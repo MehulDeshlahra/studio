@@ -1,0 +1,40 @@
+{
+ "hook_first_words": "Let's dive into",
+ "first_frame": "A complex system diagram showing the software development lifecycle, overlaid with the creator's talking head in the bottom right corner.",
+ "hook_type": "other",
+ "format": "talking head + graphics",
+ "length_s": 58,
+ "cuts_estimate": 1,
+ "avg_shot_s": 58.0,
+ "words_per_s_estimate": 2.2,
+ "beats": [
+  "0-3 s: Introduction of the topic (shipping code).",
+  "3-54 s: Step-by-step walkthrough of the diagram (Plan, Development, Build & Package, Test, Release).",
+  "54-58 s: Outro/CTA."
+ ],
+ "visual_techniques": [
+  "Animated lines drawing connections between diagram nodes (0-54s)",
+  "Highlighted icons/text appearing in sync with the narration (0-54s)",
+  "Zoom-in effect on specific diagram sections (0-54s)"
+ ],
+ "captions": "Simple, white, sans-serif font, 3-6 words per chunk, centered at the bottom, no highlight colour.",
+ "sound": "Clear voiceover, no background music, no sound effects.",
+ "recurring_element": "The architectural diagram that serves as the visual backbone throughout the entire video.",
+ "ending": "CTA to visit the link in bio for a free system design ebook.",
+ "why": "It provides high-density, expert-level educational value in a clear, visual format. The diagram acts as a 'map' that keeps the viewer oriented, making complex technical concepts easy to digest.",
+ "reusable_faceless": [
+  "Use a single, complex diagram that is slowly revealed or highlighted throughout the video.",
+  "Synchronize animations with narration to maintain viewer focus.",
+  "Keep the visual style consistent and clean to avoid overwhelming the viewer."
+ ],
+ "id": "551lh10g_go",
+ "url": "https://www.youtube.com/watch?v=551lh10g_go",
+ "channel": "ByteByteGo",
+ "niche": "tech diagrams",
+ "title": "How Big Tech Ships Code to Production",
+ "views": 2000000,
+ "channel_median": 455000,
+ "ratio": 4.4,
+ "label": "winner",
+ "watched": "2026-11-16T04:28+05:30"
+}

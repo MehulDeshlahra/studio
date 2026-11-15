@@ -1,0 +1,43 @@
+{
+ "hook_first_words": "Wait, somebody just used a chatbot",
+ "first_frame": "A woman speaking directly to the camera, holding a small microphone, with a bookshelf and plant in the background.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 111,
+ "cuts_estimate": 35,
+ "avg_shot_s": 3.17,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-7 s: Hook: A developer used AI to find a potential new planet.",
+  "7-51 s: The process: Explaining how TESS telescope data works and how the developer spotted a dip in brightness.",
+  "51-105 s: The verification: Using Claude Code to scan years of data, verify the dip, and get NASA approval.",
+  "105-111 s: Closing: Summary of the achievement and call to action."
+ ],
+ "visual_techniques": [
+  "Motion graphics overlay (0-111 s)",
+  "Zoom-in/out on talking head (0-111 s)",
+  "Screen recording of data analysis (51-57 s)",
+  "Text highlights in captions (throughout)"
+ ],
+ "captions": "Style: Bold, sans-serif, white text with black outline. 3-6 words per chunk. Position: Centered, lower-third. Highlight colour: Yellow for key terms.",
+ "sound": "Voice: Clear, energetic, professional. Music: Upbeat, tech-focused, subtle background track. Sound effects: Subtle 'whoosh' and 'click' sounds during graphic transitions.",
+ "recurring_element": "The woman holding the small circular microphone, and the recurring 3D star/planet graphic.",
+ "ending": "CTA: 'Share this story if you also found this fascinating and follow me for more.'",
+ "why": "It combines a high-stakes scientific discovery with a relatable 'individual vs. giant organization' narrative. The pacing is tight, using high-quality motion graphics to simplify complex astronomy, making it accessible and shareable.",
+ "reusable_faceless": [
+  "Use of motion graphics to visualize abstract data",
+  "Pacing: alternating between talking head and visual explanation",
+  "Highlighting key terms in captions to maintain focus",
+  "Using a clear, step-by-step narrative structure for complex topics"
+ ],
+ "id": "2KmY_lSQi10",
+ "url": "https://www.youtube.com/watch?v=2KmY_lSQi10",
+ "channel": "aevytv",
+ "niche": "tech stories, English, India",
+ "title": "The coolest thing anyone's done with CLAUDE!",
+ "views": 1000000,
+ "channel_median": 246000,
+ "ratio": 4.07,
+ "label": "winner",
+ "watched": "2026-11-16T04:29+05:30"
+}

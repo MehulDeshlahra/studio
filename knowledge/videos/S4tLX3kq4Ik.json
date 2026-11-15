@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "Netflix tech stack",
+ "first_frame": "A complex, dark-themed architectural diagram of Netflix's tech stack with the host's face in the bottom right corner.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 52,
+ "cuts_estimate": 10,
+ "avg_shot_s": 5.2,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-6 s: Hook and intro, establishing the topic.",
+  "7-11 s: Mobile and frontend stack explanation.",
+  "12-20 s: Backend, communication, and microservices.",
+  "21-31 s: Storage, data processing, and streaming.",
+  "32-38 s: Deployment, scaling, and monitoring.",
+  "39-52 s: Development tools and reliability testing (Chaos Monkey), closing."
+ ],
+ "visual_techniques": [
+  "Picture-in-picture (host in bottom right corner) throughout",
+  "Animated highlighting of specific icons on the static diagram as they are mentioned",
+  "Dynamic red lines connecting components to show data flow"
+ ],
+ "captions": "Simple, clean white text, 3-6 words per chunk, centered at the bottom, no specific highlight color.",
+ "sound": "Clear, professional voiceover, light upbeat background music, no sound effects.",
+ "recurring_element": "The architectural diagram of the Netflix tech stack remains on screen throughout the entire video.",
+ "ending": "The video ends abruptly on the final point about reliability, no explicit CTA or loop.",
+ "why": "It provides high-density, valuable information in a visually engaging way. By using a complex diagram and breaking it down piece by piece, it makes a technical subject accessible and satisfying to watch, which keeps viewers engaged to see the whole 'picture' completed.",
+ "reusable_faceless": [
+  "Use a complex, high-quality diagram as the anchor for the video",
+  "Highlight specific parts of the diagram in sync with the narration",
+  "Use a clear, authoritative voiceover to explain complex systems",
+  "Keep the pacing fast by moving quickly between different sections of the diagram"
+ ],
+ "id": "S4tLX3kq4Ik",
+ "url": "https://www.youtube.com/watch?v=S4tLX3kq4Ik",
+ "channel": "ByteByteGo",
+ "niche": "tech diagrams",
+ "title": "Netflix Tech Stack",
+ "views": 1700000,
+ "channel_median": 455000,
+ "ratio": 3.74,
+ "label": "winner",
+ "watched": "2026-11-16T04:29+05:30"
+}

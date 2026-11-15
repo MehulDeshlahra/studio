@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "They shoved",
+ "first_frame": "A 3D close-up of a medical scope entering a nostril.",
+ "hook_type": "visual surprise",
+ "format": "3D how-it-works",
+ "length_s": 32,
+ "cuts_estimate": 12,
+ "avg_shot_s": 2.6,
+ "words_per_s_estimate": 2.7,
+ "beats": [
+  "0-3 s: Hook showing the medical scope inside the nose.",
+  "3-12 s: Contextualizing the patient's symptoms (swollen face, nosebleeds).",
+  "12-16 s: The reveal of the maggots inside the nose.",
+  "16-24 s: Failed attempt to suction the maggots.",
+  "24-32 s: Successful removal and count of the maggots."
+ ],
+ "visual_techniques": [
+  "3D animation (throughout)",
+  "Camera zoom/dolly-in (0:00, 0:13)",
+  "Cross-section anatomical view (0:10, 0:18)",
+  "Dynamic object tracking (0:21)",
+  "Animated counter (0:27)"
+ ],
+ "captions": "White text with black outline, 3-6 words per chunk, centered at bottom, no highlight color.",
+ "sound": "Deep, calm male voiceover; subtle medical-themed background ambience; crisp sound effects (suction, squelching, metal clinking).",
+ "recurring_element": "The 3D medical character and the medical scope.",
+ "ending": "Punchline (the final count of 150 bugs).",
+ "why": "The content is extremely visceral and 'gross-out' in a way that likely triggered YouTube's safety/advertiser-friendly filters, resulting in restricted reach compared to the channel's usual educational/scientific content.",
+ "reusable_faceless": [
+  "Anatomical cross-section animations to explain medical conditions",
+  "Using a 'medical scope' perspective to create an immersive hook",
+  "Visualizing numerical data (the counter) during a process"
+ ],
+ "id": "EHhqfU1kXxQ",
+ "url": "https://www.youtube.com/watch?v=EHhqfU1kXxQ",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "His Nose Was Filled With Live Maggots 😨",
+ "views": 811000,
+ "channel_median": 6400000,
+ "ratio": 0.13,
+ "label": "flop",
+ "watched": "2026-11-16T04:30+05:30"
+}

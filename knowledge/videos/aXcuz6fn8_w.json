@@ -1,0 +1,41 @@
+{
+ "hook_first_words": "1990",
+ "first_frame": "The text '1990' in pixel font at the top, and a yellow block below it.",
+ "hook_type": "visual surprise",
+ "format": "animation",
+ "length_s": 53,
+ "cuts_estimate": 25,
+ "avg_shot_s": 2.1,
+ "words_per_s_estimate": 2.3,
+ "beats": [
+  "0-45 s: Rapid-fire chronological sequence of web technologies, each 'fixing' the previous one.",
+  "46-53 s: The 'punchline' reveal that despite all the innovation, jQuery is still used on 75% of websites, accompanied by a meme clip."
+ ],
+ "visual_techniques": [
+  "Stacking animation (0-45s): New logos drop from the top, pushing previous ones down.",
+  "Text overlay (0-45s): Year counter at the top updates with every new technology.",
+  "Meme cut (46s): Transition from animation to a 'dumpster fire' video.",
+  "Reaction shot (48s): Cut to a man looking stressed/confused."
+ ],
+ "captions": "Simple white sans-serif text, centered, 2-4 words per chunk, no highlight colour.",
+ "sound": "Fast-paced, upbeat, rhythmic electronic background music. Clear, dry voiceover narration. Sound effect of a 'thud' or 'pop' when each logo lands.",
+ "recurring_element": "The 'stacking' animation of logos and the repeating narrative structure ('X invented to fix Y').",
+ "ending": "Punchline: A meme clip of a man looking distressed, reinforcing the absurdity of the 75% statistic.",
+ "why": "It uses a highly satisfying, repetitive visual pattern that creates 'loopability' and anticipation. It simplifies a complex history into a clear, humorous narrative arc that culminates in a surprising, relatable fact for the target audience (developers).",
+ "reusable_faceless": [
+  "Chronological stacking animation for history topics.",
+  "The 'X invented to fix Y' narrative structure.",
+  "Using a 'dumpster fire' visual metaphor to represent industry chaos.",
+  "Ending with a relatable meme reaction to ground technical data in human emotion."
+ ],
+ "id": "aXcuz6fn8_w",
+ "url": "https://www.youtube.com/watch?v=aXcuz6fn8_w",
+ "channel": "Fireship",
+ "niche": "dev/tech humour",
+ "title": "the untold history of web development",
+ "views": 5200000,
+ "channel_median": 1500000,
+ "ratio": 3.47,
+ "label": "winner",
+ "watched": "2026-11-16T04:30+05:30"
+}

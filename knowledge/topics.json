@@ -1,0 +1,199 @@
+{
+ "picks": [
+  {
+   "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+   "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+   "src": "Google AI",
+   "angle": "Har Indian ka daily Google search ab AI-powered hoga, faster aur smarter answers milega",
+   "hook": "Google Search ab soch ke jawab dega",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 10,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem",
+   "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+   "src": "Hugging Face blog",
+   "angle": "Bina internet ke powerful AI models chalao phone/laptop pe - free, private, offline",
+   "hook": "Bina net ke AI chalega tumhare phone pe",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 10,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "Gemini Intelligence: New features, on more devices",
+   "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+   "src": "Google AI",
+   "angle": "Android phones pe naye AI features bina naya phone kharide milega",
+   "hook": "Tumhara purana Android ab Gemini se smart",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "Introducing ChatGPT Wallet",
+   "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+   "src": "OpenAI",
+   "angle": "AI agents ab tumhare liye shopping, booking kar sakte hain - wallet ke saath",
+   "hook": "ChatGPT ab khud paise kharch karega",
+   "format": "how-it-works",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+   "url": "https://huggingface.co/blog/qvac/botpsy",
+   "src": "Hugging Face blog",
+   "angle": "Chhota model, bada kaam - personal assistant jo tumhare phone pe hi rehta hai, cloud nahi",
+   "hook": "Pocket mein AI assistant, cloud nahi chahiye",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "Build your own AI office with Univer Office SDK",
+   "url": "https://github.com/dream-num/univer",
+   "src": "GitHub trending",
+   "angle": "Students aur small businesses ke liye free AI-powered Excel/Word alternative",
+   "hook": "Free AI Office suite - Microsoft ka tod",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "Old Bitly Links Are Being Hijacked",
+   "url": "https://ransomnews.com/burger-king-tweet-bitly-link-hijack-2026/",
+   "src": "Hacker News",
+   "angle": "Purane shortened links (bit.ly) ab hackers ke haath - apne links check karo",
+   "hook": "Tumhare purane bit.ly links ab khatre mein",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "Your Agent Will Pick the Hackable One",
+   "url": "https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/",
+   "src": "Hacker News",
+   "angle": "AI agents automatically vulnerable tools choose kar lete hain - security alert",
+   "hook": "AI agent khud hackable tool dhoond leta hai",
+   "format": "story",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "Handwriting, as a Font",
+   "url": "https://ductus.sorenblank.com",
+   "src": "Hacker News",
+   "angle": "Apni handwriting ko font bana ke notes, assignments, cards mein use karo",
+   "hook": "Apni handwriting ko font bana lo minute mein",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "Try Tabletop: Customizable, collaborative spaces for groups",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+   "src": "Google AI",
+   "angle": "College projects, family planning, team work ke liye free visual collaboration board",
+   "hook": "Google ka free whiteboard for group planning",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "Chrome DevTools for coding agents",
+   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+   "src": "GitHub trending",
+   "angle": "Young developers ke liye - AI coding agents ab browser devtools use kar sakte hain",
+   "hook": "AI coder ab browser inspect bhi karega",
+   "format": "how-it-works",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "title": "What thousands of conversations look like inside a language model",
+   "url": "https://operator0x.com/field-notes/qwen-conversation-state-space/",
+   "src": "Hacker News",
+   "angle": "Visual proof: AI models conversations kaise samajhte hain - students ke liye eye-opener",
+   "hook": "AI ke dimaag mein conversations aise dikhte hain",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-16T04:27+05:30"
+  }
+ ],
+ "history": [
+  {
+   "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+   "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+   "title": "Gemini Intelligence: New features, on more devices",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+   "title": "Introducing ChatGPT Wallet",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+   "title": "llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://huggingface.co/blog/qvac/botpsy",
+   "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://github.com/dream-num/univer",
+   "title": "Build your own AI office with Univer Office SDK",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://ransomnews.com/burger-king-tweet-bitly-link-hijack-2026/",
+   "title": "Old Bitly Links Are Being Hijacked",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/",
+   "title": "Your Agent Will Pick the Hackable One",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://ductus.sorenblank.com",
+   "title": "Handwriting, as a Font",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+   "title": "Try Tabletop: Customizable, collaborative spaces for groups",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+   "title": "Chrome DevTools for coding agents",
+   "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://operator0x.com/field-notes/qwen-conversation-state-space/",
+   "title": "What thousands of conversations look like inside a language model",
+   "found": "2026-11-16T04:27+05:30"
+  }
+ ],
+ "updated": "2026-11-16T04:27+05:30"
+}

@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "Anthropic just released Claude Fable 5.2",
+ "first_frame": "A calm, abstract blue and orange gradient background with the text 'Anthropic' and 'Fable 5.2' appearing, overlaid with the creator in a talking head shot.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 90,
+ "cuts_estimate": 35,
+ "avg_shot_s": 2.5,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook and intro to the topic.",
+  "3-22 s: Point 1: Operating system creation.",
+  "22-41 s: Point 2: Electronic device design.",
+  "41-58 s: Point 3: Chemistry problem solving.",
+  "58-72 s: Point 4: Math optimization.",
+  "72-83 s: Point 5: Physics calculation.",
+  "83-90 s: Conclusion and summary."
+ ],
+ "visual_techniques": [
+  "Talking head with green screen background (0s)",
+  "Split screen: talking head on bottom, graphics on top (0-90s)",
+  "Zoom-in on text/images for emphasis (throughout)",
+  "Motion graphics to highlight specific data points (throughout)",
+  "Fast-paced cuts between charts, code snippets, and real-world footage (throughout)",
+  "Countdown numbers (2, 3, 5) to structure the list (22s, 42s, 73s)"
+ ],
+ "captions": "Style: Bold, white sans-serif font centered on the screen, highlighting one or two words at a time in yellow.",
+ "sound": "Voice: Clear, energetic narration. Music: Subtle, upbeat electronic background track. Sound effects: Minimal, used for transitions.",
+ "recurring_element": "The split-screen layout with the creator on the bottom and relevant AI-generated graphics/tweets on the top.",
+ "ending": "Summary of the model's versatility, ending on the Claude logo with a fade-out.",
+ "why": "The video succeeds because it breaks down a complex, technical announcement into a digestible, fast-paced listicle. The use of clear, visual evidence for each claim keeps the viewer engaged, while the creator's energetic delivery maintains momentum.",
+ "reusable_faceless": [
+  "Split-screen layout for talking head and screen recordings",
+  "Numbered list structure for complex topics",
+  "Highlighting specific words in captions to maintain focus",
+  "Using real-world footage or 3D renders to illustrate abstract concepts"
+ ],
+ "id": "vzO_Tc9AQ10",
+ "url": "https://www.youtube.com/watch?v=vzO_Tc9AQ10",
+ "channel": "VarunMayya",
+ "niche": "AI/tech news, English, India",
+ "title": "Anthropic just released Claude Fable 5.2",
+ "views": 507000,
+ "channel_median": 111000,
+ "ratio": 4.57,
+ "label": "winner",
+ "watched": "2026-11-16T04:28+05:30"
+}

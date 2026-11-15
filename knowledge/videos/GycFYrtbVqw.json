@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "How strong are",
+ "first_frame": "A drill driving a screw into a blue wall.",
+ "hook_type": "question",
+ "format": "3D how-it-works",
+ "length_s": 25,
+ "cuts_estimate": 10,
+ "avg_shot_s": 2.5,
+ "words_per_s_estimate": 0.8,
+ "beats": [
+  "0-3 s: Introduction of the test with a simple screw.",
+  "3-7 s: Testing a plastic anchor with a weight.",
+  "7-10 s: Testing a toggle bolt anchor.",
+  "10-15 s: Testing a zip-toggle anchor.",
+  "15-24 s: Testing a heavy-duty metal anchor with increasing weight.",
+  "24-25 s: Final failure and logo."
+ ],
+ "visual_techniques": [
+  "3D simulation (throughout)",
+  "Slow-motion impact/failure (0:02, 0:06, 0:10, 0:15, 0:23)",
+  "On-screen text overlays for weight (throughout)",
+  "Camera tracking of falling objects (0:02, 0:06, 0:10, 0:15, 0:23)"
+ ],
+ "captions": "None used.",
+ "sound": "Voiceover (calm, instructional), sound effects (drilling, hammering, heavy crashing, metal clanking), no background music.",
+ "recurring_element": "The blue drywall surface and the drill.",
+ "ending": "Punchline (the wall breaks completely under the final weight).",
+ "why": "The video lacks a strong narrative arc or 'human' element. While the 3D visuals are high quality, the repetitive nature of 'drill, hang, break' becomes predictable quickly without a host or commentary to add personality or stakes.",
+ "reusable_faceless": [
+  "Using 3D physics simulations to test real-world scenarios",
+  "On-screen text to track numerical data (weight/stress)",
+  "Slow-motion impact shots to emphasize failure points"
+ ],
+ "id": "GycFYrtbVqw",
+ "url": "https://www.youtube.com/watch?v=GycFYrtbVqw",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "How Strong Are Different Drywall Anchors 🤔",
+ "views": 876000,
+ "channel_median": 6400000,
+ "ratio": 0.14,
+ "label": "flop",
+ "watched": "2026-11-16T04:30+05:30"
+}

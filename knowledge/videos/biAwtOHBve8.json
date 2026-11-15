@@ -1,0 +1,49 @@
+{
+ "hook_first_words": "Shocking news.",
+ "first_frame": "A split screen showing Jensen Huang with his wife on top and the creator, Varun Mayya, on the bottom.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 70,
+ "cuts_estimate": 25,
+ "avg_shot_s": 2.8,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook: Bold claim about Nvidia CEO cheating on his wife.",
+  "3-21 s: Context: Reading of the apology email with visual highlights.",
+  "21-34 s: The 'Spy' angle: Explaining the US intelligence reports with map/graphic overlays.",
+  "34-41 s: The Trump connection: Mentioning Trump's involvement.",
+  "41-53 s: Analysis: Breaking down the email's content (or lack thereof).",
+  "53-65 s: Counter-narrative: Nvidia's official response.",
+  "65-70 s: Closing: Summary and final question."
+ ],
+ "visual_techniques": [
+  "Split screen (0-3s)",
+  "Text highlighting/underlining on email screenshot (7-12s)",
+  "Map animation with dots (27-29s)",
+  "Schematic/infographic overlay (30-33s)",
+  "Screen recording of news articles (34-38s, 53-59s)",
+  "Black and white filter on B-roll (24-26s, 46-52s)",
+  "Target/reticle graphic (24-26s)"
+ ],
+ "captions": "White text with black outline, 3-5 words per chunk, centered, dynamic highlighting (yellow/white) on key phrases.",
+ "sound": "Voiceover (creator), background synth-heavy suspenseful music, no sound effects.",
+ "recurring_element": "The apology email screenshot, which is revisited multiple times to anchor the narrative.",
+ "ending": "Open-ended question, leaving the viewer to ponder the 'spy' aspect.",
+ "why": "It combines a high-profile celebrity scandal (cheating) with a high-stakes geopolitical thriller (Chinese spy/Nvidia chips). The editing is tight, using visual aids to keep the viewer engaged with a dense, text-heavy story.",
+ "reusable_faceless": [
+  "Using a 'documentary' style with B-roll overlays and text highlights.",
+  "Pacing the story by alternating between direct quotes (the email) and analysis.",
+  "Using simple map animations to visualize complex international stories.",
+  "Maintaining a consistent visual aesthetic (black/white/grey) for archival footage."
+ ],
+ "id": "biAwtOHBve8",
+ "url": "https://www.youtube.com/watch?v=biAwtOHBve8",
+ "channel": "VarunMayya",
+ "niche": "AI/tech news, English, India",
+ "title": "Nvidia CEO, Jensen Huang, just openly accepted that he was cheating on his wife",
+ "views": 449000,
+ "channel_median": 111000,
+ "ratio": 4.05,
+ "label": "winner",
+ "watched": "2026-11-16T04:29+05:30"
+}

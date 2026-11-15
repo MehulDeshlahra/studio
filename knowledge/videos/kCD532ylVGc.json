@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "Everybody stop!",
+ "first_frame": "Cleo Abram in her studio, hands up, looking directly at the camera.",
+ "hook_type": "interruption",
+ "format": "talking head + 3D motion graphics",
+ "length_s": 53,
+ "cuts_estimate": 22,
+ "avg_shot_s": 2.4,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook and immediate stakes (drilling into King Tut's tomb).",
+  "3-18 s: Context on why the tomb is unusual and the Nefertiti theory.",
+  "18-35 s: Explanation of the first scientific method: Ground Penetrating Radar.",
+  "35-47 s: Explanation of the second scientific method: Microgravity survey.",
+  "47-53 s: Conclusion and final call to action."
+ ],
+ "visual_techniques": [
+  "3D architectural model of the tomb (0:01, 0:03, 0:10, 0:12, 0:25, 0:28, 0:43, 0:46)",
+  "Pixelation/blurring of specific tomb areas (0:03, 0:10, 0:19)",
+  "White arrow overlays on 3D model (0:04, 0:13, 0:26)",
+  "Stock footage of archaeology site (0:05-0:09)",
+  "Static image of Nefertiti bust (0:15)",
+  "Animated 3D diagram of radar waves (0:21)",
+  "Animated 3D diagram of gravity sensors (0:37)",
+  "Drill animation showing internal camera (0:48)"
+ ],
+ "captions": "Bold, sans-serif font, white text with black drop shadow, 3-6 words per chunk, centered, highlights in yellow/green.",
+ "sound": "Upbeat, inquisitive background music; clear, energetic narration; subtle sound effects (whooshes on transitions, digital blips on graphics).",
+ "recurring_element": "The 3D model of King Tut's tomb, which evolves as new information is presented.",
+ "ending": "CTA (Subscribe) paired with a visual of a camera entering the tomb.",
+ "why": "The video performs well because it uses a high-stakes, urgent hook ('Everybody stop!') to frame a scientific discovery as a mystery. It balances complex technical concepts (radar/gravity) with simple, high-quality 3D visualizations, making the information accessible and visually engaging.",
+ "reusable_faceless": [
+  "Using a 3D model that updates in real-time as the narrative progresses.",
+  "Using pixelation/blur to create a sense of 'hidden' or 'classified' information.",
+  "Breaking down complex scientific processes into simple, animated 3D diagrams.",
+  "Using a clear, step-by-step numbering system for multi-part explanations."
+ ],
+ "id": "kCD532ylVGc",
+ "url": "https://www.youtube.com/watch?v=kCD532ylVGc",
+ "channel": "CleoAbram",
+ "niche": "science/tech explainers",
+ "title": "They Found Something In King Tut’s Tomb",
+ "views": 3400000,
+ "channel_median": 827000,
+ "ratio": 4.11,
+ "label": "winner",
+ "watched": "2026-11-16T04:29+05:30"
+}

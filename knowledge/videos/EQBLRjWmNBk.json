@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "Guys, money will come and go",
+ "first_frame": "Creator in a blue suit, speaking directly to the camera, with a garden background.",
+ "hook_type": "bold claim",
+ "format": "talking head + vlog style",
+ "length_s": 38,
+ "cuts_estimate": 25,
+ "avg_shot_s": 1.5,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook statement about money vs. age.",
+  "3-6 s: Transition to the reveal (unboxing the car).",
+  "6-12 s: The reveal of the giant gift box.",
+  "12-16 s: The car is revealed with confetti.",
+  "16-25 s: Family celebration, blessing the car, and getting in.",
+  "25-30 s: Driving shots and interior features.",
+  "30-38 s: Emotional closing statement from parents."
+ ],
+ "visual_techniques": [
+  "Jump cuts to maintain pace (throughout)",
+  "Slow-motion reveal of the car (12-14 s)",
+  "Handheld camera movement (throughout)",
+  "Text overlays for emphasis (0-5 s)",
+  "B-roll of the car driving (26-29 s)"
+ ],
+ "captions": "Bold, white, sans-serif font, centered, 3-5 words per chunk, no highlight colour.",
+ "sound": "Voiceover/Direct speech, upbeat Indian pop music, sound effects (confetti/cheering), no silences.",
+ "recurring_element": "The Mercedes car.",
+ "ending": "Emotional testimonial from the mother, ending on a sentimental note.",
+ "why": "The video combines a relatable, high-aspiration hook with a visually satisfying 'unboxing' style reveal of a luxury item, tapping into strong emotional family values that resonate deeply with the Indian audience.",
+ "reusable_faceless": [
+  "High-energy hook statement",
+  "Slow-motion reveal of a product",
+  "Fast-paced montage of a 'big event'",
+  "Emotional payoff at the end of the video"
+ ],
+ "id": "EQBLRjWmNBk",
+ "url": "https://www.youtube.com/watch?v=EQBLRjWmNBk",
+ "channel": "IshanSharma7390",
+ "niche": "AI tools, Hinglish",
+ "title": "FINALLY Got The Mercedes for Parents!",
+ "views": 2700000,
+ "channel_median": 75000,
+ "ratio": 36.0,
+ "label": "winner",
+ "watched": "2026-11-16T04:28+05:30"
+}
