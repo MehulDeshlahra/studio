@@ -1,0 +1,8 @@
+ref/
+watch/
+*.mp4
+*.webm
+*.wav
+__pycache__/
+.env
+*.key

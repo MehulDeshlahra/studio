@@ -1,0 +1,18 @@
+{
+ "note": "YouTube channels whose Shorts the scout studies. 'why' = what we learn from them. The scout may add channels it finds (added_by: scout), max 40.",
+ "channels": [
+  {"handle": "VarunMayya", "niche": "AI/tech news, English, India", "why": "evidence editing, cut every ~1.8 s"},
+  {"handle": "aevytv", "niche": "tech stories, English, India", "why": "story hooks about real people"},
+  {"handle": "dhruvrathee", "niche": "Hindi explainers", "why": "stacked numbers, Indian swaps, 10M+ views"},
+  {"handle": "CleoAbram", "niche": "science/tech explainers", "why": "recurring 3D home object, neon labels"},
+  {"handle": "Fireship", "niche": "dev/tech humour", "why": "fast meme-cut explainers"},
+  {"handle": "ByteByteGo", "niche": "tech diagrams", "why": "one diagram that grows"},
+  {"handle": "mkbhd", "niche": "tech products", "why": "product animation, polish"},
+  {"handle": "kurzgesagt", "niche": "animated science", "why": "every noun drawn on the word"},
+  {"handle": "zackdfilms", "niche": "3D how-it-works", "why": "one continuous 3D take, twist endings"},
+  {"handle": "TechBurner", "niche": "Hindi tech", "why": "Hindi tech audience baseline"},
+  {"handle": "GyanTherapy", "niche": "Hindi tech", "why": "short Hindi product shorts, 1-3M views"},
+  {"handle": "IshanSharma7390", "niche": "AI tools, Hinglish", "why": "AI tool shorts for Indian students"},
+  {"handle": "ThinkSchool", "niche": "business explainers, India", "why": "Indian business storytelling"}
+ ]
+}
