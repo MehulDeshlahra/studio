@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "PS5 Wolverine edition",
+ "first_frame": "The creator is holding a PS5 box with a Wolverine-themed cover, standing in front of a green screen.",
+ "hook_type": "visual surprise",
+ "format": "talking head + hands-on",
+ "length_s": 67,
+ "cuts_estimate": 35,
+ "avg_shot_s": 1.9,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-7 s: Hook and unboxing start.",
+  "8-14 s: Rapid-fire unboxing of accessories.",
+  "15-31 s: Controller reveal and interaction with other team members.",
+  "32-46 s: Console reveal and unboxing.",
+  "47-59 s: Detailed close-up of console design features.",
+  "60-67 s: Comparison and final question/CTA."
+ ],
+ "visual_techniques": [
+  "Jump cuts to maintain pace (throughout)",
+  "Object tracking/overlay of controller when mentioned (16s, 24s, 28s)",
+  "Hand-held camera movement for dynamic reveal (44s)",
+  "Close-up shots for product detail (47s, 53s)",
+  "Screen recording overlay for comparison (102s)"
+ ],
+ "captions": "None",
+ "sound": "Voiceover (Hindi), upbeat background music, foley sound effects (unboxing, rustling), conversational audio with other people.",
+ "recurring_element": "The Wolverine-themed PS5 controller.",
+ "ending": "Question to the audience asking for their preference, serving as a CTA for comments.",
+ "why": "The video performs well because it combines a high-demand, visually striking product (Wolverine PS5) with a fast-paced, unscripted-feeling unboxing. Including other people in the video adds social proof and breaks the monotony of a standard talking head, making it feel more like a fun, relatable experience.",
+ "reusable_faceless": [
+  "Fast-paced unboxing with rhythmic cuts",
+  "Using overlays to highlight specific product features during a demo",
+  "Ending with a 'this vs that' comparison to drive engagement"
+ ],
+ "id": "p_N-jF8IkJ8",
+ "url": "https://www.youtube.com/watch?v=p_N-jF8IkJ8",
+ "channel": "GyanTherapy",
+ "niche": "Hindi tech",
+ "title": "Wolverine Play Station (PS5) #shorts",
+ "views": 3300000,
+ "channel_median": 1000000,
+ "ratio": 3.3,
+ "label": "winner",
+ "watched": "2026-11-16T05:07+05:30"
+}

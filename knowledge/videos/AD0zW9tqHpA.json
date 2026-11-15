@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "People, Sri Lanka is shaping up",
+ "first_frame": "Talking head of the host, with a 'Powered by Odoo' logo at the bottom.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 114,
+ "cuts_estimate": 45,
+ "avg_shot_s": 2.5,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook statement about Sri Lanka real estate.",
+  "3-16 s: Visual comparison of rental yields across three cities.",
+  "16-26 s: Three reasons for the growth (Tourism).",
+  "26-36 s: Second reason (Proximity to high-income cities).",
+  "36-43 s: Third reason (Proximity to India).",
+  "43-58 s: Introduction to the expert and his company.",
+  "58-114 s: Transition to the deeper interview/analysis."
+ ],
+ "visual_techniques": [
+  "Animated bar chart (0:07-0:15)",
+  "Animated map with distance circles (0:27-0:33, 0:37-0:42)",
+  "B-roll of Sri Lankan luxury villas (0:45-0:47, 0:53-0:56)",
+  "Split-screen interview footage (0:58-1:00)",
+  "Text overlays for key stats (0:07, 0:20, 0:28)"
+ ],
+ "captions": "Style: Simple white text with black outline, centered, 2-4 words per chunk, no highlight color.",
+ "sound": "Voice type: Professional, clear, fast-paced narration. Music: Upbeat, corporate-style background track. Sound effects: Subtle whooshes during transitions and map animations.",
+ "recurring_element": "The host's talking head and the 'Powered by Odoo' logo at the bottom.",
+ "ending": "CTA/Teaser for the full video.",
+ "why": "It beats the channel's usual performance because it combines high-stakes financial advice with a 'travel-to-investigate' narrative, making the content feel like an exclusive, high-value documentary rather than a standard explainer.",
+ "reusable_faceless": [
+  "Animated map overlays for distance/proximity explanations.",
+  "Data-driven bar charts for comparative analysis.",
+  "Stock footage of luxury real estate to visualize the investment.",
+  "Fast-paced, information-dense narration style."
+ ],
+ "id": "AD0zW9tqHpA",
+ "url": "https://www.youtube.com/watch?v=AD0zW9tqHpA",
+ "channel": "ThinkSchool",
+ "niche": "business explainers, India",
+ "title": "Sri Lanka vs Dubai vs Thailand: Which Is the Safest Real Estate Bet for Indians?",
+ "views": 181000,
+ "channel_median": 60000,
+ "ratio": 3.02,
+ "label": "winner",
+ "watched": "2026-11-16T05:08+05:30"
+}

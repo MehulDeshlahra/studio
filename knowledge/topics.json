@@ -1,136 +1,136 @@
 {
  "picks": [
   {
-   "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
-   "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
-   "src": "Google AI",
-   "angle": "Har Indian ka daily Google search ab AI-powered hoga, faster aur smarter answers milega",
-   "hook": "Google Search ab soch ke jawab dega",
-   "format": "evidence",
-   "freshness": "this week",
-   "score": 10,
-   "found": "2026-11-16T04:27+05:30"
-  },
-  {
-   "title": "llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem",
-   "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
-   "src": "Hugging Face blog",
-   "angle": "Bina internet ke powerful AI models chalao phone/laptop pe - free, private, offline",
-   "hook": "Bina net ke AI chalega tumhare phone pe",
+   "title": "Claude Code reverse engineered my 1994 Jeep's ECU",
+   "url": "https://www.youtube.com/watch?v=WPj3aQ-xxpI",
+   "src": "Hacker News",
+   "angle": "AI ab purani cars ko bhi hack aur fix kar sakta hai.",
+   "hook": "AI ne 1994 ki purani Jeep hack kar di!",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 10,
-   "found": "2026-11-16T04:27+05:30"
+   "found": "2026-11-16T05:06+05:30"
   },
   {
-   "title": "Gemini Intelligence: New features, on more devices",
-   "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+   "title": "Indian chip startup Bharat Semi lands $24M seed round",
+   "url": "https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/",
+   "src": "TechCrunch",
+   "angle": "Bharat ka naya chip startup global market mein dhamaka kar raha hai.",
+   "hook": "Bharat ka ye startup ab global chip market hilaega!",
+   "format": "story",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "title": "Adobe’s creative tools coming to Google apps",
+   "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
    "src": "Google AI",
-   "angle": "Android phones pe naye AI features bina naya phone kharide milega",
-   "hook": "Tumhara purana Android ab Gemini se smart",
+   "angle": "Office work aur design ab ek hi jagah, bina tab switch kiye.",
+   "hook": "Ab Google Docs mein hi Adobe ka magic!",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-16T04:27+05:30"
+   "found": "2026-11-16T05:06+05:30"
   },
   {
-   "title": "Introducing ChatGPT Wallet",
-   "url": "https://openai.com/index/introducing-chatgpt-wallet/",
-   "src": "OpenAI",
-   "angle": "AI agents ab tumhare liye shopping, booking kar sakte hain - wallet ke saath",
-   "hook": "ChatGPT ab khud paise kharch karega",
+   "title": "Protomaps: Self-hosting map tiles",
+   "url": "https://bruceroettgers.eu/blog/protomaps/",
+   "src": "Hacker News",
+   "angle": "Small business owners ke liye Google Maps API ka sasta alternative.",
+   "hook": "Google Maps ka mehenga API chodo, ye try karo!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "title": "Gemini Omni 1.2 Flash released",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+   "src": "Google AI",
+   "angle": "Developers aur students ke liye sasta aur fast AI model.",
+   "hook": "Gemini ka naya update, pehle se double fast!",
+   "format": "comparison",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "title": "Amazon's plan to index world's online shopping data",
+   "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
+   "src": "The Verge",
+   "angle": "Online shopping ka future ab AI-driven search se badlega.",
+   "hook": "Amazon ab har product ka data index kar raha hai!",
+   "format": "story",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "title": "Crows make decisions faster than humans",
+   "url": "https://www.nytimes.com/2026/11/15/science/birdbrain-crows-birds-research-decision.html",
+   "src": "Hacker News",
+   "angle": "Nature aur AI ke beech ka connection, surprising research.",
+   "hook": "Kya crows humse zyada fast decision lete hain?",
+   "format": "story",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "title": "WebGL Flight Simulator with seed generated terrain",
+   "url": "https://baron.by.dai.studio/",
+   "src": "Hacker News",
+   "angle": "Browser mein hi high-end graphics, AI ka kamaal.",
+   "hook": "Browser mein hi flight simulator, wo bhi AI generated!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "title": "A NES emulator written in Odin",
+   "url": "https://lucypero.com/lucynes.html",
+   "src": "Hacker News",
+   "angle": "Retro gaming aur low-level programming ka maza.",
+   "hook": "Sirf 300 lines mein pura NES console bana diya!",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "title": "XYBench: Helping with the problem behind the question",
+   "url": "https://huggingface.co/blog/allenai/xybench",
+   "src": "Hugging Face",
+   "angle": "AI se sahi kaam karwane ke liye better prompting seekho.",
+   "hook": "AI se sahi sawal puchna ab aur asaan!",
    "format": "how-it-works",
    "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-16T04:27+05:30"
+   "score": 7,
+   "found": "2026-11-16T05:06+05:30"
   },
   {
-   "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
-   "url": "https://huggingface.co/blog/qvac/botpsy",
-   "src": "Hugging Face blog",
-   "angle": "Chhota model, bada kaam - personal assistant jo tumhare phone pe hi rehta hai, cloud nahi",
-   "hook": "Pocket mein AI assistant, cloud nahi chahiye",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-16T04:27+05:30"
-  },
-  {
-   "title": "Build your own AI office with Univer Office SDK",
-   "url": "https://github.com/dream-num/univer",
-   "src": "GitHub trending",
-   "angle": "Students aur small businesses ke liye free AI-powered Excel/Word alternative",
-   "hook": "Free AI Office suite - Microsoft ka tod",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T04:27+05:30"
-  },
-  {
-   "title": "Old Bitly Links Are Being Hijacked",
-   "url": "https://ransomnews.com/burger-king-tweet-bitly-link-hijack-2026/",
-   "src": "Hacker News",
-   "angle": "Purane shortened links (bit.ly) ab hackers ke haath - apne links check karo",
-   "hook": "Tumhare purane bit.ly links ab khatre mein",
-   "format": "evidence",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T04:27+05:30"
-  },
-  {
-   "title": "Your Agent Will Pick the Hackable One",
-   "url": "https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/",
-   "src": "Hacker News",
-   "angle": "AI agents automatically vulnerable tools choose kar lete hain - security alert",
-   "hook": "AI agent khud hackable tool dhoond leta hai",
+   "title": "Google Cloud launches Gemini for healthcare",
+   "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
+   "src": "Google AI",
+   "angle": "Healthcare professionals ke liye AI ka naya use case.",
+   "hook": "AI ab doctors ki madad karega, dekho kaise!",
    "format": "story",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-16T04:27+05:30"
+   "found": "2026-11-16T05:06+05:30"
   },
   {
-   "title": "Handwriting, as a Font",
-   "url": "https://ductus.sorenblank.com",
-   "src": "Hacker News",
-   "angle": "Apni handwriting ko font bana ke notes, assignments, cards mein use karo",
-   "hook": "Apni handwriting ko font bana lo minute mein",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-16T04:27+05:30"
-  },
-  {
-   "title": "Try Tabletop: Customizable, collaborative spaces for groups",
-   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
-   "src": "Google AI",
-   "angle": "College projects, family planning, team work ke liye free visual collaboration board",
-   "hook": "Google ka free whiteboard for group planning",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-16T04:27+05:30"
-  },
-  {
-   "title": "Chrome DevTools for coding agents",
-   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-   "src": "GitHub trending",
-   "angle": "Young developers ke liye - AI coding agents ab browser devtools use kar sakte hain",
-   "hook": "AI coder ab browser inspect bhi karega",
+   "title": "LLMON: An LLM-Native Markup Language",
+   "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+   "src": "Hugging Face",
+   "angle": "AI models ke liye naya coding format, tech students ke liye.",
+   "hook": "LLMs ke liye naya coding language format aa gaya!",
    "format": "how-it-works",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-16T04:27+05:30"
-  },
-  {
-   "title": "What thousands of conversations look like inside a language model",
-   "url": "https://operator0x.com/field-notes/qwen-conversation-state-space/",
-   "src": "Hacker News",
-   "angle": "Visual proof: AI models conversations kaise samajhte hain - students ke liye eye-opener",
-   "hook": "AI ke dimaag mein conversations aise dikhte hain",
-   "format": "evidence",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-16T04:27+05:30"
+   "found": "2026-11-16T05:06+05:30"
   }
  ],
  "history": [
@@ -193,7 +193,67 @@
    "url": "https://operator0x.com/field-notes/qwen-conversation-state-space/",
    "title": "What thousands of conversations look like inside a language model",
    "found": "2026-11-16T04:27+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/",
+   "title": "Indian chip startup Bharat Semi lands $24M seed round",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=WPj3aQ-xxpI",
+   "title": "Claude Code reverse engineered my 1994 Jeep's ECU",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
+   "title": "Adobe’s creative tools coming to Google apps",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+   "title": "Gemini Omni 1.2 Flash released",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
+   "title": "Amazon's plan to index world's online shopping data",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://bruceroettgers.eu/blog/protomaps/",
+   "title": "Protomaps: Self-hosting map tiles",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://huggingface.co/blog/allenai/xybench",
+   "title": "XYBench: Helping with the problem behind the question",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://www.nytimes.com/2026/11/15/science/birdbrain-crows-birds-research-decision.html",
+   "title": "Crows make decisions faster than humans",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://baron.by.dai.studio/",
+   "title": "WebGL Flight Simulator with seed generated terrain",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
+   "title": "Google Cloud launches Gemini for healthcare",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+   "title": "LLMON: An LLM-Native Markup Language",
+   "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://lucypero.com/lucynes.html",
+   "title": "A NES emulator written in Odin",
+   "found": "2026-11-16T05:06+05:30"
   }
  ],
- "updated": "2026-11-16T04:27+05:30"
+ "updated": "2026-11-16T05:06+05:30"
 }

@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "Whatever Apple does, Android does it better.",
+ "first_frame": "Host with hands raised, holding a closed white foldable phone, with text overlay \"ANDROID'S IPHONE DUO IS BETTER!\"",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 76,
+ "cuts_estimate": 25,
+ "avg_shot_s": 3.0,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Hook: Bold claim about Android vs Apple.",
+  "3-15 s: Intro: Price comparison using visual metaphors (car vs phone).",
+  "15-18 s: Transition: \"A copy and it still does 3 things better.\"",
+  "18-34 s: Comparison 1: Physical design (thickness/weight) and camera specs.",
+  "34-57 s: Comparison 2: Battery and SIM card features.",
+  "57-70 s: Comparison 3: Multitasking capabilities.",
+  "70-76 s: Outro: Summary and CTA."
+ ],
+ "visual_techniques": [
+  "Dynamic camera movement (zooms/pans)",
+  "Text overlays for specs/prices",
+  "Picture-in-picture/Split screen for comparisons",
+  "Object tracking for floating icons",
+  "Fast-paced cuts to keep engagement high"
+ ],
+ "captions": "Bold, sans-serif, white with black outline, centered, occasional yellow highlights for key numbers/specs.",
+ "sound": "Upbeat, energetic background music; crisp voiceover; sound effects (swishes, pops, clicks) accompanying every text/graphic appearance.",
+ "recurring_element": "The two phones being held or placed side-by-side to emphasize the comparison.",
+ "ending": "CTA: \"Subscribe for the best smartphones\" with channel logo and animation.",
+ "why": "It uses a controversial, high-stakes hook that challenges a major brand (Apple), immediately followed by clear, visual, and data-driven comparisons that justify the claim. The pacing is relentless, and the use of visual metaphors (like the car) makes technical specs accessible and entertaining.",
+ "reusable_faceless": [
+  "Using visual metaphors for price comparisons",
+  "Side-by-side spec comparison overlays",
+  "Fast-paced, sound-synced graphic transitions",
+  "Using a '3 things better' structure to build curiosity"
+ ],
+ "id": "otwhI0lg72c",
+ "url": "https://www.youtube.com/watch?v=otwhI0lg72c",
+ "channel": "TechWiser",
+ "niche": "Consumer tech & AI tips (Hindi/English)",
+ "title": "Android's iPhone Duo Is Better????",
+ "views": 3500000,
+ "channel_median": 620000,
+ "ratio": 5.65,
+ "label": "winner",
+ "watched": "2026-11-16T05:07+05:30"
+}

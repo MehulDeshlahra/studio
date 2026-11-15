@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "Kya aap jaante ho doston",
+ "first_frame": "Dhruv Rathee talking head, yellow background, split screen with laptop showing e-commerce site",
+ "hook_type": "question",
+ "format": "talking head + screen recording",
+ "length_s": 130,
+ "cuts_estimate": 45,
+ "avg_shot_s": 2.8,
+ "words_per_s_estimate": 2.6,
+ "beats": [
+  "0-12 s: Hook and problem statement (wasting time on coupon codes)",
+  "12-28 s: Emphasizing the frustration of expired codes",
+  "28-43 s: Introduction of the solution (Buyhatke app)",
+  "43-1:14 s: Step-by-step demo of the app features",
+  "1:14-1:22 s: Additional features (All-in-one browsing)",
+  "1:22-1:52 s: Storage space benefit and more demo",
+  "1:52-2:10 s: Closing, CTA, and final pitch"
+ ],
+ "visual_techniques": [
+  "Split screen (talking head + screen recording) throughout",
+  "Zoom-in on talking head at 0:09",
+  "Blur effect on background at 0:26",
+  "Screen recording overlays with pointer/click animations",
+  "Text overlays highlighting savings percentages",
+  "Transition effects between app screens"
+ ],
+ "captions": "Minimalist, white text with black outline, 3-5 words per chunk, centered at the bottom, no highlight colour",
+ "sound": "Clear voiceover, upbeat background music, subtle UI sound effects (clicks, pops), no silences",
+ "recurring_element": "The 'Buyhatke' app interface",
+ "ending": "CTA (Call to Action) encouraging viewers to try the app",
+ "why": "The video is essentially a long-form sponsored ad disguised as an explainer. The audience likely tuned out because the value proposition felt like a sales pitch rather than educational content, which is what the channel is known for. The pacing is too slow for a 2-minute short.",
+ "reusable_faceless": [
+  "Split-screen format for app demos",
+  "Step-by-step screen recording with pointer highlights",
+  "Text-based savings callouts",
+  "Using UI sound effects to maintain engagement"
+ ],
+ "id": "fHU4neQCpkc",
+ "url": "https://www.youtube.com/watch?v=fHU4neQCpkc",
+ "channel": "dhruvrathee",
+ "niche": "Hindi explainers",
+ "title": "Stop wasting time searching for discounts!",
+ "views": 2300000,
+ "channel_median": 13000000,
+ "ratio": 0.18,
+ "label": "flop",
+ "watched": "2026-11-16T05:08+05:30"
+}

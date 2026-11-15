@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "Vibe coding just reached your TV.",
+ "first_frame": "A TV screen showing a standard Android TV home screen with a 'Samajh Se investing Simple' ad banner at the top, with the channel logo 'A AI Anytime' in the top left corner.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 42,
+ "cuts_estimate": 10,
+ "avg_shot_s": 4.2,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Hook and visual demonstration of the 'before' state (ads on TV).",
+  "3-13 s: Introduction of the 'CleanYourTV' solution and the 'after' state.",
+  "13-22 s: Social proof via GitHub stats.",
+  "22-26 s: Technical explanation of how it works.",
+  "26-34 s: Philosophical take on software as a commodity.",
+  "34-42 s: Final summary and CTA."
+ ],
+ "visual_techniques": [
+  "Screen recording overlay with zoom-ins on specific UI elements (0-13s)",
+  "GitHub repository scrolling/highlighting (13-22s)",
+  "Text-based bullet points for technical steps (22-26s)",
+  "Comparison side-by-side screenshots (26-34s)",
+  "Code snippet display (34-39s)",
+  "End screen with channel logo (39-42s)"
+ ],
+ "captions": "Style: Bold, white text with a slight shadow, centered at the bottom of the screen. Words per chunk: 3-6. Highlight colour: Yellow for key terms like 'Vibe coding', 'CleanYourTV', 'software'.",
+ "sound": "Voice type: AI-generated, clear, professional male voice. Music: Subtle, upbeat, tech-focused background track. Sound effects: None.",
+ "recurring_element": "The 'CleanYourTV' GitHub repository interface.",
+ "ending": "CTA: 'Follow AI Anytime for more' with the channel logo.",
+ "why": "The video addresses a universal pain point (ads on smart TVs) with a concrete, actionable AI-driven solution. It uses high-quality visual evidence to show the 'before' and 'after' states, making the benefit immediately clear. The pacing is steady, and the tone is authoritative yet accessible, which builds trust with the audience.",
+ "reusable_faceless": [
+  "Use screen recordings to demonstrate 'before' and 'after' results of a tool.",
+  "Highlight GitHub stats to build immediate credibility for open-source tools.",
+  "Use a clean, consistent caption style to keep viewers engaged.",
+  "Structure the video around a problem-solution framework."
+ ],
+ "id": "zsah85KcyTQ",
+ "url": "https://www.youtube.com/watch?v=zsah85KcyTQ",
+ "channel": "AIAnytime",
+ "niche": "AI tutorials & news (Hindi/Hinglish)",
+ "title": "Vibe coding reached your TV now. #tv #vibecoding #aiagents #cleanyourtv #viral #shorts #aishorts",
+ "views": 2600,
+ "channel_median": 367,
+ "ratio": 7.08,
+ "label": "winner",
+ "watched": "2026-11-16T05:07+05:30"
+}

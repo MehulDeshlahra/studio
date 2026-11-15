@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "We're running out of water.",
+ "first_frame": "A cartoon Earth with a water faucet attached to the top, dripping water into a void.",
+ "hook_type": "bold claim",
+ "format": "animation",
+ "length_s": 119,
+ "cuts_estimate": 45,
+ "avg_shot_s": 2.6,
+ "words_per_s_estimate": 2.2,
+ "beats": [
+  "0-14 s: The problem: water demand vs supply.",
+  "15-21 s: Defining 'water bankruptcy'.",
+  "22-31 s: Global scale of the crisis.",
+  "32-37 s: Consequences: famine, migration, conflict.",
+  "38-50 s: Solutions: measurement and recycling.",
+  "51-60 s: Economic feasibility.",
+  "61-70 s: ROI of action vs inaction.",
+  "71-79 s: Final call to action/optimistic summary."
+ ],
+ "visual_techniques": [
+  "Motion graphics (throughout)",
+  "Dynamic zoom-ins on maps (25 s)",
+  "Data visualization with charts (22 s, 54 s, 61 s)",
+  "Character animation (114 s)",
+  "Iconography to represent complex concepts (9 s)"
+ ],
+ "captions": "Bold, sans-serif, centered at the bottom, white text with black outline, occasional yellow highlights for emphasis.",
+ "sound": "Professional, clear male voiceover; upbeat, rhythmic, and slightly urgent background music; subtle sound effects (dripping, cash register, whooshes).",
+ "recurring_element": "The cartoon sun and cloud characters that react to the information being presented.",
+ "ending": "A summary of the cost-to-benefit ratio, ending on an optimistic note with a call to protect what's left.",
+ "why": "It takes a complex, abstract global issue and simplifies it into a clear, visual narrative with a concrete economic solution. The use of relatable character animation keeps the viewer engaged, while the data-backed ROI makes the argument compelling and urgent.",
+ "reusable_faceless": [
+  "Using a 'water faucet' metaphor to visualize resource depletion",
+  "Translating global GDP percentages into 'cost per person per day' to make numbers relatable",
+  "Using recurring characters (sun/clouds) to provide emotional context to dry data",
+  "Visualizing ROI with simple 'dollar in, dollars out' graphics"
+ ],
+ "id": "tZ8i1RxGSYM",
+ "url": "https://www.youtube.com/watch?v=tZ8i1RxGSYM",
+ "channel": "kurzgesagt",
+ "niche": "animated science",
+ "title": "Can Earth Run Out of Water?",
+ "views": 4100000,
+ "channel_median": 1300000,
+ "ratio": 3.15,
+ "label": "winner",
+ "watched": "2026-11-16T05:08+05:30"
+}

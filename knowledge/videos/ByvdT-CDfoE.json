@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "Agar aap is Diwali ghar jaane ka plan bana rahe ho",
+ "first_frame": "Dhruv Rathee speaking directly to the camera, wearing a black t-shirt against a warm, gradient background.",
+ "hook_type": "question",
+ "format": "talking head + graphics",
+ "length_s": 130,
+ "cuts_estimate": 25,
+ "avg_shot_s": 5.2,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-8 s: Hook about rising flight prices during Diwali.",
+  "8-13 s: Introduction of the 'Buyhatke' app as a solution.",
+  "13-28 s: Demonstration of the 'Flight Compare' feature.",
+  "28-50 s: Real-world example of booking a flight and checking the final price.",
+  "50-100 s: Comparison between Buyhatke and direct booking sites to show savings.",
+  "100-130 s: Pro-tip on round trips and final CTA."
+ ],
+ "visual_techniques": [
+  "Picture-in-picture (PiP) of the creator over screen recordings (starts at 13s)",
+  "Screen recordings of the mobile app interface (throughout)",
+  "Red arrows and circles to highlight price changes (at 6s, 47s, 59s)",
+  "Side-by-side comparison graphics (at 105s, 119s)",
+  "Text overlays for key points (at 20s, 105s, 205s)"
+ ],
+ "captions": "Minimalist, white text with black outline, centered at the bottom, 3-5 words per chunk.",
+ "sound": "Clear voiceover, upbeat background music, subtle UI sound effects during app interactions.",
+ "recurring_element": "The 'Buyhatke' app interface and the creator's face in the corner.",
+ "ending": "CTA to check the link in the bio.",
+ "why": "The video is essentially a long-form advertisement for an app. Even with Dhruv Rathee's high engagement, the audience likely tuned out due to the overt promotional nature and the dry, instructional content which lacks the usual high-stakes narrative or controversial edge of his typical explainers.",
+ "reusable_faceless": [
+  "Side-by-side price comparison graphics",
+  "Screen recording with red annotation overlays",
+  "Step-by-step tutorial format with clear UI highlights",
+  "Using a 'pro-tip' to add value beyond the main tutorial"
+ ],
+ "id": "ByvdT-CDfoE",
+ "url": "https://www.youtube.com/watch?v=ByvdT-CDfoE",
+ "channel": "dhruvrathee",
+ "niche": "Hindi explainers",
+ "title": "Best App to Book Cheapest flight tickets online",
+ "views": 1900000,
+ "channel_median": 13000000,
+ "ratio": 0.15,
+ "label": "flop",
+ "watched": "2026-11-16T05:08+05:30"
+}

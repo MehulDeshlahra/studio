@@ -1,0 +1,50 @@
+{
+ "hook_first_words": "Ye tempered glass jo hai",
+ "first_frame": "A person holding a phone with a tempered glass screen protector, about to hit it with a hammer.",
+ "hook_type": "visual surprise",
+ "format": "talking head + graphics",
+ "length_s": 78,
+ "cuts_estimate": 45,
+ "avg_shot_s": 1.7,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook: Hammering a phone screen to grab attention.",
+  "3-10 s: Intro: Explaining the variety of tempered glasses in the market.",
+  "10-20 s: Problem/News: Introducing the new government BIS mandate for screen protectors.",
+  "20-30 s: Context: Why this matters (market size, cost implications).",
+  "30-45 s: Analysis: Discussing quality vs. price and the impact on consumers.",
+  "45-60 s: Deep Dive: How the mandate will affect manufacturing and imports.",
+  "60-78 s: Conclusion/CTA: Questioning the necessity of the mandate and asking for viewer input."
+ ],
+ "visual_techniques": [
+  "Hammering the phone screen at 0s",
+  "Quick cuts between talking head and B-roll of screen protectors at 3s, 8s, 16s",
+  "Screen recordings of news articles at 12s, 20s, 45s, 48s",
+  "Screen recordings of e-commerce listings at 26s",
+  "Text overlays highlighting key figures (12,000-15,000 crore) at 13s",
+  "Picture-in-picture style for news articles at 45s",
+  "Channel branding/subscribe button at 114s"
+ ],
+ "captions": "Simple, bold white text with black outline, 3-5 words per chunk, centered, no specific highlight color.",
+ "sound": "High-energy, fast-paced voiceover, upbeat background music, sound effects for hammer hits and transitions.",
+ "recurring_element": "The host holding two different tempered glasses, using them as props throughout the video.",
+ "ending": "CTA asking viewers for their thoughts and to subscribe.",
+ "why": "The video starts with a high-stakes visual (hammering a phone) that immediately hooks the viewer. It then transitions into relevant, timely news (BIS mandate) that affects a wide audience (smartphone users). The host maintains a conversational tone, making complex policy changes easy to understand. The use of B-roll and screen recordings keeps the pacing fast and engaging.",
+ "reusable_faceless": [
+  "Using a high-stakes visual hook at the start",
+  "Incorporating screen recordings of relevant news articles",
+  "Using text overlays to emphasize key data points",
+  "Keeping the pacing fast with frequent cuts",
+  "Using props to illustrate points"
+ ],
+ "id": "qamB6ygkQR8",
+ "url": "https://www.youtube.com/watch?v=qamB6ygkQR8",
+ "channel": "GyanTherapy",
+ "niche": "Hindi tech",
+ "title": "Phone Tempered Glass in India #shorts",
+ "views": 3000000,
+ "channel_median": 1000000,
+ "ratio": 3.0,
+ "label": "winner",
+ "watched": "2026-11-16T05:08+05:30"
+}

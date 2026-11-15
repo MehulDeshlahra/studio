@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "So, here's exactly how you can hack your TV",
+ "first_frame": "A TV screen showing a generic UI with ads, and a hand holding a remote, with the creator in the foreground.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 88,
+ "cuts_estimate": 45,
+ "avg_shot_s": 1.95,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook and problem statement (ads on TV).",
+  "3-12 s: The solution (Free My TV) and its benefits.",
+  "12-28 s: How it works (Claude Code/API).",
+  "28-59 s: Step-by-step tutorial (Developer settings/ADB).",
+  "59-88 s: Final result, customization, and closing."
+ ],
+ "visual_techniques": [
+  "Picture-in-picture overlay (0s)",
+  "Screen recording with zoom-ins on UI elements (3s)",
+  "Loading bar animations (5s)",
+  "Terminal/Code snippet animations (12s)",
+  "UI mockups (14s)",
+  "Split-screen comparison (111s)",
+  "Fast-paced jump cuts between tutorial steps (28s)"
+ ],
+ "captions": "Bold, white, centered, sans-serif, no highlight colour, 3-5 words per chunk.",
+ "sound": "Upbeat, tech-focused background music, crisp voiceover with clear enunciation, subtle UI click sound effects.",
+ "recurring_element": "The 'Claude Code' terminal window and the 'Free My TV' UI interface.",
+ "ending": "CTA to visit the website (freemytv.io) and a final demo of customization.",
+ "why": "It solves a universal, annoying problem (ads on smart TVs) with a clear, actionable, and seemingly 'hacker-style' solution. The pacing is extremely fast, and the visual representation of the technical steps makes a complex process feel accessible and satisfying to watch.",
+ "reusable_faceless": [
+  "Use of terminal animations for technical tutorials",
+  "Progress bars to visualize performance gains",
+  "Step-by-step UI screen recordings with clear highlights",
+  "Using a 'problem-solution-tutorial-result' structure"
+ ],
+ "id": "SC6_oZ24FRM",
+ "url": "https://www.youtube.com/watch?v=SC6_oZ24FRM",
+ "channel": "VarunMayya",
+ "niche": "AI/tech news, English, India",
+ "title": "This hack turns your TV into an Ad free Apple TV",
+ "views": 359000,
+ "channel_median": 111000,
+ "ratio": 3.23,
+ "label": "winner",
+ "watched": "2026-11-16T05:08+05:30"
+}

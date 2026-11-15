@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "Every house should have this gadget!",
+ "first_frame": "The host is sitting at a desk, holding a black remote control, looking directly into the camera.",
+ "hook_type": "bold claim",
+ "format": "talking head + POV/demonstration",
+ "length_s": 47,
+ "cuts_estimate": 28,
+ "avg_shot_s": 1.67,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook and price reveal",
+  "3-12 s: Problem identification and relatable frustration",
+  "12-18 s: Solution introduction and setup",
+  "18-32 s: Feature 1 (Air Mouse) demonstration",
+  "32-40 s: Feature 2 (QWERTY keyboard) demonstration",
+  "40-44 s: Feature 3 (Rechargeable battery) and comparison",
+  "44-47 s: CTA"
+ ],
+ "visual_techniques": [
+  "Jump cuts to maintain high energy (throughout)",
+  "POV shots of the remote in use (14s, 16s, 24s, 28s, 35s, 37s)",
+  "On-screen text overlays for price and features (3s, 13s, 23s, 34s)",
+  "Humorous B-roll of hitting a TV remote with a prop hammer (5s)",
+  "Split-screen/picture-in-picture style demonstration (23s, 36s)"
+ ],
+ "captions": "Bold, sans-serif font, 3-5 words per chunk, centered at the bottom, white text with yellow highlights for keywords.",
+ "sound": "Upbeat, fast-paced background music; sound effects (slap sound, whooshes, click sounds) to emphasize actions; clear, energetic voiceover.",
+ "recurring_element": "The remote control itself, shown in different contexts (hand, desk, in-use).",
+ "ending": "CTA (Call to Action) with a visual pointing gesture and channel logo.",
+ "why": "It addresses a universal pain point (annoying TV remotes) with a cheap, high-utility solution. The pacing is extremely tight, and the use of humor (the hammer) keeps the viewer engaged while demonstrating the product's features in real-time.",
+ "reusable_faceless": [
+  "Use of POV shots to demonstrate product utility",
+  "Highlighting key features with on-screen text overlays",
+  "Fast-paced editing with sound effects to match visual transitions",
+  "Addressing a specific 'pain point' early in the video to hook the audience"
+ ],
+ "id": "dX_fna-Bx4E",
+ "url": "https://www.youtube.com/watch?v=dX_fna-Bx4E",
+ "channel": "TechWiser",
+ "niche": "Consumer tech & AI tips (Hindi/English)",
+ "title": "Every House Should Have This Gadget!",
+ "views": 3100000,
+ "channel_median": 620000,
+ "ratio": 5.0,
+ "label": "winner",
+ "watched": "2026-11-16T05:07+05:30"
+}
