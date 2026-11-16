@@ -565,6 +565,9 @@ class H(BaseHTTPRequestHandler):
             if u == "/api/posts":
                 c = next((x for x in state_cache()["channels"] if x["id"] == qs.get("cid")), None)
                 return self.send(200, extra.posts(c["igid"]) if c and c.get("igid") else [])
+            if u == "/api/ideas":
+                h = jload(os.path.join(ROOT, "channels", qs.get("cid", "x").replace("/", ""), "ideas.json"), []) or []
+                return self.send(200, h[-1] if h else {})
             if u == "/api/sources":
                 return self.send(200, extra.sources(state_cache()))
             if u == "/api/brief":
