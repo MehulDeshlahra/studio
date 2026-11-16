@@ -81,7 +81,7 @@ def main():
                 return
             run([os.path.join(ROOT, "engine", "translate.py"), cid, j], 1)
             note("tts")
-            run([os.path.join(ROOT, "engine", "make.py"), cid, "--lang", "en", "--job", j + "-en", "--from", "voice", "--no-send"])
+            run([os.path.join(ROOT, "engine", "make.py"), cid, "--lang", "en", "--job", j + "-en", "--from", "voice"])
             run([os.path.join(ROOT, "engine", "sync.py")], 1)
             return
     # 2) a new video
@@ -104,7 +104,7 @@ def main():
     if dry:
         return
     note("reels"); note("tts")
-    run([os.path.join(ROOT, "engine", "make.py"), cid, "--no-send"])
+    run([os.path.join(ROOT, "engine", "make.py"), cid])
     run([os.path.join(ROOT, "engine", "sync.py")], 1)
 
 
