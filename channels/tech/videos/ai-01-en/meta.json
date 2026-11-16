@@ -2,7 +2,8 @@
  "channel": "tech",
  "job": "ai-01-en",
  "topic": "UPI paisa 2 second mein kaise pahunchta hai",
- "stage": "prepped",
+ "stage": "done",
  "lang": "en",
- "prepped_at": "2026-11-17 01:07"
+ "prepped_at": "2026-11-17 01:07",
+ "voice_retry": 1
 }

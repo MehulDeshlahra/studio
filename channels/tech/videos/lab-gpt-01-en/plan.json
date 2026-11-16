@@ -1,0 +1,173 @@
+{
+ "slug": "chatgpt-jawab-prediction",
+ "title": "How ChatGPT actually writes answers",
+ "hooks": [
+  "ChatGPT insaan ki tarah dimaag laga kar jawab nahi deta.",
+  "Aapka ChatGPT asal mein sirf ek super-smart guesser hai.",
+  "ChatGPT kabhi poora sentence ek saath nahi sochta."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Busts the illusion of AI consciousness in frame 0 and creates immediate curiosity about how it actually writes.",
+ "metaphor": "A super-fast smartphone auto-complete looping through next-token probabilities.",
+ "cast": {},
+ "scenes": [
+  {
+   "type": "clip",
+   "prompt": "Cinematic macro shot of a sleek smartphone screen glowing softly in a dark studio, a single minimalist glowing green cursor blinking steadily, dark glass reflection, pure black background, no text, no icons.",
+   "label": "THE ILLUSION",
+   "vo": "ChatGPT doesn't actually think or reason like a human brain.",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "title",
+   "big": "HOW IT WORKS",
+   "sub": "The Prediction Engine",
+   "vo": "Then how does it write such genius answers every single time?",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "object",
+   "prompt": "Photorealistic studio product shot of a floating minimalist dark mechanical keyboard key with subtle turquoise neon edge glow, isolated on pure black background, cinematic lighting, no text.",
+   "label": "SUPER AUTOCOMPLETE",
+   "vo": "Truth is, ChatGPT is just your phone's autocomplete on crazy steroids.",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "flow",
+   "nodes": [
+    "Your Prompt",
+    "Tokens",
+    "Probability",
+    "Next Word"
+   ],
+   "label": "STEP 1: TOKENS",
+   "vo": "First, it chops your prompt into tiny chunks called tokens.",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "ui",
+   "title": "NEXT WORD ODDS",
+   "rows": [
+    {
+     "label": "Bharat",
+     "value": "76%",
+     "pct": 76
+    },
+    {
+     "label": "Duniya",
+     "value": "18%",
+     "pct": 18
+    },
+    {
+     "label": "Khabar",
+     "value": "6%",
+     "pct": 6
+    }
+   ],
+   "label": "STEP 2: THE MATH",
+   "vo": "Then it calculates the mathematical probability of the next best word.",
+   "keywords": [],
+   "motion": "push"
+  },
+  {
+   "type": "stat",
+   "value": "1 Token",
+   "sub": "generated per step",
+   "label": "ONE BY ONE",
+   "vo": "It never plans ahead—it literally generates just one word at once.",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "compare",
+   "items": [
+    {
+     "label": "Pichla Text",
+     "value": "Input Prompt",
+     "pct": 40
+    },
+    {
+     "label": "Naya Loop",
+     "value": "Prompt + Naya Token",
+     "pct": 100
+    }
+   ],
+   "label": "FEEDBACK LOOP",
+   "vo": "Once chosen, that word gets glued right back into the sentence.",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "object",
+   "prompt": "Photorealistic glowing circular data stream ring looping smoothly into itself, neon cyan and deep amber particles on a pure black background, 3D render, no text.",
+   "label": "CONTINUOUS LOOP",
+   "vo": "It reads the new sentence and predicts the next token again.",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "object",
+   "prompt": "Photorealistic studio render of a high-tech matte dark processor chip with sharp golden rim light, glowing circuitry lines pulsing on black background, macro detail, zero text.",
+   "label": "MICROSECOND SPEED",
+   "vo": "This loop repeats in microseconds, making it look like live typing.",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "object",
+   "prompt": "Photorealistic minimalist translucent glass dice with tiny glowing amber nodes suspended inside, resting on dark reflective studio surface with subtle blue rim light, no text.",
+   "label": "MATH NOT MIND",
+   "vo": "So ChatGPT understands zero facts—it's just an insanely powerful math guesser.",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "title",
+   "big": "CAUGHT IT LYING?",
+   "sub": "Neeche comment karo",
+   "vo": "Has ChatGPT ever confidently given you a completely wrong answer?",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  }
+ ],
+ "caption": "ChatGPT doesn't think—it just predicts! The crazy math behind picking the next word will blow your mind. Has ChatGPT ever given you a completely wrong answer?",
+ "hashtags": [
+  "#ChatGPT",
+  "#ArtificialIntelligence",
+  "#TechExplained",
+  "#MachineLearning",
+  "#TechIndia",
+  "#AITricks",
+  "#DidYouKnow"
+ ],
+ "claims": [
+  {
+   "claim": "ChatGPT generates text sequentially one token at a time (autoregressive generation)",
+   "basis": "Standard Transformer autoregressive decoder architecture (Vaswani et al. 2017, OpenAI GPT papers)."
+  },
+  {
+   "claim": "Input text is broken into sub-word tokens before processing",
+   "basis": "Byte Pair Encoding (BPE) tokenization documented in OpenAI GPT tokenizer specifications."
+  },
+  {
+   "claim": "The next token is chosen using calculated probability distributions over vocabulary",
+   "basis": "Softmax distribution over token logits used in standard LLM inference."
+  }
+ ],
+ "lang": "en",
+ "end_line": "Follow for more"
+}

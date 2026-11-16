@@ -37,5 +37,18 @@
    "visual: Missing final branded end card displaying page handle @kaise.tech.",
    "visual score 3/10"
   ]
+ },
+ {
+  "job": "ai-01-en",
+  "topic": "UPI paisa 2 second mein kaise pahunchta hai",
+  "title": "How ChatGPT actually generates your answers!",
+  "qc_ok": false,
+  "status": "held",
+  "review": [
+   "the video does not start with the first line \"When you ask ChatGPT something, it never thinks up\" (heard: \"in indian english curious warm energetic young indian\")",
+   "visual: Most scenes (2, 3, 4, 5, 6, 8, 9, 10, and 11) lack visual generation, displaying only empty dark gradient backgrounds.",
+   "visual: No dedicated branded end card is present at the end of the video despite a handle being specified.",
+   "visual score 3/10"
+  ]
  }
 ]

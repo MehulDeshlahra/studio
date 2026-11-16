@@ -1,0 +1,71 @@
+{
+ "lufs": -14,
+ "music": {
+  "file": "music/deep-urban.mp3",
+  "offset": 8,
+  "gain_db": -22,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "t": 11.09,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 14.07,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 17.97,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 21.33,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 24.37,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 26.71,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 29.41,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 32.39,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 35.79,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 39.93,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  }
+ ]
+}

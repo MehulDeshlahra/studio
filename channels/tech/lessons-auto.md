@@ -105,3 +105,37 @@
 - visual: Multiple scenes (2, 3, 4, 5, 6, 8, 11, and 12) are completely missing visual backgrounds or generated images.
 - visual: Missing final branded end card displaying page handle @kaise.tech.
 - visual score 3/10
+
+## ai-01-en UPI paisa 2 second mein kaise pahunchta hai
+- scene 2: The text 'Every single millisecond it's just' does not match the intended line 'Every single millisecond, it's just predicting the next single word.'
+- scene 3: The text 'but ridiculously faster and smarter.' does not match the intended line 'Just like your phone’s auto-complete, but ridiculously faster and smarter.'
+- scene 4: The text 'your question gets chopped into tiny' does not match the intended line 'First, your question gets chopped into tiny pieces called tokens.'
+- scene 5: The text 'so the computer can calculate it.' does not match the intended line 'Each token turns into a number so the computer can calculate it.'
+- scene 6: The text 'The model has already devoured billions' does not match the intended line 'The model has already devoured billions of web pages and books.'
+- scene 8: The text 'word is most likely 'puye'!' does not match the intended line 'Its math screams that the next word is most likely 'puye'!'.
+- scene 9: The text 'The moment it places that word' does not match the intended line 'The moment it places that word, it re-reads everything from scratch.'
+- scene 10: The text 'every second looking like real-time typing.' does not match the intended line 'This cycle runs thousands of times every second, looking like real-time typing.'
+- scene 11: The text 'does AI actually think or is' does not match the intended line 'So does AI actually think, or is it pure probability? Tell us below!'
+
+## review ai-01-en
+- the video does not start with the first line "When you ask ChatGPT something, it never thinks up" (heard: "in indian english curious warm energetic young indian")
+- visual: Most scenes (2, 3, 4, 5, 6, 8, 9, 10, 11) are missing visual imagery, displaying only blank dark gradients.
+- visual: Missing final end card showcasing the handle @kaise.tech.
+- visual score 3/10
+
+## ai-01-en UPI paisa 2 second mein kaise pahunchta hai
+- scene 2: The text 'Every single millisecond it's just' does not match the intended line 'Every single millisecond, it's just predicting the next single word.' (It is incomplete).
+- scene 3: The text 'but ridiculously faster and smarter.' does not match the intended line 'Just like your phone’s auto-complete, but ridiculously faster and smarter.' (It is incomplete).
+- scene 4: The text 'your question gets chopped into tiny' does not match the intended line 'First, your question gets chopped into tiny pieces called tokens.' (It is incomplete).
+- scene 5: The text 'so the computer can calculate it.' does not match the intended line 'Each token turns into a number so the computer can calculate it.' (It is incomplete).
+- scene 6: The text 'The model has already devoured billions' does not match the intended line 'The model has already devoured billions of web pages and books.' (It is incomplete).
+- scene 8: The text 'word is most likely 'puye'!' does not match the intended line 'Its math screams that the next word is most likely 'puye'!' (It is incomplete).
+- scene 9: The text 'it re-reads everything from scratch.' does not match the intended line 'The moment it places that word, it re-reads everything from scratch.' (It is incomplete).
+- scene 10: The text 'every second looking like real-time typing.' does not match the intended line 'This cycle runs thousands of times every second, looking like real-time typing.' (It is incomplete).
+- scene 11: The text 'does AI actually think or is' does not match the intended line 'So does AI actually think, or is it pure probability? Tell us below!' (It is incomplete).
+
+## review ai-01-en
+- the video does not start with the first line "When you ask ChatGPT something, it never thinks up" (heard: "in indian english curious warm energetic young indian")
+- visual: Most scenes (2, 3, 4, 5, 6, 8, 9, 10, and 11) lack visual generation, displaying only empty dark gradient backgrounds.
+- visual: No dedicated branded end card is present at the end of the video despite a handle being specified.
+- visual score 3/10
