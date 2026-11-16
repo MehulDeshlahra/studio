@@ -10,13 +10,17 @@ def send(cid, job):
     mp4 = os.path.join(jd, f"{cid}-{job}.mp4")
     if not os.path.exists(mp4):
         log("send: no video", cid, job); return None
+    rv = load(os.path.join(jd, "review.json"))
+    if not FORCE and (not rv or not rv.get("ok")):
+        log("send: not sent, review missing or failed", cid, job, (rv or {}).get("problems"))
+        return None
     p = load(os.path.join(jd, "plan.json"), {})
     q = load(os.path.join(jd, "qc.json"), {})
     f = q.get("format", {})
-    probs = (q.get("vision", {}).get("problems") or [])[:3]
+    probs = (rv or {}).get("minor", [])[:2]
     lang = "English" if p.get("lang") == "en" else "Hindi"
     txt = (f"[{cid} · {lang}] {p.get('title', job)}\n"
-           f"{f.get('dur')} s · {f.get('lufs')} LUFS · vision {q.get('vision', {}).get('score')}/10\n"
+           f"✅ passed review · {f.get('dur')} s · {f.get('lufs')} LUFS · visual {(rv or {}).get('checks', {}).get('vision', {}).get('score')}/10\n"
            + ("Notes: " + " | ".join(str(x)[:140] for x in probs) + "\n" if probs else "")
            + f"\nCaption:\n{p.get('caption', '')}\n\nReply: ok / no / your feedback")
     if os.path.getsize(mp4) > 45 * 1024 * 1024:          # Telegram bots can send up to 50 MB
@@ -35,7 +39,8 @@ def send(cid, job):
     return mid
 
 
+FORCE = "--force" in sys.argv
 if __name__ == "__main__":
-    a = sys.argv[1:]
+    a = [x for x in sys.argv[1:] if x != "--force"]
     for i in range(0, len(a) - 1, 2):
         send(a[i], a[i + 1])

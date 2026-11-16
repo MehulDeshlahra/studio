@@ -48,7 +48,11 @@
                            "Karna aur Indra ka daan (Mahabharata)"
                        ],
     "edit":  {
-                 "wps":  2.4
+                 "wps":  2.4,
+                 "length_s":  [
+                                  28,
+                                  80
+                              ]
              },
     "english":  true,
     "warmup":  {

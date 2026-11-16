@@ -50,3 +50,7 @@ length follows information, short question ending, one colour identity, no effec
 
 ## Voice: instructions read aloud (17 Nov, owner, English edition case2-p1-en)
 - Gemini TTS read the whole English style prompt aloud (15 s) before the script. Never put long instructions in the TTS prompt: use the short "Say in <language>, <style>:" line. After every TTS call engine/tts.py strip_preamble() transcribes the start in English and cuts any instruction phrase. QC must fail if instruction words are heard.
+
+## Reviewer before sending (owner, 17 Nov: "add a reviewer which reviews before sending here, I am not free to point silly mistakes")
+- engine/review.py checks the FINAL mp4: first spoken words = script's first line (catches spoken instructions AND a cut-off opening), last line heard, no instruction phrases, alignment >= 80%, format/loudness, length range, strict vision review (2 frames per scene + end card) by gemini-3.8-flash. Only PASS goes to Telegram; HOLD stays on the server with its problems written to lessons-auto.md. Voice faults get one automatic re-voice + rebuild.
+- 16 Nov case2-p1-en: the instruction cut was segment-level and also removed the first line "You are the detective...". Cuts are now word-level, and the reviewer checks the opening.

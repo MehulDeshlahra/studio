@@ -256,7 +256,28 @@ def main():
     if not any(d["job"] == job_id for d in done):
         done.append({"job": job_id, "topic": topic, "title": p.get("title"), "qc_ok": rep["ok"], "status": "made"})
         save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
-    if not a.no_send:
+    import review
+    rv = review.review(ch["id"], job_id)
+    voice_fault = any(("instructions" in x or "does not start" in x or "starts late" in x or "of the script" in x)
+                      for x in rv["problems"])
+    if not rv["ok"] and voice_fault and meta.get("voice_retry", 0) < 1:
+        meta["voice_retry"] = meta.get("voice_retry", 0) + 1
+        save(os.path.join(job, "meta.json"), meta)
+        log("review: voice problem, making a new voice once and rebuilding")
+        args = [sys.executable, os.path.abspath(__file__), ch["id"], "--job", job_id, "--from", "voice"]
+        if a.lang:
+            args += ["--lang", a.lang]
+        if a.no_send:
+            args.append("--no-send")
+        subprocess.run(args)
+        return
+    done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), [])
+    for d in done:
+        if d["job"] == job_id:
+            d["status"] = "made" if rv["ok"] else "held"
+            d["review"] = rv["problems"]
+    save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
+    if not a.no_send and rv["ok"]:
         import send
         send.send(ch["id"], job_id)
     meta.update({"stage": "done"}); save(os.path.join(job, "meta.json"), meta)

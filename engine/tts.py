@@ -46,24 +46,28 @@ LEAK = ("read this", "start instantly", "no intro", "pause briefly", "read exact
 
 
 def strip_preamble(wav, first_line, lang="hi"):
-    """Cut instructions the TTS model read aloud before the script (case2-p1-en read its whole style prompt).
-    The instructions are English, so transcribe the first 40 s in English for every language: the last segment that
-    contains an instruction phrase marks the cut. Returns (seconds_cut, leaked_text)."""
+    """Cut instructions the TTS model read aloud before the script. Word-level: the cut lands on the first word AFTER
+    the last instruction phrase, so the script's first line is kept (16 Nov the segment-level cut also removed
+    "You are the detective..."). Instructions are English, so transcribe the first 40 s in English. Returns (cut_s, text)."""
+    import re as _re
     import numpy as np, soundfile as sf
     from faster_whisper import WhisperModel
     a, sr = sf.read(wav, dtype="float32")
     mono = a if a.ndim == 1 else a.mean(axis=1)
     x = np.interp(np.arange(0, len(mono), sr / 16000), np.arange(len(mono)), mono).astype("float32")
-    segs, _ = WhisperModel("base", compute_type="int8").transcribe(x[: 40 * 16000], language="en")
-    segs = list(segs)
-    cut, leaked = 0.0, ""
-    for s in segs:
-        txt = s.text.lower()
-        if any(k in txt for k in LEAK):
-            cut, leaked = s.end, leaked + " " + s.text.strip()
-        elif cut:
-            break
-    if cut:
-        sf.write(wav, a[int(max(0.0, cut - 0.05) * sr):], sr)
-        log("tts: cut", round(cut, 2), "s of spoken instructions:", leaked[:160])
-    return cut, leaked.strip()
+    segs, _ = WhisperModel("base", compute_type="int8").transcribe(x[: 40 * 16000], language="en", word_timestamps=True)
+    words = [(w.word.strip(), w.start, w.end) for s in segs for w in s.words if w.word.strip()]
+    norm = [_re.sub(r"[^a-z]", "", w[0].lower()) for w in words]
+    last = -1
+    for k in LEAK + ("these words", "exactly these", "the final question", "accent"):
+        kw = k.split()
+        for i2 in range(len(norm) - len(kw) + 1):
+            if norm[i2:i2 + len(kw)] == kw and words[i2][1] < 35:
+                last = max(last, i2 + len(kw) - 1)
+    if last < 0 or last + 1 >= len(words):
+        return 0.0, ""
+    cut = max(0.0, words[last + 1][1] - 0.08)
+    leaked = " ".join(w[0] for w in words[: last + 1])
+    sf.write(wav, a[int(cut * sr):], sr)
+    log("tts: cut", round(cut, 2), "s of spoken instructions:", leaked[:160])
+    return cut, leaked
