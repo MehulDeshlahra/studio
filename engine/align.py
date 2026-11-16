@@ -99,7 +99,7 @@ def words_by_line(wav, texts, lang="hi"):
         for w in t.split():
             if re.search(r"[A-Za-z0-9]", w):
                 toks.append(w); line_of.append(k)
-    W, total, t0, t1 = _whisper(wav, lang, " ".join(texts))
+    W, total, t0, t1 = _whisper(wav, lang)   # 17 Nov: the script as initial_prompt made Whisper loop on garbage ("Ṭ Ṭ Ṭ") and run 3x slower; keep plain
     heard = [skel_lat(w[0]) if lang == "en" else (skel_dev(w[0]) or skel_lat(w[0])) for w in W]
     pairs = _nw([skel_lat(w) for w in toks], heard)
     cover = len(pairs) / max(1, len(toks))
