@@ -56,3 +56,10 @@
 - IG @aagesuno (Page still named Raaz Room, owner renames). YouTube @aagesuno to create. English page name open.
 - Voice signature 'Aage suno.' once, before the twist; end line 'Kal ek nayi kahani. Follow karo.' Rules in channels/raaz/lessons.md; enforced by compose (accent + sting) and review.py.
 
+
+## Dashboard + idea picking (17 Nov)
+- Dashboard: https://jobbot.taildd6388.ts.net:10000 (Tailscale only). Code dashboard/ (api.py + extra.py, stdlib; app.js/app.css, no build). Unit studio-dash on 127.0.0.1:4788. Pages: Today (AI brief, needs-you, building now), Runs (+ timeline drawer), Approvals (approve/reject/feedback = same as Telegram), Channels (+ latest posts, idea ranking), Server, Connected apps, Activity, Brain, Settings (auto-approve, off by default). Ctrl+K = jump or ask (Gemini on live data).
+- Design rule: neutral surfaces, colour only for meaning (green done, blue working, violet needs you, amber watch, red broken, teal approved).
+- engine/ideas.py: every new video picks the best of 10 ideas (YouTube demand + fit + freshness), log in channels/<id>/ideas.json.
+- tts.strip_preamble: English editions cut everything before the script's first words.
+
