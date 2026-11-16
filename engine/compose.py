@@ -10,17 +10,27 @@ def esc(s):
     return html.escape(s or "")
 
 
-def chunks(words, keys):
-    """3-word caption chunks; never a lone last word; break at punctuation."""
+def chunks(words, keys=None):
+    """Caption groups: max 3 words / 16 letters, break at punctuation or a pause >= 0.15 s, never a lone last word."""
     out, cur = [], []
     for i, w in enumerate(words):
         cur.append(w)
         left = len(words) - i - 1
-        if (len(cur) == 3 and left != 1) or (w["w"].endswith((",", ".", "?", "!")) and len(cur) > 1 and left != 1) or left == 0:
+        nxt = words[i + 1] if left else None
+        letters = sum(len(x["w"]) for x in cur)
+        brk = (len(cur) >= 3 or letters >= 16 or w["w"].endswith((",", ".", "?", "!", "..."))
+               or (nxt and nxt["s"] - w["e"] >= 0.15))
+        if left == 0 or (brk and left != 1):
             out.append(cur); cur = []
     if cur:
         out.append(cur)
     return out
+
+
+def _dup(title, vo):
+    tw = set(re.sub(r"[^a-z0-9 ]", "", (title or "").lower()).split())
+    vw = set(re.sub(r"[^a-z0-9 ]", "", (vo or "").lower()).split())
+    return bool(tw) and len(tw & vw) / len(tw) >= 0.5
 
 
 def page(plan, timed, total, theme, assets):
@@ -99,6 +109,15 @@ def page(plan, timed, total, theme, assets):
                 js.append(f'tl.fromTo("#{sid}o{j}",{{x:-700,opacity:0}},{{x:0,opacity:1,duration:0.4,ease:"power3.out",immediateRender:false}},{a + 0.2 + j * 0.28:.3f});')
                 js.append(f'tl.set("#{sid}o{j}",{{opacity:0}},{a:.3f});')
                 cues.append({"t": round(a + 0.2 + j * 0.28, 3), "file": "sfx/click-select.mp3", "gain_db": -18, "align": "onset"})
+            if s.get("hold"):
+                c0 = t["end"] + 0.15
+                for q in range(int(s["hold"]), 0, -1):
+                    tq = c0 + (int(s["hold"]) - q)
+                    inner += f'<div id="{sid}q{q}" class="count">{q}</div>'
+                    js.append(f'tl.set("#{sid}q{q}",{{opacity:0}},{a:.3f});')
+                    js.append(f'tl.fromTo("#{sid}q{q}",{{scale:2.2,opacity:1}},{{scale:1,opacity:1,duration:0.35,ease:"power4.out",immediateRender:false}},{tq:.3f});')
+                    js.append(f'tl.set("#{sid}q{q}",{{opacity:0}},{tq + 0.95:.3f});')
+                    cues.append({"t": round(tq, 3), "file": "sfx/click-ui.mp3", "gain_db": -12, "align": "onset"})
             inner += f'<div id="{sid}cm" class="cmt">COMMENT KARO: A, B YA C</div>'
             js.append(f'tl.fromTo("#{sid}cm",{{scale:0.7,opacity:0}},{{scale:1,opacity:1,duration:0.35,ease:"back.out(2)",immediateRender:false}},{a + 1.2:.3f});')
             js.append(f'tl.to("#{sid}cm",{{scale:1.06,duration:0.5,yoyo:true,repeat:5,ease:"sine.inOut"}},{a + 1.6:.3f});')
@@ -118,13 +137,22 @@ def page(plan, timed, total, theme, assets):
                 js.append(f'tl.fromTo("#{sid}o{j}",{{x:-700,opacity:0}},{{x:0,opacity:1,duration:0.4,ease:"power3.out",immediateRender:false}},{a + 0.2 + j * 0.28:.3f});')
                 js.append(f'tl.set("#{sid}o{j}",{{opacity:0}},{a:.3f});')
                 cues.append({"t": round(a + 0.2 + j * 0.28, 3), "file": "sfx/click-select.mp3", "gain_db": -18, "align": "onset"})
+            if s.get("hold"):
+                c0 = t["end"] + 0.15
+                for q in range(int(s["hold"]), 0, -1):
+                    tq = c0 + (int(s["hold"]) - q)
+                    inner += f'<div id="{sid}q{q}" class="count">{q}</div>'
+                    js.append(f'tl.set("#{sid}q{q}",{{opacity:0}},{a:.3f});')
+                    js.append(f'tl.fromTo("#{sid}q{q}",{{scale:2.2,opacity:1}},{{scale:1,opacity:1,duration:0.35,ease:"power4.out",immediateRender:false}},{tq:.3f});')
+                    js.append(f'tl.set("#{sid}q{q}",{{opacity:0}},{tq + 0.95:.3f});')
+                    cues.append({"t": round(tq, 3), "file": "sfx/click-ui.mp3", "gain_db": -12, "align": "onset"})
             inner += f'<div id="{sid}cm" class="cmt">COMMENT KARO: A, B YA C</div>'
             js.append(f'tl.fromTo("#{sid}cm",{{scale:0.7,opacity:0}},{{scale:1,opacity:1,duration:0.35,ease:"back.out(2)",immediateRender:false}},{a + 1.2:.3f});')
             js.append(f'tl.to("#{sid}cm",{{scale:1.06,duration:0.5,yoyo:true,repeat:5,ease:"sine.inOut"}},{a + 1.6:.3f});')
             js.append(f'tl.set("#{sid}cm",{{opacity:0}},{a:.3f});')
         if plan.get("hud_left"):
             inner += f'<div class="hud"><span>{esc(plan["hud_left"])}</span><span>{esc(s.get("hud_right", ""))}</span></div>'
-        if s.get("title"):
+        if s.get("title") and not _dup(s["title"], s.get("vo")):
             inner += f'<div id="{sid}t" class="tag"><span class="pill">{esc(s["title"].upper())}</span></div>'
             js.append(f'tl.fromTo("#{sid}t",{{scale:0.3,opacity:0}},{{scale:1,opacity:1,duration:0.3,ease:"back.out(2.5)",immediateRender:false}},{a + 0.15:.3f});')
             js.append(f'tl.set("#{sid}t",{{opacity:0}},{a:.3f});')
@@ -149,20 +177,32 @@ def page(plan, timed, total, theme, assets):
             scenes.append(f'<div id="{sid}" class="clip scene over" data-start="{a:.3f}" data-duration="{d:.3f}" data-track-index="1">{inner}</div>')
         else:
             scenes.append(f'<div id="{sid}" class="clip scene" data-start="{a:.3f}" data-duration="{d:.3f}" data-track-index="1">{inner}</div>')
-        # captions
-        for ci, c in enumerate(chunks(t["words"], keys)):
-            cs = c[0]["s"] - (0.08 if ci == 0 else 0)
-            ce = c[-1]["e"] + 0.12
-            spans = []
-            for w in c:
-                k = re.sub(r"[^a-z0-9]", "", w["w"].lower())
-                spans.append(f'<span class="w{" key" if k in keys else ""}" data-t="{max(0, w["s"] - cs):.2f}">{esc(w["w"].strip(".,!").replace("...", "").upper())}</span>')
-            caps.append((cs, ce, " ".join(spans)))
-    capdiv = []
-    for j, (cs, ce, sp) in enumerate(caps):
-        if j + 1 < len(caps) and caps[j + 1][0] - ce < 0.5:
-            ce = caps[j + 1][0]
-        capdiv.append(f'<div id="c{j}" class="clip cap" data-start="{cs:.3f}" data-duration="{max(0.3, ce - cs):.3f}" data-track-index="9">{sp}</div>')
+        # captions (none while a card/clue/choice already shows text: no double text)
+        if kind not in ("clue", "choice", "card"):
+            for c in chunks(t["words"], keys):
+                caps.append(c)
+    capdiv, cap_js = [], []
+    for j, c in enumerate(caps):
+        st = max(0.05, c[0]["s"] - 0.05)
+        en = c[-1]["e"] + 0.25
+        if j + 1 < len(caps):
+            en = min(en, caps[j + 1][0]["s"] - 0.05) if caps[j + 1][0]["s"] - c[-1]["e"] < 0.6 else en
+            en = min(en, caps[j + 1][0]["s"] - 0.03)
+        en = max(en, st + 0.25)
+        text = " ".join(w["w"] for w in c)
+        fs = int(max(58, min(96, 900 / max(1, len(text)) / 0.62)))
+        spans = []
+        for k, w in enumerate(c):
+            kk = re.sub(r"[^a-z0-9]", "", w["w"].lower())
+            word = esc(re.sub(r"[.,!]+$", "", w["w"]).replace("...", "").upper())
+            spans.append(f'<span id="c{j}w{k}" class="w{" key" if kk in keys else ""}">{word}</span>')
+            base = acc if kk in keys else "#ffffff"
+            cap_js.append(f'tl.set("#c{j}w{k}",{{backgroundColor:"{acc}",color:"#111111",webkitTextStroke:"0px #000",textShadow:"none",scale:1.08}},{max(st, w["s"] - 0.02):.3f});')
+            if k + 1 < len(c):
+                cap_js.append(f'tl.set("#c{j}w{k}",{{backgroundColor:"rgba(0,0,0,0)",color:"{base}",webkitTextStroke:"5px #000",textShadow:"0 8px 0 rgba(0,0,0,.85)",scale:1}},{c[k + 1]["s"] - 0.02:.3f});')
+        capdiv.append(f'<div id="c{j}" class="clip cap" style="font-size:{fs}px" data-start="{st:.3f}" '
+                      f'data-duration="{en - st:.3f}" data-track-index="9">{" ".join(spans)}</div>')
+        cap_js.append(f'tl.fromTo("#c{j}",{{scale:0.86,y:14}},{{scale:1,y:0,duration:0.14,ease:"back.out(2.5)",immediateRender:false}},{st:.3f});')
     css = f"""
 body{{margin:0;background:{bg}}}
 #root{{position:relative;width:{W}px;height:{H}px;overflow:hidden;background:{bg};font-family:'{font}',sans-serif}}
@@ -180,31 +220,13 @@ body{{margin:0;background:{bg}}}
 .dot{{position:absolute;left:510px;width:60px;height:60px;border-radius:30px;background:{acc};box-shadow:0 0 40px {acc};z-index:3}}
 .big{{position:absolute;left:90px;width:900px;top:560px;text-align:center;font-size:190px;line-height:1;color:{acc};text-shadow:0 12px 0 #000}}
 .small{{position:absolute;left:90px;width:900px;top:800px;text-align:center;font-size:66px;color:#fff;text-shadow:0 6px 0 #000}}
-.cap{{position:absolute;left:90px;width:900px;top:1190px;z-index:5;text-align:center;font-size:80px;line-height:1.05;color:#fff;
-  -webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 7px 0 #000}}
-.paper{{position:absolute;left:110px;width:860px;top:520px;background:#e9dcc0;color:#2a1a0a;border-radius:10px;padding:48px 44px 54px;box-shadow:0 24px 60px rgba(0,0,0,.65);transform:rotate(-1.5deg)}}
-.paper .stamp{{position:absolute;top:-34px;left:34px;background:#b3261e;color:#fff;font-size:44px;padding:8px 24px;border-radius:8px;transform:rotate(-3deg)}}
-.paper .who{{font-size:62px;line-height:1.05;margin-top:12px;color:#7a1a12}}
-.paper .quote{{font-family:Inter,sans-serif;font-weight:700;font-size:46px;line-height:1.25;margin-top:22px}}
-.opt{{position:absolute;left:100px;width:880px;height:170px;display:flex;align-items:center;font-size:62px;color:#fff;background:rgba(10,16,22,.88);border:5px solid {acc};border-radius:26px;box-shadow:0 12px 0 #000}}
-.opt .ab{{display:inline-block;width:130px;text-align:center;font-size:96px;color:{acc};margin-right:10px}}
-.cmt{{position:absolute;left:0;width:{W}px;top:1060px;text-align:center;font-size:56px;color:#fff;text-shadow:0 6px 0 #000;z-index:4}}
-.hud{{position:absolute;left:70px;width:940px;top:200px;display:flex;justify-content:space-between;font-family:Inter,sans-serif;font-weight:800;font-size:34px;color:#fff;letter-spacing:3px;z-index:3;text-shadow:0 3px 0 #000}}
-.hud span:first-child{{background:#b3261e;padding:6px 18px;border-radius:8px}}
-.paper{{position:absolute;left:110px;width:860px;top:470px;background:#e9dcc0;color:#2a1a0a;border-radius:10px;padding:48px 44px 54px;box-shadow:0 24px 60px rgba(0,0,0,.65)}}
-.paper .stamp{{position:absolute;top:-34px;left:34px;background:#b3261e;color:#fff;font-size:44px;padding:8px 24px;border-radius:8px;transform:rotate(-3deg)}}
-.paper .who{{font-size:62px;line-height:1.05;margin-top:12px;color:#7a1a12}}
-.paper .quote{{font-family:Inter,sans-serif;font-weight:700;font-size:46px;line-height:1.25;margin-top:22px}}
-.opt{{position:absolute;left:100px;width:880px;height:170px;display:flex;align-items:center;font-size:62px;color:#fff;background:rgba(10,16,22,.88);border:5px solid {acc};border-radius:26px;box-shadow:0 12px 0 #000}}
-.opt .ab{{display:inline-block;width:130px;text-align:center;font-size:96px;color:{acc};margin-right:10px}}
-.cmt{{position:absolute;left:0;width:{W}px;top:1060px;text-align:center;font-size:56px;color:#fff;text-shadow:0 6px 0 #000;z-index:4}}
-.hud{{position:absolute;left:70px;width:940px;top:200px;display:flex;justify-content:space-between;font-family:Inter,sans-serif;font-weight:800;font-size:34px;color:#fff;letter-spacing:3px;z-index:3;text-shadow:0 3px 0 #000}}
-.hud span:first-child{{background:#b3261e;padding:6px 18px;border-radius:8px}}
-.cap .w{{display:inline-block}} .cap .key{{color:{acc}}}
+.cap{{position:absolute;left:0;width:{W}px;top:1180px;z-index:5;text-align:center;line-height:1.15;color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:1px;-webkit-text-stroke:5px #000;paint-order:stroke fill;
+  text-shadow:0 8px 0 rgba(0,0,0,.85),0 0 30px rgba(0,0,0,.6);overflow:visible}}
+.cap .w{{display:inline-block;padding:0 12px;border-radius:16px;margin:0 2px;background-color:rgba(0,0,0,0)}}
+.cap .key{{color:{acc}}}
+.cap .w.on{{background:{acc};color:#111;-webkit-text-stroke:0;text-shadow:none;transform:scale(1.08);box-shadow:0 8px 0 #000}}
 """
-    cap_js = """document.querySelectorAll(".cap").forEach(c=>{const s=parseFloat(c.dataset.start);
- c.querySelectorAll(".w").forEach(w=>{tl.fromTo(w,{opacity:0.8,scale:0.9},{opacity:1,scale:1,duration:0.12,ease:"back.out(3)",immediateRender:false},s+parseFloat(w.dataset.t));});
- tl.set(c.querySelectorAll(".w"),{opacity:0.8},s);});"""
     doc = f"""<!doctype html><html><head><meta charset="utf-8"><style>{css}</style></head><body>
 <div id="root" data-composition-id="main" data-width="{W}" data-height="{H}" data-duration="{total:.3f}" data-start="0">
 {chr(10).join(top)}
@@ -216,7 +238,7 @@ body{{margin:0;background:{bg}}}
 <script>
 const tl=gsap.timeline({{paused:true}});
 {chr(10).join(js)}
-{cap_js}
+{chr(10).join(cap_js)}
 window.__timelines=window.__timelines||{{}};window.__timelines["main"]=tl;
 </script></body></html>"""
     return doc, cues

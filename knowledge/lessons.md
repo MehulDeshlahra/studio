@@ -32,3 +32,8 @@ length follows information, short question ending, one colour identity, no effec
 - QC vision model flagged intended 3-word captions as "cut off": QC prompt now says captions are word-by-word. Read-back with whisper small is weak on Hinglish: only fail on whole missing sentences.
 - Muse puts printed text on some images (e.g. "BATCH SETTLEMENT VIA RBI" on a door): prompts say no text, but check; cover text with a card or regenerate.
 - Two simultaneous jobs on the 2-CPU server make renders 2x slower; the scheduler runs one job at a time.
+
+## Captions (all channels, owner 16 Nov)
+- Word times from whisper matched to the script (engine/align.py), never estimated. Active word highlighted.
+- Never the same text twice on screen (no captions under a card that shows text; no title repeating the voice).
+- Montserrat 900, max 3 words per group, one group at a time.

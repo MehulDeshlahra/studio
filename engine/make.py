@@ -103,8 +103,39 @@ def main():
     if "voice" in redo or not os.path.exists(vo):
         script = "\n".join(s["vo"] for s in p["scenes"])
         tts.speak(script, vo, ch["voice"].get("voice", "Charon"), ch["voice"].get("style", ""))
-    timed, vdur = align.lines(vo, [s["vo"] for s in p["scenes"]])
-    save(os.path.join(job, "timing.json"), timed)
+    tp = os.path.join(job, "timing.json")
+    if "voice" in redo or not os.path.exists(tp) or load(tp, {}).get("method") != "whisper":
+        try:
+            timed, vdur, cover = align.words_by_line(vo, [s["vo"] for s in p["scenes"]])
+            method = "whisper"; log("aligned words with whisper, matched", f"{cover:.0%}")
+        except Exception as e:
+            log("whisper alignment failed, pause estimate:", str(e)[:150])
+            timed, vdur = align.lines(vo, [s["vo"] for s in p["scenes"]]); method = "pauses"
+        save(tp, {"method": method, "dur": vdur, "lines": timed})
+    tj = load(tp)
+    timed, vdur = tj["lines"], tj["dur"]
+    # holds: silence after a line (e.g. a countdown before the answer); words after it move later
+    vo_use = vo
+    holds = [(i, float(s["hold"])) for i, s in enumerate(p["scenes"]) if s.get("hold")]
+    if holds:
+        import numpy as np, soundfile as sf
+        a_, sr = sf.read(vo, dtype="float32")
+        shift, pieces, last = 0.0, [], 0
+        for i, h in holds:
+            if i + 1 >= len(timed):
+                continue
+            cut = (timed[i]["end"] + timed[i + 1]["start"]) / 2
+            pieces += [a_[last:int(cut * sr)], np.zeros(int(h * sr), dtype="float32")]
+            last = int(cut * sr)
+            for L in timed[i + 1:]:
+                L["start"] += h; L["end"] += h
+                for w in L["words"]:
+                    w["s"] += h; w["e"] += h
+            shift += h
+        pieces.append(a_[last:])
+        vo_use = os.path.join(job, "vo-held.wav")
+        sf.write(vo_use, np.concatenate(pieces), sr)
+        vdur += shift
     total = round(vdur + 0.7, 3)
     # 4 assets
     assets = stage_assets(ch, p, job)
@@ -123,7 +154,7 @@ def main():
     # 6 mix
     mix = os.path.join(job, "mix.wav")
     if "mix" in redo or not os.path.exists(mix):
-        sh(["ffmpeg", "-v", "error", "-y", "-i", vo, "-ar", "48000", os.path.join(job, "vo.wav")])
+        sh(["ffmpeg", "-v", "error", "-y", "-i", vo_use, "-ar", "48000", os.path.join(job, "vo.wav")])
         sh([PY, os.path.join(ROOT, "lib", "mix.py"), job, os.path.join(ASSETS, "audio")])
         shutil.copy(mix, os.path.join(rdir, "assets", "mix.wav"))
         redo.add("render")
