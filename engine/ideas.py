@@ -31,7 +31,7 @@ def demand(query):
     vids = research.search(query, n=8)[:5]
     views = [v["views"] for v in vids if v.get("views")]
     if not views:
-        return 0.0, 0
+        return None, 0                                       # no listing (yt-dlp timeout under load): unknown, not zero
     med = statistics.median(views)
     return round(min(10.0, max(0.0, (math.log10(max(med, 1)) - 3) * 2.5)), 1), int(med)   # 1k views -> 0, 100k -> 5, 10M -> 10
 
@@ -63,7 +63,8 @@ def candidates(ch, used):
     out = [{"topic": t, "search": t, "fit": 7, "from": "backlog"} for t in backlog]
     for x in fresh:
         if isinstance(x, dict) and x.get("topic") and x["topic"].lower() not in used:
-            out.append({"topic": x["topic"].strip(), "search": (x.get("search") or x["topic"]).strip(), "fit": float(x.get("fit") or 6), "from": "new"})
+            t = re.split(r"\s*\((?:metaphor|example|analogy)\b", x["topic"], flags=re.I)[0].strip()
+            out.append({"topic": t, "note": x["topic"][len(t):].strip(" ()"), "search": (x.get("search") or x["topic"]).strip(), "fit": float(x.get("fit") or 6), "from": "new"})
     return out[:N]
 
 
@@ -73,10 +74,12 @@ def pick(ch):
     cands = candidates(ch, used)
     if not cands:
         return None
-    with ThreadPoolExecutor(3) as ex:
+    with ThreadPoolExecutor(2) as ex:
         dem = list(ex.map(lambda c: demand(c["search"]), cands))
+    dem = [d if d[0] is not None else demand(c["search"]) for c, d in zip(cands, dem)]   # one slow retry
     for c, (d, med) in zip(cands, dem):
-        c["demand"], c["median_views"] = d, med
+        c["demand_known"] = d is not None
+        c["demand"], c["median_views"] = (d if d is not None else 4.0), med
         c["fresh"] = freshness(c["topic"], list(used))
         c["score"] = round(0.45 * d + 0.35 * min(10, c["fit"]) + 0.20 * c["fresh"], 2)
     cands.sort(key=lambda c: -c["score"])
