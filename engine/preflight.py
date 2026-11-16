@@ -51,7 +51,7 @@ def layout(rdir, timed):
         t = f.get("time") if f.get("time") is not None else (f.get("sample") or {}).get("time", 0)
         found.append({"scene": _scene_of(float(t or 0), timed), "code": code, "selector": sel, "msg": (f.get("message") or "")[:160]})
     for f in (d.get("runtime") or {}).get("findings", []) if isinstance(d.get("runtime"), dict) else []:
-        if f.get("severity") == "error":
+        if f.get("severity") == "error" and "mix.wav" not in (f.get("message") or ""):   # the mix is made after preflight
             runtime.append((f.get("message") or "")[:160])
     return found, runtime
 
