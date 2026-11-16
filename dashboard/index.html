@@ -3,234 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cut">
-<meta name="theme-color" content="#0d0d0f">
-<title>Studio · Channels</title>
+<meta name="theme-color" content="#070b16">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<title>Studio Control</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--r:14px}
-[data-theme=dark]{--bg:#0d0d0f;--side:#111114;--card:#16161a;--card2:#1c1c21;--line:#26262d;--tx:#ececf1;--mut:#8b8b96;--soft:#5d5d68;--acc:#e8c37a;--good:#4fd08b;--warn:#f0b64a;--bad:#ff6b6b;--chip:#202027}
-[data-theme=light]{--bg:#f4f1ec;--side:#ece8e1;--card:#fbfaf7;--card2:#fff;--line:#e2ddd4;--tx:#1c1b19;--mut:#6f6b64;--soft:#a39e95;--acc:#9a6b14;--good:#1f9d5c;--warn:#b7791f;--bad:#c53030;--chip:#efebe4}
-*{box-sizing:border-box;margin:0}
-html,body{background:var(--bg);color:var(--tx);font:14px/1.45 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
-aside{background:var(--side);border-right:1px solid var(--line);padding:18px 12px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:4px}
-.logo{display:flex;align-items:center;gap:10px;padding:4px 10px 18px;font:500 20px Newsreader,serif}
-.logo b{width:30px;height:30px;border-radius:8px;background:var(--tx);color:var(--bg);display:grid;place-items:center;font:700 15px Geist}
-.nav{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:9px;color:var(--mut);cursor:pointer;font-weight:500}
-.nav:hover{background:var(--chip);color:var(--tx)}.nav.on{background:var(--chip);color:var(--tx)}
-.nav svg{width:17px;height:17px;flex:none}.nav .bd{margin-left:auto;background:var(--acc);color:#111;border-radius:99px;font-size:11px;padding:1px 7px;font-weight:700}
-.side-foot{margin-top:auto;padding:10px;color:var(--mut);font-size:12px;display:flex;flex-direction:column;gap:6px}
-.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--good);margin-right:6px;box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 25%,transparent)}
-.tbtn{background:none;border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:6px 9px;cursor:pointer;font:inherit;align-self:flex-start}
-main{padding:34px 40px 90px;max-width:1240px;width:100%}
-.hero h1{font:400 40px/1.1 Newsreader,serif;letter-spacing:-.5px}
-.hero p{color:var(--mut);font-size:15.5px;margin-top:10px;max-width:760px}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;padding:3px;margin-top:18px;background:var(--card)}
-.seg span{padding:5px 12px;border-radius:7px;color:var(--mut);cursor:pointer;font-size:13px}.seg span.on{background:var(--chip);color:var(--tx)}
-.mock{display:inline-block;margin-left:10px;font:500 11px Geist Mono;color:var(--warn);border:1px dashed var(--warn);border-radius:6px;padding:2px 7px;vertical-align:middle}
-.grid{display:grid;gap:14px;margin-top:24px}
-.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
-.k{color:var(--mut);font-size:12.5px;font-weight:500}
-.v{font:400 34px/1.1 Newsreader,serif;margin-top:6px;letter-spacing:-.3px}
-.s{color:var(--mut);font-size:12.5px;margin-top:6px}
-.up{color:var(--good)}.dn{color:var(--bad)}
-.h2{font:500 22px Newsreader,serif;margin:34px 0 4px;display:flex;align-items:baseline;gap:10px}
-.h2 small{font:400 13px Geist;color:var(--mut)}
-.ch{display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
-.ch-top{display:flex;gap:12px;align-items:center}
-.av{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font:700 17px Geist;color:#111;flex:none}
-.ch-name{font-weight:600;font-size:15.5px}.ch-sub{color:var(--mut);font-size:12.5px}
-.pill{font-size:11px;font-weight:600;border-radius:99px;padding:2px 8px;margin-left:auto;white-space:nowrap}
-.p-live{background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--good)}
-.p-warm{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
-.p-off{background:var(--chip);color:var(--mut)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.stats div{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:9px 10px}
-.stats b{display:block;font:500 19px Newsreader,serif}.stats span{color:var(--mut);font-size:11.5px}
-.links{display:flex;gap:6px;flex-wrap:wrap}
-.lk{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-size:12px;color:var(--mut)}
-.lk:hover{color:var(--tx);border-color:var(--soft)}.lk svg{width:13px;height:13px}
-.next{font-size:12.5px;color:var(--mut);border-top:1px solid var(--line);padding-top:11px;display:flex;justify-content:space-between;gap:8px}
-.next b{color:var(--tx);font-weight:500}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;color:var(--mut);font-weight:500;padding:10px 12px;border-bottom:1px solid var(--line);font-size:12px}
-td{padding:11px 12px;border-bottom:1px solid var(--line)}tr:last-child td{border:0}
-.tbl{padding:0;overflow:auto}
-.q{display:grid;grid-template-columns:96px 1fr;gap:14px}
-.thumb{aspect-ratio:9/16;border-radius:10px;background:linear-gradient(160deg,#2a2a33,#121216);display:grid;place-items:center;color:var(--soft);font-size:11px;position:relative;overflow:hidden}
-.thumb i{position:absolute;inset:auto 8px 8px 8px;font-style:normal;font:700 11px/1.2 Geist;color:#fff}
-.btns{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-.b{border:1px solid var(--line);background:var(--card2);color:var(--tx);border-radius:9px;padding:7px 13px;font:500 13px Geist;cursor:pointer}
-.b.ok{background:var(--good);border-color:var(--good);color:#06150c}.b.no{color:var(--bad)}
-.chk{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.chk span{font-size:11px;background:var(--chip);border-radius:6px;padding:2px 7px;color:var(--mut)}
-.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-.day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;min-height:150px}
-.day h4{font:500 12px Geist;color:var(--mut);margin-bottom:8px}.day.today{border-color:var(--acc)}
-.ev{font-size:11.5px;border-radius:7px;padding:5px 7px;margin-bottom:5px;border-left:3px solid;background:var(--card2)}
-.bar{height:8px;border-radius:99px;background:var(--chip);overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;border-radius:99px;background:var(--acc)}
-.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}
-.mono{font-family:'Geist Mono',monospace;font-size:12px}
-.tabbar{display:none}
-.sec{display:none}.sec.on{display:block}
-@media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}.cal{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:720px){
- .app{grid-template-columns:1fr}aside{display:none}
- main{padding:22px 16px 110px}.hero h1{font-size:31px}
- .g4,.g3,.g2{grid-template-columns:1fr 1fr}.g3.chs,.g2.one{grid-template-columns:1fr}
- .cal{grid-template-columns:1fr 1fr}
- .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--side) 92%,transparent);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom));z-index:9;justify-content:space-around}
- .tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--mut);padding:4px 6px;position:relative}
- .tabbar a.on{color:var(--tx)}.tabbar svg{width:20px;height:20px}
- .tabbar .bd{position:absolute;top:0;right:2px;background:var(--acc);color:#111;border-radius:99px;font-size:9px;padding:0 5px;font-weight:700}
- .topbar{display:flex!important}
-}
-.topbar{display:none;justify-content:space-between;align-items:center;margin-bottom:16px}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
 </head>
 <body>
+<div class="bg-glow"></div>
 <div class="app">
-<aside>
- <div class="logo"><b>S</b>Studio</div>
- <div id="sidenav"></div>
- <div class="side-foot">
-  <div><span class="dot"></span>Server OK · engine running</div>
-  <div>Updated just now</div>
-  <button class="tbtn" onclick="theme()">◐ Theme</button>
- </div>
-</aside>
-<main>
- <div class="topbar"><div class="logo" style="padding:0"><b>S</b>Studio</div><button class="tbtn" onclick="theme()">◐</button></div>
- <div id="view"></div>
-</main>
+ <aside id="side">
+  <div class="brand"><div class="logo">S</div><div><b>Studio</b><small>Control room</small></div></div>
+  <nav id="nav"></nav>
+  <div class="side-foot">
+   <div class="live"><span class="pulse"></span><span id="liveTx">Connecting…</span></div>
+   <button class="ghost" onclick="toggleTheme()">◐ Theme</button>
+  </div>
+ </aside>
+ <main>
+  <header class="top">
+   <div class="m-brand"><div class="logo">S</div><b>Studio</b></div>
+   <div id="banner" class="banner"></div>
+  </header>
+  <div id="view"></div>
+ </main>
 </div>
 <nav class="tabbar" id="tabbar"></nav>
-
-<script>
-/* ------------ MOCK DATA (real follower counts from Meta, 17 Nov; everything else is sample) ------------ */
-const CH=[
- {id:"tech",name:"Kaise Tech",group:"Studio",av:"KT",col:"#f5c542",status:"warm",statusTx:"Warm-up · posts from 20 Nov",
-  ig:"kaise.tech",fb:"https://facebook.com/1474228909103892",yt:"kaise.tech.official",igF:2,fbF:0,ytF:0,posts:0,views7:0,approved:1,waiting:2,next:"20 Nov, 20:00",nextTx:"UPI paisa 2 second mein"},
- {id:"katha",name:"Puraan Ki Katha",group:"Studio",av:"PK",col:"#ff9f43",status:"warm",statusTx:"Warm-up · posts from 20 Nov",
-  ig:"puraankikatha",fb:"https://facebook.com/1453056947892202",yt:null,igF:1,fbF:0,ytF:0,posts:0,views7:0,approved:1,waiting:1,next:"20 Nov, 20:00",nextTx:"Kuber ka ghamand"},
- {id:"raaz",name:"Aage Suno",group:"Studio",av:"AS",col:"#7c8cff",status:"warm",statusTx:"Warm-up · posts from 20 Nov",
-  ig:"aagesuno",fb:"https://facebook.com/1501633449691931",yt:"aagesuno",igF:0,fbF:0,ytF:0,posts:0,views7:0,approved:1,waiting:0,next:"20 Nov, 20:00",nextTx:"Aakhri train ka musafir"},
- {id:"vajra",name:"Vajra Formwork",group:"Business",av:"V",col:"#4fd08b",status:"live",statusTx:"Live · 1 reel/day 19:30",
-  ig:"vajraformwork",fb:"https://facebook.com/1296793536861294",yt:"UCLl1cgbkcTjv5188ZIeAIlQ",ytIsId:true,igF:1044,fbF:7827,ytF:0,posts:48,views7:8420,approved:4,waiting:1,next:"Today, 19:30",nextTx:"Column reel (real clips)",ads:true},
- {id:"planstalk",name:"Planstalk",group:"Business",av:"P",col:"#46d1ff",status:"off",statusTx:"Manual",
-  ig:"planstalkindia",fb:null,yt:null,igF:173,fbF:0,ytF:0,posts:37,views7:0,approved:0,waiting:0,next:"—",nextTx:"Not automated yet"},
- {id:"marginmart",name:"MarginMart",group:"Business",av:"M",col:"#ff6b9d",status:"off",statusTx:"Manual",
-  ig:"marginmartofficial",fb:null,yt:null,igF:11,fbF:1,ytF:0,posts:8,views7:0,approved:0,waiting:0,next:"—",nextTx:"Not automated yet"},
-];
-const QUEUE=[
- {ch:"tech",title:"ChatGPT jawab kaise banata hai",lang:"Hindi",dur:"48 s",score:"8/10",checks:["voice ✓","captions ✓","loudness ✓","no AI label ✓"],cover:"CHATGPT AAPKE SAWAAL KA JAWAB"},
- {ch:"tech",title:"UPI paisa 2 second mein (English)",lang:"English",dur:"44 s",score:"8/10",checks:["voice ✓","captions ✓","loudness ✓"],cover:"HOW UPI MOVES MONEY"},
- {ch:"katha",title:"Kuber ka ghamand",lang:"Hindi",dur:"41 s",score:"9/10",checks:["voice ✓","captions ✓","loudness ✓"],cover:"KUBER KA GHAMAND"},
- {ch:"vajra",title:"Column finish — real site clips",lang:"Hinglish",dur:"28 s",score:"9/10",checks:["claims ✓","no price ✓","audio ✓"],cover:"PLY KA JHANJHAT KHATAM"},
-];
-const DAYS=["Mon 17","Tue 18","Wed 19","Thu 20","Fri 21","Sat 22","Sun 23"];
-const CAL={0:[["vajra","19:30 reel"]],1:[["vajra","19:30 reel"]],2:[["vajra","19:30 reel"]],
- 3:[["tech","20:00 first post"],["katha","20:00 first post"],["raaz","20:00 first post"],["vajra","19:30 reel"]],
- 4:[["tech","20:00"],["katha","20:00"],["raaz","20:00"],["vajra","19:30"]],5:[["tech","20:00"],["katha","20:00"],["raaz","20:00"],["vajra","19:30"]],6:[["tech","20:00"],["katha","20:00"],["raaz","20:00"],["vajra","19:30"]]};
-const ADS=[["L10 Column reel","Running","₹143","13","₹11.0"],["L12 Kharcha remake","Running","₹96","27","₹3.5"],["L9 Throw reel","Running","₹29","3","₹9.6"],["L11 One-man","Paused","₹81","10","₹8.1"]];
-const HEALTH=[["Oracle server","2 cores · 12 GB · load 1.4","ok"],["Prep lane (voice, images)","last run 01:05 · OK","ok"],["Render lane","last render 133 s · OK","ok"],["Telegram approvals","Studio360 · bot online","ok"],["Meta login (posting)","data access 54 days left","ok"],["Muse image bridges","bridge 2 OK · bridge 1 limited","warn"],["YouTube uploader","not connected (needs 5-min login)","bad"],["Daily budgets","TTS 6/30 · reels 2/8","ok"]];
-
-/* ------------ ICONS ------------ */
-const I={
- home:'<path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
- check:'<path d="M20 6 9 17l-5-5"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
- chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',ads:'<path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1zM16 8a5 5 0 0 1 0 8"/>',
- pulse:'<path d="M3 12h4l3-8 4 16 3-8h4"/>',
- ig:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
- fb:'<path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
- yt:'<rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/>'};
-const ic=(n)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${I[n]}</svg>`;
-const TABS=[["overview","Overview","home"],["channels","Channels","grid"],["approvals","Approvals","check",QUEUE.length],["calendar","Calendar","cal"],["insights","Insights","chart"],["ads","Ads","ads"],["health","Health","pulse"]];
-const byId=Object.fromEntries(CH.map(c=>[c.id,c]));
-const n=(x)=>x>=1000?(x/1000).toFixed(1).replace(".0","")+"k":String(x);
-
-/* ------------ VIEWS ------------ */
-function chCard(c){
- const links=[c.ig&&`<a class="lk" target="_blank" href="https://instagram.com/${c.ig}">${ic("ig")}@${c.ig}</a>`,
-  c.fb&&`<a class="lk" target="_blank" href="${c.fb}">${ic("fb")}Facebook</a>`,
-  c.yt&&`<a class="lk" target="_blank" href="https://youtube.com/${c.ytIsId?"channel/"+c.yt:"@"+c.yt}">${ic("yt")}YouTube</a>`].filter(Boolean).join("");
- return `<div class="card ch">
-  <div class="ch-top"><div class="av" style="background:${c.col}">${c.av}</div>
-   <div><div class="ch-name">${c.name}</div><div class="ch-sub">${c.statusTx}</div></div>
-   <span class="pill p-${c.status}">${{live:"Live",warm:"Warm-up",off:"Manual"}[c.status]}</span></div>
-  <div class="stats"><div><b>${n(c.igF+c.fbF+c.ytF)}</b><span>followers</span></div><div><b>${c.posts}</b><span>posts</span></div><div><b>${n(c.views7)}</b><span>views · 7d</span></div></div>
-  <div class="links">${links}</div>
-  <div class="next"><span>Next: <b>${c.nextTx}</b></span><span>${c.next}</span></div></div>`;
-}
-const V={
-overview(){
- const fol=CH.reduce((a,c)=>a+c.igF+c.fbF+c.ytF,0), wait=QUEUE.length, appr=CH.reduce((a,c)=>a+c.approved,0);
- return `<div class="hero"><h1>Good evening, Mehul<span class="mock">MOCK</span></h1>
- <p>6 channels, ${n(fol)} followers in total. ${wait} videos are waiting for your OK and ${appr} are approved and queued. The 3 Studio pages start posting on 20 Nov.</p>
- <div class="seg"><span>Today</span><span class="on">7 days</span><span>30 days</span><span>All time</span></div></div>
- <div class="grid g4">
-  <div class="card"><div class="k">Followers</div><div class="v">${n(fol)}</div><div class="s"><span class="up">▲ 38</span> this week</div></div>
-  <div class="card"><div class="k">Views · 7 days</div><div class="v">8.4k</div><div class="s"><span class="up">▲ 12%</span> vs last week</div></div>
-  <div class="card"><div class="k">Waiting for you</div><div class="v">${wait}</div><div class="s">open Approvals</div></div>
-  <div class="card"><div class="k">Ad spend · 7 days</div><div class="v">₹349</div><div class="s">53 chats · ₹6.6 each</div></div>
- </div>
- <div class="h2">Channels <small>tap a link to open the page</small></div>
- <div class="grid g3 chs">${CH.map(chCard).join("")}</div>`;
-},
-channels(){
- const rows=CH.map(c=>`<tr><td><b>${c.name}</b><div class="s" style="margin:0">${c.group}</div></td><td>${c.ig?"@"+c.ig:"—"}</td><td class="mono">${n(c.igF)}</td><td class="mono">${n(c.fbF)}</td><td class="mono">${c.yt?n(c.ytF):"—"}</td><td class="mono">${c.posts}</td><td><span class="pill p-${c.status}" style="margin:0">${{live:"Live",warm:"Warm-up",off:"Manual"}[c.status]}</span></td></tr>`).join("");
- return `<div class="hero"><h1>Channels</h1><p>Every page you own, with its Instagram, Facebook and YouTube.</p></div>
- <div class="card tbl" style="margin-top:22px"><table><tr><th>Channel</th><th>Instagram</th><th>IG</th><th>FB</th><th>YT</th><th>Posts</th><th>Status</th></tr>${rows}</table></div>
- <div class="h2">Studio pages</div><div class="grid g3 chs">${CH.filter(c=>c.group=="Studio").map(chCard).join("")}</div>
- <div class="h2">Businesses</div><div class="grid g3 chs">${CH.filter(c=>c.group=="Business").map(chCard).join("")}</div>`;
-},
-approvals(){
- return `<div class="hero"><h1>Approvals</h1><p>Only videos that passed the server's review show up here. OK sends it to the posting queue, same as replying in Telegram.</p></div>
- <div class="grid g2 one">${QUEUE.map((q,i)=>{const c=byId[q.ch];return `<div class="card q">
-  <div class="thumb" style="background:linear-gradient(160deg,${c.col}55,#0e0e12 70%)">▶<i>${q.cover}</i></div>
-  <div><div class="ch-sub">${c.name} · ${q.lang} · ${q.dur}</div><div class="ch-name" style="margin-top:2px">${q.title}</div>
-   <div class="chk"><span>visual ${q.score}</span>${q.checks.map(x=>`<span>${x}</span>`).join("")}</div>
-   <div class="btns"><button class="b ok" onclick="this.closest('.card').style.opacity=.35;this.textContent='Approved'">OK</button><button class="b no">No</button><button class="b">Feedback</button></div></div></div>`}).join("")}</div>`;
-},
-calendar(){
- return `<div class="hero"><h1>Calendar</h1><p>This week's posts. Warm-up: one post a day at 20:00 until 27 Nov, then two a day (13:00 and 20:00).</p></div>
- <div class="cal" style="margin-top:22px">${DAYS.map((d,i)=>`<div class="day ${i==0?"today":""}"><h4>${d}${i==0?" · today":""}</h4>${(CAL[i]||[]).map(([id,t])=>`<div class="ev" style="border-color:${byId[id].col}"><b>${byId[id].name}</b><br>${t}</div>`).join("")}</div>`).join("")}</div>`;
-},
-insights(){
- const bars=[["Pain-of-ply hook + proof (VAJRA)",92],["Real site clips",74],["19:30 slot vs 09:30",68],["Feature-only reels",28],["Photo posts",18]];
- return `<div class="hero"><h1>Insights</h1><p>What works, learned from every page and shared with all of them.</p></div>
- <div class="grid g2 one"><div class="card"><div class="k">Best performers · relative reach</div>${bars.map(([t,v])=>`<div style="margin-top:14px"><div class="row" style="border:0;padding:0"><span>${t}</span><span class="mono">${v}</span></div><div class="bar"><i style="width:${v}%"></i></div></div>`).join("")}</div>
- <div class="card"><div class="k">Lessons in the brain (latest)</div>
-  <div class="row"><span>Hook in first 2 s, no logo at start</span><span class="pill p-live">all pages</span></div>
-  <div class="row"><span>Captions follow the voice word by word</span><span class="pill p-live">all pages</span></div>
-  <div class="row"><span>"Aage suno" once, before the twist</span><span class="pill p-warm">Aage Suno</span></div>
-  <div class="row"><span>Never state number of uses or price</span><span class="pill p-warm">VAJRA</span></div>
-  <div class="row"><span>Tech: premium lab look, not cartoon</span><span class="pill p-warm">Kaise Tech</span></div></div></div>`;
-},
-ads(){
- return `<div class="hero"><h1>Ads</h1><p>VAJRA WhatsApp ads, ₹100 a day, built only from existing posts. The daily job pauses an ad that costs over 1.8× the best one.</p></div>
- <div class="grid g4"><div class="card"><div class="k">Balance</div><div class="v">₹520</div><div class="s">about 5 days left</div></div><div class="card"><div class="k">Spend · 7 d</div><div class="v">₹349</div></div><div class="card"><div class="k">Chats · 7 d</div><div class="v">53</div></div><div class="card"><div class="k">Best ₹/chat</div><div class="v">₹3.5</div><div class="s">L12 Kharcha</div></div></div>
- <div class="card tbl" style="margin-top:14px"><table><tr><th>Ad</th><th>Status</th><th>Spend</th><th>Chats</th><th>₹/chat</th></tr>${ADS.map(a=>`<tr><td>${a[0]}</td><td><span class="pill ${a[1]=="Running"?"p-live":"p-off"}" style="margin:0">${a[1]}</span></td><td class="mono">${a[2]}</td><td class="mono">${a[3]}</td><td class="mono">${a[4]}</td></tr>`).join("")}</table></div>`;
-},
-health(){
- const col={ok:"var(--good)",warn:"var(--warn)",bad:"var(--bad)"};
- return `<div class="hero"><h1>Health</h1><p>Everything the engine needs, checked every 10 minutes.</p></div>
- <div class="card" style="margin-top:22px">${HEALTH.map(([a,b,s])=>`<div class="row"><span><span class="dot" style="background:${col[s]};box-shadow:none"></span>${a}</span><span class="s" style="margin:0">${b}</span></div>`).join("")}</div>`;
-}};
-
-/* ------------ ROUTER ------------ */
-function go(){
- const t=(location.hash.slice(1)||"overview"); const tab=TABS.find(x=>x[0]==t)?t:"overview";
- document.getElementById("view").innerHTML=V[tab]();
- document.getElementById("sidenav").innerHTML=TABS.map(([id,l,i,b])=>`<a class="nav ${id==tab?"on":""}" href="#${id}">${ic(i)}${l}${b?`<span class="bd">${b}</span>`:""}</a>`).join("");
- document.getElementById("tabbar").innerHTML=TABS.filter(x=>x[0]!="insights").map(([id,l,i,b])=>`<a class="${id==tab?"on":""}" href="#${id}">${ic(i)}${l}${b?`<span class="bd">${b}</span>`:""}</a>`).join("");
- scrollTo(0,0);
-}
-function theme(){const h=document.documentElement;h.dataset.theme=h.dataset.theme=="dark"?"light":"dark";localStorage.theme=h.dataset.theme}
-if(localStorage.theme)document.documentElement.dataset.theme=localStorage.theme;
-addEventListener("hashchange",go);go();
-</script>
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="sheet" id="sheet"></div></div>
+<script src="app.js"></script>
 </body>
 </html>

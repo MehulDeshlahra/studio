@@ -1,0 +1,603 @@
+"""Studio dashboard server (stdlib only). Serves the app and a live JSON API about everything on this server.
+Runs as systemd unit studio-dash on 127.0.0.1:4788; reached only through Tailscale (tailnet-only HTTPS :10000).
+  GET  /api/state            everything the app shows (server, running work, jobs, issues, schedule, channels, log)
+  GET  /api/brain            pages + lessons + videos as a graph
+  GET  /media/<cid>/<job>/<file>   cover.jpg / review-sheet.jpg / preview.mp4 / final mp4 of a job
+  POST /api/decide           {cid, job, action: approve|reject|fix, note}
+  POST /api/make             {cid, topic?}  start one video now
+  POST /api/settings         {auto_approve, min_score}
+  POST /api/reset-failed     clear failed studio-* units"""
+import glob, json, os, re, shutil, statistics, subprocess, sys, threading, time, urllib.parse, urllib.request
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+
+HOME = os.path.expanduser("~")
+ROOT = os.path.join(HOME, "studio")
+OUT = os.path.join(HOME, "studio-out")
+APP = os.path.dirname(os.path.abspath(__file__))
+LOG = os.path.join(OUT, "engine.log")
+SETTINGS = os.path.join(OUT, "dash-settings.json")
+FOLLOW_HIST = os.path.join(OUT, "dash-followers.json")
+PY = os.path.join(HOME, "studio-venv", "bin", "python")
+G = "https://graph.facebook.com/v23.0"
+TTS_CAP = int(os.environ.get("STUDIO_TTS_CAP", "30")); REELS_CAP = int(os.environ.get("STUDIO_REELS_CAP", "8"))
+
+CHANNELS = [  # the 6 channels on the dashboard (owner, 17 Nov)
+    {"id": "tech", "name": "Kaise Tech", "group": "Studio", "color": "#facc15", "page": "1474228909103892", "ig": "kaise.tech", "yt": "@kaise.tech.official"},
+    {"id": "katha", "name": "Puraan Ki Katha", "group": "Studio", "color": "#fb923c", "page": "1453056947892202", "ig": "puraankikatha", "yt": None},
+    {"id": "raaz", "name": "Aage Suno", "group": "Studio", "color": "#a78bfa", "page": "1501633449691931", "ig": "aagesuno", "yt": "@aagesuno"},
+    {"id": "vajra", "name": "Vajra Formwork", "group": "Business", "color": "#34d399", "page": "1296793536861294", "ig": "vajraformwork", "yt": "channel/UCLl1cgbkcTjv5188ZIeAIlQ"},
+    {"id": "planstalk", "name": "Planstalk", "group": "Business", "color": "#38bdf8", "page": None, "ig": "planstalkindia", "yt": None},
+    {"id": "marginmart", "name": "MarginMart", "group": "Business", "color": "#f472b6", "page": None, "ig": "marginmartofficial", "yt": None},
+]
+STAGES = [("research", "Research", "research.json"), ("plan", "Script", "plan.json"), ("voice", "Voice", "vo-raw.wav"),
+          ("pace", "Pace", "vo-paced.wav"), ("align", "Captions", "timing.json"), ("images", "Visuals", "assets.json"),
+          ("compose", "Edit", "cues.json"), ("mix", "Music", "mix.wav"), ("render", "Render", "raw.mp4"),
+          ("master", "Master", "{final}"), ("qc", "Checks", "qc.json"), ("cover", "Cover", "cover.jpg"),
+          ("review", "Review", "review.json")]
+FROM_MAP = {"voice": "voice", "compose": "compose", "assets": "images", "render": "render", "mix": "mix", "images": "images", "align": "align"}
+
+
+def jload(p, d=None):
+    try:
+        with open(p, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return d
+
+
+def jsave(p, v):
+    tmp = p + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(v, f, ensure_ascii=False, indent=1)
+    os.replace(tmp, p)
+
+
+def run(cmd, timeout=15):
+    try:
+        return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout).stdout
+    except Exception:
+        return ""
+
+
+# ---------------- server metrics (sampled in the background) ----------------
+HIST = []          # [(t, cpu%, mem%, load1)]
+_prev = None
+
+
+def _cpu():
+    global _prev
+    with open("/proc/stat") as f:
+        v = list(map(int, f.readline().split()[1:]))
+    idle, tot = v[3] + v[4], sum(v)
+    if _prev is None:
+        _prev = (idle, tot); return 0.0
+    di, dt = idle - _prev[0], tot - _prev[1]; _prev = (idle, tot)
+    return round(100 * (1 - di / dt), 1) if dt else 0.0
+
+
+def _mem():
+    m = {}
+    with open("/proc/meminfo") as f:
+        for line in f:
+            k, v = line.split(":"); m[k] = int(v.split()[0])
+    return m["MemTotal"], m["MemAvailable"]
+
+
+def sampler():
+    while True:
+        try:
+            c = _cpu(); tot, av = _mem(); l1 = os.getloadavg()[0]
+            HIST.append((int(time.time()), c, round(100 * (1 - av / tot), 1), round(l1, 2)))
+            del HIST[:-240]
+        except Exception:
+            pass
+        time.sleep(5)
+
+
+def server():
+    tot, av = _mem(); du = shutil.disk_usage("/")
+    with open("/proc/uptime") as f:
+        up = float(f.read().split()[0])
+    la = os.getloadavg()
+    muse = {}
+    for port, name in ((20241, "bridge 2"), (20240, "bridge 1")):
+        try:
+            urllib.request.urlopen(f"http://127.0.0.1:{port}/health", timeout=3); muse[name] = True
+        except Exception:
+            muse[name] = False
+    return {"cores": os.cpu_count(), "cpu": HIST[-1][1] if HIST else 0, "mem_pct": round(100 * (1 - av / tot), 1),
+            "mem_used_gb": round((tot - av) / 1048576, 1), "mem_total_gb": round(tot / 1048576, 1),
+            "disk_pct": round(100 * du.used / du.total, 1), "disk_free_gb": round(du.free / 1e9, 1), "disk_total_gb": round(du.total / 1e9),
+            "load": [round(x, 2) for x in la], "uptime_h": round(up / 3600, 1), "muse": muse,
+            "hist": [{"t": t, "cpu": c, "mem": m, "load": l} for t, c, m, l in HIST[-120:]]}
+
+
+# ---------------- what is running right now ----------------
+KINDS = [("make.py", "Making video"), ("translate.py", "English edition"), ("publish.py", "Posting"), ("stats.py", "Reading stats"),
+         ("scout.py", "Scouting trends"), ("inbox.py", "Reading Telegram"), ("brand.py", "Brand images"), ("send.py", "Sending to Telegram"),
+         ("daily.py", "Scheduler")]
+
+
+def processes():
+    out, tick = [], os.sysconf("SC_CLK_TCK")
+    with open("/proc/uptime") as f:
+        up = float(f.read().split()[0])
+    for pid in os.listdir("/proc"):
+        if not pid.isdigit():
+            continue
+        try:
+            with open(f"/proc/{pid}/cmdline", "rb") as f:
+                args = f.read().decode(errors="ignore").split("\0")
+            line = " ".join(args)
+            if "/studio/engine/" not in line and "engine/" not in line:
+                if "hyperframes" in line and "render" in line and "npm" not in args[0]:
+                    pass
+                else:
+                    continue
+            with open(f"/proc/{pid}/stat") as f:
+                st = f.read().rsplit(")", 1)[1].split()
+            age = up - int(st[19]) / tick
+            out.append({"pid": int(pid), "args": args, "line": line, "age": int(age)})
+        except Exception:
+            continue
+    return out
+
+
+def parse_job(args):
+    def opt(k):
+        return args[args.index(k) + 1] if k in args and args.index(k) + 1 < len(args) else None
+    script = next((os.path.basename(a) for a in args if a.endswith(".py")), "")
+    i = next((k for k, a in enumerate(args) if a.endswith(".py")), -1)
+    pos = [a for a in args[i + 1:] if not a.startswith("--")]
+    flags = {a for a in args if a.startswith("--")}
+    vals = {opt(k) for k in ("--job", "--from", "--lang", "--until", "--lane") if opt(k)}
+    pos = [a for a in pos if a not in vals]
+    return {"script": script, "cid": pos[0] if pos else None, "job": opt("--job") or (pos[1] if script in ("translate.py", "send.py") and len(pos) > 1 else None),
+            "frm": opt("--from"), "lang": opt("--lang"), "until": opt("--until"), "lane": opt("--lane"), "flags": sorted(flags)}
+
+
+def render_median():
+    xs = []
+    try:
+        for line in tail_lines(LOG, 4000):
+            m = re.search(r"rendered in (\d+) s", line)
+            if m:
+                xs.append(int(m.group(1)))
+    except Exception:
+        pass
+    return int(statistics.median(xs[-12:])) if xs else 300
+
+
+def tail_lines(p, n):
+    try:
+        with open(p, "rb") as f:
+            f.seek(0, 2); size = f.tell(); f.seek(max(0, size - 400 * n))
+            return f.read().decode("utf-8", "ignore").splitlines()[-n:]
+    except Exception:
+        return []
+
+
+# ---------------- jobs ----------------
+def job_state(cid, job, active=None):
+    jd = os.path.join(OUT, cid, job)
+    final = f"{cid}-{job}.mp4"
+    t0 = active["started"] if active else 0
+    frm = FROM_MAP.get((active or {}).get("frm") or "", None)
+    order = [s[0] for s in STAGES]
+    cut = order.index(frm) if frm in order else 0
+    steps, prev_t = [], 0
+    for k, (key, label, fn) in enumerate(STAGES):
+        p = os.path.join(jd, fn.replace("{final}", final))
+        t = os.path.getmtime(p) if os.path.exists(p) else 0
+        done = bool(t)
+        if active and k >= cut and t and t < t0 - 5:
+            done = False                      # an old file from an earlier build that this run will remake
+        steps.append({"key": key, "label": label, "done": done, "t": int(t) if done else 0})
+        prev_t = max(prev_t, t if done else 0)
+    if active and active.get("until") == "assets":
+        steps = steps[:6]
+    cur = next((i for i, s in enumerate(steps) if not s["done"]), None)
+    n = len(steps); doneN = sum(1 for s in steps if s["done"])
+    pct = doneN / n
+    eta = None
+    if active and cur is not None:
+        steps[cur]["active"] = True
+        if steps[cur]["key"] == "render":
+            med = render_median(); since = time.time() - max(prev_t, t0)
+            frac = min(0.95, since / med) if med else 0
+            steps[cur]["sub"] = round(frac, 2); pct = (doneN + frac) / n; eta = max(0, int(med - since))
+    plan = jload(os.path.join(jd, "plan.json"), {}) or {}
+    rv = jload(os.path.join(jd, "review.json"), {}) or {}
+    qc = jload(os.path.join(jd, "qc.json"), {}) or {}
+    meta = jload(os.path.join(jd, "meta.json"), {}) or {}
+    files = {f: os.path.exists(os.path.join(jd, f)) for f in ("cover.jpg", "review-sheet.jpg", "preview.mp4", final)}
+    mt = max([s["t"] for s in steps] + [int(os.path.getmtime(jd))])
+    return {"cid": cid, "job": job, "title": plan.get("title") or meta.get("topic") or job, "lang": "en" if job.endswith("-en") or plan.get("lang") == "en" else "hi",
+            "steps": steps, "pct": round(pct, 3), "eta": eta, "updated": mt, "files": files, "final": final,
+            "review": {"ok": rv.get("ok"), "problems": rv.get("problems", [])[:4], "minor": rv.get("minor", [])[:3],
+                       "score": ((rv.get("checks") or {}).get("vision") or {}).get("score")},
+            "qc": {"dur": (qc.get("format") or {}).get("dur"), "lufs": (qc.get("format") or {}).get("lufs")},
+            "caption": plan.get("caption", ""), "active": bool(active), "started": int(t0) if active else None}
+
+
+def tgmap():
+    m = jload(os.path.join(OUT, "tg-map.json"), {}) or {}
+    return {(v.get("channel"), v.get("job")) for v in m.values()}
+
+
+def jobs(running):
+    act = {}
+    for r in running:
+        p = r.get("job")
+        if p and p.get("script") == "make.py" and p.get("cid") and p.get("job"):
+            k = (p["cid"], p["job"])
+            if k not in act or r["age"] > act[k]["age"]:
+                act[k] = {"started": time.time() - r["age"], "frm": p.get("frm"), "until": p.get("until"), "age": r["age"]}
+    sent = tgmap(); out = []
+    for c in ("tech", "katha", "raaz"):
+        done = {d["job"]: d for d in (jload(os.path.join(ROOT, "channels", c, "done.json"), []) or [])}
+        base = os.path.join(OUT, c)
+        if not os.path.isdir(base):
+            continue
+        for j in os.listdir(base):
+            if not os.path.isdir(os.path.join(base, j)):
+                continue
+            s = job_state(c, j, act.get((c, j)))
+            d = done.get(j)
+            st = (d or {}).get("status")
+            if s["active"]:
+                status = "building"
+            elif st in ("posted",):
+                status = "posted"
+            elif st in ("approved",):
+                status = "approved"
+            elif st in ("rejected",):
+                status = "rejected"
+            elif st == "held" or s["review"]["ok"] is False:
+                status = "held"
+            elif s["review"]["ok"] and (c, j) in sent:
+                status = "waiting"
+            elif s["review"]["ok"]:
+                status = "ready"
+            elif s["pct"] < 1:
+                status = "paused"
+            else:
+                status = "made"
+            s["status"] = status; s["posted"] = (d or {}).get("posted"); s["held_why"] = (d or {}).get("review")
+            out.append(s)
+    out.sort(key=lambda x: (not x["active"], -x["updated"]))
+    return out
+
+
+# ---------------- schedule ----------------
+NICE = {"studio-inbox": "Read Telegram replies", "studio-prep": "Prep lane (script, voice, visuals)", "studio-make": "Render lane",
+        "studio-scout": "Scout trends + tech news", "studio-stats": "Morning stats report", "studio-post": "Post approved videos"}
+
+
+def schedule():
+    try:
+        ts = json.loads(run(["systemctl", "list-timers", "--all", "-o", "json", "studio*"]) or "[]")
+    except Exception:
+        ts = []
+    now = time.time(); out = []
+    for t in ts:
+        u = t["unit"].replace(".timer", "")
+        nxt = t.get("next") or 0; last = t.get("last") or 0
+        state = run(["systemctl", "is-active", u + ".service"]).strip()
+        out.append({"unit": u, "name": NICE.get(u, u), "next": int(nxt / 1e6) if nxt else None, "in": int(nxt / 1e6 - now) if nxt else None,
+                    "last": int(last / 1e6) if last else None, "running": state in ("active", "activating")})
+    out.sort(key=lambda x: x["in"] if x["in"] is not None else 1e12)
+    return out
+
+
+def failed_units():
+    try:
+        us = json.loads(run(["systemctl", "list-units", "--all", "--failed", "-o", "json", "studio*"]) or "[]")
+    except Exception:
+        us = []
+    out = []
+    for u in us:
+        last = run(["journalctl", "-u", u["unit"], "-n", "3", "--no-pager", "-o", "cat"]).strip().splitlines()
+        out.append({"unit": u["unit"], "desc": u.get("description", "")[:120], "last": (last[-1] if last else "")[:220]})
+    return out
+
+
+# ---------------- channels (Meta numbers cached 30 min) ----------------
+_cache = {"t": 0, "pages": {}}
+
+
+def meta_pages():
+    if time.time() - _cache["t"] < 1800 and _cache["pages"]:
+        return _cache["pages"]
+    try:
+        ut = open(os.path.join(HOME, ".studio-meta-user.token")).read().strip()
+        d = json.load(urllib.request.urlopen(f"{G}/me/accounts?fields=name,id,followers_count,fan_count,instagram_business_account{{username,followers_count,media_count}}&limit=50&access_token={ut}", timeout=30))
+        pages = {}
+        for p in d.get("data", []):
+            ig = p.get("instagram_business_account") or {}
+            pages[ig.get("username") or p["id"]] = {"fb": p.get("followers_count", p.get("fan_count", 0)) or 0, "ig": ig.get("followers_count", 0) or 0,
+                                                   "posts": ig.get("media_count", 0) or 0, "page": p["id"], "name": p["name"]}
+        dbg = json.load(urllib.request.urlopen(f"{G}/debug_token?input_token={ut}&access_token={ut}", timeout=30))["data"]
+        pages["_token_days"] = round((dbg.get("data_access_expires_at", 0) - time.time()) / 86400)
+        _cache.update(t=time.time(), pages=pages)
+        h = jload(FOLLOW_HIST, {}) or {}
+        day = time.strftime("%Y-%m-%d")
+        h[day] = {k: v["ig"] + v["fb"] for k, v in pages.items() if isinstance(v, dict)}
+        jsave(FOLLOW_HIST, dict(sorted(h.items())[-90:]))
+    except Exception as e:
+        _cache["err"] = str(e)[:200]
+    return _cache["pages"]
+
+
+def channels(jl):
+    pages = meta_pages(); hist = jload(FOLLOW_HIST, {}) or {}
+    days = sorted(hist)[-30:]
+    out = []
+    for c in CHANNELS:
+        p = pages.get(c["ig"], {})
+        cfg = jload(os.path.join(ROOT, "channels", c["id"], "channel.json"), {}) or {}
+        acc = jload(os.path.join(HOME, ".studio-accounts", c["id"] + ".json"), {}) or {}
+        mine = [j for j in jl if j["cid"] == c["id"]]
+        cnt = {}
+        for j in mine:
+            cnt[j["status"]] = cnt.get(j["status"], 0) + 1
+        w = cfg.get("warmup") or {}
+        day = time.strftime("%Y-%m-%d")
+        if c["group"] == "Studio":
+            if cfg.get("post") is False:
+                status, note = "off", "Posting off"
+            elif w.get("post_from") and day < w["post_from"]:
+                status, note = "warm", f"Warm-up · first post {w['post_from'][8:]} Nov"
+            else:
+                status, note = "live", "Live"
+            yt_ok = bool(acc.get("yt"))
+        elif c["id"] == "vajra":
+            q = jload(os.path.join(HOME, "vajra-automation", "social", "queue.json"), {}) or {}
+            posts = q.get("posts", [])
+            pend = [x for x in posts if not x.get("posted")]
+            cnt = {"queued": len(pend), "held": len(q.get("hold", []))}
+            status, note, yt_ok = "live", "Live · 1 reel a day 19:30 (GitHub)", True
+        else:
+            status, note, yt_ok = "manual", "Manual · not automated", None
+        spark = [hist[d].get(c["ig"], None) for d in days]
+        out.append({**c, "fb": p.get("fb", 0), "igF": p.get("ig", 0), "posts": p.get("posts", 0), "status": status, "note": note,
+                    "counts": cnt, "yt_ok": yt_ok, "spark": spark,
+                    "fb_url": f"https://facebook.com/{p.get('page') or c['page']}" if (p.get("page") or c["page"]) else None})
+    return out, pages.get("_token_days")
+
+
+# ---------------- activity log ----------------
+def classify(line):
+    l = line.lower()
+    if any(k in l for k in ("traceback", "error", " fail", "failed", "hold:", "problems", "cancel")):
+        return "bad"
+    if any(k in l for k in ("warn", "retry", "limited", "skip", "not sent", "fallback", "warm-up", "nothing approved")):
+        return "warn"
+    if any(k in l for k in ("published", "posted", "approved", "sent for approval", "passed", "rendered in", "ok ", "prepped", "cover made", "matched")):
+        return "ok"
+    if any(k in l for k in ("job ", "daily: run", "lane", "plan", "tts", "render")):
+        return "run"
+    return "info"
+
+
+def activity(n=160):
+    out = []
+    for line in tail_lines(LOG, n):
+        m = re.match(r"(\d{4}-\d\d-\d\d \d\d:\d\d:\d\d) (.*)", line)
+        if not m:
+            continue
+        msg = m.group(2)
+        cid = next((c["id"] for c in CHANNELS if re.search(rf"\b{c['id']}\b", msg)), None)
+        out.append({"t": m.group(1), "msg": msg[:260], "lvl": classify(msg), "cid": cid})
+    return out[::-1]
+
+
+def budgets():
+    b = (jload(os.path.join(OUT, "budget.json"), {}) or {}).get(time.strftime("%Y-%m-%d"), {})
+    return [{"name": "Voice (Gemini TTS)", "used": b.get("tts", 0), "cap": TTS_CAP},
+            {"name": "New videos today", "used": b.get("reels", 0), "cap": REELS_CAP}]
+
+
+# ---------------- issues ----------------
+def issues(srv, fails, jl, sched, token_days, chs):
+    out = []
+
+    def add(lvl, title, detail="", fix="", action=None, key=None):
+        out.append({"lvl": lvl, "title": title, "detail": detail, "fix": fix, "action": action, "key": key or title})
+    for f in fails:
+        add("bad", f"Job failed: {f['unit']}", f["last"] or f["desc"], "Clear it once the cause is fixed.", "reset-failed")
+    if srv["disk_pct"] >= 93:
+        add("bad", f"Disk almost full ({srv['disk_pct']}%)", f"{srv['disk_free_gb']} GB free", "Old job folders and caches can be deleted.")
+    elif srv["disk_pct"] >= 85:
+        add("warn", f"Disk {srv['disk_pct']}% full", f"{srv['disk_free_gb']} GB free of {srv['disk_total_gb']} GB", "Clean old renders soon.")
+    if srv["mem_total_gb"] - srv["mem_used_gb"] < 1:
+        add("warn", "Low memory", f"{srv['mem_used_gb']} of {srv['mem_total_gb']} GB used")
+    if srv["load"][1] > 3 * srv["cores"]:
+        add("warn", "Server overloaded", f"load {srv['load'][1]} on {srv['cores']} cores (5 min)")
+    for name, ok in srv["muse"].items():
+        if not ok:
+            add("warn", f"Muse {name} is down", "images fall back to Cloudflare / Pollinations", "Restart the Muse browser.")
+    for j in jl:
+        if j["status"] == "held":
+            why = (j["review"]["problems"] or j.get("held_why") or ["review failed"])
+            add("warn", f"Held by reviewer: {j['title'][:60]}", "; ".join(str(x) for x in why[:2])[:300], "The engine re-voices once; otherwise it needs a fix or a new build.", None, f"held-{j['cid']}-{j['job']}")
+        if j["active"] and time.time() - max([s["t"] for s in j["steps"]] + [j["started"] or 0]) > 2700:
+            add("bad", f"Looks stuck: {j['job']}", "no progress for 45+ minutes")
+    for s in sched:
+        if s["in"] is None and not s["running"]:
+            add("warn", f"Timer not scheduled: {s['unit']}")
+    if token_days is not None and token_days < 21:
+        add("warn" if token_days > 7 else "bad", f"Meta login access ends in {token_days} days", "", "Log in to Meta Business Suite once.")
+    for c in chs:
+        if c["group"] == "Studio" and c["yt"] and not c["yt_ok"]:
+            add("info", f"YouTube not connected: {c['name']}", "Shorts are not uploaded yet", "One-time 5-minute login.", None, f"yt-{c['id']}")
+    errs = [a for a in activity(300) if a["lvl"] == "bad" and time.time() - time.mktime(time.strptime(a["t"], "%Y-%m-%d %H:%M:%S")) < 7200]
+    seen = set()
+    for e in errs:
+        k = re.sub(r"\d+", "#", e["msg"])[:60]
+        if k in seen or "HOLD" in e["msg"] or "PROBLEMS" in e["msg"]:
+            continue
+        seen.add(k); add("warn", "Error in the last 2 h", e["msg"][:240], "", None, "log-" + k)
+        if len(seen) >= 4:
+            break
+    rank = {"bad": 0, "warn": 1, "info": 2}
+    return sorted(out, key=lambda x: rank[x["lvl"]])
+
+
+def now_sentence(running, jl):
+    act = [j for j in jl if j["active"]]
+    if act:
+        parts = []
+        for j in act:
+            cur = next((s["label"] for s in j["steps"] if s.get("active")), "Finishing")
+            nm = next(c["name"] for c in CHANNELS if c["id"] == j["cid"])
+            parts.append(f"{cur} · {nm}{' (English)' if j['lang'] == 'en' else ''}")
+        return " + ".join(parts)
+    other = [r for r in running if r.get("kind") and r["kind"] not in ("Scheduler", "Making video")]
+    return other[0]["kind"] if other else "Idle · waiting for the next timer"
+
+
+def state():
+    procs = processes(); running = []
+    for p in procs:
+        j = parse_job(p["args"]); kind = next((k for s, k in KINDS if j["script"] == s), None)
+        if kind is None and "hyperframes" in p["line"]:
+            kind = "Render (Chrome)"
+        if kind:
+            running.append({"pid": p["pid"], "kind": kind, "age": p["age"], "job": j, "cmd": p["line"][-160:]})
+    srv = server(); jl = jobs(running); sched = schedule(); fails = failed_units()
+    chs, token_days = channels(jl)
+    iss = issues(srv, fails, jl, sched, token_days, chs)
+    st = jload(SETTINGS, {"auto_approve": False, "min_score": 9}) or {}
+    return {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
+            "schedule": sched, "issues": iss, "channels": chs, "budgets": budgets(), "activity": activity(), "settings": st,
+            "token_days": token_days, "render_median": render_median()}
+
+
+# ---------------- brain graph ----------------
+def brain():
+    nodes, links = [{"id": "brain", "label": "Shared brain", "kind": "core"}], []
+    shared = open(os.path.join(ROOT, "knowledge", "lessons.md"), encoding="utf-8").read() if os.path.exists(os.path.join(ROOT, "knowledge", "lessons.md")) else ""
+    for i, l in enumerate([x[2:].strip() for x in shared.splitlines() if x.startswith("- ")][:24]):
+        nodes.append({"id": f"s{i}", "label": l[:140], "kind": "lesson", "cid": None}); links.append({"s": "brain", "t": f"s{i}"})
+    for c in CHANNELS[:3]:
+        nodes.append({"id": c["id"], "label": c["name"], "kind": "page", "color": c["color"]}); links.append({"s": "brain", "t": c["id"]})
+        for fn, kind in (("lessons.md", "lesson"), ("lessons-auto.md", "auto")):
+            p = os.path.join(ROOT, "channels", c["id"], fn)
+            if not os.path.exists(p):
+                continue
+            ls = [x[2:].strip() for x in open(p, encoding="utf-8").read().splitlines() if x.startswith("- ")]
+            for i, l in enumerate(ls[-14:]):
+                nid = f"{c['id']}-{fn[:4]}{i}"
+                nodes.append({"id": nid, "label": l[:140], "kind": kind, "cid": c["id"], "color": c["color"]}); links.append({"s": c["id"], "t": nid})
+        for d in (jload(os.path.join(ROOT, "channels", c["id"], "done.json"), []) or [])[-10:]:
+            nid = f"v-{c['id']}-{d['job']}"
+            nodes.append({"id": nid, "label": d.get("title") or d["job"], "kind": "video", "cid": c["id"], "status": d.get("status"), "color": c["color"]})
+            links.append({"s": c["id"], "t": nid})
+    return {"nodes": nodes, "links": links}
+
+
+# ---------------- actions ----------------
+def decide(cid, job, action, note=""):
+    sys.path.insert(0, os.path.join(ROOT, "engine"))
+    import inbox
+    if action == "approve":
+        inbox.set_status(cid, job, "approved"); inbox.telegram(f"✅ {cid} {job} approved (dashboard)")
+    elif action == "reject":
+        inbox.set_status(cid, job, "rejected"); inbox.telegram(f"❌ {cid} {job} rejected (dashboard)")
+    elif action == "fix":
+        inbox.set_status(cid, job, "fix", note); inbox.add_lesson(cid, note, job); inbox.telegram(f"✍️ {cid} {job} feedback (dashboard): {note[:200]}")
+    else:
+        raise ValueError("unknown action")
+    return {"ok": True}
+
+
+def make_now(cid, topic=""):
+    if cid not in ("tech", "katha", "raaz"):
+        raise ValueError("unknown channel")
+    unit = f"studio-job-dash-{int(time.time())}"
+    cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}",
+           PY, os.path.join(ROOT, "engine", "make.py"), cid] + ([topic[:160]] if topic else [])
+    subprocess.run(cmd, capture_output=True, timeout=20)
+    return {"ok": True, "unit": unit}
+
+
+class H(BaseHTTPRequestHandler):
+    def log_message(self, *a):
+        pass
+
+    def send(self, code, body, ctype="application/json"):
+        b = body if isinstance(body, bytes) else json.dumps(body, ensure_ascii=False).encode()
+        self.send_response(code); self.send_header("Content-Type", ctype); self.send_header("Content-Length", str(len(b)))
+        self.send_header("Cache-Control", "no-store"); self.end_headers(); self.wfile.write(b)
+
+    def do_GET(self):
+        u = urllib.parse.urlparse(self.path).path
+        try:
+            if u == "/api/state":
+                return self.send(200, state())
+            if u == "/api/brain":
+                return self.send(200, brain())
+            if u.startswith("/media/"):
+                parts = u.split("/")[2:]
+                if len(parts) != 3 or any(p in ("", ".", "..") or "/" in p for p in parts):
+                    return self.send(404, {"error": "bad path"})
+                p = os.path.realpath(os.path.join(OUT, *parts))
+                if not p.startswith(os.path.realpath(OUT) + os.sep) or not os.path.isfile(p):
+                    return self.send(404, {"error": "not found"})
+                return self.file(p)
+            f = "index.html" if u in ("/", "") else u.lstrip("/")
+            p = os.path.realpath(os.path.join(APP, f))
+            if p.startswith(APP + os.sep) and os.path.isfile(p) and not p.endswith(".py"):
+                return self.file(p)
+            return self.send(404, {"error": "not found"})
+        except Exception as e:
+            return self.send(500, {"error": str(e)[:300]})
+
+    def file(self, p):
+        ext = p.rsplit(".", 1)[-1].lower()
+        ct = {"html": "text/html; charset=utf-8", "js": "text/javascript", "css": "text/css", "jpg": "image/jpeg", "png": "image/png",
+              "mp4": "video/mp4", "svg": "image/svg+xml", "json": "application/json", "webmanifest": "application/manifest+json"}.get(ext, "application/octet-stream")
+        size = os.path.getsize(p); rng = self.headers.get("Range")
+        if rng and ext == "mp4":
+            a, _, b = rng.replace("bytes=", "").partition("-")
+            a = int(a or 0); b = min(int(b) if b else a + 2_000_000, size - 1)
+            with open(p, "rb") as f:
+                f.seek(a); data = f.read(b - a + 1)
+            self.send_response(206); self.send_header("Content-Type", ct); self.send_header("Accept-Ranges", "bytes")
+            self.send_header("Content-Range", f"bytes {a}-{b}/{size}"); self.send_header("Content-Length", str(len(data))); self.end_headers()
+            self.wfile.write(data); return
+        with open(p, "rb") as f:
+            data = f.read()
+        self.send_response(200); self.send_header("Content-Type", ct); self.send_header("Content-Length", str(size))
+        if ext == "mp4":
+            self.send_header("Accept-Ranges", "bytes")
+        self.send_header("Cache-Control", "no-cache"); self.end_headers(); self.wfile.write(data)
+
+    def do_POST(self):
+        u = urllib.parse.urlparse(self.path).path
+        try:
+            n = int(self.headers.get("Content-Length") or 0)
+            body = json.loads(self.rfile.read(n) or b"{}") if n < 100000 else {}
+            if u == "/api/decide":
+                return self.send(200, decide(body["cid"], body["job"], body["action"], body.get("note", "")[:1000]))
+            if u == "/api/make":
+                return self.send(200, make_now(body["cid"], body.get("topic", "")))
+            if u == "/api/settings":
+                st = jload(SETTINGS, {}) or {}
+                if "auto_approve" in body:
+                    st["auto_approve"] = bool(body["auto_approve"])
+                if "min_score" in body:
+                    st["min_score"] = max(7, min(10, int(body["min_score"])))
+                jsave(SETTINGS, st); return self.send(200, st)
+            if u == "/api/reset-failed":
+                subprocess.run(["sudo", "systemctl", "reset-failed", "studio-*"], capture_output=True, timeout=20)
+                return self.send(200, {"ok": True})
+            return self.send(404, {"error": "not found"})
+        except Exception as e:
+            return self.send(400, {"error": str(e)[:300]})
+
+
+if __name__ == "__main__":
+    threading.Thread(target=sampler, daemon=True).start()
+    ThreadingHTTPServer(("127.0.0.1", int(os.environ.get("PORT", "4788"))), H).serve_forever()

@@ -39,7 +39,20 @@ def send(cid, job):
         m[str(mid)] = {"channel": cid, "job": job}
         save(os.path.join(OUT, "tg-map.json"), m)
         log("sent for approval", cid, job, mid)
+        auto_approve(cid, job, rv)
     return mid
+
+
+def auto_approve(cid, job, rv):
+    """Dashboard setting (~/studio-out/dash-settings.json): approve videos that passed review with a high visual score."""
+    st = load(os.path.join(OUT, "dash-settings.json"), {}) or {}
+    score = ((rv or {}).get("checks") or {}).get("vision", {}).get("score")
+    if not st.get("auto_approve") or not (rv or {}).get("ok") or score is None or score < st.get("min_score", 9):
+        return
+    import inbox
+    inbox.set_status(cid, job, "approved")
+    telegram(f"🤖 {cid} {job} auto-approved (score {score}/10). Reply 'no' to the video above to stop it.")
+    log("auto-approved", cid, job, score)
 
 
 FORCE = "--force" in sys.argv
