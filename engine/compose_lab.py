@@ -234,7 +234,7 @@ def page(plan, timed, total, theme, assets):
             js.append(f'tl.set("#{sid}p",{{opacity:0}},{a:.3f});')
         inner += f'<div id="{sid}cam" class="cam">{hero}</div>'
         inner += (f'<div class="hud"><span class="hl"><b></b>{esc(series)}</span>'
-                  f'<span class="hr">{esc((s.get("hud_right") or s.get("label") or "").upper())}</span></div>')
+                  f'<span class="hr">{esc("" if (s.get("hud_right") or "").upper() in ("", (s.get("label") or "").upper()) else s["hud_right"].upper())}</span></div>')   # no duplicate of the pill
         js.append(f'tl.fromTo("#{sid}cam",{{scale:1.05}},{{scale:1.0,duration:0.9,ease:"power3.out",immediateRender:false}},{a:.3f});')
         js.append(f'tl.to("#{sid}cam",{{scale:1.03,duration:{max(0.4, d - 0.9):.3f},ease:"sine.inOut"}},{a + 0.9:.3f});')
         if i:
