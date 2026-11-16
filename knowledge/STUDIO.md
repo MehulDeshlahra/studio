@@ -32,7 +32,7 @@
 
 ## Server
 - Muse bridge 1: 127.0.0.1:20240 (jb-musebridge + jb-muse-browser, CDP 9444, profile ~/musebridge/profile).
-- Muse bridge 2 (second account): 127.0.0.1:20241 (jb-musebridge2 + jb-muse-browser2, CDP 9445, profile ~/musebridge2/profile). Installed 16 Nov, NOT started: waits for the owner's login.
+- Muse bridge 2 (second account): 127.0.0.1:20241 (jb-musebridge2 + jb-muse-browser2, CDP 9445, profile ~/musebridge2/profile). LIVE 16 Nov 20:44 (second Meta account logged in by owner; test image ok; own usage.json). musebridge.js is a COPY (a symlink made node use ~/musebridge as __dirname and share usage) - copy again after bridge updates.
 - Bridge code is shared (~/musebridge2/musebridge.js is a link); MUSE_BROWSER_SVC picks which browser it stops/starts.
 
 ## Open
