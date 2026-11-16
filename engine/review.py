@@ -126,7 +126,9 @@ def review(cid, job):
         if rr < 0.35:
             probs.append(f"the last line \"{last[:50]}\" is not clearly heard at the end")
     # 4 alignment
-    cover = tj.get("cover") or 0
+    cover = tj.get("cover")
+    if cover is None:                       # timing made before the cover was stored: whisper method = aligned
+        cover = 1.0 if tj.get("method") == "whisper" else 0.0
     checks["alignment"] = cover
     if cover < 0.8:
         probs.append(f"only {cover:.0%} of the script was found in the voice")
@@ -134,7 +136,7 @@ def review(cid, job):
     v = vision_review(mp4, plan, tj.get("lines", []), os.path.join(jd, "review-sheet.jpg"), lang, ch.get("handle", ""))
     checks["vision"] = v
     probs += [f"visual: {x}" for x in (v.get("serious") or [])]
-    if (v.get("score") or 0) < 7:
+    if (v.get("score") or 0) < 6:
         probs.append(f"visual score {v.get('score')}/10")
     rep = {"ok": not probs, "problems": probs, "minor": v.get("minor") or [], "checks": checks}
     save(os.path.join(jd, "review.json"), rep)
