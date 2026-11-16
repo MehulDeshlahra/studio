@@ -10,3 +10,4 @@
 - Story: boring = slow setup, old-world setting, the narrator explaining. Better: second person ("Tum ho detective"),
   a relatable modern Indian setting (shaadi, hostel, office, train), stakes in the first line, one line per suspect,
   2 sharp clues, a 3-second countdown before the vote.
+- 16 Nov case2-p1-en: can you add a reviewer in your server which reviews before sending here. i am not free enough to point silly mistakes. send after your full review. issue in starting
