@@ -31,6 +31,9 @@ def send(cid, job):
                 "-movflags", "+faststart", prev], timeout=1800)
         mp4 = prev
     mid = telegram(txt[:1000], video=mp4)
+    cv = os.path.join(jd, "cover.jpg")
+    if os.path.exists(cv):
+        telegram("cover / thumbnail", photo=cv)
     if isinstance(mid, int):
         m = load(os.path.join(OUT, "tg-map.json"), {})
         m[str(mid)] = {"channel": cid, "job": job}

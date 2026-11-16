@@ -30,6 +30,7 @@ def pick_topic(ch):
 
 def stage_assets(ch, p, job):
     look = ch.get("visuals", {}).get("look", "")
+    theme = ch.get("theme", {})
     adir = os.path.join(job, "assets"); os.makedirs(adir, exist_ok=True)
     got = load(os.path.join(job, "assets.json"), {})
     last_img = None
@@ -264,6 +265,7 @@ def main():
     if not any(d["job"] == job_id for d in done):
         done.append({"job": job_id, "topic": topic, "title": p.get("title"), "qc_ok": rep["ok"], "status": "made"})
         save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
+    import thumb; thumb.make(ch["id"], job_id)
     import review
     rv = review.review(ch["id"], job_id)
     voice_fault = any(("instructions" in x or "does not start" in x or "starts late" in x or "of the script" in x)

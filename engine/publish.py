@@ -21,7 +21,7 @@ def _req(url, data=None, headers=None, method=None):
 def instagram(acc, mp4, caption):
     tok, uid = acc["page_token"], acc["ig_user_id"]
     c = _req(f"{G}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
-                                    "share_to_feed": "true", "access_token": tok})
+                                    "share_to_feed": "true", "thumb_offset": "0", "access_token": tok})
     cid = c["id"]
     size = os.path.getsize(mp4)
     _req(f"https://rupload.facebook.com/ig-api-upload/v23.0/{cid}", open(mp4, "rb").read(),
@@ -104,6 +104,13 @@ def post_one(cid, dry=False):
     plan = load(os.path.join(job, "plan.json"), {})
     mp4 = os.path.join(job, f"{cid}-{nxt['job']}.mp4")
     caption = (plan.get("caption", "") + "\n\n" + " ".join(plan.get("hashtags", [])[:8])).strip()
+    cv = os.path.join(job, "cover.jpg")
+    if os.path.exists(cv):
+        try:
+            import thumb
+            mp4 = thumb.stamp(mp4, cv, os.path.join(job, "post.mp4"))
+        except Exception as e:
+            log("cover stamp failed, posting plain", str(e)[:150])
     if dry:
         log("publish dry", cid, nxt["job"], caption[:80]); return
     res = {}
