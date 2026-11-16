@@ -133,3 +133,12 @@ Method: Apify hashtag reels (#youdecide #hindimystery #suspensestory #mysterysto
 - your.calltv 1.7M / 2.8k / 88 s: "LET GO or HOLD ON? The majority writes Part 4."
 Shared: speech from frame 0, one situation, game-like UI (HUD, message bubbles, paper clue cards, A/B/C cards), a "Part N" tag, last frame = question + promise of next part, -14 LUFS, 46-98 s. Most are flat 2D vector; our edge = cinematic noir stills + the same UI language + a clue the viewer can truly solve + a recurring Inspector.
 Rules for raaz (also in channels/raaz/bible.md): fair-play clue hidden in the audio, answer in Part 2, HUD "PART n" + "SURAAG k/3", paper clue cards, A/B/C card, brisk 2.3 words/s narration, 60-80 s.
+
+## Round 7: story pages and naming (16 Nov)
+Method: Apify hashtag reels (#hindistory #hindikahani #aistory #plottwist #storytime #animatedstory #moralstory #horrorstory #emotionalstory #part1, 200 reels), top 8 downloaded, 8-frame sheets (watch/story/).
+Biggest story reels this month (plays): animated_ai_vdos 41.2M (statue princess comes alive, 78 s), smrbio 26.2M (jinn + greedy mukhiya + lion, Part 1, 103 s), deep_storie01 20.8M (baby elephant + doll, moral, 48 s), _rangrez_ofc 13.8M (phone-network bars as girls 4G/5G/"?G", family drama, 112 s), rasel_vai36 12.9M (trust test, 25 s), alsuh__ai 10.5M (school drama, Part 1), trend2d 9.8M (calf brings corn to mother, 28 s), starfish_ai_series 9.6M ("Ishq me fana" season 2 ep 2).
+Findings:
+- The 10-40M tier is emotional/moral/family/love/fantasy 3D-Pixar AI stories, often with animals or personified objects. Mystery / you-decide is a smaller tier (1-9M). A mystery-only page caps the reach.
+- What sells is the series and the characters ("Part 6", "Season 2 Ep 2", recurring Sheru boss), not the page name. Page names are generic studio names: "AI Animation", "DeePSTORIES", "Rangrez | 3D Stories", "AI STORYHUB", "Kaagaz Lab", "The Story Chest".
+- So the page name should be a broad story-studio name; each format (mystery, moral, love, fantasy, karma, horror) lives inside as a named series with its own Part numbers.
+Free handles (16 Nov): kahaniverse, kahanilab, kissakhana, kahanikaar.studio, storyroz, kahani.mehfil, aglakya.hoga, thetwist.in, plottwist.daily, raazkafaisla. Taken: ekkahani.roz, rozkikahani, kahani.ghar, kissa.studio, theraazroom, andar ki baat.
