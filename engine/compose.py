@@ -87,6 +87,42 @@ def page(plan, timed, total, theme, assets):
                 js.append(f'tl.fromTo("#{sid}b",{{scale:2.6,opacity:0,rotation:-6}},{{scale:1,opacity:1,rotation:-2,duration:0.35,ease:"power4.out",immediateRender:false}},{a + 0.1:.3f});')
                 js.append(f'tl.set("#{sid}b",{{opacity:0}},{a:.3f});')
                 cues.append({"t": round(a + 0.12, 3), "file": "sfx/impact.mp3", "gain_db": -18, "align": "onset"})
+
+            js.append(f'tl.fromTo("#{sid}k",{{y:140,rotation:4,opacity:0}},{{y:0,rotation:-1.5,opacity:1,duration:0.45,ease:"back.out(1.6)",immediateRender:false}},{a + 0.12:.3f});')
+            js.append(f'tl.set("#{sid}k",{{opacity:0}},{a:.3f});')
+            cues.append({"t": round(a + 0.12, 3), "file": "sfx/impact.mp3", "gain_db": -20, "align": "onset"})
+        if kind == "choice":
+            inner += '<div class="shade"></div>'
+            for j, o in enumerate((s.get("options") or [])[:3]):
+                inner += f'<div id="{sid}o{j}" class="opt"  style="top:{470 + j * 230}px"><span class="ab">{"ABC"[j]}</span>{esc(o.upper())}</div>'
+                js.append(f'tl.fromTo("#{sid}o{j}",{{x:-700,opacity:0}},{{x:0,opacity:1,duration:0.4,ease:"power3.out",immediateRender:false}},{a + 0.2 + j * 0.28:.3f});')
+                js.append(f'tl.set("#{sid}o{j}",{{opacity:0}},{a:.3f});')
+                cues.append({"t": round(a + 0.2 + j * 0.28, 3), "file": "sfx/click-select.mp3", "gain_db": -18, "align": "onset"})
+            inner += f'<div id="{sid}cm" class="cmt">COMMENT KARO: A, B YA C</div>'
+            js.append(f'tl.fromTo("#{sid}cm",{{scale:0.7,opacity:0}},{{scale:1,opacity:1,duration:0.35,ease:"back.out(2)",immediateRender:false}},{a + 1.2:.3f});')
+            js.append(f'tl.to("#{sid}cm",{{scale:1.06,duration:0.5,yoyo:true,repeat:5,ease:"sine.inOut"}},{a + 1.6:.3f});')
+            js.append(f'tl.set("#{sid}cm",{{opacity:0}},{a:.3f});')
+        if plan.get("hud_left"):
+            inner += f'<div class="hud"><span>{esc(plan["hud_left"])}</span><span>{esc(s.get("hud_right", ""))}</span></div>'
+        if kind == "clue":
+            inner += (f'<div class="shade"></div><div id="{sid}k" class="paper"><div class="stamp">{esc(s.get("label", "SURAAG").upper())}</div>'
+                      f'<div class="who">{esc(s.get("who", "").upper())}</div><div class="quote">&ldquo;{esc(s.get("quote", ""))}&rdquo;</div></div>')
+            js.append(f'tl.fromTo("#{sid}k",{{y:140,rotation:4,opacity:0}},{{y:0,rotation:-1.5,opacity:1,duration:0.45,ease:"back.out(1.6)",immediateRender:false}},{a + 0.12:.3f});')
+            js.append(f'tl.set("#{sid}k",{{opacity:0}},{a:.3f});')
+            cues.append({"t": round(a + 0.12, 3), "file": "sfx/impact.mp3", "gain_db": -20, "align": "onset"})
+        if kind == "choice":
+            inner += '<div class="shade"></div>'
+            for j, o in enumerate((s.get("options") or [])[:3]):
+                inner += f'<div id="{sid}o{j}" class="opt" style="top:{470 + j * 230}px"><span class="ab">{"ABC"[j]}</span>{esc(o.upper())}</div>'
+                js.append(f'tl.fromTo("#{sid}o{j}",{{x:-700,opacity:0}},{{x:0,opacity:1,duration:0.4,ease:"power3.out",immediateRender:false}},{a + 0.2 + j * 0.28:.3f});')
+                js.append(f'tl.set("#{sid}o{j}",{{opacity:0}},{a:.3f});')
+                cues.append({"t": round(a + 0.2 + j * 0.28, 3), "file": "sfx/click-select.mp3", "gain_db": -18, "align": "onset"})
+            inner += f'<div id="{sid}cm" class="cmt">COMMENT KARO: A, B YA C</div>'
+            js.append(f'tl.fromTo("#{sid}cm",{{scale:0.7,opacity:0}},{{scale:1,opacity:1,duration:0.35,ease:"back.out(2)",immediateRender:false}},{a + 1.2:.3f});')
+            js.append(f'tl.to("#{sid}cm",{{scale:1.06,duration:0.5,yoyo:true,repeat:5,ease:"sine.inOut"}},{a + 1.6:.3f});')
+            js.append(f'tl.set("#{sid}cm",{{opacity:0}},{a:.3f});')
+        if plan.get("hud_left"):
+            inner += f'<div class="hud"><span>{esc(plan["hud_left"])}</span><span>{esc(s.get("hud_right", ""))}</span></div>'
         if s.get("title"):
             inner += f'<div id="{sid}t" class="tag"><span class="pill">{esc(s["title"].upper())}</span></div>'
             js.append(f'tl.fromTo("#{sid}t",{{scale:0.3,opacity:0}},{{scale:1,opacity:1,duration:0.3,ease:"back.out(2.5)",immediateRender:false}},{a + 0.15:.3f});')
@@ -145,6 +181,24 @@ body{{margin:0;background:{bg}}}
 .small{{position:absolute;left:90px;width:900px;top:800px;text-align:center;font-size:66px;color:#fff;text-shadow:0 6px 0 #000}}
 .cap{{position:absolute;left:90px;width:900px;top:1190px;z-index:5;text-align:center;font-size:80px;line-height:1.05;color:#fff;
   -webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 7px 0 #000}}
+.paper{{position:absolute;left:110px;width:860px;top:520px;background:#e9dcc0;color:#2a1a0a;border-radius:10px;padding:48px 44px 54px;box-shadow:0 24px 60px rgba(0,0,0,.65);transform:rotate(-1.5deg)}}
+.paper .stamp{{position:absolute;top:-34px;left:34px;background:#b3261e;color:#fff;font-size:44px;padding:8px 24px;border-radius:8px;transform:rotate(-3deg)}}
+.paper .who{{font-size:62px;line-height:1.05;margin-top:12px;color:#7a1a12}}
+.paper .quote{{font-family:Inter,sans-serif;font-weight:700;font-size:46px;line-height:1.25;margin-top:22px}}
+.opt{{position:absolute;left:100px;width:880px;height:180px;display:flex;align-items:center;font-size:62px;color:#fff;background:rgba(10,16,22,.88);border:5px solid {acc};border-radius:26px;box-shadow:0 12px 0 #000}}
+.opt .ab{{display:inline-block;width:130px;text-align:center;font-size:96px;color:{acc};margin-right:10px}}
+.cmt{{position:absolute;left:0;width:{W}px;top:1150px;text-align:center;font-size:58px;color:#fff;text-shadow:0 6px 0 #000;z-index:4}}
+.hud{{position:absolute;left:70px;width:940px;top:200px;display:flex;justify-content:space-between;font-family:Inter,sans-serif;font-weight:800;font-size:34px;color:#fff;letter-spacing:3px;z-index:3;text-shadow:0 3px 0 #000}}
+.hud span:first-child{{background:#b3261e;padding:6px 18px;border-radius:8px}}
+.paper{{position:absolute;left:110px;width:860px;top:470px;background:#e9dcc0;color:#2a1a0a;border-radius:10px;padding:48px 44px 54px;box-shadow:0 24px 60px rgba(0,0,0,.65)}}
+.paper .stamp{{position:absolute;top:-34px;left:34px;background:#b3261e;color:#fff;font-size:44px;padding:8px 24px;border-radius:8px;transform:rotate(-3deg)}}
+.paper .who{{font-size:62px;line-height:1.05;margin-top:12px;color:#7a1a12}}
+.paper .quote{{font-family:Inter,sans-serif;font-weight:700;font-size:46px;line-height:1.25;margin-top:22px}}
+.opt{{position:absolute;left:100px;width:880px;height:180px;display:flex;align-items:center;font-size:62px;color:#fff;background:rgba(10,16,22,.88);border:5px solid {acc};border-radius:26px;box-shadow:0 12px 0 #000}}
+.opt .ab{{display:inline-block;width:130px;text-align:center;font-size:96px;color:{acc};margin-right:10px}}
+.cmt{{position:absolute;left:0;width:{W}px;top:1150px;text-align:center;font-size:58px;color:#fff;text-shadow:0 6px 0 #000;z-index:4}}
+.hud{{position:absolute;left:70px;width:940px;top:200px;display:flex;justify-content:space-between;font-family:Inter,sans-serif;font-weight:800;font-size:34px;color:#fff;letter-spacing:3px;z-index:3;text-shadow:0 3px 0 #000}}
+.hud span:first-child{{background:#b3261e;padding:6px 18px;border-radius:8px}}
 .cap .w{{display:inline-block}} .cap .key{{color:{acc}}}
 """
     cap_js = """document.querySelectorAll(".cap").forEach(c=>{const s=parseFloat(c.dataset.start);

@@ -33,7 +33,7 @@ def stage_assets(ch, p, job):
         if k in got and all(os.path.exists(v) for v in got[k].values()):
             last_img = got[k].get("image", last_img); continue
         a = {}
-        if s.get("prompt") and s["type"] in ("image", "clip", "card", "flow"):
+        if s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice"):
             prompt = s["prompt"] + (". " + look if look and look.lower()[:20] not in s["prompt"].lower() else "") + \
                 ". Vertical 9:16, no text, no letters, no logos, no watermark."
             if s["type"] == "flow":
