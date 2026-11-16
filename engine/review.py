@@ -140,6 +140,26 @@ def review(cid, job):
     checks["alignment"] = cover
     if cover < 0.8:
         probs.append(f"only {cover:.0%} of the script was found in the voice")
+    # 6b blank stretch (17 Nov: a clip ended early and left ~1 s of empty frame; the 2-frames-per-scene sheet missed it):
+    #    every 0.25 s, look at the picture area above the captions; nearly flat for 0.75 s+ = blank
+    try:
+        import numpy as np
+        w_, h_ = 54, 96
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", mp4, "-vf", f"fps=4,scale={w_}:{h_},format=gray", "-f", "rawvideo", "-"],
+                             capture_output=True).stdout
+        fr = np.frombuffer(raw, np.uint8).reshape(-1, h_, w_)[:, int(h_ * 0.16):int(h_ * 0.6), :].astype(np.float32)
+        flat = (fr.std(axis=(1, 2)) < 6) & (fr.max(axis=(1, 2)) < 70)
+        run_, start_ = 0, 0
+        for k, fl in enumerate(list(flat) + [False]):
+            if fl:
+                run_ += 1; start_ = start_ if run_ > 1 else k
+            else:
+                if run_ >= 3 and start_ / 4 < (f.get("dur") or 999) - 2.5:      # end card excluded
+                    probs.append(f"blank frame from {start_ / 4:.1f} s to {(start_ + run_) / 4:.1f} s (nothing in the picture area)")
+                run_ = 0
+        checks["blank_frames"] = int(flat.sum())
+    except Exception as e:
+        log("review blank check failed", str(e)[:120])
     # 7 vision
     v = vision_review(mp4, plan, tj.get("lines", []), os.path.join(jd, "review-sheet.jpg"), lang, ch.get("handle", ""))
     checks["vision"] = v

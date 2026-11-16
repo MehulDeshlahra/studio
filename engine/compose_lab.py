@@ -71,9 +71,16 @@ def page(plan, timed, total, theme, assets):
         img = (assets.get(i) or {}).get("image")
         vid = (assets.get(i) or {}).get("video")
         if kind == "clip" and vid:
+            try:                                 # the video element ends with its clip, so the held image shows after it
+                import subprocess as _sp
+                vlen = float(_sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", vid],
+                                     capture_output=True, text=True, timeout=30).stdout.strip()) - 0.3
+            except Exception:
+                vlen = d
+            vd = max(0.5, min(d, vlen))
             top.append(f'<video id="v{i}" class="clip vid" src="assets/{os.path.basename(vid)}" muted playsinline '
-                       f'data-start="{a:.3f}" data-duration="{d:.3f}" data-media-start="0.2" data-track-index="0"></video>')
-            js.append(f'tl.fromTo("#v{i}",{{scale:1.08}},{{scale:1.0,duration:{d:.3f},ease:"none"}},{a:.3f});')
+                       f'data-start="{a:.3f}" data-duration="{vd:.3f}" data-media-start="0.2" data-track-index="0"></video>')
+            js.append(f'tl.fromTo("#v{i}",{{scale:1.08}},{{scale:1.0,duration:{vd:.3f},ease:"none"}},{a:.3f});')
         elif kind in ("object", "clip") and img:
             hero = f'<img id="{sid}h" class="prop" src="assets/{os.path.basename(img)}">'
             js.append(f'tl.fromTo("#{sid}h",{{y:70,scale:0.92,opacity:0}},{{y:0,scale:1,opacity:1,duration:0.9,ease:"power4.out",immediateRender:false}},{a:.3f});')
