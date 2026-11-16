@@ -152,3 +152,13 @@ Checked each name on: Instagram exact handle + ".en" handle (Apify profile looku
 - Rejected on meaning: kissify, kissanova (read as "kiss").
 - Round 8b (wider words, 16 Nov): ~75 more names checked on YouTube then Instagram. Free on both: plotlok, tilism, tilism.tv, mohalla.tv, suno.kahani, kahaneo, kahaanio, kissaup, kissaaro. Look-alikes: tilism -> @tilism.in (1.4k) + "tilismati amliyat" astrology/black-magic accounts (bad association); plotlok none; mohalla.tv only unrelated Iranian "moallatv". Taken on IG: phir.kya.hua (416), phirkya, phir.kya, raatkibaat, dastaan.tv, chaupal.tv, fablo, twistlok, jugnu.tales, aage.kya. Owner: kahanikart not usable in app (reserved); ".in/.official" handles look like websites / too long.
 - Round 8c (16 Nov, naming research: vidIQ/TubeBuddy: short, easy to spell, flexible, unique beats literal; naming research (SMIT VUB, Alter & Oppenheimer): 2 syllables, easy to pronounce = better recall; GitHub naming tools (glacierphonk/naming metaphor method, thorwhalen/brand, veyralabs naming-suite)). Metaphor method: everyday Indian objects that mean "story that hooks you". Free on IG + YT: lattu.tv, jugnoo.tv, laltain.tv, chakkar.tv, kaanta.tv, chirag.tv, taleo (rejected: Oracle Taleo trademark). Taken IG: palat, palto, jhatka, gaanth, pataka, twistoo, dhamaka.tv, popat.tv.
+
+## Round 9: mythology / katha reels (16 Nov)
+Method: Apify hashtags #pauranikkatha #mahabharat #ramayan #sanatandharma #mythology #krishna #shivpuran (140 reels), top 8 downloaded, 8-frame sheets in watch/katha/.
+- pauranix 13.1M / 2.7k comments / 40 s: modern parable ("Mera bhagwan mujhe bachayega" priest in a flood refuses boat, army helicopter), photoreal cinematic.
+- deva.toontales 12.4M / 5.1k / 78 s: "Hanuman ji ki kundli mein aa gaya Shani!" Part 1, 3D cartoon, "story you probably haven't heard".
+- mahadevunfiltered 9.6M / 62 s: today's family scene (Papa stops son with earrings at aarti) + Mahadev's answer; 2D, captions word by word.
+- pauranik.didi 8.6M / 109 s: Panchmukhi Hanuman Part 1, flat 2D, Hindi text.
+- bhaktiangan 6.4M / 23 s(!): Karna had gold in heaven but no food because he never gave anna daan; painterly cinematic; lesson in one line.
+Shared: line 1 = a paradox or "you haven't heard this", a lesson that matters today, Part numbers for long stories, 23-80 s, Hindi Devanagari captions on many, warm gold palette. Our edge: painterly cinematic stills + Charon storyteller voice + synced highlight captions + one-line lesson card + a question to the viewer.
+Rules for katha: say "lok katha" when it's folk tradition, name the scripture when it is one; respectful faces; no miracles claimed as history.
