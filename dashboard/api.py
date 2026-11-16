@@ -9,6 +9,8 @@ Runs as systemd unit studio-dash on 127.0.0.1:4788; reached only through Tailsca
   POST /api/reset-failed     clear failed studio-* units"""
 import glob, json, os, re, shutil, statistics, subprocess, sys, threading, time, urllib.parse, urllib.request
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import extra
 
 HOME = os.path.expanduser("~")
 ROOT = os.path.join(HOME, "studio")
@@ -320,12 +322,12 @@ def meta_pages():
         return _cache["pages"]
     try:
         ut = open(os.path.join(HOME, ".studio-meta-user.token")).read().strip()
-        d = json.load(urllib.request.urlopen(f"{G}/me/accounts?fields=name,id,followers_count,fan_count,instagram_business_account{{username,followers_count,media_count}}&limit=50&access_token={ut}", timeout=30))
+        d = json.load(urllib.request.urlopen(f"{G}/me/accounts?fields=name,id,followers_count,fan_count,instagram_business_account{{id,username,followers_count,media_count}}&limit=50&access_token={ut}", timeout=30))
         pages = {}
         for p in d.get("data", []):
             ig = p.get("instagram_business_account") or {}
             pages[ig.get("username") or p["id"]] = {"fb": p.get("followers_count", p.get("fan_count", 0)) or 0, "ig": ig.get("followers_count", 0) or 0,
-                                                   "posts": ig.get("media_count", 0) or 0, "page": p["id"], "name": p["name"]}
+                                                   "posts": ig.get("media_count", 0) or 0, "page": p["id"], "name": p["name"], "igid": ig.get("id")}
         dbg = json.load(urllib.request.urlopen(f"{G}/debug_token?input_token={ut}&access_token={ut}", timeout=30))["data"]
         pages["_token_days"] = round((dbg.get("data_access_expires_at", 0) - time.time()) / 86400)
         _cache.update(t=time.time(), pages=pages)
@@ -369,7 +371,7 @@ def channels(jl):
         else:
             status, note, yt_ok = "manual", "Manual · not automated", None
         spark = [hist[d].get(c["ig"], None) for d in days]
-        out.append({**c, "fb": p.get("fb", 0), "igF": p.get("ig", 0), "posts": p.get("posts", 0), "status": status, "note": note,
+        out.append({**c, "igid": p.get("igid"), "fb": p.get("fb", 0), "igF": p.get("ig", 0), "posts": p.get("posts", 0), "status": status, "note": note,
                     "counts": cnt, "yt_ok": yt_ok, "spark": spark,
                     "fb_url": f"https://facebook.com/{p.get('page') or c['page']}" if (p.get("page") or c["page"]) else None})
     return out, pages.get("_token_days")
@@ -478,9 +480,19 @@ def state():
     chs, token_days = channels(jl)
     iss = issues(srv, fails, jl, sched, token_days, chs)
     st = jload(SETTINGS, {"auto_approve": False, "min_score": 9}) or {}
-    return {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
+    out = {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
             "schedule": sched, "issues": iss, "channels": chs, "budgets": budgets(), "activity": activity(), "settings": st,
             "token_days": token_days, "render_median": render_median()}
+    out["needs"] = extra.needs_you(out)
+    _last.update(t=time.time(), s=out)
+    return out
+
+
+_last = {"t": 0, "s": None}
+
+
+def state_cache():
+    return _last["s"] if _last["s"] and time.time() - _last["t"] < 20 else state()
 
 
 # ---------------- brain graph ----------------
@@ -547,6 +559,16 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, state())
             if u == "/api/brain":
                 return self.send(200, brain())
+            qs = dict(urllib.parse.parse_qsl(urllib.parse.urlparse(self.path).query))
+            if u == "/api/job":
+                return self.send(200, extra.job_detail(sys.modules[__name__], qs["cid"], qs["job"]))
+            if u == "/api/posts":
+                c = next((x for x in state_cache()["channels"] if x["id"] == qs.get("cid")), None)
+                return self.send(200, extra.posts(c["igid"]) if c and c.get("igid") else [])
+            if u == "/api/sources":
+                return self.send(200, extra.sources(state_cache()))
+            if u == "/api/brief":
+                return self.send(200, extra.brief(state_cache(), qs.get("force") == "1"))
             if u.startswith("/media/"):
                 parts = u.split("/")[2:]
                 if len(parts) != 3 or any(p in ("", ".", "..") or "/" in p for p in parts):
@@ -599,6 +621,12 @@ class H(BaseHTTPRequestHandler):
                 if "min_score" in body:
                     st["min_score"] = max(7, min(10, int(body["min_score"])))
                 jsave(SETTINGS, st); return self.send(200, st)
+            if u == "/api/ask":
+                return self.send(200, extra.ask(state_cache(), body.get("q", "")))
+            if u == "/api/task":
+                return self.send(200, extra.set_task(body["id"], body.get("done", True)))
+            if u == "/api/test":
+                return self.send(200, extra.test_source(body.get("name", "")))
             if u == "/api/reset-failed":
                 subprocess.run(["sudo", "systemctl", "reset-failed", "studio-*"], capture_output=True, timeout=20)
                 return self.send(200, {"ok": True})

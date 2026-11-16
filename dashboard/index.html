@@ -1,40 +1,38 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cut">
-<meta name="theme-color" content="#070b16">
+<meta name="theme-color" content="#fafafa">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg">
-<title>Studio Control</title>
+<title>Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="app.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css?v=5">
+<script>if(localStorage.theme)document.documentElement.dataset.theme=localStorage.theme</script>
 </head>
 <body>
-<div class="bg-glow"></div>
 <div class="app">
- <aside id="side">
-  <div class="brand"><div class="logo">S</div><div><b>Studio</b><small>Control room</small></div></div>
+ <aside class="side">
+  <div class="ws"><div class="mark">S</div><div><div class="ws-n">Studio</div><div class="ws-s">Oracle · Mumbai</div></div></div>
   <nav id="nav"></nav>
-  <div class="side-foot">
-   <div class="live"><span class="pulse"></span><span id="liveTx">Connecting…</span></div>
-   <button class="ghost" onclick="toggleTheme()">◐ Theme</button>
-  </div>
+  <div class="side-f"><span id="sync" class="sync"><i class="dot"></i><span>Connecting</span></span></div>
  </aside>
- <main>
-  <header class="top">
-   <div class="m-brand"><div class="logo">S</div><b>Studio</b></div>
-   <div id="banner" class="banner"></div>
+ <div class="main">
+  <header class="bar">
+   <div class="crumb" id="crumb"></div>
+   <button class="kbtn" onclick="openPalette()"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Ask or jump to…</span><kbd>Ctrl K</kbd></button>
+   <button class="icon-btn" title="Theme" onclick="toggleTheme()"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </header>
-  <div id="view"></div>
- </main>
+  <div id="view" class="view"></div>
+ </div>
 </div>
 <nav class="tabbar" id="tabbar"></nav>
+<div id="drawer" class="drawer" onclick="if(event.target===this)closeDrawer()"><div class="panel" id="panel"></div></div>
+<div id="pal" class="pal" onclick="if(event.target===this)closePalette()"><div class="pal-box" id="palbox"></div></div>
 <div id="toast" class="toast"></div>
-<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="sheet" id="sheet"></div></div>
-<script src="app.js?v=3"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
