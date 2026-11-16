@@ -1,7 +1,7 @@
 {
     "id":  "raaz",
     "name":  "TBD (story page name parked)",
-    "status":  "planned",
+    "status":  "pilot",
     "language":  "Hindi / Hinglish",
     "format":  "Interactive suspense case in 3-4 parts; each part ends with an A/B choice; viewers vote in comments; the next part follows the winning vote (counted from our own post\u0027s comments via the official IG API)",
     "voice":  {
@@ -23,7 +23,8 @@
               ],
     "schedule":  {
                      "posts_per_day":  1,
-                     "approve_first":  10
+                     "approve_first":  10,
+                     "backlog":  6
                  },
     "accounts":  {
                      "instagram":  null,
@@ -54,5 +55,6 @@
                    "Dil Se (emotional, love, family)",
                    "Jaadu (fantasy, talking objects/animals)",
                    "Darr (light horror)"
-               ]
+               ],
+    "english":  true
 }

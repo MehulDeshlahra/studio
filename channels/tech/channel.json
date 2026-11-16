@@ -43,7 +43,8 @@
               ],
     "schedule":  {
                      "posts_per_day":  2,
-                     "approve_first":  10
+                     "approve_first":  10,
+                     "backlog":  6
                  },
     "accounts":  {
                      "instagram":  null,
@@ -80,5 +81,6 @@
                     "Tech news, samjho: big tech/AI news (CEO changes, launches, bans, AI rules) explained in 30-45 s; only verified facts from 2+ trusted sources named on screen; real official visuals, no AI fakes of real people; neutral tone, no speculation; no politics/general news"
                 ],
     "handle":  "@kaise.tech",
-    "locked":  "2026-11-16"
+    "locked":  "2026-11-16",
+    "english":  true
 }

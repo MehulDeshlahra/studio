@@ -8,7 +8,8 @@
                   "engine":  "gemini-3.8-flash-tts",
                   "voice":  "Charon",
                   "one_request_per_reel":  true,
-                  "style":  "a warm Hindi storyteller with modern pace, respectful, clear pronunciation of Sanskrit names, emotional at the turning point"
+                  "style":  "a warm Hindi storyteller with modern pace, respectful, clear pronunciation of Sanskrit names, emotional at the turning point",
+                  "style_en":  "a warm Indian-English storyteller, clear accent, calm and emotional at the turning point"
               },
     "visuals":  {
                     "primary":  "muse",
@@ -22,7 +23,8 @@
               ],
     "schedule":  {
                      "posts_per_day":  1,
-                     "approve_first":  10
+                     "approve_first":  10,
+                     "backlog":  6
                  },
     "accounts":  {
                      "instagram":  null,
@@ -47,5 +49,6 @@
                        ],
     "edit":  {
                  "wps":  2.4
-             }
+             },
+    "english":  true
 }

@@ -2,7 +2,7 @@
 # Studio engine timers: studio-make (every 2 h, at most one video), studio-inbox (every minute), studio-post (13:00 + 20:00 IST).
 set -e
 for u in make inbox post; do
-  case $u in make) CMD="engine/daily.py"; ON="*-*-* 00/2:15:00"; NICE=15;; inbox) CMD="engine/inbox.py"; ON="*:*:00"; NICE=5;; post) CMD="engine/publish.py"; ON="*-*-* 07,14:30:00 UTC"; NICE=10;; esac
+  case $u in make) CMD="engine/daily.py"; ON="*:05,35"; NICE=15;; inbox) CMD="engine/inbox.py"; ON="*:*:00"; NICE=5;; post) CMD="engine/publish.py"; ON="*-*-* 07,14:30:00 UTC"; NICE=10;; esac
   sudo tee /etc/systemd/system/studio-$u.service >/dev/null <<U
 [Unit]
 Description=Studio engine: $u
