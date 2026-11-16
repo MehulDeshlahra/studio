@@ -75,6 +75,8 @@ def make(ch, topic, research_text):
     ch_lessons = all_lessons(ch["id"])
     bible = read(os.path.join(ROOT, "channels", ch["id"], "bible.md"))
     playbook = read(os.path.join(ROOT, "knowledge", "playbook.md"), 6000)
+    results = (read(os.path.join(ROOT, "channels", ch["id"], "results.md"), 2500) + "\n" +
+               read(os.path.join(ROOT, "knowledge", "results.md"), 2500)).strip()
     p = f"""You plan one vertical short video (Instagram Reel / YouTube Short) for the channel below. Topic: "{topic}".
 
 CHANNEL: {json.dumps({k: ch[k] for k in ("id", "language", "format", "visuals", "edit") if k in ch}, ensure_ascii=False)}
@@ -89,6 +91,9 @@ LESSONS (hard rules learned from earlier videos and the owner; obey all):
 
 WHAT WINS ON SHORTS RIGHT NOW (scout playbook, excerpt):
 {playbook}
+
+OUR OWN RESULTS (posted videos, best first; repeat what made the top ones work, avoid what the bottom ones did):
+{results or "no posts yet"}
 
 RESEARCH ON THIS TOPIC (the best existing Shorts; beat them, do not copy them):
 {research_text}

@@ -23,6 +23,7 @@ def main():
                     shutil.copy(os.path.join(jd, f), os.path.join(dst, f))
     g = lambda *a: subprocess.run(["git", "-C", ROOT] + list(a), capture_output=True, text=True)
     g("add", "channels")
+    g("add", "knowledge/results.md")
     if g("diff", "--cached", "--quiet").returncode:
         g("commit", "-qm", "engine: jobs + lessons")
         g("pull", "-q", "--rebase", "--autostash")
