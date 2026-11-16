@@ -12,7 +12,7 @@ CHROME = next((p for p in glob.glob(os.path.expanduser("~/.cache/ms-playwright/c
 def _title(plan):
     t = (plan.get("cover_text") or plan.get("title") or "").strip()
     words = t.replace("|", " ").split()
-    return " ".join(words[:7])
+    return " ".join(words[:5])
 
 
 def make(cid, job):
@@ -34,10 +34,10 @@ def make(cid, job):
 *{{margin:0;box-sizing:border-box}}body{{width:1080px;height:1920px;background:#000;position:relative;overflow:hidden;font-family:'Noto Sans Devanagari','DejaVu Sans',sans-serif}}
 .bg{{position:absolute;inset:0;background:url(cover-frame.jpg);background-size:cover;filter:blur(14px) brightness(.42) saturate(1.1);transform:scale(1.08)}}
 .shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.1) 40%,rgba(0,0,0,.75))}}
-.bar{{position:absolute;left:90px;top:620px;width:150px;height:14px;background:{acc};border-radius:7px}}
-h1{{position:absolute;left:90px;right:90px;top:670px;font-size:150px;line-height:1.08;font-weight:900;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.8)}}
+.bar{{position:absolute;left:90px;top:560px;width:150px;height:14px;background:{acc};border-radius:7px}}
+h1{{position:absolute;left:90px;right:90px;top:610px;font-size:128px;line-height:1.08;font-weight:900;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.8)}}
 h1 em{{font-style:normal;color:{acc}}}
-.h{{position:absolute;left:90px;bottom:300px;font-size:46px;font-weight:700;color:{acc};letter-spacing:2px}}
+.h{{position:absolute;left:90px;bottom:170px;font-size:46px;font-weight:700;color:{acc};letter-spacing:2px}}
 </style><div class=bg></div><div class=shade></div><div class=bar></div><h1>{_hl(title)}</h1><div class=h>{html.escape(handle)}</div>""")
         png = os.path.join(jd, "cover.png")
         sh([CHROME, "--no-sandbox", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files", "--window-size=1080,1920",
