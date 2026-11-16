@@ -1,0 +1,13 @@
+{
+  "id": "katha",
+  "name": "TBD",
+  "status": "planned",
+  "language": "Hindi",
+  "format": "One mythology story with one clear lesson, 45-75 s; every retelling names its source (text + chapter/kand)",
+  "voice": {"engine": "gemini-3.8-flash-tts", "voice": "TBD (warm storyteller)", "one_request_per_reel": true},
+  "visuals": {"primary": "muse", "look": "painterly Indian miniature-meets-cinematic stills, warm gold light, slow camera moves",
+              "cast": "the story's figures, respectful, one fixed style"},
+  "rules": ["respectful, no mockery", "sourced retellings only, mention when versions differ", "no on-screen AI label"],
+  "schedule": {"posts_per_day": 1, "approve_first": 10},
+  "accounts": {"instagram": null, "facebook_page": null, "youtube": null}
+}

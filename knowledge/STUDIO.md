@@ -21,6 +21,15 @@
 | tech-002 | AI Mode v2 | 22.6 s | v3 parked (old format) | revision list |
 | tech-003 | Phone ulta, screen kaise ghoomti hai | 42.6 s | pilot | good, not the best |
 
+## Channels
+- See channels/CHANNELS.md (tech, raaz, katha, game later). Each channel: channels/<id>/channel.json.
+- No single mascot: tech uses the topic's own object as the character.
+
+## Server
+- Muse bridge 1: 127.0.0.1:20240 (jb-musebridge + jb-muse-browser, CDP 9444, profile ~/musebridge/profile).
+- Muse bridge 2 (second account): 127.0.0.1:20241 (jb-musebridge2 + jb-muse-browser2, CDP 9445, profile ~/musebridge2/profile). Installed 16 Nov, NOT started: waits for the owner's login.
+- Bridge code is shared (~/musebridge2/musebridge.js is a link); MUSE_BROWSER_SVC picks which browser it stops/starts.
+
 ## Open
 - Second Muse account on the bridge (more daily clips).
 - Channel accounts (Instagram + YouTube) and branding.

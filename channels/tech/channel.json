@@ -1,0 +1,22 @@
+{
+  "id": "tech",
+  "name": "TBD",
+  "status": "pilot",
+  "language": "Hinglish (Roman script captions)",
+  "format": "One curiosity question ('X kaise kaam karta hai?'), one visual metaphor, 30-60 s, speech from frame 0",
+  "voice": {"engine": "gemini-3.8-flash-tts", "voice": "Charon",
+            "style": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end",
+            "one_request_per_reel": true},
+  "visuals": {"primary": "muse", "fallback": ["pollinations/flux", "hf-ltx", "kaggle-wan2.2"],
+              "look": "glossy 3D Pixar-style, dark navy studio, soft blue rim light, yellow accent #ffd84d",
+              "cast": "topic objects as characters (no fixed mascot)"},
+  "edit": {"size": "1080x1920", "fps": 30, "lufs": -14, "true_peak": -1.5, "captions": "3-word chunks, spoken word lit, keywords yellow",
+           "text_band_px": [168, 1330], "max_s_per_visual_idea": 8},
+  "rules": ["no on-screen AI label", "every fact sourced in sources.json", "no guessed specs/prices/numbers",
+            "research before every video (knowledge/PREFLIGHT.md)"],
+  "schedule": {"posts_per_day": 2, "approve_first": 10},
+  "accounts": {"instagram": null, "facebook_page": null, "youtube": null},
+  "topics_backlog": ["UPI paisa 2 second mein kaise pahunchta hai", "WiFi deewar ke paar kaise jaata hai",
+                     "Phone garam kyun hota hai", "Fingerprint unlock kaise kaam karta hai", "'Hey Google' phone kaise sunta hai",
+                     "Fast charging phone ko kharab karti hai kya", "GPS ko kaise pata ki aap kahan ho", "OTP kaise banta hai"]
+}

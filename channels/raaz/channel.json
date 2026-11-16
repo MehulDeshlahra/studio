@@ -1,0 +1,13 @@
+{
+  "id": "raaz",
+  "name": "TBD (RaazRoom is taken)",
+  "status": "planned",
+  "language": "Hindi / Hinglish",
+  "format": "Interactive suspense case in 3-4 parts; each part ends with an A/B choice; viewers vote in comments; the next part follows the winning vote (counted from our own post's comments via the official IG API)",
+  "voice": {"engine": "gemini-3.8-flash-tts", "voice": "TBD (low, calm, tense)", "one_request_per_reel": true},
+  "visuals": {"primary": "muse", "look": "cinematic dark thriller stills + short clips, film grain, cold teal/amber",
+              "cast": "one recurring narrator-detective (fixed description) + case cast"},
+  "rules": ["fiction clearly fiction, no real crimes/people", "no gore", "no on-screen AI label"],
+  "schedule": {"posts_per_day": 1, "approve_first": 10},
+  "accounts": {"instagram": null, "facebook_page": null, "youtube": null}
+}
