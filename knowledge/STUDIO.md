@@ -41,6 +41,12 @@
 - Studio Gemini key (~/.studio-gemini.key) is from the credits project 'My First Project V' -> TTS cap 30/day in daily.py.
 - Posting (CORRECTED 17 Nov, owner): like VAJRA + MarginMart (commit 8a59377) posts are made with Mehul's 'Ads MCP' Meta login (user token, app 'Ads MCP', never expires, data access ~60 days, renews on login), so posts show 'via Ads MCP' and can be promoted as ads. Server copy: ~/.studio-meta-user.token (600). publish.py reads the Page key + linked IG id from it. FB Pages already exist: Kaise Tech 1474228909103892, Puraan Ki Katha 1453056947892202, Raaz Room 1501633449691931 (no IG linked yet on 17 Nov).
 
+## Accounts (verified on the server 17 Nov)
+- Kaise Tech: FB Page 1474228909103892 + IG @kaise.tech (17841422728593136), publish quota ok. YouTube: @kaise.tech.official (owner).
+- Puraan Ki Katha: FB Page 1453056947892202 + IG @puraankikatha (17841459966207698), publish quota ok.
+- Raaz Room FB Page 1501633449691931 + IG @kahanikart.official (17841413280544411) - story page; name to confirm with owner.
+- Server files: ~/.studio-accounts/{tech,katha,raaz}.json (page_id only; keys come from the Ads MCP login).
+
 ## Open
 - Second Muse account on the bridge (more daily clips).
 - Channel accounts (Instagram + YouTube) and branding.
