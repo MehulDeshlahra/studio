@@ -135,3 +135,4 @@ textarea,input[type=text],select{width:100%;background:var(--card2);border:1px s
  .tabbar a.on{color:var(--tx)}.tabbar a.on svg{color:var(--run)}
  .tabbar .cnt{position:absolute;top:-2px;right:6px;font-size:9.5px;padding:0 5px}
 }
+h2 svg,.banner svg,.b svg{width:17px;height:17px;flex:none}.banner .ico svg{width:20px;height:20px}.card h2 small{white-space:nowrap}
