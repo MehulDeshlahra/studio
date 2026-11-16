@@ -59,16 +59,12 @@ def stage_assets(ch, p, job):
 
 
 def remux(raw, mix, total, out):
-    """Two-pass loudnorm (-14 LUFS, TP -2) on the mix, then mux with the rendered picture."""
-    import json as _j, re as _re
+    """Master: loudnorm (-13 target) + limiter at -4 dBFS, so the AAC encoder (adds ~2 dB true-peak overshoot) lands at
+    about -14.8 LUFS / true peak -2 dBFS. Then mux with the rendered picture."""
     lim = mix.replace(".wav", "-tp.wav")
-    base = f"apad=whole_dur={total:.3f},"
-    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", mix, "-af", base + "loudnorm=I=-14:TP=-2:LRA=11:print_format=json",
-                        "-f", "null", "-"], capture_output=True, text=True).stderr
-    m = _j.loads(_re.findall(r"\{[^{}]*\}", r)[-1])
-    ln = (f"loudnorm=I=-14:TP=-2:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
-          f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
-    sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af", base + ln + ",volume=-2dB,aresample=48000", "-c:a", "pcm_s16le", lim])
+    sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af",
+        f"apad=whole_dur={total:.3f},loudnorm=I=-13.0:TP=-2:LRA=11,alimiter=limit=0.63:level=false:attack=3:release=60,aresample=48000",
+        "-c:a", "pcm_s16le", lim])
     sh(["ffmpeg", "-v", "error", "-y", "-i", raw, "-i", lim, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
         "-c:a", "aac", "-b:a", "256k", "-t", f"{total:.3f}", "-movflags", "+faststart", out])
 

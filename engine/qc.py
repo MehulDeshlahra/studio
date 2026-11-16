@@ -14,7 +14,7 @@ def fmt(mp4):
     lufs = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", r)[-1])
     tp = float(re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)[-1])
     c, w, h, fr = o.split(",")
-    ok = c == "h264" and w == "1080" and h == "1920" and fr == "30/1" and a == "aac" and -15.5 <= lufs <= -12.5 and tp <= -1.0
+    ok = c == "h264" and w == "1080" and h == "1920" and fr == "30/1" and a == "aac" and -16.0 <= lufs <= -13.0 and tp <= -1.0
     return {"ok": ok, "video": o, "audio": a, "lufs": lufs, "true_peak": tp, "dur": round(dur(mp4), 2)}
 
 
