@@ -2,7 +2,33 @@
 then a second pass reviews it as a strict editor and returns the fixed plan."""
 import json, os, re
 from core import ROOT, read, log
-import llm
+import llm, tts, urllib.request, urllib.error, time
+
+GEM_TEXT = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
+
+
+def ask(prompt, max_tokens=8000):
+    """Planning text: Gemini (Studio free key) first, OmniRoute free chain as fallback."""
+    for m in GEM_TEXT:
+        try:
+            body = {"contents": [{"parts": [{"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
+                    "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": max_tokens, "temperature": 0.7}}
+            r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
+                                       data=json.dumps(body).encode(),
+                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key()})
+            d = json.load(urllib.request.urlopen(r, timeout=300))
+            out = "".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"])
+            log("plan text by", m)
+            return llm.parse_json(out)
+        except Exception as e:
+            log("gemini text fail", m, str(e)[:120])
+    return llm.text(prompt, json_mode=True, max_tokens=max_tokens)
+
+EXAMPLE = """Example of the voice we want (a past reel of ours, owner liked the voice and pacing):
+"Phone ulta kiya... aur screen khud ghoom gayi. Par phone ko pata kaise chala? Jaadu nahi hai. Aapke phone ke andar
+ek chhota sa chip hai. Naam hai... accelerometer. Is chip ke andar ek bahut hi chhota sa wazan hai, jo patli patli
+springs pe latka hota hai. Jaise hi aap phone terha karte ho, gravity us wazan ko neeche kheenchti hai, aur woh
+thoda sa khisak jaata hai." -> short spoken sentences, everyday words, one image per sentence, curiosity first."""
 
 SCHEMA = """{
  "slug": "short-ascii-id",
@@ -55,6 +81,10 @@ REQUIREMENTS
 - One new piece of information per scene. The same visual idea never repeats. Max 8 s per idea.
 - Explain the mechanism simply with the ONE metaphor, in order, so a 14-year-old understands.
 - The last scene: a short payoff + a question the viewer answers in comments.
+{EXAMPLE}
+- On-screen titles are for the VIEWER (e.g. "BALANCE CHECK", "2 SECOND MEIN"), never production labels
+  like "ask audience", "hook", "outro". Leave most titles empty; use 3-5 titles per video.
+- A flow diagram shows the WHOLE path once (3-5 nodes); do not split one path into several 2-node flows.
 - Language: {ch.get('language')}. Write vo in Roman script only (no Devanagari). Natural spoken Hinglish, short words.
   Use "..." at most twice (it makes the voice pause).
 - Visual types: "image" (a still, animated with camera motion), "clip" (a 10 s generated video: use at most 2, for the
@@ -72,14 +102,16 @@ Return JSON with exactly this shape:
     review = f"""You are a strict senior editor of viral Indian Shorts. Review this plan against the requirements and lessons,
 then return the IMPROVED plan (same JSON shape). Fix: weak hook, repeated visuals, lines over 16 words, scenes that add
 no new information, unclear mechanism, prompts that would make cluttered or text-filled images, risky or unverifiable
-claims (remove them), a weak ending question. Keep 10-15 scenes and 95-150 words total.
+claims (remove them), a weak ending question, stiff or bookish Hindi (make it sound like a friend talking),
+production-label titles. Make the mechanism complete (no missing step). Keep 10-15 scenes and 95-150 words total.
 LESSONS:
 {lessons}
 PLAN:
 {json.dumps(plan, ensure_ascii=False)}"""
     try:
-        better = llm.text(review, json_mode=True, max_tokens=6000)
-        if len(better.get("scenes", [])) >= 6:
+        better = ask(review)
+        bw = sum(len(s.get("vo", "").split()) for s in better.get("scenes", []))
+        if len(better.get("scenes", [])) >= 6 and 90 <= bw <= 165:
             plan = better
             log("plan v2 (reviewed)", len(plan["scenes"]), "scenes")
     except Exception as e:

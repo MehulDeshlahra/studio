@@ -1,13 +1,48 @@
 {
-  "id": "katha",
-  "name": "TBD",
-  "status": "planned",
-  "language": "Hindi",
-  "format": "One mythology story with one clear lesson, 45-75 s; every retelling names its source (text + chapter/kand)",
-  "voice": {"engine": "gemini-3.8-flash-tts", "voice": "TBD (warm storyteller)", "one_request_per_reel": true},
-  "visuals": {"primary": "muse", "look": "painterly Indian miniature-meets-cinematic stills, warm gold light, slow camera moves",
-              "cast": "the story's figures, respectful, one fixed style"},
-  "rules": ["respectful, no mockery", "sourced retellings only, mention when versions differ", "no on-screen AI label"],
-  "schedule": {"posts_per_day": 1, "approve_first": 10},
-  "accounts": {"instagram": null, "facebook_page": null, "youtube": null}
+    "id":  "katha",
+    "name":  "Puraan Ki Katha (@puraankikatha)",
+    "status":  "planned",
+    "language":  "Hindi",
+    "format":  "One mythology story with one clear lesson, 45-75 s; every retelling names its source (text + chapter/kand)",
+    "voice":  {
+                  "engine":  "gemini-3.8-flash-tts",
+                  "voice":  "Charon",
+                  "one_request_per_reel":  true,
+                  "style":  "a warm Hindi storyteller with modern pace, respectful, clear pronunciation of Sanskrit names, emotional at the turning point"
+              },
+    "visuals":  {
+                    "primary":  "muse",
+                    "look":  "painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, ornate but uncluttered",
+                    "cast":  "the story\u0027s figures, respectful, one fixed style"
+                },
+    "rules":  [
+                  "respectful, no mockery",
+                  "sourced retellings only, mention when versions differ",
+                  "no on-screen AI label"
+              ],
+    "schedule":  {
+                     "posts_per_day":  1,
+                     "approve_first":  10
+                 },
+    "accounts":  {
+                     "instagram":  null,
+                     "facebook_page":  null,
+                     "youtube":  null
+                 },
+    "theme":  {
+                  "bg":  "#140806",
+                  "accent":  "#f5c04a",
+                  "accent2":  "#c0392b",
+                  "font":  "Archivo Black",
+                  "music":  "music/close-up.mp3",
+                  "music_offset":  0
+              },
+    "topics_backlog":  [
+                           "Eklavya ka angootha (Mahabharata, Adi Parva)",
+                           "Nachiketa aur Yamraj (Katha Upanishad)",
+                           "Shravan Kumar ki katha (Valmiki Ramayana)",
+                           "Yaksha ke prashn (Mahabharata, Vana Parva)",
+                           "Ganesh ji aur Kuber ka bhoj",
+                           "Karna aur Indra ka daan (Mahabharata)"
+                       ]
 }

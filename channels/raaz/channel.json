@@ -1,13 +1,45 @@
 {
-  "id": "raaz",
-  "name": "TBD (RaazRoom is taken)",
-  "status": "planned",
-  "language": "Hindi / Hinglish",
-  "format": "Interactive suspense case in 3-4 parts; each part ends with an A/B choice; viewers vote in comments; the next part follows the winning vote (counted from our own post's comments via the official IG API)",
-  "voice": {"engine": "gemini-3.8-flash-tts", "voice": "TBD (low, calm, tense)", "one_request_per_reel": true},
-  "visuals": {"primary": "muse", "look": "cinematic dark thriller stills + short clips, film grain, cold teal/amber",
-              "cast": "one recurring narrator-detective (fixed description) + case cast"},
-  "rules": ["fiction clearly fiction, no real crimes/people", "no gore", "no on-screen AI label"],
-  "schedule": {"posts_per_day": 1, "approve_first": 10},
-  "accounts": {"instagram": null, "facebook_page": null, "youtube": null}
+    "id":  "raaz",
+    "name":  "Raaz Ka Faisla (@raazkafaisla)",
+    "status":  "planned",
+    "language":  "Hindi / Hinglish",
+    "format":  "Interactive suspense case in 3-4 parts; each part ends with an A/B choice; viewers vote in comments; the next part follows the winning vote (counted from our own post\u0027s comments via the official IG API)",
+    "voice":  {
+                  "engine":  "gemini-3.8-flash-tts",
+                  "voice":  "Charon",
+                  "one_request_per_reel":  true,
+                  "style":  "a low, calm, tense Indian male thriller narrator; short sentences, slow, a suspenseful pause before the choice"
+              },
+    "visuals":  {
+                    "primary":  "muse",
+                    "look":  "cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location",
+                    "cast":  "one recurring narrator-detective (fixed description) + case cast"
+                },
+    "rules":  [
+                  "fiction clearly fiction, no real crimes/people",
+                  "no gore",
+                  "no on-screen AI label"
+              ],
+    "schedule":  {
+                     "posts_per_day":  1,
+                     "approve_first":  10
+                 },
+    "accounts":  {
+                     "instagram":  null,
+                     "facebook_page":  null,
+                     "youtube":  null
+                 },
+    "theme":  {
+                  "bg":  "#05080a",
+                  "accent":  "#f2b134",
+                  "accent2":  "#3fb6b2",
+                  "font":  "Archivo Black",
+                  "music":  "music/deep-urban.mp3",
+                  "music_offset":  0
+              },
+    "topics_backlog":  [
+                           "Case 1: Haveli ka band kamra (part 1)",
+                           "Case 2: Aakhri train ka musafir (part 1)",
+                           "Case 3: Hotel room 304 (part 1)"
+                       ]
 }
