@@ -146,7 +146,6 @@ body{{margin:0;background:#050b1a}}
   <div id="hT" class="title">AGLA <b>SAWAAL?</b><br>COMMENT KARO</div>
 </div>
 
-<div id="aiTag" data-layout-ignore class="clip ai" data-start="0" data-duration="{TOTAL}" data-track-index="8">AI visuals</div>
 {cap_html()}
 <audio id="mix" src="assets/mix.wav" data-start="0" data-duration="{VO_END}" class="clip" data-track-index="10"></audio>
 </div>
