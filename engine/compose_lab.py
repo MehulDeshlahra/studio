@@ -14,7 +14,7 @@ from compose import chunks as _chunks, _split_dashes
 
 W, H = 1080, 1920
 MONO = "'JetBrains Mono','IBM Plex Mono',monospace"
-SANS = "'Inter Tight','Inter',sans-serif"
+SANS = "'Inter',sans-serif"   # 17 Nov: 'Inter Tight' is not in HyperFrames' font list -> rendered in a fallback font
 CAP_Y = 1210
 
 

@@ -20,7 +20,7 @@ LAYOUT_CODES = {"content_overlap", "text_overflow", "text_clipped", "canvas_over
 def _npx(args, cwd, timeout=900):
     chrome = os.environ.get("PUPPETEER_EXECUTABLE_PATH") or next(iter(sorted(glob.glob(os.path.expanduser(
         "~/.cache/ms-playwright/chromium_headless_shell-*/chrome-headless-shell-linux-arm64/chrome-headless-shell")))), "")
-    env = dict(os.environ, PUPPETEER_EXECUTABLE_PATH=chrome, HYPERFRAMES_NO_TELEMETRY="1")
+    env = dict(os.environ, PUPPETEER_EXECUTABLE_PATH=chrome, HYPERFRAMES_BROWSER_PATH=chrome, HYPERFRAMES_NO_TELEMETRY="1")
     r = subprocess.run(["nice", "-n", "15", "npx", "-y", "hyperframes@latest"] + args, cwd=cwd, env=env,
                        capture_output=True, text=True, timeout=timeout)
     return r.returncode, r.stdout, r.stderr
