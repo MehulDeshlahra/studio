@@ -39,14 +39,17 @@ def _sim(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 
-def _whisper(wav, lang="hi"):
+def _whisper(wav, lang="hi", prompt=None):
     from faster_whisper import WhisperModel
     a, sr = sf.read(wav, dtype="float32")
     if a.ndim > 1:
         a = a.mean(axis=1)
     if sr != 16000:
         a = np.interp(np.arange(0, len(a), sr / 16000), np.arange(len(a)), a).astype("float32")
-    segs, _ = WhisperModel("small", compute_type="int8").transcribe(a, language=lang, word_timestamps=True, beam_size=5)
+    # 17 Nov: Hinglish matched only 62-84% (Devanagari output vs our Latin script). The script as initial_prompt makes
+    # Whisper write the same Latin spellings, so the words line up (English editions already match ~95%).
+    segs, _ = WhisperModel("small", compute_type="int8").transcribe(a, language=lang, word_timestamps=True, beam_size=5,
+                                                                    initial_prompt=(prompt or None) and prompt[:600])
     out = [(w.word.strip(), float(w.start), float(w.end)) for s in segs for w in s.words if w.word.strip()]
     # speech end by energy (drops hallucinated words in a silent tail)
     hop = 160
@@ -96,7 +99,7 @@ def words_by_line(wav, texts, lang="hi"):
         for w in t.split():
             if re.search(r"[A-Za-z0-9]", w):
                 toks.append(w); line_of.append(k)
-    W, total, t0, t1 = _whisper(wav, lang)
+    W, total, t0, t1 = _whisper(wav, lang, " ".join(texts))
     heard = [skel_lat(w[0]) if lang == "en" else (skel_dev(w[0]) or skel_lat(w[0])) for w in W]
     pairs = _nw([skel_lat(w) for w in toks], heard)
     cover = len(pairs) / max(1, len(toks))
