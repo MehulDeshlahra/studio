@@ -63,6 +63,7 @@ def page(plan, timed, total, theme, assets):
         b = (timed[i + 1]["start"] - 0.1) if i + 1 < n else total - endcard
         d = round(b - a, 3)
         sid = f"s{i}"
+        js0 = len(js)
         kind = s.get("type", "object")
         glow = acc if i % 3 != 1 else cool
         inner = f'<div class="glow" style="background:radial-gradient(circle at 50% 44%,{glow}33 0%,{glow}14 28%,transparent 62%)"></div>'
@@ -172,12 +173,12 @@ def page(plan, timed, total, theme, assets):
             js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
         else:  # title
             words = esc(s.get("big", "")).split()
-            hero = '<div id="%sh" class="kin">%s</div>' % (sid, " ".join(f'<span class="kw" id="{sid}w{j}">{w}</span>' for j, w in enumerate(words)))
+            sub = f'<div id="{sid}u" class="kinsub">{esc(s["sub"])}</div>' if s.get("sub") else ""   # in the flow: never overlaps a 2-line title
+            hero = '<div id="%sh" class="kin">%s%s</div>' % (sid, " ".join(f'<span class="kw" id="{sid}w{j}">{w}</span>' for j, w in enumerate(words)), sub)
             for j in range(len(words)):
                 js.append(f'tl.fromTo("#{sid}w{j}",{{yPercent:80,opacity:0}},{{yPercent:0,opacity:1,duration:0.6,ease:"power4.out",immediateRender:false}},{a + 0.08 + j * 0.09:.3f});')
                 js.append(f'tl.set("#{sid}w{j}",{{opacity:0}},{a:.3f});')
             if s.get("sub"):
-                hero += f'<div id="{sid}u" class="statsub">{esc(s["sub"])}</div>'
                 js.append(f'tl.fromTo("#{sid}u",{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{a + 0.5:.3f});')
                 js.append(f'tl.set("#{sid}u",{{opacity:0}},{a:.3f});')
         if s.get("label"):
@@ -192,6 +193,10 @@ def page(plan, timed, total, theme, assets):
         if i:
             js.append(f'tl.fromTo("#{sid}",{{opacity:0}},{{opacity:1,duration:0.22,ease:"power1.out",immediateRender:false}},{a:.3f});')
             cues.append({"t": round(a + 0.05, 3), "file": ["sfx/air-zoom.mp3", "sfx/whoosh-fast.mp3"][i % 2], "gain_db": -26, "align": "onset"})
+        # 17 Nov fix: a tl.set(opacity:0) at the SAME time as the entrance fromTo, added after it, won on every seek ->
+        # props, UI panels, stats and compares rendered invisible. Resets go first, so the entrance tween wins.
+        mine = js[js0:]
+        js[js0:] = [x for x in mine if x.startswith("tl.set(")] + [x for x in mine if not x.startswith("tl.set(")]
         scenes.append(f'<div id="{sid}" class="clip scene{" over" if kind == "clip" and vid else ""}" data-start="{a:.3f}" '
                       f'data-duration="{d:.3f}" data-track-index="1">{inner}</div>')
         for c in cap_groups(t["words"]):
@@ -266,7 +271,8 @@ body{{margin:0;background:#07080b}}
 .cc{{width:300px;text-align:center}} .cv{{font-weight:800;font-size:86px;margin-bottom:18px;letter-spacing:-2px}}
 .ctrack{{height:560px;display:flex;align-items:flex-end;justify-content:center}} .cbar{{width:180px;border-radius:22px 22px 6px 6px}}
 .cl{{font-family:{MONO};font-size:34px;color:#c9ced8;margin-top:20px;letter-spacing:1px}}
-.kin{{position:absolute;left:70px;right:70px;top:540px;text-align:center;font-weight:800;font-size:150px;line-height:1.02;letter-spacing:-4px}}
+.kinsub{{display:block;margin-top:36px;font-family:{MONO};font-weight:500;font-size:36px;letter-spacing:2px;line-height:1.3;color:#9aa3b2}}
+.kin{{position:absolute;left:70px;right:70px;top:500px;text-align:center;font-weight:800;font-size:150px;line-height:1.02;letter-spacing:-4px}}
 .kw{{display:inline-block;margin:0 14px}}
 .cap{{position:absolute;left:80px;width:{W - 160}px;top:{CAP_Y}px;z-index:7;text-align:center;font-family:{SANS};font-weight:700;font-size:58px;
   line-height:1.18;letter-spacing:-0.5px;color:#fff;text-shadow:0 4px 18px #000c}}
