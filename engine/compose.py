@@ -127,7 +127,7 @@ def page(plan, timed, total, theme, assets):
             js.append(f'tl.to("#{sid}cm",{{scale:1.06,duration:0.5,yoyo:true,repeat:5,ease:"sine.inOut"}},{a + 1.6:.3f});')
             js.append(f'tl.set("#{sid}cm",{{opacity:0}},{a:.3f});')
         if plan.get("hud_left"):
-            inner += f'<div class="hud"><span>{esc(plan["hud_left"])}</span><span>{esc(s.get("hud_right") or handle)}</span></div>'
+            inner += f'<div class="hud"><span>{esc(plan["hud_left"])}</span><span>{esc("" if (s.get("title") or "").strip().upper() == (s.get("hud_right") or "").strip().upper() else (s.get("hud_right") or handle))}</span></div>'
         if s.get("title") and not _dup(s["title"], s.get("vo")):
             inner += f'<div id="{sid}t" class="tag"><span class="pill">{esc(s["title"].upper())}</span></div>'
             js.append(f'tl.fromTo("#{sid}t",{{scale:0.3,opacity:0}},{{scale:1,opacity:1,duration:0.3,ease:"back.out(2.5)",immediateRender:false}},{a + 0.15:.3f});')
