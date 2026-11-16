@@ -1,6 +1,6 @@
 {
     "id":  "raaz",
-    "name":  "Raaz Ka Faisla (@raazkafaisla)",
+    "name":  "Kahaneo (@kahaneo; English @kahaneo.en)",
     "status":  "planned",
     "language":  "Hindi / Hinglish",
     "format":  "Interactive suspense case in 3-4 parts; each part ends with an A/B choice; viewers vote in comments; the next part follows the winning vote (counted from our own post\u0027s comments via the official IG API)",
@@ -44,5 +44,14 @@
                        ],
     "edit":  {
                  "wps":  2.7
-             }
+             },
+    "handle":  "@kahaneo",
+    "handle_en":  "@kahaneo.en",
+    "series":  [
+                   "Raaz Ka Faisla (mystery, you vote)",
+                   "Karma (revenge/karma twist)",
+                   "Dil Se (emotional, love, family)",
+                   "Jaadu (fantasy, talking objects/animals)",
+                   "Darr (light horror)"
+               ]
 }
