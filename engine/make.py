@@ -110,6 +110,7 @@ def main():
     ap.add_argument("--job"); ap.add_argument("--from", dest="frm", default="")
     ap.add_argument("--no-send", action="store_true")
     ap.add_argument("--lang", default="", help="en = English page version (voice, captions, handle_en)")
+    ap.add_argument("--until", default="", help="assets = stop after voice + images (prep lane); the render lane finishes it")
     a = ap.parse_args()
     ch = channel(a.channel)
     if a.lang == "en":
@@ -196,6 +197,12 @@ def main():
     total = round(vdur + 0.7 + (1.4 if theme.get("handle") else 0.0), 3)
     # 4 assets
     assets = stage_assets(ch, p, job)
+    if a.until == "assets":
+        meta.update({"stage": "prepped", "lang": p.get("lang") or ch.get("lang", "hi"), "prepped_at": time.strftime("%Y-%m-%d %H:%M")})
+        save(os.path.join(job, "meta.json"), meta)
+        log("prepped", ch["id"], job_id, "(voice + images ready; render lane finishes it)")
+        print(json.dumps({"prepped": job}))
+        return
     # 5 compose
     rdir = os.path.join(job, "render")
     if "compose" in redo or not os.path.exists(os.path.join(rdir, "index.html")):
@@ -252,6 +259,7 @@ def main():
     if not a.no_send:
         import send
         send.send(ch["id"], job_id)
+    meta.update({"stage": "done"}); save(os.path.join(job, "meta.json"), meta)
     print(json.dumps({"final": final, "ok": rep["ok"]}))
 
 
