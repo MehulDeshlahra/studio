@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "Can we evolve so that we never have to sleep?",
+ "first_frame": "A character with blonde hair looking at the camera with a glitch/chromatic aberration effect, text overlay 'Can YOU EVOLVE to NEVER SLEEP?'",
+ "hook_type": "question",
+ "format": "animation",
+ "length_s": 70,
+ "cuts_estimate": 25,
+ "avg_shot_s": 2.8,
+ "words_per_s_estimate": 2.3,
+ "beats": [
+  "0-3 s: Hook question, character appears with glitch effect.",
+  "3-12 s: Explaining the 'reset' function of sleep and brain waves.",
+  "12-21 s: Hypothetical 'Daily Brain Reset' procedure with electrodes.",
+  "21-36 s: Explaining amyloid beta proteins and the need for brain flushing.",
+  "36-42 s: The 'dolphin' half-brain solution.",
+  "42-51 s: The energy cost of staying awake.",
+  "51-59 s: Comparing humans to dolphins.",
+  "59-70 s: Conclusion with a humorous Wendy's skit."
+ ],
+ "visual_techniques": [
+  "Chromatic aberration/glitch effect (0s)",
+  "Dynamic zoom on brain anatomy (7s)",
+  "Split screen comparison (52s)",
+  "Character animation with props (e.g., burger, electrodes) (13s, 60s)",
+  "Text overlays for key terms (e.g., 'Stage 3 Delta Waves') (9s)"
+ ],
+ "captions": "Simple, white, centered, sans-serif, 1-4 words per chunk, no highlight colour.",
+ "sound": "Professional British male narrator, upbeat orchestral/synth background music, subtle sound effects for actions (e.g., beeps, chewing).",
+ "recurring_element": "The blonde character in various scenarios (bed, fast food restaurant, wearing a futuristic suit).",
+ "ending": "Punchline: The character is in a Wendy's wearing a complex sleep-suit, and the employee tells them 'Sir, this is a Wendy's'.",
+ "why": "It combines high-quality, recognizable animation with a relatable, high-stakes hypothetical question. The humor at the end provides a 'reward' for watching the educational content, and the pacing is tight, moving quickly from one scientific concept to the next.",
+ "reusable_faceless": [
+  "Use a recognizable character to anchor the narrative.",
+  "Start with a 'What If' question that challenges basic human biology.",
+  "Use simple, high-contrast visual metaphors to explain complex biological processes.",
+  "End with a humorous, low-stakes situational skit to break the tension of the educational content."
+ ],
+ "id": "hiIIGMeMEuE",
+ "url": "https://www.youtube.com/watch?v=hiIIGMeMEuE",
+ "channel": "kurzgesagt",
+ "niche": "animated science",
+ "title": "What If You Never Slept?",
+ "views": 3000000,
+ "channel_median": 1300000,
+ "ratio": 2.31,
+ "label": "winner",
+ "watched": "2026-11-16T17:08+05:30"
+}

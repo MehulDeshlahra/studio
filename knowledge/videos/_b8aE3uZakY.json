@@ -1,0 +1,49 @@
+{
+ "hook_first_words": "AI is not coming for your job",
+ "first_frame": "A stick figure character wearing a graduation cap standing in a spotlight, surrounded by sad-looking stick figures in the dark.",
+ "hook_type": "bold claim",
+ "format": "animation",
+ "length_s": 59,
+ "cuts_estimate": 15,
+ "avg_shot_s": 3.9,
+ "words_per_s_estimate": 2.2,
+ "beats": [
+  "0-3 s: Hook: AI isn't coming for your job, but the co-worker using it is.",
+  "3-10 s: The 'Builder' vs 'Decider' concept introduction.",
+  "10-20 s: Defining the 'AI Decider' role.",
+  "20-32 s: Actionable advice: Start tiny, automate, track hours.",
+  "32-39 s: Engagement CTA: Ask the audience for a task to automate.",
+  "39-52 s: Data visualization: 26% to 76% growth in AI roles.",
+  "52-59 s: Final CTA: Follow for more."
+ ],
+ "visual_techniques": [
+  "Hand-drawn animation style (stick figures)",
+  "Dynamic spotlight effect at start",
+  "On-screen text highlighting key terms (e.g., 'BUILDERS', 'DECIDER')",
+  "Progressive drawing/writing animation to keep viewer engaged",
+  "Simple bar chart visualization for data",
+  "Character movement/gestures to emphasize points"
+ ],
+ "captions": "Style: Bold, sans-serif, centered at the bottom. Words per chunk: 3-5. Highlight colour: Green for positive/key concepts, white for standard text.",
+ "sound": "Voice type: Clear, upbeat, professional narration. Music: Upbeat, rhythmic, lo-fi hip-hop style background track. Sound effects: Pencil scratching sounds during drawing, 'ding' or subtle pop sounds when text appears.",
+ "recurring_element": "The stick figure character with the graduation cap.",
+ "ending": "CTA: 'Follow for a new AI edge every day' with a subscribe button animation.",
+ "why": "It uses a 'fear-to-opportunity' narrative arc that is highly relatable to professionals. The simple, clean animation style makes complex AI career advice feel accessible and non-intimidating, which is perfect for a beginner-friendly channel.",
+ "reusable_faceless": [
+  "Hand-drawn whiteboard animation style",
+  "Using a consistent character to guide the viewer",
+  "Highlighting key words in a different colour to break up text",
+  "Using simple data visualizations (bar charts) to prove a point",
+  "Direct, specific call-to-action that asks for a comment"
+ ],
+ "id": "_b8aE3uZakY",
+ "url": "https://www.youtube.com/watch?v=_b8aE3uZakY",
+ "channel": "TheAIUniversity",
+ "niche": "Beginner-friendly AI fundamentals using diagrams, examples, and code snippets",
+ "title": "26% → 76%: The AI Role Exploding Now",
+ "views": 456,
+ "channel_median": 174,
+ "ratio": 2.62,
+ "label": "winner",
+ "watched": "2026-11-16T17:08+05:30"
+}

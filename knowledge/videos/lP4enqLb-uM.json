@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "So what are you saying?",
+ "first_frame": "A man in a white t-shirt looking at his phone, with a podcast-style setup (microphone, desk, bookshelf in background).",
+ "hook_type": "in-the-middle",
+ "format": "talking head + graphics",
+ "length_s": 51,
+ "cuts_estimate": 25,
+ "avg_shot_s": 2.0,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-5 s: Establishing the premise: a disagreement about Instagram growth.",
+  "5-13 s: The 'Breaking Belief Statement' concept is introduced.",
+  "13-24 s: Providing concrete proof with a specific page example.",
+  "24-35 s: Showing another example to reinforce the claim.",
+  "35-42 s: Mentioning the 'Kumar Method' as a case study.",
+  "42-51 s: Transitioning to the explanation phase and ending with a CTA/outro."
+ ],
+ "visual_techniques": [
+  "Jump cuts between two speakers (0-51s)",
+  "Screen recording overlays of Instagram accounts (19s, 36s, 40s)",
+  "Text overlays highlighting key terms like 'Breaking Belief Statement' (13s)",
+  "Zoom-ins on speakers to emphasize points (15s, 32s)",
+  "Logo animation at the end (49s)"
+ ],
+ "captions": "Style: white text with subtle drop shadow, 1-4 words per chunk, centered at the bottom, no specific highlight color used consistently.",
+ "sound": "Voice type: conversational, energetic, podcast-style; Music: upbeat, rhythmic, low-volume background track; Sound effects: subtle whooshes on cuts.",
+ "recurring_element": "The back-and-forth dialogue between the two hosts, acting as a 'skeptic' and 'expert'.",
+ "ending": "CTA (Call to Action) to watch another episode on the topic.",
+ "why": "It uses a 'skeptic vs. expert' dynamic to build immediate tension, provides concrete, verifiable proof (real Instagram accounts) to validate the claim, and keeps the pace fast with frequent cuts and visual overlays, preventing viewer drop-off.",
+ "reusable_faceless": [
+  "Use a 'skeptic vs. expert' dialogue script to frame the information",
+  "Incorporate real-time screen recordings to provide social proof",
+  "Use 'Breaking Belief Statements' as a hook structure",
+  "Maintain a fast-paced editing style with frequent visual changes"
+ ],
+ "id": "lP4enqLb-uM",
+ "url": "https://www.youtube.com/watch?v=lP4enqLb-uM",
+ "channel": "ThinkSchool",
+ "niche": "business explainers, India",
+ "title": "Saad’s Secret to Blowing Up on Instagram",
+ "views": 174000,
+ "channel_median": 60000,
+ "ratio": 2.9,
+ "label": "winner",
+ "watched": "2026-11-16T17:07+05:30"
+}

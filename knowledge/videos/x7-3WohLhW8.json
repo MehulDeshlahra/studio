@@ -1,0 +1,42 @@
+{
+ "hook_first_words": "Guys, Elon Musk has gone",
+ "first_frame": "A screenshot of a tweet by Elon Musk, with the creator's face in a circular picture-in-picture overlay in the top right corner.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 47,
+ "cuts_estimate": 1,
+ "avg_shot_s": 47.0,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-2 s: Hook about Elon Musk being 'mad'.",
+  "2-17 s: Explaining Elon's tweet to Ambani regarding Starlink.",
+  "17-30 s: Comparing Starlink pricing vs Jio pricing.",
+  "30-47 s: Personal opinion on why this strategy will fail in India."
+ ],
+ "visual_techniques": [
+  "Picture-in-picture (PiP) overlay of the creator throughout the video.",
+  "Screen recording/scrolling of a tweet on a computer screen.",
+  "Dynamic captions appearing in sync with speech."
+ ],
+ "captions": "Style: Bold, sans-serif, white text with black outline. Words per chunk: 3-5 words. Position: Bottom center. Highlight colour: Yellow for emphasis on key terms.",
+ "sound": "Voice: Clear, energetic, high-pitched, fast-paced. Music: None, just the creator's voice. Sound effects: None. Silences: None.",
+ "recurring_element": "The screen recording of the tweet, which serves as the visual anchor for the entire duration.",
+ "ending": "The video ends with the creator's opinion on the backlash, leaving the viewer with a thought-provoking conclusion.",
+ "why": "The video performs well because it taps into a highly relevant and controversial topic (Elon Musk vs. Ambani/Jio) in India. The creator uses a 'reaction' style format that feels authentic and personal, and the pacing is fast, keeping the viewer engaged throughout the 47-second duration.",
+ "reusable_faceless": [
+  "Using a screen recording of a trending tweet as the primary visual.",
+  "Adding a personal commentary overlay to news/trending topics.",
+  "Using dynamic, highlighted captions to maintain viewer attention.",
+  "Structuring the video as a concise, opinionated take on a current event."
+ ],
+ "id": "x7-3WohLhW8",
+ "url": "https://www.youtube.com/watch?v=x7-3WohLhW8",
+ "channel": "IshanSharma7390",
+ "niche": "AI tools, Hinglish",
+ "title": "Elon Musk vs Ambani: Will Starlink Survive in India?",
+ "views": 220000,
+ "channel_median": 75000,
+ "ratio": 2.93,
+ "label": "winner",
+ "watched": "2026-11-16T17:07+05:30"
+}

@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "I wanted to learn",
+ "first_frame": "Host talking to camera, text overlay 'I wanted to learn'",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 54,
+ "cuts_estimate": 25,
+ "avg_shot_s": 2.1,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-6 s: Hook: Problem identification (hiring)",
+  "6-12 s: Problem elaboration (resume screening)",
+  "12-28 s: Solution: Building 'Hire AI' tool using IBM SkillsBuild",
+  "28-36 s: Workflow demonstration",
+  "36-47 s: Philosophical takeaway on AI",
+  "47-54 s: CTA for IBM SkillsBuild"
+ ],
+ "visual_techniques": [
+  "Text overlays for emphasis (0-54s)",
+  "Screen recordings of IDE and AI tool interface (1s, 4s, 13s, 16s, 19s, 31s, 39s)",
+  "Split screen/PIP for resume analysis (21s, 25s)",
+  "Stock footage of mobile/tablet usage (41s)"
+ ],
+ "captions": "Center-aligned, white text, bold, sans-serif, word-by-word highlighting in yellow",
+ "sound": "Host voiceover, upbeat lo-fi background music, subtle UI click sound effects",
+ "recurring_element": "Host talking head (A-roll) and IBM SkillsBuild branding",
+ "ending": "CTA (Link in bio)",
+ "why": "The video feels like a generic ad rather than a personal story. The 'hiring problem' is a common trope, and the 'solution' is clearly a sponsored promotion for IBM, which reduces viewer trust and engagement compared to the creator's usual educational/tutorial content.",
+ "reusable_faceless": [
+  "Screen recording with zoom-ins on specific UI elements",
+  "Word-by-word caption highlighting",
+  "Using a 'problem-solution' framework for product promotion",
+  "Overlaying text on top of screen recordings to guide the viewer's eye"
+ ],
+ "id": "5bFS4wIl4W0",
+ "url": "https://www.youtube.com/watch?v=5bFS4wIl4W0",
+ "channel": "IshanSharma7390",
+ "niche": "AI tools, Hinglish",
+ "title": "THIS AI Tool Solved My Hiring Problem! IBM SkillsBuild",
+ "views": 15000,
+ "channel_median": 75000,
+ "ratio": 0.2,
+ "label": "flop",
+ "watched": "2026-11-16T17:09+05:30"
+}

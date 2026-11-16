@@ -1,0 +1,42 @@
+{
+ "hook_first_words": "Everything you just saw",
+ "first_frame": "A split-screen video showing a man with a robotic eye overlay (top) and the original raw footage (bottom). Text overlay: 'CYBERPUNK INDIA'.",
+ "hook_type": "visual surprise",
+ "format": "talking head + graphics",
+ "length_s": 89,
+ "cuts_estimate": 28,
+ "avg_shot_s": 3.1,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-32 s: A montage of 'Cyberpunk India' visuals, split-screen showing AI CGI vs. raw footage.",
+  "32-35 s: Talking head intro explaining the tool used (Higgsfield Genjutsu).",
+  "35-89 s: Step-by-step tutorial on how to use the tool, intercut with more examples and screen recordings of the app interface."
+ ],
+ "visual_techniques": [
+  "Split-screen comparison (0-32 s)",
+  "Screen recording of software interface (58-62 s, 101-104 s)",
+  "B-roll of the creator filming on location (38-42 s)",
+  "Fast-paced cuts between tutorial steps and visual examples (45-57 s)"
+ ],
+ "captions": "Simple white sans-serif font, 3-6 words per chunk, centered, no highlight colour.",
+ "sound": "Upbeat, futuristic electronic background music, voiceover narration, sound effects of robotic movements and city ambiance.",
+ "recurring_element": "The split-screen 'AI CGI vs. RAW' comparison.",
+ "ending": "CTA to try the tool.",
+ "why": "The video is essentially a long-form tutorial disguised as a short. The hook is visually impressive, but the transition into a 60-second 'how-to' guide causes a significant drop in retention for viewers expecting a quick, entertaining showcase of 'Cyberpunk India'. The pacing slows down too much during the technical explanation.",
+ "reusable_faceless": [
+  "Split-screen 'Before/After' or 'Raw/AI' comparison",
+  "Screen recording with zoom-ins on specific UI elements",
+  "Overlaying text on top of raw footage to explain the process",
+  "Using a 'step-by-step' structure for complex AI tools"
+ ],
+ "id": "OlFMwxTI3bk",
+ "url": "https://www.youtube.com/watch?v=OlFMwxTI3bk",
+ "channel": "VarunMayya",
+ "niche": "AI/tech news, English, India",
+ "title": "What India could look like in 10 years",
+ "views": 20000,
+ "channel_median": 111000,
+ "ratio": 0.18,
+ "label": "flop",
+ "watched": "2026-11-16T17:09+05:30"
+}

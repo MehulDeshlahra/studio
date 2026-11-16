@@ -1,0 +1,51 @@
+{
+ "hook_first_words": "A company just made gold",
+ "first_frame": "The creator is speaking directly to the camera, holding a small object, with the text 'This startup just turned mercury into GOLD!' overlaid at the top.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 96,
+ "cuts_estimate": 35,
+ "avg_shot_s": 2.7,
+ "words_per_s_estimate": 2.4,
+ "beats": [
+  "0-5 s: Hook and premise introduction.",
+  "5-16 s: Context on the startup and comparison to CERN.",
+  "16-26 s: Scientific explanation of the process using periodic table graphics.",
+  "26-35 s: Historical context with Isaac Newton.",
+  "35-52 s: Detailed animation of the nuclear reaction process.",
+  "52-60 s: Explanation of the decay process.",
+  "60-70 s: Addressing the 'why' and the bigger picture.",
+  "70-85 s: Transition to the real goal: fusion reactors.",
+  "85-96 s: Future applications and conclusion."
+ ],
+ "visual_techniques": [
+  "Jump cuts to maintain pacing",
+  "Periodic table overlay (17s)",
+  "Atom/particle animation (21s, 37s, 54s)",
+  "Historical image overlay (29s)",
+  "Split-screen comparison (7s)",
+  "Motion graphics for technical concepts (111s, 116s, 128s)"
+ ],
+ "captions": "Style: white text with black outline, centered, 2-4 words per chunk, highlights specific keywords in yellow.",
+ "sound": "Voice: clear, professional, energetic narration. Music: light, upbeat, tech-focused background track. Sound effects: subtle 'pop' or 'click' sounds during graphic transitions.",
+ "recurring_element": "The creator holding a small, dark, round object (likely a prop or fidget toy) while speaking.",
+ "ending": "Punchline: The creator highlights a practical, life-saving application for the technology, providing a satisfying conclusion.",
+ "why": "The video performs well because it takes a complex scientific topic and breaks it down into a simple, engaging story. It uses a strong, curiosity-inducing hook and maintains momentum through high-quality, relevant motion graphics that simplify the science. The creator's energetic delivery and the clear, concise editing keep the viewer's attention throughout.",
+ "reusable_faceless": [
+  "Use of simple, clean motion graphics for complex processes",
+  "Periodic table/atom visual aids",
+  "Historical image overlays to provide context",
+  "Split-screen to contrast two entities",
+  "Highlighting key words in captions to maintain focus"
+ ],
+ "id": "y1bUUkIvPQE",
+ "url": "https://www.youtube.com/watch?v=y1bUUkIvPQE",
+ "channel": "aevytv",
+ "niche": "tech stories, English, India",
+ "title": "This startup turned mercury into GOLD!",
+ "views": 657000,
+ "channel_median": 247000,
+ "ratio": 2.66,
+ "label": "winner",
+ "watched": "2026-11-16T17:08+05:30"
+}

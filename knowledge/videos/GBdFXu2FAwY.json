@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "So Apple just sent me this",
+ "first_frame": "Creator sitting at a table in an Apple store, holding a pink gift bag, smiling at the camera.",
+ "hook_type": "visual surprise",
+ "format": "talking head + b-roll",
+ "length_s": 54,
+ "cuts_estimate": 25,
+ "avg_shot_s": 2.16,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook, holding the gift bag.",
+  "3-10 s: Transition to exterior and interior of the Apple store.",
+  "10-20 s: Showing the event, drawing Rangoli on iPad.",
+  "20-27 s: Showing the event atmosphere and merchandise.",
+  "27-50 s: Unboxing the gifts from the bag.",
+  "50-54 s: Closing shot and sign-off."
+ ],
+ "visual_techniques": [
+  "Jump cuts to maintain pacing",
+  "Point-of-view shots for unboxing",
+  "B-roll of the event space",
+  "Screen recording overlay for iPad demo"
+ ],
+ "captions": "Style: Bold, white sans-serif font with a drop shadow, centered, 2-4 words per chunk, highlights specific keywords in pink.",
+ "sound": "Voice-over/on-camera narration, upbeat background music, ambient sound from the event, no specific sound effects.",
+ "recurring_element": "The pink gift bag which acts as the anchor for the video.",
+ "ending": "CTA: 'I'll see you in the next one' with a final shot of the creator outside the store.",
+ "why": "It combines an exclusive 'behind the scenes' look at a high-profile brand event with a satisfying unboxing experience. The creator's enthusiasm and the high production value of the Apple store setting create a 'premium' feel that keeps viewers engaged.",
+ "reusable_faceless": [
+  "Use a physical object as a 'hook' to anchor the video",
+  "Alternate between talking head and high-quality B-roll",
+  "Use screen recordings to demonstrate digital tasks",
+  "Keep the pacing tight with frequent cuts"
+ ],
+ "id": "GBdFXu2FAwY",
+ "url": "https://www.youtube.com/watch?v=GBdFXu2FAwY",
+ "channel": "IshanSharma7390",
+ "niche": "AI tools, Hinglish",
+ "title": "Apple's Diwali Party + Gift Unboxing",
+ "views": 210000,
+ "channel_median": 75000,
+ "ratio": 2.8,
+ "label": "winner",
+ "watched": "2026-11-16T17:08+05:30"
+}

@@ -1,136 +1,136 @@
 {
  "picks": [
   {
-   "title": "Claude Code reverse engineered my 1994 Jeep's ECU",
-   "url": "https://www.youtube.com/watch?v=WPj3aQ-xxpI",
+   "title": "Researchers track whole body movement with just a smartwatch",
+   "url": "https://news.cornell.edu/stories/2026/11/researchers-track-whole-body-movement-just-smartwatch",
    "src": "Hacker News",
-   "angle": "AI ab purani cars ko bhi hack aur fix kar sakta hai.",
-   "hook": "AI ne 1994 ki purani Jeep hack kar di!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 10,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "Indian chip startup Bharat Semi lands $24M seed round",
-   "url": "https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/",
-   "src": "TechCrunch",
-   "angle": "Bharat ka naya chip startup global market mein dhamaka kar raha hai.",
-   "hook": "Bharat ka ye startup ab global chip market hilaega!",
-   "format": "story",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "Adobe’s creative tools coming to Google apps",
-   "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
-   "src": "Google AI",
-   "angle": "Office work aur design ab ek hi jagah, bina tab switch kiye.",
-   "hook": "Ab Google Docs mein hi Adobe ka magic!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "Protomaps: Self-hosting map tiles",
-   "url": "https://bruceroettgers.eu/blog/protomaps/",
-   "src": "Hacker News",
-   "angle": "Small business owners ke liye Google Maps API ka sasta alternative.",
-   "hook": "Google Maps ka mehenga API chodo, ye try karo!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "Gemini Omni 1.2 Flash released",
-   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
-   "src": "Google AI",
-   "angle": "Developers aur students ke liye sasta aur fast AI model.",
-   "hook": "Gemini ka naya update, pehle se double fast!",
-   "format": "comparison",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "Amazon's plan to index world's online shopping data",
-   "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
-   "src": "The Verge",
-   "angle": "Online shopping ka future ab AI-driven search se badlega.",
-   "hook": "Amazon ab har product ka data index kar raha hai!",
-   "format": "story",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "Crows make decisions faster than humans",
-   "url": "https://www.nytimes.com/2026/11/15/science/birdbrain-crows-birds-research-decision.html",
-   "src": "Hacker News",
-   "angle": "Nature aur AI ke beech ka connection, surprising research.",
-   "hook": "Kya crows humse zyada fast decision lete hain?",
-   "format": "story",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "WebGL Flight Simulator with seed generated terrain",
-   "url": "https://baron.by.dai.studio/",
-   "src": "Hacker News",
-   "angle": "Browser mein hi high-end graphics, AI ka kamaal.",
-   "hook": "Browser mein hi flight simulator, wo bhi AI generated!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "A NES emulator written in Odin",
-   "url": "https://lucypero.com/lucynes.html",
-   "src": "Hacker News",
-   "angle": "Retro gaming aur low-level programming ka maza.",
-   "hook": "Sirf 300 lines mein pura NES console bana diya!",
+   "angle": "Indian fitness enthusiasts can soon get full-body workout tracking without expensive camera setups.",
+   "hook": "Sirf ek smartwatch se poori body track?",
    "format": "evidence",
    "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T05:06+05:30"
+   "score": 10,
+   "found": "2026-11-16T17:06+05:30"
   },
   {
-   "title": "XYBench: Helping with the problem behind the question",
-   "url": "https://huggingface.co/blog/allenai/xybench",
-   "src": "Hugging Face",
-   "angle": "AI se sahi kaam karwane ke liye better prompting seekho.",
-   "hook": "AI se sahi sawal puchna ab aur asaan!",
+   "title": "I posted in \"Who wants to be hired?\" and a recruiter sent me a RAT",
+   "url": "https://getjump.me/posts/03-huntrole-fake-take-home/",
+   "src": "Hacker News",
+   "angle": "Crucial safety warning for Indian job seekers applying on LinkedIn or niche tech boards.",
+   "hook": "Job ke badle hacker ne bheja virus!",
+   "format": "story",
+   "freshness": "this week",
+   "score": 10,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "Qwen4-Max",
+   "url": "https://qwen.ai/blog?id=qwen4-max",
+   "src": "Hacker News",
+   "angle": "A powerful new free alternative to ChatGPT for Indian students and developers.",
+   "hook": "Alibaba ka naya AI model ChatGPT se behtar?",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "SpaceX catches the Starship to end Flight 15",
+   "url": "https://www.spacex.com/launches/starship-flight-15",
+   "src": "Hacker News",
+   "angle": "Visual spectacle of the latest rocket catch that makes space travel cheaper and more accessible.",
+   "hook": "SpaceX ne hawa mein rocket pakad liya!",
+   "format": "evidence",
+   "freshness": "today",
+   "score": 9,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "How to make almost anything",
+   "url": "https://pub.cba.mit.edu/863.26/site/",
+   "src": "Hacker News",
+   "angle": "A goldmine of free MIT engineering resources for Indian students and makers.",
+   "hook": "MIT ka famous course ab sabke liye free.",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "Microsoft 365 outage leads to chlorine gas poisoning",
+   "url": "https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html",
+   "src": "Hacker News",
+   "angle": "A shocking example of how software bugs can lead to physical danger in smart buildings.",
+   "hook": "Software bug ki wajah se hotel mein gas?",
+   "format": "story",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "Apple launches new app to study how people use AI for health",
+   "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+   "src": "TechCrunch AI",
+   "angle": "iPhone users in India can now participate in shaping the future of AI-driven healthcare.",
+   "hook": "Apple ka naya app aapki health sudharega.",
+   "format": "tool-demo",
+   "freshness": "today",
+   "score": 8,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "eDIAR: Training-Free Open-Speaker Streaming Diarization",
+   "url": "https://huggingface.co/papers/2611.18529",
+   "src": "HF papers",
+   "angle": "Perfect for Indian professionals to automatically identify who said what in long office meetings.",
+   "hook": "Meeting mein kaun kya bola, AI bataega.",
    "format": "how-it-works",
    "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-16T05:06+05:30"
+   "score": 8,
+   "found": "2026-11-16T17:06+05:30"
   },
   {
-   "title": "Google Cloud launches Gemini for healthcare",
-   "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
+   "title": "Gamer: A Generalist Foundation Model for Real-Time Game Agent",
+   "url": "https://huggingface.co/papers/2611.18397",
+   "src": "HF papers",
+   "angle": "The next level of gaming where AI plays alongside you with human-like logic.",
+   "hook": "Ab AI aapke liye games khelega.",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
    "src": "Google AI",
-   "angle": "Healthcare professionals ke liye AI ka naya use case.",
-   "hook": "AI ab doctors ki madad karega, dekho kaise!",
+   "angle": "Indian developers can now build apps that make smart, automated choices instantly.",
+   "hook": "Google ka naya AI khud faisle lega.",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "Skydio's asymmetrical F10 Lightrunner solves drone problems",
+   "url": "https://spectrum.ieee.org/skydio-f10-lightrunner-asymmetrical-drone",
+   "src": "Hacker News",
+   "angle": "New drone design that looks weird but flies much better, relevant for India's growing drone industry.",
+   "hook": "Ye drone tedha hai par kaam kamaal hai.",
+   "format": "comparison",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
+   "url": "https://openai.com/index/lvmh-media-division-partnership",
+   "src": "OpenAI",
+   "angle": "Luxury brands like Louis Vuitton are now using ChatGPT to create content and designs.",
+   "hook": "Louis Vuitton ab ChatGPT use karega.",
    "format": "story",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-16T05:06+05:30"
-  },
-  {
-   "title": "LLMON: An LLM-Native Markup Language",
-   "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
-   "src": "Hugging Face",
-   "angle": "AI models ke liye naya coding format, tech students ke liye.",
-   "hook": "LLMs ke liye naya coding language format aa gaya!",
-   "format": "how-it-works",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-16T05:06+05:30"
+   "found": "2026-11-16T17:06+05:30"
   }
  ],
  "history": [
@@ -253,7 +253,67 @@
    "url": "https://lucypero.com/lucynes.html",
    "title": "A NES emulator written in Odin",
    "found": "2026-11-16T05:06+05:30"
+  },
+  {
+   "url": "https://news.cornell.edu/stories/2026/11/researchers-track-whole-body-movement-just-smartwatch",
+   "title": "Researchers track whole body movement with just a smartwatch",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://getjump.me/posts/03-huntrole-fake-take-home/",
+   "title": "I posted in \"Who wants to be hired?\" and a recruiter sent me a RAT",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://qwen.ai/blog?id=qwen4-max",
+   "title": "Qwen4-Max",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://www.spacex.com/launches/starship-flight-15",
+   "title": "SpaceX catches the Starship to end Flight 15",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+   "title": "Apple launches new app to study how people use AI for health",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.18529",
+   "title": "eDIAR: Training-Free Open-Speaker Streaming Diarization",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://pub.cba.mit.edu/863.26/site/",
+   "title": "How to make almost anything",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://spectrum.ieee.org/skydio-f10-lightrunner-asymmetrical-drone",
+   "title": "Skydio's asymmetrical F10 Lightrunner solves drone problems",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html",
+   "title": "Microsoft 365 outage leads to chlorine gas poisoning",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.18397",
+   "title": "Gamer: A Generalist Foundation Model for Real-Time Game Agent",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://openai.com/index/lvmh-media-division-partnership",
+   "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
+   "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+   "found": "2026-11-16T17:06+05:30"
   }
  ],
- "updated": "2026-11-16T05:06+05:30"
+ "updated": "2026-11-16T17:06+05:30"
 }

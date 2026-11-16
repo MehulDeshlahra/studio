@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "I have to admit something.",
+ "first_frame": "A dark background with the text 'I have to admit something' at the top, a small circular video of the creator in the top right, and the Claude logo in the center.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 60,
+ "cuts_estimate": 15,
+ "avg_shot_s": 4.0,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-5 s: Hook and setup of the problem (Claude made mistakes).",
+  "5-14 s: Showing the app and the creator's credentials.",
+  "14-21 s: Explaining the 'broken' rules.",
+  "21-31 s: Fixing the first rule.",
+  "31-41 s: Fixing the second rule.",
+  "41-60 s: Showing the final working product."
+ ],
+ "visual_techniques": [
+  "Text overlays appearing in sync with speech (0-60s)",
+  "Small circular talking head video in the corner (0-60s)",
+  "Screen recordings of the app interface (6-12s, 43-60s)",
+  "Animated arrows pointing to specific parts of the interface (6-12s, 46-48s, 58-60s)",
+  "Highlighted text boxes for rules and fixes (20-41s)"
+ ],
+ "captions": "Bold, sans-serif font, 2-4 words per chunk, centered on screen, yellow highlight color.",
+ "sound": "Clear voiceover, upbeat background music, subtle UI sound effects.",
+ "recurring_element": "The creator's circular talking head video and the app interface.",
+ "ending": "The video ends with the creator showing the final working app, serving as proof of the solution.",
+ "why": "It uses a 'problem-solution' narrative structure. By admitting a mistake (the hook) and showing how they fixed it, the creator builds trust and authority. The fast-paced visual changes keep the viewer engaged, and the clear, step-by-step explanation makes complex technical content accessible.",
+ "reusable_faceless": [
+  "Use a 'hook' that admits a mistake or reveals a secret to grab attention.",
+  "Use screen recordings with clear annotations (arrows, highlights) to explain technical processes.",
+  "Keep text overlays simple and in sync with the audio to reinforce key points.",
+  "Structure the video as a 'problem-solution' journey to keep viewers watching until the end."
+ ],
+ "id": "jLRIxgyr2hs",
+ "url": "https://www.youtube.com/watch?v=jLRIxgyr2hs",
+ "channel": "TheAIUniversity",
+ "niche": "Beginner-friendly AI fundamentals using diagrams, examples, and code snippets",
+ "title": "I built a BREAKOUT STOCK SCREENER using Claude in 18 minutes",
+ "views": 4000,
+ "channel_median": 174,
+ "ratio": 22.99,
+ "label": "winner",
+ "watched": "2026-11-16T17:07+05:30"
+}

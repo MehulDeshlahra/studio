@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "Three reasons why Redis is lightning fast",
+ "first_frame": "The ByteByteGo logo and the Redis logo stacked vertically, with the presenter in the bottom right corner.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 47,
+ "cuts_estimate": 12,
+ "avg_shot_s": 3.9,
+ "words_per_s_estimate": 2.4,
+ "beats": [
+  "0-3 s: Hook and setup of the premise.",
+  "3-10 s: Explanation of RAM vs. Disk.",
+  "10-19 s: Explanation of data structures.",
+  "19-34 s: Explanation of single-threading vs. multithreading.",
+  "34-43 s: Explanation of I/O multiplexing.",
+  "43-47 s: Outro and CTA."
+ ],
+ "visual_techniques": [
+  "Dynamic diagram animation (0-43s)",
+  "Text overlays appearing in sync with speech (throughout)",
+  "Presenter in bottom right corner (throughout)",
+  "Highlighting specific parts of diagrams with red outlines (15s, 44s)",
+  "Split screen comparison of single vs. multi-threading (25-34s)"
+ ],
+ "captions": "Style: Simple, clean white font with a slight drop shadow. Position: Bottom center. Words per chunk: 3-6 words. Highlight colour: None, but the text appears in sync with the audio.",
+ "sound": "Voice type: Clear, professional, informative. Music: Subtle, upbeat, tech-focused background track. Sound effects: None.",
+ "recurring_element": "The presenter's consistent position in the bottom right corner and the high-quality, evolving technical diagrams.",
+ "ending": "CTA for a free system design ebook.",
+ "why": "It breaks down a complex technical topic into three simple, digestible points. The visual diagrams provide immediate clarity, making the abstract concepts concrete and easy to follow, which is highly engaging for a tech-savvy audience.",
+ "reusable_faceless": [
+  "Use of clear, motion-graphic diagrams to explain abstract concepts.",
+  "The 'three reasons' structure for concise storytelling.",
+  "Consistent visual branding (logo, color palette).",
+  "Syncing text overlays with audio to reinforce key points."
+ ],
+ "id": "x8lcdDbKZto",
+ "url": "https://www.youtube.com/watch?v=x8lcdDbKZto",
+ "channel": "ByteByteGo",
+ "niche": "tech diagrams",
+ "title": "Why is Redis so FAST #javascript #python #web #coding #programming",
+ "views": 1300000,
+ "channel_median": 455000,
+ "ratio": 2.86,
+ "label": "winner",
+ "watched": "2026-11-16T17:07+05:30"
+}
