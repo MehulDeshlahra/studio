@@ -58,15 +58,29 @@ def stage_assets(ch, p, job):
     return {int(k): v for k, v in got.items()}
 
 
+def _loud(f):
+    o = subprocess.run(["ffmpeg", "-hide_banner", "-i", f, "-af", "ebur128=peak=true", "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    return float(re.findall(r"I:\s+(-?[\d.]+) LUFS", o)[-1]), float(re.findall(r"Peak:\s+(-?[\d.]+) dBFS", o)[-1])
+
+
 def remux(raw, mix, total, out):
-    """Master: loudnorm (-13 target) + limiter at -4 dBFS, so the AAC encoder (adds ~2 dB true-peak overshoot) lands at
-    about -14.8 LUFS / true peak -2 dBFS. Then mux with the rendered picture."""
+    """Master to -14 LUFS with true peak <= -1.5 AFTER the AAC encode (the encoder adds 2-3 dB overshoot):
+    gain + brickwall limiter at -4.4 dBFS, measured on the encoded file, corrected once."""
     lim = mix.replace(".wav", "-tp.wav")
-    sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af",
-        f"apad=whole_dur={total:.3f},loudnorm=I=-13.0:TP=-2:LRA=11,alimiter=limit=0.63:level=false:attack=3:release=60,aresample=48000",
-        "-c:a", "pcm_s16le", lim])
-    sh(["ffmpeg", "-v", "error", "-y", "-i", raw, "-i", lim, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-        "-c:a", "aac", "-b:a", "256k", "-t", f"{total:.3f}", "-movflags", "+faststart", out])
+    L0, _ = _loud(mix)
+    gain = -14 - L0 + 2.8
+    for _ in range(3):
+        sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af",
+            f"apad=whole_dur={total:.3f},volume={gain:.2f}dB,alimiter=limit=0.6:level=false:attack=1:release=40,aresample=48000",
+            "-c:a", "pcm_s16le", lim])
+        sh(["ffmpeg", "-v", "error", "-y", "-i", raw, "-i", lim, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
+            "-c:a", "aac", "-b:a", "256k", "-t", f"{total:.3f}", "-movflags", "+faststart", out])
+        L, tp = _loud(out)
+        log("master", f"gain {gain:+.1f} dB -> {L} LUFS, TP {tp}")
+        if abs(L + 14) <= 0.6 and tp <= -1.5:
+            break
+        gain += (-14 - L) if tp <= -1.5 else -1.0
 
 
 def main():
