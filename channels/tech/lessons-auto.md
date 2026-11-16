@@ -39,3 +39,14 @@
 - scene 2: The robot's left hand is holding a puzzle piece, but the fingers/grip are anatomically nonsensical/melted.
 - scene 6: The robot is extremely tiny compared to the massive, abstract, glowing digital structure behind it, making it look slightly out of place/disproportionate.
 - scene 7: The robot's left arm/hand is blending into the blue box/UI element in a way that looks like a rendering error (melted geometry).
+
+## review upi-01
+- only 0% of the script was found in the voice
+- visual score 6/10
+
+## review ai-01
+- format/loudness: h264,1080,1920,30/1 -14.4 LUFS, true peak 1.1
+- visual score 6/10
+
+## review ai-01
+- format/loudness: h264,1080,1920,30/1 -14.4 LUFS, true peak 1.1

@@ -1,0 +1,122 @@
+{
+ "slug": "kuber-01",
+ "title": "Kuber's Pride and Ganesha's Hunger",
+ "hud_left": "ANCIENT TALE",
+ "hooks": [
+  "Teeno lok ka sabse ameer devta... ek bachche ko khaana khila nahi paaya.",
+  "Ek mutthi chaawal ne Kuber ka ghamand tod diya.",
+  "Ganesh ji ki bhookh kisi se nahi mitti thi... ek ko chhod kar."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Paradox in line 1 (richest god fails to feed a child), the pattern of the 12-13M winners: a twist the viewer hasn't heard.",
+ "metaphor": "Endless gold cannot fill a child's stomach; one handful given with love can.",
+ "scenes": [
+  {
+   "vo": "The richest god in the cosmos... couldn't satisfy a child's appetite.",
+   "type": "clip",
+   "prompt": "Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile standing shocked in a huge golden palace hall, empty golden plates everywhere, slow camera push-in. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": [],
+   "hud_right": "FOLK TALE"
+  },
+  {
+   "vo": "Kuber had so much gold, he threw a grand feast just to show off.",
+   "type": "image",
+   "prompt": "Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile proudly showing an endless palace full of gold coins and jewels, servants carrying golden trays. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pan",
+   "keywords": []
+  },
+  {
+   "vo": "He traveled to Kailash to invite Mahadev himself.",
+   "type": "image",
+   "prompt": "Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile bowing with folded hands before Lord Shiva: calm, blue skin, crescent moon in matted hair, serpent around neck, sitting on Mount Kailash on snowy Mount Kailash, golden invitation scroll in his hand. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": []
+  },
+  {
+   "vo": "Mahadev smiled and said... I cannot come. Send my son Ganesh instead.",
+   "type": "image",
+   "prompt": "Lord Shiva: calm, blue skin, crescent moon in matted hair, serpent around neck, sitting on Mount Kailash smiling softly and pointing to Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes sitting beside him on Kailash. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pull",
+   "keywords": []
+  },
+  {
+   "vo": "Ganesh sat down to eat. First plate wiped out. Second plate, gone.",
+   "type": "image",
+   "prompt": "Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes sitting on a golden seat eating happily from a big golden thali in a grand dining hall, servants amazed. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "punch",
+   "keywords": []
+  },
+  {
+   "vo": "The kitchen ran out. The entire royal pantry was wiped clean.",
+   "type": "card",
+   "prompt": "A grand palace kitchen with huge empty copper pots and empty storerooms, cooks looking scared. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "big": "ALL EMPTY",
+   "small": "still hungry",
+   "keywords": []
+  },
+  {
+   "vo": "Little Ganesh smiled and said... is there more? I'm still starving.",
+   "type": "image",
+   "prompt": "Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes looking up innocently with an empty thali, while Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile sweats nervously behind. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": []
+  },
+  {
+   "vo": "A terrified Kuber rushed back to Kailash, begging for help.",
+   "type": "image",
+   "prompt": "Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile running in panic up the snowy path of Mount Kailash, crown slipping. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pan",
+   "keywords": []
+  },
+  {
+   "vo": "Mahadev handed him a fistful of rice: feed this with true love.",
+   "type": "image",
+   "prompt": "Lord Shiva: calm, blue skin, crescent moon in matted hair, serpent around neck, sitting on Mount Kailash placing a small handful of rice into the hands of Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile, soft divine light. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": []
+  },
+  {
+   "vo": "Just one handful of rice. And Ganesh was completely satisfied.",
+   "type": "clip",
+   "prompt": "Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes happily eating a small handful of rice from a simple leaf plate, glowing contentment, warm light. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": []
+  },
+  {
+   "vo": "God doesn't want your gold. He only seeks genuine devotion.",
+   "type": "card",
+   "prompt": "A single humble leaf plate with a little rice in front of a small diya, golden light, temple background. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pull",
+   "big": "DEVOTION",
+   "small": "not gold",
+   "keywords": []
+  },
+  {
+   "vo": "Have you ever done something just to show off? Tell us below.",
+   "type": "image",
+   "prompt": "Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes smiling warmly at the viewer, hands in blessing, soft golden background. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pull",
+   "keywords": []
+  }
+ ],
+ "caption": "The richest god in the universe couldn't satisfy one child's hunger. 🙏 A fistful of rice changed everything. Have you ever done something just to show off?",
+ "hashtags": [
+  "#IndianMythology",
+  "#LordGanesha",
+  "#Mahadev",
+  "#SpiritualWisdom",
+  "#AncientTales",
+  "#LifeLessons",
+  "#ShortStories"
+ ],
+ "claims": [
+  {
+   "claim": "Kuber's feast and Ganesha's hunger",
+   "basis": "popular Indian lok-katha (folk tale) about Kuber's pride; not from a single Purana chapter, so the video says 'lok katha'."
+  }
+ ],
+ "lang": "en",
+ "end_line": "New story daily"
+}

@@ -1,0 +1,144 @@
+{
+ "slug": "upi-2-second-transfer",
+ "title": "How does UPI transfer money in 2 seconds?",
+ "hooks": [
+  "PIN dabaya aur agle hi second samne wale ke phone pe tring!",
+  "Do alag bankon ke beech paisa itni tezi se kaise udd jaata hai?",
+  "UPI transfer karte hi paisa do second mein kaise milta hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Relatable sensory trigger (PIN press and instant payment alert) that establishes curiosity right at second zero.",
+ "metaphor": "Digital diaries and a central referee: physical money does not move during transfer; NPCI verifies and tells both banks to update their respective balance numbers simultaneously.",
+ "cast": {
+  "PayerBank": "glossy 3D Pixar-style navy blue bank vault character with big expressive curious eyes, wearing a tiny banker visor, soft blue rim light, dark navy studio background",
+  "PayeeBank": "glossy 3D Pixar-style cyan-tinted bank vault character with round cartoon spectacles and happy glowing eyes, soft blue rim light, dark navy studio background",
+  "NPCIReferee": "tiny energetic 3D Pixar-style referee robot floating with glowing yellow accents #ffd84d, carrying a digital glowing ledger stylus, dark navy studio"
+ },
+ "scenes": [
+  {
+   "vo": "You enter your PIN, and instantly—payment successful!",
+   "type": "clip",
+   "prompt": "glossy 3D Pixar-style smartphone screen showing a bright glowing green checkmark with soft golden particles, dark navy studio, soft blue rim light, camera pushes in smoothly with no text on screen",
+   "motion": "push",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Ever wondered how money moves between different banks so fast?",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style navy blue bank vault character scratching head with curious glowing eyes, floating question mark above, soft blue rim light, dark navy studio background",
+   "motion": "pull",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Here's the twist: the money doesn't actually travel anywhere!",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style golden coin resting completely motionless on a sleek dark pedestal while glowing circuit lines pulse under it, dark navy studio, yellow accent #ffd84d",
+   "motion": "punch",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Think of every bank keeping a digital ledger tracking account balances.",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style floating holographic notebook with glowing columns and tally marks, soft blue rim light, dark navy studio background",
+   "motion": "tilt",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Sitting in the middle is a lightning-fast referee—the NPCI switch.",
+   "type": "image",
+   "prompt": "tiny energetic 3D Pixar-style referee robot floating with glowing yellow accents #ffd84d holding a digital glowing whistle, looking sharp in center frame, dark navy studio background",
+   "motion": "push",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "The moment you enter PIN, your bank deducts five hundred rupees.",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style navy blue bank vault character proudly stamping a digital ledger card as a bright yellow light beam shoots out, dark navy studio background",
+   "motion": "pan",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "NPCI instantly shoots that signal to the receiver's bank.",
+   "type": "flow",
+   "prompt": "clean minimalist dark navy interface showing a glowing yellow data pulse moving rapidly between three rounded nodes, soft blue rim light, dark navy studio",
+   "motion": "push",
+   "title": "",
+   "nodes": [
+    "Your Bank",
+    "NPCI",
+    "Receiver Bank"
+   ],
+   "keywords": []
+  },
+  {
+   "vo": "Their bank immediately responds: 'Done, five hundred rupees credited!'",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style cyan-tinted bank vault character with round spectacles cheerfully writing on a glowing digital pad, soft blue rim light, dark navy studio background",
+   "motion": "tilt",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Just numbers updated in two digital ledgers, and transfer complete!",
+   "type": "clip",
+   "prompt": "two glossy 3D bank vault characters on left and right giving a thumbs-up as glowing green checkmarks hover above them, dark navy studio background, camera subtly pulls back",
+   "motion": "pull",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Actual inter-bank settlement happens later in batches through RBI.",
+   "type": "card",
+   "prompt": "sleek dark navy studio backdrop with glowing digital vault doors and soft ambient golden lighting, clean depth of field",
+   "motion": "punch",
+   "title": "",
+   "big": "NET SETTLEMENT",
+   "small": "Batch settlement via RBI",
+   "keywords": []
+  },
+  {
+   "vo": "This simple ledger system completely revolutionized digital payments across India.",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style golden digital shield glowing with bright speed particles, soft blue rim light, dark navy studio background",
+   "motion": "push",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Ever had a UPI payment get stuck at a counter? Comment below!",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style cute smartphone mascot holding a glowing chat bubble with a question mark, soft blue rim light, dark navy studio background",
+   "motion": "pull",
+   "title": "",
+   "keywords": []
+  }
+ ],
+ "caption": "How does UPI transfer money in just two seconds? ⚡\nNo money physically races through wires—it's all the magic of digital ledgers and NPCI's central switch.\nHas your UPI payment ever failed? 👇",
+ "hashtags": [
+  "#UPI",
+  "#FintechIndia",
+  "#DigitalIndia",
+  "#BankingTech",
+  "#NPCI",
+  "#MoneyExplained",
+  "#TechExplainer"
+ ],
+ "claims": [
+  {
+   "claim": "UPI transfers update balances in real-time between bank ledgers via the NPCI messaging switch without physical cash moving.",
+   "basis": "NPCI UPI procedural guidelines: Real-time settlement for customers occurs through ISO 8583 messaging between payer and beneficiary banks over the NPCI network."
+  },
+  {
+   "claim": "Interbank net financial settlement occurs in subsequent periodic batches through RBI RTGS.",
+   "basis": "Reserve Bank of India (RBI) and NPCI settlement framework: Multilateral net settlement runs in designated batches throughout the day."
+  }
+ ],
+ "lang": "en",
+ "end_line": "Follow for more"
+}

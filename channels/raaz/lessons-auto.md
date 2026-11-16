@@ -45,3 +45,13 @@
 - scene 9: The visual content shows a multiple-choice menu (A, B, C) which is good, but the caption is missing entirely.
 - scene 10: The caption text 'ANSWER TOMORROW' does not match the intended script 'Comment A, B or C. Answer tomorrow.'
 - General: The top-left/top-right text overlays (e.g., 'PART 1', 'CASE 2', 'SUSP CASE/2') are inconsistent, overlapping, and look like placeholder UI elements that were not cleaned up.
+
+## review case2-p1-en
+- the video does not start with the first line "You are the detective. And this wedding... is now " (heard: "the rooms envelope with five lakh rupees gone")
+- visual: Top header text overlaps and clips in frame 21 ('PART 2 TOM CASE 2').
+- visual: Card text '₹5,00,000' is displayed prematurely across Scene 1 while the dialogue discusses the wedding crime scene.
+- visual score 5/10
+
+## case2-p1-en Case 1: Haveli ka band kamra (part 1)
+- scene 5: The image of the sweet maker's hands holding the syrup shows a slight AI artifacting issue where the fingers look somewhat melted/blended into the syrup bowl, though it is acceptable for a quick social media clip.
+- scene 6: The friend's hand holding the phone looks slightly distorted/unnatural in its grip.

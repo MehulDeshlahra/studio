@@ -12,3 +12,13 @@
 - scene 1: The caption 'EK BACHCHE KO' is partially obscured by the character's hand/clothing, making it slightly hard to read.
 - scene 6: The text 'PHIR BHI BHOOKH' is slightly low and close to the pots, creating a somewhat cramped composition.
 - scene 10: The caption 'AUR GANESH JI' is slightly cut off at the bottom edge of the frame.
+
+## review kuber-01
+- only 0% of the script was found in the voice
+- visual score 6/10
+
+## kuber-01-en Eklavya ka angootha (Mahabharata, Adi Parva)
+- scene 1: The top left corner has 'FOLK TALE' while all other scenes have 'ANCIENT TALE'. This is inconsistent branding.
+- scene 5: The caption 'FIRST PLATE WIPED' is slightly confusing because the visual shows Ganesh eating, but the text implies the pantry is already wiped clean. It's acceptable but slightly misaligned with the visual action.
+- scene 6: The text 'ALL EMPTY' and 'STILL HUNGRY' are present, but the visual is quite dark and murky, making the text slightly harder to read than in other frames.
+- scene 11: The text 'DEVOTION NOT GOLD' is clear, but the visual is a bit generic/dark compared to the vibrant storytelling in the other frames.

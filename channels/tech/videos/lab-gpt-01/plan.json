@@ -1,0 +1,203 @@
+{
+ "slug": "chatgpt-jawab-prediction",
+ "title": "ChatGPT jawab kaise banata hai?",
+ "hooks": [
+  "ChatGPT insaan ki tarah dimaag laga kar jawab nahi deta.",
+  "Aapka ChatGPT asal mein sirf ek super-smart guesser hai.",
+  "ChatGPT kabhi poora sentence ek saath nahi sochta."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Busts the illusion of AI consciousness in frame 0 and creates immediate curiosity about how it actually writes.",
+ "metaphor": "A super-fast smartphone auto-complete looping through next-token probabilities.",
+ "cast": {},
+ "scenes": [
+  {
+   "type": "clip",
+   "prompt": "Cinematic macro shot of a sleek smartphone screen glowing softly in a dark studio, a single minimalist glowing green cursor blinking steadily, dark glass reflection, pure black background, no text, no icons.",
+   "label": "THE ILLUSION",
+   "vo": "ChatGPT insaan ki tarah dimaag laga kar jawab nahi deta.",
+   "keywords": [
+    "dimaag laga kar",
+    "nahi deta"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "title",
+   "big": "KAISE HOTA HAI?",
+   "sub": "The Prediction Engine",
+   "vo": "Toh phir itne smart aur lambe answers bante kaise hain?",
+   "keywords": [
+    "smart answers",
+    "bante kaise"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "object",
+   "prompt": "Photorealistic studio product shot of a floating minimalist dark mechanical keyboard key with subtle turquoise neon edge glow, isolated on pure black background, cinematic lighting, no text.",
+   "label": "AUTO-COMPLETE",
+   "vo": "Asal mein ChatGPT phone ke auto-complete ka ek super-sized roop hai.",
+   "keywords": [
+    "auto-complete",
+    "super-sized"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "flow",
+   "nodes": [
+    "Aapka Prompt",
+    "Tokens",
+    "Probability",
+    "Agla Shabd"
+   ],
+   "label": "STEP 1: TOKENS",
+   "vo": "Aapka sawaal aate hi yeh use chhote tukdon yani tokens mein todta hai.",
+   "keywords": [
+    "tokens",
+    "todta hai"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "ui",
+   "title": "AGLE SHABD KA CHANCE",
+   "rows": [
+    {
+     "label": "Bharat",
+     "value": "76%",
+     "pct": 76
+    },
+    {
+     "label": "Duniya",
+     "value": "18%",
+     "pct": 18
+    },
+    {
+     "label": "Khabar",
+     "value": "6%",
+     "pct": 6
+    }
+   ],
+   "label": "STEP 2: MATH",
+   "vo": "Fir agla sabse sahi shabd aane ka chance calculate hota hai.",
+   "keywords": [
+    "sabse sahi",
+    "calculate"
+   ],
+   "motion": "push"
+  },
+  {
+   "type": "stat",
+   "value": "1 Token",
+   "sub": "generated per step",
+   "label": "ONE BY ONE",
+   "vo": "Ek baar mein poora jawab nahi, bas agla ek tukda banta hai.",
+   "keywords": [
+    "ek baar mein",
+    "agla tukda"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "compare",
+   "items": [
+    {
+     "label": "Pichla Text",
+     "value": "Input Prompt",
+     "pct": 40
+    },
+    {
+     "label": "Naya Loop",
+     "value": "Prompt + Naya Token",
+     "pct": 100
+    }
+   ],
+   "label": "FEEDBACK LOOP",
+   "vo": "Naya shabd chunte hi, yeh use pichle sentence ke aage jod deta hai.",
+   "keywords": [
+    "aage jod deta",
+    "sentence"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "object",
+   "prompt": "Photorealistic glowing circular data stream ring looping smoothly into itself, neon cyan and deep amber particles on a pure black background, 3D render, no text.",
+   "label": "CONTINUOUS LOOP",
+   "vo": "Ab naye sentence ko dobara padh kar, agla shabd predict hota hai.",
+   "keywords": [
+    "dobara padh kar",
+    "predict"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "object",
+   "prompt": "Photorealistic studio render of a high-tech matte dark processor chip with sharp golden rim light, glowing circuitry lines pulsing on black background, macro detail, zero text.",
+   "label": "MICROSECOND SPEED",
+   "vo": "Yeh cycle microsecond mein ghoomti hai, isliye lagta hai live typing chal rahi hai.",
+   "keywords": [
+    "microsecond",
+    "live typing"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "object",
+   "prompt": "Photorealistic minimalist translucent glass dice with tiny glowing amber nodes suspended inside, resting on dark reflective studio surface with subtle blue rim light, no text.",
+   "label": "MATH NOT MIND",
+   "vo": "Matlab ChatGPT kuch samajhta nahi, bas mathematics ka sabse tagda guesser hai.",
+   "keywords": [
+    "kuch samajhta nahi",
+    "guesser"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "type": "title",
+   "big": "KABHI GALTI HUI?",
+   "sub": "Neeche comment karo",
+   "vo": "Kabhi ChatGPT ne aapke sawaal ka ajeeb ya galat jawab diya hai?",
+   "keywords": [
+    "ajeeb jawab",
+    "galat jawab"
+   ],
+   "motion": "push",
+   "title": ""
+  }
+ ],
+ "caption": "ChatGPT sochta nahi, bas predict karta hai! Agla shabd chunne ka ye math jaankar dimaag hil jaayega. Kya aapke saath kabhi ChatGPT ne galat jawab diya hai?",
+ "hashtags": [
+  "#techexplained",
+  "#chatgpt",
+  "#artificialintelligence",
+  "#kaisehotahai",
+  "#techfacts",
+  "#hindi"
+ ],
+ "claims": [
+  {
+   "claim": "ChatGPT generates text sequentially one token at a time (autoregressive generation)",
+   "basis": "Standard Transformer autoregressive decoder architecture (Vaswani et al. 2017, OpenAI GPT papers)."
+  },
+  {
+   "claim": "Input text is broken into sub-word tokens before processing",
+   "basis": "Byte Pair Encoding (BPE) tokenization documented in OpenAI GPT tokenizer specifications."
+  },
+  {
+   "claim": "The next token is chosen using calculated probability distributions over vocabulary",
+   "basis": "Softmax distribution over token logits used in standard LLM inference."
+  }
+ ]
+}

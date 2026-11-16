@@ -1,0 +1,30 @@
+{
+ "topic": "Eklavya ka angootha (Mahabharata, Adi Parva)",
+ "title": "Kuber's Pride and Ganesha's Hunger",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.8,
+  "true_peak": -3.2,
+  "dur": 51.43
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 1: The top left corner has 'FOLK TALE' while all other scenes have 'ANCIENT TALE'. This is inconsistent branding.",
+   "scene 5: The caption 'FIRST PLATE WIPED' is slightly confusing because the visual shows Ganesh eating, but the text implies the pantry is already wiped clean. It's acceptable but slightly misaligned with the visual action.",
+   "scene 6: The text 'ALL EMPTY' and 'STILL HUNGRY' are present, but the visual is quite dark and murky, making the text slightly harder to read than in other frames.",
+   "scene 11: The text 'DEVOTION NOT GOLD' is clear, but the visual is a bit generic/dark compared to the vibrant storytelling in the other frames."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9323308270676691,
+  "words": 133,
+  "problems": []
+ },
+ "ok": true
+}
