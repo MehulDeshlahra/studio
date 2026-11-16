@@ -37,3 +37,8 @@ length follows information, short question ending, one colour identity, no effec
 - Word times from whisper matched to the script (engine/align.py), never estimated. Active word highlighted.
 - Never the same text twice on screen (no captions under a card that shows text; no title repeating the voice).
 - Montserrat 900, max 3 words per group, one group at a time.
+
+## Learning is shared across ALL pages (owner, 16 Nov)
+- Every plan reads the lessons of every page (engine/plan.py all_lessons): its own first, then the other pages', each labelled. General lessons (captions, sync, length, hooks, sound, no double text, story pacing) apply to all pages; format-specific ones (e.g. raaz clue cards) only where they fit.
+- Owner feedback on any page is also written here when it is general, so it is never lost.
+- Shared from raaz feedback (16 Nov) to all pages: captions from real word times; no text twice on screen; Montserrat captions with active-word highlight; 35-45 s; hook in the first line; relatable modern setting; second person ("tum/aap") when it fits.

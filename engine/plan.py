@@ -48,13 +48,31 @@ SCHEMA = """{
 }"""
 
 
+def all_lessons(own):
+    """Lessons from EVERY page (owner rule 16 Nov: learning from one page applies to all).
+    This page's own lessons first, then the others, each labelled with its page."""
+    base = os.path.join(ROOT, "channels")
+    ids = [own] + sorted(c for c in os.listdir(base) if c != own and os.path.isdir(os.path.join(base, c)))
+    out = ["LESSONS FROM ALL OUR PAGES (apply every general lesson here too; format-specific ones only if they fit):"]
+    for cid in ids:
+        a = read(os.path.join(base, cid, "lessons.md"), 4000).strip()
+        b = read(os.path.join(base, cid, "lessons-auto.md"), 2000).strip()
+        if a or b:
+            out.append(f"--- page '{cid}'{' (this page)' if cid == own else ''} ---")
+            if a:
+                out.append(a)
+            if b:
+                out.append("Problems the quality gate found:\n" + b)
+    return "\n".join(out)
+
+
 def _rules(ch):
     return "\n".join("- " + r for r in ch.get("rules", []))
 
 
 def make(ch, topic, research_text):
     lessons = read(os.path.join(ROOT, "knowledge", "lessons.md"))
-    ch_lessons = read(os.path.join(ROOT, "channels", ch["id"], "lessons.md")) + "\nProblems the quality gate found in earlier videos (avoid them):\n" + read(os.path.join(ROOT, "channels", ch["id"], "lessons-auto.md"), 3000)
+    ch_lessons = all_lessons(ch["id"])
     bible = read(os.path.join(ROOT, "channels", ch["id"], "bible.md"))
     playbook = read(os.path.join(ROOT, "knowledge", "playbook.md"), 6000)
     p = f"""You plan one vertical short video (Instagram Reel / YouTube Short) for the channel below. Topic: "{topic}".
