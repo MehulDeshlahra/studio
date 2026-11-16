@@ -126,6 +126,9 @@ def sources(state):
     tsj = cached("tsc", 300, lambda: json.loads(run(["tailscale", "status", "--json"]) or "{}"))
     online = (tsj.get("Self") or {}).get("Online") if isinstance(tsj, dict) else None
     add("Tailscale", "Private access to this page", "ok" if online else "warn", "Online" if online else "Status unknown", None)
+    ds = jload(os.path.join(OUT, "doctor-state.json"), {}) or {}
+    add("Doctor (self-repair)", "Finds and fixes breaks every 10 min", "ok" if ds.get("last") and time.time() - ds["last"] < 1800 else "bad",
+        ("Last fixes: " + " | ".join(ds.get("last_did") or [])[-200:]) if ds.get("last_did") else "Nothing needed fixing", ds.get("last"))
     gt = run(["git", "-C", ROOT, "log", "-1", "--format=%ct %s"]).strip()
     add("GitHub (studio repo)", "Code + lessons backup", "ok" if gt else "warn", gt.split(" ", 1)[1][:80] if gt else "No commits", int(gt.split()[0]) if gt else None)
     q = os.path.join(HOME, "vajra-automation", "social", "queue.json")

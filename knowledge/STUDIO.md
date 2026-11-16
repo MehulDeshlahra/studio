@@ -70,3 +70,9 @@
 - Muse browsers stay warm while Studio fetches visuals (~/musebridge*/STUDIO-AWAKE, ignored after 45 min).
 - Hand-started tests: always systemd-run -p CPUWeight=20 -p Nice=15; never run Whisper at normal priority.
 
+
+## Doctor (17 Nov)
+- engine/doctor.py, timer studio-doctor every 10 min: clears failed units, restarts stopped timers / dashboard / Muse bridges (down 20 min), kills jobs with no progress for 60 min (lane resumes), cleans caches at 88% disk, unsticks git, trims budget.
+- Telegram ONLY for owner-only items (Meta login, Gemini money/cap, disk still full), once a day each.
+- Unknown repeated errors -> ~/studio-out/doctor-unknown.json: READ IT at the start of every session and fix them.
+

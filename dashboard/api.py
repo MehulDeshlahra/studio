@@ -464,6 +464,15 @@ def issues(srv, fails, jl, sched, token_days, chs):
         seen.add(k); add("warn", "Error in the last 2 h", e["msg"][:240], "", None, "log-" + k)
         if len(seen) >= 4:
             break
+    dst = jload(os.path.join(OUT, "doctor-state.json"), {}) or {}
+    if not dst.get("last") or time.time() - dst["last"] > 1800:
+        add("warn", "Doctor has not run for 30+ min", "the self-repair agent (studio-doctor timer) is not running")
+    for u in (jload(os.path.join(OUT, "doctor-unknown.json"), []) or [])[-5:]:
+        try:
+            if time.time() - time.mktime(time.strptime(u["t"], "%Y-%m-%d %H:%M")) < 86400:
+                add("info", "Doctor noted (fixed next session): " + u["what"], u.get("detail", "")[:200], key="doc-" + u["what"])
+        except Exception:
+            pass
     rank = {"bad": 0, "warn": 1, "info": 2}
     return sorted(out, key=lambda x: rank[x["lvl"]])
 
