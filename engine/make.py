@@ -13,7 +13,26 @@ CHROME = os.environ.get("PUPPETEER_EXECUTABLE_PATH", next((p for p in [
     os.path.expanduser("~/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux-arm64/chrome-headless-shell"),
     os.path.expanduser("~/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux-arm64/chrome-headless-shell"),
     os.path.expanduser("~/.cache/ms-playwright/chromium-1248/chrome-linux-arm64/chrome")] if os.path.exists(p)), ""))
-WORKERS = os.environ.get("STUDIO_RENDER_WORKERS", "2")
+WORKERS = os.environ.get("STUDIO_RENDER_WORKERS", "")
+
+
+def render_workers():
+    """17 Nov: 2 workers only help on a quiet server; with the job bot busy they double the CPU fight (load 11).
+    Sample /proc/stat for 3 s: if normal-priority (not niced) work uses >= 35% of the cores, use 1 worker."""
+    if WORKERS:
+        return WORKERS
+    def snap():
+        with open("/proc/stat") as f:
+            v = list(map(int, f.readline().split()[1:]))
+        return v[0] + v[2], sum(v)                     # user + system (niced work excluded), total
+    try:
+        a = snap(); time.sleep(3); b = snap()
+        busy = (b[0] - a[0]) / max(1, b[1] - a[1])
+    except Exception:
+        return "1"
+    w = "1" if busy >= 0.35 else "2"
+    log(f"render workers {w} (normal-priority CPU {busy:.0%})")
+    return w
 
 
 def pick_topic(ch):
@@ -35,7 +54,28 @@ def pick_topic(ch):
     return t
 
 
+def _muse_awake(on):
+    """~/musebridge*/STUDIO-AWAKE: the bridge skips its 20-min idle stop while this file is fresh (< 45 min)."""
+    for d in ("~/musebridge", "~/musebridge2"):
+        f = os.path.join(os.path.expanduser(d), "STUDIO-AWAKE")
+        try:
+            if on:
+                open(f, "w").write(str(int(time.time())))
+            elif os.path.exists(f):
+                os.remove(f)
+        except Exception:
+            pass
+
+
 def stage_assets(ch, p, job):
+    _muse_awake(True)
+    try:
+        return _stage_assets(ch, p, job)
+    finally:
+        _muse_awake(False)
+
+
+def _stage_assets(ch, p, job):
     look = ch.get("visuals", {}).get("look", "")
     theme = ch.get("theme", {})
     adir = os.path.join(job, "assets"); os.makedirs(adir, exist_ok=True)
@@ -243,7 +283,7 @@ def main():
     if "render" in redo or not os.path.exists(final):
         env = dict(os.environ, PUPPETEER_EXECUTABLE_PATH=CHROME)
         t0 = time.time()
-        sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--workers", WORKERS, "--no-low-memory-mode", "--output", raw],
+        sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--workers", render_workers(), "--no-low-memory-mode", "--output", raw],
            env=env, timeout=7200, cwd=rdir) if os.name != "nt" else sh(["npx.cmd", "-y", "hyperframes@latest", "render", "--output", raw], cwd=rdir)
         log("rendered in", round(time.time() - t0), "s")
         remux(raw, mix, total, final)

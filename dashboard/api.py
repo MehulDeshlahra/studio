@@ -67,14 +67,17 @@ _prev = None
 
 
 def _cpu():
+    """Returns (total %, normal-priority % = user+system, background % = niced Studio work)."""
     global _prev
     with open("/proc/stat") as f:
         v = list(map(int, f.readline().split()[1:]))
-    idle, tot = v[3] + v[4], sum(v)
+    cur = (v[0] + v[2] + v[5] + v[6], v[1], v[3] + v[4], sum(v))
     if _prev is None:
-        _prev = (idle, tot); return 0.0
-    di, dt = idle - _prev[0], tot - _prev[1]; _prev = (idle, tot)
-    return round(100 * (1 - di / dt), 1) if dt else 0.0
+        _prev = cur; return 0.0, 0.0, 0.0
+    dn, dni, di, dt = (cur[k] - _prev[k] for k in range(4)); _prev = cur
+    if not dt:
+        return 0.0, 0.0, 0.0
+    return round(100 * (1 - di / dt), 1), round(100 * dn / dt, 1), round(100 * dni / dt, 1)
 
 
 def _mem():
@@ -88,8 +91,8 @@ def _mem():
 def sampler():
     while True:
         try:
-            c = _cpu(); tot, av = _mem(); l1 = os.getloadavg()[0]
-            HIST.append((int(time.time()), c, round(100 * (1 - av / tot), 1), round(l1, 2)))
+            c, cn, cb = _cpu(); tot, av = _mem(); l1 = os.getloadavg()[0]
+            HIST.append((int(time.time()), c, round(100 * (1 - av / tot), 1), round(l1, 2), cn, cb))
             del HIST[:-240]
         except Exception:
             pass
@@ -107,11 +110,14 @@ def server():
             urllib.request.urlopen(f"http://127.0.0.1:{port}/health", timeout=3); muse[name] = True
         except Exception:
             muse[name] = False
-    return {"cores": os.cpu_count(), "cpu": HIST[-1][1] if HIST else 0, "mem_pct": round(100 * (1 - av / tot), 1),
+    rec = HIST[-12:]                                        # last minute
+    cpu_norm = round(sum(h[4] for h in rec) / len(rec), 1) if rec else 0
+    cpu_bg = round(sum(h[5] for h in rec) / len(rec), 1) if rec else 0
+    return {"cores": os.cpu_count(), "cpu": HIST[-1][1] if HIST else 0, "cpu_norm": cpu_norm, "cpu_bg": cpu_bg, "mem_pct": round(100 * (1 - av / tot), 1),
             "mem_used_gb": round((tot - av) / 1048576, 1), "mem_total_gb": round(tot / 1048576, 1),
             "disk_pct": round(100 * du.used / du.total, 1), "disk_free_gb": round(du.free / 1e9, 1), "disk_total_gb": round(du.total / 1e9),
             "load": [round(x, 2) for x in la], "uptime_h": round(up / 3600, 1), "muse": muse,
-            "hist": [{"t": t, "cpu": c, "mem": m, "load": l} for t, c, m, l in HIST[-120:]]}
+            "hist": [{"t": h[0], "cpu": h[1], "mem": h[2], "load": h[3], "norm": h[4], "bg": h[5]} for h in HIST[-120:]]}
 
 
 # ---------------- what is running right now ----------------
@@ -428,8 +434,10 @@ def issues(srv, fails, jl, sched, token_days, chs):
         add("warn", f"Disk {srv['disk_pct']}% full", f"{srv['disk_free_gb']} GB free of {srv['disk_total_gb']} GB", "Clean old renders soon.")
     if srv["mem_total_gb"] - srv["mem_used_gb"] < 1:
         add("warn", "Low memory", f"{srv['mem_used_gb']} of {srv['mem_total_gb']} GB used")
-    if srv["load"][1] > 3 * srv["cores"]:
-        add("warn", "Server overloaded", f"load {srv['load'][1]} on {srv['cores']} cores (5 min)")
+    # 17 Nov: 100% CPU is fine when it is niced Studio work using spare cores. Warn only when NORMAL-priority work
+    # (job bot, Muse browser, dashboard) is itself near the limit for a full minute.
+    if srv["cpu_norm"] >= 85:
+        add("warn", "Server busy with priority work", f"job bot and other normal-priority work use {srv['cpu_norm']:.0f}% of the CPU; Studio waits")
     for name, ok in srv["muse"].items():
         if not ok:
             add("warn", f"Muse {name} is down", "images fall back to Cloudflare / Pollinations", "Restart the Muse browser.")
@@ -542,7 +550,7 @@ def make_now(cid, topic=""):
     if cid not in ("tech", "katha", "raaz"):
         raise ValueError("unknown channel")
     unit = f"studio-job-dash-{int(time.time())}"
-    cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}",
+    cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "Nice=15", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}",
            PY, os.path.join(ROOT, "engine", "make.py"), cid] + ([topic[:160]] if topic else [])
     subprocess.run(cmd, capture_output=True, timeout=20)
     return {"ok": True, "unit": unit}

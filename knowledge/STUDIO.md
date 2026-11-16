@@ -63,3 +63,10 @@
 - engine/ideas.py: every new video picks the best of 10 ideas (YouTube demand + fit + freshness), log in channels/<id>/ideas.json.
 - tts.strip_preamble: English editions cut everything before the script's first words.
 
+
+## CPU rules (17 Nov)
+- Studio work is low priority (nice 15, CPUWeight 20): job bot first, Studio takes spare CPU. 100% CPU with mostly 'background' is normal.
+- Render workers: 2 on a quiet server, 1 when normal-priority CPU >= 35% (make.render_workers).
+- Muse browsers stay warm while Studio fetches visuals (~/musebridge*/STUDIO-AWAKE, ignored after 45 min).
+- Hand-started tests: always systemd-run -p CPUWeight=20 -p Nice=15; never run Whisper at normal priority.
+

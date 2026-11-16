@@ -41,6 +41,14 @@ const lvlBadge = (l, t) => `<span class="badge" style="--c:${LV[l] || K.gray}"><
 const meter = (p, c) => `<div class="meter" style="--c:${c}"><i style="width:${Math.max(2, Math.min(100, p))}%"></i></div>`;
 const thr = (v, w, b) => (v >= b ? K.red : v >= w ? K.amber : K.green);
 const seg = (j) => `<div class="seg">${j.steps.map((s) => `<i class="${s.done ? "d" : s.active ? "a" : ""}" title="${esc(s.label)}"></i>`).join("")}</div>`;
+function cpuSplit(s) {
+  const n = Math.round(s.cpu_norm || 0), b = Math.round(s.cpu_bg || 0), f = Math.max(0, 100 - n - b);
+  return `<div style="display:flex;justify-content:space-between;font-size:12.5px"><span class="mut">CPU</span><span class="num">${n + b}%</span></div>
+  <div style="display:flex;height:8px;border-radius:99px;overflow:hidden;margin-top:5px;background:var(--sub);border:1px solid var(--line)">
+   <i style="width:${n}%;background:${n >= 85 ? "var(--red)" : n >= 60 ? "var(--amber)" : "var(--blue)"}"></i><i style="width:${b}%;background:color-mix(in srgb,var(--gray) 45%,transparent)"></i></div>
+  <div style="display:flex;gap:12px;font-size:12px;margin-top:5px" class="mut"><span><i class="dot" style="--c:var(--blue)"></i> priority ${n}%</span><span><i class="dot" style="--c:var(--gray)"></i> Studio background ${b}%</span><span>free ${f}%</span></div>
+  <div class="faint" style="font-size:11.5px;margin-top:3px">Studio runs at low priority and only uses CPU nothing else needs.</div>`;
+}
 const curStep = (j) => (j.steps.find((s) => s.active) || {}).label;
 function toast(t) { const e = $("#toast"); e.textContent = t; e.classList.add("on"); clearTimeout(e._t); e._t = setTimeout(() => e.classList.remove("on"), 2200); }
 async function post(u, b) { const r = await fetch(u, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(b) }); const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j; }
@@ -50,7 +58,7 @@ function chart(hist, key, color, max = 100, unit = "%") {
   const w = 600, h = 120, n = hist.length, y = (v) => h - 4 - (Math.min(v, max) / max) * (h - 12);
   const d = hist.map((p, i) => `${i ? "L" : "M"}${((i / (n - 1)) * w).toFixed(1)} ${y(p[key]).toFixed(1)}`).join(" ");
   const last = hist[n - 1][key];
-  return `<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="lbl">${key === "cpu" ? "CPU" : key === "mem" ? "Memory" : "Load"}</span><span class="num" style="font-weight:600">${last}${unit}</span></div>
+  return `<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="lbl">${{ cpu: "CPU", mem: "Memory", norm: "Priority CPU (job bot, Muse, dashboard)", load: "Load" }[key]}</span><span class="num" style="font-weight:600">${last}${unit}</span></div>
   <svg class="chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${[0.25, 0.5, 0.75].map((f) => `<line x1="0" x2="${w}" y1="${y(max * f)}" y2="${y(max * f)}" stroke="var(--line)" stroke-dasharray="2 4"/>`).join("")}
   <path d="${d} L${w} ${h} L0 ${h}Z" fill="${color}" opacity=".08"/><path d="${d}" fill="none" stroke="${color}" stroke-width="1.6" vector-effect="non-scaling-stroke"/></svg>
   <div class="dl">last ${Math.round((hist[n - 1].t - hist[0].t) / 60)} min</div>`;
@@ -96,7 +104,7 @@ const V = {
      <div><div class="lbl"><i class="dot" style="--c:${K.violet}"></i>Needs approval</div><div class="val">${wait}</div><div class="dl">${appr} approved, waiting for a slot</div></div>
      <div><div class="lbl">Rendered today</div><div class="val">${made}</div><div class="dl">${S.budgets.map((x) => `${x.name.split(" ")[0]} ${x.used}/${x.cap}`).join(" · ")}</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${act.length ? K.blue : K.gray}"></i>Building</div><div class="val">${act.length}</div><div class="dl">typical render ${dur(S.render_median)}</div></div>
-     <div><div class="lbl"><i class="dot" style="--c:${bad ? K.red : warn ? K.amber : K.green}"></i>Health</div><div class="val">${bad ? bad + " <small>to fix</small>" : warn ? warn + " <small>to watch</small>" : "OK"}</div><div class="dl">CPU ${Math.round(s.cpu)}% · disk ${Math.round(s.disk_pct)}%</div></div>
+     <div><div class="lbl"><i class="dot" style="--c:${bad ? K.red : warn ? K.amber : K.green}"></i>Health</div><div class="val">${bad ? bad + " <small>to fix</small>" : warn ? warn + " <small>to watch</small>" : "OK"}</div><div class="dl">priority CPU ${Math.round(s.cpu_norm || 0)}% · disk ${Math.round(s.disk_pct)}%</div></div>
     </div>
     <div class="cols" style="margin-top:16px">
      <div>
@@ -109,8 +117,8 @@ const V = {
      </div>
      <div>
       <div class="sec" style="margin-top:0"><h3>Server</h3><a class="r mut" href="#server">Details →</a></div>
-      <div class="card pad">${[["CPU", s.cpu, thr(s.cpu, 80, 95), `${Math.round(s.cpu)}%`], ["Memory", s.mem_pct, thr(s.mem_pct, 80, 92), `${s.mem_used_gb} / ${s.mem_total_gb} GB`], ["Disk", s.disk_pct, thr(s.disk_pct, 85, 93), `${s.disk_free_gb} GB free`], ["Load", (s.load[0] / (s.cores * 3)) * 100, thr(s.load[0] / s.cores, 2, 3.5), `${s.load[0]} on ${s.cores} cores`]]
-        .map(([l, v, c, t]) => `<div style="margin-top:10px"><div style="display:flex;justify-content:space-between;font-size:12.5px"><span class="mut">${l}</span><span class="num">${t}</span></div><div style="margin-top:5px">${meter(v, c)}</div></div>`).join("").replace('margin-top:10px', 'margin-top:0')}</div>
+      <div class="card pad">${cpuSplit(s)}${[["Memory", s.mem_pct, thr(s.mem_pct, 80, 92), `${s.mem_used_gb} / ${s.mem_total_gb} GB`], ["Disk", s.disk_pct, thr(s.disk_pct, 85, 93), `${s.disk_free_gb} GB free`], ["Load per core", (s.load[1] / s.cores / 4) * 100, thr(s.load[1] / s.cores, 3, 5), `${(s.load[1] / s.cores).toFixed(1)} (5 min)`]]
+        .map(([l, v, c, t]) => `<div style="margin-top:10px"><div style="display:flex;justify-content:space-between;font-size:12.5px"><span class="mut">${l}</span><span class="num">${t}</span></div><div style="margin-top:5px">${meter(v, c)}</div></div>`).join("")}</div>
       <div class="sec"><h3>Issues</h3><span class="mut">${S.issues.length}</span></div>
       <div class="card">${S.issues.slice(0, 5).map(issueRow).join("") || `<div class="empty">No issues.</div>`}${S.issues.length > 5 ? `<a class="row mut" href="#server">${S.issues.length - 5} more →</a>` : ""}</div>
       <div class="sec"><h3>Coming up</h3></div>
@@ -163,7 +171,7 @@ const V = {
   server() {
     const s = S.server;
     return `<div class="h1">Server</div><div class="lead">Oracle Ampere · ${s.cores} cores · ${s.mem_total_gb} GB · up ${Math.round(s.uptime_h / 24)} days. Sampled every 5 seconds.</div>
-     <div class="g3" style="margin-top:16px"><div class="card pad">${chart(s.hist, "cpu", "var(--blue)")}</div><div class="card pad">${chart(s.hist, "mem", "var(--violet)")}</div>
+     <div class="g3" style="margin-top:16px"><div class="card pad">${cpuSplit(s)}<div style="margin-top:12px">${chart(s.hist, "norm", "var(--blue)")}</div></div><div class="card pad">${chart(s.hist, "mem", "var(--violet)")}</div>
       <div class="card pad"><div class="lbl">Disk</div><div class="val">${Math.round(s.disk_pct)}%<small>${s.disk_free_gb} GB free of ${s.disk_total_gb}</small></div><div style="margin-top:10px">${meter(s.disk_pct, thr(s.disk_pct, 85, 93))}</div>
        <div class="lbl" style="margin-top:16px">Load (1 / 5 / 15 min)</div><div class="val num" style="font-size:18px">${s.load.join(" · ")}</div><div class="dl">${s.load[1] > s.cores * 3 ? "Overloaded: more work than cores" : s.load[1] > s.cores ? "Busy" : "Comfortable"}</div></div></div>
      <div class="sec"><h3>Issues</h3><span class="mut">${S.issues.length}</span></div><div class="card">${S.issues.map(issueRow).join("") || `<div class="empty">No issues.</div>`}</div>
