@@ -6,7 +6,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import OUT, load, save, log
 import plan as planner
 
-FIELDS = ("vo", "title", "big", "small", "who", "quote", "label", "hud_right", "options", "nodes")
+# 17 Nov: lab scenes (rows/items/sub/value/end_label) were missing, so the English edition showed Hindi on screen
+FIELDS = ("vo", "title", "big", "small", "sub", "who", "quote", "label", "hud_right", "options", "nodes", "rows", "items", "value", "end_label")
 
 
 def main(cid, job):
@@ -18,8 +19,9 @@ def main(cid, job):
     prompt = f"""Rewrite this vertical-video plan for an ENGLISH-speaking Indian audience. Keep the same number of scenes,
 in the same order, each scene still matching its picture. Do NOT translate word for word: write natural, punchy spoken
 Indian English with the same meaning, twists and clues (a clue must still work). Keep proper names. Keep each vo
-short (4-16 words). Translate every on-screen text field too (title, big, small, who, quote, label, hud_right,
-options, nodes), keep them as short as the original. Return the same JSON shape plus "hashtags" (7 English hashtags)
+short (4-16 words). Translate EVERY on-screen text field too (title, big, small, sub, who, quote, label, hud_right,
+options, nodes, rows[].label/value, items[].label/value, value, end_label) into English, keep numbers and pct as
+they are, keep them as short as the original. No Hindi or Hinglish word may stay on screen. Return the same JSON shape plus "hashtags" (7 English hashtags)
 and "end_line" (2-4 words, e.g. "Part 2 tomorrow" or "New story daily").
 PLAN:
 {json.dumps(slim, ensure_ascii=False)}"""
