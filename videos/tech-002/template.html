@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en"
+  data-composition-variables='[
+  {"id":"color-ground","type":"color","label":"Background","default":"#F4F2EE"},
+  {"id":"color-ink","type":"color","label":"Text","default":"#0E0E10"},
+  {"id":"color-accent","type":"color","label":"Accent","default":"#2B4BFF"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>tech-002 Google Search real demo</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+/* One identity for the whole film: warm off-white ground, ink type, one blue accent, highlighter yellow for proof.
+   Text lives in the Reels+Shorts safe box: y 288-1248, x 120-888. */
+:root { --ground: #F4F2EE; --ink: #0E0E10; --accent: #2B4BFF; --hl: #FFE45C; --mute: #6B6A66; }
+html, body { margin: 0; background: var(--ground); }
+#root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ground); font-family: Inter, sans-serif; color: var(--ink); }
+.abs { position: absolute; }
+
+/* headline band */
+.hd { left: 120px; top: 300px; width: 768px; height: 210px; display: flex; flex-wrap: wrap; align-content: flex-start; column-gap: 20px;
+  font-family: "Archivo Black", sans-serif; font-size: 76px; line-height: 88px; letter-spacing: -2px; opacity: 0; }
+.hd span { display: inline-block; }
+.hd .ac { color: var(--accent); }
+
+/* the carrier: the query pill */
+#pill { left: 130px; top: 590px; width: 820px; height: 220px; border-radius: 48px; background: #fff; box-sizing: border-box;
+  border: 4px solid var(--ink); padding: 34px 44px; }
+#pq { font-weight: 600; font-size: 40px; line-height: 54px; letter-spacing: -0.4px; }
+#pq .c { opacity: 0; }
+#caret { display: inline-block; width: 4px; height: 44px; margin-left: 2px; vertical-align: -6px; background: var(--accent); }
+#pill-tag { left: 130px; top: 834px; font-weight: 700; font-size: 28px; color: var(--mute); opacity: 0; }
+
+/* evidence cards: a window onto a real capture */
+.card { left: 100px; width: 880px; border-radius: 44px; overflow: hidden; background: #fff; box-sizing: border-box;
+  border: 3px solid #E2DED6; box-shadow: 0 30px 60px rgba(14,14,16,0.10); opacity: 0; }
+.cam { position: absolute; left: 0; top: 0; width: 880px; transform-origin: 0 0; }
+.cam img { display: block; width: 880px; }
+.hl { position: absolute; background: var(--hl); mix-blend-mode: multiply; transform-origin: left center; transform: scaleX(0); border-radius: 6px; }
+.ring { position: absolute; border: 5px solid var(--accent); border-radius: 14px; box-sizing: border-box; opacity: 0; transform: scale(1.08); }
+.src { left: 0; width: 1080px; display: flex; justify-content: center; opacity: 0; }
+.src span { background: var(--ink); color: #fff; font-weight: 700; font-size: 30px; padding: 11px 24px; border-radius: 30px; }
+
+/* big name */
+#name { left: 120px; top: 560px; width: 768px; text-align: center; font-family: "Archivo Black", sans-serif; font-size: 118px; line-height: 124px; letter-spacing: -3px; }
+#name span { display: block; opacity: 0; }
+
+/* captions */
+#caps { left: 0; top: 1150px; width: 1080px; height: 96px; --cap: var(--ink); --cap-hi: var(--accent); }
+.cg { position: absolute; left: 0; top: 0; width: 1080px; height: 96px; display: flex; justify-content: center; align-items: center;
+  gap: 15px; font-weight: 900; font-size: 54px; letter-spacing: -1px; white-space: nowrap; color: var(--cap); }
+.cw { display: inline-block; }
+#uline { left: 0; top: 82px; width: 100px; height: 8px; border-radius: 4px; background: var(--cap-hi); transform-origin: left center; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="__DUR__">
+  <audio id="mix" src="mix.wav" data-start="0" data-volume="1"></audio>
+
+  <div id="hd1" class="hd abs"><span>GOOGLE</span><span>SEARCH</span><span>KA</span><span class="ac">SABSE</span><span class="ac">BADA</span><span>UPGRADE</span></div>
+  <div id="hd3" class="hd abs"><span>POORA</span><span>SAWAAL</span><span class="ac">SAMJHTA</span><span>HAI</span></div>
+  <div id="hd4" class="hd abs"><span>SEEDHA</span><span class="ac">COMPARISON</span></div>
+  <div id="hd5" class="hd abs"><span>APNI</span><span class="ac">BHASHA</span><span>MEIN</span></div>
+  <div id="hd6" class="hd abs"><span>TUM</span><span>PEHLE</span><span class="ac">KYA</span><span class="ac">POOCHOGE?</span></div>
+
+  <!-- proof: Google's own sentence -->
+  <div id="blog" class="card abs" style="top:560px;height:330px">
+    <div id="blog-cam" class="cam" data-layout-ignore><img src="assets/blog.png" alt="Google blog post" /></div>
+  </div>
+  <div id="blog-src" class="src abs" style="top:910px"><span>Google · 12 Nov</span></div>
+  <div id="name" class="abs"><span id="n1">GEMINI 4</span><span id="n2" style="color:var(--accent)">HYDROGEN</span></div>
+
+  <!-- real AI Mode answers -->
+  <div id="en" class="card abs" style="top:540px;height:580px">
+    <div id="en-cam" class="cam" data-layout-ignore><img src="assets/aim-en.png" alt="Google AI Mode answer" /></div>
+  </div>
+  <div id="hi" class="card abs" style="top:540px;height:580px">
+    <div id="hi-cam" class="cam" data-layout-ignore><img src="assets/aim-hi.png" alt="Google AI Mode answer in Hindi" /></div>
+  </div>
+
+  <div id="pill" class="abs"><div id="pq"></div></div>
+  <div id="pill-tag" class="abs">Google AI Mode</div>
+
+  <div id="caps" class="abs"></div>
+</div>
+
+<script>
+const WORDS = __WORDS__;
+const BOX = __BOXES__;
+const DUR = __DUR__;
+const tl = gsap.timeline({ paused: true });
+const $ = (s) => document.querySelector(s);
+document.fonts.ready.then(() => {
+
+const W = Object.fromEntries(WORDS.lines.map((l) => [l.id, l]));
+const at = (line, i) => W[line].words[i].start;
+const KE = 880 / 412;          // AI Mode capture: css px -> card px
+const KB = 880 / 430;          // blog capture
+const E = BOX.en, H = BOX.hi;
+
+/* camera: show css region (cx, cy) at card point (px, py) with zoom z */
+const camTo = (sel, k, cssX, cssY, z, px, py) => ({ x: px - cssX * k * z, y: py - cssY * k * z, scale: z });
+function hl(cam, k, b, id, pad = 3) {
+  const d = document.createElement("div"); d.className = "hl"; d.id = id;
+  Object.assign(d.style, { left: (b.x - pad) * k + "px", top: (b.y - 1) * k + "px", width: (b.w + pad * 2) * k + "px", height: (b.h + 2) * k + "px" });
+  $(cam).appendChild(d); return d;
+}
+function ring(cam, k, b, id) {
+  const d = document.createElement("div"); d.className = "ring"; d.id = id;
+  Object.assign(d.style, { left: (b.x - 8) * k + "px", top: (b.y - 6) * k + "px", width: (b.w + 16) * k + "px", height: (b.h + 12) * k + "px" });
+  $(cam).appendChild(d); return d;
+}
+const enter = (sel, t, from = { y: 260 }) => tl.fromTo(sel, { opacity: 0, filter: "blur(10px)", ...from }, { opacity: 1, filter: "blur(0px)", x: 0, y: 0, duration: 0.5, ease: "expo.out", immediateRender: false }, t);
+const leave = (sel, t, to = { y: -260 }) => { tl.to(sel, { opacity: 0, filter: "blur(10px)", ...to, duration: 0.24, ease: "power3.in" }, t); tl.set(sel, { opacity: 0 }, t + 0.25); };
+function headline(sel, t0, t1) {
+  const sp = [...document.querySelector(sel).querySelectorAll("span")];
+  tl.set(sel, { opacity: 1 }, t0);
+  sp.forEach((s, i) => tl.fromTo(s, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, immediateRender: false }, t0 + i * 0.067));
+  if (t1 != null) leave(sel, t1, { y: -60 });
+}
+
+/* ---------- 1. hook: headline + the real question typing (frame 0 already shows both) ---------- */
+const Q = "best phone under 20000 with good camera and 2 day battery, compare the top picks";
+$("#pq").innerHTML = [...Q].map((c) => `<span class="c">${c === " " ? "&nbsp;" : c}</span>`).join("").replace(/(&nbsp;<\/span>)/g, "$1<wbr>") + '<span id="caret"></span>';
+tl.set("#hd1", { opacity: 1 }, 0);
+document.querySelectorAll("#hd1 span").forEach((s, i) => tl.set(s, { opacity: 1 }, 0));
+const chars = [...document.querySelectorAll("#pq .c")];
+chars.forEach((c, i) => tl.set(c, { opacity: 1 }, i < 4 ? 0 : 0.2 + (i - 4) * (3.0 / chars.length)));
+tl.fromTo("#pill-tag", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 0.3);
+for (let i = 0; i < 7; i++) tl.set("#caret", { opacity: i % 2 ? 1 : 0 }, 3.3 + i * 0.25);
+// "SABSE BADA" gets a single accent punch on the spoken words
+tl.fromTo("#hd1 .ac", { scale: 1 }, { scale: 1.06, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "50% 60%" }, at("hook", 6));
+leave("#hd1", at("proof", 0) - 0.25, { y: -60 });
+leave(["#pill", "#pill-tag"], at("proof", 0) - 0.25, { y: -420 });
+
+/* ---------- 2. proof: Google's own sentence, 1.5 s, then the name ---------- */
+const bBig = { x: 60, y: 956.4, w: 276, h: 20 };
+const bLine = { x: 16, y: 940, w: 400, h: 52 };
+$("#blog-cam").style.transform = "";
+tl.set("#blog-cam", camTo("#blog-cam", KB, 16, 905, 1.04, 22, 26), 0);
+hl("#blog-cam", KB, bBig, "hb");
+enter(["#blog", "#blog-src"], at("proof", 0) - 0.12, { y: 420 });
+tl.to("#hb", { scaleX: 1, duration: 0.7, ease: "power1.inOut" }, at("proof", 1));
+tl.to("#blog-cam", { ...camTo("#blog-cam", KB, 16, 925, 1.06, 22, 26), duration: 1.6, ease: "power1.inOut" }, at("proof", 0) + 0.2);
+leave(["#blog", "#blog-src"], at("proof", 6) - 0.2);
+tl.fromTo("#n1", { opacity: 0, y: 200, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out", immediateRender: false }, at("proof", 6) - 0.05);
+tl.fromTo("#n2", { opacity: 0, y: 200, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out", immediateRender: false }, at("proof", 8) - 0.05);
+leave("#name", at("ask", 0) - 0.22, { y: -300 });
+
+/* ---------- 3. ask: the pill becomes the real AI Mode question; each part lights as it is said ---------- */
+headline("#hd3", at("ask", 0), at("table", 0) - 0.2);
+tl.set("#en-cam", camTo("#en-cam", KE, 0, 130, 1.0, 0, 0), 0);
+enter("#en", at("ask", 0) - 0.05, { y: 420 });
+const rq = ring("#en-cam", KE, E.query, "rq");
+tl.to(rq, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, at("ask", 3));
+tl.to(rq, { opacity: 0, duration: 0.2 }, at("ask", 6) - 0.1);
+tl.to("#en-cam", { ...camTo("#en-cam", KE, 16, 222, 1.32, 20, 40), duration: 0.7, ease: "power3.inOut" }, at("ask", 5));
+const U = E.understood;
+[["hu0", U[0], 6], ["hu1", U[1], 8], ["hu2", U[2], 10]].forEach(([id, b, wi]) => {
+  hl("#en-cam", KE, b, id);
+  tl.to(`#${id}`, { scaleX: 1, duration: 0.3, ease: "power2.out" }, at("ask", wi) - 0.02);
+});
+
+/* ---------- 4. table: camera travels down the real answer to the comparison table ---------- */
+headline("#hd4", at("table", 0) + 0.05, at("lang", 0) - 0.2);
+tl.to("#en-cam", { ...camTo("#en-cam", KE, 16, E.table_head.y - 6, 1.0, 0, 0), duration: 0.85, ease: "power3.inOut" }, at("table", 1));
+const r0 = E.table_rows[0];
+const rn = ring("#en-cam", KE, { x: 16, y: r0[0], w: 372, h: r0[1] }, "rn");
+tl.to(rn, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, at("table", 6));
+const bc = E.battery_cells;
+hl("#en-cam", KE, { x: 28, y: bc[0].y - 2, w: 360, h: bc[0].h + 4 }, "hbat", 0);
+tl.to("#hbat", { scaleX: 1, duration: 0.45, ease: "power1.inOut" }, at("table", 8) - 0.05);
+tl.to("#en-cam", { ...camTo("#en-cam", KE, 16, E.table_head.y + 40, 1.0, 0, 0), duration: 1.4, ease: "power1.inOut" }, at("table", 6));
+
+/* ---------- 5. language: same question in Hinglish, the answer in Hindi ---------- */
+headline("#hd5", at("lang", 0), at("cta", 0) - 0.2);
+leave("#en", at("lang", 0) - 0.18, { y: -420 });
+tl.set("#hi-cam", camTo("#hi-cam", KE, 0, 125, 1.08, 0, 0), 0);
+enter("#hi", at("lang", 0) - 0.05, { y: 420 });
+const rh = ring("#hi-cam", KE, H.query, "rh");
+tl.to(rh, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, at("lang", 0) + 0.1);
+tl.to(rh, { opacity: 0, duration: 0.2 }, at("lang", 4) - 0.1);
+hl("#hi-cam", KE, H.answer_bold, "hhi");
+tl.to("#hhi", { scaleX: 1, duration: 0.6, ease: "power1.inOut" }, at("lang", 4));
+
+/* ---------- 6. CTA: the answer folds back into the empty question pill (loops to frame 0) ---------- */
+leave("#hi", at("cta", 0) - 0.15, { y: -420 });
+headline("#hd6", at("cta", 0), null);
+tl.set("#pq .c", { opacity: 0 }, at("cta", 0) - 0.2);
+tl.set(["#pill", "#pill-tag"], { y: 0, filter: "blur(0px)" }, at("cta", 0) - 0.2);
+enter(["#pill", "#pill-tag"], at("cta", 0), { y: 420 });
+for (let i = 0; i < 6; i++) tl.set("#caret", { opacity: i % 2 ? 1 : 0 }, at("cta", 4) + i * 0.3);
+
+/* ---------- captions: whole group at once, accent underline under the spoken word ---------- */
+const groups = [];
+WORDS.lines.forEach((ln) => {
+  let cur = [];
+  ln.words.forEach((w, i) => {
+    cur.push(w);
+    const left = ln.words.length - 1 - i;
+    if ((cur.length === 3 && left !== 1) || cur.length === 4 || left === 0) { groups.push(cur); cur = []; }
+  });
+});
+$("#caps").innerHTML = groups.map((g, gi) =>
+  `<div class="cg" id="cg${gi}" style="visibility:hidden">${g.map((w, wi) => `<span class="cw" id="cw${gi}_${wi}">${w.w.replace(/[,.:]+$/, "")}</span>`).join("")}</div>`).join("") +
+  '<div id="uline" class="abs"></div>';
+const capsLeft = $("#caps").getBoundingClientRect().left;
+groups.forEach((g, gi) => {
+  const el = $(`#cg${gi}`);
+  el.style.visibility = "visible";
+  let fs = 54; el.style.fontSize = fs + "px";
+  while (el.scrollWidth > 690 && fs > 38) { fs -= 2; el.style.fontSize = fs + "px"; }
+  const boxes = g.map((_, wi) => $(`#cw${gi}_${wi}`).getBoundingClientRect());
+  el.style.visibility = "hidden";
+  const end = gi + 1 < groups.length ? groups[gi + 1][0].start : DUR - 0.05;
+  tl.set(el, { visibility: "visible" }, Math.max(0.05, g[0].start));
+  tl.set(el, { visibility: "hidden" }, end);
+  g.forEach((w, wi) => {
+    const b = boxes[wi];
+    const nxt = wi + 1 < g.length ? g[wi + 1].start : end;
+    const d = wi ? Math.max(0.02, Math.min(0.12, nxt - w.start - 0.01)) : 0.001;
+    tl.to("#uline", { x: b.left - capsLeft, scaleX: b.width / 100, opacity: 1, duration: d, ease: "power2.out" }, w.start);
+  });
+});
+
+window.__timelines["main"] = tl;
+});
+</script>
+</body>
+</html>

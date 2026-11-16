@@ -1,0 +1,339 @@
+{
+ "dur": 21.825,
+ "lines": [
+  {
+   "id": "hook",
+   "cap": "Google Search ka ab tak ka sabse bada upgrade aa gaya",
+   "start": 0.15,
+   "end": 3.761,
+   "heard": "गूगल सर्च का अप दिख का सबसे बड़ अपग्रेड आगया है",
+   "words": [
+    {
+     "w": "Google",
+     "start": 0.15,
+     "end": 0.51
+    },
+    {
+     "w": "Search",
+     "start": 0.51,
+     "end": 0.81
+    },
+    {
+     "w": "ka",
+     "start": 0.81,
+     "end": 1.27
+    },
+    {
+     "w": "ab",
+     "start": 1.27,
+     "end": 1.49
+    },
+    {
+     "w": "tak",
+     "start": 1.49,
+     "end": 1.69
+    },
+    {
+     "w": "ka",
+     "start": 1.69,
+     "end": 1.87
+    },
+    {
+     "w": "sabse",
+     "start": 1.87,
+     "end": 2.21
+    },
+    {
+     "w": "bada",
+     "start": 2.21,
+     "end": 2.55
+    },
+    {
+     "w": "upgrade",
+     "start": 2.55,
+     "end": 3.19
+    },
+    {
+     "w": "aa",
+     "start": 3.19,
+     "end": 3.59
+    },
+    {
+     "w": "gaya",
+     "start": 3.59,
+     "end": 3.73
+    }
+   ]
+  },
+  {
+   "id": "proof",
+   "cap": "Google ne khud kaha. Naam hai Gemini 4 Hydrogen",
+   "start": 4.081,
+   "end": 7.253,
+   "heard": "गुगल ने खुद कहा नाम है, जेमिनाई पोर, हाईद्रोजन.",
+   "words": [
+    {
+     "w": "Google",
+     "start": 4.081,
+     "end": 4.421
+    },
+    {
+     "w": "ne",
+     "start": 4.421,
+     "end": 4.601
+    },
+    {
+     "w": "khud",
+     "start": 4.601,
+     "end": 4.761
+    },
+    {
+     "w": "kaha.",
+     "start": 4.761,
+     "end": 5.041
+    },
+    {
+     "w": "Naam",
+     "start": 5.041,
+     "end": 5.321
+    },
+    {
+     "w": "hai",
+     "start": 5.321,
+     "end": 5.501
+    },
+    {
+     "w": "Gemini",
+     "start": 5.661,
+     "end": 6.121
+    },
+    {
+     "w": "4",
+     "start": 6.121,
+     "end": 6.461
+    },
+    {
+     "w": "Hydrogen",
+     "start": 6.681,
+     "end": 7.221
+    }
+   ]
+  },
+  {
+   "id": "ask",
+   "cap": "Ab ek hi line mein poocho: bees hazaar, achha camera, do din battery",
+   "start": 7.573,
+   "end": 11.835,
+   "heard": "अब एक ही लाईन में पूछो, बीस हजार, अच्छा केमरा दो दिन बेट्री.",
+   "words": [
+    {
+     "w": "Ab",
+     "start": 7.573,
+     "end": 7.773
+    },
+    {
+     "w": "ek",
+     "start": 7.773,
+     "end": 7.973
+    },
+    {
+     "w": "hi",
+     "start": 7.973,
+     "end": 8.133
+    },
+    {
+     "w": "line",
+     "start": 8.133,
+     "end": 8.453
+    },
+    {
+     "w": "mein",
+     "start": 8.453,
+     "end": 8.653
+    },
+    {
+     "w": "poocho:",
+     "start": 8.653,
+     "end": 8.993
+    },
+    {
+     "w": "bees",
+     "start": 9.233,
+     "end": 9.553
+    },
+    {
+     "w": "hazaar,",
+     "start": 9.553,
+     "end": 10.033
+    },
+    {
+     "w": "achha",
+     "start": 10.113,
+     "end": 10.453
+    },
+    {
+     "w": "camera,",
+     "start": 10.453,
+     "end": 10.893
+    },
+    {
+     "w": "do",
+     "start": 10.893,
+     "end": 11.213
+    },
+    {
+     "w": "din",
+     "start": 11.213,
+     "end": 11.393
+    },
+    {
+     "w": "battery",
+     "start": 11.393,
+     "end": 11.813
+    }
+   ]
+  },
+  {
+   "id": "table",
+   "cap": "Aur jawab seedha comparison table mein, asli phones ke saath",
+   "start": 12.155,
+   "end": 15.794,
+   "heard": "और जवाब सीथा कमपेरिजन तेबल में अस्ली फोंज के साथ",
+   "words": [
+    {
+     "w": "Aur",
+     "start": 12.155,
+     "end": 12.315
+    },
+    {
+     "w": "jawab",
+     "start": 12.315,
+     "end": 12.695
+    },
+    {
+     "w": "seedha",
+     "start": 12.695,
+     "end": 13.175
+    },
+    {
+     "w": "comparison",
+     "start": 13.175,
+     "end": 13.915
+    },
+    {
+     "w": "table",
+     "start": 13.915,
+     "end": 14.315
+    },
+    {
+     "w": "mein,",
+     "start": 14.315,
+     "end": 14.695
+    },
+    {
+     "w": "asli",
+     "start": 14.695,
+     "end": 15.035
+    },
+    {
+     "w": "phones",
+     "start": 15.035,
+     "end": 15.395
+    },
+    {
+     "w": "ke",
+     "start": 15.395,
+     "end": 15.575
+    },
+    {
+     "w": "saath",
+     "start": 15.575,
+     "end": 15.755
+    }
+   ]
+  },
+  {
+   "id": "lang",
+   "cap": "Hinglish mein poocho, toh jawab Hindi mein",
+   "start": 16.114,
+   "end": 18.371,
+   "heard": "इंगलिश में पूछो, तो जवाब हिन्दी में",
+   "words": [
+    {
+     "w": "Hinglish",
+     "start": 16.114,
+     "end": 16.494
+    },
+    {
+     "w": "mein",
+     "start": 16.494,
+     "end": 16.834
+    },
+    {
+     "w": "poocho,",
+     "start": 16.834,
+     "end": 17.154
+    },
+    {
+     "w": "toh",
+     "start": 17.314,
+     "end": 17.474
+    },
+    {
+     "w": "jawab",
+     "start": 17.474,
+     "end": 17.854
+    },
+    {
+     "w": "Hindi",
+     "start": 17.854,
+     "end": 18.194
+    },
+    {
+     "w": "mein",
+     "start": 18.194,
+     "end": 18.334
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "cap": "Tum pehle kya poochoge? Comment karo",
+   "start": 18.691,
+   "end": 20.905,
+   "heard": "तुम पहले क्या पुछोगे? कमेट करो",
+   "words": [
+    {
+     "w": "Tum",
+     "start": 18.691,
+     "end": 18.891
+    },
+    {
+     "w": "pehle",
+     "start": 18.891,
+     "end": 19.271
+    },
+    {
+     "w": "kya",
+     "start": 19.271,
+     "end": 19.471
+    },
+    {
+     "w": "poochoge?",
+     "start": 19.471,
+     "end": 20.071
+    },
+    {
+     "w": "Comment",
+     "start": 20.291,
+     "end": 20.591
+    },
+    {
+     "w": "karo",
+     "start": 20.591,
+     "end": 20.871
+    }
+   ]
+  }
+ ]
+}

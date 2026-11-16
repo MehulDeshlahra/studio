@@ -1,0 +1,19 @@
+{
+ "id": "tech-002",
+ "topic": "Google Search + Gemini 4 Hydrogen: real AI Mode demo",
+ "source": {"url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+            "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen", "date": "2026-11-12",
+            "facts": ["biggest model upgrade to Search yet", "available globally for all users",
+                      "handles questions with multiple parts", "more visual responses incl. comparison tables",
+                      "better answers across supported AI Mode languages"],
+            "demo": "Real Google AI Mode answers captured 16 Nov 2026 (cap/boxes.json); shown as captured, AI-made answers, not our recommendations"},
+ "voice": {"engine": "kokoro-onnx v1.0", "voice": "hm_psi", "speed": 1.17},
+ "lines": [
+  {"id": "hook", "cap": "Google Search ka ab tak ka sabse bada upgrade aa gaya", "tts": "गूगल सर्च का अब तक का सबसे बड़ा अपग्रेड आ गया है।"},
+  {"id": "proof", "cap": "Google ne khud kaha. Naam hai Gemini 4 Hydrogen", "tts": "गूगल ने ख़ुद कहा। नाम है, जेमिनाई फोर, हाइड्रोजन।"},
+  {"id": "ask", "cap": "Ab ek hi line mein poocho: bees hazaar, achha camera, do din battery", "tts": "अब एक ही लाइन में पूछो, बीस हज़ार, अच्छा कैमरा, दो दिन बैटरी।"},
+  {"id": "table", "cap": "Aur jawab seedha comparison table mein, asli phones ke saath", "tts": "और जवाब सीधा कम्पैरिज़न टेबल में, असली फ़ोन्स के साथ।"},
+  {"id": "lang", "cap": "Hinglish mein poocho, toh jawab Hindi mein", "tts": "हिंगलिश में पूछो, तो जवाब, हिन्दी में।"},
+  {"id": "cta", "cap": "Tum pehle kya poochoge? Comment karo", "tts": "तुम पहले क्या पूछोगे? कमेंट करो।"}
+ ]
+}
