@@ -1,0 +1,108 @@
+[
+ {
+  "t": "2026-11-17 02:37",
+  "picked": "Incognito mode sach mein kya chhupata hai aur aapke WiFi owner ko kya dikhta hai? (Metaphor: Apne kamre ka darwaza band karna par bahar street camera par sab record hona)",
+  "ideas": [
+   {
+    "topic": "Incognito mode sach mein kya chhupata hai aur aapke WiFi owner ko kya dikhta hai? (Metaphor: Apne kamre ka darwaza band karna par bahar street camera par sab record hona)",
+    "search": "truth about incognito mode",
+    "fit": 10.0,
+    "from": "new",
+    "demand": 6.2,
+    "median_views": 299628,
+    "fresh": 7.7,
+    "score": 7.83
+   },
+   {
+    "topic": "Active Noise Cancellation (ANC) headphones bahar ka shor gayab kaise karte hain? (Metaphor: Ek sound wave ko theek uski ulti wave se takra kar khatam karna)",
+    "search": "how noise cancellation works",
+    "fit": 10.0,
+    "from": "new",
+    "demand": 6.2,
+    "median_views": 310438,
+    "fresh": 7.3,
+    "score": 7.75
+   },
+   {
+    "topic": "AI text likhne par nayi photo kaise bana deta hai? (Metaphor: TV ke static noise ya ret ke dher se step-by-step dhool hata kar tasveer nikalna - Diffusion)",
+    "search": "how ai generates images",
+    "fit": 9.0,
+    "from": "new",
+    "demand": 1.7,
+    "median_views": 4871,
+    "fresh": 7.2,
+    "score": 5.36
+   },
+   {
+    "topic": "GPS bina internet aur SIM card ke aapki exact location kaise dhoondh leta hai? (Metaphor: 4 satellites ke intersection circles ka timeline calculation)",
+    "search": "how gps works offline",
+    "fit": 10.0,
+    "from": "new",
+    "demand": 0.0,
+    "median_views": 0,
+    "fresh": 7.0,
+    "score": 4.9
+   },
+   {
+    "topic": "Flight mein phone Airplane Mode par na rakhein toh sach mein kya pilot ka connection toot jata hai? (Metaphor: Pilot ke headphone mein loudspeaker jaisa annoying buzzing feedback aana)",
+    "search": "why airplane mode required",
+    "fit": 9.0,
+    "from": "new",
+    "demand": 0.0,
+    "median_views": 0,
+    "fresh": 7.5,
+    "score": 4.65
+   },
+   {
+    "topic": "120W Fast Charging phone ki battery ko jalaye bina itni tezi se charge kaise karti hai? (Metaphor: Khali glass mein pehle tezi se paani daalna fir aakhri 20% boond-boond bharna)",
+    "search": "how fast charging works",
+    "fit": 9.0,
+    "from": "new",
+    "demand": 0.0,
+    "median_views": 0,
+    "fresh": 7.4,
+    "score": 4.63
+   },
+   {
+    "topic": "'Hey Google' phone kaise sunta hai",
+    "search": "'Hey Google' phone kaise sunta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand": 2.2,
+    "median_views": 7828,
+    "fresh": 4.8,
+    "score": 4.4
+   },
+   {
+    "topic": "Fingerprint unlock kaise kaam karta hai",
+    "search": "Fingerprint unlock kaise kaam karta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand": 0.7,
+    "median_views": 1880,
+    "fresh": 4.3,
+    "score": 3.62
+   },
+   {
+    "topic": "Phone garam kyun hota hai",
+    "search": "Phone garam kyun hota hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand": 0.0,
+    "median_views": 46,
+    "fresh": 5.6,
+    "score": 3.57
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand": 0.0,
+    "median_views": 0,
+    "fresh": 5.3,
+    "score": 3.51
+   }
+  ]
+ }
+]

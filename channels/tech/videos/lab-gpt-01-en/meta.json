@@ -2,7 +2,8 @@
  "channel": "tech",
  "job": "lab-gpt-01-en",
  "topic": "WiFi deewar ke paar kaise jaata hai",
- "stage": "prepped",
+ "stage": "done",
  "lang": "en",
- "prepped_at": "2026-11-17 01:27"
+ "prepped_at": "2026-11-17 01:27",
+ "voice_retry": 1
 }

@@ -139,3 +139,28 @@
 - visual: Most scenes (2, 3, 4, 5, 6, 8, 9, 10, and 11) lack visual generation, displaying only empty dark gradient backgrounds.
 - visual: No dedicated branded end card is present at the end of the video despite a handle being specified.
 - visual score 3/10
+
+## lab-gpt-01-en WiFi deewar ke paar kaise jaata hai
+- scene 1: The caption 'ChatGPT doesn't actually think or reason' is partially obscured by the green arrow graphic, making it slightly hard to read.
+- scene 7: The caption 'that word gets glued right back' is very dark and difficult to read against the background.
+- scene 8: The caption 'predicts the next token again.' is extremely faint and almost invisible against the dark background.
+- scene 11: The caption 'ChatGPT ever confidently given you' is partially obscured by the large 'CAUGHT IT LYING?' text, making it difficult to read.
+
+## review lab-gpt-01-en
+- the video does not start with the first line "ChatGPT doesn't actually think or reason like a hu" (heard: "in indian english curious warm energetic young indian")
+- visual: Non-English text appears on screen: Hindi words ('Bharat', 'Duniya', 'Khabar') in Scene 5 odds table, and Romanized Hindi ('Neeche comment karo') under the title in Scene 11.
+- visual: Duplicate text shown simultaneously across all scenes between the top right header bar and the yellow badge (e.g., 'THE ILLUSION', 'STEP 1: TOKENS', 'FEEDBACK LOOP').
+- visual: Captions in Scene 8 ('predicts the next token again.') and Scene 10 ('ChatGPT understands zero facts it's') are too dark and faint to read against the background.
+- visual score 5/10
+
+## lab-gpt-01-en WiFi deewar ke paar kaise jaata hai
+- scene 1: The caption text 'ChatGPT doesn't actually think or reason' is partially obscured by the green arrow graphic.
+- scene 2: The text 'The Prediction Engine' below 'HOW IT WORKS' is extremely faint/low contrast and nearly unreadable.
+- scene 11: The text 'Reeche comment karo' is visible below 'CAUGHT IT LYING?' which is not part of the script and looks like an accidental inclusion or watermark.
+
+## review lab-gpt-01-en
+- the video does not start with the first line "ChatGPT doesn't actually think or reason like a hu" (heard: "in indian english curious warm energetic young indian")
+- visual: Scene 7 contains no visual asset or graphic, leaving the center frame completely empty.
+- visual: Scene 11 and the final frame have garbled, illegible placeholder text bleeding underneath 'CAUGHT IT LYING?'.
+- visual: Missing dedicated end card showing the channel handle at the end of the video.
+- visual score 5/10

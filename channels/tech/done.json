@@ -4,21 +4,21 @@
   "topic": "UPI mein paisa 2 second mein kaise pahunchta hai",
   "title": "UPI mein paisa 2 second mein kaise pahunchta hai?",
   "qc_ok": false,
-  "status": "made"
+  "status": "rejected"
  },
  {
   "job": "ai-01",
   "topic": "ChatGPT aapke sawaal ka jawab kaise banata hai",
   "title": "ChatGPT aapke sawaal ka jawab kaise banata hai?",
   "qc_ok": false,
-  "status": "made"
+  "status": "rejected"
  },
  {
   "job": "lab-gpt-01",
   "topic": "ChatGPT jawab kaise banata hai",
   "title": "ChatGPT jawab kaise banata hai?",
   "qc_ok": true,
-  "status": "held",
+  "status": "rejected",
   "review": [
    "only 62% of the script was found in the voice",
    "visual: Scene 5 center UI table unexpectedly disappears in the second frame, leaving a large empty void.",
@@ -31,7 +31,7 @@
   "topic": "UPI paisa 2 second mein kaise pahunchta hai",
   "title": "How does UPI transfer money in 2 seconds?",
   "qc_ok": false,
-  "status": "held",
+  "status": "rejected",
   "review": [
    "visual: Multiple scenes (2, 3, 4, 5, 6, 8, 11, and 12) are completely missing visual backgrounds or generated images.",
    "visual: Missing final branded end card displaying page handle @kaise.tech.",
@@ -43,12 +43,26 @@
   "topic": "UPI paisa 2 second mein kaise pahunchta hai",
   "title": "How ChatGPT actually generates your answers!",
   "qc_ok": false,
-  "status": "held",
+  "status": "rejected",
   "review": [
    "the video does not start with the first line \"When you ask ChatGPT something, it never thinks up\" (heard: \"in indian english curious warm energetic young indian\")",
    "visual: Most scenes (2, 3, 4, 5, 6, 8, 9, 10, and 11) lack visual generation, displaying only empty dark gradient backgrounds.",
    "visual: No dedicated branded end card is present at the end of the video despite a handle being specified.",
    "visual score 3/10"
+  ]
+ },
+ {
+  "job": "lab-gpt-01-en",
+  "topic": "WiFi deewar ke paar kaise jaata hai",
+  "title": "How ChatGPT actually writes answers",
+  "qc_ok": true,
+  "status": "held",
+  "review": [
+   "the video does not start with the first line \"ChatGPT doesn't actually think or reason like a hu\" (heard: \"in indian english curious warm energetic young indian\")",
+   "visual: Scene 7 contains no visual asset or graphic, leaving the center frame completely empty.",
+   "visual: Scene 11 and the final frame have garbled, illegible placeholder text bleeding underneath 'CAUGHT IT LYING?'.",
+   "visual: Missing dedicated end card showing the channel handle at the end of the video.",
+   "visual score 5/10"
   ]
  }
 ]
