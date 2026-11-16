@@ -49,7 +49,7 @@ def stage_assets(ch, p, job):
                 v = muse.video(s["prompt"] + ". Smooth natural motion, no text, no subtitles, no speech.", a["image"],
                                os.path.join(adir, f"s{i}.mp4"))
                 if v:
-                    a["video"] = v
+                    a["video"] = prep_clip(v)
                 else:
                     s["type"] = "image"; s["motion"] = "push"; log("scene", i, "clip failed -> still image")
         got[k] = a
@@ -63,6 +63,21 @@ def _loud(f):
     o = subprocess.run(["ffmpeg", "-hide_banner", "-i", f, "-af", "ebur128=peak=true", "-f", "null", "-"],
                        capture_output=True, text=True).stderr
     return float(re.findall(r"I:\s+(-?[\d.]+) LUFS", o)[-1]), float(re.findall(r"Peak:\s+(-?[\d.]+) dBFS", o)[-1])
+
+
+def prep_clip(src):
+    """Muse clips are 704x1248 with a 10 s keyframe gap: upscale once (lanczos + light sharpen) to 1080x1920 and
+    re-encode with a keyframe every second, so they look sharper and the renderer seeks fast. Keeps the original on error."""
+    out = os.path.splitext(src)[0] + "-hd.mp4"
+    try:
+        sh(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf",
+            "scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920,unsharp=5:5:0.6:5:5:0.0",
+            "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "17", "-g", "30", "-keyint_min", "30",
+            "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart", out], timeout=600)
+        return out
+    except Exception as e:
+        log("clip prep failed, using original:", str(e)[:120])
+        return src
 
 
 def remux(raw, mix, total, out):
