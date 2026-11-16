@@ -150,7 +150,7 @@ def check_git():
 def check_held():
     """A held video whose problem the engine can repair is rebuilt once: caption timing (re-align with the current
     aligner) or loudness (re-master). Other holds (visual) are noted for the next fix session."""
-    busy = sh("systemctl list-units --state=active --no-legend 'studio-job-*' 'studio-make*' 'studio-prep*'")[1].strip()
+    busy = sh("systemctl list-units --state=active --no-legend 'studio-job-*.service' 'studio-make.service' 'studio-prep.service'")[1].strip()
     for cid in ("tech", "katha", "raaz"):
         done = load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
         for d in done:
