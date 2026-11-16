@@ -190,7 +190,7 @@ def job_state(cid, job, active=None):
         p = os.path.join(jd, fn.replace("{final}", final))
         t = os.path.getmtime(p) if os.path.exists(p) else 0
         done = bool(t)
-        if active and k >= cut and t and t < t0 - 5:
+        if active and k >= cut and t and t < t0 - 5 and key not in ("research", "plan", "images"):   # visuals are reused, not remade
             done = False                      # an old file from an earlier build that this run will remake
         steps.append({"key": key, "label": label, "done": done, "t": int(t) if done else 0})
         prev_t = max(prev_t, t if done else 0)
