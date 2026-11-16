@@ -378,9 +378,14 @@ def channels(jl):
 
 
 # ---------------- activity log ----------------
+BAD = re.compile(r"\b(traceback|error|errno|fail|failed|exception|cancelled|hold:|problems)\b", re.I)
+
+
 def classify(line):
     l = line.lower()
-    if any(k in l for k in ("traceback", "error", " fail", "failed", "hold:", "problems", "cancel")):
+    if l.startswith("ideas ") or l.startswith("plan "):
+        return "info"
+    if BAD.search(line):
         return "bad"
     if any(k in l for k in ("warn", "retry", "limited", "skip", "not sent", "fallback", "warm-up", "nothing approved")):
         return "warn"

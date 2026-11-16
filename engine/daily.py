@@ -135,11 +135,11 @@ def main():
     dry = "--dry" in sys.argv
     lane = sys.argv[sys.argv.index("--lane") + 1] if "--lane" in sys.argv else "render"
     os.makedirs(OUT, exist_ok=True)
-    lk = open(os.path.join(OUT, f"{lane}.lock"), "w")
+    lk = open(os.path.join(OUT, "engine.lock"), "w")          # ONE lock for both lanes: one build at a time on 2 cores
     try:
         fcntl.flock(lk, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except OSError:
-        log(f"{lane} lane: busy"); return
+        log(f"{lane} lane: the other lane is building, wait"); return
     if manual_busy():
         log(f"{lane} lane: a manual job is running, skip"); return
     subprocess.run(["git", "-C", ROOT, "pull", "-q", "--rebase", "--autostash"], timeout=120)
