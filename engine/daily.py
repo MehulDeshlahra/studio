@@ -14,8 +14,8 @@ import muse
 
 LOCK = os.path.join(OUT, "make.lock")
 BUDGET = os.path.join(OUT, "budget.json")
-TTS_CAP = int(os.environ.get("STUDIO_TTS_CAP", "8"))
-REELS_CAP = int(os.environ.get("STUDIO_REELS_CAP", "6"))
+TTS_CAP = int(os.environ.get("STUDIO_TTS_CAP", "30"))   # key is on the credits project (owner, 17 Nov)
+REELS_CAP = int(os.environ.get("STUDIO_REELS_CAP", "8"))
 
 
 def today():

@@ -35,6 +35,12 @@
 - Muse bridge 2 (second account): 127.0.0.1:20241 (jb-musebridge2 + jb-muse-browser2, CDP 9445, profile ~/musebridge2/profile). LIVE 16 Nov 20:44 (second Meta account logged in by owner; test image ok; own usage.json). musebridge.js is a COPY (a symlink made node use ~/musebridge as __dirname and share usage) - copy again after bridge updates.
 - Bridge code is shared (~/musebridge2/musebridge.js is a link); MUSE_BROWSER_SVC picks which browser it stops/starts.
 
+## Facts (owner corrections)
+- Oracle Always Free for this tenancy is 2 OCPU / 12 GB now (Oracle reduced it from 4). Don't suggest resizing.
+- Kaggle + Cloudflare were already set up on 15 Nov: ~/videngine (cf.token, kaggle.env, vid.py, img.py). Cloudflare FLUX ~170 images/day is now the 2nd image fallback after Muse. Kaggle Wan 2.2 last run failed (KernelWorkerStatus.ERROR, 16 Nov 01:03) - fix before use.
+- Studio Gemini key (~/.studio-gemini.key) is from the credits project 'My First Project V' -> TTS cap 30/day in daily.py.
+- Posting: like VAJRA/MarginMart = Meta Graph API with a never-expiring Page token from app 'Vajra' 971433526020162 (system user), not the ads MCP. Per page: FB Page + IG professional linked + added to the business portfolio + assigned to the system user with Content permission.
+
 ## Open
 - Second Muse account on the bridge (more daily clips).
 - Channel accounts (Instagram + YouTube) and branding.

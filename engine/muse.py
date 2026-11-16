@@ -79,6 +79,25 @@ def video(prompt, start_image, dest, tries=2):
     return None
 
 
+CF_ACCOUNT = "3d44fbd85f54ea694dd4f73153843dd3"
+
+
+def cloudflare(prompt, dest):
+    """Cloudflare Workers AI FLUX.1 schnell (free daily quota ~170 images; token ~/videngine/cf.token). Text to image."""
+    try:
+        tok = open(os.path.expanduser("~/videngine/cf.token")).read().strip()
+        body = json.dumps({"prompt": prompt + ", vertical 9:16 portrait composition", "steps": 6}).encode()
+        req = urllib.request.Request(f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/run/@cf/black-forest-labs/flux-1-schnell",
+                                     data=body, headers={"Authorization": "Bearer " + tok, "Content-Type": "application/json"})
+        r = json.load(urllib.request.urlopen(req, timeout=150))
+        open(dest, "wb").write(base64.b64decode(r["result"]["image"]))
+        log("cloudflare image", os.path.basename(dest))
+        return dest
+    except Exception as e:
+        log("cloudflare fail", str(e)[:120])
+        return None
+
+
 def pollinations(prompt, dest):
     """Free backup still (Pollinations flux through OmniRoute)."""
     import llm
