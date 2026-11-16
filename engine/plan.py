@@ -54,7 +54,7 @@ def _rules(ch):
 
 def make(ch, topic, research_text):
     lessons = read(os.path.join(ROOT, "knowledge", "lessons.md"))
-    ch_lessons = read(os.path.join(ROOT, "channels", ch["id"], "lessons.md"))
+    ch_lessons = read(os.path.join(ROOT, "channels", ch["id"], "lessons.md")) + "\nProblems the quality gate found in earlier videos (avoid them):\n" + read(os.path.join(ROOT, "channels", ch["id"], "lessons-auto.md"), 3000)
     bible = read(os.path.join(ROOT, "channels", ch["id"], "bible.md"))
     playbook = read(os.path.join(ROOT, "knowledge", "playbook.md"), 6000)
     p = f"""You plan one vertical short video (Instagram Reel / YouTube Short) for the channel below. Topic: "{topic}".

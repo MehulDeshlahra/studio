@@ -156,7 +156,11 @@ def main():
     if not a.no_send:
         txt = (f"[{ch['id']}] {p.get('title')}\n{'✅ QC ok' if rep['ok'] else '⚠️ QC: ' + '; '.join(map(str, probs))[:600]}\n"
                f"{rep['format']['dur']} s, {rep['format']['lufs']} LUFS, vision {rep['vision'].get('score')}/10\n\n{p.get('caption', '')}")
-        telegram(txt, video=final)
+        mid = telegram(txt, video=final)
+        if isinstance(mid, int):
+            m = load(os.path.join(OUT, "tg-map.json"), {})
+            m[str(mid)] = {"channel": ch["id"], "job": job_id}
+            save(os.path.join(OUT, "tg-map.json"), m)
     print(json.dumps({"final": final, "ok": rep["ok"]}))
 
 

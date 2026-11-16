@@ -69,13 +69,14 @@ def telegram(text, video=None, photo=None):
         if video or photo:
             f = video or photo
             kind = "sendVideo" if video else "sendPhoto"
-            sh(["curl", "-s", "-m", "300", "-F", f"chat_id={cfg['chat']}", "-F", f"caption={text[:1000]}",
-                "-F", f"{'video' if video else 'photo'}=@{f}", f"https://api.telegram.org/bot{cfg['token']}/{kind}"])
+            r = json.loads(sh(["curl", "-s", "-m", "300", "-F", f"chat_id={cfg['chat']}", "-F", f"caption={text[:1000]}",
+                               "-F", "supports_streaming=true",
+                               "-F", f"{'video' if video else 'photo'}=@{f}", f"https://api.telegram.org/bot{cfg['token']}/{kind}"]))
         else:
             body = json.dumps({"chat_id": cfg["chat"], "text": text[:4000]}).encode()
-            urllib.request.urlopen(urllib.request.Request(f"https://api.telegram.org/bot{cfg['token']}/sendMessage",
-                                   data=body, headers={"Content-Type": "application/json"}), timeout=60)
-        return True
+            r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://api.telegram.org/bot{cfg['token']}/sendMessage",
+                          data=body, headers={"Content-Type": "application/json"}), timeout=60))
+        return r.get("result", {}).get("message_id") or True
     except Exception as e:
         log("telegram error", e)
         return False
