@@ -23,3 +23,12 @@ Each lesson: what went wrong or right -> the rule. Newest at the top. Owner feed
 See lessons-tech-001.md (frame 0 must say what + why-for-me, quick proof, one headline per section, real things,
 length follows information, short question ending, one colour identity, no effects to cover editorial problems).
 - tech-002: the "AI news with UI cards" format is the samjho.exe lane: polished but low reach. Switched format.
+
+## Engine lessons (16 Nov, first automatic runs: tech upi-01, raaz case1-p1)
+- A render started with nohup from an ssh session dies when the session ends ("render_cancelled_parent_exited"). On the server always start long jobs with `sudo systemd-run --unit=studio-job-<name> --uid=ubuntu ...` (the timers already use systemd).
+- Gemini TTS reads ~2.3 words/s for suspense (163 words = 72 s). Plan raaz parts at 120-140 words for ~60 s.
+- Big card words must be auto-sized (14 chars at 190 px overflowed). Captions at 45% opacity were hard to read: use 80%.
+- True peak after AAC overshoots the limiter: master with two-pass loudnorm (I=-14, TP=-2, linear) and mux; re-measure the final mp4.
+- QC vision model flagged intended 3-word captions as "cut off": QC prompt now says captions are word-by-word. Read-back with whisper small is weak on Hinglish: only fail on whole missing sentences.
+- Muse puts printed text on some images (e.g. "BATCH SETTLEMENT VIA RBI" on a door): prompts say no text, but check; cover text with a card or regenerate.
+- Two simultaneous jobs on the 2-CPU server make renders 2x slower; the scheduler runs one job at a time.
