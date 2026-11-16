@@ -1,0 +1,297 @@
+"""'lab' look for Kaise Tech (channels/tech/style-lab.md): dark premium world, photoreal props, big numbers,
+HTML UI cards, drawn charts and flows, mono HUD chrome, sentence captions with karaoke light-up.
+page(plan, timed, total, theme, assets) -> (html, sfx cues). Scene types:
+  object  {prompt, label}                      photoreal prop (Muse/Cloudflare image on black, blended 'lighten')
+  clip    {prompt, label}                      generated video clip
+  stat    {value, sub, label}                  big number that counts up
+  ui      {title, rows:[{label,value,pct}]}    dark panel with rows and progress bars
+  chart   {points:[..], end_label, label}      line chart that draws; red when it falls, green when it rises
+  flow    {nodes:[..], label}                  vertical path, nodes light up, a dot travels
+  compare {items:[{label,value,pct}] x2, label} two bars side by side
+  title   {big, sub}                           kinetic statement"""
+import html, math, os, re
+from compose import chunks as _chunks, _split_dashes
+
+W, H = 1080, 1920
+MONO = "'JetBrains Mono','IBM Plex Mono',monospace"
+SANS = "'Inter Tight','Inter',sans-serif"
+CAP_Y = 1210
+
+
+def esc(s):
+    return html.escape(str(s or ""))
+
+
+def _num(v):
+    m = re.search(r"-?[\d,]*\.?\d+", str(v))
+    if not m:
+        return None
+    raw = m.group(0)
+    dec = len(raw.split(".")[1]) if "." in raw else 0
+    return m.start(), m.end(), float(raw.replace(",", "")), dec, "," in raw
+
+
+def cap_groups(words):
+    words = _split_dashes(words)
+    out, cur = [], []
+    for i, w in enumerate(words):
+        cur.append(w)
+        nxt = words[i + 1] if i + 1 < len(words) else None
+        letters = sum(len(x["w"]) for x in cur)
+        brk = len(cur) >= 6 or letters >= 30 or w["w"].endswith((".", "?", "!")) or (nxt and nxt["s"] - w["e"] >= 0.25)
+        if nxt is None or (brk and len(words) - i - 1 != 1):
+            out.append(cur); cur = []
+    if cur:
+        out.append(cur)
+    return out
+
+
+def page(plan, timed, total, theme, assets):
+    acc = theme.get("accent", "#ffd84d")
+    cool = theme.get("accent2", "#3ec7ff")
+    handle = theme.get("handle", "")
+    series = (plan.get("hud_left") or "KAISE.TECH").upper()
+    endcard = 1.4 if handle else 0.0
+    keys = set()
+    for s in plan["scenes"]:
+        for k in s.get("keywords") or []:
+            keys.update(re.sub(r"[^a-z0-9 ]", "", k.lower()).split())
+    scenes, top, js, cues, caps = [], [], [], [], []
+    n = len(timed)
+    for i, (s, t) in enumerate(zip(plan["scenes"], timed)):
+        a = 0.0 if i == 0 else t["start"] - 0.1
+        b = (timed[i + 1]["start"] - 0.1) if i + 1 < n else total - endcard
+        d = round(b - a, 3)
+        sid = f"s{i}"
+        kind = s.get("type", "object")
+        glow = acc if i % 3 != 1 else cool
+        inner = f'<div class="glow" style="background:radial-gradient(circle at 50% 44%,{glow}33 0%,{glow}14 28%,transparent 62%)"></div>'
+        hero = ""
+        img = (assets.get(i) or {}).get("image")
+        vid = (assets.get(i) or {}).get("video")
+        if kind == "clip" and vid:
+            top.append(f'<video id="v{i}" class="clip vid" src="assets/{os.path.basename(vid)}" muted playsinline '
+                       f'data-start="{a:.3f}" data-duration="{d:.3f}" data-media-start="0.2" data-track-index="0"></video>')
+            js.append(f'tl.fromTo("#v{i}",{{scale:1.08}},{{scale:1.0,duration:{d:.3f},ease:"none"}},{a:.3f});')
+        elif kind in ("object", "clip") and img:
+            hero = f'<img id="{sid}h" class="prop" src="assets/{os.path.basename(img)}">'
+            js.append(f'tl.fromTo("#{sid}h",{{y:70,scale:0.92,opacity:0}},{{y:0,scale:1,opacity:1,duration:0.9,ease:"power4.out",immediateRender:false}},{a:.3f});')
+            js.append(f'tl.to("#{sid}h",{{y:-18,rotation:0.6,duration:{max(0.5, d - 0.9):.3f},ease:"sine.inOut"}},{a + 0.9:.3f});')
+            js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
+        elif kind == "stat":
+            v = str(s.get("value", ""))
+            nm = _num(v)
+            if nm:
+                st, en, val, dec, comma = nm
+                hero = (f'<div id="{sid}h" class="stat">{esc(v[:st])}<span id="{sid}n" class="tab">{esc(v[st:en])}</span>{esc(v[en:])}</div>')
+                js.append(f'(function(){{const o={{v:0}},el=document.getElementById("{sid}n");'
+                          f'tl.to(o,{{v:{val},duration:{min(1.4, d * 0.55):.2f},ease:"power2.out",onUpdate:()=>{{el.textContent='
+                          f'o.v.toLocaleString("{"en-IN" if comma else "en-US"}",{{minimumFractionDigits:{dec},maximumFractionDigits:{dec}}})}}}},{a + 0.2:.3f});'
+                          f'tl.set(o,{{v:0}},{a:.3f});}})();')
+            else:
+                hero = f'<div id="{sid}h" class="stat">{esc(v)}</div>'
+            if s.get("sub"):
+                hero += f'<div id="{sid}u" class="statsub">{esc(s["sub"])}</div>'
+                js.append(f'tl.fromTo("#{sid}u",{{y:24,opacity:0}},{{y:0,opacity:1,duration:0.5,ease:"power3.out",immediateRender:false}},{a + 0.6:.3f});')
+                js.append(f'tl.set("#{sid}u",{{opacity:0}},{a:.3f});')
+            js.append(f'tl.fromTo("#{sid}h",{{scale:0.86,opacity:0}},{{scale:1,opacity:1,duration:0.7,ease:"power4.out",immediateRender:false}},{a + 0.05:.3f});')
+            js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
+            cues.append({"t": round(a + 0.2, 3), "file": "sfx/type-soft.mp3", "gain_db": -24, "align": "onset", "dur": 1.2})
+        elif kind == "ui":
+            rows = (s.get("rows") or [])[:5]
+            hero = f'<div id="{sid}h" class="panel"><div class="ptitle"><i></i>{esc(s.get("title", ""))}</div>'
+            for j, r in enumerate(rows):
+                pct = max(0, min(100, float(r.get("pct", 60) or 0)))
+                hero += (f'<div class="row"><div class="rl">{esc(r.get("label"))}</div><div class="rv">{esc(r.get("value"))}</div>'
+                         f'<div class="bar"><div id="{sid}b{j}" class="fill" style="width:{pct:.0f}%;background:{acc if j == 0 else "#d7dbe3"}"></div></div></div>')
+                js.append(f'tl.fromTo("#{sid}b{j}",{{scaleX:0}},{{scaleX:1,transformOrigin:"0% 50%",duration:0.7,ease:"power3.out",immediateRender:false}},{a + 0.45 + j * 0.22:.3f});')
+                js.append(f'tl.set("#{sid}b{j}",{{scaleX:0,transformOrigin:"0% 50%"}},{a:.3f});')
+                cues.append({"t": round(a + 0.45 + j * 0.22, 3), "file": "sfx/click-select.mp3", "gain_db": -24, "align": "onset"})
+            hero += "</div>"
+            js.append(f'tl.fromTo("#{sid}h",{{y:60,opacity:0,rotationX:12}},{{y:0,opacity:1,rotationX:0,duration:0.8,ease:"power4.out",immediateRender:false}},{a:.3f});')
+            js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
+        elif kind == "chart":
+            pts = [float(x) for x in (s.get("points") or [3, 5, 4, 7, 6, 9])][:12]
+            lo, hi = min(pts), max(pts)
+            rng = (hi - lo) or 1
+            cw, ch_ = 780, 420
+            xy = [(i2 * cw / max(1, len(pts) - 1), ch_ - (p - lo) / rng * ch_) for i2, p in enumerate(pts)]
+            path = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in xy)
+            area = path + f" L{cw} {ch_} L0 {ch_} Z"
+            ln = sum(math.dist(xy[k], xy[k + 1]) for k in range(len(xy) - 1))
+            col = "#ff4d5e" if pts[-1] < pts[0] else "#3ddc84"
+            hero = (f'<div id="{sid}h" class="panel chartp"><div class="ptitle"><i></i>{esc(s.get("title", s.get("label", "")))}</div>'
+                    f'<svg width="{cw}" height="{ch_ + 20}" viewBox="0 -10 {cw} {ch_ + 20}">'
+                    + "".join(f'<line x1="0" x2="{cw}" y1="{g * ch_ / 4:.0f}" y2="{g * ch_ / 4:.0f}" stroke="#ffffff14"/>' for g in range(5))
+                    + f'<path id="{sid}a" d="{area}" fill="{col}22"/>'
+                    f'<path id="{sid}l" d="{path}" fill="none" stroke="{col}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" '
+                    f'stroke-dasharray="{ln:.0f}" stroke-dashoffset="{ln:.0f}"/>'
+                    f'<circle id="{sid}c" cx="{xy[-1][0]:.1f}" cy="{xy[-1][1]:.1f}" r="13" fill="{col}"/></svg>'
+                    f'<div id="{sid}e" class="endl" style="color:{col}">{esc(s.get("end_label", ""))}</div></div>')
+            js.append(f'tl.fromTo("#{sid}h",{{y:60,opacity:0}},{{y:0,opacity:1,duration:0.7,ease:"power4.out",immediateRender:false}},{a:.3f});')
+            js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
+            js.append(f'tl.fromTo("#{sid}l",{{strokeDashoffset:{ln:.0f}}},{{strokeDashoffset:0,duration:{min(1.8, d * 0.6):.2f},ease:"power1.inOut",immediateRender:false}},{a + 0.35:.3f});')
+            js.append(f'tl.set("#{sid}l",{{strokeDashoffset:{ln:.0f}}},{a:.3f});')
+            js.append(f'tl.fromTo("#{sid}a,#{sid}c,#{sid}e",{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{a + 0.35 + min(1.8, d * 0.6):.3f});')
+            js.append(f'tl.set("#{sid}a,#{sid}c,#{sid}e",{{opacity:0}},{a:.3f});')
+            cues.append({"t": round(a + 0.35, 3), "file": "sfx/sweep-small.mp3", "gain_db": -22, "align": "onset"})
+        elif kind == "flow":
+            nodes = (s.get("nodes") or [])[:5]
+            k = max(1, len(nodes))
+            y0, gap = 0, (620 / max(1, k - 1)) if k > 1 else 0
+            hero = f'<div id="{sid}h" class="flowp"><svg class="fline" width="20" height="{int(gap * (k - 1)) + 2}"><line x1="10" x2="10" y1="0" y2="{gap * (k - 1):.0f}" stroke="#ffffff22" stroke-width="4"/>' \
+                   f'<line id="{sid}ln" x1="10" x2="10" y1="0" y2="{gap * (k - 1):.0f}" stroke="{acc}" stroke-width="4" stroke-dasharray="{gap * (k - 1):.0f}" stroke-dashoffset="{gap * (k - 1):.0f}"/></svg>'
+            step = min(0.9, (d * 0.7) / k)
+            for j, lab in enumerate(nodes):
+                tj = a + 0.3 + j * step
+                hero += (f'<div id="{sid}n{j}" class="node" style="top:{y0 + j * gap:.0f}px"><span class="nd"></span>'
+                         f'<span class="ni">{j + 1:02d}</span>{esc(lab)}</div>')
+                js.append(f'tl.fromTo("#{sid}n{j}",{{x:-40,opacity:0}},{{x:0,opacity:1,duration:0.5,ease:"power3.out",immediateRender:false}},{tj:.3f});')
+                js.append(f'tl.set("#{sid}n{j}",{{opacity:0}},{a:.3f});')
+                js.append(f'tl.to("#{sid}n{j} .nd",{{backgroundColor:"{acc}",boxShadow:"0 0 26px {acc}",duration:0.2}},{tj + 0.1:.3f});')
+                js.append(f'tl.set("#{sid}n{j} .nd",{{backgroundColor:"#2a2f3a",boxShadow:"none"}},{a:.3f});')
+                cues.append({"t": round(tj, 3), "file": "sfx/click-ui.mp3", "gain_db": -22, "align": "onset"})
+            if k > 1:
+                js.append(f'tl.fromTo("#{sid}ln",{{strokeDashoffset:{gap * (k - 1):.0f}}},{{strokeDashoffset:0,duration:{step * (k - 1):.2f},ease:"none",immediateRender:false}},{a + 0.4:.3f});')
+                js.append(f'tl.set("#{sid}ln",{{strokeDashoffset:{gap * (k - 1):.0f}}},{a:.3f});')
+            hero += "</div>"
+        elif kind == "compare":
+            its = (s.get("items") or [])[:2]
+            hero = f'<div id="{sid}h" class="cmp">'
+            for j, it in enumerate(its):
+                pct = max(4, min(100, float(it.get("pct", 50) or 0)))
+                col = acc if j == 0 else "#d7dbe3"
+                hero += (f'<div class="cc"><div class="cv" style="color:{col}">{esc(it.get("value"))}</div>'
+                         f'<div class="ctrack"><div id="{sid}c{j}" class="cbar" style="height:{pct * 5.6:.0f}px;background:{col}"></div></div>'
+                         f'<div class="cl">{esc(it.get("label"))}</div></div>')
+                js.append(f'tl.fromTo("#{sid}c{j}",{{scaleY:0}},{{scaleY:1,transformOrigin:"50% 100%",duration:0.8,ease:"power3.out",immediateRender:false}},{a + 0.35 + j * 0.35:.3f});')
+                js.append(f'tl.set("#{sid}c{j}",{{scaleY:0,transformOrigin:"50% 100%"}},{a:.3f});')
+                cues.append({"t": round(a + 0.35 + j * 0.35, 3), "file": "sfx/sweep-small.mp3", "gain_db": -22, "align": "onset"})
+            hero += "</div>"
+            js.append(f'tl.fromTo("#{sid}h",{{opacity:0}},{{opacity:1,duration:0.3,immediateRender:false}},{a:.3f});')
+            js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
+        else:  # title
+            words = esc(s.get("big", "")).split()
+            hero = '<div id="%sh" class="kin">%s</div>' % (sid, " ".join(f'<span class="kw" id="{sid}w{j}">{w}</span>' for j, w in enumerate(words)))
+            for j in range(len(words)):
+                js.append(f'tl.fromTo("#{sid}w{j}",{{yPercent:80,opacity:0}},{{yPercent:0,opacity:1,duration:0.6,ease:"power4.out",immediateRender:false}},{a + 0.08 + j * 0.09:.3f});')
+                js.append(f'tl.set("#{sid}w{j}",{{opacity:0}},{a:.3f});')
+            if s.get("sub"):
+                hero += f'<div id="{sid}u" class="statsub">{esc(s["sub"])}</div>'
+                js.append(f'tl.fromTo("#{sid}u",{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{a + 0.5:.3f});')
+                js.append(f'tl.set("#{sid}u",{{opacity:0}},{a:.3f});')
+        if s.get("label"):
+            inner += f'<div id="{sid}p" class="lpill"><i></i>{esc(s["label"].upper())}</div>'
+            js.append(f'tl.fromTo("#{sid}p",{{y:-14,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out",immediateRender:false}},{a + 0.15:.3f});')
+            js.append(f'tl.set("#{sid}p",{{opacity:0}},{a:.3f});')
+        inner += f'<div id="{sid}cam" class="cam">{hero}</div>'
+        inner += (f'<div class="hud"><span class="hl"><b></b>{esc(series)}</span>'
+                  f'<span class="hr">{esc((s.get("hud_right") or s.get("label") or "").upper())}</span></div>')
+        js.append(f'tl.fromTo("#{sid}cam",{{scale:1.05}},{{scale:1.0,duration:0.9,ease:"power3.out",immediateRender:false}},{a:.3f});')
+        js.append(f'tl.to("#{sid}cam",{{scale:1.03,duration:{max(0.4, d - 0.9):.3f},ease:"sine.inOut"}},{a + 0.9:.3f});')
+        if i:
+            js.append(f'tl.fromTo("#{sid}",{{opacity:0}},{{opacity:1,duration:0.22,ease:"power1.out",immediateRender:false}},{a:.3f});')
+            cues.append({"t": round(a + 0.05, 3), "file": ["sfx/air-zoom.mp3", "sfx/whoosh-fast.mp3"][i % 2], "gain_db": -26, "align": "onset"})
+        scenes.append(f'<div id="{sid}" class="clip scene{" over" if kind == "clip" and vid else ""}" data-start="{a:.3f}" '
+                      f'data-duration="{d:.3f}" data-track-index="1">{inner}</div>')
+        for c in cap_groups(t["words"]):
+            caps.append(c)
+    # captions: one sentence chunk at a time, words light up as spoken
+    capdiv, cap_js = [], []
+    for j, c in enumerate(caps):
+        st = max(0.05, c[0]["s"] - 0.08)
+        en = c[-1]["e"] + 0.3
+        if j + 1 < len(caps):
+            en = min(en, caps[j + 1][0]["s"] - 0.06)
+        en = max(en, st + 0.3)
+        spans = []
+        for k, w in enumerate(c):
+            kk = re.sub(r"[^a-z0-9]", "", w["w"].lower())
+            word = esc(re.sub(r"[,]+$", "", w["w"]).replace("...", ""))
+            spans.append(f'<span id="c{j}w{k}" class="w{" key" if kk in keys else ""}">{word}</span>')
+            cap_js.append(f'tl.to("#c{j}w{k}",{{opacity:1,duration:0.08}},{max(st, w["s"] - 0.03):.3f});')
+            cap_js.append(f'tl.set("#c{j}w{k}",{{opacity:0.32}},{st:.3f});')
+        capdiv.append(f'<div id="c{j}" class="clip cap" data-start="{st:.3f}" data-duration="{en - st:.3f}" data-track-index="9">{" ".join(spans)}</div>')
+        cap_js.append(f'tl.fromTo("#c{j}",{{y:16,opacity:0}},{{y:0,opacity:1,duration:0.18,ease:"power2.out",immediateRender:false}},{st:.3f});')
+    brand = []
+    if handle:
+        e0 = total - endcard
+        brand.append(f'<div id="endc" class="clip endc" data-start="{e0:.3f}" data-duration="{endcard:.3f}" data-track-index="8">'
+                     f'<div class="glow" style="background:radial-gradient(circle at 50% 46%,{acc}30,transparent 60%)"></div>'
+                     f'<div id="endh" class="endh">{esc(handle)}</div><div id="endf" class="endf">{"FOLLOW FOR MORE" if theme.get("lang") == "en" else "FOLLOW KARO"}</div></div>')
+        js.append(f'tl.fromTo("#endh",{{y:40,opacity:0}},{{y:0,opacity:1,duration:0.6,ease:"power4.out",immediateRender:false}},{e0 + 0.05:.3f});')
+        js.append(f'tl.fromTo("#endf",{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{e0 + 0.3:.3f});')
+        cues.append({"t": round(e0 + 0.05, 3), "file": "sfx/whoosh-cine.mp3", "gain_db": -20, "align": "peak"})
+    grain = ("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'>"
+             "<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/>"
+             "<feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")
+    css = f"""
+body{{margin:0;background:#07080b}}
+#root{{position:relative;width:{W}px;height:{H}px;overflow:hidden;background:#07080b;font-family:{SANS};color:#fff}}
+.scene{{position:absolute;inset:0;overflow:hidden;z-index:1;background:#07080b}}
+.scene.over{{background:transparent;z-index:2}}
+.vid{{position:absolute;inset:0;width:{W}px;height:{H}px;object-fit:cover;z-index:1}}
+.glow{{position:absolute;inset:0}}
+.cam{{position:absolute;inset:0}}
+.prop{{position:absolute;left:90px;top:430px;width:900px;height:760px;object-fit:contain;mix-blend-mode:lighten;
+  -webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 60%,transparent 100%)}}
+.hud{{position:absolute;left:64px;right:64px;top:196px;display:flex;justify-content:space-between;font-family:{MONO};font-size:30px;
+  letter-spacing:2px;color:#c9ced8;z-index:6}}
+.hud span{{border:1.5px solid #ffffff30;border-radius:10px;padding:8px 16px;background:#0b0d12cc}}
+.hud span:empty{{display:none}}
+.hud b{{display:inline-block;width:14px;height:14px;border-radius:4px;background:{acc};margin-right:12px;vertical-align:1px}}
+.lpill{{position:absolute;left:0;right:0;margin:auto;top:340px;width:max-content;font-family:{MONO};font-size:32px;letter-spacing:2px;
+  color:#0b0d12;background:{acc};padding:8px 20px;border-radius:10px;z-index:5}}
+.lpill i{{display:inline-block;width:10px;height:10px;border-radius:50%;background:#0b0d12;margin-right:12px;vertical-align:4px}}
+.stat{{position:absolute;left:40px;right:40px;top:560px;text-align:center;font-weight:800;font-size:200px;letter-spacing:-6px;line-height:1;
+  color:#fff;text-shadow:0 0 60px {acc}40}}
+.tab{{font-variant-numeric:tabular-nums}}
+.statsub{{position:absolute;left:80px;right:80px;top:800px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:2px;color:#9aa3b2}}
+.panel{{position:absolute;left:100px;width:880px;top:470px;background:linear-gradient(180deg,#151922,#0e1117);border:1.5px solid #ffffff1f;
+  border-radius:28px;padding:40px 44px 46px;box-shadow:0 40px 80px #000a, inset 0 1px 0 #ffffff14;box-sizing:border-box}}
+.ptitle{{font-family:{MONO};font-size:30px;letter-spacing:2px;color:#9aa3b2;margin-bottom:26px;text-transform:uppercase}}
+.ptitle i{{display:inline-block;width:12px;height:12px;border-radius:50%;background:#3ddc84;margin-right:14px;vertical-align:3px;box-shadow:0 0 12px #3ddc84}}
+.row{{display:grid;grid-template-columns:1fr auto;row-gap:12px;margin-top:26px}}
+.rl{{font-size:42px;font-weight:600;color:#e8ebf0}} .rv{{font-size:42px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}}
+.bar{{grid-column:1/3;height:16px;border-radius:8px;background:#ffffff12;overflow:hidden}}
+.fill{{height:100%;border-radius:8px}}
+.chartp svg{{display:block;margin-top:10px}}
+.endl{{font-weight:800;font-size:64px;text-align:right;margin-top:6px}}
+.flowp{{position:absolute;left:150px;top:470px;width:780px;height:700px}}
+.fline{{position:absolute;left:28px;top:44px}}
+.node{{position:absolute;left:0;width:780px;height:92px;display:flex;align-items:center;font-size:46px;font-weight:700;color:#fff}}
+.nd{{width:56px;height:56px;border-radius:50%;background:#2a2f3a;border:4px solid #07080b;margin-right:28px;flex:none}}
+.ni{{font-family:{MONO};font-size:28px;color:#7d8696;margin-right:20px}}
+.cmp{{position:absolute;left:150px;right:150px;top:420px;height:820px;display:flex;justify-content:space-around;align-items:flex-end}}
+.cc{{width:300px;text-align:center}} .cv{{font-weight:800;font-size:86px;margin-bottom:18px;letter-spacing:-2px}}
+.ctrack{{height:560px;display:flex;align-items:flex-end;justify-content:center}} .cbar{{width:180px;border-radius:22px 22px 6px 6px}}
+.cl{{font-family:{MONO};font-size:34px;color:#c9ced8;margin-top:20px;letter-spacing:1px}}
+.kin{{position:absolute;left:70px;right:70px;top:540px;text-align:center;font-weight:800;font-size:150px;line-height:1.02;letter-spacing:-4px}}
+.kw{{display:inline-block;margin:0 14px}}
+.cap{{position:absolute;left:80px;width:{W - 160}px;top:{CAP_Y}px;z-index:7;text-align:center;font-family:{SANS};font-weight:700;font-size:58px;
+  line-height:1.18;letter-spacing:-0.5px;color:#fff;text-shadow:0 4px 18px #000c}}
+.cap .w{{opacity:0.32}} .cap .key{{color:{acc}}}
+.grain{{position:absolute;inset:-50px;z-index:30;pointer-events:none;opacity:.07;background-image:url("{grain}");mix-blend-mode:overlay}}
+.vign{{position:absolute;inset:0;z-index:29;pointer-events:none;background:radial-gradient(ellipse 80% 70% at 50% 48%,transparent 55%,#000c 100%)}}
+.endc{{position:absolute;inset:0;z-index:20;background:#07080b}}
+.endh{{position:absolute;left:0;width:{W}px;top:800px;text-align:center;font-weight:800;font-size:110px;letter-spacing:-3px}}
+.endf{{position:absolute;left:0;width:{W}px;top:950px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:6px;color:{acc}}}
+"""
+    doc = f"""<!doctype html><html><head><meta charset="utf-8">
+<style>{css}</style></head><body>
+<div id="root" data-composition-id="main" data-width="{W}" data-height="{H}" data-duration="{total:.3f}" data-start="0">
+{chr(10).join(top)}
+{chr(10).join(scenes)}
+{chr(10).join(capdiv)}
+{chr(10).join(brand)}
+<div class="vign"></div><div class="grain"></div>
+<audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="{total:.3f}" data-track-index="10"></audio>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+const tl=gsap.timeline({{paused:true}});
+{chr(10).join(js)}
+{chr(10).join(cap_js)}
+window.__timelines=window.__timelines||{{}};window.__timelines["main"]=tl;
+</script></body></html>"""
+    return doc, cues

@@ -48,6 +48,24 @@ SCHEMA = """{
 }"""
 
 
+LAB = """
+
+THIS CHANNEL USES THE 'LAB' LOOK (channels/tech/style-lab.md), for Gen Z: premium, dark, minimal, like samjho.exe and
+sparethoughtstudios. IGNORE the visual types above and use ONLY these scene types (vary them, never 3 of a kind in a row):
+  {"type":"object","prompt":"<one real object, e.g. 'a modern smartphone lying face up showing a payment confirmation glow'>","label":"<2-3 word tag>"}
+  {"type":"stat","value":"<a number with unit, e.g. '2 sec' or '₹1,76,121' or '14 billion'>","sub":"<what it measures, 2-5 words>","label":"..."}
+  {"type":"ui","title":"<panel title>","rows":[{"label":"...","value":"...","pct":0-100}],"label":"..."}   (2-4 rows)
+  {"type":"chart","title":"...","points":[numbers...],"end_label":"<e.g. +38%>","label":"..."}
+  {"type":"flow","nodes":["step 1","step 2","step 3","step 4"],"label":"..."}   (how something moves / happens, 3-5 nodes, <=14 letters each)
+  {"type":"compare","items":[{"label":"...","value":"...","pct":0-100},{"label":"...","value":"...","pct":0-100}],"label":"..."}
+  {"type":"title","big":"<1-3 words>","sub":"<optional short line>"}
+  {"type":"clip","prompt":"<one cinematic real-world shot>","label":"..."}   (max 1 per video, for the hook)
+Rules: at most 4 'object' scenes (they cost image credits); every number must be true and common knowledge, or
+leave numbers out (no made-up stats); labels are UPPERCASE-able tags like "NPCI SWITCH", "STEP 2", "INDIA · 2024";
+no cartoons, no faces, no characters with eyes; the object prompts describe real hardware/things only.
+"""
+
+
 def all_lessons(own):
     """Lessons from EVERY page (owner rule 16 Nov: learning from one page applies to all).
     This page's own lessons first, then the others, each labelled with its page."""
@@ -124,6 +142,8 @@ REQUIREMENTS
 - Never mention AI and never add an AI label.
 Return JSON with exactly this shape:
 {SCHEMA}"""
+    if ch.get("theme", {}).get("style") == "lab":
+        p += LAB
     plan = ask(p)
     for _ in range(2):
         words = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))

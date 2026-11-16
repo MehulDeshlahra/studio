@@ -38,9 +38,13 @@ def stage_assets(ch, p, job):
         if k in got and all(os.path.exists(v) for v in got[k].values()):
             last_img = got[k].get("image", last_img); continue
         a = {}
-        if s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice"):
+        if s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
             prompt = s["prompt"] + (". " + look if look and look.lower()[:20] not in s["prompt"].lower() else "") + \
                 ". Vertical 9:16, no text, no letters, no logos, no watermark."
+            if theme.get("style") == "lab":
+                prompt = (s["prompt"] + ". Photorealistic studio product render, single object centred, isolated on a pure black "
+                          "background, dramatic soft rim light, subtle reflections, shallow depth of field, premium Apple-style "
+                          "product photography, no people, no faces, no cartoon, no text, no logos, no watermark, vertical 9:16.")
             if s["type"] == "flow":
                 prompt = "Soft, simple, uncluttered background for a diagram: " + prompt
             f = os.path.join(adir, f"s{i}.webp")
@@ -207,7 +211,11 @@ def main():
     rdir = os.path.join(job, "render")
     if "compose" in redo or not os.path.exists(os.path.join(rdir, "index.html")):
         os.makedirs(os.path.join(rdir, "assets"), exist_ok=True)
-        doc, cues = compose.page(p, timed, total, theme, assets)
+        if theme.get("style") == "lab":
+            import compose_lab
+            doc, cues = compose_lab.page(p, timed, total, theme, assets)
+        else:
+            doc, cues = compose.page(p, timed, total, theme, assets)
         open(os.path.join(rdir, "index.html"), "w", encoding="utf-8").write(doc)
         for v in assets.values():
             for f in v.values():

@@ -18,8 +18,8 @@
                                      "hf-ltx",
                                      "kaggle-wan2.2"
                                  ],
-                    "look":  "glossy 3D Pixar-style, dark navy studio, soft blue rim light, yellow accent #ffd84d",
-                    "cast":  "topic objects as characters (no fixed mascot)"
+                    "look":  "photorealistic premium studio product render on pure black",
+                    "cast":  "no characters: real objects, numbers, UI, charts, flows"
                 },
     "edit":  {
                  "size":  "1080x1920",
@@ -67,11 +67,12 @@
                        ],
     "theme":  {
                   "bg":  "#050b1a",
-                  "accent":  "#ffd84d",
-                  "accent2":  "#3ec7ff",
+                  "accent":  "#f5c542",
+                  "accent2":  "#46d1ff",
                   "font":  "Archivo Black",
-                  "music":  "music/digital-clouds.mp3",
-                  "music_offset":  8
+                  "music":  "music/deep-urban.mp3",
+                  "music_offset":  8,
+                  "style":  "lab"
               },
     "handle_instagram":  "@kaise.tech",
     "handle_youtube":  "@kaise.tech.official",
