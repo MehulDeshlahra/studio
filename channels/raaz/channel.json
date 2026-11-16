@@ -1,6 +1,6 @@
 {
     "id":  "raaz",
-    "name":  "Kahaneo (@kahaneo; English @kahaneo.en)",
+    "name":  "Kahaniverse",
     "status":  "planned",
     "language":  "Hindi / Hinglish",
     "format":  "Interactive suspense case in 3-4 parts; each part ends with an A/B choice; viewers vote in comments; the next part follows the winning vote (counted from our own post\u0027s comments via the official IG API)",
@@ -45,8 +45,8 @@
     "edit":  {
                  "wps":  2.7
              },
-    "handle":  "@kahaneo",
-    "handle_en":  "@kahaneo.en",
+    "handle":  "TBD (owner picks a variation in the app)",
+    "handle_en":  "TBD",
     "series":  [
                    "Raaz Ka Faisla (mystery, you vote)",
                    "Karma (revenge/karma twist)",
