@@ -36,6 +36,8 @@ def _dup(title, vo):
 def page(plan, timed, total, theme, assets):
     acc, acc2, bg = theme.get("accent", "#ffd84d"), theme.get("accent2", "#3ec7ff"), theme.get("bg", "#050b1a")
     font = theme.get("font", "Archivo Black")
+    handle = theme.get("handle", "")
+    endcard = 1.4 if handle else 0.0
     scenes, top, caps, js, cues = [], [], [], [], []
     keys = set()
     for s in plan["scenes"]:
@@ -125,7 +127,7 @@ def page(plan, timed, total, theme, assets):
             js.append(f'tl.to("#{sid}cm",{{scale:1.06,duration:0.5,yoyo:true,repeat:5,ease:"sine.inOut"}},{a + 1.6:.3f});')
             js.append(f'tl.set("#{sid}cm",{{opacity:0}},{a:.3f});')
         if plan.get("hud_left"):
-            inner += f'<div class="hud"><span>{esc(plan["hud_left"])}</span><span>{esc(s.get("hud_right", ""))}</span></div>'
+            inner += f'<div class="hud"><span>{esc(plan["hud_left"])}</span><span>{esc(s.get("hud_right") or handle)}</span></div>'
         if s.get("title") and not _dup(s["title"], s.get("vo")):
             inner += f'<div id="{sid}t" class="tag"><span class="pill">{esc(s["title"].upper())}</span></div>'
             js.append(f'tl.fromTo("#{sid}t",{{scale:0.3,opacity:0}},{{scale:1,opacity:1,duration:0.3,ease:"back.out(2.5)",immediateRender:false}},{a + 0.15:.3f});')
@@ -177,8 +179,31 @@ def page(plan, timed, total, theme, assets):
         capdiv.append(f'<div id="c{j}" class="clip cap" style="font-size:{fs}px" data-start="{st:.3f}" '
                       f'data-duration="{en - st:.3f}" data-track-index="9">{" ".join(spans)}</div>')
         cap_js.append(f'tl.fromTo("#c{j}",{{scale:0.86,y:14}},{{scale:1,y:0,duration:0.14,ease:"back.out(2.5)",immediateRender:false}},{st:.3f});')
+    brand = []
+    if handle:
+        if not plan.get("hud_left"):
+            brand.append(f'<div id="brand" class="clip brand" data-start="0" data-duration="{total - endcard:.3f}" data-track-index="7">{esc(handle)}</div>')
+        e0 = total - endcard
+        follow = "FOLLOW" if theme.get("lang") == "en" else "FOLLOW KARO"
+        line = esc((plan.get("end_line") or "").upper())
+        brand.append(f'<div id="endc" class="clip endc" data-start="{e0:.3f}" data-duration="{endcard:.3f}" data-track-index="8">'
+                     f'<div id="endf" class="endf">{follow}</div><div id="endh" class="endh">{esc(handle)}</div>'
+                     + (f'<div id="endl" class="endl">{line}</div>' if line else "") + '</div>')
+        js.append(f'tl.fromTo("#endc",{{opacity:0}},{{opacity:1,duration:0.2,immediateRender:false}},{e0:.3f});')
+        js.append(f'tl.fromTo("#endh",{{scale:0.5}},{{scale:1,duration:0.35,ease:"back.out(2.2)",immediateRender:false}},{e0 + 0.05:.3f});')
+        js.append(f'tl.fromTo("#endf",{{y:-30,opacity:0}},{{y:0,opacity:1,duration:0.25,immediateRender:false}},{e0 + 0.15:.3f});')
+        if line:
+            js.append(f'tl.fromTo("#endl",{{y:30,opacity:0}},{{y:0,opacity:1,duration:0.25,immediateRender:false}},{e0 + 0.3:.3f});')
+        cues.append({"t": round(e0 + 0.05, 3), "file": "sfx/whoosh-cine.mp3", "gain_db": -16, "align": "peak"})
+        cues.append({"t": round(e0 + 0.1, 3), "file": "sfx/pop-light.mp3", "gain_db": -14, "align": "onset"})
     css = f"""
 body{{margin:0;background:{bg}}}
+.brand{{position:absolute;left:70px;top:200px;z-index:6;font-family:'Montserrat',sans-serif;font-weight:800;font-size:32px;color:#fff;
+  background:rgba(0,0,0,.45);padding:6px 16px;border-radius:10px;letter-spacing:1px}}
+.endc{{position:absolute;inset:0;z-index:20;background:radial-gradient(circle at 50% 45%,{bg}ee,{bg} 75%);text-align:center}}
+.endf{{position:absolute;left:0;width:{W}px;top:640px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:64px;color:#fff;letter-spacing:4px}}
+.endh{{position:absolute;left:0;width:{W}px;top:740px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:104px;color:{acc};-webkit-text-stroke:3px #000;paint-order:stroke fill}}
+.endl{{position:absolute;left:0;width:{W}px;top:900px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:56px;color:#fff}}
 #root{{position:relative;width:{W}px;height:{H}px;overflow:hidden;background:{bg};font-family:'{font}',sans-serif}}
 .scene{{position:absolute;inset:0;overflow:hidden;z-index:1;background:{bg}}}
 .scene.over{{background:transparent;z-index:2}}
@@ -216,6 +241,7 @@ body{{margin:0;background:{bg}}}
 {chr(10).join(top)}
 {chr(10).join(scenes)}
 {chr(10).join(capdiv)}
+{chr(10).join(brand)}
 <audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="{total:.3f}" data-track-index="10"></audio>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

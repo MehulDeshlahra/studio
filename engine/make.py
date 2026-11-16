@@ -88,9 +88,17 @@ def main():
     ap.add_argument("channel"); ap.add_argument("topic", nargs="?")
     ap.add_argument("--job"); ap.add_argument("--from", dest="frm", default="")
     ap.add_argument("--no-send", action="store_true")
+    ap.add_argument("--lang", default="", help="en = English page version (voice, captions, handle_en)")
     a = ap.parse_args()
     ch = channel(a.channel)
-    theme = ch.get("theme", {})
+    if a.lang == "en":
+        ch["lang"] = "en"
+        ch["handle"] = ch.get("handle_en", "")
+        ch["voice"] = dict(ch["voice"], style=ch["voice"].get("style_en", ch["voice"].get("style", "")))
+    theme = dict(ch.get("theme", {}))
+    theme["lang"] = ch.get("lang", "hi")
+    if ch.get("handle") and not ch["handle"].startswith("TBD"):
+        theme["handle"] = ch["handle"]
     job_id = a.job or time.strftime("%m%d-%H%M")
     job = os.path.join(OUT, ch["id"], job_id); os.makedirs(job, exist_ok=True)
     order = ["research", "plan", "voice", "assets", "compose", "mix", "render", "qc", "send"]
@@ -116,7 +124,7 @@ def main():
     vo = os.path.join(job, "vo-raw.wav")
     if "voice" in redo or not os.path.exists(vo):
         script = "\n".join(s["vo"] for s in p["scenes"])
-        tts.speak(script, vo, ch["voice"].get("voice", "Charon"), ch["voice"].get("style", ""))
+        tts.speak(script, vo, ch["voice"].get("voice", "Charon"), ch["voice"].get("style", ""), p.get("lang") or ch.get("lang", "hi"))
     import pace
     paced = os.path.join(job, "vo-paced.wav")
     if "voice" in redo or not os.path.exists(paced):
@@ -128,7 +136,7 @@ def main():
     tp = os.path.join(job, "timing.json")
     if "voice" in redo or not os.path.exists(tp) or load(tp, {}).get("method") != "whisper":
         try:
-            timed, vdur, cover = align.words_by_line(vo, [s["vo"] for s in p["scenes"]])
+            timed, vdur, cover = align.words_by_line(vo, [s["vo"] for s in p["scenes"]], p.get("lang") or ch.get("lang", "hi"))
             method = "whisper"; log("aligned words with whisper, matched", f"{cover:.0%}")
         except Exception as e:
             log("whisper alignment failed, pause estimate:", str(e)[:150])
@@ -158,7 +166,7 @@ def main():
         vo_use = os.path.join(job, "vo-held.wav")
         sf.write(vo_use, np.concatenate(pieces), sr)
         vdur += shift
-    total = round(vdur + 0.7, 3)
+    total = round(vdur + 0.7 + (1.4 if theme.get("handle") else 0.0), 3)
     # 4 assets
     assets = stage_assets(ch, p, job)
     # 5 compose

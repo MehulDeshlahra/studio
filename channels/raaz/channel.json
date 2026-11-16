@@ -1,6 +1,6 @@
 {
     "id":  "raaz",
-    "name":  "Kahaniverse",
+    "name":  "TBD (story page name parked)",
     "status":  "planned",
     "language":  "Hindi / Hinglish",
     "format":  "Interactive suspense case in 3-4 parts; each part ends with an A/B choice; viewers vote in comments; the next part follows the winning vote (counted from our own post\u0027s comments via the official IG API)",
@@ -8,7 +8,8 @@
                   "engine":  "gemini-3.8-flash-tts",
                   "voice":  "Charon",
                   "one_request_per_reel":  true,
-                  "style":  "a low, calm, tense Indian male thriller narrator; brisk and urgent, about 3 words per second, short pauses, a suspenseful beat only before the final question"
+                  "style":  "a low, calm, tense Indian male thriller narrator; brisk and urgent, about 3 words per second, short pauses, a suspenseful beat only before the final question",
+                  "style_en":  "a low, calm, tense Indian male, clear Indian-English accent thriller narrator; brisk and urgent, about 3 words per second, short pauses, a suspenseful beat only before the final question"
               },
     "visuals":  {
                     "primary":  "muse",
@@ -45,8 +46,8 @@
     "edit":  {
                  "wps":  2.7
              },
-    "handle":  "TBD (owner picks a variation in the app)",
-    "handle_en":  "TBD",
+    "handle":  "",
+    "handle_en":  "",
     "series":  [
                    "Raaz Ka Faisla (mystery, you vote)",
                    "Karma (revenge/karma twist)",

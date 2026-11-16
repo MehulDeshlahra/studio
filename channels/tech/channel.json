@@ -8,7 +8,8 @@
                   "engine":  "gemini-3.8-flash-tts",
                   "voice":  "Charon",
                   "style":  "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end",
-                  "one_request_per_reel":  true
+                  "one_request_per_reel":  true,
+                  "style_en":  "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end"
               },
     "visuals":  {
                     "primary":  "muse",
@@ -69,7 +70,7 @@
               },
     "handle_instagram":  "@kaise.tech",
     "handle_youtube":  "@kaise.tech",
-    "handle_en":  "@kaisetech.en / YT @kaisetech.en",
+    "handle_en":  "",
     "pillars":  [
                     "Kaise kaam karta hai: everyday tech explained with one visual idea (UPI, WiFi, GPS, battery)",
                     "AI kaise: how AI tools work and how to use them (ChatGPT, Gemini, image/video AI) with real screen captures",

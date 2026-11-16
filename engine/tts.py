@@ -10,8 +10,9 @@ def _key():
     return open(os.path.expanduser(os.environ.get("STUDIO_GEMINI_KEY_FILE", "~/.studio-gemini.key"))).read().strip()
 
 
-def speak(script, out_wav, voice="Charon", style=""):
-    prompt = (f"Read this in natural spoken Hinglish/Hindi as {style}. Start instantly, no intro. "
+def speak(script, out_wav, voice="Charon", style="", lang="hi"):
+    language = "natural spoken Indian English" if lang == "en" else "natural spoken Hinglish/Hindi"
+    prompt = (f"Read this in {language} as {style}. Start instantly, no intro. "
               "Pause briefly between sentences. Read exactly these words:\n\n" + script)
     body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
