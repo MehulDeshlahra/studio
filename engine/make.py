@@ -17,6 +17,13 @@ WORKERS = os.environ.get("STUDIO_RENDER_WORKERS", "2")
 
 
 def pick_topic(ch):
+    try:                                                 # best of 10 scored ideas (engine/ideas.py); old way as fallback
+        import ideas
+        t = ideas.pick(ch)
+        if t:
+            return t
+    except Exception as e:
+        log("ideas failed, using the backlog", str(e)[:150])
     done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), [])
     used = {d["topic"].lower() for d in done}
     for t in ch.get("topics_backlog", []):
