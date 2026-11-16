@@ -13,3 +13,4 @@ videos/*/assets/
 *.jpg
 *.png
 lib/tts_*.py
+review.md
