@@ -2,7 +2,7 @@
   python engine/make.py <channel> ["topic"] [--job ID] [--from STAGE]
 Stages: research -> plan -> voice -> assets -> compose -> mix -> render -> qc -> send.
 Each stage writes into ~/studio-out/<channel>/<job>/ and is skipped when its output already exists (rerun-safe)."""
-import argparse, json, os, re, shutil, sys, time
+import argparse, json, os, re, shutil, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, ASSETS, OUT, PY, log, sh, load, save, channel, telegram, dur
 import research, plan as planner, tts, align, muse, compose, qc
@@ -59,10 +59,16 @@ def stage_assets(ch, p, job):
 
 
 def remux(raw, mix, total, out):
+    """Two-pass loudnorm (-14 LUFS, TP -2) on the mix, then mux with the rendered picture."""
+    import json as _j, re as _re
     lim = mix.replace(".wav", "-tp.wav")
-    sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af",
-        f"apad=whole_dur={total:.3f},aresample=192000,alimiter=limit=0.6:level=false:attack=1,aresample=48000",
-        "-c:a", "pcm_s16le", lim])
+    base = f"apad=whole_dur={total:.3f},"
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", mix, "-af", base + "loudnorm=I=-14:TP=-2:LRA=11:print_format=json",
+                        "-f", "null", "-"], capture_output=True, text=True).stderr
+    m = _j.loads(_re.findall(r"\{[^{}]*\}", r)[-1])
+    ln = (f"loudnorm=I=-14:TP=-2:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+          f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af", base + ln + ",aresample=48000", "-c:a", "pcm_s16le", lim])
     sh(["ffmpeg", "-v", "error", "-y", "-i", raw, "-i", lim, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
         "-c:a", "aac", "-b:a", "256k", "-t", f"{total:.3f}", "-movflags", "+faststart", out])
 
