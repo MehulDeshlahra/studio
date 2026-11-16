@@ -58,6 +58,21 @@ def strip_preamble(wav, first_line, lang="hi"):
     segs, _ = WhisperModel("base", compute_type="int8").transcribe(x[: 40 * 16000], language="en", word_timestamps=True)
     words = [(w.word.strip(), w.start, w.end) for s in segs for w in s.words if w.word.strip()]
     norm = [_re.sub(r"[^a-z]", "", w[0].lower()) for w in words]
+    # 1) best: find where the script's first words start and cut everything before them (17 Nov: "Say in" was cut but
+    #    "Indian English, curious warm energetic young Indian" stayed in the English edition)
+    fl = [_re.sub(r"[^a-z]", "", t.lower()) for t in first_line.split()][:4]
+    fl = [t for t in fl if t]
+    if len(fl) >= 2 and lang == "en":
+        for i2 in range(1, min(len(norm), 80)):
+            hit = sum(1 for k, t in enumerate(fl[:3]) if i2 + k < len(norm) and norm[i2 + k] == t)
+            if hit >= 2 and words[i2][1] > 0.3:
+                pre = " ".join(w[0] for w in words[:i2])
+                if any(k in pre.lower() for k in ("say", "indian", "english", "hinglish", "voice", "tone", "warm", "energetic", "curious", "calm")):
+                    cut = max(0.0, words[i2][1] - 0.08)
+                    sf.write(wav, a[int(cut * sr):], sr)
+                    log("tts: cut", round(cut, 2), "s before the first line:", pre[:160])
+                    return cut, pre
+                break
     last = -1
     for k in LEAK + ("these words", "exactly these", "the final question", "accent"):
         kw = k.split()
