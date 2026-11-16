@@ -228,7 +228,9 @@ body{{margin:0;background:{bg}}}
 .count{{position:absolute;left:0;width:{W}px;top:1150px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:200px;color:{acc};-webkit-text-stroke:6px #000;paint-order:stroke fill;z-index:6}}
 .cmt{{position:absolute;left:0;width:{W}px;top:1060px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:56px;color:#fff;-webkit-text-stroke:3px #000;paint-order:stroke fill;z-index:4}}
 .hud{{position:absolute;left:70px;width:940px;top:200px;display:flex;justify-content:space-between;font-family:'Montserrat',sans-serif;font-weight:800;font-size:34px;color:#fff;letter-spacing:3px;z-index:6;text-shadow:0 3px 0 #000}}
-.hud span:first-child{{background:#b3261e;padding:6px 18px;border-radius:8px}}
+.hud span{{background:rgba(0,0,0,.55);padding:6px 18px;border-radius:8px}}
+.hud span:first-child{{background:#b3261e}}
+.hud span:empty{{display:none}}
 .cap{{position:absolute;left:0;width:{W}px;top:1180px;z-index:5;text-align:center;line-height:1.15;color:#fff;
   font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:1px;-webkit-text-stroke:5px #000;paint-order:stroke fill;
   text-shadow:0 8px 0 rgba(0,0,0,.85),0 0 30px rgba(0,0,0,.6);overflow:visible}}

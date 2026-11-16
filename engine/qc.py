@@ -40,7 +40,7 @@ def vision(sheet_path, plan):
     prompt = f"""This contact sheet shows one frame from each scene of a vertical short video, left to right, top to bottom.
 The intended scenes:
 {desc}
-NOTE: the large bold words near the lower middle are word-by-word CAPTIONS that show only 2-3 words of the line at a time; that is intended, never report them as cut off or as not matching the line. Check like a strict editor: is any OTHER text (titles, cards, labels, text inside the images) cut off, overlapping, unreadable or misspelled; does any image look broken
+NOTE: the large bold words near the lower middle are word-by-word CAPTIONS that show only 2-3 words of the line at a time; that is intended, never report them as cut off or as not matching the line. Big words on a card (e.g. 'SAB KHAALI', 'BHAAV') are intended summaries of the line, not errors. Check like a strict editor: is any OTHER text (titles, cards, labels, text inside the images) cut off, overlapping, unreadable or misspelled; does any image look broken
 (extra limbs, melted shapes, gibberish text, watermark); does each frame fit its line; is anything ugly or amateur?
 Return JSON {{"score": 1-10, "ok": true/false (false if any serious problem), "problems": ["scene N: ..."]}}"""
     content = [{"type": "text", "text": prompt + "\nReturn ONLY JSON."},

@@ -136,13 +136,14 @@ def main():
     vo = paced
     tp = os.path.join(job, "timing.json")
     if "voice" in redo or not os.path.exists(tp) or load(tp, {}).get("method") != "whisper":
+        cover = 0.0
         try:
             timed, vdur, cover = align.words_by_line(vo, [s["vo"] for s in p["scenes"]], p.get("lang") or ch.get("lang", "hi"))
             method = "whisper"; log("aligned words with whisper, matched", f"{cover:.0%}")
         except Exception as e:
             log("whisper alignment failed, pause estimate:", str(e)[:150])
             timed, vdur = align.lines(vo, [s["vo"] for s in p["scenes"]]); method = "pauses"
-        save(tp, {"method": method, "dur": vdur, "lines": timed})
+        save(tp, {"method": method, "dur": vdur, "lines": timed, "cover": cover if method == "whisper" else 0.0})
     tj = load(tp)
     timed, vdur = tj["lines"], tj["dur"]
     # holds: silence after a line (e.g. a countdown before the answer); words after it move later
@@ -203,7 +204,13 @@ def main():
     mids = [((t["start"] + t["end"]) / 2) for t in timed]
     sheet = qc.sheet(final, mids, os.path.join(job, "sheet.jpg"))
     rep["vision"] = qc.vision(sheet, p)
-    rep["voice"] = qc.readback(vo, " ".join(s["vo"] for s in p["scenes"]))
+    tj2 = load(os.path.join(job, "timing.json"), {})
+    words = [w for L in tj2.get("lines", []) for w in L.get("words", [])]
+    cover = tj2.get("cover")
+    if cover is None and tj2.get("method") == "whisper":
+        cover = 1.0
+    rep["voice"] = {"ok": (cover or 0) >= 0.7, "method": tj2.get("method"), "matched": cover, "words": len(words),
+                    "problems": [] if (cover or 0) >= 0.7 else [f"only {cover or 0:.0%} of the script was found in the voice"]}
     rep["ok"] = bool(rep["format"]["ok"] and rep["vision"].get("ok") is not False and rep["voice"].get("ok") is not False)
     save(os.path.join(job, "qc.json"), rep)
     # auto-lessons: every problem the gate found is kept for the next plans

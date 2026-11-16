@@ -42,3 +42,8 @@ length follows information, short question ending, one colour identity, no effec
 - Every plan reads the lessons of every page (engine/plan.py all_lessons): its own first, then the other pages', each labelled. General lessons (captions, sync, length, hooks, sound, no double text, story pacing) apply to all pages; format-specific ones (e.g. raaz clue cards) only where they fit.
 - Owner feedback on any page is also written here when it is general, so it is never lost.
 - Shared from raaz feedback (16 Nov) to all pages: captions from real word times; no text twice on screen; Montserrat captions with active-word highlight; 35-45 s; hook in the first line; relatable modern setting; second person ("tum/aap") when it fits.
+
+## QC lessons (17 Nov, katha kuber-01)
+- The LLM read-back judge said half the katha story was missing; the whisper transcript had every line. Voice check is now decided by the word alignment (share of script words found in order, >= 70%), not by an LLM.
+- The vision judge flags intended card summaries ("SAB KHAALI", "BHAAV") as mismatches; its prompt now says they are intended. Treat vision notes as hints, look at the sheet before trusting a FAIL.
+- HUD text on bright images was faint (top-right "LOK KATHA"): HUD labels now sit on a dark pill.
