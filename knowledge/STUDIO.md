@@ -19,7 +19,8 @@
 |---|---|---|---|---|
 | tech-001 | Google AI Mode update | 43.7 s | not posted | external review 5/10 |
 | tech-002 | AI Mode v2 | 22.6 s | v3 parked (old format) | revision list |
-| raaz case1-p1 | Haveli ka laal dibba, Part 1 (engine run, hand-written plan) | 72 s | sample emailed 16 Nov | awaiting |
+| raaz case2-p1 | Shaadi ka lifafa, Part 1 (synced captions, no double text, 35 s, countdown) | 35 s | emailed 16 Nov | awaiting |
+| raaz case1-p1 | Haveli ka laal dibba, Part 1 (engine run, hand-written plan) | 72 s | sample emailed 16 Nov | owner: captions out of sync, double text, too long, boring story |
 | tech upi-01 | UPI 2 second (first fully automatic run) | 48 s | QC found card overflow (fixed in engine), to re-render | awaiting |
 | tech-003 | Phone ulta, screen kaise ghoomti hai | 42.6 s | pilot | good, not the best |
 
