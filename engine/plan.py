@@ -108,7 +108,7 @@ REQUIREMENTS
   like "ask audience", "hook", "outro". Leave most titles empty; use 3-5 titles per video.
 - A flow diagram shows the WHOLE path once (3-5 nodes); do not split one path into several 2-node flows.
 - Language: {ch.get('language')}. Write vo in Roman script only (no Devanagari). Natural spoken Hinglish, short words.
-  Use "..." at most twice (it makes the voice pause).
+  Use "..." at most twice (it makes the voice pause). Never use dashes (— or -) or slashes between words.
 - Visual types: "image" (a still, animated with camera motion), "clip" (a 10 s generated video: use at most 2, for the
   hook or the key moment), "flow" (animated step diagram, for how data/money/signal moves; 2-5 nodes), "card"
   (one big word/number over an image, for the payoff).

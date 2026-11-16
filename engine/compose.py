@@ -10,15 +10,30 @@ def esc(s):
     return html.escape(s or "")
 
 
+def _split_dashes(words):
+    """'hai—paisa' is spoken as two words: split at dashes/slashes, share the time by length."""
+    out = []
+    for w in words:
+        parts = [x for x in re.split(r"[—–/]|--", w["w"]) if x.strip()]
+        if len(parts) < 2:
+            out.append(w); continue
+        tot = sum(len(x) for x in parts); c = w["s"]
+        for x in parts:
+            d = (w["e"] - w["s"]) * len(x) / tot
+            out.append({"w": x, "s": round(c, 3), "e": round(c + d, 3)}); c += d
+    return out
+
+
 def chunks(words, keys=None):
-    """Caption groups: max 3 words / 16 letters, break at punctuation or a pause >= 0.15 s, never a lone last word."""
+    """Caption groups: max 3 words / 14 letters, break at punctuation or a pause >= 0.15 s, never a lone last word."""
+    words = _split_dashes(words)
     out, cur = [], []
     for i, w in enumerate(words):
         cur.append(w)
         left = len(words) - i - 1
         nxt = words[i + 1] if left else None
         letters = sum(len(x["w"]) for x in cur)
-        brk = (len(cur) >= 3 or letters >= 16 or w["w"].endswith((",", ".", "?", "!", "..."))
+        brk = (len(cur) >= 3 or letters >= 14 or w["w"].endswith((",", ".", "?", "!", "..."))
                or (nxt and nxt["s"] - w["e"] >= 0.15))
         if left == 0 or (brk and left != 1):
             out.append(cur); cur = []
@@ -166,7 +181,8 @@ def page(plan, timed, total, theme, assets):
             en = min(en, caps[j + 1][0]["s"] - 0.03)
         en = max(en, st + 0.25)
         text = " ".join(w["w"] for w in c)
-        fs = int(max(58, min(96, 900 / max(1, len(text)) / 0.62)))
+        clean = re.sub(r"[^A-Za-z0-9 ]", "", text)
+        fs = int(max(52, min(96, 940 / max(1, len(clean) + 0.6 * (len(c) - 1)) / 0.72)))
         spans = []
         for k, w in enumerate(c):
             kk = re.sub(r"[^a-z0-9]", "", w["w"].lower())
@@ -231,7 +247,7 @@ body{{margin:0;background:{bg}}}
 .hud span{{background:rgba(0,0,0,.55);padding:6px 18px;border-radius:8px}}
 .hud span:first-child{{background:#b3261e}}
 .hud span:empty{{display:none}}
-.cap{{position:absolute;left:0;width:{W}px;top:1180px;z-index:5;text-align:center;line-height:1.15;color:#fff;
+.cap{{position:absolute;left:50px;width:{W - 100}px;top:1180px;z-index:5;text-align:center;line-height:1.15;color:#fff;
   font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:1px;-webkit-text-stroke:5px #000;paint-order:stroke fill;
   text-shadow:0 8px 0 rgba(0,0,0,.85),0 0 30px rgba(0,0,0,.6);overflow:visible}}
 .cap .w{{display:inline-block;padding:0 12px;border-radius:16px;margin:0 2px;background-color:rgba(0,0,0,0)}}
