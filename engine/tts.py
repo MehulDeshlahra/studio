@@ -11,9 +11,9 @@ def _key():
 
 
 def speak(script, out_wav, voice="Charon", style="", lang="hi"):
-    language = "natural spoken Indian English" if lang == "en" else "natural spoken Hinglish/Hindi"
-    prompt = (f"Read this in {language} as {style}. Start instantly, no intro. "
-              "Pause briefly between sentences. Read exactly these words:\n\n" + script)
+    language = "Indian English" if lang == "en" else "Hinglish"
+    # short "Say ...:" directive (Gemini TTS docs style); a long instruction got READ ALOUD in English (case2-p1-en).
+    prompt = f"Say in {language}, {style}:\n" + script
     body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
@@ -40,3 +40,30 @@ def speak(script, out_wav, voice="Charon", style="", lang="hi"):
                 errs.append(f"{m} {str(e)[:100]}")
                 time.sleep(5)
     raise RuntimeError("tts failed: " + " | ".join(errs))
+
+
+LEAK = ("read this", "start instantly", "no intro", "pause briefly", "read exactly", "words per second", "narrator", "say in")
+
+
+def strip_preamble(wav, first_line, lang="hi"):
+    """Cut instructions the TTS model read aloud before the script (case2-p1-en read its whole style prompt).
+    The instructions are English, so transcribe the first 40 s in English for every language: the last segment that
+    contains an instruction phrase marks the cut. Returns (seconds_cut, leaked_text)."""
+    import numpy as np, soundfile as sf
+    from faster_whisper import WhisperModel
+    a, sr = sf.read(wav, dtype="float32")
+    mono = a if a.ndim == 1 else a.mean(axis=1)
+    x = np.interp(np.arange(0, len(mono), sr / 16000), np.arange(len(mono)), mono).astype("float32")
+    segs, _ = WhisperModel("base", compute_type="int8").transcribe(x[: 40 * 16000], language="en")
+    segs = list(segs)
+    cut, leaked = 0.0, ""
+    for s in segs:
+        txt = s.text.lower()
+        if any(k in txt for k in LEAK):
+            cut, leaked = s.end, leaked + " " + s.text.strip()
+        elif cut:
+            break
+    if cut:
+        sf.write(wav, a[int(max(0.0, cut - 0.05) * sr):], sr)
+        log("tts: cut", round(cut, 2), "s of spoken instructions:", leaked[:160])
+    return cut, leaked.strip()

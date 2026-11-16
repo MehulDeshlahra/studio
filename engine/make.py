@@ -140,7 +140,12 @@ def main():
     vo = os.path.join(job, "vo-raw.wav")
     if "voice" in redo or not os.path.exists(vo):
         script = "\n".join(s["vo"] for s in p["scenes"])
-        tts.speak(script, vo, ch["voice"].get("voice", "Charon"), ch["voice"].get("style", ""), p.get("lang") or ch.get("lang", "hi"))
+        lang_ = p.get("lang") or ch.get("lang", "hi")
+        tts.speak(script, vo, ch["voice"].get("voice", "Charon"), ch["voice"].get("style", ""), lang_)
+        try:
+            tts.strip_preamble(vo, p["scenes"][0]["vo"], lang_)
+        except Exception as e:
+            log("preamble check failed:", str(e)[:120])
     import pace
     paced = os.path.join(job, "vo-paced.wav")
     if "voice" in redo or not os.path.exists(paced):

@@ -47,3 +47,6 @@ length follows information, short question ending, one colour identity, no effec
 - The LLM read-back judge said half the katha story was missing; the whisper transcript had every line. Voice check is now decided by the word alignment (share of script words found in order, >= 70%), not by an LLM.
 - The vision judge flags intended card summaries ("SAB KHAALI", "BHAAV") as mismatches; its prompt now says they are intended. Treat vision notes as hints, look at the sheet before trusting a FAIL.
 - HUD text on bright images was faint (top-right "LOK KATHA"): HUD labels now sit on a dark pill.
+
+## Voice: instructions read aloud (17 Nov, owner, English edition case2-p1-en)
+- Gemini TTS read the whole English style prompt aloud (15 s) before the script. Never put long instructions in the TTS prompt: use the short "Say in <language>, <style>:" line. After every TTS call engine/tts.py strip_preamble() transcribes the start in English and cuts any instruction phrase. QC must fail if instruction words are heard.
