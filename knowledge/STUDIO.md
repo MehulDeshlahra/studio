@@ -39,7 +39,7 @@
 - Oracle Always Free for this tenancy is 2 OCPU / 12 GB now (Oracle reduced it from 4). Don't suggest resizing.
 - Kaggle + Cloudflare were already set up on 15 Nov: ~/videngine (cf.token, kaggle.env, vid.py, img.py). Cloudflare FLUX ~170 images/day is now the 2nd image fallback after Muse. Kaggle Wan 2.2 last run failed (KernelWorkerStatus.ERROR, 16 Nov 01:03) - fix before use.
 - Studio Gemini key (~/.studio-gemini.key) is from the credits project 'My First Project V' -> TTS cap 30/day in daily.py.
-- Posting: like VAJRA/MarginMart = Meta Graph API with a never-expiring Page token from app 'Vajra' 971433526020162 (system user), not the ads MCP. Per page: FB Page + IG professional linked + added to the business portfolio + assigned to the system user with Content permission.
+- Posting (CORRECTED 17 Nov, owner): like VAJRA + MarginMart (commit 8a59377) posts are made with Mehul's 'Ads MCP' Meta login (user token, app 'Ads MCP', never expires, data access ~60 days, renews on login), so posts show 'via Ads MCP' and can be promoted as ads. Server copy: ~/.studio-meta-user.token (600). publish.py reads the Page key + linked IG id from it. FB Pages already exist: Kaise Tech 1474228909103892, Puraan Ki Katha 1453056947892202, Raaz Room 1501633449691931 (no IG linked yet on 17 Nov).
 
 ## Open
 - Second Muse account on the bridge (more daily clips).

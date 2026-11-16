@@ -1,7 +1,8 @@
 """Post approved videos (systemd timer studio-post at each channel's slots). Official APIs only.
-Accounts per channel: ~/.studio-accounts/<channel>.json (never in git):
- {"ig_user_id": "...", "page_id": "...", "page_token": "long-lived page token (instagram_content_publish, pages_manage_posts)",
-  "yt": {"client_id": "...", "client_secret": "...", "refresh_token": "..."}}
+Accounts per channel: ~/.studio-accounts/<channel>.json (never in git): {"page_id": "...", "yt": {...optional}}
+Posting key (same as VAJRA and MarginMart, owner 12/17 Nov): Mehul's "Ads MCP" Meta login (~/.studio-meta-user.token,
+never expires, data access renews when he logs in to Meta). The Page key and the linked Instagram id are read from it on
+every run, so posts can later be promoted as ads on the existing post. A fixed "page_token" in the file still works.
 Instagram: resumable upload of the local file (no public hosting needed). Facebook Page: video reels. YouTube: Shorts.
   python engine/publish.py [channel] [--dry]"""
 import json, os, sys, time, urllib.parse, urllib.request
@@ -62,8 +63,27 @@ def youtube(acc, mp4, title, desc):
     return json.load(urllib.request.urlopen(up, timeout=900))["id"]
 
 
+def resolve(acc):
+    """Fill page_token + ig_user_id from the Ads MCP user login."""
+    if not acc or acc.get("page_token") or not acc.get("page_id"):
+        return acc
+    try:
+        ut = open(os.path.expanduser("~/.studio-meta-user.token")).read().strip()
+        d = _req(f"{G}/{acc['page_id']}?fields=access_token,instagram_business_account&access_token={ut}")
+        acc = dict(acc, page_token=d["access_token"])
+        if d.get("instagram_business_account"):
+            acc["ig_user_id"] = d["instagram_business_account"]["id"]
+        dbg = _req(f"{G}/debug_token?input_token={ut}&access_token={ut}")["data"]
+        left = (dbg.get("data_access_expires_at", 0) - time.time()) / 86400
+        if left < 21:
+            telegram(f"⚠️ Meta login data access ends in {left:.0f} days: Mehul, log in to Meta Business Suite once, or posting stops.")
+    except Exception as e:
+        log("meta login: no page key", str(e)[:200])
+    return acc
+
+
 def post_one(cid, dry=False):
-    acc = load(os.path.expanduser(f"~/.studio-accounts/{cid}.json"))
+    acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     p = os.path.join(ROOT, "channels", cid, "done.json")
     done = load(p, [])
     nxt = next((d for d in done if d.get("status") == "approved"), None)
@@ -84,6 +104,8 @@ def post_one(cid, dry=False):
             continue
         if name in ("ig", "fb") and not acc.get("page_token"):
             continue
+        if name == "ig" and not acc.get("ig_user_id"):
+            log("publish", cid, "no Instagram linked to the Page yet"); continue
         try:
             res[name] = fn(); log("published", cid, name, res[name])
         except Exception as e:
