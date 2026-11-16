@@ -52,7 +52,7 @@ def _bridges(kind):
     return out
 
 
-def image(prompt, dest, tries=2):
+def image(prompt, dest, tries=3):
     for i, b in _bridges("image"):
         for t in range(tries):
             try:
@@ -60,11 +60,14 @@ def image(prompt, dest, tries=2):
                 shutil.copy(f, dest); _note(i, "image"); log("muse image", i, os.path.basename(dest))
                 return dest
             except Exception as e:
-                log("muse image fail", i, str(e)[:120]); time.sleep(10)
+                # 17 Nov: 502s came from a cold browser (bridge stops it after 20 idle min; first clicks time out
+                # on a busy server). Wait longer and retry before calling it a failure.
+                last = t == tries - 1
+                log("muse image " + ("fail" if last else "retry"), i, str(e)[:120]); time.sleep(0 if last else 30 if "502" in str(e) else 10)
     return None
 
 
-def video(prompt, start_image, dest, tries=2):
+def video(prompt, start_image, dest, tries=3):
     body = {"prompt": prompt, "size": "9:16"}
     if start_image:
         body["image_b64"] = base64.b64encode(open(start_image, "rb").read()).decode()
@@ -75,7 +78,8 @@ def video(prompt, start_image, dest, tries=2):
                 shutil.copy(f, dest); _note(i, "video"); log("muse video", i, os.path.basename(dest))
                 return dest
             except Exception as e:
-                log("muse video fail", i, str(e)[:120]); time.sleep(15)
+                last = t == tries - 1
+                log("muse video " + ("fail" if last else "retry"), i, str(e)[:120]); time.sleep(0 if last else 30 if "502" in str(e) else 15)
     return None
 
 
