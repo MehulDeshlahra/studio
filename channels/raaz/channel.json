@@ -1,7 +1,7 @@
 {
   "id": "raaz",
   "name": "Aage Suno",
-  "status": "pilot",
+  "status": "live (warm-up)",
   "language": "Hindi / Hinglish",
   "format": "All kinds of stories (mystery, karma, emotional, fantasy, light horror) in Hindi/Hinglish; some as series parts",
   "voice": {
@@ -27,9 +27,9 @@
     "backlog": 6
   },
   "accounts": {
-    "instagram": null,
-    "facebook_page": null,
-    "youtube": null
+    "instagram": "@aagesuno 17841413280544411",
+    "facebook_page": "Aage Suno 1501633449691931",
+    "youtube": "@aagesuno (uploader not connected)"
   },
   "theme": {
     "bg": "#05080a",
@@ -63,13 +63,13 @@
     "Darr (light horror)"
   ],
   "english": true,
-  "post": false,
+  "post": true,
   "warmup": {
     "post_from": "2026-11-20",
     "one_a_day_until": "2026-11-27",
     "note": "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
   },
   "handle_instagram": "@aagesuno",
-  "handle_youtube": "@aagesuno (to create)",
+  "handle_youtube": "@aagesuno",
   "tagline": "Har roz ek nayi kahani."
 }
