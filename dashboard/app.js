@@ -4,7 +4,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const K = { green: "var(--green)", amber: "var(--amber)", red: "var(--red)", blue: "var(--blue)", violet: "var(--violet)", teal: "var(--teal)", gray: "var(--gray)" };
 const ST = {
   building: ["Building", K.blue, 1], prepped: ["Prepped", K.blue], waiting: ["Needs approval", K.violet], ready: ["Ready, not sent", K.violet],
-  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held by review", K.amber], rejected: ["Rejected", K.red], paused: ["Stopped midway", K.gray], made: ["Made", K.gray],
+  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held · server fixing", K.amber], rejected: ["Rejected", K.red], paused: ["Stopped midway", K.gray], made: ["Made", K.gray],
 };
 const LV = { ok: K.green, warn: K.amber, bad: K.red, info: K.gray, run: K.blue, wait: K.violet };
 const P = {
@@ -149,11 +149,12 @@ const V = {
        <div style="font-weight:600;font-size:14.5px;margin-top:6px">${esc(j.title)}</div>
        <div class="chips" style="margin-top:8px">${j.review.ok ? lvlBadge("ok", "Passed review") : ""}${j.review.score ? lvlBadge(j.review.score >= 8 ? "ok" : "warn", `Visual ${j.review.score}/10`) : ""}${j.qc.lufs ? lvlBadge("info", `${j.qc.lufs} LUFS`) : ""}</div>
        ${(j.review.problems || []).length ? `<ul class="mut" style="margin:8px 0 0 16px;font-size:12.5px">${j.review.problems.slice(0, 3).map((p) => `<li>${esc(String(p).slice(0, 160))}</li>`).join("")}</ul>` : ""}
-       ${["waiting", "ready", "held"].includes(j.status) ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn ok" onclick="decide('${j.cid}','${j.job}','approve')">Approve</button><button class="btn no" onclick="decide('${j.cid}','${j.job}','reject')">Reject</button><button class="btn" onclick="feedback('${j.cid}','${j.job}')">Feedback</button></div>` : ""}
+       ${["waiting", "ready"].includes(j.status) ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn ok" onclick="decide('${j.cid}','${j.job}','approve')">Approve</button><button class="btn no" onclick="decide('${j.cid}','${j.job}','reject')">Reject</button><button class="btn" onclick="feedback('${j.cid}','${j.job}')">Feedback</button></div>`
+        : j.status === "held" ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center"><span class="mut" style="font-size:12.5px">Being fixed on the server.</span><button class="btn sm" onclick="decide('${j.cid}','${j.job}','approve')">Approve anyway</button></div>` : ""}
        </div></div></div>`; };
     return `<div class="h1">Approvals</div><div class="lead">Only videos that passed the server's review come here. Approving here or in Telegram does the same thing.${S.settings.auto_approve ? ` Auto-approve is on for scores of ${S.settings.min_score}/10 and up.` : ""}</div>
      <div class="sec"><i class="dot" style="--c:${K.violet}"></i><h3>Needs approval</h3><span class="mut">${w.length}</span></div><div class="g2">${w.map(card).join("") || `<div class="card empty">Nothing is waiting for you.</div>`}</div>
-     ${held.length ? `<div class="sec"><i class="dot" style="--c:${K.amber}"></i><h3>Held by review</h3><span class="mut">${held.length} · not sent to Telegram</span></div><div class="g2">${held.map(card).join("")}</div>` : ""}
+     ${held.length ? `<div class="sec"><i class="dot" style="--c:${K.amber}"></i><h3>Held by the server's reviewer</h3><span class="mut">${held.length} · nothing for you: the server fixes or rebuilds these, and they reach Telegram only after they pass</span></div><div class="g2">${held.map(card).join("")}</div>` : ""}
      ${ap.length ? `<div class="sec"><i class="dot" style="--c:${K.teal}"></i><h3>Approved, waiting for a slot</h3><span class="mut">${ap.length}</span></div><div class="g2">${ap.map(card).join("")}</div>` : ""}`;
   },
   channels() {

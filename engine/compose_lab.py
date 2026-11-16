@@ -162,8 +162,10 @@ def page(plan, timed, total, theme, assets):
             for j, it in enumerate(its):
                 pct = max(4, min(100, float(it.get("pct", 50) or 0)))
                 col = acc if j == 0 else "#d7dbe3"
-                hero += (f'<div class="cc"><div class="cv" style="color:{col}">{esc(it.get("value"))}</div>'
-                         f'<div class="ctrack"><div id="{sid}c{j}" class="cbar" style="height:{pct * 5.6:.0f}px;background:{col}"></div></div>'
+                vtx = str(it.get("value") or "")
+                vfs = 86 if len(vtx) <= 8 else 64 if len(vtx) <= 14 else 46       # fits in 2 lines, never climbs into the pill
+                hero += (f'<div class="cc"><div class="cv" style="color:{col};font-size:{vfs}px">{esc(vtx)}</div>'
+                         f'<div class="ctrack"><div id="{sid}c{j}" class="cbar" style="height:{pct * 4.0:.0f}px;background:{col}"></div></div>'
                          f'<div class="cl">{esc(it.get("label"))}</div></div>')
                 js.append(f'tl.fromTo("#{sid}c{j}",{{scaleY:0}},{{scaleY:1,transformOrigin:"50% 100%",duration:0.8,ease:"power3.out",immediateRender:false}},{a + 0.35 + j * 0.35:.3f});')
                 js.append(f'tl.set("#{sid}c{j}",{{scaleY:0,transformOrigin:"50% 100%"}},{a:.3f});')
@@ -267,9 +269,9 @@ body{{margin:0;background:#07080b}}
 .node{{position:absolute;left:0;width:780px;height:92px;display:flex;align-items:center;font-size:46px;font-weight:700;color:#fff}}
 .nd{{width:56px;height:56px;border-radius:50%;background:#2a2f3a;border:4px solid #07080b;margin-right:28px;flex:none}}
 .ni{{font-family:{MONO};font-size:28px;color:#7d8696;margin-right:20px}}
-.cmp{{position:absolute;left:150px;right:150px;top:420px;height:820px;display:flex;justify-content:space-around;align-items:flex-end}}
-.cc{{width:300px;text-align:center}} .cv{{font-weight:800;font-size:86px;margin-bottom:18px;letter-spacing:-2px}}
-.ctrack{{height:560px;display:flex;align-items:flex-end;justify-content:center}} .cbar{{width:180px;border-radius:22px 22px 6px 6px}}
+.cmp{{position:absolute;left:120px;right:120px;top:470px;height:660px;display:flex;justify-content:space-around;align-items:flex-end}}
+.cc{{width:360px;text-align:center}} .cv{{font-weight:800;font-size:86px;line-height:1.05;margin-bottom:18px;letter-spacing:-1px;max-height:2.2em;overflow:hidden}}
+.ctrack{{height:400px;display:flex;align-items:flex-end;justify-content:center}} .cbar{{width:180px;border-radius:22px 22px 6px 6px}}
 .cl{{font-family:{MONO};font-size:34px;color:#c9ced8;margin-top:20px;letter-spacing:1px}}
 .kinsub{{display:block;margin-top:36px;font-family:{MONO};font-weight:500;font-size:36px;letter-spacing:2px;line-height:1.3;color:#9aa3b2}}
 .kin{{position:absolute;left:70px;right:70px;top:500px;text-align:center;font-weight:800;font-size:150px;line-height:1.02;letter-spacing:-4px}}

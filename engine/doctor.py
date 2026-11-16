@@ -147,6 +147,41 @@ def check_git():
         st["gitpull"] = 0
 
 
+def check_held():
+    """A held video whose problem the engine can repair is rebuilt once: caption timing (re-align with the current
+    aligner) or loudness (re-master). Other holds (visual) are noted for the next fix session."""
+    busy = sh("systemctl list-units --state=active --no-legend 'studio-job-*' 'studio-make*' 'studio-prep*'")[1].strip()
+    for cid in ("tech", "katha", "raaz"):
+        done = load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
+        for d in done:
+            if d.get("status") != "held":
+                continue
+            jd = os.path.join(OUT, cid, d["job"])
+            meta = load(os.path.join(jd, "meta.json"), {}) or {}
+            probs = " ".join(map(str, d.get("review") or (load(os.path.join(jd, "review.json"), {}) or {}).get("problems", [])))
+            if meta.get("doctor_rebuilt"):
+                if "visual" in probs:
+                    unknown.append({"what": f"held video still failing after rebuild: {cid} {d['job']}", "detail": probs[:200]})
+                continue
+            if busy:
+                return                                             # one build at a time; try next run
+            frm = None
+            if "of the script was found" in probs or "starts late" in probs:
+                frm = "compose"
+                fix(f"held {cid} {d['job']}: caption timing redone with the new aligner", fn=lambda jd=jd: os.path.exists(os.path.join(jd, "timing.json")) and os.remove(os.path.join(jd, "timing.json")))
+            elif "loudness" in probs or "true peak" in probs:
+                frm = "mix"
+            elif "visual" in probs:
+                frm = "compose"                                    # layout fixes land in compose code
+            if not frm:
+                continue
+            meta["doctor_rebuilt"] = time.strftime("%Y-%m-%d %H:%M"); save(os.path.join(jd, "meta.json"), meta)
+            args = f"/home/ubuntu/studio-venv/bin/python {ROOT}/engine/make.py {cid} --job {d['job']} --from {frm}" + (" --lang en" if d["job"].endswith("-en") else "")
+            fix(f"rebuilding held {cid} {d['job']} from {frm}",
+                f"sudo systemd-run --unit=studio-job-doc-{int(time.time())} --uid=ubuntu -p CPUWeight=20 -p Nice=15 --working-directory={ROOT} -E HOME={HOME} {args}")
+            return                                                 # one rebuild per run
+
+
 def check_budget_stall():
     """Prep lane says 'reel budget used' or 'voice budget used' every run after midnight -> budget file stuck."""
     b = load(os.path.join(OUT, "budget.json"), {}) or {}
@@ -193,7 +228,7 @@ def check_repeating_errors():
 
 
 def main():
-    for c in (check_failed_units, check_timers, check_services, check_stuck_jobs, check_disk, check_git,
+    for c in (check_failed_units, check_timers, check_services, check_stuck_jobs, check_disk, check_git, check_held,
               check_budget_stall, check_owner_items, check_repeating_errors):
         try:
             c()
