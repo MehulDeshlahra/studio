@@ -122,7 +122,7 @@ def page(plan, timed, total, theme, assets):
                     js.append(f'tl.fromTo("#{sid}q{q}",{{scale:2.2,opacity:1}},{{scale:1,opacity:1,duration:0.35,ease:"power4.out",immediateRender:false}},{tq:.3f});')
                     js.append(f'tl.set("#{sid}q{q}",{{opacity:0}},{tq + 0.95:.3f});')
                     cues.append({"t": round(tq, 3), "file": "sfx/click-ui.mp3", "gain_db": -12, "align": "onset"})
-            inner += f'<div id="{sid}cm" class="cmt">COMMENT KARO: A, B YA C</div>'
+            inner += f'<div id="{sid}cm" class="cmt">{"COMMENT: A, B OR C" if theme.get("lang") == "en" else "COMMENT KARO: A, B YA C"}</div>'
             js.append(f'tl.fromTo("#{sid}cm",{{scale:0.7,opacity:0}},{{scale:1,opacity:1,duration:0.35,ease:"back.out(2)",immediateRender:false}},{a + 1.2:.3f});')
             js.append(f'tl.to("#{sid}cm",{{scale:1.06,duration:0.5,yoyo:true,repeat:5,ease:"sine.inOut"}},{a + 1.6:.3f});')
             js.append(f'tl.set("#{sid}cm",{{opacity:0}},{a:.3f});')
