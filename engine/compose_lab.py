@@ -143,7 +143,7 @@ def page(plan, timed, total, theme, assets):
             y0, gap = 0, (620 / max(1, k - 1)) if k > 1 else 0
             hero = f'<div id="{sid}h" class="flowp"><svg class="fline" width="20" height="{int(gap * (k - 1)) + 2}"><line x1="10" x2="10" y1="0" y2="{gap * (k - 1):.0f}" stroke="#ffffff22" stroke-width="4"/>' \
                    f'<line id="{sid}ln" x1="10" x2="10" y1="0" y2="{gap * (k - 1):.0f}" stroke="{acc}" stroke-width="4" stroke-dasharray="{gap * (k - 1):.0f}" stroke-dashoffset="{gap * (k - 1):.0f}"/></svg>'
-            step = min(0.9, (d * 0.7) / k)
+            step = min(0.8, (d * 0.4) / k)   # all nodes visible before mid-scene
             for j, lab in enumerate(nodes):
                 tj = a + 0.3 + j * step
                 hero += (f'<div id="{sid}n{j}" class="node" style="top:{y0 + j * gap:.0f}px"><span class="nd"></span>'
@@ -268,7 +268,7 @@ def page(plan, timed, total, theme, assets):
             word = esc(re.sub(r"[,]+$", "", w["w"]).replace("...", ""))
             spans.append(f'<span id="c{j}w{k}" class="w{" key" if kk in keys else ""}">{word}</span>')
             cap_js.append(f'tl.to("#c{j}w{k}",{{opacity:1,duration:0.08}},{max(st, w["s"] - 0.03):.3f});')
-            cap_js.append(f'tl.set("#c{j}w{k}",{{opacity:0.32}},{st:.3f});')
+            cap_js.append(f'tl.set("#c{j}w{k}",{{opacity:0.55}},{st:.3f});')
         capdiv.append(f'<div id="c{j}" class="clip cap" data-start="{st:.3f}" data-duration="{en - st:.3f}" data-track-index="9">{" ".join(spans)}</div>')
         cap_js.append(f'tl.fromTo("#c{j}",{{y:16,opacity:0}},{{y:0,opacity:1,duration:0.18,ease:"power2.out",immediateRender:false}},{st:.3f});')
     brand = []
@@ -345,7 +345,7 @@ body{{margin:0;background:#07080b}}
 .cur{{display:inline-block;width:20px;height:40px;background:{acc};vertical-align:-6px;animation:none}}
 .cap{{position:absolute;left:80px;width:{W - 160}px;top:{CAP_Y}px;z-index:7;text-align:center;font-family:{SANS};font-weight:700;font-size:58px;
   line-height:1.18;letter-spacing:-0.5px;color:#fff;text-shadow:0 4px 18px #000c}}
-.cap .w{{opacity:0.32}} .cap .key{{color:{acc}}}
+.cap .w{{opacity:0.55}} .cap .key{{color:{acc}}}
 .grain{{position:absolute;inset:-50px;z-index:30;pointer-events:none;opacity:.07;background-image:url("{grain}");mix-blend-mode:overlay}}
 .vign{{position:absolute;inset:0;z-index:29;pointer-events:none;background:radial-gradient(ellipse 80% 70% at 50% 48%,transparent 55%,#000c 100%)}}
 .endc{{position:absolute;inset:0;z-index:20;background:#07080b}}

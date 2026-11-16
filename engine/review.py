@@ -60,7 +60,7 @@ Scenes:
 {desc}
 Language of the video: {"English" if lang == "en" else "Hindi/Hinglish (Roman script)"}. Page handle: {handle or "none"}.
 Rules of our template (do NOT report these as problems): captions show only 2-3 words of the line at a time, the
-spoken word is highlighted in a yellow box; cards show 1-3 big summary words; a small top bar shows the page/part.
+spoken word is highlighted in a yellow box (in the dark tech look: words not yet spoken are shown dimmed and light up as they are said, which is intended); cards show 1-3 big summary words; a small top bar shows the page/part.
 Report ONLY real, visible problems a viewer would notice:
 - any text cut off at the frame edge, overflowing, overlapping other text, or too faint to read
 - the same words shown twice at the same moment (e.g. headline and top bar both "CLUE 1")
