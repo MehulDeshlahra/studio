@@ -183,12 +183,16 @@ def page(plan, timed, total, theme, assets):
         text = " ".join(w["w"] for w in c)
         clean = re.sub(r"[^A-Za-z0-9 ]", "", text)
         fs = int(max(52, min(96, 940 / max(1, len(clean) + 0.6 * (len(c) - 1)) / 0.72)))
+        sig = bool(theme.get("signature")) and theme["signature"] in re.sub(r"[^a-z ]", "", text.lower())
+        if sig:
+            fs = int(fs * 1.12)
+            cues.append({"t": round(st, 3), "file": "sfx/impact.mp3", "gain_db": -13, "align": "onset"})
         spans = []
         for k, w in enumerate(c):
             kk = re.sub(r"[^a-z0-9]", "", w["w"].lower())
             word = esc(re.sub(r"[.,!]+$", "", w["w"]).replace("...", "").upper())
             spans.append(f'<span id="c{j}w{k}" class="w{" key" if kk in keys else ""}">{word}</span>')
-            base = acc if kk in keys else "#ffffff"
+            base = acc if (kk in keys or sig) else "#ffffff"
             cap_js.append(f'tl.set("#c{j}w{k}",{{backgroundColor:"{acc}",color:"#111111",webkitTextStroke:"0px #000",textShadow:"none",scale:1.08}},{max(st, w["s"] - 0.02):.3f});')
             if k + 1 < len(c):
                 cap_js.append(f'tl.set("#c{j}w{k}",{{backgroundColor:"rgba(0,0,0,0)",color:"{base}",webkitTextStroke:"5px #000",textShadow:"0 8px 0 rgba(0,0,0,.85)",scale:1}},{c[k + 1]["s"] - 0.02:.3f});')
@@ -201,7 +205,7 @@ def page(plan, timed, total, theme, assets):
             brand.append(f'<div id="brand" class="clip brand" data-start="0" data-duration="{total - endcard:.3f}" data-track-index="7">{esc(handle)}</div>')
         e0 = total - endcard
         follow = "FOLLOW" if theme.get("lang") == "en" else "FOLLOW KARO"
-        line = esc((plan.get("end_line") or "").upper())
+        line = esc((plan.get("end_line") or theme.get("end_line") or "").upper())
         brand.append(f'<div id="endc" class="clip endc" data-start="{e0:.3f}" data-duration="{endcard:.3f}" data-track-index="8">'
                      f'<div id="endf" class="endf">{follow}</div><div id="endh" class="endh">{esc(handle)}</div>'
                      + (f'<div id="endl" class="endl">{line}</div>' if line else "") + '</div>')
@@ -214,7 +218,7 @@ def page(plan, timed, total, theme, assets):
         cues.append({"t": round(e0 + 0.1, 3), "file": "sfx/pop-light.mp3", "gain_db": -14, "align": "onset"})
     css = f"""
 body{{margin:0;background:{bg}}}
-.brand{{position:absolute;left:70px;top:200px;z-index:6;font-family:'Montserrat',sans-serif;font-weight:800;font-size:32px;color:#fff;
+.brand{{position:absolute;left:70px;top:260px;z-index:6;font-family:'Montserrat',sans-serif;font-weight:800;font-size:32px;color:#fff;
   background:rgba(0,0,0,.45);padding:6px 16px;border-radius:10px;letter-spacing:1px}}
 .endc{{position:absolute;inset:0;z-index:20;background:radial-gradient(circle at 50% 45%,{bg}ee,{bg} 75%);text-align:center}}
 .endf{{position:absolute;left:0;width:{W}px;top:640px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:64px;color:#fff;letter-spacing:4px}}

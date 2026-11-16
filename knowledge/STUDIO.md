@@ -51,3 +51,8 @@
 - Second Muse account on the bridge (more daily clips).
 - Channel accounts (Instagram + YouTube) and branding.
 - Server automation of the whole pipeline.
+
+## Story page = Aage Suno (@aagesuno), 17 Nov
+- IG @aagesuno (Page still named Raaz Room, owner renames). YouTube @aagesuno to create. English page name open.
+- Voice signature 'Aage suno.' once, before the twist; end line 'Kal ek nayi kahani. Follow karo.' Rules in channels/raaz/lessons.md; enforced by compose (accent + sting) and review.py.
+

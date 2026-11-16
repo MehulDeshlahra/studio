@@ -119,6 +119,14 @@ def review(cid, job):
             probs.append(f"first word starts late ({w1[0]['s']:.1f} s): something is spoken before the script")
     # 2 end
     last = plan["scenes"][-1]["vo"]
+    sig = (load(os.path.join(ROOT, "channels", cid, "channel.json"), {}).get("theme") or {}).get("signature")
+    if sig and lang != "en":
+        allvo = " ".join(re.sub(r"[^a-z ]", "", s["vo"].lower()) for s in plan["scenes"])
+        n = allvo.count(sig)
+        if n > 1:
+            probs.append(f"the page line \"{sig}\" is said {n} times; say it once, before the twist")
+        if sig in re.sub(r"[^a-z ]", "", last.lower()) and "part" not in last.lower():
+            probs.append(f"\"{sig}\" is in the last line of a finished story: it promises more that never comes")
     if lang == "en":
         tail = _whisper(_pcm(mp4, max(0, f["dur"] - 9), 9), "en")
         rr = SequenceMatcher(None, " ".join(_norm(tail)), " ".join(_norm(last))).ratio()

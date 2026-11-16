@@ -11,3 +11,15 @@
   a relatable modern Indian setting (shaadi, hostel, office, train), stakes in the first line, one line per suspect,
   2 sharp clues, a 3-second countdown before the vote.
 - 16 Nov case2-p1-en: can you add a reviewer in your server which reviews before sending here. i am not free enough to point silly mistakes. send after your full review. issue in starting
+
+## Page brand: Aage Suno (@aagesuno), locked 17 Nov - hard rules
+- Page = all kinds of stories (mystery, karma, emotional/family, fantasy, light horror). Tagline: "Har roz ek nayi kahani."
+- Voice signature: the narrator says "Aage suno." ONCE per video, as its own short line, right before the twist
+  (about 60-70% in), after a line that makes it seem the story is over. Same calm tone every time. The engine shows it
+  big in the accent colour with an impact sting; the reviewer holds a video that says it twice or at the end.
+- Opening may use a soft "...suno." in the hook (not the full page name). No handle or page name spoken at the start.
+- Never end a finished story with "aage suno" (it promises more that never comes). Part 1 of a series may end
+  "Part 2 mein aage suno."; the last part never does.
+- Last spoken line (end card shows FOLLOW KARO @aagesuno + KAL EK NAYI KAHANI): "Kal ek nayi kahani. Follow karo."
+  Set plan end_line = "Kal ek nayi kahani".
+- English edition: no "aage suno" line (signature is Hindi only); English page name still open (What Happened Next).
