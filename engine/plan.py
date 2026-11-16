@@ -50,8 +50,8 @@ SCHEMA = """{
 
 LAB = """
 
-THIS CHANNEL USES THE 'LAB' LOOK (channels/tech/style-lab.md), for Gen Z: premium, dark, minimal, like samjho.exe and
-sparethoughtstudios. IGNORE the visual types above and use ONLY these scene types (vary them, never 3 of a kind in a row):
+THIS CHANNEL USES THE 'LAB' LOOK (channels/tech/style-lab.md), for Gen Z: premium, dark, minimal, our own
+look (study good explainers but never copy one creator). IGNORE the visual types above and use ONLY these scene types (vary them, never 3 of a kind in a row):
   {"type":"object","prompt":"<one real object, e.g. 'a modern smartphone lying face up showing a payment confirmation glow'>","label":"<2-3 word tag>"}
   {"type":"stat","value":"<a number with unit, e.g. '2 sec' or '₹1,76,121' or '14 billion'>","sub":"<what it measures, 2-5 words>","label":"..."}
   {"type":"ui","title":"<panel title>","rows":[{"label":"...","value":"...","pct":0-100}],"label":"..."}   (2-4 rows)
@@ -60,6 +60,8 @@ sparethoughtstudios. IGNORE the visual types above and use ONLY these scene type
   {"type":"compare","items":[{"label":"...","value":"...","pct":0-100},{"label":"...","value":"...","pct":0-100}],"label":"..."}
   {"type":"title","big":"<1-3 words>","sub":"<optional short line>"}
   {"type":"clip","prompt":"<one cinematic real-world shot>","label":"..."}   (max 1 per video, for the hook)
+  {"type":"chat","title":"<app name, e.g. 'ChatGPT'>","messages":[{"role":"user","text":"<short question>"},{"role":"ai","text":"<short answer, <= 14 words>"}],"label":"..."}   (for AI topics: shows a real-looking chat; the answer streams word by word)
+  {"type":"code","title":"<e.g. 'terminal'>","lines":["<short command or code line>", "..."],"highlight":<index of the key line>,"label":"..."}   (2-5 lines, <= 26 characters each)
 Rules: at most 4 'object' scenes (they cost image credits); every number must be true and common knowledge, or
 leave numbers out (no made-up stats); labels are UPPERCASE-able tags like "NPCI SWITCH", "STEP 2", "INDIA · 2024";
 no cartoons, no faces, no characters with eyes; the object prompts describe real hardware/things only.

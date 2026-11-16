@@ -100,7 +100,8 @@ def page(plan, timed, total, theme, assets):
             cues.append({"t": round(a + 0.2, 3), "file": "sfx/type-soft.mp3", "gain_db": -24, "align": "onset", "dur": 1.2})
         elif kind == "ui":
             rows = (s.get("rows") or [])[:5]
-            hero = f'<div id="{sid}h" class="panel"><div class="ptitle"><i></i>{esc(s.get("title", ""))}</div>'
+            hero = f'<div id="{sid}h" class="panel"><div id="{sid}sh" class="shine" data-layout-ignore></div><div class="ptitle"><i></i>{esc(s.get("title", ""))}</div>'
+            js.append(f'tl.fromTo("#{sid}sh",{{xPercent:-120}},{{xPercent:260,duration:1.1,ease:"power2.inOut",immediateRender:false}},{a + 0.5:.3f});')
             for j, r in enumerate(rows):
                 pct = max(0, min(100, float(r.get("pct", 60) or 0)))
                 hero += (f'<div class="row"><div class="rl">{esc(r.get("label"))}</div><div class="rv">{esc(r.get("value"))}</div>'
@@ -173,12 +174,56 @@ def page(plan, timed, total, theme, assets):
             hero += "</div>"
             js.append(f'tl.fromTo("#{sid}h",{{opacity:0}},{{opacity:1,duration:0.3,immediateRender:false}},{a:.3f});')
             js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
+        elif kind == "chat":
+            msgs = [m for m in (s.get("messages") or []) if isinstance(m, dict) and m.get("text")][:3]
+            hero = f'<div id="{sid}h" class="chat"><div class="chead"><i></i><i></i><i></i><span>{esc(s.get("title") or "assistant")}</span></div>'
+            tcur = a + 0.35
+            for j, m in enumerate(msgs):
+                ai = (m.get("role") or "ai") != "user"
+                ws = esc(m["text"]).split()
+                body = " ".join(f'<span id="{sid}m{j}w{q}" class="cw">{w}</span>' for q, w in enumerate(ws)) if ai else esc(m["text"])
+                hero += f'<div id="{sid}m{j}" class="bub {"ai" if ai else "me"}">{"<b class=av></b>" if ai else ""}<div>{body}</div></div>'
+                js.append(f'tl.set("#{sid}m{j}",{{opacity:0}},{a:.3f});')
+                js.append(f'tl.fromTo("#{sid}m{j}",{{y:30,opacity:0}},{{y:0,opacity:1,duration:0.35,ease:"power3.out",immediateRender:false}},{tcur:.3f});')
+                cues.append({"t": round(tcur, 3), "file": "sfx/pop-light.mp3" if not ai else "sfx/click-ui.mp3", "gain_db": -24, "align": "onset"})
+                if ai and ws:
+                    span = max(0.6, min(2.2, (d - (tcur - a)) * 0.7))
+                    for q in range(len(ws)):
+                        js.append(f'tl.set("#{sid}m{j}w{q}",{{opacity:0}},{a:.3f});')
+                        js.append(f'tl.to("#{sid}m{j}w{q}",{{opacity:1,duration:0.05}},{tcur + 0.3 + q * span / len(ws):.3f});')
+                    cues.append({"t": round(tcur + 0.3, 3), "file": "sfx/type-soft.mp3", "gain_db": -26, "align": "onset", "dur": round(span, 2)})
+                    tcur += 0.3 + span + 0.2
+                else:
+                    tcur += 0.7
+            hero += "</div>"
+            js.append(f'tl.fromTo("#{sid}h",{{y:50,opacity:0}},{{y:0,opacity:1,duration:0.6,ease:"power4.out",immediateRender:false}},{a:.3f});')
+            js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
+        elif kind == "code":
+            lines = [str(x) for x in (s.get("lines") or [])][:6]
+            hl = s.get("highlight")
+            hero = f'<div id="{sid}h" class="term"><div class="chead"><i></i><i></i><i></i><span>{esc(s.get("title") or "terminal")}</span></div><div class="tbody">'
+            step = max(0.25, min(0.7, (d * 0.6) / max(1, len(lines))))
+            for j, ln in enumerate(lines):
+                tj = a + 0.4 + j * step
+                hero += f'<div id="{sid}l{j}" class="tl{" hl" if hl == j else ""}"><span class="tp">{"$" if j == 0 else ">"}</span>{esc(ln)}</div>'
+                js.append(f'tl.set("#{sid}l{j}",{{clipPath:"inset(0 100% 0 0)"}},{a:.3f});')
+                js.append(f'tl.to("#{sid}l{j}",{{clipPath:"inset(0 0% 0 0)",duration:{step * 0.8:.2f},ease:"steps({max(4, min(28, len(ln)))})"}},{tj:.3f});')
+            hero += '<span class="cur"></span></div></div>'
+            js.append(f'tl.fromTo("#{sid}h",{{y:50,opacity:0}},{{y:0,opacity:1,duration:0.6,ease:"power4.out",immediateRender:false}},{a:.3f});')
+            js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
+            cues.append({"t": round(a + 0.4, 3), "file": "sfx/type-soft.mp3", "gain_db": -24, "align": "onset", "dur": round(step * len(lines), 2)})
         else:  # title
             words = esc(s.get("big", "")).split()
             sub = f'<div id="{sid}u" class="kinsub">{esc(s["sub"])}</div>' if s.get("sub") else ""   # in the flow: never overlaps a 2-line title
-            hero = '<div id="%sh" class="kin">%s%s</div>' % (sid, " ".join(f'<span class="kw" id="{sid}w{j}">{w}</span>' for j, w in enumerate(words)), sub)
+            spans = []
+            for j, w in enumerate(words):
+                last = j == len(words) - 1 and len(words) > 1
+                spans.append(f'<span class="kwm"><span class="kw{" acc" if last else ""}" id="{sid}w{j}">{w}</span></span>')
+            hero = '<div id="%sh" class="kin">%s<div id="%sul" class="uline"></div>%s</div>' % (sid, " ".join(spans), sid, sub)
+            js.append(f'tl.set("#{sid}ul",{{scaleX:0}},{a:.3f});')
+            js.append(f'tl.to("#{sid}ul",{{scaleX:1,duration:0.5,ease:"power3.inOut"}},{a + 0.2 + len(words) * 0.09:.3f});')
             for j in range(len(words)):
-                js.append(f'tl.fromTo("#{sid}w{j}",{{yPercent:80,opacity:0}},{{yPercent:0,opacity:1,duration:0.6,ease:"power4.out",immediateRender:false}},{a + 0.08 + j * 0.09:.3f});')
+                js.append(f'tl.fromTo("#{sid}w{j}",{{yPercent:105,opacity:1}},{{yPercent:0,opacity:1,duration:0.65,ease:"expo.out",immediateRender:false}},{a + 0.08 + j * 0.09:.3f});')
                 js.append(f'tl.set("#{sid}w{j}",{{opacity:0}},{a:.3f});')
             if s.get("sub"):
                 js.append(f'tl.fromTo("#{sid}u",{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{a + 0.5:.3f});')
@@ -193,7 +238,13 @@ def page(plan, timed, total, theme, assets):
         js.append(f'tl.fromTo("#{sid}cam",{{scale:1.05}},{{scale:1.0,duration:0.9,ease:"power3.out",immediateRender:false}},{a:.3f});')
         js.append(f'tl.to("#{sid}cam",{{scale:1.03,duration:{max(0.4, d - 0.9):.3f},ease:"sine.inOut"}},{a + 0.9:.3f});')
         if i:
-            js.append(f'tl.fromTo("#{sid}",{{opacity:0}},{{opacity:1,duration:0.22,ease:"power1.out",immediateRender:false}},{a:.3f});')
+            tr = i % 3
+            if tr == 1:      # push up with motion blur
+                js.append(f'tl.fromTo("#{sid}",{{yPercent:7,opacity:0,filter:"blur(14px)"}},{{yPercent:0,opacity:1,filter:"blur(0px)",duration:0.38,ease:"power3.out",immediateRender:false}},{a:.3f});')
+            elif tr == 2:    # zoom through
+                js.append(f'tl.fromTo("#{sid}",{{scale:1.14,opacity:0,filter:"blur(10px)"}},{{scale:1,opacity:1,filter:"blur(0px)",duration:0.42,ease:"expo.out",immediateRender:false}},{a:.3f});')
+            else:            # flash cut
+                js.append(f'tl.fromTo("#{sid}",{{opacity:0,filter:"brightness(2.2)"}},{{opacity:1,filter:"brightness(1)",duration:0.26,ease:"power2.out",immediateRender:false}},{a:.3f});')
             cues.append({"t": round(a + 0.05, 3), "file": ["sfx/air-zoom.mp3", "sfx/whoosh-fast.mp3"][i % 2], "gain_db": -26, "align": "onset"})
         # 17 Nov fix: a tl.set(opacity:0) at the SAME time as the entrance fromTo, added after it, won on every seek ->
         # props, UI panels, stats and compares rendered invisible. Resets go first, so the entrance tween wins.
@@ -275,7 +326,23 @@ body{{margin:0;background:#07080b}}
 .cl{{font-family:{MONO};font-size:34px;color:#c9ced8;margin-top:20px;letter-spacing:1px}}
 .kinsub{{display:block;margin-top:36px;font-family:{MONO};font-weight:500;font-size:36px;letter-spacing:2px;line-height:1.3;color:#9aa3b2}}
 .kin{{position:absolute;left:70px;right:70px;top:500px;text-align:center;font-weight:800;font-size:150px;line-height:1.02;letter-spacing:-4px}}
-.kw{{display:inline-block;margin:0 14px}}
+.kwm{{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 12px 6px}} .kw{{display:inline-block}} .kw.acc{{color:{acc}}}
+.uline{{width:260px;height:12px;margin:26px auto 0;border-radius:6px;background:{acc};transform-origin:0 50%;box-shadow:0 0 24px {acc}88}}
+.shine{{position:absolute;top:0;bottom:0;left:0;width:40%;background:linear-gradient(100deg,transparent,#ffffff14,transparent);pointer-events:none}}
+.panel{{overflow:hidden}}
+.chat,.term{{position:absolute;left:90px;width:900px;top:440px;background:linear-gradient(180deg,#141821,#0c0f15);border:1.5px solid #ffffff1f;
+  border-radius:30px;box-shadow:0 40px 90px #000b, inset 0 1px 0 #ffffff14;overflow:hidden}}
+.chead{{display:flex;align-items:center;gap:12px;padding:22px 30px;border-bottom:1.5px solid #ffffff12;font-family:{MONO};font-size:26px;color:#8b93a3;letter-spacing:1px}}
+.chead i{{width:16px;height:16px;border-radius:50%;background:#ffffff22}} .chead i:first-child{{background:#ff5f57}} .chead i:nth-child(2){{background:#febc2e}} .chead i:nth-child(3){{background:#28c840}}
+.chead span{{margin-left:14px}}
+.bub{{margin:26px 30px;font-size:42px;line-height:1.3;font-weight:600;display:flex;gap:18px;align-items:flex-start}}
+.bub.me{{justify-content:flex-end}} .bub.me div{{background:{acc};color:#0b0d12;border-radius:26px 26px 6px 26px;padding:18px 26px;max-width:640px}}
+.bub.ai div{{background:#1d2230;color:#eef1f6;border-radius:26px 26px 26px 6px;padding:18px 26px;max-width:680px}}
+.bub .av{{width:44px;height:44px;border-radius:12px;flex:none;margin-top:8px;background:conic-gradient({acc},{cool},{acc})}}
+.tbody{{padding:26px 34px 34px;font-family:{MONO};font-size:36px;line-height:1.55;color:#d6dbe4;position:relative}}
+.tl{{white-space:pre;overflow:hidden}} .tl.hl{{color:{acc};background:#ffffff0c;border-radius:8px;margin:0 -12px;padding:0 12px}}
+.tp{{color:#5d6677;margin-right:18px}}
+.cur{{display:inline-block;width:20px;height:40px;background:{acc};vertical-align:-6px;animation:none}}
 .cap{{position:absolute;left:80px;width:{W - 160}px;top:{CAP_Y}px;z-index:7;text-align:center;font-family:{SANS};font-weight:700;font-size:58px;
   line-height:1.18;letter-spacing:-0.5px;color:#fff;text-shadow:0 4px 18px #000c}}
 .cap .w{{opacity:0.32}} .cap .key{{color:{acc}}}
