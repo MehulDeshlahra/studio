@@ -85,6 +85,10 @@ REQUIREMENTS
 - On-screen titles are for the VIEWER (e.g. "BALANCE CHECK", "2 SECOND MEIN"), never production labels
   like "ask audience", "hook", "outro". Leave most titles empty; use 3-5 titles per video.
 - A flow diagram shows the WHOLE path once (3-5 nodes); do not split one path into several 2-node flows.
+{EXAMPLE}
+- On-screen titles are for the VIEWER (e.g. "BALANCE CHECK", "2 SECOND MEIN"), never production labels
+  like "ask audience", "hook", "outro". Leave most titles empty; use 3-5 titles per video.
+- A flow diagram shows the WHOLE path once (3-5 nodes); do not split one path into several 2-node flows.
 - Language: {ch.get('language')}. Write vo in Roman script only (no Devanagari). Natural spoken Hinglish, short words.
   Use "..." at most twice (it makes the voice pause).
 - Visual types: "image" (a still, animated with camera motion), "clip" (a 10 s generated video: use at most 2, for the
@@ -97,7 +101,15 @@ REQUIREMENTS
 - Never mention AI and never add an AI label.
 Return JSON with exactly this shape:
 {SCHEMA}"""
-    plan = llm.text(p, json_mode=True, max_tokens=6000)
+    plan = ask(p)
+    for _ in range(2):
+        words = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))
+        if 95 <= words <= 160:
+            break
+        log("plan has", words, "words -> asking for a fix")
+        plan = ask(f"This plan has {words} spoken words; it needs 100-145 (40-55 s). Rewrite it to fit: add the missing "
+                   f"steps of the mechanism (or cut repetition), keep the same JSON shape.\n{EXAMPLE}\n"
+                   f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}")
     log("plan v1", len(plan.get("scenes", [])), "scenes")
     review = f"""You are a strict senior editor of viral Indian Shorts. Review this plan against the requirements and lessons,
 then return the IMPROVED plan (same JSON shape). Fix: weak hook, repeated visuals, lines over 16 words, scenes that add
