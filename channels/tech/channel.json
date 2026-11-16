@@ -1,6 +1,6 @@
 {
     "id":  "tech",
-    "name":  "Kaise Hota Hai? (@kaisehota.tech)",
+    "name":  "Kaise Tech",
     "status":  "pilot",
     "language":  "Hinglish (Roman script captions)",
     "format":  "One curiosity question (\u0027X kaise kaam karta hai?\u0027), one visual metaphor, 30-60 s, speech from frame 0",
@@ -65,5 +65,8 @@
                   "font":  "Archivo Black",
                   "music":  "music/digital-clouds.mp3",
                   "music_offset":  8
-              }
+              },
+    "handle_instagram":  "@kaisetech (to confirm in app)",
+    "handle_youtube":  "@kaise.tech",
+    "handle_en":  "@kaisetech.en / YT @kaisetech.en"
 }
