@@ -142,3 +142,11 @@ Findings:
 - What sells is the series and the characters ("Part 6", "Season 2 Ep 2", recurring Sheru boss), not the page name. Page names are generic studio names: "AI Animation", "DeePSTORIES", "Rangrez | 3D Stories", "AI STORYHUB", "Kaagaz Lab", "The Story Chest".
 - So the page name should be a broad story-studio name; each format (mystery, moral, love, fantasy, karma, horror) lives inside as a named series with its own Part numbers.
 Free handles (16 Nov): kahaniverse, kahanilab, kissakhana, kahanikaar.studio, storyroz, kahani.mehfil, aglakya.hoga, thetwist.in, plottwist.daily, raazkafaisla. Taken: ekkahani.roz, rozkikahani, kahani.ghar, kissa.studio, theraazroom, andar ki baat.
+
+## Round 8: final name check (16 Nov)
+Checked each name on: Instagram exact handle + ".en" handle (Apify profile lookup), Instagram user search for look-alikes, YouTube @handle (https://www.youtube.com/@name, 404 = free).
+- PASS all: Kahani Kart (@kahanikart, @kahanikart.en, YT @kahanikart); Kahani Mela (@kahanimela, @kahanimela.en, YT @kahanimela; look-alikes tiny: kahani_ka_mela 107).
+- PASS with caveat: Kahaniyaan TV (@kahaniyaan.tv free; YT @kahaniyaan.tv free but a "KahaniyaanTV" channel already exists).
+- FAIL YouTube taken: kahanilab, kissakhana, kissalok (GupShupKhani), storyroz, kahanimehfil, kahanipitara, kissapitara, kissakhaas, kahanijunction, kahanibazaar, kahanitadka, kissatadka, kahanibox, kahanicafe, kahanichakra, kissachakra, kahanijhola, kahanitown, kahaninagri, kahanigully, kahanify, qissaverse, kahaniflix, kissaflix, kahaniyo, kahanikhazana, kissakhazana, kahanibuzz, kissadabba, kahanidabba, kissakit, kahaniloop.
+- FAIL Instagram: kahaniverse (owner: not available; many look-alikes incl. @mykahaniverse 1.8k), kissaghar (taken).
+- Rejected on meaning: kissify, kissanova (read as "kiss").
