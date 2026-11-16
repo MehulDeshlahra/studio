@@ -50,3 +50,58 @@
 
 ## review ai-01
 - format/loudness: h264,1080,1920,30/1 -14.4 LUFS, true peak 1.1
+
+## lab-gpt-01 ChatGPT jawab kaise banata hai
+- scene 2: The intended title is 'Toh phir itne smart aur lambe answers bante kaise hain?', but the image text is 'KAISE HOTA HAI? The Prediction Engine'.
+- scene 3: The intended title is blank, but the image text is 'AUTO-COMPLETE'.
+- scene 4: The intended title is blank, but the image text is 'STEP 1: TOKENS'.
+- scene 5: The intended title is 'AGLE SHABD KA CHANCE', but the image text is 'STEP 2: MATH'.
+- scene 6: The intended title is blank, but the image text is 'ONE BY ONE'.
+- scene 7: The intended title is blank, but the image text is 'FEEDBACK LOOP'.
+- scene 8: The intended title is blank, but the image text is 'CONTINUOUS LOOP'.
+- scene 9: The intended title is blank, but the image text is 'MICROSECOND SPEED'.
+- scene 10: The intended title is blank, but the image text is 'MATH NOT MIND'.
+- scene 11: The intended title is blank, but the image text is 'KABHI GALTI HUI? Neeche Comment karo'.
+
+## review lab-gpt-01
+- spoken instructions heard at the start: Say in English, curious, warm, energetic, young Indian tech explainer, talking to a friend, surprise at the TV, playful 
+- first word starts late (8.2 s): something is spoken before the script
+- visual: Scene 7 has missing visual content, leaving an entirely blank screen between the header and captions.
+- visual: Scene 5 UI table disappears abruptly in the middle of the scene, leaving empty space while speech continues.
+- visual score 5/10
+
+## lab-gpt-01 ChatGPT jawab kaise banata hai
+- scene 1: The text on screen 'ChatGPT insaan ki tarah dimaag laga' is missing the final word 'kar' compared to the script.
+- scene 2: The text on screen 'Toh phir itne smart aur lambe' is missing the word 'answers bante kaise hain?' compared to the script.
+- scene 3: The text on screen 'Asal mein ChatGPT phone ke auto-complete' is missing the rest of the sentence compared to the script.
+- scene 4: The text on screen 'chhote tukdon yani tokens mein todta hai.' matches the script, but the visual hierarchy is slightly different from the expected flow.
+- scene 7: The text on screen 'pichle sentence ke aage jod deta hai.' matches, but the script implies a longer sentence.
+- scene 8: The text on screen 'kar agla shabd predict hota hai.' matches, but the script implies a longer sentence.
+- scene 9: The text on screen 'hai isliye lagta hai live typing' matches, but the script implies a longer sentence.
+- scene 10: The text on screen 'kuch samajhta nahi bas mathematics' matches, but the script implies a longer sentence.
+- scene 11: The text on screen 'ne aapke sawaal ka ajeeb ya' matches, but the script implies a longer sentence.
+- only 62% of the script was found in the voice
+
+## review lab-gpt-01
+- only 62% of the script was found in the voice
+- visual: Scene 5 center UI table unexpectedly disappears in the second frame, leaving a large empty void.
+- visual: Scene 7 has no visual element or graphic in the center, showing only a blank background.
+- visual score 5/10
+
+## upi-01-en UPI paisa 2 second mein kaise pahunchta hai
+- scene 2: The text is cut off. The script says 'Ever wondered how money moves between different banks so fast?', but the image only shows 'Ever wondered how money moves between'.
+- scene 3: The text is cut off. The script says 'Here's the twist: the money doesn't actually travel anywhere!', but the image only shows 'the money doesn't actually travel anywhere!'.
+- scene 4: The text is cut off. The script says 'Think of every bank keeping a digital ledger tracking account balances.', but the image only shows 'digital ledger tracking account balances.'.
+- scene 5: The text is cut off and incomplete. The script says 'Sitting in the middle is a lightning-fast referee—the NPCI switch.', but the image only shows 'referee the'.
+- scene 6: The text is cut off. The script says 'The moment you enter PIN, your bank deducts five hundred rupees.', but the image only shows 'The moment you enter PIN'.
+- scene 7: The text is cut off. The script says 'NPCI instantly shoots that signal to the receiver's bank.', but the image only shows 'NPCI instantly shoots that signal to'.
+- scene 8: The text is cut off. The script says 'Their bank immediately responds: 'Done, five hundred rupees credited!'', but the image only shows 'Their bank immediately responds:'.
+- scene 9: The text is cut off. The script says 'Just numbers updated in two digital ledgers, and transfer complete!', but the image only shows 'ledgers and transfer com...'.
+- scene 10: The text is cut off. The script says 'Actual inter-bank settlement happens later in batches through RBI.', but the image only shows 'later in batches through RBI.'.
+- scene 11: The text is cut off. The script says 'This simple ledger system completely revolutionized digital payments across India.', but the image only shows 'revolutionized digital payments across India.'.
+- scene 12: The text is cut off. The script says 'Ever had a UPI payment get stuck at a counter? Comment below!', but the image only shows 'stuck at a counter?'.
+
+## review upi-01-en
+- visual: Multiple scenes (2, 3, 4, 5, 6, 8, 11, and 12) are completely missing visual backgrounds or generated images.
+- visual: Missing final branded end card displaying page handle @kaise.tech.
+- visual score 3/10

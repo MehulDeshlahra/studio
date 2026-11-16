@@ -1,5 +1,7 @@
 {
  "channel": "tech",
  "job": "lab-gpt-01",
- "topic": "ChatGPT jawab kaise banata hai"
+ "topic": "ChatGPT jawab kaise banata hai",
+ "voice_retry": 1,
+ "stage": "done"
 }

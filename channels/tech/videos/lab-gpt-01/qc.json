@@ -1,0 +1,37 @@
+{
+ "topic": "ChatGPT jawab kaise banata hai",
+ "title": "ChatGPT jawab kaise banata hai?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.4,
+  "true_peak": -2.3,
+  "dur": 45.97
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 1: The text on screen 'ChatGPT insaan ki tarah dimaag laga' is missing the final word 'kar' compared to the script.",
+   "scene 2: The text on screen 'Toh phir itne smart aur lambe' is missing the word 'answers bante kaise hain?' compared to the script.",
+   "scene 3: The text on screen 'Asal mein ChatGPT phone ke auto-complete' is missing the rest of the sentence compared to the script.",
+   "scene 4: The text on screen 'chhote tukdon yani tokens mein todta hai.' matches the script, but the visual hierarchy is slightly different from the expected flow.",
+   "scene 7: The text on screen 'pichle sentence ke aage jod deta hai.' matches, but the script implies a longer sentence.",
+   "scene 8: The text on screen 'kar agla shabd predict hota hai.' matches, but the script implies a longer sentence.",
+   "scene 9: The text on screen 'hai isliye lagta hai live typing' matches, but the script implies a longer sentence.",
+   "scene 10: The text on screen 'kuch samajhta nahi bas mathematics' matches, but the script implies a longer sentence.",
+   "scene 11: The text on screen 'ne aapke sawaal ka ajeeb ya' matches, but the script implies a longer sentence."
+  ]
+ },
+ "voice": {
+  "ok": false,
+  "method": "whisper",
+  "matched": 0.6153846153846154,
+  "words": 130,
+  "problems": [
+   "only 62% of the script was found in the voice"
+  ]
+ },
+ "ok": false
+}

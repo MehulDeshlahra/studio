@@ -1,0 +1,131 @@
+{
+ "slug": "chatgpt-kaise-jawab-banata-hai",
+ "title": "How ChatGPT actually generates your answers!",
+ "hooks": [
+  "Jab aap ChatGPT se kuch poochte ho, to wo poora jawab ek saath nahi sochta.",
+  "ChatGPT itni lambi baatein bina ruke kaise likh leta hai?",
+  "Aapka sawal bhejte hi computer ke andar kya chalta hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Contrarian hook that busts the biggest myth about LLMs right in the first sentence: people assume AI thinks out a whole sentence, but it actually builds it piece by piece.",
+ "metaphor": "A superfast puzzle-solver robot predicting and snapping the single next puzzle block onto a glowing sentence track.",
+ "cast": {
+  "typewriter_bot": "A cute glossy 3D navy-and-brass robot typewriter character with big expressive glowing cyan eyes, rounded edges, and tiny metallic mechanical arms, in a dark navy studio with soft blue rim light and warm yellow accent #ffd84d"
+ },
+ "scenes": [
+  {
+   "vo": "When you ask ChatGPT something, it never thinks up the full answer at once.",
+   "type": "clip",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light, warm yellow accent #ffd84d. In center, typewriter_bot stares curiously at a giant glowing holographic question mark, glowing cyan eyes blinking softly, clean studio composition, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Every single millisecond, it's just predicting the next single word.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light. typewriter_bot holding up a single glossy glowing yellow puzzle cube in its mechanical hand, inspecting it with focused bright eyes, dark clean background, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Just like your phone’s auto-complete, but ridiculously faster and smarter.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light, yellow accent #ffd84d. Stylized floating vertical glass smartphone with three glowing cyan blank prediction capsules hovering above a sleek illuminated keypad plate, no text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "First, your question gets chopped into tiny pieces called tokens.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light. A glowing beam of light slicing into translucent cyan and yellow cubic glass blocks that gently drift in mid-air, casting soft reflections, no text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Each token turns into a number so the computer can calculate it.",
+   "type": "image",
+   "prompt": "Dark navy studio diagram style, glowing cyan geometric shapes converting into bright golden pulses flowing across clean illuminated circuit tracks, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "The model has already devoured billions of web pages and books.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light. Vast curved cylindrical archive walls glowing with millions of tiny illuminated crystal blocks, typewriter_bot standing on a floating navy platform admiring the scale, no text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "So if you type: 'Chanda mama door ke...'",
+   "type": "clip",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light. typewriter_bot taps a round illuminated key on its chest; three glowing blue rectangular blocks snap into place one after another on an open metallic track, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Its math screams that the next word is most likely 'puye'!",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light, yellow accent. A sleek glowing circular probability dial pointing toward a brightly lit peak sector beside an empty slot on a glowing track, no text.",
+   "motion": "punch",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "The moment it places that word, it re-reads everything from scratch.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio. typewriter_bot fits a golden cube into the empty rail slot, while an instant cyan scanning laser beam sweeps back across the entire assembled row of blocks, no text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "This cycle runs thousands of times every second, looking like real-time typing.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio. A rapid domino wave of glowing blocks locking into a sleek illuminated sentence path, camera tracking forward as typewriter_bot watches happily, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "So does AI actually think, or is it pure probability? Tell us below!",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light, warm yellow accent #ffd84d. typewriter_bot leaning forward towards camera with wide curious cyan eyes, gesturing with open metallic palms, asking a question, no text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": []
+  }
+ ],
+ "caption": "ChatGPT never thinks up whole answers at once! It calculates the next logical word every microsecond. 🤖⚡",
+ "hashtags": [
+  "#ChatGPT",
+  "#TechExplained",
+  "#ArtificialIntelligence",
+  "#MachineLearning",
+  "#HowAIWorks",
+  "#IndianTechies",
+  "#FutureTech"
+ ],
+ "claims": [
+  {
+   "claim": "LLMs split input text into chunks called tokens and convert them to numeric representations.",
+   "basis": "Standard Large Language Model transformer architecture documentation (Vaswani et al., OpenAI technical papers)."
+  },
+  {
+   "claim": "ChatGPT generates text autoregressively by predicting the most probable next token given prior context.",
+   "basis": "Autoregressive language modeling mechanism in Generative Pre-trained Transformers."
+  },
+  {
+   "claim": "The model calculates probabilities based on statistical patterns learned during pretraining on large text corpora.",
+   "basis": "OpenAI GPT-3 / GPT-4 foundation architecture research."
+  }
+ ],
+ "lang": "en",
+ "end_line": "Follow for daily tech"
+}

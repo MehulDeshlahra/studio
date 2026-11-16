@@ -1,0 +1,37 @@
+{
+ "topic": "UPI paisa 2 second mein kaise pahunchta hai",
+ "title": "How does UPI transfer money in 2 seconds?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.5,
+  "true_peak": -3.4,
+  "dur": 44.07
+ },
+ "vision": {
+  "score": 6,
+  "ok": false,
+  "problems": [
+   "scene 2: The text is cut off. The script says 'Ever wondered how money moves between different banks so fast?', but the image only shows 'Ever wondered how money moves between'.",
+   "scene 3: The text is cut off. The script says 'Here's the twist: the money doesn't actually travel anywhere!', but the image only shows 'the money doesn't actually travel anywhere!'.",
+   "scene 4: The text is cut off. The script says 'Think of every bank keeping a digital ledger tracking account balances.', but the image only shows 'digital ledger tracking account balances.'.",
+   "scene 5: The text is cut off and incomplete. The script says 'Sitting in the middle is a lightning-fast referee—the NPCI switch.', but the image only shows 'referee the'.",
+   "scene 6: The text is cut off. The script says 'The moment you enter PIN, your bank deducts five hundred rupees.', but the image only shows 'The moment you enter PIN'.",
+   "scene 7: The text is cut off. The script says 'NPCI instantly shoots that signal to the receiver's bank.', but the image only shows 'NPCI instantly shoots that signal to'.",
+   "scene 8: The text is cut off. The script says 'Their bank immediately responds: 'Done, five hundred rupees credited!'', but the image only shows 'Their bank immediately responds:'.",
+   "scene 9: The text is cut off. The script says 'Just numbers updated in two digital ledgers, and transfer complete!', but the image only shows 'ledgers and transfer com...'.",
+   "scene 10: The text is cut off. The script says 'Actual inter-bank settlement happens later in batches through RBI.', but the image only shows 'later in batches through RBI.'.",
+   "scene 11: The text is cut off. The script says 'This simple ledger system completely revolutionized digital payments across India.', but the image only shows 'revolutionized digital payments across India.'.",
+   "scene 12: The text is cut off. The script says 'Ever had a UPI payment get stuck at a counter? Comment below!', but the image only shows 'stuck at a counter?'."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9145299145299145,
+  "words": 117,
+  "problems": []
+ },
+ "ok": false
+}
