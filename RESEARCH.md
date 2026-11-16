@@ -99,3 +99,27 @@ the server scout must NOT crawl it.
   to AVOID; it's what a vague prompt gives.
 - Pattern across the good ones: one concept, one recurring carrier (dot / asterisk / mascot / shape), real assets,
   voice-timed text, measured loudness (-13 to -14 LUFS).
+
+## Round 5: Instagram study (57 reels, 16 Nov)
+Source: Apify IG scrapers + yt-dlp, metrics in watch/ig/metrics.json, 16-frame sheets in watch/ig/sheets/.
+
+Numbers
+- Loudness: almost all at -14.1 LUFS (Instagram normalises). Target -14, not -12.
+- Winners (>=1M plays, n=26): median 58.5 s, first word at 0.0 s, ~3 words/s. Flops median 126 s.
+- Cut count does not decide: winners range from 0 cuts (one continuous shot) to 30.
+- Same story reposted by ezexplains: 592k / 48k / 5k. Hook and first frame matter more than topic.
+
+What the winners look like
+- ONE question, ONE visual metaphor for the whole reel:
+  - snapstudy0571 13.3M: "how does the bike gear change?" 3D macro renders, no face, 28 s.
+  - sparethoughtstudios 9.3M: "how do shop gates know you didn't pay?" dark 3D product renders, keyword caption on top, real data (0.025 mm, patent no., 58 kHz graph).
+  - rajat_bytes 4.7M: "count to 1,023 on fingers" 3D hand + Hinglish captions + binary boxes.
+  - madebysajjan 3.1M: 32 vs 64 bit as a stick figure + highway lanes, Hinglish.
+  - sochozara_ai 4.1M: Veo 3D cartoon characters, Hinglish dialogue (talking-object format).
+- Face-led winners: presenter in bottom half + real evidence on top (screen recording, article cards, numbered steps with red arrows): tech_spert 7.3M, digibott 7.1M, mrtechpedia 6.1M, cactuss.ai 4.9M, ezexplains 4.1M.
+- GitHub/tool lists: rajenlabs 830k (face + repo card "replaces X" overlay, "Comment REPO" CTA), stewieaiguy 676k (cartoon character + gameplay bg + big 3-word captions).
+- samjho.exe: the most polished faceless motion graphics in the set (dark gold UI cards, numbers) but 117-163 s long: 9k-160k plays. Polish alone does not win.
+
+Lesson for Studio
+- tech-001/002 were "news of a feature" with UI cards = the samjho.exe lane. The winning lane is a curiosity question ("X kaise kaam karta hai?") answered with one simple, physical visual metaphor in 30-60 s.
+- Faceless is fine when the visual is a character or object (3D hand, stick figure, talking object, 3D product render).
