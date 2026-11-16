@@ -12,3 +12,9 @@
 - Rules: pure fiction (no real crimes, places named only generically, no real people); no gore, no violence shown;
   no suicide; fair-play clues (the answer must be findable from the clues shown).
 - Never: on-screen AI label, real brand names.
+
+## Research-derived rules (16 Nov, owner asked for deep research before every video)
+- The answer must be findable from what the viewer saw or heard (fair play); the culprit slips on a detail nobody told him.
+- Each part: cold open on the strangest detail -> setup -> 3 suspects as paper cards (SURAAG 1-3) -> one extra clue -> A/B/C card -> "kal Part 2".
+- The HUD shows PART n and the clue counter on every scene; clues are shown as paper cards with a stamp.
+- Answers go in Part 2 (comment-to-know), voted/guessed in comments; reply to the first comments with hints.

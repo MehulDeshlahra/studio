@@ -123,3 +123,13 @@ What the winners look like
 Lesson for Studio
 - tech-001/002 were "news of a feature" with UI cards = the samjho.exe lane. The winning lane is a curiosity question ("X kaise kaam karta hai?") answered with one simple, physical visual metaphor in 30-60 s.
 - Faceless is fine when the visual is a character or object (3D hand, stick figure, talking object, 3D product render).
+
+## Round 6: interactive suspense (raaz), 16 Nov
+Method: Apify hashtag reels (#youdecide #hindimystery #suspensestory #mysterystory #detectivestory #kahanihindi, 90 reels), top 5 downloaded and read frame by frame, plus web search on interactive reels. Raw: watch/raaz-hash.json, watch/raaz/.
+- pahelikaraz 9.0M plays / 4.5k comments / 97 s: 2D vector story, game HUD (clock, fuel), cockpit panels, notebook plan card, ends "WHAT DID SHE FORGET? Comment your answer" then "PART 2 COMING SOON".
+- paheli.x 1.14M plays / 23.7k comments / 46 s: detective puzzle where the thief gives himself away ("chor ne khud apna raaz khola, kya aapne pakda?"). Highest comments per play of the set: a fair, solvable clue beats a coin-flip vote.
+- thebankhesit 2.7M / 3.2k / 58 s: HUD (HEAT bar, CASH counter), phone-message UI, A/B cards "YOUR CALL", "COMMENTS DECIDE WHAT HAPPENS IN PART 2".
+- oddhourtales 4.3M / 96 s: "rules of the keeper" paper cards, clock + radio UI, ends ANSWER / STAY SILENT card.
+- your.calltv 1.7M / 2.8k / 88 s: "LET GO or HOLD ON? The majority writes Part 4."
+Shared: speech from frame 0, one situation, game-like UI (HUD, message bubbles, paper clue cards, A/B/C cards), a "Part N" tag, last frame = question + promise of next part, -14 LUFS, 46-98 s. Most are flat 2D vector; our edge = cinematic noir stills + the same UI language + a clue the viewer can truly solve + a recurring Inspector.
+Rules for raaz (also in channels/raaz/bible.md): fair-play clue hidden in the audio, answer in Part 2, HUD "PART n" + "SURAAG k/3", paper clue cards, A/B/C card, brisk 2.3 words/s narration, 60-80 s.
