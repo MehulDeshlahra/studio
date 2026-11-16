@@ -10,21 +10,21 @@
   "dur": 42.5
  },
  "vision": {
-  "score": 8,
+  "score": 9,
   "ok": true,
   "problems": [
-   "scene 4: The text on the floating digital diary is gibberish/non-text symbols, though it conveys the visual concept of a ledger.",
-   "scene 5: The text 'SUPERFAST REFEREE—NPCI' is slightly cut off on the right side.",
-   "scene 6: The text 'HAI: 'MERE YAHAN' is slightly cut off on the right side.",
-   "scene 10: The text 'NET SETTLEMENT' and 'BATCH SETTLEMENT VIA RBI' is slightly cramped and close to the edges of the frame, though readable."
+   "scene 3: The text 'HAI PAISA KAHIN' is slightly confusing as a standalone phrase compared to the script 'Asli twist ye hai—paisa kahin travel karta hi nahi!', though it is understandable in context.",
+   "scene 7: The diagram text 'AAPKA BANK', 'NPCI', 'DOOSRA BANK' is clear, but the caption 'ZARIYE RECEIVER' feels slightly disconnected from the visual flow of the diagram itself."
   ]
  },
  "voice": {
   "ok": false,
+  "method": "pauses",
+  "matched": 0.0,
+  "words": 145,
   "problems": [
-   "Large middle section of the script is missing from the heard text (specifically the explanation involving the NPCI referee, the '500 minus' and '500 plus' signals, and the completion of the transfer). The speech jumps directly from the digital diary analogy to the RBI settlement part."
-  ],
-  "heard": " पिन दबाया और अगले ही सेक्ट सामने वाले के फोंपे त्रिंग  पर दो गलक बंकों के बीच पैसा हितनी तीजी से गया कैसे  आस्ली टूस्टी यह है पैसा कही त्राओल करता ही नहीं  सोचो, हर बंके पासे एक दिजिटल डाईरी है  बंकों का आपास का इसा बाद में RBI की तुछ सेटल होता है  इसी लेजर सिस्टम ने पूरे हिंदिया में केश का जंजर खडम कर दिया  क्या आपका UPI PAYMENT कभी किसी शोप पर अग्टका है  कमबन में बतावों  बंकों का आपास का इसा बाद में RBI की तुछ सेटल होता है  इसी लेजर सिस्टम ने पूरे हिंदिया में केश का जंजर खडम कर दिया  क्या आपका UPI PAYMENT कभी किसी शोप पर अग्टका है  कमबन में बतावो"
+   "only 0% of the script was found in the voice"
+  ]
  },
  "ok": false
 }

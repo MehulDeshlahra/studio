@@ -28,3 +28,8 @@
 - scene 5: The large bold caption 'TAAKI COMPUTER USE' is slightly cut off on the left side, making it look cramped.
 - scene 6: The large bold caption 'KITABEIN AUR BAATEIN' is slightly cut off on the right side.
 - scene 9: The large bold caption 'HI' seems like a very strange, incomplete fragment for the line 'Aur wo agla shabd fit karte hi, poori line dobara padhta hai.' It doesn't fit the context of the scene well.
+
+## upi-01 UPI mein paisa 2 second mein kaise pahunchta hai
+- scene 3: The text 'HAI PAISA KAHIN' is slightly confusing as a standalone phrase compared to the script 'Asli twist ye hai—paisa kahin travel karta hi nahi!', though it is understandable in context.
+- scene 7: The diagram text 'AAPKA BANK', 'NPCI', 'DOOSRA BANK' is clear, but the caption 'ZARIYE RECEIVER' feels slightly disconnected from the visual flow of the diagram itself.
+- only 0% of the script was found in the voice
