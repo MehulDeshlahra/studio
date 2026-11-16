@@ -25,7 +25,7 @@
 | tech-003 | Phone ulta, screen kaise ghoomti hai | 42.6 s | pilot | good, not the best |
 
 ## Channels
-- 16 Nov: tech page name = Kaise Tech (owner). Instagram @kaise.tech is held by an empty account (0 posts) -> use @kaisetech (free). YouTube @kaise.tech free (@kaisetech taken by 'kaise'). English: @kaisetech.en (IG + YT free). Look-alikes: none relevant (Kaiser/Kaisen accounts only). Story page name parked.
+- 16 Nov: tech page name = Kaise Tech (owner). Instagram @kaise.tech created by the owner (the empty account was his). YouTube @kaise.tech free (@kaisetech taken by 'kaise'). English: @kaisetech.en (IG + YT free). Look-alikes: none relevant (Kaiser/Kaisen accounts only). Story page name parked.
 - 16 Nov FINAL: page name = Kahaniverse (owner liked it); owner picks the handle variation in the app and tells me. (Earlier draft: Kahaneo (@kahaneo, English @kahaneo.en; both free on Instagram + YouTube on 16 Nov). Broad story studio with series inside: Raaz Ka Faisla, Karma, Dil Se, Jaadu, Darr. Fallback if the app refuses the handle: Kahaanio (@kahaanio). Rejected by owner: Tum Ho Detective, Agla Kya Hoga, Kahaniverse, Kissalok, Kahani Kart (reserved), .in/.official handles, Plotlok, Mohalla TV, Suno Kahani.
 - See channels/CHANNELS.md (tech, raaz, katha, game later). Each channel: channels/<id>/channel.json.
 - No single mascot: tech uses the topic's own object as the character.
