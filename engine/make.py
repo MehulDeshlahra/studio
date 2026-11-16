@@ -103,6 +103,14 @@ def main():
     if "voice" in redo or not os.path.exists(vo):
         script = "\n".join(s["vo"] for s in p["scenes"])
         tts.speak(script, vo, ch["voice"].get("voice", "Charon"), ch["voice"].get("style", ""))
+    import pace
+    paced = os.path.join(job, "vo-paced.wav")
+    if "voice" in redo or not os.path.exists(paced):
+        nw = sum(len(s["vo"].split()) for s in p["scenes"])
+        _, f, d0 = pace.fit(vo, paced, nw, ch.get("edit", {}).get("wps", 2.6))
+        log("paced voice: pauses squeezed, speed x", f, "from", d0, "s")
+        redo.add("voice")
+    vo = paced
     tp = os.path.join(job, "timing.json")
     if "voice" in redo or not os.path.exists(tp) or load(tp, {}).get("method") != "whisper":
         try:

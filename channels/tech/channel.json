@@ -30,7 +30,8 @@
                                       168,
                                       1330
                                   ],
-                 "max_s_per_visual_idea":  8
+                 "max_s_per_visual_idea":  8,
+                 "wps":  2.7
              },
     "rules":  [
                   "no on-screen AI label",
