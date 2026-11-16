@@ -7,8 +7,13 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, ASSETS, OUT, PY, log, sh, load, save, channel, telegram, dur
 import research, plan as planner, tts, align, muse, compose, qc
 
-CHROME = os.environ.get("PUPPETEER_EXECUTABLE_PATH",
-                        os.path.expanduser("~/.cache/ms-playwright/chromium-1248/chrome-linux-arm64/chrome"))
+# chrome-headless-shell enables HyperFrames' fast BeginFrame capture (full Chromium falls back to screenshots).
+# Benchmark 16 Nov (6 s clip, busy server): full chromium 1 worker 239 s, headless shell 1 worker 182 s, 2 workers 133 s.
+CHROME = os.environ.get("PUPPETEER_EXECUTABLE_PATH", next((p for p in [
+    os.path.expanduser("~/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux-arm64/chrome-headless-shell"),
+    os.path.expanduser("~/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux-arm64/chrome-headless-shell"),
+    os.path.expanduser("~/.cache/ms-playwright/chromium-1248/chrome-linux-arm64/chrome")] if os.path.exists(p)), ""))
+WORKERS = os.environ.get("STUDIO_RENDER_WORKERS", "2")
 
 
 def pick_topic(ch):
@@ -215,7 +220,7 @@ def main():
     if "render" in redo or not os.path.exists(final):
         env = dict(os.environ, PUPPETEER_EXECUTABLE_PATH=CHROME)
         t0 = time.time()
-        sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--workers", "1", "--output", raw],
+        sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--workers", WORKERS, "--no-low-memory-mode", "--output", raw],
            env=env, timeout=7200, cwd=rdir) if os.name != "nt" else sh(["npx.cmd", "-y", "hyperframes@latest", "render", "--output", raw], cwd=rdir)
         log("rendered in", round(time.time() - t0), "s")
         remux(raw, mix, total, final)
