@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en"
+  data-composition-variables='[
+  {"id":"color-ground","type":"color","label":"Background","default":"#F3EFE7"},
+  {"id":"color-ink","type":"color","label":"Text","default":"#0E0E10"},
+  {"id":"color-accent","type":"color","label":"Accent","default":"#2B4BFF"}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>tech-001 Google Search Gemini 4 Hydrogen</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+@font-face { font-family: "Noto Deva"; src: url("assets/fonts/deva.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Noto Tamil"; src: url("assets/fonts/tamil.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Noto Beng"; src: url("assets/fonts/beng.woff2") format("woff2"); font-weight: 700; }
+:root { --ground: #F3EFE7; --ink: #0E0E10; --accent: #2B4BFF; --hl: #FFE45C; --coral: #FF6B4A; --red: #E5322D; }
+html, body { margin: 0; background: var(--ground); }
+#root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ground);
+  font-family: Inter, sans-serif; color: var(--ink); }
+.abs { position: absolute; }
+#flood { left: 0; top: 0; width: 1080px; height: 1920px; background: var(--accent); clip-path: circle(0px at 540px 760px); }
+#flood2 { left: 0; top: 0; width: 1080px; height: 1920px; background: #E9FF5A; clip-path: circle(0px at 540px 440px); }
+
+/* giant word */
+#giant { left: 0; top: 340px; width: 1080px; height: 260px; display: flex; justify-content: center; gap: 4px;
+  font-family: "Archivo Black", sans-serif; font-size: 160px; line-height: 260px; letter-spacing: -4px; }
+.gl { height: 260px; overflow: hidden; display: block; }
+.gs { display: flex; flex-direction: column; }
+.gs span { display: block; height: 260px; text-align: center; }
+
+/* search bar */
+#bar { left: 150px; top: 685px; width: 780px; height: 150px; border-radius: 75px; background: #fff;
+  box-sizing: border-box; border: 5px solid var(--ink); }
+#bar-in { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 38px; gap: 22px; }
+#mag { width: 52px; height: 52px; flex: 0 0 52px; }
+#qmask { position: relative; flex: 1; height: 150px; overflow: hidden; }
+.q { position: absolute; left: 0; top: 0; height: 150px; display: flex; align-items: center; white-space: nowrap;
+  font-weight: 700; font-size: 38px; letter-spacing: -0.5px; }
+#q1 .w { position: relative; display: inline-block; margin-right: 11px; }
+#q1 .c { opacity: 0; }
+.sq { position: absolute; left: 0; right: 0; bottom: 30px; height: 14px; transform-origin: left center; transform: scaleX(0); }
+#caret { position: absolute; top: 47px; width: 5px; height: 56px; background: var(--ink); }
+#qroll { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; }
+#qroll div { height: 150px; display: flex; align-items: center; white-space: nowrap; font-weight: 700; font-size: 38px; }
+.deva { font-family: "Noto Deva", sans-serif; } .tamil { font-family: "Noto Tamil", sans-serif; font-size: 32px !important; }
+.beng { font-family: "Noto Beng", sans-serif; }
+
+/* evidence plate */
+#plate { left: 40px; top: 250px; width: 1000px; height: 820px; border-radius: 40px; overflow: hidden; background: #fff; opacity: 0; }
+#plate-in { position: absolute; left: 0; top: 0; width: 1000px; }
+#page { display: block; width: 1000px; }
+.hl { position: absolute; background: var(--hl); mix-blend-mode: multiply; transform-origin: left center; transform: scaleX(0); border-radius: 6px; }
+#src { left: 40px; top: 930px; width: 1000px; height: 140px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 26px; box-sizing: border-box; }
+#src span { background: var(--ink); color: #fff; font-weight: 700; font-size: 30px; padding: 12px 26px; border-radius: 40px; }
+
+/* kinetic type on cobalt */
+#kt { left: 0; top: 600px; width: 1080px; color: #fff; text-align: center; font-family: "Archivo Black", sans-serif; }
+#kt div { display: block; font-size: 112px; line-height: 130px; letter-spacing: -3px; }
+#kt span { display: inline-block; }
+
+/* numeral */
+#num { left: 390px; top: 275px; width: 300px; height: 330px; color: var(--accent);
+  font-family: "Archivo Black", sans-serif; font-size: 300px; line-height: 330px; text-align: center; }
+.nd { position: absolute; left: 0; top: 0; width: 300px; height: 330px; }
+
+/* chips */
+.chip { left: 200px; width: 680px; height: 80px; border-radius: 40px; background: #fff; box-sizing: border-box;
+  border: 4px solid var(--ink); display: flex; align-items: center; padding: 0 30px; gap: 22px; font-weight: 800; font-size: 34px; opacity: 0; }
+.tick { width: 52px; height: 52px; border-radius: 26px; background: var(--accent); display: grid; place-items: center; margin-left: auto; transform: scale(0); }
+
+/* fan out */
+#fan { left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
+.pill { width: 330px; height: 92px; border-radius: 46px; background: #fff; box-sizing: border-box; border: 4px solid var(--ink);
+  display: flex; align-items: center; justify-content: center; gap: 12px; font-weight: 800; font-size: 29px; opacity: 0; }
+.pill .lk { width: 30px; height: 30px; opacity: 0; }
+
+/* answer panel */
+#panel { left: 160px; top: 600px; width: 760px; height: 520px; border-radius: 40px; background: #fff; box-sizing: border-box;
+  border: 5px solid var(--ink); overflow: hidden; transform: scale(0); }
+.ph { top: 50px; width: 150px; height: 220px; border-radius: 28px; opacity: 0; }
+.ph i { position: absolute; left: 22px; top: 22px; width: 34px; height: 34px; border-radius: 17px; background: rgba(255,255,255,.85); }
+#tbl { left: 40px; top: 300px; width: 680px; height: 190px; }
+.row { position: absolute; left: 0; width: 680px; height: 62px; display: flex; align-items: center; font-weight: 700; font-size: 32px; }
+.row b { width: 170px; font-weight: 800; } .row span { width: 170px; text-align: center; opacity: 0; }
+.rule { position: absolute; left: 0; width: 680px; height: 3px; background: var(--ink); transform-origin: left; transform: scaleX(0); }
+#tool { left: 60px; top: 340px; width: 640px; height: 140px; opacity: 0; }
+#track { left: 0; top: 92px; width: 640px; height: 14px; border-radius: 7px; background: #E2DDD2; }
+#fill { left: 0; top: 92px; width: 640px; height: 14px; border-radius: 7px; background: var(--accent); transform-origin: left; }
+#knob { left: 0; top: 70px; width: 58px; height: 58px; border-radius: 29px; background: #fff; border: 6px solid var(--accent); box-sizing: border-box; }
+#tool-l { left: 0; top: 0; font-weight: 800; font-size: 36px; } #tool-v { right: 0; top: 0; font-weight: 800; font-size: 36px; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+/* small answer card */
+#ans { left: 200px; top: 880px; width: 680px; height: 220px; border-radius: 36px; background: #fff; box-sizing: border-box; border: 5px solid var(--ink); opacity: 0; }
+.mp { top: 40px; width: 90px; height: 140px; border-radius: 20px; }
+
+/* captions */
+#caps { left: 0; top: 1136px; width: 1080px; height: 104px; --cap: var(--ink); --cap-hi: var(--accent); }
+.cg { position: absolute; left: 0; top: 0; width: 1080px; height: 100px; display: flex; justify-content: center; align-items: center;
+  gap: 16px; font-weight: 900; font-size: 58px; letter-spacing: -1px; white-space: nowrap; color: var(--cap); }
+.cw { display: inline-block; }
+#uline { left: 0; top: 88px; width: 100px; height: 9px; border-radius: 5px; background: var(--cap-hi); transform-origin: left center; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="__DUR__">
+  <audio id="mix" src="mix.wav" data-start="0" data-volume="1"></audio>
+  <div id="flood" class="abs"></div>
+  <div id="flood2" class="abs"></div>
+
+  <div id="giant" class="abs"></div>
+
+  <div id="plate" class="abs">
+    <div id="plate-in" data-layout-ignore><img id="page" src="assets/page.png" alt="Google blog post" /></div>
+  </div>
+  <div id="src" class="abs" style="opacity:0"><span>Source: blog.google · 12 Nov 2026</span></div>
+
+  <div id="kt" class="abs"><div><span id="k1">GEMINI</span> <span id="k2">4</span></div><div><span id="k3">HYDROGEN</span></div></div>
+
+  <div id="num" class="abs" style="opacity:0"><div class="nd" id="nd1">1</div><div class="nd" id="nd2" style="opacity:0">2</div><div class="nd" id="nd3" style="opacity:0">3</div><div class="nd" id="nd4" style="opacity:0">4</div></div>
+
+  <svg id="fan" class="abs" viewBox="0 0 1080 1920"></svg>
+  <div id="pills"></div>
+
+  <div id="panel" class="abs">
+    <div class="ph abs" id="ph1" style="left:75px;background:var(--accent)"><i></i></div>
+    <div class="ph abs" id="ph2" style="left:305px;background:var(--ink)"><i></i></div>
+    <div class="ph abs" id="ph3" style="left:535px;background:var(--coral)"><i></i></div>
+    <div id="tbl" class="abs">
+      <div class="rule" style="top:0"></div>
+      <div class="row" style="top:2px"><b>Camera</b><span>50 MP</span><span>64 MP</span><span>108 MP</span></div>
+      <div class="rule" style="top:64px"></div>
+      <div class="row" style="top:66px"><b>Battery</b><span>5000</span><span>6000</span><span>5500</span></div>
+      <div class="rule" style="top:128px"></div>
+      <div class="row" style="top:130px"><b>Price</b><span>₹18k</span><span>₹20k</span><span>₹19k</span></div>
+    </div>
+    <div id="tool" class="abs">
+      <div id="tool-l" class="abs">Budget</div><div id="tool-v" class="abs">₹15,000</div>
+      <div id="track" class="abs"></div><div id="fill" class="abs"></div><div id="knob" class="abs"></div>
+    </div>
+  </div>
+
+  <div id="ans" class="abs">
+    <div class="mp abs" style="left:60px;background:var(--accent)"></div>
+    <div class="mp abs" style="left:170px;background:var(--ink)"></div>
+    <div class="mp abs" style="left:280px;background:var(--coral)"></div>
+    <div class="tick abs" id="ans-tick" style="left:520px;top:64px;width:92px;height:92px;border-radius:46px;margin:0">
+      <svg width="48" height="48" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  </div>
+
+  <div id="chips"></div>
+
+  <div id="bar" class="abs">
+    <div id="bar-in">
+      <svg id="mag" viewBox="0 0 24 24"><circle id="mag-c" cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#0E0E10" stroke-width="2.6"/><path d="M15.4 15.4L21 21" stroke="#0E0E10" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <div id="qmask">
+        <div id="q1" class="q"></div>
+        <div id="q2" class="q" style="opacity:0">best phone under 20k</div>
+        <div id="qroll" style="opacity:0" data-layout-ignore>
+          <div>best phone under 20k</div>
+          <div class="deva">20 हज़ार में बेस्ट फ़ोन</div>
+          <div class="tamil">20 ஆயிரத்தில் சிறந்த போன்</div>
+          <div class="beng">২০ হাজারে সেরা ফোন</div>
+        </div>
+        <div id="caret"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="caps" class="abs"></div>
+</div>
+
+<script>
+const WORDS = __WORDS__;
+const BOX = __BOXES__;
+const DUR = __DUR__;
+const K = 1000 / 430;                       // css px of the captured page -> plate px
+
+const tl = gsap.timeline({ paused: true });
+const $ = (s) => document.querySelector(s);
+document.fonts.ready.then(() => {
+
+/* ---------- giant word with rolling letters ---------- */
+const G = "SEARCH", ROLL = ["S#A?", "E%7&", "A@Q!", "R*4=", "C?8+", "H&Z%"];
+$("#giant").innerHTML = [...G].map((ch, i) =>
+  `<div class="gl" data-layout-ignore><div class="gs" id="gs${i}" data-layout-ignore><span>${ch}</span><span>${ROLL[i][0]}</span><span>${ROLL[i][1]}</span><span>${ch}</span></div></div>`).join("");
+
+/* ---------- typed query with typos ---------- */
+const QW = [["phon", 1], ["20k", 0], ["camra", 1], ["acha", 0], ["battry", 1], ["2din", 0]];
+$("#q1").innerHTML = QW.map(([w, typo], i) =>
+  `<span class="w" id="qw${i}">${[...w].map((c) => `<span class="c">${c}</span>`).join("")}${typo ? `<svg class="sq" viewBox="0 0 100 14" preserveAspectRatio="none"><path d="M0 7 Q5 0 10 7 T20 7 T30 7 T40 7 T50 7 T60 7 T70 7 T80 7 T90 7 T100 7" fill="none" stroke="#E5322D" stroke-width="3.2"/></svg>` : ""}</span>`).join("");
+
+/* ---------- chips ---------- */
+const CH = [["📱", "Phone · ₹20k tak"], ["📷", "Camera achha"], ["🔋", "Battery 2 din"]];
+$("#chips").innerHTML = CH.map(([ic, t], i) =>
+  `<div class="chip abs" id="chip${i}" style="top:${872 + i * 92}px"><span style="font-size:40px">${ic}</span>${t}
+   <div class="tick" id="tick${i}"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>`).join("");
+
+/* ---------- fan-out pills ---------- */
+const PL = ["camera test", "battery review", "20k phones list", "2026 launches", "user reviews", "compare specs"];
+const PP = PL.map((t, i) => ({ x: i % 2 ? 720 : 360, y: 760 + Math.floor(i / 2) * 125, t }));
+$("#pills").innerHTML = PP.map((p, i) =>
+  `<div class="pill abs" id="pill${i}" style="left:${p.x - 165}px;top:${p.y - 46}px">${p.t}
+   <svg class="lk" viewBox="0 0 24 24"><path d="M10 14L20 4M14 4h6v6M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`).join("");
+$("#fan").innerHTML = PP.map((p, i) =>
+  `<path id="ln${i}" d="M540 595 C 540 ${(595 + p.y) / 2}, ${p.x} ${(595 + p.y) / 2 - 20}, ${p.x} ${p.y - 48}" fill="none" stroke="#0E0E10" stroke-width="4" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>`).join("");
+
+/* ---------- highlights pinned to the captured page ---------- */
+function hl(key, id) {
+  return BOX[key].map((b, j) => {
+    const d = document.createElement("div");
+    d.className = "hl"; d.id = `${id}${j}`;
+    Object.assign(d.style, { left: (b.x - 4) * K + "px", top: (b.y - 2) * K + "px", width: (b.w + 8) * K + "px", height: (b.h + 4) * K + "px" });
+    $("#plate-in").appendChild(d); return d;
+  });
+}
+const hDate = hl("Nov 12, 2026", "hd"), hBig = hl("biggest model upgrade to Search yet", "hb"),
+      hAll = hl("available globally in Google Search for all users", "ha");
+
+/* ---------- captions: word by word, active word in accent ---------- */
+const groups = [];
+WORDS.lines.forEach((ln) => {
+  let cur = [];
+  ln.words.forEach((w, i) => {
+    cur.push(w);
+    const left = ln.words.length - 1 - i;
+    const brk = (cur.length === 3 && left !== 1) || cur.length === 4 || left === 0;
+    if (brk) { groups.push(cur); cur = []; }
+  });
+});
+$("#caps").innerHTML = groups.map((g, gi) =>
+  `<div class="cg" id="cg${gi}" style="visibility:hidden">${g.map((w, wi) => `<span class="cw" id="cw${gi}_${wi}">${w.w.replace(/[,.:…]+$/, "")}</span>`).join("")}</div>`).join("");
+$("#caps").insertAdjacentHTML("beforeend", '<div id="uline" class="abs"></div>');
+const capsLeft = $("#caps").getBoundingClientRect().left;
+groups.forEach((g, gi) => {
+  const el = $(`#cg${gi}`);
+  // fit the group inside the 696 px text-safe width (Reels + Shorts)
+  el.style.visibility = "visible";
+  let fs = 58; el.style.fontSize = fs + "px";
+  while (el.scrollWidth > 690 && fs > 40) { fs -= 2; el.style.fontSize = fs + "px"; }
+  const boxes = g.map((_, wi) => $(`#cw${gi}_${wi}`).getBoundingClientRect());
+  el.style.visibility = "hidden";
+  const end = gi + 1 < groups.length ? groups[gi + 1][0].start : DUR - 0.05;
+  tl.set(el, { visibility: "visible" }, Math.max(0.12, g[0].start));
+  tl.set(el, { visibility: "hidden" }, end);
+  g.forEach((w, wi) => {
+    const b = boxes[wi];
+    const nxt = wi + 1 < g.length ? g[wi + 1].start : end;
+    const d = wi ? Math.max(0.02, Math.min(0.12, nxt - w.start - 0.01)) : 0.001;
+    tl.to("#uline", { x: b.left - capsLeft, scaleX: b.width / 100, opacity: 1, duration: d, ease: "power2.out" }, w.start);
+  });
+});
+const capOnBlue = () => ({ "--cap": "#FFFFFF", "--cap-hi": "#FFE45C" }), capOnCream = () => ({ "--cap": "#0E0E10", "--cap-hi": "#2B4BFF" });
+
+const W = Object.fromEntries(WORDS.lines.map((l) => [l.id, l]));
+const at = (line, i) => W[line].words[i].start;
+
+/* ---------- S1 hook: SEARCH letters roll, cobalt flood out of the bar ---------- */
+tl.set("#caret", { left: 0 }, 0);
+for (let i = 0; i < 6; i++) tl.to(`#caret`, { opacity: 0, duration: 0.01 }, 0.45 + i * 0.5).to(`#caret`, { opacity: 1, duration: 0.01 }, 0.7 + i * 0.5);
+G.split("").forEach((_, i) => tl.to(`#gs${i}`, { y: -780, duration: 0.34, ease: "power2.inOut" }, at("hook", 6) + i * 0.035));
+tl.to("#flood", { clipPath: "circle(1500px at 540px 760px)", duration: 0.42, ease: "power2.inOut" }, 2.16);
+tl.set("#caps", capOnBlue(), 2.3);
+tl.to("#giant", { y: -260, opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power3.in" }, 2.3);
+
+/* ---------- S2 evidence: the bar becomes the page ---------- */
+tl.set("#plate", { clipPath: "inset(435px 110px 235px 110px round 75px)" }, 0);   // = the bar's rectangle
+tl.set("#plate-in", { y: -150 * K }, 0);
+tl.to("#bar", { opacity: 0, duration: 0.18 }, 2.48);
+tl.to("#plate", { opacity: 1, duration: 0.15 }, 2.45);
+tl.to("#plate", { clipPath: "inset(0px 0px 0px 0px round 40px)", duration: 0.55, ease: "power3.inOut" }, 2.45);
+tl.to("#src", { opacity: 1, duration: 0.25 }, 2.9);
+tl.to(hDate, { scaleX: 1, duration: 0.3, ease: "power2.out" }, at("evidence", 0));
+tl.fromTo("#plate-in", { scale: 1 }, { scale: 1.035, transformOrigin: "50% 30%", duration: 2.3, ease: "none" }, 2.9);
+tl.to("#plate-in", { y: -(956 * K - 380), scale: 1.0, duration: 0.85, ease: "power2.inOut" }, 5.2);
+tl.to(hBig, { scaleX: 1, duration: 1.05, ease: "power1.inOut" }, at("evidence", 13));
+tl.to("#plate-in", { scale: 1.06, transformOrigin: "50% 40%", duration: 2.6, ease: "none" }, 6.1);
+
+/* ---------- S3 name: whip up into giant type, then back to the page ---------- */
+tl.to(["#plate", "#src"], { y: -1100, filter: "blur(8px)", duration: 0.32, ease: "power3.in" }, at("name", 0) - 0.12);
+tl.fromTo("#k1", { y: 520, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, at("name", 1) - 0.05);
+tl.fromTo("#k2", { y: 520, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, at("name", 2) - 0.05);
+tl.fromTo("#k3", { y: 520, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, at("name", 3) - 0.05);
+tl.set("#k1,#k2,#k3", { opacity: 0 }, 0);
+tl.to("#kt", { y: -700, opacity: 0, filter: "blur(10px)", duration: 0.4, ease: "power3.in" }, at("name", 4) - 0.1);
+tl.set("#plate-in", { y: -(1004 * K - 470), scale: 1 }, at("name", 4) - 0.1);
+tl.set(["#plate", "#src"], { y: 1300, filter: "blur(0px)" }, at("name", 4) - 0.1);
+tl.to(["#plate", "#src"], { y: 60, duration: 0.55, ease: "expo.out" }, at("name", 4) - 0.02);
+tl.to(hAll[0], { scaleX: 1, duration: 0.85, ease: "power1.inOut" }, at("name", 6));
+tl.to(hAll[1], { scaleX: 1, duration: 0.4, ease: "power1.out" }, at("name", 6) + 0.86);
+
+/* ---------- S4 one: cobalt collapses into the numeral, bar types a messy question ---------- */
+const t4 = at("one", 0);
+tl.to(["#plate", "#src", "#kt"], { y: "-=1400", filter: "blur(8px)", duration: 0.3, ease: "power3.in" }, t4 - 0.25);
+tl.set(["#plate", "#src", "#kt", "#giant"], { opacity: 0 }, t4 + 0.1);
+tl.to("#flood", { clipPath: "circle(0px at 540px 335px)", duration: 0.45, ease: "power2.inOut" }, t4 - 0.2);
+tl.set("#caps", capOnCream(), t4 - 0.02);
+tl.fromTo("#num", { opacity: 0, scale: 2.0, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, t4);
+tl.set("#bar", { opacity: 1, y: 700 }, t4 - 0.3);
+tl.to("#bar", { y: 0, duration: 0.6, ease: "expo.out" }, t4 + 0.05);
+const chars = [...document.querySelectorAll("#q1 .c")], typeT0 = t4 + 0.4, step = 1.78 / chars.length;
+chars.forEach((c, i) => tl.set(c, { opacity: 1 }, typeT0 + i * step));
+tl.set("#caret", { opacity: 1 }, typeT0);
+// caret follows the typing (measured once at build time)
+const qmLeft = $("#qmask").getBoundingClientRect().left;
+chars.forEach((c, i) => tl.set("#caret", { left: c.getBoundingClientRect().right - qmLeft + 4 }, typeT0 + i * step));
+document.querySelectorAll("#q1 .sq").forEach((s, i) => tl.to(s, { scaleX: 1, duration: 0.28, ease: "power2.out" }, at("one", 8) + i * 0.1));
+CH.forEach((_, i) => tl.fromTo(`#chip${i}`, { opacity: 0, y: -(110 + i * 92), scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, at("one", 12) + i * 0.14));
+CH.forEach((_, i) => tl.to(`#tick${i}`, { scale: 1, duration: 0.3, ease: "back.out(1.6)" }, at("one", 15) + i * 0.2));
+
+/* ---------- S5 two: the question fans out into many searches ---------- */
+const t5 = at("two", 0);
+tl.to(["#chips .chip", "#q1"], { opacity: 0, filter: "blur(8px)", duration: 0.18 }, t5 - 0.22);
+tl.to("#nd1", { opacity: 0, filter: "blur(10px)", duration: 0.15 }, t5 - 0.05);
+tl.fromTo("#nd2", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, immediateRender: false }, t5 - 0.05 + 0.12);
+tl.set("#caret", { opacity: 0 }, t5 - 0.2);
+tl.fromTo("#q2", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2 }, t5 + 0.1);
+tl.to("#bar", { y: -240, duration: 0.5, ease: "power3.inOut" }, t5 + 0.05);
+tl.to("#num", { scale: 0.48, y: 10, transformOrigin: "50% 0%", duration: 0.5, ease: "power3.inOut" }, t5 + 0.05);
+PP.forEach((_, i) => {
+  tl.to(`#ln${i}`, { strokeDashoffset: 0, duration: 0.55, ease: "power2.inOut" }, at("two", 3) + i * 0.06);
+  tl.fromTo(`#pill${i}`, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, at("two", 3) + 0.45 + i * 0.06);
+  tl.to(`#pill${i} .lk`, { opacity: 1, duration: 0.2 }, at("two", 10) + i * 0.05);
+});
+[4, 5].forEach((i, j) => tl.to(`#pill${i}`, { backgroundColor: "#2B4BFF", color: "#FFFFFF", borderColor: "#2B4BFF", duration: 0.25 }, at("two", 14) + j * 0.15));
+
+/* ---------- S6 three: searches merge into a visual answer ---------- */
+const t6 = at("three", 0);
+tl.to("#nd2", { opacity: 0, filter: "blur(10px)", duration: 0.15 }, t6 - 0.05);
+tl.fromTo("#nd3", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, immediateRender: false }, t6 - 0.05 + 0.12);
+PP.forEach((p, i) => tl.to(`#pill${i}`, { x: 540 - p.x, y: 860 - p.y, scale: 0.2, opacity: 0, duration: 0.45, ease: "power3.in" }, t6 - 0.15 + i * 0.03));
+PP.forEach((_, i) => tl.to(`#ln${i}`, { strokeDashoffset: 110, duration: 0.3, ease: "power2.in" }, t6 - 0.2));
+tl.fromTo("#panel", { scale: 0 }, { scale: 1, duration: 0.55, ease: "expo.out" }, t6 + 0.25);
+["#ph1", "#ph2", "#ph3"].forEach((p, i) => tl.fromTo(p, { opacity: 0, y: 90, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, at("three", 5) + i * 0.1));
+document.querySelectorAll("#tbl .rule").forEach((r, i) => tl.to(r, { scaleX: 1, duration: 0.35, ease: "power2.out" }, at("three", 6) + i * 0.08));
+document.querySelectorAll("#tbl .row span").forEach((s, i) => tl.to(s, { opacity: 1, duration: 0.15 }, at("three", 6) + 0.2 + i * 0.045));
+tl.to("#tbl", { opacity: 0, filter: "blur(8px)", duration: 0.2 }, at("three", 11) - 0.35);
+tl.to("#tool", { opacity: 1, duration: 0.2 }, at("three", 11) - 0.15);
+const vals = ["₹15,000", "₹16,000", "₹17,000", "₹18,000", "₹19,000", "₹20,000"];
+tl.set("#fill", { scaleX: 0.25 }, 0); tl.set("#knob", { x: 0.25 * 640 - 29 }, 0);
+tl.to("#fill", { scaleX: 0.6, duration: 0.45, ease: "power2.inOut" }, at("three", 11));
+tl.to("#knob", { x: 0.6 * 640 - 29, duration: 0.45, ease: "power2.inOut" }, at("three", 11));
+vals.forEach((v, i) => tl.set("#tool-v", { textContent: v }, at("three", 11) + i * 0.075));
+
+/* ---------- S7 four: one question, every language ---------- */
+const t7 = at("four", 0);
+tl.to("#panel", { y: -1400, filter: "blur(8px)", duration: 0.32, ease: "power3.in" }, t7 - 0.25);
+tl.set("#panel", { opacity: 0 }, t7 + 0.1);
+tl.to("#nd3", { opacity: 0, filter: "blur(10px)", duration: 0.15 }, at("four", 1) - 0.05);
+tl.fromTo("#nd4", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, immediateRender: false }, at("four", 1) - 0.05 + 0.12);
+tl.to("#bar", { y: 0, duration: 0.5, ease: "power3.inOut" }, t7 - 0.05);
+tl.to("#num", { scale: 1, y: 0, duration: 0.5, ease: "power3.inOut" }, t7 - 0.05);
+tl.set("#q2", { opacity: 0 }, at("four", 2) - 0.02);
+tl.set("#qroll", { opacity: 1 }, at("four", 2) - 0.02);
+[1, 2, 3].forEach((n, j) => tl.to("#qroll", { y: -150 * n, duration: 0.18, ease: "power2.inOut" }, at("four", 2) - 0.1 + j * 0.5));
+tl.fromTo("#ans", { opacity: 0, y: 90 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, at("four", 7) - 0.05);
+tl.to("#ans-tick", { scale: 1, duration: 0.3, ease: "back.out(1.6)" }, at("four", 9));
+
+/* ---------- S8 payoff: everything clears back to the first frame ---------- */
+const t8 = at("payoff", 0);
+tl.to(["#ans", "#num"], { y: -300, opacity: 0, filter: "blur(8px)", duration: 0.3, ease: "power3.in" }, t8 - 0.2);
+tl.to("#qroll", { opacity: 0, filter: "blur(6px)", duration: 0.15 }, t8 - 0.15);
+tl.set("#caret", { opacity: 1, left: 0 }, t8);
+for (let i = 0; i < 4; i++) tl.to("#caret", { opacity: 0, duration: 0.01 }, t8 + 0.4 + i * 0.5).to("#caret", { opacity: 1, duration: 0.01 }, t8 + 0.65 + i * 0.5);
+G.split("").forEach((_, i) => tl.set(`#gs${i}`, { y: 0 }, t8));
+tl.fromTo("#giant", { y: 0, opacity: 0, filter: "blur(12px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out", immediateRender: false }, t8 + 0.05);
+const tp = at("payoff", 8);
+tl.to("#bar", { scale: 0.955, duration: 0.07, ease: "power2.in" }, tp - 0.03).to("#bar", { scale: 1, duration: 0.35, ease: "power3.out" }, tp + 0.04);
+tl.to("#mag-c", { fill: "#2B4BFF", stroke: "#2B4BFF", duration: 0.12 }, tp);
+tl.to("#mag-c", { fill: "rgba(43,75,255,0)", stroke: "#0E0E10", duration: 0.5 }, DUR - 1.2);
+
+/* ---------- one ground colour per act, flooding out of the numeral ---------- */
+const ACTS = [  // [time, previous ground, new ground, caption ink, caption accent, numeral colour]
+  [at("two", 0) - 0.1, "#F3EFE7", "#E9FF5A", "#0E0E10", "#2B4BFF", "#2B4BFF"],
+  [at("three", 0) - 0.1, "#E9FF5A", "#0E0E10", "#FFFFFF", "#FFE45C", "#FFE45C"],
+  [at("four", 1) - 0.12, "#0E0E10", "#FF6B4A", "#0E0E10", "#FFFFFF", "#FFFFFF"],
+  [at("payoff", 0) - 0.15, "#FF6B4A", "#F3EFE7", "#0E0E10", "#2B4BFF", "#2B4BFF"],
+];
+ACTS.forEach(([tt, prev, next, ci, ca, nc]) => {
+  tl.set("#root", { backgroundColor: prev }, tt);
+  tl.set("#flood2", { backgroundColor: next, clipPath: "circle(0px at 540px 440px)" }, tt);
+  tl.to("#flood2", { clipPath: "circle(1700px at 540px 440px)", duration: 0.5, ease: "power2.inOut" }, tt);
+  tl.set("#caps", { "--cap": ci, "--cap-hi": ca }, tt + 0.18);
+  tl.to("#num", { color: nc, duration: 0.2 }, tt + 0.1);
+});
+tl.set("#root", { backgroundColor: "#F3EFE7" }, at("payoff", 0) + 0.5);
+// lines of the fan-out read on yellow; the merge happens on ink, so they go white just before
+tl.set("#fan path", { stroke: "#0E0E10" }, 0);
+
+window.__timelines["main"] = tl;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,671 @@
+{
+ "dur": 42.898,
+ "lines": [
+  {
+   "id": "hook",
+   "cap": "Google ne Search ka dimaag hi badal diya",
+   "start": 0.15,
+   "end": 2.593,
+   "heard": "गुगल ने सर्च का दिमाग ही बदल दिया",
+   "words": [
+    {
+     "w": "Google",
+     "start": 0.15,
+     "end": 0.49
+    },
+    {
+     "w": "ne",
+     "start": 0.49,
+     "end": 0.67
+    },
+    {
+     "w": "Search",
+     "start": 0.67,
+     "end": 1.03
+    },
+    {
+     "w": "ka",
+     "start": 1.03,
+     "end": 1.23
+    },
+    {
+     "w": "dimaag",
+     "start": 1.23,
+     "end": 1.69
+    },
+    {
+     "w": "hi",
+     "start": 1.69,
+     "end": 2.01
+    },
+    {
+     "w": "badal",
+     "start": 2.01,
+     "end": 2.33
+    },
+    {
+     "w": "diya",
+     "start": 2.33,
+     "end": 2.57
+    }
+   ]
+  },
+  {
+   "id": "evidence",
+   "cap": "12 November ko Google ne khud likha: ye Search ka ab tak ka sabse bada model upgrade hai",
+   "start": 2.913,
+   "end": 8.705,
+   "heard": "पारहें नवमवर को गुगल ने हुद लिखा, ये सर्च का अब तक का सबसे बड़ा मोडिल अपग्रेर है.",
+   "words": [
+    {
+     "w": "12",
+     "start": 2.913,
+     "end": 3.353
+    },
+    {
+     "w": "November",
+     "start": 3.353,
+     "end": 3.773
+    },
+    {
+     "w": "ko",
+     "start": 3.773,
+     "end": 4.093
+    },
+    {
+     "w": "Google",
+     "start": 4.093,
+     "end": 4.633
+    },
+    {
+     "w": "ne",
+     "start": 4.633,
+     "end": 4.773
+    },
+    {
+     "w": "khud",
+     "start": 4.773,
+     "end": 4.993
+    },
+    {
+     "w": "likha:",
+     "start": 4.993,
+     "end": 5.293
+    },
+    {
+     "w": "ye",
+     "start": 5.453,
+     "end": 5.613
+    },
+    {
+     "w": "Search",
+     "start": 5.613,
+     "end": 5.853
+    },
+    {
+     "w": "ka",
+     "start": 5.853,
+     "end": 6.193
+    },
+    {
+     "w": "ab",
+     "start": 6.193,
+     "end": 6.453
+    },
+    {
+     "w": "tak",
+     "start": 6.453,
+     "end": 6.613
+    },
+    {
+     "w": "ka",
+     "start": 6.613,
+     "end": 6.833
+    },
+    {
+     "w": "sabse",
+     "start": 6.833,
+     "end": 7.173
+    },
+    {
+     "w": "bada",
+     "start": 7.173,
+     "end": 7.473
+    },
+    {
+     "w": "model",
+     "start": 7.473,
+     "end": 8.033
+    },
+    {
+     "w": "upgrade",
+     "start": 8.033,
+     "end": 8.533
+    },
+    {
+     "w": "hai",
+     "start": 8.533,
+     "end": 8.673
+    }
+   ]
+  },
+  {
+   "id": "name",
+   "cap": "Naam: Gemini 4 Hydrogen. Aur ye sabke liye hai, poori duniya mein",
+   "start": 9.025,
+   "end": 12.904,
+   "heard": "नाम जमिनाई पोर, हाईद्रोजन और ये सब के लिए है, पूरी दुन्या में",
+   "words": [
+    {
+     "w": "Naam:",
+     "start": 9.025,
+     "end": 9.33
+    },
+    {
+     "w": "Gemini",
+     "start": 9.33,
+     "end": 9.756
+    },
+    {
+     "w": "4",
+     "start": 9.756,
+     "end": 9.878
+    },
+    {
+     "w": "Hydrogen.",
+     "start": 9.878,
+     "end": 10.427
+    },
+    {
+     "w": "Aur",
+     "start": 10.427,
+     "end": 10.671
+    },
+    {
+     "w": "ye",
+     "start": 10.671,
+     "end": 10.854
+    },
+    {
+     "w": "sabke",
+     "start": 10.854,
+     "end": 11.219
+    },
+    {
+     "w": "liye",
+     "start": 11.219,
+     "end": 11.524
+    },
+    {
+     "w": "hai,",
+     "start": 11.524,
+     "end": 11.768
+    },
+    {
+     "w": "poori",
+     "start": 11.768,
+     "end": 12.134
+    },
+    {
+     "w": "duniya",
+     "start": 12.134,
+     "end": 12.56
+    },
+    {
+     "w": "mein",
+     "start": 12.56,
+     "end": 12.865
+    }
+   ]
+  },
+  {
+   "id": "one",
+   "cap": "Pehla: ek hi sawaal mein teen cheezein poocho, spelling galat ho, tab bhi har hisse ka jawab milega",
+   "start": 13.224,
+   "end": 19.052,
+   "heard": "पहला एक ही सवाल में तीन चीजे पुछो, स्पेलिंग गलत हो, तब भी हर हिसे का जवाब मिलेगा.",
+   "words": [
+    {
+     "w": "Pehla:",
+     "start": 13.224,
+     "end": 13.604
+    },
+    {
+     "w": "ek",
+     "start": 13.604,
+     "end": 13.844
+    },
+    {
+     "w": "hi",
+     "start": 13.844,
+     "end": 14.004
+    },
+    {
+     "w": "sawaal",
+     "start": 14.004,
+     "end": 14.404
+    },
+    {
+     "w": "mein",
+     "start": 14.404,
+     "end": 14.744
+    },
+    {
+     "w": "teen",
+     "start": 14.744,
+     "end": 14.984
+    },
+    {
+     "w": "cheezein",
+     "start": 14.984,
+     "end": 15.364
+    },
+    {
+     "w": "poocho,",
+     "start": 15.364,
+     "end": 15.784
+    },
+    {
+     "w": "spelling",
+     "start": 15.924,
+     "end": 16.424
+    },
+    {
+     "w": "galat",
+     "start": 16.424,
+     "end": 16.704
+    },
+    {
+     "w": "ho,",
+     "start": 16.704,
+     "end": 16.884
+    },
+    {
+     "w": "tab",
+     "start": 17.064,
+     "end": 17.224
+    },
+    {
+     "w": "bhi",
+     "start": 17.224,
+     "end": 17.404
+    },
+    {
+     "w": "har",
+     "start": 17.404,
+     "end": 17.564
+    },
+    {
+     "w": "hisse",
+     "start": 17.564,
+     "end": 17.884
+    },
+    {
+     "w": "ka",
+     "start": 17.884,
+     "end": 18.184
+    },
+    {
+     "w": "jawab",
+     "start": 18.184,
+     "end": 18.604
+    },
+    {
+     "w": "milega",
+     "start": 18.604,
+     "end": 19.024
+    }
+   ]
+  },
+  {
+   "id": "two",
+   "cap": "Doosra: Search peeche ek saath kai searches chalata hai, aur woh sites laata hai jo pehle milti hi nahi thi",
+   "start": 19.372,
+   "end": 25.866,
+   "heard": "तुस्रा सर्च पीछे एक साथ कई सर्चेज चलाता है और वो साइच लाता है, जो पहले मिलती ही नहीं ती.",
+   "words": [
+    {
+     "w": "Doosra:",
+     "start": 19.372,
+     "end": 19.772
+    },
+    {
+     "w": "Search",
+     "start": 19.772,
+     "end": 20.172
+    },
+    {
+     "w": "peeche",
+     "start": 20.172,
+     "end": 20.692
+    },
+    {
+     "w": "ek",
+     "start": 20.692,
+     "end": 21.012
+    },
+    {
+     "w": "saath",
+     "start": 21.012,
+     "end": 21.332
+    },
+    {
+     "w": "kai",
+     "start": 21.332,
+     "end": 21.652
+    },
+    {
+     "w": "searches",
+     "start": 21.652,
+     "end": 22.112
+    },
+    {
+     "w": "chalata",
+     "start": 22.112,
+     "end": 22.592
+    },
+    {
+     "w": "hai,",
+     "start": 22.592,
+     "end": 22.752
+    },
+    {
+     "w": "aur",
+     "start": 22.752,
+     "end": 23.152
+    },
+    {
+     "w": "woh",
+     "start": 23.152,
+     "end": 23.432
+    },
+    {
+     "w": "sites",
+     "start": 23.432,
+     "end": 23.792
+    },
+    {
+     "w": "laata",
+     "start": 23.792,
+     "end": 24.192
+    },
+    {
+     "w": "hai",
+     "start": 24.192,
+     "end": 24.452
+    },
+    {
+     "w": "jo",
+     "start": 24.552,
+     "end": 24.652
+    },
+    {
+     "w": "pehle",
+     "start": 24.652,
+     "end": 24.972
+    },
+    {
+     "w": "milti",
+     "start": 24.972,
+     "end": 25.332
+    },
+    {
+     "w": "hi",
+     "start": 25.332,
+     "end": 25.452
+    },
+    {
+     "w": "nahi",
+     "start": 25.452,
+     "end": 25.712
+    },
+    {
+     "w": "thi",
+     "start": 25.712,
+     "end": 25.832
+    }
+   ]
+  },
+  {
+   "id": "three",
+   "cap": "Teesra: jawab ab zyada visual. Photos, comparison tables, aur tumhare liye bane tools",
+   "start": 26.186,
+   "end": 31.443,
+   "heard": "3. जबाब अब ज्यादा विस्वल फोटोज, कमपेरीजन तेबल्स और तुमहारे लिए बने तूल.",
+   "words": [
+    {
+     "w": "Teesra:",
+     "start": 26.186,
+     "end": 26.326
+    },
+    {
+     "w": "jawab",
+     "start": 26.606,
+     "end": 26.926
+    },
+    {
+     "w": "ab",
+     "start": 26.926,
+     "end": 27.326
+    },
+    {
+     "w": "zyada",
+     "start": 27.326,
+     "end": 27.726
+    },
+    {
+     "w": "visual.",
+     "start": 27.726,
+     "end": 28.106
+    },
+    {
+     "w": "Photos,",
+     "start": 28.106,
+     "end": 28.606
+    },
+    {
+     "w": "comparison",
+     "start": 28.686,
+     "end": 29.326
+    },
+    {
+     "w": "tables,",
+     "start": 29.326,
+     "end": 29.946
+    },
+    {
+     "w": "aur",
+     "start": 29.946,
+     "end": 30.226
+    },
+    {
+     "w": "tumhare",
+     "start": 30.226,
+     "end": 30.666
+    },
+    {
+     "w": "liye",
+     "start": 30.666,
+     "end": 30.906
+    },
+    {
+     "w": "bane",
+     "start": 30.906,
+     "end": 31.166
+    },
+    {
+     "w": "tools",
+     "start": 31.166,
+     "end": 31.406
+    }
+   ]
+  },
+  {
+   "id": "four",
+   "cap": "Aur chautha: kisi bhi language mein poocho, jawab aur behtar",
+   "start": 31.763,
+   "end": 35.184,
+   "heard": "और चोथा किसी भी लेंगवेज में पुछो, जवाब और बहतर",
+   "words": [
+    {
+     "w": "Aur",
+     "start": 31.763,
+     "end": 31.903
+    },
+    {
+     "w": "chautha:",
+     "start": 31.903,
+     "end": 32.263
+    },
+    {
+     "w": "kisi",
+     "start": 32.263,
+     "end": 32.603
+    },
+    {
+     "w": "bhi",
+     "start": 32.603,
+     "end": 32.823
+    },
+    {
+     "w": "language",
+     "start": 32.823,
+     "end": 33.323
+    },
+    {
+     "w": "mein",
+     "start": 33.323,
+     "end": 33.603
+    },
+    {
+     "w": "poocho,",
+     "start": 33.603,
+     "end": 33.923
+    },
+    {
+     "w": "jawab",
+     "start": 34.103,
+     "end": 34.563
+    },
+    {
+     "w": "aur",
+     "start": 34.563,
+     "end": 34.783
+    },
+    {
+     "w": "behtar",
+     "start": 34.783,
+     "end": 35.163
+    }
+   ]
+  },
+  {
+   "id": "payoff",
+   "cap": "Matlab ab sawaal poochna seekhna nahi padega. Bas... pooch lo",
+   "start": 35.504,
+   "end": 39.044,
+   "heard": "मतलब अब सवाल पुचना सिकना नहीं पडेगा बस, पुचलो.",
+   "words": [
+    {
+     "w": "Matlab",
+     "start": 35.504,
+     "end": 35.928
+    },
+    {
+     "w": "ab",
+     "start": 35.928,
+     "end": 36.111
+    },
+    {
+     "w": "sawaal",
+     "start": 36.111,
+     "end": 36.535
+    },
+    {
+     "w": "poochna",
+     "start": 36.535,
+     "end": 37.021
+    },
+    {
+     "w": "seekhna",
+     "start": 37.021,
+     "end": 37.506
+    },
+    {
+     "w": "nahi",
+     "start": 37.506,
+     "end": 37.81
+    },
+    {
+     "w": "padega.",
+     "start": 37.81,
+     "end": 38.235
+    },
+    {
+     "w": "Bas...",
+     "start": 38.235,
+     "end": 38.477
+    },
+    {
+     "w": "pooch",
+     "start": 38.477,
+     "end": 38.842
+    },
+    {
+     "w": "lo",
+     "start": 38.842,
+     "end": 39.024
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "cap": "Aise hi AI updates ke liye follow karo",
+   "start": 39.364,
+   "end": 41.978,
+   "heard": "आसे ही A .I अप्रेट्स के लिए फोलो करो.",
+   "words": [
+    {
+     "w": "Aise",
+     "start": 39.364,
+     "end": 39.695
+    },
+    {
+     "w": "hi",
+     "start": 39.695,
+     "end": 39.893
+    },
+    {
+     "w": "AI",
+     "start": 39.893,
+     "end": 40.092
+    },
+    {
+     "w": "updates",
+     "start": 40.092,
+     "end": 40.621
+    },
+    {
+     "w": "ke",
+     "start": 40.621,
+     "end": 40.82
+    },
+    {
+     "w": "liye",
+     "start": 40.82,
+     "end": 41.15
+    },
+    {
+     "w": "follow",
+     "start": 41.15,
+     "end": 41.613
+    },
+    {
+     "w": "karo",
+     "start": 41.613,
+     "end": 41.944
+    }
+   ]
+  }
+ ]
+}

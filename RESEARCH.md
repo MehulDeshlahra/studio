@@ -82,3 +82,20 @@ the server scout must NOT crawl it.
   above music in 300 Hz-4 kHz; one SFX per event placed by its measured peak; -14 LUFS.
 - Claude can't judge sound or "feel" (moderate agreement with a motion designer on 13 videos): keep the human
   Telegram approval for the first posts of each channel; measure everything else.
+
+## Round 4: prompt-motion.com videos watched (12 entries: video + prompt + contact sheet, studio\watch\pm\)
+- Most-liked showreel (stephanlivera, 15 s): flat FULL-FRAME colour fields (tomato red, cobalt, cream, black, acid
+  yellow), giant heavy grotesk words filling 70-90% of the width (CLAUDE / EASE / NEVER / LINEAR), one mark (an
+  asterisk) that grows, spins and returns on the end card, colour-flood cuts, truchet pattern, dot-grid 3D torus.
+  Every frame is one bold idea. -13.1 LUFS.
+- Ora 2 launch (22 s, white canvas): words typed in time with the voice, ONE gradient word, real images in a ring
+  -> grid -> burst, liquid-glass controls with sliders that move as named, camera push 1.00->1.04 per scene.
+  -14.2 LUFS.
+- Jake's "agent session story" (53 s): ONE fixed illustrated home set (desk, monitor, window, guitar) with a cute
+  box mascot; day turns to night through the window; notes fly in, the mascot reacts (eyes, bandage, bow);
+  screen changes state (code -> check). Made with heygen-com/hyperframes-community-skills (session-story skill).
+  -> best model for our channel mascot + home set.
+- Steam news recap (60 s, Japanese): dark cards + bullet lists, the same layout every item = the "slide" look
+  to AVOID; it's what a vague prompt gives.
+- Pattern across the good ones: one concept, one recurring carrier (dot / asterisk / mascot / shape), real assets,
+  voice-timed text, measured loudness (-13 to -14 LUFS).

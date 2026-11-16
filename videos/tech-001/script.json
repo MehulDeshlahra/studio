@@ -1,0 +1,21 @@
+{
+ "id": "tech-001",
+ "topic": "Google Search gets Gemini 4 Hydrogen",
+ "source": {"url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+            "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen", "date": "2026-11-12", "author": "Robby Stein, VP of Product, Google Search",
+            "facts": ["biggest model upgrade to Search yet", "available globally in Google Search for all users",
+                      "nuanced/complicated questions, multiple parts, hard-to-understand typos", "query fan-out: simultaneous queries across subtopics, broader range of links, sites you might not have discovered",
+                      "more images, structured responses, comparison tables, custom tools", "more nuanced responses across all supported AI Mode languages"]},
+ "voice": {"engine": "kokoro-onnx v1.0", "voice": "hm_psi", "speed": 1.17},
+ "lines": [
+  {"id": "hook", "cap": "Google ne Search ka dimaag hi badal diya", "tts": "गूगल ने सर्च का दिमाग ही बदल दिया।"},
+  {"id": "evidence", "cap": "12 November ko Google ne khud likha: ye Search ka ab tak ka sabse bada model upgrade hai", "tts": "बारह नवंबर को गूगल ने ख़ुद लिखा, ये सर्च का अब तक का सबसे बड़ा मॉडेल अप्ग्रेड है।"},
+  {"id": "name", "cap": "Naam: Gemini 4 Hydrogen. Aur ye sabke liye hai, poori duniya mein", "tts": "नाम, जेमिनाई फोर, हाइड्रोजन। और ये सबके लिए है, पूरी दुनिया में।"},
+  {"id": "one", "cap": "Pehla: ek hi sawaal mein teen cheezein poocho, spelling galat ho, tab bhi har hisse ka jawab milega", "tts": "पहला। एक ही सवाल में तीन चीज़ें पूछो, स्पेलिंग ग़लत हो, तब भी हर हिस्से का जवाब मिलेगा।"},
+  {"id": "two", "cap": "Doosra: Search peeche ek saath kai searches chalata hai, aur woh sites laata hai jo pehle milti hi nahi thi", "tts": "दूसरा। सर्च पीछे एक साथ कई सर्चेज़ चलाता है, और वो साइट्स लाता है जो पहले मिलती ही नहीं थीं।"},
+  {"id": "three", "cap": "Teesra: jawab ab zyada visual. Photos, comparison tables, aur tumhare liye bane tools", "tts": "तीसरा। जवाब अब ज़्यादा विज़ुअल। फ़ोटोज़, कम्पैरिज़न टेबल्स, और तुम्हारे लिए बने टूल्स।"},
+  {"id": "four", "cap": "Aur chautha: kisi bhi language mein poocho, jawab aur behtar", "tts": "और चौथा। किसी भी लैंग्वेज में पूछो, जवाब और बेहतर।"},
+  {"id": "payoff", "cap": "Matlab ab sawaal poochna seekhna nahi padega. Bas... pooch lo", "tts": "मतलब अब सवाल पूछना सीखना नहीं पड़ेगा। बस... पूछ लो।"},
+  {"id": "cta", "cap": "Aise hi AI updates ke liye follow karo", "tts": "ऐसे ही ए आई अपडेट्स के लिए फ़ॉलो करो।"}
+ ]
+}

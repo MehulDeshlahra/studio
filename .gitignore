@@ -6,3 +6,10 @@ watch/
 __pycache__/
 .env
 *.key
+assets/audio/
+videos/*/cap/
+videos/*/render/
+videos/*/assets/
+*.jpg
+*.png
+lib/tts_*.py
