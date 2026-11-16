@@ -131,7 +131,7 @@ def main():
         env = dict(os.environ, PUPPETEER_EXECUTABLE_PATH=CHROME)
         t0 = time.time()
         sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--workers", "1", "--output", raw],
-           env=env, timeout=7200) if os.name != "nt" else sh(["npx.cmd", "-y", "hyperframes@latest", "render", "--output", raw])
+           env=env, timeout=7200, cwd=rdir) if os.name != "nt" else sh(["npx.cmd", "-y", "hyperframes@latest", "render", "--output", raw], cwd=rdir)
         log("rendered in", round(time.time() - t0), "s")
         remux(raw, mix, total, final)
     # 8 qc

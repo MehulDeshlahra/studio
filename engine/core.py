@@ -19,8 +19,8 @@ def log(*a):
         pass
 
 
-def sh(cmd, check=True, timeout=None, env=None):
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, env=env)
+def sh(cmd, check=True, timeout=None, env=None, cwd=None):
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, env=env, cwd=cwd)
     if check and r.returncode != 0:
         raise RuntimeError(f"{cmd[0]} failed: {(r.stderr or r.stdout)[-800:]}")
     return r.stdout
