@@ -217,7 +217,7 @@ def job_state(cid, job, active=None):
             "review": {"ok": rv.get("ok"), "problems": rv.get("problems", [])[:4], "minor": rv.get("minor", [])[:3],
                        "score": ((rv.get("checks") or {}).get("vision") or {}).get("score")},
             "qc": {"dur": (qc.get("format") or {}).get("dur"), "lufs": (qc.get("format") or {}).get("lufs")},
-            "caption": plan.get("caption", ""), "active": bool(active), "started": int(t0) if active else None}
+            "caption": plan.get("caption", ""), "active": bool(active), "prepped": bool(meta.get("prepped_at")) and not files.get(final), "started": int(t0) if active else None}
 
 
 def tgmap():
@@ -231,8 +231,15 @@ def jobs(running):
         p = r.get("job")
         if p and p.get("script") == "make.py" and p.get("cid") and p.get("job"):
             k = (p["cid"], p["job"])
-            if k not in act or r["age"] > act[k]["age"]:
+            if k not in act or r["age"] < act[k]["age"]:        # the newest process is the one doing the work (a re-voice child)
                 act[k] = {"started": time.time() - r["age"], "frm": p.get("frm"), "until": p.get("until"), "age": r["age"]}
+        elif p and p.get("script") == "make.py" and p.get("cid") in ("tech", "katha", "raaz"):
+            base = os.path.join(OUT, p["cid"])                    # new video without --job: its folder is the newest one made after start
+            t0 = time.time() - r["age"]
+            ds = [d for d in (os.listdir(base) if os.path.isdir(base) else []) if os.path.getmtime(os.path.join(base, d)) >= t0 - 30]
+            if ds:
+                d = max(ds, key=lambda d: os.path.getmtime(os.path.join(base, d)))
+                act[(p["cid"], d)] = {"started": t0, "frm": None, "until": p.get("until"), "age": r["age"]}
     sent = tgmap(); out = []
     for c in ("tech", "katha", "raaz"):
         done = {d["job"]: d for d in (jload(os.path.join(ROOT, "channels", c, "done.json"), []) or [])}
@@ -259,6 +266,8 @@ def jobs(running):
                 status = "waiting"
             elif s["review"]["ok"]:
                 status = "ready"
+            elif s["prepped"]:
+                status = "prepped"
             elif s["pct"] < 1:
                 status = "paused"
             else:

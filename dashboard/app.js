@@ -4,7 +4,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const C = { run: "#3b82f6", ok: "#22c55e", warn: "#f59e0b", bad: "#ef4444", wait: "#a855f7", post: "#14b8a6", info: "#64748b" };
 const STATUS = {
   building: ["Building", C.run, "run"], waiting: ["Waiting for you", C.wait], ready: ["Ready · not sent", C.wait], approved: ["Approved · queued", C.post],
-  posted: ["Posted", C.ok], held: ["Held by reviewer", C.warn], rejected: ["Rejected", C.bad], paused: ["Paused midway", C.info], made: ["Made", C.info],
+  posted: ["Posted", C.ok], held: ["Held by reviewer", C.warn], rejected: ["Rejected", C.bad], prepped: ["Prepped · waiting to render", C.run], paused: ["Paused midway", C.info], made: ["Made", C.info],
 };
 const I = {
   live: '<path d="M3 12h4l3-8 4 16 3-8h4"/>', pipe: '<rect x="3" y="4" width="18" height="4" rx="2"/><rect x="3" y="10" width="12" height="4" rx="2"/><rect x="3" y="16" width="7" height="4" rx="2"/>',
@@ -160,7 +160,7 @@ const V = {
     <div class="card mt"><h2>Activity <small>engine log, newest first</small></h2>${feed(S.activity, 60)}</div>`;
   },
   pipeline() {
-    const groups = [["building", "Building now"], ["waiting", "Waiting for you"], ["ready", "Ready, not sent"], ["held", "Held by reviewer"], ["approved", "Approved, queued"], ["posted", "Posted"], ["paused", "Paused midway"], ["rejected", "Rejected"], ["made", "Other"]];
+    const groups = [["building", "Building now"], ["waiting", "Waiting for you"], ["ready", "Ready, not sent"], ["held", "Held by reviewer"], ["prepped", "Prepped, waiting to render"], ["approved", "Approved, queued"], ["posted", "Posted"], ["paused", "Paused midway"], ["rejected", "Rejected"], ["made", "Other"]];
     const counts = groups.map(([k, t]) => [k, t, S.jobs.filter((j) => j.status === k)]).filter((g) => g[2].length);
     return `<h1>Pipeline</h1><p class="lead">Every video and the step it is on. Green = done, blue = working on it.</p>
      <div class="pipe mt">${counts.map(([k, t, l]) => `<span class="pill" style="--c:${(STATUS[k] || [])[1]}">${l.length} ${esc(t)}</span>`).join("")}</div>
