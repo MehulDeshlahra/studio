@@ -68,7 +68,7 @@ def remux(raw, mix, total, out):
     m = _j.loads(_re.findall(r"\{[^{}]*\}", r)[-1])
     ln = (f"loudnorm=I=-14:TP=-2:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
           f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
-    sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af", base + ln + ",aresample=48000", "-c:a", "pcm_s16le", lim])
+    sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af", base + ln + ",volume=-2dB,aresample=48000", "-c:a", "pcm_s16le", lim])
     sh(["ffmpeg", "-v", "error", "-y", "-i", raw, "-i", lim, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
         "-c:a", "aac", "-b:a", "256k", "-t", f"{total:.3f}", "-movflags", "+faststart", out])
 
