@@ -35,3 +35,13 @@
 - Envelope with five lakh rupees and bag behind the stage not mentioned.
 - Photographer's statement "I was on stage taking photos the whole time" is absent.
 - Many garbled Hindi parts make the early portion unintelligible.
+
+## case2-p1-en Case 1: Haveli ka band kamra (part 1)
+- scene 1: The caption text 'AND THIS WEDDING' does not match the intended script 'You are the detective. And this wedding... is now a crime scene.'
+- scene 2: The caption text 'GONE' does not match the intended script 'The groom's envelope with five lakh rupees, gone!'
+- scene 3: The caption text 'ONLY THREE PEOPLE' does not match the intended script 'The bag was behind the stage. Only three people went there.'
+- scene 7: The caption text 'SINGLE DROP OF' does not match the intended script 'Now listen. There's not a single drop of syrup on the bag.'
+- scene 8: The caption text 'THERE WAS NO' does not match the intended script 'And behind the stage... there was no power socket at all.'
+- scene 9: The visual content shows a multiple-choice menu (A, B, C) which is good, but the caption is missing entirely.
+- scene 10: The caption text 'ANSWER TOMORROW' does not match the intended script 'Comment A, B or C. Answer tomorrow.'
+- General: The top-left/top-right text overlays (e.g., 'PART 1', 'CASE 2', 'SUSP CASE/2') are inconsistent, overlapping, and look like placeholder UI elements that were not cleaned up.

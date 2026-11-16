@@ -33,3 +33,9 @@
 - scene 3: The text 'HAI PAISA KAHIN' is slightly confusing as a standalone phrase compared to the script 'Asli twist ye hai—paisa kahin travel karta hi nahi!', though it is understandable in context.
 - scene 7: The diagram text 'AAPKA BANK', 'NPCI', 'DOOSRA BANK' is clear, but the caption 'ZARIYE RECEIVER' feels slightly disconnected from the visual flow of the diagram itself.
 - only 0% of the script was found in the voice
+
+## ai-01 ChatGPT aapke sawaal ka jawab kaise banata hai
+- scene 1: The robot has a slightly distorted/melted appearance on its left side (viewer's left), and the typewriter keys are somewhat abstract/merged.
+- scene 2: The robot's left hand is holding a puzzle piece, but the fingers/grip are anatomically nonsensical/melted.
+- scene 6: The robot is extremely tiny compared to the massive, abstract, glowing digital structure behind it, making it look slightly out of place/disproportionate.
+- scene 7: The robot's left arm/hand is blending into the blue box/UI element in a way that looks like a rendering error (melted geometry).

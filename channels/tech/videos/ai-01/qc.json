@@ -13,9 +13,10 @@
   "score": 8,
   "ok": true,
   "problems": [
-   "scene 5: The large bold caption 'TAAKI COMPUTER USE' is slightly cut off on the left side, making it look cramped.",
-   "scene 6: The large bold caption 'KITABEIN AUR BAATEIN' is slightly cut off on the right side.",
-   "scene 9: The large bold caption 'HI' seems like a very strange, incomplete fragment for the line 'Aur wo agla shabd fit karte hi, poori line dobara padhta hai.' It doesn't fit the context of the scene well."
+   "scene 1: The robot has a slightly distorted/melted appearance on its left side (viewer's left), and the typewriter keys are somewhat abstract/merged.",
+   "scene 2: The robot's left hand is holding a puzzle piece, but the fingers/grip are anatomically nonsensical/melted.",
+   "scene 6: The robot is extremely tiny compared to the massive, abstract, glowing digital structure behind it, making it look slightly out of place/disproportionate.",
+   "scene 7: The robot's left arm/hand is blending into the blue box/UI element in a way that looks like a rendering error (melted geometry)."
   ]
  },
  "voice": {
