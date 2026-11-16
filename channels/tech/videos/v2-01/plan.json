@@ -1,0 +1,216 @@
+{
+ "slug": "phone-heat-kaise-banta-hai",
+ "title": "Phone Garam Kyun Hota Hai?",
+ "hooks": [
+  "Heavy gaming karte hi aapka phone aag ki tarah kyun tapne lagta hai?",
+  "Phone ka bahar se garam hona acchi baat hai ya kharab?",
+  "Kya aapka phone bhi gaming karte waqt heater ban jaata hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Directly attacks a universal pain point with high visual and visceral urgency.",
+ "metaphor": "Microscopic electron collisions in nanometer wires trapped inside an airtight pocket with no exhaust fan.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Heavy gaming karte hi aapka phone aag ki tarah kyun tapne lagta hai?",
+   "type": "clip",
+   "prompt": "Cinematic macro shot of a sleek smartphone back glowing with an intense neon thermal heat map, pure black studio background",
+   "label": "PHONE HEAT",
+   "keywords": [
+    "gaming",
+    "phone",
+    "aag",
+    "tapne"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Kyunki phone ke nanhe processor mein arabon microscopic transistors hote hain.",
+   "type": "stat",
+   "value": "15B+",
+   "sub": "Transistors",
+   "label": "SILICON",
+   "keywords": [
+    "processor",
+    "arabon",
+    "transistors"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Jab heavy task chalta hai, toh electrons in barik raaston se tezi se daudte hain.",
+   "type": "flow",
+   "nodes": [
+    "Heavy App",
+    "Current Surge",
+    "Electron Rush",
+    "Resistance"
+   ],
+   "label": "POWER FLOW",
+   "keywords": [
+    "electrons",
+    "barik",
+    "raaston",
+    "tezi"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Ye electrons atoms se takrate hain, aur is friction se paida hoti hai heat.",
+   "type": "object",
+   "prompt": "Abstract microscopic 3D render of energetic glowing particles colliding along golden nanometer wire tracks on dark silicon",
+   "label": "JOULE HEATING",
+   "keywords": [
+    "atoms",
+    "takrate",
+    "friction",
+    "heat"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Laptops mein fans hote hain, par phone ko slim aur waterproof banana padta hai.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "Laptop",
+     "value": "Fan Exhaust",
+     "pct": 90
+    },
+    {
+     "label": "Phone",
+     "value": "Sealed Body",
+     "pct": 10
+    }
+   ],
+   "label": "COOLING LIMIT",
+   "keywords": [
+    "laptops",
+    "fans",
+    "waterproof",
+    "phone"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Isliye zero fans hone par bhi vapor chamber heat ko body tak pohnchata hai.",
+   "type": "object",
+   "prompt": "Detailed product studio render of an ultra-thin smartphone copper vapor chamber with subtle amber heat dissipation gradient",
+   "label": "VAPOR CHAMBER",
+   "keywords": [
+    "vapor chamber",
+    "heat",
+    "body"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Phone bahar se garam hona acchi baat hai, kyunki chip thandi rehti hai.",
+   "type": "ui",
+   "title": "Heat Path",
+   "rows": [
+    {
+     "label": "Chip",
+     "value": "Safe",
+     "pct": 85
+    },
+    {
+     "label": "Vapor",
+     "value": "Flow",
+     "pct": 90
+    },
+    {
+     "label": "Glass",
+     "value": "Hot",
+     "pct": 75
+    }
+   ],
+   "label": "THERMAL",
+   "keywords": [
+    "garam",
+    "acchi baat",
+    "chip",
+    "thandi"
+   ],
+   "motion": "push"
+  },
+  {
+   "vo": "Par agar phone hadd se zyada tape, toh chip apni speed gira deti hai.",
+   "type": "stat",
+   "value": "Drop",
+   "sub": "Speed reduced",
+   "label": "PROTECTION",
+   "keywords": [
+    "zyada tape",
+    "speed",
+    "gira"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Upar se fast charging battery ke internal resistance se aur heat badha deti hai.",
+   "type": "object",
+   "prompt": "Studio render of a modern smartphone lithium battery pouch glowing with soft orange internal thermal lines on dark backdrop",
+   "label": "BATTERY RESISTANCE",
+   "keywords": [
+    "charging",
+    "battery",
+    "resistance",
+    "heat"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Kya aap bhi phone garam hone par freezer mein rakhte ho?",
+   "type": "title",
+   "big": "FREEZER HACK?",
+   "sub": "Sahi hai ya galat? Comment karo",
+   "keywords": [
+    "phone",
+    "garam",
+    "freezer",
+    "comment"
+   ],
+   "motion": "push",
+   "title": ""
+  }
+ ],
+ "caption": "Phone bahar se garam kyun hota hai? Aur kya ye sach mein ek achhi baat hai? Jaaniye phone ke andar ki physics. Kya aap phone garam hone par freezer mein rakhte ho?",
+ "hashtags": [
+  "#techshorts",
+  "#smartphonetech",
+  "#howitworks",
+  "#phoneheating",
+  "#techfacts"
+ ],
+ "claims": [
+  {
+   "claim": "Modern smartphone chipsets house billions of transistors on nanometer scales.",
+   "basis": "Standard specifications for 3nm/4nm mobile SoCs from Apple, Qualcomm, and MediaTek."
+  },
+  {
+   "claim": "Current passing through resistive silicon pathways produces Joule heating from electron-lattice collisions.",
+   "basis": "Fundamental Joule's first law of electric heating in semiconductors."
+  },
+  {
+   "claim": "Smartphones use sealed passive cooling via copper vapor chambers and graphite sheets to move heat to the chassis.",
+   "basis": "Standard thermal engineering designs across modern flagship Android and iOS devices."
+  },
+  {
+   "claim": "Processors throttle clock speeds when thermal limits are hit to prevent silicon degradation.",
+   "basis": "Universal Dynamic Voltage and Frequency Scaling (DVFS) thermal safety profiles."
+  },
+  {
+   "claim": "Fast charging introduces extra heat due to internal battery cell resistance and electrochemical reactions.",
+   "basis": "Thermodynamics of lithium-ion fast charge cycles."
+  }
+ ]
+}

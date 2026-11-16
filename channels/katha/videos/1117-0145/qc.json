@@ -1,0 +1,31 @@
+{
+ "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
+ "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.7,
+  "true_peak": -1.3,
+  "dur": 35.5
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 2: The text 'DIYA JAO' is a bit awkward grammatically in the context of the sentence 'jao, maine tumhe Yamraj ko daan diya', though it fits the '2-3 word' constraint.",
+   "scene 4: The image shows the boy meditating, but the caption implies 'intezar' (waiting). While acceptable, it's a static pose rather than waiting.",
+   "scene 11: The text 'GYAN HI AMAR' and 'KATHA UPANISHAD' are slightly off-center and the layout feels a bit cramped compared to the other slides."
+  ]
+ },
+ "voice": {
+  "ok": false,
+  "method": "pauses",
+  "matched": 0.0,
+  "words": 159,
+  "problems": [
+   "only 0% of the script was found in the voice"
+  ]
+ },
+ "ok": false
+}

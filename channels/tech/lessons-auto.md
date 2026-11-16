@@ -164,3 +164,20 @@
 - visual: Scene 11 and the final frame have garbled, illegible placeholder text bleeding underneath 'CAUGHT IT LYING?'.
 - visual: Missing dedicated end card showing the channel handle at the end of the video.
 - visual score 5/10
+
+## lab-gpt-01 ChatGPT jawab kaise banata hai
+- only 62% of the script was found in the voice
+
+## review lab-gpt-01
+- only 62% of the script was found in the voice
+- visual: Scene 7 has severe text overlapping: the yellow 'FEEDBACK LOOP' tag covers the 'Prompt' column title, and faint grey labels at the bottom clash directly with the spoken subtitle captions.
+- visual score 5/10
+
+## lab-gpt-01 ChatGPT jawab kaise banata hai
+- scene 1: The caption 'ChatGPT insaan ki tarah dimaag laga' is cut off at the bottom, missing the final word 'kar'.
+- scene 4: The caption 'chote tukdon yani tokens mein todta hai' is slightly cut off at the bottom.
+- scene 8: The caption 'agla shabd predict hota hai' is very faint and difficult to read against the background.
+
+## review lab-gpt-01
+- first word starts late (7.0 s): something is spoken before the script
+- visual: Scene 8 second frame caption text ('agla shabd predict...') is extremely faint and unreadable against the dark background.

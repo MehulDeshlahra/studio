@@ -18,12 +18,10 @@
   "topic": "ChatGPT jawab kaise banata hai",
   "title": "ChatGPT jawab kaise banata hai?",
   "qc_ok": true,
-  "status": "rejected",
+  "status": "held",
   "review": [
-   "only 62% of the script was found in the voice",
-   "visual: Scene 5 center UI table unexpectedly disappears in the second frame, leaving a large empty void.",
-   "visual: Scene 7 has no visual element or graphic in the center, showing only a blank background.",
-   "visual score 5/10"
+   "first word starts late (7.0 s): something is spoken before the script",
+   "visual: Scene 8 second frame caption text ('agla shabd predict...') is extremely faint and unreadable against the dark background."
   ]
  },
  {
@@ -56,7 +54,7 @@
   "topic": "WiFi deewar ke paar kaise jaata hai",
   "title": "How ChatGPT actually writes answers",
   "qc_ok": true,
-  "status": "held",
+  "status": "rejected",
   "review": [
    "the video does not start with the first line \"ChatGPT doesn't actually think or reason like a hu\" (heard: \"in indian english curious warm energetic young indian\")",
    "visual: Scene 7 contains no visual asset or graphic, leaving the center frame completely empty.",

@@ -22,3 +22,21 @@
 - scene 5: The caption 'FIRST PLATE WIPED' is slightly confusing because the visual shows Ganesh eating, but the text implies the pantry is already wiped clean. It's acceptable but slightly misaligned with the visual action.
 - scene 6: The text 'ALL EMPTY' and 'STILL HUNGRY' are present, but the visual is quite dark and murky, making the text slightly harder to read than in other frames.
 - scene 11: The text 'DEVOTION NOT GOLD' is clear, but the visual is a bit generic/dark compared to the vibrant storytelling in the other frames.
+
+## 1117-0145 Nachiketa aur Yamraj (Katha Upanishad)
+- scene 3: The text 'SACH KARNE SEEDHE' is slightly overlapping the child's body/leg, making it a bit difficult to read against the busy background.
+- scene 4: The text 'AUR YEH NANHA' is positioned directly over the child's lap, which makes the text harder to read.
+- scene 11: The text 'GYAN HI AMAR' is clear, but the sub-text 'KATHA UPANISHAD' is slightly low-contrast against the dark background, though still legible.
+
+## review 1117-0145
+- first word starts late (3.1 s): something is spoken before the script
+- visual: Character inconsistency: Yamraj is depicted with blue skin in scenes 5 and 12, but appears with golden/human skin tone and different features in scene 10.
+
+## 1117-0145 Nachiketa aur Yamraj (Katha Upanishad)
+- scene 2: The text 'DIYA JAO' is a bit awkward grammatically in the context of the sentence 'jao, maine tumhe Yamraj ko daan diya', though it fits the '2-3 word' constraint.
+- scene 4: The image shows the boy meditating, but the caption implies 'intezar' (waiting). While acceptable, it's a static pose rather than waiting.
+- scene 11: The text 'GYAN HI AMAR' and 'KATHA UPANISHAD' are slightly off-center and the layout feels a bit cramped compared to the other slides.
+- only 0% of the script was found in the voice
+
+## review 1117-0145
+- only 0% of the script was found in the voice
