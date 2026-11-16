@@ -45,7 +45,7 @@ def speak(script, out_wav, voice="Charon", style="", lang="hi"):
 LEAK = ("read this", "start instantly", "no intro", "pause briefly", "read exactly", "words per second", "narrator", "say in")
 
 
-def strip_preamble(wav, first_line, lang="hi"):
+def strip_preamble(wav, first_line, lang="hi", style=""):
     """Cut instructions the TTS model read aloud before the script. Word-level: the cut lands on the first word AFTER
     the last instruction phrase, so the script's first line is kept (16 Nov the segment-level cut also removed
     "You are the detective..."). Instructions are English, so transcribe the first 40 s in English. Returns (cut_s, text)."""
@@ -58,6 +58,24 @@ def strip_preamble(wav, first_line, lang="hi"):
     segs, _ = WhisperModel("base", compute_type="int8").transcribe(x[: 40 * 16000], language="en", word_timestamps=True)
     words = [(w.word.strip(), w.start, w.end) for s in segs for w in s.words if w.word.strip()]
     norm = [_re.sub(r"[^a-z]", "", w[0].lower()) for w in words]
+    # 0) the exact instruction we sent ("Say in Hinglish, a calm low narrator...:"). 17 Nov: the Hindi edition still
+    #    started with "Say in English, curious, warm, energetic..." because only the phrase "say in" was cut.
+    language = "Indian English" if lang == "en" else "Hinglish"
+    pre = set(t for t in (_re.sub(r"[^a-z ]", " ", f"say in {language} {style} indian english hinglish read aloud".lower()).split()) if len(t) > 1)
+    k, hits, last_pre = 0, 0, -1
+    for k, nw in enumerate(norm[:80]):
+        if not nw:
+            continue
+        if nw in pre:
+            hits += 1; last_pre = k
+        elif k - last_pre > 3:                     # 4 words in a row that are not instruction words: the script began
+            break
+    if last_pre >= 1 and words[0][1] < 2.0 and norm[0] in pre and hits >= 0.6 * (last_pre + 1) and last_pre + 1 < len(words):
+        cut = max(0.0, words[last_pre + 1][1] - 0.08)
+        said = " ".join(w[0] for w in words[: last_pre + 1])
+        sf.write(wav, a[int(cut * sr):], sr)
+        log("tts: cut", round(cut, 2), "s of the spoken instruction:", said[:160])
+        return cut, said
     # 1) best: find where the script's first words start and cut everything before them (17 Nov: "Say in" was cut but
     #    "Indian English, curious warm energetic young Indian" stayed in the English edition)
     fl = [_re.sub(r"[^a-z]", "", t.lower()) for t in first_line.split()][:4]

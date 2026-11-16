@@ -66,7 +66,7 @@ def page(plan, timed, total, theme, assets):
         js0 = len(js)
         kind = s.get("type", "object")
         glow = acc if i % 3 != 1 else cool
-        inner = f'<div class="glow" style="background:radial-gradient(circle at 50% 44%,{glow}33 0%,{glow}14 28%,transparent 62%)"></div>'
+        inner = f'<div class="glow" data-layout-ignore style="background:radial-gradient(circle at 50% 44%,{glow}33 0%,{glow}14 28%,transparent 62%)"></div>'
         hero = ""
         img = (assets.get(i) or {}).get("image")
         vid = (assets.get(i) or {}).get("video")
@@ -224,7 +224,7 @@ def page(plan, timed, total, theme, assets):
     if handle:
         e0 = total - endcard
         brand.append(f'<div id="endc" class="clip endc" data-start="{e0:.3f}" data-duration="{endcard:.3f}" data-track-index="8">'
-                     f'<div class="glow" style="background:radial-gradient(circle at 50% 46%,{acc}30,transparent 60%)"></div>'
+                     f'<div class="glow" data-layout-ignore style="background:radial-gradient(circle at 50% 46%,{acc}30,transparent 60%)"></div>'
                      f'<div id="endh" class="endh">{esc(handle)}</div><div id="endf" class="endf">{"FOLLOW FOR MORE" if theme.get("lang") == "en" else "FOLLOW KARO"}</div></div>')
         js.append(f'tl.fromTo("#endh",{{y:40,opacity:0}},{{y:0,opacity:1,duration:0.6,ease:"power4.out",immediateRender:false}},{e0 + 0.05:.3f});')
         js.append(f'tl.fromTo("#endf",{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{e0 + 0.3:.3f});')
@@ -292,7 +292,7 @@ body{{margin:0;background:#07080b}}
 {chr(10).join(scenes)}
 {chr(10).join(capdiv)}
 {chr(10).join(brand)}
-<div class="vign"></div><div class="grain"></div>
+<div class="vign" data-layout-ignore></div><div class="grain" data-layout-ignore></div>
 <audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="{total:.3f}" data-track-index="10"></audio>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

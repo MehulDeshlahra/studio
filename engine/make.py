@@ -201,7 +201,7 @@ def main():
         lang_ = p.get("lang") or ch.get("lang", "hi")
         tts.speak(script, vo, ch["voice"].get("voice", "Charon"), ch["voice"].get("style", ""), lang_)
         try:
-            tts.strip_preamble(vo, p["scenes"][0]["vo"], lang_)
+            tts.strip_preamble(vo, p["scenes"][0]["vo"], lang_, ch["voice"].get("style", ""))
         except Exception as e:
             log("preamble check failed:", str(e)[:120])
     import pace
@@ -224,6 +224,26 @@ def main():
         save(tp, {"method": method, "dur": vdur, "lines": timed, "cover": cover if method == "whisper" else 0.0})
     tj = load(tp)
     timed, vdur = tj["lines"], tj["dur"]
+    w0 = next((L["words"][0]["s"] for L in timed if L.get("words")), 0.0)
+    vbad = []
+    if tj.get("method") == "whisper" and (tj.get("cover") or 0) < 0.75:
+        vbad.append(f"only {tj.get('cover', 0):.0%} of the script matched the voice")
+    if w0 > 1.3:
+        vbad.append(f"first word starts at {w0:.1f} s (something is said before the script)")
+    if vbad and meta.get("voice_gate", 0) < 2:
+        meta["voice_gate"] = meta.get("voice_gate", 0) + 1; save(os.path.join(job, "meta.json"), meta)
+        log("voice gate:", "; ".join(vbad), "-> new voice now, before visuals and render")
+        for f_ in ("vo-raw.wav", "vo-paced.wav", "timing.json"):
+            if os.path.exists(os.path.join(job, f_)):
+                os.remove(os.path.join(job, f_))
+        av, skip = [], False
+        for x in sys.argv:
+            if skip:
+                skip = False; continue
+            if x == "--from":
+                skip = True; continue
+            av.append(x)
+        os.execv(sys.executable, [sys.executable] + av + ["--from", "voice"])
     # holds: silence after a line (e.g. a countdown before the answer); words after it move later
     vo_use = vo
     holds = [(i, float(s["hold"])) for i, s in enumerate(p["scenes"]) if s.get("hold")]
@@ -271,6 +291,32 @@ def main():
         save(os.path.join(job, "cues.json"), {"lufs": -14, "music": {"file": theme.get("music", "music/digital-clouds.mp3"),
               "offset": theme.get("music_offset", 8.0), "gain_db": -22, "fade_out": 1.5}, "sfx": cues})
         redo.add("mix")
+    # 5b preflight: check the composed page with stills BEFORE the slow render; repair bad scenes (visual fields only)
+    lang_p = p.get("lang") or ch.get("lang", "hi")
+    if "mix" in redo and os.environ.get("STUDIO_NO_PREFLIGHT") != "1":
+        import preflight
+        pr = {"ok": True}
+        for attempt in range(3):
+            pr = preflight.run(job, p, timed, total, lang_p)
+            if pr["ok"] or attempt == 2 or theme.get("style") != "lab":
+                break
+            if not preflight.repair(p, pr["bad"], lang_p):
+                break
+            save(pp, p)
+            import compose_lab
+            doc, cues = compose_lab.page(p, timed, total, theme, assets)
+            open(os.path.join(rdir, "index.html"), "w", encoding="utf-8").write(doc)
+            cj = load(os.path.join(job, "cues.json"), {}); cj["sfx"] = cues; save(os.path.join(job, "cues.json"), cj)
+            log("preflight: repaired", len(pr["bad"]), "scene(s), checking again")
+        if not pr["ok"] and theme.get("style") == "lab":
+            done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), [])
+            row = next((d for d in done if d["job"] == job_id), None)
+            if not row:
+                row = {"job": job_id, "topic": topic, "title": p.get("title")}; done.append(row)
+            row.update(status="held", review=[f"before render, scene {int(k) + 1}: {v[0]}" for k, v in pr["bad"].items()][:6])
+            save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
+            log("preflight: still failing after repairs, held BEFORE render (no render time spent)", ch["id"], job_id)
+            return
     # 6 mix
     mix = os.path.join(job, "mix.wav")
     if "mix" in redo or not os.path.exists(mix):
