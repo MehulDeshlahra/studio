@@ -1,0 +1,32 @@
+{
+ "topic": "Case 1: Haveli ka band kamra (part 1)",
+ "title": "Five lakh vanished at a wedding: who is the thief? (Part 1)",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.1,
+  "true_peak": -2.3,
+  "dur": 44.47
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 5: The image of the sweet maker shows his hands covered in syrup, but the text says 'Look, my hands are still sticky with syrup.' While the image matches the context, the visual representation of the syrup is slightly messy/unnatural (common AI artifacting).",
+   "scene 8: The text says 'And behind the stage... there was no power socket at all.' The image shows a wooden wall with a flashlight, but there is no clear visual indication of a 'power socket' or lack thereof, making the clue slightly ambiguous visually.",
+   "scene 9: The text in the frame says 'A PHOTOGRAPHER', 'B SWEET MAKER', 'C GROOM'S FRIEND', which is a good summary, but the prompt script for this scene was 'So who is the thief? Three seconds. Think.' The frame text doesn't match the script provided."
+  ]
+ },
+ "voice": {
+  "ok": false,
+  "problems": [
+   "Missing detective introduction and description of the wedding crime scene.",
+   "Envelope with five lakh rupees and bag behind the stage not mentioned.",
+   "Photographer's statement \"I was on stage taking photos the whole time\" is absent.",
+   "Many garbled Hindi parts make the early portion unintelligible."
+  ],
+  "heard": " अली ती वछाचा फिलाउ आली अग़ेमादानी काऽ मुझउ प्रट हैं!  लोग विश्वकल मुझभी।  लद विश्वाखाछ दिंबासा, चरियान लाईटा सलुट लाउड्ठुंद आली अगजी.  आजा ची आएद देनारता, बर ठा दी बासा अग़े को लगी.  शक्रण तरन बागी बारीं, वोलाँ गवाब आलापचारे करती आपने आपने चाड़ अध्धारी स्रूसा, है, बचट तागा पर साल करती आपने अपने त्रेन अपने ञाया वर्जाज़गा मगवाब ताज़ ञादी वफ़।  आद्दातियो दिटेक्टीग क्या देक्टीदे लगदो off  आद आद लेता साचा लगक्ती लगते ञाडी प्र्यारुस्य क्या थाद्ऩुआ Conservative  शीक तरऩा बगा का चीणisions तराश्ट सरके था।  लेजली उवी तरिब बीका वर्जते हैं।  메이크업 said I was at the store  look, my hands are still sticky with syrup  and the groom's friend says I just went to charge my phone  now listen. there is not a single drop of syrup on the back  and behind the stage there was no power socket at all  so who is the thief, 3 seconds  think comment A, B or C answer tomorrow"
+ },
+ "ok": false
+}

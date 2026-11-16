@@ -1,0 +1,160 @@
+{
+ "slug": "chatgpt-kaise-jawab-banata-hai",
+ "title": "ChatGPT aapke sawaal ka jawab kaise banata hai?",
+ "hooks": [
+  "Jab aap ChatGPT se kuch poochte ho, to wo poora jawab ek saath nahi sochta.",
+  "ChatGPT itni lambi baatein bina ruke kaise likh leta hai?",
+  "Aapka sawal bhejte hi computer ke andar kya chalta hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Contrarian hook that busts the biggest myth about LLMs right in the first sentence: people assume AI thinks out a whole sentence, but it actually builds it piece by piece.",
+ "metaphor": "A superfast puzzle-solver robot predicting and snapping the single next puzzle block onto a glowing sentence track.",
+ "cast": {
+  "typewriter_bot": "A cute glossy 3D navy-and-brass robot typewriter character with big expressive glowing cyan eyes, rounded edges, and tiny metallic mechanical arms, in a dark navy studio with soft blue rim light and warm yellow accent #ffd84d"
+ },
+ "scenes": [
+  {
+   "vo": "Jab aap ChatGPT se kuch poochte ho, to wo poora jawab ek saath nahi sochta.",
+   "type": "clip",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light, warm yellow accent #ffd84d. In center, typewriter_bot stares curiously at a giant glowing holographic question mark, glowing cyan eyes blinking softly, clean studio composition, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "poora jawab",
+    "ek saath"
+   ]
+  },
+  {
+   "vo": "Wo har second sirf agla ek akshar ya shabd guess karta hai.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light. typewriter_bot holding up a single glossy glowing yellow puzzle cube in its mechanical hand, inspecting it with focused bright eyes, dark clean background, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "agla shabd",
+    "guess"
+   ]
+  },
+  {
+   "vo": "Bilkul aapke phone ke auto-complete ki tarah, par laakhon guna zyada tez.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light, yellow accent #ffd84d. Stylized floating vertical glass smartphone with three glowing cyan blank prediction capsules hovering above a sleek illuminated keypad plate, no text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "auto-complete",
+    "laakhon guna"
+   ]
+  },
+  {
+   "vo": "Sabse pehle aapka sawal chhote tukdon mein kat-ta hai, jinhe tokens kehte hain.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light. A glowing beam of light slicing into translucent cyan and yellow cubic glass blocks that gently drift in mid-air, casting soft reflections, no text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "chhote tukdon",
+    "tokens"
+   ]
+  },
+  {
+   "vo": "Har token ek number banta hai, taaki computer use samajh sake.",
+   "type": "image",
+   "prompt": "Dark navy studio diagram style, glowing cyan geometric shapes converting into bright golden pulses flowing across clean illuminated circuit tracks, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "number",
+    "computer"
+   ]
+  },
+  {
+   "vo": "Is AI ne internet ki arbon kitabein aur baatein pehle se padhi hain.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light. Vast curved cylindrical archive walls glowing with millions of tiny illuminated crystal blocks, typewriter_bot standing on a floating navy platform admiring the scale, no text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "arbon kitabein",
+    "padhi"
+   ]
+  },
+  {
+   "vo": "Toh jaise hi aap likhte ho: Chanda mama door ke...",
+   "type": "clip",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light. typewriter_bot taps a round illuminated key on its chest; three glowing blue rectangular blocks snap into place one after another on an open metallic track, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Chanda mama",
+    "door ke"
+   ]
+  },
+  {
+   "vo": "To iska calculation kehta hai ki agla shabd puye hone ka chance sabse zyada hai.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light, yellow accent. A sleek glowing circular probability dial pointing toward a brightly lit peak sector beside an empty slot on a glowing track, no text.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "calculation",
+    "chance"
+   ]
+  },
+  {
+   "vo": "Aur wo agla shabd fit karte hi, poori line dobara padhta hai.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio. typewriter_bot fits a golden cube into the empty rail slot, while an instant cyan scanning laser beam sweeps back across the entire assembled row of blocks, no text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "fit karte hi",
+    "dobara"
+   ]
+  },
+  {
+   "vo": "Yahi process second mein hazaron baar chalta hai, isliye typing bilkul live lagti hai.",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio. A rapid domino wave of glowing blocks locking into a sleek illuminated sentence path, camera tracking forward as typewriter_bot watches happily, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "hazaron baar",
+    "live"
+   ]
+  },
+  {
+   "vo": "Aapko kya laga tha, AI sach mein sochta hai ya bas probability ka khel hai? Batao!",
+   "type": "image",
+   "prompt": "Glossy 3D Pixar-style dark navy studio, soft blue rim light, warm yellow accent #ffd84d. typewriter_bot leaning forward towards camera with wide curious cyan eyes, gesturing with open metallic palms, asking a question, no text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "AI",
+    "probability"
+   ]
+  }
+ ],
+ "caption": "ChatGPT poora jawab ek baar mein nahi sochta! Wo har second agla sabse logical shabd calculate karta hai. 🤖⚡",
+ "hashtags": [
+  "#techfacts",
+  "#chatgpt",
+  "#ai",
+  "#kaisehotahai",
+  "#learntech"
+ ],
+ "claims": [
+  {
+   "claim": "LLMs split input text into chunks called tokens and convert them to numeric representations.",
+   "basis": "Standard Large Language Model transformer architecture documentation (Vaswani et al., OpenAI technical papers)."
+  },
+  {
+   "claim": "ChatGPT generates text autoregressively by predicting the most probable next token given prior context.",
+   "basis": "Autoregressive language modeling mechanism in Generative Pre-trained Transformers."
+  },
+  {
+   "claim": "The model calculates probabilities based on statistical patterns learned during pretraining on large text corpora.",
+   "basis": "OpenAI GPT-3 / GPT-4 foundation architecture research."
+  }
+ ]
+}

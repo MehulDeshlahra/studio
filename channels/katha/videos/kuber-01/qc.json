@@ -1,0 +1,29 @@
+{
+ "topic": "Kuber ka ghamand",
+ "title": "Kuber ka ghamand aur Ganesh ji ki bhookh",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.7,
+  "true_peak": -1.5,
+  "dur": 40.63
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 1: The caption 'EK BACHCHE KO' is partially obscured by the character's hand/clothing, making it slightly hard to read.",
+   "scene 6: The text 'PHIR BHI BHOOKH' is slightly low and close to the pots, creating a somewhat cramped composition.",
+   "scene 10: The caption 'AUR GANESH JI' is slightly cut off at the bottom edge of the frame."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 1.0,
+  "words": 130,
+  "problems": []
+ },
+ "ok": true
+}

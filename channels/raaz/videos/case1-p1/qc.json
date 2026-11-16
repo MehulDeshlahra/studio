@@ -1,0 +1,33 @@
+{
+ "topic": "Haveli ka laal dibba",
+ "title": "Haveli ka laal dibba: kaun hai chor? (Part 1)",
+ "format": {
+  "ok": false,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.3,
+  "true_peak": 2.9,
+  "dur": 72.17
+ },
+ "vision": {
+  "score": 8,
+  "ok": false,
+  "problems": [
+   "scene 1: The caption 'DIBBA JO AB' does not match the script line 'Ek haveli. Ek raat. Aur ek laal dibba... jo ab wahan nahi hai.'",
+   "scene 2: The caption 'RATHORE AAJ KA' is incomplete and doesn't match the script line 'Main Inspector Vikram Rathore. Aaj ka faisla, aapka hoga.'",
+   "scene 5: The caption 'THI TEENO NE' does not match the script line 'Chabi sirf teen logon ke paas thi. Teeno ne apni baat boli.'",
+   "scene 6: The caption 'SE HISAAB LIKHA' does not match the script line 'Pehla, Munshi Ramlal. Maine toh shaam se hisaab likha. Mujhe kya pata, kaale thaile mein dibba kab gaya.'",
+   "scene 7: The caption 'RASOI MEIN THI' does not match the script line 'Doosri, Bahu Meera. Main poori raat rasoi mein thi. Sau mehmaanon ka khaana banana tha.'",
+   "scene 8: The caption 'DHO RAHA THA' does not match the script line 'Teesra, driver Kallu. Main toh gaadi dho raha tha, saab. Saara din gaadi ka kaam.'",
+   "scene 10: The caption 'EK GALTI' does not match the script line 'Ek ne jhooth bola. Aur uski ek galti, aapne abhi sun li.'",
+   "scene 11: The caption 'MEERA? YA KALLU?' does not match the script line 'Toh kaun hai chor? Munshi? Meera? Ya Kallu? Comment karo.'",
+   "scene 12: The caption 'MEIN DEKHTE HAIN' does not match the script line 'Sahi jawab, kal Part 2 mein. Dekhte hain, kitne log pakad paate hain.'"
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "problems": [],
+  "heard": " एक हवेली, एक राद, और एक लाल दिभबा, जो अब वान नहीं है, मैं स्पक्तर विक्रम राथ होर, आजका फैस्ला आपका होगा, जैपृर की पास ताकृर भेरव सिंकी हवेली, दिवाली की राथ, आलमीरा से लाल दिभबा गायब, अंदर नो पुष्थो का सोने का हार �  मून्षी राम लाल, मैंने तो शाम से हिसाब लिखा, मुझे क्या पता काले तहले में दिभबागब गया?  तुस्री, बहु मीरा, मैं पूरी राथ रसूई में ती, सो मैहमानो का खाना बनाना था,  तीस्रा, ज्रीवर कलू, मैं तो गाडी दो हुरा था साब, सारा दिन गाडी का काम, अब दिहान से सुनो,  आलमीरा के हैंडल पर ना आता था, नगरीस, बिलकुल साफ,  एक ने जोट बोला, और उसकी एग गलती आपने भी सुनली,  तो कुन है जोर?  मूनषी, मीरा, या कलू,  कोमेंट करो, सही जबाब कल पाटू मैं,  देकते है, कितने लोग पखर पाते हैं."
+ },
+ "ok": false
+}

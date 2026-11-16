@@ -1,0 +1,29 @@
+{
+ "topic": "Shaadi ka lifafa",
+ "title": "Shaadi ka 5 lakh ka lifafa: chor kaun? (Part 1)",
+ "format": {
+  "ok": false,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -15.5,
+  "true_peak": -0.8,
+  "dur": 35.23
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 4: The text 'Poore time stage pe photo le raha tha' is slightly cut off at the bottom of the white card.",
+   "scene 5: The text 'Haath abhi bhi chashni mein hain' is slightly cut off at the bottom of the white card.",
+   "scene 6: The text 'Bas phone charge karne gaya tha' is slightly cut off at the bottom of the white card."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "problems": [
+   "Heavy recognition errors throughout (e.g., 'टिटेक्तिव', 'पाछ लाक कलिपापा', 'बहद्टी', 'दोस पोला', 'बैक पेट', 'प्लकपोईन'), final sentence cut off at 'तीन स'"
+  ],
+  "heard": " तुम हो टिटेक्तिव और ये शादी अप क्राईम सीन है  दूले का पाछ लाक कलिपापा गायब बाग स्टेज के पीचे दा  और वहां सरफ तीन लोग गय, फोटोगरफर बोला  मैं तो पूरे टाईम स्टेज पे फोटो लेरा था  हल्वाई बोला मैं बहद्टी पी ता, देखो हात आभी भी चाषनी में है, और दूले का दोस पोला, मैं तो बस फोँन चारच करने गया था, अप सुनो, बैक पेट चाषनी का एक पी निशान नहीं, और स्टेज के पीचे एक पी प्लकपोईन नहीं ता, तो चोर कोन, तीन स"
+ },
+ "ok": false
+}

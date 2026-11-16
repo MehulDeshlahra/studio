@@ -1,0 +1,149 @@
+{
+ "slug": "kuber-01",
+ "title": "Kuber ka ghamand aur Ganesh ji ki bhookh",
+ "hud_left": "PURAAN KI KATHA",
+ "hooks": [
+  "Teeno lok ka sabse ameer devta... ek bachche ko khaana khila nahi paaya.",
+  "Ek mutthi chaawal ne Kuber ka ghamand tod diya.",
+  "Ganesh ji ki bhookh kisi se nahi mitti thi... ek ko chhod kar."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Paradox in line 1 (richest god fails to feed a child), the pattern of the 12-13M winners: a twist the viewer hasn't heard.",
+ "metaphor": "Endless gold cannot fill a child's stomach; one handful given with love can.",
+ "scenes": [
+  {
+   "vo": "Teeno lok ka sabse ameer devta... ek bachche ko khaana khila nahi paaya.",
+   "type": "clip",
+   "prompt": "Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile standing shocked in a huge golden palace hall, empty golden plates everywhere, slow camera push-in. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": [
+    "ameer",
+    "bachche"
+   ],
+   "hud_right": "LOK KATHA"
+  },
+  {
+   "vo": "Kuber ke paas itna sona tha, ki wo use dikhane ke liye ek bhoj rakhte hain.",
+   "type": "image",
+   "prompt": "Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile proudly showing an endless palace full of gold coins and jewels, servants carrying golden trays. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pan",
+   "keywords": [
+    "sona",
+    "bhoj"
+   ]
+  },
+  {
+   "vo": "Wo Kailash jaate hain, aur Mahadev ko nyota dete hain.",
+   "type": "image",
+   "prompt": "Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile bowing with folded hands before Lord Shiva: calm, blue skin, crescent moon in matted hair, serpent around neck, sitting on Mount Kailash on snowy Mount Kailash, golden invitation scroll in his hand. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": [
+    "kailash",
+    "mahadev"
+   ]
+  },
+  {
+   "vo": "Mahadev muskura kar kehte hain... main nahi aa sakta. Mera beta Ganesh aayega.",
+   "type": "image",
+   "prompt": "Lord Shiva: calm, blue skin, crescent moon in matted hair, serpent around neck, sitting on Mount Kailash smiling softly and pointing to Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes sitting beside him on Kailash. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pull",
+   "keywords": [
+    "ganesh"
+   ]
+  },
+  {
+   "vo": "Ganesh ji khaane baithte hain. Pehli thaali, khatam. Dusri, khatam.",
+   "type": "image",
+   "prompt": "Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes sitting on a golden seat eating happily from a big golden thali in a grand dining hall, servants amazed. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "punch",
+   "keywords": [
+    "khatam"
+   ]
+  },
+  {
+   "vo": "Rasoi khaali ho gayi. Bhandaar khaali ho gaya.",
+   "type": "card",
+   "prompt": "A grand palace kitchen with huge empty copper pots and empty storerooms, cooks looking scared. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "big": "SAB KHAALI",
+   "small": "phir bhi bhookh",
+   "keywords": [
+    "khaali"
+   ]
+  },
+  {
+   "vo": "Ganesh ji bole... mujhe abhi bhi bhookh lagi hai.",
+   "type": "image",
+   "prompt": "Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes looking up innocently with an empty thali, while Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile sweats nervously behind. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": [
+    "bhookh"
+   ]
+  },
+  {
+   "vo": "Ghabraaye Kuber, bhaag kar Mahadev ke paas pahunche.",
+   "type": "image",
+   "prompt": "Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile running in panic up the snowy path of Mount Kailash, crown slipping. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pan",
+   "keywords": [
+    "mahadev"
+   ]
+  },
+  {
+   "vo": "Mahadev ne bas ek mutthi chaawal diye, aur kaha: ise prem se khilao.",
+   "type": "image",
+   "prompt": "Lord Shiva: calm, blue skin, crescent moon in matted hair, serpent around neck, sitting on Mount Kailash placing a small handful of rice into the hands of Kuber: plump Indian god of wealth, golden crown, heavy gold jewellery, rich silk dhoti, proud smile, soft divine light. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": [
+    "mutthi",
+    "prem"
+   ]
+  },
+  {
+   "vo": "Ek mutthi chaawal. Aur Ganesh ji ka pet bhar gaya.",
+   "type": "clip",
+   "prompt": "Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes happily eating a small handful of rice from a simple leaf plate, glowing contentment, warm light. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "push",
+   "keywords": [
+    "mutthi",
+    "bhar"
+   ]
+  },
+  {
+   "vo": "Bhagwan ko sona nahi chahiye. Bas bhaav chahiye.",
+   "type": "card",
+   "prompt": "A single humble leaf plate with a little rice in front of a small diya, golden light, temple background. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pull",
+   "big": "BHAAV",
+   "small": "sona nahi",
+   "keywords": [
+    "bhaav"
+   ]
+  },
+  {
+   "vo": "Aap ne kabhi dikhaave ke liye kuch kiya hai? Comment mein batao.",
+   "type": "image",
+   "prompt": "Bal Ganesh: young child Lord Ganesha with elephant head, small and cute, red dhoti, gentle calm eyes smiling warmly at the viewer, hands in blessing, soft golden background. Painterly cinematic Indian epic illustration, rich warm gold and deep maroon, soft divine rim light, ornate but uncluttered, vertical 9:16, one clear subject centred, empty space at the top and bottom",
+   "motion": "pull",
+   "keywords": [
+    "comment"
+   ]
+  }
+ ],
+ "caption": "Teeno lok ka sabse ameer devta ek bachche ka pet nahi bhar paaya 🙏 Ek mutthi chaawal ne sab badal diya. (Lok katha) Aap ne kabhi dikhaave ke liye kuch kiya hai?",
+ "hashtags": [
+  "#Ganesh",
+  "#Kuber",
+  "#PauranikKatha",
+  "#Mahadev",
+  "#SanatanDharma",
+  "#HindiKahani",
+  "#Bhakti"
+ ],
+ "claims": [
+  {
+   "claim": "Kuber's feast and Ganesha's hunger",
+   "basis": "popular Indian lok-katha (folk tale) about Kuber's pride; not from a single Purana chapter, so the video says 'lok katha'."
+  }
+ ]
+}

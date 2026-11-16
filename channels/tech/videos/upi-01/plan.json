@@ -1,0 +1,177 @@
+{
+ "slug": "upi-2-second-transfer",
+ "title": "UPI mein paisa 2 second mein kaise pahunchta hai?",
+ "hooks": [
+  "PIN dabaya aur agle hi second samne wale ke phone pe tring!",
+  "Do alag bankon ke beech paisa itni tezi se kaise udd jaata hai?",
+  "UPI transfer karte hi paisa do second mein kaise milta hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Relatable sensory trigger (PIN press and instant payment alert) that establishes curiosity right at second zero.",
+ "metaphor": "Digital diaries and a central referee: physical money does not move during transfer; NPCI verifies and tells both banks to update their respective balance numbers simultaneously.",
+ "cast": {
+  "PayerBank": "glossy 3D Pixar-style navy blue bank vault character with big expressive curious eyes, wearing a tiny banker visor, soft blue rim light, dark navy studio background",
+  "PayeeBank": "glossy 3D Pixar-style cyan-tinted bank vault character with round cartoon spectacles and happy glowing eyes, soft blue rim light, dark navy studio background",
+  "NPCIReferee": "tiny energetic 3D Pixar-style referee robot floating with glowing yellow accents #ffd84d, carrying a digital glowing ledger stylus, dark navy studio"
+ },
+ "scenes": [
+  {
+   "vo": "PIN dabaya aur agle hi second samne wale ke phone pe tring!",
+   "type": "clip",
+   "prompt": "glossy 3D Pixar-style smartphone screen showing a bright glowing green checkmark with soft golden particles, dark navy studio, soft blue rim light, camera pushes in smoothly with no text on screen",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "PIN",
+    "tring"
+   ]
+  },
+  {
+   "vo": "Par do alag bankon ke beech paisa itni tezi se gaya kaise?",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style navy blue bank vault character scratching head with curious glowing eyes, floating question mark above, soft blue rim light, dark navy studio background",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "alag bankon",
+    "tezi se"
+   ]
+  },
+  {
+   "vo": "Asli twist ye hai—paisa kahin travel karta hi nahi!",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style golden coin resting completely motionless on a sleek dark pedestal while glowing circuit lines pulse under it, dark navy studio, yellow accent #ffd84d",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "twist",
+    "travel"
+   ]
+  },
+  {
+   "vo": "Socho har bank ke paas ek digital diary hai, jisme sabka balance likha hai.",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style floating holographic notebook with glowing columns and tally marks, soft blue rim light, dark navy studio background",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "digital diary",
+    "balance"
+   ]
+  },
+  {
+   "vo": "Aur beech mein khada hai ek superfast referee—NPCI ka central switch.",
+   "type": "image",
+   "prompt": "tiny energetic 3D Pixar-style referee robot floating with glowing yellow accents #ffd84d holding a digital glowing whistle, looking sharp in center frame, dark navy studio background",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "referee",
+    "NPCI"
+   ]
+  },
+  {
+   "vo": "PIN daalte hi aapka bank bolta hai: 'Mere yahan se 500 minus!'",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style navy blue bank vault character proudly stamping a digital ledger card as a bright yellow light beam shoots out, dark navy studio background",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "PIN",
+    "minus"
+   ]
+  },
+  {
+   "vo": "Ye signal turant NPCI referee ke zariye receiver ke bank tak pahunchta hai.",
+   "type": "flow",
+   "prompt": "clean minimalist dark navy interface showing a glowing yellow data pulse moving rapidly between three rounded nodes, soft blue rim light, dark navy studio",
+   "motion": "push",
+   "title": "",
+   "nodes": [
+    "Aapka Bank",
+    "NPCI",
+    "Doosra Bank"
+   ],
+   "keywords": [
+    "signal",
+    "NPCI"
+   ]
+  },
+  {
+   "vo": "Doosra bank turant bolta hai: 'Done, maine 500 plus kar diye!'",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style cyan-tinted bank vault character with round spectacles cheerfully writing on a glowing digital pad, soft blue rim light, dark navy studio background",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "Doosra bank",
+    "plus"
+   ]
+  },
+  {
+   "vo": "Bas dono diary mein number badle, aur do second mein transfer complete!",
+   "type": "clip",
+   "prompt": "two glossy 3D bank vault characters on left and right giving a thumbs-up as glowing green checkmarks hover above them, dark navy studio background, camera subtly pulls back",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "number badle",
+    "complete"
+   ]
+  },
+  {
+   "vo": "Bankon ka aapas ka hisaab baad mein RBI ke through settle hota hai.",
+   "type": "card",
+   "prompt": "sleek dark navy studio backdrop with glowing digital vault doors and soft ambient golden lighting, clean depth of field",
+   "motion": "punch",
+   "title": "",
+   "big": "NET SETTLEMENT",
+   "small": "Batch settlement via RBI",
+   "keywords": [
+    "aapas ka hisaab",
+    "settle"
+   ]
+  },
+  {
+   "vo": "Isi ledger system ne poore India mein cash ka jhanjhat khatam kar diya.",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style golden digital shield glowing with bright speed particles, soft blue rim light, dark navy studio background",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "ledger system",
+    "cash"
+   ]
+  },
+  {
+   "vo": "Kya aapka UPI payment kabhi kisi shop par atka hai? Comment mein batao!",
+   "type": "image",
+   "prompt": "glossy 3D Pixar-style cute smartphone mascot holding a glowing chat bubble with a question mark, soft blue rim light, dark navy studio background",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "payment atka",
+    "Comment"
+   ]
+  }
+ ],
+ "caption": "UPI transfer 2 second mein kaise ho jaata hai? ⚡\nPaisa wire ke andar physically nahi bhagta—ye sab digital ledger aur NPCI switch ka kamaal hai.\nKya aapka UPI payment kabhi fail hua hai? 👇",
+ "hashtags": [
+  "#techfacts",
+  "#upi",
+  "#howitworks",
+  "#digitalindia",
+  "#samjho",
+  "#fintech"
+ ],
+ "claims": [
+  {
+   "claim": "UPI transfers update balances in real-time between bank ledgers via the NPCI messaging switch without physical cash moving.",
+   "basis": "NPCI UPI procedural guidelines: Real-time settlement for customers occurs through ISO 8583 messaging between payer and beneficiary banks over the NPCI network."
+  },
+  {
+   "claim": "Interbank net financial settlement occurs in subsequent periodic batches through RBI RTGS.",
+   "basis": "Reserve Bank of India (RBI) and NPCI settlement framework: Multilateral net settlement runs in designated batches throughout the day."
+  }
+ ]
+}

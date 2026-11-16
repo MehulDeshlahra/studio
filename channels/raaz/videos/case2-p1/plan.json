@@ -1,0 +1,142 @@
+{
+ "slug": "case2-p1",
+ "title": "Shaadi ka 5 lakh ka lifafa: chor kaun? (Part 1)",
+ "hud_left": "PART 1",
+ "hooks": [
+  "Tum ho detective. Aur ye shaadi... ab crime scene hai.",
+  "Shaadi mein 5 lakh gayab. Teen suspect. 3 second.",
+  "Ek jhooth. Kya tum pakad paoge?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Second person (the viewer is the detective), a relatable Indian setting and a twist in the first line. The 3-second countdown makes people pause and rewatch.",
+ "metaphor": "Fast fair-play whodunit; two spoken clues clear A and expose C (no plug point = no charging).",
+ "scenes": [
+  {
+   "vo": "Tum ho detective. Aur ye shaadi... ab crime scene hai.",
+   "type": "clip",
+   "prompt": "A grand Indian wedding stage at night, the bride and groom on the stage, guests dancing, then the music stops and everyone turns around shocked, slow camera push-in. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "push",
+   "keywords": [
+    "detective",
+    "crime"
+   ],
+   "hud_right": "CASE 2"
+  },
+  {
+   "vo": "Dulhe ka paanch lakh ka lifafa, gayab!",
+   "type": "card",
+   "prompt": "An open, empty red-and-gold wedding gift bag lying on a velvet chair behind a stage curtain, a few torn shagun envelopes on the floor, spotlight. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "punch",
+   "big": "₹5,00,000",
+   "small": "GAYAB",
+   "keywords": [
+    "lakh",
+    "gayab"
+   ],
+   "hud_right": "CASE 2"
+  },
+  {
+   "vo": "Bag stage ke peeche tha. Aur wahan sirf teen log gaye.",
+   "type": "image",
+   "prompt": "Backstage of a wedding stage: a heavy marigold curtain, three people seen from behind walking in, backlit, mysterious. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "push",
+   "keywords": [
+    "teen"
+   ],
+   "hud_right": "3 SUSPECT"
+  },
+  {
+   "vo": "Photographer bola: main toh poore time stage pe photo le raha tha.",
+   "type": "clue",
+   "prompt": "Photographer Rohit: lean Indian man in his 20s, black t-shirt, big DSLR camera on a strap, cap turned backwards, holding his camera, looking straight at the viewer, slightly annoyed, wedding lights behind. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "push",
+   "label": "A",
+   "who": "Photographer Rohit",
+   "quote": "Poore time stage pe photo le raha tha.",
+   "hud_right": "SUSPECT 1/3"
+  },
+  {
+   "vo": "Halwai bola: main bhatti pe tha. Dekho, haath abhi bhi chashni mein hain.",
+   "type": "clue",
+   "prompt": "Halwai Ramesh: plump cheerful Indian man in his 50s, white vest and dhoti, orange gamchha on his shoulder, showing his sticky palms covered in sugar syrup, a big kadhai of jalebi frying behind him, steam. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "pan",
+   "label": "B",
+   "who": "Halwai Ramesh",
+   "quote": "Haath abhi bhi chashni mein hain.",
+   "hud_right": "SUSPECT 2/3"
+  },
+  {
+   "vo": "Aur dulhe ka dost bola: main toh bas phone charge karne gaya tha.",
+   "type": "clue",
+   "prompt": "Groom's friend Sunny: Indian man in his 20s, shiny maroon kurta, gold chain, gelled hair, smartphone in hand, smiling too much, holding up his phone, sweat on his forehead, behind a stage curtain. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "pull",
+   "label": "C",
+   "who": "Dost Sunny",
+   "quote": "Bas phone charge karne gaya tha.",
+   "hud_right": "SUSPECT 3/3"
+  },
+  {
+   "vo": "Ab suno. Bag pe chashni ka ek bhi nishaan nahi.",
+   "type": "image",
+   "prompt": "Extreme close-up of a clean red-and-gold silk wedding bag, no stains at all, a magnifying glass over it. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "punch",
+   "keywords": [
+    "chashni",
+    "nishaan"
+   ],
+   "title": "SURAAG 1",
+   "hud_right": "SURAAG 1"
+  },
+  {
+   "vo": "Aur stage ke peeche... ek bhi plug point nahi tha.",
+   "type": "image",
+   "prompt": "A plain backstage wall made of wooden boards and marigold strings, completely bare, no sockets, a torch beam scanning it. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "pan",
+   "keywords": [
+    "plug",
+    "point"
+   ],
+   "title": "SURAAG 2",
+   "hud_right": "SURAAG 2"
+  },
+  {
+   "vo": "Toh chor kaun? Teen second. Socho.",
+   "type": "choice",
+   "hold": 3,
+   "prompt": "The wedding stage seen from far away, lights flickering, three silhouettes standing apart. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "push",
+   "options": [
+    "Photographer",
+    "Halwai",
+    "Dulhe ka dost"
+   ],
+   "hud_right": "TUMHARA FAISLA"
+  },
+  {
+   "vo": "Comment mein likho A, B ya C. Jawab kal.",
+   "type": "card",
+   "prompt": "The empty wedding hall at dawn, flower petals on the floor, one lamp still burning. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "motion": "pull",
+   "big": "JAWAB KAL",
+   "small": "PART 2",
+   "hud_right": "PART 2 KAL"
+  }
+ ],
+ "caption": "Shaadi mein 5 lakh ka lifafa gayab 😱 Tum detective ho. Chor kaun hai? A, B ya C, comment karo. Jawab kal Part 2 mein 🕵️",
+ "hashtags": [
+  "#RaazKaFaisla",
+  "#HindiMystery",
+  "#DetectiveStory",
+  "#Paheli",
+  "#Shaadi",
+  "#WhoDidIt",
+  "#Suspense"
+ ],
+ "claims": [
+  {
+   "claim": "Fiction.",
+   "basis": "original story"
+  }
+ ],
+ "answer_for_part2": "C, the groom's friend. There was no plug point behind the stage, so he could not have gone to charge his phone. The bag has no syrup, so it was not the halwai; the photographer's photos show him on stage the whole time."
+}

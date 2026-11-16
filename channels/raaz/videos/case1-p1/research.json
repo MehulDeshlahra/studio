@@ -1,0 +1,19 @@
+{
+ "top": [],
+ "watched": [],
+ "topic": "interactive suspense / who-did-it Reels in Hindi (Instagram, Nov 2026)",
+ "method": "Apify hashtag reels scrape (#youdecide #hindimystery #suspensestory #mysterystory #detectivestory #kahanihindi, 90 reels), top reels downloaded and studied frame by frame; web research on interactive reels.",
+ "findings": [
+  "pahelikaraz (9.0M plays, 4.5k comments, 97 s): 2D vector story, pilot Captain Lena, game HUD (time, fuel), cockpit panels, notebook card, ends 'WHAT DID SHE FORGET? Comment your answer' + 'PART 2 COMING SOON'.",
+  "paheli.x (1.14M plays, 23.7k comments, 46 s): detective puzzle 'chor ne khud apna raaz khola, kya aapne pakda?' fair-play slip clue; comment-answer CTA. Most comments per play in the set.",
+  "thebankhesit (2.7M, 3.2k comments, 58 s): 'YOU JUST ROBBED A BANK', HUD (HEAT bar, CASH counter), phone message UI, A/B cards 'YOUR CALL', 'COMMENTS DECIDE WHAT HAPPENS IN PART 2'.",
+  "oddhourtales (4.3M, 96 s): rules-of-the-keeper paper cards, clock, radio UI, ends with ANSWER / STAY SILENT card, 'Comment ANSWER or SILENT'.",
+  "your.calltv (1.7M, 2.8k comments, 88 s): 'LET GO or HOLD ON? The majority writes Part 4'.",
+  "All winners: speech from frame 0, one clear situation, game-like UI (HUD, phone messages, paper clues, A/B/C cards), a 'Part N' tag, the final frame is the question + the promise of the next part. Loudness -14 LUFS. Lengths 46-98 s.",
+  "Most winners are flat 2D vector animation with simple characters. Our edge: cinematic noir stills + the same UI language, a fair-play clue the viewer can really solve, a recurring Inspector, and answers revealed in Part 2 (comment-to-know)."
+ ],
+ "sources": [
+  "https://typito.com/blog/quiz-reels-trend-report-boost-engagement/",
+  "https://postflow.app/blog/instagram-reel-polls-and-comment-prompts"
+ ]
+}

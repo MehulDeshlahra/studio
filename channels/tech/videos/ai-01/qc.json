@@ -1,0 +1,29 @@
+{
+ "topic": "ChatGPT aapke sawaal ka jawab kaise banata hai",
+ "title": "ChatGPT aapke sawaal ka jawab kaise banata hai?",
+ "format": {
+  "ok": false,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.4,
+  "true_peak": 1.1,
+  "dur": 44.93
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 5: The large bold caption 'TAAKI COMPUTER USE' is slightly cut off on the left side, making it look cramped.",
+   "scene 6: The large bold caption 'KITABEIN AUR BAATEIN' is slightly cut off on the right side.",
+   "scene 9: The large bold caption 'HI' seems like a very strange, incomplete fragment for the line 'Aur wo agla shabd fit karte hi, poori line dobara padhta hai.' It doesn't fit the context of the scene well."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8041958041958042,
+  "words": 143,
+  "problems": []
+ },
+ "ok": false
+}

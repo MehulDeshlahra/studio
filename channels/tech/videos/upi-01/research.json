@@ -1,0 +1,147 @@
+{
+ "topic": "UPI mein paisa 2 second mein kaise pahunchta hai",
+ "queries": [
+  "UPI mein paisa 2 second mein kaise pahunchta hai",
+  "UPI mein paisa 2 second mein kaise pahunchta hai shorts",
+  "UPI mein paisa 2 second mein kaise pahunchta hai explained"
+ ],
+ "top": [
+  {
+   "id": "dC38MtpBL9Q",
+   "title": "Transaction Successful Ho Gaya Per Paisa Nahin Pahuncha",
+   "views": 109024,
+   "dur": 73,
+   "channel": "Tech Guru Tales",
+   "url": "https://www.youtube.com/shorts/dC38MtpBL9Q"
+  },
+  {
+   "id": "PfKHnVpii58",
+   "title": "UPI App से Transaction Fail फेल होने पर भी कट गए पैसे, कैसे मिलेगा वापस? जानें पूरा तरीका",
+   "views": 76045,
+   "dur": 120,
+   "channel": "IndiaTV",
+   "url": "https://www.youtube.com/shorts/PfKHnVpii58"
+  },
+  {
+   "id": "1Vp0nsxjR0Y",
+   "title": "☹️NAVI UPI Payment Successful But Money Not Received Bank | NAVI App Payment Successfully Problem ",
+   "views": 49457,
+   "dur": 179,
+   "channel": "Kartik Tech Store",
+   "url": "https://www.youtube.com/shorts/1Vp0nsxjR0Y"
+  },
+  {
+   "id": "RkwJJVkAiQQ",
+   "title": "Navi transaction failed but money debited 2026 | Navi upi transaction failed refund",
+   "views": 31741,
+   "dur": 148,
+   "channel": "Social Media Ya Teacher",
+   "url": "https://www.youtube.com/shorts/RkwJJVkAiQQ"
+  },
+  {
+   "id": "4uCDqWfNnhs",
+   "title": "Payment Successful but money not received? | Complete information about UPI Payment",
+   "views": 2774,
+   "dur": 170,
+   "channel": "Samjho Technical",
+   "url": "https://www.youtube.com/shorts/4uCDqWfNnhs"
+  },
+  {
+   "id": "chkYmLRqNx8",
+   "title": "2 सेकंड में UPI Payment कैसे पहुँचता है? 🤯 पूरा सिस्टम समझिए",
+   "views": 16,
+   "dur": 131,
+   "channel": "Five Plus 2.0",
+   "url": "https://www.youtube.com/shorts/chkYmLRqNx8"
+  },
+  {
+   "id": "MLgBJioY1OU",
+   "title": "यूपीआई (UPI) पेमेंट 2 सेकंड में कैसे पहुँचता है? | यूपीआई (UPI) कैसे काम करता है (हिंग्लिश)",
+   "views": 11,
+   "dur": 79,
+   "channel": "Vinay Travel Vlogs",
+   "url": "https://www.youtube.com/shorts/MLgBJioY1OU"
+  }
+ ],
+ "watched": [
+  {
+   "hook_line": "Transaction success ho gaya, but receiver ko paise nahi mile hain.",
+   "frame0": "A screenshot of a successful UPI transaction on a mobile screen.",
+   "visual_metaphor": "The 'Bank Server' as a digital vault that can be 'down' (busy/unresponsive).",
+   "structure": [
+    "Identify the common problem (transaction success but no money received)",
+    "Explain the 'Bank Server Down' technical issue",
+    "Provide the solution (wait for the server to sync)",
+    "Provide the fallback solution (48-hour refund policy)"
+   ],
+   "editing": "Screen recording of a UPI app, B-roll of server rooms, text overlays for emphasis, and simple jump cuts to maintain pacing.",
+   "length_s": 73,
+   "why_it_works": "It addresses a high-anxiety, common financial problem with a clear, actionable solution, building trust through practical advice.",
+   "weak_points": "The video is slightly repetitive, and the visual quality of the B-roll is generic stock footage.",
+   "facts_claimed": [
+    "UPI transactions can show as 'success' even if the receiver hasn't received funds.",
+    "This is often due to the receiver's bank server being down.",
+    "If the issue persists, wait for 48 hours for an automatic refund."
+   ],
+   "url": "https://www.youtube.com/shorts/dC38MtpBL9Q",
+   "title": "Transaction Successful Ho Gaya Per Paisa Nahin Pahuncha",
+   "views": 109024,
+   "channel": "Tech Guru Tales"
+  },
+  {
+   "hook_line": "UPI payment karte samay kai baar aapke saath bhi aisa hua hoga ki account se paise kat gaye aur samne wale ko receive hi nahi hua ho.",
+   "frame0": "A university logo and campus shot, followed by a mobile screen showing a QR code scan.",
+   "visual_metaphor": "The flow of money between two mobile phones represented by a simple animation of a currency note moving from one screen to another.",
+   "structure": [
+    "Introduction to the common problem of failed UPI transactions.",
+    "Explanation of why this happens (server load).",
+    "Advice on what to do (wait, don't retry immediately).",
+    "Step-by-step guide on how to report failed transactions in the app.",
+    "Further steps if the issue persists (contacting the bank).",
+    "Final recourse (contacting RBI)."
+   ],
+   "editing": "Voiceover narration, stock footage of mobile payments, simple 2D motion graphics for the transaction flow, overlay text for key steps, and standard IndiaTV branding elements.",
+   "length_s": 119,
+   "why_it_works": "It addresses a very common, relatable pain point for millions of UPI users in India. The advice is practical, actionable, and follows a clear logical hierarchy.",
+   "weak_points": "The video is overly long for a short-form format; it could be condensed significantly. The branding (University ads) is distracting and takes up screen space throughout the video.",
+   "facts_claimed": [
+    "UPI transactions can fail due to server load.",
+    "Failed transactions usually refund automatically within 24 hours.",
+    "Users can report failed transactions via the app's help section.",
+    "Banks have 30 days to resolve payment complaints.",
+    "If the bank fails to resolve it, users can contact the RBI."
+   ],
+   "url": "https://www.youtube.com/shorts/PfKHnVpii58",
+   "title": "UPI App से Transaction Fail फेल होने पर भी कट गए पैसे, कैसे मिलेगा वापस? जानें पूरा तरीका",
+   "views": 76045,
+   "channel": "IndiaTV"
+  },
+  {
+   "hook_line": "Navi app payment successfully, but money not received.",
+   "frame0": "A disclaimer screen about the video's content.",
+   "visual_metaphor": "Screen recording of the payment app as a 'live proof' of the issue.",
+   "structure": [
+    "Problem statement: Payment successful but money not credited.",
+    "Explanation: Technical issues cause delays.",
+    "Solution: Contact support via email with proof.",
+    "Step-by-step guide: How to find support email and send a complaint.",
+    "Alternative: Check bank statement if the issue persists."
+   ],
+   "editing": "Screen recordings overlay, jump cuts, text captions for emphasis, voiceover narration.",
+   "length_s": 178,
+   "why_it_works": "Addresses a common and stressful user pain point with a clear, actionable solution. Uses screen recording to build trust.",
+   "weak_points": "The video is quite long for a short-form format; the pacing could be tighter. The disclaimer at the start is unnecessary for this type of content.",
+   "facts_claimed": [
+    "UPI payments can sometimes be delayed due to technical issues.",
+    "Users should wait 10-15 minutes before panicking.",
+    "Support can be contacted via the app's official email.",
+    "Attaching a payment screenshot is necessary for a support request.",
+    "Bank statements can verify if the money was truly transferred."
+   ],
+   "url": "https://www.youtube.com/shorts/1Vp0nsxjR0Y",
+   "title": "☹️NAVI UPI Payment Successful But Money Not Received Bank | NAVI App Payment Successfully Problem ",
+   "views": 49457,
+   "channel": "Kartik Tech Store"
+  }
+ ]
+}
