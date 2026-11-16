@@ -37,7 +37,8 @@
                   "no on-screen AI label",
                   "every fact sourced in sources.json",
                   "no guessed specs/prices/numbers",
-                  "research before every video (knowledge/PREFLIGHT.md)"
+                  "research before every video (knowledge/PREFLIGHT.md)",
+                  "news: verify with 2+ trusted sources before making anything; never invent or assume an event"
               ],
     "schedule":  {
                      "posts_per_day":  2,
@@ -66,7 +67,7 @@
                   "music":  "music/digital-clouds.mp3",
                   "music_offset":  8
               },
-    "handle_instagram":  "@kaise.tech (created by owner 16 Nov)",
+    "handle_instagram":  "@kaise.tech",
     "handle_youtube":  "@kaise.tech",
     "handle_en":  "@kaisetech.en / YT @kaisetech.en",
     "pillars":  [
@@ -74,6 +75,9 @@
                     "AI kaise: how AI tools work and how to use them (ChatGPT, Gemini, image/video AI) with real screen captures",
                     "AI ka naya: new AI launches explained in 30-45 s, why it matters for you (sourced)",
                     "Tech raaz: myths and hidden features (fast charging, airplane mode, incognito)",
-                    "Free tool of the day: one free AI/GitHub tool that replaces a paid one (real demo)"
-                ]
+                    "Free tool of the day: one free AI/GitHub tool that replaces a paid one (real demo)",
+                    "Tech news, samjho: big tech/AI news (CEO changes, launches, bans, AI rules) explained in 30-45 s; only verified facts from 2+ trusted sources named on screen; real official visuals, no AI fakes of real people; neutral tone, no speculation; no politics/general news"
+                ],
+    "handle":  "@kaise.tech",
+    "locked":  "2026-11-16"
 }
