@@ -56,5 +56,6 @@
                    "Jaadu (fantasy, talking objects/animals)",
                    "Darr (light horror)"
                ],
-    "english":  true
+    "english":  true,
+    "post":  false
 }

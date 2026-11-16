@@ -83,6 +83,9 @@ def resolve(acc):
 
 
 def post_one(cid, dry=False):
+    ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {})
+    if ch.get("post") is False:
+        log("publish", cid, "posting is off for this page (channel.json post=false)"); return
     acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     p = os.path.join(ROOT, "channels", cid, "done.json")
     done = load(p, [])
