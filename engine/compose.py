@@ -79,7 +79,8 @@ def page(plan, timed, total, theme, assets):
                     mid = a + d * 0.5
                     js.append(f'tl.to("#{sid}i",{{scale:"+=0.08",duration:0.18,ease:"power4.out"}},{mid:.3f});')
             if kind == "card":
-                inner += f'<div class="shade"></div><div id="{sid}b" class="big">{esc(s.get("big", "").upper())}</div>'
+                bsz = int(min(190, 880 / max(4, len(s.get("big", ""))) / 0.60))
+                inner += f'<div class="shade"></div><div id="{sid}b" class="big" style="font-size:{bsz}px">{esc(s.get("big", "").upper())}</div>'
                 if s.get("small"):
                     inner += f'<div id="{sid}m" class="small">{esc(s["small"].upper())}</div>'
                     js.append(f'tl.fromTo("#{sid}m",{{y:40,opacity:0}},{{y:0,opacity:1,duration:0.3,immediateRender:false}},{a + 0.45:.3f});')
@@ -180,7 +181,7 @@ body{{margin:0;background:{bg}}}
 .big{{position:absolute;left:90px;width:900px;top:560px;text-align:center;font-size:190px;line-height:1;color:{acc};text-shadow:0 12px 0 #000}}
 .small{{position:absolute;left:90px;width:900px;top:800px;text-align:center;font-size:66px;color:#fff;text-shadow:0 6px 0 #000}}
 .cap{{position:absolute;left:90px;width:900px;top:1190px;z-index:5;text-align:center;font-size:80px;line-height:1.05;color:#fff;
-  -webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 7px 0 #000}}
+  -webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 7px 0 #000}}
 .paper{{position:absolute;left:110px;width:860px;top:520px;background:#e9dcc0;color:#2a1a0a;border-radius:10px;padding:48px 44px 54px;box-shadow:0 24px 60px rgba(0,0,0,.65);transform:rotate(-1.5deg)}}
 .paper .stamp{{position:absolute;top:-34px;left:34px;background:#b3261e;color:#fff;font-size:44px;padding:8px 24px;border-radius:8px;transform:rotate(-3deg)}}
 .paper .who{{font-size:62px;line-height:1.05;margin-top:12px;color:#7a1a12}}
@@ -202,8 +203,8 @@ body{{margin:0;background:{bg}}}
 .cap .w{{display:inline-block}} .cap .key{{color:{acc}}}
 """
     cap_js = """document.querySelectorAll(".cap").forEach(c=>{const s=parseFloat(c.dataset.start);
- c.querySelectorAll(".w").forEach(w=>{tl.fromTo(w,{opacity:0.45,scale:0.88},{opacity:1,scale:1,duration:0.12,ease:"back.out(3)",immediateRender:false},s+parseFloat(w.dataset.t));});
- tl.set(c.querySelectorAll(".w"),{opacity:0.45},s);});"""
+ c.querySelectorAll(".w").forEach(w=>{tl.fromTo(w,{opacity:0.8,scale:0.9},{opacity:1,scale:1,duration:0.12,ease:"back.out(3)",immediateRender:false},s+parseFloat(w.dataset.t));});
+ tl.set(c.querySelectorAll(".w"),{opacity:0.8},s);});"""
     doc = f"""<!doctype html><html><head><meta charset="utf-8"><style>{css}</style></head><body>
 <div id="root" data-composition-id="main" data-width="{W}" data-height="{H}" data-duration="{total:.3f}" data-start="0">
 {chr(10).join(top)}

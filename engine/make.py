@@ -61,7 +61,7 @@ def stage_assets(ch, p, job):
 def remux(raw, mix, total, out):
     lim = mix.replace(".wav", "-tp.wav")
     sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af",
-        f"apad=whole_dur={total:.3f},aresample=192000,alimiter=limit=0.7:level=false:attack=1,aresample=48000",
+        f"apad=whole_dur={total:.3f},aresample=192000,alimiter=limit=0.6:level=false:attack=1,aresample=48000",
         "-c:a", "pcm_s16le", lim])
     sh(["ffmpeg", "-v", "error", "-y", "-i", raw, "-i", lim, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
         "-c:a", "aac", "-b:a", "256k", "-t", f"{total:.3f}", "-movflags", "+faststart", out])

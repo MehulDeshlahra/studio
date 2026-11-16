@@ -40,7 +40,7 @@ def vision(sheet_path, plan):
     prompt = f"""This contact sheet shows one frame from each scene of a vertical short video, left to right, top to bottom.
 The intended scenes:
 {desc}
-Check like a strict editor: is any text cut off, overlapping, unreadable or misspelled; does any image look broken
+NOTE: the large bold words near the lower middle are word-by-word CAPTIONS that show only 2-3 words of the line at a time; that is intended, never report them as cut off or as not matching the line. Check like a strict editor: is any OTHER text (titles, cards, labels, text inside the images) cut off, overlapping, unreadable or misspelled; does any image look broken
 (extra limbs, melted shapes, gibberish text, watermark); does each frame fit its line; is anything ugly or amateur?
 Return JSON {{"score": 1-10, "ok": true/false (false if any serious problem), "problems": ["scene N: ..."]}}"""
     content = [{"type": "text", "text": prompt + "\nReturn ONLY JSON."},
@@ -66,8 +66,9 @@ def readback(wav, script):
         heard = " ".join(s.text for s in segs)
     except Exception as e:
         return {"ok": None, "note": f"whisper failed: {e}"}
-    p = f"""Script (Roman Hinglish) and what speech recognition heard (Devanagari). Ignore script differences and small
-recognition slips. Are any words missing, garbled or clearly mispronounced in a way a listener would notice?
+    p = f"""Script (Roman Hinglish) and what a weak speech recognizer heard (Devanagari, often with errors on Hinglish).
+Judge ONLY whether most of the script was spoken in order (the recognizer's own mistakes and repeats do not count).
+Return ok=false only if whole sentences are clearly missing or the speech is mostly nonsense.
 SCRIPT: {script}
 HEARD: {heard}
 Return JSON {{"ok": true/false, "problems": ["..."]}}"""

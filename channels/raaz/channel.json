@@ -8,7 +8,7 @@
                   "engine":  "gemini-3.8-flash-tts",
                   "voice":  "Charon",
                   "one_request_per_reel":  true,
-                  "style":  "a low, calm, tense Indian male thriller narrator; short sentences, slow, a suspenseful pause before the choice"
+                  "style":  "a low, calm, tense Indian male thriller narrator; brisk and urgent, about 3 words per second, short pauses, a suspenseful beat only before the final question"
               },
     "visuals":  {
                     "primary":  "muse",
