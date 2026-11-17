@@ -1,0 +1,215 @@
+{
+ "slug": "phone-wake-word-dsp",
+ "title": "Hey Google phone kaise sunta hai?",
+ "hooks": [
+  "Screen off hai, phone lock hai. Par Hey Google bolte hi ye turant jaag jata hai.",
+  "Kya aapka smartphone aapki har secret baat 24 ghante sun raha hai?",
+  "Phone locked table par pada hai, fir bhi use aapki aawaz kaise sunayi di?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Immediate relatable observation of a locked, dark phone instantly reacting to speech creates instant curiosity without feeling like a conspiracy video.",
+ "metaphor": "A sleepy giant guarded by a tiny gatekeeper chip who only recognizes one specific secret handshake.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Screen off hai, phone lock hai. Par Hey Google bolte hi ye turant jaag jata hai.",
+   "type": "clip",
+   "prompt": "Cinematic studio shot of a sleek matte black smartphone resting flat on an obsidian black surface, screen pitch black then suddenly emitting a soft luminous pulse from the center, photorealistic premium studio product render on pure black.",
+   "label": "STANDBY MODE",
+   "keywords": [
+    "Screen off",
+    "Hey Google",
+    "jaag jata hai"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Toh kya phone aapki har baat 24 ghante chupke se sun raha hai?",
+   "type": "title",
+   "big": "ALWAYS LISTENING?",
+   "sub": "24 Ghante Spying Sach Ya Jhooth",
+   "keywords": [
+    "24 ghante",
+    "chupke se"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Bilkul nahi. Agar har baat internet par jaati, toh battery do ghante mein khatam ho jaati.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "FULL CLOUD STREAM",
+     "value": "2 Hours Battery",
+     "pct": 15
+    },
+    {
+     "label": "LOCAL DETECTION",
+     "value": "All Day Battery",
+     "pct": 95
+    }
+   ],
+   "label": "BATTERY DRAIN",
+   "keywords": [
+    "internet",
+    "battery khatam"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Asal mein phone ka main processor gehre sleep mode mein soya hota hai.",
+   "type": "object",
+   "prompt": "Close up macro view of a large dark silicon mobile system on chip processor on a motherboard, faint cooling traces, completely dormant with subtle dim ambient blue edge light, photorealistic premium studio product render on pure black.",
+   "label": "MAIN CPU SLEEP",
+   "keywords": [
+    "main processor",
+    "sleep mode"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Pehre par baitha hota hai ek micro chip. Naam hai... DSP.",
+   "type": "stat",
+   "value": "< 10 mW",
+   "sub": "Low Power Audio Coprocessor",
+   "label": "POWER USAGE",
+   "keywords": [
+    "micro chip",
+    "DSP"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Ye chip aawaz ko lagataar chhotey digital pattern mein check karta hai.",
+   "type": "ui",
+   "title": "ACOUSTIC ANALYZER",
+   "rows": [
+    {
+     "label": "Spectrogram Match",
+     "value": "Analyzing",
+     "pct": 45
+    },
+    {
+     "label": "Voice Biomarker",
+     "value": "Active",
+     "pct": 80
+    }
+   ],
+   "label": "SIGNAL CHECK",
+   "keywords": [
+    "digital pattern",
+    "check"
+   ],
+   "motion": "push"
+  },
+  {
+   "vo": "Sirf ek second ka audio banta hai, aur turant delete hota rehta hai.",
+   "type": "flow",
+   "nodes": [
+    "Audio Input",
+    "1s Buffer",
+    "Pattern Check",
+    "Auto Erase"
+   ],
+   "label": "ROLLING BUFFER",
+   "keywords": [
+    "ek second",
+    "delete"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Lekin jaise hi Hey Google ka sound pattern match hota hai...",
+   "type": "object",
+   "prompt": "Macro technical shot of an audio coprocessor chip firing a brilliant sharp yellow golden trace pulse along a printed circuit board trace, photorealistic premium studio product render on pure black.",
+   "label": "HARDWARE INTERRUPT",
+   "keywords": [
+    "Hey Google",
+    "pattern match"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Ye chip soye hue main processor ko jagata hai, aur screen on ho jaati hai.",
+   "type": "flow",
+   "nodes": [
+    "Wake Signal",
+    "CPU Wakeup",
+    "Secure Pipeline",
+    "Screen Active"
+   ],
+   "label": "ACTIVATION FLOW",
+   "keywords": [
+    "main processor",
+    "screen on"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Matlab wake word phone ke andar pakda gaya, kisi server par nahi.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "WAKE WORD",
+     "value": "On Device Hardware",
+     "pct": 100
+    },
+    {
+     "label": "FULL SPEECH QUERY",
+     "value": "Encrypted Cloud",
+     "pct": 60
+    }
+   ],
+   "label": "PROCESSING SPLIT",
+   "keywords": [
+    "phone ke andar",
+    "server par nahi"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Aap voice assistant on rakhte ho ya off? Comment mein batao.",
+   "type": "title",
+   "big": "ON YA OFF?",
+   "sub": "Aapka Voice Assistant Setup",
+   "keywords": [
+    "voice assistant",
+    "comment"
+   ],
+   "motion": "push",
+   "title": ""
+  }
+ ],
+ "caption": "Phone band hone par bhi 'Hey Google' kaise sun leta hai? 📱 Aur kya ye hamari sabhi baatein record karta hai? Sach jaano hardware level par. Aap voice assistant use karte ho ya off rakhte ho?",
+ "hashtags": [
+  "#techfacts",
+  "#smartphonetech",
+  "#heygoogle",
+  "#howitworks",
+  "#kaisehotahai",
+  "#androidtips"
+ ],
+ "claims": [
+  {
+   "claim": "Continuous cloud audio streaming 24/7 would exhaust smartphone battery within hours.",
+   "basis": "Mobile cellular transceivers and main application processors consume hundreds of milliwatts to several watts during continuous transmission compared to standby idle states."
+  },
+  {
+   "claim": "Modern smartphones use a low power dedicated DSP or audio coprocessor that stays awake while the main processor sleeps.",
+   "basis": "Android Voice Interaction architecture and hardware implementations like Qualcomm Hexagon DSP or Apple Always On Processor dedicate micro-watt coprocessors to hotword detection."
+  },
+  {
+   "claim": "Audio is kept in a rolling circular buffer of approximately one to a few seconds and continuously discarded unless the wake word acoustic pattern matches.",
+   "basis": "Official Android Hotword Detection Service specification confirms raw audio is kept in an ephemeral local ring buffer and purged unless a verified hardware interrupt occurs."
+  }
+ ]
+}

@@ -259,3 +259,13 @@
 
 ## review v2-01-en
 - visual: Missing branded end card with handle call-to-action; last frame is just an untyped freeze of Scene 10.
+
+## v2-01-en Fingerprint unlock kaise kaam karta hai
+- scene 1: The caption 'Ever wondered why your phone heats' is cut off at 'heats' while the script says 'heats up like crazy during heavy gaming?'.
+- scene 4: The caption 'with atoms and that friction generates' is missing the start of the sentence 'These electrons constantly collide'.
+- scene 7: The caption 'good news it' is missing the full context of the line 'Your phone feeling hot outside is good news—it keeps the processor cool!'.
+- scene 8: The caption 'thermal throttling forces the processor' is missing the full context of the line 'If it gets dangerously hot, thermal throttling forces the processor to slow down.'.
+
+## review v2-01-en
+- visual: Scene 1 caption fails to advance between frames, omitting the second half of the spoken voiceover ('up like crazy during heavy gaming').
+- visual: Missing branded end card call-to-action despite a dedicated page handle.

@@ -1,0 +1,135 @@
+{
+ "topic": "'Hey Google' phone kaise sunta hai",
+ "queries": [
+  "'Hey Google' phone kaise sunta hai",
+  "'Hey Google' phone kaise sunta hai shorts",
+  "'Hey Google' phone kaise sunta hai explained"
+ ],
+ "top": [
+  {
+   "id": "GiuTQS1EyBM",
+   "title": "How the Ear Works -  3D Medical Animation || ABP ©",
+   "views": 868649,
+   "dur": 23,
+   "channel": "AnimatedBiomedical",
+   "url": "https://www.youtube.com/shorts/GiuTQS1EyBM"
+  },
+  {
+   "id": "yk2_eMf1ufc",
+   "title": "Call Par Baat Karte Samay Green Dot Kyu Aata Hai | Baat Karte Samay Green Light Kyon Jalti Hai",
+   "views": 342442,
+   "dur": 91,
+   "channel": "Aman Kumar",
+   "url": "https://www.youtube.com/shorts/yk2_eMf1ufc"
+  },
+  {
+   "id": "zyVyxCoaKBk",
+   "title": "google hamari baat sunta hai kaise band kare || phone hamari baat sunta hai usko kaise band kare ||",
+   "views": 14099,
+   "dur": 118,
+   "channel": "Deepak Tanwar ",
+   "url": "https://www.youtube.com/shorts/zyVyxCoaKBk"
+  },
+  {
+   "id": "8Y4sIk0fRuA",
+   "title": "Your mobile is listening to everything you say || How to turn it off || New Android tricks 2024",
+   "views": 1557,
+   "dur": 133,
+   "channel": "Raghuveer Parmar Official",
+   "url": "https://www.youtube.com/shorts/8Y4sIk0fRuA"
+  },
+  {
+   "id": "qk4cPyYbRn4",
+   "title": "क्या google हमारी आवाज सुनता है?।। मोबाइल के सभी browser के बंद होने के बाद भी google आवाज सुनता है।",
+   "views": 204,
+   "dur": 82,
+   "channel": "Ajmal husain",
+   "url": "https://www.youtube.com/shorts/qk4cPyYbRn4"
+  },
+  {
+   "id": "nrW9K86I-gM",
+   "title": "Google Aapki Baatein Sunta Hai? 😱 Web & App Activity OFF Karne Ka Asaan Tarika | Privacy Save",
+   "views": 141,
+   "dur": 157,
+   "channel": "Danish K Tech",
+   "url": "https://www.youtube.com/shorts/nrW9K86I-gM"
+  }
+ ],
+ "watched": [
+  {
+   "hook_line": "None (The video is a silent medical animation)",
+   "frame0": "A close-up 3D medical animation of the outer ear canal leading to the eardrum.",
+   "visual_metaphor": "The ear as a mechanical receiver, where sound waves (green ripples) hit the eardrum and vibrate the inner ear bones, mirroring how a microphone diaphragm captures sound.",
+   "structure": [
+    "Introduction to the outer ear canal",
+    "Sound waves entering the canal",
+    "Vibration of the eardrum",
+    "Transmission of vibrations through the ossicles to the cochlea"
+   ],
+   "editing": "Smooth 3D camera pan, motion graphics (green ripples representing sound waves), no cuts, no captions, no voiceover, no background music.",
+   "length_s": 22,
+   "why_it_works": "It uses high-quality medical visualization to provide a clear, intuitive understanding of a complex biological process, making it highly educational and visually satisfying.",
+   "weak_points": "The video lacks context or a direct connection to the 'Hey Google' prompt mentioned in the user's request, making it feel like a stock clip rather than a complete explanation.",
+   "facts_claimed": [
+    "Sound waves travel through the ear canal",
+    "Sound waves cause the eardrum to vibrate",
+    "Vibrations are transmitted through the middle ear bones to the cochlea"
+   ],
+   "url": "https://www.youtube.com/shorts/GiuTQS1EyBM",
+   "title": "How the Ear Works -  3D Medical Animation || ABP ©",
+   "views": 868649,
+   "channel": "AnimatedBiomedical"
+  },
+  {
+   "hook_line": "Dosto, agar call karte samay call mein rehne ke dauran yahan pe agar aapko is type ka green dot dikhayi deta hai, toh ye kya hai?",
+   "frame0": "A close-up shot of a smartphone screen showing a phone call in progress with a green dot in the top right corner.",
+   "visual_metaphor": "The green dot as a 'privacy indicator' that acts like a security camera light, signaling when hardware is active.",
+   "structure": [
+    "Introduction to the green dot issue during calls",
+    "Demonstration of the green dot appearing during calls and camera usage",
+    "Explanation of why the green dot appears (microphone/camera usage)",
+    "Troubleshooting: How to check and manage app permissions in settings",
+    "Step-by-step guide to disabling 'Allowed all the time' permissions",
+    "Conclusion and final check"
+   ],
+   "editing": "Clean screen recording overlays, subtle zoom-ins to highlight specific menu items, simple text captions for navigation steps, and a clear voiceover.",
+   "length_s": 90,
+   "why_it_works": "It addresses a common user anxiety regarding privacy and surveillance, providing a practical, actionable solution using native phone settings.",
+   "weak_points": "The video is slightly long for a simple privacy tip; could be more concise. The pacing in the settings menu is a bit slow.",
+   "facts_claimed": [
+    "The green dot indicates that the microphone or camera is currently being used by an app.",
+    "The green dot should disappear when the app is closed.",
+    "If the green dot persists, it may be due to an app running in the background.",
+    "Users can manage app permissions through the Privacy and Security settings on Android."
+   ],
+   "url": "https://www.youtube.com/shorts/yk2_eMf1ufc",
+   "title": "Call Par Baat Karte Samay Green Dot Kyu Aata Hai | Baat Karte Samay Green Light Kyon Jalti Hai",
+   "views": 342442,
+   "channel": "Aman Kumar"
+  },
+  {
+   "hook_line": "Hello dosto, mere channel mein aap sabhi ka swagat hai.",
+   "frame0": "A split screen showing a YouTube logo on the left and a smartphone home screen on the right.",
+   "visual_metaphor": "The 'eavesdropping' phone: A phone that listens to your conversations to serve targeted ads.",
+   "structure": [
+    "Introduction to the premise: Phones record your private conversations.",
+    "Explanation of how this leads to targeted ads.",
+    "Step-by-step tutorial on how to disable permissions (Camera, Microphone, Location) in Chrome settings.",
+    "Conclusion: Reassurance that disabling these stops the phone from 'listening'."
+   ],
+   "editing": "Screen recording with red circle annotations for navigation, simple cuts, static background overlay, no background music.",
+   "length_s": 120,
+   "why_it_works": "It addresses a common user fear (privacy/surveillance) with a simple, actionable 'fix' that makes the viewer feel in control.",
+   "weak_points": "The video relies on a common tech myth; modern smartphones don't actually record and upload constant audio for ad targeting, as it would be technically impractical and legally risky. The tutorial is also quite long and repetitive.",
+   "facts_claimed": [
+    "Phones record your private conversations.",
+    "Phones use these conversations to show you targeted ads.",
+    "Disabling Camera, Microphone, and Location permissions in Chrome stops your phone from listening to you."
+   ],
+   "url": "https://www.youtube.com/shorts/zyVyxCoaKBk",
+   "title": "google hamari baat sunta hai kaise band kare || phone hamari baat sunta hai usko kaise band kare ||",
+   "views": 14099,
+   "channel": "Deepak Tanwar "
+  }
+ ]
+}

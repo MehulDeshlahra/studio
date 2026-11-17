@@ -77,7 +77,8 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "visual: Missing branded end card with handle call-to-action; last frame is just an untyped freeze of Scene 10."
+   "visual: Scene 1 caption fails to advance between frames, omitting the second half of the spoken voiceover ('up like crazy during heavy gaming').",
+   "visual: Missing branded end card call-to-action despite a dedicated page handle."
   ]
  }
 ]

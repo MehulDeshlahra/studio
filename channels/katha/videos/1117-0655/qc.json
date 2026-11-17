@@ -1,0 +1,29 @@
+{
+ "topic": "Yaksha ke prashn (Mahabharata, Vana Parva)",
+ "title": "Chaar Pandav bina yuddh ke kaise dharashayi hue?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.6,
+  "true_peak": -3.5,
+  "dur": 59.63
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 6: The image shows 'DIVYA BAGULA' as the label, but the script calls for 'DIVYA YAKSHA'. While the visual is a crane (bagula), the text label is inconsistent with the script's intended title.",
+   "scene 9: The image shows 'MAN KI GATI' and 'HAWA SE BHI TEZ' as the card text, but the script expects the answer 'Manushya ka man' and the title 'SAWAL AUR JAWAB' (which appears to have been moved to scene 8). The sequence of text on the cards feels slightly jumbled compared to the script flow.",
+   "scene 10: The image shows 'DUNIYA KA SABSE' as the caption, but the card says 'MAHA PRASHNA', which matches the script. However, the visual is a crane, not Yudhishthir asking/answering, which makes the narrative flow slightly confusing compared to the script's description of Yudhishthir's actions."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9113924050632911,
+  "words": 158,
+  "problems": []
+ },
+ "ok": true
+}

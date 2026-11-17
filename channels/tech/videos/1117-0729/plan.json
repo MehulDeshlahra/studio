@@ -1,0 +1,197 @@
+{
+ "slug": "hey-google-kaise-sunta-hai",
+ "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
+ "hooks": [
+  "Phone band hai, screen black hai... fir 'Hey Google' bolte hi ye jaag kaise jaata hai?",
+  "Kya Google aapki har baat chupke se 24 ghante sun raha hai?",
+  "Screen band hone par phone ko kaise pata chalta hai ki aapne usse pukara?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Starts with an everyday relatable mystery on a locked phone that everyone experiences daily.",
+ "metaphor": "A tiny sleeping guard chip that only wakes up when it hears one exact secret acoustic knock.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Phone band hai, screen black hai. Fir 'Hey Google' bolte hi ye jaag kaise jaata hai?",
+   "type": "clip",
+   "prompt": "Cinematic macro shot of a sleek matte black smartphone on dark surface, black locked screen, soft subtle glowing blue audio indicator ripples at bottom chin, photorealistic clean product lighting on pure black background, no text.",
+   "label": "LOCKED PHONE",
+   "keywords": [
+    "Phone band",
+    "Hey Google",
+    "jaag"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Kya Google 24 ghante aapki saari baatein chupke se sun raha hai? Bilkul nahi!",
+   "type": "title",
+   "big": "24/7 SPYING?",
+   "sub": "asal sach kya hai",
+   "keywords": [
+    "chupke se",
+    "baatein",
+    "bilkul nahi"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Agar phone har baat internet pe bhejta, toh battery do ghante mein dead ho jaati.",
+   "type": "stat",
+   "value": "2 HOURS",
+   "sub": "battery dead if uploading",
+   "label": "BATTERY REALITY",
+   "keywords": [
+    "battery",
+    "dead",
+    "internet"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Toh secret kya hai? Phone ke andar ek nanha acoustic DSP chip hota hai.",
+   "type": "object",
+   "prompt": "Macro studio shot of a tiny isolated silicon DSP processor chip with micro-etched golden circuit pins, soft blue edge glow, pitch black studio background, no text, no labels.",
+   "label": "DSP CHIP",
+   "keywords": [
+    "secret",
+    "nanha",
+    "DSP chip"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Main CPU gehri neend mein sota hai, par ye nanha chip pehra deta hai.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "MAIN CPU",
+     "value": "DEEP SLEEP",
+     "pct": 5
+    },
+    {
+     "label": "TINY DSP",
+     "value": "LISTENING",
+     "pct": 95
+    }
+   ],
+   "label": "POWER SAVING",
+   "keywords": [
+    "gehri neend",
+    "pehra"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Ye kuch record nahi karta. Bas aakhri do second ki aawaz loop mein ghumata hai.",
+   "type": "ui",
+   "title": "AUDIO BUFFER",
+   "rows": [
+    {
+     "label": "ROLLING BUFFER",
+     "value": "2 SECONDS",
+     "pct": 30
+    },
+    {
+     "label": "CLOUD STORAGE",
+     "value": "ZERO DATA",
+     "pct": 0
+    }
+   ],
+   "label": "BUFFER LOOP",
+   "keywords": [
+    "record nahi",
+    "do second",
+    "loop"
+   ],
+   "motion": "push"
+  },
+  {
+   "vo": "Har naye second pichhla audio turant delete! Bina internet, bina storage ke.",
+   "type": "flow",
+   "nodes": [
+    "MIC IN",
+    "2s BUFFER",
+    "INSTANT PURGE"
+   ],
+   "label": "AUTO ERASE",
+   "keywords": [
+    "turant delete",
+    "bina internet"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Lekin jaise hi 'Hey Google' ki sound frequency exact match hoti hai...",
+   "type": "object",
+   "prompt": "Abstract glowing golden acoustic soundwave spectrum sliding perfectly into a mechanical glowing waveform template, dark clean minimalist studio render, photorealistic, no text.",
+   "label": "PATTERN MATCH",
+   "keywords": [
+    "Hey Google",
+    "sound frequency",
+    "exact match"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Ye DSP turant main processor ko jagata hai, aur screen jal uthti hai.",
+   "type": "flow",
+   "nodes": [
+    "MATCH FOUND",
+    "HARDWARE INTERRUPT",
+    "MAIN CPU WAKES"
+   ],
+   "label": "WAKE TRIGGER",
+   "keywords": [
+    "DSP",
+    "main processor",
+    "screen"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Kya aapka phone kisi dost ki aawaz se bhi khul jaata hai? Test karke batao!",
+   "type": "title",
+   "big": "TEST KARO",
+   "sub": "kisi dost ki aawaz try ki?",
+   "keywords": [
+    "dost ki aawaz",
+    "test",
+    "batao"
+   ],
+   "motion": "push",
+   "title": ""
+  }
+ ],
+ "caption": "Screen band aur phone lock hone par bhi 'Hey Google' kaise activate ho jata hai? Janiye phone ke hidden low-power DSP chip aur 2-second buffer ka pura mechanism! Kya aapka phone kisi aur ki aawaz pe jaagta hai?",
+ "hashtags": [
+  "#techshorts",
+  "#heygoogle",
+  "#androidtricks",
+  "#smartphonefacts",
+  "#howitworks",
+  "#techtipsindia"
+ ],
+ "claims": [
+  {
+   "claim": "Modern smartphones use a low-power digital signal processor (DSP) to detect the wake-word locally without running the main application processor.",
+   "basis": "Documented in Qualcomm Snapdragon Hexagon DSP architecture and Android Open Source Project (AOSP) SoundTrigger HAL."
+  },
+  {
+   "claim": "The wake-word detector listens in a short rolling circular buffer (typically 1 to 2 seconds) that continuously purges without saving audio to disk or uploading to servers.",
+   "basis": "Google Assistant privacy whitepaper on on-device hotword verification and local acoustic model processing."
+  },
+  {
+   "claim": "Only after the hardware DSP verifies the local wake-word pattern does it send an interrupt to wake the main CPU and activate internet-connected speech recognition.",
+   "basis": "Google Pixel and Android SoundTrigger hardware interrupt documentation."
+  }
+ ]
+}

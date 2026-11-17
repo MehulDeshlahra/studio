@@ -38,5 +38,17 @@
    "visual: Headlines specified in the script are missing from scenes 1 ('TRUTH OF DEATH'), 7 ('THIRD BOON'), 10 ('IMMORTAL SOUL'), and 12 ('YOUR QUESTION?').",
    "visual score 5/10"
   ]
+ },
+ {
+  "job": "1117-0655",
+  "topic": "Yaksha ke prashn (Mahabharata, Vana Parva)",
+  "title": "Chaar Pandav bina yuddh ke kaise dharashayi hue?",
+  "qc_ok": false,
+  "status": "held",
+  "review": [
+   "spoken instructions heard at the start: Say in English, a warm Hindi storyteller with modern pace. Respectful, clear pronunciation of Sanskrit names. Emotional ",
+   "first word starts late (8.9 s): something is spoken before the script",
+   "visual: Scene 6 is missing the required top headline 'DIVYA YAKSHA'."
+  ]
  }
 ]

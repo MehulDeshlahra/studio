@@ -1,0 +1,136 @@
+{
+ "topic": "'Hey Google' phone kaise sunta hai",
+ "queries": [
+  "'Hey Google' phone kaise sunta hai",
+  "'Hey Google' phone kaise sunta hai shorts",
+  "'Hey Google' phone kaise sunta hai explained"
+ ],
+ "top": [
+  {
+   "id": "yI_Vg0_DZY0",
+   "title": "Happy Birthday Song 🎉 Special Birthday Celebration Music",
+   "views": 1164318,
+   "dur": 80,
+   "channel": "Happy Birthday Songs by I-Wish-You",
+   "url": "https://www.youtube.com/shorts/yI_Vg0_DZY0"
+  },
+  {
+   "id": "GiuTQS1EyBM",
+   "title": "How the Ear Works -  3D Medical Animation || ABP ©",
+   "views": 868649,
+   "dur": 23,
+   "channel": "AnimatedBiomedical",
+   "url": "https://www.youtube.com/shorts/GiuTQS1EyBM"
+  },
+  {
+   "id": "yk2_eMf1ufc",
+   "title": "Call Par Baat Karte Samay Green Dot Kyu Aata Hai | Baat Karte Samay Green Light Kyon Jalti Hai",
+   "views": 342442,
+   "dur": 91,
+   "channel": "Aman Kumar",
+   "url": "https://www.youtube.com/shorts/yk2_eMf1ufc"
+  },
+  {
+   "id": "zyVyxCoaKBk",
+   "title": "google hamari baat sunta hai kaise band kare || phone hamari baat sunta hai usko kaise band kare ||",
+   "views": 14099,
+   "dur": 118,
+   "channel": "Deepak Tanwar ",
+   "url": "https://www.youtube.com/shorts/zyVyxCoaKBk"
+  },
+  {
+   "id": "8Y4sIk0fRuA",
+   "title": "Your mobile is listening to everything you say || How to turn it off || New Android tricks 2024",
+   "views": 1557,
+   "dur": 133,
+   "channel": "Raghuveer Parmar Official",
+   "url": "https://www.youtube.com/shorts/8Y4sIk0fRuA"
+  },
+  {
+   "id": "qk4cPyYbRn4",
+   "title": "क्या google हमारी आवाज सुनता है?।। मोबाइल के सभी browser के बंद होने के बाद भी google आवाज सुनता है।",
+   "views": 204,
+   "dur": 82,
+   "channel": "Ajmal husain",
+   "url": "https://www.youtube.com/shorts/qk4cPyYbRn4"
+  },
+  {
+   "id": "nrW9K86I-gM",
+   "title": "Google Aapki Baatein Sunta Hai? 😱 Web & App Activity OFF Karne Ka Asaan Tarika | Privacy Save",
+   "views": 141,
+   "dur": 157,
+   "channel": "Danish K Tech",
+   "url": "https://www.youtube.com/shorts/nrW9K86I-gM"
+  }
+ ],
+ "watched": [
+  {
+   "hook_line": "None",
+   "frame0": "A countdown timer from 3 to 1 with a birthday cake background.",
+   "visual_metaphor": "None, this is a generic birthday greeting video.",
+   "structure": [
+    "Countdown (0-4s)",
+    "Happy Birthday song starts with text overlays (5-120s)"
+   ],
+   "editing": "Rapid cuts between different animated text overlays (hearts, stars, balloons) and a static background cake image, accompanied by a generic 'Happy Birthday' song.",
+   "length_s": 120,
+   "why_it_works": "It uses high-contrast colors and festive animations that appeal to a broad audience looking for quick, shareable birthday wishes.",
+   "weak_points": "The video is repetitive, lacks a unique narrative or educational content, and does not match the user's requested topic ('Hey Google' phone kaise sunta hai).",
+   "facts_claimed": [],
+   "url": "https://www.youtube.com/shorts/yI_Vg0_DZY0",
+   "title": "Happy Birthday Song 🎉 Special Birthday Celebration Music",
+   "views": 1164318,
+   "channel": "Happy Birthday Songs by I-Wish-You"
+  },
+  {
+   "hook_line": "None (The video has no audio/spoken words)",
+   "frame0": "A close-up, 3D medical animation of a human ear canal.",
+   "visual_metaphor": "The ear canal as a tunnel that funnels sound waves into the eardrum, which then vibrates to transmit sound to the inner ear.",
+   "structure": [
+    "Zoom into the ear canal",
+    "Sound waves enter the canal",
+    "Eardrum vibrates",
+    "Inner ear structures move in response to the vibrations"
+   ],
+   "editing": "Smooth 3D camera movement, green sound wave overlays, no captions, no voiceover, no background music.",
+   "length_s": 22,
+   "why_it_works": "It uses high-quality medical visualization to explain a complex biological process clearly without needing language, making it universally understandable.",
+   "weak_points": "The video completely fails to address the prompt's title ('Hey Google' phone kaise sunta hai). It is purely a biological animation of human hearing, not a technical explanation of smartphone microphones or AI voice processing.",
+   "facts_claimed": [
+    "Sound waves travel through the ear canal",
+    "Sound waves cause the eardrum to vibrate",
+    "Eardrum vibrations are transmitted to the inner ear structures"
+   ],
+   "url": "https://www.youtube.com/shorts/GiuTQS1EyBM",
+   "title": "How the Ear Works -  3D Medical Animation || ABP ©",
+   "views": 868649,
+   "channel": "AnimatedBiomedical"
+  },
+  {
+   "hook_line": "Dosto, agar call karte samay, call mein rehne ke dauran, yaha pe agar aapko is type ka green dot dikhayi deta hai...",
+   "frame0": "A close-up of a smartphone screen showing the call dialer interface.",
+   "visual_metaphor": "The green dot as a 'privacy indicator' that acts like a security camera light, signaling when sensitive hardware (mic/camera) is active.",
+   "structure": [
+    "Introduction: Identifying the green dot indicator.",
+    "Explanation: What the green dot means (microphone/camera usage).",
+    "Problem: Why it might stay on even when apps are closed.",
+    "Solution: Step-by-step guide to checking and managing app permissions in Android settings.",
+    "Conclusion: How to ensure privacy by disabling 'Allowed all the time' permissions."
+   ],
+   "editing": "Screen recording with clear, slow-paced navigation. Simple white text overlays for key steps. No distracting background music. Clean, direct cuts.",
+   "length_s": 90,
+   "why_it_works": "It addresses a common user anxiety regarding privacy, provides a clear visual cue, and offers a practical, actionable solution without unnecessary fluff.",
+   "weak_points": "The pacing is a bit slow; could be condensed for better retention. The audio quality could be crisper.",
+   "facts_claimed": [
+    "A green dot on Android indicates microphone or camera usage.",
+    "The green dot should disappear when the app using the hardware is closed.",
+    "Persistent green dots can be caused by apps with 'Allowed all the time' permissions.",
+    "Users can manage these permissions in Settings > Privacy and Security > Permission Manager."
+   ],
+   "url": "https://www.youtube.com/shorts/yk2_eMf1ufc",
+   "title": "Call Par Baat Karte Samay Green Dot Kyu Aata Hai | Baat Karte Samay Green Light Kyon Jalti Hai",
+   "views": 342442,
+   "channel": "Aman Kumar"
+  }
+ ]
+}

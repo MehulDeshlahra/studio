@@ -13,16 +13,10 @@
   "score": 9,
   "ok": true,
   "problems": [
-   "scene 1: The caption 'Ever wondered why your phone heats' is missing the word 'up' and 'like crazy' compared to the script provided.",
-   "scene 2: The caption 'billions of microscopic transistors' is missing the first part of the sentence 'Inside that tiny processor,'.",
-   "scene 3: The caption 'of electrons race through microscopic pathways.' is missing the first part of the sentence 'Run a heavy task, and billions'.",
-   "scene 4: The caption 'with atoms and that friction generates' is missing the first part of the sentence 'These electrons constantly collide'.",
-   "scene 5: The caption 'but smartphones must stay sleek and waterproof.' is missing the first part of the sentence 'Laptops have cooling fans,'.",
-   "scene 6: The caption 'chamber pushes heat outward to the body.' is missing the first part of the sentence 'With zero internal fans, a vapor'.",
-   "scene 7: The caption 'good news it' is missing the full sentence context 'Your phone feeling hot outside is good news—it keeps the processor cool!'.",
-   "scene 8: The caption 'thermal throttling forces the processor' is missing the first part of the sentence 'If it gets dangerously hot,'.",
-   "scene 9: The caption 'battery resistance cranks up the temperature further.' is missing the first part of the sentence 'Plug in fast charging, and internal'.",
-   "scene 10: The caption 'into the freezer to cool down?' is missing the first part of the sentence 'Do you also pop your phone'."
+   "scene 1: The caption 'Ever wondered why your phone heats' is cut off at 'heats' while the script says 'heats up like crazy during heavy gaming?'.",
+   "scene 4: The caption 'with atoms and that friction generates' is missing the start of the sentence 'These electrons constantly collide'.",
+   "scene 7: The caption 'good news it' is missing the full context of the line 'Your phone feeling hot outside is good news—it keeps the processor cool!'.",
+   "scene 8: The caption 'thermal throttling forces the processor' is missing the full context of the line 'If it gets dangerously hot, thermal throttling forces the processor to slow down.'."
   ]
  },
  "voice": {

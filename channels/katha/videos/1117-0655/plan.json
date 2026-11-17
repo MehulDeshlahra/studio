@@ -1,0 +1,198 @@
+{
+ "slug": "yaksha-prashna-mahabharata",
+ "title": "Chaar Pandav bina yuddh ke kaise dharashayi hue?",
+ "hooks": [
+  "Mahabharata ke chaar sabse shaktishali yoddha bina yuddh ke achanak bejaan kaise pad gaye?",
+  "Ek ghoont paani ne chaar mahabali yoddhaon ko kaise mita diya?",
+  "Duniya ka sabse bada aashcharya kya hai? Yaksha ka wo sawal jisne Pandavon ko hila diya."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Immediate high-stakes paradox: four unconquerable warriors fall unconscious not to weapons or armies, but to a mysterious sip of water.",
+ "metaphor": "The Enchanted Lake of Truth: a clear mirror reflecting the lethal poison of pride and the lifesaving power of humble wisdom.",
+ "cast": {
+  "yudhisthira": "A noble ancient Indian king with tranquil, intelligent eyes and calm posture, draped in simple ascetic royal silk robes of deep maroon with delicate gold borders, hands folded respectfully in Namaste, painterly cinematic Indian miniature-meets-epic style, warm golden lighting, no modern elements, no text.",
+  "yaksha_crane": "A mystical divine white crane standing elegantly at the mossy edge of a crystal forest pond, glowing with a subtle sacred golden aura, eyes wise and ethereal, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon tones, clean composition, no text."
+ },
+ "scenes": [
+  {
+   "vo": "Mahabharata ke chaar sabse shaktishali yoddha bina yuddh ke achanak bejaan kaise pad gaye?",
+   "type": "clip",
+   "prompt": "Four mighty ancient warrior princes lying motionless on the mossy bank of an enchanted forest lake, quivers and bows resting in the dewy grass, painterly cinematic Indian miniature-meets-epic style, warm golden sunbeams, deep maroon shadows, no text, no watermarks",
+   "motion": "push",
+   "title": "TALAB KA RAAZ",
+   "keywords": [
+    "shaktishali",
+    "yoddha",
+    "bejaan"
+   ]
+  },
+  {
+   "vo": "Jangal mein bhatakte waqt jab Pandav pyaas se tadpe, tab Nakul ek talab par pahuche.",
+   "type": "image",
+   "prompt": "Exhausted young prince Nakula walking through dense ancient banyan jungle, stumbling upon a pristine glowing forest pond filled with lotus blossoms, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, no text",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Jangal",
+    "pyaas",
+    "talab"
+   ]
+  },
+  {
+   "vo": "Paani peene jhuke hi the ki aakashvani hui: Pehle mere sawal, phir paani!",
+   "type": "clip",
+   "prompt": "Prince cupping cool crystal water in hands at lake shore, suddenly freezing in shock as golden ripples glow across the lake, divine ethereal aura shining through forest mist, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "push",
+   "title": "DIVYA CHETAVANI",
+   "keywords": [
+    "aakashvani",
+    "sawal",
+    "paani"
+   ]
+  },
+  {
+   "vo": "Unhone aawaz ko ansuna kiya... aur paani peete hi dharashayi ho gaye.",
+   "type": "image",
+   "prompt": "Young ancient warrior stubbornly drinking cupped water from lake edge, then immediately dropping powerless onto soft mossy grass, ripples fading into still water, painterly cinematic Indian miniature-meets-epic style, dramatic lighting, no text",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "ansuna",
+    "paani",
+    "dharashayi"
+   ]
+  },
+  {
+   "vo": "Dhoondhne aaye baki teeno bhaiyon ne bhi wahi galti dohrayi aur behosh gir pade.",
+   "type": "image",
+   "prompt": "Three mighty warrior brothers lying unconscious side by side along the mystical lake bank, bows and maces scattered on lush grass, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon tones, no text",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "bhaiyon",
+    "galti",
+    "behosh"
+   ]
+  },
+  {
+   "vo": "Aakhir mein Yudhishthir pahuche. Samne tha ek divya bagula, yaani Yaksha.",
+   "type": "image",
+   "prompt": "Elder king Yudhisthira arriving at the misty enchanted lake shore, facing a majestic luminous white crane radiating divine golden aura, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, clean composition, no text",
+   "motion": "push",
+   "title": "DIVYA YAKSHA",
+   "keywords": [
+    "Yudhishthir",
+    "divya",
+    "Yaksha"
+   ]
+  },
+  {
+   "vo": "Yudhishthir ne ahankaar chhodkar shanti se haath jode aur prashn sunne lage.",
+   "type": "image",
+   "prompt": "King Yudhisthira in maroon ascetic silk robes standing upright with folded hands in Namaste before the mystical glowing lake, serene expression of patience and respect, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "ahankaar",
+    "shanti",
+    "prashn"
+   ]
+  },
+  {
+   "vo": "Yaksha ne poocha: Hawa se bhi tez kya hai?",
+   "type": "image",
+   "prompt": "Mystical glowing white crane perched on ancient mossy stone, sharp divine eyes peering forward with solemn authority, atmospheric mist rolling across deep waters, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "tilt",
+   "title": "SAWAL AUR JAWAB",
+   "keywords": [
+    "Hawa",
+    "tez",
+    "sawal"
+   ]
+  },
+  {
+   "vo": "Yudhishthir bole: Manushya ka man.",
+   "type": "card",
+   "prompt": "Cosmic golden lotus blooming in a star-filled serene nocturnal lake sky, symbolizing human consciousness, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, clean backdrop, no text",
+   "motion": "punch",
+   "title": "",
+   "big": "MAN KI GATI",
+   "small": "Hawa se bhi tez",
+   "keywords": [
+    "Manushya",
+    "man"
+   ]
+  },
+  {
+   "vo": "Yaksha ne agla prashn kiya: Duniya ka sabse bada aashcharya kya hai?",
+   "type": "image",
+   "prompt": "Divine luminous crane opening golden glowing beak to speak sacred philosophical query, reflecting brightly in the still enchanted waters, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, no text",
+   "motion": "push",
+   "title": "MAHA PRASHNA",
+   "keywords": [
+    "agla prashn",
+    "sabse bada",
+    "aashcharya"
+   ]
+  },
+  {
+   "vo": "Yudhishthir ne kaha: Har roz maut dekhkar bhi insaan khud ko amar samajhta hai.",
+   "type": "image",
+   "prompt": "Philosophical silhouette of travelers passing into golden twilight mist while a wise king reflects quietly with folded hands beside an ancient sacred banyan tree, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "maut",
+    "insaan",
+    "amar"
+   ]
+  },
+  {
+   "vo": "Vinamra uttar sunkar prasanna Yaksha ne sabhi bhaiyon ko punarjeevit kar diya.",
+   "type": "image",
+   "prompt": "Four warrior princes opening their eyes and standing up refreshed by the lake shore under a warm golden blessing light from the radiant crane, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, no text",
+   "motion": "pull",
+   "title": "DHAIRYA KI JEET",
+   "keywords": [
+    "prasanna",
+    "Yaksha",
+    "punarjeevit"
+   ]
+  },
+  {
+   "vo": "Agar aapki jagah wahan hoti, toh kya aap pyaas mein bhi itna dhairya rakh paate?",
+   "type": "image",
+   "prompt": "A serene lotus pond reflecting warm golden evening sky, delicate ancient Indian miniature border motifs around edges, tranquil sacred water ripples, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "tilt",
+   "title": "SOCHIYE ZARA",
+   "keywords": [
+    "pyaas",
+    "dhairya",
+    "jawab"
+   ]
+  }
+ ],
+ "caption": "Mahabharata ka Yaksha Prashna prasang sikhata hai ki taqat se bada dhairya hota hai, aur ghamand se bada gyan. Jab chaar mahan yoddha pyaas aur aatmavishwas mein gir gaye, tab keval Yudhishthir ki vinamrata ne unhein bachaya.\n\nAgar aap us talab par hote, toh kya pyaas ke samne itna dhairya rakh paate? Comment mein batayein!",
+ "hashtags": [
+  "#Mahabharata",
+  "#YakshaPrashna",
+  "#VanaParva",
+  "#IndianMythology",
+  "#WisdomShorts",
+  "#LifeLessons"
+ ],
+ "claims": [
+  {
+   "claim": "Yaksha Prashna episode takes place during the Pandavas' exile in the Aranya/Vana Parva of the Mahabharata.",
+   "basis": "Mahabharata Critical Edition, Vana Parva, Adhyaya 311-314."
+  },
+  {
+   "claim": "Yudhishthira answers that the mind is swifter than wind, and the greatest wonder is mortal beings living as if they will never die.",
+   "basis": "Mahabharata, Vana Parva, Yaksha Prashna verses."
+  },
+  {
+   "claim": "Pleased with Yudhishthira's answers and humility, the Yaksha (Lord Dharma in disguise) revives all four brothers.",
+   "basis": "Mahabharata, Vana Parva, conclusion of the Yaksha Prashna section."
+  }
+ ]
+}

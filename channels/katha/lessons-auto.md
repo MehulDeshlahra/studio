@@ -79,3 +79,23 @@
 ## review 1117-0145-en
 - visual: Headlines specified in the script are missing from scenes 1 ('TRUTH OF DEATH'), 7 ('THIRD BOON'), 10 ('IMMORTAL SOUL'), and 12 ('YOUR QUESTION?').
 - visual score 5/10
+
+## 1117-0655 Yaksha ke prashn (Mahabharata, Vana Parva)
+- scene 8: The caption 'HAWA SE BHI' appears in the image, but the script for this scene is 'Yaksha ne poocha: Hawa se bhi tez kya hai?'. The card in scene 9 says 'MAN KI GATI' which is a good summary, but the text placement is a bit repetitive across scenes 8 and 9.
+- scene 9: The card says 'MAN KI GATI' and 'HAWA SE BHI TEZ'. This is a bit redundant with the previous scene's visual. It's not an error, but a stylistic redundancy.
+- scene 12: The image shows the brothers standing, which is fine, but the caption 'NE SABHI BHAIYON' is grammatically incomplete without the context of the previous frame, though this is acceptable given the 'word-by-word' constraint.
+- only 0% of the script was found in the voice
+
+## review 1117-0655
+- only 0% of the script was found in the voice
+- visual: Severe character inconsistency for Yudhishthir: portrayed as an elderly man with a white beard in Scene 6, then abruptly as a young, clean-shaven prince in Scene 7.
+
+## 1117-0655 Yaksha ke prashn (Mahabharata, Vana Parva)
+- scene 6: The image shows 'DIVYA BAGULA' as the label, but the script calls for 'DIVYA YAKSHA'. While the visual is a crane (bagula), the text label is inconsistent with the script's intended title.
+- scene 9: The image shows 'MAN KI GATI' and 'HAWA SE BHI TEZ' as the card text, but the script expects the answer 'Manushya ka man' and the title 'SAWAL AUR JAWAB' (which appears to have been moved to scene 8). The sequence of text on the cards feels slightly jumbled compared to the script flow.
+- scene 10: The image shows 'DUNIYA KA SABSE' as the caption, but the card says 'MAHA PRASHNA', which matches the script. However, the visual is a crane, not Yudhishthir asking/answering, which makes the narrative flow slightly confusing compared to the script's description of Yudhishthir's actions.
+
+## review 1117-0655
+- spoken instructions heard at the start: Say in English, a warm Hindi storyteller with modern pace. Respectful, clear pronunciation of Sanskrit names. Emotional 
+- first word starts late (8.9 s): something is spoken before the script
+- visual: Scene 6 is missing the required top headline 'DIVYA YAKSHA'.
