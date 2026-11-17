@@ -74,7 +74,9 @@ def manual_busy():
 
 
 def lane_render(dry):
-    todo = jobs_in("prepped")
+    held = {(cid, d["job"]) for cid in os.listdir(os.path.join(ROOT, "channels")) for d in (done_list(cid) or [])
+            if d.get("status") == "held"}
+    todo = [t for t in jobs_in("prepped") if (t[0], t[1]) not in held]   # 18 Nov: a held job is the healer's, not the lane's
     if not todo:
         log("render lane: nothing prepped"); return
     cid, j, m = todo[0]
@@ -120,8 +122,8 @@ def lane_prep(dry):
     # 2) a new video
     if b.get("reels", 0) >= REELS_CAP:
         log("prep lane: reel budget used today", b); return
-    if not muse._bridges("image"):
-        log("prep lane: no Muse image budget left today"); return
+    if not muse._bridges("image"):     # 18 Nov: this stopped ALL new videos although pictures fall back to free FLUX
+        log("prep lane: Muse image budget used today; pictures come from the free FLUX sources (OmniRoute, Cloudflare, Pollinations)")
     want = []
     for cid, c in chans:
         target = c.get("schedule", {}).get("backlog", 6)

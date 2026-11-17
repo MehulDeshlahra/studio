@@ -453,6 +453,10 @@ def main():
                 row = {"job": job_id, "topic": topic, "title": p.get("title")}; done.append(row)
             row.update(status="held", review=[f"before render, scene {int(k) + 1}: {v[0]}" for k, v in pr["bad"].items()][:6])
             save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
+            # 18 Nov: stage stayed "prepped", so the render lane rebuilt this same held job every 10 min (7 times 03:20-04:20)
+            # and nothing else got rendered or prepped. "held" = the healer (engine/healer.py) owns it now.
+            meta = load(os.path.join(job, "meta.json"), {}) or meta
+            meta.update(stage="held", held_at=time.strftime("%Y-%m-%d %H:%M")); save(os.path.join(job, "meta.json"), meta)
             log("preflight: still failing after repairs, held BEFORE render (no render time spent)", ch["id"], job_id)
             return
     if os.environ.get("STUDIO_STOP_AFTER_PREFLIGHT") == "1":     # healer check (engine/healer.py): compose + preflight, no render
