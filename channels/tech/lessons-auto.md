@@ -337,3 +337,8 @@
 ## real-01-en GPS ko kaise pata ki aap kahan ho
 - scene 11: The caption 'money?' at the bottom does not match the intended script line 'Did you think PhonePe sent the money? Drop the truth in comments!'.
 - scene 11: The title card 'WHO SENT?' is a bit generic compared to the specific prompt 'PHONEPE'.
+
+## real-03 UPI se paisa bhejte waqt Google Pay, PhonePe aur NPCI ke beech kya hota hai
+- scene 10: The large bold text 'Direct None' is overlapping and looks messy/unintentional compared to the clean design of other slides.
+- scene 11: The text 'SACH' is centered, but the caption text below it is cut off/overlapping with the 'SACH' text, making it look broken and amateur.
+- only 69% of the script was found in the voice
