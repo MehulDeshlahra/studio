@@ -61,6 +61,10 @@ def _gemini(parts, temp=0.6, tokens=2000):
                 return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
             except Exception as e:
                 log("cover gemini fail", m, str(e)[:100])
+    try:                                                   # 18 Nov: our Gemini keys out -> same question through OmniRoute
+        return llm.from_parts(parts, max_tokens=tokens)
+    except Exception as e:
+        log("cover omniroute fail", str(e)[:120])
     return None
 
 

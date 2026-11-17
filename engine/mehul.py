@@ -55,6 +55,10 @@ def _gem(parts):
             return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
         except Exception as e:
             log("mehul agent gemini fail", m, str(e)[:100])
+    try:                                                   # 18 Nov: our Gemini keys out -> same question through OmniRoute
+        return llm.from_parts(parts, max_tokens=2500)
+    except Exception as e:
+        log("mehul agent omniroute fail", str(e)[:120])
     return None
 
 

@@ -126,6 +126,10 @@ def judge_source(src):
                 return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
             except Exception as e:
                 log("learn: file read failed", m, str(e)[:120])
+        try:                                               # 18 Nov: images also through OmniRoute (PDFs need Gemini)
+            return llm.from_parts(body["contents"][0]["parts"], max_tokens=8000)
+        except Exception as e:
+            log("learn: omniroute read failed", str(e)[:120])
         return None
     return planner.ask(head + src["text"], max_tokens=8000)
 

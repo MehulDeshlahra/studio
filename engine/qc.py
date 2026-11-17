@@ -3,7 +3,7 @@ import base64, json, os, re, subprocess
 from core import sh, log, dur
 import llm
 
-VISION = ["gemini/gemini-3.1-flash-lite", "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b"]
+VISION = ["studio-vision", "gemini/gemini-3.1-flash-lite", "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b"]   # studio-vision: engine/omnimap.py
 
 
 def fmt(mp4):

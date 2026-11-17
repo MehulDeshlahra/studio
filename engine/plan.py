@@ -8,8 +8,27 @@ GEM_TEXT = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 
 
 def ask(prompt, max_tokens=8000):
-    """Planning text: Gemini (Studio free key) first, OmniRoute free chain as fallback."""
-    for m in [x for mm in tts.usable(GEM_TEXT) for x in (mm, mm)]:        # each model twice: malformed JSON is usually one-off
+    """Planning text: Gemini 3.8-flash on Studio's own keys first; then OmniRoute's studio-text combo (strong free models,
+    ordered daily by engine/omnimap.py); flash-lite on our keys only as the last resort (18 Nov: before this, every
+    afternoon all planning and repairs ran on flash-lite while the stronger OmniRoute models sat idle)."""
+    usable = tts.usable(GEM_TEXT)
+    r = _gem([m for m in usable if "lite" not in m], prompt, max_tokens)
+    if r is not None:
+        return r
+    try:
+        r = llm.text(prompt, json_mode=True, max_tokens=max_tokens)
+        log("plan text by omniroute", llm.last_model)
+        return r
+    except Exception as e:
+        log("plan text omniroute fail", str(e)[:160])
+    r = _gem([m for m in usable if "lite" in m], prompt, max_tokens)
+    if r is not None:
+        return r
+    raise RuntimeError("no model answered the planning request")
+
+
+def _gem(models, prompt, max_tokens):
+    for m in [x for mm in models for x in (mm, mm)]:        # each model twice: malformed JSON is usually one-off
         try:
             body = {"contents": [{"parts": [{"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
                     "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": max_tokens, "temperature": 0.7}}
@@ -22,7 +41,7 @@ def ask(prompt, max_tokens=8000):
             return llm.parse_json(out)
         except Exception as e:
             log("gemini text fail", m, str(e)[:120])
-    return llm.text(prompt, json_mode=True, max_tokens=max_tokens)
+    return None
 
 EXAMPLE = """Example of the voice we want (a past reel of ours, owner liked the voice and pacing):
 "Phone ulta kiya... aur screen khud ghoom gayi. Par phone ko pata kaise chala? Jaadu nahi hai. Aapke phone ke andar

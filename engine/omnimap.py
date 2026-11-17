@@ -31,10 +31,10 @@ TEXT = [
     ("cloudflare-ai/@cf/zai-org/glm-4.7-flash", 2), ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 2),
     ("cloudflare-ai/@cf/meta/llama-3.3-70b-instruct-fp8-fast", 1), ("cloudflare-ai/@cf/qwen/qwen2.5-coder-32b-instruct", 1),
     ("zai/glm-4.7-flash", 2), ("zai/glm-4.5-flash", 2),
-    ("siliconflow/Qwen/Qwen3-8B", 1), ("siliconflow/THUDM/GLM-4-9B-0414", 1), ("siliconflow/Qwen/Qwen2.5-7B-Instruct", 1),
-    ("nara/qwen3.8-27b", 2), ("nara/agnes-2.5-flash", 1), ("nara/stepfun-3.7-flash", 1),
+    ("siliconflow/Qwen/Qwen3-8B", 1),                   # 18 Nov: Qwen2.5-7B / GLM-4-9B answered 402 there (locks the key)
+    ("nara/qwen3.8-27b", 2),
     ("llm7/codestral-latest", 1), ("llm7/default", 1),
-    ("huggingface/deepseek-ai/DeepSeek-V3", 3),
+    ("huggingface/deepseek-ai/DeepSeek-V3", 2),         # small monthly free credit: low in the chain
     ("pollinations/openai-large", 3), ("pollinations/deepseek", 3), ("pollinations/openai", 2), ("pollinations/mistral-large", 2),
     ("pollinations/kimi", 3), ("pollinations/glm", 2), ("pollinations/gemini", 2), ("pollinations/qwen-coder-large", 2),
     ("openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", 3), ("openrouter/google/gemma-4-31b-it:free", 2),
@@ -46,7 +46,7 @@ VISION = [
     ("nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b", 3), ("openrouter/nvidia/nemotron-3.5-super-vl:free", 3),
     ("nvidia/google/gemma-4-31b-it", 2), ("openrouter/google/gemma-4-31b-it:free", 2),
     ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 2), ("pollinations/openai", 2), ("pollinations/qwen-vision", 2),
-    ("pollinations/gemini", 2), ("siliconflow/THUDM/GLM-4.1V-9B-Thinking", 1),
+    ("pollinations/gemini", 2),
 ]
 CODE = {"gemini/gemini-3.1-pro-preview", "gemini/gemini-3.8-flash", "gemini/gemini-3.7-flash", "groq/openai/gpt-oss-120b",
         "nvidia/nvidia/nemotron-3-ultra-550b-a55b", "huggingface/deepseek-ai/DeepSeek-V3", "pollinations/kimi",
