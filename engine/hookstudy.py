@@ -132,7 +132,7 @@ def run(pages):
     allnotes = load(os.path.join(ROOT, "knowledge", "hooks.json"), {}) or {}
     for page in pages:
         found, notes = study(page)
-        if len(notes) < 4:
+        if len(notes) < 3:
             log("hookstudy", page, "too few faceless videos watched:", len(notes)); continue
         mine = ours(page)
         txt = "\n".join(f"- {x['views']:,} views | type {x.get('hook_type')} | words \"{x.get('first_words')}\" | text \"{x.get('first_text')}\""
