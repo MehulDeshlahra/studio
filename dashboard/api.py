@@ -644,7 +644,7 @@ def brain():
                 if k_ not in seen_:
                     seen_.add(k_); uniq.append(x)
             for i, l in enumerate(uniq[:10][::-1]):
-                nid = f"{c['id']}-{fn[:4]}{i}"
+                nid = f"{c['id']}-{kind}{i}"            # was fn[:4]: 'lessons.md' and 'lessons-auto.md' both gave "less" -> same id, loose nodes
                 nodes.append({"id": nid, "label": l[:140], "kind": kind, "cid": c["id"], "color": c["color"]}); links.append({"s": c["id"], "t": nid})
         for d in (jload(os.path.join(ROOT, "channels", c["id"], "done.json"), []) or [])[-10:]:
             nid = f"v-{c['id']}-{d['job']}"
