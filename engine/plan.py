@@ -123,7 +123,7 @@ CHANNEL BIBLE:
 {bible}
 
 {part2}
-{("FIRST 2 SECONDS (what the most-viewed faceless Shorts in this niche do; scene 1 must follow these rules):" + chr(10) + hooks) if hooks else ""}
+{("FIRST 2 SECONDS (what the most-viewed faceless Shorts in this niche do; scene 1 and the opening visual follow these rules; they never change this page voice style, language or the rest of the script; small sample, so use them as strong hints):" + chr(10) + hooks) if hooks else ""}
 LESSONS (hard rules learned from earlier videos and the owner; obey all):
 {lessons}
 {ch_lessons}
