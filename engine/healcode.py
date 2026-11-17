@@ -23,7 +23,9 @@ MAX_LINES = 150
 RULES = """You are fixing the code of Studio, a fully automatic faceless short-video engine (Python 3.12, HyperFrames HTML
 pages rendered to video). Rules: make the SMALLEST change that fixes exactly this problem; keep every other behaviour;
 no new dependencies, services or API keys; never touch keys, accounts or posting; keep the existing code style and add a
-short comment with the date (18 Nov style) explaining why. Fix the cause in code, not one video's data."""
+short comment with the date (18 Nov style) explaining why. Fix the cause in code, not one video's data.
+NEVER make a problem disappear by hiding it: do not remove or silence log lines, do not delete or weaken a check, a
+quality gate or a retry limit, do not catch-and-ignore errors. If you cannot find the real cause, change nothing."""
 
 
 def sh(cmd, timeout=300, cwd=None, env=None):
