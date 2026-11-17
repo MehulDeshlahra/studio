@@ -70,3 +70,12 @@
 
 ## review 1117-0145-en
 - visual: Missing top headlines in scenes 1 ('TRUTH OF DEATH'), 7 ('THIRD BOON'), 10 ('IMMORTAL SOUL'), and 12 ('YOUR QUESTION?').
+
+## 1117-0145-en Shravan Kumar ki katha (Valmiki Ramayana)
+- scene 6: The caption 'HIS FATHER' does not match the intended scene description 'Nachiketa asked for peace for his father, and the secrets of sacred fire.' The image shows a yantra/fire ritual, but the text is incomplete/mismatched.
+- scene 7: The boy's eyes appear slightly asymmetrical and somewhat 'melted' or distorted in the close-up.
+- scene 11: The text 'KNOWLEDGE IS ETERNAL' and 'KATHA UPANISHAD' is present, but the scene is meant to be a summary card. While not an error, the composition feels a bit cramped compared to others.
+
+## review 1117-0145-en
+- visual: Headlines specified in the script are missing from scenes 1 ('TRUTH OF DEATH'), 7 ('THIRD BOON'), 10 ('IMMORTAL SOUL'), and 12 ('YOUR QUESTION?').
+- visual score 5/10

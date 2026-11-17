@@ -1,0 +1,172 @@
+{
+ "slug": "phone-heat-kaise-banta-hai",
+ "title": "Why Does Your Phone Overheat?",
+ "hooks": [
+  "Heavy gaming karte hi aapka phone aag ki tarah kyun tapne lagta hai?",
+  "Phone ka bahar se garam hona acchi baat hai ya kharab?",
+  "Kya aapka phone bhi gaming karte waqt heater ban jaata hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Directly attacks a universal pain point with high visual and visceral urgency.",
+ "metaphor": "Microscopic electron collisions in nanometer wires trapped inside an airtight pocket with no exhaust fan.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Ever wondered why your phone heats up like crazy during heavy gaming?",
+   "type": "clip",
+   "prompt": "Cinematic macro shot of a sleek smartphone back glowing with an intense neon thermal heat map, pure black studio background",
+   "label": "PHONE HEAT",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Inside that tiny processor, billions of microscopic transistors are firing non-stop.",
+   "type": "stat",
+   "value": "15B+",
+   "sub": "Transistors",
+   "label": "SILICON",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Run a heavy task, and billions of electrons race through microscopic pathways.",
+   "type": "flow",
+   "nodes": [
+    "Heavy App",
+    "Current",
+    "Electrons"
+   ],
+   "label": "POWER FLOW",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "These electrons constantly collide with atoms, and that friction generates pure heat.",
+   "type": "object",
+   "prompt": "Abstract microscopic 3D render of energetic glowing particles colliding along golden nanometer wire tracks on dark silicon",
+   "label": "JOULE HEATING",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Laptops have cooling fans, but smartphones must stay sleek and waterproof.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "Laptop",
+     "value": "Fan Exhaust",
+     "pct": 90
+    },
+    {
+     "label": "Phone",
+     "value": "Sealed Body",
+     "pct": 10
+    }
+   ],
+   "label": "COOLING LIMIT",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "With zero internal fans, a vapor chamber pushes heat outward to the body.",
+   "type": "object",
+   "prompt": "Detailed product studio render of an ultra-thin smartphone copper vapor chamber with subtle amber heat dissipation gradient",
+   "label": "VAPOR CHAMBER",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Your phone feeling hot outside is good news—it keeps the processor cool!",
+   "type": "ui",
+   "title": "Heat Path",
+   "rows": [
+    {
+     "label": "Chip",
+     "value": "Safe",
+     "pct": 85
+    },
+    {
+     "label": "Vapor",
+     "value": "Flow",
+     "pct": 90
+    },
+    {
+     "label": "Glass",
+     "value": "Hot",
+     "pct": 75
+    }
+   ],
+   "label": "THERMAL",
+   "keywords": [],
+   "motion": "push"
+  },
+  {
+   "vo": "If it gets dangerously hot, thermal throttling forces the processor to slow down.",
+   "type": "stat",
+   "value": "Drop",
+   "sub": "Speed Throttled",
+   "label": "PROTECTION",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Plug in fast charging, and internal battery resistance cranks up the temperature further.",
+   "type": "object",
+   "prompt": "Studio render of a modern smartphone lithium battery pouch glowing with soft orange internal thermal lines on dark backdrop",
+   "label": "BATTERY RESISTANCE",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Do you also pop your phone into the freezer to cool down?",
+   "type": "title",
+   "big": "FREEZER HACK?",
+   "sub": "Right or Wrong?",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  }
+ ],
+ "caption": "Why does your phone feel burning hot from the outside, and is that actually a good sign? Let's break down the thermal physics inside your smartphone. Do you also put your phone in the freezer?",
+ "hashtags": [
+  "#TechFacts",
+  "#SmartphoneTips",
+  "#PhysicsExplains",
+  "#TechExplained",
+  "#GadgetHacks",
+  "#Overheating",
+  "#PhoneTips"
+ ],
+ "claims": [
+  {
+   "claim": "Modern smartphone chipsets house billions of transistors on nanometer scales.",
+   "basis": "Standard specifications for 3nm/4nm mobile SoCs from Apple, Qualcomm, and MediaTek."
+  },
+  {
+   "claim": "Current passing through resistive silicon pathways produces Joule heating from electron-lattice collisions.",
+   "basis": "Fundamental Joule's first law of electric heating in semiconductors."
+  },
+  {
+   "claim": "Smartphones use sealed passive cooling via copper vapor chambers and graphite sheets to move heat to the chassis.",
+   "basis": "Standard thermal engineering designs across modern flagship Android and iOS devices."
+  },
+  {
+   "claim": "Processors throttle clock speeds when thermal limits are hit to prevent silicon degradation.",
+   "basis": "Universal Dynamic Voltage and Frequency Scaling (DVFS) thermal safety profiles."
+  },
+  {
+   "claim": "Fast charging introduces extra heat due to internal battery cell resistance and electrochemical reactions.",
+   "basis": "Thermodynamics of lithium-ion fast charge cycles."
+  }
+ ],
+ "lang": "en",
+ "end_line": "New tech daily"
+}

@@ -244,3 +244,18 @@
 - scene 8: The caption 'tape toh chip apni speed gira' is slightly cut off at the end (missing 'di hai').
 - scene 9: The caption 'internal resistance se aur heat badha' is slightly cut off at the end (missing 'di hai').
 - scene 10: The caption 'par freezer mein rakhte ho?' is slightly cut off at the start (missing 'Kya aap bhi phone garam hone').
+
+## v2-01-en Fingerprint unlock kaise kaam karta hai
+- scene 1: The caption 'Ever wondered why your phone heats' is missing the word 'up' and 'like crazy' compared to the script provided.
+- scene 2: The caption 'billions of microscopic transistors' is missing the first part of the sentence 'Inside that tiny processor,'.
+- scene 3: The caption 'of electrons race through microscopic pathways.' is missing the first part of the sentence 'Run a heavy task, and billions'.
+- scene 4: The caption 'with atoms and that friction generates' is missing the first part of the sentence 'These electrons constantly collide'.
+- scene 5: The caption 'but smartphones must stay sleek and waterproof.' is missing the first part of the sentence 'Laptops have cooling fans,'.
+- scene 6: The caption 'chamber pushes heat outward to the body.' is missing the first part of the sentence 'With zero internal fans, a vapor'.
+- scene 7: The caption 'good news it' is missing the full sentence context 'Your phone feeling hot outside is good news—it keeps the processor cool!'.
+- scene 8: The caption 'thermal throttling forces the processor' is missing the first part of the sentence 'If it gets dangerously hot,'.
+- scene 9: The caption 'battery resistance cranks up the temperature further.' is missing the first part of the sentence 'Plug in fast charging, and internal'.
+- scene 10: The caption 'into the freezer to cool down?' is missing the first part of the sentence 'Do you also pop your phone'.
+
+## review v2-01-en
+- visual: Missing branded end card with handle call-to-action; last frame is just an untyped freeze of Scene 10.

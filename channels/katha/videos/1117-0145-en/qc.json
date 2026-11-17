@@ -13,9 +13,9 @@
   "score": 8,
   "ok": true,
   "problems": [
-   "scene 6: The caption 'HIS FATHER' does not match the intended scene description 'Nachiketa asked for peace for his father, and the secrets of sacred fire.' The image shows a ritual fire, but the text is disconnected from the action of asking for boons.",
-   "scene 11: The caption 'KNOWLEDGE IS ETERNAL / KATHA UPANISHAD' is present, but the visual of an open book is generic and doesn't strongly connect to the 'true wealth is knowledge' message as effectively as the other frames.",
-   "scene 12: The caption 'QUESTION' is a bit abrupt given the full prompt 'If you could ask Yamraj one question, what would it be? Drop a comment!'. It works as a hook, but feels slightly disconnected from the visual of Yamraj."
+   "scene 6: The caption 'HIS FATHER' does not match the intended scene description 'Nachiketa asked for peace for his father, and the secrets of sacred fire.' The image shows a yantra/fire ritual, but the text is incomplete/mismatched.",
+   "scene 7: The boy's eyes appear slightly asymmetrical and somewhat 'melted' or distorted in the close-up.",
+   "scene 11: The text 'KNOWLEDGE IS ETERNAL' and 'KATHA UPANISHAD' is present, but the scene is meant to be a summary card. While not an error, the composition feels a bit cramped compared to others."
   ]
  },
  "voice": {

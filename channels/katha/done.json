@@ -35,7 +35,8 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "visual: Missing top headlines in scenes 1 ('TRUTH OF DEATH'), 7 ('THIRD BOON'), 10 ('IMMORTAL SOUL'), and 12 ('YOUR QUESTION?')."
+   "visual: Headlines specified in the script are missing from scenes 1 ('TRUTH OF DEATH'), 7 ('THIRD BOON'), 10 ('IMMORTAL SOUL'), and 12 ('YOUR QUESTION?').",
+   "visual score 5/10"
   ]
  }
 ]

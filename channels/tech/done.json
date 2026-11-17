@@ -69,5 +69,15 @@
   "title": "Phone Garam Kyun Hota Hai?",
   "qc_ok": true,
   "status": "made"
+ },
+ {
+  "job": "v2-01-en",
+  "topic": "Fingerprint unlock kaise kaam karta hai",
+  "title": "Why Does Your Phone Overheat?",
+  "qc_ok": true,
+  "status": "held",
+  "review": [
+   "visual: Missing branded end card with handle call-to-action; last frame is just an untyped freeze of Scene 10."
+  ]
  }
 ]
