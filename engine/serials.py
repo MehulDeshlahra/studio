@@ -97,10 +97,31 @@ def _find(ch, topic):
     return None, None
 
 
+def _complete_cast(ch, s, n):
+    """Part n may bring in a named character who has no fixed look yet (Rohan in Part 8 of the first story): ask the planner
+    for a description once, save it to the story, so every image of that character matches."""
+    part = s["parts"][n - 1]
+    txt = f"{part.get('title', '')}. {part.get('beats', '')} {part.get('cliffhanger', '')}"
+    try:
+        import plan as planner
+        r = planner.ask("Our serial's cast so far: " + json.dumps(s["cast"], ensure_ascii=False) + ".\nThis part's text: " + txt[:900]
+                        + '\nList every NAMED person in this part who is NOT in the cast, with a fixed visual description (age, face, hair, '
+                        'clothes, one signature item), consistent with the story setting. JSON {"new": {"<name>": "<description>"}} '
+                        '(empty if nobody is missing).', max_tokens=700) or {}
+        new = {k: v for k, v in (r.get("new") or {}).items() if isinstance(v, str) and k not in s["cast"]} if isinstance(r, dict) else {}
+        if new:
+            s["cast"].update(new)
+            _save(ch["id"], s)
+            log("serial: added to the cast for part", n, ", ".join(new))
+    except Exception as e:
+        log("serial cast check failed", str(e)[:100])
+
+
 def context(ch, topic):
     s, n = _find(ch, topic)
     if not s:
         return ""
+    _complete_cast(ch, s, n)
     last = len(s["parts"])
     part = s["parts"][n - 1]
     prev = []
