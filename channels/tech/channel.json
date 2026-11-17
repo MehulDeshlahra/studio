@@ -87,7 +87,7 @@
   ],
   "handle": "@kaise.tech",
   "locked": "2026-11-16",
-  "english": true,
+  "english": false,
   "warmup": {
     "post_from": "2026-11-20",
     "one_a_day_until": "2026-11-27",
