@@ -628,8 +628,8 @@ class H(BaseHTTPRequestHandler):
                 sys.path.insert(0, os.path.join(ROOT, "engine"))
                 import brain
                 bq = open(os.path.join(ROOT, "knowledge", "build-queue.md"), encoding="utf-8").read() if os.path.exists(os.path.join(ROOT, "knowledge", "build-queue.md")) else ""
-                top = sorted([i for i in brain.items() if i.get("uses")], key=lambda i: -(i.get("wins", 0) / max(1, i["uses"])))[:8]
-                return self.send(200, {"stats": brain.stats(), "learned": (jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or [])[::-1][:40],
+                top = sorted([i for i in brainmod.items() if i.get("uses")], key=lambda i: -(i.get("wins", 0) / max(1, i["uses"])))[:8]
+                return self.send(200, {"stats": brainmod.stats(), "learned": (jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or [])[::-1][:40],
                                        "build_open": bq.count("- [ ]"), "build_done": bq.count("- [x]"),
                                        "top": [{"title": i["title"], "uses": i["uses"], "wins": i.get("wins", 0)} for i in top]})
             if u == "/api/ideas":
