@@ -124,7 +124,7 @@ def pick(cands, subject, kind, work):
         ins += ["-i", c["path"]]
         fc += (f"[{i}:v]scale=320:320:force_original_aspect_ratio=decrease,pad=320:320:(ow-iw)/2:(oh-ih)/2:color=0x888888,"
                f"drawtext=text='{'ABCDEF'[i]}':x=8:y=4:fontsize=44:fontcolor=yellow:box=1:boxcolor=black@0.7[t{i}];")
-    fc += "".join(f"[t{i}]" for i in range(len(cands))) + f"hstack={len(cands)}"
+    fc += "".join(f"[t{i}]" for i in range(len(cands))) + (f"hstack={len(cands)}" if len(cands) > 1 else "null")   # hstack needs 2+ inputs
     sheet = os.path.join(work, "pick.jpg")
     sh(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", fc, "-frames:v", "1", "-q:v", "3", sheet], timeout=60)
     r = _gemini([{"text": JUDGE.format(n=len(cands), subject=subject, kind=kind)},
