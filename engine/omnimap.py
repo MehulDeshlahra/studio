@@ -67,7 +67,11 @@ def _post(model, content, timeout=90, max_tokens=300):
                        "temperature": 0.2}).encode()
     req = urllib.request.Request(URL, data=body, headers={"Authorization": "Bearer " + _key(), "Content-Type": "application/json"})
     d = json.load(urllib.request.urlopen(req, timeout=timeout))
-    return (d["choices"][0]["message"].get("content") or "").strip()
+    out = (d["choices"][0]["message"].get("content") or "").strip()
+    import llm
+    if llm.QUOTA_TEXT.search(out[:600]):                 # a "top up" text in a 200 reply is a failure, not an answer
+        raise RuntimeError("quota message instead of an answer")
+    return out
 
 
 def _image():

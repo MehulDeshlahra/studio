@@ -18,6 +18,7 @@ VISION_MODELS = ["studio-vision", "gemini/gemini-3.1-flash-lite"]
 CODE_MODELS = ["studio-code", "studio-text"]
 WATCH_MODELS = ["gemini/gemini-3.1-flash-lite", "gemini/gemini-3.8-flash"]
 last_model = ""                                     # which upstream model answered the last call (for logs)
+QUOTA_TEXT = re.compile(r"account behind this API key doesn.t have enough credits|enter\.pollinations\.ai/(top-up|quests)", re.I)
 
 
 def _key():
@@ -41,6 +42,8 @@ def _call(model, content, max_tokens=4000, timeout=300):
     out = (d["choices"][0]["message"].get("content") or "").strip()
     if not out:
         raise RuntimeError("empty answer from " + model)
+    if QUOTA_TEXT.search(out[:600]):        # 18 Nov: Pollinations answers "not enough credits, top up" as a normal 200 reply
+        raise RuntimeError(f"quota message instead of an answer from {d.get('model') or model}")
     last_model = d.get("model") or model
     return out
 
