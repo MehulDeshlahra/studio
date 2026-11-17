@@ -5,36 +5,24 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.9,
-  "true_peak": -2.1,
-  "dur": 35.5
+  "lufs": -14.6,
+  "true_peak": -1.1,
+  "dur": 53.43
  },
  "vision": {
-  "score": 3,
-  "ok": false,
+  "score": 9,
+  "ok": true,
   "problems": [
-   "scene 1: The image shows a boy meditating, but the text overlay 'TEENO DIN KE' corresponds to scene 4, not scene 1.",
-   "scene 2: The image shows Yamraj, but the text overlay 'YAMTEEN VARDAN OH MAANGO' is gibberish/incorrect and does not match the scene description.",
-   "scene 3: The image shows a boy meditating, but the text overlay 'INTITEEN VARDAN AHA MAANGO' is gibberish/incorrect.",
-   "scene 4: The image shows a boy meditating, but the text overlay 'AUFTEEN VARDAN HA BHOGMAANGOAASA' is gibberish/incorrect.",
-   "scene 5: The image shows Yamraj, but the text overlay 'SHATEEN VARDAN HUE MAANGO' is gibberish/incorrect.",
-   "scene 6: The image shows a geometric symbol, but the text overlay 'MAN MAANGA' is incomplete/misaligned with the scene content.",
-   "scene 7: The image shows a boy walking towards a palace, but the text overlay 'POOCHA YAMRAJ' is incorrect context for the scene.",
-   "scene 8: The image shows golden chariots, but the text overlay 'APSARAYEIN LE LO' is partially cut off/misaligned.",
-   "scene 9: The image shows a boy, but the text overlay 'KHATAM HOGA' is barely readable against the background.",
-   "scene 10: The image shows Yamraj, but the text overlay 'SAKTA HAI' is incomplete.",
-   "scene 11: The text 'GYAN HI AMAR KATHA UPANISHAD' is present, but the image is just a book, which feels disconnected from the narrative flow compared to the other frames.",
-   "scene 12: The text overlay 'HO' is nonsensical for the final call to action."
+   "scene 5: The image shows Yamraj, but the caption 'AUR' seems disconnected from the specific visual of him holding a flame, though it fits the narrative flow.",
+   "scene 11: The text 'GYAN HI AMAR' is clear, but the 'KATHA UPANISHAD' text is slightly small and could be more prominent for readability on a mobile screen."
   ]
  },
  "voice": {
-  "ok": false,
+  "ok": true,
   "method": "whisper",
-  "matched": 0.5220125786163522,
+  "matched": 0.7484276729559748,
   "words": 159,
-  "problems": [
-   "only 52% of the script was found in the voice"
-  ]
+  "problems": []
  },
- "ok": false
+ "ok": true
 }

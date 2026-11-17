@@ -109,3 +109,26 @@
 - spoken instructions heard at the start: Say in English, a warm Hindi storyteller with modern pace. Respectful, clear pronunciation of Sanskrit names. Emotional 
 - first word starts late (8.9 s): something is spoken before the script
 - visual: Scene 13 visual lacks a subject, displaying only an empty background arch.
+
+## 1117-0145 Nachiketa aur Yamraj (Katha Upanishad)
+- scene 7: The caption 'LEKHOTA HAI? AN' is gibberish/misspelled and cut off awkwardly.
+- scene 8: The caption 'APSARAYEIN ELE, LO' contains a typo ('ELE') and looks broken.
+- scene 10: The caption 'SAKTA HAI' is partially cut off at the bottom edge.
+- scene 11: The text 'GYAN HI AMAR' and 'KATHA UPANISHAD' is floating awkwardly over a book, and the composition feels a bit disconnected from the narrative flow compared to the other frames.
+- only 55% of the script was found in the voice
+
+## review 1117-0145
+- format/loudness: h264,1080,1920,30/1 -14.6 LUFS, true peak -0.3
+- only 55% of the script was found in the voice
+- visual: Scene 7 has a completely black frame with garbled, overlapping text ('LEKHOTA HAI? AN').
+- visual: Scene 7 and 8 order is scrambled, displaying Scene 8 footage prior to the black Scene 7 frame.
+- visual: Scene 8 second frame has duplicated, misaligned caption text overlapping itself ('APSARAYEIN LE LO').
+- visual score 4/10
+
+## 1117-0145 Nachiketa aur Yamraj (Katha Upanishad)
+- scene 5: The image shows Yamraj, but the caption 'AUR' seems disconnected from the specific visual of him holding a flame, though it fits the narrative flow.
+- scene 11: The text 'GYAN HI AMAR' is clear, but the 'KATHA UPANISHAD' text is slightly small and could be more prominent for readability on a mobile screen.
+
+## review 1117-0145
+- only 75% of the script was found in the voice
+- visual: Severe character inconsistency for Yamraj: depicted with blue skin and distinct attire in scenes 5 and 12, but suddenly appears with human skin tone and an entirely different face in scene 10.

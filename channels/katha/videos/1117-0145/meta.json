@@ -7,7 +7,8 @@
  "prepped_at": "2026-11-17 03:03",
  "voice_gate": 2,
  "voice_retry": 1,
- "doctor_rebuilt": "2026-11-17 10:53",
- "doctor_code": "a27328d",
- "doctor_tries": 2
+ "doctor_rebuilt": "2026-11-17 11:13",
+ "doctor_code": "7504b60",
+ "doctor_tries": 3,
+ "brain_judged": true
 }

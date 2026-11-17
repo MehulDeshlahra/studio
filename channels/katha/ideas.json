@@ -1,0 +1,126 @@
+[
+ {
+  "t": "2026-11-17 11:14",
+  "picked": "The consequence of Ashwatthama's vengeance and loss of his protective head gem; Source: Mahabharata (Sauptika Parva, Adhyaya 16); Lesson: Blind hatred and cowardice strip away divine grace and leave lasting remorse.",
+  "ideas": [
+   {
+    "topic": "The consequence of Ashwatthama's vengeance and loss of his protective head gem; Source: Mahabharata (Sauptika Parva, Adhyaya 16); Lesson: Blind hatred and cowardice strip away divine grace and leave lasting remorse.",
+    "note": "",
+    "search": "ashwatthama mani curse mahabharata",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 8.8,
+    "median_views": 3446899,
+    "fresh": 7.8,
+    "score": 8.67
+   },
+   {
+    "topic": "Jatayu confronts Ravana mid-air knowing he cannot win; Source: Valmiki Ramayana (Aranya Kanda, Sarga 50-51); Lesson: Standing up against injustice is mandatory, even when defeat is guaranteed.",
+    "note": "",
+    "search": "jatayu fight ravana ramayana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 5.0,
+    "median_views": 99735,
+    "fresh": 7.3,
+    "score": 7.21
+   },
+   {
+    "topic": "Sudama visits Dwarka with only crushed rice in torn cloth; Source: Srimad Bhagavatam (Skandha 10, Adhyaya 80-81); Lesson: True friendship and pure intent hold infinitely more value than lavish material offerings.",
+    "note": "",
+    "search": "sudama krishna friendship story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.7,
+    "score": 6.84
+   },
+   {
+    "topic": "King Shibi offers his own flesh to save a frightened dove from a hawk; Source: Mahabharata (Vana Parva, Adhyaya 130-131); Lesson: Protecting those who seek refuge is the highest dharma, regardless of personal sacrifice.",
+    "note": "",
+    "search": "king shibi dove sacrifice",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.5,
+    "score": 6.8
+   },
+   {
+    "topic": "Satyakama Jabala reveals his unknown lineage to Guru Gautama without shame; Source: Chhandogya Upanishad (Prapathaka 4, Khanda 4); Lesson: Truthfulness and honesty determine true nobility, not birth or caste.",
+    "note": "",
+    "search": "satyakama jabala truth story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 8.5,
+    "score": 6.65
+   },
+   {
+    "topic": "Raja Harishchandra demands cremation tax from his own mourning queen at the ghat; Source: Markandeya Purana (Adhyaya 7-8); Lesson: Unwavering duty and commitment to truth must remain uncompromised even in extreme sorrow.",
+    "note": "",
+    "search": "raja harishchandra kashi ghat",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.6,
+    "median_views": 11267,
+    "fresh": 8.6,
+    "score": 6.39
+   },
+   {
+    "topic": "Bhasmasura tricks Lord Shiva for lethal power only to destroy himself through ego; Source: Bhagavata Purana (Skandha 10, Adhyaya 88); Lesson: Arrogance coupled with reckless power inevitably leads to self-destruction.",
+    "note": "",
+    "search": "bhasmasura mohini story purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 67,
+    "fresh": 8.4,
+    "score": 5.18
+   },
+   {
+    "topic": "Maharishi Dadhichi donates his bones to forge Indra's Vajra; Source: Srimad Bhagavatam (Skandha 6, Adhyaya 10); Lesson: Supreme selflessness and sacrificing personal comfort for universal protection.",
+    "note": "",
+    "search": "sage dadhichi vajra story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 232,
+    "fresh": 8.3,
+    "score": 5.16
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1646,
+    "fresh": 4.3,
+    "score": 3.53
+   },
+   {
+    "topic": "Ganesh ji aur Kuber ka bhoj",
+    "search": "Ganesh ji aur Kuber ka bhoj",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 93,
+    "fresh": 5.3,
+    "score": 3.51
+   }
+  ]
+ }
+]
