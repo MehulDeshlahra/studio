@@ -570,7 +570,10 @@ def issues(srv, fails, jl, sched, token_days, chs):
     dst = jload(os.path.join(OUT, "doctor-state.json"), {}) or {}
     if not dst.get("last") or time.time() - dst["last"] > 1800:
         add("warn", "Doctor has not run for 30+ min", "the self-repair agent (studio-doctor timer) is not running")
-    for u in (jload(os.path.join(OUT, "doctor-unknown.json"), []) or [])[-5:]:
+    uniq_ = {}
+    for u in (jload(os.path.join(OUT, "doctor-unknown.json"), []) or [])[-30:]:      # one line per problem, the newest text
+        uniq_[u["what"]] = u
+    for u in list(uniq_.values())[-5:]:
         try:
             if time.time() - time.mktime(time.strptime(u["t"], "%Y-%m-%d %H:%M")) < 86400:
                 add("info", "Doctor noted (fixed next session): " + u["what"], u.get("detail", "")[:200], key="doc-" + u["what"])
