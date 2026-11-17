@@ -66,6 +66,8 @@ def strip_preamble(wav, first_line, lang="hi", style=""):
     for k, nw in enumerate(norm[:80]):
         if not nw:
             continue
+        if last_pre >= 0 and words[k][1] - words[last_pre][2] > 1.2:   # a gap = the instruction ended (Whisper skipped the Hindi after it)
+            break
         if nw in pre:
             hits += 1; last_pre = k
         elif k - last_pre > 3:                     # 4 words in a row that are not instruction words: the script began
