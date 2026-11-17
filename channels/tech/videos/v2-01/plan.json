@@ -44,9 +44,8 @@
    "type": "flow",
    "nodes": [
     "Heavy App",
-    "Current Surge",
-    "Electron Rush",
-    "Resistance"
+    "Current",
+    "Electrons"
    ],
    "label": "POWER FLOW",
    "keywords": [
@@ -172,7 +171,7 @@
    "vo": "Kya aap bhi phone garam hone par freezer mein rakhte ho?",
    "type": "title",
    "big": "FREEZER HACK?",
-   "sub": "Sahi hai ya galat? Comment karo",
+   "sub": "Sahi ya Galat?",
    "keywords": [
     "phone",
     "garam",

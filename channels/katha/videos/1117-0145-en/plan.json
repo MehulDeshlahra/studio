@@ -1,0 +1,180 @@
+{
+ "slug": "nachiketa-yamraj-upanishad",
+ "title": "When an 8-Year-Old Boy Stood Up to Yamraj",
+ "hooks": [
+  "Ek aath saal ke bachche ne seedhe Yamraj se maut ka sach maang liya!",
+  "Jab Yamraj ne sone-chandi ke dher laga diye, tab is bachche ne kya maanga?",
+  "Yamraj ke darbar mein bina dare khada hone wala akela bachcha kaun tha?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Immediate, shocking premise of an 8-year-old fearless child demanding the ultimate secret of death directly from Yamraj.",
+ "metaphor": "Worldly treasures are temporary illusions compared to the eternal truth of the soul.",
+ "cast": {
+  "nachiketa": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, painterly cinematic Indian miniature epic style, warm gold and deep maroon, soft divine rim light, clean uncluttered composition, no text",
+  "yamraj": "Majestic divine Yamraj seated on a dark obsidian throne, midnight blue skin, regal ornate crown, fierce but serene golden eyes, holding a glowing divine noose, painterly cinematic Indian miniature epic style, warm gold and deep maroon, clean uncluttered composition, no text"
+ },
+ "scenes": [
+  {
+   "vo": "An eight-year-old boy demanded the ultimate truth of death from Yamraj himself!",
+   "type": "clip",
+   "prompt": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, painterly cinematic Indian miniature epic style, warm gold and deep maroon, soft divine rim light, clean uncluttered composition, no text, standing fearless before colossal dark carved gates of Yamlok, cinematic push in as faint golden particles swirl around him.",
+   "motion": "push",
+   "title": "TRUTH OF DEATH",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "Enraged during a ritual, his father snapped and banished him straight to Death.",
+   "type": "image",
+   "prompt": "Ancient Indian hermit sage beside an ornate Vedic sacrificial fire pit, raising hand in sudden anger, painterly cinematic Indian miniature epic style, warm gold and deep maroon, embers rising in night air, dramatic lighting, clean uncluttered composition, no text.",
+   "motion": "pan",
+   "title": "",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "Fearless Nachiketa obeyed his father's words and walked straight to the underworld.",
+   "type": "image",
+   "prompt": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, painterly cinematic Indian miniature epic style, warm gold and deep maroon, walking resolute across an ethereal bridge made of mist toward a glowing fortress, clean uncluttered composition, no text.",
+   "motion": "pull",
+   "title": "",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "Yamraj was away for three days, and the young boy waited without food or water.",
+   "type": "image",
+   "prompt": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, sitting cross-legged in deep serene meditation on stone steps outside grand palace portal, three silhouettes of day and night passing in sky, painterly cinematic Indian miniature epic style, warm gold and deep maroon, clean uncluttered composition, no text.",
+   "motion": "tilt",
+   "title": "3 DAYS WAITING",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "Guilty upon returning, Yamraj offered him three boons for the three days of waiting.",
+   "type": "image",
+   "prompt": "Majestic divine Yamraj seated on a dark obsidian throne, midnight blue skin, regal ornate crown, fierce but serene golden eyes, raising a golden open palm granting divine blessings, painterly cinematic Indian miniature epic style, warm gold and deep maroon, dramatic warm lighting, clean uncluttered composition, no text.",
+   "motion": "push",
+   "title": "",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "Nachiketa asked for peace for his father, and the secrets of sacred fire.",
+   "type": "image",
+   "prompt": "A glowing sacred geometric altar with mystical floating spiritual golden flames illuminating ancient stone carvings, painterly cinematic Indian miniature epic style, warm gold and deep maroon, radiant divine glow, clean uncluttered composition, no text.",
+   "motion": "pan",
+   "title": "",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "For his final boon, he asked: what happens to the soul after death?",
+   "type": "clip",
+   "prompt": "Close-up of an eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, folded hands, looking straight ahead with unwavering calm conviction, painterly cinematic Indian miniature epic style, warm gold and deep maroon, subtle slow push in, clean uncluttered composition, no text.",
+   "motion": "punch",
+   "title": "THIRD BOON",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "Yamraj panicked: take gold, take kingdoms, take pleasures, but do not ask this!",
+   "type": "image",
+   "prompt": "Shimmering mirage of royal golden chariots, heaps of gemstones, and lush celestial gardens emerging from divine mist, painterly cinematic Indian miniature epic style, warm gold and deep maroon, tempting illusions, clean uncluttered composition, no text.",
+   "motion": "pull",
+   "title": "",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "Nachiketa smiled: all worldly wealth will perish, grant me only the eternal truth.",
+   "type": "image",
+   "prompt": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, painterly cinematic Indian miniature epic style, warm gold and deep maroon, standing calm as heaps of glittering gold crumble into fine grey dust around him, clean uncluttered composition, no text.",
+   "motion": "tilt",
+   "title": "",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "Defeated, Yamraj revealed: bodies perish, but your soul remains eternal and indestructible.",
+   "type": "image",
+   "prompt": "Majestic divine Yamraj pointing a glowing finger of spiritual light toward a glowing translucent orb of soul essence inside human silhouette, cosmic stars swirling in background, painterly cinematic Indian miniature epic style, warm gold and deep maroon, clean uncluttered composition, no text.",
+   "motion": "push",
+   "title": "IMMORTAL SOUL",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  },
+  {
+   "vo": "This Katha Upanishad legend teaches us: true wealth is knowledge alone.",
+   "type": "card",
+   "prompt": "Sacred glowing ancient palm-leaf manuscript emitting soft divine golden rays against deep maroon velvet background, painterly cinematic Indian miniature epic style, warm gold and deep maroon, clean uncluttered composition, no text.",
+   "motion": "pull",
+   "title": "",
+   "nodes": [],
+   "big": "KNOWLEDGE IS ETERNAL",
+   "small": "Katha Upanishad",
+   "keywords": []
+  },
+  {
+   "vo": "If you could ask Yamraj one question, what would it be? Drop a comment!",
+   "type": "image",
+   "prompt": "Majestic divine Yamraj seated on dark obsidian throne, midnight blue skin, regal ornate crown, looking with serene wisdom toward the viewer, painterly cinematic Indian miniature epic style, warm gold and deep maroon, divine temple hall, clean uncluttered composition, no text.",
+   "motion": "push",
+   "title": "YOUR QUESTION?",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": []
+  }
+ ],
+ "caption": "When young Nachiketa rejected worldly riches and demanded the ultimate secret of death from Yamraj. Source: Katha Upanishad.\n\nIf you could ask Yamraj one question, what would it be? Tell us in the comments!",
+ "hashtags": [
+  "#IndianMythology",
+  "#KathaUpanishad",
+  "#AncientWisdom",
+  "#Yamraj",
+  "#SpiritualWisdom",
+  "#HinduPhilosophy",
+  "#MythologyStories"
+ ],
+ "claims": [
+  {
+   "claim": "Nachiketa was sent to Yamraj's abode by his father sage Vajasravas in anger.",
+   "basis": "Katha Upanishad, Chapter 1, Valli 1, Verses 1-4"
+  },
+  {
+   "claim": "Nachiketa waited at Yamraj's doorstep for three nights without food or water.",
+   "basis": "Katha Upanishad, Chapter 1, Valli 1, Verse 9"
+  },
+  {
+   "claim": "Yamraj offered Nachiketa immense wealth, horses, elephants, and heavenly pleasures instead of the third boon, which Nachiketa rejected.",
+   "basis": "Katha Upanishad, Chapter 1, Valli 1, Verses 20-27"
+  },
+  {
+   "claim": "Yamraj revealed the immortal nature of the Atman to Nachiketa.",
+   "basis": "Katha Upanishad, Chapter 1, Valli 2, Verses 18-20"
+  }
+ ],
+ "lang": "en",
+ "end_line": "Follow for more wisdom"
+}

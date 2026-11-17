@@ -1,0 +1,29 @@
+{
+ "topic": "Shravan Kumar ki katha (Valmiki Ramayana)",
+ "title": "When an 8-Year-Old Boy Stood Up to Yamraj",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.9,
+  "true_peak": -3.4,
+  "dur": 56.87
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 6: The caption 'HIS FATHER' does not match the intended scene description 'Nachiketa asked for peace for his father, and the secrets of sacred fire.' The image shows a ritual fire, but the text is disconnected from the action of asking for boons.",
+   "scene 11: The caption 'KNOWLEDGE IS ETERNAL / KATHA UPANISHAD' is present, but the visual of an open book is generic and doesn't strongly connect to the 'true wealth is knowledge' message as effectively as the other frames.",
+   "scene 12: The caption 'QUESTION' is a bit abrupt given the full prompt 'If you could ask Yamraj one question, what would it be? Drop a comment!'. It works as a hook, but feels slightly disconnected from the visual of Yamraj."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9741935483870968,
+  "words": 155,
+  "problems": []
+ },
+ "ok": true
+}

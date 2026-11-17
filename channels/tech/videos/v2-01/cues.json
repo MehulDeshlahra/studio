@@ -27,19 +27,13 @@
    "align": "onset"
   },
   {
-   "t": 8.536,
+   "t": 8.346,
    "file": "sfx/click-ui.mp3",
    "gain_db": -22,
    "align": "onset"
   },
   {
-   "t": 9.331,
-   "file": "sfx/click-ui.mp3",
-   "gain_db": -22,
-   "align": "onset"
-  },
-  {
-   "t": 10.127,
+   "t": 8.953,
    "file": "sfx/click-ui.mp3",
    "gain_db": -22,
    "align": "onset"

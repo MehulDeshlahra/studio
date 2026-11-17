@@ -21,7 +21,21 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "only 0% of the script was found in the voice"
+   "only 52% of the script was found in the voice",
+   "visual: Severe caption overlapping and double-printed text in the first two rows create unreadable, garbled subtitles.",
+   "visual: The opening scenes (scenes 1–3) are missing, resulting in repeated and scrambled frames in the first two rows.",
+   "visual: All scripted scene headlines ('MAUT KA SACH', '3 DIN INTEZAR', 'TEESRA VARDAN', 'AMAR AATMA', 'AAP KYA POOCHENGE?') are absent.",
+   "visual score 4/10"
+  ]
+ },
+ {
+  "job": "1117-0145-en",
+  "topic": "Shravan Kumar ki katha (Valmiki Ramayana)",
+  "title": "When an 8-Year-Old Boy Stood Up to Yamraj",
+  "qc_ok": true,
+  "status": "held",
+  "review": [
+   "visual: Missing top headlines in scenes 1 ('TRUTH OF DEATH'), 7 ('THIRD BOON'), 10 ('IMMORTAL SOUL'), and 12 ('YOUR QUESTION?')."
   ]
  }
 ]

@@ -40,3 +40,33 @@
 
 ## review 1117-0145
 - only 0% of the script was found in the voice
+
+## 1117-0145 Nachiketa aur Yamraj (Katha Upanishad)
+- scene 1: The image shows a boy meditating, but the text overlay 'TEENO DIN KE' corresponds to scene 4, not scene 1.
+- scene 2: The image shows Yamraj, but the text overlay 'YAMTEEN VARDAN OH MAANGO' is gibberish/incorrect and does not match the scene description.
+- scene 3: The image shows a boy meditating, but the text overlay 'INTITEEN VARDAN AHA MAANGO' is gibberish/incorrect.
+- scene 4: The image shows a boy meditating, but the text overlay 'AUFTEEN VARDAN HA BHOGMAANGOAASA' is gibberish/incorrect.
+- scene 5: The image shows Yamraj, but the text overlay 'SHATEEN VARDAN HUE MAANGO' is gibberish/incorrect.
+- scene 6: The image shows a geometric symbol, but the text overlay 'MAN MAANGA' is incomplete/misaligned with the scene content.
+- scene 7: The image shows a boy walking towards a palace, but the text overlay 'POOCHA YAMRAJ' is incorrect context for the scene.
+- scene 8: The image shows golden chariots, but the text overlay 'APSARAYEIN LE LO' is partially cut off/misaligned.
+- scene 9: The image shows a boy, but the text overlay 'KHATAM HOGA' is barely readable against the background.
+- scene 10: The image shows Yamraj, but the text overlay 'SAKTA HAI' is incomplete.
+- scene 11: The text 'GYAN HI AMAR KATHA UPANISHAD' is present, but the image is just a book, which feels disconnected from the narrative flow compared to the other frames.
+- scene 12: The text overlay 'HO' is nonsensical for the final call to action.
+- only 52% of the script was found in the voice
+
+## review 1117-0145
+- only 52% of the script was found in the voice
+- visual: Severe caption overlapping and double-printed text in the first two rows create unreadable, garbled subtitles.
+- visual: The opening scenes (scenes 1–3) are missing, resulting in repeated and scrambled frames in the first two rows.
+- visual: All scripted scene headlines ('MAUT KA SACH', '3 DIN INTEZAR', 'TEESRA VARDAN', 'AMAR AATMA', 'AAP KYA POOCHENGE?') are absent.
+- visual score 4/10
+
+## 1117-0145-en Shravan Kumar ki katha (Valmiki Ramayana)
+- scene 6: The caption 'HIS FATHER' does not match the intended scene description 'Nachiketa asked for peace for his father, and the secrets of sacred fire.' The image shows a ritual fire, but the text is disconnected from the action of asking for boons.
+- scene 11: The caption 'KNOWLEDGE IS ETERNAL / KATHA UPANISHAD' is present, but the visual of an open book is generic and doesn't strongly connect to the 'true wealth is knowledge' message as effectively as the other frames.
+- scene 12: The caption 'QUESTION' is a bit abrupt given the full prompt 'If you could ask Yamraj one question, what would it be? Drop a comment!'. It works as a hook, but feels slightly disconnected from the visual of Yamraj.
+
+## review 1117-0145-en
+- visual: Missing top headlines in scenes 1 ('TRUTH OF DEATH'), 7 ('THIRD BOON'), 10 ('IMMORTAL SOUL'), and 12 ('YOUR QUESTION?').

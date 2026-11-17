@@ -1,0 +1,35 @@
+{
+ "topic": "Phone garam kyun hota hai",
+ "title": "Phone Garam Kyun Hota Hai?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.5,
+  "true_peak": -2.5,
+  "dur": 38.83
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 2: The caption 'arabon microscopic transistors hote hain' is extremely faint and difficult to read against the dark background compared to other scenes.",
+   "scene 3: The caption 'electrons in barik raaston se tezi' is slightly cut off at the end (missing 'se daudte hain' which is in the script).",
+   "scene 4: The caption 'Ye electrons atoms se takrate hain' is slightly cut off at the end (missing 'aur is friction se paida hoti hai heat').",
+   "scene 5: The caption 'phone ko slim aur waterproof banana' is slightly cut off at the end (missing 'padta hai').",
+   "scene 6: The caption 'vapor chamber heat ko body tak' is slightly cut off at the end (missing 'pohnchata hai').",
+   "scene 7: The caption 'baat hai kyunki chip thandi rehti hai' is slightly cut off at the start (missing 'Phone bahar se garam hona acchi').",
+   "scene 8: The caption 'tape toh chip apni speed gira' is slightly cut off at the end (missing 'di hai').",
+   "scene 9: The caption 'internal resistance se aur heat badha' is slightly cut off at the end (missing 'di hai').",
+   "scene 10: The caption 'par freezer mein rakhte ho?' is slightly cut off at the start (missing 'Kya aap bhi phone garam hone')."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8270676691729323,
+  "words": 133,
+  "problems": []
+ },
+ "ok": true
+}

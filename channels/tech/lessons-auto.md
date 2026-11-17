@@ -181,3 +181,66 @@
 ## review lab-gpt-01
 - first word starts late (7.0 s): something is spoken before the script
 - visual: Scene 8 second frame caption text ('agla shabd predict...') is extremely faint and unreadable against the dark background.
+
+## v2-01 Phone garam kyun hota hai
+- scene 2: The caption text 'arabon microscopic transistors hote hain' is extremely faint and difficult to read against the dark background compared to other scenes.
+- scene 3: The caption text 'electrons in barik raaston se tezi' is slightly cut off at the very end.
+- scene 4: The caption text 'Ye electrons atoms se takrate hain' is slightly cut off at the end.
+- scene 5: The caption text 'phone ko slim aur waterproof banana' is slightly cut off at the end.
+- scene 6: The caption text 'vapor chamber heat ko body tak' is slightly cut off at the end.
+- scene 7: The caption text 'baat hai kyunki chip thandi rehti hai' is slightly cut off at the end.
+- scene 8: The caption text 'tape toh chip apni speed gira' is slightly cut off at the end.
+- scene 9: The caption text 'internal resistance se aur heat badha' is slightly cut off at the end.
+- scene 10: The caption text 'par freezer mein rakhte ho?' is slightly cut off at the end.
+
+## review v2-01
+- visual: Scene 2 second frame: bottom caption text is extremely faint and blends into the dark background, making it unreadable.
+
+## v2-01 Phone garam kyun hota hai
+- scene 2: The caption 'arabon microscopic transistors hote hain' is extremely dark and barely readable against the black background.
+- scene 3: The caption 'electrons in barik raaston se tezi' is extremely dark and barely readable against the black background.
+- scene 4: The caption 'Ye electrons atoms se takrate hain' is extremely dark and barely readable against the black background.
+- scene 5: The caption 'phone ko slim aur waterproof banana' is extremely dark and barely readable against the black background.
+- scene 6: The caption 'vapor chamber heat ko body tak' is extremely dark and barely readable against the black background.
+- scene 7: The caption 'baat hai kyunki chip thandi rehti hai' is extremely dark and barely readable against the black background.
+- scene 8: The caption 'tape toh chip apni speed gira' is extremely dark and barely readable against the black background.
+- scene 9: The caption 'internal resistance se aur heat badha' is extremely dark and barely readable against the black background.
+- scene 10: The caption 'par freezer mein rakhte ho?' is extremely dark and barely readable against the black background.
+
+## review v2-01
+- visual: Scene 2 middle frame caption text is too faint and dark against the background, making it unreadable.
+
+## v2-01 Phone garam kyun hota hai
+- scene 3: The visual text 'electrons in barik raaston se tezi' is slightly cut off at the end (missing 'se daudte hain' which is in the script, though it may be a stylistic choice).
+- scene 4: The visual text 'Ye electrons atoms se takrate hain' is slightly cut off (missing 'aur is friction se paida hoti hai heat').
+- scene 5: The visual text 'phone ko slim aur waterproof banana' is missing the word 'padta hai' from the script.
+- scene 6: The visual text 'vapor chamber heat ko body tak' is missing 'pohnchata hai' from the script.
+- scene 7: The visual text 'baat hai kyunki chip thandi rehti hai.' is missing the beginning 'Phone bahar se garam hona acchi'.
+- scene 8: The visual text 'tape toh chip apni speed gira' is missing 'hai' and the beginning 'Par agar phone hadd se zyada'.
+- scene 9: The visual text 'internal resistance se aur heat badha' is missing the beginning 'Upar se fast charging battery ke' and the end 'ti hai'.
+- scene 10: The visual text 'par freezer mein rakhte ho?' is missing the beginning 'Kya aap bhi phone garam hone'.
+
+## review v2-01
+- visual: Duplicate category labels appear simultaneously in scenes 1 through 9, where the top-right header text redundantly mirrors the yellow pill badge directly below it.
+
+## v2-01 Phone garam kyun hota hai
+- scene 2: The caption 'arabon microscopic transistors hote hain' is very faint/low contrast compared to other scenes.
+- scene 3: The caption 'electrons in barik raaston se tezi' is cut off; it should say 'se tezi se daudte hain' based on the script.
+- scene 4: The caption 'Ye electrons atoms se takrate hain' is missing the final word 'hain' (it is cut off).
+- scene 5: The caption 'phone ko slim aur waterproof banana' is missing the word 'padta' at the end.
+- scene 6: The caption 'vapor chamber heat ko body tak' is missing 'pohnchata hai' at the end.
+- scene 7: The caption 'baat hai kyunki chip thandi rehti hai' is missing the first half of the sentence 'Phone bahar se garam hona acchi'.
+- scene 8: The caption 'tape toh chip apni speed gira' is missing 'ti hai' at the end.
+- scene 9: The caption 'internal resistance se aur heat badha' is missing 'di hai' at the end.
+- scene 10: The caption 'par freezer mein rakhte ho?' is missing 'Kya aap bhi phone garam hone' at the beginning.
+
+## v2-01 Phone garam kyun hota hai
+- scene 2: The caption 'arabon microscopic transistors hote hain' is extremely faint and difficult to read against the dark background compared to other scenes.
+- scene 3: The caption 'electrons in barik raaston se tezi' is slightly cut off at the end (missing 'se daudte hain' which is in the script).
+- scene 4: The caption 'Ye electrons atoms se takrate hain' is slightly cut off at the end (missing 'aur is friction se paida hoti hai heat').
+- scene 5: The caption 'phone ko slim aur waterproof banana' is slightly cut off at the end (missing 'padta hai').
+- scene 6: The caption 'vapor chamber heat ko body tak' is slightly cut off at the end (missing 'pohnchata hai').
+- scene 7: The caption 'baat hai kyunki chip thandi rehti hai' is slightly cut off at the start (missing 'Phone bahar se garam hona acchi').
+- scene 8: The caption 'tape toh chip apni speed gira' is slightly cut off at the end (missing 'di hai').
+- scene 9: The caption 'internal resistance se aur heat badha' is slightly cut off at the end (missing 'di hai').
+- scene 10: The caption 'par freezer mein rakhte ho?' is slightly cut off at the start (missing 'Kya aap bhi phone garam hone').
