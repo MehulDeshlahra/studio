@@ -1,18 +1,12 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/full-on.mp3",
+  "file": "music/lib/katha/dentaneosuchus-hunt.mp3",
   "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
  "sfx": [
-  {
-   "t": 0.0,
-   "file": "sfx/impact.mp3",
-   "gain_db": -15,
-   "align": "onset"
-  },
   {
    "t": 4.42,
    "file": "sfx/air-zoom.mp3",

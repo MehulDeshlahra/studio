@@ -62,8 +62,6 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "before render, scene 5: CUT: caption text 'NA?' is incomplete compared to voiceover",
-   "before render, scene 7: FIT: image shows Narakasura instead of Krishna's weapon breaking the spell",
    "before render, scene 10: OVERLAP/CUT (layout audit): content_overlap on #s9b"
   ]
  },

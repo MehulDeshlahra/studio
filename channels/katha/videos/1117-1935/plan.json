@@ -69,7 +69,7 @@
   {
    "vo": "Narakasura hansa: 'Vardaan yaad hai na? Koi purush nahi maar sakta.'",
    "type": "image",
-   "prompt": "Painterly Indian epic style, demon king on obsidian throne laughing arrogantly, red aura, centred subject with ample space above and below, no text",
+   "prompt": "Painterly Indian epic style, demon king laughing arrogantly on obsidian throne, red aura, vertical 9:16 composition, generous empty space at top and bottom for text, no text",
    "motion": "pull",
    "keywords": [
     "hansi",
@@ -134,7 +134,7 @@
   {
    "vo": "Ahankar ka wo durg todo. Kal nayi kahani. Follow @puraankikatha.",
    "type": "card",
-   "prompt": "Painterly Indian epic style, golden lotus on dark water, single ripple, soft glow, centred subject with ample space above and below, no text",
+   "prompt": "Painterly Indian epic style, golden lotus on dark water, single ripple, soft glow, vertical 9:16 composition, generous empty space at top and bottom for text, no text",
    "motion": "push",
    "big": "Follow",
    "small": "Nayi Kahani",
