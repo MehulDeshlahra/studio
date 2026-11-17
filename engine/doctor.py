@@ -159,14 +159,18 @@ def check_held():
             jd = os.path.join(OUT, cid, d["job"])
             meta = load(os.path.join(jd, "meta.json"), {}) or {}
             probs = " ".join(map(str, d.get("review") or (load(os.path.join(jd, "review.json"), {}) or {}).get("problems", [])))
-            if meta.get("doctor_rebuilt"):
+            head = sh(f"git -C {ROOT} rev-parse --short HEAD")[1].strip()
+            tries = meta.get("doctor_tries", 1 if meta.get("doctor_rebuilt") else 0)
+            if meta.get("doctor_rebuilt") and (meta.get("doctor_code") == head or tries >= 3):   # retry only after a code fix
                 if "visual" in probs:
                     unknown.append({"what": f"held video still failing after rebuild: {cid} {d['job']}", "detail": probs[:200]})
                 continue
             if busy:
                 return                                             # one build at a time; try next run
             frm = None
-            if "of the script was found" in probs or "starts late" in probs:
+            if "spoken instructions" in probs or "does not start with the first line" in probs or "starts late" in probs:
+                frm = "voice"                                      # new voice (the instruction cut is fixed in code)
+            elif "of the script was found" in probs:
                 frm = "compose"
                 fix(f"held {cid} {d['job']}: caption timing redone with the new aligner", fn=lambda jd=jd: os.path.exists(os.path.join(jd, "timing.json")) and os.remove(os.path.join(jd, "timing.json")))
             elif "loudness" in probs or "true peak" in probs:
@@ -175,7 +179,8 @@ def check_held():
                 frm = "compose"                                    # layout fixes land in compose code
             if not frm:
                 continue
-            meta["doctor_rebuilt"] = time.strftime("%Y-%m-%d %H:%M"); save(os.path.join(jd, "meta.json"), meta)
+            meta.update(doctor_rebuilt=time.strftime("%Y-%m-%d %H:%M"), doctor_code=head, doctor_tries=tries + 1)
+            save(os.path.join(jd, "meta.json"), meta)
             args = f"/home/ubuntu/studio-venv/bin/python {ROOT}/engine/make.py {cid} --job {d['job']} --from {frm}" + (" --lang en" if d["job"].endswith("-en") else "")
             fix(f"rebuilding held {cid} {d['job']} from {frm}",
                 f"sudo systemd-run --unit=studio-job-doc-{int(time.time())} --uid=ubuntu -p CPUWeight=20 -p Nice=15 --working-directory={ROOT} -E HOME={HOME} {args}")
