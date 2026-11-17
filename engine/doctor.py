@@ -257,6 +257,22 @@ def check_owner_items():
                 owner.append(f"Meta data access ends in {left:.0f} days. Open Meta Business Suite once (any page) to renew it.")
     except Exception:
         pass
+    if time.strftime("%Y-%m-%d") != st.get("yt-check"):    # 18 Nov: a revoked YouTube login is found the same day
+        st["yt-check"] = time.strftime("%Y-%m-%d")
+        import urllib.parse
+        for cid in ("tech", "katha", "raaz"):
+            yt = (load(os.path.join(HOME, ".studio-accounts", f"{cid}.json"), {}) or {}).get("yt") or {}
+            if not yt.get("refresh_token"):
+                continue
+            try:
+                body = urllib.parse.urlencode({"client_id": yt["client_id"], "client_secret": yt["client_secret"],
+                                               "refresh_token": yt["refresh_token"], "grant_type": "refresh_token"}).encode()
+                json.load(urllib.request.urlopen("https://oauth2.googleapis.com/token", data=body, timeout=30))
+            except urllib.error.HTTPError as e:
+                if e.code in (400, 401) and once_a_day(f"yt-{cid}"):
+                    owner.append(f"YouTube login for {cid} stopped working, so Shorts are not uploaded. On the laptop run: python tools/yt_login.py {cid}")
+            except Exception:
+                pass
     for line in reversed(open(os.path.join(OUT, "engine.log"), encoding="utf-8", errors="ignore").readlines()[-400:]):
         if "Spend cap" in line or "billing" in line.lower() and "403" in line:
             if once_a_day("gemini-cap"):
