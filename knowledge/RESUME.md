@@ -43,3 +43,10 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - Edit safely (an edit script once emptied tts.py): write file.new, os.replace, assert length; never trust a silent success.
 - Scripts: write to C:\Users\mehul\Desktop\studio\.tmp (gitignored), scp to /tmp, `sed -i 's/\r//'`, run with output to a log file, then cat it.
 - Wikimedia asks for a polite User-Agent and returns 429 when fast (handled in realmedia._get).
+
+## 18 Nov 01:40 (owner decisions round 2)
+- Katha Hindi only; Aage Suno = fiction serials (engine/serials.py; first story 'Chouthi Manzil Ka Raaz', 10 parts); brand guard; English never posted on Hindi pages.
+- Mehul agent: engine/mehul.py + knowledge/mehul.md, timer studio-mehul 22:30, Telegram 'mehul: ...' adds to the profile. Dry run on katha scored 6/10 with 4 actions; the full run crashed once on low memory (fixed).
+- extras.py: teaser line, recap Story (FB; IG needs a public image URL), guess comment, festivals, Katha series, Tech myth Monday, long cut, sting, drop-off, best cover picture.
+- 01:14-01:34 the server hit load 300 (memory pressure 99%: job bot + Studio prep + a manual rebuild + agent sheets). Fixed: lanes wait below 1.8 GB free; all Studio units MemoryHigh 2.6G / Max 3.4G / IOWeight 20.
+- TODO: re-run katha 1117-1935 rebuild (own handle) when memory allows; run engine/mehul.py --dry again and read its actions; Rohan's look for Part 8 of the serial.

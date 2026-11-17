@@ -34,3 +34,7 @@ Built 17 Nov from everything Mehul said while building Studio. Add a line whenev
 - "Check real state before stating facts." Look at actual frames, logs and numbers.
 - Act first inside the rules, report after. Ask only for money, sign-ups, deleting posted things, or his clicks.
 - When unsure between two ways: pick the one a top creator page would use, and the one that needs him less.
+- (17 Nov) No A/B copies of the same video: grow by adding NEW pages, not more versions.
+- (17 Nov) Serial pages: a specific teaser for the next part, a recap Story, ask viewers to guess, a long YouTube cut when done.
+- (17 Nov) Katha: festival stories on the day; 5-7 part series. Tech: a weekly myth-buster.
+- (18 Nov) Keep the server busy, but Studio must never push the job bot into swap (free memory >= 1.8 GB).
