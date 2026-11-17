@@ -69,11 +69,22 @@
    "align": "onset"
   },
   {
-   "t": 26.028,
-   "file": "sfx/type-soft.mp3",
-   "gain_db": -24,
-   "align": "onset",
-   "dur": 1.2
+   "t": 26.128,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 26.7,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 27.273,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
   },
   {
    "t": 25.878,
