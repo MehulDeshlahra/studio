@@ -50,3 +50,7 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - extras.py: teaser line, recap Story (FB; IG needs a public image URL), guess comment, festivals, Katha series, Tech myth Monday, long cut, sting, drop-off, best cover picture.
 - 01:14-01:34 the server hit load 300 (memory pressure 99%: job bot + Studio prep + a manual rebuild + agent sheets). Fixed: lanes wait below 1.8 GB free; all Studio units MemoryHigh 2.6G / Max 3.4G / IOWeight 20.
 - TODO: re-run katha 1117-1935 rebuild (own handle) when memory allows; run engine/mehul.py --dry again and read its actions; Rohan's look for Part 8 of the serial.
+
+## 18 Nov 02:20 server freeze + reboot
+- 01:50 a hand-started Mehul agent dry run on a server with ~800 MB free froze it (memory thrash). Rebooted 02:19 through the Oracle API: node C:\Users\mehul\Desktop\job\oracle\reboot.js status|softreset|reset (API key in job/oci-config; no console password needed). All jb-* services, studio-dash and 21 timers came back.
+- Rule: never start a manual job (systemd-run) when MemAvailable < 2.5 GB. mehul.py now skips itself below 2.5 GB.

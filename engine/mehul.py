@@ -123,7 +123,17 @@ def _set_knob(cid, key, value):
     return f"{key}: {old} -> {v}"
 
 
+def _mem_ok(need_mb=2500):
+    """18 Nov: a hand-started agent run on a nearly full server froze it (reboot needed). Never start below need_mb free."""
+    try:
+        return int(next(l for l in open("/proc/meminfo") if l.startswith("MemAvailable")).split()[1]) // 1024 >= need_mb
+    except Exception:
+        return True
+
+
 def run():
+    if not _mem_ok():
+        log("mehul agent: not enough free memory, skipped today (will run tomorrow)"); return []
     profile = read(os.path.join(ROOT, "knowledge", "mehul.md"), 6000)
     hist = load(LOG, []) or []
     since = time.strftime("%Y-%m-%d", time.localtime(time.time() - 7 * 86400))
