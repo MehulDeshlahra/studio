@@ -177,7 +177,8 @@ def _stage_assets(ch, p, job):
             if s["type"] == "flow":
                 prompt = "Soft, simple, uncluttered background for a diagram: " + prompt
             f = os.path.join(adir, f"s{i}.webp")
-            img = (muse.image(prompt, f) or muse.cloudflare(prompt, os.path.join(adir, f"s{i}.jpg"))
+            img = (muse.image(prompt, f) or muse.omni_image(prompt, os.path.join(adir, f"s{i}o.jpg"))
+                   or muse.cloudflare(prompt, os.path.join(adir, f"s{i}.jpg"))
                    or muse.pollinations(prompt, os.path.join(adir, f"s{i}p.jpg")))
             if img:
                 a["image"] = img

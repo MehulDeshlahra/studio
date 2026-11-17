@@ -102,6 +102,30 @@ def cloudflare(prompt, dest):
         return None
 
 
+OMNI_IMAGE = ["nvidia/black-forest-labs/flux.1-dev", "pollinations/zimage", "nvidia/black-forest-labs/flux.2-klein-4b",
+              "nvidia/black-forest-labs/flux.1-schnell"]
+
+
+def omni_image(prompt, dest):
+    """18 Nov: free FLUX.1-dev (NVIDIA key) and z-image (Pollinations) through OmniRoute, 768x1344, ~10 s; checked on real
+    frames (clean, no artefacts). Second picture source after Muse, before Cloudflare schnell."""
+    import llm
+    for m in OMNI_IMAGE:
+        try:
+            body = json.dumps({"model": m, "prompt": prompt, "size": "768x1344", "n": 1}).encode()
+            req = urllib.request.Request("http://127.0.0.1:20128/v1/images/generations", data=body,
+                                         headers={"Authorization": "Bearer " + llm._key(), "Content-Type": "application/json"})
+            d = json.load(urllib.request.urlopen(req, timeout=240))["data"][0]
+            raw = base64.b64decode(d["b64_json"]) if d.get("b64_json") else urllib.request.urlopen(d["url"], timeout=90).read()
+            if len(raw) < 20000:
+                raise RuntimeError("tiny image")
+            open(dest, "wb").write(raw); log("omniroute image", m, os.path.basename(dest))
+            return dest
+        except Exception as e:
+            log("omniroute image fail", m, str(e)[:120])
+    return None
+
+
 def pollinations(prompt, dest):
     """Free backup still (Pollinations flux through OmniRoute)."""
     import llm
