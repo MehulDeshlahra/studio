@@ -132,3 +132,11 @@
 ## review 1117-0145
 - only 75% of the script was found in the voice
 - visual: Severe character inconsistency for Yamraj: depicted with blue skin and distinct attire in scenes 5 and 12, but suddenly appears with human skin tone and an entirely different face in scene 10.
+
+## 1117-0145-en Shravan Kumar ki katha (Valmiki Ramayana)
+- scene 6: The image shows an altar with a Sri Yantra symbol, but the prompt says 'Nachiketa asked for peace for his father, and the secrets of sacred fire.' The image is abstract and doesn't clearly depict the conversation or the request.
+- scene 8: The text 'TAKE KINGDOMS' is clear, but the image shows golden chariots and jewels, which is fine, but the prompt says 'Yamraj panicked: take gold, take kingdoms...'. The image is a bit generic and lacks the 'panicked' Yamraj character, though it fits the theme.
+- scene 11: The text on the card 'KNOWLEDGE IS ETERNAL / KATHA UPANISHAD' is legible, but the layout feels a bit sparse compared to the other visually dense panels.
+
+## review 1117-0145-en
+- visual: Visual inconsistency: Yamraj is depicted as blue-skinned in scenes 5 and 12, but appears with natural/golden skin in scene 10.

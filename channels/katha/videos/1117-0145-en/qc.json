@@ -13,9 +13,9 @@
   "score": 8,
   "ok": true,
   "problems": [
-   "scene 6: The caption 'HIS FATHER' does not match the intended scene description 'Nachiketa asked for peace for his father, and the secrets of sacred fire.' The image shows a yantra/fire ritual, but the text is incomplete/mismatched.",
-   "scene 7: The boy's eyes appear slightly asymmetrical and somewhat 'melted' or distorted in the close-up.",
-   "scene 11: The text 'KNOWLEDGE IS ETERNAL' and 'KATHA UPANISHAD' is present, but the scene is meant to be a summary card. While not an error, the composition feels a bit cramped compared to others."
+   "scene 6: The image shows an altar with a Sri Yantra symbol, but the prompt says 'Nachiketa asked for peace for his father, and the secrets of sacred fire.' The image is abstract and doesn't clearly depict the conversation or the request.",
+   "scene 8: The text 'TAKE KINGDOMS' is clear, but the image shows golden chariots and jewels, which is fine, but the prompt says 'Yamraj panicked: take gold, take kingdoms...'. The image is a bit generic and lacks the 'panicked' Yamraj character, though it fits the theme.",
+   "scene 11: The text on the card 'KNOWLEDGE IS ETERNAL / KATHA UPANISHAD' is legible, but the layout feels a bit sparse compared to the other visually dense panels."
   ]
  },
  "voice": {

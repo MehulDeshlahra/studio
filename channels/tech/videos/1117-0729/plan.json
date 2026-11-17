@@ -125,9 +125,9 @@
     "bina internet"
    ],
    "motion": "push",
-   "title": "No Storage",
+   "title": "Zero Storage",
    "big": "0 KB",
-   "sub": "Live Only",
+   "sub": "Auto Delete",
    "value": "0 KB"
   },
   {
