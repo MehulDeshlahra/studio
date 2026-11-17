@@ -15,16 +15,16 @@ import llm, research
 
 QUERIES = {
     "tech": ["tech facts hindi shorts", "phone kaise kaam karta hai shorts", "technology explained in hindi shorts",
-             "internet kaise chalta hai shorts", "hindi tech gyan shorts"],
+             "internet kaise chalta hai shorts", "hindi tech gyan shorts", "science facts hindi shorts", "kaise kaam karta hai animation hindi"],
     "katha": ["pauranik katha shorts hindi", "mahabharat ki kahani shorts", "ramayan ka rahasya shorts",
               "hindu mythology facts hindi shorts", "shiv ji ki katha shorts"],
     "raaz": ["real crime story hindi shorts", "rahasya kahani shorts hindi", "mystery story hindi shorts",
-             "sachi ghatna hindi shorts", "detective story hindi shorts"],
+             "sachi ghatna hindi shorts", "detective story hindi shorts", "horror kahani hindi shorts", "crime story animated hindi shorts"],
 }
 
-NICHE = {"tech": "an explainer about how technology works (phones, internet, apps, AI, gadgets)",
+NICHE = {"tech": "an explainer or fact video about technology, science or how everyday things work (phones, internet, apps, AI, gadgets, machines)",
          "katha": "a Hindu mythology / puranic story or explanation told in Hindi (gods, epics, temples, legends)",
-         "raaz": "a mystery / unsolved case / strange real story told as a narrated story"}
+         "raaz": "a narrated story or case about crime, mystery, horror, suspense or strange real events (not a movie scene, not a vlog)"}
 
 HOOK_PROMPT = """You study short-video hooks. Watch ONLY the first 3 seconds of this Short very carefully, then the rest once.
 FIRST decide if this Short is really {niche_desc}. Movie scenes, trailers, ads, gossip, vlogs, news, music, comedy skits and
