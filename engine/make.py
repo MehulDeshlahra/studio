@@ -316,8 +316,10 @@ def main():
         try:                                              # 17 Nov: mood-picked track from the free library (engine/musiclib.py)
             import musiclib
             mtrack = musiclib.pick(ch["id"], p.get("music_mood"), job_id)
-            if mtrack and musiclib.CREDIT not in (p.get("caption") or ""):
-                p["caption"] = (p.get("caption") or "").rstrip() + "\n\n" + musiclib.CREDIT; save(os.path.join(job, "plan.json"), p)
+            if mtrack:
+                p["music_credit"] = musiclib.CREDIT; save(os.path.join(job, "plan.json"), p)
+                if musiclib.CREDIT not in (p.get("caption") or ""):
+                    p["caption"] = (p.get("caption") or "").rstrip() + "\n\n" + musiclib.CREDIT; save(os.path.join(job, "plan.json"), p)
         except Exception as e:
             log("music library pick failed:", str(e)[:120])
         for cr in p.get("credits", []):                 # CC BY clips: the credit line goes into the caption

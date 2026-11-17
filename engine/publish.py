@@ -48,11 +48,12 @@ def facebook(acc, mp4, caption):
     return vid
 
 
-def youtube(acc, mp4, title, desc):
+def youtube(acc, mp4, title, desc, tags=None, thumb=None):
     y = acc["yt"]
     tok = _req("https://oauth2.googleapis.com/token", {"client_id": y["client_id"], "client_secret": y["client_secret"],
                                                        "refresh_token": y["refresh_token"], "grant_type": "refresh_token"})["access_token"]
-    meta = json.dumps({"snippet": {"title": title[:95] + " #shorts", "description": desc, "categoryId": "27"},
+    meta = json.dumps({"snippet": {"title": (title[:90] if "#shorts" in title.lower() else title[:90] + " #shorts"), "description": desc,
+                                   "categoryId": "27", "tags": (tags or [])[:15]},
                        "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False}}).encode()
     r = urllib.request.Request("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
                                data=meta, headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json",
@@ -60,7 +61,15 @@ def youtube(acc, mp4, title, desc):
     loc = urllib.request.urlopen(r, timeout=120).headers["Location"]
     up = urllib.request.Request(loc, data=open(mp4, "rb").read(), method="PUT",
                                 headers={"Authorization": f"Bearer {tok}", "Content-Type": "video/mp4"})
-    return json.load(urllib.request.urlopen(up, timeout=900))["id"]
+    vid = json.load(urllib.request.urlopen(up, timeout=900))["id"]
+    if thumb and os.path.exists(thumb):                       # custom cover (needs a verified channel; failure is harmless)
+        try:
+            urllib.request.urlopen(urllib.request.Request(f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}",
+                                   data=open(thumb, "rb").read(), method="POST",
+                                   headers={"Authorization": f"Bearer {tok}", "Content-Type": "image/jpeg"}), timeout=120)
+        except Exception as e:
+            log("youtube thumbnail not set", str(e)[:100])
+    return vid
 
 
 def resolve(acc):
@@ -103,7 +112,16 @@ def post_one(cid, dry=False):
     job = os.path.join(OUT, cid, nxt["job"])
     plan = load(os.path.join(job, "plan.json"), {})
     mp4 = os.path.join(job, f"{cid}-{nxt['job']}.mp4")
-    caption = (plan.get("caption", "") + "\n\n" + " ".join(plan.get("hashtags", [])[:8])).strip()
+    try:                                                       # 17 Nov: platform-specific caption/title/hashtags (engine/seo.py)
+        import seo
+        seo.make(cid, plan, job)
+        plan = load(os.path.join(job, "plan.json"), {})
+    except Exception as e:
+        log("seo failed, using the plan caption", str(e)[:150])
+    mc = plan.get("music_credit")
+    caption = seo.text_for(plan, "ig", mc) if "seo" in sys.modules else (plan.get("caption", "") + "\n\n" + " ".join(plan.get("hashtags", [])[:8])).strip()
+    fbcap = seo.text_for(plan, "fb", mc) if "seo" in sys.modules else caption
+    ytx = seo.text_for(plan, "yt", mc) if "seo" in sys.modules else {"title": plan.get("title", ""), "description": caption, "tags": []}
     cv = os.path.join(job, "cover.jpg")
     if os.path.exists(cv):
         try:
@@ -114,8 +132,8 @@ def post_one(cid, dry=False):
     if dry:
         log("publish dry", cid, nxt["job"], caption[:80]); return
     res = {}
-    for name, fn in (("ig", lambda: instagram(acc, mp4, caption)), ("fb", lambda: facebook(acc, mp4, caption)),
-                     ("yt", lambda: youtube(acc, mp4, plan.get("title", ""), caption))):
+    for name, fn in (("ig", lambda: instagram(acc, mp4, caption)), ("fb", lambda: facebook(acc, mp4, fbcap)),
+                     ("yt", lambda: youtube(acc, mp4, ytx["title"], ytx["description"], ytx.get("tags"), cv))):
         if name == "yt" and not acc.get("yt"):
             continue
         if name in ("ig", "fb") and not acc.get("page_token"):
