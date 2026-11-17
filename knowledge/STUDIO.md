@@ -96,3 +96,9 @@
 - Tested 17 Nov: fixed a real preflight.py crash from a production traceback, and a deliberately injected dashboard typo (found, patched, verified).
 - Kiro sessions: still read build-queue.md and doctor-unknown.json first; selfcheck does not do design, taste or new features.
 
+
+## Tools radar (17 Nov)
+- engine/radar.py, timer studio-radar 06:30 IST. Scans Reddit (RSS, 16 subs), Hacker News, GitHub (new fast-rising repos), Hugging Face trending, Product Hunt, dev.to, Google News and a Gemini Google-Search sweep for new FREE tools/models/platform features. Gemini judges vs CAPABILITIES.md + money rule.
+- Score 7+: GitHub -> learner queue, tips -> brain, features -> build-queue.md, sign-ups -> listed as optional for the owner (never signs up itself). Dashboard Radar page (knowledge/radar.json), one Telegram digest only when something scored 7+.
+- First run 17 Nov: 309 items, 4 repos queued for the learner (HTML/GSAP animation library, hook A/B patterns, render review tooling, YouTube SEO).
+

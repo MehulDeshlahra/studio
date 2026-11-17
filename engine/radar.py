@@ -41,10 +41,14 @@ def _text(s, n=300):
 
 def rss(url, src, n=25):
     out = []
-    try:
-        root = ET.fromstring(_get(url))
-    except Exception as e:
-        log("radar:", src, "failed", str(e)[:80]); return out
+    for wait in (0, 20, 60):                                   # 17 Nov: Reddit and Google News answer 429 when asked too fast
+        try:
+            time.sleep(wait)
+            root = ET.fromstring(_get(url))
+            break
+        except Exception as e:
+            if "429" not in str(e) or wait == 60:
+                log("radar:", src, "failed", str(e)[:80]); return out
     for it in list(root.iter("{http://www.w3.org/2005/Atom}entry"))[:n] + list(root.iter("item"))[:n]:
         g = lambda t: (it.find(t) if it.find(t) is not None else it.find("{http://www.w3.org/2005/Atom}" + t))
         t, l, d = g("title"), g("link"), g("description") if g("description") is not None else g("content")
@@ -57,7 +61,7 @@ def rss(url, src, n=25):
 def collect():
     items = []
     for s in SUBS:
-        items += rss(f"https://www.reddit.com/r/{s}/top/.rss?t=day", f"reddit r/{s}", 12); time.sleep(2)
+        items += rss(f"https://www.reddit.com/r/{s}/top/.rss?t=day", f"reddit r/{s}", 12); time.sleep(7)
     day = int(time.time()) - 86400
     for q in (f"tags=show_hn&numericFilters=created_at_i>{day}", f"tags=front_page"):
         try:
@@ -90,7 +94,7 @@ def collect():
         log("radar: devto failed", str(e)[:80])
     for q in NEWSQ:
         items += rss(f"https://news.google.com/rss/search?q={urllib.parse.quote(q)}+when:2d&hl=en-IN&gl=IN&ceid=IN:en", "google news", 8)
-        time.sleep(1)
+        time.sleep(6)
     items += google_sweep()
     return items
 
@@ -137,6 +141,8 @@ Return JSON {{"picks": [{{
   "action": "learn_repo" | "add_to_brain" | "build" | "owner_signup" | "watch",
   "how": "the concrete next step for our pipeline", "effort": "small" | "medium" | "large",
   "score": 1-10, "risk": "anything to be careful about"}}]}}
+Look across ALL sources (not only GitHub): free services and credits, new open models, platform features and creator tips count too.
+Skip repos we already read: {known}
 Max 8 picks, best first. Be strict: most days only 0-3 deserve a 7 or more."""
 
 
@@ -144,7 +150,8 @@ def judge(items):
     import plan as planner
     caps = read(os.path.join(ROOT, "knowledge", "CAPABILITIES.md"), 5000)
     lines = "\n".join(f"{i}. [{c['src']}] {c['title']} | {c['about'][:220]} | {c['url']}" for i, c in enumerate(items))
-    r = planner.ask(JUDGE.format(caps=caps, items=lines), max_tokens=6000) or {}
+    known = ", ".join(d["name"] for d in (load(os.path.join(ROOT, "knowledge", "learned.json"), []) or [])[-80:]) or "none"
+    r = planner.ask(JUDGE.format(caps=caps, items=lines, known=known), max_tokens=6000) or {}
     picks = r.get("picks", []) if isinstance(r, dict) else []
     out = []
     for p in picks:
