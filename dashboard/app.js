@@ -185,7 +185,7 @@ const V = {
   server() {
     const s = S.server;
     return `<div class="h1">Server</div><div class="lead">Oracle Ampere · ${s.cores} cores · ${s.mem_total_gb} GB · up ${Math.round(s.uptime_h / 24)} days. Sampled every 5 seconds.</div>
-     <div class="g3" style="margin-top:16px"><div class="card pad">${cpuSplit(s)}<div style="margin-top:12px">${chart(s.hist, "norm", "var(--blue)")}</div></div><div class="card pad">${chart(s.hist, "mem", "var(--violet)")}</div>
+      <div class="g3" style="margin-top:16px"><div class="card pad">${cpuSplit(s)}<div style="margin-top:12px">${chart(s.hist, "norm", "var(--blue)")}</div></div><div class="card pad"><div class="lbl">Memory</div><div style="margin-top:12px">${chart(s.hist, "mem", "var(--violet)")}</div></div>
       <div class="card pad"><div class="lbl">Disk</div><div class="val">${Math.round(s.disk_pct)}%<small>${s.disk_free_gb} GB free of ${s.disk_total_gb}</small></div><div style="margin-top:10px">${meter(s.disk_pct, thr(s.disk_pct, 85, 93))}</div>
        <div class="lbl" style="margin-top:16px">Load (1 / 5 / 15 min)</div><div class="val num" style="font-size:18px">${s.load.join(" · ")}</div><div class="dl">${s.load[1] > s.cores * 3 ? "Overloaded: more work than cores" : s.load[1] > s.cores ? "Busy" : "Comfortable"}</div></div></div>
      <div class="sec"><h3>Issues</h3><span class="mut">${S.issues.length}</span></div><div class="card">${S.issues.map(issueRow).join("") || `<div class="empty">No issues.</div>`}</div>
