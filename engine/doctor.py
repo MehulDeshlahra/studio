@@ -118,8 +118,9 @@ def check_stuck_jobs():
 def check_disk():
     du = shutil.disk_usage("/")
     pct = 100 * du.used / du.total
-    if pct < 88:
+    if pct < 90 or time.time() - st.get("disk_clean", 0) < 6 * 3600:   # 17 Nov: it cleaned every 10 min for nothing
         return
+    st["disk_clean"] = time.time()
     fix(f"disk {pct:.0f}% full: cleaned rebuildable caches",
         "sudo journalctl --vacuum-size=300M; (~/.local/bin/uv cache clean || uv cache clean) >/dev/null 2>&1; "
         "rm -rf ~/.cache/pip; find ~/.npm/_npx -maxdepth 1 -mindepth 1 -mtime +3 -exec rm -rf {} + ; "
