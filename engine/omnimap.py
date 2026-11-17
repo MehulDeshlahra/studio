@@ -19,42 +19,39 @@ PROBE = os.path.join(OUT, "omni-probe.json")
 ADMIN = os.path.join(ROOT, "tools", "omni.mjs")
 DRY = "--dry" in sys.argv
 
-# (model, tier) tier 3 = strongest. Only free tiers / free keys the owner added.
+# (model, tier) tier 4 = best for our Hinglish scripts, 1 = small. ONLY free models: on zai / siliconflow / huggingface a
+# paid model answers 402 and OmniRoute then marks the WHOLE connection "credits_exhausted" (free models too, also for the
+# job bot). Learned 18 Nov 04:00: a first probe locked all three; heal_connections() below re-tests and re-opens them.
 TEXT = [
-    ("gemini/gemini-3.8-flash", 3), ("gemini/gemini-3.1-pro-preview", 3), ("gemini/gemini-2.5-pro", 3),
-    ("gemini/gemini-3.7-flash", 3), ("gemini/gemini-2.5-flash", 2), ("gemini/gemini-3-flash-preview", 2),
-    ("gemini/gemini-3.1-flash-lite", 1), ("gemini/gemini-2.5-flash-lite", 1),
-    ("zai/glm-5.3", 3), ("zai/glm-5.1", 3), ("zai/glm-5-turbo", 2), ("zai/glm-5.3-flash", 2), ("zai/glm-4.7-flash", 1),
-    ("groq/openai/gpt-oss-120b", 3), ("groq/qwen/qwen3.8-27b", 2), ("groq/openai/gpt-oss-20b", 1), ("groq/qwen/qwen3.6-27b", 2),
-    ("cloudflare-ai/@cf/moonshotai/kimi-k2.6", 3), ("cloudflare-ai/@cf/zai-org/glm-4.7-flash", 1),
-    ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 1), ("cloudflare-ai/@cf/meta/llama-3.3-70b-instruct-fp8-fast", 1),
-    ("siliconflow/deepseek-ai/DeepSeek-V3.2", 3), ("siliconflow/moonshotai/Kimi-K2.6", 3), ("siliconflow/zai-org/GLM-5.1", 3),
-    ("siliconflow/Qwen/Qwen3.5-397B-A17B", 3), ("siliconflow/openai/gpt-oss-120b", 3), ("siliconflow/Qwen/Qwen3-8B", 1),
-    ("siliconflow/THUDM/GLM-4-9B-0414", 1), ("siliconflow/Qwen/Qwen3.5-9B", 1),
+    ("gemini/gemini-3.8-flash", 4), ("gemini/gemini-3.7-flash", 4), ("gemini/gemini-3.1-pro-preview", 4),
+    ("gemini/gemini-3-flash-preview", 3), ("gemini/gemini-3.1-flash-lite", 2),
+    ("groq/openai/gpt-oss-120b", 3), ("groq/qwen/qwen3.8-27b", 2), ("groq/openai/gpt-oss-20b", 1), ("groq/compound", 2),
     ("nvidia/nvidia/nemotron-3-ultra-550b-a55b", 3), ("nvidia/google/gemma-4-31b-it", 2),
-    ("nvidia/nvidia/nemotron-3.5-lightning-30b-a3b", 1),
-    ("nara/mistral-large", 3), ("nara/minimax-m3-free", 2), ("nara/qwen3.8-27b", 2), ("nara/stepfun-3.7-flash", 1),
-    ("llm7/gpt-4.1-nano-2025-04-14", 1), ("llm7/deepseek-r1-0528", 2),
-    ("huggingface/deepseek-ai/DeepSeek-V3", 3), ("huggingface/Qwen/Qwen2.5-7B-Instruct", 1),
-    ("pollinations/openai-large", 3), ("pollinations/openai", 2), ("pollinations/deepseek", 3), ("pollinations/kimi", 3),
-    ("pollinations/glm", 2), ("pollinations/mistral-large", 2), ("pollinations/gemini", 2),
+    ("nvidia/nvidia/nemotron-3.5-lightning-30b-a3b", 1), ("nvidia/poolside/laguna-xs-2.1", 1),
+    ("cloudflare-ai/@cf/zai-org/glm-4.7-flash", 2), ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 2),
+    ("cloudflare-ai/@cf/meta/llama-3.3-70b-instruct-fp8-fast", 1), ("cloudflare-ai/@cf/qwen/qwen2.5-coder-32b-instruct", 1),
+    ("zai/glm-4.7-flash", 2), ("zai/glm-4.5-flash", 2),
+    ("siliconflow/Qwen/Qwen3-8B", 1), ("siliconflow/THUDM/GLM-4-9B-0414", 1), ("siliconflow/Qwen/Qwen2.5-7B-Instruct", 1),
+    ("nara/qwen3.8-27b", 2), ("nara/agnes-2.5-flash", 1), ("nara/stepfun-3.7-flash", 1),
+    ("llm7/codestral-latest", 1), ("llm7/default", 1),
+    ("huggingface/deepseek-ai/DeepSeek-V3", 3),
+    ("pollinations/openai-large", 3), ("pollinations/deepseek", 3), ("pollinations/openai", 2), ("pollinations/mistral-large", 2),
+    ("pollinations/kimi", 3), ("pollinations/glm", 2), ("pollinations/gemini", 2), ("pollinations/qwen-coder-large", 2),
     ("openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", 3), ("openrouter/google/gemma-4-31b-it:free", 2),
     ("openrouter/baidu/ernie-5.5-flash-preview:free", 1), ("openrouter/inclusionai/ling-3.2-flash:free", 1),
 ]
 VISION = [
-    ("gemini/gemini-3.8-flash", 3), ("gemini/gemini-2.5-pro", 3), ("gemini/gemini-3.7-flash", 3), ("gemini/gemini-2.5-flash", 2),
-    ("gemini/gemini-3-flash-preview", 2), ("gemini/gemini-3.1-flash-lite", 1),
+    ("gemini/gemini-3.8-flash", 4), ("gemini/gemini-3.7-flash", 4), ("gemini/gemini-3-flash-preview", 3),
+    ("gemini/gemini-3.1-flash-lite", 2),
     ("nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b", 3), ("openrouter/nvidia/nemotron-3.5-super-vl:free", 3),
     ("nvidia/google/gemma-4-31b-it", 2), ("openrouter/google/gemma-4-31b-it:free", 2),
-    ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 1), ("siliconflow/zai-org/GLM-4.6V", 2),
-    ("siliconflow/Qwen/Qwen2.5-VL-7B-Instruct", 1), ("pollinations/qwen-vision", 2), ("pollinations/openai", 2),
-    ("pollinations/gemini", 2), ("huggingface/meta-llama/llama-3.2-11b-instruct", 1),
+    ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 2), ("pollinations/openai", 2), ("pollinations/qwen-vision", 2),
+    ("pollinations/gemini", 2), ("siliconflow/THUDM/GLM-4.1V-9B-Thinking", 1),
 ]
-CODE = {"gemini/gemini-3.1-pro-preview", "gemini/gemini-2.5-pro", "gemini/gemini-3.8-flash", "zai/glm-5.3", "zai/glm-5.1",
-        "cloudflare-ai/@cf/moonshotai/kimi-k2.6", "siliconflow/moonshotai/Kimi-K2.6", "siliconflow/deepseek-ai/DeepSeek-V3.2",
-        "siliconflow/zai-org/GLM-5.1", "siliconflow/Qwen/Qwen3.5-397B-A17B", "groq/openai/gpt-oss-120b",
+CODE = {"gemini/gemini-3.1-pro-preview", "gemini/gemini-3.8-flash", "gemini/gemini-3.7-flash", "groq/openai/gpt-oss-120b",
         "nvidia/nvidia/nemotron-3-ultra-550b-a55b", "huggingface/deepseek-ai/DeepSeek-V3", "pollinations/kimi",
-        "pollinations/deepseek", "pollinations/openai-large", "nara/mistral-large", "gemini/gemini-3.7-flash"}
+        "pollinations/deepseek", "pollinations/openai-large", "pollinations/qwen-coder-large", "gemini/gemini-3-flash-preview",
+        "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"}
 
 
 def _key():
@@ -88,13 +85,13 @@ def probe_one(model, kind):
         if kind == "vision":
             content = [{"type": "text", "text": 'This picture has two halves. Return ONLY JSON {"left": "<colour>", "right": "<colour>"}.'},
                        {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + _image()}}]
-            out = _post(model, content)
+            out = _post(model, content, max_tokens=1500)
             j = llm.parse_json(out)
             ok = "red" in str(j.get("left", "")).lower() and "blue" in str(j.get("right", "")).lower()
             why = "" if ok else "wrong answer: " + out[:80]
         else:
             out = _post(model, 'Return ONLY JSON {"line": "<one short Hinglish sentence in Roman letters: aasmaan neela kyun hai>"}',
-                        max_tokens=400)
+                        max_tokens=1500)                # thinking models spend tokens before they answer
             j = llm.parse_json(out)
             line = str(j.get("line", ""))
             ok = len(line) > 10 and not any("\u0900" <= ch <= "\u097f" for ch in line)
@@ -106,8 +103,34 @@ def probe_one(model, kind):
         return {"ok": False, "secs": round(time.time() - t0, 1), "why": str(e)[:120]}
 
 
+def providers_status():
+    """[(connection id, provider, name, status)] from OmniRoute's own provider list."""
+    r = admin("GET", "/api/providers").get("body") or {}
+    conns = r.get("connections", r) if isinstance(r, dict) else r
+    return [(c.get("id"), c.get("provider"), c.get("name"), c.get("testStatus") or c.get("test_status")) for c in conns or []]
+
+
+def heal_connections():
+    """A connection stuck in credits_exhausted / error after one bad answer blocks every model on it (also for the job
+    bot). Re-test it: OmniRoute re-opens it when the test passes. Returns what was done."""
+    did = []
+    env = dict(os.environ, PATH=os.path.join(HOME, ".npm-global", "bin") + ":" + os.environ.get("PATH", ""))
+    for cid, prov, name, status in providers_status():
+        if status in (None, "active", "unknown") or prov == "ollama-cloud":
+            continue
+        p = subprocess.run(["omniroute", "-q", "--no-color", "providers", "test", cid], capture_output=True, text=True, env=env, timeout=120)
+        ok = "passed" in (p.stdout + p.stderr)
+        did.append(f"{name} was {status}: re-test {'passed, open again' if ok else 'failed, stays closed'}")
+        log("omnimap:", did[-1])
+    return did
+
+
 def probe():
+    old = load(PROBE, {}) or {}
+    skip = {k for k, v in (old.get("paid") or {}).items() if time.time() - v < 30 * 86400}     # paid models: never call again
+    gone = {k for k, v in (old.get("gone") or {}).items() if time.time() - v < 7 * 86400}      # 404: look again in a week
     jobs = [(m, "text") for m, _ in TEXT] + [(m, "vision") for m, _ in VISION]
+    jobs = [(m, k) for m, k in jobs if f"{k}:{m}" not in skip | gone]
     res, lock = {}, threading.Lock()
     by_provider = {}
     for m, k in jobs:                                   # one call at a time per provider: never burst a free key
@@ -120,11 +143,15 @@ def probe():
                 res[f"{k}:{m}"] = r
     ths = [threading.Thread(target=worker, args=(v,)) for v in by_provider.values()]
     [t.start() for t in ths]; [t.join() for t in ths]
-    old = load(PROBE, {}) or {}
-    hist = old.get("history", {})
+    hist, paid, gonem = old.get("history", {}), old.get("paid", {}), old.get("gone", {})
     for k, r in res.items():                            # keep the last 7 results per model: one bad day is not a verdict
         hist[k] = (hist.get(k, []) + [1 if r["ok"] else 0])[-7:]
-    data = {"t": time.strftime("%Y-%m-%d %H:%M"), "results": res, "history": hist}
+        if r["why"].startswith("HTTP 402") and "connection(s) credits exhausted" not in r["why"]:
+            paid[k] = time.time()
+        if r["why"].startswith("HTTP 404") or "no longer avail" in r["why"] or "currently unavailable" in r["why"]:
+            gonem[k] = time.time()
+    data = {"t": time.strftime("%Y-%m-%d %H:%M"), "results": res, "history": hist, "paid": paid, "gone": gonem,
+            "healed": heal_connections() if not DRY else []}
     if not DRY:
         save(PROBE, data)
     ok = [k for k, r in res.items() if r["ok"]]
@@ -136,10 +163,13 @@ def rank(data, cands, kind, need_tier=0, only=None):
     out = []
     for m, tier in cands:
         r = data["results"].get(f"{kind}:{m}")
-        if not r or not r["ok"] or tier < need_tier or (only and m not in only):
-            continue
         h = data["history"].get(f"{kind}:{m}", [1])
         rel = sum(h) / len(h)
+        cooling = bool(r) and r["why"].startswith("HTTP 429") and rel >= 0.5   # busy today but usually works: keep it, last
+        if not r or not (r["ok"] or cooling) or tier < need_tier or (only and m not in only):
+            continue
+        if cooling:
+            tier = 0
         out.append((-(tier * 10 + rel * 5) + min(r["secs"], 60) / 6, m))
     return [m for _, m in sorted(out)]
 
