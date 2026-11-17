@@ -79,6 +79,8 @@
   "title": "Ganga swarg se zameen par kaise aayin?",
   "status": "held",
   "review": [
+   "before render, scene 8: FIT: caption says 'AGAR GANGA SEEDHE' and voice says 'Agar Ganga seedhe zameen par girti, toh dharti patal mein chali jaati.', but the second caption says 'TOH DHARTI PATAL' which misses the word 'mei",
+   "before render, scene 9: DUP: both stills show 'LORD SHIVA SE' repeating the exact same caption text without progressing to the next phrase of the voiceover.",
    "before render, scene 12: OVERLAP/CUT (layout audit): content_overlap on #s11b"
   ]
  }
