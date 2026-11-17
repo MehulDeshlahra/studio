@@ -228,6 +228,9 @@ def main():
     vbad = []
     if tj.get("method") == "whisper" and (tj.get("cover") or 0) < 0.75:
         vbad.append(f"only {tj.get('cover', 0):.0%} of the script matched the voice")
+    nwords = sum(len(s["vo"].split()) for s in p["scenes"])
+    if vdur and nwords and vdur < nwords / 3.6:          # too short for the script: part of the voice is missing
+        vbad.append(f"voice is {vdur:.0f} s for {nwords} words (part of the script is missing)")
     if w0 > 1.3:
         vbad.append(f"first word starts at {w0:.1f} s (something is said before the script)")
     if vbad and meta.get("voice_gate", 0) < 2:
