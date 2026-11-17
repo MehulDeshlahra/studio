@@ -111,9 +111,7 @@
   "topic": "GPS ko kaise pata ki aap kahan ho",
   "title": "What actually happens behind the scenes when you pay via UPI?",
   "qc_ok": true,
-  "status": "held",
-  "review": [
-   "visual: Scene 6 headline shows 'NPCI Switch' twice (top bar and card label)"
-  ]
+  "status": "approved",
+  "review": []
  }
 ]

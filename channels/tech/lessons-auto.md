@@ -333,3 +333,7 @@
 
 ## review real-01-en
 - visual: Scene 6 headline shows 'NPCI Switch' twice (top bar and card label)
+
+## real-01-en GPS ko kaise pata ki aap kahan ho
+- scene 11: The caption 'money?' at the bottom does not match the intended script line 'Did you think PhonePe sent the money? Drop the truth in comments!'.
+- scene 11: The title card 'WHO SENT?' is a bit generic compared to the specific prompt 'PHONEPE'.

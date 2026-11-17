@@ -1,0 +1,29 @@
+{
+ "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
+ "title": "Jab Krishna khud pahunche Narakasura ke durg",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.1,
+  "true_peak": -3.2,
+  "dur": 42.87
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 5: The text 'NA?' is a poor summary for the line 'Narakasura hansa: Vardaan yaad hai na?'. It feels disconnected and confusing.",
+   "scene 6: The image shows a finger with the chakra, but the script says 'Krishna muskuraye' (Krishna smiled). The image focuses solely on the finger/chakra, missing the character Krishna entirely, which creates a visual disconnect from the narration.",
+   "scene 7: The image shows Narakasura's face/helmet, but the script emphasizes the 'Vardaan fail' and Krishna's nature. While the image is dramatic, it feels slightly disconnected from the specific action of the 'vaar' (strike) mentioned in the narration."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8220338983050848,
+  "words": 124,
+  "problems": []
+ },
+ "ok": true
+}

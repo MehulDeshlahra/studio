@@ -235,3 +235,31 @@
 - visual: scene 10: The caption text 'MOVED BY THEIR' and 'MAHADEV FINALLY' is cut off; it does not match the full line provided.
 - visual: scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' appears on the image, which contradicts the intended script for scene 11 (which should be about the Kedarnath Shivling).
 - visual: scene 12: The text 'THINK', 'YOUR VIEW', and 'JAI BHOLE' appears on the image, but the text is inconsistent and repetitive across the final frames, and the script for scene 12 is missing from the visual output.
+
+## real-02-en Hanuman ji aur Shani dev ka yuddh aur unka milan (Ramayana, Kishkindha Kanda)
+- scene 6: The caption 'MASSIVE ROCKS TO' is grammatically incomplete and awkward compared to the line 'He spread his legs across two massive rocks to block the path.'
+- scene 9: The image shows Bhima holding the bull's head/horns, but the line says 'Bhima was left holding only its hump.' The visual does not match the narrative text.
+- scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' appears on the image, which was not requested in the scene description (only 'KEDARNATH' title was expected).
+- scene 12: The text 'JAI BHOLE' appears on the image, which was not requested in the scene description.
+
+## review real-02-en
+- visual: Scene 11 subtitle says 'SACRED BULL' instead of describing the Kedarnath Shivling hump or matching the script line about today's triangular Shivling.
+
+## real-02-en Hanuman ji aur Shani dev ka yuddh aur unka milan (Ramayana, Kishkindha Kanda)
+- scene 6: The image shows Bhima standing on top of the rocks rather than spreading his legs across them to block the path as described in the narrative.
+- scene 9: The image depicts a bull's head being held from above, which contradicts the narrative of Bhima holding the 'hump' of the bull (which is on the back).
+- scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' appears on the card, which was not requested in the intended scene description (which only asked for 'KEDARNATH' as the title).
+- scene 12: The text 'JAI BHOLE' appears on the card, which was not requested in the intended scene description (which only asked for 'THINK' as the title).
+
+## review real-02-en
+- visual: scene 6: The image shows Bhima standing on one rock with his legs spread, but the text 'HE SPREAD HIS' and 'MASSIVE ROCKS TO' implies he is spanning two rocks. While the image is okay, the visual composition is slightly confusing/amateurish regarding the 'two rocks' claim.
+- visual: scene 7: The image shows a single bull, but the text says 'THE OTHER BULLS'. The visual narrative is inconsistent with the text.
+- visual: scene 8: The image shows Bhima riding the bull, not grabbing it from the front as the text 'BHIMA RUSHED FORWARD' implies. The action sequence is disconnected.
+- visual: scene 9: The image shows hands holding the hump, but the text 'AS IT SANK' and 'BHIMA WAS LEFT' suggests a dramatic sinking event that isn't clearly depicted.
+- visual: scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' appears on the image, which was not requested in the plan. The plan called for the text 'That very hump is today's triangular Shivling at Kedarnath' with title 'KEDARNATH'. The generated text is completely different from the plan.
+- visual: scene 12: The text 'THINK', 'YOUR VIEW', and 'JAI BHOLE' appears, but the plan asked for the question 'Does true repentance erase every single past mistake in your view?' with title 'THINK'. The text is missing the actual question.
+
+## 1117-1935 When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.
+- scene 5: The text 'NA?' is a poor summary for the line 'Narakasura hansa: Vardaan yaad hai na?'. It feels disconnected and confusing.
+- scene 6: The image shows a finger with the chakra, but the script says 'Krishna muskuraye' (Krishna smiled). The image focuses solely on the finger/chakra, missing the character Krishna entirely, which creates a visual disconnect from the narration.
+- scene 7: The image shows Narakasura's face/helmet, but the script emphasizes the 'Vardaan fail' and Krishna's nature. While the image is dramatic, it feels slightly disconnected from the specific action of the 'vaar' (strike) mentioned in the narration.

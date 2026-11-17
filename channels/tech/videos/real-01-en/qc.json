@@ -5,16 +5,16 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.6,
-  "true_peak": -2.6,
+  "lufs": -13.7,
+  "true_peak": -3.4,
   "dur": 42.7
  },
  "vision": {
   "score": 9,
   "ok": true,
   "problems": [
-   "scene 11: The caption text 'money?' is incomplete and does not match the intended script line 'Did you think PhonePe sent the money? Drop the truth in comments!'.",
-   "scene 11: The title card 'COMMENT' and subtitle 'Drop below' are present, but the visual flow is slightly disjointed compared to the intended script."
+   "scene 11: The caption 'money?' at the bottom does not match the intended script line 'Did you think PhonePe sent the money? Drop the truth in comments!'.",
+   "scene 11: The title card 'WHO SENT?' is a bit generic compared to the specific prompt 'PHONEPE'."
   ]
  },
  "voice": {

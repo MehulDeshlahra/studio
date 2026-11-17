@@ -5,5 +5,8 @@
  "stage": "done",
  "lang": "en",
  "prepped_at": "2026-11-17 18:46",
- "brain_judged": true
+ "brain_judged": true,
+ "doctor_rebuilt": "2026-11-17 19:23",
+ "doctor_code": "bcc9ea4",
+ "doctor_tries": 1
 }

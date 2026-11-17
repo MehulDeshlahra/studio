@@ -1,0 +1,161 @@
+{
+ "slug": "krishnas-visit-to-narakasura",
+ "title": "Jab Krishna khud pahunche Narakasura ke durg",
+ "hooks": [
+  "Ek raakshas jise koi purush nahi maar sakta... toh phir kaun maarega?",
+  "Krishna ne ek baar apna chakra ghuma diya - poora durg hil gaya",
+  "16000 raaniyan bandi theen. Unka mukti kaun dilayega?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Instant curiosity gap: impossible boon + who breaks it. Second person pulls viewer in.",
+ "metaphor": "Outer fortress = inner ego. One clean strike frees both.",
+ "cast": {
+  "Krishna": "Calm divine figure, peacock feather, blue skin, gold silk, soft halo, painterly Indian epic style",
+  "Narakasura": "Hulking demon king, dark ornate armor, red glowing eyes, arrogant smirk, same painterly style"
+ },
+ "scenes": [
+  {
+   "vo": "Suno - ek raakshas tha Narakasura. Vardaan: koi purush use maar na sake.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, massive dark fortress gates glowing with red runes, stormy sky, no text",
+   "motion": "push",
+   "keywords": [
+    "vardaan",
+    "raakshas"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Usne teen lok ke devta hila diye. 16000 raaniyan bandi bana li.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, vast dungeon hall, countless women in royal clothes, dim torchlight, no text",
+   "motion": "pan",
+   "keywords": [
+    "bandi",
+    "raaniyan"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Sab haar maane. Tab Krishna khud aaye. Na sena, na shor - sirf wo.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, single blue figure walking toward glowing fortress gates, wind in peacock feather, no text",
+   "motion": "push",
+   "keywords": [
+    "krishna",
+    "ekla"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Deewarein mantron se bandh thi. Krishna ne shankh bajaya - patthar bhi kaanp uthe.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, conch shell glowing gold, sound waves cracking stone walls, divine light, no text",
+   "motion": "punch",
+   "keywords": [
+    "shankh",
+    "deewarein"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Narakasura hansa: 'Vardaan yaad hai na? Koi purush nahi maar sakta.'",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, demon king on obsidian throne pointing at Krishna, red aura, arrogant, no text",
+   "motion": "pull",
+   "keywords": [
+    "hansi",
+    "vardaan"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Krishna muskuraye. Ungli pe Sudarshan Chakra ghumaya - surya jaisi roshni.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, close-up: spinning golden disc on fingertip, blinding light cutting darkness, no text",
+   "motion": "push",
+   "keywords": [
+    "chakra",
+    "roshni"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Ek vaar. Mantra-raksha toot gayi jaise makkhan. Vardaan fail - kyunki Krishna purush nahi, Bhagwan the.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, golden disc slicing through red shield, demon armor cracking, light winning, no text",
+   "motion": "punch",
+   "keywords": [
+    "vaad",
+    "tod"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Narakasura gira. Saare taale toote. Raaniayan mukti - samman se ghar bheji gayi.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, palace gates opening, women walking out in morning light, Krishna blessing, no text",
+   "motion": "pan",
+   "keywords": [
+    "mukti",
+    "samman"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Yeh kahani Bhagavata Purana mein hai. Par asli sawal ab: tere andar bhi koi durg hai?",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, quiet temple courtyard at twilight, diyas flickering, one empty throne, no text",
+   "motion": "tilt",
+   "keywords": [
+    "bhitar",
+    "durg"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Ahankar ka wo durg todo. Kal nayi kahani. Follow @aagesuno.",
+   "type": "card",
+   "prompt": "Painterly Indian epic style, golden lotus on dark water, single ripple, soft glow, no text",
+   "motion": "push",
+   "big": "@aagesuno",
+   "small": "Kal nayi kahani",
+   "keywords": [
+    "todo",
+    "follow"
+   ],
+   "title": ""
+  }
+ ],
+ "music_mood": "epic",
+ "caption": "Jab Krishna ne Narakasura ko maara, toh sirf raakshas nahi mara - ahankar ka durg toota. Bhagavata Purana, Dasham Skandh. Tere andar ka durg kab tootega? #puraankikatha #krishna #narakasura #ahankar #aagesuno\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#puraankikatha",
+  "#krishna",
+  "#narakasura",
+  "#ahankar",
+  "#aagesuno"
+ ],
+ "claims": [
+  {
+   "claim": "Krishna defeated Narakasura and freed captive women.",
+   "basis": "Bhagavata Purana, Skandha 10"
+  }
+ ],
+ "brain_ids": [
+  "656474d688",
+  "121c1c5529",
+  "9b12cd9138",
+  "82055e32f5",
+  "ef573ce014",
+  "4204a43442",
+  "1ad22ef225",
+  "d7b38f2237",
+  "3cec28c3e9",
+  "7a67022fb6",
+  "d4d8a0da8f",
+  "84c1e843ba",
+  "1662db247e",
+  "6a0ed93ee3"
+ ]
+}

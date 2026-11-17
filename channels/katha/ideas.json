@@ -247,5 +247,130 @@
     "score": 3.53
    }
   ]
+ },
+ {
+  "t": "2026-11-17 19:35",
+  "picked": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
+  "ideas": [
+   {
+    "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
+    "search": "when lord krishna visited naraka purana",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "Directly inspired by the r/hinduism trending discussion 'When Lord Krishna visited Naraka', aligning with post-festival spiritual interest. Source: Bhagavata Purana, Canto 10, Chapter 59.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.5,
+    "score": 7.1
+   },
+   {
+    "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
+    "search": "did ravan touch sita maa valmiki ramayana",
+    "fit": 10.0,
+    "from": "trend",
+    "note": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
+    "demand_known": true,
+    "demand": 2.1,
+    "median_views": 6746,
+    "fresh": 6.9,
+    "score": 6.83
+   },
+   {
+    "topic": "Ahilya ka udhar, kaise Ram ji ke charan padne se shrap mukt hui (Valmiki Ramayana, Bala Kanda)",
+    "note": "",
+    "search": "ahilya shrap mukti ramayana story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.6,
+    "score": 6.42
+   },
+   {
+    "topic": "Karna aur Indra dev ki katha, kavach kundal daan (Mahabharata, Vana Parva)",
+    "note": "",
+    "search": "karna gives kavach kundal to indra",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 4.6,
+    "median_views": 68455,
+    "fresh": 4.1,
+    "score": 6.39
+   },
+   {
+    "topic": "Abhimanyu aur Chakravyuh ka rahasya, satva dwara gyan (Mahabharata, Dronaparva)",
+    "note": "",
+    "search": "abhimanyu chakravyuh inner secrets",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.6,
+    "score": 6.22
+   },
+   {
+    "topic": "Samudra Manthan se nikle 14 ratna aur unka rahasya (Mahabharata, Adi Parva)",
+    "note": "",
+    "search": "samudra manthan 14 ratna story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.1,
+    "score": 6.12
+   },
+   {
+    "topic": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
+    "search": "setting sun worship Chhath mythology story",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Ties into the festival buzz around Chhath Puja / Sun temples, connecting ancient Puranic legends of Surya Dev to current cultural interest. Source: Samba Purana, Chapter 27.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 205,
+    "fresh": 7.7,
+    "score": 5.69
+   },
+   {
+    "topic": "Bhishma Pitamah ka ichha mrityu ka vardaan aur uska rahasya (Mahabharata, Anushasana Parva)",
+    "note": "",
+    "search": "bhishma ichha mrityu boon mahabharat",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 1.1,
+    "median_views": 2719,
+    "fresh": 5.0,
+    "score": 5.0
+   },
+   {
+    "topic": "Shiva aur Sati ki katha, Daksha Yagya ka vidhvans (Shiva Purana)",
+    "note": "",
+    "search": "daksha yagya shiva sati story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 71,
+    "fresh": 5.2,
+    "score": 4.54
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1646,
+    "fresh": 4.3,
+    "score": 3.53
+   }
+  ]
  }
 ]

@@ -5,18 +5,18 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -14.3,
-  "true_peak": -2.1,
+  "lufs": -13.9,
+  "true_peak": -2.3,
   "dur": 48.53
  },
  "vision": {
-  "score": 8,
-  "ok": true,
+  "score": 7,
+  "ok": false,
   "problems": [
-   "scene 6: The text 'MASSIVE ROCKS TO' is grammatically incomplete and awkward compared to the narration 'He spread his legs across two massive rocks to block the path'.",
-   "scene 9: The image depicts the bull sinking, but the text 'BHIMA WAS LEFT' is slightly disconnected from the visual action of the bull disappearing.",
-   "scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' are present, but the intended narration for this scene is 'That very hump is today's triangular Shivling at Kedarnath.' The text on the card does not match the intended narration.",
-   "scene 12: The text 'YOUR VIEW' and 'JAI BHOLE' are present, but the intended narration is 'Does true repentance erase every single past mistake in your view?'. The text on the card does not match the intended narration."
+   "scene 6: The image shows Bhima standing on top of the rocks rather than spreading his legs across them to block the path as described in the narrative.",
+   "scene 9: The image depicts a bull's head being held from above, which contradicts the narrative of Bhima holding the 'hump' of the bull (which is on the back).",
+   "scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' appears on the card, which was not requested in the intended scene description (which only asked for 'KEDARNATH' as the title).",
+   "scene 12: The text 'JAI BHOLE' appears on the card, which was not requested in the intended scene description (which only asked for 'THINK' as the title)."
   ]
  },
  "voice": {
@@ -26,5 +26,5 @@
   "words": 130,
   "problems": []
  },
- "ok": true
+ "ok": false
 }

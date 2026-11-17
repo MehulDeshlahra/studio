@@ -81,15 +81,15 @@
    "vo": "NPCI asks your bank directly: is the PIN correct and funds available?",
    "type": "flow",
    "nodes": [
-    "NPCI Switch",
-    "Remitter Bank",
-    "Auth Check",
-    "Debit Approval"
+    "NPCI",
+    "Bank",
+    "Auth",
+    "Debit"
    ],
-   "label": "VERIFICATION",
+   "label": "CHECK",
    "motion": "push",
    "keywords": [],
-   "title": ""
+   "title": "VERIFY"
   },
   {
    "vo": "As soon as the bank confirms, money gets debited from your account.",
@@ -135,12 +135,12 @@
    "vo": "The moment both banks reply OK, a green tick appears on your screen.",
    "type": "stat",
    "prompt": "Sleek floating emerald acrylic success token glowing with a bright minimalist checkmark contour, soft warm rim light, premium dark fintech aesthetics on solid black background.",
-   "label": "VERIFIED",
+   "label": "STATUS",
    "motion": "tilt",
    "keywords": [],
-   "title": "STATUS",
-   "value": "OK",
-   "sub": "Confirmed",
+   "title": "REPLY",
+   "value": "SUCCESS",
+   "sub": "Bank OK",
    "big": "TICK"
   },
   {
@@ -153,25 +153,25 @@
      "pct": 100
     },
     {
-     "label": "Others",
+     "label": "Apps",
      "value": "None",
      "pct": 0
     }
    ],
-   "label": "TRANSFER",
+   "label": "PATH",
    "motion": "pull",
    "keywords": [],
-   "title": "DIRECT"
+   "title": "BANK ONLY"
   },
   {
    "vo": "Did you think PhonePe sent the money? Drop the truth in comments!",
    "type": "title",
-   "big": "COMMENT",
-   "sub": "Drop below",
+   "big": "WHO SENT?",
+   "sub": "Drop truth",
    "motion": "punch",
    "keywords": [],
-   "title": "TRUTH",
-   "label": "REPLY"
+   "title": "PHONEPE",
+   "label": "COMMENTS"
   }
  ],
  "caption": "PhonePe and Google Pay don't actually transfer a single rupee of yours! See how NPCI and your bank finish the settlement in just 2 seconds. Did you even know this?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
