@@ -87,7 +87,7 @@
   "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
   "status": "held",
   "review": [
-   "before render, scene 7: OVERLAP: '03 Auto Delete' node collides with bottom caption text"
+   "before render, scene 7: OVERLAP: the bottom flow node 'Auto Delete' overlaps directly with the caption text"
   ]
  }
 ]
