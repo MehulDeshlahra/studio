@@ -85,7 +85,7 @@ if vc:
     posts = q.get("posts", [])
     pend = [x for x in posts if not x.get("posted") and not x.get("hold")]
     check("VAJRA queued", vc["counts"].get("queued"), len(pend))
-    check("VAJRA held", vc["counts"].get("held"), len(q.get("hold", [])))
+    check("VAJRA on hold", vc["counts"].get("on_hold"), len(q.get("hold", [])))
 # 9 quality numbers vs a fresh parse
 first = {}
 rx = re.compile(r"^(\d{4}-\d\d-\d\d) [\d:]+ review (\w+) (\S+) (PASS|HOLD)")
