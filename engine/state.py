@@ -100,7 +100,8 @@ def write():
     L.append("")
     L.append("## Needs the owner")
     rows = ot if isinstance(ot, list) else ot.get("tasks", []) if isinstance(ot, dict) else []
-    L += [f"- {(r.get('what') or r.get('text') or str(r))[:160]}" for r in rows[-6:] if isinstance(r, dict) and not r.get("done")] or ["- nothing"]
+    L += [f"- {r.get('title') or r.get('what') or r.get('text')}: {r.get('why', '')}"[:200] for r in rows[-6:]
+          if isinstance(r, dict) and not r.get("done")] or ["- nothing"]
     txt = "\n".join(L) + "\n"
     tmp = PATH + ".tmp"
     open(tmp, "w", encoding="utf-8").write(txt)
