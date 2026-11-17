@@ -765,7 +765,10 @@ class H(BaseHTTPRequestHandler):
                 h = jload(os.path.join(ROOT, "channels", qs.get("cid", "x").replace("/", ""), "ideas.json"), []) or []
                 return self.send(200, h[-1] if h else {})
             if u == "/api/sources":
-                return self.send(200, extra.sources(state_cache()))
+                try:
+                    return self.send(200, extra.sources(state_cache()))
+                except Exception as e:
+                    return self.send(500, {"error": str(e)})
             if u == "/api/brief":
                 return self.send(200, extra.brief(state_cache(), qs.get("force") == "1"))
             if u.startswith("/media/"):
