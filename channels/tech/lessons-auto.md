@@ -326,3 +326,10 @@
 ## 1117-0729-en Bank app outage causes: 10 reasons banking apps go down
 - scene 6: The visual card says 'AUDIO BUFFER' while the script title says 'AUDIO BUFFER', but the text inside the card says 'ROLLING BUFFER'. This is a minor inconsistency between the intended title and the actual graphic.
 - scene 7: The visual card says 'STORAGE' while the script title says 'Auto Delete'. This is a mismatch between the intended title and the graphic label.
+
+## real-01-en GPS ko kaise pata ki aap kahan ho
+- scene 11: The caption text 'money?' is incomplete and does not match the intended script line 'Did you think PhonePe sent the money? Drop the truth in comments!'.
+- scene 11: The title card 'COMMENT' and subtitle 'Drop below' are present, but the visual flow is slightly disjointed compared to the intended script.
+
+## review real-01-en
+- visual: Scene 6 headline shows 'NPCI Switch' twice (top bar and card label)

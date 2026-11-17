@@ -1,0 +1,213 @@
+{
+ "slug": "upi-backend-explained",
+ "title": "What actually happens behind the scenes when you pay via UPI?",
+ "hooks": [
+  "Google Pay ya PhonePe aapka ek rupya bhi transfer nahi karte.",
+  "Aapka UPI app aapka paisa kabhi haath bhi nahi lagata.",
+  "PIN daala aur do second mein payment done... par beech mein paisa kahan gaya?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Contrarian hook that immediately shatters user assumption that payment apps move the actual money, driving high watch retention.",
+ "metaphor": "NPCI ek central air traffic controller hai jo bina paisa chuve do alag banks ke beech transaction route karta hai.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Google Pay or PhonePe never actually transfer a single rupee of yours.",
+   "type": "clip",
+   "prompt": "Cinematic close-up macro shot of a sleek smartphone screen resting on a dark slate surface, displaying a subtle green glowing payment ring with soft rim lighting, photorealistic studio tech product render on pure black background, no text on screen.",
+   "label": "PAYMENT APPS",
+   "motion": "punch",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "Enter PIN, transfer done in two seconds, but what happened behind?",
+   "type": "ui",
+   "title": "SETTLEMENT SPEED",
+   "rows": [
+    {
+     "label": "PIN Entered",
+     "value": "0.0s",
+     "pct": 20
+    },
+    {
+     "label": "Network Route",
+     "value": "0.8s",
+     "pct": 55
+    },
+    {
+     "label": "Bank Credit",
+     "value": "1.8s",
+     "pct": 100
+    }
+   ],
+   "label": "TIME BREAKDOWN",
+   "motion": "push",
+   "keywords": []
+  },
+  {
+   "vo": "The truth is these apps are just acting like digital postmen.",
+   "type": "object",
+   "prompt": "Minimalist illuminated glowing data packet capsule floating inside a dark digital glass conduit, soft volumetric cyan lighting, premium cinematic 3D render on pure dark background, no text.",
+   "label": "DATA CARRIER",
+   "motion": "push",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "The moment you enter your PIN, the app locks and forwards it to NPCI.",
+   "type": "object",
+   "prompt": "Premium matte-black cryptographic security vault token with a faint glowing golden cipher lock core, dramatic moody edge lighting, isolated on solid black background, hyper-detailed product studio render.",
+   "label": "ENCRYPTED PIN",
+   "motion": "pull",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "NPCI is the national switchboard that connects all banks together instantly.",
+   "type": "object",
+   "prompt": "Futuristic centralized banking network server core with glowing golden circuit tracks and deep blue fiber connections, photorealistic tech render on pure black, clean minimal composition.",
+   "label": "NPCI SWITCH",
+   "motion": "push",
+   "keywords": [],
+   "real": {
+    "q": "NPCI logo vector white background",
+    "kind": "logo",
+    "subject": "National Payments Corporation of India logo"
+   },
+   "title": ""
+  },
+  {
+   "vo": "NPCI asks your bank directly: is the PIN correct and funds available?",
+   "type": "flow",
+   "nodes": [
+    "NPCI Switch",
+    "Remitter Bank",
+    "Auth Check",
+    "Debit Approval"
+   ],
+   "label": "VERIFICATION",
+   "motion": "push",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "As soon as the bank confirms, money gets debited from your account.",
+   "type": "ui",
+   "title": "REMITTER CORE BANKING",
+   "rows": [
+    {
+     "label": "Security Check",
+     "value": "PASSED",
+     "pct": 100
+    },
+    {
+     "label": "Ledger Balance",
+     "value": "DEBITED",
+     "pct": 100
+    }
+   ],
+   "label": "DEBIT SIGNAL",
+   "motion": "punch",
+   "keywords": []
+  },
+  {
+   "vo": "Then NPCI tells the receiver bank to credit the funds right away.",
+   "type": "ui",
+   "title": "BENEFICIARY SYSTEM",
+   "rows": [
+    {
+     "label": "Credit Order",
+     "value": "RECEIVED",
+     "pct": 100
+    },
+    {
+     "label": "Account Credit",
+     "value": "INSTANT",
+     "pct": 100
+    }
+   ],
+   "label": "CREDIT SIGNAL",
+   "motion": "pan",
+   "keywords": []
+  },
+  {
+   "vo": "The moment both banks reply OK, a green tick appears on your screen.",
+   "type": "stat",
+   "prompt": "Sleek floating emerald acrylic success token glowing with a bright minimalist checkmark contour, soft warm rim light, premium dark fintech aesthetics on solid black background.",
+   "label": "VERIFIED",
+   "motion": "tilt",
+   "keywords": [],
+   "title": "STATUS",
+   "value": "OK",
+   "sub": "Confirmed",
+   "big": "TICK"
+  },
+  {
+   "vo": "Money went strictly bank to bank, no third-party app touched it.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "Bank",
+     "value": "Direct",
+     "pct": 100
+    },
+    {
+     "label": "Others",
+     "value": "None",
+     "pct": 0
+    }
+   ],
+   "label": "TRANSFER",
+   "motion": "pull",
+   "keywords": [],
+   "title": "DIRECT"
+  },
+  {
+   "vo": "Did you think PhonePe sent the money? Drop the truth in comments!",
+   "type": "title",
+   "big": "COMMENT",
+   "sub": "Drop below",
+   "motion": "punch",
+   "keywords": [],
+   "title": "TRUTH",
+   "label": "REPLY"
+  }
+ ],
+ "caption": "PhonePe and Google Pay don't actually transfer a single rupee of yours! See how NPCI and your bank finish the settlement in just 2 seconds. Did you even know this?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#UPI",
+  "#Fintech",
+  "#GooglePay",
+  "#PhonePe",
+  "#Banking",
+  "#TechFacts",
+  "#Money"
+ ],
+ "claims": [
+  {
+   "claim": "Third-party UPI apps (Google Pay, PhonePe) do not hold customer deposits or directly transfer money; settlement occurs bank-to-bank.",
+   "basis": "NPCI Unified Payments Interface framework: TPAPs operate as front-end application providers on top of sponsor and member Core Banking Systems."
+  },
+  {
+   "claim": "The encrypted transaction request routes via the NPCI switch to verify credentials with the remitter bank CBS before notifying the beneficiary bank.",
+   "basis": "NPCI UPI Operating Guidelines and core transaction routing flows."
+  }
+ ],
+ "brain_ids": [
+  "82055e32f5",
+  "1ad22ef225",
+  "4204a43442",
+  "7a67022fb6",
+  "3cec28c3e9",
+  "ef573ce014",
+  "d7b38f2237",
+  "d4d8a0da8f",
+  "a43539ef19",
+  "8ff0e3e4e9",
+  "31d664c19b",
+  "84c1e843ba"
+ ],
+ "lang": "en",
+ "end_line": "Share this now"
+}

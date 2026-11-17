@@ -1,0 +1,28 @@
+{
+ "topic": "GPS ko kaise pata ki aap kahan ho",
+ "title": "What actually happens behind the scenes when you pay via UPI?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.6,
+  "true_peak": -2.6,
+  "dur": 42.7
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 11: The caption text 'money?' is incomplete and does not match the intended script line 'Did you think PhonePe sent the money? Drop the truth in comments!'.",
+   "scene 11: The title card 'COMMENT' and subtitle 'Drop below' are present, but the visual flow is slightly disjointed compared to the intended script."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9921259842519685,
+  "words": 131,
+  "problems": []
+ },
+ "ok": true
+}

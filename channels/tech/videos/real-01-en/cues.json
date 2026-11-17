@@ -1,0 +1,162 @@
+{
+ "lufs": -14,
+ "music": {
+  "file": "music/lib/tech/thief-in-the-night.mp3",
+  "offset": 6.0,
+  "gain_db": -22,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "t": 5.27,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 5.49,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 5.71,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 4.87,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 8.39,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 11.71,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 15.67,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 20.16,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 20.506,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 20.852,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 21.198,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 19.91,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 23.77,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 23.99,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 23.37,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 26.95,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 27.17,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 26.55,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 30.24,
+   "file": "sfx/type-soft.mp3",
+   "gain_db": -24,
+   "align": "onset",
+   "dur": 1.2
+  },
+  {
+   "t": 30.09,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 34.01,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 34.36,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 33.71,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 37.37,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 41.341,
+   "file": "sfx/whoosh-cine.mp3",
+   "gain_db": -20,
+   "align": "peak"
+  }
+ ]
+}

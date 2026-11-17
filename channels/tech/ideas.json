@@ -227,5 +227,68 @@
     "score": 4.22
    }
   ]
+ },
+ {
+  "t": "2026-11-17 18:45",
+  "picked": "GPS ko kaise pata ki aap kahan ho",
+  "ideas": [
+   {
+    "topic": "GPS ko kaise pata ki aap kahan ho",
+    "search": "GPS ko kaise pata ki aap kahan ho",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 9.5,
+    "median_views": 6138745,
+    "fresh": 4.9,
+    "score": 7.71
+   },
+   {
+    "topic": "Prison jammers in Bengaluru have left residents without signal for nearly two years",
+    "search": "how mobile jammers block signal",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Trending on Reddit r/india about prison jammers cutting off entire neighborhoods; highly relatable tech curiosity.",
+    "demand_known": true,
+    "demand": 3.3,
+    "median_views": 20179,
+    "fresh": 7.1,
+    "score": 7.05
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 6.5,
+    "median_views": 388813,
+    "fresh": 2.7,
+    "score": 5.92
+   },
+   {
+    "topic": "New phones, old chips: Inside the rise of recycled memory in smartphones",
+    "search": "how old chips are reused in phones",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "Business Standard tech report on recycled smartphone memory chips, appealing to tech-savvy youth interested in hardware secrets.",
+    "demand_known": true,
+    "demand": 0.1,
+    "median_views": 1051,
+    "fresh": 6.9,
+    "score": 5.22
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 186,
+    "fresh": 5.1,
+    "score": 3.47
+   }
+  ]
  }
 ]
