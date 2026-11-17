@@ -284,3 +284,12 @@
 
 ## review lab-gpt-01
 - only 0% of the script was found in the voice
+
+## lab-gpt-01 ChatGPT jawab kaise banata hai
+- scene 4: The caption text 'chhote tukdon yani tokens mein todta hai.' is slightly cut off at the bottom compared to other frames, though still readable.
+- scene 5: The caption text 'ka chance calculate hota hai.' is slightly cut off at the bottom.
+- scene 6: The caption text 'bas agla ek tukda banta hai.' is slightly cut off at the bottom.
+- only 0% of the script was found in the voice
+
+## review lab-gpt-01
+- only 0% of the script was found in the voice
