@@ -82,3 +82,9 @@
 - engine/learn.py: GitHub links / PDFs / photos / text files posted in Studio360 -> read via GitHub API (never cloned or run) -> knowledge into the brain, code features into knowledge/build-queue.md. Weekly explore (studio-learn timer, Sun 11:00) searches GitHub for new repos.
 - Kiro sessions: READ knowledge/build-queue.md and ~/studio-out/doctor-unknown.json first; build/fix the best items.
 
+
+## Dashboard audit (17 Nov)
+- Run python dashboard/audit.py on the server after any dashboard change: it recomputes runs, statuses, budgets, disk/memory, timers, follower counts (vs Meta), VAJRA queue and first-pass numbers from raw files and compares with /api/state (72 checks).
+- Tab-by-tab review fixed: stale 92% progress, stale reviews on building videos, held-label wording, grouped issues, friendly hold reasons, brief refresh (30 min, background), brain graph ids + learned cluster, phone layout (no sideways scroll, runs as cards), VAJRA counts, settings defaults, thumbnails (cover-s.jpg).
+- Housekeeping: finished videos keep video/cover/plan/timing/assets only; render/ raw.mp4 mix-tp.wav removed after a day (doctor) and raw.mp4 right after mastering. Preflight stills are deleted after the sheet is made.
+
