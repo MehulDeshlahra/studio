@@ -626,7 +626,7 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, extra.posts(c["igid"]) if c and c.get("igid") else [])
             if u == "/api/learned":
                 sys.path.insert(0, os.path.join(ROOT, "engine"))
-                import brain
+                import brain as brainmod
                 bq = open(os.path.join(ROOT, "knowledge", "build-queue.md"), encoding="utf-8").read() if os.path.exists(os.path.join(ROOT, "knowledge", "build-queue.md")) else ""
                 top = sorted([i for i in brainmod.items() if i.get("uses")], key=lambda i: -(i.get("wins", 0) / max(1, i["uses"])))[:8]
                 return self.send(200, {"stats": brainmod.stats(), "learned": (jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or [])[::-1][:40],
