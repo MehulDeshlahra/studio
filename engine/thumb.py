@@ -127,17 +127,14 @@ def page(hero_path, hk, st, handle, lang, layout_hint=0):
     acc, acc2, ink, font = st["acc"], st["acc2"], st["ink"], st["font"]
     # text block sits in the centre-low area: inside the 3:4 grid crop (y 240..1680) and mostly inside the centre square
     top = 1010 if layout_hint % 2 == 0 else 360
+    grad = ("rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.15) 48%,rgba(0,0,0,.82) 72%,rgba(0,0,0,.92) 100%" if top > 600 else
+            "rgba(0,0,0,.92) 0%,rgba(0,0,0,.8) 34%,rgba(0,0,0,.1) 58%,rgba(0,0,0,.15) 85%,rgba(0,0,0,.5) 100%")
+    bg = f"""<img class="hero" src="{hero}" style="position:absolute;inset:0;width:{W}px;height:{H}px;object-fit:cover;filter:{st['grade']}">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,{grad})"></div>"""
     if st["layout"] == "lab":
-        bg = f"""<div class="bg" style="background:#07080b"></div>
-<div class="glow" style="position:absolute;left:-10%;right:-10%;top:12%;height:60%;background:radial-gradient(closest-side,{acc}55,{acc2}22 55%,transparent 72%)"></div>
-<img class="hero" src="{hero}" style="position:absolute;left:90px;top:{300 if top > 600 else 760}px;width:900px;height:760px;object-fit:contain;filter:{st['grade']} drop-shadow(0 30px 60px #000);mix-blend-mode:lighten">
+        # full-bleed hero like the other pages, plus a faint tech glow and grid
+        bg += f"""<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% {32 if top > 600 else 72}%,transparent 40%,{acc2}1c 65%,transparent 85%);mix-blend-mode:screen"></div>
 <div class="grid"></div>"""
-    else:
-        bg = f"""<img class="hero" src="{hero}" style="position:absolute;inset:0;width:{W}px;height:{H}px;object-fit:cover;filter:{st['grade']}">
-<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.15) 48%,rgba(0,0,0,.82) 72%,rgba(0,0,0,.92) 100%)"></div>"""
-        if top < 600:
-            bg = bg.replace("rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.15) 48%,rgba(0,0,0,.82) 72%,rgba(0,0,0,.92) 100%",
-                            "rgba(0,0,0,.92) 0%,rgba(0,0,0,.8) 34%,rgba(0,0,0,.1) 58%,rgba(0,0,0,.15) 85%,rgba(0,0,0,.5) 100%")
     extra = ""
     if st["layout"] == "noir":
         extra = f'<div class="tape" style="top:{top - 120}px">CASE FILE</div>'
