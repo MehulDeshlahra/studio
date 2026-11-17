@@ -115,13 +115,26 @@ def heal_connections():
     bot). Re-test it: OmniRoute re-opens it when the test passes. Returns what was done."""
     did = []
     env = dict(os.environ, PATH=os.path.join(HOME, ".npm-global", "bin") + ":" + os.environ.get("PATH", ""))
+    hp = os.path.join(OUT, "omni-heal.json")
+    hs = load(hp, {}) or {}
     for cid, prov, name, status in providers_status():
         if status != "credits_exhausted" or prov == "ollama-cloud":
             continue                                    # "unavailable" = OmniRoute's own rate-limit cool-down: leave it alone
+        h = hs.get(cid, {})
+        if time.time() < h.get("rest_until", 0):
+            continue
+        if time.time() - h.get("reopened", 0) < 6 * 3600:   # locked again soon after a re-open: the free credit is really
+            hs[cid] = dict(h, rest_until=time.time() + 86400)    # out (e.g. Hugging Face monthly credit) -> rest a day
+            did.append(f"{name} locked again within 6 h: really out of free credit, left closed for 24 h"); log("omnimap:", did[-1])
+            continue
         p = subprocess.run(["omniroute", "-q", "--no-color", "providers", "test", cid], capture_output=True, text=True, env=env, timeout=120)
         ok = "passed" in (p.stdout + p.stderr)
+        if ok:
+            hs[cid] = {"reopened": time.time()}
+        save(hp, hs)
         did.append(f"{name} was {status}: re-test {'passed, open again' if ok else 'failed, stays closed'}")
         log("omnimap:", did[-1])
+    save(hp, hs)
     return did
 
 
