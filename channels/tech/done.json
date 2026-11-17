@@ -80,5 +80,14 @@
    "visual: Scene 1 caption fails to advance between frames, omitting the second half of the spoken voiceover ('up like crazy during heavy gaming').",
    "visual: Missing branded end card call-to-action despite a dedicated page handle."
   ]
+ },
+ {
+  "job": "1117-0729",
+  "topic": "'Hey Google' phone kaise sunta hai",
+  "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
+  "status": "held",
+  "review": [
+   "before render, scene 7: OVERLAP: '03 Auto Delete' node collides with bottom caption text"
+  ]
  }
 ]
