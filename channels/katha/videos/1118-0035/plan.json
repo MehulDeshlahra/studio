@@ -124,7 +124,7 @@
   {
    "vo": "Tab Bhagirath ne Lord Shiva se prarthna ki.",
    "type": "image",
-   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, Lord Shiva seated in deep meditation on Mount Kailash",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a lone sage meditating intensely in the Himalayas",
    "motion": "pan",
    "title": "SHIVA ARADHNA",
    "keywords": [
@@ -167,7 +167,7 @@
    "motion": "punch",
    "title": "SROAT",
    "big": "SROAT",
-   "small": "Bhagavata",
+   "small": "Purana",
    "keywords": [
     "Bhagavata Purana"
    ],
