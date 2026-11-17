@@ -93,6 +93,10 @@
   "topic": "UPI se paisa bhejte waqt Google Pay, PhonePe aur NPCI ke beech kya hota hai",
   "title": "UPI se payment karte waqt peeche kya hota hai?",
   "qc_ok": true,
-  "status": "made"
+  "status": "held",
+  "review": [
+   "only 58% of the script was found in the voice",
+   "visual: Scene 11 end card / title text overlaps and is garbled at the bottom ('Commebhejta hai?h batao!') due to caption text bleeding into the final card."
+  ]
  }
 ]

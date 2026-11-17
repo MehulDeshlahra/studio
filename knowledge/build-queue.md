@@ -85,3 +85,4 @@
 
 ## Done by Kiro (verified on the server)
 - [x] 17-Nov Gemini key rotation: KeyWatch (engine/tts.py) counts every call per key, skips a key for the day once its daily quota is out (per model), Telegram only when ALL keys are out of voice quota; dashboard Server page shows each key (tested: bad key counted, caller still gets the error body).
+- [x] 17-Nov Voice-script match score counts only matchable words: katha 1117-0655 now 96 pct, real-02 93 pct (old metric gave 58-79 pct on good voices and caused re-voices); voice length floor 4.3 words/s.

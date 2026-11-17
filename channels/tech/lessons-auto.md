@@ -307,3 +307,7 @@
 - scene 11: The text 'DID YOU KNOW?' is large and clear, but the caption text at the bottom 'Commerbhejta hai?h batao!' is garbled, overlapping, and contains a typo/glitch ('Commerbhejta hai?h batao!' instead of 'Comment mein sach batao!').
 - scene 10: The caption text 'beech mein kisi app ne chua' is cut off or partially obscured by the graphic elements above it, making it slightly hard to read compared to other frames.
 - only 58% of the script was found in the voice
+
+## review real-01
+- only 58% of the script was found in the voice
+- visual: Scene 11 end card / title text overlaps and is garbled at the bottom ('Commebhejta hai?h batao!') due to caption text bleeding into the final card.
