@@ -35,22 +35,38 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
 - Studio's 4 Gemini keys are not in OmniRoute; OmniRoute's Gemini key is not in Studio's rotation.
 
 ## Build (status: [ ] todo, [x] verified on the server)
-- [ ] B1 compose.py: last scene ends where the end card starts (same as compose_lab) -> unblocks 1117-1935-type holds.
-- [ ] B2 OmniRoute: own Studio API key; Studio's Gemini keys added as connections; new Studio combos ordered by
-      measured success/latency (fast, strong, vision); every provider tested with a real call; the job bot's combos untouched.
-- [ ] B3 lib/llm.py: Studio key, per-task combos, timeouts that fit the chain, logs which model answered.
-- [ ] B4 Engine text calls: Gemini direct first while quota lasts, then OmniRoute strong combo (not flash-lite only).
-- [ ] B5 engine/healer.py (every 15 min): one inbox (doctor-unknown, held videos, selfcheck could-not-fix, [mehul]
+- [x] B1 compose.py: last scene ends where the end card starts (same as compose_lab). Plus: unknown "motion" (a repair
+      wrote "none") crashed compose with KeyError. Verified: healcode --check katha 1117-1935 -> preflight passed;
+      1118-0035 composes with no content_overlap (scene 12 ends 47.141 = end card start).
+- [x] B1b PIPELINE STALL found: a video held before render kept stage "prepped", so the render lane rebuilt the same held
+      job every 10 min (1118-0035 seven times 03:20-04:20) and the prep lane stopped (2 prepped max) -> nothing new was
+      made. Fixed: held jobs get stage "held", the render lane skips held jobs. The prep lane also stopped all new videos
+      when the Muse image budget was out although pictures fall back to free FLUX: now it continues.
+- [x] B1c Pictures: free FLUX.1-dev (NVIDIA) + z-image (Pollinations) through OmniRoute, 768x1344, ~10 s, frames checked
+      clean. Order: Muse -> OmniRoute FLUX -> Cloudflare schnell -> Pollinations flux.
+- [x] B2 OmniRoute: Studio key "studio" (~/.omniroute-studio.key); 4 Studio Gemini keys added (5 Gemini connections);
+      combos studio-text / studio-fast / studio-vision / studio-code built from real probes (engine/omnimap.py).
+      Probe 04:11: 29 of 53 free models answered correctly. Job bot combos untouched.
+      Lesson: a paid model on zai / siliconflow / huggingface answers 402 and OmniRoute locks the WHOLE connection
+      (credits_exhausted) -> only free models are probed; locked connections are re-tested and re-opened automatically.
+- [x] B3 lib/llm.py: Studio key, text / fast / vision / code / from_parts, 300 s timeouts, last_model logged.
+      Verified: text 6.5 s (gemini-3-flash-preview), fast 0.6 s (laguna), vision 3.1 s red/blue correct (nemotron VL).
+- [x] B4 plan.ask: 3.8-flash (own keys) -> studio-text -> flash-lite. preflight / review / covers / Mehul agent /
+      realmedia / learn fall back to OmniRoute when the own Gemini keys are out (preflight used to skip vision silently).
+- [~] B5 engine/healer.py (every 15 min; timer installed 04:26; dry run classified 60 doctor notes: 42 quota waits,
+      8 merged into the held ladder, 10 gone): one inbox (doctor-unknown, held videos, selfcheck could-not-fix, [mehul]
       tasks, failed units); classify (wait / retry / change input / fix code / needs owner); known-fixes file
       knowledge/fixes.json; held-video ladder (rebuild -> re-plan failing scenes with the reason -> simpler scene type ->
       code fix); every action logged and verified.
-- [ ] B6 Code-fixing agent: aider (free models via OmniRoute) in a separate git worktree; checks = compile + preflight on
+- [~] B6 Code-fixing agent (engine/healcode.py; aider 0.86.2 in ~/aider-venv, test fix 9 s / 250 MB): aider (free models via OmniRoute) in a separate git worktree; checks = compile + preflight on
       the failing job + known-good jobs; merge + push only if all pass, else discard. Memory guard 2.5 GB.
-- [ ] B7 Doctor: keep the cause of every failed unit in the healer inbox; a failed repair becomes a new problem;
+- [x] B7 Doctor (dry run clean; held videos moved to the healer): keep the cause of every failed unit in the healer inbox; a failed repair becomes a new problem;
       provider health check (error spike -> note + route around).
-- [ ] B8 knowledge/STATE.md written every hour by the server (memory, running, held, errors, inbox, keys, posts).
-- [ ] B9 Mehul agent: fix the ffmpeg contact-sheet failure; first real run verified.
-- [ ] B10 Units created through engine/units.sh; doctor keeps the new timers on.
+- [x] B8 knowledge/STATE.md written by the server every 15 min (healer), committed by sync.py; steering says read it first.
+- [~] B9 Mehul agent: the ffmpeg sheet command works (rc 0 on kuber-01); the 01:07/01:51 failures were under memory
+      pressure and the log cut the reason off -> now logs the end of the error, timeout 420 s. First real run: 22:30.
+- [x] B10 Units via engine/units.sh (studio-healer :07/:22/:37/:52, studio-omnimap 04:40, memory fence drop-ins);
+      doctor keeps them on. Dashboard shows the healer's step for each held video.
 - [ ] B11 Final check: held videos cleared by the server itself, report.
 
 ## Log

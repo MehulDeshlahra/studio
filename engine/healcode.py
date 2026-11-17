@@ -212,7 +212,8 @@ def merge(wt, br, what, changed, verified):
     if any(f.startswith("dashboard/") for f in changed):
         sh(["sudo", "systemctl", "restart", "studio-dash"], timeout=120)
     log("healer: merged code fix", commit, what[:100], "verified" if verified else "unverified")
-    telegram(f"🩹 Studio fixed its own code: {what[:120]} ({', '.join(changed)}; {'checked on the failing video' if verified else 'watching for a repeat'}).")
+    if os.environ.get("STUDIO_NO_TELEGRAM") != "1":
+        telegram(f"🩹 Studio fixed its own code: {what[:120]} ({', '.join(changed)}; {'checked on the failing video' if verified else 'watching for a repeat'}).")
     return {"result": "merged" + ("" if verified else " (unverified)"), "merged": True, "commit": commit, "verified": verified}
 
 
