@@ -327,8 +327,12 @@ def jobs(running):
             else:
                 status = "made"
             s["status"] = status; s["posted"] = (d or {}).get("posted"); s["held_why"] = (d or {}).get("review")
-            if status == "held":      # is the server still working on it, or does it wait for a code fix (next session)?
-                s["held_state"] = "waiting" if (s["doctor_tries"] >= 3 or (s["doctor_tries"] >= 1 and s["doctor_code"] == head())) else "retrying"
+            if status == "held":      # 18 Nov: the healer (engine/healer.py) owns held videos; show its real step
+                hit = ((jload(os.path.join(OUT, "healer.json"), {}) or {}).get("items") or {}).get(f"held:{c}:{j}") or {}
+                last = (hit.get("steps") or [{}])[-1]
+                s["held_state"] = "waiting" if hit.get("state") == "parked" else "retrying"
+                s["healer"] = {"state": hit.get("state") or ("working" if hit else "queued"), "step": last.get("step"),
+                               "result": last.get("result"), "why": hit.get("why")}
             out.append(s)
     out.sort(key=lambda x: (not x["active"], -x["updated"]))
     return out
@@ -340,7 +344,8 @@ NICE = {"studio-inbox": "Read Telegram replies", "studio-prep": "Prep lane (scri
         "studio-doctor": "Doctor (self-repair)", "studio-learn": "Learn from GitHub (weekly)",
         "studio-selfcheck": "Self-check and self-fix", "studio-radar": "Tools radar (daily)",
         "studio-trends": "Trending topics scout (daily)", "studio-hooks": "Hook study of top Shorts (weekly)",
-        "studio-weekly": "Weekly report (Sunday)", "studio-comments": "Pinned question + comment replies", "studio-mehul": "Mehul agent (acts for the owner)", "studio-stories": "Daily Stories (IG + FB)"}
+        "studio-weekly": "Weekly report (Sunday)", "studio-comments": "Pinned question + comment replies", "studio-mehul": "Mehul agent (acts for the owner)", "studio-stories": "Daily Stories (IG + FB)",
+        "studio-healer": "Healer (fixes held videos + unknown errors)", "studio-omnimap": "Model map (tests every free model, daily)"}
 
 
 def schedule():
@@ -610,12 +615,14 @@ def issues(srv, fails, jl, sched, token_days, chs):
     uniq_ = {}
     for u in (jload(os.path.join(OUT, "doctor-unknown.json"), []) or [])[-30:]:      # one line per problem, the newest text
         uniq_[u["what"]] = u
-    for u in list(uniq_.values())[-5:]:
-        try:
-            if time.time() - time.mktime(time.strptime(u["t"], "%Y-%m-%d %H:%M")) < 86400:
-                add("info", "Doctor noted (fixed next session): " + u["what"], u.get("detail", "")[:200], key="doc-" + u["what"])
-        except Exception:
-            pass
+    hs = jload(os.path.join(OUT, "healer.json"), {}) or {}
+    hitems = hs.get("items") or {}
+    if hs.get("log") and time.time() - os.path.getmtime(os.path.join(OUT, "healer.json")) > 2700:
+        add("warn", "Healer has not run for 45+ min", "the agent that fixes held videos and unknown errors (studio-healer timer) is not running")
+    for k, it in list(hitems.items())[-200:]:          # 18 Nov: only what the healer is still working on (not quota noise)
+        if k.startswith("unk:") and it.get("state") in ("open", "parked"):
+            add("info", f"Healer {'working on' if it['state'] == 'open' else 'parked'}: " + it.get("what", "")[:80],
+                (it.get("why") or it.get("detail") or "")[:200], key="heal-" + k)
     sc = jload(os.path.join(OUT, "selfcheck.json"), {}) or {}
     if not sc.get("last") or time.time() - sc["last"] > 5400:
         add("warn", "Self-check has not run for 90+ min", "the agent that tests and fixes the studio's own code is not running")
