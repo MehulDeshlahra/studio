@@ -39,7 +39,7 @@ def cap_groups(words):
         nxt = words[i + 1] if i + 1 < len(words) else None
         letters = sum(len(x["w"]) for x in cur)
         brk = len(cur) >= 6 or letters >= 30 or w["w"].endswith((".", "?", "!")) or (nxt and nxt["s"] - w["e"] >= 0.25)
-        if nxt is None or (brk and len(words) - i - 1 != 1):
+        left = len(words) - i - 1\n        if nxt is None or (brk and (left > 2 or (left == 2 and w["w"].endswith((".", "?", "!"))))):   # no 1-2 word orphan caption at the end of a line
             out.append(cur); cur = []
     if cur:
         out.append(cur)
