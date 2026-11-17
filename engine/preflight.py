@@ -73,6 +73,7 @@ def stills(rdir, timed, total, out_jpg):
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(tmp, "f%03d.png"), "-vf",
                     f"scale=300:-1,drawtext=text='%{{eif\\:n/2+1\\:d}}':x=10:y=10:fontsize=34:fontcolor=yellow:box=1:boxcolor=black@0.6,tile={cols}x{-(-len(pngs) // cols)}",
                     "-frames:v", "1", out_jpg], check=False)
+    shutil.rmtree(tmp, ignore_errors=True)            # 130 MB of stills per run; the contact sheet is kept
     return out_jpg if os.path.exists(out_jpg) else None
 
 

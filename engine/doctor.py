@@ -134,6 +134,29 @@ def check_disk():
         owner.append(f"Disk is still {100 * du.used / du.total:.0f}% full after cleaning. Nothing urgent tonight; I will free more space next session.")
 
 
+def check_housekeeping():
+    """Once a day: finished videos older than a day keep only the video, cover, plan, timing and assets. The rendered page
+    folder (render/) is rebuilt from those when needed (compose)."""
+    day = time.strftime("%Y-%m-%d")
+    if st.get("housekeeping") == day:
+        return
+    st["housekeeping"] = day
+    freed = 0
+    for jd in glob.glob(os.path.join(OUT, "*", "*")):
+        cid, job = os.path.basename(os.path.dirname(jd)), os.path.basename(jd)
+        fin = os.path.join(jd, f"{cid}-{job}.mp4")
+        if not os.path.exists(fin) or time.time() - os.path.getmtime(fin) < 86400:
+            continue
+        for p in (os.path.join(jd, "render"), os.path.join(jd, "raw.mp4"), os.path.join(jd, "mix-tp.wav")):
+            if os.path.exists(p):
+                sz = sh(["du", "-sb", p])[1].split()[0] if not DRY else "0"
+                freed += int(sz) if sz.isdigit() else 0
+                if not DRY:
+                    shutil.rmtree(p, ignore_errors=True) if os.path.isdir(p) else os.remove(p)
+    if freed:
+        did.append(f"housekeeping: freed {freed // 1048576} MB of old render files"); log("doctor:", did[-1])
+
+
 def check_git():
     rc, out = sh(f"git -C {ROOT} status --porcelain=v1 -b")
     if "UU " in out or "AA " in out or "rebase" in sh(f"ls {ROOT}/.git")[1]:
@@ -234,7 +257,7 @@ def check_repeating_errors():
 
 
 def main():
-    for c in (check_failed_units, check_timers, check_services, check_stuck_jobs, check_disk, check_git, check_held,
+    for c in (check_failed_units, check_timers, check_services, check_stuck_jobs, check_disk, check_housekeeping, check_git, check_held,
               check_budget_stall, check_owner_items, check_repeating_errors):
         try:
             c()

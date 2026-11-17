@@ -4,7 +4,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const K = { green: "var(--green)", amber: "var(--amber)", red: "var(--red)", blue: "var(--blue)", violet: "var(--violet)", teal: "var(--teal)", gray: "var(--gray)" };
 const ST = {
   building: ["Building", K.blue, 1], prepped: ["Prepped", K.blue], waiting: ["Needs approval", K.violet], ready: ["Ready, not sent", K.violet],
-  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held · server fixing", K.amber], rejected: ["Rejected", K.red], paused: ["Stopped midway", K.gray], made: ["Made", K.gray],
+  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], paused: ["Stopped midway", K.gray], made: ["Made", K.gray],
 };
 const LV = { ok: K.green, warn: K.amber, bad: K.red, info: K.gray, run: K.blue, wait: K.violet };
 const P = {
@@ -36,7 +36,7 @@ const ago = (t) => { if (!t) return "—"; const d = Math.max(0, now() - t); ret
 const dur = (s) => (s == null ? "—" : s < 60 ? `${s | 0}s` : s < 3600 ? `${(s / 60) | 0}m ${String(s % 60 | 0).padStart(2, "0")}s` : `${(s / 3600) | 0}h ${String(((s % 3600) / 60) | 0).padStart(2, "0")}m`);
 const inT = (s) => (s == null ? "—" : s <= 0 ? "now" : s < 3600 ? `in ${Math.ceil(s / 60)} min` : `in ${(s / 3600) | 0} h ${((s % 3600) / 60) | 0} m`);
 const ch = (id) => (S?.channels || []).find((c) => c.id === id) || { name: id, color: "#737373" };
-const badge = (k) => { const [t, c, run] = ST[k] || [k, K.gray]; return `<span class="badge ${run ? "run" : ""}" style="--c:${c}"><i class="dot"></i>${t}</span>`; };
+const badge = (k, j) => { let [t, c, run] = ST[k] || [k, K.gray]; if (k === "held" && j) t = j.held_state === "waiting" ? "Held · waits for a fix" : "Held · being rebuilt"; return `<span class="badge ${run ? "run" : ""}" style="--c:${c}"><i class="dot"></i>${t}</span>`; };
 const lvlBadge = (l, t) => `<span class="badge" style="--c:${LV[l] || K.gray}"><i class="dot"></i>${esc(t)}</span>`;
 const meter = (p, c) => `<div class="meter" style="--c:${c}"><i style="width:${Math.max(2, Math.min(100, p))}%"></i></div>`;
 const thr = (v, w, b) => (v >= b ? K.red : v >= w ? K.amber : K.green);
@@ -86,7 +86,7 @@ function runRow(j) {
   const c = ch(j.cid), cur = curStep(j);
   return `<div class="run row click" onclick="openJob('${j.cid}','${j.job}')" style="display:block">
    <div class="top"><span class="sq" style="--c:${c.color}"></span><div class="grow" style="min-width:0;flex:1"><div class="t" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(j.title)}</div>
-   <div class="s mut">${esc(c.name)} · ${j.lang === "en" ? "English" : "Hindi"}</div></div>${badge(j.status)}</div>
+   <div class="s mut">${esc(c.name)} · ${j.lang === "en" ? "English" : "Hindi"}</div></div>${badge(j.status, j)}</div>
    <div style="margin-top:10px">${seg(j)}</div>
    <div class="foot"><span>${cur ? `${esc(cur)}${j.eta != null ? ` · about ${dur(j.eta)} left` : ""}` : "Finishing"}</span><span class="num">${Math.round(j.pct * 100)}% · ${dur(j.started ? now() - j.started : null)}</span></div></div>`;
 }
@@ -113,7 +113,7 @@ const V = {
     <div class="card strip">
      <div><div class="lbl">Followers</div><div class="val">${nf(fol)}</div><div class="dl">6 channels · Instagram + Facebook</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${K.violet}"></i>Needs approval</div><div class="val">${wait}</div><div class="dl">${appr} approved, waiting for a slot</div></div>
-     <div><div class="lbl"><i class="dot" style="--c:${(S.quality.rate7 ?? 0) >= 70 ? K.green : (S.quality.rate7 ?? 0) >= 40 ? K.amber : K.red}"></i>First-pass rate</div><div class="val">${S.quality.rate7 == null ? "—" : S.quality.rate7 + "%"}</div><div class="dl">${S.quality.videos7} videos in 7 days passed review first try · ${made} rendered today</div></div>
+     <div><div class="lbl"><i class="dot" style="--c:${(S.quality.rate7 ?? 0) >= 70 ? K.green : (S.quality.rate7 ?? 0) >= 40 ? K.amber : K.red}"></i>First-pass rate</div><div class="val">${S.quality.rate7 == null ? "—" : S.quality.rate7 + "%"}</div><div class="dl">${S.quality.passed7} of ${S.quality.videos7} videos passed review on the first try (7 days) · ${made} rendered today</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${act.length ? K.blue : K.gray}"></i>Building</div><div class="val">${act.length}</div><div class="dl">typical render ${dur(S.render_median)}</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${bad ? K.red : warn ? K.amber : K.green}"></i>Health</div><div class="val">${bad ? bad + " <small>to fix</small>" : warn ? warn + " <small>to watch</small>" : "OK"}</div><div class="dl">priority CPU ${Math.round(s.cpu_norm || 0)}% · disk ${Math.round(s.disk_pct)}%</div></div>
     </div>
@@ -147,23 +147,23 @@ const V = {
     <div class="tools"><div class="tabs">${F.map(([k, t]) => `<button class="${runFilter === k ? "on" : ""}" onclick="runFilter='${k}';render(1)">${t} <span class="faint">${S.jobs.filter((j) => k === "all" || (k === "active" ? j.active : k === "need" ? ["waiting", "ready"].includes(j.status) : j.status === k)).length}</span></button>`).join("")}</div>
      <select onchange="runCh=this.value;render(1)"><option value="all">All pages</option>${S.channels.filter((c) => c.group === "Studio").map((c) => `<option value="${c.id}" ${runCh === c.id ? "selected" : ""}>${esc(c.name)}</option>`).join("")}</select></div>
     <div class="card tw" style="margin-top:12px"><table><thead><tr><th>Status</th><th>Video</th><th class="hide-m">Page</th><th>Progress</th><th class="hide-m">Review</th><th class="hide-m">Updated</th></tr></thead><tbody>
-    ${list.map((j) => { const c = ch(j.cid); return `<tr class="click" onclick="openJob('${j.cid}','${j.job}')"><td>${badge(j.status)}</td>
+    ${list.map((j) => { const c = ch(j.cid); return `<tr class="click" onclick="openJob('${j.cid}','${j.job}')"><td>${badge(j.status, j)}</td>
       <td><div class="tt">${esc(j.title)}</div><div class="mono faint">${esc(j.job)} · ${j.lang === "en" ? "EN" : "HI"}</div></td>
       <td class="hide-m"><span style="display:flex;gap:8px;align-items:center"><span class="sq" style="--c:${c.color}"></span>${esc(c.name)}</span></td>
       <td style="min-width:170px">${seg(j)}<div class="mono faint" style="margin-top:4px">${j.active ? esc(curStep(j) || "") + " · " : ""}${Math.round(j.pct * 100)}%</div></td>
-      <td class="hide-m">${j.review.ok === true ? `<span class="up">Passed</span>${j.review.score ? ` · ${j.review.score}/10` : ""}` : j.review.ok === false ? `<span class="dn">${(j.review.problems || []).length} problems</span>` : `<span class="faint">—</span>`}</td>
+      <td class="hide-m">${j.review.ok === true ? `<span class="up">Passed</span>${j.review.score ? ` · ${j.review.score}/10` : ""}` : j.review.ok === false ? `<span class="dn">${(j.review.problems || []).length ? (j.review.problems.length + (j.review.problems.length > 1 ? " problems" : " problem")) : "Held"}</span>` : `<span class="faint">—</span>`}</td>
       <td class="hide-m mut">${ago(j.updated)}</td></tr>`; }).join("") || `<tr><td colspan="6" class="empty">No runs here.</td></tr>`}</tbody></table></div>`;
   },
   approvals() {
     const w = S.jobs.filter((j) => ["waiting", "ready"].includes(j.status)), held = S.jobs.filter((j) => j.status === "held"), ap = S.jobs.filter((j) => j.status === "approved");
     const card = (j) => { const c = ch(j.cid), base = `/media/${j.cid}/${j.job}/`;
-      return `<div class="card pad"><div class="media"><div class="cover" onclick="openJob('${j.cid}','${j.job}')">${j.files["cover.jpg"] ? `<img loading="lazy" src="${base}cover.jpg?v=${j.updated}">` : ""}<span class="pl">${ic("play")}${j.qc.dur ? Math.round(j.qc.dur) + "s" : "Play"}</span></div>
-       <div style="min-width:0"><div style="display:flex;gap:8px;align-items:center"><span class="sq" style="--c:${c.color}"></span><span class="mut">${esc(c.name)} · ${j.lang === "en" ? "English" : "Hindi"}</span><span style="margin-left:auto">${badge(j.status)}</span></div>
+      return `<div class="card pad"><div class="media"><div class="cover" onclick="openJob('${j.cid}','${j.job}')">${(j.files[j.final] || j.files["preview.mp4"]) ? `${j.files["cover.jpg"] ? `<img src="${base}cover.jpg?v=${j.updated}">` : ""}<span class="pl">${ic("play")}${j.qc.dur ? Math.round(j.qc.dur) + "s" : "Play"}</span>` : `<div class="empty" style="padding:70px 8px;font-size:12px">No video yet<br>held before render</div>`}</div>
+       <div style="min-width:0"><div style="display:flex;gap:8px;align-items:center"><span class="sq" style="--c:${c.color}"></span><span class="mut">${esc(c.name)} · ${j.lang === "en" ? "English" : "Hindi"}</span><span style="margin-left:auto">${badge(j.status, j)}</span></div>
        <div style="font-weight:600;font-size:14.5px;margin-top:6px">${esc(j.title)}</div>
        <div class="chips" style="margin-top:8px">${j.review.ok ? lvlBadge("ok", "Passed review") : ""}${j.review.score ? lvlBadge(j.review.score >= 8 ? "ok" : "warn", `Visual ${j.review.score}/10`) : ""}${j.qc.lufs ? lvlBadge("info", `${j.qc.lufs} LUFS`) : ""}</div>
        ${(j.review.problems || []).length ? `<ul class="mut" style="margin:8px 0 0 16px;font-size:12.5px">${j.review.problems.slice(0, 3).map((p) => `<li>${esc(String(p).slice(0, 160))}</li>`).join("")}</ul>` : ""}
        ${["waiting", "ready"].includes(j.status) ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn ok" onclick="decide('${j.cid}','${j.job}','approve')">Approve</button><button class="btn no" onclick="decide('${j.cid}','${j.job}','reject')">Reject</button><button class="btn" onclick="feedback('${j.cid}','${j.job}')">Feedback</button></div>`
-        : j.status === "held" ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center"><span class="mut" style="font-size:12.5px">Being fixed on the server.</span><button class="btn sm" onclick="decide('${j.cid}','${j.job}','approve')">Approve anyway</button></div>` : ""}
+        : j.status === "held" ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center"><span class="mut" style="font-size:12.5px">${j.held_state === "waiting" ? "Waits for the next code fix." : "The server is rebuilding it."}</span><button class="btn sm" onclick="decide('${j.cid}','${j.job}','approve')">Approve anyway</button></div>` : ""}
        </div></div></div>`; };
     return `<div class="h1">Approvals</div><div class="lead">Only videos that passed the server's review come here. Approving here or in Telegram does the same thing.${S.settings.auto_approve ? ` Auto-approve is on for scores of ${S.settings.min_score}/10 and up.` : ""}</div>
      <div class="sec"><i class="dot" style="--c:${K.violet}"></i><h3>Needs approval</h3><span class="mut">${w.length}</span></div><div class="g2">${w.map(card).join("") || `<div class="card empty">Nothing is waiting for you.</div>`}</div>
@@ -174,7 +174,7 @@ const V = {
     const row = (c) => { const cnt = c.counts || {}, st = { live: ["Live", "ok"], warm: ["Warm-up", "warn"], off: ["Off", "info"], manual: ["Manual", "info"] }[c.status];
       return `<tr class="click" onclick="openChannel('${c.id}')"><td><span style="display:flex;gap:10px;align-items:center"><span class="sq" style="--c:${c.color};width:12px;height:12px"></span><span><div style="font-weight:500">${esc(c.name)}</div><div class="faint" style="font-size:12px">@${esc(c.ig)}</div></span></span></td>
       <td>${lvlBadge(st[1], st[0])}<div class="faint" style="font-size:12px;margin-top:3px">${esc(c.note)}</div></td><td class="num">${nf(c.igF)}</td><td class="num hide-m">${nf(c.fb)}</td><td class="num hide-m">${nf(c.posts)}</td>
-      <td class="hide-m">${Object.entries(cnt).filter(([, v]) => v).map(([k, v]) => `<span class="mut" style="margin-right:10px">${v} ${(ST[k] || [k])[0].toLowerCase()}</span>`).join("") || `<span class="faint">—</span>`}</td><td class="hide-m">${spark(c.spark, c.color)}</td></tr>`; };
+      <td class="hide-m" style="white-space:normal;min-width:210px">${Object.entries(cnt).filter(([, v]) => v).map(([k, v]) => `<span class="mut" style="margin-right:10px;display:inline-block">${v} ${(ST[k] || [k])[0].toLowerCase()}</span>`).join("") || `<span class="faint">—</span>`}</td><td class="hide-m">${spark(c.spark, c.color)}</td></tr>`; };
     const st = S.channels.filter((c) => c.group === "Studio"), bz = S.channels.filter((c) => c.group !== "Studio");
     const head = `<thead><tr><th>Channel</th><th>Status</th><th>IG followers</th><th class="hide-m">FB followers</th><th class="hide-m">IG posts</th><th class="hide-m">Videos</th><th class="hide-m">30 days</th></tr></thead>`;
     return `<div class="h1">Channels</div><div class="lead">${S.channels.length} channels. Follower numbers come from Meta every 30 minutes. Click one for its latest posts.</div>
@@ -208,7 +208,7 @@ const V = {
   brain() {
     setTimeout(loadLearned, 0);
     return `<div class="h1">Brain</div><div class="lead">What the engine has learned. Every page reads the shared lessons and every other page's lessons before it writes a script. Drag nodes; hover for the text.</div>
-     <div class="card" style="margin-top:16px;overflow:hidden"><canvas id="brainc"></canvas><div class="leg"><span><i class="dot" style="--c:var(--ink)"></i>Shared brain</span>${S.channels.slice(0, 3).map((c) => `<span><span class="sq" style="--c:${c.color}"></span>${esc(c.name)}</span>`).join("")}<span><i class="dot" style="--c:var(--blue)"></i>Shared lesson</span><span><i class="dot" style="--c:var(--red)"></i>Mistake the reviewer caught</span><span><i class="dot" style="--c:var(--green)"></i>Video</span></div></div>
+     <div class="card" style="margin-top:16px;overflow:hidden"><canvas id="brainc"></canvas><div class="leg"><span><i class="dot" style="--c:var(--ink)"></i>Shared brain</span>${S.channels.slice(0, 3).map((c) => `<span><span class="sq" style="--c:${c.color}"></span>${esc(c.name)}</span>`).join("")}<span><i class="dot" style="--c:var(--blue)"></i>Shared lesson</span><span><i class="dot" style="--c:var(--red)"></i>Mistake the reviewer caught</span><span><i class="dot" style="--c:var(--teal)"></i>Learned from repos</span><span><i class="dot" style="--c:var(--green)"></i>Video</span></div></div>
      <div class="sec"><h3>Learning</h3><span class="mut">GitHub links and files you send in Studio360, plus a weekly search of GitHub. Studio reads them, keeps what helps, and scores every item by results.</span></div>
      <div id="learned" class="card"><div class="empty">Loading…</div></div>`;
   },
@@ -232,7 +232,7 @@ async function openJob(cid, job) {
   const t0 = Math.min(...d.timeline.filter((r) => r.start).map((r) => r.start)), t1 = Math.max(...d.timeline.map((r) => (r.start || 0) + (r.dur || 0)), t0 + 1);
   const wf = d.timeline.map((r) => `<div class="r ${r.start == null ? "p" : ""}"><span>${esc(r.label)}</span><div class="tr">${r.start != null ? `<div class="b" style="--c:${r.active ? "var(--blue)" : "var(--green)"};left:${((r.start - t0) / (t1 - t0)) * 100}%;width:${(Math.max(r.dur || 0, 1) / (t1 - t0)) * 100}%"></div>` : ""}</div><span class="num mut" style="text-align:right">${r.start != null ? dur(r.dur) : "—"}</span></div>`).join("");
   const rv = d.review_full || {};
-  $("#panel").innerHTML = `<div class="ph"><span class="sq" style="--c:${c.color};margin-top:6px"></span><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:15px">${esc(d.title)}</div><div class="mut">${esc(c.name)} · ${d.lang === "en" ? "English" : "Hindi"} · <span class="mono">${esc(job)}</span></div></div>${badge(d.status)}<button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div>
+  $("#panel").innerHTML = `<div class="ph"><span class="sq" style="--c:${c.color};margin-top:6px"></span><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:15px">${esc(d.title)}</div><div class="mut">${esc(c.name)} · ${d.lang === "en" ? "English" : "Hindi"} · <span class="mono">${esc(job)}</span></div></div>${badge(d.status, d)}<button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div>
   <div class="pb">
    <div class="media"><div class="cover">${have ? `<video src="${base + vid}" poster="${d.files["cover.jpg"] ? base + "cover.jpg" : ""}" controls playsinline preload="none"></video>` : d.files["cover.jpg"] ? `<img src="${base}cover.jpg">` : `<div class="empty">No video yet</div>`}</div>
     <div><div class="kv"><span>Progress</span><span class="num">${Math.round(d.pct * 100)}%${d.active ? " · " + esc(curStep(d) || "") : ""}</span><span>Length</span><span>${d.qc.dur ? Math.round(d.qc.dur) + " s" : "—"}</span><span>Loudness</span><span>${d.qc.lufs ?? "—"} LUFS</span><span>Review</span><span>${d.review.ok === true ? `<span class="up">Passed</span>` : d.review.ok === false ? `<span class="dn">Held</span>` : "—"}${d.review.score ? ` · visual ${d.review.score}/10` : ""}</span><span>Updated</span><span>${ago(d.updated)}</span></div>
@@ -289,29 +289,31 @@ async function startBrain() {
   const dpr = devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; const x = cv.getContext("2d"); x.scale(dpr, dpr);
   const SC = { posted: col("--green"), approved: col("--teal"), held: col("--amber"), rejected: col("--red") };
   const by = {}, N = data.nodes.map((n, i) => (by[n.id] = { ...n, x: W / 2 + Math.cos(i * 2.4) * (40 + i * 2), y: H / 2 + Math.sin(i * 2.4) * (40 + i * 2), vx: 0, vy: 0,
-    r: n.kind === "core" ? 11 : n.kind === "page" ? 9 : n.kind === "video" ? 4.5 : 3.5,
-    c: n.kind === "core" ? col("--ink") : n.kind === "page" ? n.color : n.kind === "auto" ? col("--red") : n.kind === "video" ? SC[n.status] || col("--gray") : n.cid ? n.color : col("--blue") }));
+    r: n.kind === "core" ? 11 : n.kind === "page" || n.kind === "hub" ? 9 : n.kind === "video" ? 4.5 : 3.5,
+    c: n.kind === "core" ? col("--ink") : n.kind === "page" ? n.color : n.kind === "hub" || n.kind === "learned" ? col("--teal") : n.kind === "auto" ? col("--red") : n.kind === "video" ? SC[n.status] || col("--gray") : n.cid ? n.color : col("--blue") }));
   const L = data.links.map((l) => ({ s: by[l.s], t: by[l.t] })).filter((l) => l.s && l.t); const core = by.brain; core.fx = W / 2; core.fy = H / 2;
+  const anchors = N.filter((n) => n.kind === "page" || n.kind === "hub"), R = Math.min(W, H) * 0.3;
+  anchors.forEach((n, k) => { const a = -Math.PI / 2 + (k * 2 * Math.PI) / anchors.length; n.fx = W / 2 + R * Math.cos(a) * (W > H ? 1.35 : 1); n.fy = H / 2 + R * Math.sin(a); n.pin = [n.fx, n.fy]; n.x = n.fx; n.y = n.fy; });
   let drag = null, hov = null, a = 1; const tip = document.body.appendChild(Object.assign(document.createElement("div"), { className: "tip" }));
   (function tick() {
     if (!document.body.contains(cv)) { tip.remove(); return; }
     if (a > 0.01) {
       for (let i = 0; i < N.length; i++) for (let j = i + 1; j < N.length; j++) { const p = N[i], q = N[j]; let dx = q.x - p.x, dy = q.y - p.y, d2 = dx * dx + dy * dy + 0.01, d = Math.sqrt(d2), f = (600 * a) / d2; dx /= d; dy /= d; p.vx -= dx * f; p.vy -= dy * f; q.vx += dx * f; q.vy += dy * f; }
-      for (const l of L) { const want = l.s.kind === "core" ? (l.t.kind === "page" ? 140 : 90) : 48; const dx = l.t.x - l.s.x, dy = l.t.y - l.s.y, d = Math.sqrt(dx * dx + dy * dy) || 1, f = ((d - want) / d) * 0.05 * a; l.s.vx += dx * f; l.s.vy += dy * f; l.t.vx -= dx * f; l.t.vy -= dy * f; }
+      for (const l of L) { const want = l.s.kind === "core" ? 120 : l.s.kind === "page" || l.s.kind === "hub" ? 58 : 48; const dx = l.t.x - l.s.x, dy = l.t.y - l.s.y, d = Math.sqrt(dx * dx + dy * dy) || 1, f = ((d - want) / d) * 0.05 * a; l.s.vx += dx * f; l.s.vy += dy * f; l.t.vx -= dx * f; l.t.vy -= dy * f; }
       for (const n of N) { if (n.fx != null) { n.x = n.fx; n.y = n.fy; n.vx = n.vy = 0; continue; } n.vx += (W / 2 - n.x) * 0.002 * a; n.vy += (H / 2 - n.y) * 0.002 * a; n.vx *= 0.8; n.vy *= 0.8; n.x = Math.max(10, Math.min(W - 10, n.x + n.vx)); n.y = Math.max(10, Math.min(H - 10, n.y + n.vy)); }
       a *= 0.99;
     }
     x.clearRect(0, 0, W, H); x.lineWidth = 1;
     for (const l of L) { x.strokeStyle = hov && (hov === l.s || hov === l.t) ? col("--mut") : col("--line"); x.beginPath(); x.moveTo(l.s.x, l.s.y); x.lineTo(l.t.x, l.t.y); x.stroke(); }
     for (const n of N) { x.beginPath(); x.arc(n.x, n.y, n.r, 0, 7); if (n.kind === "video") { x.fillStyle = col("--panel"); x.fill(); x.strokeStyle = n.c; x.lineWidth = 2; x.stroke(); x.lineWidth = 1; } else { x.fillStyle = n.c; x.fill(); }
-      if (n.kind === "page" || n.kind === "core") { x.fillStyle = col("--tx"); x.font = "500 12px Geist"; x.textAlign = "center"; x.fillText(n.label, n.x, n.y - n.r - 6); } }
+      if (n.kind === "page" || n.kind === "core" || n.kind === "hub") { x.fillStyle = col("--tx"); x.font = "500 12px Geist"; x.textAlign = "center"; x.fillText(n.label, n.x, n.y - n.r - 6); } }
     requestAnimationFrame(tick);
   })();
   const pos = (e) => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }, find = (px, py) => N.find((n) => (n.x - px) ** 2 + (n.y - py) ** 2 < (n.r + 6) ** 2);
   cv.onpointerdown = (e) => { const [px, py] = pos(e); drag = find(px, py); if (drag) { drag.fx = px; drag.fy = py; a = Math.max(a, 0.4); cv.setPointerCapture(e.pointerId); } };
   cv.onpointermove = (e) => { const [px, py] = pos(e); if (drag) { drag.fx = px; drag.fy = py; a = Math.max(a, 0.3); } hov = find(px, py);
-    if (hov) { tip.style.display = "block"; tip.style.left = Math.min(innerWidth - 330, e.clientX + 12) + "px"; tip.style.top = e.clientY + 12 + "px"; tip.innerHTML = `<div class="mut" style="font-size:11.5px">${{ core: "Shared brain", page: "Page", lesson: "Lesson", auto: "Mistake the reviewer caught", video: "Video · " + (hov.status || "") }[hov.kind]}</div>${esc(hov.label)}`; } else tip.style.display = "none"; };
-  cv.onpointerup = () => { if (drag && drag !== core) drag.fx = drag.fy = null; drag = null; }; cv.onpointerleave = () => { tip.style.display = "none"; hov = null; };
+    if (hov) { tip.style.display = "block"; tip.style.left = Math.min(innerWidth - 330, e.clientX + 12) + "px"; tip.style.top = e.clientY + 12 + "px"; tip.innerHTML = `<div class="mut" style="font-size:11.5px">${{ core: "Shared brain", page: "Page", lesson: "Lesson", auto: "Mistake the reviewer caught", hub: "Learning", learned: "Learned from a repo or file", video: "Video · " + (hov.status || "") }[hov.kind]}</div>${esc(hov.label)}`; } else tip.style.display = "none"; };
+  cv.onpointerup = () => { if (drag && drag !== core) { if (drag.pin) { drag.fx = drag.pin[0]; drag.fy = drag.pin[1]; } else drag.fx = drag.fy = null; } drag = null; }; cv.onpointerleave = () => { tip.style.display = "none"; hov = null; };
 }
 
 async function loadLearned() {

@@ -106,17 +106,22 @@ def sources(state):
     def add(name, what, lvl, detail, last=None, test=None):
         out.append({"name": name, "what": what, "lvl": lvl, "detail": detail, "last": last, "test": test})
     td = state.get("token_days")
+    mp = grep_log(r"published|stats:|insights")
     add("Meta (Ads MCP login)", "Posting, followers, insights", "ok" if (td or 0) >= 21 else "warn" if (td or 0) > 7 else "bad",
-        f"Data access {td} days left" if td is not None else "Not checked yet", None, "meta")
+        f"Data access {td} days left" if td is not None else "Not checked yet", ts(mp[-1]) if mp else int(time.time()), "meta")
     t = cached("tg", 600, lambda: _tg())
-    add("Telegram bot", "Approvals in Studio360", t[0] if isinstance(t, tuple) else "bad", t[1] if isinstance(t, tuple) else t.get("error", ""), None, "telegram")
+    tg = grep_log(r"sent for approval|telegram")
+    add("Telegram bot", "Approvals in Studio360", t[0] if isinstance(t, tuple) else "bad", t[1] if isinstance(t, tuple) else t.get("error", ""), ts(tg[-1]) if tg else None, "telegram")
     gl = grep_log(r"plan text by|tts gemini|gemini text fail|429|RESOURCE_EXHAUSTED")
     good = [l for l in gl if "fail" not in l and "429" not in l and "EXHAUSTED" not in l]
     badl = [l for l in gl if l not in good]
     lvl = "ok" if good and (not badl or ts(good[-1]) > ts(badl[-1])) else "warn" if good else "bad"
-    add("Gemini (free credits)", "Scripts, voice, review", lvl, ("Last error: " + badl[-1][20:120]) if lvl != "ok" and badl else "Working", ts(good[-1]) if good else None)
+    add("Gemini (free credits)", "Scripts, voice, review", lvl, ("Last error: " + badl[-1][20:120]) if lvl != "ok" and badl else
+        (good[-1][20:80] if good else "No call yet"), ts(good[-1]) if good else None)
     for name, ok in state["server"]["muse"].items():
-        add(f"Muse {name}", "Images and clips", "ok" if ok else "bad", "Reachable" if ok else "Not answering", None)
+        lg = os.path.join(HOME, "musebridge2" if name == "bridge 2" else "musebridge", "musebridge.log")
+        add(f"Muse {name}", "Images and clips", "ok" if ok else "bad", "Answering" if ok else "Not answering",
+            int(os.path.getmtime(lg)) if os.path.exists(lg) else None)
     cf = os.path.exists(os.path.join(HOME, "videngine", "cf.token"))
     cl = grep_log(r"cloudflare")
     add("Cloudflare FLUX", "Backup images", "ok" if cf else "bad", "Key saved" if cf else "No key", ts(cl[-1]) if cl else None)
@@ -129,6 +134,15 @@ def sources(state):
     ds = jload(os.path.join(OUT, "doctor-state.json"), {}) or {}
     add("Doctor (self-repair)", "Finds and fixes breaks every 10 min", "ok" if ds.get("last") and time.time() - ds["last"] < 1800 else "bad",
         ("Last fixes: " + " | ".join(ds.get("last_did") or [])[-200:]) if ds.get("last_did") else "Nothing needed fixing", ds.get("last"))
+    lr = jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or []
+    try:
+        import brain as _b
+        bs = _b.stats()
+    except Exception:
+        bs = {}
+    add("Learner (GitHub + files)", "Reads links and files you send in Studio360", "ok" if lr else "info",
+        f"{len(lr)} sources read · {bs.get('active', 0)} items in the brain" if lr else "Nothing sent yet",
+        int(time.mktime(time.strptime(lr[-1]["t"], "%Y-%m-%d %H:%M"))) if lr else None)
     gt = run(["git", "-C", ROOT, "log", "-1", "--format=%ct %s"]).strip()
     add("GitHub (studio repo)", "Code + lessons backup", "ok" if gt else "warn", gt.split(" ", 1)[1][:80] if gt else "No commits", int(gt.split()[0]) if gt else None)
     q = os.path.join(HOME, "vajra-automation", "social", "queue.json")
@@ -191,7 +205,8 @@ def _ctx(state):
     j = [{"channel": x["cid"], "video": x["title"], "status": x["status"], "progress": x["pct"], "review_problems": x["review"].get("problems")} for x in state["jobs"][:14]]
     ch = [{"name": c["name"], "ig_followers": c["igF"], "fb_followers": c["fb"], "status": c["note"], "pipeline": c["counts"]} for c in state["channels"]]
     srv = {k: state["server"][k] for k in ("cpu", "mem_pct", "disk_pct", "load", "muse")}
-    acts = [a["t"][11:16] + " " + a["msg"][:140] for a in state["activity"][:40]]
+    cut = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time() - 7200))
+    acts = [a["t"][11:16] + " " + a["msg"][:140] for a in state["activity"] if a["t"] >= cut][:30]
     return json.dumps({"now": time.strftime("%a %d %b %H:%M IST"), "doing_now": state["doing"], "server": srv, "videos": j, "channels": ch,
                        "issues": [{"level": i["lvl"], "title": i["title"], "detail": i["detail"][:160]} for i in state["issues"]],
                        "schedule": [{"what": s["name"], "in_min": (s["in"] or 0) // 60} for s in state["schedule"]], "recent_log": acts}, ensure_ascii=False)
@@ -203,11 +218,25 @@ def _ask_llm(prompt):
     return planner.ask(prompt, max_tokens=1500)
 
 
+_bg = {"run": False}
+
+
 def brief(state, force=False):
     b = jload(BRIEF, {}) or {}
-    if not force and b.get("t") and time.time() - b["t"] < 3 * 3600:
-        return b
+    if force or not b.get("t"):
+        return _make_brief(state)
+    if time.time() - b["t"] > 1800 and not _bg["run"]:          # stale: rewrite in the background, show the last one meanwhile
+        import threading
+        _bg["run"] = True
+        threading.Thread(target=lambda: (_make_brief(state), _bg.update(run=False)), daemon=True).start()
+    return b
+
+
+def _make_brief(state):
     p = ("You write the owner's short status brief for his video studio dashboard. Plain English, no hype, no emojis.\n"
+         "Describe the situation of the LAST 2 HOURS only; ignore anything older. Videos 'held' are being rebuilt by the server "
+         "automatically (say so briefly, do not list log errors). Mention disk only if it is above 85% full. Mention CPU only if the "
+         "priority CPU is above 85%. Say what the owner needs to do, or that nothing is needed.\n"
          "Data (live, from the server):\n" + _ctx(state) + "\n\n"
          'Return JSON {"headline": "one sentence: the single most important thing right now", '
          '"lines": ["4-7 short lines: what got done, what is in progress, what needs the owner, any risk, what happens next"]}. '

@@ -202,7 +202,7 @@ def job_state(cid, job, active=None):
             done = False                      # an old file from an earlier build that this run will remake
         steps.append({"key": key, "label": label, "done": done, "t": int(t) if done else 0})
         prev_t = max(prev_t, t if done else 0)
-    if not active and os.path.exists(os.path.join(jd, final)) and os.path.exists(os.path.join(jd, "review.json")):
+    if not active and os.path.exists(os.path.join(jd, final)):
         for st_ in steps:                      # finished: files older runs never made (cover, qc) are not "missing steps"
             st_["done"] = True
     if active and active.get("until") == "assets":
@@ -225,8 +225,10 @@ def job_state(cid, job, active=None):
     mt = max([s["t"] for s in steps] + [int(os.path.getmtime(jd))])
     return {"cid": cid, "job": job, "title": plan.get("title") or meta.get("topic") or job, "lang": "en" if job.endswith("-en") or plan.get("lang") == "en" else "hi",
             "steps": steps, "pct": round(pct, 3), "eta": eta, "updated": mt, "files": files, "final": final,
-            "review": {"ok": rv.get("ok"), "problems": rv.get("problems", [])[:4], "minor": rv.get("minor", [])[:3],
-                       "score": ((rv.get("checks") or {}).get("vision") or {}).get("score")},
+            "review": ({"ok": None, "problems": [], "minor": [], "score": None} if active else
+                       {"ok": rv.get("ok"), "problems": rv.get("problems", [])[:4], "minor": rv.get("minor", [])[:3],
+                        "score": ((rv.get("checks") or {}).get("vision") or {}).get("score")}),
+            "doctor_tries": meta.get("doctor_tries", 1 if meta.get("doctor_rebuilt") else 0), "doctor_code": meta.get("doctor_code"),
             "qc": {"dur": (qc.get("format") or {}).get("dur"), "lufs": (qc.get("format") or {}).get("lufs")},
             "caption": plan.get("caption", ""), "active": bool(active), "prepped": bool(meta.get("prepped_at")) and not files.get(final), "started": int(t0) if active else None}
 
@@ -234,6 +236,15 @@ def job_state(cid, job, active=None):
 def tgmap():
     m = jload(os.path.join(OUT, "tg-map.json"), {}) or {}
     return {(v.get("channel"), v.get("job")) for v in m.values()}
+
+
+_head = {"t": 0, "v": ""}
+
+
+def head():
+    if time.time() - _head["t"] > 60:
+        _head.update(t=time.time(), v=run(["git", "-C", ROOT, "rev-parse", "--short", "HEAD"]).strip())
+    return _head["v"]
 
 
 def jobs(running):
@@ -284,6 +295,8 @@ def jobs(running):
             else:
                 status = "made"
             s["status"] = status; s["posted"] = (d or {}).get("posted"); s["held_why"] = (d or {}).get("review")
+            if status == "held":      # is the server still working on it, or does it wait for a code fix (next session)?
+                s["held_state"] = "waiting" if (s["doctor_tries"] >= 3 or (s["doctor_tries"] >= 1 and s["doctor_code"] == head())) else "retrying"
             out.append(s)
     out.sort(key=lambda x: (not x["active"], -x["updated"]))
     return out
@@ -291,7 +304,8 @@ def jobs(running):
 
 # ---------------- schedule ----------------
 NICE = {"studio-inbox": "Read Telegram replies", "studio-prep": "Prep lane (script, voice, visuals)", "studio-make": "Render lane",
-        "studio-scout": "Scout trends + tech news", "studio-stats": "Morning stats report", "studio-post": "Post approved videos"}
+        "studio-scout": "Scout trends + tech news", "studio-stats": "Morning stats report", "studio-post": "Post approved videos",
+        "studio-doctor": "Doctor (self-repair)", "studio-learn": "Learn from GitHub (weekly)"}
 
 
 def schedule():
@@ -349,6 +363,18 @@ def meta_pages():
     return _cache["pages"]
 
 
+_vj = {"t": 0}
+
+
+def vajra_sync():
+    """VAJRA's queue lives in a GitHub repo that its own jobs push to; keep the server copy fresh (every 10 min)."""
+    if time.time() - _vj["t"] < 600:
+        return
+    _vj["t"] = time.time()
+    threading.Thread(target=lambda: subprocess.run(["git", "-C", os.path.join(HOME, "vajra-automation"), "pull", "-q", "--ff-only"],
+                                                   capture_output=True, timeout=60), daemon=True).start()
+
+
 def channels(jl):
     pages = meta_pages(); hist = jload(FOLLOW_HIST, {}) or {}
     days = sorted(hist)[-30:]
@@ -372,10 +398,11 @@ def channels(jl):
                 status, note = "live", "Live"
             yt_ok = bool(acc.get("yt"))
         elif c["id"] == "vajra":
+            vajra_sync()
             q = jload(os.path.join(HOME, "vajra-automation", "social", "queue.json"), {}) or {}
             posts = q.get("posts", [])
             pend = [x for x in posts if not x.get("posted")]
-            cnt = {"queued": len(pend), "held": len(q.get("hold", []))}
+            cnt = {"queued": len(pend), "on_hold": len(q.get("hold", []))}
             status, note, yt_ok = "live", "Live · 1 reel a day 19:30 (GitHub)", True
         else:
             status, note, yt_ok = "manual", "Manual · not automated", None
@@ -396,13 +423,31 @@ def classify(line):
         return "info"
     if BAD.search(line):
         return "bad"
-    if any(k in l for k in ("warn", "retry", "limited", "skip", "not sent", "fallback", "warm-up", "nothing approved")):
+    if any(k in l for k in ("warn", "retry", "limited", "skip", "not sent", "fallback", "warm-up", "nothing approved", "to fix", "still failing", "voice gate")):
         return "warn"
     if any(k in l for k in ("published", "posted", "approved", "sent for approval", "passed", "rendered in", "ok ", "prepped", "cover made", "matched")):
         return "ok"
     if any(k in l for k in ("job ", "daily: run", "lane", "plan", "tts", "render")):
         return "run"
     return "info"
+
+
+_jc = {"t": 0, "m": []}
+
+
+def job_channel(msg):
+    """Log lines that only name a job (preflight 1117-0145 ...) get that job's page."""
+    if time.time() - _jc["t"] > 60:
+        m = []
+        for c in ("tech", "katha", "raaz"):
+            base = os.path.join(OUT, c)
+            if os.path.isdir(base):
+                m += [(j, c) for j in os.listdir(base)]
+        _jc.update(t=time.time(), m=sorted(m, key=lambda x: -len(x[0])))
+    for j, c in _jc["m"]:
+        if re.search(rf"(?<![\w-]){re.escape(j)}(?![\w-])", msg):
+            return c
+    return None
 
 
 def activity(n=160):
@@ -412,9 +457,23 @@ def activity(n=160):
         if not m:
             continue
         msg = m.group(2)
-        cid = next((c["id"] for c in CHANNELS if re.search(rf"\b{c['id']}\b", msg)), None)
+        cid = next((c["id"] for c in CHANNELS if re.search(rf"\b{c['id']}\b", msg)), None) or job_channel(msg)
         out.append({"t": m.group(1), "msg": msg[:260], "lvl": classify(msg), "cid": cid})
     return out[::-1]
+
+
+def friendly(p):
+    l = p.lower()
+    for k, t in (("of the script was found", "Voice did not match the script"), ("visual score", "Low visual score"),
+                 ("spoken instructions", "Instructions spoken at the start"), ("starts late", "Something spoken before the script"),
+                 ("does not start with the first line", "English voice did not start with the script"),
+                 ("loudness", "Loudness or peak out of range"), ("true peak", "Loudness or peak out of range"), ("blank frame", "Blank stretch in the picture"),
+                 ("end card", "Missing end card"), ("headline", "Missing headline"), ("caption", "Caption problem (overlap, faint, stuck)"),
+                 ("overlap", "Text overlapping"), ("cut", "Text cut off"), ("faint", "Text too faint to read"), ("empty", "Empty scene"),
+                 ("language", "Wrong language on screen"), ("fit", "Picture does not fit the voice")):
+        if k in l:
+            return t
+    return re.sub(r"^visual:\s*", "", p)[:60]
 
 
 def quality(days=7):
@@ -437,8 +496,7 @@ def quality(days=7):
                 if k not in first:
                     first[k] = (day, res == "PASS")
                 if res == "HOLD" and why:
-                    for p in why.split(" | ")[:3]:
-                        key = re.sub(r"\d+(\.\d+)?", "#", p.replace("visual: ", ""))[:70]
+                    for key in {friendly(p) for p in why.split(" | ")[:4]}:
                         reasons[key] = reasons.get(key, 0) + 1
     except Exception:
         pass
@@ -449,7 +507,7 @@ def quality(days=7):
         out.append({"day": day, "videos": len(vs), "passed": sum(vs), "rate": round(100 * sum(vs) / len(vs)) if vs else None,
                     "pre_held": pre_held.get(day, 0)})
     allv = [ok for (d, ok) in first.values() if d >= out[0]["day"]]
-    return {"days": out, "rate7": round(100 * sum(allv) / len(allv)) if allv else None, "videos7": len(allv),
+    return {"days": out, "rate7": round(100 * sum(allv) / len(allv)) if allv else None, "videos7": len(allv), "passed7": sum(allv),
             "avg_reviews": round(sum(reviews.values()) / max(1, len(reviews)), 1),
             "reasons": sorted(reasons.items(), key=lambda x: -x[1])[:6]}
 
@@ -471,7 +529,7 @@ def issues(srv, fails, jl, sched, token_days, chs):
     if srv["disk_pct"] >= 93:
         add("bad", f"Disk almost full ({srv['disk_pct']}%)", f"{srv['disk_free_gb']} GB free", "Old job folders and caches can be deleted.")
     elif srv["disk_pct"] >= 85:
-        add("warn", f"Disk {srv['disk_pct']}% full", f"{srv['disk_free_gb']} GB free of {srv['disk_total_gb']} GB", "Clean old renders soon.")
+        add("warn", f"Disk {srv['disk_pct']}% full", f"{srv['disk_free_gb']} GB free of {srv['disk_total_gb']} GB", "The doctor cleans caches and old render files automatically.")
     if srv["mem_total_gb"] - srv["mem_used_gb"] < 1:
         add("warn", "Low memory", f"{srv['mem_used_gb']} of {srv['mem_total_gb']} GB used")
     # 17 Nov: 100% CPU is fine when it is niced Studio work using spare cores. Warn only when NORMAL-priority work
@@ -482,11 +540,14 @@ def issues(srv, fails, jl, sched, token_days, chs):
         if not ok:
             add("warn", f"Muse {name} is down", "images fall back to Cloudflare / Pollinations", "Restart the Muse browser.")
     for j in jl:
-        if j["status"] == "held":
-            why = (j["review"]["problems"] or j.get("held_why") or ["review failed"])
-            add("warn", f"Held by reviewer: {j['title'][:60]}", "; ".join(str(x) for x in why[:2])[:300], "The engine re-voices once; otherwise it needs a fix or a new build.", None, f"held-{j['cid']}-{j['job']}")
         if j["active"] and time.time() - max([s["t"] for s in j["steps"]] + [j["started"] or 0]) > 2700:
             add("bad", f"Looks stuck: {j['job']}", "no progress for 45+ minutes")
+    held = [j for j in jl if j["status"] == "held"]
+    if held:
+        wait = [j for j in held if j.get("held_state") == "waiting"]
+        add("info", f"{len(held)} video{'s' if len(held) > 1 else ''} held by the reviewer",
+            "; ".join(f"{j['title'][:40]} ({len(j['review']['problems']) or 'see Runs'})" if False else j["title"][:44] for j in held[:5]),
+            f"Nothing for you. {len(held) - len(wait)} being rebuilt by the server" + (f", {len(wait)} wait for the next code fix." if wait else "."), None, "held-group")
     for s in sched:
         if s["in"] is None and not s["running"]:
             add("warn", f"Timer not scheduled: {s['unit']}")
@@ -499,7 +560,7 @@ def issues(srv, fails, jl, sched, token_days, chs):
     seen = set()
     for e in errs:
         k = re.sub(r"\d+", "#", e["msg"])[:60]
-        if k in seen or "HOLD" in e["msg"] or "PROBLEMS" in e["msg"]:
+        if k in seen or "HOLD" in e["msg"] or "PROBLEMS" in e["msg"] or "retry" in e["msg"] or "held BEFORE" in e["msg"] or "doctor:" in e["msg"]:
             continue
         seen.add(k); add("warn", "Error in the last 2 h", e["msg"][:240], "", None, "log-" + k)
         if len(seen) >= 4:
@@ -524,8 +585,8 @@ def now_sentence(running, jl):
         for j in act:
             cur = next((s["label"] for s in j["steps"] if s.get("active")), "Finishing")
             nm = next(c["name"] for c in CHANNELS if c["id"] == j["cid"])
-            parts.append(f"{cur} · {nm}{' (English)' if j['lang'] == 'en' else ''}")
-        return " + ".join(parts)
+            parts.append(f"Making a {nm}{' English' if j['lang'] == 'en' else ''} video, now at the {cur.lower()} step")
+        return " · ".join(parts)
     other = [r for r in running if r.get("kind") and r["kind"] not in ("Scheduler", "Making video")]
     return other[0]["kind"] if other else "Idle · waiting for the next timer"
 
@@ -570,13 +631,29 @@ def brain():
             if not os.path.exists(p):
                 continue
             ls = [x[2:].strip() for x in open(p, encoding="utf-8").read().splitlines() if x.startswith("- ")]
-            for i, l in enumerate(ls[-14:]):
+            seen_, uniq = set(), []
+            for x in reversed(ls):                       # newest first, no repeats
+                k_ = re.sub(r"\W+", " ", x.lower())[:50]
+                if k_ not in seen_:
+                    seen_.add(k_); uniq.append(x)
+            for i, l in enumerate(uniq[:10][::-1]):
                 nid = f"{c['id']}-{fn[:4]}{i}"
                 nodes.append({"id": nid, "label": l[:140], "kind": kind, "cid": c["id"], "color": c["color"]}); links.append({"s": c["id"], "t": nid})
         for d in (jload(os.path.join(ROOT, "channels", c["id"], "done.json"), []) or [])[-10:]:
             nid = f"v-{c['id']}-{d['job']}"
             nodes.append({"id": nid, "label": d.get("title") or d["job"], "kind": "video", "cid": c["id"], "status": d.get("status"), "color": c["color"]})
             links.append({"s": c["id"], "t": nid})
+    try:
+        sys.path.insert(0, os.path.join(ROOT, "engine"))
+        import brain as brainmod
+        got = [i for i in brainmod.items() if i.get("on", True)][-60:]
+        if got:
+            nodes.append({"id": "learn", "label": "Learned from repos", "kind": "hub", "color": "#0d9488"}); links.append({"s": "brain", "t": "learn"})
+            for i in got:
+                nodes.append({"id": "b" + i["id"], "label": f"{i['title']}: {i['text']}"[:160], "kind": "learned", "build": i.get("kind") == "build", "color": "#0d9488"})
+                links.append({"s": "learn", "t": "b" + i["id"]})
+    except Exception:
+        pass
     return {"nodes": nodes, "links": links}
 
 

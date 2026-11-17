@@ -336,6 +336,11 @@ def main():
            env=env, timeout=7200, cwd=rdir) if os.name != "nt" else sh(["npx.cmd", "-y", "hyperframes@latest", "render", "--output", raw], cwd=rdir)
         log("rendered in", round(time.time() - t0), "s")
         remux(raw, mix, total, final)
+        for junk in (raw, os.path.join(job, "mix-tp.wav")):         # ~120 MB per video; rebuilt if ever needed
+            try:
+                os.remove(junk)
+            except OSError:
+                pass
     # 8 qc
     rep = {"topic": topic, "title": p.get("title"), "format": qc.fmt(final)}
     mids = [((t["start"] + t["end"]) / 2) for t in timed]
