@@ -167,13 +167,13 @@
    "vo": "Dono bank se OK milte hi, aapki screen par green tick aa jaata hai.",
    "type": "stat",
    "prompt": "Sleek floating emerald acrylic success token glowing with a bright minimalist checkmark contour, soft warm rim light, premium dark fintech aesthetics on solid black background.",
-   "label": "STATUS",
+   "label": "APPROVAL",
    "motion": "tilt",
    "keywords": [
     "green tick"
    ],
-   "title": "APPROVAL",
-   "value": "SUCCESS",
+   "title": "STATUS",
+   "value": "OK",
    "sub": "Verified",
    "big": "DONE"
   },
@@ -192,7 +192,7 @@
      "pct": 0
     }
    ],
-   "label": "FLOW",
+   "label": "DIRECT",
    "motion": "pull",
    "keywords": [
     "bank to bank"
@@ -209,7 +209,7 @@
     "PhonePe"
    ],
    "title": "SACH",
-   "label": "PHONEPE"
+   "label": "REPLY"
   }
  ],
  "caption": "PhonePe aur Google Pay aapka ek rupya bhi transfer nahi karte! Dekhiye kaise NPCI aur aapka bank sirf 2 second mein poora settlement karte hain. Kya aapko yeh pata tha?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",

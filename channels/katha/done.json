@@ -65,5 +65,16 @@
   "qc_ok": true,
   "status": "approved",
   "review": []
+ },
+ {
+  "job": "real-02-en",
+  "topic": "Hanuman ji aur Shani dev ka yuddh aur unka milan (Ramayana, Kishkindha Kanda)",
+  "title": "Why is the Kedarnath Shivling triangular?",
+  "status": "held",
+  "review": [
+   "before render, scene 1: FIT: Yellow tag says 'KEDARNATH SHIVLING' in the first still and 'TRIANGULAR' in the second, but voice says 'Why is the Kedarnath Shivling triangular instead of being round?' where 'TRIANGULAR' appear",
+   "before render, scene 11: FIT: Both stills in scene 11 display 'SHIVLING' on screen, whereas the card specification and voice mention different hierarchical text ('KEDARNATH', 'SHIVLING', 'SHIVA PURAN').",
+   "before render, scene 12: OVERLAP/CUT (layout audit): text_occluded on #s11b"
+  ]
  }
 ]

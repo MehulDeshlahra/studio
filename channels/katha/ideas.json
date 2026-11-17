@@ -122,5 +122,130 @@
     "score": 3.51
    }
   ]
+ },
+ {
+  "t": "2026-11-17 16:45",
+  "picked": "Hanuman ji aur Shani dev ka yuddh aur unka milan (Ramayana, Kishkindha Kanda)",
+  "ideas": [
+   {
+    "topic": "Hanuman ji aur Shani dev ka yuddh aur unka milan (Ramayana, Kishkindha Kanda)",
+    "note": "",
+    "search": "hanuman and shani dev story ramayana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 8.4,
+    "median_views": 2212591,
+    "fresh": 5.4,
+    "score": 8.36
+   },
+   {
+    "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
+    "search": "when lord krishna visited naraka purana",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "Directly inspired by the r/hinduism trending discussion 'When Lord Krishna visited Naraka', aligning with post-festival spiritual interest. Source: Bhagavata Purana, Canto 10, Chapter 59.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.5,
+    "score": 7.1
+   },
+   {
+    "topic": "Karna aur Indra dev ki katha, kavach kundal ka daan (Mahabharata, Vana Parva)",
+    "note": "",
+    "search": "karna gives kavach kundal to indra",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 5.3,
+    "median_views": 131361,
+    "fresh": 4.3,
+    "score": 6.75
+   },
+   {
+    "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
+    "search": "did ravan touch sita maa valmiki ramayana",
+    "fit": 10.0,
+    "from": "trend",
+    "note": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
+    "demand_known": true,
+    "demand": 1.9,
+    "median_views": 5947,
+    "fresh": 6.9,
+    "score": 6.74
+   },
+   {
+    "topic": "Samudra Manthan se nikle 14 ratna aur unka rahasya (Mahabharata, Adi Parva)",
+    "note": "",
+    "search": "samudra manthan 14 ratna story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.1,
+    "score": 6.12
+   },
+   {
+    "topic": "Ahilya ka udhar, Gautam Rishi ka shrap (Valmiki Ramayana, Bala Kanda)",
+    "note": "",
+    "search": "ahilya shrap ramayana story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.0,
+    "score": 6.1
+   },
+   {
+    "topic": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
+    "search": "setting sun worship Chhath mythology story",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Ties into the festival buzz around Chhath Puja / Sun temples, connecting ancient Puranic legends of Surya Dev to current cultural interest. Source: Samba Purana, Chapter 27.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 204,
+    "fresh": 7.9,
+    "score": 5.73
+   },
+   {
+    "topic": "Bhishma Pitamah ki ichcha mrityu ka vardaan (Mahabharata, Anusasana Parva)",
+    "note": "",
+    "search": "bhishma ichcha mrityu boon mahabharata",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 1.0,
+    "median_views": 2458,
+    "fresh": 4.5,
+    "score": 4.85
+   },
+   {
+    "topic": "Bali aur Sugriva ka yuddh, Tara ka vilap (Valmiki Ramayana, Kishkindha Kanda)",
+    "note": "",
+    "search": "bali vadh ramayana story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 1,
+    "fresh": 4.9,
+    "score": 4.48
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1646,
+    "fresh": 4.3,
+    "score": 3.53
+   }
+  ]
  }
 ]

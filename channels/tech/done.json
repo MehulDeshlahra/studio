@@ -83,10 +83,8 @@
   "job": "1117-0729",
   "topic": "'Hey Google' phone kaise sunta hai",
   "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
-  "status": "held",
-  "review": [
-   "visual: Scene 10 caption text is cut off at the bottom frame edge ('Kya aapka phone kisi dost ki...')."
-  ]
+  "status": "approved",
+  "review": []
  },
  {
   "job": "real-01",
@@ -95,9 +93,9 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "before render, scene 9: FIT: Wrong visual type displayed (stat/text instead of flow), and caption collision with text at bottom.",
-   "before render, scene 10: EMPTY: Scene 10 is completely dark/empty in the first still, and shows wrong stats.",
-   "before render, scene 11: OVERLAP: Captions overlap heavily with the subtext and main title in multiple stills."
+   "before render, scene 9: OVERLAP: Captions collide with the bottom edge of the frame/content",
+   "before render, scene 10: FIT: Visual shows 100% vs 0% comparison instead of transfer stats",
+   "before render, scene 11: OVERLAP: Multiple overlapping caption lines at the bottom causing unreadable text"
   ]
  }
 ]

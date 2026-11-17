@@ -318,3 +318,7 @@
 
 ## review 1117-0729
 - visual: Scene 10 caption text is cut off at the bottom frame edge ('Kya aapka phone kisi dost ki...').
+
+## 1117-0729 'Hey Google' phone kaise sunta hai
+- scene 3: The caption text 'bhejta' is partially obscured/cut off by the large '2 HOURS' text above it, making it slightly hard to read.
+- scene 6: The caption text 'Bas aakhri do second ki aawaz' is slightly cut off at the bottom edge.

@@ -1,0 +1,170 @@
+{
+ "slug": "kedarnath-mandir-pandav-rahasya",
+ "title": "Why is the Kedarnath Shivling triangular?",
+ "hooks": [
+  "Kedarnath ka Shivling baki mandiron jaisa gol kyu nahi, balki trikoniya hai?",
+  "Mahabharat ke baad Shiv ji ne Bhim se bachne ke liye kaunsa roop liya tha?",
+  "Kedarnath mandir ke trikone shivling ka sach kya hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Points directly to the visible physical anomaly of the Kedarnath lingam that visitors observe, sparking immediate curiosity about its origin.",
+ "metaphor": "The divine bull sinking into the earth, leaving behind its triangular hump as the eternal anchor of forgiveness.",
+ "cast": {
+  "Pandavas": "five noble ancient Indian warrior brothers in rustic ascetic wraps, weary expressions of deep remorse, painterly Indian epic aesthetic",
+  "Bhim": "towering powerfully built ancient Indian warrior prince with immense muscular frame, rustic dhoti, rudraksha beads, determined gaze",
+  "Nandi_Bull": "magnificent divine humpback Himalayan bull, luminous silver-grey hide, regal horns, subtle spiritual glow"
+ },
+ "scenes": [
+  {
+   "vo": "Why is the Kedarnath Shivling triangular instead of being round?",
+   "type": "image",
+   "prompt": "cinematic epic style, bright illuminated sacred natural triangular rock lingam in dark temple sanctum, glowing diya lights around, clear centered subject, 9:16 aspect ratio",
+   "motion": "punch",
+   "title": "",
+   "keywords": [],
+   "real": null
+  },
+  {
+   "vo": "After the great war, the Pandavas were deeply grieving their lost kin.",
+   "type": "image",
+   "prompt": "painterly Indian epic style, five noble ancient Indian warrior brothers in rustic ascetic wraps, weary expressions of deep remorse, standing on a misty ridge overlooking dusk, muted embers and deep maroon tones",
+   "motion": "push",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "They went to the Himalayas for peace, but Mahadev avoided them.",
+   "type": "image",
+   "prompt": "cinematic epic style, brightly lit majestic snow-capped Himalayan peaks under clear blue sky, towering mountains, clear centered composition, 9:16 aspect ratio",
+   "motion": "pan",
+   "title": "",
+   "keywords": [],
+   "real": null
+  },
+  {
+   "vo": "Shiva took the form of a bull and hid among cattle.",
+   "type": "image",
+   "prompt": "painterly Indian epic style, large herd of Himalayan cattle grazing on vast green alpine valley, amongst them one magnificent luminous silver-grey bull hiding quietly, subtle divine aura",
+   "motion": "pull",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Seeing this, Bhima instantly came up with a clever plan.",
+   "type": "image",
+   "prompt": "cinematic portrait, towering muscular ancient warrior Bhima thinking with a clever strategic smile, centered, 9:16, dark moody background with ample headroom and footroom, no text",
+   "motion": "push",
+   "title": "",
+   "keywords": [],
+   "real": null
+  },
+  {
+   "vo": "He spread his legs across two massive rocks to block the path.",
+   "type": "image",
+   "prompt": "painterly Indian epic style, mighty hero standing with legs spread wide across two massive towering boulders, blocking a narrow mountain pass, centered, 9:16, ample headroom and footroom, no text",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [],
+   "real": null
+  },
+  {
+   "vo": "The other bulls passed under, but Mahadev refused to bow down.",
+   "type": "image",
+   "prompt": "painterly Indian epic style, a magnificent divine bull standing firmly refusing to bow, centered, 9:16, majestic mountain background with ample headroom and footroom, no text",
+   "motion": "push",
+   "title": "",
+   "keywords": [],
+   "real": null
+  },
+  {
+   "vo": "Spotting him instantly, Bhima rushed forward and grabbed the bull.",
+   "type": "image",
+   "prompt": "cinematic action, colossal ancient warrior grabbing the horns and neck of a magnificent divine bull head-on, struggling to stop it on a mountain path, dust kicking up",
+   "motion": "punch",
+   "title": "",
+   "keywords": [],
+   "real": null
+  },
+  {
+   "vo": "As it sank into the earth, Bhima was left holding only its hump.",
+   "type": "clip",
+   "prompt": "painterly Indian fantasy style, divine bull sinking softly into glowing mystical earth, powerful warrior hands tightly gripping the solid triangular hump, bright golden spiritual light radiating",
+   "motion": "push",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Moved by their true repentance, Mahadev finally forgave the Pandavas.",
+   "type": "image",
+   "prompt": "painterly Indian epic aesthetic, majestic Hindu deity Shiva appearing in glowing golden light above five reverent warrior brothers who are bowing in deep devotion, centered, 9:16, ample headroom and footroom, no text",
+   "motion": "pan",
+   "title": "",
+   "keywords": [],
+   "real": null
+  },
+  {
+   "vo": "That very hump is today's triangular Shivling at Kedarnath.",
+   "type": "card",
+   "prompt": "cinematic bright photo style, ancient stone Kedarnath temple standing tall against grand snow peaks under morning sun, sacred fluttering flags, 9:16 aspect ratio",
+   "motion": "pull",
+   "title": "KEDARNATH",
+   "big": "SHIVLING",
+   "small": "SHIVA PURAN",
+   "keywords": [],
+   "real": null
+  },
+  {
+   "vo": "Does true repentance erase every single past mistake in your view?",
+   "type": "card",
+   "prompt": "painterly bright daylight view of sacred Himalayan mountain shrine with peaceful spiritual atmosphere, clear lighting, centered, 9:16, ample headroom and footroom, no text",
+   "motion": "pull",
+   "title": "THINK",
+   "big": "COMMENT",
+   "small": "JAI BHOLE",
+   "keywords": [],
+   "real": null
+  }
+ ],
+ "caption": "Why is the Kedarnath Shivling not round like others, but triangular? 🏔️🙏\nThe fascinating tale of the Pandavas and Mahadev after the Mahabharata war, found in the Shiva Purana and Skanda Purana (Kedar Khanda).\nDoes true repentance forgive all mistakes? Share your thoughts in the comments.\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#Kedarnath",
+  "#Mahadev",
+  "#ShivaPurana",
+  "#HinduMythology",
+  "#Pandavas",
+  "#Bholenath",
+  "#IndianHistory"
+ ],
+ "claims": [
+  {
+   "claim": "The natural rock lingam at Kedarnath is triangular in shape, representing the hump of a bull.",
+   "basis": "Shiva Purana, Koti Rudra Samhita, and Skanda Purana (Kedar Khanda) explicitly describe the Kedarnath swayambhu rock as the hump (prishtha bhaga) of Shiva's bull form."
+  },
+  {
+   "claim": "Pandavas sought Shiva to atone for the deaths of their kin in the Kurukshetra war.",
+   "basis": "Mahabharata (Svargarohanika Parva context) and Kedar Khanda describe the Pandavas journey to Garhwal Himalayas for penance."
+  },
+  {
+   "claim": "Shiva took the form of a bull, and Bhima stood astride two rocks to identify him among the herd.",
+   "basis": "Traditional Sthala Purana of Panch Kedar and Skanda Purana Kedar Khanda narrate Bhima's method of identifying the divine bull."
+  }
+ ],
+ "brain_ids": [
+  "82055e32f5",
+  "ef573ce014",
+  "7a67022fb6",
+  "1ad22ef225",
+  "4204a43442",
+  "3cec28c3e9",
+  "d7b38f2237",
+  "1662db247e",
+  "6a0ed93ee3",
+  "8ff0e3e4e9",
+  "d4d8a0da8f",
+  "84c1e843ba",
+  "a43539ef19",
+  "31d664c19b"
+ ],
+ "lang": "en",
+ "end_line": "Follow for more"
+}
