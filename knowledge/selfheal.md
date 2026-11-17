@@ -69,4 +69,14 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
       doctor keeps them on. Dashboard shows the healer's step for each held video.
 - [ ] B11 Final check: held videos cleared by the server itself, report.
 
+## More found while building (all fixed, 18 Nov)
+- Jobs cut off by the 01:50 freeze (katha 1118-0053, 1118-0133) were never resumed: healer.heal_orphans resumes them.
+- The doctor's hourly OmniRoute re-test also re-opened connections in OmniRoute's own rate-limit cool-down: now only
+  "credits_exhausted" locks are re-tested.
+- Owner task "Link YouTube" was stale: all three pages answer channels.list (Kaise Tech, Puraan Ki Katha, Aage Suno);
+  marked done; the doctor now checks every YouTube login once a day and tells the owner only if one stops working.
+- Weekly report: held videos / unknown errors moved out of "Needs you" (they are the healer's), healer line added.
+
 ## Log
+- 04:35 end-to-end test of the coding agent on a sandbox clone (injected the old end-card bug): aider found the cause
+  and wrote the same one-line fix in 28k tokens through studio-code.
