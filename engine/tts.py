@@ -6,11 +6,105 @@ from core import log
 MODELS = ["gemini-3.8-flash-tts", "gemini-3.1-flash-tts-preview"]
 
 
-def _key():
-    # one key per line; a random one per call spreads the free-tier quota (and a retry lands on another key)
-    ks = [l.strip() for l in open(os.path.expanduser(os.environ.get("STUDIO_GEMINI_KEY_FILE", "~/.studio-gemini.key"))) if l.strip()]
+KEYS_STATE = os.path.expanduser("~/studio-out/gemini-keys.json")
+
+
+def _keys_all():
+    return [l.strip() for l in open(os.path.expanduser(os.environ.get("STUDIO_GEMINI_KEY_FILE", "~/.studio-gemini.key"))) if l.strip()]
+
+
+def _kstate():
+    try:
+        st = json.load(open(KEYS_STATE))
+    except Exception:
+        st = {}
+    today = time.strftime("%Y-%m-%d", time.gmtime(time.time() - 8 * 3600))   # Google resets daily quota at midnight Pacific
+    if st.get("day") != today:
+        st = {"day": today, "keys": {}, "alerted": st.get("alerted") if st.get("day") == today else None}
+    return st
+
+
+def _ksave(st):
+    try:
+        tmp = KEYS_STATE + ".tmp"; json.dump(st, open(tmp, "w")); os.replace(tmp, KEYS_STATE)
+    except Exception:
+        pass
+
+
+def _key(model=None):
+    """A random free key that is not out of daily quota today (for this model, or for every model when model is None).
+    If every key is out, any key (the call then fails fast and the caller falls back)."""
     import random
-    return random.choice(ks)
+    ks = _keys_all()
+    st = _kstate()["keys"]
+    def out(k):
+        o = st.get(k[-6:], {}).get("out", [])
+        return (model in o) if model else ("*" in o)
+    ok = [k for k in ks if not out(k)]
+    return random.choice(ok or ks)
+
+
+class _KeyWatch(urllib.request.BaseHandler):
+    """Counts every Gemini call per key and marks a key 'out' for the day (per model) when Google says the DAILY quota is
+    used up. Installed as the global urllib opener, so every module (plan, review, thumb, brain...) is covered."""
+    handler_order = 999
+
+    def _note(self, req, code, body=""):
+        if "generativelanguage.googleapis.com" not in req.full_url:
+            return
+        k = req.get_header("X-goog-api-key") or ""
+        if not k:
+            return
+        m = req.full_url.split("/models/")[-1].split(":")[0] if "/models/" in req.full_url else "other"
+        st = _kstate(); e = st["keys"].setdefault(k[-6:], {"ok": 0, "fail": 0, "out": [], "models": {}})
+        e["models"][m] = e["models"].get(m, 0) + 1
+        if code < 300:
+            e["ok"] += 1
+        else:
+            e["fail"] += 1
+            b = body.lower()
+            daily = ("per day" in b or "perday" in b or "requests per day" in b or "daily" in b or "spend cap" in b
+                     or ("quota" in b and "minute" not in b))
+            if code in (403, 429) and daily and m not in e["out"]:
+                e["out"].append(m)
+                if "spend cap" in b or "permission" in b:
+                    e["out"].append("*")
+        _ksave(st)
+        if code >= 300:
+            _alert_if_all_out(st)
+
+    def http_response(self, req, resp):
+        body = ""
+        if resp.status >= 300:
+            try:
+                raw = resp.read(); body = raw[:600].decode("utf8", "ignore")
+                import io as _io
+                resp.fp = _io.BytesIO(raw); resp.read = resp.fp.read
+            except Exception:
+                pass
+        try:
+            self._note(req, resp.status, body)
+        except Exception:
+            pass
+        return resp
+
+    https_response = http_response
+
+
+def _alert_if_all_out(st):
+    ks = [k[-6:] for k in _keys_all()]
+    tts_out = all(any("tts" in m for m in st["keys"].get(k, {}).get("out", [])) or "*" in st["keys"].get(k, {}).get("out", []) for k in ks)
+    if tts_out and not st.get("alerted"):
+        st["alerted"] = time.strftime("%H:%M"); _ksave(st)
+        try:
+            from core import telegram
+            telegram(f"Studio: all {len(ks)} free Gemini keys are out of today's VOICE quota. Videos wait until the reset "
+                     "(13:30 IST). Nothing to do unless this happens often; then add one more free key.")
+        except Exception:
+            pass
+
+
+urllib.request.install_opener(urllib.request.build_opener(_KeyWatch()))
 
 
 def speak(script, out_wav, voice="Charon", style="", lang="hi"):
@@ -26,7 +120,7 @@ def speak(script, out_wav, voice="Charon", style="", lang="hi"):
             try:
                 r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
                                            data=json.dumps(body).encode(),
-                                           headers={"Content-Type": "application/json", "x-goog-api-key": _key()})
+                                           headers={"Content-Type": "application/json", "x-goog-api-key": _key(m)})
                 d = json.load(urllib.request.urlopen(r, timeout=300))
                 pcm = base64.b64decode(d["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
                 w = wave.open(out_wav, "wb"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000)

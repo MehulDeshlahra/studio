@@ -115,6 +115,21 @@ def sampler():
         time.sleep(5)
 
 
+def gemini_keys():
+    """Free Gemini keys: today's calls per key (engine/tts.py _KeyWatch writes ~/studio-out/gemini-keys.json)."""
+    try:
+        st = json.load(open(os.path.expanduser("~/studio-out/gemini-keys.json")))
+    except Exception:
+        st = {}
+    try:
+        tails = [l.strip()[-6:] for l in open(os.path.expanduser("~/.studio-gemini.key")) if l.strip()]
+    except Exception:
+        tails = []
+    ks = st.get("keys", {}) if st.get("day") else {}
+    return {"day": st.get("day"), "alerted": st.get("alerted"),
+            "list": [dict({"id": "…" + t[-4:], "ok": 0, "fail": 0, "out": [], "models": {}}, **{k: v for k, v in ks.get(t, {}).items()}, id="…" + t[-4:]) for t in tails]}
+
+
 def server():
     tot, av = _mem(); du = shutil.disk_usage("/")
     with open("/proc/uptime") as f:
@@ -132,7 +147,7 @@ def server():
     return {"cores": os.cpu_count(), "cpu": HIST[-1][1] if HIST else 0, "cpu_norm": cpu_norm, "cpu_bg": cpu_bg, "mem_pct": round(100 * (1 - av / tot), 1),
             "mem_used_gb": round((tot - av) / 1048576, 1), "mem_total_gb": round(tot / 1048576, 1),
             "disk_pct": round(100 * du.used / du.total, 1), "disk_free_gb": round(du.free / 1e9, 1), "disk_total_gb": round(du.total / 1e9),
-            "load": [round(x, 2) for x in la], "uptime_h": round(up / 3600, 1), "muse": muse,
+            "load": [round(x, 2) for x in la], "uptime_h": round(up / 3600, 1), "muse": muse, "keys": gemini_keys(),
             "hist": [{"t": h[0], "cpu": h[1], "mem": h[2], "load": h[3], "norm": h[4], "bg": h[5]} for h in HIST[-120:]]}
 
 
