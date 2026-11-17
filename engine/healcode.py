@@ -52,7 +52,8 @@ def check(code_dir, cid, job):
     os.makedirs(dst)
     for f in os.listdir(src):
         p = os.path.join(src, f)
-        if f in ("render",) or f.endswith((".mp4", ".mov")) or f.startswith(("sheet", "preflight-sheet", "cover-variants")):
+        if f in ("render", "preflight.json") or f.endswith((".mp4", ".mov")) or f.startswith(("sheet", "preflight-sheet", "cover-variants")):
+            # 18 Nov: the old preflight.json was copied too, so a crashed build looked like "still failing"
             continue
         (shutil.copytree if os.path.isdir(p) else shutil.copy2)(p, os.path.join(dst, f))
     for f in ("gemini-keys.json", "realmedia-usage.json", "music-usage.json"):    # key quota state is shared, not reset
