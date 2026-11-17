@@ -70,6 +70,8 @@ Report ONLY real, visible problems a viewer would notice:
 - garbled or fake letters inside the generated images, watermarks
 - broken anatomy (extra fingers, melted faces), ugly artefacts, a frame that doesn't fit its line
 - wrong language on screen, missing end card when a handle is given
+- a god, goddess or sacred figure shown wrongly or disrespectfully (wrong gender or form, revealing clothes, mocking), or a
+  split / collage picture where one scene was meant (18 Nov: a generated Kartikeya came out as a woman)
 Return JSON {{"score": 1-10, "serious": ["..."], "minor": ["..."]}} (serious = must fix before posting)."""
     b64 = base64.b64encode(open(out_jpg, "rb").read()).decode()
     body = {"contents": [{"parts": [{"text": prompt}, {"inline_data": {"mime_type": "image/jpeg", "data": b64}}]}],

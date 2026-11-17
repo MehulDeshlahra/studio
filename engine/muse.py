@@ -102,8 +102,8 @@ def cloudflare(prompt, dest):
         return None
 
 
-OMNI_IMAGE = ["nvidia/black-forest-labs/flux.1-dev", "pollinations/zimage", "nvidia/black-forest-labs/flux.2-klein-4b",
-              "nvidia/black-forest-labs/flux.1-schnell"]
+# 18 Nov: z-image dropped after one real katha frame drew Kartikeya as a woman in revealing clothes on a split panel
+OMNI_IMAGE = ["nvidia/black-forest-labs/flux.1-dev", "nvidia/black-forest-labs/flux.2-klein-4b", "nvidia/black-forest-labs/flux.1-schnell"]
 
 
 def omni_image(prompt, dest):

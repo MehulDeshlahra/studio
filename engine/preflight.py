@@ -95,6 +95,9 @@ For EACH scene, report only real problems a viewer would notice:
 - LANG: wrong language on screen
 - FIT: the visual does not match what the voice says, or looks broken/glitchy
 - DUP: the same words shown twice at once
+- FIT also covers: a split / collage picture when one scene was meant, or a character whose gender or form differs from the line
+- RESPECT: a god, goddess or sacred figure shown wrongly (wrong gender or form, missing attributes, revealing clothes,
+  mocking or cartoonish) -- report it as "FIT: RESPECT ..." so the picture is made again
 Return JSON {{"score": 1-10, "scenes": [{{"n": <scene number>, "problems": ["CODE: short description"]}}]}}
 List only scenes that have problems."""
     b64 = base64.b64encode(open(sheet, "rb").read()).decode()
