@@ -315,17 +315,32 @@ def main():
         pr = {"ok": True}
         for attempt in range(3):
             pr = preflight.run(job, p, timed, total, lang_p)
-            if pr["ok"] or attempt == 2 or theme.get("style") != "lab":
+            if pr["ok"] or attempt == 2:
                 break
-            if not preflight.repair(p, pr["bad"], lang_p):
-                break
-            save(pp, p)
-            import compose_lab
-            doc, cues = compose_lab.page(p, timed, total, theme, assets)
+            if theme.get("style") == "lab":
+                if not preflight.repair(p, pr["bad"], lang_p):
+                    break
+                save(pp, p)
+                import compose_lab
+                doc, cues = compose_lab.page(p, timed, total, theme, assets)
+            else:                                         # 17 Nov: classic pages rendered known-bad scenes (no repair) -> held after render
+                again = preflight.repair_classic(p, pr["bad"], lang_p, ch.get("name", ch["id"]))
+                if not again and not pr["bad"]:
+                    break
+                save(pp, p)
+                got = load(os.path.join(job, "assets.json"), {})
+                for k in again:
+                    got.pop(str(k), None)
+                save(os.path.join(job, "assets.json"), got)
+                assets = stage_assets(ch, p, job)
+                for v in assets.values():
+                    for f in v.values():
+                        shutil.copy(f, os.path.join(rdir, "assets", os.path.basename(f)))
+                doc, cues = compose.page(p, timed, total, theme, assets)
             open(os.path.join(rdir, "index.html"), "w", encoding="utf-8").write(doc)
             cj = load(os.path.join(job, "cues.json"), {}); cj["sfx"] = cues; save(os.path.join(job, "cues.json"), cj)
             log("preflight: repaired", len(pr["bad"]), "scene(s), checking again")
-        if not pr["ok"] and theme.get("style") == "lab":
+        if not pr["ok"]:
             done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), [])
             row = next((d for d in done if d["job"] == job_id), None)
             if not row:

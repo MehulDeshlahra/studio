@@ -174,6 +174,45 @@ def repair(plan, bad, lang):
     return n
 
 
+REPAIR_CLASSIC = """You are fixing scenes of a planned vertical {page} video that FAILED the pre-render check. The voice is already
+recorded: NEVER change "vo". For each listed scene return a fixed scene. You may change: type (image or card only),
+prompt (a NEW image prompt: one clear subject centred, 9:16, room above and below for text, no text/letters/logos in
+the image), title (<= 3 words or empty), big (card: 1-3 words), small (card: <= 5 words), motion.
+If the problem is a watermark, a wrong picture, or an empty frame, write a new prompt and set "real" to null (the AI
+image replaces the web photo). On-screen language: {lang}.
+Scenes to fix (index: current scene JSON -> problems):
+{items}
+Return JSON {{"scenes": {{"<index>": {{...the full fixed scene, same vo...}}}}}}"""
+
+
+def repair_classic(plan, bad, lang, page="story"):
+    """Classic look (Katha, Aage Suno): new picture prompts / shorter text for the failing scenes.
+    Returns the indices whose picture must be made again (make.py clears their assets and re-stages them)."""
+    import plan as planner
+    items = "\n".join(f"{k}: {json.dumps(plan['scenes'][int(k)], ensure_ascii=False)} -> {probs}" for k, probs in bad.items())
+    r = planner.ask(REPAIR_CLASSIC.format(page=page, lang="English" if lang == "en" else "Hinglish (Roman)", items=items), max_tokens=3000) or {}
+    redo = []
+    for k, s in ((r if isinstance(r, dict) else {}).get("scenes") or {}).items():
+        try:
+            k = int(k)
+        except Exception:
+            continue
+        if not (0 <= k < len(plan["scenes"])) or not isinstance(s, dict):
+            continue
+        old = plan["scenes"][k]
+        new = dict(old); new.update({kk: vv for kk, vv in s.items() if kk in ("type", "prompt", "title", "big", "small", "motion", "real")})
+        if new.get("type") not in ("image", "card"):
+            new["type"] = old["type"] if old.get("type") in ("image", "card", "clip") else "image"
+        probs = " ".join(bad.get(str(k)) or bad.get(k) or []).lower()
+        if any(w in probs for w in ("watermark", "fit:", "empty", "garbled", "wrong")):
+            new["real"] = None                                 # a web photo failed: use an AI picture this time
+        new["vo"] = old["vo"]
+        if new.get("prompt") != old.get("prompt") or new.get("real") != old.get("real"):
+            redo.append(k)
+        plan["scenes"][k] = new
+    return redo
+
+
 if __name__ == "__main__":
     cid, job = sys.argv[1], sys.argv[2]
     jd = os.path.join(OUT, cid, job)

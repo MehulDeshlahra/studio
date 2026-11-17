@@ -14,6 +14,7 @@ from core import log, sh
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 H = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
 MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
+WATERMARKED = re.compile(r"alamy|shutterstock|dreamstime|istockphoto|gettyimages|depositphotos|123rf|bigstock|adobestock|stock\.adobe|canstock|agefotostock|pond5", re.I)
 
 
 def _get(url, timeout=20, maxb=12_000_000):
@@ -62,6 +63,8 @@ def download(urls, work, kind, want=6):
     for i, u in enumerate(urls):
         if len(got) >= want:
             break
+        if WATERMARKED.search(u):                 # stock sites burn a watermark into every preview (alamy in real-02)
+            continue
         try:
             b, ct = _get(u, 15)
             if len(b) < 6000 or "image" not in ct or "svg" in ct or "gif" in ct:
