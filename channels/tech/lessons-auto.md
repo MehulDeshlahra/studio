@@ -342,3 +342,9 @@
 - scene 10: The large bold text 'Direct None' is overlapping and looks messy/unintentional compared to the clean design of other slides.
 - scene 11: The text 'SACH' is centered, but the caption text below it is cut off/overlapping with the 'SACH' text, making it look broken and amateur.
 - only 69% of the script was found in the voice
+
+## review real-03
+- only 69% of the script was found in the voice
+- visual: scene 10: The text overlay 'Beech mein kisi app ne chua tak nahi' is overlapping and unreadable due to a glitch/duplicate layering.
+- visual: scene 11: The text overlay 'Comment mein sach batao!' is badly garbled and overlapping with 'Comment mein sach batao!' and 'paise'.
+- visual: scene 11: The final frame is a mess of overlapping text layers, making it look amateur and broken.
