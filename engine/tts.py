@@ -99,7 +99,8 @@ def strip_preamble(wav, first_line, lang="hi", style=""):
     for k in LEAK + ("these words", "exactly these", "the final question", "accent"):
         kw = k.split()
         for i2 in range(len(norm) - len(kw) + 1):
-            if norm[i2:i2 + len(kw)] == kw and words[i2][1] < 35:
+            # 17 Nov: a match deep inside the story cut half a Katha voice (159 words left as 40 s). Only the opening counts.
+            if norm[i2:i2 + len(kw)] == kw and words[i2][1] < 10 and i2 < 30:
                 last = max(last, i2 + len(kw) - 1)
     if last < 0 or last + 1 >= len(words):
         return 0.0, ""
