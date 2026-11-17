@@ -162,8 +162,8 @@ REQUIREMENTS
 - REAL PICTURES: when the spoken line names a real, well-known thing (a brand or app logo, a product, a company, a place, a
   monument, a public figure, a real event), add "real" to that scene so the video shows the actual picture instead of an AI
   drawing: {{"q": "short web image search query", "kind": "logo" or "photo", "subject": "what the picture must show"}}.
-  Use it on 2-5 scenes per video (MYTHOLOGY pages: at most 2, only for a real PLACE or temple, never for gods, heroes
-  or story scenes: those stay in our painted style; a real photo among paintings looks wrong); only where the line is really about that thing; keep the normal "prompt" as the fallback.
+  Use it on 2-5 scenes per video (STORY pages = mythology and case-file/mystery pages: at most 2, only for a real PLACE, temple or landmark, never for gods, heroes, victims, suspects
+  or story scenes: those stay in our illustrated style; a real photo among illustrations looks wrong); only where the line is really about that thing; keep the normal "prompt" as the fallback.
   Works on image, card and object scenes (not clip or flow). "kind" may also be "clip" (a real 6 s video of a real PLACE or
   event, e.g. {{"q": "Varanasi ghat aarti", "kind": "clip"}}: use at most 1 per video, only if the line is about that place).
   For an app/product scene you may add "logo": "Google Pay logo" inside "real" (kind photo): the logo pops in first, then the photo. Query like a person would: "UPI logo", "Taj Mahal front view".
