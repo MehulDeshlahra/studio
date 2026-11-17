@@ -1,0 +1,201 @@
+{
+ "slug": "lakshmi-horse-sanjna-surya",
+ "title": "Why did Sanjna become a horse?",
+ "hooks": [
+  "Suraj ki aag se bachne ke liye devi ko ghodi banna pada!",
+  "Sanjna ne Surya ka tej sahan nahi kiya, chupke se ban gayi ghodi.",
+  "Kya aapko pata hai Surya dev ko ghoda kyun banna pada tha?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the striking conversational hook about escaping the sun's heat by turning into a mare, written in natural spoken Hindi without bookish words.",
+ "metaphor": "The horse form as a living shield against Surya's unbearable radiance — a divine adaptation that turns flight into penance and union.",
+ "cast": {
+  "Surya": "Radiant golden deity with four arms, riding a chariot pulled by seven horses, crown of sun rays, warm golden aura.",
+  "Sanjna": "Beautiful goddess with lotus eyes, golden complexion, wearing red saree with gold ornaments, calm expression.",
+  "Chhaya": "Shadowy duplicate of Sanjna, same form but dark grey silhouette, subtle divine glow.",
+  "AshwiniKumaras": "Twin youthful gods with horse heads, golden armor, holding medicinal herbs."
+ },
+ "scenes": [
+  {
+   "vo": "Suraj ki aag se bachne ke liye devi ko ghodi banna pada!",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Surya's blinding golden chariot dominates the upper frame, intense rays like spears. Below, Sanjna shields her eyes, beginning to shimmer into a white mare. Warm gold and deep maroon palette, soft divine light. 9:16, subject centred, room above for text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Suraj",
+    "aag",
+    "ghodi"
+   ]
+  },
+  {
+   "vo": "Sanjna ki shaadi Surya dev ke sath hui thi.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Wedding mandap under a banyan tree. Surya and Sanjna exchange garlands. Warm gold light, deep maroon accents, soft divine glow. 9:16, centred, room for text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Sanjna",
+    "shaadi",
+    "Surya"
+   ]
+  },
+  {
+   "vo": "Par Surya ka tej itna jyada tha ki sahan nahi hota tha.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Close-up of Sanjna's face, sweat pearls on brow, Surya's blinding aura pressing in from all sides like molten gold. Her hands raised in futile protection. Warm gold and deep maroon. 9:16, centred.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Surya",
+    "tej",
+    "sahan"
+   ]
+  },
+  {
+   "vo": "Toh usne apni chhaya ko wahi chhod diya.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Sanjna creates a dark-grey silhouette twin who sits exactly where she was. Sanjna's form turns translucent, stepping back. Surya's chariot in background unaware. Warm gold, deep maroon. 9:16, centred.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "chhaya",
+    "chhod",
+    "diya"
+   ]
+  },
+  {
+   "vo": "Aur khud ghodi ban kar van mein tapasya karne chali gayi.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: A white mare gallops into a dense golden forest at twilight. Her hooves leave faint lotus prints. Trees glow with soft divine light. Warm gold and deep maroon palette. 9:16, centred, room above for text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "ghodi",
+    "van",
+    "tapasya"
+   ]
+  },
+  {
+   "vo": "Jab Surya ko sach pata chala toh woh hairan reh gaye.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Surya on his chariot, seven horses rearing. He gazes down at the empty seat where Chhaya sits, his third eye blazing with realization. Warm gold, deep maroon, dramatic low-key lighting. 9:16, centred.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Surya",
+    "sach",
+    "hairan"
+   ]
+  },
+  {
+   "vo": "Woh bhi ghoda ban kar unse milne van mein pahunch gaye.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: A magnificent golden stallion enters the same forest, mane flowing like solar flares. He approaches the white mare nose-to-nose. Soft divine light filters through trees. Warm gold and deep maroon. 9:16, centred.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "ghoda",
+    "milne",
+    "van"
+   ]
+  },
+  {
+   "vo": "Inse fir Ashwini Kumaras aur Revanta ka janm hua.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: The two horses stand together; from their union emerge twin youths with horse heads and a radiant son Revanta, all glowing gold. Forest background. Warm gold, deep maroon, ornate but uncluttered. 9:16, centred.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Ashwini",
+    "Revanta",
+    "janm"
+   ]
+  },
+  {
+   "vo": "Bad mein Sanjna wapas aayi aur sab theek ho gaya.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Sanjna in human form again, standing beside Surya on his chariot. Both serene, hands joined. Seven horses calm. Warm golden hour light, deep maroon accents. 9:16, centred.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "Sanjna",
+    "wapas",
+    "theek"
+   ]
+  },
+  {
+   "vo": "Mushkil waqt mein rasta badalna padta hai, haar nahi.",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: A single lotus blooms in a fiery pool, its petals turning from gold to white. Metaphor of adaptation. Warm gold and deep maroon, soft divine light. 9:16, centred, room above for text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Mushkil",
+    "rasta",
+    "haar"
+   ]
+  },
+  {
+   "vo": "Aapki kya rai hai is par? Comments mein batao.",
+   "type": "card",
+   "prompt": "Painterly cinematic Indian miniature: The lotus from previous scene now floats in a calm pond reflecting Surya's chariot. Overlay a terracotta silhouette card with golden highlighter sweep. Warm gold, deep maroon. 9:16, centred.",
+   "motion": "punch",
+   "title": "",
+   "big": "YOUR TURN",
+   "small": "Comment below",
+   "keywords": [
+    "Aapki",
+    "rai",
+    "comments"
+   ]
+  }
+ ],
+ "music_mood": "epic",
+ "caption": "Surya's heat forced Sanjna into a mare's form — a divine escape that became a penance. 🐎✨\nThe Vishnu Purana reveals how adaptation turns crisis into creation.\nWhat would you have done in Sanjna's place?",
+ "hashtags": [
+  "#PuraanKiKatha",
+  "#VishnuPurana",
+  "#SanjnaSurya",
+  "#HinduMythology",
+  "#Kahani"
+ ],
+ "claims": [
+  {
+   "claim": "Sanjna, daughter of Vishwakarma, married Surya.",
+   "basis": "Vishnu Purana, Book 3, Chapter 1-2"
+  },
+  {
+   "claim": "Sanjna could not bear Surya's intense radiance and created a shadow double named Chhaya.",
+   "basis": "Vishnu Purana, Book 3, Chapter 2"
+  },
+  {
+   "claim": "Sanjna transformed into a mare and performed penance in the forest.",
+   "basis": "Vishnu Purana, Book 3, Chapter 2"
+  },
+  {
+   "claim": "Surya discovered the deception, became a stallion, and united with her, producing the Ashwini Kumaras and Revanta.",
+   "basis": "Vishnu Purana, Book 3, Chapter 2-3"
+  },
+  {
+   "claim": "Sanjna later returned to Surya and they resumed their married life.",
+   "basis": "Vishnu Purana, Book 3, Chapter 3"
+  }
+ ],
+ "brain_ids": [
+  "e15cfaed29",
+  "0adc696a75",
+  "a688e48ca2",
+  "1ad22ef225",
+  "82055e32f5",
+  "3cec28c3e9",
+  "d7b38f2237",
+  "ef573ce014",
+  "4204a43442",
+  "7a67022fb6",
+  "1662db247e",
+  "6a0ed93ee3",
+  "d4d8a0da8f",
+  "84c1e843ba"
+ ]
+}

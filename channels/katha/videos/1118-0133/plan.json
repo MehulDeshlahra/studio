@@ -1,0 +1,221 @@
+{
+ "slug": "somnath-jyotirlinga-part1",
+ "title": "Chandra ko shraap kaise bana Somnath?",
+ "hooks": [
+  "Chandra ne Daksh ki 27 betiyon se byah kiya, par dil sirf Rohini pe aaya",
+  "Kyun ghat ta badhta hai chandrama har maheene",
+  "Shraap mila Chand ko aur Shiv ne bana diya Somnath"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Subject-first opening with 'Chandra' as first word; immediate conflict (27 wives, one favorite) creates open loop; visual of favoritism is instantly graspable; colloquial 'dil sirf Rohini pe aaya' sounds like a friend talking",
+ "metaphor": "Moon's waxing and waning as a living metaphor for curse turning into divine rhythm — each phase a reminder that grace can restructure punishment into cosmic order",
+ "cast": {
+  "Chandra": "fair luminous deity in white silk, crescent moon on forehead, calm expression, traditional gold ornaments, soft glow around form",
+  "Daksha": "elderly sage-king with long white beard, rudraksha mala, angry but regal posture, saffron dhoti, raised hand in curse gesture",
+  "Shiva": "serene yogi with matted locks tied up, crescent moon on crown, third eye closed, rudraksha beads, tiger skin draped, damru at side, deep meditative gaze",
+  "Rohini": "beautiful woman in red bridal silk, heavy gold jewelry, standing slightly apart from 26 other wives in white, radiant but modest"
+ },
+ "scenes": [
+  {
+   "vo": "Chandra ne Daksh ki 27 betiyon se byah kiya, par dil sirf Rohini pe aaya",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light. Chandra in white silk centered, 27 wives in white arrayed behind him in semicircle, Rohini in red bridal attire slightly forward, ornate but uncluttered, 9:16 vertical, room above and below for text",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Chandra",
+    "27 betiyan",
+    "Rohini"
+   ]
+  },
+  {
+   "vo": "Baaki 26 ko bhool gaya — Daksh ne yeh dekha, gussa ho ke shraap de diya",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, deep maroon and gold. Daksha Prajapati towering on left, raised hand glowing with curse energy, Chandra small on right recoiling, 26 wives fading in shadowed background, dramatic low-key lighting like firelight, ornate but uncluttered, 9:16 vertical",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Daksh",
+    "shraap",
+    "26 bhool gaya"
+   ]
+  },
+  {
+   "vo": "Shraap: 'Tera roshni har din kam hoti rahegi' — Chandra ka chamak pal-pal dhalne laga",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold fading to deep maroon. Chandra's luminous form dimming progressively left to right, moon phases shown as shrinking discs behind him, soft divine light turning cold, ornate but uncluttered, 9:16 vertical",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "roshni kam",
+    "chamak dhalne laga"
+   ]
+  },
+  {
+   "vo": "Bechain Chandra bhaag ke pahuncha Prabhas Patan, samudra ke kinare",
+   "type": "clip",
+   "prompt": "cinematic slow camera move, warm golden hour lighting. Diminished Chandra walking along seashore at Prabhas Patan, waves gentle, ancient temple silhouette distant, soft divine light guiding path, painterly Indian miniature aesthetic, 9:16 vertical",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Prabhas Patan",
+    "samudra kinare"
+   ],
+   "real": {
+    "q": "Somnath temple Gujarat seashore aerial view",
+    "kind": "photo",
+    "subject": "Somnath temple at seashore golden hour"
+   }
+  },
+  {
+   "vo": "Wahan ret ka Shivling bana ke, din-raat pooja ki, man maanga",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon. Chandra kneeling before a simple Shivling made of sand on shore, offering water from conch, meditative posture, soft divine light descending, ornate but uncluttered, 9:16 vertical",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "ret ka Shivling",
+    "din-raat pooja"
+   ]
+  },
+  {
+   "vo": "Shiv khush hue, apne maath pe chand laga liya — 'Ab tu mere saath rahega'",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon. Shiva emerging from soft light behind Shivling, crescent moon on crown, hand raised in blessing, Chandra looking up in awe, divine glow connecting both, ornate but uncluttered, 9:16 vertical",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Shiv khush",
+    "maath pe chand",
+    "saath rahega"
+   ]
+  },
+  {
+   "vo": "Bola: 'Har maas badhega, ghatoge — yeh jagah Somnath ke naam se jaani jayegi'",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon. Moon phases arc across top of frame — new to full to new — each phase a small Chandra form waxing and waning, Shiva's silhouette below holding the cycle, soft divine light, ornate but uncluttered, 9:16 vertical",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "har maas badhega ghatoge",
+    "Somnath naam"
+   ]
+  },
+  {
+   "vo": "Mandir toota, bana, phir toota — par andar ki jyoti kabhi nahi bujhi",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, deep maroon and gold. Sequence of temple forms dissolving and rebuilding — invaders' shadows, reconstruction, destruction, reconstruction — but central jyoti flame never extinguishes, soft divine light persistent, ornate but uncluttered, 9:16 vertical",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "mandir toota bana",
+    "jyoti nahi bujhi"
+   ]
+  },
+  {
+   "vo": "Aaj bhi wahan Shiv khud jyotirlinga roop mein baithte hain",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon. Current Somnath temple at twilight, inner sanctum glowing with intense golden jyoti, devotees in silhouette offering prayers, soft divine light spilling out, ornate but uncluttered, 9:16 vertical",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Aaj bhi",
+    "jyotirlinga",
+    "Shiv baithte hain"
+   ],
+   "real": {
+    "q": "Somnath temple Gujarat sanctum jyotirlinga darshan",
+    "kind": "photo",
+    "subject": "Somnath temple inner sanctum jyotirlinga"
+   }
+  },
+  {
+   "vo": "Yeh katha Shiv Puran ke Kotirudra Samhita se",
+   "type": "card",
+   "prompt": "textured cream grid canvas, deep maroon text, warm gold accent lines. Clean source card, no imagery needed, 9:16 vertical",
+   "motion": "punch",
+   "title": "",
+   "big": "SHIV PURAN",
+   "small": "Kotirudra Samhita",
+   "keywords": [
+    "Shiv Puran",
+    "Kotirudra Samhita"
+   ]
+  },
+  {
+   "vo": "Shraap bhi ashirwad ban jata hai, jab dil se maango",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon. Dark night transforming — moon emerging from shadow into full light, single devotee hands folded, soft divine light bridging darkness and glow, ornate but uncluttered, 9:16 vertical",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "shraap ashirwad",
+    "dil se maango"
+   ]
+  },
+  {
+   "vo": "Tumhari zindagi mein kaunsa dard badal ke roshni bana? Comment karo",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon. Silhouette of person at crossroads — one path dark, one lit by moonrise, soft divine light on lit path, ornate but uncluttered, 9:16 vertical",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "zindagi",
+    "dard",
+    "roshni bana"
+   ]
+  }
+ ],
+ "music_mood": "devotional",
+ "caption": "Chandra ne 27 patniyan chhodi, sirf Rohini chahi — Daksh ne shraap de diya. Shiv ne apne maath pe chand laga ke shraap ko ashirwad bana diya. Yeh hai Somnath ki kahani. 🌙\n\nTumhari zindagi mein kaunsa dard badal ke roshni bana? Comment karo.\n\n#Somnath #Jyotirlinga #ShivPuran #PuraanKiKatha #Mahadev #ChandraDev",
+ "hashtags": [
+  "#Somnath",
+  "#Jyotirlinga",
+  "#ShivPuran",
+  "#PuraanKiKatha",
+  "#Mahadev",
+  "#ChandraDev"
+ ],
+ "claims": [
+  {
+   "claim": "Chandra (Moon) married 27 daughters of Daksha Prajapati",
+   "basis": "Shiva Purana, Kotirudra Samhita, Chapter 14-15"
+  },
+  {
+   "claim": "Chandra favored Rohini over the other 26 wives",
+   "basis": "Shiva Purana, Kotirudra Samhita; also in Bhagavata Purana 6.18"
+  },
+  {
+   "claim": "Daksha cursed Chandra to lose his brightness (wane)",
+   "basis": "Shiva Purana, Kotirudra Samhita, Chapter 15"
+  },
+  {
+   "claim": "Chandra performed penance at Prabhas Patan and worshipped a Shivling",
+   "basis": "Shiva Purana, Kotirudra Samhita, Chapter 15-16"
+  },
+  {
+   "claim": "Shiva blessed Chandra to wax and wane monthly, establishing Somnath Jyotirlinga",
+   "basis": "Shiva Purana, Kotirudra Samhita, Chapter 16; Skanda Purana, Prabhasa Khanda"
+  },
+  {
+   "claim": "Somnath is the first of the 12 Jyotirlingas",
+   "basis": "Shiva Purana, Kotirudra Samhita, Chapter 1; Dwadasha Jyotirlinga Stotram by Adi Shankaracharya"
+  }
+ ],
+ "brain_ids": [
+  "e15cfaed29",
+  "0adc696a75",
+  "a688e48ca2",
+  "82055e32f5",
+  "1ad22ef225",
+  "7a67022fb6",
+  "d7b38f2237",
+  "ef573ce014",
+  "4204a43442",
+  "3cec28c3e9",
+  "1662db247e",
+  "6a0ed93ee3",
+  "d4d8a0da8f",
+  "84c1e843ba"
+ ]
+}

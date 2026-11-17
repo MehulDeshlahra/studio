@@ -1,0 +1,85 @@
+{
+ "slug": "chouthi-manzil-ka-raaz",
+ "title": "Chouthi Manzil Ka Raaz",
+ "genre": "Mystery Thriller",
+ "logline": "An ordinary IT worker moves into a Mumbai flat where every night at 3 AM, an exact duplicate of his living room lights up on the floor above.",
+ "setting": "A slightly cramped 1BHK rented flat in a suburban Mumbai housing society.",
+ "cast": {
+  "Kabir": "27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone.",
+  "Rohan": "27 years old, sharp features, neat black hair, wearing Kabir's faded blue cotton t-shirt, holding Kabir's cracked black smartphone."
+ },
+ "started": "2026-11-17 23:59",
+ "parts": [
+  {
+   "n": 1,
+   "title": "Batti Upar Wali",
+   "beats": "Kabir shifts into flat 302 of Orchid Towers on a rainy Tuesday night. At exactly 3:00 AM, he wakes up to a bright yellow glow spilling onto his ceiling from the balcony above. He looks up and realizes the apartment directly overhead, flat 402, has been sealed with a permanent iron padlock for years. Yet, through the window, he sees a glowing study lamp moving on its own.",
+   "cliffhanger": "Kabir hears a soft knock from inside the locked flat above him, followed by the distinct sound of a pen scratching on paper.",
+   "status": "todo"
+  },
+  {
+   "n": 2,
+   "title": "Chabi Wala",
+   "beats": "The next morning, Kabir questions Sharma ji, the society watchman, about the fourth-floor flat. Sharma ji turns pale and drops his chai glass, swearing flat 402 has been empty since the original owner vanished in 2018. Kabir refuses to drop it and checks the electricity meter box downstairs in the basement. He discovers that meter number 402 is showing high active power consumption right at this moment.",
+   "cliffhanger": "Kabir opens meter box 402 and finds a fresh note inside with his exact name and current mobile number written in red ink.",
+   "status": "todo"
+  },
+  {
+   "n": 3,
+   "title": "Laal Siyahi",
+   "beats": "Shaken, Kabir calls the number written on the note, but it rings out to his own phone, which is sitting in his pocket. He rushes back upstairs and notices a trail of fresh red ink drops on his living room floor, leading directly from his front door toward the empty balcony. He follows the drops and finds a single red fountain pen resting on his outdoor ledge.",
+   "cliffhanger": "Kabir picks up the pen and realizes it is leaking, and the ink on his fingers spells out a warning: 'Don't look in the mirror'.",
+   "status": "todo"
+  },
+  {
+   "n": 4,
+   "title": "Aaina",
+   "beats": "Ignoring the warning, Kabir stands in front of his bathroom mirror to wash the ink off his hands. In the reflection, he sees the hallway light behind him flicker and turn off, though he is alone in the flat. When he turns around, the hallway is empty, but the mirror reflection shows a tall, faceless silhouette standing right behind where he was just sitting.",
+   "cliffhanger": "The silhouette in the mirror slowly raises its hand and points a finger directly at Kabir's bedroom door.",
+   "status": "todo"
+  },
+  {
+   "n": 5,
+   "title": "Band Kamra",
+   "beats": "Kabir slowly pushes open his bedroom door, bracing himself for the worst. Inside, his bed is neatly made, but his laptop is open on the desk, playing a live CCTV feed of flat 402's living room. On the screen, he watches himself sleeping in his bed last night, but the timestamp on the video says the recording happened in October 2018—five years before he even rented this flat.",
+   "cliffhanger": "On the laptop screen, a hand reaches out from under Kabir's bed in the video and grabs his ankle.",
+   "status": "todo"
+  },
+  {
+   "n": 6,
+   "title": "Purana Kirayedar",
+   "beats": "Panicking, Kabir dives to the floor and looks under his bed, finding a box covered in thick dust. He opens it to reveal old rent receipts, a college ID card, and a diary belonging to a man named Rohan who looked identical to him. The diary entries stop abruptly on November 12, 2018, with the words: 'He is coming down the stairs tonight.'",
+   "cliffhanger": "A heavy, dragging footstep echoes loudly on the ceiling right above Kabir's head, moving step by step toward his balcony.",
+   "status": "todo"
+  },
+  {
+   "n": 7,
+   "title": "Chhat Ka Raasta",
+   "beats": "Determined to face whatever is up there, Kabir takes the master keys he stole from Sharma ji's desk and climbs the stairwell to the fourth floor. The heavy iron padlock on flat 402 is rusted shut, but the wooden door is unlocked and ajar. He pushes it open to find a room completely barren of furniture, except for a single wooden chair placed in the center facing a wall.",
+   "cliffhanger": "As Kabir steps inside, the heavy wooden door slams shut behind him with a loud click, and the lock slides into place from the outside.",
+   "status": "todo"
+  },
+  {
+   "n": 8,
+   "title": "Deewar Ke Us Paar",
+   "beats": "Trapped, Kabir inspects the room and discovers that the wall facing the chair is actually a massive two-way mirror. He wipes the dust off the glass and peers through into the adjoining room. To his absolute horror, he sees his own flat 302 downstairs—and standing in his living room is Rohan, alive, wearing Kabir's own blue t-shirt, looking directly up through the floor at him.",
+   "cliffhanger": "Rohan picks up a phone and dials, and a second later, Kabir's own phone in his pocket begins to ring.",
+   "status": "todo"
+  },
+  {
+   "n": 9,
+   "title": "Sachaai",
+   "beats": "Kabir answers the phone with shaking hands. Rohan's voice whispers through the speaker: 'Every five years, the building takes a new tenant to trap the old one. You paid the rent, Kabir. Now you are the ghost upstairs.' Downstairs in the mirror, Kabir watches Rohan walk out of the flat 302 front door, lock it from the outside, and throw the keys into the lift shaft.",
+   "cliffhanger": "Heavy footsteps ascend the stairs toward flat 402, and a key turns in the outside lock with a metallic click.",
+   "status": "todo"
+  },
+  {
+   "n": 10,
+   "title": "Naya Shikar",
+   "beats": "The door of flat 402 swings open, and a new, terrified young man with luggage enters the room, looking around nervously. Kabir, now fading into a transparent silhouette, stands quietly in the dark corner holding a red fountain pen. He offers a weak, welcoming smile to the newcomer as the clock strikes 3:00 AM.",
+   "cliffhanger": "Har roz ek nayi kahani... aur agli baari aapki hai.",
+   "status": "todo"
+  }
+ ],
+ "made_jobs": {}
+}

@@ -1,0 +1,209 @@
+{
+ "slug": "ganga-avatarana-bhagavata",
+ "title": "Ganga swarg se zameen par kaise aayin?",
+ "hooks": [
+  "Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta, toh kya hota?",
+  "Kya aapko pata hai Ganga ji ko zameen par lane ke liye kya karna pada tha?",
+  "Bhagirath ki tapasya aisi thi ki bade-bade devta bhi hairan reh gaye the!"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Starts with a relatable high-stakes visual question that instantly hooks viewers.",
+ "metaphor": "A celestial river descending from the cosmic realms down to earth, guided by devotion.",
+ "cast": {
+  "Bhagirath": "Ancient Indian king in simple royal robes, deep devotion on his face, hands folded in prayer, painterly epic style",
+  "Lord Shiva": "Serene divine figure with matted hair, crescent moon, glowing aura, calm meditative expression, painterly Indian miniature style",
+  "Goddess Ganga": "Graceful divine river goddess personified, flowing translucent silks, glowing aura of pure water, serene divine expression"
+ },
+ "scenes": [
+  {
+   "vo": "Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta, toh kya hota?",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a glowing celestial river flowing through the cosmos",
+   "motion": "push",
+   "title": "SWARG SE DHARTI",
+   "keywords": [
+    "Swarg",
+    "Ganga",
+    "zameen"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Puraanon ke anusar, yeh katha hai Raja Bhagirath ki.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, ancient Indian king meditating in a serene forest",
+   "motion": "pull",
+   "title": "SKANDHA NAV",
+   "keywords": [
+    "Puraan",
+    "Bhagirath"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Unke purvaj ek shrap ki wajah se mukt nahi ho pa rahe the.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, ancient sages sitting in deep meditation under a glowing banyan tree",
+   "motion": "pan",
+   "title": "SHRAP KA DUKH",
+   "keywords": [
+    "purvaj",
+    "shrap"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Sirf Ganga ka pavitra jal hi unhe moksha dila sakta tha.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a glowing pot of sacred golden water radiating divine light",
+   "motion": "push",
+   "title": "MOKSHA KA MARG",
+   "keywords": [
+    "pavitra jal",
+    "moksha"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Bhagirath ne saalon kathor tapasya ki aur Brahma ji ko prasann kiya.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, King Bhagirath standing on one leg in intense meditation",
+   "motion": "punch",
+   "title": "KATHOR TAPASYA",
+   "keywords": [
+    "tapasya",
+    "Brahma ji"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Brahma ji ne varan diya ki Ganga swarg se zameen par aayengi.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, Lord Brahma bestowing a divine blessing with a gentle glow",
+   "motion": "pan",
+   "title": "VARDAAN",
+   "keywords": [
+    "Brahma ji",
+    "varan"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Par ek badi samasya thi, unke veg ko kaun sambhalta?",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a massive celestial torrent of glowing water rushing down",
+   "motion": "push",
+   "title": "MAHASAMASYA",
+   "keywords": [
+    "veg",
+    "samasya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Agar Ganga seedhe zameen par girti, toh dharti patal mein chali jaati.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, immense force of a golden waterfall falling from the heavens towards a fragile earth",
+   "motion": "pull",
+   "title": "DHARTI KA KHATRA",
+   "keywords": [
+    "seedhe zameen",
+    "patal"
+   ],
+   "big": null,
+   "small": null,
+   "real": null
+  },
+  {
+   "vo": "Tab Bhagirath ne Lord Shiva se prarthna ki.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, Lord Shiva seated in deep meditation on Mount Kailash",
+   "motion": "pan",
+   "title": "SHIVA ARADHNA",
+   "keywords": [
+    "Lord Shiva",
+    "prarthna"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Shiva ji ne apni jataon mein Ganga ke veg ko aasaani se rok liya.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, Lord Shiva catching the rushing celestial river within his matted hair",
+   "motion": "push",
+   "title": "JATAON MEIN",
+   "keywords": [
+    "jataon",
+    "veg roka"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Aur is tarah Ganga ji dharti par sabka kalyan karne aayin.",
+   "type": "image",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, serene river Ganga flowing gently across the fertile green plains",
+   "motion": "pull",
+   "title": "KALYAN",
+   "keywords": [
+    "dharti par",
+    "kalyan"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Sroat: Bhagavata Purana. Aapke anusar, sacchi lagan se kya namumkin bhi mumkin ho jata hai?",
+   "type": "card",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, ancient sacred manuscript scroll glowing softly",
+   "motion": "punch",
+   "title": "SROAT",
+   "big": "SROAT",
+   "small": "Bhagavata",
+   "keywords": [
+    "Bhagavata Purana"
+   ],
+   "real": null
+  }
+ ],
+ "music_mood": "epic",
+ "caption": "Ganga ji ka swarg se dharti par aana dradh sankalp ki vijay hai. Sroat: Bhagavata Purana. Aapke anusar, sacchi lagan se kya namumkin bhi mumkin ho jata hai?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#Ganga",
+  "#BhagavataPurana",
+  "#Mythology",
+  "#Sanatan",
+  "#Katha"
+ ],
+ "claims": [
+  {
+   "claim": "Ganga avatarana story is narrated in Bhagavata Purana",
+   "basis": "Bhagavata Purana, Chapters on Bhagirath and the descent of Ganga"
+  }
+ ],
+ "brain_ids": [
+  "e15cfaed29",
+  "0adc696a75",
+  "a688e48ca2",
+  "4204a43442",
+  "3cec28c3e9",
+  "1ad22ef225",
+  "d7b38f2237",
+  "ef573ce014",
+  "7a67022fb6",
+  "82055e32f5",
+  "1662db247e",
+  "6a0ed93ee3",
+  "d4d8a0da8f",
+  "84c1e843ba"
+ ],
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}

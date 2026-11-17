@@ -17,13 +17,15 @@
   {
    "vo": "Suno - ek raakshas tha Narakasura. Vardaan: koi purush use maar na sake.",
    "type": "image",
-   "prompt": "Painterly Indian epic style, massive dark fortress gates glowing with red runes, stormy sky, no text",
+   "prompt": "Painterly Indian epic style, massive dark fortress gates glowing with red runes, stormy sky, centred subject with ample space above and below, no text",
    "motion": "push",
    "keywords": [
     "vardaan",
     "raakshas"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Usne teen lok ke devta hila diye. 16000 raaniyan bandi bana li.",
@@ -34,7 +36,9 @@
     "bandi",
     "raaniyan"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Sab haar maane. Tab Krishna khud aaye. Na sena, na shor - sirf wo.",
@@ -45,29 +49,35 @@
     "krishna",
     "ekla"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Deewarein mantron se bandh thi. Krishna ne shankh bajaya - patthar bhi kaanp uthe.",
    "type": "image",
-   "prompt": "Painterly Indian epic style, conch shell glowing gold, sound waves cracking stone walls, divine light, no text",
+   "prompt": "Painterly Indian epic style, conch shell glowing gold, sound waves cracking stone walls, divine light, centred subject with ample space above and below, no text",
    "motion": "punch",
    "keywords": [
     "shankh",
     "deewarein"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Narakasura hansa: 'Vardaan yaad hai na? Koi purush nahi maar sakta.'",
    "type": "image",
-   "prompt": "Painterly Indian epic style, demon king on obsidian throne pointing at Krishna, red aura, arrogant, no text",
+   "prompt": "Painterly Indian epic style, demon king on obsidian throne laughing arrogantly, red aura, centred subject with ample space above and below, no text",
    "motion": "pull",
    "keywords": [
     "hansi",
     "vardaan"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Krishna muskuraye. Ungli pe Sudarshan Chakra ghumaya - surya jaisi roshni.",
@@ -78,7 +88,9 @@
     "chakra",
     "roshni"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Ek vaar. Mantra-raksha toot gayi jaise makkhan. Vardaan fail - kyunki Krishna purush nahi, Bhagwan the.",
@@ -89,7 +101,9 @@
     "vaad",
     "tod"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Narakasura gira. Saare taale toote. Raaniayan mukti - samman se ghar bheji gayi.",
@@ -100,41 +114,44 @@
     "mukti",
     "samman"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Yeh kahani Bhagavata Purana mein hai. Par asli sawal ab: tere andar bhi koi durg hai?",
    "type": "image",
-   "prompt": "Painterly Indian epic style, quiet temple courtyard at twilight, diyas flickering, one empty throne, no text",
+   "prompt": "Painterly Indian epic style, quiet temple courtyard at twilight, diyas flickering, one empty throne, centred subject with ample space above and below, no text",
    "motion": "tilt",
    "keywords": [
     "bhitar",
     "durg"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
-   "vo": "Ahankar ka wo durg todo. Kal nayi kahani. Follow @aagesuno.",
+   "vo": "Ahankar ka wo durg todo. Kal nayi kahani. Follow @puraankikatha.",
    "type": "card",
-   "prompt": "Painterly Indian epic style, golden lotus on dark water, single ripple, soft glow, no text",
+   "prompt": "Painterly Indian epic style, golden lotus on dark water, single ripple, soft glow, centred subject with ample space above and below, no text",
    "motion": "push",
-   "big": "@aagesuno",
-   "small": "Kal nayi kahani",
+   "big": "Follow",
+   "small": "Nayi Kahani",
    "keywords": [
     "todo",
     "follow"
    ],
-   "title": ""
+   "title": "@puraankikatha"
   }
  ],
  "music_mood": "epic",
- "caption": "Jab Krishna ne Narakasura ko maara, toh sirf raakshas nahi mara - ahankar ka durg toota. Bhagavata Purana, Dasham Skandh. Tere andar ka durg kab tootega? #puraankikatha #krishna #narakasura #ahankar #aagesuno\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "caption": "Jab Krishna ne Narakasura ko maara, toh sirf raakshas nahi mara - ahankar ka durg toota. Bhagavata Purana, Dasham Skandh. Tere andar ka durg kab tootega? #puraankikatha #krishna #narakasura #ahankar #@puraankikatha Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#puraankikatha",
   "#krishna",
   "#narakasura",
-  "#ahankar",
-  "#aagesuno"
+  "#ahankar"
  ],
  "claims": [
   {
@@ -157,5 +174,6 @@
   "84c1e843ba",
   "1662db247e",
   "6a0ed93ee3"
- ]
+ ],
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

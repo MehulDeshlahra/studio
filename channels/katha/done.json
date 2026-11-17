@@ -60,8 +60,12 @@
   "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
   "title": "Jab Krishna khud pahunche Narakasura ke durg",
   "qc_ok": true,
-  "status": "made",
-  "review": []
+  "status": "held",
+  "review": [
+   "before render, scene 5: CUT: caption text 'NA?' is incomplete compared to voiceover",
+   "before render, scene 7: FIT: image shows Narakasura instead of Krishna's weapon breaking the spell",
+   "before render, scene 10: OVERLAP/CUT (layout audit): content_overlap on #s9b"
+  ]
  },
  {
   "job": "1117-1935-en",
@@ -70,5 +74,14 @@
   "qc_ok": true,
   "status": "made",
   "review": []
+ },
+ {
+  "job": "1118-0035",
+  "topic": "The Origin of River Ganga and Why She Fell from Heaven (Bhagavata Purana, Skandha 9)",
+  "title": "Ganga swarg se zameen par kaise aayin?",
+  "status": "held",
+  "review": [
+   "before render, scene 12: OVERLAP/CUT (layout audit): content_overlap on #s11b"
+  ]
  }
 ]

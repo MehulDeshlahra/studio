@@ -497,5 +497,380 @@
     "score": 3.53
    }
   ]
+ },
+ {
+  "t": "2026-11-17 22:16",
+  "picked": "The curse on a proud saint that turned into service: How a single choice reversed fate? Lesson: transformation begins with one accountable decision (Bhagavata Purana/Acharya-cursed saint type tradition narration; source + chapter/kand in credits)",
+  "ideas": [
+   {
+    "topic": "The curse on a proud saint that turned into service: How a single choice reversed fate? Lesson: transformation begins with one accountable decision (Bhagavata Purana/Acharya-cursed saint type tradition narration; source + chapter/kand in credits)",
+    "note": "",
+    "search": "cursed saint transformation lesson",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 10.0,
+    "median_views": 11433452,
+    "fresh": 8.1,
+    "score": 8.92
+   },
+   {
+    "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
+    "search": "did ravan touch sita maa valmiki ramayana",
+    "fit": 10.0,
+    "from": "trend",
+    "note": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
+    "demand_known": true,
+    "demand": 1.9,
+    "median_views": 5954,
+    "fresh": 6.9,
+    "score": 6.74
+   },
+   {
+    "topic": "Why did the Ganga become “Ganga” only after Shiva’s permission? Retelling the story behind Bhagiratha’s tapas + lesson: discipline turns impossible into inevitable (Skanda Purana/Bhagiratha episode narration, named source + kand/chapter placeholder in voiceover)",
+    "note": "",
+    "search": "Bhagiratha Shiva permission lesson",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.7,
+    "score": 6.49
+   },
+   {
+    "topic": "The King who trapped a curse with a promise: How King Harishchandra’s truth saved his family? Lesson: truth may cost, but it never breaks (Mahabharata not used; use Purana/Itihasa Harishchandra tradition with chapter/kand naming in narration)",
+    "note": "",
+    "search": "Harishchandra truth saves family",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.7,
+    "score": 6.14
+   },
+   {
+    "topic": "“I have to admit something…”: What if Kaal Bhairav’s terrifying form is actually a test of humility? (Bhairava/Ashtadasha Bhairava tradition + episode narration, with clear lesson: ego attracts fear)",
+    "note": "",
+    "search": "Kaal Bhairav humility test",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.5,
+    "score": 6.1
+   },
+   {
+    "topic": "The “shortcut” that became a trap: Why did Ravana’s arrogance fail even with power? Lesson: power without wisdom turns into self-destruction (Ramayana/Valmiki, Lanka episode narration; source + kanda/canto named in credits)",
+    "note": "",
+    "search": "Ravana arrogance lesson power",
+    "fit": 7.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.7,
+    "score": 5.79
+   },
+   {
+    "topic": "Why do we offer lamps to Yama’s messengers? The hidden moral from a Yamdoot story: Lesson: fear becomes guidance when you align your actions (Skanda Purana/Itihasa-style Yama messenger narration with spoken source + chapter/kand)",
+    "note": "",
+    "search": "Yamdoot lesson lamps story",
+    "fit": 6.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.9,
+    "score": 5.48
+   },
+   {
+    "topic": "A god appears as a beggar—then demands honesty: How Narad’s visit exposes greed? Lesson: listening before judging prevents downfall (Bhagavata Purana/Narada episodes narration, with source + chapter/kand in spoken credits)",
+    "note": "",
+    "search": "Narad beggar greed lesson",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 245,
+    "fresh": 7.0,
+    "score": 4.2
+   },
+   {
+    "topic": "Why did Shani delay returns to one person—and how did that become a blessing? Retelling Shani’s justice principle (Vishnu Purana/Agni Purana-style Shani-katha tradition narration, named source + chapter/kand in voiceover) with one lesson: patience during delay",
+    "note": "",
+    "search": "Shani delayed justice katha",
+    "fit": 7.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.1,
+    "median_views": 1134,
+    "fresh": 7.8,
+    "score": 4.05
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1646,
+    "fresh": 4.3,
+    "score": 3.53
+   }
+  ]
+ },
+ {
+  "t": "2026-11-18 00:36",
+  "picked": "The Origin of River Ganga and Why She Fell from Heaven (Bhagavata Purana, Skandha 9)",
+  "ideas": [
+   {
+    "topic": "The Origin of River Ganga and Why She Fell from Heaven (Bhagavata Purana, Skandha 9)",
+    "note": "",
+    "search": "origin of ganga heaven bhagavata purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 9.7,
+    "median_views": 7479293,
+    "fresh": 6.2,
+    "score": 9.11
+   },
+   {
+    "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
+    "search": "did ravan touch sita maa valmiki ramayana",
+    "fit": 10.0,
+    "from": "trend",
+    "note": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
+    "demand_known": true,
+    "demand": 1.9,
+    "median_views": 5960,
+    "fresh": 6.9,
+    "score": 6.74
+   },
+   {
+    "topic": "Why Lord Ganesha Has the Head of an Elephant (Shiva Purana, Rudra Samhita)",
+    "note": "",
+    "search": "ganesha elephant head shiva purana story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.3,
+    "score": 6.56
+   },
+   {
+    "topic": "The Curse of Sage Gautama on Ahalya: The True Story (Valmiki Ramayana, Bala Kanda)",
+    "note": "",
+    "search": "ahalya curse gautama sage valmiki ramayana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.0,
+    "score": 6.5
+   },
+   {
+    "topic": "The Day Lord Krishna Lifted Govardhan Hill on One Finger (Bhagavata Purana, Skandha 10)",
+    "note": "",
+    "search": "govardhan hill krishna bhagavata purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.9,
+    "score": 6.48
+   },
+   {
+    "topic": "How Lord Hanuman Forgot His Own Powers (Valmiki Ramayana, Kishkindha Kanda)",
+    "note": "",
+    "search": "hanuman forgot powers curse ramayana kishkindha kanda",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.0,
+    "score": 6.3
+   },
+   {
+    "topic": "Why King Dasharatha Was Cursed by Shravan Kumar's Blind Father (Valmiki Ramayana, Ayodhya Kanda)",
+    "note": "",
+    "search": "dasharatha curse blind parents ramayana ayodhya kanda",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.5,
+    "score": 6.2
+   },
+   {
+    "topic": "Samudra Manthan: Why Lord Shiva Drank Halahala Poison (Padma Purana, Khand 1)",
+    "note": "",
+    "search": "samudra manthan halahala poison shiva padma purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 912,
+    "fresh": 6.4,
+    "score": 4.78
+   },
+   {
+    "topic": "The Secret Birth of Karna and His Hidden Warrior Training (Mahabharata, Adi Parva)",
+    "note": "",
+    "search": "karna birth secret mahabharata adi parva",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 108,
+    "fresh": 4.6,
+    "score": 4.42
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1646,
+    "fresh": 4.3,
+    "score": 3.53
+   }
+  ]
+ },
+ {
+  "t": "2026-11-18 00:53",
+  "picked": "Why Goddess Lakshmi Had to Take the Form of a Horse: The Legend of Sanjna and Surya (Vishnu Purana, Book 3)",
+  "ideas": [
+   {
+    "topic": "Why Goddess Lakshmi Had to Take the Form of a Horse: The Legend of Sanjna and Surya (Vishnu Purana, Book 3)",
+    "note": "",
+    "search": "lakshmi horse form sanjna surya vishnu purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 7.4,
+    "median_views": 876313,
+    "fresh": 6.5,
+    "score": 8.13
+   },
+   {
+    "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
+    "search": "did ravan touch sita maa valmiki ramayana",
+    "fit": 10.0,
+    "from": "trend",
+    "note": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
+    "demand_known": true,
+    "demand": 1.9,
+    "median_views": 5960,
+    "fresh": 6.9,
+    "score": 6.74
+   },
+   {
+    "topic": "The Birth of Lord Ganesha According to Shiva Purana: Why His Head Was Replaced (Shiva Purana, Rudra Samhita)",
+    "note": "",
+    "search": "shiva purana ganesha birth head rudra samhita",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.2,
+    "score": 6.54
+   },
+   {
+    "topic": "The Secret Boon Given to Ashwatthama That Became His Greatest Curse (Mahabharata, Sauptika Parva)",
+    "note": "",
+    "search": "ashwatthama boon curse mahabharata sauptika parva",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.5,
+    "score": 6.4
+   },
+   {
+    "topic": "How Sage Markandeya Saw the Entire Universe Inside Baby Lord Krishna (Bhagavata Purana, Skandha 12)",
+    "note": "",
+    "search": "markandeya universe baby krishna bhagavata purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 45,
+    "fresh": 6.6,
+    "score": 4.82
+   },
+   {
+    "topic": "Samudra Manthan: Why Lord Shiva Drank Halahala Poison (Padma Purana, Khand 1)",
+    "note": "",
+    "search": "samudra manthan halahala shiva poison padma purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 912,
+    "fresh": 6.4,
+    "score": 4.78
+   },
+   {
+    "topic": "The Curse of Sage Gautama on Ahalya: The Real Puranic Truth (Valmiki Ramayana, Bala Kanda)",
+    "note": "",
+    "search": "ahalya curse gautama ramayana bala kanda",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 91,
+    "fresh": 6.2,
+    "score": 4.74
+   },
+   {
+    "topic": "Matsya Avatar: How Lord Vishnu Saved Manu from the Great Deluge (Matsya Purana, Chapter 2)",
+    "note": "",
+    "search": "matsya avatar vishnu manu great deluge purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 25,
+    "fresh": 6.1,
+    "score": 4.72
+   },
+   {
+    "topic": "Why King Dasharatha Was Cursed by Shravan Kumar's Blind Parents (Valmiki Ramayana, Ayodhya Kanda)",
+    "note": "",
+    "search": "dasharatha curse shravan kumar parents ramayana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 99,
+    "fresh": 4.6,
+    "score": 4.42
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1646,
+    "fresh": 4.3,
+    "score": 3.53
+   }
+  ]
  }
 ]
