@@ -258,6 +258,40 @@ def heal_held():
                 note(f"parked {cid} {job}: {'; '.join(probs)[:140]}")
 
 
+def heal_orphans():
+    """18 Nov: jobs cut off mid-build (the 01:50 freeze + reboot left katha 1118-0053 and 1118-0133 with a voice but no
+    pictures) were never picked up again: no lane resumes a job without a stage. Resume the oldest one from its last
+    finished step (make.py skips every step whose output exists), up to the prepped stage."""
+    if busy() or mem_mb() < 2500:
+        return
+    for cid in PAGES:
+        known = {d["job"] for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []}
+        for jd in sorted(glob.glob(os.path.join(OUT, cid, "*"))):
+            job = os.path.basename(jd)
+            meta = load(os.path.join(jd, "meta.json"), None)
+            if meta is None or job in known or job.endswith("-en") or meta.get("stage") in ("done", "prepped", "held"):
+                continue
+            newest = max((os.path.getmtime(os.path.join(dp, f)) for dp, _, fs in os.walk(jd) for f in fs), default=0)
+            if time.time() - newest < 3600:
+                continue                                    # still being built (or just stopped): not an orphan yet
+            key = f"orphan:{cid}:{job}"
+            it = S["items"].setdefault(key, {"first": time.strftime("%Y-%m-%d %H:%M"), "steps": [], "what": meta.get("topic", "")})
+            if len(it["steps"]) >= 2:
+                if it.get("state") != "parked":
+                    it.update(state="parked", why="resumed twice and still unfinished"); note(f"parked orphan {cid} {job}")
+                continue
+            it["steps"].append({"step": "resume", "t": time.strftime("%Y-%m-%d %H:%M")}); it["state"] = "working"
+            unit = f"studio-job-resume-{int(time.time())}"
+            cmd = (f"sudo systemd-run --unit={unit} --uid=ubuntu -p CPUWeight=20 -p Nice=15 -p MemoryHigh=2600M -p MemoryMax=3400M "
+                   f"--working-directory={ROOT} -E HOME={HOME} {PY} {ROOT}/engine/make.py {cid} --job {job} --until assets")
+            if DRY:
+                note(f"[dry] would resume unfinished {cid} {job} ({meta.get('topic', '')[:60]})"); return
+            rc, out = sh(cmd)
+            note(f"resumed unfinished {cid} {job} ({meta.get('topic', '')[:60]})" + ("" if rc == 0 else f" FAILED: {out[-100:]}"))
+            save(STATE, S)
+            return
+
+
 def check_cleared():
     """Held items whose video is no longer held: record what fixed it (learning)."""
     status = {}
@@ -265,6 +299,11 @@ def check_cleared():
         for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []:
             status[f"held:{cid}:{d['job']}"] = d.get("status")
     for key, it in S["items"].items():
+        if key.startswith("orphan:") and it.get("state") == "working":
+            m = load(os.path.join(OUT, key.split(":")[1], key.split(":")[2], "meta.json"), {}) or {}
+            if m.get("stage") in ("prepped", "done"):
+                it.update(state="fixed", fixed=time.strftime("%Y-%m-%d %H:%M")); note(f"unfinished {key[7:]} is {m['stage']} now")
+            continue
         if not key.startswith("held:") or it.get("state") == "fixed":
             continue
         st = status.get(key)
@@ -430,7 +469,7 @@ def main():
     if "--once" in sys.argv:
         i = sys.argv.index("--once"); cid, job = sys.argv[i + 1], sys.argv[i + 2]
         S["items"].pop(f"held:{cid}:{job}", None)
-    for step in (check_cleared, watch_unverified, heal_held, heal_unknown, heal_tasks):
+    for step in (check_cleared, watch_unverified, heal_held, heal_orphans, heal_unknown, heal_tasks):
         try:
             step()
         except Exception as e:
