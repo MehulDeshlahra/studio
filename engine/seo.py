@@ -56,7 +56,7 @@ def _info(url):
 
 
 def study(page):
-    notes = (load(os.path.join(ROOT, "knowledge", "hooks.json"), {}) or {}).get(page, {}).get("notes", [])
+    notes = [x for x in (load(os.path.join(ROOT, "knowledge", "hooks.json"), {}) or {}).get(page, {}).get("notes", []) if x.get("on_niche") is not False]
     tags, hts, titles = {}, {}, []
     n = 0
     for x in notes[:12]:

@@ -22,9 +22,16 @@ QUERIES = {
              "sachi ghatna hindi shorts", "detective story hindi shorts"],
 }
 
+NICHE = {"tech": "an explainer about how technology works (phones, internet, apps, AI, gadgets)",
+         "katha": "a Hindu mythology / puranic story or explanation told in Hindi (gods, epics, temples, legends)",
+         "raaz": "a mystery / unsolved case / strange real story told as a narrated story"}
+
 HOOK_PROMPT = """You study short-video hooks. Watch ONLY the first 3 seconds of this Short very carefully, then the rest once.
+FIRST decide if this Short is really {niche_desc}. Movie scenes, trailers, ads, gossip, vlogs, news, music, comedy skits and
+anything else is NOT on niche.
 Return JSON:
-{"faceless": true/false (true if no presenter/creator face is the main thing on screen),
+{{"on_niche": true/false,
+ "faceless": true/false (true if no presenter/creator face is the main thing on screen),
  "language": "hindi|hinglish|english|other",
  "first_words": "exact first spoken words (first 2 s), in Roman script",
  "first_text": "exact on-screen text in the first 2 s, or empty",
@@ -34,7 +41,7 @@ Return JSON:
  "hook_type": "question|shock fact|myth bust|you-statement|story cold open|number|mystery|challenge|other",
  "time_to_first_cut_s": number,
  "why_viewers_stay": "one sentence",
- "what_we_can_copy_without_copying": "one sentence: the principle, not the content"}"""
+ "what_we_can_copy_without_copying": "one sentence: the principle, not the content"}}"""
 
 DISTIL = """You are the head of a faceless Shorts studio. Below are notes on the {n} most-viewed faceless Shorts in our niche
 "{page}" (Hindi audience), with their view counts. Our own results (may be empty): {ours}
@@ -98,10 +105,10 @@ def study(page, n=10):
             break
         tried += 1
         try:
-            a = llm.watch(v["url"], HOOK_PROMPT)
+            a = llm.watch(v["url"], HOOK_PROMPT.format(niche_desc=NICHE.get(page, "a short-form explainer in this niche")))
         except Exception as e:
             log("hookstudy watch fail", v["url"], str(e)[:100]); continue
-        if not isinstance(a, dict) or not a.get("faceless", True):
+        if not isinstance(a, dict) or not a.get("faceless", True) or a.get("on_niche") is False:
             continue
         a.update({k: v.get(k) for k in ("url", "title", "views", "channel")})
         notes.append(a); log("hookstudy", page, f"{v['views']:,}", v["url"], "|", str(a.get("first_words"))[:60])
