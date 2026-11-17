@@ -111,6 +111,8 @@ def pick(cands, subject, kind, work):
     sh(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", fc, "-frames:v", "1", "-q:v", "3", sheet], timeout=60)
     r = _gemini([{"text": JUDGE.format(n=len(cands), subject=subject, kind=kind)},
                  {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(open(sheet, "rb").read()).decode()}}]) or {}
+    if not r:
+        return -2, "judge unavailable"
     b = str(r.get("best", "none")).strip().upper()[:1]
     return ("ABCDEF".find(b) if b in "ABCDEF"[:len(cands)] else -1), r.get("why", "")
 
