@@ -87,44 +87,11 @@
   "review": []
  },
  {
-  "job": "real-01",
-  "topic": "UPI se paisa bhejte waqt Google Pay, PhonePe aur NPCI ke beech kya hota hai",
-  "title": "UPI se payment karte waqt peeche kya hota hai?",
-  "qc_ok": true,
-  "status": "held",
-  "review": [
-   "before render, scene 9: OVERLAP: Captions collide with the bottom edge of the frame/content",
-   "before render, scene 10: FIT: Visual shows 100% vs 0% comparison instead of transfer stats",
-   "before render, scene 11: OVERLAP: Multiple overlapping caption lines at the bottom causing unreadable text"
-  ]
- },
- {
   "job": "1117-0729-en",
   "topic": "Bank app outage causes: 10 reasons banking apps go down",
   "title": "How Does Your Phone Hear 'Hey Google' When Locked?",
   "qc_ok": true,
   "status": "approved",
   "review": []
- },
- {
-  "job": "real-01-en",
-  "topic": "GPS ko kaise pata ki aap kahan ho",
-  "title": "What actually happens behind the scenes when you pay via UPI?",
-  "qc_ok": true,
-  "status": "approved",
-  "review": []
- },
- {
-  "job": "real-03",
-  "topic": "UPI se paisa bhejte waqt Google Pay, PhonePe aur NPCI ke beech kya hota hai",
-  "title": "UPI se payment karte waqt peeche kya hota hai?",
-  "qc_ok": false,
-  "status": "held",
-  "review": [
-   "only 69% of the script was found in the voice",
-   "visual: scene 10: The text overlay 'Beech mein kisi app ne chua tak nahi' is overlapping and unreadable due to a glitch/duplicate layering.",
-   "visual: scene 11: The text overlay 'Comment mein sach batao!' is badly garbled and overlapping with 'Comment mein sach batao!' and 'paise'.",
-   "visual: scene 11: The final frame is a mess of overlapping text layers, making it look amateur and broken."
-  ]
  }
 ]

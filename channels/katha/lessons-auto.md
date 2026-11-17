@@ -267,3 +267,11 @@
 ## 1117-1935-en The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.
 - scene 3: The caption 'ARRIVED' is slightly cut off at the top edge of the text box/image area compared to other frames, though readable.
 - scene 6: The caption 'CHAKRA ON HIS' is slightly low and close to the bottom edge of the frame, creating a tight composition.
+
+## real-04 Kedarnath mandir ka rahasya: Pandavon ne Shiv ji ko kaise dhoondha
+- vision review could not run
+
+## real-05 Kedarnath mandir ka rahasya: Pandavon ne Shiv ji ko kaise dhoondha
+- scene 4: The image is a stock photo of a man in a suit, which completely breaks the visual style and narrative immersion of the mythological story being told in the other frames.
+- scene 11: The text 'SHIVLING' and 'SHIVA PURAN' are present, but the intended script line for this scene is 'Wahi pathar bana bail ka kubad, aaj Kedarnath ka trikoniya Shivling hai.' The visual doesn't clearly show the 'trikoniya' (triangular) aspect well, and the text on the card doesn't match the script provided in the prompt.
+- scene 12: The text 'COMMENT' and 'JAI BHOLE' are present, but the intended script line is 'Aapke hisab se, kya sacha pashchatap har purani galti ko mita sakta hai?'. The card text 'SOCH' is okay, but the overall text layout seems disconnected from the prompt's script.
