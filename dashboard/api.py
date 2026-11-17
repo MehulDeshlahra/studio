@@ -338,7 +338,9 @@ def jobs(running):
 NICE = {"studio-inbox": "Read Telegram replies", "studio-prep": "Prep lane (script, voice, visuals)", "studio-make": "Render lane",
         "studio-scout": "Scout trends + tech news", "studio-stats": "Morning stats report", "studio-post": "Post approved videos",
         "studio-doctor": "Doctor (self-repair)", "studio-learn": "Learn from GitHub (weekly)",
-        "studio-selfcheck": "Self-check and self-fix", "studio-radar": "Tools radar (daily)"}
+        "studio-selfcheck": "Self-check and self-fix", "studio-radar": "Tools radar (daily)",
+        "studio-trends": "Trending topics scout (daily)", "studio-hooks": "Hook study of top Shorts (weekly)",
+        "studio-weekly": "Weekly report (Sunday)", "studio-comments": "Pinned question + comment replies"}
 
 
 def schedule():

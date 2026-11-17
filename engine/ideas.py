@@ -61,6 +61,13 @@ def candidates(ch, used):
     except Exception as e:
         log("ideas: planner failed", str(e)[:150]); fresh = []
     out = [{"topic": t, "search": t, "fit": 7, "from": "backlog"} for t in backlog]
+    try:                                                     # 17 Nov: today's trends for this page (engine/trends.py), first
+        import trends
+        tr = [x for x in trends.fresh(ch["id"]) if x["topic"].lower() not in used][:3]
+        out = [{"topic": x["topic"], "search": x.get("search") or x["topic"], "fit": float(x.get("fit") or 7), "from": "trend",
+                "note": x.get("why", "")} for x in tr] + out
+    except Exception as e:
+        log("ideas: trends unavailable", str(e)[:100])
     for x in fresh:
         if isinstance(x, dict) and x.get("topic") and x["topic"].lower() not in used:
             t = re.split(r"\s*\((?:metaphor|example|analogy)\b", x["topic"], flags=re.I)[0].strip()
@@ -81,11 +88,16 @@ def pick(ch):
         c["demand_known"] = d is not None
         c["demand"], c["median_views"] = (d if d is not None else 4.0), med
         c["fresh"] = freshness(c["topic"], list(used))
-        c["score"] = round(0.45 * c["demand"] + 0.35 * min(10, c["fit"]) + 0.20 * c["fresh"], 2)   # 17 Nov: used d (None when YouTube gave no data) -> crash -> plain backlog
+        c["score"] = round(0.45 * c["demand"] + 0.35 * min(10, c["fit"]) + 0.20 * c["fresh"] + (1.0 if c.get("from") == "trend" else 0), 2)   # 17 Nov: used d (None when YouTube gave no data) -> crash -> plain backlog
     cands.sort(key=lambda c: -c["score"])
     hist = load(os.path.join(ROOT, "channels", ch["id"], "ideas.json"), []) or []
     hist.append({"t": time.strftime("%Y-%m-%d %H:%M"), "picked": cands[0]["topic"], "ideas": cands})
     save(os.path.join(ROOT, "channels", ch["id"], "ideas.json"), hist[-30:])
+    if cands[0].get("from") == "trend":
+        try:
+            import trends; trends.mark_used(ch["id"], cands[0]["topic"])
+        except Exception:
+            pass
     log("ideas", ch["id"], "picked", repr(cands[0]["topic"]), "score", cands[0]["score"], "of", len(cands),
         "| runner-up", repr(cands[1]["topic"]) if len(cands) > 1 else "-")
     return cands[0]["topic"]
