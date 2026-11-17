@@ -67,14 +67,19 @@ def job_detail(api, cid, job):
     prev = first; rows = []
     for s in st["steps"]:
         if s["done"]:
-            rows.append({**s, "start": int(prev), "dur": max(0, int(s["t"] - prev))}); prev = s["t"]
+            gap = s["t"] - prev
+            if gap > 1500:       # a long gap is time spent waiting (queue, another build, an older run), not work
+                rows.append({**s, "start": int(s["t"]), "dur": 0, "waited": int(gap)})
+            else:
+                rows.append({**s, "start": int(prev), "dur": max(0, int(gap))})
+            prev = s["t"]
         else:
             rows.append({**s, "start": int(prev) if s.get("active") else None, "dur": int(time.time() - prev) if s.get("active") else None})
     logs = [l for l in grep_log(re.escape(job))][-60:]
     plan = jload(os.path.join(jd, "plan.json"), {}) or {}
     rv = jload(os.path.join(jd, "review.json"), {}) or {}
     return {**st, "timeline": rows, "logs": logs[::-1], "scenes": [{"type": s.get("type"), "vo": s.get("vo", "")[:200]} for s in plan.get("scenes", [])],
-            "hashtags": plan.get("hashtags", []), "review_full": rv}
+            "hashtags": plan.get("hashtags", []), "review_full": ({} if st.get("active") else rv)}
 
 
 # ---------------- latest posts of a channel (likes/comments; views from stats when we have them) ----------------
@@ -207,7 +212,11 @@ def _ctx(state):
     srv = {k: state["server"][k] for k in ("cpu", "mem_pct", "disk_pct", "load", "muse")}
     cut = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time() - 7200))
     acts = [a["t"][11:16] + " " + a["msg"][:140] for a in state["activity"] if a["t"] >= cut][:30]
+    q = state.get("quality") or {}
     return json.dumps({"now": time.strftime("%a %d %b %H:%M IST"), "doing_now": state["doing"], "server": srv, "videos": j, "channels": ch,
+                       "first_pass_quality": {"rate_7_days_percent": q.get("rate7"), "videos_7_days": q.get("videos7"), "passed_first_try": q.get("passed7"),
+                                              "by_day": q.get("days"), "reviews_per_video": q.get("avg_reviews"), "top_hold_reasons": q.get("reasons")},
+                       "budgets_today": state.get("budgets"), "meta_login_days_left": state.get("token_days"),
                        "issues": [{"level": i["lvl"], "title": i["title"], "detail": i["detail"][:160]} for i in state["issues"]],
                        "schedule": [{"what": s["name"], "in_min": (s["in"] or 0) // 60} for s in state["schedule"]], "recent_log": acts}, ensure_ascii=False)
 
