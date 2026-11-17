@@ -100,6 +100,12 @@ def heroes(jd, plan, mp4):
     for p in out:
         if p not in seen:
             seen.add(p); uniq.append(p)
+    try:                                              # 17 Nov: the strongest picture first (engine/extras.py)
+        import extras
+        uniq = extras.best_image(uniq[:6], os.path.join(jd, ".bestimg"))
+        import shutil; shutil.rmtree(os.path.join(jd, ".bestimg"), ignore_errors=True)
+    except Exception as e:
+        log("cover best-picture pick skipped", str(e)[:80])
     return uniq[:4]
 
 

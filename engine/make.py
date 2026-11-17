@@ -36,6 +36,23 @@ def render_workers():
 
 
 def pick_topic(ch):
+    try:                                                 # 17 Nov owner-approved extras (engine/extras.py)
+        import extras
+        done_ = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or []
+        made = {str(d.get("topic", "")).lower() for d in done_}
+        if ch["id"] == "katha":
+            day, fest = extras.festival_today(1)
+            if fest and f"festival {day}: {fest}".lower() not in made:
+                return f"Festival {day}: {fest} - iski asli katha aur mahatva"
+            last = str((done_[-1] if done_ else {}).get("topic", ""))
+            if " - Part " not in last:                   # every other Katha video is the next part of a 5-7 part series
+                return extras.katha_next(ch)
+        if ch["id"] == "tech":
+            m = extras.mythbust_due(ch)
+            if m:
+                return m
+    except Exception as e:
+        log("extras topic skipped", str(e)[:120])
     if ch.get("serial"):                                 # Aage Suno: the next part of the running serial (engine/serials.py)
         try:
             import serials
@@ -265,6 +282,17 @@ def main():
     p = load(pp)
     if _brand_guard(ch, p):
         save(pp, p)
+    if ch.get("serial") and " - Part " in str(topic) and not p.get("cliff_done"):
+        try:
+            import extras
+            ln = extras.cliffhanger_line(ch, topic, p)
+            last = (p.get("scenes") or [{}])[-1]
+            if ln and "kal" in last.get("vo", "").lower():
+                last["vo"] = ln.rstrip(".") + ". Follow karo."
+                log("serial teaser line:", ln)
+            p["cliff_done"] = True; save(pp, p)
+        except Exception as e:
+            log("teaser line skipped", str(e)[:100])
     # 3 voice (one request)
     vo = os.path.join(job, "vo-raw.wav")
     if "voice" in redo or not os.path.exists(vo):
@@ -376,6 +404,13 @@ def main():
             if cr not in (p.get("caption") or ""):
                 p["caption"] = (p.get("caption") or "").rstrip() + "\nVideo: " + cr
         save(os.path.join(job, "plan.json"), p)
+        try:                                              # 17 Nov: the page's signature sound on frame 0 (engine/extras.py STING)
+            import extras
+            st_ = extras.STING.get(ch["id"])
+            if st_ and os.path.exists(os.path.join(ASSETS, "audio", st_)) and not any(c.get("t", 9) < 0.3 for c in cues):
+                cues = [{"t": 0.0, "file": st_, "gain_db": -15, "align": "onset"}] + list(cues)
+        except Exception as e:
+            log("sting skipped", str(e)[:80])
         save(os.path.join(job, "cues.json"), {"lufs": -14, "music": {"file": mtrack["file"] if mtrack else theme.get("music", "music/digital-clouds.mp3"),
               "offset": mtrack.get("offset", 2.0) if mtrack else theme.get("music_offset", 8.0), "gain_db": -22, "fade_out": 1.5}, "sfx": cues})
         redo.add("mix")

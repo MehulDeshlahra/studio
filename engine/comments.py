@@ -105,6 +105,14 @@ def run():
             plan = load(os.path.join(OUT, cid, row["job"], "plan.json"), {})
             vo = " ".join(x.get("vo", "") for x in plan.get("scenes", []))[:1500]
             q = ((plan.get("seo") or {}).get("comment_q") or plan.get("comment_q") or "").strip()
+            try:                                           # serial parts: ask for a guess (owner 17 Nov)
+                import extras
+                from core import channel as _ch
+                g = extras.guess_question(_ch(cid), row.get("topic"))
+                if g:
+                    q = g
+            except Exception:
+                pass
             ann_sent = False
             for plat in ("ig", "fb", "yt"):
                 target = pst.get(plat)

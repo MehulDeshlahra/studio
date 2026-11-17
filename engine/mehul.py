@@ -132,6 +132,11 @@ def run():
         ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}
         if ch.get("status") not in ("pilot", "active", "live (warm-up)", "live"):
             continue
+        try:                                       # where viewers leave (needs posted videos with stats)
+            import extras
+            extras.scene_dropoff(cid)
+        except Exception as e:
+            log("dropoff skipped", str(e)[:80])
         done = load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
         recent = [d["job"] for d in done if not d["job"].endswith("-en") and os.path.exists(os.path.join(OUT, cid, d["job"], f"{cid}-{d['job']}.mp4"))][-5:]
         if not recent:

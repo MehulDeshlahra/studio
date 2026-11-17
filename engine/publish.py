@@ -149,6 +149,18 @@ def post_one(cid, dry=False):
     nxt["posted"] = {"at": time.strftime("%Y-%m-%d %H:%M"), **res}
     save(p, done)
     telegram(f"📤 {cid} {nxt['job']} posted: {res}")
+    if any(k in res for k in ("ig", "fb")) and ch.get("serial"):
+        try:                                                   # 17 Nov: recap Story the day a part goes up; long cut at the end
+            import extras, serials
+            extras.recap_story(cid, nxt, acc, plan)
+            s, n = serials._find(ch, nxt.get("topic"))
+            if s and n == len(s["parts"]):
+                lc = extras.long_cut(cid, s)
+                if lc and acc.get("yt"):
+                    vid = youtube(acc, lc, f"{s['title']} - Poori Kahani (All Parts)", f"{s['logline']}\n\nSaare parts ek saath. Har roz ek nayi kahani.", [s["title"], "hindi story", "kahani"], None)
+                    log("long cut on YouTube", cid, vid)
+        except Exception as e:
+            log("serial extras failed", str(e)[:150])
 
 
 if __name__ == "__main__":
