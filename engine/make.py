@@ -297,8 +297,16 @@ def main():
         for v in assets.values():
             for f in v.values():
                 shutil.copy(f, os.path.join(rdir, "assets", os.path.basename(f)))
-        save(os.path.join(job, "cues.json"), {"lufs": -14, "music": {"file": theme.get("music", "music/digital-clouds.mp3"),
-              "offset": theme.get("music_offset", 8.0), "gain_db": -22, "fade_out": 1.5}, "sfx": cues})
+        mtrack = None
+        try:                                              # 17 Nov: mood-picked track from the free library (engine/musiclib.py)
+            import musiclib
+            mtrack = musiclib.pick(ch["id"], p.get("music_mood"), job_id)
+            if mtrack and musiclib.CREDIT not in (p.get("caption") or ""):
+                p["caption"] = (p.get("caption") or "").rstrip() + "\n\n" + musiclib.CREDIT; save(os.path.join(job, "plan.json"), p)
+        except Exception as e:
+            log("music library pick failed:", str(e)[:120])
+        save(os.path.join(job, "cues.json"), {"lufs": -14, "music": {"file": mtrack["file"] if mtrack else theme.get("music", "music/digital-clouds.mp3"),
+              "offset": mtrack.get("offset", 2.0) if mtrack else theme.get("music_offset", 8.0), "gain_db": -22, "fade_out": 1.5}, "sfx": cues})
         redo.add("mix")
     # 5b preflight: check the composed page with stills BEFORE the slow render; repair bad scenes (visual fields only)
     lang_p = p.get("lang") or ch.get("lang", "hi")

@@ -44,6 +44,7 @@ SCHEMA = """{
    "keywords": ["1-3 words from vo to highlight"],
    "real": "OPTIONAL, see REAL PICTURES: {\\"q\\": \\"search query\\", \\"kind\\": \\"logo|photo\\", \\"subject\\": \\"what it must show\\"}"}
  ],
+ "music_mood": "ONE of: suspense, mystery, epic, emotional, calm, uplifting, playful, driving, dark (the feeling of the whole video)",
  "caption": "Instagram caption: 1 hook line + 1-2 lines + a question", "hashtags": ["#..."],
  "claims": [{"claim": "each factual statement", "basis": "why it is true / source"}]
 }"""
