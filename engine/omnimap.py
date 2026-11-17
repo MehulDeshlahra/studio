@@ -126,6 +126,8 @@ def heal_connections():
 
 
 def probe():
+    if not DRY:
+        heal_connections()                              # a locked connection would make its free models look broken
     old = load(PROBE, {}) or {}
     skip = {k for k, v in (old.get("paid") or {}).items() if time.time() - v < 30 * 86400}     # paid models: never call again
     gone = {k for k, v in (old.get("gone") or {}).items() if time.time() - v < 7 * 86400}      # 404: look again in a week
