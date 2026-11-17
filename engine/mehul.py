@@ -68,7 +68,7 @@ def _sheet(cid, jobs, out):
             d = float(sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp4]).strip())
             r = out + f".{k}.jpg"
             sh(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-vf", f"fps=12/{d:.2f},scale=120:213,tile=12x1,"
-                "drawtext=text='" + j.replace("'", "") + "':x=6:y=6:fontsize=20:fontcolor=yellow:box=1:boxcolor=black@0.7", "-frames:v", "1", r], timeout=120)
+                "drawtext=text='" + j.replace("'", "") + "':x=6:y=6:fontsize=20:fontcolor=yellow:box=1:boxcolor=black@0.7", "-frames:v", "1", "-threads", "1", r], timeout=180)
             rows.append(r)
         except Exception as e:
             log("mehul agent sheet fail", j, str(e)[:80])
@@ -141,7 +141,10 @@ def run():
         recent = [d["job"] for d in done if not d["job"].endswith("-en") and os.path.exists(os.path.join(OUT, cid, d["job"], f"{cid}-{d['job']}.mp4"))][-5:]
         if not recent:
             continue
-        sheet = _sheet(cid, recent, os.path.join(OUT, f"mehul-{cid}.jpg"))
+        try:
+            sheet = _sheet(cid, recent[-4:], os.path.join(OUT, f"mehul-{cid}.jpg"))
+        except Exception as e:                      # low memory on the shared server: judge from the numbers only
+            log("mehul agent: no contact sheet for", cid, str(e)[:80]); sheet = None
         rules = (read(os.path.join(ROOT, "channels", cid, "lessons.md"), 3000) + "\n" + "\n".join("- " + r for r in ch.get("rules", [])))[-3500:]
         parts = [{"text": ASK.format(profile=profile, page=f"{ch.get('name', cid)} ({cid})", rules=rules, data=_data(cid, done, since),
                                      knobs=", ".join(KNOBS))}]
