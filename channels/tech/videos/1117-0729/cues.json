@@ -1,0 +1,138 @@
+{
+ "lufs": -14,
+ "music": {
+  "file": "music/deep-urban.mp3",
+  "offset": 8,
+  "gain_db": -22,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "t": 5.17,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 9.74,
+   "file": "sfx/type-soft.mp3",
+   "gain_db": -24,
+   "align": "onset",
+   "dur": 1.2
+  },
+  {
+   "t": 9.59,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 13.51,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 18.49,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 18.84,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 18.19,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 22.26,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 22.48,
+   "file": "sfx/click-select.mp3",
+   "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 21.86,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 26.128,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 26.7,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 27.273,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 25.878,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 30.17,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 34.156,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 34.623,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 35.09,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 33.906,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 37.41,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 41.821,
+   "file": "sfx/whoosh-cine.mp3",
+   "gain_db": -20,
+   "align": "peak"
+  }
+ ]
+}
