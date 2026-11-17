@@ -8,8 +8,8 @@
     "engine": "gemini-3.8-flash-tts",
     "voice": "Charon",
     "one_request_per_reel": true,
-    "style": "a low, calm, tense Indian male thriller narrator; brisk and urgent, about 3 words per second, short pauses, a suspenseful beat only before the final question",
-    "style_en": "a low, calm, tense Indian male, clear Indian-English accent thriller narrator; brisk and urgent, about 3 words per second, short pauses, a suspenseful beat only before the final question"
+    "style": "a low, calm, tense Indian male thriller narrator; unhurried and tense, about 2.6 words per second, short pauses, a suspenseful beat only before the final question; speak slightly slower than a normal fast reel, with clear pauses between sentences",
+    "style_en": "a low, calm, tense Indian male, clear Indian-English accent thriller narrator; unhurried and tense, about 2.6 words per second, short pauses, a suspenseful beat only before the final question; speak slightly slower than a normal fast reel, with clear pauses between sentences"
   },
   "visuals": {
     "primary": "muse",
@@ -48,7 +48,7 @@
     "Case 3: Hotel room 304 (part 1)"
   ],
   "edit": {
-    "wps": 2.7,
+    "wps": 2.5,
     "length_s": [
       25,
       55

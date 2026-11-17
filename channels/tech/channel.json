@@ -7,9 +7,9 @@
   "voice": {
     "engine": "gemini-3.8-flash-tts",
     "voice": "Charon",
-    "style": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end",
+    "style": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end; speak slightly slower than a normal fast reel, with clear pauses between sentences",
     "one_request_per_reel": true,
-    "style_en": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end"
+    "style_en": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end; speak slightly slower than a normal fast reel, with clear pauses between sentences"
   },
   "visuals": {
     "primary": "muse",
@@ -32,7 +32,7 @@
       1330
     ],
     "max_s_per_visual_idea": 8,
-    "wps": 2.7,
+    "wps": 2.5,
     "length_s": [
       25,
       65

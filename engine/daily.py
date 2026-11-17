@@ -20,8 +20,10 @@ def _nkeys():
         return 1
 # 17 Nov (owner: "the server should always be making something"): ~10 free voice requests per key per day; keep 1 per key
 # spare for re-voices. Reels per day follow the voice budget.
-TTS_CAP = int(os.environ.get("STUDIO_TTS_CAP", str(9 * _nkeys())))
-REELS_CAP = int(os.environ.get("STUDIO_REELS_CAP", str(7 * _nkeys())))
+# 18 Nov owner: "never limit yourself to keep something spare; I will bring more keys". No daily caps: the keys
+# themselves are the limit (KeyWatch skips a key once Google says it is out, and Telegram asks for more when all are out).
+TTS_CAP = int(os.environ.get("STUDIO_TTS_CAP", "100000"))
+REELS_CAP = int(os.environ.get("STUDIO_REELS_CAP", "100000"))
 PREPPED_MAX = int(os.environ.get("STUDIO_PREPPED_MAX", "2"))
 ENGINE = os.path.join(ROOT, "engine")
 

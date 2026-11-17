@@ -8,8 +8,8 @@
     "engine": "gemini-3.8-flash-tts",
     "voice": "Charon",
     "one_request_per_reel": true,
-    "style": "a warm Hindi storyteller with modern pace, respectful, clear pronunciation of Sanskrit names, emotional at the turning point",
-    "style_en": "a warm Indian-English storyteller, clear accent, calm and emotional at the turning point"
+    "style": "a warm Hindi storyteller with modern pace, respectful, clear pronunciation of Sanskrit names, emotional at the turning point; speak slightly slower than a normal fast reel, with clear pauses between sentences",
+    "style_en": "a warm Indian-English storyteller, clear accent, calm and emotional at the turning point; speak slightly slower than a normal fast reel, with clear pauses between sentences"
   },
   "visuals": {
     "primary": "muse",

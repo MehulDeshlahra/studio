@@ -41,7 +41,8 @@ tap to the reel. Types:
  recap  : top = "PICHHLE PART MEIN...", body = what happened last time in 2 short lines (no spoiler of the end)
  guess  : top = "AAGE KYA HOGA?", body = the cliffhanger as a question, ask = "DM mein apna guess bhejo"
  cast   : top = "KAUN HAI YE?" + the character's name, body = one line about them from the material
-JSON {{"top": "...", "body": "...", "answer": "... or empty", "ask": "short reply ask (e.g. 'DM karo: SACH ya JHOOTH?')"}}"""
+JSON {{"top": "...", "body": "...", "answer": "... or empty", "ask": "reply ask, MAX 24 characters (e.g. 'DM karo: SACH ya JHOOTH?')"}}
+For myth and quiz the answer goes ONLY in "answer" (never in "body")."""
 
 
 def _pages():
@@ -129,7 +130,9 @@ def _frame(cid, pic, top, body, ask, out, answer=False):
         vf.append(f"drawtext=fontfile={FONT}:text='{_esc(t)}':fontsize=70:fontcolor=white:x=(w-tw)/2:y={y}:borderw=3:bordercolor=black@0.7"); y += 86
     if ask:
         vf.append(f"drawbox=x=90:y=1560:w={W - 180}:h=150:color={acc}@0.95:t=fill")
-        vf.append(f"drawtext=fontfile={FONT}:text='{_esc(ask[:34])}':fontsize=56:fontcolor=black:x=(w-tw)/2:y=1612")
+        a_ = ask.strip()[:40]
+        fs_ = 58 if len(a_) <= 24 else 50 if len(a_) <= 30 else 42
+        vf.append(f"drawtext=fontfile={FONT}:text='{_esc(a_)}':fontsize={fs_}:fontcolor=black:x=(w-tw)/2:y={1635 - fs_ // 2}")
     sh(["ffmpeg", "-v", "error", "-y"] + src + ["-vf", ",".join(vf), "-frames:v", "1", "-q:v", "3", out], timeout=120)
     return out
 

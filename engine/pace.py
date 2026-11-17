@@ -5,7 +5,7 @@ import subprocess
 import numpy as np
 import soundfile as sf
 
-MAX_PAUSE, KEEP = 0.38, 0.24
+MAX_PAUSE, KEEP = 0.55, 0.36          # 18 Nov owner: voice felt too fast; keep more natural breathing room
 
 
 def squeeze(a, sr):
