@@ -143,14 +143,14 @@ def layout(src, out, kind, lab):
     if lab:
         # 1350x1140 (= 900:760 x1.5) on black. Logo: light rounded-ish card; photo: fitted.
         if kind == "logo":
-            fc = ("color=c=black:s=1350x1140[bg];color=c=0xf3f4f7:s=1100x900[card];[0:v]scale=860:660:force_original_aspect_ratio=decrease[l];"
+            fc = ("color=c=black:s=1350x1140[bg];color=c=0xffffff:s=1100x900[card];[0:v]scale=860:660:force_original_aspect_ratio=decrease[l];"
                   "[card][l]overlay=(W-w)/2:(H-h)/2[c];[bg][c]overlay=(W-w)/2:(H-h)/2")
         else:
             fc = ("color=c=black:s=1350x1140[bg];[0:v]scale=1250:1040:force_original_aspect_ratio=decrease[p];[bg][p]overlay=(W-w)/2:(H-h)/2")
     else:
         if kind == "logo":
             fc = ("[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=40:6,eq=brightness=-0.25[bg];"
-                  "color=c=0xf3f4f7:s=900x760[card];[b]scale=700:560:force_original_aspect_ratio=decrease[l];[card][l]overlay=(W-w)/2:(H-h)/2[c];"
+                  "color=c=0xffffff:s=900x760[card];[b]scale=700:560:force_original_aspect_ratio=decrease[l];[card][l]overlay=(W-w)/2:(H-h)/2[c];"
                   "[bg][c]overlay=(W-w)/2:(H-h)/2")
         else:
             fc = ("[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=40:6,eq=brightness=-0.3[bg];"
