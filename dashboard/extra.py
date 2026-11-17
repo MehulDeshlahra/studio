@@ -113,7 +113,7 @@ def sources(state):
     td = state.get("token_days")
     mp = grep_log(r"published|stats:|insights")
     add("Meta (Ads MCP login)", "Posting, followers, insights", "ok" if (td or 0) >= 21 else "warn" if (td or 0) > 7 else "bad",
-        f"Data access {td} days left" if td is not None else "Not checked yet", ts(mp[-1]) if mp else int(time.time()), "meta")
+        f"Data access {td} days left" if td is not None else "Not checked yet", int(os.path.getmtime(os.path.join(OUT, "dash-followers.json"))) if os.path.exists(os.path.join(OUT, "dash-followers.json")) else None, "meta")
     t = cached("tg", 600, lambda: _tg())
     tg = grep_log(r"sent for approval|telegram")
     add("Telegram bot", "Approvals in Studio360", t[0] if isinstance(t, tuple) else "bad", t[1] if isinstance(t, tuple) else t.get("error", ""), ts(tg[-1]) if tg else None, "telegram")
@@ -141,6 +141,7 @@ def sources(state):
         ("Last fixes: " + " | ".join(ds.get("last_did") or [])[-200:]) if ds.get("last_did") else "Nothing needed fixing", ds.get("last"))
     lr = jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or []
     try:
+        sys.path.insert(0, os.path.join(ROOT, "engine"))
         import brain as _b
         bs = _b.stats()
     except Exception:
