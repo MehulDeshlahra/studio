@@ -9,13 +9,13 @@ GEM_TEXT = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 
 def ask(prompt, max_tokens=8000):
     """Planning text: Gemini (Studio free key) first, OmniRoute free chain as fallback."""
-    for m in [x for mm in GEM_TEXT for x in (mm, mm)]:        # each model twice: malformed JSON is usually one-off
+    for m in [x for mm in tts.usable(GEM_TEXT) for x in (mm, mm)]:        # each model twice: malformed JSON is usually one-off
         try:
             body = {"contents": [{"parts": [{"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
                     "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": max_tokens, "temperature": 0.7}}
             r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
                                        data=json.dumps(body).encode(),
-                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key()})
+                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
             d = json.load(urllib.request.urlopen(r, timeout=300))
             out = "".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"])
             log("plan text by", m)

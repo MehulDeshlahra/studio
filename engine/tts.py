@@ -44,6 +44,15 @@ def _key(model=None):
     return random.choice(ok or ks)
 
 
+def usable(models):
+    """Models that still have quota on at least one key today (the rest are skipped instead of tried and failed).
+    If none is usable, the original list comes back so callers still fail the normal way."""
+    st = _kstate()["keys"]
+    ks = [k[-6:] for k in _keys_all()]
+    ok = [m for m in models if any(m not in st.get(k, {}).get("out", []) and "*" not in st.get(k, {}).get("out", []) for k in ks)]
+    return ok or list(models)
+
+
 class _KeyWatch(urllib.request.BaseHandler):
     """Counts every Gemini call per key and marks a key 'out' for the day (per model) when Google says the DAILY quota is
     used up. Installed as the global urllib opener, so every module (plan, review, thumb, brain...) is covered."""

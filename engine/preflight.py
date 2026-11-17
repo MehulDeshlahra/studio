@@ -100,10 +100,10 @@ List only scenes that have problems."""
     b64 = base64.b64encode(open(sheet, "rb").read()).decode()
     body = {"contents": [{"parts": [{"text": prompt}, {"inline_data": {"mime_type": "image/jpeg", "data": b64}}]}],
             "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}}
-    for m in MODELS:
+    for m in tts.usable(MODELS):
         try:
             r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent", data=json.dumps(body).encode(),
-                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key()})
+                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
             d = json.load(urllib.request.urlopen(r, timeout=180))
             return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
         except Exception as e:

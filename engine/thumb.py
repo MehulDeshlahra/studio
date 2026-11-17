@@ -52,11 +52,11 @@ Return JSON {{"scores": {{"A": <1-10 overall>, ...}}, "best": "A", "notes": "wha
 def _gemini(parts, temp=0.6, tokens=2000):
     import tts, llm
     body = {"contents": [{"parts": parts}], "generationConfig": {"responseMimeType": "application/json", "temperature": temp, "maxOutputTokens": tokens}}
-    for m in MODELS:
+    for m in tts.usable(MODELS):
         for _ in range(2):
             try:
                 r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent", data=json.dumps(body).encode(),
-                                           headers={"Content-Type": "application/json", "x-goog-api-key": tts._key()})
+                                           headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
                 d = json.load(urllib.request.urlopen(r, timeout=180))
                 return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
             except Exception as e:
