@@ -322,7 +322,8 @@ def jobs(running):
 # ---------------- schedule ----------------
 NICE = {"studio-inbox": "Read Telegram replies", "studio-prep": "Prep lane (script, voice, visuals)", "studio-make": "Render lane",
         "studio-scout": "Scout trends + tech news", "studio-stats": "Morning stats report", "studio-post": "Post approved videos",
-        "studio-doctor": "Doctor (self-repair)", "studio-learn": "Learn from GitHub (weekly)"}
+        "studio-doctor": "Doctor (self-repair)", "studio-learn": "Learn from GitHub (weekly)",
+        "studio-selfcheck": "Self-check and self-fix", "studio-radar": "Tools radar (daily)"}
 
 
 def schedule():
@@ -740,6 +741,8 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, {"stats": brainmod.stats(), "learned": (jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or [])[::-1][:40],
                                        "build_open": bq.count("- [ ]"), "build_done": bq.count("- [x]"),
                                        "top": [{"title": i["title"], "uses": i["uses"], "wins": i.get("wins", 0)} for i in top]})
+            if u == "/api/radar":
+                return self.send(200, (jload(os.path.join(ROOT, "knowledge", "radar.json"), []) or [])[::-1][:30])
             if u == "/api/ideas":
                 h = jload(os.path.join(ROOT, "channels", qs.get("cid", "x").replace("/", ""), "ideas.json"), []) or []
                 return self.send(200, h[-1] if h else {})

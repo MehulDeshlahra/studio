@@ -23,10 +23,10 @@ const NAV = [
   ["", [["today", "Today"], ["runs", "Runs"], ["approvals", "Approvals"]]],
   ["Channels", [["channels", "All channels"]]],
   ["System", [["server", "Server"], ["sources", "Connected apps"], ["activity", "Activity log"]]],
-  ["Knowledge", [["brain", "Brain"]]],
+  ["Knowledge", [["brain", "Brain"], ["radar", "Radar"]]],
   ["", [["settings", "Settings"]]],
 ];
-const ICON = { today: "today", runs: "runs", approvals: "approve", channels: "channels", server: "server", sources: "sources", activity: "activity", brain: "brain", settings: "settings" };
+const ICON = { radar: "spark", today: "today", runs: "runs", approvals: "approve", channels: "channels", server: "server", sources: "sources", activity: "activity", brain: "brain", settings: "settings" };
 let S = null, prev = "", runFilter = "all", runCh = "all", logQ = "", logLvl = "all", fails = 0, srcCache = null, briefCache = null, drawerKey = null;
 
 /* ---------- format ---------- */
@@ -212,6 +212,11 @@ const V = {
      <div class="sec"><h3>Learning</h3><span class="mut">GitHub links and files you send in Studio360, plus a weekly search of GitHub. Studio reads them, keeps what helps, and scores every item by results.</span></div>
      <div id="learned" class="card"><div class="empty">Loading…</div></div>`;
   },
+  radar() {
+    setTimeout(loadRadar, 0);
+    return `<div class="h1">Radar</div><div class="lead">Every morning Studio scans Reddit, Hacker News, GitHub, Hugging Face, Product Hunt, Google News and a Google web search for new FREE tools, models and platform features, and keeps only what fits us. Repos go to the learner, tips to the brain, features to the build list. Nothing paid, nothing signed up without you.</div>
+     <div id="radar" class="card" style="margin-top:16px"><div class="empty">Loading…</div></div>`;
+  },
   settings() {
     const st = S.settings;
     return `<div class="h1">Settings</div>
@@ -316,6 +321,20 @@ async function startBrain() {
   cv.onpointerup = () => { if (drag && drag !== core) { if (drag.pin) { drag.fx = drag.pin[0]; drag.fy = drag.pin[1]; } else drag.fx = drag.fy = null; } drag = null; }; cv.onpointerleave = () => { tip.style.display = "none"; hov = null; };
 }
 
+async function loadRadar() {
+  const el = $("#radar"); if (!el) return;
+  const days = await (await fetch("/api/radar")).json();
+  if (!days.length) { el.innerHTML = `<div class="empty">The first scan runs at 06:30. Nothing yet.</div>`; return; }
+  const act = { learn_repo: "Learner reads it", add_to_brain: "Added to the brain", build: "On the build list", owner_signup: "Needs a free sign-up (optional)", watch: "Watching" };
+  el.innerHTML = days.map((d) => `<div class="row" style="background:var(--sub)"><b>${esc(d.day)}</b><span class="mut" style="font-size:12.5px">${d.scanned} items scanned · ${d.new} new · ${(d.picks || []).length} picked</span></div>` +
+    ((d.picks || []).map((p) => `<div class="row" style="align-items:flex-start">
+      <span class="badge" style="--c:${p.score >= 8 ? "var(--green)" : p.score >= 7 ? "var(--teal)" : "var(--gray)"};min-width:44px;justify-content:center">${p.score}/10</span>
+      <div class="grow"><div class="t" style="white-space:normal"><a href="${esc(p.url)}" target="_blank">${esc(p.name)}</a> <span class="faint" style="font-weight:400">· ${esc(p.src)}</span></div>
+      <div class="s" style="white-space:normal">${esc(p.what || "")}</div>
+      <div style="font-size:12.5px;margin-top:3px;white-space:normal"><b>For us:</b> ${esc(p.why || "")}</div>
+      <div class="s" style="white-space:normal"><b>Free:</b> ${esc(p.free || "")} · effort ${esc(p.effort || "")}${p.risk ? " · careful: " + esc(p.risk) : ""}</div></div>
+      <span class="mut" style="font-size:12px;white-space:nowrap">${esc(p.done || act[p.action] || "")}</span></div>`).join("") || `<div class="row mut">Nothing worth adding that day.</div>`)).join("");
+}
 async function loadLearned() {
   const el = $("#learned"); if (!el) return;
   const d = await (await fetch("/api/learned")).json(), s = d.stats || {};
