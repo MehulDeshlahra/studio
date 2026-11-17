@@ -137,7 +137,7 @@ def probe_tracebacks(hours=3):
         if not fr:
             continue
         last = tb.strip().splitlines()[-1]
-        if any(k in last for k in ("Network is unreachable", "timed out", "HTTP Error 5", "HTTP Error 429", "Connection reset", "No space left")):
+        if any(k in last for k in ("Network is unreachable", "timed out", "HTTP Error 5", "HTTP Error 429", "Connection reset", "No space left", "BrokenPipeError", "ConnectionResetError", "ConnectionAbortedError")):
             continue                                              # environment, not code
         k = sig(fr[-1][0], fr[-1][1], last[:60])
         if k not in seen:
