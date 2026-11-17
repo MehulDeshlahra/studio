@@ -39,6 +39,22 @@ STAGES = [("research", "Research", "research.json"), ("plan", "Script", "plan.js
 FROM_MAP = {"voice": "voice", "compose": "compose", "assets": "images", "render": "render", "mix": "mix", "images": "images", "align": "align"}
 
 
+ERRLOG = os.path.join(OUT, "dash-errors.log")
+
+
+def log_exc(path):
+    """Keep the traceback of a failed endpoint so the self-check agent can find the faulty line."""
+    try:
+        import traceback
+        with open(ERRLOG, "a", encoding="utf-8") as f:
+            f.write(f"\n=== {time.strftime('%Y-%m-%d %H:%M:%S')} {path}\n{traceback.format_exc()}")
+        if os.path.getsize(ERRLOG) > 200000:
+            data = open(ERRLOG, encoding="utf-8", errors="ignore").read()[-80000:]
+            open(ERRLOG, "w", encoding="utf-8").write(data)
+    except Exception:
+        pass
+
+
 def jload(p, d=None):
     try:
         with open(p, encoding="utf-8") as f:
@@ -581,6 +597,11 @@ def issues(srv, fails, jl, sched, token_days, chs):
                 add("info", "Doctor noted (fixed next session): " + u["what"], u.get("detail", "")[:200], key="doc-" + u["what"])
         except Exception:
             pass
+    sc = jload(os.path.join(OUT, "selfcheck.json"), {}) or {}
+    if not sc.get("last") or time.time() - sc["last"] > 5400:
+        add("warn", "Self-check has not run for 90+ min", "the agent that tests and fixes the studio's own code is not running")
+    for fnd in (sc.get("findings") or [])[:3]:
+        add("info", "Self-check found: " + fnd["kind"] + " " + fnd.get("where", ""), fnd["msg"], "It tries to fix this itself; otherwise it is noted for the next fix session.", None, "sc-" + fnd["kind"] + fnd.get("where", ""))
     rank = {"bad": 0, "warn": 1, "info": 2}
     return sorted(out, key=lambda x: rank[x["lvl"]])
 
@@ -744,6 +765,7 @@ class H(BaseHTTPRequestHandler):
                 return self.file(p)
             return self.send(404, {"error": "not found"})
         except Exception as e:
+            log_exc(u)
             return self.send(500, {"error": str(e)[:300]})
 
     def file(self, p):
@@ -793,6 +815,7 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, {"ok": True})
             return self.send(404, {"error": "not found"})
         except Exception as e:
+            log_exc(u)
             return self.send(400, {"error": str(e)[:300]})
 
 

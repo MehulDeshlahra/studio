@@ -139,6 +139,10 @@ def sources(state):
     ds = jload(os.path.join(OUT, "doctor-state.json"), {}) or {}
     add("Doctor (self-repair)", "Finds and fixes breaks every 10 min", "ok" if ds.get("last") and time.time() - ds["last"] < 1800 else "bad",
         ("Last fixes: " + " | ".join(ds.get("last_did") or [])[-200:]) if ds.get("last_did") else "Nothing needed fixing", ds.get("last"))
+    sc = jload(os.path.join(OUT, "selfcheck.json"), {}) or {}
+    nfix = len(sc.get("fixes", []))
+    add("Self-check and self-fix", "Tests every page and API, fixes small code bugs by itself", "ok" if sc.get("last") and time.time() - sc["last"] < 5400 else "bad",
+        (f"{sc.get('count', 0)} open finding(s) · " if sc.get("count") else "All clear · ") + f"{nfix} fix(es) so far" + (f" · last: {sc['fixes'][-1]['why'][:70]}" if nfix else ""), sc.get("last"))
     lr = jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or []
     try:
         sys.path.insert(0, os.path.join(ROOT, "engine"))
