@@ -604,6 +604,7 @@ def issues(srv, fails, jl, sched, token_days, chs):
         k = re.sub(r"\d+", "#", e["msg"])[:60]
         if k in seen or "HOLD" in e["msg"] or "PROBLEMS" in e["msg"] or "retry" in e["msg"] or "held BEFORE" in e["msg"] or "doctor:" in e["msg"] \
                 or "gemini text fail" in e["msg"] or "vision fail" in e["msg"] or "alignment failed" in e["msg"] \
+                or " ig skip " in e["msg"] or "omniroute image fail" in e["msg"] \
                 or re.search(r"gemini[\w -]* fail.*(429|503|Too Many Requests|Service Unavailable|timed out)", e["msg"]):      # recovered by a fallback
             continue
         seen.add(k); add("warn", "Error in the last 2 h", e["msg"][:240], "", None, "log-" + k)
