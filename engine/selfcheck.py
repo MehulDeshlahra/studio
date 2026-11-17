@@ -122,17 +122,22 @@ def probe_audit():
 
 
 def probe_tracebacks(hours=3):
-    rc, o = sh(f"journalctl -u 'studio-*' --since '-{hours}h' --no-pager -o cat 2>/dev/null", 60)
-    out, cur = [], None
-    for line in o.splitlines():
+    rc, o = sh(f"journalctl -u 'studio-*' --since '-{hours}h' --no-pager -o short-iso 2>/dev/null", 60)
+    out, cur, ts0 = [], None, 0
+    rx = re.compile(r"^(\d{4}-\d\d-\d\dT[\d:]+)[+-]\d{4} \S+ [^\s:]+: ?(.*)$")
+    for raw in o.splitlines():
+        m = rx.match(raw)
+        if not m:
+            continue
+        when, line = m.group(1), m.group(2)
         if line.startswith("Traceback (most recent call last)"):
-            cur = [line]
+            cur = [line]; ts0 = int(time.mktime(time.strptime(when, "%Y-%m-%dT%H:%M:%S")))
         elif cur is not None:
             cur.append(line)
             if line and not line.startswith((" ", "\t")) and not line.startswith("Traceback"):
-                out.append("\n".join(cur)); cur = None
+                out.append((ts0, "\n".join(cur))); cur = None
     seen, res = set(), []
-    for tb in out:
+    for ts_, tb in out:
         fr = frames(tb)
         if not fr:
             continue
@@ -140,8 +145,12 @@ def probe_tracebacks(hours=3):
         if any(k in last for k in ("Network is unreachable", "timed out", "HTTP Error 5", "HTTP Error 429", "Connection reset", "No space left", "BrokenPipeError", "ConnectionResetError", "ConnectionAbortedError")):
             continue                                              # environment, not code
         k = sig(fr[-1][0], fr[-1][1], last[:60])
-        if k not in seen:
-            seen.add(k); res.append({"kind": "traceback", "tb": tb[-1800:], "msg": last[:200], "frames": fr})
+        if k in seen:
+            for r_ in res:                                       # keep the newest time of each distinct crash
+                if r_["tbsig"] == k:
+                    r_["ts"] = max(r_["ts"], ts_)
+            continue
+        seen.add(k); res.append({"kind": "traceback", "tb": tb[-1800:], "msg": last[:200], "frames": fr, "ts": ts_, "tbsig": k})
     return res
 
 
@@ -193,8 +202,10 @@ def context_for(f):
         if m:
             numbered, _ = snippet("dashboard/app.js", int(m.group(2)))
             return "dashboard/app.js", numbered, f"The browser reports on tab '{f['tab']}': {f['msg']}"
-        return "dashboard/app.js", function_sources("dashboard/app.js", []) or snippet("dashboard/app.js", 1, 60)[0], \
-            f"On tab '{f['tab']}' the page is blank or broken: {f['msg']}. The tab's renderer is V.{f['tab']} in app.js."
+        txt = open(os.path.join(ROOT, "dashboard", "app.js"), encoding="utf-8").read().splitlines()
+        i = next((k for k, l in enumerate(txt) if re.match(rf"\s*{f['tab']}\(\) \{{", l)), 0)
+        numbered = "\n".join(f"{k + 1}: {txt[k]}" for k in range(i, min(len(txt), i + 70)))
+        return "dashboard/app.js", numbered, f"On tab '{f['tab']}' the page is blank or broken: {f['msg']}. The tab's renderer starts at line {i + 1} of app.js."
     if f["kind"] == "data":
         names = []
         for k, v in FUNC_HINT.items():
@@ -317,7 +328,7 @@ def verify_old_fixes(tbs):
         t0 = time.mktime(time.strptime(fx["t"], "%Y-%m-%d %H:%M"))
         if now - t0 < 1800:
             continue
-        again = [t for t in tbs if fx.get("tb_sig") and sig(t["frames"][-1][0], t["frames"][-1][1], t["msg"][:60]) == fx["tb_sig"]]
+        again = [t for t in tbs if fx.get("tb_sig") and t["tbsig"] == fx["tb_sig"] and t["ts"] > t0 + 60]
         if again and not DRY:
             sh(["git", "-C", ROOT, "revert", "--no-edit", fx["commit"]]); sh(f"cd {ROOT} && timeout 60 git push -q", 90)
             fx["reverted"] = True
@@ -334,13 +345,13 @@ def main():
     findings += probe_ui()
     findings += probe_audit()
     tbs = probe_tracebacks()
-    findings += tbs
-    verify_old_fixes(tbs)
+    fixed_at = {x["tb_sig"]: time.mktime(time.strptime(x["t"], "%Y-%m-%d %H:%M")) for x in S["fixes"] if x.get("tb_sig") and not x.get("reverted")}
+    tbs_new = [t for t in tbs if t["ts"] > fixed_at.get(t["tbsig"], 0) + 60]       # newer than the fix for it
+    findings += tbs_new
+    verify_old_fixes(tbs)                                         # tbs carry their own times: only a crash AFTER the fix counts
     log("selfcheck:", len(findings), "finding(s)" if findings else "all clear", "| " + "; ".join(f"{f['kind']} {f.get('path') or f.get('tab') or f['msg'][:40]}" for f in findings[:5]) if findings else "")
     fixed = 0
     for f in findings:
-        if f["kind"] == "traceback":
-            f["tbsig"] = sig(f["frames"][-1][0], f["frames"][-1][1], f["msg"][:60])
         try:
             if try_fix(f):
                 fixed += 1
