@@ -116,8 +116,8 @@ def heal_connections():
     did = []
     env = dict(os.environ, PATH=os.path.join(HOME, ".npm-global", "bin") + ":" + os.environ.get("PATH", ""))
     for cid, prov, name, status in providers_status():
-        if status in (None, "active", "unknown") or prov == "ollama-cloud":
-            continue
+        if status != "credits_exhausted" or prov == "ollama-cloud":
+            continue                                    # "unavailable" = OmniRoute's own rate-limit cool-down: leave it alone
         p = subprocess.run(["omniroute", "-q", "--no-color", "providers", "test", cid], capture_output=True, text=True, env=env, timeout=120)
         ok = "passed" in (p.stdout + p.stderr)
         did.append(f"{name} was {status}: re-test {'passed, open again' if ok else 'failed, stays closed'}")
