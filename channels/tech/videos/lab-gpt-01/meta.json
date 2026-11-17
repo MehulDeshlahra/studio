@@ -4,5 +4,7 @@
  "topic": "ChatGPT jawab kaise banata hai",
  "voice_retry": 1,
  "stage": "done",
- "doctor_rebuilt": "2026-11-17 03:06"
+ "doctor_rebuilt": "2026-11-17 09:41",
+ "doctor_code": "bffebb6",
+ "doctor_tries": 2
 }

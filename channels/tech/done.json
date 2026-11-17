@@ -87,7 +87,7 @@
   "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
   "status": "held",
   "review": [
-   "before render, scene 7: OVERLAP: caption text 'delete!' collides with and overlaps 'internet'"
+   "before render, scene 7: OVERLAP: caption in the second still has overlapping text with 'delete!' colliding directly into 'internet' and 'storage ke.'"
   ]
  }
 ]

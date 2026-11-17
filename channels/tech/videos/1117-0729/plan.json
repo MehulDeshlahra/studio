@@ -119,15 +119,15 @@
     "2s Buffer",
     "Auto Delete"
    ],
-   "label": "Stored Data",
+   "label": "Auto Delete",
    "keywords": [
     "turant delete",
     "bina internet"
    ],
    "motion": "push",
-   "title": "Local Buffer",
+   "title": "Storage",
    "big": "0 KB",
-   "sub": "Auto Erase",
+   "sub": "Erase",
    "value": "0 KB"
   },
   {
