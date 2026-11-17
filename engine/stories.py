@@ -20,7 +20,8 @@ MEDIA = os.path.expanduser("~/studio-media")
 RAW = "https://raw.githubusercontent.com/MehulDeshlahra/studio-media/main/"
 STATE = os.path.join(OUT, "stories-state.json")
 W, H = 1080, 1920
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT = next((f for f in ("/usr/share/fonts/truetype/montserrat/Montserrat-Black.ttf", os.path.expanduser("~/.fonts/Montserrat-Black.ttf"),
+             "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf") if os.path.exists(f)), "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
 FORMATS = {"tech": ["myth", "fact", "teaser", "poll"], "katha": ["katha", "quiz", "teaser", "festival"],
            "raaz": ["recap", "guess", "cast", "teaser"]}
 THEME = {"tech": ("#0b0d12", "#f5c542"), "katha": ("#1a0d05", "#e8b04a"), "raaz": ("#05080a", "#f2b134")}
@@ -90,9 +91,7 @@ def _picture(cid, job, used):
     if job:
         a = load(os.path.join(OUT, cid, job, "assets.json"), {}) or {}
         cands = [v.get("image") for k, v in sorted(a.items(), key=lambda x: int(x[0]) if str(x[0]).isdigit() else 99) if (v or {}).get("image")]
-        cv = os.path.join(OUT, cid, job, "cover.jpg")
-        if os.path.exists(cv):
-            cands.insert(0, cv)
+        # 18 Nov: never the cover (it already carries its own big text, Story text on top looked cluttered)
     cands = [c for c in cands if c and os.path.exists(c) and time.time() - used.get(c, 0) > 14 * 86400]
     return cands[0] if cands else None
 
@@ -118,15 +117,16 @@ def _frame(cid, pic, top, body, ask, out, answer=False):
     vf = []
     if pic:
         src = ["-i", pic]
-        vf.append(f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},eq=brightness=-0.32:saturation=0.9,boxblur=2:1")
+        vf.append(f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},eq=brightness=-0.12:saturation=1.05")
+        vf.append(f"drawbox=x=60:y=300:w={W - 120}:h=760:color=black@0.62:t=fill")
     else:
         src = ["-f", "lavfi", "-i", f"color=c={bg}:s={W}x{H}"]
     y = 360
     for t in tl:
-        vf.append(f"drawtext=fontfile={FONT}:text='{_esc(t)}':fontsize=92:fontcolor={acc}:x=(w-tw)/2:y={y}:borderw=4:bordercolor=black@0.7"); y += 112
+        vf.append(f"drawtext=fontfile={FONT}:text='{_esc(t)}':fontsize=96:fontcolor={acc}:x=(w-tw)/2:y={y}:borderw=4:bordercolor=black@0.7"); y += 112
     y += 60
     for t in bl:
-        vf.append(f"drawtext=fontfile={FONT}:text='{_esc(t)}':fontsize=66:fontcolor=white:x=(w-tw)/2:y={y}:borderw=3:bordercolor=black@0.7"); y += 86
+        vf.append(f"drawtext=fontfile={FONT}:text='{_esc(t)}':fontsize=70:fontcolor=white:x=(w-tw)/2:y={y}:borderw=3:bordercolor=black@0.7"); y += 86
     if ask:
         vf.append(f"drawbox=x=90:y=1560:w={W - 180}:h=150:color={acc}@0.95:t=fill")
         vf.append(f"drawtext=fontfile={FONT}:text='{_esc(ask[:34])}':fontsize=56:fontcolor=black:x=(w-tw)/2:y=1612")
