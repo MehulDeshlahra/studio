@@ -215,3 +215,23 @@
 ## review real-02-en
 - visual: Scene 11 card text says 'SACRED BULL' and 'SHIVA PURAN' instead of the requested text/card summary.
 - visual: Scene 12 headline and text do not match the requested prompt ('Does true repentance erase every single past mistake in your view?').
+
+## real-02-en Hanuman ji aur Shani dev ka yuddh aur unka milan (Ramayana, Kishkindha Kanda)
+- scene 6: The text 'MASSIVE ROCKS TO' is grammatically incomplete and awkward compared to the narration 'He spread his legs across two massive rocks to block the path'.
+- scene 9: The image depicts the bull sinking, but the text 'BHIMA WAS LEFT' is slightly disconnected from the visual action of the bull disappearing.
+- scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' are present, but the intended narration for this scene is 'That very hump is today's triangular Shivling at Kedarnath.' The text on the card does not match the intended narration.
+- scene 12: The text 'YOUR VIEW' and 'JAI BHOLE' are present, but the intended narration is 'Does true repentance erase every single past mistake in your view?'. The text on the card does not match the intended narration.
+
+## review real-02-en
+- visual: scene 1: The caption text 'WHY IS THE' and 'TRIANGULAR' is cut off or missing the rest of the sentence 'Why is the Kedarnath Shivling triangular...'.
+- visual: scene 2: The caption text 'AFTER THE GREAT' and 'DEEPLY GRIEVING' is cut off; it does not match the full line provided.
+- visual: scene 3: The caption text 'THEY WENT TO' and 'PEACE' is cut off; it does not match the full line provided.
+- visual: scene 4: The caption text 'SHIVA TOOK THE' and 'BULL AND HID' is cut off; it does not match the full line provided.
+- visual: scene 5: The caption text 'SEEING THIS' and 'BHIMA INSTANTLY' is cut off; it does not match the full line provided.
+- visual: scene 6: The caption text 'HE SPREAD HIS' and 'MASSIVE ROCKS TO' is cut off; it does not match the full line provided.
+- visual: scene 7: The caption text 'THE OTHER BULLS' and 'BUT MAHADEV REFUSED' is cut off; it does not match the full line provided.
+- visual: scene 8: The caption text 'SPOTTING HIM INSTANTLY' and 'BHIMA RUSHED FORWARD' is cut off; it does not match the full line provided.
+- visual: scene 9: The caption text 'AS IT SANK' and 'BHIMA WAS LEFT' is cut off; it does not match the full line provided.
+- visual: scene 10: The caption text 'MOVED BY THEIR' and 'MAHADEV FINALLY' is cut off; it does not match the full line provided.
+- visual: scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' appears on the image, which contradicts the intended script for scene 11 (which should be about the Kedarnath Shivling).
+- visual: scene 12: The text 'THINK', 'YOUR VIEW', and 'JAI BHOLE' appears on the image, but the text is inconsistent and repetitive across the final frames, and the script for scene 12 is missing from the visual output.

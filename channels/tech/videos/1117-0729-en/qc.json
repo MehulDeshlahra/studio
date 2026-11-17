@@ -1,0 +1,28 @@
+{
+ "topic": "Bank app outage causes: 10 reasons banking apps go down",
+ "title": "How Does Your Phone Hear 'Hey Google' When Locked?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.5,
+  "true_peak": -3.4,
+  "dur": 41.77
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 6: The visual card says 'AUDIO BUFFER' while the script title says 'AUDIO BUFFER', but the text inside the card says 'ROLLING BUFFER'. This is a minor inconsistency between the intended title and the actual graphic.",
+   "scene 7: The visual card says 'STORAGE' while the script title says 'Auto Delete'. This is a mismatch between the intended title and the graphic label."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 1.0,
+  "words": 131,
+  "problems": []
+ },
+ "ok": true
+}

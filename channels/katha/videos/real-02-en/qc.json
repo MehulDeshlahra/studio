@@ -5,18 +5,18 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.9,
-  "true_peak": -2.2,
+  "lufs": -14.3,
+  "true_peak": -2.1,
   "dur": 48.53
  },
  "vision": {
   "score": 8,
-  "ok": false,
+  "ok": true,
   "problems": [
-   "scene 6: The image shows Bhima standing on top of the rocks, but the text says he 'spread his legs across two massive rocks'. The visual depiction of him standing on top makes the 'spreading legs' action unclear/incorrect.",
-   "scene 9: The image shows hands holding a bull's head/hump, but the anatomy of the hands is slightly distorted/melted (common AI artifacting).",
-   "scene 11: The text on the card says 'SACRED BULL' and 'SHIVA PURAN', which does not match the intended narrative flow or the prompt's description for that scene (which should be about the Kedarnath Shivling).",
-   "scene 12: The text on the card says 'YOUR VIEW' and 'JAI BHOLE', which does not match the intended narrative flow or the prompt's description for that scene."
+   "scene 6: The text 'MASSIVE ROCKS TO' is grammatically incomplete and awkward compared to the narration 'He spread his legs across two massive rocks to block the path'.",
+   "scene 9: The image depicts the bull sinking, but the text 'BHIMA WAS LEFT' is slightly disconnected from the visual action of the bull disappearing.",
+   "scene 11: The text 'SACRED BULL' and 'SHIVA PURAN' are present, but the intended narration for this scene is 'That very hump is today's triangular Shivling at Kedarnath.' The text on the card does not match the intended narration.",
+   "scene 12: The text 'YOUR VIEW' and 'JAI BHOLE' are present, but the intended narration is 'Does true repentance erase every single past mistake in your view?'. The text on the card does not match the intended narration."
   ]
  },
  "voice": {
@@ -26,5 +26,5 @@
   "words": 130,
   "problems": []
  },
- "ok": false
+ "ok": true
 }

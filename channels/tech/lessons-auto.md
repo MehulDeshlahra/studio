@@ -322,3 +322,7 @@
 ## 1117-0729 'Hey Google' phone kaise sunta hai
 - scene 3: The caption text 'bhejta' is partially obscured/cut off by the large '2 HOURS' text above it, making it slightly hard to read.
 - scene 6: The caption text 'Bas aakhri do second ki aawaz' is slightly cut off at the bottom edge.
+
+## 1117-0729-en Bank app outage causes: 10 reasons banking apps go down
+- scene 6: The visual card says 'AUDIO BUFFER' while the script title says 'AUDIO BUFFER', but the text inside the card says 'ROLLING BUFFER'. This is a minor inconsistency between the intended title and the actual graphic.
+- scene 7: The visual card says 'STORAGE' while the script title says 'Auto Delete'. This is a mismatch between the intended title and the graphic label.

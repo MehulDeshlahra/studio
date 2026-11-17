@@ -97,5 +97,13 @@
    "before render, scene 10: FIT: Visual shows 100% vs 0% comparison instead of transfer stats",
    "before render, scene 11: OVERLAP: Multiple overlapping caption lines at the bottom causing unreadable text"
   ]
+ },
+ {
+  "job": "1117-0729-en",
+  "topic": "Bank app outage causes: 10 reasons banking apps go down",
+  "title": "How Does Your Phone Hear 'Hey Google' When Locked?",
+  "qc_ok": true,
+  "status": "approved",
+  "review": []
  }
 ]

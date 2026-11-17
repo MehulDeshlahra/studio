@@ -1,0 +1,165 @@
+{
+ "slug": "hey-google-kaise-sunta-hai",
+ "title": "How Does Your Phone Hear 'Hey Google' When Locked?",
+ "hooks": [
+  "Phone band hai, screen black hai... fir 'Hey Google' bolte hi ye jaag kaise jaata hai?",
+  "Kya Google aapki har baat chupke se 24 ghante sun raha hai?",
+  "Screen band hone par phone ko kaise pata chalta hai ki aapne usse pukara?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Starts with an everyday relatable mystery on a locked phone that everyone experiences daily.",
+ "metaphor": "A tiny sleeping guard chip that only wakes up when it hears one exact secret acoustic knock.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Phone is off, screen is black. Then how does it wake up to 'Hey Google'?",
+   "type": "clip",
+   "prompt": "Cinematic macro shot of a sleek matte black smartphone on dark surface, black locked screen, soft subtle glowing blue audio indicator ripples at bottom chin, photorealistic clean product lighting on pure black background, no text.",
+   "label": "LOCKED PHONE",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Is Google secretly listening to your every word 24/7? Absolutely not!",
+   "type": "title",
+   "big": "24/7 SPYING?",
+   "sub": "what is the real truth",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "If your phone uploaded everything to the internet, the battery would die in two hours.",
+   "type": "stat",
+   "value": "2 HOURS",
+   "sub": "battery dead if uploading",
+   "label": "BATTERY REALITY",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "So what is the secret? There is a tiny acoustic DSP chip inside your phone.",
+   "type": "object",
+   "prompt": "Macro studio shot of a tiny isolated silicon DSP processor chip with micro-etched golden circuit pins, soft blue edge glow, pitch black studio background, no text, no labels.",
+   "label": "DSP CHIP",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "The main CPU sleeps deeply, but this tiny chip stands guard constantly.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "MAIN CPU",
+     "value": "DEEP SLEEP",
+     "pct": 5
+    },
+    {
+     "label": "TINY DSP",
+     "value": "LISTENING",
+     "pct": 95
+    }
+   ],
+   "label": "POWER SAVING",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "It records nothing. It just loops the last two seconds of audio.",
+   "type": "ui",
+   "title": "AUDIO BUFFER",
+   "rows": [
+    {
+     "label": "ROLLING BUFFER",
+     "value": "2 SECONDS",
+     "pct": 30
+    },
+    {
+     "label": "CLOUD STORAGE",
+     "value": "ZERO DATA",
+     "pct": 0
+    }
+   ],
+   "label": "BUFFER LOOP",
+   "keywords": [],
+   "motion": "push"
+  },
+  {
+   "vo": "Every new second deletes the old audio instantly! No internet, no storage used.",
+   "type": "stat",
+   "nodes": [
+    "Mic",
+    "RAM",
+    "Delete"
+   ],
+   "label": "Storage",
+   "keywords": [],
+   "motion": "push",
+   "title": "Auto Delete",
+   "big": "0 KB",
+   "sub": "No Storage",
+   "value": "0 KB"
+  },
+  {
+   "vo": "But the moment the sound frequency of 'Hey Google' matches exactly...",
+   "type": "object",
+   "prompt": "Abstract glowing golden acoustic soundwave spectrum sliding perfectly into a mechanical glowing waveform template, dark clean minimalist studio render, photorealistic, no text.",
+   "label": "PATTERN MATCH",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "This DSP instantly wakes up the main processor, and the screen lights up.",
+   "type": "flow",
+   "nodes": [
+    "MATCH FOUND",
+    "HARDWARE INTERRUPT",
+    "MAIN CPU WAKES"
+   ],
+   "label": "WAKE TRIGGER",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Does your phone unlock with a friend's voice too? Test it and tell me!",
+   "type": "title",
+   "big": "TEST IT NOW",
+   "sub": "tried a friend's voice yet?",
+   "keywords": [],
+   "motion": "push",
+   "title": ""
+  }
+ ],
+ "caption": "How does 'Hey Google' activate even when the screen is off and locked? Discover the hidden low-power DSP chip and 2-second buffer mechanism! Does your phone wake up to anyone else's voice?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#TechFacts",
+  "#GoogleAssistant",
+  "#SmartphoneSecrets",
+  "#TechKnowledge",
+  "#HowItWorks",
+  "#GadgetTricks",
+  "#TechShorts"
+ ],
+ "claims": [
+  {
+   "claim": "Modern smartphones use a low-power digital signal processor (DSP) to detect the wake-word locally without running the main application processor.",
+   "basis": "Documented in Qualcomm Snapdragon Hexagon DSP architecture and Android Open Source Project (AOSP) SoundTrigger HAL."
+  },
+  {
+   "claim": "The wake-word detector listens in a short rolling circular buffer (typically 1 to 2 seconds) that continuously purges without saving audio to disk or uploading to servers.",
+   "basis": "Google Assistant privacy whitepaper on on-device hotword verification and local acoustic model processing."
+  },
+  {
+   "claim": "Only after the hardware DSP verifies the local wake-word pattern does it send an interrupt to wake the main CPU and activate internet-connected speech recognition.",
+   "basis": "Google Pixel and Android SoundTrigger hardware interrupt documentation."
+  }
+ ],
+ "lang": "en",
+ "end_line": "Test it today"
+}
