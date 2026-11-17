@@ -1,6 +1,6 @@
 """Daily Instagram + Facebook Stories for every Studio page (owner 18 Nov: "every channel should get stories daily").
 Same idea as VAJRA's social/story.py: Instagram only takes a Story from a PUBLIC image URL, so every frame is pushed to the
-public repo MehulDeshlahra/studio-media (raw.githubusercontent.com serves it), then published through the Graph API.
+public repo offhours-lab/studio-media (raw.githubusercontent.com serves it), then published through the Graph API.
 Facebook Page Stories upload the file directly (unpublished photo -> photo_stories).
 Two Stories a day per page (timer studio-stories, 11:00 and 19:00 IST), different formats, rotated so two in a row never
 look alike. Content per page:
@@ -17,7 +17,7 @@ from core import ROOT, OUT, log, load, save, sh
 
 DRY = "--dry" in sys.argv
 MEDIA = os.path.expanduser("~/studio-media")
-RAW = "https://raw.githubusercontent.com/MehulDeshlahra/studio-media/main/"
+RAW = "https://raw.githubusercontent.com/offhours-lab/studio-media/main/"
 STATE = os.path.join(OUT, "stories-state.json")
 W, H = 1080, 1920
 FONT = next((f for f in ("/usr/share/fonts/truetype/montserrat/Montserrat-Black.ttf", os.path.expanduser("~/.fonts/Montserrat-Black.ttf"),
