@@ -46,11 +46,32 @@ Return JSON {{"rules": ["6-9 rules"], "patterns": [{{"hook_type": "...", "share"
 "avoid": ["3-5 things the winners never do"], "summary": "2 sentences"}}"""
 
 
+def top_shorts(q, n=60):
+    """YouTube search sorted by VIEW COUNT, short videos only (plain ytsearch returned mostly 15-800-view uploads)."""
+    import subprocess, urllib.parse
+    url = "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus(q) + "&sp=CAMSAhgB"
+    try:
+        out = subprocess.run([research.YTDLP if os.path.exists(research.YTDLP) else "yt-dlp", url, "--flat-playlist", "-j",
+                              "--no-warnings", "--playlist-end", str(n)], capture_output=True, text=True, timeout=180).stdout
+    except Exception as e:
+        log("hookstudy search fail", str(e)[:100]); return []
+    vids = []
+    for line in out.splitlines():
+        try:
+            d = json.loads(line)
+        except ValueError:
+            continue
+        if d.get("id") and (d.get("duration") or 999) <= 90 and (d.get("view_count") or 0) >= 50000:
+            vids.append({"id": d["id"], "title": d.get("title"), "views": d.get("view_count") or 0, "dur": d.get("duration"),
+                         "channel": d.get("channel") or d.get("uploader"), "url": f"https://www.youtube.com/shorts/{d['id']}"})
+    return vids
+
+
 def study(page, n=10):
     found, seen = [], set()
     for q in QUERIES.get(page, []):
-        for v in research.search(q, 15):
-            if v["id"] and v["id"] not in seen and (v.get("views") or 0) > 0:
+        for v in top_shorts(q):
+            if v["id"] not in seen:
                 seen.add(v["id"]); found.append(v)
     found.sort(key=lambda v: -v["views"])
     notes, tried = [], 0
