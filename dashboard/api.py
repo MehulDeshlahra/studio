@@ -340,7 +340,7 @@ NICE = {"studio-inbox": "Read Telegram replies", "studio-prep": "Prep lane (scri
         "studio-doctor": "Doctor (self-repair)", "studio-learn": "Learn from GitHub (weekly)",
         "studio-selfcheck": "Self-check and self-fix", "studio-radar": "Tools radar (daily)",
         "studio-trends": "Trending topics scout (daily)", "studio-hooks": "Hook study of top Shorts (weekly)",
-        "studio-weekly": "Weekly report (Sunday)", "studio-comments": "Pinned question + comment replies"}
+        "studio-weekly": "Weekly report (Sunday)", "studio-comments": "Pinned question + comment replies", "studio-mehul": "Mehul agent (acts for the owner)"}
 
 
 def schedule():

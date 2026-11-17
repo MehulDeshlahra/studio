@@ -119,6 +119,7 @@ def make(ch, topic, research_text):
     lessons = read(os.path.join(ROOT, "knowledge", "lessons.md"))
     ch_lessons = all_lessons(ch["id"])
     bible = read(os.path.join(ROOT, "channels", ch["id"], "bible.md"))
+    owner = read(os.path.join(ROOT, "knowledge", "mehul.md"), 4000)   # how the owner thinks (engine/mehul.py)
     hooks = read(os.path.join(ROOT, "channels", ch["id"], "hooks.md"), 3500)   # engine/hookstudy.py (weekly)
     try:
         import series
@@ -148,6 +149,8 @@ CHANNEL BIBLE:
 
 {part2}
 {("FIRST 2 SECONDS (what the most-viewed faceless Shorts in this niche do; scene 1 and the opening visual follow these rules; they never change this page voice style, language or the rest of the script; small sample, so use them as strong hints):" + chr(10) + hooks) if hooks else ""}
+OWNER TASTE (Mehul; what he likes and dislikes, obey):
+{owner}
 LESSONS (hard rules learned from earlier videos and the owner; obey all):
 {lessons}
 {ch_lessons}

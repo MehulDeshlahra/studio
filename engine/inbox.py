@@ -4,7 +4,7 @@
   anything else                  -> feedback: saved as an owner lesson for that channel (read by every next plan)
                                     and the video is marked "fix"
 Commands: "/make <channel> [topic]" makes a video now; "/status" lists backlogs; "/lesson <channel> <text>" adds a rule."""
-import re, time, json, os, subprocess, sys, time, urllib.request
+import re, time, json, os, subprocess, sys, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, PY, log, load, save, telegram
 
@@ -92,6 +92,14 @@ def main():
             parts = text.split(maxsplit=2)
             if len(parts) == 3:
                 add_lesson(parts[1], parts[2]); telegram(f"📝 lesson saved for {parts[1]}"); changed = True
+        elif low.startswith(("mehul:", "/mehul", "rule:")):     # owner taste -> knowledge/mehul.md (the Mehul agent reads it daily)
+            note = text.split(":", 1)[1].strip() if ":" in text[:7] else text.split(maxsplit=1)[1] if " " in text else ""
+            if note:
+                mp = os.path.join(ROOT, "knowledge", "mehul.md")
+                with open(mp, "a", encoding="utf-8", newline="\n") as f:
+                    f.write(f"- ({time.strftime('%d %b')}, from Telegram) {note}\n")
+                telegram("🧑‍💼 Saved to how-Mehul-thinks. The Mehul agent and the planner follow it from the next run.")
+                changed = True
         elif low.startswith("/status"):
             lines = []
             for cid in sorted(os.listdir(os.path.join(ROOT, "channels"))):
