@@ -1,19 +1,31 @@
 {
  "id": "tech-002",
- "topic": "Google Search + Gemini 4 Hydrogen: real AI Mode demo",
+ "version": "v3 (revision of v2 per review 16 Nov)",
+ "topic": "Google Search + Gemini 4 Hydrogen: all four announced changes, shown on real AI Mode answers",
  "source": {"url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
-            "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen", "date": "2026-11-12",
-            "facts": ["biggest model upgrade to Search yet", "available globally for all users",
-                      "handles questions with multiple parts", "more visual responses incl. comparison tables",
-                      "better answers across supported AI Mode languages"],
-            "demo": "Real Google AI Mode answers captured 16 Nov 2026 (cap/boxes.json); shown as captured, AI-made answers, not our recommendations"},
- "voice": {"engine": "kokoro-onnx v1.0", "voice": "hm_psi", "speed": 1.17},
+            "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen", "date": "2026-11-12", "author": "Robby Stein, VP of Product, Google Search",
+            "features": {
+              "1 intent": "handle nuanced and complicated questions ... questions with multiple parts, hard-to-understand typos, or highly specific requests",
+              "2 fan-out + linking": "supercharges our query fan-out technique ... conducting simultaneous queries across all the relevant subtopics ... broader range of helpful links ... sites you previously might not have discovered",
+              "3 visual": "more images, structured responses, comparison tables, and custom tools",
+              "4 language": "more highly nuanced and helpful responses across all supported AI Mode languages"},
+            "availability": "now available globally in Google Search for all users"},
+ "demo": {"captured": "2026-11-16T05:36Z, signed-out laptop browser, Pixel 8 viewport, cap/v4/capture.json",
+          "note": "AI Mode answers change on every load; everything on screen comes from this one capture. Sub-queries in the fan-out beat are an illustration (Google does not show them) and are labelled as an example."},
+ "verified_specs": {
+   "Vivo Y39 5G": {"battery": "6,500 mAh (typ), 44W", "camera": "50 MP + 2 MP rear, 8 MP front", "src": "https://www.vivo.com/in/products/param/y39-5g"},
+   "Realme Narzo 80 Pro 5G": {"battery": "6,000 mAh (typ), 80W SUPERVOOC", "camera": "50 MP Sony IMX882 with OIS", "src": "https://www.realme.com/in/realme-narzo-80-pro-5g/specs"},
+   "Samsung Galaxy F36 5G": {"battery": "5,000 mAh, 25W", "camera": "50 MP OIS triple rear, 13 MP front", "src": "https://news.samsung.com/in/samsung-launches-galaxy-f36-5g-with-premium-leather-finish-segment-leading-camera-and-ai-innovations-in-india ; https://www.smartprix.com/mobiles/samsung-galaxy-f36-5g-ppd1g4a14fhg"}},
+ "not_shown_on_purpose": ["prices (change daily; not verified)", "any battery-life-in-days claim", "Google's 'Sony' label for the Vivo camera (not on vivo.com)"],
+ "voice": {"engine": "kokoro-onnx v1.0", "voice": "hm_psi", "speed": 1.22},
+ "gap": 0.24,
  "lines": [
   {"id": "hook", "cap": "Google Search ka ab tak ka sabse bada upgrade aa gaya", "tts": "गूगल सर्च का अब तक का सबसे बड़ा अपग्रेड आ गया है।"},
-  {"id": "proof", "cap": "Google ne khud kaha. Naam hai Gemini 4 Hydrogen", "tts": "गूगल ने ख़ुद कहा। नाम है, जेमिनाई फोर, हाइड्रोजन।"},
-  {"id": "ask", "cap": "Ab ek hi line mein poocho: bees hazaar, achha camera, do din battery", "tts": "अब एक ही लाइन में पूछो, बीस हज़ार, अच्छा कैमरा, दो दिन बैटरी।"},
-  {"id": "table", "cap": "Aur jawab seedha comparison table mein, asli phones ke saath", "tts": "और जवाब सीधा कम्पैरिज़न टेबल में, असली फ़ोन्स के साथ।"},
-  {"id": "lang", "cap": "Hinglish mein poocho, toh jawab Hindi mein", "tts": "हिंगलिश में पूछो, तो जवाब, हिन्दी में।"},
+  {"id": "proof", "cap": "Google ne khud kaha: Gemini 4 Hydrogen", "tts": "गूगल ने ख़ुद कहा, जेमिनाई फोर, हाइड्रोजन।"},
+  {"id": "one", "cap": "Pehla: poora sawaal ek saath samajhta hai. Budget, camera, battery, sab", "tts": "पहला। पूरा सवाल एक साथ समझता है। बजट, कैमरा, बैटरी, सब।"},
+  {"id": "two", "cap": "Doosra: ek saath kai searches, aur zyada websites ke links milte hain", "tts": "दूसरा। एक साथ कई सर्चेज़, और ज़्यादा वेबसाइट्स के लिंक मिलते हैं।"},
+  {"id": "three", "cap": "Teesra: jawab visual. Asli phones ki table, camera aur battery ke saath", "tts": "तीसरा। जवाब विज़ुअल। असली फ़ोन्स की टेबल, कैमरा और बैटरी के साथ।"},
+  {"id": "four", "cap": "Chautha: apni bhasha mein poocho. Hindi English mix bhi samajhta hai", "tts": "चौथा। अपनी भाषा में पूछो। हिंदी इंग्लिश मिक्स भी समझता है।"},
   {"id": "cta", "cap": "Tum pehle kya poochoge? Comment karo", "tts": "तुम पहले क्या पूछोगे? कमेंट करो।"}
  ]
 }

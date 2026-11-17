@@ -49,6 +49,7 @@ def main(vdir):
     k = Kokoro(f"{M}/kokoro-v1.0.onnx", f"{M}/voices-v1.0.bin")
     wm = WhisperModel("small", device="cpu", compute_type="int8")
     v = s["voice"]
+    gap = float(s.get("gap", GAP))
     track, t, lines = [np.zeros(int(LEAD * SR))], LEAD, []
     for ln in s["lines"]:
         a, sr = k.create(ln["tts"], voice=v["voice"], speed=v.get("speed", 1.0), lang="hi")
@@ -70,8 +71,8 @@ def main(vdir):
         lines.append({"id": ln["id"], "cap": ln["cap"], "start": round(t, 3), "end": round(t + dur, 3),
                       "heard": " ".join(w.word.strip() for w in ww),
                       "words": [{"w": c, "start": round(t + a0, 3), "end": round(t + a1, 3)} for c, (a0, a1) in zip(caps, times)]})
-        track += [a, np.zeros(int(GAP * SR))]
-        t += dur + GAP
+        track += [a, np.zeros(int(gap * SR))]
+        t += dur + gap
         print(f"{ln['id']:9s} {dur:5.2f}s | heard: {lines[-1]['heard'][:90]}", flush=True)
     track.append(np.zeros(int(TAIL * SR)))
     y = np.concatenate(track)

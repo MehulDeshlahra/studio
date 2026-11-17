@@ -204,7 +204,7 @@ def make(cid, job):
     jd = os.path.join(OUT, cid, job)
     mp4 = os.path.join(jd, f"{cid}-{job}.mp4")
     out = os.path.join(jd, "cover.jpg")
-    work = os.path.join(jd, ".cover"); os.makedirs(work, exist_ok=True)
+    work = os.path.join(jd, f".cover-{os.getpid()}"); os.makedirs(work, exist_ok=True)
     try:
         plan = load(os.path.join(jd, "plan.json"), {}) or {}
         ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}

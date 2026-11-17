@@ -1,337 +1,416 @@
 {
- "dur": 21.825,
+ "dur": 27.292,
  "lines": [
   {
    "id": "hook",
    "cap": "Google Search ka ab tak ka sabse bada upgrade aa gaya",
    "start": 0.15,
-   "end": 3.761,
-   "heard": "गूगल सर्च का अप दिख का सबसे बड़ अपग्रेड आगया है",
+   "end": 3.61,
+   "heard": "Google search का अप दिक का सब से बड़ा अप ग्रीर आगया है",
    "words": [
     {
      "w": "Google",
      "start": 0.15,
-     "end": 0.51
+     "end": 0.593
     },
     {
      "w": "Search",
-     "start": 0.51,
-     "end": 0.81
+     "start": 0.593,
+     "end": 1.037
     },
     {
      "w": "ka",
-     "start": 0.81,
-     "end": 1.27
+     "start": 1.037,
+     "end": 1.227
     },
     {
      "w": "ab",
-     "start": 1.27,
-     "end": 1.49
+     "start": 1.227,
+     "end": 1.417
     },
     {
      "w": "tak",
-     "start": 1.49,
-     "end": 1.69
+     "start": 1.417,
+     "end": 1.67
     },
     {
      "w": "ka",
-     "start": 1.69,
-     "end": 1.87
+     "start": 1.67,
+     "end": 1.86
     },
     {
      "w": "sabse",
-     "start": 1.87,
-     "end": 2.21
+     "start": 1.86,
+     "end": 2.24
     },
     {
      "w": "bada",
-     "start": 2.21,
-     "end": 2.55
+     "start": 2.24,
+     "end": 2.557
     },
     {
      "w": "upgrade",
-     "start": 2.55,
-     "end": 3.19
+     "start": 2.557,
+     "end": 3.063
     },
     {
      "w": "aa",
-     "start": 3.19,
-     "end": 3.59
+     "start": 3.063,
+     "end": 3.253
     },
     {
      "w": "gaya",
-     "start": 3.59,
-     "end": 3.73
+     "start": 3.253,
+     "end": 3.57
     }
    ]
   },
   {
    "id": "proof",
-   "cap": "Google ne khud kaha. Naam hai Gemini 4 Hydrogen",
-   "start": 4.081,
-   "end": 7.253,
-   "heard": "गुगल ने खुद कहा नाम है, जेमिनाई पोर, हाईद्रोजन.",
+   "cap": "Google ne khud kaha: Gemini 4 Hydrogen",
+   "start": 3.93,
+   "end": 6.621,
+   "heard": "गुगल ने हुद कहा जैमिनाई फोर हीट्रोजन",
    "words": [
     {
      "w": "Google",
-     "start": 4.081,
-     "end": 4.421
+     "start": 3.93,
+     "end": 4.25
     },
     {
      "w": "ne",
-     "start": 4.421,
-     "end": 4.601
+     "start": 4.25,
+     "end": 4.41
     },
     {
      "w": "khud",
-     "start": 4.601,
-     "end": 4.761
+     "start": 4.41,
+     "end": 4.57
     },
     {
-     "w": "kaha.",
-     "start": 4.761,
-     "end": 5.041
-    },
-    {
-     "w": "Naam",
-     "start": 5.041,
-     "end": 5.321
-    },
-    {
-     "w": "hai",
-     "start": 5.321,
-     "end": 5.501
+     "w": "kaha:",
+     "start": 4.57,
+     "end": 4.89
     },
     {
      "w": "Gemini",
-     "start": 5.661,
-     "end": 6.121
+     "start": 4.89,
+     "end": 5.57
     },
     {
      "w": "4",
-     "start": 6.121,
-     "end": 6.461
+     "start": 5.57,
+     "end": 5.89
     },
     {
      "w": "Hydrogen",
-     "start": 6.681,
-     "end": 7.221
+     "start": 5.89,
+     "end": 6.59
     }
    ]
   },
   {
-   "id": "ask",
-   "cap": "Ab ek hi line mein poocho: bees hazaar, achha camera, do din battery",
-   "start": 7.573,
-   "end": 11.835,
-   "heard": "अब एक ही लाईन में पूछो, बीस हजार, अच्छा केमरा दो दिन बेट्री.",
+   "id": "one",
+   "cap": "Pehla: poora sawaal ek saath samajhta hai. Budget, camera, battery, sab",
+   "start": 6.941,
+   "end": 10.876,
+   "heard": "पहला पूरा सवाल एक साथ समजता है बजर्ट, केम्रा, बेट्री सब",
    "words": [
     {
-     "w": "Ab",
-     "start": 7.573,
-     "end": 7.773
+     "w": "Pehla:",
+     "start": 6.941,
+     "end": 7.281
+    },
+    {
+     "w": "poora",
+     "start": 7.281,
+     "end": 7.541
+    },
+    {
+     "w": "sawaal",
+     "start": 7.541,
+     "end": 7.981
     },
     {
      "w": "ek",
-     "start": 7.773,
-     "end": 7.973
-    },
-    {
-     "w": "hi",
-     "start": 7.973,
-     "end": 8.133
-    },
-    {
-     "w": "line",
-     "start": 8.133,
-     "end": 8.453
-    },
-    {
-     "w": "mein",
-     "start": 8.453,
-     "end": 8.653
-    },
-    {
-     "w": "poocho:",
-     "start": 8.653,
-     "end": 8.993
-    },
-    {
-     "w": "bees",
-     "start": 9.233,
-     "end": 9.553
-    },
-    {
-     "w": "hazaar,",
-     "start": 9.553,
-     "end": 10.033
-    },
-    {
-     "w": "achha",
-     "start": 10.113,
-     "end": 10.453
-    },
-    {
-     "w": "camera,",
-     "start": 10.453,
-     "end": 10.893
-    },
-    {
-     "w": "do",
-     "start": 10.893,
-     "end": 11.213
-    },
-    {
-     "w": "din",
-     "start": 11.213,
-     "end": 11.393
-    },
-    {
-     "w": "battery",
-     "start": 11.393,
-     "end": 11.813
-    }
-   ]
-  },
-  {
-   "id": "table",
-   "cap": "Aur jawab seedha comparison table mein, asli phones ke saath",
-   "start": 12.155,
-   "end": 15.794,
-   "heard": "और जवाब सीथा कमपेरिजन तेबल में अस्ली फोंज के साथ",
-   "words": [
-    {
-     "w": "Aur",
-     "start": 12.155,
-     "end": 12.315
-    },
-    {
-     "w": "jawab",
-     "start": 12.315,
-     "end": 12.695
-    },
-    {
-     "w": "seedha",
-     "start": 12.695,
-     "end": 13.175
-    },
-    {
-     "w": "comparison",
-     "start": 13.175,
-     "end": 13.915
-    },
-    {
-     "w": "table",
-     "start": 13.915,
-     "end": 14.315
-    },
-    {
-     "w": "mein,",
-     "start": 14.315,
-     "end": 14.695
-    },
-    {
-     "w": "asli",
-     "start": 14.695,
-     "end": 15.035
-    },
-    {
-     "w": "phones",
-     "start": 15.035,
-     "end": 15.395
-    },
-    {
-     "w": "ke",
-     "start": 15.395,
-     "end": 15.575
+     "start": 7.981,
+     "end": 8.301
     },
     {
      "w": "saath",
-     "start": 15.575,
-     "end": 15.755
+     "start": 8.301,
+     "end": 8.581
+    },
+    {
+     "w": "samajhta",
+     "start": 8.581,
+     "end": 9.041
+    },
+    {
+     "w": "hai.",
+     "start": 9.041,
+     "end": 9.161
+    },
+    {
+     "w": "Budget,",
+     "start": 9.161,
+     "end": 9.561
+    },
+    {
+     "w": "camera,",
+     "start": 9.561,
+     "end": 10.001
+    },
+    {
+     "w": "battery,",
+     "start": 10.081,
+     "end": 10.581
+    },
+    {
+     "w": "sab",
+     "start": 10.581,
+     "end": 10.841
     }
    ]
   },
   {
-   "id": "lang",
-   "cap": "Hinglish mein poocho, toh jawab Hindi mein",
-   "start": 16.114,
-   "end": 18.371,
-   "heard": "इंगलिश में पूछो, तो जवाब हिन्दी में",
+   "id": "two",
+   "cap": "Doosra: ek saath kai searches, aur zyada websites ke links milte hain",
+   "start": 11.196,
+   "end": 15.326,
+   "heard": "तुस्रा एक साथ कई सर्चेर और जादा वेप्साइट्स के लिएंक मिलते हैं",
    "words": [
     {
-     "w": "Hinglish",
-     "start": 16.114,
-     "end": 16.494
+     "w": "Doosra:",
+     "start": 11.196,
+     "end": 11.616
     },
     {
-     "w": "mein",
-     "start": 16.494,
-     "end": 16.834
+     "w": "ek",
+     "start": 11.616,
+     "end": 11.876
     },
     {
-     "w": "poocho,",
-     "start": 16.834,
-     "end": 17.154
+     "w": "saath",
+     "start": 11.876,
+     "end": 12.196
     },
     {
-     "w": "toh",
-     "start": 17.314,
-     "end": 17.474
+     "w": "kai",
+     "start": 12.196,
+     "end": 12.476
+    },
+    {
+     "w": "searches,",
+     "start": 12.476,
+     "end": 12.896
+    },
+    {
+     "w": "aur",
+     "start": 12.896,
+     "end": 13.216
+    },
+    {
+     "w": "zyada",
+     "start": 13.216,
+     "end": 13.676
+    },
+    {
+     "w": "websites",
+     "start": 13.676,
+     "end": 14.356
+    },
+    {
+     "w": "ke",
+     "start": 14.356,
+     "end": 14.536
+    },
+    {
+     "w": "links",
+     "start": 14.536,
+     "end": 14.796
+    },
+    {
+     "w": "milte",
+     "start": 14.796,
+     "end": 15.156
+    },
+    {
+     "w": "hain",
+     "start": 15.156,
+     "end": 15.296
+    }
+   ]
+  },
+  {
+   "id": "three",
+   "cap": "Teesra: jawab visual. Asli phones ki table, camera aur battery ke saath",
+   "start": 15.646,
+   "end": 19.811,
+   "heard": "तीस्रा जवाब, विस्वल अस्ली फोंस की तेबल, केम्रा और बेट्री के साथ",
+   "words": [
+    {
+     "w": "Teesra:",
+     "start": 15.646,
+     "end": 15.966
     },
     {
      "w": "jawab",
-     "start": 17.474,
-     "end": 17.854
+     "start": 15.966,
+     "end": 16.346
     },
     {
-     "w": "Hindi",
-     "start": 17.854,
-     "end": 18.194
+     "w": "visual.",
+     "start": 16.566,
+     "end": 16.966
+    },
+    {
+     "w": "Asli",
+     "start": 16.966,
+     "end": 17.346
+    },
+    {
+     "w": "phones",
+     "start": 17.346,
+     "end": 17.646
+    },
+    {
+     "w": "ki",
+     "start": 17.646,
+     "end": 17.826
+    },
+    {
+     "w": "table,",
+     "start": 17.826,
+     "end": 18.166
+    },
+    {
+     "w": "camera",
+     "start": 18.306,
+     "end": 18.746
+    },
+    {
+     "w": "aur",
+     "start": 18.746,
+     "end": 19.066
+    },
+    {
+     "w": "battery",
+     "start": 19.066,
+     "end": 19.406
+    },
+    {
+     "w": "ke",
+     "start": 19.406,
+     "end": 19.606
+    },
+    {
+     "w": "saath",
+     "start": 19.606,
+     "end": 19.786
+    }
+   ]
+  },
+  {
+   "id": "four",
+   "cap": "Chautha: apni bhasha mein poocho. Hindi English mix bhi samajhta hai",
+   "start": 20.131,
+   "end": 23.891,
+   "heard": "तो ता आपनी भाशा मे पुछो हिंदी इंगलिष मिक्स भी समझता है",
+   "words": [
+    {
+     "w": "Chautha:",
+     "start": 20.131,
+     "end": 20.577
+    },
+    {
+     "w": "apni",
+     "start": 20.577,
+     "end": 20.856
+    },
+    {
+     "w": "bhasha",
+     "start": 20.856,
+     "end": 21.247
     },
     {
      "w": "mein",
-     "start": 18.194,
-     "end": 18.334
+     "start": 21.247,
+     "end": 21.526
+    },
+    {
+     "w": "poocho.",
+     "start": 21.526,
+     "end": 21.917
+    },
+    {
+     "w": "Hindi",
+     "start": 21.917,
+     "end": 22.252
+    },
+    {
+     "w": "English",
+     "start": 22.252,
+     "end": 22.698
+    },
+    {
+     "w": "mix",
+     "start": 22.698,
+     "end": 22.922
+    },
+    {
+     "w": "bhi",
+     "start": 22.922,
+     "end": 23.145
+    },
+    {
+     "w": "samajhta",
+     "start": 23.145,
+     "end": 23.647
+    },
+    {
+     "w": "hai",
+     "start": 23.647,
+     "end": 23.871
     }
    ]
   },
   {
    "id": "cta",
    "cap": "Tum pehle kya poochoge? Comment karo",
-   "start": 18.691,
-   "end": 20.905,
-   "heard": "तुम पहले क्या पुछोगे? कमेट करो",
+   "start": 24.211,
+   "end": 26.372,
+   "heard": "तुम पहले क्या पुछोगे कमेट करो?",
    "words": [
     {
      "w": "Tum",
-     "start": 18.691,
-     "end": 18.891
+     "start": 24.211,
+     "end": 24.411
     },
     {
      "w": "pehle",
-     "start": 18.891,
-     "end": 19.271
+     "start": 24.411,
+     "end": 24.751
     },
     {
      "w": "kya",
-     "start": 19.271,
-     "end": 19.471
+     "start": 24.751,
+     "end": 25.031
     },
     {
      "w": "poochoge?",
-     "start": 19.471,
-     "end": 20.071
+     "start": 25.031,
+     "end": 25.551
     },
     {
      "w": "Comment",
-     "start": 20.291,
-     "end": 20.591
+     "start": 25.551,
+     "end": 26.071
     },
     {
      "w": "karo",
-     "start": 20.591,
-     "end": 20.871
+     "start": 26.071,
+     "end": 26.351
     }
    ]
   }
