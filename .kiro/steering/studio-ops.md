@@ -9,8 +9,24 @@ Free, 24x7, self-running faceless Reels/Shorts engine on the Oracle server for 3
 - Owner prefers NEW PAGES over more versions of the same video (no A/B copies).
 
 ## Read first in every session
-- knowledge/RESUME.md (latest state + open items), knowledge/mehul.md (how the owner thinks),
-  knowledge/build-queue.md (tasks; `## Done by Kiro` = verified log), ~/studio-out/doctor-unknown.json on the server.
+- knowledge/STATE.md ON THE SERVER (`cat ~/studio/knowledge/STATE.md`): written by the server every 15 min (memory,
+  running jobs, held videos, healer actions, models, owner tasks). It is the truth; never report items from notes
+  without checking them against it and the live server (owner 18 Nov: "be honest, you brought stale data").
+- knowledge/selfheal.md (how the server heals itself), knowledge/RESUME.md (decisions + history),
+  knowledge/mehul.md (how the owner thinks), end of knowledge/build-queue.md.
+- Never use workflows in this workspace (owner 18 Nov). Never `sleep` to wait: do other work, then check.
+
+## Self-healing (18 Nov) - the server fixes itself; Kiro builds new abilities, not repairs
+- doctor (10 min): services, timers, disk, git, OmniRoute; hands every unknown failure to the healer.
+- healer (engine/healer.py, :07/:22/:37/:52): held-video ladder (known fix -> rebuild after code change -> re-plan the
+  failing scenes -> verified code fix -> park), unknown errors, [mehul] tasks; learns into knowledge/fixes.json.
+- healcode (engine/healcode.py): aider (~/aider-venv) on OmniRoute combo studio-code in a git worktree ~/studio-heal;
+  merges only after compile + compose/preflight of the failing video + a good video. `healcode.py --check <cid> <job>`.
+- omnimap (04:40 daily): probes every free model, rebuilds combos studio-text / -fast / -vision / -code. Only FREE models
+  on zai / siliconflow / huggingface: one 402 locks the whole connection (re-test re-opens: heal_connections).
+- Studio's own OmniRoute key ~/.omniroute-studio.key; admin API from the server: `node ~/studio/tools/omni.mjs GET /api/combos`.
+  Never change the job bot's combos (claude-free, agent-free, forms-free).
+- Ship from the laptop with `.tmp\ship.ps1 "msg"` (the server commits often: always pull --rebase before push).
 
 ## Owner rules
 - Rs 0. Free tools only. Never sign up or pay on his behalf. No on-screen AI label. No robotic voices.

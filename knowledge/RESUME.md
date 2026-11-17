@@ -1,3 +1,17 @@
+# RESUME
+## 18 Nov 04:00-05:00: self-healing server + full OmniRoute (read knowledge/selfheal.md for the details)
+- Current state is NOT in this file any more: read knowledge/STATE.md on the server (written every 15 min by the server).
+  The OPEN ITEMS list below is history; several items there were stale when checked on 18 Nov.
+- Owner decisions: never use workflows in this workspace; never sleep-wait; the server must fix things itself
+  (doctor -> healer -> coding agent), Kiro builds new abilities. Use every free key and model fully (OmniRoute).
+- Built: engine/healer.py, engine/healcode.py (aider in a worktree, verified merges), engine/omnimap.py (daily model
+  probe + Studio combos), engine/state.py (STATE.md), Studio OmniRoute key + 4 Gemini keys inside OmniRoute,
+  every Gemini caller falls back to OmniRoute, free FLUX.1-dev pictures, doctor hands every failure to the healer.
+- Found + fixed: render lane rebuilt the same held job every 10 min (pipeline stalled); prep lane stopped when Muse
+  was out; compose end-card overlap (katha holds) and motion "none" crash.
+- Not touched on purpose: the job bot's OmniRoute combos (claude-free etc. start with the slowest model; changing them is
+  the job bot's decision).
+
 # RESUME (updated 17 Nov 2026 ~21:55 IST)
 
 Owner's list was worked in order. "Done" = built, deployed, checked on the server (frames / logs / numbers).
