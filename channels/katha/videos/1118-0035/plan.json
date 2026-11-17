@@ -85,9 +85,9 @@
   {
    "vo": "Brahma ji ne varan diya ki Ganga swarg se zameen par aayengi.",
    "type": "image",
-   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, Lord Brahma bestowing a divine blessing with a gentle glow",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, celestial river Ganga descending from the heavens towards the earth",
    "motion": "pan",
-   "title": "VARDAAN",
+   "title": "GANGA AVATARAN",
    "keywords": [
     "Brahma ji",
     "varan"
@@ -148,7 +148,8 @@
     "veg roka"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Aur is tarah Ganga ji dharti par sabka kalyan karne aayin.",

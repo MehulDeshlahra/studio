@@ -1,7 +1,7 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/deep-haze.mp3",
+  "file": "music/lib/katha/full-on.mp3",
   "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
@@ -41,12 +41,6 @@
    "t": 15.88,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
-   "align": "onset"
-  },
-  {
-   "t": 20.11,
-   "file": "sfx/pop-light.mp3",
-   "gain_db": -17,
    "align": "onset"
   },
   {
