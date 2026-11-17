@@ -81,7 +81,7 @@ def vision(sheet, plan, lang):
     desc = "\n".join(f"scene {i + 1} ({s.get('type')}): voice says \"{s.get('vo', '')}\"; on-screen fields "
                      f"{json.dumps({k: v for k, v in s.items() if k not in ('vo', 'prompt', 'keywords', 'motion')}, ensure_ascii=False)[:220]}"
                      for i, s in enumerate(plan["scenes"]))
-    prompt = f"""You are the strictest finishing editor at a premium tech-explainer studio. The sheet shows two stills per scene,
+    prompt = f"""You are the strictest finishing editor at a premium short-video studio. The sheet shows two stills per scene,
 in order, each labelled with its scene number (yellow). Captions at the lower third are expected and show only a PART of the spoken line (one phrase at a time), so a caption with missing words is NOT a problem, and words not yet spoken are dimmed on purpose; a small mono top bar
 (page name left, tag right) is expected; a small yellow tag pill above the main visual is expected.
 Scenes:
@@ -90,7 +90,7 @@ On-screen language must be {"English only" if lang == "en" else "Hinglish in Rom
 For EACH scene, report only real problems a viewer would notice:
 - EMPTY: the centre of the frame has no main visual (just a dark gradient) in the middle still
 - OVERLAP: text touching/covering other text or a tag, captions colliding with the visual
-- CUT: text cut at the frame edge or inside its box, words missing
+- CUT: LETTERS physically clipped by the frame edge or by their box (you can see half a letter). Never report a caption for showing only part of the sentence.
 - READ: text too small/faint to read on a phone, or too much text
 - LANG: wrong language on screen
 - FIT: the visual does not match what the voice says, or looks broken/glitchy
