@@ -119,6 +119,8 @@ Return JSON {{"best": "A" or "none", "why": "6 words"}}. Use "none" when no cand
 
 
 def pick(cands, subject, kind, work):
+    if os.environ.get("REALMEDIA_NO_JUDGE"):          # tests only: take the first candidate
+        return 0, "judge bypassed (test)"
     ins, fc = [], ""
     for i, c in enumerate(cands):
         ins += ["-i", c["path"]]
