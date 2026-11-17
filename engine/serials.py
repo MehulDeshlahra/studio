@@ -25,7 +25,7 @@ setting (city flat, hostel, office, train, small town, village fair, hospital, w
 Part 1 opens on the strangest, most specific moment (first line pulls you in) and ends on a hook. EVERY part ends on a
 cliffhanger that makes people come back tomorrow. The middle keeps raising the stakes (a new clue, a betrayal, a twist every
 2-3 parts); Part {n} pays everything off with a satisfying twist. Each part has a clear new event (no recap-only parts).
-Cast: a fixed visual description per character (age, face, hair, clothes, one signature item) reused in every image.
+Cast: EVERY named character who appears in any part (hero, friends, villain, side characters) gets a fixed visual description (age, face, hair, clothes, one signature item) reused in every image; nobody appears who is not in the cast.
 Return JSON {{"title": "<Hindi/Hinglish title, 2-5 words>", "slug": "ascii-slug", "genre": "...", "logline": "one sentence",
 "setting": "...", "cast": {{"<name>": "fixed visual description"}},
 "parts": [{{"n": 1, "title": "...", "beats": "3-5 sentences: what happens in this part", "cliffhanger": "the last moment"}}, ... {n} parts]}}"""
