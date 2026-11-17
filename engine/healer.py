@@ -328,6 +328,14 @@ def heal_unknown():
         if WAIT.search(detail) and not CODE_HINT.search(detail.replace("HTTP Error", "")):
             it.update(state="wait", why="free-tier quota / restart: every caller has a fallback")
             continue
+        if what.startswith("selfcheck found"):              # selfcheck re-probes every 30 min: trust its latest findings
+            cur = json.dumps((load(os.path.join(OUT, "selfcheck.json"), {}) or {}).get("findings", []))
+            tag = what.split("could not fix:", 1)[-1].strip()
+            if tag and tag in cur:
+                it.update(state="open")
+            else:
+                it.update(state="gone", why="selfcheck no longer finds it")
+            continue
         if not still_happening(detail):
             it.update(state="gone", why="did not happen again in the last hour"); continue
         it.update(state="open")
