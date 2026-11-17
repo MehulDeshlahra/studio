@@ -604,7 +604,7 @@ def state():
     srv = server(); jl = jobs(running); sched = schedule(); fails = failed_units()
     chs, token_days = channels(jl)
     iss = issues(srv, fails, jl, sched, token_days, chs)
-    st = jload(SETTINGS, {"auto_approve": False, "min_score": 9}) or {}
+    st = {"auto_approve": False, "min_score": 9, **(jload(SETTINGS, {}) or {})}
     out = {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
             "schedule": sched, "issues": iss, "channels": chs, "budgets": budgets(), "activity": activity(), "settings": st,
             "token_days": token_days, "render_median": render_median(), "quality": quality()}
@@ -771,7 +771,7 @@ class H(BaseHTTPRequestHandler):
             if u == "/api/make":
                 return self.send(200, make_now(body["cid"], body.get("topic", "")))
             if u == "/api/settings":
-                st = jload(SETTINGS, {}) or {}
+                st = {"auto_approve": False, "min_score": 9, **(jload(SETTINGS, {}) or {})}
                 if "auto_approve" in body:
                     st["auto_approve"] = bool(body["auto_approve"])
                 if "min_score" in body:
