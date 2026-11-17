@@ -1,0 +1,28 @@
+{
+ "topic": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
+ "title": "When Krishna himself stormed Narakasura's fortress",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.8,
+  "true_peak": -3.4,
+  "dur": 49.1
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 3: The caption 'ARRIVED' is slightly cut off at the top edge of the text box/image area compared to other frames, though readable.",
+   "scene 6: The caption 'CHAKRA ON HIS' is slightly low and close to the bottom edge of the frame, creating a tight composition."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 1.0,
+  "words": 129,
+  "problems": []
+ },
+ "ok": true
+}

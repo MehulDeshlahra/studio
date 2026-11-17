@@ -1,0 +1,135 @@
+{
+ "slug": "krishnas-visit-to-narakasura",
+ "title": "When Krishna himself stormed Narakasura's fortress",
+ "hooks": [
+  "Ek raakshas jise koi purush nahi maar sakta... toh phir kaun maarega?",
+  "Krishna ne ek baar apna chakra ghuma diya - poora durg hil gaya",
+  "16000 raaniyan bandi theen. Unka mukti kaun dilayega?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Instant curiosity gap: impossible boon + who breaks it. Second person pulls viewer in.",
+ "metaphor": "Outer fortress = inner ego. One clean strike frees both.",
+ "cast": {
+  "Krishna": "Calm divine figure, peacock feather, blue skin, gold silk, soft halo, painterly Indian epic style",
+  "Narakasura": "Hulking demon king, dark ornate armor, red glowing eyes, arrogant smirk, same painterly style"
+ },
+ "scenes": [
+  {
+   "vo": "Listen - there was a demon named Narakasura. Boon: no man could kill him.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, massive dark fortress gates glowing with red runes, stormy sky, no text",
+   "motion": "push",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "He shook all three worlds. Imprisoned 16,000 queens.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, vast dungeon hall, countless women in royal clothes, dim torchlight, no text",
+   "motion": "pan",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "Everyone gave up. Then Krishna himself arrived. No army, no noise - just him.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, single blue figure walking toward glowing fortress gates, wind in peacock feather, no text",
+   "motion": "push",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "The walls were sealed with mantras. Krishna blew his conch - even the stones trembled.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, conch shell glowing gold, sound waves cracking stone walls, divine light, no text",
+   "motion": "punch",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "Narakasura laughed: 'Remember the boon? No man can kill me.'",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, demon king on obsidian throne pointing at Krishna, red aura, arrogant, no text",
+   "motion": "pull",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "Krishna smiled. Spun the Sudarshan Chakra on his finger - light like the sun.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, close-up: spinning golden disc on fingertip, blinding light cutting darkness, no text",
+   "motion": "push",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "One strike. Mantra protection broke like butter. Boon failed - because Krishna wasn't a mere man, he was God.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, golden disc slicing through red shield, demon armor cracking, light winning, no text",
+   "motion": "punch",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "Narakasura fell. All locks broke. Queens freed - sent home with full dignity.",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, palace gates opening, women walking out in morning light, Krishna blessing, no text",
+   "motion": "pan",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "This story is from the Bhagavata Purana. But the real question now: do you have a fortress inside?",
+   "type": "image",
+   "prompt": "Painterly Indian epic style, quiet temple courtyard at twilight, diyas flickering, one empty throne, no text",
+   "motion": "tilt",
+   "keywords": [],
+   "title": ""
+  },
+  {
+   "vo": "Break that fortress of ego. New story tomorrow. Follow @aagesuno.",
+   "type": "card",
+   "prompt": "Painterly Indian epic style, golden lotus on dark water, single ripple, soft glow, no text",
+   "motion": "push",
+   "big": "@aagesuno",
+   "small": "New story tomorrow",
+   "keywords": [],
+   "title": ""
+  }
+ ],
+ "music_mood": "epic",
+ "caption": "When Krishna defeated Narakasura, it wasn't just a demon dying - an empire of ego fell. Bhagavata Purana, Book 10. When will your inner fortress fall? #mythology #krishna #narakasura #ego #aagesuno\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#krishna",
+  "#narakasura",
+  "#mythology",
+  "#bhagavatapurana",
+  "#spiritual",
+  "#ancientstories",
+  "#aagesuno"
+ ],
+ "claims": [
+  {
+   "claim": "Krishna defeated Narakasura and freed captive women.",
+   "basis": "Bhagavata Purana, Skandha 10"
+  }
+ ],
+ "brain_ids": [
+  "656474d688",
+  "121c1c5529",
+  "9b12cd9138",
+  "82055e32f5",
+  "ef573ce014",
+  "4204a43442",
+  "1ad22ef225",
+  "d7b38f2237",
+  "3cec28c3e9",
+  "7a67022fb6",
+  "d4d8a0da8f",
+  "84c1e843ba",
+  "1662db247e",
+  "6a0ed93ee3"
+ ],
+ "lang": "en",
+ "end_line": "New story daily"
+}

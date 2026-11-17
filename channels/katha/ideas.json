@@ -372,5 +372,130 @@
     "score": 3.53
    }
   ]
+ },
+ {
+  "t": "2026-11-17 20:16",
+  "picked": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
+  "ideas": [
+   {
+    "topic": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
+    "search": "setting sun worship Chhath mythology story",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Ties into the festival buzz around Chhath Puja / Sun temples, connecting ancient Puranic legends of Surya Dev to current cultural interest. Source: Samba Purana, Chapter 27.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.6,
+    "score": 7.47
+   },
+   {
+    "topic": "Dhruva Tara ki katha: Ek chote bachche ki atal tapasya (Vishnu Purana)",
+    "note": "",
+    "search": "dhruva tara story vishnu purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 5.7,
+    "median_views": 183210,
+    "fresh": 5.0,
+    "score": 7.06
+   },
+   {
+    "topic": "Bhasmasur ka ant: Mohini avatar ka chamatkar (Bhagavat Purana)",
+    "note": "",
+    "search": "bhasmasur and mohini avatar story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 4.5,
+    "median_views": 62213,
+    "fresh": 5.5,
+    "score": 6.62
+   },
+   {
+    "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
+    "search": "did ravan touch sita maa valmiki ramayana",
+    "fit": 10.0,
+    "from": "trend",
+    "note": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
+    "demand_known": true,
+    "demand": 1.2,
+    "median_views": 2991,
+    "fresh": 6.9,
+    "score": 6.42
+   },
+   {
+    "topic": "Matsya Avatar: Satyavrata aur pralay ki katha (Matsya Purana)",
+    "note": "",
+    "search": "matsya avatar story purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.3,
+    "score": 6.36
+   },
+   {
+    "topic": "Ahilya ka uddhar: Gautam rishi ka shrap aur Rama ka milan (Valmiki Ramayana, Bala Kanda)",
+    "note": "",
+    "search": "ahilya shrap ramayana story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.9,
+    "score": 6.28
+   },
+   {
+    "topic": "Garuda aur Aruna ki katha: Vinata aur Kadru ka shrap (Mahabharata, Adi Parva)",
+    "note": "",
+    "search": "garuda birth story mahabharata",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.5,
+    "score": 6.2
+   },
+   {
+    "topic": "Samudra Manthan se nikle 14 ratna aur unka rahasya (Mahabharata, Adi Parva)",
+    "note": "",
+    "search": "samudra manthan 14 ratna story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.1,
+    "score": 6.12
+   },
+   {
+    "topic": "Savitri aur Satyavan: Yamraj se pran wapas lene ki katha (Mahabharata, Vana Parva)",
+    "note": "",
+    "search": "savitri satyavan yamraj story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 16,
+    "fresh": 4.2,
+    "score": 4.34
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1646,
+    "fresh": 4.3,
+    "score": 3.53
+   }
+  ]
  }
 ]

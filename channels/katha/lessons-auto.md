@@ -263,3 +263,7 @@
 - scene 5: The text 'NA?' is a poor summary for the line 'Narakasura hansa: Vardaan yaad hai na?'. It feels disconnected and confusing.
 - scene 6: The image shows a finger with the chakra, but the script says 'Krishna muskuraye' (Krishna smiled). The image focuses solely on the finger/chakra, missing the character Krishna entirely, which creates a visual disconnect from the narration.
 - scene 7: The image shows Narakasura's face/helmet, but the script emphasizes the 'Vardaan fail' and Krishna's nature. While the image is dramatic, it feels slightly disconnected from the specific action of the 'vaar' (strike) mentioned in the narration.
+
+## 1117-1935-en The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.
+- scene 3: The caption 'ARRIVED' is slightly cut off at the top edge of the text box/image area compared to other frames, though readable.
+- scene 6: The caption 'CHAKRA ON HIS' is slightly low and close to the bottom edge of the frame, creating a tight composition.
