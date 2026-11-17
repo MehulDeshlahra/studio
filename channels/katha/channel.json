@@ -1,63 +1,67 @@
 {
-    "id":  "katha",
-    "name":  "Puraan Ki Katha (@puraankikatha)",
-    "status":  "pilot",
-    "language":  "Hindi",
-    "format":  "One mythology story with one clear lesson, 45-75 s; every retelling names its source (text + chapter/kand)",
-    "voice":  {
-                  "engine":  "gemini-3.8-flash-tts",
-                  "voice":  "Charon",
-                  "one_request_per_reel":  true,
-                  "style":  "a warm Hindi storyteller with modern pace, respectful, clear pronunciation of Sanskrit names, emotional at the turning point",
-                  "style_en":  "a warm Indian-English storyteller, clear accent, calm and emotional at the turning point"
-              },
-    "visuals":  {
-                    "primary":  "muse",
-                    "look":  "painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, ornate but uncluttered",
-                    "cast":  "the story\u0027s figures, respectful, one fixed style"
-                },
-    "rules":  [
-                  "respectful, no mockery",
-                  "sourced retellings only, mention when versions differ",
-                  "no on-screen AI label"
-              ],
-    "schedule":  {
-                     "posts_per_day":  1,
-                     "approve_first":  10,
-                     "backlog":  6
-                 },
-    "accounts":  {
-                     "instagram":  null,
-                     "facebook_page":  null,
-                     "youtube":  null
-                 },
-    "theme":  {
-                  "bg":  "#140806",
-                  "accent":  "#f5c04a",
-                  "accent2":  "#c0392b",
-                  "font":  "Archivo Black",
-                  "music":  "music/close-up.mp3",
-                  "music_offset":  0
-              },
-    "topics_backlog":  [
-                           "Eklavya ka angootha (Mahabharata, Adi Parva)",
-                           "Nachiketa aur Yamraj (Katha Upanishad)",
-                           "Shravan Kumar ki katha (Valmiki Ramayana)",
-                           "Yaksha ke prashn (Mahabharata, Vana Parva)",
-                           "Ganesh ji aur Kuber ka bhoj",
-                           "Karna aur Indra ka daan (Mahabharata)"
-                       ],
-    "edit":  {
-                 "wps":  2.4,
-                 "length_s":  [
-                                  28,
-                                  80
-                              ]
-             },
-    "english":  true,
-    "warmup":  {
-                   "post_from":  "2026-11-20",
-                   "one_a_day_until":  "2026-11-27",
-                   "note":  "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
-               }
+  "id": "katha",
+  "name": "Puraan Ki Katha (@puraankikatha)",
+  "status": "pilot",
+  "language": "Hindi",
+  "format": "One mythology story with one clear lesson, 45-75 s; every retelling names its source (text + chapter/kand)",
+  "voice": {
+    "engine": "gemini-3.8-flash-tts",
+    "voice": "Charon",
+    "one_request_per_reel": true,
+    "style": "a warm Hindi storyteller with modern pace, respectful, clear pronunciation of Sanskrit names, emotional at the turning point",
+    "style_en": "a warm Indian-English storyteller, clear accent, calm and emotional at the turning point"
+  },
+  "visuals": {
+    "primary": "muse",
+    "look": "painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, ornate but uncluttered",
+    "cast": "the story's figures, respectful, one fixed style"
+  },
+  "rules": [
+    "respectful, no mockery",
+    "sourced retellings only, mention when versions differ",
+    "no on-screen AI label"
+  ],
+  "schedule": {
+    "posts_per_day": 1,
+    "approve_first": 10,
+    "backlog": 10
+  },
+  "accounts": {
+    "instagram": null,
+    "facebook_page": null,
+    "youtube": null
+  },
+  "theme": {
+    "bg": "#140806",
+    "accent": "#f5c04a",
+    "accent2": "#c0392b",
+    "font": "Archivo Black",
+    "music": "music/close-up.mp3",
+    "music_offset": 0,
+    "end_line": "Kal ek nayi katha"
+  },
+  "topics_backlog": [
+    "Eklavya ka angootha (Mahabharata, Adi Parva)",
+    "Nachiketa aur Yamraj (Katha Upanishad)",
+    "Shravan Kumar ki katha (Valmiki Ramayana)",
+    "Yaksha ke prashn (Mahabharata, Vana Parva)",
+    "Ganesh ji aur Kuber ka bhoj",
+    "Karna aur Indra ka daan (Mahabharata)"
+  ],
+  "edit": {
+    "wps": 2.4,
+    "length_s": [
+      28,
+      80
+    ]
+  },
+  "english": false,
+  "warmup": {
+    "post_from": "2026-11-20",
+    "one_a_day_until": "2026-11-27",
+    "note": "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
+  },
+  "handle": "@puraankikatha",
+  "handle_instagram": "@puraankikatha",
+  "tagline": "Puranon ki asli kathayein."
 }

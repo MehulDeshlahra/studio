@@ -36,6 +36,14 @@ def render_workers():
 
 
 def pick_topic(ch):
+    if ch.get("serial"):                                 # Aage Suno: the next part of the running serial (engine/serials.py)
+        try:
+            import serials
+            t = serials.next_topic(ch)
+            if t:
+                return t
+        except Exception as e:
+            log("serial failed, using ideas", str(e)[:150])
     try:                                                 # best of 10 scored ideas (engine/ideas.py); old way as fallback
         import ideas
         t = ideas.pick(ch)
@@ -65,6 +73,41 @@ def _muse_awake(on):
                 os.remove(f)
         except Exception:
             pass
+
+
+def _brand_guard(ch, p):
+    """17 Nov: katha plans ended 'Follow @aagesuno' (another page's lesson leaked). Replace any other page's handle / page
+    name in the spoken lines, cards, caption and hashtags with this page's own (or drop it). Returns True if changed."""
+    import re as _re
+    own = ch.get("handle") or ""
+    bad = []
+    for cid in os.listdir(os.path.join(ROOT, "channels")):
+        if cid == ch["id"]:
+            continue
+        c = load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}
+        for h in (c.get("handle"), c.get("handle_instagram")):
+            if h:
+                bad += [h, h.lstrip("@")]
+    bad = sorted({b for b in bad if b and len(b) > 3}, key=len, reverse=True)
+    if not bad:
+        return False
+    rx = _re.compile("|".join(_re.escape(b) for b in bad), _re.I)
+    hit = False
+
+    def fix(t):
+        nonlocal hit
+        if isinstance(t, str) and rx.search(t):
+            hit = True
+            return _re.sub(r"\s{2,}", " ", rx.sub(own, t)).strip()
+        return t
+    for s in p.get("scenes", []):
+        for k in ("vo", "big", "small", "title"):
+            s[k] = fix(s.get(k))
+    p["caption"] = fix(p.get("caption"))
+    p["hashtags"] = [h for h in (p.get("hashtags") or []) if not rx.search(h)]
+    if hit:
+        log("brand guard: removed another page's handle from the plan of", ch["id"])
+    return hit
 
 
 def stage_assets(ch, p, job):
@@ -201,6 +244,11 @@ def main():
     meta = load(os.path.join(job, "meta.json"), {})
     topic = a.topic or meta.get("topic") or pick_topic(ch)
     meta.update({"channel": ch["id"], "job": job_id, "topic": topic}); save(os.path.join(job, "meta.json"), meta)
+    if ch.get("serial") and " - Part " in str(topic):
+        try:
+            import serials; serials.mark_made(ch, topic, job_id)
+        except Exception as e:
+            log("serial mark failed", str(e)[:100])
     log("job", ch["id"], job_id, topic)
 
     # 1 research
@@ -215,6 +263,8 @@ def main():
     if "plan" in redo or not os.path.exists(pp):
         p = planner.make(ch, topic, rtext); save(pp, p)
     p = load(pp)
+    if _brand_guard(ch, p):
+        save(pp, p)
     # 3 voice (one request)
     vo = os.path.join(job, "vo-raw.wav")
     if "voice" in redo or not os.path.exists(vo):

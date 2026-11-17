@@ -13,8 +13,15 @@ from core import ROOT, OUT, PY, log, load, save
 import muse
 
 BUDGET = os.path.join(OUT, "budget.json")
-TTS_CAP = int(os.environ.get("STUDIO_TTS_CAP", "30"))      # key is on the credits project (owner, 17 Nov)
-REELS_CAP = int(os.environ.get("STUDIO_REELS_CAP", "8"))
+def _nkeys():
+    try:
+        return max(1, sum(1 for l in open(os.path.expanduser("~/.studio-gemini.key")) if l.strip()))
+    except Exception:
+        return 1
+# 17 Nov (owner: "the server should always be making something"): ~10 free voice requests per key per day; keep 1 per key
+# spare for re-voices. Reels per day follow the voice budget.
+TTS_CAP = int(os.environ.get("STUDIO_TTS_CAP", str(9 * _nkeys())))
+REELS_CAP = int(os.environ.get("STUDIO_REELS_CAP", str(7 * _nkeys())))
 PREPPED_MAX = int(os.environ.get("STUDIO_PREPPED_MAX", "2"))
 ENGINE = os.path.join(ROOT, "engine")
 

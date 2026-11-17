@@ -3,7 +3,7 @@
   "name": "Aage Suno",
   "status": "live (warm-up)",
   "language": "Hindi / Hinglish",
-  "format": "All kinds of stories (mystery, karma, emotional, fantasy, light horror) in Hindi/Hinglish; some as series parts",
+  "format": "ORIGINAL fiction serials in Hindi/Hinglish: one story runs about 10 parts, one part a day, every part ends on a cliffhanger (mystery thriller, emotional family drama, light horror, fantasy, karma twist, love with a secret, survival, small-town sci-fi). Never mythology, religion or real people.",
   "voice": {
     "engine": "gemini-3.8-flash-tts",
     "voice": "Charon",
@@ -19,12 +19,13 @@
   "rules": [
     "fiction clearly fiction, no real crimes/people",
     "no gore",
-    "no on-screen AI label"
+    "no on-screen AI label",
+    "fiction only: no mythology, gods, religion or real events"
   ],
   "schedule": {
     "posts_per_day": 1,
     "approve_first": 10,
-    "backlog": 6
+    "backlog": 10
   },
   "accounts": {
     "instagram": "@aagesuno 17841413280544411",
@@ -62,7 +63,7 @@
     "Jaadu (fantasy, talking objects/animals)",
     "Darr (light horror)"
   ],
-  "english": true,
+  "english": false,
   "post": true,
   "warmup": {
     "post_from": "2026-11-20",
@@ -71,5 +72,9 @@
   },
   "handle_instagram": "@aagesuno",
   "handle_youtube": "@aagesuno",
-  "tagline": "Har roz ek nayi kahani."
+  "tagline": "Har roz ek nayi kahani.",
+  "serial": {
+    "parts": 10,
+    "note": "engine/serials.py plans the whole arc once (story bible), then one part per slot"
+  }
 }

@@ -73,6 +73,24 @@ AI render; keep the object "prompt" as the fallback. Real faces of public figure
 """
 
 
+def _strip_brand(text, cid):
+    """Drop '## Page brand' sections and any line naming another page's handle / signature."""
+    out, skip = [], False
+    try:
+        c = json.load(open(os.path.join(ROOT, "channels", cid, "channel.json"), encoding="utf-8"))
+    except Exception:
+        c = {}
+    marks = [m.lower() for m in (c.get("handle"), c.get("handle_instagram"), (c.get("handle") or "").lstrip("@"),
+                                (c.get("theme") or {}).get("signature"), (c.get("theme") or {}).get("end_line"), c.get("name")) if m]
+    for line in text.splitlines():
+        if line.startswith("## "):
+            skip = "brand" in line.lower()
+        if skip or any(m in line.lower() for m in marks):
+            continue
+        out.append(line)
+    return "\n".join(out)
+
+
 def all_lessons(own):
     """Lessons from EVERY page (owner rule 16 Nov: learning from one page applies to all).
     This page's own lessons first, then the others, each labelled with its page."""
@@ -81,6 +99,8 @@ def all_lessons(own):
     out = ["LESSONS FROM ALL OUR PAGES (apply every general lesson here too; format-specific ones only if they fit):"]
     for cid in ids:
         a = read(os.path.join(base, cid, "lessons.md"), 4000).strip()
+        if cid != own:                       # 17 Nov: a page's BRAND rules (handle, end line, signature) never travel to other pages
+            a = _strip_brand(a, cid)
         b = read(os.path.join(base, cid, "lessons-auto.md"), 2000).strip()
         if a or b:
             out.append(f"--- page '{cid}'{' (this page)' if cid == own else ''} ---")
@@ -103,6 +123,9 @@ def make(ch, topic, research_text):
     try:
         import series
         part2 = series.context(topic, ch["id"]) if str(topic).lower().startswith("part 2") else ""
+        if ch.get("serial"):
+            import serials
+            part2 = serials.context(ch, topic) or part2
     except Exception:
         part2 = ""
     playbook = read(os.path.join(ROOT, "knowledge", "playbook.md"), 6000)
@@ -119,6 +142,7 @@ def make(ch, topic, research_text):
 CHANNEL: {json.dumps({k: ch[k] for k in ("id", "language", "format", "visuals", "edit") if k in ch}, ensure_ascii=False)}
 CHANNEL RULES:
 {_rules(ch)}
+- This page is "{ch.get('name', ch['id'])}"{(' (' + ch['handle'] + ')') if ch.get('handle') else ''}. Never name, tag or mention any other page or handle.
 CHANNEL BIBLE:
 {bible}
 

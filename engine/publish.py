@@ -104,7 +104,8 @@ def post_one(cid, dry=False):
     acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     p = os.path.join(ROOT, "channels", cid, "done.json")
     done = load(p, [])
-    nxt = next((d for d in done if d.get("status") == "approved"), None)
+    # 17 Nov: English editions (-en) only go out once the page has an English account (handle_en); the English page is parked
+    nxt = next((d for d in done if d.get("status") == "approved" and (not d["job"].endswith("-en") or ch.get("handle_en"))), None)
     if not nxt:
         log("publish", cid, "nothing approved"); return
     if not acc:
