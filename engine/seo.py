@@ -32,12 +32,27 @@ Return JSON {{"ig": {{"caption": "...", "hashtags": ["#..", ...4-6]}},
 
 
 def _info(url):
+    """Title, description and tags of a Short. yt-dlp is blocked for single videos from this server ("confirm you are not
+    a bot", 17 Nov) but the public /shorts/<id> page still carries them, so read that page directly."""
+    import urllib.request
+    h = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36",
+         "Accept-Language": "en-US,en;q=0.9", "Cookie": "CONSENT=YES+1; SOCS=CAI"}
     try:
-        out = subprocess.run([research.YTDLP if os.path.exists(research.YTDLP) else "yt-dlp", "-j", "--no-warnings", "--skip-download", url],
-                             capture_output=True, text=True, timeout=120).stdout
-        return json.loads(out) if out.strip() else None
+        t = urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=40).read().decode("utf8", "ignore")
     except Exception:
         return None
+    m = re.search(r'"shortDescription":"((?:[^"\\]|\\.)*)"', t)
+    k = re.search(r'"keywords":\[(.*?)\]', t)
+    ti = re.search(r'<meta property="og:title" content="([^"]*)"', t)
+    if not (m or k or ti):
+        return None
+    try:
+        desc = json.loads('"' + m.group(1) + '"') if m else ""
+    except Exception:
+        desc = ""
+    import html as _h
+    return {"title": _h.unescape(ti.group(1)) if ti else "", "description": desc, "view_count": None,
+            "tags": [x.strip().strip('"') for x in (k.group(1).split('","') if k else [])]}
 
 
 def study(page):
@@ -49,7 +64,7 @@ def study(page):
         if not d:
             continue
         n += 1
-        titles.append({"title": d.get("title"), "views": d.get("view_count")})
+        titles.append({"title": d.get("title"), "views": x.get("views")})
         for t in d.get("tags") or []:
             tags[t.lower()] = tags.get(t.lower(), 0) + 1
         for h in re.findall(r"#\w+", (d.get("description") or "") + " " + (d.get("title") or "")):
