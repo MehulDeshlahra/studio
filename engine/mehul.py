@@ -9,7 +9,7 @@ Every day (timer studio-mehul, 22:30 IST) it does what Mehul does when he looks 
        - changes a page knob in channel.json from a fixed allow-list (backlog, posts_per_day,
          serial.parts, length_s, music mood bias, series/genre lists)                               [auto, logged]
        - sends a held video back for a rebuild with a note                                          [auto]
-       - writes a code task to knowledge/build-queue.md (tag [mehul]) for the next Kiro session     [auto]
+       - writes a code task to knowledge/build-queue.md (tag [mehul]); engine/healer.py works on it  [auto]
      It never: spends money, signs up, deletes posted content, changes keys/accounts, posts on its own,
      edits engine code (that stays with selfcheck + Kiro), or turns posting on/off.
   4. LEARNS: every action is saved in knowledge/mehul-log.json; when Mehul gives new feedback in Telegram
@@ -72,10 +72,10 @@ def _sheet(cid, jobs, out):
             d = float(sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp4]).strip())
             r = out + f".{k}.jpg"
             sh(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-vf", f"fps=12/{d:.2f},scale=120:213,tile=12x1,"
-                "drawtext=text='" + j.replace("'", "") + "':x=6:y=6:fontsize=20:fontcolor=yellow:box=1:boxcolor=black@0.7", "-frames:v", "1", "-threads", "1", r], timeout=180)
+                "drawtext=text='" + j.replace("'", "") + "':x=6:y=6:fontsize=20:fontcolor=yellow:box=1:boxcolor=black@0.7", "-frames:v", "1", "-threads", "1", r], timeout=420)
             rows.append(r)
-        except Exception as e:
-            log("mehul agent sheet fail", j, str(e)[:80])
+        except Exception as e:                            # 18 Nov: the log kept only the command (first 80 chars), never the reason
+            log("mehul agent sheet fail", j, str(e)[-200:].replace("\n", " "))
     if not rows:
         return None
     ins = sum([["-i", r] for r in rows], [])
@@ -203,7 +203,7 @@ def run():
                         if not DRY:
                             with open(bq, "a", encoding="utf-8", newline="\n") as f:
                                 f.write(f"- [ ] [mehul] {time.strftime('%d %b')} {cid}: {t}\n")
-                        did.append("task for Kiro: " + t)
+                        did.append("code task (the healer works on it): " + t)
             except Exception as e:
                 log("mehul agent action failed", cid, str(e)[:120])
         hist.append({"t": time.strftime("%Y-%m-%d %H:%M"), "page": cid, "score": r.get("score"), "verdict": r.get("verdict"), "did": did, "dry": DRY})

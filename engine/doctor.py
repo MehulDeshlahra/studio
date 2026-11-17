@@ -2,7 +2,7 @@
 Runs every 10 min (systemd timer studio-doctor). Each check finds a known break and repairs it by itself; every action
 goes to engine.log as "doctor: ..." (the dashboard shows it). Telegram is used ONLY for things the owner must do
 himself (logins, money, app settings), at most once a day per item.
-Unknown problems are written to ~/studio-out/doctor-unknown.json for the next Kiro session; never pinged.
+Unknown problems are written to ~/studio-out/doctor-unknown.json; engine/healer.py works through them (18 Nov).
   python engine/doctor.py [--dry]"""
 import glob, json, os, re, shutil, subprocess, sys, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +38,8 @@ def fix(what, cmd=None, fn=None):
         except Exception as e:
             ok = False; what += f" (FAILED: {str(e)[:160]})"
     did.append(what); log("doctor:", what)
+    if not ok:                                   # 18 Nov: a failed repair was only logged; now the healer gets it
+        unknown.append({"what": "doctor repair failed", "detail": what[:300]})
     return ok
 
 
@@ -67,12 +69,14 @@ def check_failed_units():
         tb = [l for l in last.splitlines() if re.search(r"Error|Exception|Traceback", l)]
         cause = (tb[-1] if tb else last.splitlines()[-1] if last else "")[:200]
         fix(f"cleared failed unit {u} (cause: {cause})", f"sudo systemctl reset-failed {u}")
-        if "No module named" in cause or "SyntaxError" in cause or "NameError" in cause:
-            unknown.append({"what": f"code error in {u}", "detail": cause})
+        # 18 Nov: clearing hid the cause; every failure now goes to the healer with the unit's last error lines
+        kind = "code error in" if re.search(r"No module named|SyntaxError|NameError|Traceback|Error:", last) else "unit failed:"
+        uname = re.sub(r"-\d+(?=\.service)", "-#", u)
+        unknown.append({"what": f"{kind} {uname}", "detail": (" | ".join(tb[-3:]) if tb else cause)[:300]})
 
 
 def check_timers():
-    for t in ("studio-inbox", "studio-prep", "studio-make", "studio-scout", "studio-stats", "studio-post", "studio-doctor", "studio-learn", "studio-selfcheck", "studio-radar", "studio-trends", "studio-hooks", "studio-weekly", "studio-comments", "studio-mehul", "studio-stories"):
+    for t in ("studio-inbox", "studio-prep", "studio-make", "studio-scout", "studio-stats", "studio-post", "studio-doctor", "studio-learn", "studio-selfcheck", "studio-radar", "studio-trends", "studio-hooks", "studio-weekly", "studio-comments", "studio-mehul", "studio-stories", "studio-healer", "studio-omnimap"):
         rc, _ = sh(f"systemctl is-active --quiet {t}.timer")
         if rc != 0 and os.path.exists(f"/etc/systemd/system/{t}.timer"):
             fix(f"timer {t} was stopped, started it again", f"sudo systemctl enable --now {t}.timer")
@@ -90,6 +94,27 @@ def check_services():
                 st[k] = 0
         else:
             st[f"muse-{port}"] = 0
+
+
+def check_omniroute():
+    """18 Nov: OmniRoute (free model gateway, shared with the job bot). Not answering twice in a row -> restart it.
+    A connection stuck in credits_exhausted / error after one bad answer blocks all its free models (also for the job
+    bot) -> re-test it once an hour (engine/omnimap.py heal_connections re-opens it when the test passes)."""
+    try:
+        urllib.request.urlopen(urllib.request.Request("http://127.0.0.1:20128/v1/models", headers={"Authorization": "Bearer " +
+                               open(os.path.join(HOME, ".omniroute-studio.key")).read().strip()}), timeout=30)
+        st["omni-down"] = 0
+    except Exception as e:
+        st["omni-down"] = st.get("omni-down", 0) + 1
+        if st["omni-down"] >= 2:
+            fix(f"OmniRoute not answering for 20 min ({str(e)[:60]}), restarted it", "sudo systemctl restart jb-omniroute")
+            st["omni-down"] = 0
+        return
+    if time.time() - st.get("omni-heal", 0) > 3600:
+        st["omni-heal"] = time.time()
+        import omnimap
+        for h in omnimap.heal_connections():
+            did.append("OmniRoute: " + h)
 
 
 def check_stuck_jobs():
@@ -259,8 +284,10 @@ def check_repeating_errors():
 
 
 def main():
-    for c in (check_failed_units, check_timers, check_services, check_stuck_jobs, check_disk, check_housekeeping, check_git, check_held,
-              check_budget_stall, check_owner_items, check_repeating_errors):
+    # 18 Nov: held videos moved to engine/healer.py (a ladder: known fix, rebuild after a code change, re-plan the
+    # failing scenes, verified code fix); check_held stays below for reference but no longer runs (no double rebuilds)
+    for c in (check_failed_units, check_timers, check_services, check_omniroute, check_stuck_jobs, check_disk, check_housekeeping,
+              check_git, check_budget_stall, check_owner_items, check_repeating_errors):
         try:
             c()
         except Exception as e:

@@ -61,7 +61,9 @@ def page(plan, timed, total, theme, assets):
     n = len(timed)
     for i, (s, t) in enumerate(zip(plan["scenes"], timed)):
         a = 0.0 if i == 0 else t["start"] - 0.08
-        b = (timed[i + 1]["start"] - 0.08) if i + 1 < n else total
+        # 18 Nov: the last scene ended at `total`, so a card's big/small text sat under the end card's FOLLOW + handle
+        # (layout audit content_overlap; katha 1117-1935 held 4 times). End where the end card starts, like compose_lab.
+        b = (timed[i + 1]["start"] - 0.08) if i + 1 < n else total - endcard
         d = round(b - a, 3)
         sid = f"s{i}"
         kind, img = s["type"], assets.get(i, {}).get("image")

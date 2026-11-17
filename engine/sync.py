@@ -23,7 +23,10 @@ def main():
                     shutil.copy(os.path.join(jd, f), os.path.join(dst, f))
     g = lambda *a: subprocess.run(["git", "-C", ROOT] + list(a), capture_output=True, text=True)
     g("add", "channels")
-    g("add", "knowledge/results.md")
+    # 18 Nov: the server's own state + what it learned travel with the repo (a new session reads these, not old notes)
+    for f in ("results.md", "STATE.md", "fixes.json", "build-queue.md", "mehul.md", "mehul-log.json"):
+        if os.path.exists(os.path.join(ROOT, "knowledge", f)):
+            g("add", "knowledge/" + f)
     if g("diff", "--cached", "--quiet").returncode:
         g("commit", "-qm", "engine: jobs + lessons")
         g("pull", "-q", "--rebase", "--autostash")

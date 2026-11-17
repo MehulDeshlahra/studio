@@ -25,9 +25,14 @@ Persistent=true
 [Install]
 WantedBy=timers.target
 EOF
+mkdir -p /etc/systemd/system/$1.service.d          # 18 Nov: same memory fence as every Studio unit (server froze twice)
+[ -f /etc/systemd/system/$1.service.d/memory.conf ] || printf '[Service]\nMemoryHigh=2600M\nMemoryMax=3400M\nIOWeight=20\n' > /etc/systemd/system/$1.service.d/memory.conf
 systemctl daemon-reload; systemctl enable --now $1.timer
 }
 mk studio-trends   "Studio trending topics scout (daily)"     "*-*-* 06:00:00"      trends.py    1800
+# 18 Nov: self-healing (engine/healer.py) every 15 min + daily OmniRoute model map (engine/omnimap.py)
+[ -f /home/ubuntu/studio/engine/healer.py ]  && mk studio-healer  "Studio healer (fixes what the doctor cannot)" "*-*-* *:07,22,37,52:00" healer.py 3000
+[ -f /home/ubuntu/studio/engine/omnimap.py ] && mk studio-omnimap "Studio OmniRoute model map (daily)" "*-*-* 04:40:00" omnimap.py 1800
 mk studio-hooks    "Studio hook study of top Shorts (weekly)" "Mon *-*-* 05:30:00"  hookstudy.py 5400
 [ -f /home/ubuntu/studio/engine/weekly.py ]   && mk studio-weekly   "Studio weekly report (Sunday)"        "Sun *-*-* 20:00:00" weekly.py   900
 [ -f /home/ubuntu/studio/engine/comments.py ] && mk studio-comments "Studio pinned question + comment replies" "*-*-* *:25:00" comments.py 900

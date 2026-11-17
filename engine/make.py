@@ -455,6 +455,9 @@ def main():
             save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
             log("preflight: still failing after repairs, held BEFORE render (no render time spent)", ch["id"], job_id)
             return
+    if os.environ.get("STUDIO_STOP_AFTER_PREFLIGHT") == "1":     # healer check (engine/healer.py): compose + preflight, no render
+        print(json.dumps({"preflight_ok": True, "job": job_id}))
+        return
     # 6 mix
     mix = os.path.join(job, "mix.wav")
     if "mix" in redo or not os.path.exists(mix):
