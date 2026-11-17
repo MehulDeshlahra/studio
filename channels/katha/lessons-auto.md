@@ -140,3 +140,10 @@
 
 ## review 1117-0145-en
 - visual: Visual inconsistency: Yamraj is depicted as blue-skinned in scenes 5 and 12, but appears with natural/golden skin in scene 10.
+
+## 1117-0145-en Shravan Kumar ki katha (Valmiki Ramayana)
+- scene 6: The image depicts the father/ritual, but the text on the image says 'HIS FATHER', which doesn't align with the scene description 'Nachiketa asked for peace for his father, and the secrets of sacred fire'. It looks like a label error.
+- scene 11: The text 'KNOWLEDGE IS ETERNAL' and 'KATHA UPANISHAD' is present, but the scene description implies a summary card. While not broken, the composition is slightly generic compared to the rest of the narrative flow.
+
+## review 1117-0145-en
+- visual: Severe character design inconsistency: Yamraj appears blue-skinned with multi-arms in scenes 5 and 12, but suddenly appears human-skinned with a different look in scene 10.

@@ -116,10 +116,10 @@
    "type": "stat",
    "nodes": [
     "Mic",
-    "2s",
+    "2s RAM",
     "Erase"
    ],
-   "label": "Auto Clear",
+   "label": "Storage",
    "keywords": [
     "turant delete",
     "bina internet"
