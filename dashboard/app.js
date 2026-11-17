@@ -206,8 +206,11 @@ const V = {
      <div class="card" style="margin-top:12px">${L.map((a) => `<div class="row" style="align-items:flex-start;padding:8px 16px"><span class="mono faint" style="width:44px;padding-top:1px">${a.t.slice(11, 16)}</span><i class="dot" style="--c:${LV[a.lvl]};margin-top:6px"></i>${a.cid ? `<span class="sq" style="--c:${ch(a.cid).color};margin-top:5px" title="${esc(ch(a.cid).name)}"></span>` : `<span style="width:9px"></span>`}<span class="grow" style="word-break:break-word">${esc(a.msg)}</span></div>`).join("") || `<div class="empty">No lines match.</div>`}</div>`;
   },
   brain() {
+    setTimeout(loadLearned, 0);
     return `<div class="h1">Brain</div><div class="lead">What the engine has learned. Every page reads the shared lessons and every other page's lessons before it writes a script. Drag nodes; hover for the text.</div>
-     <div class="card" style="margin-top:16px;overflow:hidden"><canvas id="brainc"></canvas><div class="leg"><span><i class="dot" style="--c:var(--ink)"></i>Shared brain</span>${S.channels.slice(0, 3).map((c) => `<span><span class="sq" style="--c:${c.color}"></span>${esc(c.name)}</span>`).join("")}<span><i class="dot" style="--c:var(--blue)"></i>Shared lesson</span><span><i class="dot" style="--c:var(--red)"></i>Mistake the reviewer caught</span><span><i class="dot" style="--c:var(--green)"></i>Video</span></div></div>`;
+     <div class="card" style="margin-top:16px;overflow:hidden"><canvas id="brainc"></canvas><div class="leg"><span><i class="dot" style="--c:var(--ink)"></i>Shared brain</span>${S.channels.slice(0, 3).map((c) => `<span><span class="sq" style="--c:${c.color}"></span>${esc(c.name)}</span>`).join("")}<span><i class="dot" style="--c:var(--blue)"></i>Shared lesson</span><span><i class="dot" style="--c:var(--red)"></i>Mistake the reviewer caught</span><span><i class="dot" style="--c:var(--green)"></i>Video</span></div></div>
+     <div class="sec"><h3>Learning</h3><span class="mut">GitHub links and files you send in Studio360, plus a weekly search of GitHub. Studio reads them, keeps what helps, and scores every item by results.</span></div>
+     <div id="learned" class="card"><div class="empty">Loading…</div></div>`;
   },
   settings() {
     const st = S.settings;
@@ -311,6 +314,20 @@ async function startBrain() {
   cv.onpointerup = () => { if (drag && drag !== core) drag.fx = drag.fy = null; drag = null; }; cv.onpointerleave = () => { tip.style.display = "none"; hov = null; };
 }
 
+async function loadLearned() {
+  const el = $("#learned"); if (!el) return;
+  const d = await (await fetch("/api/learned")).json(), s = d.stats || {};
+  el.innerHTML = `<div class="strip" style="margin:0;border:0;box-shadow:none"><div><div class="lbl">In the brain</div><div class="val">${s.active ?? 0}</div><div class="dl">${s.items ?? 0} stored · no size limit</div></div>
+   <div><div class="lbl">To build</div><div class="val">${d.build_open}</div><div class="dl">${d.build_done} built</div></div>
+   <div><div class="lbl">Retired</div><div class="val">${s.retired ?? 0}</div><div class="dl">kept losing in reviews</div></div>
+   <div><div class="lbl">Sources read</div><div class="val">${d.learned.length}</div><div class="dl">repos and files</div></div>
+   <div><div class="lbl">Areas</div><div class="dl" style="margin-top:8px">${Object.entries(s.areas || {}).map(([k, v]) => `${esc(k)} ${v}`).join(" · ") || "—"}</div></div></div>
+   ${d.learned.map((x) => `<div class="row" style="align-items:flex-start"><i class="dot" style="--c:${x.verdict === "useful" ? "var(--green)" : x.verdict === "some" ? "var(--blue)" : "var(--gray)"};margin-top:6px"></i>
+     <div class="grow"><div class="t" style="white-space:normal">${x.url.startsWith("http") ? `<a href="${esc(x.url)}" target="_blank">${esc(x.name)}</a>` : esc(x.name)} <span class="faint" style="font-weight:400">· ${esc(x.t)}</span></div>
+     <div class="s" style="white-space:normal">${esc(x.summary || x.skip || "")}</div>
+     ${x.items && x.items.length ? `<div class="chips" style="margin-top:6px">${x.items.map((i) => `<span class="badge" style="--c:${i.kind === "build" ? "var(--violet)" : "var(--teal)"}">${esc(i.title)}</span>`).join("")}</div>` : ""}</div>
+     <span class="mut num" style="white-space:nowrap">+${x.knowledge}${x.build ? ` · ${x.build} build` : ""}</span></div>`).join("") || `<div class="empty">Nothing learned yet. Send a GitHub link or a PDF in Studio360.</div>`}`;
+}
 /* ---------- actions ---------- */
 async function decide(cid, job, action) { try { await post("/api/decide", { cid, job, action }); toast(action === "approve" ? "Approved" : "Rejected"); if (drawerKey) closeDrawer(); load(); } catch (e) { toast("Failed: " + e.message); } }
 function feedback(cid, job) {

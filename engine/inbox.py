@@ -4,7 +4,7 @@
   anything else                  -> feedback: saved as an owner lesson for that channel (read by every next plan)
                                     and the video is marked "fix"
 Commands: "/make <channel> [topic]" makes a video now; "/status" lists backlogs; "/lesson <channel> <text>" adds a rule."""
-import json, os, subprocess, sys, time, urllib.request
+import re, time, json, os, subprocess, sys, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, PY, log, load, save, telegram
 
@@ -53,6 +53,21 @@ def main():
         if str(m.get("chat", {}).get("id")) != str(cfg["chat"]):
             continue
         text = (m.get("text") or m.get("caption") or "").strip()
+        rep0 = m.get("reply_to_message", {}).get("message_id")
+        doc = m.get("document") or (m.get("photo") or [None])[-1]
+        links = re.findall(r"https?://(?:www\.)?github\.com/[\w.-]+/[\w.-]+", text)
+        if (links or doc) and not (rep0 and str(rep0) in tgmap):
+            q = load(os.path.join(OUT, "learn-queue.json"), []) or []
+            for u in dict.fromkeys(links):
+                q.append({"kind": "github", "url": u, "from": "owner"})
+            if doc:
+                q.append({"kind": "file", "file_id": doc["file_id"], "name": doc.get("file_name") or f"photo-{m.get('message_id')}.jpg", "from": "owner"})
+            save(os.path.join(OUT, "learn-queue.json"), q)
+            subprocess.Popen(["sudo", "systemd-run", f"--unit=studio-learn-{int(time.time())}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "Nice=15",
+                              f"--working-directory={ROOT}", "-E", f"HOME={os.path.expanduser('~')}", PY, os.path.join(ROOT, "engine", "learn.py")],
+                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            telegram("📥 Got it, reading it now. I'll post what Studio learned.")
+            continue
         if not text:
             continue
         low = text.lower()

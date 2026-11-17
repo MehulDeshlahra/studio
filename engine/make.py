@@ -364,6 +364,13 @@ def main():
     import thumb; thumb.make(ch["id"], job_id)
     import review
     rv = review.review(ch["id"], job_id)
+    if not meta.get("brain_judged"):
+        try:
+            import brain
+            brain.judge(p.get("brain_ids") or [], bool(rv.get("ok")))
+            meta["brain_judged"] = True; save(os.path.join(job, "meta.json"), meta)
+        except Exception as e:
+            log("brain judge failed", str(e)[:120])
     voice_fault = any(("instructions" in x or "does not start" in x or "starts late" in x or "of the script" in x)
                       for x in rv["problems"])
     if not rv["ok"] and voice_fault and meta.get("voice_retry", 0) < 1:

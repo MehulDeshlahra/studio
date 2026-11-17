@@ -76,3 +76,9 @@
 - Telegram ONLY for owner-only items (Meta login, Gemini money/cap, disk still full), once a day each.
 - Unknown repeated errors -> ~/studio-out/doctor-unknown.json: READ IT at the start of every session and fix them.
 
+
+## Self-learning brain (17 Nov)
+- engine/brain.py: unlimited store knowledge/brain.jsonl; each video gets the 14 most relevant items (free Gemini embeddings, 256 dims, cache ~/studio-out/brain-emb.json); items score wins/losses from first reviews; retired when they keep losing.
+- engine/learn.py: GitHub links / PDFs / photos / text files posted in Studio360 -> read via GitHub API (never cloned or run) -> knowledge into the brain, code features into knowledge/build-queue.md. Weekly explore (studio-learn timer, Sun 11:00) searches GitHub for new repos.
+- Kiro sessions: READ knowledge/build-queue.md and ~/studio-out/doctor-unknown.json first; build/fix the best items.
+

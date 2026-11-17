@@ -97,7 +97,13 @@ def make(ch, topic, research_text):
     playbook = read(os.path.join(ROOT, "knowledge", "playbook.md"), 6000)
     results = (read(os.path.join(ROOT, "channels", ch["id"], "results.md"), 2500) + "\n" +
                read(os.path.join(ROOT, "knowledge", "results.md"), 2500)).strip()
+    try:
+        import brain
+        bblock, bids = brain.prompt_block(f"{topic}. {ch.get('format', '')} {ch.get('name', '')}", 14)
+    except Exception as e:
+        bblock, bids = "", []; log("brain lookup failed", str(e)[:120])
     p = f"""You plan one vertical short video (Instagram Reel / YouTube Short) for the channel below. Topic: "{topic}".
+{bblock}
 
 CHANNEL: {json.dumps({k: ch[k] for k in ("id", "language", "format", "visuals", "edit") if k in ch}, ensure_ascii=False)}
 CHANNEL RULES:
@@ -173,7 +179,10 @@ PLAN:
             log("plan v2 (reviewed)", len(plan["scenes"]), "scenes")
     except Exception as e:
         log("plan review failed, keeping v1:", str(e)[:120])
-    return clean(plan)
+    out = clean(plan)
+    if isinstance(out, dict):
+        out["brain_ids"] = bids                    # which brain items this video used (scored after its review)
+    return out
 
 
 def clean(plan):

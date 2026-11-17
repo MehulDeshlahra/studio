@@ -624,6 +624,14 @@ class H(BaseHTTPRequestHandler):
             if u == "/api/posts":
                 c = next((x for x in state_cache()["channels"] if x["id"] == qs.get("cid")), None)
                 return self.send(200, extra.posts(c["igid"]) if c and c.get("igid") else [])
+            if u == "/api/learned":
+                sys.path.insert(0, os.path.join(ROOT, "engine"))
+                import brain
+                bq = open(os.path.join(ROOT, "knowledge", "build-queue.md"), encoding="utf-8").read() if os.path.exists(os.path.join(ROOT, "knowledge", "build-queue.md")) else ""
+                top = sorted([i for i in brain.items() if i.get("uses")], key=lambda i: -(i.get("wins", 0) / max(1, i["uses"])))[:8]
+                return self.send(200, {"stats": brain.stats(), "learned": (jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or [])[::-1][:40],
+                                       "build_open": bq.count("- [ ]"), "build_done": bq.count("- [x]"),
+                                       "top": [{"title": i["title"], "uses": i["uses"], "wins": i.get("wins", 0)} for i in top]})
             if u == "/api/ideas":
                 h = jload(os.path.join(ROOT, "channels", qs.get("cid", "x").replace("/", ""), "ideas.json"), []) or []
                 return self.send(200, h[-1] if h else {})
