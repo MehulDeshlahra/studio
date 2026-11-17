@@ -723,7 +723,7 @@ def make_now(cid, topic=""):
     if cid not in ("tech", "katha", "raaz"):
         raise ValueError("unknown channel")
     unit = f"studio-job-dash-{int(time.time())}"
-    cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "Nice=15", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}",
+    cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M", "-p", "Nice=15", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}",
            PY, os.path.join(ROOT, "engine", "make.py"), cid] + ([topic[:160]] if topic else [])
     subprocess.run(cmd, capture_output=True, timeout=20)
     return {"ok": True, "unit": unit}

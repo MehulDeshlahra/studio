@@ -207,7 +207,7 @@ def check_held():
             save(os.path.join(jd, "meta.json"), meta)
             args = f"/home/ubuntu/studio-venv/bin/python {ROOT}/engine/make.py {cid} --job {d['job']} --from {frm}" + (" --lang en" if d["job"].endswith("-en") else "")
             fix(f"rebuilding held {cid} {d['job']} from {frm}",
-                f"sudo systemd-run --unit=studio-job-doc-{int(time.time())} --uid=ubuntu -p CPUWeight=20 -p Nice=15 --working-directory={ROOT} -E HOME={HOME} {args}")
+                f"sudo systemd-run --unit=studio-job-doc-{int(time.time())} --uid=ubuntu -p CPUWeight=20 -p MemoryHigh=2600M -p MemoryMax=3400M -p Nice=15 --working-directory={ROOT} -E HOME={HOME} {args}")
             return                                                 # one rebuild per run
 
 

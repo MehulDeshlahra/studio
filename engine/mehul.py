@@ -178,7 +178,7 @@ def run():
                         row["mehul_rebuilt"] = time.strftime("%Y-%m-%d"); row.setdefault("review", []).insert(0, "owner agent: " + str(a.get("note", ""))[:200])
                         if not DRY:
                             save(os.path.join(ROOT, "channels", cid, "done.json"), done)
-                            subprocess.Popen(["sudo", "systemd-run", f"--unit=studio-job-mehul-{a['job']}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "Nice=15",
+                            subprocess.Popen(["sudo", "systemd-run", f"--unit=studio-job-mehul-{a['job']}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M", "-p", "Nice=15",
                                               "--working-directory=" + ROOT, "-E", "HOME=/home/ubuntu", sys.executable, os.path.join(ROOT, "engine", "make.py"),
                                               cid, "--job", a["job"], "--from", "plan"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                         did.append(f"rebuild {a['job']}: {str(a.get('note', ''))[:80]}")

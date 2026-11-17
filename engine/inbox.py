@@ -63,7 +63,7 @@ def main():
             if doc:
                 q.append({"kind": "file", "file_id": doc["file_id"], "name": doc.get("file_name") or f"photo-{m.get('message_id')}.jpg", "from": "owner"})
             save(os.path.join(OUT, "learn-queue.json"), q)
-            subprocess.Popen(["sudo", "systemd-run", f"--unit=studio-learn-{int(time.time())}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "Nice=15",
+            subprocess.Popen(["sudo", "systemd-run", f"--unit=studio-learn-{int(time.time())}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M", "-p", "Nice=15",
                               f"--working-directory={ROOT}", "-E", f"HOME={os.path.expanduser('~')}", PY, os.path.join(ROOT, "engine", "learn.py")],
                              stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             telegram("📥 Got it, reading it now. I'll post what Studio learned.")
