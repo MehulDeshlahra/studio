@@ -103,6 +103,23 @@ def probe_one(model, kind):
         return {"ok": False, "secs": round(time.time() - t0, 1), "why": str(e)[:120]}
 
 
+def probe_long(model):
+    """18 Nov: the coding agent sends ~30k tokens; some models that pass the tiny probe answer 400 or hang on that.
+    One real engine file (~6k tokens) + a question whose answer is in it."""
+    import llm
+    t0 = time.time()
+    try:
+        src = open(os.path.join(ROOT, "engine", "compose.py"), encoding="utf-8").read()
+        out = _post(model, src + '\n\nIn the code above, what is the value of `endcard` when a handle is set? '
+                    'Return ONLY JSON {"endcard": <number>}', timeout=180, max_tokens=1500)
+        ok = abs(float(llm.parse_json(out).get("endcard", 0)) - 1.4) < 0.01
+        return {"ok": ok, "secs": round(time.time() - t0, 1), "why": "" if ok else "wrong answer: " + out[:60]}
+    except urllib.error.HTTPError as e:
+        return {"ok": False, "secs": round(time.time() - t0, 1), "why": f"HTTP {e.code}"}
+    except Exception as e:
+        return {"ok": False, "secs": round(time.time() - t0, 1), "why": str(e)[:100]}
+
+
 def providers_status():
     """[(connection id, provider, name, status)] from OmniRoute's own provider list."""
     r = admin("GET", "/api/providers").get("body") or {}
@@ -144,7 +161,7 @@ def probe():
     old = load(PROBE, {}) or {}
     skip = {k for k, v in (old.get("paid") or {}).items() if time.time() - v < 30 * 86400}     # paid models: never call again
     gone = {k for k, v in (old.get("gone") or {}).items() if time.time() - v < 7 * 86400}      # 404: look again in a week
-    jobs = [(m, "text") for m, _ in TEXT] + [(m, "vision") for m, _ in VISION]
+    jobs = [(m, "text") for m, _ in TEXT] + [(m, "vision") for m, _ in VISION] + [(m, "long") for m in sorted(CODE)]
     jobs = [(m, k) for m, k in jobs if f"{k}:{m}" not in skip | gone]
     res, lock = {}, threading.Lock()
     by_provider = {}
@@ -153,7 +170,7 @@ def probe():
 
     def worker(items):
         for m, k in items:
-            r = probe_one(m, k)
+            r = probe_long(m) if k == "long" else probe_one(m, k)
             with lock:
                 res[f"{k}:{m}"] = r
     ths = [threading.Thread(target=worker, args=(v,)) for v in by_provider.values()]
@@ -220,7 +237,8 @@ def main():
     set_combo("studio-text", text)
     set_combo("studio-fast", fast)
     set_combo("studio-vision", rank(data, VISION, "vision"))
-    set_combo("studio-code", rank(data, TEXT, "text", only=CODE))
+    # code: only models that read a whole engine file correctly (long probe), strongest first
+    set_combo("studio-code", rank(data, [(m, t) for m, t in TEXT if m in CODE], "long") or rank(data, TEXT, "text", only=CODE))
     return data
 
 
