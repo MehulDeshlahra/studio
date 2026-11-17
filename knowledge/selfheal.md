@@ -76,6 +76,17 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
 - Owner task "Link YouTube" was stale: all three pages answer channels.list (Kaise Tech, Puraan Ki Katha, Aage Suno);
   marked done; the doctor now checks every YouTube login once a day and tells the owner only if one stops working.
 - Weekly report: held videos / unknown errors moved out of "Needs you" (they are the healer's), healer line added.
+- Mehul agent's real failure: ffmpeg 6.1.1 (arm64) crashes ("malloc(): corrupted top size") stacking 213 px rows
+  (odd height). Rows are 214 px now; contact sheet verified (51 s). Preflight sheet uses an even height too.
+- z-image (Pollinations) drew Kartikeya as a woman in revealing clothes on a split panel: removed from the picture
+  chain; preflight + review now check sacred figures (gender / form / attributes / modesty) and split pictures.
+- Pollinations answers "not enough credits, top up" as a normal 200 reply: lib/llm.py and omnimap treat that text as a
+  failure (it could have become a caption or a plan). Checked: no such text in any plan, caption or reply so far.
+- The healer would have re-run its steps after every render (sync commits change HEAD): steps now follow the CODE
+  version (last commit touching engine/ or lib/), max 6 steps per video per day.
+- Healer checks must not change the video: a check re-voiced a good video (old timing without a voice score) -> check
+  mode never re-aligns or re-voices; the "good video" must have a real voice score.
+- Voice: OmniRoute cannot route Gemini TTS (no speech endpoint for gemini), so voice stays on Studio's own 4 keys.
 
 ## Log
 - 04:35 end-to-end test of the coding agent on a sandbox clone (injected the old end-card bug): aider found the cause
