@@ -247,6 +247,8 @@ def check_repeating_errors():
     for l in lines:
         if l[:19] < cut or not re.search(r"\b(fail|failed|error|traceback|exception)\b", l, re.I):
             continue
+        if re.search(r"gemini[\w -]* fail.*(429|503|Too Many Requests|Service Unavailable|timed out)|vision fail.*(429|503)", l):
+            continue                      # free-tier quota / overload: every caller has a fallback model (17 Nov), not a fault
         if re.search(r"muse (image|video) retry|doctor:|review .* HOLD|qc PROBLEMS", l):
             continue
         k = re.sub(r"\d+", "#", l[20:])[:90]
