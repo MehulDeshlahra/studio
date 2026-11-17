@@ -222,7 +222,8 @@ def job_state(cid, job, active=None):
     qc = jload(os.path.join(jd, "qc.json"), {}) or {}
     meta = jload(os.path.join(jd, "meta.json"), {}) or {}
     files = {f: os.path.exists(os.path.join(jd, f)) for f in ("cover.jpg", "review-sheet.jpg", "preview.mp4", final)}
-    mt = max([s["t"] for s in steps] + [int(os.path.getmtime(jd))])
+    fin_t = [int(os.path.getmtime(os.path.join(jd, x))) for x in (final, "review.json", "cover.jpg") if os.path.exists(os.path.join(jd, x))]   # not the folder time: cleanups touch folders
+    mt = max([s["t"] for s in steps] + fin_t) or int(os.path.getmtime(jd))
     return {"cid": cid, "job": job, "title": plan.get("title") or meta.get("topic") or job, "lang": "en" if job.endswith("-en") or plan.get("lang") == "en" else "hi",
             "steps": steps, "pct": round(pct, 3), "eta": eta, "updated": mt, "files": files, "final": final,
             "review": ({"ok": None, "problems": [], "minor": [], "score": None} if active else
