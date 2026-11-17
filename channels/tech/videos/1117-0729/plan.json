@@ -113,11 +113,11 @@
   },
   {
    "vo": "Har naye second pichhla audio turant delete! Bina internet, bina storage ke.",
-   "type": "flow",
+   "type": "stat",
    "nodes": [
     "Mic",
     "RAM",
-    "Erase"
+    "Delete"
    ],
    "label": "Storage",
    "keywords": [
@@ -125,9 +125,9 @@
     "bina internet"
    ],
    "motion": "push",
-   "title": "Zero Storage",
+   "title": "Auto Delete",
    "big": "0 KB",
-   "sub": "Auto Delete",
+   "sub": "Zero Storage",
    "value": "0 KB"
   },
   {
