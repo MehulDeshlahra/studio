@@ -32,16 +32,17 @@
   },
   {
    "vo": "Run a heavy task, and billions of electrons race through microscopic pathways.",
-   "type": "flow",
+   "type": "stat",
    "nodes": [
     "Heavy App",
     "Current",
     "Electrons"
    ],
-   "label": "POWER FLOW",
+   "label": "ELECTRONS",
    "keywords": [],
    "motion": "push",
-   "title": ""
+   "title": "Heavy Task",
+   "value": "Billions"
   },
   {
    "vo": "These electrons constantly collide with atoms, and that friction generates pure heat.",
@@ -108,13 +109,31 @@
   },
   {
    "vo": "If it gets dangerously hot, thermal throttling forces the processor to slow down.",
-   "type": "stat",
+   "type": "chart",
    "value": "Drop",
-   "sub": "Speed Throttled",
-   "label": "PROTECTION",
+   "sub": "Severe slowdown",
+   "label": "CLOCK SPEED",
    "keywords": [],
    "motion": "push",
-   "title": ""
+   "title": "CPU Throttling",
+   "rows": [
+    {
+     "label": "Normal",
+     "value": "100%"
+    },
+    {
+     "label": "Throttled",
+     "value": "40%"
+    }
+   ],
+   "points": [
+    100,
+    95,
+    80,
+    50,
+    40
+   ],
+   "end_label": "40%"
   },
   {
    "vo": "Plug in fast charging, and internal battery resistance cranks up the temperature further.",

@@ -116,18 +116,18 @@
    "type": "stat",
    "nodes": [
     "Mic",
-    "2s Buffer",
-    "Delete"
+    "2s",
+    "Erase"
    ],
-   "label": "Auto Delete",
+   "label": "Auto Clear",
    "keywords": [
     "turant delete",
     "bina internet"
    ],
    "motion": "push",
-   "title": "Audio Loop",
+   "title": "No Storage",
    "big": "0 KB",
-   "sub": "Auto Delete",
+   "sub": "Live Only",
    "value": "0 KB"
   },
   {

@@ -76,8 +76,7 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "visual: Scene 1 caption fails to advance between frames, omitting the second half of the spoken voiceover ('up like crazy during heavy gaming').",
-   "visual: Missing branded end card call-to-action despite a dedicated page handle."
+   "before render, scene 10: READ: subtitle 'Right or Wrong?' is too dark and faint to read clearly against the dark background"
   ]
  },
  {
@@ -86,7 +85,8 @@
   "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
   "status": "held",
   "review": [
-   "before render, scene 7: OVERLAP: caption text in the second still has 'delete!' overlapping directly onto 'internet'"
+   "before render, scene 7: OVERLAP: caption text overlaps and collides ('delete!' is superimposed over the sentence in still 2)",
+   "before render, scene 10: READ: subtitle text is too faint and low-contrast to read on a phone screen"
   ]
  }
 ]
