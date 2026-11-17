@@ -7,7 +7,10 @@ MODELS = ["gemini-3.8-flash-tts", "gemini-3.1-flash-tts-preview"]
 
 
 def _key():
-    return open(os.path.expanduser(os.environ.get("STUDIO_GEMINI_KEY_FILE", "~/.studio-gemini.key"))).read().strip()
+    # one key per line; a random one per call spreads the free-tier quota (and a retry lands on another key)
+    ks = [l.strip() for l in open(os.path.expanduser(os.environ.get("STUDIO_GEMINI_KEY_FILE", "~/.studio-gemini.key"))) if l.strip()]
+    import random
+    return random.choice(ks)
 
 
 def speak(script, out_wav, voice="Charon", style="", lang="hi"):
