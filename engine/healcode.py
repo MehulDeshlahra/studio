@@ -43,12 +43,39 @@ def git(*a, cwd=ROOT, timeout=120):
 
 
 # ---------------------------------------------------------------- check one video with some code (no render)
+def sig(text):
+    t = re.sub(r"#?s\d+[a-z]*", "#s", str(text).lower())
+    return re.sub(r"\d+", "#", t)[:110]
+
+
+CATS = (("EMPTY", r"empty|dark frame|no main visual"), ("OVERLAP", r"overlap|collid|covering"), ("CUT", r"cut off|clipped|cut\b"),
+        ("READ", r"faint|unreadable|too small|hard to read|\bread\b"), ("LANG", r"language"), ("DUP", r"twice|duplicate"),
+        ("FIT", r"fit|match|inconsisten|wrong|broken|garbled|watermark"))
+
+
+def keys_of(problems):
+    """(scene, category) pairs for a list of problem lines. The vision reviewer words things differently on every run, so
+    a problem is compared by WHERE (scene) and WHAT KIND (category), not by its exact text."""
+    out = set()
+    for p in problems:
+        t = str(p)
+        m = re.search(r"\b(EMPTY|OVERLAP|CUT|READ|LANG|FIT|DUP)\b", t)
+        cat = m.group(1) if m else next((c for c, rx in CATS if re.search(rx, t, re.I)), "OTHER")
+        scenes = [int(x) for x in re.findall(r"scenes?\s+(\d+)", t, re.I)] or [0]
+        out |= {(s, cat) for s in scenes}
+    return out
+
+
+def layout_set(pr):
+    return {(f.get("code"), re.sub(r"\d+$", "", f.get("selector") or "")) for f in (pr or {}).get("layout") or []}
+
+
 def check(code_dir, cid, job):
-    """Compose + preflight of an existing job with the code in code_dir, on a COPY of the job (live files untouched).
-    Returns (ok, short reason)."""
+    """Compose + ONE preflight (no repairs) of an existing job with the code in code_dir, on a COPY of the job (live files
+    untouched). Returns (ok, short reason, preflight result or None when the build crashed)."""
     src = os.path.join(OUT, cid, job)
     if not os.path.exists(os.path.join(src, "plan.json")) or not os.path.exists(os.path.join(src, "timing.json")):
-        return None, "job has no plan/timing"
+        return None, "job has no plan/timing", None
     tmp = os.path.join(OUT, ".healcheck", f"{int(time.time())}-{job}")
     dst = os.path.join(tmp, cid, job)
     os.makedirs(dst)
@@ -61,18 +88,49 @@ def check(code_dir, cid, job):
     for f in ("gemini-keys.json", "realmedia-usage.json", "music-usage.json"):    # key quota state is shared, not reset
         if os.path.exists(os.path.join(OUT, f)):
             shutil.copy2(os.path.join(OUT, f), os.path.join(tmp, f))
-    env = dict(os.environ, STUDIO_OUT=tmp, STUDIO_STOP_AFTER_PREFLIGHT="1", HOME=HOME)
+    env = dict(os.environ, STUDIO_OUT=tmp, STUDIO_STOP_AFTER_PREFLIGHT="1", STUDIO_PREFLIGHT_TRIES="1", HOME=HOME)
     args = [PY, os.path.join(code_dir, "engine", "make.py"), cid, "--job", job, "--from", "compose", "--no-send"]
     if job.endswith("-en"):
         args += ["--lang", "en"]
     rc, out = sh(args, timeout=1500, cwd=code_dir, env=env)
-    pr = load(os.path.join(dst, "preflight.json"), {}) or {}
+    pr = load(os.path.join(dst, "preflight.json"), None)
     shutil.rmtree(tmp, ignore_errors=True)
     if '"preflight_ok": true' in out:
-        return True, "preflight passed"
+        return True, "preflight passed", pr or {"ok": True, "bad": {}, "layout": []}
     if pr:
-        return False, "; ".join(f"s{int(k) + 1}: {v[0]}" for k, v in (pr.get("bad") or {}).items())[:300] or "preflight failed"
-    return False, "build crashed: " + out.strip()[-300:]
+        return False, "; ".join(f"s{int(k) + 1}: {v[0]}" for k, v in (pr.get("bad") or {}).items())[:300] or "preflight failed", pr
+    return False, "build crashed: " + out.strip()[-300:], None
+
+
+def problems_of(pr):
+    return [f"before render, scene {int(k) + 1}: {v}" for k, vs in ((pr or {}).get("bad") or {}).items() for v in vs]
+
+
+def verify_fix(wt, cid, job, problems):
+    """True/False + reason. The fix passes when (1) the ORIGINAL problems are gone (layout audit exactly; vision problems
+    by scene + kind) and (2) it adds no layout problem that the live code does not have, on this video and a good one."""
+    ok, why, pr = check(wt, cid, job)
+    if pr is None:
+        return False, f"the build crashed with the fix: {why}"
+    base = load(os.path.join(OUT, cid, job, "preflight.json"), {}) or {}
+    still = keys_of(problems) & keys_of(problems_of(pr))
+    lay_still = layout_set(base) & layout_set(pr) if any("layout audit" in str(p) for p in problems) else set()
+    if still or lay_still:
+        return False, f"the original problem is still there ({sorted(still) or sorted(lay_still)})"
+    added = layout_set(pr) - layout_set(base)
+    if added:
+        return False, f"it adds new layout problems {sorted(added)}"
+    g = good_job(cid, job)
+    if g:
+        okg, whyg, prg = check(wt, cid, g)
+        if prg is None:
+            return False, f"it breaks the good video {cid} {g}: {whyg}"
+        if layout_set(prg):
+            ok0, _, pr0 = check(ROOT, cid, g)
+            extra = layout_set(prg) - layout_set(pr0)
+            if extra:
+                return False, f"it adds layout problems on the good video {cid} {g}: {sorted(extra)}"
+    return True, "original problem gone, nothing new" + (f" (other notes on this video: {why[:120]})" if not ok else "")
 
 
 def good_job(cid, not_job):
@@ -169,24 +227,20 @@ def fix(what, problems, files, verify=None, task=False):
         verified = False
         if verify:
             cid, job = verify
-            ok, why = check(wt, cid, job)
+            ok, why = verify_fix(wt, cid, job, problems)
             if not ok:
-                return {"result": f"the fix did not make {job} pass: {why}"}
-            g = good_job(cid, job)
-            if g:
-                ok, why = check(wt, cid, g)
-                if ok is False:
-                    ok0, _ = check(ROOT, cid, g)
-                    if ok0:
-                        return {"result": f"refused: it breaks the good video {cid} {g}: {why}"}
+                return {"result": f"not merged: {why}"}
             verified = True
+            log("healer: fix checked on", cid, job, "-", why[:160])
         elif any(f in ("engine/compose.py", "engine/compose_lab.py", "engine/preflight.py", "engine/make.py") for f in changed):
             for cid in ("katha", "tech"):
                 g = good_job(cid, "")
                 if g:
-                    ok, why = check(wt, cid, g)
-                    if ok is False and check(ROOT, cid, g)[0]:
-                        return {"result": f"refused: it breaks the good video {cid} {g}: {why}"}
+                    okg, whyg, prg = check(wt, cid, g)
+                    if prg is None:
+                        return {"result": f"refused: it breaks the good video {cid} {g}: {whyg}"}
+                    if layout_set(prg) - layout_set(check(ROOT, cid, g)[2]):
+                        return {"result": f"refused: it adds layout problems on the good video {cid} {g}"}
         return merge(wt, br, what, changed, verified)
     finally:
         git("worktree", "remove", "--force", wt)
@@ -233,4 +287,4 @@ def revert(commit, why):
 if __name__ == "__main__":
     if "--check" in sys.argv:
         i = sys.argv.index("--check")
-        print(check(ROOT, sys.argv[i + 1], sys.argv[i + 2]))
+        print(check(ROOT, sys.argv[i + 1], sys.argv[i + 2])[:2])

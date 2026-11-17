@@ -420,9 +420,10 @@ def main():
     if "mix" in redo and os.environ.get("STUDIO_NO_PREFLIGHT") != "1":
         import preflight
         pr = {"ok": True}
-        for attempt in range(3):
+        tries = max(1, int(os.environ.get("STUDIO_PREFLIGHT_TRIES", "3")))   # healer checks use 1: judge the code, not repairs
+        for attempt in range(tries):
             pr = preflight.run(job, p, timed, total, lang_p)
-            if pr["ok"] or attempt == 2:
+            if pr["ok"] or attempt == tries - 1:
                 break
             if theme.get("style") == "lab":
                 if not preflight.repair(p, pr["bad"], lang_p):
