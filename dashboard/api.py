@@ -560,7 +560,8 @@ def issues(srv, fails, jl, sched, token_days, chs):
     seen = set()
     for e in errs:
         k = re.sub(r"\d+", "#", e["msg"])[:60]
-        if k in seen or "HOLD" in e["msg"] or "PROBLEMS" in e["msg"] or "retry" in e["msg"] or "held BEFORE" in e["msg"] or "doctor:" in e["msg"]:
+        if k in seen or "HOLD" in e["msg"] or "PROBLEMS" in e["msg"] or "retry" in e["msg"] or "held BEFORE" in e["msg"] or "doctor:" in e["msg"] \
+                or "gemini text fail" in e["msg"] or "vision fail" in e["msg"] or "alignment failed" in e["msg"]:      # recovered by a fallback
             continue
         seen.add(k); add("warn", "Error in the last 2 h", e["msg"][:240], "", None, "log-" + k)
         if len(seen) >= 4:

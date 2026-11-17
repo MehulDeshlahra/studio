@@ -343,7 +343,12 @@ async function setS(b) { try { S.settings = await post("/api/settings", b); rend
 async function resetFailed() { await post("/api/reset-failed", {}); toast("Cleared"); load(); }
 async function doneTask(id) { await post("/api/task", { id, done: true }); toast("Marked done"); load(); }
 async function testSrc(n) { toast("Testing…"); const r = await post("/api/test", { name: n }); toast((r.ok ? "Working: " : "Problem: ") + r.detail); loadSources(); }
-async function loadBrief(force) { if (force) { briefCache = { headline: "", lines: [] }; render(1); } try { briefCache = await (await fetch("/api/brief" + (force ? "?force=1" : ""))).json(); } catch (e) { briefCache = { error: e.message }; } render(1); }
+async function loadBrief(force) {
+  if (force) { briefCache = { headline: "", lines: [] }; render(1); }
+  try { briefCache = await (await fetch("/api/brief" + (force ? "?force=1" : ""))).json(); } catch (e) { briefCache = { error: e.message }; }
+  render(1);
+  if (briefCache.t && Date.now() / 1000 - briefCache.t > 1800) setTimeout(() => loadBrief(0), 30000);      // the server is rewriting a stale brief: pick it up
+}
 async function loadSources() { try { srcCache = await (await fetch("/api/sources")).json(); } catch (e) {} if (page() === "sources") render(1); }
 function toggleTheme() { const h = document.documentElement; h.dataset.theme = h.dataset.theme === "dark" ? "light" : "dark"; localStorage.theme = h.dataset.theme; document.querySelector('meta[name=theme-color]').content = h.dataset.theme === "dark" ? "#0a0a0a" : "#fafafa"; render(1); }
 
@@ -373,4 +378,4 @@ async function load() {
   } catch (e) { if (++fails > 1) $("#sync").innerHTML = `<i class="dot" style="--c:var(--red)"></i><span>Offline · retrying</span>`; }
 }
 addEventListener("hashchange", () => { prev = ""; scrollTo(0, 0); closeDrawer(); render(1); if (page() === "sources") loadSources(); });
-load().then(() => { loadBrief(0); loadSources(); }); setInterval(() => !document.hidden && load(), 4000); setInterval(() => !document.hidden && loadSources(), 60000);
+load().then(() => { loadBrief(0); loadSources(); }); setInterval(() => !document.hidden && loadBrief(0), 300000); setInterval(() => !document.hidden && load(), 4000); setInterval(() => !document.hidden && loadSources(), 60000);

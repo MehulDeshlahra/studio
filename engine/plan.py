@@ -9,7 +9,7 @@ GEM_TEXT = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 
 def ask(prompt, max_tokens=8000):
     """Planning text: Gemini (Studio free key) first, OmniRoute free chain as fallback."""
-    for m in GEM_TEXT:
+    for m in [x for mm in GEM_TEXT for x in (mm, mm)]:        # each model twice: malformed JSON is usually one-off
         try:
             body = {"contents": [{"parts": [{"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
                     "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": max_tokens, "temperature": 0.7}}

@@ -81,7 +81,7 @@ def pick(ch):
         c["demand_known"] = d is not None
         c["demand"], c["median_views"] = (d if d is not None else 4.0), med
         c["fresh"] = freshness(c["topic"], list(used))
-        c["score"] = round(0.45 * d + 0.35 * min(10, c["fit"]) + 0.20 * c["fresh"], 2)
+        c["score"] = round(0.45 * c["demand"] + 0.35 * min(10, c["fit"]) + 0.20 * c["fresh"], 2)   # 17 Nov: used d (None when YouTube gave no data) -> crash -> plain backlog
     cands.sort(key=lambda c: -c["score"])
     hist = load(os.path.join(ROOT, "channels", ch["id"], "ideas.json"), []) or []
     hist.append({"t": time.strftime("%Y-%m-%d %H:%M"), "picked": cands[0]["topic"], "ideas": cands})
