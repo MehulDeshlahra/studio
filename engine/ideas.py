@@ -61,6 +61,12 @@ def candidates(ch, used):
     except Exception as e:
         log("ideas: planner failed", str(e)[:150]); fresh = []
     out = [{"topic": t, "search": t, "fit": 7, "from": "backlog"} for t in backlog]
+    try:                                                     # Part 2 of a winner is due: first of all (engine/series.py)
+        import series
+        out = [{"topic": x["topic"], "search": x.get("search") or x["topic"], "fit": 10.0, "from": "series", "note": "Part 2 of " + str(x.get("of_title"))}
+               for x in series.due(ch["id"])[:1]] + out
+    except Exception as e:
+        log("ideas: series unavailable", str(e)[:100])
     try:                                                     # 17 Nov: today's trends for this page (engine/trends.py), first
         import trends
         tr = [x for x in trends.fresh(ch["id"]) if x["topic"].lower() not in used][:3]
@@ -88,11 +94,16 @@ def pick(ch):
         c["demand_known"] = d is not None
         c["demand"], c["median_views"] = (d if d is not None else 4.0), med
         c["fresh"] = freshness(c["topic"], list(used))
-        c["score"] = round(0.45 * c["demand"] + 0.35 * min(10, c["fit"]) + 0.20 * c["fresh"] + (1.0 if c.get("from") == "trend" else 0), 2)   # 17 Nov: used d (None when YouTube gave no data) -> crash -> plain backlog
+        c["score"] = round(0.45 * c["demand"] + 0.35 * min(10, c["fit"]) + 0.20 * c["fresh"] + (1.0 if c.get("from") == "trend" else 0) + (3.0 if c.get("from") == "series" else 0), 2)   # 17 Nov: used d (None when YouTube gave no data) -> crash -> plain backlog
     cands.sort(key=lambda c: -c["score"])
     hist = load(os.path.join(ROOT, "channels", ch["id"], "ideas.json"), []) or []
     hist.append({"t": time.strftime("%Y-%m-%d %H:%M"), "picked": cands[0]["topic"], "ideas": cands})
     save(os.path.join(ROOT, "channels", ch["id"], "ideas.json"), hist[-30:])
+    if cands[0].get("from") == "series":
+        try:
+            import series; series.mark_used(ch["id"], cands[0]["topic"])
+        except Exception:
+            pass
     if cands[0].get("from") == "trend":
         try:
             import trends; trends.mark_used(ch["id"], cands[0]["topic"])

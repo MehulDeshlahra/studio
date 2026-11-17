@@ -75,6 +75,10 @@ def run():
         data[page] = sorted(ideas + keep, key=lambda x: -float(x.get("fit") or 0))[:12]
         log("trends", page, len(heads), "headlines ->", len(ideas), "ideas:", "; ".join(f"{x['topic'][:50]} ({x.get('fit')})" for x in ideas[:4]))
     save(OUTF, data)
+    try:                                                    # daily too: queue Part 2 for winners (engine/series.py)
+        import series; series.scan()
+    except Exception as e:
+        log("series scan failed", str(e)[:100])
     return data
 
 

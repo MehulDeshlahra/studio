@@ -105,6 +105,7 @@ def run():
             plan = load(os.path.join(OUT, cid, row["job"], "plan.json"), {})
             vo = " ".join(x.get("vo", "") for x in plan.get("scenes", []))[:1500]
             q = ((plan.get("seo") or {}).get("comment_q") or plan.get("comment_q") or "").strip()
+            ann_sent = False
             for plat in ("ig", "fb", "yt"):
                 target = pst.get(plat)
                 if not target or (plat == "yt" and not acc.get("yt")) or (plat in ("ig", "fb") and not acc.get("page_token")):
@@ -113,6 +114,14 @@ def run():
                     if q and not s["asked"].get(plat) and time.time() - time.mktime(time.strptime(pst["at"], "%Y-%m-%d %H:%M")) > 120:
                         if _post(acc, plat, target, q):
                             s["asked"][plat] = time.strftime("%H:%M"); log("comments first comment", cid, row["job"], plat)
+                    try:                                            # "Part 2 kal" under the Part 1 post
+                        import series
+                        t2 = series.announce(cid, row["job"])
+                        if t2 and plat in ("ig", "fb", "yt") and _post(acc, plat, target, t2):
+                            ann_sent = True
+                            log("comments part-2 announcement", cid, row["job"], plat)
+                    except Exception as e:
+                        log("comments series fail", str(e)[:100])
                     cs = {"ig": _ig_comments, "fb": _fb_comments, "yt": _yt_comments}[plat](acc, target)
                     todo = [c for c in cs if not c["answered"] and c["id"] not in s["replied"] and c["text"].strip() and "http" not in c["text"].lower()
                             and c["text"].strip() != q]
@@ -131,6 +140,8 @@ def run():
                             time.sleep(4)
                 except Exception as e:
                     log("comments fail", cid, row["job"], plat, str(e)[:160])
+            if ann_sent:
+                import series; series.mark_announced(cid, row["job"])
         st["day"][today + ":" + cid] = used_today
     st["day"] = {k: v for k, v in st["day"].items() if k[:10] >= time.strftime("%Y-%m-%d", time.localtime(time.time() - 3 * 86400))}
     save(STATE, st)
