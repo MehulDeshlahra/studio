@@ -313,7 +313,8 @@ def main():
         redo.add("voice")
     vo = paced
     tp = os.path.join(job, "timing.json")
-    if "voice" in redo or not os.path.exists(tp) or load(tp, {}).get("method") != "whisper":
+    check_only = os.environ.get("STUDIO_STOP_AFTER_PREFLIGHT") == "1"    # healer check: never re-align or re-voice
+    if "voice" in redo or not os.path.exists(tp) or (load(tp, {}).get("method") != "whisper" and not check_only):
         cover = 0.0
         try:
             timed, vdur, cover = align.words_by_line(vo, [s["vo"] for s in p["scenes"]], p.get("lang") or ch.get("lang", "hi"))
@@ -333,7 +334,7 @@ def main():
         vbad.append(f"voice is {vdur:.0f} s for {nwords} words (part of the script is missing)")
     if w0 > 1.3:
         vbad.append(f"first word starts at {w0:.1f} s (something is said before the script)")
-    if vbad and meta.get("voice_gate", 0) < 2:
+    if vbad and meta.get("voice_gate", 0) < 2 and not check_only:
         meta["voice_gate"] = meta.get("voice_gate", 0) + 1; save(os.path.join(job, "meta.json"), meta)
         log("voice gate:", "; ".join(vbad), "-> new voice now, before visuals and render")
         for f_ in ("vo-raw.wav", "vo-paced.wav", "timing.json"):
