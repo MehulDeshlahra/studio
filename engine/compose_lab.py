@@ -83,9 +83,18 @@ def page(plan, timed, total, theme, assets):
                        f'data-start="{a:.3f}" data-duration="{vd:.3f}" data-media-start="0.2" data-track-index="0"></video>')
             js.append(f'tl.fromTo("#v{i}",{{scale:1.08}},{{scale:1.0,duration:{vd:.3f},ease:"none"}},{a:.3f});')
         elif kind in ("object", "clip") and img:
-            hero = f'<img id="{sid}h" class="prop" src="assets/{os.path.basename(img)}">'
-            js.append(f'tl.fromTo("#{sid}h",{{y:70,scale:0.92,opacity:0}},{{y:0,scale:1,opacity:1,duration:0.9,ease:"power4.out",immediateRender:false}},{a:.3f});')
-            js.append(f'tl.to("#{sid}h",{{y:-18,rotation:0.6,duration:{max(0.5, d - 0.9):.3f},ease:"sine.inOut"}},{a + 0.9:.3f});')
+            lg = (assets.get(i) or {}).get("logo")
+            t_img = a
+            if lg and d > 2.4:        # 17 Nov: the brand logo pops in (back.out), holds, shrinks away, THEN the photo/product arrives
+                hero = f'<img id="{sid}L" class="prop" src="assets/{os.path.basename(lg)}">'
+                js.append(f'tl.fromTo("#{sid}L",{{scale:0.35,opacity:0,rotation:-4}},{{scale:1,opacity:1,rotation:0,duration:0.45,ease:"back.out(2.4)",immediateRender:false}},{a + 0.05:.3f});')
+                js.append(f'tl.to("#{sid}L",{{scale:0.8,opacity:0,y:-60,duration:0.35,ease:"power2.in"}},{a + 1.15:.3f});')
+                js.append(f'tl.set("#{sid}L",{{opacity:0}},{a:.3f});')
+                cues.append({"t": round(a + 0.08, 3), "file": "sfx/impact.mp3", "gain_db": -22, "align": "onset"})
+                t_img = a + 1.3
+            hero += f'<img id="{sid}h" class="prop" src="assets/{os.path.basename(img)}">'
+            js.append(f'tl.fromTo("#{sid}h",{{y:70,scale:0.92,opacity:0}},{{y:0,scale:1,opacity:1,duration:0.9,ease:"power4.out",immediateRender:false}},{t_img:.3f});')
+            js.append(f'tl.to("#{sid}h",{{y:-18,rotation:0.6,duration:{max(0.5, d - 0.9 - (t_img - a)):.3f},ease:"sine.inOut"}},{t_img + 0.9:.3f});')
             js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
         elif kind == "stat":
             v = str(s.get("value", ""))

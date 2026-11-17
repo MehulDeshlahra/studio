@@ -89,9 +89,24 @@ def _stage_assets(ch, p, job):
         real = s.get("real")
         if isinstance(real, dict) and real.get("q") and s.get("type") in ("image", "card", "object"):
             import realmedia
-            r = realmedia.fetch(real, os.path.join(adir, f"s{i}r.jpg"), lab=theme.get("style") == "lab")
-            if r:
-                a["image"] = r
+            if str(real.get("kind", "")).lower() == "clip":      # a real video clip (Wikimedia Commons)
+                vc = realmedia.video_clip(real["q"], os.path.join(adir, f"s{i}rv.mp4"), real.get("subject"))
+                if vc:
+                    a["video"] = vc["path"]; a["image"] = vc["frame"] if os.path.exists(vc["frame"]) else None
+                    if not a["image"]:
+                        a.pop("image")
+                    else:
+                        keep = os.path.join(adir, f"s{i}rv.jpg"); shutil.copy(vc["frame"], keep); a["image"] = keep
+                    s["type"] = "clip"
+                    p.setdefault("credits", []).append(vc["credit"])
+            else:
+                r = realmedia.fetch(real, os.path.join(adir, f"s{i}r.jpg"), lab=theme.get("style") == "lab")
+                if r:
+                    a["image"] = r
+                if r and real.get("logo") and theme.get("style") == "lab":      # logo pops in first, then the photo
+                    lg = realmedia.fetch({"q": real["logo"], "kind": "logo", "subject": real["logo"]}, os.path.join(adir, f"s{i}rl.jpg"), lab=True)
+                    if lg:
+                        a["logo"] = lg
         if not a and s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
             prompt = s["prompt"] + (". " + look if look and look.lower()[:20] not in s["prompt"].lower() else "") + \
                 ". Vertical 9:16, no text, no letters, no logos, no watermark."
@@ -305,6 +320,10 @@ def main():
                 p["caption"] = (p.get("caption") or "").rstrip() + "\n\n" + musiclib.CREDIT; save(os.path.join(job, "plan.json"), p)
         except Exception as e:
             log("music library pick failed:", str(e)[:120])
+        for cr in p.get("credits", []):                 # CC BY clips: the credit line goes into the caption
+            if cr not in (p.get("caption") or ""):
+                p["caption"] = (p.get("caption") or "").rstrip() + "\nVideo: " + cr
+        save(os.path.join(job, "plan.json"), p)
         save(os.path.join(job, "cues.json"), {"lufs": -14, "music": {"file": mtrack["file"] if mtrack else theme.get("music", "music/digital-clouds.mp3"),
               "offset": mtrack.get("offset", 2.0) if mtrack else theme.get("music_offset", 8.0), "gain_db": -22, "fade_out": 1.5}, "sfx": cues})
         redo.add("mix")
