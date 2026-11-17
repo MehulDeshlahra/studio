@@ -98,6 +98,7 @@ def make(ch, topic, research_text):
     lessons = read(os.path.join(ROOT, "knowledge", "lessons.md"))
     ch_lessons = all_lessons(ch["id"])
     bible = read(os.path.join(ROOT, "channels", ch["id"], "bible.md"))
+    hooks = read(os.path.join(ROOT, "channels", ch["id"], "hooks.md"), 3500)   # engine/hookstudy.py (weekly)
     playbook = read(os.path.join(ROOT, "knowledge", "playbook.md"), 6000)
     results = (read(os.path.join(ROOT, "channels", ch["id"], "results.md"), 2500) + "\n" +
                read(os.path.join(ROOT, "knowledge", "results.md"), 2500)).strip()
@@ -115,6 +116,7 @@ CHANNEL RULES:
 CHANNEL BIBLE:
 {bible}
 
+{("FIRST 2 SECONDS (what the most-viewed faceless Shorts in this niche do; scene 1 must follow these rules):" + chr(10) + hooks) if hooks else ""}
 LESSONS (hard rules learned from earlier videos and the owner; obey all):
 {lessons}
 {ch_lessons}
