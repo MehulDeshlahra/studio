@@ -1,35 +1,33 @@
-# What the top faceless katha Shorts do in the first 2 seconds (2026-11-17, 4 videos watched)
+# What the top faceless katha Shorts do in the first 2 seconds (2026-11-18, 4 videos watched)
 
-Top katha Shorts open with a culturally resonant subject or question as the very first word, paired with a visually arresting frame-0 image and immediate cinematic audio. They cut at or before 2 seconds to reset attention, never wasting frames on greetings or silence.
+Top performers open with immediate voice delivering a specific, high-stakes hook word-for-word on screen, over a static cinematic or creator shot with zero cuts for 2.5+ seconds. The first sentence is deliberately incomplete to compel the viewer past the 3-second mark.
 
 ## Rules for our first 2 seconds (obey)
-- First spoken word is the subject noun/name or question word (e.g., 'Kantara', 'Thamba', 'kya') — zero greetings or filler.
-- On-screen text ≤ 4 words, appears at frame 0, high-contrast placement (bottom-third or center).
-- First hard cut at or before 2.0 s (3 of 4 winners cut at 1–2 s; the 7 s outlier is the lowest-view cold open).
-- Audio (voiceover + music/SFX) starts at frame 0 — no silent lead-in.
-- Frame 0 visual is a close-up or cinematic wide of a culturally specific, high-stakes, or mystical subject (ritual makeup, temple conflict, boiling pot, glowing silhouette).
-- Motion begins at frame 0: subtle zoom-in, slow descent, or angle change — never static hold.
-- Lighting is warm cinematic or dramatic low-key (candles, fire, golden hour) — never flat overhead/phone look.
-- Voiceover tone is deep cinematic, rhythmic/percussive, or aggressive/shouting — never casual conversational.
-- If text overlay is used, it mirrors or sharpens the spoken hook (e.g., 'ukaltya panyat jaalte' = 'boiling in hot water'), not a full sentence.
+- First spoken word is the hook keyword (date, name, or claim) — zero greetings or filler.
+- On-screen text ≤ 6 words, high-contrast, appears at frame 0 and mirrors the first spoken phrase.
+- Camera static or ultra-slow zoom only; first hard cut at ≥ 2.5 s.
+- Voice starts at frame 0 with background music bed already audible.
+- Visual is either: (a) cinematic establishing shot, (b) creator medium shot in warm studio, or (c) split-screen illustration + creator.
+- Hook type must be one of: myth-bust, shock-fact/urgency, interactive-challenge, mystery-tease.
+- First sentence ends on a cliffhanger (incomplete thought) to force retention past 3 s.
+- No logos, watermarks, channel names, or CTAs in first 2 s.
+- Aspect ratio 9:16; text placed in title-safe zone (center 80%).
 
 ## Never
-- Greetings or intros ('namaste', 'swagat hai', 'aaj hum baat karenge')
-- Silent first frames or delayed audio start
-- Flat, bright, phone-camera lighting
-- First cut after 3 s (except proven long-hold narrative)
-- Conversational/casual voiceover tone
-- On-screen text > 4 words or appearing after frame 0
+- Greetings or self-intro ("namaste", "main hoon", "swagat hai").
+- Fast cuts, pans, or motion in the first 2 s.
+- Silent or black lead-in frames.
+- Generic retention bait ("watch till end", "comment below").
+- On-screen text longer than 6 words or appearing after frame 0.
 
 ## Hook types among the winners
-- cold_open_story: 3 of 4 (e.g. "Kantara movie mein jo teen devta")
-- question_philosophical: 1 of 4 (e.g. "kya aatma ka punarjanm hota hai")
-- subject_first_opening: 3 of 4 (e.g. "Thamba / aaj ya tukaramala")
-- immediate_voiceover: 4 of 4 (e.g. "deep cinematic VO at frame 0")
-- frame0_visual_hook: 4 of 4 (e.g. "Bhoota Kola close-up / temple standoff / boiling pot / glowing silhouette")
+- myth-bust: 1 of 4 (e.g. "Pata hai aajkal ek")
+- shock-fact/urgency: 1 of 4 (e.g. "Is baar 31 october")
+- interactive-challenge: 1 of 4 (e.g. "main aapko aadhi aadhi line bol raha hu")
+- mystery-tease: 1 of 4 (e.g. "Do hazaar gyarah")
 
 ## Videos studied
-- 18,000,000 views: Kantara Movie सच! | guliga and panjurli story#Kantara #ytshorts #shorts (https://www.youtube.com/shorts/e5SKAhUBUoM) first words "Kantara movie mein jo teen devta"
-- 2,300,000 views: विठ्ठल मंदिरात मासे... आणि स्वतः विठ्ठल बाहेर आले! 😢🙏 #shorts  #vitthal  #santparampara (https://www.youtube.com/shorts/07nGxudfCI4) first words "Thamba"
-- 2,000,000 views: तुकोबांवर उकळतं पाणी ओतलं…आणि स्वतः विठ्ठलाने चटके झेलले!😢| Tukaram Maharaj (https://www.youtube.com/shorts/ueHECeQT-90) first words "aaj ya tukaramala"
-- 1,100,000 views: किस आत्मा को पुनर्जन्म मिलता है? | Which Soul Gets Rebirth | Garud Puran (https://www.youtube.com/shorts/5BwnF42ejMI) first words "kya aatma ka punarjanm hota hai"
+- 366,000 views: Vault 6 of Padmanabhaswamy Temple | RAAAZ #shorts (https://www.youtube.com/shorts/fk4jCvapYUY) first words "Do hazaar gyarah"
+- 1,300,000 views: Ravan's Darkest Secrets Revealed in Ramayana! 🤯🚩 (https://www.youtube.com/shorts/hMBDK88Lxos) first words "Pata hai aajkal ek"
+- 1,200,000 views: Jupiter Transit 2026: A Rare Phenomenon After 70 Years! | Akshat Gupta (https://www.youtube.com/shorts/if82g4od_Mc) first words "Is baar 31 october"
+- 1,000,000 views: My name begins with Mother ❤️ | Akshat Gupta #akshatgupta #akshatguptashorts #motherlove #shorts ... (https://www.youtube.com/shorts/jO_y3gNHs6c) first words "main aapko aadhi aadhi line bol raha hu"

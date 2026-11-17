@@ -18,16 +18,17 @@
   {
    "vo": "Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta, toh kya hota?",
    "type": "image",
-   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a glowing celestial river flowing through the cosmos",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a massive celestial waterfall crashing down from the clouds onto the earth",
    "motion": "push",
-   "title": "SWARG SE DHARTI",
+   "title": "VISHAL SAILAB",
    "keywords": [
     "Swarg",
     "Ganga",
     "zameen"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Puraanon ke anusar, yeh katha hai Raja Bhagirath ki.",
@@ -124,15 +125,16 @@
   {
    "vo": "Tab Bhagirath ne Lord Shiva se prarthna ki.",
    "type": "image",
-   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a lone sage meditating intensely in the Himalayas",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a devoted sage praying with folded hands before a serene mountain shrine",
    "motion": "pan",
-   "title": "BHAGIRATH TAPASYA",
+   "title": "PRARTHNA",
    "keywords": [
     "Lord Shiva",
     "prarthna"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Shiva ji ne apni jataon mein Ganga ke veg ko aasaani se rok liya.",
@@ -167,7 +169,7 @@
    "motion": "punch",
    "title": "",
    "big": "SROAT",
-   "small": "Purana",
+   "small": "Bhagavata",
    "keywords": [
     "Bhagavata Purana"
    ],

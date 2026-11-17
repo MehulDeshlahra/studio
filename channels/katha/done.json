@@ -79,7 +79,8 @@
   "title": "Ganga swarg se zameen par kaise aayin?",
   "status": "held",
   "review": [
-   "before render, scene 1: FIT: Caption says AGAR SWARG SE, voice says Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta",
+   "before render, scene 1: FIT: The images labeled as scene 1 actually show scene 8 content ('AGAR SWARG SE / VISHAL SAILAB'), mismatching the voiceover about swarg se paani ka sailab.",
+   "before render, scene 8: FIT: The images labeled as scene 8 actually show scene 1 content ('AGAR GANGA SEEDHE...'), mismatching the voiceover about dharti patal mein chali jaati.",
    "before render, scene 12: OVERLAP/CUT (layout audit): content_overlap on #s11b"
   ]
  }
