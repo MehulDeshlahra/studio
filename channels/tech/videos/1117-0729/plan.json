@@ -113,13 +113,13 @@
   },
   {
    "vo": "Har naye second pichhla audio turant delete! Bina internet, bina storage ke.",
-   "type": "flow",
+   "type": "stat",
    "nodes": [
     "Mic Input",
     "2s Buffer",
     "Auto Delete"
    ],
-   "label": "Auto Erase",
+   "label": "Stored Data",
    "keywords": [
     "turant delete",
     "bina internet"
@@ -127,7 +127,8 @@
    "motion": "push",
    "title": "Local Buffer",
    "big": "0 KB",
-   "sub": "No Storage"
+   "sub": "Auto Erase",
+   "value": "0 KB"
   },
   {
    "vo": "Lekin jaise hi 'Hey Google' ki sound frequency exact match hoti hai...",

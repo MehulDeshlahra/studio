@@ -99,3 +99,13 @@
 - spoken instructions heard at the start: Say in English, a warm Hindi storyteller with modern pace. Respectful, clear pronunciation of Sanskrit names. Emotional 
 - first word starts late (8.9 s): something is spoken before the script
 - visual: Scene 6 is missing the required top headline 'DIVYA YAKSHA'.
+
+## 1117-0655 Yaksha ke prashn (Mahabharata, Vana Parva)
+- scene 6: The text in the image says 'DIVYA BAGULA', but the script description says 'Yaksha'. While a Yaksha can take the form of a crane, the label might be confusing to the viewer if they expect a Yaksha figure.
+- scene 9: The text in the image says 'MAN KI GATI' and 'HAWA SE BHI TEZ', which does not align with the script's specific dialogue 'Manushya ka man'.
+- scene 12: The text in the image says 'NE SABHI BHAIYON', which is a fragmented sentence and doesn't fully capture the context of the scene as well as the script description does.
+
+## review 1117-0655
+- spoken instructions heard at the start: Say in English, a warm Hindi storyteller with modern pace. Respectful, clear pronunciation of Sanskrit names. Emotional 
+- first word starts late (8.9 s): something is spoken before the script
+- visual: Scene 13 visual lacks a subject, displaying only an empty background arch.

@@ -68,7 +68,7 @@
   "topic": "Phone garam kyun hota hai",
   "title": "Phone Garam Kyun Hota Hai?",
   "qc_ok": true,
-  "status": "made"
+  "status": "approved"
  },
  {
   "job": "v2-01-en",
@@ -87,7 +87,7 @@
   "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
   "status": "held",
   "review": [
-   "before render, scene 7: OVERLAP: the bottom flow node 'Auto Delete' overlaps directly with the caption text"
+   "before render, scene 7: OVERLAP: caption text 'delete!' collides with and overlaps 'internet'"
   ]
  }
 ]

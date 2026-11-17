@@ -13,9 +13,9 @@
   "score": 8,
   "ok": true,
   "problems": [
-   "scene 6: The image shows 'DIVYA BAGULA' as the label, but the script calls for 'DIVYA YAKSHA'. While the visual is a crane (bagula), the text label is inconsistent with the script's intended title.",
-   "scene 9: The image shows 'MAN KI GATI' and 'HAWA SE BHI TEZ' as the card text, but the script expects the answer 'Manushya ka man' and the title 'SAWAL AUR JAWAB' (which appears to have been moved to scene 8). The sequence of text on the cards feels slightly jumbled compared to the script flow.",
-   "scene 10: The image shows 'DUNIYA KA SABSE' as the caption, but the card says 'MAHA PRASHNA', which matches the script. However, the visual is a crane, not Yudhishthir asking/answering, which makes the narrative flow slightly confusing compared to the script's description of Yudhishthir's actions."
+   "scene 6: The text in the image says 'DIVYA BAGULA', but the script description says 'Yaksha'. While a Yaksha can take the form of a crane, the label might be confusing to the viewer if they expect a Yaksha figure.",
+   "scene 9: The text in the image says 'MAN KI GATI' and 'HAWA SE BHI TEZ', which does not align with the script's specific dialogue 'Manushya ka man'.",
+   "scene 12: The text in the image says 'NE SABHI BHAIYON', which is a fragmented sentence and doesn't fully capture the context of the scene as well as the script description does."
   ]
  },
  "voice": {
