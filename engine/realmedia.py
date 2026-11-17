@@ -6,7 +6,7 @@ look at them and pick the one that really shows the subject, then lays it out fo
   classic look  -> 1080x1920 frame: blurred copy of the picture behind, the real picture sharp in front
   lab look      -> 900:760 canvas on black (the lab compositor blends it with 'lighten'); logos sit on a light card
 Returns the image path, or None (the caller then makes an AI image as before)."""
-import base64, html, json, os, re, shutil, subprocess, sys, time, urllib.parse, urllib.request
+import base64, html, json, os, re, shutil, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import log, sh
@@ -17,9 +17,24 @@ MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
 WATERMARKED = re.compile(r"alamy|shutterstock|dreamstime|istockphoto|gettyimages|depositphotos|123rf|bigstock|adobestock|stock\.adobe|canstock|agefotostock|pond5", re.I)
 
 
+WM_UA = {"User-Agent": "StudioBot/1.0 (https://kaise.tech; mehuldeshlahra12@gmail.com) python-urllib", "Accept-Language": "en"}
+
+
 def _get(url, timeout=20, maxb=12_000_000):
-    r = urllib.request.urlopen(urllib.request.Request(url, headers=H), timeout=timeout)
-    return r.read(maxb), (r.headers.get("content-type") or "").lower()
+    """Wikimedia asks bots for a descriptive User-Agent with a contact, and answers 429 when we are fast: wait and retry."""
+    hdr = WM_UA if "wikimedia.org" in url or "wikipedia.org" in url else H
+    for attempt in range(4):
+        try:
+            r = urllib.request.urlopen(urllib.request.Request(url, headers=hdr), timeout=timeout)
+            return r.read(maxb), (r.headers.get("content-type") or "").lower()
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < 3:
+                try:
+                    w = min(40, int(e.headers.get("Retry-After") or 8))
+                except Exception:
+                    w = 8
+                time.sleep(w + 2 * attempt); continue
+            raise
 
 
 def bing(q, n=14):
