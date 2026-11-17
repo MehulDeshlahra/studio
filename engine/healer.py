@@ -66,7 +66,9 @@ def busy():
 
 
 def head():
-    return sh(f"git -C {ROOT} rev-parse --short HEAD")[1].strip()
+    """The CODE version: last commit that touched engine/ or lib/. (18 Nov: HEAD changes after every render because sync
+    commits jobs + lessons, which would have re-run every healer step after every render.)"""
+    return sh(f"git -C {ROOT} log -1 --format=%h -- engine lib")[1].strip()
 
 
 def changed_since(commit, files):
@@ -212,12 +214,15 @@ def heal_held():
                 last["pending"] = False
                 last["result"] = "still held: " + "; ".join(probs)[:160]
             tried = {(s["step"], s.get("code")) for s in it["steps"]}
+            today_steps = sum(1 for s in it["steps"] if s.get("t", "")[:10] == time.strftime("%Y-%m-%d"))
+            if today_steps >= 6:                            # a hard daily cap per video: never loop on one job
+                continue
             stg = stage_for(probs)
             files = STAGE_FILES.get(stg, []) + STAGE_FILES["preflight"] + ["engine/make.py", "engine/plan.py"]
             # 1 known fix
             kf = known_fix(probs)
             if kf and ("known", h) not in tried:
-                it["steps"].append({"step": "known", "code": h, "fix": kf["fix"], "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
+                it["state"] = "working"; it["steps"].append({"step": "known", "code": h, "fix": kf["fix"], "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 if kf["fix"] == "simplify" and simplify(cid, job, probs):
                     rebuild(cid, job, "assets" if stg == "compose" else stg, f"known fix: {kf['fix']}")
                 else:
@@ -227,16 +232,16 @@ def heal_held():
             since = next((s["code"] for s in reversed(it["steps"]) if s.get("code")), None) or \
                 (load(os.path.join(OUT, cid, job, "meta.json"), {}) or {}).get("doctor_code")
             if ("rebuild", h) not in tried and changed_since(since, files):
-                it["steps"].append({"step": "rebuild", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
+                it["state"] = "working"; it["steps"].append({"step": "rebuild", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 rebuild(cid, job, stg, "code changed since the last try"); save(STATE, S); return
             # 3 change the input (once per code version)
             if ("simplify", h) not in tried and stg == "compose":
-                it["steps"].append({"step": "simplify", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
+                it["state"] = "working"; it["steps"].append({"step": "simplify", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 if simplify(cid, job, probs):
                     rebuild(cid, job, "assets", "failing scenes re-planned"); save(STATE, S); return
                 it["steps"][-1].update(pending=False, result="nothing to re-plan")
             if ("simplify", h) not in tried and stg == "voice":
-                it["steps"].append({"step": "simplify", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
+                it["state"] = "working"; it["steps"].append({"step": "simplify", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 for f_ in ("vo-raw.wav", "vo-paced.wav", "timing.json"):
                     p_ = os.path.join(OUT, cid, job, f_)
                     if os.path.exists(p_) and not DRY:
@@ -244,11 +249,11 @@ def heal_held():
                 rebuild(cid, job, "voice", "new voice"); save(STATE, S); return
             # 4 code fix
             if ("code", h) not in tried and S.get("code_day", {}).get(time.strftime("%Y-%m-%d"), 0) < 6:
-                it["steps"].append({"step": "code", "code": h, "t": time.strftime("%Y-%m-%d %H:%M")})
+                it["state"] = "working"; it["steps"].append({"step": "code", "code": h, "t": time.strftime("%Y-%m-%d %H:%M")})
                 save(STATE, S)
                 if code_fix(f"held video {cid} {job}", probs, STAGE_FILES.get(stg, []) + ["engine/preflight.py"], verify=(cid, job)).get("merged"):
                     it["steps"][-1]["result"] = "code fixed"; learn(probs[0], "code", "see git log: healer")
-                    it["steps"].append({"step": "rebuild", "code": head(), "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
+                    it["state"] = "working"; it["steps"].append({"step": "rebuild", "code": head(), "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                     rebuild(cid, job, stg, "code fixed by the healer")
                 else:
                     it["steps"][-1]["result"] = "no verified code fix"
