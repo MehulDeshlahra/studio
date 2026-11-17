@@ -28,6 +28,10 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 10. Keys: DONE (+ models out of quota are skipped for the day; dashboard Server shows keys).
 11. Weekly report: DONE (engine/weekly.py, Sunday 20:00). Preview printed.
 
+## Closing notes (22:30)
+- Katha clip render test passed (clip plays, reviewer flags off-style clips). Test jobs real-01..05 deleted from the server and done.json.
+- hooks.md exist for tech, katha, raaz; seo.json for all three.
+
 ## To finish when resuming
 - Look at real-05 (katha clip test) frames; then delete test jobs real-01..05 from ~/studio-out if wanted (keep disk < 80%).
 - Read channels/tech|raaz/hooks.md and seo.json after hooks6 finishes; if still empty for raaz, widen queries.
