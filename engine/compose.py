@@ -249,7 +249,7 @@ body{{margin:0;background:{bg}}}
 .paper .quote{{font-family:'Montserrat',sans-serif;font-weight:700;font-size:50px;line-height:1.22;margin-top:22px}}
 .opt{{position:absolute;left:100px;width:880px;height:170px;display:flex;align-items:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:60px;color:#fff;background:rgba(10,16,22,.9);border:5px solid {acc};border-radius:26px;box-shadow:0 12px 0 #000;z-index:4}}
 .opt .ab{{display:inline-block;width:130px;text-align:center;font-size:96px;color:{acc};margin-right:10px}}
-.count{{position:absolute;left:0;width:{W}px;top:1150px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:200px;color:{acc};-webkit-text-stroke:6px #000;paint-order:stroke fill;z-index:6}}
+.count{{position:absolute;left:0;width:{W}px;top:1210px;line-height:1;text-align:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:200px;color:{acc};-webkit-text-stroke:6px #000;paint-order:stroke fill;z-index:6}}
 .cmt{{position:absolute;left:0;width:{W}px;top:1060px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:56px;color:#fff;-webkit-text-stroke:3px #000;paint-order:stroke fill;z-index:4}}
 .hud{{position:absolute;left:70px;width:940px;top:200px;display:flex;justify-content:space-between;font-family:'Montserrat',sans-serif;font-weight:800;font-size:34px;color:#fff;letter-spacing:3px;z-index:6;text-shadow:0 3px 0 #000}}
 .hud span{{background:rgba(0,0,0,.55);padding:6px 18px;border-radius:8px}}

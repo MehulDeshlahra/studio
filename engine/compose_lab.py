@@ -312,7 +312,7 @@ body{{margin:0;background:#07080b}}
 .vid{{position:absolute;inset:0;width:{W}px;height:{H}px;object-fit:cover;z-index:1}}
 .glow{{position:absolute;inset:0}}
 .cam{{position:absolute;inset:0}}
-.prop{{position:absolute;left:90px;top:430px;width:900px;height:760px;object-fit:contain;mix-blend-mode:lighten;
+.prop{{position:absolute;left:40px;top:330px;width:1000px;height:900px;object-fit:contain;mix-blend-mode:lighten;
   -webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 60%,transparent 100%)}}
 .hud{{position:absolute;left:64px;right:64px;top:196px;display:flex;justify-content:space-between;font-family:{MONO};font-size:30px;
   letter-spacing:2px;color:#c9ced8;z-index:6}}
@@ -325,7 +325,7 @@ body{{margin:0;background:#07080b}}
 .stat{{position:absolute;left:40px;right:40px;top:560px;text-align:center;font-weight:800;font-size:200px;letter-spacing:-6px;line-height:1;
   color:#fff;text-shadow:0 0 60px {acc}40}}
 .tab{{font-variant-numeric:tabular-nums}}
-.statsub{{position:absolute;left:80px;right:80px;top:800px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:2px;color:#9aa3b2}}
+.statsub{{position:absolute;left:80px;right:80px;top:800px;text-align:center;font-family:{SANS};font-weight:700;font-size:48px;letter-spacing:0;line-height:1.15;color:#e6e9ef}}
 .panel{{position:absolute;left:100px;width:880px;top:470px;background:linear-gradient(180deg,#151922,#0e1117);border:1.5px solid #ffffff1f;
   border-radius:28px;padding:40px 44px 46px;box-shadow:0 40px 80px #000a, inset 0 1px 0 #ffffff14;box-sizing:border-box}}
 .ptitle{{font-family:{MONO};font-size:30px;letter-spacing:2px;color:#9aa3b2;margin-bottom:26px;text-transform:uppercase}}
@@ -345,7 +345,7 @@ body{{margin:0;background:#07080b}}
 .cc{{width:360px;text-align:center}} .cv{{font-weight:800;font-size:86px;line-height:1.05;margin-bottom:18px;letter-spacing:-1px;max-height:2.2em;overflow:hidden}}
 .ctrack{{height:400px;display:flex;align-items:flex-end;justify-content:center}} .cbar{{width:180px;border-radius:22px 22px 6px 6px}}
 .cl{{font-family:{MONO};font-size:34px;color:#c9ced8;margin-top:20px;letter-spacing:1px}}
-.kinsub{{display:block;margin-top:36px;font-family:{MONO};font-weight:500;font-size:36px;letter-spacing:2px;line-height:1.3;color:#9aa3b2}}
+.kinsub{{display:block;margin-top:36px;font-family:{SANS};font-weight:700;font-size:48px;letter-spacing:0;line-height:1.2;color:#e6e9ef}}
 .kin{{position:absolute;left:70px;right:70px;top:500px;text-align:center;font-weight:800;font-size:150px;line-height:1.02;letter-spacing:-4px}}
 .kwm{{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 12px 6px}} .kw{{display:inline-block}} .kw.acc{{color:{acc}}}
 .uline{{width:260px;height:12px;margin:26px auto 0;border-radius:6px;background:{acc};transform-origin:0 50%;box-shadow:0 0 24px {acc}88}}
