@@ -74,9 +74,16 @@ def build():
         if not acc.get("yt"):
             needs.append(f"YouTube login for {cid}: on the laptop run  python tools/yt_login.py {cid}  (20 s)")
     unk = load(os.path.join(OUT, "doctor-unknown.json"), {}) or {}
-    items = list(unk.items()) if isinstance(unk, dict) else [(None, x) for x in unk]
-    for k, v in items[-3:]:
-        needs.append("doctor could not fix: " + (str(v.get("what") or v.get("problem") or v.get("msg") or v)[:100] if isinstance(v, dict) else str(v if k is None else k)[:100]))
+    seen, recent = set(), []
+    for x in (reversed(unk) if isinstance(unk, list) else []):
+        if not isinstance(x, dict) or str(x.get("t", ""))[:10] < since:
+            continue
+        key = re.sub(r"\d+", "N", str(x.get("detail", x.get("what", ""))))[:60]
+        if key in seen:
+            continue
+        seen.add(key); recent.append(x)
+    for x in recent[:3]:
+        needs.append("doctor could not fix (" + str(x.get("what", ""))[:40] + "): " + str(x.get("detail", "")).strip()[:110])
     held = [(cid, d["job"]) for cid in ("tech", "katha", "raaz") for d in (load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []) if d.get("status") == "held"]
     if held:
         needs.append(f"{len(held)} held video(s) the doctor could not rebuild: " + ", ".join(f"{c}/{j}" for c, j in held[:4]))
