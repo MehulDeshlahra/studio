@@ -117,6 +117,27 @@ def pick(cands, subject, kind, work):
     return ("ABCDEF".find(b) if b in "ABCDEF"[:len(cands)] else -1), r.get("why", "")
 
 
+def trim_margins(src, work):
+    """Logos come with big empty borders (usually white): crop to the artwork plus a small margin. Returns a path."""
+    try:
+        o = subprocess.run(["ffmpeg", "-hide_banner", "-i", src, "-vf", "negate,cropdetect=limit=40:round=2:reset=0", "-frames:v", "2", "-f", "null", "-"],
+                           capture_output=True, text=True, timeout=60).stderr
+        m = re.findall(r"crop=(\d+):(\d+):(\d+):(\d+)", o)
+        if not m:
+            return src
+        w, h, x, y = map(int, m[-1])
+        W0, H0 = _probe(src)
+        if w < 80 or h < 40 or w * h > 0.92 * W0 * H0 or w * h < 0.04 * W0 * H0:
+            return src
+        pad = int(max(w, h) * 0.06)
+        x0, y0 = max(0, x - pad), max(0, y - pad)
+        out = os.path.join(work, "trim.png")
+        sh(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", f"crop={min(W0 - x0, w + 2 * pad)}:{min(H0 - y0, h + 2 * pad)}:{x0}:{y0}", out], timeout=60)
+        return out
+    except Exception:
+        return src
+
+
 def layout(src, out, kind, lab):
     """Lay the real picture out for the video; out is a JPEG."""
     if lab:
@@ -156,7 +177,8 @@ def fetch(real, out_path, lab=False):
         i, why = pick(cands[:6], subject, kind, work)
         if i < 0:
             log("realmedia: none fits", repr(subject), why); return None
-        layout(cands[i]["path"], out_path, kind, lab)
+        src = trim_margins(cands[i]["path"], work) if kind == "logo" else cands[i]["path"]
+        layout(src, out_path, kind, lab)
         log("realmedia ok", repr(q), kind, cands[i]["url"][:70])
         return out_path
     except Exception as e:

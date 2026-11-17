@@ -67,7 +67,7 @@ Rules: at most 4 'object' scenes (they cost image credits); every number must be
 leave numbers out (no made-up stats); labels are UPPERCASE-able tags like "NPCI SWITCH", "STEP 2", "INDIA · 2024";
 no cartoons, no characters with eyes; the object prompts describe real hardware/things only.
 REAL PICTURES apply here too: an 'object' scene whose line names a real brand/app/company/product/person may carry
-"real": {"q": "UPI logo", "kind": "logo" or "photo", "subject": "what it must show"} (2-5 per video). Real logos/photos replace the
+"real": {"q": "UPI logo", "kind": "logo" or "photo", "subject": "what it must show"} (2-5 per video). When a line names 1-2 brands/apps (e.g. "Google Pay ya PhonePe"), use an 'object' scene with "real" for it, not a clip. Real logos/photos replace the
 AI render; keep the object "prompt" as the fallback. Real faces of public figures are fine in a 'photo'.
 """
 
