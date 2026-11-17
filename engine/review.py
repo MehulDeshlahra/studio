@@ -55,6 +55,7 @@ def vision_review(mp4, plan, timing, out_jpg, lang, handle):
     from compose import _dup
     desc = "\n".join(f"scene {i + 1}: says \"{s['vo']}\" | type {s['type']}"
                      + ("" if (not s.get("title") or _dup(s["title"], s.get("vo"))) else f" | headline \"{s['title']}\"")
+                     + (f" | CARD words shown on screen (intended, do not flag them): \"{s.get('big', '')}\" / \"{s.get('small', '')}\"" if s.get("type") == "card" else "")
                      for i, s in enumerate(plan["scenes"]))
     prompt = f"""You are the strictest reviewer at a top short-video studio. The contact sheet shows frames in time order:
 two frames per scene (scene start, scene middle), then the very last frame (end card).
