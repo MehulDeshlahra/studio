@@ -5,18 +5,27 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.7,
-  "true_peak": -3.3,
+  "lufs": -13.6,
+  "true_peak": -2.9,
   "dur": 47.67
  },
  "vision": {
   "score": 7,
   "ok": false,
   "problems": [
-   "scene 1: The image shows a triangular stone, but the text 'BAKI MANDIRON JAISA' contradicts the script's question about why it is *not* like other temples.",
-   "scene 9: The caption 'LAGA' is too abrupt and doesn't fit the flow of the sentence 'Pakadte hi bail dharati mein samane laga'.",
-   "scene 11: The text 'SHIVLING' and 'SHIVA PURAN' are present, but the script for this scene is about the 'Kedarnath' title and the explanation of the stone. The visual is a generic temple, not specifically the Kedarnath Shivling.",
-   "scene 12: The text 'COMMENT' and 'JAI BHOLE' are present, but the script requires the title 'SOCH' and the question about repentance. The visual is a generic temple, not related to the 'Soch' prompt."
+   "scene 1: The caption 'BAKI MANDIRON JAISA' is cut off at the end (missing 'GOL KYU NAHI').",
+   "scene 2: The caption 'YUDDH MEIN MAARE' is cut off (missing 'GAYE').",
+   "scene 3: The caption 'HIMALAYA PAHUCHE' is cut off (missing 'THE').",
+   "scene 4: The caption 'ROOP LIYA AUR' is cut off (missing 'CHUP GAYE').",
+   "scene 5: The caption 'TOH UNHONE TURANT' is cut off (missing 'EK ANOKHI CHAAL SOCHI').",
+   "scene 6: The caption 'APNE PAIR PHAILA' is cut off (missing 'KAR RASTA ROK DIYA').",
+   "scene 7: The caption 'PAR MAHADEV KISI' is cut off (missing 'KE AAGE JHUKNE KO TAIYAR NAHI THE').",
+   "scene 8: The caption 'AUR AAGE BADHKAR' is cut off (missing 'BAIL KO PAKAD LIYA').",
+   "scene 9: The caption 'LAGA' is cut off (missing 'DHARTI MEIN SAMANE LAGA').",
+   "scene 10: The caption 'PASHCHATAP KO DEKHKAR' is cut off (missing 'MAHADEV NE UNHE KSHAMA KAR DIYA').",
+   "scene 11: The text 'SHIVLING' and 'SHIVA PURAN' are present, but the intended title 'KEDARNATH' is missing from the card.",
+   "scene 12: The text 'COMMENT' and 'JAI BHOLE' are present, but the intended title 'SOCH' is missing (only a small label 'SOCH' is visible, not the title).",
+   "General: The captions in every single scene are severely truncated, making them grammatically incomplete and confusing, failing the instruction to show 2-3 words of the line (they are cutting off mid-sentence)."
   ]
  },
  "voice": {

@@ -177,3 +177,41 @@
 ## 1117-0655-en Ganesh ji aur Kuber ka bhoj
 - scene 5: The image shows three brothers lying down, but the text mentions 'Sahadeva, Arjuna, and Bhima', implying three people, whereas the image depicts three figures. While technically correct, the visual composition is a bit crowded/repetitive compared to the narrative flow.
 - scene 13: The text 'DYING OF THIRST?' is slightly obscured by the lotus flower graphic, making it a bit harder to read than other text elements.
+
+## real-02 Kedarnath mandir ka rahasya: Pandavon ne Shiv ji ko kaise dhoondha
+- scene 1: The caption says 'BAKI MANDIRON JAISA' but the intended line is 'Kedarnath ka Shivling baki mandiron jaisa gol kyu nahi...'. The image shows a triangular lingam, which contradicts the text 'baki mandiron jaisa gol' (like other temples, round).
+- scene 11: The title card says 'SHIVLING' and 'SHIVA PURAN' instead of 'KEDARNATH' as requested in the prompt.
+- scene 12: The title card says 'COMMENT' and 'JAI BHOLE' instead of 'SOCH' as requested in the prompt.
+- scene 12: The text 'SOCH' is present in a small box, but the prompt requested the title to be 'SOCH'. The main text on the card is 'COMMENT', which is not part of the requested script.
+
+## review real-02
+- visual: Scene 9 end frame text is incomplete (shows 'LAGA' instead of 'USKA KUBAD AAYA'), clipping the key action word.
+- visual: Scene 11 and 12 end cards show 'COMMENT' and 'SHIVLING' instead of the proper conclusion/summary text requested for the final cards.
+
+## real-02 Kedarnath mandir ka rahasya: Pandavon ne Shiv ji ko kaise dhoondha
+- scene 1: The caption 'BAKI MANDIRON JAISA' is cut off at the end (missing 'GOL KYU NAHI').
+- scene 2: The caption 'YUDDH MEIN MAARE' is cut off (missing 'GAYE').
+- scene 3: The caption 'HIMALAYA PAHUCHE' is cut off (missing 'THE').
+- scene 4: The caption 'ROOP LIYA AUR' is cut off (missing 'CHUP GAYE').
+- scene 5: The caption 'TOH UNHONE TURANT' is cut off (missing 'EK ANOKHI CHAAL SOCHI').
+- scene 6: The caption 'APNE PAIR PHAILA' is cut off (missing 'KAR RASTA ROK DIYA').
+- scene 7: The caption 'PAR MAHADEV KISI' is cut off (missing 'KE AAGE JHUKNE KO TAIYAR NAHI THE').
+- scene 8: The caption 'AUR AAGE BADHKAR' is cut off (missing 'BAIL KO PAKAD LIYA').
+- scene 9: The caption 'LAGA' is cut off (missing 'DHARTI MEIN SAMANE LAGA').
+- scene 10: The caption 'PASHCHATAP KO DEKHKAR' is cut off (missing 'MAHADEV NE UNHE KSHAMA KAR DIYA').
+- scene 11: The text 'SHIVLING' and 'SHIVA PURAN' are present, but the intended title 'KEDARNATH' is missing from the card.
+- scene 12: The text 'COMMENT' and 'JAI BHOLE' are present, but the intended title 'SOCH' is missing (only a small label 'SOCH' is visible, not the title).
+- General: The captions in every single scene are severely truncated, making them grammatically incomplete and confusing, failing the instruction to show 2-3 words of the line (they are cutting off mid-sentence).
+
+## review real-02
+- visual: Scene 11 card text says 'SHIVLING' and Scene 12 says 'COMMENT' instead of the requested words and headline 'SOCH'.
+
+## real-02-en Hanuman ji aur Shani dev ka yuddh aur unka milan (Ramayana, Kishkindha Kanda)
+- scene 6: The image shows Bhima standing on top of the rocks, but the text says he 'spread his legs across two massive rocks'. The visual depiction of him standing on top makes the 'spreading legs' action unclear/incorrect.
+- scene 9: The image shows hands holding a bull's head/hump, but the anatomy of the hands is slightly distorted/melted (common AI artifacting).
+- scene 11: The text on the card says 'SACRED BULL' and 'SHIVA PURAN', which does not match the intended narrative flow or the prompt's description for that scene (which should be about the Kedarnath Shivling).
+- scene 12: The text on the card says 'YOUR VIEW' and 'JAI BHOLE', which does not match the intended narrative flow or the prompt's description for that scene.
+
+## review real-02-en
+- visual: Scene 11 card text says 'SACRED BULL' and 'SHIVA PURAN' instead of the requested text/card summary.
+- visual: Scene 12 headline and text do not match the requested prompt ('Does true repentance erase every single past mistake in your view?').

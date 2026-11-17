@@ -18,9 +18,9 @@
   {
    "vo": "Why is the Kedarnath Shivling triangular instead of being round?",
    "type": "image",
-   "prompt": "cinematic epic style, bright illuminated sacred natural triangular rock lingam in dark temple sanctum, glowing diya lights around, clear centered subject, 9:16 aspect ratio",
+   "prompt": "cinematic epic style, sacred natural triangular rock lingam in dark temple sanctum, glowing diya lights around, clear centered subject, 9:16 aspect ratio, lots of room above and below",
    "motion": "punch",
-   "title": "",
+   "title": "MYSTERY",
    "keywords": [],
    "real": null
   },
@@ -108,7 +108,7 @@
    "prompt": "cinematic bright photo style, ancient stone Kedarnath temple standing tall against grand snow peaks under morning sun, sacred fluttering flags, 9:16 aspect ratio",
    "motion": "pull",
    "title": "KEDARNATH",
-   "big": "SHIVLING",
+   "big": "SACRED BULL",
    "small": "SHIVA PURAN",
    "keywords": [],
    "real": null
@@ -119,7 +119,7 @@
    "prompt": "painterly bright daylight view of sacred Himalayan mountain shrine with peaceful spiritual atmosphere, clear lighting, centered, 9:16, ample headroom and footroom, no text",
    "motion": "pull",
    "title": "THINK",
-   "big": "COMMENT",
+   "big": "YOUR VIEW",
    "small": "JAI BHOLE",
    "keywords": [],
    "real": null

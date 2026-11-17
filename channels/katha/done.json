@@ -54,8 +54,7 @@
   "qc_ok": false,
   "status": "held",
   "review": [
-   "visual: Scene 11 (Shivling/card): The caption says 'SHIVLING' instead of the required summary words, and the image completely diverges from the expected ending narration.",
-   "visual: Scene 12 (Engagement card): The caption displays 'COMMENT' and 'JAI BHOLE' instead of the requested question prompt about sacha pashchatap."
+   "visual: Scene 11 card text says 'SHIVLING' and Scene 12 says 'COMMENT' instead of the requested words and headline 'SOCH'."
   ]
  },
  {
@@ -72,9 +71,8 @@
   "title": "Why is the Kedarnath Shivling triangular?",
   "status": "held",
   "review": [
-   "before render, scene 1: FIT: Yellow tag says 'KEDARNATH SHIVLING' in the first still and 'TRIANGULAR' in the second, but voice says 'Why is the Kedarnath Shivling triangular instead of being round?' where 'TRIANGULAR' appear",
-   "before render, scene 11: FIT: Both stills in scene 11 display 'SHIVLING' on screen, whereas the card specification and voice mention different hierarchical text ('KEDARNATH', 'SHIVLING', 'SHIVA PURAN').",
-   "before render, scene 12: OVERLAP/CUT (layout audit): text_occluded on #s11b"
+   "visual: Scene 11 card text says 'SACRED BULL' and 'SHIVA PURAN' instead of the requested text/card summary.",
+   "visual: Scene 12 headline and text do not match the requested prompt ('Does true repentance erase every single past mistake in your view?')."
   ]
  }
 ]

@@ -1,12 +1,18 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/deep-haze.mp3",
+  "file": "music/lib/katha/urban-gauntlet.mp3",
   "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
  "sfx": [
+  {
+   "t": 0.15,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -17,
+   "align": "onset"
+  },
   {
    "t": 4.3,
    "file": "sfx/air-zoom.mp3",

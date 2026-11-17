@@ -1,0 +1,30 @@
+{
+ "topic": "Hanuman ji aur Shani dev ka yuddh aur unka milan (Ramayana, Kishkindha Kanda)",
+ "title": "Why is the Kedarnath Shivling triangular?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.9,
+  "true_peak": -2.2,
+  "dur": 48.53
+ },
+ "vision": {
+  "score": 8,
+  "ok": false,
+  "problems": [
+   "scene 6: The image shows Bhima standing on top of the rocks, but the text says he 'spread his legs across two massive rocks'. The visual depiction of him standing on top makes the 'spreading legs' action unclear/incorrect.",
+   "scene 9: The image shows hands holding a bull's head/hump, but the anatomy of the hands is slightly distorted/melted (common AI artifacting).",
+   "scene 11: The text on the card says 'SACRED BULL' and 'SHIVA PURAN', which does not match the intended narrative flow or the prompt's description for that scene (which should be about the Kedarnath Shivling).",
+   "scene 12: The text on the card says 'YOUR VIEW' and 'JAI BHOLE', which does not match the intended narrative flow or the prompt's description for that scene."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 1.0,
+  "words": 130,
+  "problems": []
+ },
+ "ok": false
+}
