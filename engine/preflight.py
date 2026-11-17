@@ -157,7 +157,7 @@ def repair(plan, bad, lang):
     items = "\n".join(f"{k}: {json.dumps(plan['scenes'][int(k)], ensure_ascii=False)} -> {probs}" for k, probs in bad.items())
     r = planner.ask(REPAIR.format(lang="English" if lang == "en" else "Hinglish (Roman)", items=items), max_tokens=3000) or {}
     n = 0
-    for k, s in (r.get("scenes") or {}).items():
+    for k, s in ((r if isinstance(r, dict) else {}).get("scenes") or {}).items():
         try:
             k = int(k)
         except Exception:
