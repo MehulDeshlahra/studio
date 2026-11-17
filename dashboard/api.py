@@ -422,6 +422,8 @@ def classify(line):
     l = line.lower()
     if l.startswith("ideas ") or l.startswith("plan "):
         return "info"
+    if " hold" in l and "review " in l:                       # a held video is something to watch, not an error
+        return "warn"
     if BAD.search(line):
         return "bad"
     if any(k in l for k in ("warn", "retry", "limited", "skip", "not sent", "fallback", "warm-up", "nothing approved", "to fix", "still failing", "voice gate")):
