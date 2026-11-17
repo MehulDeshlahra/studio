@@ -92,12 +92,69 @@ def top_shorts(q, n=40):
     return out
 
 
+IG_ACCOUNTS = {   # public business/creator accounts in each niche (owner can add more; the agent may too)
+    "tech": ["samjho.exe", "techburner", "trakintech", "technicalguruji", "gyanfactory"],
+    "katha": ["sanatani.kahaniyan", "bhakti.stories", "mythology.in.hindi", "dharmikgyan", "puranikkatha"],
+    "raaz": ["horror.kahaniya", "crimetak", "rahasya.kahani", "hindistoryshorts", "kahaniwala"],
+}
+
+
+def ig_top(page, per=6):
+    """Top reels of niche accounts on Instagram itself, through the official Business Discovery API (any public
+    business/creator account; uses the page's own login). Returns [{url, title, views(likes as proxy), channel}]."""
+    import publish
+    acc = publish.resolve(load(os.path.expanduser(f"~/.studio-accounts/{page}.json")) or {})
+    if not acc.get("ig_user_id"):
+        return []
+    out = []
+    names = IG_ACCOUNTS.get(page, []) + list((load(os.path.join(ROOT, "knowledge", "ig-accounts.json"), {}) or {}).get(page, []))
+    for u in dict.fromkeys(names):
+        f = ("business_discovery.username(%s){username,followers_count,media.limit(25){caption,like_count,comments_count,"
+             "media_product_type,permalink,media_url}}" % u)
+        try:
+            d = publish._req(f"{publish.G}/{acc['ig_user_id']}?fields=" + f.replace("{", "%7B").replace("}", "%7D") + f"&access_token={acc['page_token']}")
+        except Exception as e:
+            log("hookstudy ig skip", u, str(e)[:60]); continue
+        b = d.get("business_discovery") or {}
+        reels = [m for m in (b.get("media") or {}).get("data", []) if m.get("media_product_type") == "REELS" and m.get("permalink")]
+        reels.sort(key=lambda m: -((m.get("like_count") or 0) + 3 * (m.get("comments_count") or 0)))
+        for m in reels[:per]:
+            out.append({"id": m["permalink"], "url": m["permalink"], "video": m.get("media_url"), "title": (m.get("caption") or "")[:90],
+                        "views": (m.get("like_count") or 0) * 30, "likes": m.get("like_count"), "comments": m.get("comments_count"),
+                        "channel": "ig:" + u, "followers": b.get("followers_count")})
+    return out
+
+
+def watch_file(mp4_url, prompt):
+    """Instagram reel: download the file (<= 25 MB) and send it inline to Gemini (free keys), returns parsed JSON."""
+    import base64, urllib.request, tts
+    b = urllib.request.urlopen(urllib.request.Request(mp4_url, headers={"User-Agent": "Mozilla/5.0"}), timeout=90).read(26_000_000)
+    body = {"contents": [{"parts": [{"inline_data": {"mime_type": "video/mp4", "data": base64.b64encode(b).decode()}},
+                                    {"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
+            "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2, "maxOutputTokens": 1500}}
+    for m in tts.usable(["gemini-3.8-flash", "gemini-3.5-flash-lite"]):
+        try:
+            r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent", data=json.dumps(body).encode(),
+                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
+            d = json.load(urllib.request.urlopen(r, timeout=240))
+            return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
+        except Exception as e:
+            log("hookstudy ig watch fail", m, str(e)[:80])
+    raise RuntimeError("could not watch the reel")
+
+
 def study(page, n=10):
     found, seen = [], set()
     for q in QUERIES.get(page, []):
         for v in top_shorts(q):
             if v["id"] not in seen:
                 seen.add(v["id"]); found.append(v)
+    try:                                                     # 18 Nov: Instagram winners join the YouTube ones
+        ig = ig_top(page)
+        found += ig
+        log("hookstudy", page, "instagram reels found:", len(ig))
+    except Exception as e:
+        log("hookstudy instagram failed", str(e)[:100])
     found.sort(key=lambda v: -v["views"])
     notes, tried, loose = [], 0, []
     for v in found:
@@ -105,7 +162,8 @@ def study(page, n=10):
             break
         tried += 1
         try:
-            a = llm.watch(v["url"], HOOK_PROMPT.format(niche_desc=NICHE.get(page, "a short-form explainer in this niche")))
+            hp = HOOK_PROMPT.format(niche_desc=NICHE.get(page, "a short-form explainer in this niche"))
+            a = watch_file(v["video"], hp) if v.get("video") else llm.watch(v["url"], hp)
         except Exception as e:
             log("hookstudy watch fail", v["url"], str(e)[:100]); continue
         if not isinstance(a, dict) or a.get("on_niche") is False:

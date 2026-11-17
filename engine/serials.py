@@ -14,6 +14,23 @@ import json, os, re, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, log, load, save
 
+# Owner 18 Nov: use his and his friends' names. Start with Mehul + Raghav, then rotate (never the same pair every story).
+# Villains / culprits always get a MADE-UP name (never a friend, never "Rohan").
+FRIENDS = ["Mehul", "Raghav", "Aditya", "Shobhit", "Shwetal", "Saumya", "Suhail", "Jahnvi", "Masood", "Animesh", "Jayesh",
+           "Aaryan", "Dhruv", "Mudit", "Shruti"]
+BANNED_VILLAIN = {"rohan"}
+
+
+def _names_for_new_story(cid):
+    """Hero + 1-3 friends for the next story: least used first, so everyone appears over time."""
+    use = {}
+    for s in stories(cid):
+        for n in s.get("cast", {}):
+            use[n] = use.get(n, 0) + 1
+    order = sorted(FRIENDS, key=lambda n: (use.get(n, 0), FRIENDS.index(n)))
+    return order[0], order[1:4]
+
+
 GENRES = ["mystery thriller", "emotional family drama", "light horror", "fantasy (talking objects or animals, magic in a modern Indian town)",
           "karma and revenge twist", "love story with a secret", "survival / adventure", "sci-fi in a small Indian town"]
 
@@ -25,6 +42,8 @@ setting (city flat, hostel, office, train, small town, village fair, hospital, w
 Part 1 opens on the strangest, most specific moment (first line pulls you in) and ends on a hook. EVERY part ends on a
 cliffhanger that makes people come back tomorrow. The middle keeps raising the stakes (a new clue, a betrayal, a twist every
 2-3 parts); Part {n} pays everything off with a satisfying twist. Each part has a clear new event (no recap-only parts).
+NAMES: the hero is {hero}; friends / side characters may use: {friends} (use 1-3 of them, good characters only).
+The villain or culprit gets a made-up Indian name that is NOT in that list and is never "Rohan".
 Cast: EVERY named character who appears in any part (hero, friends, villain, side characters) gets a fixed visual description (age, face, hair, clothes, one signature item) reused in every image; nobody appears who is not in the cast.
 Return JSON {{"title": "<Hindi/Hinglish title, 2-5 words>", "slug": "ascii-slug", "genre": "...", "logline": "one sentence",
 "setting": "...", "cast": {{"<name>": "fixed visual description"}},
@@ -56,8 +75,9 @@ def new_story(ch):
     used = [s.get("genre", "") for s in stories(cid)][-3:]
     genre = next((g for g in GENRES if not any(g.split()[0] in u for u in used)), GENRES[len(past) % len(GENRES)])
     n = int((ch.get("serial") or {}).get("parts", 10))
-    r = planner.ask(ARC.format(name=ch.get("name", cid), tagline=ch.get("tagline", ""), n=n, genre=genre,
-                               past="; ".join(past) or "none yet"), max_tokens=6000) or {}
+    hero, friends = _names_for_new_story(cid)
+    r = planner.ask(ARC.format(name=ch.get("name", cid), tagline=ch.get("tagline", ""), n=n, genre=genre, hero=hero,
+                               friends=", ".join(friends), past="; ".join(past) or "none yet"), max_tokens=6000) or {}
     parts = [p for p in (r.get("parts") or []) if isinstance(p, dict) and p.get("beats")]
     if not r.get("title") or len(parts) < max(5, n - 2):
         log("serial: story planning failed for", cid); return None
