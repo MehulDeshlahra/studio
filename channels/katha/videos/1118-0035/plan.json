@@ -18,7 +18,7 @@
   {
    "vo": "Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta, toh kya hota?",
    "type": "image",
-   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a massive celestial waterfall crashing down from the clouds onto the earth",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a vast empty mystical sky with dramatic dark clouds hinting at a mighty flood",
    "motion": "push",
    "title": "VISHAL SAILAB",
    "keywords": [
@@ -93,7 +93,8 @@
     "varan"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Par ek badi samasya thi, unke veg ko kaun sambhalta?",
@@ -169,7 +170,7 @@
    "motion": "punch",
    "title": "",
    "big": "SROAT",
-   "small": "Bhagavata",
+   "small": "Purana",
    "keywords": [
     "Bhagavata Purana"
    ],
