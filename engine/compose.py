@@ -99,10 +99,11 @@ def page(plan, timed, total, theme, assets):
         else:
             if img:
                 inner += f'<img id="{sid}i" class="bg" src="assets/{os.path.basename(img)}">'
-                m = s.get("motion", "push")
-                frm, to = {"push": ("{scale:1.02}", "{scale:1.16}"), "pull": ("{scale:1.2}", "{scale:1.03}"),
-                           "pan": ("{scale:1.15,x:-50}", "{scale:1.15,x:50}"), "tilt": ("{scale:1.12,rotation:-2.5}", "{scale:1.12,rotation:2.5}"),
-                           "punch": ("{scale:1.04}", "{scale:1.14}")}[m]
+                MOVES = {"push": ("{scale:1.02}", "{scale:1.16}"), "pull": ("{scale:1.2}", "{scale:1.03}"),
+                         "pan": ("{scale:1.15,x:-50}", "{scale:1.15,x:50}"), "tilt": ("{scale:1.12,rotation:-2.5}", "{scale:1.12,rotation:2.5}"),
+                         "punch": ("{scale:1.04}", "{scale:1.14}")}
+                m = s.get("motion") if s.get("motion") in MOVES else "push"   # 18 Nov: a repair wrote motion "none" -> KeyError, job stuck
+                frm, to = MOVES[m]
                 js.append(f'tl.fromTo("#{sid}i",{frm},{to[:-1]},duration:{d:.3f},ease:"none"}},{a:.3f});')
                 if m == "punch":
                     mid = a + d * 0.5
