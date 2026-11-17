@@ -166,12 +166,12 @@
   },
   {
    "vo": "Sroat: Bhagavata Purana. Aapke anusar, sacchi lagan se kya namumkin bhi mumkin ho jata hai?",
-   "type": "card",
-   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, ancient sacred manuscript scroll glowing softly",
-   "motion": "punch",
+   "type": "image",
+   "prompt": "centered glowing ancient manuscript scroll, Indian miniature style, warm gold and deep maroon palette, soft divine light, 9:16 aspect, generous empty space above and below for Hinglish text, no logos or letters in image",
+   "motion": "none",
    "title": "",
-   "big": "SROAT",
-   "small": "Purana",
+   "big": "",
+   "small": "",
    "keywords": [
     "Bhagavata Purana"
    ],
