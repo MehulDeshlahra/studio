@@ -1,0 +1,30 @@
+{
+ "topic": "Kedarnath mandir ka rahasya: Pandavon ne Shiv ji ko kaise dhoondha",
+ "title": "Kedarnath ka Shivling trikoniya kyu hai?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.7,
+  "true_peak": -3.3,
+  "dur": 47.67
+ },
+ "vision": {
+  "score": 7,
+  "ok": false,
+  "problems": [
+   "scene 1: The image shows a triangular stone, but the text 'BAKI MANDIRON JAISA' contradicts the script's question about why it is *not* like other temples.",
+   "scene 9: The caption 'LAGA' is too abrupt and doesn't fit the flow of the sentence 'Pakadte hi bail dharati mein samane laga'.",
+   "scene 11: The text 'SHIVLING' and 'SHIVA PURAN' are present, but the script for this scene is about the 'Kedarnath' title and the explanation of the stone. The visual is a generic temple, not specifically the Kedarnath Shivling.",
+   "scene 12: The text 'COMMENT' and 'JAI BHOLE' are present, but the script requires the title 'SOCH' and the question about repentance. The visual is a generic temple, not related to the 'Soch' prompt."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9320987654320988,
+  "words": 162,
+  "problems": []
+ },
+ "ok": false
+}

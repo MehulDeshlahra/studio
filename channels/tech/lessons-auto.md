@@ -311,3 +311,10 @@
 ## review real-01
 - only 58% of the script was found in the voice
 - visual: Scene 11 end card / title text overlaps and is garbled at the bottom ('Commebhejta hai?h batao!') due to caption text bleeding into the final card.
+
+## 1117-0729 'Hey Google' phone kaise sunta hai
+- scene 6: The visual text 'CLOUD STORAGE' and 'ZERO DATA' are slightly contradictory to the script 'Bina internet, bina storage ke', though technically accurate as a technical specification label, it might confuse the viewer.
+- scene 7: The visual labels 'Mic', 'RAM', 'Delete' are slightly misaligned with the flow of the script which focuses on the 'Auto Delete' mechanism.
+
+## review 1117-0729
+- visual: Scene 10 caption text is cut off at the bottom frame edge ('Kya aapka phone kisi dost ki...').

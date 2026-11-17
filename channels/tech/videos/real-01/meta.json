@@ -2,5 +2,11 @@
  "channel": "tech",
  "job": "real-01",
  "topic": "UPI se paisa bhejte waqt Google Pay, PhonePe aur NPCI ke beech kya hota hai",
- "voice_gate": 1
+ "voice_gate": 2,
+ "brain_judged": true,
+ "voice_retry": 1,
+ "stage": "done",
+ "doctor_rebuilt": "2026-11-17 15:23",
+ "doctor_code": "123c198",
+ "doctor_tries": 1
 }

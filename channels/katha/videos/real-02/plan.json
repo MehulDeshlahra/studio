@@ -1,0 +1,213 @@
+{
+ "slug": "kedarnath-mandir-pandav-rahasya",
+ "title": "Kedarnath ka Shivling trikoniya kyu hai?",
+ "hooks": [
+  "Kedarnath ka Shivling baki mandiron jaisa gol kyu nahi, balki trikoniya hai?",
+  "Mahabharat ke baad Shiv ji ne Bhim se bachne ke liye kaunsa roop liya tha?",
+  "Kedarnath mandir ke trikone shivling ka sach kya hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Points directly to the visible physical anomaly of the Kedarnath lingam that visitors observe, sparking immediate curiosity about its origin.",
+ "metaphor": "The divine bull sinking into the earth, leaving behind its triangular hump as the eternal anchor of forgiveness.",
+ "cast": {
+  "Pandavas": "five noble ancient Indian warrior brothers in rustic ascetic wraps, weary expressions of deep remorse, painterly Indian epic aesthetic",
+  "Bhim": "towering powerfully built ancient Indian warrior prince with immense muscular frame, rustic dhoti, rudraksha beads, determined gaze",
+  "Nandi_Bull": "magnificent divine humpback Himalayan bull, luminous silver-grey hide, regal horns, subtle spiritual glow"
+ },
+ "scenes": [
+  {
+   "vo": "Kedarnath ka Shivling baki mandiron jaisa gol kyu nahi, balki trikoniya hai?",
+   "type": "image",
+   "prompt": "cinematic epic style, bright illuminated sacred natural triangular rock lingam in dark temple sanctum, glowing diya lights around, clear centered subject, 9:16 aspect ratio",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Kedarnath",
+    "trikoniya",
+    "Shivling"
+   ],
+   "real": null
+  },
+  {
+   "vo": "Mahabharat ke baad, Pandav apno ke yuddh mein maare jaane ke dukh se tadap rahe the.",
+   "type": "image",
+   "prompt": "painterly Indian epic style, five noble ancient Indian warrior brothers in rustic ascetic wraps, weary expressions of deep remorse, standing on a misty ridge overlooking dusk, muted embers and deep maroon tones",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Pandav",
+    "pashchatap",
+    "yuddh"
+   ]
+  },
+  {
+   "vo": "Mukti paane ve Himalaya pahuche, par Mahadev unse milna nahi chahte the.",
+   "type": "image",
+   "prompt": "cinematic epic style, brightly lit majestic snow-capped Himalayan peaks under clear blue sky, towering mountains, clear centered composition, 9:16 aspect ratio",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Himalaya",
+    "Mahadev",
+    "dhoondhna"
+   ],
+   "real": null
+  },
+  {
+   "vo": "Shiv ji ne ek bail ka roop liya aur maveshiyon ke jhund mein chup gaye.",
+   "type": "image",
+   "prompt": "painterly Indian epic style, large herd of Himalayan cattle grazing on vast green alpine valley, amongst them one magnificent luminous silver-grey bull hiding quietly, subtle divine aura",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "bail",
+    "roop",
+    "jhund"
+   ]
+  },
+  {
+   "vo": "Bhim ne jab yeh dekha, toh unhone turant ek anokhi chaal sochi.",
+   "type": "image",
+   "prompt": "cinematic portrait, towering muscular ancient warrior Bhim looking across the valley with sharp observant eyes, determined face, dramatic side lighting",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Bhim",
+    "chaal",
+    "nazar"
+   ]
+  },
+  {
+   "vo": "Unhone do badi chattanon ke beech apne pair phaila kar rasta rok diya.",
+   "type": "image",
+   "prompt": "painterly Indian epic style, mighty hero standing in the narrow gap between two massive towering boulders, firmly blocking the mountain pass with his legs spread wide, dramatic shadows",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "pair",
+    "chattan",
+    "rasta"
+   ],
+   "real": null
+  },
+  {
+   "vo": "Baki sab bail neeche se nikal gaye, par Mahadev kisi ke aage jhukne ko taiyar nahi the.",
+   "type": "image",
+   "prompt": "painterly Indian epic style, regular cattle passing under the massive stance while one magnificent silver bull stops firmly before the legs, regal stance, glowing eyes refusing to bow",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Mahadev",
+    "bail",
+    "rukna"
+   ]
+  },
+  {
+   "vo": "Rukte hi Bhim ne pehchan liya aur aage badhkar bail ko pakad liya.",
+   "type": "image",
+   "prompt": "cinematic action, colossal ancient warrior grabbing the horns and neck of a magnificent divine bull head-on, struggling to stop it on a mountain path, dust kicking up",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Bhim",
+    "pakad",
+    "pehchan"
+   ],
+   "real": null
+  },
+  {
+   "vo": "Pakadte hi bail dharati mein samane laga, aur Bhim ke haath bas uska kubad aaya.",
+   "type": "clip",
+   "prompt": "painterly Indian fantasy style, divine bull sinking softly into glowing mystical earth, powerful warrior hands tightly gripping the solid triangular hump, bright golden spiritual light radiating",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "dharati",
+    "samaana",
+    "kubad"
+   ]
+  },
+  {
+   "vo": "Pandavon ke sache pashchatap ko dekhkar Mahadev ne unhe kshama kar diya.",
+   "type": "image",
+   "prompt": "painterly Indian epic aesthetic, five warrior brothers bowing reverently on the alpine ridge before warm heavenly golden light breaking through Himalayan storm clouds, divine blessing atmosphere",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "pashchatap",
+    "kshama",
+    "Mahadev"
+   ]
+  },
+  {
+   "vo": "Wahi pathar bana bail ka kubad, aaj Kedarnath ka trikoniya Shivling hai.",
+   "type": "card",
+   "prompt": "cinematic bright photo style, ancient stone Kedarnath temple standing tall against grand snow peaks under morning sun, sacred fluttering flags, 9:16 aspect ratio",
+   "motion": "pull",
+   "title": "KEDARNATH",
+   "big": "SHIVLING",
+   "small": "SHIVA PURAN",
+   "keywords": [
+    "Kedarnath",
+    "trikoniya",
+    "Shivling"
+   ],
+   "real": null
+  },
+  {
+   "vo": "Aapke hisab se, kya sacha pashchatap har purani galti ko mita sakta hai?",
+   "type": "card",
+   "prompt": "painterly bright daylight view of Kedarnath valley, spiritual tranquil atmosphere, clear lighting, 9:16 aspect ratio",
+   "motion": "pull",
+   "title": "SOCH",
+   "big": "COMMENT",
+   "small": "JAI BHOLE",
+   "keywords": [
+    "pashchatap",
+    "vichar",
+    "comment"
+   ],
+   "real": null
+  }
+ ],
+ "caption": "Kedarnath ka Shivling aam shivling jaisa gol kyu nahi, balki trikoniya hai? 🏔️🙏\nMahabharat yuddh ke baad Pandavon aur Mahadev ke beech ki yeh romanchak katha Shiva Puran aur Skanda Puran (Kedar Khanda) mein milti hai.\nKya sacha pashchatap sabhi galtiyon ko maaf kar deta hai? Apni raye comment mein zaroor batayein.\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#Kedarnath",
+  "#Mahadev",
+  "#PuranKatha",
+  "#Mahabharat",
+  "#Bhim",
+  "#Shivling",
+  "#SanatanDharma"
+ ],
+ "claims": [
+  {
+   "claim": "The natural rock lingam at Kedarnath is triangular in shape, representing the hump of a bull.",
+   "basis": "Shiva Purana, Koti Rudra Samhita, and Skanda Purana (Kedar Khanda) explicitly describe the Kedarnath swayambhu rock as the hump (prishtha bhaga) of Shiva's bull form."
+  },
+  {
+   "claim": "Pandavas sought Shiva to atone for the deaths of their kin in the Kurukshetra war.",
+   "basis": "Mahabharata (Svargarohanika Parva context) and Kedar Khanda describe the Pandavas journey to Garhwal Himalayas for penance."
+  },
+  {
+   "claim": "Shiva took the form of a bull, and Bhima stood astride two rocks to identify him among the herd.",
+   "basis": "Traditional Sthala Purana of Panch Kedar and Skanda Purana Kedar Khanda narrate Bhima's method of identifying the divine bull."
+  }
+ ],
+ "brain_ids": [
+  "82055e32f5",
+  "ef573ce014",
+  "7a67022fb6",
+  "1ad22ef225",
+  "4204a43442",
+  "3cec28c3e9",
+  "d7b38f2237",
+  "1662db247e",
+  "6a0ed93ee3",
+  "8ff0e3e4e9",
+  "d4d8a0da8f",
+  "84c1e843ba",
+  "a43539ef19",
+  "31d664c19b"
+ ]
+}

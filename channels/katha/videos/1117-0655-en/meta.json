@@ -2,7 +2,8 @@
  "channel": "katha",
  "job": "1117-0655-en",
  "topic": "Ganesh ji aur Kuber ka bhoj",
- "stage": "prepped",
+ "stage": "done",
  "lang": "en",
- "prepped_at": "2026-11-17 10:17"
+ "prepped_at": "2026-11-17 10:17",
+ "brain_judged": true
 }

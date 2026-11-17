@@ -1,0 +1,28 @@
+{
+ "topic": "Ganesh ji aur Kuber ka bhoj",
+ "title": "How Did Four Pandavas Fall Without a Battle?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.8,
+  "true_peak": -1.4,
+  "dur": 51.5
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 5: The image shows three brothers lying down, but the text mentions 'Sahadeva, Arjuna, and Bhima', implying three people, whereas the image depicts three figures. While technically correct, the visual composition is a bit crowded/repetitive compared to the narrative flow.",
+   "scene 13: The text 'DYING OF THIRST?' is slightly obscured by the lotus flower graphic, making it a bit harder to read than other text elements."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.959731543624161,
+  "words": 149,
+  "problems": []
+ },
+ "ok": true
+}

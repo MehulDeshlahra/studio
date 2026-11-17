@@ -46,5 +46,24 @@
    "first word starts late (8.9 s): something is spoken before the script",
    "visual: Scene 13 visual lacks a subject, displaying only an empty background arch."
   ]
+ },
+ {
+  "job": "real-02",
+  "topic": "Kedarnath mandir ka rahasya: Pandavon ne Shiv ji ko kaise dhoondha",
+  "title": "Kedarnath ka Shivling trikoniya kyu hai?",
+  "qc_ok": false,
+  "status": "held",
+  "review": [
+   "visual: Scene 11 (Shivling/card): The caption says 'SHIVLING' instead of the required summary words, and the image completely diverges from the expected ending narration.",
+   "visual: Scene 12 (Engagement card): The caption displays 'COMMENT' and 'JAI BHOLE' instead of the requested question prompt about sacha pashchatap."
+  ]
+ },
+ {
+  "job": "1117-0655-en",
+  "topic": "Ganesh ji aur Kuber ka bhoj",
+  "title": "How Did Four Pandavas Fall Without a Battle?",
+  "qc_ok": true,
+  "status": "approved",
+  "review": []
  }
 ]

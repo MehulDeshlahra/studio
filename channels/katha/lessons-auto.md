@@ -147,3 +147,33 @@
 
 ## review 1117-0145-en
 - visual: Severe character design inconsistency: Yamraj appears blue-skinned with multi-arms in scenes 5 and 12, but suddenly appears human-skinned with a different look in scene 10.
+
+## real-02 Kedarnath mandir ka rahasya: Pandavon ne Shiv ji ko kaise dhoondha
+- scene 3: The image contains a visible 'alamy' watermark at the bottom, which is unprofessional.
+- scene 5: The character's left arm (holding the mace) looks anatomically incorrect/melted into the body.
+- scene 6: The character's legs are floating unnaturally in the air, creating a distorted, 'melted' appearance.
+- scene 7: The perspective is confusing; the legs in the foreground are massive compared to the tiny bull in the background, making the composition look amateur.
+- scene 8: The bull's anatomy is distorted (the head/neck connection looks unnatural), and the rider's position on the bull is physically impossible/awkward.
+- scene 11: The text 'SWAYAMBHU SHIVLING' and 'SHIVA PURAN KATHA' is floating in the sky, which looks like a jarring overlay rather than part of the scene.
+- scene 12: The text 'COMMENT KAREIN' and 'JAI BHOLE NATH' is floating in the sky, which looks like a jarring overlay rather than part of the scene.
+
+## review real-02
+- visual: scene 1: The title is missing from the provided text, and the image contains a watermark ('alamy') which is amateur.
+- visual: scene 3: The image contains a visible watermark ('alamy') in the bottom right corner.
+- visual: scene 11: The text on the card ('SWAYAMBHU SHIVLING', 'SHIVA PURAN KATHA') does not match the intended script line ('KEDARNATH DHAM').
+- visual: scene 12: The text on the card ('AAP KYA SOCHTE HAIN?', 'COMMENT KAREIN', 'JAI BHOLE NATH') does not match the intended script line ('AAP KYA SOCHTE HAIN?').
+- visual: General: There is significant inconsistency between the intended script provided and the actual text rendered on the cards in the final scenes (11 and 12).
+
+## real-02 Kedarnath mandir ka rahasya: Pandavon ne Shiv ji ko kaise dhoondha
+- scene 1: The image shows a triangular stone, but the text 'BAKI MANDIRON JAISA' contradicts the script's question about why it is *not* like other temples.
+- scene 9: The caption 'LAGA' is too abrupt and doesn't fit the flow of the sentence 'Pakadte hi bail dharati mein samane laga'.
+- scene 11: The text 'SHIVLING' and 'SHIVA PURAN' are present, but the script for this scene is about the 'Kedarnath' title and the explanation of the stone. The visual is a generic temple, not specifically the Kedarnath Shivling.
+- scene 12: The text 'COMMENT' and 'JAI BHOLE' are present, but the script requires the title 'SOCH' and the question about repentance. The visual is a generic temple, not related to the 'Soch' prompt.
+
+## review real-02
+- visual: Scene 11 (Shivling/card): The caption says 'SHIVLING' instead of the required summary words, and the image completely diverges from the expected ending narration.
+- visual: Scene 12 (Engagement card): The caption displays 'COMMENT' and 'JAI BHOLE' instead of the requested question prompt about sacha pashchatap.
+
+## 1117-0655-en Ganesh ji aur Kuber ka bhoj
+- scene 5: The image shows three brothers lying down, but the text mentions 'Sahadeva, Arjuna, and Bhima', implying three people, whereas the image depicts three figures. While technically correct, the visual composition is a bit crowded/repetitive compared to the narrative flow.
+- scene 13: The text 'DYING OF THIRST?' is slightly obscured by the lotus flower graphic, making it a bit harder to read than other text elements.

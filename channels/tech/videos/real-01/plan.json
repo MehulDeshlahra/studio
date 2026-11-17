@@ -165,56 +165,54 @@
   },
   {
    "vo": "Dono bank se OK milte hi, aapki screen par green tick aa jaata hai.",
-   "type": "object",
+   "type": "stat",
    "prompt": "Sleek floating emerald acrylic success token glowing with a bright minimalist checkmark contour, soft warm rim light, premium dark fintech aesthetics on solid black background.",
-   "label": "INSTANT SUCCESS",
+   "label": "STATUS",
    "motion": "tilt",
    "keywords": [
-    "screen",
-    "green tick",
-    "OK"
+    "green tick"
    ],
-   "title": ""
+   "title": "APPROVAL",
+   "value": "SUCCESS",
+   "sub": "Verified",
+   "big": "DONE"
   },
   {
    "vo": "Paisa seedha bank to bank gaya, beech mein kisi app ne chua tak nahi.",
    "type": "compare",
    "items": [
     {
-     "label": "Bank to Bank Settlement",
+     "label": "Bank",
      "value": "100%",
      "pct": 100
     },
     {
-     "label": "Funds Held by UPI Apps",
+     "label": "Others",
      "value": "0%",
      "pct": 0
     }
    ],
-   "label": "DIRECT ROUTE",
+   "label": "FLOW",
    "motion": "pull",
    "keywords": [
-    "bank to bank",
-    "app",
-    "chua"
+    "bank to bank"
    ],
-   "title": ""
+   "title": "TRANSFER"
   },
   {
    "vo": "Kya aapko lagta tha PhonePe paise bhejta hai? Comment mein sach batao!",
    "type": "title",
-   "big": "DID YOU KNOW?",
-   "sub": "Sach batao comment mein",
+   "big": "COMMENT",
+   "sub": "Batao",
    "motion": "punch",
    "keywords": [
-    "PhonePe",
-    "comment",
-    "batao"
+    "PhonePe"
    ],
-   "title": ""
+   "title": "SACH",
+   "label": "PHONEPE"
   }
  ],
- "caption": "PhonePe aur Google Pay aapka ek rupya bhi transfer nahi karte! Dekhiye kaise NPCI aur aapka bank sirf 2 second mein poora settlement karte hain. Kya aapko yeh pata tha?",
+ "caption": "PhonePe aur Google Pay aapka ek rupya bhi transfer nahi karte! Dekhiye kaise NPCI aur aapka bank sirf 2 second mein poora settlement karte hain. Kya aapko yeh pata tha?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#UPI",
   "#NPCI",

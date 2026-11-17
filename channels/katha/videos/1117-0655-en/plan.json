@@ -85,16 +85,19 @@
    "motion": "punch",
    "title": "",
    "big": "THE MIND",
-   "small": "Faster than wind",
+   "small": "Swift thought",
    "keywords": []
   },
   {
    "vo": "The Yaksha pressed on: What is the greatest wonder in the world?",
-   "type": "image",
+   "type": "card",
    "prompt": "Divine luminous crane opening golden glowing beak to speak sacred philosophical query, reflecting brightly in the still enchanted waters, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, no text",
    "motion": "push",
-   "title": "GREATEST WONDER",
-   "keywords": []
+   "title": "",
+   "keywords": [],
+   "big": "THE WONDER",
+   "small": "Life continues daily",
+   "real": null
   },
   {
    "vo": "Yudhishthira replied: Seeing death daily, mortals still act like they are immortal.",
@@ -121,7 +124,7 @@
    "keywords": []
   }
  ],
- "caption": "The Yaksha Prashna from the Mahabharata teaches that patience surpasses raw power, and humility outshines pride. When four mighty warriors fell to their thirst and arrogance, only Yudhishthira's calm wisdom saved them.\n\nIf you were in their shoes, could you show such restraint? Tell us in the comments!",
+ "caption": "The Yaksha Prashna from the Mahabharata teaches that patience surpasses raw power, and humility outshines pride. When four mighty warriors fell to their thirst and arrogance, only Yudhishthira's calm wisdom saved them.\n\nIf you were in their shoes, could you show such restraint? Tell us in the comments!\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#Mahabharata",
   "#AncientWisdom",
