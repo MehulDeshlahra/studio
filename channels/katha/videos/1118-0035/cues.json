@@ -1,7 +1,7 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/full-on.mp3",
+  "file": "music/lib/katha/death-and-axes.mp3",
   "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
@@ -66,12 +66,6 @@
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,
    "align": "peak"
-  },
-  {
-   "t": 26.73,
-   "file": "sfx/pop-light.mp3",
-   "gain_db": -17,
-   "align": "onset"
   },
   {
    "t": 26.68,
