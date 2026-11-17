@@ -99,7 +99,7 @@ def study(page, n=10):
             if v["id"] not in seen:
                 seen.add(v["id"]); found.append(v)
     found.sort(key=lambda v: -v["views"])
-    notes, tried = [], 0
+    notes, tried, loose = [], 0, []
     for v in found:
         if len(notes) >= n or tried >= n * 2:
             break
@@ -108,10 +108,14 @@ def study(page, n=10):
             a = llm.watch(v["url"], HOOK_PROMPT.format(niche_desc=NICHE.get(page, "a short-form explainer in this niche")))
         except Exception as e:
             log("hookstudy watch fail", v["url"], str(e)[:100]); continue
-        if not isinstance(a, dict) or not a.get("faceless", True) or a.get("on_niche") is False:
+        if not isinstance(a, dict) or a.get("on_niche") is False:
             continue
+        if not a.get("faceless", True):                 # keep on-niche videos with a presenter as a fallback (raaz has few faceless winners)
+            a.update({k: v.get(k) for k in ("url", "title", "views", "channel")}); loose.append(a); continue
         a.update({k: v.get(k) for k in ("url", "title", "views", "channel")})
         notes.append(a); log("hookstudy", page, f"{v['views']:,}", v["url"], "|", str(a.get("first_words"))[:60])
+    if len(notes) < 3:
+        notes += loose[:6 - len(notes)]
     return found, notes
 
 
