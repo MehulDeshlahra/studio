@@ -41,6 +41,17 @@ const lvlBadge = (l, t) => `<span class="badge" style="--c:${LV[l] || K.gray}"><
 const meter = (p, c) => `<div class="meter" style="--c:${c}"><i style="width:${Math.max(2, Math.min(100, p))}%"></i></div>`;
 const thr = (v, w, b) => (v >= b ? K.red : v >= w ? K.amber : K.green);
 const seg = (j) => `<div class="seg">${j.steps.map((s) => `<i class="${s.done ? "d" : s.active ? "a" : ""}" title="${esc(s.label)}"></i>`).join("")}</div>`;
+function qualityChart(q) {
+  const mx = Math.max(1, ...q.days.map((d) => d.videos));
+  const bars = q.days.map((d) => { const h = (d.videos / mx) * 70, hp = (d.passed / mx) * 70;
+    return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px"><div class="num" style="font-size:12px;font-weight:600">${d.rate == null ? "" : d.rate + "%"}</div>
+    <div style="height:72px;width:70%;display:flex;flex-direction:column;justify-content:flex-end"><div style="height:${h - hp}px;background:color-mix(in srgb,var(--amber) 35%,transparent);border-radius:3px 3px 0 0"></div><div style="height:${hp}px;background:var(--green);border-radius:${h > hp ? 0 : 3}px ${h > hp ? 0 : 3}px 0 0"></div></div>
+    <div class="faint" style="font-size:11px">${d.day.slice(8)}</div></div>`; }).join("");
+  const rs = q.reasons.map(([r, n]) => `<div class="row" style="padding:6px 0"><span class="grow" style="font-size:12.5px">${esc(r)}</span><span class="num mut">${n}×</span></div>`).join("");
+  return `<div style="display:flex;gap:6px;align-items:flex-end">${bars}</div>
+  <div class="mut" style="font-size:12px;margin-top:6px"><span class="dot" style="--c:var(--green)"></span> passed first try &nbsp; <span class="dot" style="--c:var(--amber)"></span> held, then fixed or rebuilt · ${q.avg_reviews} reviews per video on average</div>
+  ${rs ? `<div style="margin-top:10px;font-weight:500;font-size:12.5px">Most common reasons for a hold</div>${rs}` : ""}`;
+}
 function cpuSplit(s) {
   const n = Math.round(s.cpu_norm || 0), b = Math.round(s.cpu_bg || 0), f = Math.max(0, 100 - n - b);
   return `<div style="display:flex;justify-content:space-between;font-size:12.5px"><span class="mut">CPU</span><span class="num">${n + b}%</span></div>
@@ -102,7 +113,7 @@ const V = {
     <div class="card strip">
      <div><div class="lbl">Followers</div><div class="val">${nf(fol)}</div><div class="dl">6 channels · Instagram + Facebook</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${K.violet}"></i>Needs approval</div><div class="val">${wait}</div><div class="dl">${appr} approved, waiting for a slot</div></div>
-     <div><div class="lbl">Rendered today</div><div class="val">${made}</div><div class="dl">${S.budgets.map((x) => `${x.name.split(" ")[0]} ${x.used}/${x.cap}`).join(" · ")}</div></div>
+     <div><div class="lbl"><i class="dot" style="--c:${(S.quality.rate7 ?? 0) >= 70 ? K.green : (S.quality.rate7 ?? 0) >= 40 ? K.amber : K.red}"></i>First-pass rate</div><div class="val">${S.quality.rate7 == null ? "—" : S.quality.rate7 + "%"}</div><div class="dl">${S.quality.videos7} videos in 7 days passed review first try · ${made} rendered today</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${act.length ? K.blue : K.gray}"></i>Building</div><div class="val">${act.length}</div><div class="dl">typical render ${dur(S.render_median)}</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${bad ? K.red : warn ? K.amber : K.green}"></i>Health</div><div class="val">${bad ? bad + " <small>to fix</small>" : warn ? warn + " <small>to watch</small>" : "OK"}</div><div class="dl">priority CPU ${Math.round(s.cpu_norm || 0)}% · disk ${Math.round(s.disk_pct)}%</div></div>
     </div>
@@ -112,6 +123,8 @@ const V = {
        ${b && b.headline ? `<div class="hl">${esc(b.headline)}</div><ul>${(b.lines || []).map((l) => `<li>${esc(l)}</li>`).join("")}</ul>` : `<div class="mut" style="margin-top:8px">${b && b.error ? "Could not write the brief: " + esc(b.error) : "Writing the brief…"}</div>`}</div>
       <div class="sec"><h3>Needs you</h3><span class="mut">${S.needs.length}</span></div>
       <div class="card">${S.needs.map(needRow).join("") || `<div class="empty">Nothing needs you right now.</div>`}</div>
+      <div class="sec"><h3>Accuracy</h3><span class="mut">share of videos that pass the final review on the first try</span></div>
+      <div class="card pad">${qualityChart(S.quality)}</div>
       <div class="sec"><h3>Building now</h3><a class="r mut" href="#runs">All runs →</a></div>
       <div class="card">${act.map(runRow).join("") || `<div class="empty">Idle. Next: ${esc(S.schedule[0]?.name || "—")} ${inT(S.schedule[0]?.in)}.</div>`}</div>
      </div>

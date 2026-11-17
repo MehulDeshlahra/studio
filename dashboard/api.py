@@ -414,6 +414,43 @@ def activity(n=160):
     return out[::-1]
 
 
+def quality(days=7):
+    """First-pass rate per day: of the videos whose FIRST final review happened that day, how many passed it.
+    Also: reviews per video, holds caught before render (no render time spent), top hold reasons."""
+    first, reviews, pre_held, reasons = {}, {}, {}, {}
+    rx = re.compile(r"^(\d{4}-\d\d-\d\d) [\d:]+ review (\w+) (\S+) (PASS|HOLD)(?::\s*(.*))?")
+    try:
+        with open(LOG, encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                if "held BEFORE render" in line:
+                    pre_held[line[:10]] = pre_held.get(line[:10], 0) + 1
+                    continue
+                m = rx.match(line)
+                if not m:
+                    continue
+                day, cid, job, res, why = m.groups()
+                k = (cid, job)
+                reviews[k] = reviews.get(k, 0) + 1
+                if k not in first:
+                    first[k] = (day, res == "PASS")
+                if res == "HOLD" and why:
+                    for p in why.split(" | ")[:3]:
+                        key = re.sub(r"\d+(\.\d+)?", "#", p.replace("visual: ", ""))[:70]
+                        reasons[key] = reasons.get(key, 0) + 1
+    except Exception:
+        pass
+    out = []
+    for i in range(days - 1, -1, -1):
+        day = time.strftime("%Y-%m-%d", time.localtime(time.time() - i * 86400))
+        vs = [ok for (d, ok) in first.values() if d == day]
+        out.append({"day": day, "videos": len(vs), "passed": sum(vs), "rate": round(100 * sum(vs) / len(vs)) if vs else None,
+                    "pre_held": pre_held.get(day, 0)})
+    allv = [ok for (d, ok) in first.values() if d >= out[0]["day"]]
+    return {"days": out, "rate7": round(100 * sum(allv) / len(allv)) if allv else None, "videos7": len(allv),
+            "avg_reviews": round(sum(reviews.values()) / max(1, len(reviews)), 1),
+            "reasons": sorted(reasons.items(), key=lambda x: -x[1])[:6]}
+
+
 def budgets():
     b = (jload(os.path.join(OUT, "budget.json"), {}) or {}).get(time.strftime("%Y-%m-%d"), {})
     return [{"name": "Voice (Gemini TTS)", "used": b.get("tts", 0), "cap": TTS_CAP},
@@ -504,7 +541,7 @@ def state():
     st = jload(SETTINGS, {"auto_approve": False, "min_score": 9}) or {}
     out = {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
             "schedule": sched, "issues": iss, "channels": chs, "budgets": budgets(), "activity": activity(), "settings": st,
-            "token_days": token_days, "render_median": render_median()}
+            "token_days": token_days, "render_median": render_median(), "quality": quality()}
     out["needs"] = extra.needs_you(out)
     _last.update(t=time.time(), s=out)
     return out
