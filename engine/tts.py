@@ -110,7 +110,9 @@ urllib.request.install_opener(urllib.request.build_opener(_KeyWatch()))
 def speak(script, out_wav, voice="Charon", style="", lang="hi"):
     language = "Indian English" if lang == "en" else "Hinglish"
     # short "Say ...:" directive (Gemini TTS docs style); a long instruction got READ ALOUD in English (case2-p1-en).
-    prompt = f"Say in {language}, {style}:\n" + script
+    # 17 Nov: the "Say in ...:" line was READ ALOUD on every voice (7-9 s cut each time; when the cut missed, the video
+    # was held: top hold reason #3). A bracket style tag is not read (tested: speech starts at 0.0 s with the script).
+    prompt = f"[{language}, {style.strip().rstrip('.')}] " + script
     body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
