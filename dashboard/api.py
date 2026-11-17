@@ -725,6 +725,10 @@ class H(BaseHTTPRequestHandler):
                 parts = u.split("/")[2:]
                 if len(parts) != 3 or any(p in ("", ".", "..") or "/" in p for p in parts):
                     return self.send(404, {"error": "bad path"})
+                if parts[2] == "cover-s.jpg":                      # 360 px thumbnail, made once and cached next to the cover
+                    big, small = os.path.join(OUT, parts[0], parts[1], "cover.jpg"), os.path.join(OUT, parts[0], parts[1], "cover-s.jpg")
+                    if os.path.exists(big) and (not os.path.exists(small) or os.path.getmtime(small) < os.path.getmtime(big)):
+                        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", big, "-vf", "scale=360:-2", "-q:v", "5", small], timeout=30)
                 p = os.path.realpath(os.path.join(OUT, *parts))
                 if not p.startswith(os.path.realpath(OUT) + os.sep) or not os.path.isfile(p):
                     return self.send(404, {"error": "not found"})
