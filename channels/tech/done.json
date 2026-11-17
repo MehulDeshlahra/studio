@@ -85,7 +85,7 @@
   "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
   "status": "held",
   "review": [
-   "before render, scene 7: OVERLAP: Caption text in still 2 is corrupted and overlapping ('delete!' collides directly into 'internet, bina storage ke.')"
+   "visual: Scene 10 end card has overlapping duplicate text at the bottom ('Kya aapka phone kisi dost ki') where the caption overlaps or glitches with the final frame state."
   ]
  }
 ]

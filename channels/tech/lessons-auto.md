@@ -293,3 +293,9 @@
 
 ## review lab-gpt-01
 - only 0% of the script was found in the voice
+
+## review 1117-0729
+- only 76% of the script was found in the voice
+
+## review 1117-0729
+- visual: Scene 10 end card has overlapping duplicate text at the bottom ('Kya aapka phone kisi dost ki') where the caption overlaps or glitches with the final frame state.

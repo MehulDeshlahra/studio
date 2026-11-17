@@ -2,7 +2,9 @@
  "channel": "tech",
  "job": "1117-0729",
  "topic": "'Hey Google' phone kaise sunta hai",
- "stage": "prepped",
+ "stage": "done",
  "lang": "hi",
- "prepped_at": "2026-11-17 07:48"
+ "prepped_at": "2026-11-17 07:48",
+ "brain_judged": true,
+ "voice_retry": 1
 }

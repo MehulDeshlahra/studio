@@ -1,0 +1,25 @@
+{
+ "topic": "'Hey Google' phone kaise sunta hai",
+ "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.6,
+  "true_peak": -2.5,
+  "dur": 48.97
+ },
+ "vision": {
+  "score": 10,
+  "ok": true,
+  "problems": []
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8142857142857143,
+  "words": 140,
+  "problems": []
+ },
+ "ok": true
+}
