@@ -116,7 +116,7 @@ def ig_top(page, per=6):
         except Exception as e:
             log("hookstudy ig skip", u, str(e)[:60]); continue
         b = d.get("business_discovery") or {}
-        reels = [m for m in (b.get("media") or {}).get("data", []) if m.get("media_product_type") == "REELS" and m.get("permalink")]
+        reels = [m for m in (b.get("media") or {}).get("data", []) if m.get("media_product_type") == "REELS" and m.get("permalink") and m.get("media_url")]   # no file = cannot be watched (licensed music)
         reels.sort(key=lambda m: -((m.get("like_count") or 0) + 3 * (m.get("comments_count") or 0)))
         for m in reels[:per]:
             out.append({"id": m["permalink"], "url": m["permalink"], "video": m.get("media_url"), "title": (m.get("caption") or "")[:90],
