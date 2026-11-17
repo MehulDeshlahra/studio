@@ -177,7 +177,8 @@ def probe():
     [t.start() for t in ths]; [t.join() for t in ths]
     hist, paid, gonem = old.get("history", {}), old.get("paid", {}), old.get("gone", {})
     for k, r in res.items():                            # keep the last 7 results per model: one bad day is not a verdict
-        hist[k] = (hist.get(k, []) + [1 if r["ok"] else 0])[-7:]
+        if not r["why"].startswith("HTTP 429"):            # busy is not broken: a 429 does not count against a model
+            hist[k] = (hist.get(k, []) + [1 if r["ok"] else 0])[-7:]
         if r["why"].startswith("HTTP 402") and "connection(s) credits exhausted" not in r["why"]:
             paid[k] = time.time()
         if r["why"].startswith("HTTP 404") or "no longer avail" in r["why"] or "currently unavailable" in r["why"]:
@@ -200,8 +201,8 @@ def rank(data, cands, kind, need_tier=0, only=None):
         cooling = bool(r) and r["why"].startswith("HTTP 429") and rel >= 0.5   # busy today but usually works: keep it, last
         if not r or not (r["ok"] or cooling) or tier < need_tier or (only and m not in only):
             continue
-        if cooling:
-            tier = 0
+        # 18 Nov: a 429 at probe time only means "busy this minute"; OmniRoute skips a busy model per request anyway,
+        # so a usually-working model keeps its place (04:40 run had put every Gemini model last for the whole day)
         out.append((-(tier * 10 + rel * 5) + min(r["secs"], 60) / 6, m))
     return [m for _, m in sorted(out)]
 
