@@ -41,7 +41,8 @@ SCHEMA = """{
    "prompt": "image prompt (image, clip, card background); for clip also what moves",
    "motion": "push|pull|pan|punch|tilt", "title": "0-4 word on-screen headline or empty",
    "nodes": ["only for flow: 2-5 short labels in order"], "big": "only for card: 1-3 words / symbol", "small": "card: <=5 words",
-   "keywords": ["1-3 words from vo to highlight"]}
+   "keywords": ["1-3 words from vo to highlight"],
+   "real": "OPTIONAL, see REAL PICTURES: {\\"q\\": \\"search query\\", \\"kind\\": \\"logo|photo\\", \\"subject\\": \\"what it must show\\"}"}
  ],
  "caption": "Instagram caption: 1 hook line + 1-2 lines + a question", "hashtags": ["#..."],
  "claims": [{"claim": "each factual statement", "basis": "why it is true / source"}]
@@ -64,7 +65,10 @@ look (study good explainers but never copy one creator). IGNORE the visual types
   {"type":"code","title":"<e.g. 'terminal'>","lines":["<short command or code line>", "..."],"highlight":<index of the key line>,"label":"..."}   (2-5 lines, <= 26 characters each)
 Rules: at most 4 'object' scenes (they cost image credits); every number must be true and common knowledge, or
 leave numbers out (no made-up stats); labels are UPPERCASE-able tags like "NPCI SWITCH", "STEP 2", "INDIA · 2024";
-no cartoons, no faces, no characters with eyes; the object prompts describe real hardware/things only.
+no cartoons, no characters with eyes; the object prompts describe real hardware/things only.
+REAL PICTURES apply here too: an 'object' scene whose line names a real brand/app/company/product/person may carry
+"real": {"q": "UPI logo", "kind": "logo" or "photo", "subject": "what it must show"} (2-5 per video). Real logos/photos replace the
+AI render; keep the object "prompt" as the fallback. Real faces of public figures are fine in a 'photo'.
 """
 
 
@@ -146,6 +150,11 @@ REQUIREMENTS
 - Prompts: describe one clear, simple 9:16 composition, subject centred, room above and below for text;
   include the channel look: {ch.get('visuals', {}).get('look', '')}. Recurring characters: paste their cast description verbatim.
   Never ask for readable text, logos or brand names inside images.
+- REAL PICTURES: when the spoken line names a real, well-known thing (a brand or app logo, a product, a company, a place, a
+  monument, a public figure, a real event), add "real" to that scene so the video shows the actual picture instead of an AI
+  drawing: {{"q": "short web image search query", "kind": "logo" or "photo", "subject": "what the picture must show"}}.
+  Use it on 2-5 scenes per video, only where the line is really about that thing; keep the normal "prompt" as the fallback.
+  Works on image, card and object scenes (not clip or flow). Query like a person would: "UPI logo", "Taj Mahal front view".
 - No numbers, specs, prices or dates unless they are common, stable knowledge; list every factual statement in "claims".
 - Never mention AI and never add an AI label.
 Return JSON with exactly this shape:

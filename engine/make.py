@@ -86,7 +86,13 @@ def _stage_assets(ch, p, job):
         if k in got and all(os.path.exists(v) for v in got[k].values()):
             last_img = got[k].get("image", last_img); continue
         a = {}
-        if s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
+        real = s.get("real")
+        if isinstance(real, dict) and real.get("q") and s.get("type") in ("image", "card", "object"):
+            import realmedia
+            r = realmedia.fetch(real, os.path.join(adir, f"s{i}r.jpg"), lab=theme.get("style") == "lab")
+            if r:
+                a["image"] = r
+        if not a and s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
             prompt = s["prompt"] + (". " + look if look and look.lower()[:20] not in s["prompt"].lower() else "") + \
                 ". Vertical 9:16, no text, no letters, no logos, no watermark."
             if theme.get("style") == "lab":
