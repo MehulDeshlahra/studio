@@ -103,11 +103,12 @@ class _KeyWatch(urllib.request.BaseHandler):
 def _alert_if_all_out(st):
     ks = [k[-6:] for k in _keys_all()]
     tts_out = all(any("tts" in m for m in st["keys"].get(k, {}).get("out", [])) or "*" in st["keys"].get(k, {}).get("out", []) for k in ks)
-    if tts_out and not st.get("alerted"):
+    lite_out = all(any(m.startswith("gemini-3.5-flash-lite") for m in st["keys"].get(k, {}).get("out", [])) or "*" in st["keys"].get(k, {}).get("out", []) for k in ks)
+    if (tts_out or lite_out) and not st.get("alerted"):
         st["alerted"] = time.strftime("%H:%M"); _ksave(st)
         try:
             from core import telegram
-            telegram(f"Studio: all {len(ks)} free Gemini keys are out of today's VOICE quota. Videos wait until the reset "
+            telegram(f"Studio: all {len(ks)} free Gemini keys are out of today's quota ({"voice" if tts_out else "text"}). Videos wait until the reset "
                      "(13:30 IST). Nothing to do unless this happens often; then add one more free key.")
         except Exception:
             pass
