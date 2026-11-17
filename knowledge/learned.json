@@ -1,0 +1,426 @@
+[
+ {
+  "t": "2026-11-17 10:42",
+  "name": "lowfatgeek/motion-graphics-skill",
+  "url": "https://github.com/lowfatgeek/motion-graphics-skill",
+  "license": "MIT",
+  "verdict": "useful",
+  "summary": "Motion Bang Bang is an MIT-licensed agent skill and design framework for building cinematic, anti-slide motion graphics using HTML, CSS, and GSAP. It provides high-value recipes including automated GSAP SFX mining, deterministic render contracts, and Vox-style editorial collage components that integrate directly with HyperFrames.",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Timeline-Mined SFX Cue Generation",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Staggered Caption Word-Clicks",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Mechanical Anti-Slide Preflight Audit",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Vox-Style Editorial Collage Design System",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Shot-Scale Jump Contrast Rule",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "SVG Joint Proxy Transform Wrapper",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-17 10:47",
+  "name": "0xS4N4TG/kinetograph-foundation-motion",
+  "url": "https://github.com/0xS4N4TG/kinetograph-foundation-motion",
+  "license": "NOASSERTION",
+  "verdict": "useful",
+  "summary": "Kinetograph Foundation Motion is an animation reference for coding agents translating Disney's twelve principles and modern UI motion design (Kowalski, Krehel, Tompkins) into programmatic motion graphics and automated audits. It provides high-value timing heuristics, camera/easing rules, and anti-slop filters directly applicable to our HTML+GSAP render pipeline.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Text Reading Hold Duration Formula",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Materializing Blur-Translate Enter Preset",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Subtler Asymmetric Exit Rule",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Ease-In Cut-On-Beat Scene Transition",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Deterministic Sub-1% Handheld Drift",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Two-Effect Composite Restraint Audit",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Non-Zero Scale Inception Guard",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-17 10:47",
+  "name": "2boysfromtown/2bft-playbook",
+  "url": "https://github.com/2boysfromtown/2bft-playbook",
+  "license": "none",
+  "verdict": "skip",
+  "summary": "This document is a business playbook, agency rate card, and earnings breakdown for an AI creative studio based in Tamil Nadu. It provides no concrete video editing specifications, motion parameters, or pipeline automation code.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [],
+  "skip": "The repository is purely a portfolio showcase, rate card, and commercial revenue breakdown with no actionable technical rules, prompt systems, or editing engineering details for our pipeline."
+ },
+ {
+  "t": "2026-11-17 11:13",
+  "name": "2boysfromtown/2bft-video-editor",
+  "url": "https://github.com/2boysfromtown/2bft-video-editor",
+  "license": "MIT",
+  "verdict": "useful",
+  "summary": "2BFT Video Editor is an open-source suite of automated video editing tools featuring face-tracked reframing, stem separation, audio energy mapping, and rigorous pre-delivery QC. It provides high-value operational recipes for beat alignment, trending audio workflows, energy-driven camera effects, and Hinglish subtitle timing.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "India Shorts Trend Audio Scraper & Dual Master Export",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Drum-Stem Transient Beat-Grid Snapping",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Voice Energy Shake with Hard Budget Guardrails",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Multi-Check Pre-Delivery QA Matrix",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Windowed Latin Prompting for Hinglish Word Alignment",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-17 11:15",
+  "name": "2boysfromtown/hyperframes-motion",
+  "url": "https://github.com/2boysfromtown/hyperframes-motion",
+  "license": "MIT",
+  "verdict": "useful",
+  "summary": "This repository provides zero-dependency After Effects-style motion graphics templates and CSS/GSAP animation primitives specifically designed for vertical 1080x1920 video. It is highly practical and directly compatible with our existing HyperFrames HTML-to-MP4 rendering pipeline.",
+  "knowledge": 0,
+  "build": 3,
+  "items": [
+   {
+    "title": "CSS 3D Perspective Rig for Prop and Panel Staging",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Scramble-Decode Headline Text Generator",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "Dual-Layer CSS Chromatic Glitch Impact",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-17 12:35",
+  "name": "alchaincyf/huashu-art-motion",
+  "url": "https://github.com/alchaincyf/huashu-art-motion",
+  "license": "MIT",
+  "verdict": "useful",
+  "summary": "An open-source code-driven motion graphics engine containing 36 procedural art styles, 9 explainer grammars, and rigorous preflight/post-render quality gates. It offers exceptional battle-tested rules for camera punctuation, script-to-screen factual validation, and automated anti-slideshow post-render checks.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Dual-Metric Anti-PPT and AI-Slop Render Gate",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Camera Punctuation Density and Directional Alternation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Script-to-Screen Numerical Parity Preflight",
+    "kind": "build",
+    "area": "script"
+   },
+   {
+    "title": "Subzone Graphic Intrusion Gate",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-17 12:37",
+  "name": "bestagentkits/motion-video-skill",
+  "url": "https://github.com/bestagentkits/motion-video-skill",
+  "license": "MIT",
+  "verdict": "useful",
+  "summary": "This repository provides a production-grade Agent Skill and Python/Node pipeline for authoring beat-synced motion graphics in HyperFrames using GSAP and AI audio. It is exceptionally relevant as our studio already uses HyperFrames and GSAP, offering concrete solutions for beat grid fitting, stem mix verification, and rendering pitfalls.",
+  "knowledge": 3,
+  "build": 2,
+  "items": [
+   {
+    "title": "Dual-Band Beat-Grid and Kick Energy Fitter",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Speech-to-Music Stem Mix Balance Verification",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Lossless Master Audio Remux Post-HyperFrames",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Bar-Spliced Pre-Drop Silent Stops",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Bake Complex CSS Gradients and Noise into PNG Tiles",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "GSAP On-Twos Stepped Easing Quantizer",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-17 13:35",
+  "name": "calesthio/generative-media-skills",
+  "url": "https://github.com/calesthio/generative-media-skills",
+  "license": "MIT",
+  "verdict": "useful",
+  "summary": "This repository is a comprehensive library of 150+ research-backed 'skills' and evaluation rubrics for AI-driven media production. It is an exceptional resource for standardizing how AI agents handle complex cinematography, 3D assets, and technical API constraints.",
+  "knowledge": 5,
+  "build": 5,
+  "items": [
+   {
+    "title": "LLM Reasoning Evaluation (EVAL.md Pattern)",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "D3.js Animated Data Visualization",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Lottie Vector Animation Integration",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Non-Semantic Audio-Reactive Mapping",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Three.js Deterministic 3D Props",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Volatile Fact Verification Dating",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "2D Rig Viseme Inventory Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Automated Screen Demo Capture",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Precise Video Description (5-Aspect Rule)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Instruction-Guided TTS Performance",
+    "kind": "knowledge",
+    "area": "voice"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-17 13:41",
+  "name": "devton/motion-director",
+  "url": "https://github.com/devton/motion-director",
+  "license": "none",
+  "verdict": "useful",
+  "summary": "This source is a comprehensive HyperFrames orchestration framework for high-end automated motion design. It is an exceptional engineering reference for achieving frame-perfect audio-visual synchronization using a shared timing 'spine' and procedural audio.",
+  "knowledge": 2,
+  "build": 6,
+  "items": [
+   {
+    "title": "Shared Timing Spine (layout.js)",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "120 BPM Structural Grid",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Spine-Driven Procedural Scoring",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "CSS 3D Head-on Stage",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Mathematical Character Rigging",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dual-Side Transition Snapshots",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "LLMS.txt Verbatim Extraction",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "FLIP Object Continuity",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-17 13:47",
+  "name": "feitangyuan/onetake",
+  "url": "https://github.com/feitangyuan/onetake",
+  "license": "NOASSERTION",
+  "verdict": "useful",
+  "summary": "Onetake is a high-end motion engine that prioritizes 'continuity' over cuts, ensuring every scene grows out of the previous one. It uses HTML/JS/3D replicas and an automated 'oracle' to measure rhythm and element carry-over.",
+  "knowledge": 3,
+  "build": 7,
+  "items": [
+   {
+    "title": "Continuity Carry Oracle",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Reference Energy Mapping",
+    "kind": "knowledge",
+    "area": "research"
+   },
+   {
+    "title": "UI Replica System",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Shutter-Based Motion Blur",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Event-Driven SFX Scoring",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Rhythm Variance Rule",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Screen-Space Camera Rig",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Language Time-Warping",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "3D Prop Integration",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Camera Air & Depth SFX",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ }
+]

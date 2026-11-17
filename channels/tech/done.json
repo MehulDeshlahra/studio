@@ -87,5 +87,12 @@
   "review": [
    "visual: Scene 10 end card has overlapping duplicate text at the bottom ('Kya aapka phone kisi dost ki') where the caption overlaps or glitches with the final frame state."
   ]
+ },
+ {
+  "job": "real-01",
+  "topic": "UPI se paisa bhejte waqt Google Pay, PhonePe aur NPCI ke beech kya hota hai",
+  "title": "UPI se payment karte waqt peeche kya hota hai?",
+  "qc_ok": true,
+  "status": "made"
  }
 ]

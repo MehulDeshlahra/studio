@@ -299,3 +299,11 @@
 
 ## review 1117-0729
 - visual: Scene 10 end card has overlapping duplicate text at the bottom ('Kya aapka phone kisi dost ki') where the caption overlaps or glitches with the final frame state.
+
+## review real-01
+- only 76% of the script was found in the voice
+
+## real-01 UPI se paisa bhejte waqt Google Pay, PhonePe aur NPCI ke beech kya hota hai
+- scene 11: The text 'DID YOU KNOW?' is large and clear, but the caption text at the bottom 'Commerbhejta hai?h batao!' is garbled, overlapping, and contains a typo/glitch ('Commerbhejta hai?h batao!' instead of 'Comment mein sach batao!').
+- scene 10: The caption text 'beech mein kisi app ne chua' is cut off or partially obscured by the graphic elements above it, making it slightly hard to read compared to other frames.
+- only 58% of the script was found in the voice
