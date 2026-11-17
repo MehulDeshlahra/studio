@@ -70,7 +70,7 @@ def strip_preamble(wav, first_line, lang="hi", style=""):
             hits += 1; last_pre = k
         elif k - last_pre > 3:                     # 4 words in a row that are not instruction words: the script began
             break
-    if last_pre >= 1 and words[0][1] < 2.0 and norm[0] in pre and hits >= 0.6 * (last_pre + 1):
+    if last_pre >= 1 and words[0][1] < 2.0 and any(n in pre for n in norm[:3]) and hits >= 0.6 * (last_pre + 1):
         # 17 Nov katha: English Whisper stopped after "...turning point." (the Hindi script was not transcribed), so
         # there was no "next word"; cut just after the last instruction word then
         cut = max(0.0, words[last_pre + 1][1] - 0.08) if last_pre + 1 < len(words) else words[last_pre][2] + 0.15
