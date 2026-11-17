@@ -72,7 +72,7 @@ def check_failed_units():
 
 
 def check_timers():
-    for t in ("studio-inbox", "studio-prep", "studio-make", "studio-scout", "studio-stats", "studio-post", "studio-doctor"):
+    for t in ("studio-inbox", "studio-prep", "studio-make", "studio-scout", "studio-stats", "studio-post", "studio-doctor", "studio-learn", "studio-selfcheck"):
         rc, _ = sh(f"systemctl is-active --quiet {t}.timer")
         if rc != 0 and os.path.exists(f"/etc/systemd/system/{t}.timer"):
             fix(f"timer {t} was stopped, started it again", f"sudo systemctl enable --now {t}.timer")
