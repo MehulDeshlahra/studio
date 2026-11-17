@@ -46,25 +46,43 @@ Return JSON {{"rules": ["6-9 rules"], "patterns": [{{"hook_type": "...", "share"
 "avoid": ["3-5 things the winners never do"], "summary": "2 sentences"}}"""
 
 
-def top_shorts(q, n=60):
-    """YouTube search sorted by VIEW COUNT, short videos only (plain ytsearch returned mostly 15-800-view uploads)."""
-    import subprocess, urllib.parse
-    url = "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus(q) + "&sp=CAMSAhgB"
+def _ytdlp(url, n):
+    import subprocess
     try:
         out = subprocess.run([research.YTDLP if os.path.exists(research.YTDLP) else "yt-dlp", url, "--flat-playlist", "-j",
                               "--no-warnings", "--playlist-end", str(n)], capture_output=True, text=True, timeout=180).stdout
     except Exception as e:
-        log("hookstudy search fail", str(e)[:100]); return []
-    vids = []
+        log("hookstudy yt-dlp fail", str(e)[:100]); return []
+    rows = []
     for line in out.splitlines():
         try:
-            d = json.loads(line)
+            rows.append(json.loads(line))
         except ValueError:
-            continue
-        if d.get("id") and (d.get("duration") or 999) <= 90 and (d.get("view_count") or 0) >= 50000:
-            vids.append({"id": d["id"], "title": d.get("title"), "views": d.get("view_count") or 0, "dur": d.get("duration"),
-                         "channel": d.get("channel") or d.get("uploader"), "url": f"https://www.youtube.com/shorts/{d['id']}"})
-    return vids
+            pass
+    return rows
+
+
+def top_shorts(q, n=40):
+    """YouTube search lists mostly tiny new uploads and no view-sorted Shorts (tested 17 Nov), so: find the CHANNELS that
+    post in this niche, read each channel's Shorts tab (view counts included), keep the big ones."""
+    chans = {}
+    for d in _ytdlp(f"ytsearch{n}:{q}", n):
+        cid = d.get("channel_id") or d.get("uploader_id")
+        if cid and cid not in chans:
+            chans[cid] = d.get("channel") or d.get("uploader") or cid
+    vids = []
+    for cid, name in list(chans.items())[:14]:
+        base = f"https://www.youtube.com/channel/{cid}" if cid.startswith("UC") else f"https://www.youtube.com/{cid}"
+        for d in _ytdlp(base + "/shorts", 30):
+            if d.get("id") and (d.get("view_count") or 0) >= 50000:
+                vids.append({"id": d["id"], "title": d.get("title"), "views": d.get("view_count") or 0, "dur": d.get("duration"),
+                             "channel": name, "url": f"https://www.youtube.com/shorts/{d['id']}"})
+    vids.sort(key=lambda v: -v["views"])
+    out, per = [], {}
+    for v in vids:                                            # max 2 per channel, so one big channel does not decide alone
+        if per.get(v["channel"], 0) < 2:
+            out.append(v); per[v["channel"]] = per.get(v["channel"], 0) + 1
+    return out
 
 
 def study(page, n=10):
