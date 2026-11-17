@@ -73,20 +73,18 @@ def build():
         acc = load(os.path.expanduser(f"~/.studio-accounts/{cid}.json"), {}) or {}
         if not acc.get("yt"):
             needs.append(f"YouTube login for {cid}: on the laptop run  python tools/yt_login.py {cid}  (20 s)")
-    unk = load(os.path.join(OUT, "doctor-unknown.json"), {}) or {}
-    seen, recent = set(), []
-    for x in (reversed(unk) if isinstance(unk, list) else []):
-        if not isinstance(x, dict) or str(x.get("t", ""))[:10] < since:
-            continue
-        key = re.sub(r"\d+", "N", str(x.get("detail", x.get("what", ""))))[:60]
-        if key in seen:
-            continue
-        seen.add(key); recent.append(x)
-    for x in recent[:3]:
-        needs.append("doctor could not fix (" + str(x.get("what", ""))[:40] + "): " + str(x.get("detail", "")).strip()[:110])
-    held = [(cid, d["job"]) for cid in ("tech", "katha", "raaz") for d in (load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []) if d.get("status") == "held"]
-    if held:
-        needs.append(f"{len(held)} held video(s) the doctor could not rebuild: " + ", ".join(f"{c}/{j}" for c, j in held[:4]))
+    # 18 Nov: held videos and unknown errors belong to the healer, not to the owner: report what it did and what it parked
+    hs = load(os.path.join(OUT, "healer.json"), {}) or {}
+    hl = [x for x in hs.get("log", []) if x.get("t", "")[:10] >= since]
+    items = hs.get("items", {})
+    fixed = [k for k, it in items.items() if it.get("state") == "fixed" and str(it.get("fixed", ""))[:10] >= since]
+    parked = [(k, it) for k, it in items.items() if it.get("state") == "parked" and "English" not in str(it.get("why"))]
+    fx = load(os.path.join(ROOT, "knowledge", "fixes.json"), []) or []
+    out.append(f"   healer: {len(hl)} actions, {len(fixed)} problems fixed ({sum(k.startswith('held:') for k in fixed)} held videos), "
+               f"{sum('merged code fix' in ln for ln in lines)} code fixes merged, {len(fx)} known fixes learned")
+    if parked:
+        out.append("   parked by the healer (retried after the next code change): " +
+                   "; ".join(f"{k.split(':', 1)[1]} ({str(it.get('why') or '')[:50]})" for k, it in parked[:4]))
     out += ["", "Needs you:" if needs else "Needs you: nothing."] + [f"   - {n}" for n in needs]
     return "\n".join(out)[:3900]
 
