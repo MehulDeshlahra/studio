@@ -54,3 +54,16 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 ## 18 Nov 02:20 server freeze + reboot
 - 01:50 a hand-started Mehul agent dry run on a server with ~800 MB free froze it (memory thrash). Rebooted 02:19 through the Oracle API: node C:\Users\mehul\Desktop\job\oracle\reboot.js status|softreset|reset (API key in job/oci-config; no console password needed). All jb-* services, studio-dash and 21 timers came back.
 - Rule: never start a manual job (systemd-run) when MemAvailable < 2.5 GB. mehul.py now skips itself below 2.5 GB.
+
+## OPEN ITEMS (18 Nov, chat moved from the Vajra workspace to this repo)
+1. Mehul agent first real run: read its proposals (knowledge/mehul-log.json); the earlier manual dry run froze the server.
+2. Narakasura reel katha/1117-1935 with @puraankikatha: held by preflight (scene 10 overlap); fix + render.
+3. Own-video review leftovers: one-word captions, long static holds (katha), empty black frames + one-step flow (tech), duplicate TEST KARO end frame.
+4. Serial teaser lines: Hindi not always natural; better prompt.
+5. Listen to the first slower voice (2.4-2.5 w/s).
+6. Review Part 1 of 'Chouthi Manzil Ka Raaz' (Mehul, Raghav, villain Vikrant) once made.
+7. Read the new hooks.md per page after the Instagram + YouTube study.
+8. 20 Nov launch: check first posts, Stories (IG + FB), first comments, YouTube uploads actually work.
+9. After stats exist: comment replies, Part 2 series, drop-off lessons.
+10. Katha Hindi caption timing still weak.
+11. Later: new pages (owner prefers new pages over more versions).
