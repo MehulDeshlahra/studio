@@ -88,3 +88,11 @@
 - Tab-by-tab review fixed: stale 92% progress, stale reviews on building videos, held-label wording, grouped issues, friendly hold reasons, brief refresh (30 min, background), brain graph ids + learned cluster, phone layout (no sideways scroll, runs as cards), VAJRA counts, settings defaults, thumbnails (cover-s.jpg).
 - Housekeeping: finished videos keep video/cover/plan/timing/assets only; render/ raw.mp4 mix-tp.wav removed after a day (doctor) and raw.mp4 right after mastering. Preflight stills are deleted after the sheet is made.
 
+
+## Self-check and self-fix (17 Nov)
+- engine/selfcheck.py, timer studio-selfcheck (:17 and :47 every hour, low priority). Probes every dashboard API, loads every tab in headless Chrome (blank page / JS error / Offline), runs dashboard/audit.py, scans the last 3 h of unit logs for Python crashes (with their times).
+- For a code problem it shows the faulty code to Gemini, applies ONE small patch, compiles, restarts the dashboard if needed, re-runs the failing probe; pass = commit + push + one Telegram line, fail = rollback. Crashes inside video builds cannot be replayed: committed as unverified and auto-reverted if the same crash shows again AFTER the fix.
+- Limits: 4 fixes/day, 1 try per problem per day, only engine/ and dashboard/ (never publish.py, doctor.py, core.py, selfcheck.py, configs, secrets). Log: engine.log 'selfcheck:' lines, ~/studio-out/selfcheck.json, dashboard Connected apps. Unfixable problems go to doctor-unknown.json.
+- Tested 17 Nov: fixed a real preflight.py crash from a production traceback, and a deliberately injected dashboard typo (found, patched, verified).
+- Kiro sessions: still read build-queue.md and doctor-unknown.json first; selfcheck does not do design, taste or new features.
+

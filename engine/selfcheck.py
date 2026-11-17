@@ -330,7 +330,13 @@ def verify_old_fixes(tbs):
             continue
         again = [t for t in tbs if fx.get("tb_sig") and t["tbsig"] == fx["tb_sig"] and t["ts"] > t0 + 60]
         if again and not DRY:
-            sh(["git", "-C", ROOT, "revert", "--no-edit", fx["commit"]]); sh(f"cd {ROOT} && timeout 60 git push -q", 90)
+            rc, out = sh(["git", "-C", ROOT, "revert", "--no-edit", fx["commit"]])
+            if rc != 0:                                                   # a conflict must never leave git half-done
+                sh(["git", "-C", ROOT, "revert", "--abort"])
+                fx["reverted"] = True
+                note({"kind": "traceback", "msg": "an automatic fix could not be undone cleanly: " + fx["commit"], "frames": []}, out[-120:])
+                continue
+            sh(f"cd {ROOT} && timeout 60 git push -q", 90)
             fx["reverted"] = True
             log("selfcheck: undid fix", fx["commit"], "- the same crash came back")
             telegram(f"↩️ Studio undid its own earlier fix ({fx['file']}) because the same crash came back. It is noted for the next fix session.")
