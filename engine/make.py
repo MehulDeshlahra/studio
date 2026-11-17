@@ -167,7 +167,7 @@ def main():
     ch = channel(a.channel)
     if a.lang == "en":
         ch["lang"] = "en"
-        ch["handle"] = ch.get("handle_en", "")
+        ch["handle"] = ch.get("handle_en") or ch.get("handle", "")
         ch["voice"] = dict(ch["voice"], style=ch["voice"].get("style_en", ch["voice"].get("style", "")))
     theme = dict(ch.get("theme", {}))
     theme["lang"] = ch.get("lang", "hi")

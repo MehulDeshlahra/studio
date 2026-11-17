@@ -52,7 +52,9 @@ def vision_review(mp4, plan, timing, out_jpg, lang, handle):
     dur = float(sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp4]).strip())
     times.append(max(0.1, dur - 0.5))                     # end card
     qc.sheet(mp4, times[:26], out_jpg)
-    desc = "\n".join(f"scene {i + 1}: says \"{s['vo']}\" | type {s['type']} | headline \"{s.get('title', '')}\""
+    from compose import _dup
+    desc = "\n".join(f"scene {i + 1}: says \"{s['vo']}\" | type {s['type']}"
+                     + ("" if (not s.get("title") or _dup(s["title"], s.get("vo"))) else f" | headline \"{s['title']}\"")
                      for i, s in enumerate(plan["scenes"]))
     prompt = f"""You are the strictest reviewer at a top short-video studio. The contact sheet shows frames in time order:
 two frames per scene (scene start, scene middle), then the very last frame (end card).

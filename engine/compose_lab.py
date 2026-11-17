@@ -147,7 +147,7 @@ def page(plan, timed, total, theme, assets):
         elif kind == "flow":
             nodes = (s.get("nodes") or [])[:5]
             k = max(1, len(nodes))
-            y0, gap = 0, (620 / max(1, k - 1)) if k > 1 else 0
+            y0, gap = 0, (min(560, 150 * (k - 1)) / max(1, k - 1)) if k > 1 else 0   # last node ends above the captions
             hero = f'<div id="{sid}h" class="flowp"><svg class="fline" width="20" height="{int(gap * (k - 1)) + 2}"><line x1="10" x2="10" y1="0" y2="{gap * (k - 1):.0f}" stroke="#ffffff22" stroke-width="4"/>' \
                    f'<line id="{sid}ln" x1="10" x2="10" y1="0" y2="{gap * (k - 1):.0f}" stroke="{acc}" stroke-width="4" stroke-dasharray="{gap * (k - 1):.0f}" stroke-dashoffset="{gap * (k - 1):.0f}"/></svg>'
             step = min(0.8, (d * 0.4) / k)   # all nodes visible before mid-scene
@@ -322,7 +322,7 @@ body{{margin:0;background:#07080b}}
 .fill{{height:100%;border-radius:8px}}
 .chartp svg{{display:block;margin-top:10px}}
 .endl{{font-weight:800;font-size:64px;text-align:right;margin-top:6px}}
-.flowp{{position:absolute;left:150px;top:470px;width:780px;height:700px}}
+.flowp{{position:absolute;left:150px;top:450px;width:780px;height:660px}}
 .fline{{position:absolute;left:28px;top:44px}}
 .node{{position:absolute;left:0;width:780px;height:92px;display:flex;align-items:center;font-size:46px;font-weight:700;color:#fff}}
 .nd{{width:56px;height:56px;border-radius:50%;background:#2a2f3a;border:4px solid #07080b;margin-right:28px;flex:none}}
