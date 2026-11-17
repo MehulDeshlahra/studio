@@ -1,0 +1,843 @@
+{
+ "method": "whisper",
+ "dur": 50.781,
+ "lines": [
+  {
+   "text": "How did four mighty Pandavas drop dead without fighting a single battle?",
+   "start": 0.0,
+   "end": 4.42,
+   "words": [
+    {
+     "w": "How",
+     "s": 0.0,
+     "e": 0.14
+    },
+    {
+     "w": "did",
+     "s": 0.14,
+     "e": 0.34
+    },
+    {
+     "w": "four",
+     "s": 0.34,
+     "e": 0.76
+    },
+    {
+     "w": "mighty",
+     "s": 0.76,
+     "e": 1.16
+    },
+    {
+     "w": "Pandavas",
+     "s": 1.16,
+     "e": 1.74
+    },
+    {
+     "w": "drop",
+     "s": 1.74,
+     "e": 2.1
+    },
+    {
+     "w": "dead",
+     "s": 2.1,
+     "e": 2.42
+    },
+    {
+     "w": "without",
+     "s": 2.42,
+     "e": 3.08
+    },
+    {
+     "w": "fighting",
+     "s": 3.08,
+     "e": 3.52
+    },
+    {
+     "w": "a",
+     "s": 3.52,
+     "e": 3.78
+    },
+    {
+     "w": "single",
+     "s": 3.78,
+     "e": 4.08
+    },
+    {
+     "w": "battle?",
+     "s": 4.08,
+     "e": 4.42
+    }
+   ]
+  },
+  {
+   "text": "Exiled in the deep forest and parched with thirst, Nakula found a lake.",
+   "start": 4.74,
+   "end": 8.4,
+   "words": [
+    {
+     "w": "Exiled",
+     "s": 4.74,
+     "e": 5.08
+    },
+    {
+     "w": "in",
+     "s": 5.08,
+     "e": 5.26
+    },
+    {
+     "w": "the",
+     "s": 5.26,
+     "e": 5.34
+    },
+    {
+     "w": "deep",
+     "s": 5.34,
+     "e": 5.54
+    },
+    {
+     "w": "forest",
+     "s": 5.54,
+     "e": 5.88
+    },
+    {
+     "w": "and",
+     "s": 5.88,
+     "e": 6.18
+    },
+    {
+     "w": "parched",
+     "s": 6.18,
+     "e": 6.6
+    },
+    {
+     "w": "with",
+     "s": 6.6,
+     "e": 6.86
+    },
+    {
+     "w": "thirst,",
+     "s": 6.86,
+     "e": 7.12
+    },
+    {
+     "w": "Nakula",
+     "s": 7.58,
+     "e": 7.88
+    },
+    {
+     "w": "found",
+     "s": 7.88,
+     "e": 8.14
+    },
+    {
+     "w": "a",
+     "s": 8.14,
+     "e": 8.26
+    },
+    {
+     "w": "lake.",
+     "s": 8.26,
+     "e": 8.4
+    }
+   ]
+  },
+  {
+   "text": "As he leaned to drink, a voice boomed: Answer my questions first!",
+   "start": 8.64,
+   "end": 12.52,
+   "words": [
+    {
+     "w": "As",
+     "s": 8.64,
+     "e": 8.8
+    },
+    {
+     "w": "he",
+     "s": 8.8,
+     "e": 8.92
+    },
+    {
+     "w": "leaned",
+     "s": 8.92,
+     "e": 9.14
+    },
+    {
+     "w": "to",
+     "s": 9.14,
+     "e": 9.34
+    },
+    {
+     "w": "drink,",
+     "s": 9.34,
+     "e": 9.54
+    },
+    {
+     "w": "a",
+     "s": 9.54,
+     "e": 9.8
+    },
+    {
+     "w": "voice",
+     "s": 9.8,
+     "e": 10.14
+    },
+    {
+     "w": "boomed:",
+     "s": 10.14,
+     "e": 10.92
+    },
+    {
+     "w": "Answer",
+     "s": 11.1,
+     "e": 11.46
+    },
+    {
+     "w": "my",
+     "s": 11.46,
+     "e": 11.7
+    },
+    {
+     "w": "questions",
+     "s": 11.7,
+     "e": 12.14
+    },
+    {
+     "w": "first!",
+     "s": 12.14,
+     "e": 12.52
+    }
+   ]
+  },
+  {
+   "text": "Nakula ignored the warning, drank the water, and collapsed lifeless on the spot.",
+   "start": 12.9,
+   "end": 17.14,
+   "words": [
+    {
+     "w": "Nakula",
+     "s": 12.9,
+     "e": 13.24
+    },
+    {
+     "w": "ignored",
+     "s": 13.24,
+     "e": 13.5
+    },
+    {
+     "w": "the",
+     "s": 13.5,
+     "e": 13.7
+    },
+    {
+     "w": "warning,",
+     "s": 13.7,
+     "e": 13.92
+    },
+    {
+     "w": "drank",
+     "s": 14.34,
+     "e": 14.5
+    },
+    {
+     "w": "the",
+     "s": 14.5,
+     "e": 14.76
+    },
+    {
+     "w": "water,",
+     "s": 14.76,
+     "e": 14.94
+    },
+    {
+     "w": "and",
+     "s": 14.94,
+     "e": 15.38
+    },
+    {
+     "w": "collapsed",
+     "s": 15.38,
+     "e": 15.82
+    },
+    {
+     "w": "lifeless",
+     "s": 15.82,
+     "e": 16.54
+    },
+    {
+     "w": "on",
+     "s": 16.54,
+     "e": 16.78
+    },
+    {
+     "w": "the",
+     "s": 16.78,
+     "e": 16.88
+    },
+    {
+     "w": "spot.",
+     "s": 16.88,
+     "e": 17.14
+    }
+   ]
+  },
+  {
+   "text": "Searching for him, Sahadeva, Arjuna, and Bhima made the exact same mistake.",
+   "start": 17.4,
+   "end": 21.5,
+   "words": [
+    {
+     "w": "Searching",
+     "s": 17.4,
+     "e": 17.72
+    },
+    {
+     "w": "for",
+     "s": 17.72,
+     "e": 17.88
+    },
+    {
+     "w": "him,",
+     "s": 17.88,
+     "e": 18.02
+    },
+    {
+     "w": "Sahadeva,",
+     "s": 18.4,
+     "e": 18.88
+    },
+    {
+     "w": "Arjuna,",
+     "s": 19.1,
+     "e": 19.3
+    },
+    {
+     "w": "and",
+     "s": 19.3,
+     "e": 19.7
+    },
+    {
+     "w": "Bhima",
+     "s": 19.7,
+     "e": 20.0
+    },
+    {
+     "w": "made",
+     "s": 20.0,
+     "e": 20.28
+    },
+    {
+     "w": "the",
+     "s": 20.28,
+     "e": 20.44
+    },
+    {
+     "w": "exact",
+     "s": 20.44,
+     "e": 20.88
+    },
+    {
+     "w": "same",
+     "s": 20.88,
+     "e": 21.16
+    },
+    {
+     "w": "mistake.",
+     "s": 21.16,
+     "e": 21.5
+    }
+   ]
+  },
+  {
+   "text": "Finally, Yudhishthira arrived and spotted a mystical crane—the divine Yaksha.",
+   "start": 21.8,
+   "end": 25.78,
+   "words": [
+    {
+     "w": "Finally,",
+     "s": 21.8,
+     "e": 22.08
+    },
+    {
+     "w": "Yudhishthira",
+     "s": 22.56,
+     "e": 22.86
+    },
+    {
+     "w": "arrived",
+     "s": 22.86,
+     "e": 23.14
+    },
+    {
+     "w": "and",
+     "s": 23.14,
+     "e": 23.46
+    },
+    {
+     "w": "spotted",
+     "s": 23.46,
+     "e": 23.8
+    },
+    {
+     "w": "a",
+     "s": 23.8,
+     "e": 23.98
+    },
+    {
+     "w": "mystical",
+     "s": 23.98,
+     "e": 24.22
+    },
+    {
+     "w": "crane—the",
+     "s": 24.22,
+     "e": 24.52
+    },
+    {
+     "w": "divine",
+     "s": 25.02,
+     "e": 25.34
+    },
+    {
+     "w": "Yaksha.",
+     "s": 25.34,
+     "e": 25.78
+    }
+   ]
+  },
+  {
+   "text": "Setting his ego aside, Yudhishthira folded his hands, ready to listen.",
+   "start": 26.06,
+   "end": 29.64,
+   "words": [
+    {
+     "w": "Setting",
+     "s": 26.06,
+     "e": 26.26
+    },
+    {
+     "w": "his",
+     "s": 26.26,
+     "e": 26.5
+    },
+    {
+     "w": "ego",
+     "s": 26.5,
+     "e": 26.78
+    },
+    {
+     "w": "aside,",
+     "s": 26.78,
+     "e": 27.08
+    },
+    {
+     "w": "Yudhishthira",
+     "s": 27.52,
+     "e": 27.84
+    },
+    {
+     "w": "folded",
+     "s": 27.84,
+     "e": 28.22
+    },
+    {
+     "w": "his",
+     "s": 28.22,
+     "e": 28.48
+    },
+    {
+     "w": "hands,",
+     "s": 28.48,
+     "e": 28.74
+    },
+    {
+     "w": "ready",
+     "s": 29.06,
+     "e": 29.2
+    },
+    {
+     "w": "to",
+     "s": 29.2,
+     "e": 29.38
+    },
+    {
+     "w": "listen.",
+     "s": 29.38,
+     "e": 29.64
+    }
+   ]
+  },
+  {
+   "text": "The Yaksha asked: What moves faster than the swiftest wind?",
+   "start": 29.64,
+   "end": 32.94,
+   "words": [
+    {
+     "w": "The",
+     "s": 29.64,
+     "e": 29.98
+    },
+    {
+     "w": "Yaksha",
+     "s": 29.98,
+     "e": 30.3
+    },
+    {
+     "w": "asked:",
+     "s": 30.3,
+     "e": 30.56
+    },
+    {
+     "w": "What",
+     "s": 30.78,
+     "e": 31.02
+    },
+    {
+     "w": "moves",
+     "s": 31.02,
+     "e": 31.32
+    },
+    {
+     "w": "faster",
+     "s": 31.32,
+     "e": 31.84
+    },
+    {
+     "w": "than",
+     "s": 31.84,
+     "e": 32.06
+    },
+    {
+     "w": "the",
+     "s": 32.06,
+     "e": 32.18
+    },
+    {
+     "w": "swiftest",
+     "s": 32.18,
+     "e": 32.7
+    },
+    {
+     "w": "wind?",
+     "s": 32.7,
+     "e": 32.94
+    }
+   ]
+  },
+  {
+   "text": "Without hesitation, Yudhishthira answered: The human mind.",
+   "start": 33.2,
+   "end": 35.74,
+   "words": [
+    {
+     "w": "Without",
+     "s": 33.2,
+     "e": 33.42
+    },
+    {
+     "w": "hesitation,",
+     "s": 33.42,
+     "e": 33.86
+    },
+    {
+     "w": "Yudhishthira",
+     "s": 34.1,
+     "e": 34.38
+    },
+    {
+     "w": "answered:",
+     "s": 34.38,
+     "e": 34.54
+    },
+    {
+     "w": "The",
+     "s": 35.08,
+     "e": 35.2
+    },
+    {
+     "w": "human",
+     "s": 35.2,
+     "e": 35.42
+    },
+    {
+     "w": "mind.",
+     "s": 35.42,
+     "e": 35.74
+    }
+   ]
+  },
+  {
+   "text": "The Yaksha pressed on: What is the greatest wonder in the world?",
+   "start": 36.06,
+   "end": 38.88,
+   "words": [
+    {
+     "w": "The",
+     "s": 36.06,
+     "e": 36.18
+    },
+    {
+     "w": "Yaksha",
+     "s": 36.18,
+     "e": 36.5
+    },
+    {
+     "w": "pressed",
+     "s": 36.5,
+     "e": 36.64
+    },
+    {
+     "w": "on:",
+     "s": 36.64,
+     "e": 36.86
+    },
+    {
+     "w": "What",
+     "s": 37.28,
+     "e": 37.38
+    },
+    {
+     "w": "is",
+     "s": 37.38,
+     "e": 37.52
+    },
+    {
+     "w": "the",
+     "s": 37.52,
+     "e": 37.62
+    },
+    {
+     "w": "greatest",
+     "s": 37.62,
+     "e": 37.96
+    },
+    {
+     "w": "wonder",
+     "s": 37.96,
+     "e": 38.36
+    },
+    {
+     "w": "in",
+     "s": 38.36,
+     "e": 38.58
+    },
+    {
+     "w": "the",
+     "s": 38.58,
+     "e": 38.66
+    },
+    {
+     "w": "world?",
+     "s": 38.66,
+     "e": 38.88
+    }
+   ]
+  },
+  {
+   "text": "Yudhishthira replied: Seeing death daily, mortals still act like they are immortal.",
+   "start": 39.14,
+   "end": 43.6,
+   "words": [
+    {
+     "w": "Yudhishthira",
+     "s": 39.14,
+     "e": 39.58
+    },
+    {
+     "w": "replied:",
+     "s": 39.58,
+     "e": 39.84
+    },
+    {
+     "w": "Seeing",
+     "s": 40.26,
+     "e": 40.56
+    },
+    {
+     "w": "death",
+     "s": 40.56,
+     "e": 40.94
+    },
+    {
+     "w": "daily,",
+     "s": 40.94,
+     "e": 41.34
+    },
+    {
+     "w": "mortals",
+     "s": 41.8,
+     "e": 42.18
+    },
+    {
+     "w": "still",
+     "s": 42.18,
+     "e": 42.58
+    },
+    {
+     "w": "act",
+     "s": 42.58,
+     "e": 42.9
+    },
+    {
+     "w": "like",
+     "s": 42.9,
+     "e": 43.06
+    },
+    {
+     "w": "they",
+     "s": 43.06,
+     "e": 43.22
+    },
+    {
+     "w": "are",
+     "s": 43.22,
+     "e": 43.28
+    },
+    {
+     "w": "immortal.",
+     "s": 43.28,
+     "e": 43.6
+    }
+   ]
+  },
+  {
+   "text": "Pleased by his profound humility, the Yaksha restored all four brothers to life.",
+   "start": 43.96,
+   "end": 47.44,
+   "words": [
+    {
+     "w": "Pleased",
+     "s": 43.96,
+     "e": 44.16
+    },
+    {
+     "w": "by",
+     "s": 44.16,
+     "e": 44.34
+    },
+    {
+     "w": "his",
+     "s": 44.34,
+     "e": 44.46
+    },
+    {
+     "w": "profound",
+     "s": 44.46,
+     "e": 44.76
+    },
+    {
+     "w": "humility,",
+     "s": 44.76,
+     "e": 45.14
+    },
+    {
+     "w": "the",
+     "s": 45.42,
+     "e": 45.48
+    },
+    {
+     "w": "Yaksha",
+     "s": 45.46,
+     "e": 45.86
+    },
+    {
+     "w": "restored",
+     "s": 45.86,
+     "e": 46.22
+    },
+    {
+     "w": "all",
+     "s": 46.22,
+     "e": 46.6
+    },
+    {
+     "w": "four",
+     "s": 46.6,
+     "e": 46.8
+    },
+    {
+     "w": "brothers",
+     "s": 46.8,
+     "e": 47.04
+    },
+    {
+     "w": "to",
+     "s": 47.04,
+     "e": 47.26
+    },
+    {
+     "w": "life.",
+     "s": 47.26,
+     "e": 47.44
+    }
+   ]
+  },
+  {
+   "text": "Could you stay this patient when dying of thirst? Tell us below!",
+   "start": 47.64,
+   "end": 50.24,
+   "words": [
+    {
+     "w": "Could",
+     "s": 47.64,
+     "e": 47.76
+    },
+    {
+     "w": "you",
+     "s": 47.76,
+     "e": 47.94
+    },
+    {
+     "w": "stay",
+     "s": 47.94,
+     "e": 48.16
+    },
+    {
+     "w": "this",
+     "s": 48.16,
+     "e": 48.36
+    },
+    {
+     "w": "patient",
+     "s": 48.36,
+     "e": 48.66
+    },
+    {
+     "w": "when",
+     "s": 48.66,
+     "e": 48.88
+    },
+    {
+     "w": "dying",
+     "s": 48.88,
+     "e": 49.12
+    },
+    {
+     "w": "of",
+     "s": 49.12,
+     "e": 49.3
+    },
+    {
+     "w": "thirst?",
+     "s": 49.3,
+     "e": 49.5
+    },
+    {
+     "w": "Tell",
+     "s": 49.8,
+     "e": 49.9
+    },
+    {
+     "w": "us",
+     "s": 49.9,
+     "e": 50.04
+    },
+    {
+     "w": "below!",
+     "s": 50.04,
+     "e": 50.24
+    }
+   ]
+  }
+ ],
+ "cover": 0.959731543624161
+}

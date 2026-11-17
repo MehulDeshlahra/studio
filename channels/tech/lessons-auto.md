@@ -269,3 +269,18 @@
 ## review v2-01-en
 - visual: Scene 1 caption fails to advance between frames, omitting the second half of the spoken voiceover ('up like crazy during heavy gaming').
 - visual: Missing branded end card call-to-action despite a dedicated page handle.
+
+## lab-gpt-01 ChatGPT jawab kaise banata hai
+- scene 1: The caption text 'ChatGPT insaan ki tarah dimaag laga' is missing the final word 'kar' compared to the script.
+- scene 4: The caption text 'chhote tukdon yani tokens mein todta hai' is missing the word 'Aapka sawaal aate hi yeh use' compared to the script.
+- scene 5: The caption text 'ka chance calculate hota hai' is missing the beginning 'Fir agla sabse sahi shabd' compared to the script.
+- scene 6: The caption text 'bas agla ek tukda banta hai' is missing the beginning 'Ek baar mein poora jawab nahi' compared to the script.
+- scene 7: The caption text 'pichle sentence ke aage jod deta hai' is missing the beginning 'Naya shabd chunte hi, yeh use' compared to the script.
+- scene 8: The caption text 'kar agla shabd predict hota hai' is missing the beginning 'Ab naye sentence ko dobara padh' compared to the script.
+- scene 9: The caption text 'hai isliye lagta hai live typing' is missing the beginning 'Yeh cycle microsecond mein ghoomti' and the final word 'hai' compared to the script.
+- scene 10: The caption text 'bas mathematics ka sabse tagda guesser hai' is missing the beginning 'Matlab ChatGPT kuch samajhta nahi' compared to the script.
+- scene 11: The caption text 'ajeeb ya galat jawab diya hai?' is missing the beginning 'Kabhi ChatGPT ne aapke sawaal ka' compared to the script.
+- only 0% of the script was found in the voice
+
+## review lab-gpt-01
+- only 0% of the script was found in the voice

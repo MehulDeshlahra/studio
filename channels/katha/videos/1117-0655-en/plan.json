@@ -1,0 +1,150 @@
+{
+ "slug": "yaksha-prashna-mahabharata",
+ "title": "How Did Four Pandavas Fall Without a Battle?",
+ "hooks": [
+  "Mahabharata ke chaar sabse shaktishali yoddha bina yuddh ke achanak bejaan kaise pad gaye?",
+  "Ek ghoont paani ne chaar mahabali yoddhaon ko kaise mita diya?",
+  "Duniya ka sabse bada aashcharya kya hai? Yaksha ka wo sawal jisne Pandavon ko hila diya."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Immediate high-stakes paradox: four unconquerable warriors fall unconscious not to weapons or armies, but to a mysterious sip of water.",
+ "metaphor": "The Enchanted Lake of Truth: a clear mirror reflecting the lethal poison of pride and the lifesaving power of humble wisdom.",
+ "cast": {
+  "yudhisthira": "A noble ancient Indian king with tranquil, intelligent eyes and calm posture, draped in simple ascetic royal silk robes of deep maroon with delicate gold borders, hands folded respectfully in Namaste, painterly cinematic Indian miniature-meets-epic style, warm golden lighting, no modern elements, no text.",
+  "yaksha_crane": "A mystical divine white crane standing elegantly at the mossy edge of a crystal forest pond, glowing with a subtle sacred golden aura, eyes wise and ethereal, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon tones, clean composition, no text."
+ },
+ "scenes": [
+  {
+   "vo": "How did four mighty Pandavas drop dead without fighting a single battle?",
+   "type": "clip",
+   "prompt": "Four mighty ancient warrior princes lying motionless on the mossy bank of an enchanted forest lake, quivers and bows resting in the dewy grass, painterly cinematic Indian miniature-meets-epic style, warm golden sunbeams, deep maroon shadows, no text, no watermarks",
+   "motion": "push",
+   "title": "THE DEADLY POOL",
+   "keywords": []
+  },
+  {
+   "vo": "Exiled in the deep forest and parched with thirst, Nakula found a lake.",
+   "type": "image",
+   "prompt": "Exhausted young prince Nakula walking through dense ancient banyan jungle, stumbling upon a pristine glowing forest pond filled with lotus blossoms, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, no text",
+   "motion": "pan",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "As he leaned to drink, a voice boomed: Answer my questions first!",
+   "type": "clip",
+   "prompt": "Prince cupping cool crystal water in hands at lake shore, suddenly freezing in shock as golden ripples glow across the lake, divine ethereal aura shining through forest mist, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "push",
+   "title": "DIVINE WARNING",
+   "keywords": []
+  },
+  {
+   "vo": "Nakula ignored the warning, drank the water, and collapsed lifeless on the spot.",
+   "type": "image",
+   "prompt": "Young ancient warrior stubbornly drinking cupped water from lake edge, then immediately dropping powerless onto soft mossy grass, ripples fading into still water, painterly cinematic Indian miniature-meets-epic style, dramatic lighting, no text",
+   "motion": "punch",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Searching for him, Sahadeva, Arjuna, and Bhima made the exact same mistake.",
+   "type": "image",
+   "prompt": "Three mighty warrior brothers lying unconscious side by side along the mystical lake bank, bows and maces scattered on lush grass, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon tones, no text",
+   "motion": "pan",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Finally, Yudhishthira arrived and spotted a mystical crane—the divine Yaksha.",
+   "type": "image",
+   "prompt": "Elder king Yudhisthira arriving at the misty enchanted lake shore, facing a majestic luminous white crane radiating divine golden aura, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, clean composition, no text",
+   "motion": "push",
+   "title": "THE YAKSHA",
+   "keywords": []
+  },
+  {
+   "vo": "Setting his ego aside, Yudhishthira folded his hands, ready to listen.",
+   "type": "image",
+   "prompt": "King Yudhisthira in maroon ascetic silk robes standing upright with folded hands in Namaste before the mystical glowing lake, serene expression of patience and respect, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "pull",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "The Yaksha asked: What moves faster than the swiftest wind?",
+   "type": "image",
+   "prompt": "Mystical glowing white crane perched on ancient mossy stone, sharp divine eyes peering forward with solemn authority, atmospheric mist rolling across deep waters, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "tilt",
+   "title": "THE RIDDLE",
+   "keywords": []
+  },
+  {
+   "vo": "Without hesitation, Yudhishthira answered: The human mind.",
+   "type": "card",
+   "prompt": "Cosmic golden lotus blooming in a star-filled serene nocturnal lake sky, symbolizing human consciousness, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, clean backdrop, no text",
+   "motion": "punch",
+   "title": "",
+   "big": "THE MIND",
+   "small": "Faster than wind",
+   "keywords": []
+  },
+  {
+   "vo": "The Yaksha pressed on: What is the greatest wonder in the world?",
+   "type": "image",
+   "prompt": "Divine luminous crane opening golden glowing beak to speak sacred philosophical query, reflecting brightly in the still enchanted waters, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, no text",
+   "motion": "push",
+   "title": "GREATEST WONDER",
+   "keywords": []
+  },
+  {
+   "vo": "Yudhishthira replied: Seeing death daily, mortals still act like they are immortal.",
+   "type": "image",
+   "prompt": "Philosophical silhouette of travelers passing into golden twilight mist while a wise king reflects quietly with folded hands beside an ancient sacred banyan tree, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "pan",
+   "title": "",
+   "keywords": []
+  },
+  {
+   "vo": "Pleased by his profound humility, the Yaksha restored all four brothers to life.",
+   "type": "image",
+   "prompt": "Four warrior princes opening their eyes and standing up refreshed by the lake shore under a warm golden blessing light from the radiant crane, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, no text",
+   "motion": "pull",
+   "title": "WISDOM WINS",
+   "keywords": []
+  },
+  {
+   "vo": "Could you stay this patient when dying of thirst? Tell us below!",
+   "type": "image",
+   "prompt": "A serene lotus pond reflecting warm golden evening sky, delicate ancient Indian miniature border motifs around edges, tranquil sacred water ripples, painterly cinematic Indian miniature-meets-epic style, no text",
+   "motion": "tilt",
+   "title": "THINK ABOUT IT",
+   "keywords": []
+  }
+ ],
+ "caption": "The Yaksha Prashna from the Mahabharata teaches that patience surpasses raw power, and humility outshines pride. When four mighty warriors fell to their thirst and arrogance, only Yudhishthira's calm wisdom saved them.\n\nIf you were in their shoes, could you show such restraint? Tell us in the comments!",
+ "hashtags": [
+  "#Mahabharata",
+  "#AncientWisdom",
+  "#IndianMythology",
+  "#YakshaPrashna",
+  "#Pandavas",
+  "#LifeLessons",
+  "#EpicTales"
+ ],
+ "claims": [
+  {
+   "claim": "Yaksha Prashna episode takes place during the Pandavas' exile in the Aranya/Vana Parva of the Mahabharata.",
+   "basis": "Mahabharata Critical Edition, Vana Parva, Adhyaya 311-314."
+  },
+  {
+   "claim": "Yudhishthira answers that the mind is swifter than wind, and the greatest wonder is mortal beings living as if they will never die.",
+   "basis": "Mahabharata, Vana Parva, Yaksha Prashna verses."
+  },
+  {
+   "claim": "Pleased with Yudhishthira's answers and humility, the Yaksha (Lord Dharma in disguise) revives all four brothers.",
+   "basis": "Mahabharata, Vana Parva, conclusion of the Yaksha Prashna section."
+  }
+ ],
+ "lang": "en",
+ "end_line": "More legends daily"
+}

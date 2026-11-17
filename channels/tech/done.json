@@ -20,8 +20,7 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "first word starts late (7.0 s): something is spoken before the script",
-   "visual: Scene 8 second frame caption text ('agla shabd predict...') is extremely faint and unreadable against the dark background."
+   "only 0% of the script was found in the voice"
   ]
  },
  {
@@ -87,7 +86,7 @@
   "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
   "status": "held",
   "review": [
-   "before render, scene 7: OVERLAP: caption in the second still has overlapping text with 'delete!' colliding directly into 'internet' and 'storage ke.'"
+   "before render, scene 7: OVERLAP: caption text in the second still has 'delete!' overlapping directly onto 'internet'"
   ]
  }
 ]

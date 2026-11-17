@@ -8,128 +8,128 @@
  },
  "sfx": [
   {
-   "t": 9.89,
+   "t": 2.705,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 12.39,
+   "t": 5.381,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 16.84,
+   "t": 8.94,
    "file": "sfx/click-ui.mp3",
    "gain_db": -22,
    "align": "onset"
   },
   {
-   "t": 17.404,
+   "t": 9.281,
    "file": "sfx/click-ui.mp3",
    "gain_db": -22,
    "align": "onset"
   },
   {
-   "t": 17.967,
+   "t": 9.621,
    "file": "sfx/click-ui.mp3",
    "gain_db": -22,
    "align": "onset"
   },
   {
-   "t": 18.53,
+   "t": 9.962,
    "file": "sfx/click-ui.mp3",
    "gain_db": -22,
    "align": "onset"
   },
   {
-   "t": 16.59,
+   "t": 8.69,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 20.21,
+   "t": 12.496,
    "file": "sfx/click-select.mp3",
    "gain_db": -24,
    "align": "onset"
   },
   {
-   "t": 20.43,
+   "t": 12.716,
    "file": "sfx/click-select.mp3",
    "gain_db": -24,
    "align": "onset"
   },
   {
-   "t": 20.65,
+   "t": 12.936,
    "file": "sfx/click-select.mp3",
    "gain_db": -24,
    "align": "onset"
   },
   {
-   "t": 19.81,
+   "t": 12.096,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 23.2,
+   "t": 15.166,
    "file": "sfx/type-soft.mp3",
    "gain_db": -24,
    "align": "onset",
    "dur": 1.2
   },
   {
-   "t": 23.05,
+   "t": 15.016,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 26.15,
+   "t": 18.187,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -22,
    "align": "onset"
   },
   {
-   "t": 26.5,
+   "t": 18.537,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -22,
    "align": "onset"
   },
   {
-   "t": 25.85,
+   "t": 17.887,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 28.85,
+   "t": 21.147,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 32.026,
+   "t": 24.31,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 35.35,
+   "t": 28.349,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 40.35,
+   "t": 32.144,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -26,
    "align": "onset"
   },
   {
-   "t": 44.601,
+   "t": 36.011,
    "file": "sfx/whoosh-cine.mp3",
    "gain_db": -20,
    "align": "peak"

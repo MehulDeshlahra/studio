@@ -21,11 +21,7 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "only 52% of the script was found in the voice",
-   "visual: Severe caption overlapping and double-printed text in the first two rows create unreadable, garbled subtitles.",
-   "visual: The opening scenes (scenes 1–3) are missing, resulting in repeated and scrambled frames in the first two rows.",
-   "visual: All scripted scene headlines ('MAUT KA SACH', '3 DIN INTEZAR', 'TEESRA VARDAN', 'AMAR AATMA', 'AAP KYA POOCHENGE?') are absent.",
-   "visual score 4/10"
+   "spoken instructions heard at the start (voice missing half the script)"
   ]
  },
  {
