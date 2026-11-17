@@ -113,10 +113,10 @@
   },
   {
    "vo": "Har naye second pichhla audio turant delete! Bina internet, bina storage ke.",
-   "type": "stat",
+   "type": "flow",
    "nodes": [
     "Mic",
-    "2s RAM",
+    "RAM",
     "Erase"
    ],
    "label": "Storage",
