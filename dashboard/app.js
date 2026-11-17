@@ -1,6 +1,12 @@
 /* Studio dashboard. Live data from /api/state every 4 s. Colour = meaning only. */
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+// 18 Nov: held videos belong to the healer (engine/healer.py); say what it is doing, in plain words
+const HEAL_STEP = { known: "applying a fix it learned before", rebuild: "rebuilding with the newer code", simplify: "re-planned the failing scenes, rebuilding",
+  code: "trying a code fix (checked before it goes live)", resume: "finishing the interrupted build" };
+const healerLine = (j) => { const h = j.healer || {}; if (h.state === "parked") return "Healer parked it: " + (h.why || "every step tried") + ".";
+  if (h.state === "fixed") return "Healer fixed it."; if (h.step) return "Healer: " + (HEAL_STEP[h.step] || h.step) + (h.result ? " (last: " + h.result + ")" : "") + ".";
+  return "The healer picks it up on its next run (every 15 min)."; };
 const K = { green: "var(--green)", amber: "var(--amber)", red: "var(--red)", blue: "var(--blue)", violet: "var(--violet)", teal: "var(--teal)", gray: "var(--gray)" };
 const ST = {
   building: ["Building", K.blue, 1], prepped: ["Prepped", K.blue], waiting: ["Needs approval", K.violet], ready: ["Ready, not sent", K.violet],
@@ -163,7 +169,7 @@ const V = {
        <div class="chips" style="margin-top:8px">${j.review.ok ? lvlBadge("ok", "Passed review") : ""}${j.review.score ? lvlBadge(j.review.score >= 8 ? "ok" : "warn", `Visual ${j.review.score}/10`) : ""}${j.qc.lufs ? lvlBadge("info", `${j.qc.lufs} LUFS`) : ""}</div>
        ${(j.review.problems || []).length ? `<ul class="mut" style="margin:8px 0 0 16px;font-size:12.5px">${j.review.problems.slice(0, 3).map((p) => `<li>${esc(String(p).slice(0, 160))}</li>`).join("")}</ul>` : ""}
        ${["waiting", "ready"].includes(j.status) ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn ok" onclick="decide('${j.cid}','${j.job}','approve')">Approve</button><button class="btn no" onclick="decide('${j.cid}','${j.job}','reject')">Reject</button><button class="btn" onclick="feedback('${j.cid}','${j.job}')">Feedback</button></div>`
-        : j.status === "held" ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center"><span class="mut" style="font-size:12.5px">${j.held_state === "waiting" ? "Waits for the next code fix." : "The server is rebuilding it."}</span><button class="btn sm" onclick="decide('${j.cid}','${j.job}','approve')">Approve anyway</button></div>` : ""}
+        : j.status === "held" ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center"><span class="mut" style="font-size:12.5px">${esc(healerLine(j))}</span><button class="btn sm" onclick="decide('${j.cid}','${j.job}','approve')">Approve anyway</button></div>` : ""}
        </div></div></div>`; };
     return `<div class="h1">Approvals</div><div class="lead">Only videos that passed the server's review come here. Approving here or in Telegram does the same thing.${S.settings.auto_approve ? ` Auto-approve is on for scores of ${S.settings.min_score}/10 and up.` : ""}</div>
      <div class="sec"><i class="dot" style="--c:${K.violet}"></i><h3>Needs approval</h3><span class="mut">${w.length}</span></div><div class="g2">${w.map(card).join("") || `<div class="card empty">Nothing is waiting for you.</div>`}</div>
