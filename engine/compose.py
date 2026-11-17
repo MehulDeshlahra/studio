@@ -180,6 +180,10 @@ def page(plan, timed, total, theme, assets):
             en = min(en, caps[j + 1][0]["s"] - 0.05) if caps[j + 1][0]["s"] - c[-1]["e"] < 0.6 else en
             en = min(en, caps[j + 1][0]["s"] - 0.03)
         en = max(en, st + 0.25)
+        if endcard:                                   # 17 Nov: no caption over the end card
+            if st >= total - endcard - 0.2:
+                continue
+            en = min(en, total - endcard - 0.05)
         text = " ".join(w["w"] for w in c)
         clean = re.sub(r"[^A-Za-z0-9 ]", "", text)
         fs = int(max(52, min(96, 940 / max(1, len(clean) + 0.6 * (len(c) - 1)) / 0.72)))

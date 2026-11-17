@@ -270,6 +270,10 @@ def page(plan, timed, total, theme, assets):
         if j + 1 < len(caps):
             en = min(en, caps[j + 1][0]["s"] - 0.06)
         en = max(en, st + 0.3)
+        if endcard:                                   # 17 Nov: captions bled into the end card (review HOLD)
+            if st >= total - endcard - 0.2:
+                continue
+            en = min(en, total - endcard - 0.05)
         spans = []
         for k, w in enumerate(c):
             kk = re.sub(r"[^a-z0-9]", "", w["w"].lower())
