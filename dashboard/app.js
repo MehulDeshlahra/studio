@@ -146,7 +146,7 @@ const V = {
     return `<div class="h1">Runs</div><div class="lead">Every video the engine has made or is making. Click a row for the full timeline, review and log.</div>
     <div class="tools"><div class="tabs">${F.map(([k, t]) => `<button class="${runFilter === k ? "on" : ""}" onclick="runFilter='${k}';render(1)">${t} <span class="faint">${S.jobs.filter((j) => k === "all" || (k === "active" ? j.active : k === "need" ? ["waiting", "ready"].includes(j.status) : j.status === k)).length}</span></button>`).join("")}</div>
      <select onchange="runCh=this.value;render(1)"><option value="all">All pages</option>${S.channels.filter((c) => c.group === "Studio").map((c) => `<option value="${c.id}" ${runCh === c.id ? "selected" : ""}>${esc(c.name)}</option>`).join("")}</select></div>
-    <div class="card tw" style="margin-top:12px"><table><thead><tr><th>Status</th><th>Video</th><th class="hide-m">Page</th><th>Progress</th><th class="hide-m">Review</th><th class="hide-m">Updated</th></tr></thead><tbody>
+    <div class="card tw" style="margin-top:12px"><table class="stack"><thead><tr><th>Status</th><th>Video</th><th class="hide-m">Page</th><th>Progress</th><th class="hide-m">Review</th><th class="hide-m">Updated</th></tr></thead><tbody>
     ${list.map((j) => { const c = ch(j.cid); return `<tr class="click" onclick="openJob('${j.cid}','${j.job}')"><td>${badge(j.status, j)}</td>
       <td><div class="tt">${esc(j.title)}</div><div class="mono faint">${esc(j.job)} · ${j.lang === "en" ? "EN" : "HI"}</div></td>
       <td class="hide-m"><span style="display:flex;gap:8px;align-items:center"><span class="sq" style="--c:${c.color}"></span>${esc(c.name)}</span></td>

@@ -130,6 +130,10 @@ textarea{height:auto;padding:8px 10px;width:100%}
  .strip{grid-template-columns:1fr 1fr}.strip>div{border-left:0;border-top:1px solid var(--line)}.strip>div:nth-child(-n+2){border-top:0}.strip>div:nth-child(even){border-left:1px solid var(--line)}
  .g2,.g3{grid-template-columns:1fr}
  .hide-m{display:none}
+ .stack,.stack tbody,.stack tr,.stack td{display:block}.stack thead{display:none}
+ .stack tr{padding:12px 14px;border-bottom:1px solid var(--line)}.stack tr:last-child{border:0}
+ .stack td{border:0!important;padding:3px 0;white-space:normal;background:none!important}
+ .stack .tt{max-width:none;white-space:normal;overflow:visible}.stack td[style*="min-width"]{min-width:0!important}
  .media{grid-template-columns:110px minmax(0,1fr)}
  .panel{top:auto;left:0;width:100%;max-height:92vh;border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;animation:su .2s ease-out}@keyframes su{from{transform:translateY(30px)}}
  .posts{grid-template-columns:repeat(2,1fr)}
