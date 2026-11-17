@@ -137,9 +137,11 @@ def good_job(cid, not_job):
     done = load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
     for d in reversed(done):
         j = d["job"]
+        tj = load(os.path.join(OUT, cid, j, "timing.json"), {}) or {}
         if d.get("status") in ("approved", "made", "posted") and j != not_job and not j.endswith("-en") \
-                and os.path.exists(os.path.join(OUT, cid, j, "timing.json")) and os.path.exists(os.path.join(OUT, cid, j, "assets.json")):
-            return j
+                and tj.get("method") == "whisper" and (tj.get("cover") or 0) >= 0.75 \
+                and os.path.exists(os.path.join(OUT, cid, j, "assets.json")):      # 18 Nov: an old job without a voice score
+            return j                                                                    # made the check re-voice it
     return None
 
 
