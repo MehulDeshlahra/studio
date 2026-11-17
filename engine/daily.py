@@ -149,6 +149,12 @@ def main():
         log(f"{lane} lane: the other lane is building, wait"); return
     if manual_busy():
         log(f"{lane} lane: a manual job is running, skip"); return
+    try:                                                    # 18 Nov: the job bot shares this server; never push it into swap
+        avail = int(next(l for l in open("/proc/meminfo") if l.startswith("MemAvailable")).split()[1]) // 1024
+        if avail < int(os.environ.get("STUDIO_MIN_FREE_MB", "1800")):
+            log(f"{lane} lane: only {avail} MB memory free (the other servers need it), wait"); return
+    except Exception:
+        pass
     subprocess.run(["git", "-C", ROOT, "pull", "-q", "--rebase", "--autostash"], timeout=120)
     (lane_prep if lane == "prep" else lane_render)(dry)
 
