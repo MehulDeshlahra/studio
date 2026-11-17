@@ -18,9 +18,9 @@
   {
    "vo": "Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta, toh kya hota?",
    "type": "image",
-   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a vast empty mystical sky with dramatic dark clouds hinting at a mighty flood",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a massive celestial flood descending from heaven towards earth, dramatic clouds, vast sky",
    "motion": "push",
-   "title": "VISHAL SAILAB",
+   "title": "Sailab",
    "keywords": [
     "Swarg",
     "Ganga",
@@ -114,7 +114,7 @@
    "type": "image",
    "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, immense force of a golden waterfall falling from the heavens towards a fragile earth",
    "motion": "pull",
-   "title": "AGAR GANGA",
+   "title": "Ganga",
    "keywords": [
     "seedhe zameen",
     "patal"
@@ -126,9 +126,9 @@
   {
    "vo": "Tab Bhagirath ne Lord Shiva se prarthna ki.",
    "type": "image",
-   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, a devoted sage praying with folded hands before a serene mountain shrine",
+   "prompt": "painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, uncluttered, King Bhagirath kneeling in prayer before a majestic Lord Shiva statue on a Himalayan peak",
    "motion": "pan",
-   "title": "PRARTHNA",
+   "title": "Bhagirath Prarthna",
    "keywords": [
     "Lord Shiva",
     "prarthna"

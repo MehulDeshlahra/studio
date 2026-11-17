@@ -1,8 +1,8 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/dentaneosuchus-hunt.mp3",
-  "offset": 6.0,
+  "file": "music/lib/katha/run-amok.mp3",
+  "offset": 2.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
