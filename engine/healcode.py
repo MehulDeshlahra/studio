@@ -61,7 +61,7 @@ def keys_of(problems):
         t = str(p)
         m = re.search(r"\b(EMPTY|OVERLAP|CUT|READ|LANG|FIT|DUP)\b", t)
         cat = m.group(1) if m else next((c for c, rx in CATS if re.search(rx, t, re.I)), "OTHER")
-        scenes = [int(x) for x in re.findall(r"scenes?\s+(\d+)", t, re.I)] or [0]
+        scenes = [int(x) for g in re.findall(r"scenes?\s+((?:\d+\s*(?:,|and|&)?\s*)+)", t, re.I) for x in re.findall(r"\d+", g)] or [0]
         out |= {(s, cat) for s in scenes}
     return out
 
