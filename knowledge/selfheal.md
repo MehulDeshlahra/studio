@@ -79,4 +79,12 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
 
 ## Log
 - 04:35 end-to-end test of the coding agent on a sandbox clone (injected the old end-card bug): aider found the cause
-  and wrote the same one-line fix in 28k tokens through studio-code.
+  and wrote the same one-line fix in 28k tokens through studio-code. Not merged: the verifier demanded a fully clean
+  preflight and the vision reviewer flagged an unrelated scene -> verifier changed to "original problem gone + no new
+  layout problem" with ONE preflight and no repairs (STUDIO_PREFLIGHT_TRIES=1).
+- 04:47 second run: studio-code had been re-ranked by a probe taken while Gemini was busy, so Pollinations wrote a
+  symptom fix (smaller pop-in scale) with a "top up your credits" text as commit message. The verifier REJECTED it
+  ("original problem still there (10, OVERLAP)"). Fixed: 429 no longer demotes a model; long-input probe for coding
+  models; a provider's "top up" text in a 200 reply counts as a failure everywhere (lib/llm.py).
+- OmniRoute map 04:55: 32 of 59 answered; studio-code = Gemini 3.7 / 3.8 / 3.1-pro / nemotron-ultra (all read a whole
+  engine file correctly).
