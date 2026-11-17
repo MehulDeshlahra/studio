@@ -101,8 +101,12 @@ def words_by_line(wav, texts, lang="hi"):
                 toks.append(w); line_of.append(k)
     W, total, t0, t1 = _whisper(wav, lang)   # 17 Nov: the script as initial_prompt made Whisper loop on garbage ("Ṭ Ṭ Ṭ") and run 3x slower; keep plain
     heard = [skel_lat(w[0]) if lang == "en" else (skel_dev(w[0]) or skel_lat(w[0])) for w in W]
-    pairs = _nw([skel_lat(w) for w in toks], heard)
-    cover = len(pairs) / max(1, len(toks))
+    sk = [skel_lat(w) for w in toks]
+    pairs = _nw(sk, heard)
+    # 17 Nov: words like "hai ka ho ki" have an EMPTY consonant skeleton and can never match, so a perfect Hinglish voice
+    # scored only 58-79%. Coverage counts only words that can be matched (a missing sentence still shows up here).
+    can = [i for i, x in enumerate(sk) if len(x) >= 1]
+    cover = sum(1 for i in can if i in pairs) / max(1, len(can))
     if cover < 0.5:
         raise RuntimeError(f"alignment matched only {cover:.0%} of the words")
     s = [None] * len(toks); e = [None] * len(toks)
