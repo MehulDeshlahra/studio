@@ -96,7 +96,7 @@ def _gemini(parts):
 JUDGE = """The picture shows {n} candidate images (A, B, C ...) for a video scene about: "{subject}" ({kind}).
 Pick the ONE that best shows exactly this subject. Good: the real, recognisable subject, clean, sharp, no watermark,
 no big text banner or caption on top, not a collage, not a meme, not a different brand/person, not a tiny thumbnail.
-For a logo: the official logo alone, clear and centred. For a photo: a natural well-lit photo of the subject.
+For a logo: the official logo alone, clear and centred, on a plain white or solid background. REJECT any image that shows a grey/white checkerboard pattern (fake transparency), a mock-up, a business card, or a logo shrunk small inside a big empty area. For a photo: a natural well-lit photo of the subject.
 Return JSON {{"best": "A" or "none", "why": "6 words"}}. Use "none" when no candidate really shows the subject."""
 
 
@@ -169,8 +169,8 @@ def fetch(real, out_path, lab=False):
     work = out_path + ".work"
     shutil.rmtree(work, ignore_errors=True); os.makedirs(work, exist_ok=True)
     try:
-        qs = [q + (" logo png" if kind == "logo" and "logo" not in q.lower() else "")]
-        urls = bing(qs[0]) + commons(q)
+        qs = [q + (" logo" if kind == "logo" and "logo" not in q.lower() else "")]
+        urls = bing(qs[0] + " -transparent -checkered") + commons(q)
         cands = download(urls, work, kind)
         if not cands:
             log("realmedia: no usable images for", q); return None
