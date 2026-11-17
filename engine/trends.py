@@ -30,7 +30,8 @@ Today's headlines and trending searches (India):
 {heads}
 Turn ONLY the ones that really fit this page into video ideas a viewer would click TODAY. The idea explains or tells a
 story around the trend (how it works / the real story / the old legend behind it), curiosity first. Skip politics,
-elections, communal topics, celebrity gossip, deaths of real people, medical or money advice. Fit 0-10 (be strict:
+elections, communal topics, anything that questions the purity or character of deities or sacred figures or could hurt
+religious feelings (Katha must stay respectful), celebrity gossip, deaths of real people, medical or money advice. Fit 0-10 (be strict:
 8+ only if it fits the page AND is clearly trending). Return at most 6; return none if nothing fits.
 JSON {{"ideas": [{{"topic": "...", "search": "3-5 English words people type on YouTube", "fit": 0, "why": "which headline + why now"}}]}}"""
 

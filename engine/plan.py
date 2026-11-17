@@ -156,7 +156,8 @@ REQUIREMENTS
 - REAL PICTURES: when the spoken line names a real, well-known thing (a brand or app logo, a product, a company, a place, a
   monument, a public figure, a real event), add "real" to that scene so the video shows the actual picture instead of an AI
   drawing: {{"q": "short web image search query", "kind": "logo" or "photo", "subject": "what the picture must show"}}.
-  Use it on 2-5 scenes per video, only where the line is really about that thing; keep the normal "prompt" as the fallback.
+  Use it on 2-5 scenes per video (MYTHOLOGY pages: at most 2, only for a real PLACE or temple, never for gods, heroes
+  or story scenes: those stay in our painted style; a real photo among paintings looks wrong); only where the line is really about that thing; keep the normal "prompt" as the fallback.
   Works on image, card and object scenes (not clip or flow). Query like a person would: "UPI logo", "Taj Mahal front view".
 - No numbers, specs, prices or dates unless they are common, stable knowledge; list every factual statement in "claims".
 - Never mention AI and never add an AI label.
