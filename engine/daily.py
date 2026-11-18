@@ -233,7 +233,19 @@ def main():
         if lane != "prep":                                  # the render lane holds it only for this check
             fcntl.flock(lk2, fcntl.LOCK_UN)
     if manual_busy():
-        log(f"{lane} lane: a manual job is running, skip"); return
+        # 18 Nov (owner: "are we not using the laptop? I set fast"): a hand-started job blocked the render lane for hours
+        # while the laptop sat idle in fast mode. A render on the laptop costs this server almost nothing, so the
+        # render lane goes ahead when the laptop is free; the memory floor below still applies.
+        lap_ok = False
+        if lane == "render":
+            try:
+                import laptop
+                lap_ok = laptop.available()
+            except Exception:
+                lap_ok = False
+        if not lap_ok:
+            log(f"{lane} lane: a manual job is running, skip"); return
+        log("render lane: a manual job is running, but the laptop is free: rendering there")
     try:                                                    # 18 Nov: the job bot shares this server; never push it into swap
         avail = int(next(l for l in open("/proc/meminfo") if l.startswith("MemAvailable")).split()[1]) // 1024
         if avail < int(os.environ.get("STUDIO_MIN_FREE_MB", "1800")):
