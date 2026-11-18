@@ -155,7 +155,7 @@ def _real_brands(ch, p):
     planner stopped asking for them. On the tech page every reel that names a brand now gets its real logo, whatever the
     plan says: a chat scene shows the app's logo in its header, and the first object scene that names a brand (else the
     first scene that does) gets "real" {kind logo}. Returns True when the plan changed."""
-    if ch.get("theme", {}).get("style") != "lab":
+    if ch.get("theme", {}).get("style") != "lab" or ch.get("theme", {}).get("phone"):
         return False
     import re as _re
 
@@ -420,6 +420,17 @@ def _stage_assets(ch, p, job):
             last_img = got[k].get("image", last_img); continue
         a = {}
         real = s.get("real")
+        if theme.get("phone"):
+            # 19 Nov: phone pages draw every scene (engine/phone_scenes.py); the only picture is the rule card's real logo
+            if s.get("type") == "rule" and isinstance(real, dict) and real.get("q"):
+                import realmedia
+                lg = realmedia.fetch({"q": real["q"], "kind": "logo", "subject": real.get("subject") or real["q"]},
+                                     os.path.join(adir, f"s{i}rl.jpg"), lab=False, raw=True)
+                if lg:
+                    a["logo"] = lg
+            if a:
+                got[k] = a
+            continue
         if film and isinstance(real, dict) and real.get("q") and s.get("type") not in ("object", "clip", "chat", "code"):
             import realmedia                                     # v2: a real photo/logo/screen as the scene's full-frame picture
             r = realmedia.fetch(real, os.path.join(adir, f"s{i}rb.jpg"), lab=False)
@@ -652,7 +663,7 @@ def main():
         log("real brands skipped", str(e)[:100])
     try:
         th_ = ch.get("theme", {})
-        if th_.get("style") == "lab" and (th_.get("film") or os.environ.get("STUDIO_LAB_FILM") == "1") and _pick_skin(ch, p):
+        if th_.get("style") == "lab" and not th_.get("phone") and (th_.get("film") or os.environ.get("STUDIO_LAB_FILM") == "1") and _pick_skin(ch, p):
             save(pp, p)
         elif th_.get("style") != "lab" and _pick_story_looks(ch, p):
             save(pp, p)
@@ -807,7 +818,7 @@ def main():
                 # 19 Nov (finance 1118-2334): the repair rewrote types the lab cannot draw (ui holding compare items) and new
                 # picture prompts were never fetched, so the same bad picture failed 3 times. Fix the types, re-fetch the
                 # pictures of the repaired scenes.
-                planner.lab_fix(p)
+                planner.lab_fix(p, bool(theme.get("phone")))
                 save(pp, p)
                 got = load(os.path.join(job, "assets.json"), {}) or {}
                 for k in pr["bad"]:

@@ -75,6 +75,34 @@ SCHEMA = """{
 }"""
 
 
+PHONE = """
+
+THIS PAGE TELLS EVERY REEL ON THE VIEWER'S OWN PHONE (owner 19 Nov: AI pictures and random logos lost relatability).
+The story happens to one person (one of: Mehul, Raghav, Aditya, Shobhit, Shwetal, Saumya, Suhail, Jahnvi, Masood, Animesh,
+Jayesh, Aaryan, Dhruv, Mudit, Shruti; a scammer gets a made-up name) and the viewer sees exactly what that person sees.
+IGNORE the visual types above and use ONLY these scene types; never two of the same type in a row; 8-11 scenes:
+  {"type":"wa","title":"<friend name>","messages":[{"from":"<friend name>","text":"<short chat line, emoji ok>"},{"from":"me","text":"..."}]}
+      a WhatsApp chat (2-4 lines). The HOOK scene is usually this: the friend's problem in their own words.
+  {"type":"sms","time":"10:42","messages":[{"app":"Messages","from":"VM-HDFCBK","text":"<a realistic bank SMS>"},{"app":"<app>","from":"<app>","text":"..."}]}
+      lock-screen alerts (1-3): bank debit SMS, app alert, scam message. Realistic wording, exact amounts, masked account (XX4821).
+  {"type":"pay","status":"failed|pending|success","value":"₹500","to":"<name>","sub":"<one short line, optional>"}
+      a payment app's status screen.
+  {"type":"bill","title":"<2-4 words>","sub":"<short>","rows":[{"label":"...","value":"₹..."}],"total":{"label":"...","value":"₹..."},"tone":"bad|good"}
+      a receipt that does the maths line by line (2-5 rows). Every number exact; the total is the sum or result of the rows.
+  {"type":"rule","title":"<who made the rule, e.g. RBI circular>","sub":"<number and date>","lines":["<rule in 4-8 words>", "..."],"stamp":"ASLI NIYAM"}
+      the official rule card (2-3 lines). The ONLY place a real logo appears: add "real":{"q":"<regulator> logo","kind":"logo"}.
+  {"type":"stat","value":"₹100","sub":"<what it is, 2-5 words>"}   one huge number (use once or twice)
+  {"type":"compare","items":[{"label":"...","value":"...","pct":0-100},{"label":"...","value":"...","pct":0-100}]}
+  {"type":"title","big":"<2-4 words>","sub":"<short line>"}   for the one action to take and the ending
+Flow of a reel: hook (wa or sms: the problem as it happens) -> what it means (pay / sms / stat) -> the real rule (rule card)
+-> the maths (bill or stat) -> what to do (title or wa reply) -> "Save karo" + a question (title).
+No "object", "image", "ui", "chart" or "clip" scenes, no picture prompts: everything is drawn exactly.
+The on-screen texts (chat lines, SMS, receipt rows) are part of the story, not a copy of the voice: the voice explains
+what the viewer is looking at.
+"""
+
+
+THIS_LAB_MARK = None
 LAB = """
 
 THIS CHANNEL USES THE 'LAB' LOOK (channels/tech/style-lab.md), for Gen Z: premium, dark, minimal, our own
@@ -245,7 +273,7 @@ REQUIREMENTS
 Return JSON with exactly this shape:
 {SCHEMA}"""
     if ch.get("theme", {}).get("style") == "lab":
-        p += LAB
+        p += PHONE if ch.get("theme", {}).get("phone") else LAB      # 19 Nov: finance tells reels on the viewer's phone
     plan = ask(p)
     for _ in range(2):
         words = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))
@@ -301,7 +329,7 @@ PLAN:
                 except Exception as e:
                     log("numbers fix failed:", str(e)[:120]); break
     if ch.get("theme", {}).get("style") == "lab":
-        plan = lab_fix(plan)
+        plan = lab_fix(plan, bool(ch.get("theme", {}).get("phone")))
     out = clean(plan)
     if isinstance(out, dict):
         out["brain_ids"] = bids                    # which brain items this video used (scored after its review)
@@ -444,8 +472,15 @@ def _mask(text, value):
 
 def numbers_check(plan, sources=""):
     """Problems with the plan's numbers ([] = fine). Arithmetic is computed by Python, not judged by the model."""
-    rows = "\n".join(f"{i + 1} | {s.get('vo', '')} | {s.get('value') or s.get('big') or s.get('end_label') or ''}"
-                     for i, s in enumerate(plan.get("scenes", [])))
+    def _screen(s):                                   # 19 Nov: phone scenes carry numbers on screen (receipt rows, SMS)
+        out = [str(s.get("value") or s.get("big") or s.get("end_label") or "")]
+        out += [f'{r.get("label")} {r.get("value")}' for r in (s.get("rows") or []) if isinstance(r, dict)]
+        if isinstance(s.get("total"), dict):
+            out.append(f'{s["total"].get("label")} = {s["total"].get("value")}')
+        out += [str(m.get("text")) for m in (s.get("messages") or []) if isinstance(m, dict)]
+        out += [str(x) for x in (s.get("lines") or [])]
+        return " ; ".join(x for x in out if x and x != "None")
+    rows = "\n".join(f"{i + 1} | {s.get('vo', '')} | {_screen(s)}" for i, s in enumerate(plan.get("scenes", [])))
     try:
         r = ask(NUMCHK.format(rows=rows, sources=(sources or "(none found: mark facts null, never false)")[:9000]), max_tokens=2500) or {}
     except Exception as e:
@@ -522,10 +557,11 @@ def _no_article(s):
     return out if out else s
 
 
-LAB_TYPES = ("object", "stat", "ui", "chart", "flow", "compare", "title", "clip", "chat", "code")
+LAB_TYPES = ("object", "stat", "ui", "chart", "flow", "compare", "title", "clip", "chat", "code", "wa", "sms", "pay", "bill", "rule")
+PHONE_TYPES = ("wa", "sms", "pay", "bill", "rule", "stat", "compare", "title", "flow")
 
 
-def lab_fix(plan):
+def lab_fix(plan, phone=False):
     """19 Nov (finance 1118-2334 held: the planner wrote 'info' and 'image' scenes and a 'ui' with no rows on a lab page;
     the screen showed 'None' and a bare logo). Every lab scene gets a type the lab compositor draws, with its data;
     a scene that cannot be drawn becomes a 'title' (big words over its full-frame picture)."""
@@ -545,7 +581,20 @@ def lab_fix(plan):
             "object": bool(s.get("prompt") or (isinstance(s.get("real"), dict) and s["real"].get("q"))),
             "clip": bool(s.get("prompt")),
             "title": True,
+            "wa": len(s.get("messages") or []) >= 1, "sms": len(s.get("messages") or []) >= 1,
+            "pay": bool(s.get("value") or s.get("big")), "bill": len(s.get("rows") or []) >= 1,
+            "rule": len(s.get("lines") or []) >= 1,
         }
+        if phone and t not in PHONE_TYPES:
+            # 19 Nov: a phone page draws everything; a picture scene becomes the drawn scene its data allows, else a title
+            if t == "chat" and ok["chat"]:
+                s["type"] = t = "wa"
+            elif t == "ui" and ok["ui"]:
+                s["type"] = t = "bill"
+            else:
+                s["type"] = t = "title"; s["big"] = words(s)
+            s.pop("prompt", None); s.pop("bg_prompt", None)
+            log("lab fix (phone): scene ->", t)
         if t in LAB_TYPES and not ok.get(t, False):
             # 19 Nov: the pre-render repair wrote a 'ui' holding compare items and a 'chart' holding flow nodes (both drew
             # nothing). Use the type whose data the scene really has.
@@ -560,7 +609,9 @@ def lab_fix(plan):
         if t == "stat" and ok["stat"] and not s.get("value"):
             s["value"] = s.get("big")
         r_ = s.get("real") if isinstance(s.get("real"), dict) else {}
-        if str(r_.get("kind", "")).lower() == "logo" and t not in ("object", "chat"):
+        if phone and t != "rule":
+            s.pop("real", None); r_ = {}          # a phone page shows a real logo only on its rule card
+        if str(r_.get("kind", "")).lower() == "logo" and t not in ("object", "chat", "rule"):
             # 19 Nov: a real logo as a full-frame background is a white card behind white text (finance 1118-2334 s2).
             # A logo is shown on its own card: an object scene; the words go in the label.
             s["type"] = "object"; s["prompt"] = s.get("prompt") or r_.get("subject") or r_["q"]

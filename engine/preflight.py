@@ -193,8 +193,9 @@ def run(job_dir, plan, timed, total, lang):
 
 REPAIR = """You are fixing scenes of a planned vertical tech video that FAILED the pre-render check. The voice is already
 recorded: NEVER change "vo". You may change only the visual fields of the listed scenes: type (only to a type that needs
-no new image: stat, ui, chart, flow, compare, title, chat, code), title, big, sub, label, value, rows, items, nodes,
-points, end_label, lines, messages. Make text SHORTER rather than smaller (titles <= 3 words, labels <= 14 letters,
+no new image: stat, ui, chart, flow, compare, title, chat, code, and the phone scenes wa, sms, pay, bill, rule), title,
+big, sub, label, value, rows, items, nodes, points, end_label, lines, messages, status, to, total, stamp. A phone scene
+(wa, sms, pay, bill, rule) stays the same type: fix its texts. Make text SHORTER rather than smaller (titles <= 3 words, labels <= 14 letters,
 row labels <= 12 letters, values <= 8 characters, max 4 rows/nodes). Keep facts true. On-screen language: {lang}.
 Scenes to fix (index: current scene JSON -> problems):
 {items}

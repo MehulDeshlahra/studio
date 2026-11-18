@@ -11,6 +11,7 @@ page(plan, timed, total, theme, assets) -> (html, sfx cues). Scene types:
   title   {big, sub}                           kinetic statement"""
 import html, math, os, re
 from compose import chunks as _chunks, _split_dashes
+import phone_scenes
 
 W, H = 1080, 1920
 MONO = "'JetBrains Mono','IBM Plex Mono',monospace"
@@ -250,7 +251,10 @@ def page(plan, timed, total, theme, assets):
         hero = ""
         img = (assets.get(i) or {}).get("image")
         vid = (assets.get(i) or {}).get("video")
-        if kind == "clip" and vid:
+        if kind in phone_scenes.KINDS:          # 19 Nov: phone-story scenes (engine/phone_scenes.py), exact HTML, no AI picture
+            hero, pj, pc = phone_scenes.scene(kind, s, sid, a, d, assets.get(i) or {})
+            js += pj; cues += pc
+        elif kind == "clip" and vid:
             try:                                 # the video element ends with its clip, so the held image shows after it
                 import subprocess as _sp
                 vlen = float(_sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", vid],
@@ -451,7 +455,7 @@ def page(plan, timed, total, theme, assets):
                 stat_win.append((a, b))
         else:
             inner += f'<div id="{sid}cam" class="cam">{hero}</div>'
-        if not film or i == 0:
+        if (not film or i == 0) and kind not in phone_scenes.KINDS:   # 19 Nov: the tag overlapped the phone's header
             inner += (f'<div class="hud"><span class="hl"><b></b>{esc(series)}</span>'
                       f'<span class="hr">{esc("" if (s.get("hud_right") or "").upper() in ("", (s.get("label") or "").upper()) else s["hud_right"].upper())}</span></div>')   # no duplicate of the pill
         bgp = (assets.get(i) or {}).get("bg")
@@ -633,7 +637,7 @@ body{{margin:0;background:#07080b}}
 .cv{{text-shadow:0 6px 28px #000}} .cl{{font-size:40px;color:#fff;text-shadow:0 3px 14px #000}}
 .bub{{font-size:46px}}
 .cap{{font-size:62px;text-shadow:0 4px 22px #000,0 0 3px #000}}
-""" if film else "") + ("".join(_scope(skin_css(k, acc), k) for k in sorted(set(sks))) if film else "") + f"""
+""" if film else "") + ("".join(_scope(skin_css(k, acc), k) for k in sorted(set(sks))) if film else "") + phone_scenes.css(acc, bool(theme.get("phone"))) + f"""
 .endh{{position:absolute;left:0;width:{W}px;top:800px;text-align:center;font-weight:800;font-size:110px;letter-spacing:-3px}}
 .endf{{position:absolute;left:0;width:{W}px;top:950px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:6px;color:{acc}}}
 """
