@@ -29,14 +29,30 @@ Kinds allowed on this page: {kinds}
   documents to keep, what to say to the bank, settings to change...). Every fact and number must be in the script above:
   no new numbers, no new rules, no names of funds/stocks/apps to buy. Short lines, Hinglish in Roman script.
 - "wallpaper": the video's own picture as an HD phone wallpaper (story pages only).
+- "none": when this video has nothing a viewer would really want to keep.
+A GIFT IS SOMETHING THEY WILL USE LATER: steps to claim a refund, documents to keep, what to say to the bank, the settings
+to change, a puja / vrat vidhi, an aarti, a wallpaper of the deity. A recap or summary of the story or of the facts is
+NOT a gift: then choose "wallpaper" (story pages) or "none". On a story page prefer "wallpaper" unless the script itself
+gives a ritual or prayer the viewer can follow.
 Return JSON:
-{{"kind": "sheet|wallpaper",
- "keyword": "<ONE English or Hinglish word in CAPITALS, 3-9 letters, easy to type, about the gift, e.g. CHECKLIST, REFUND, PAPERS, WALLPAPER, AARTI; never {taken}>",
+{{"kind": "sheet|wallpaper|none",
+ "keyword": "<ONE common word everyone can spell, CAPITALS, 3-8 letters, about the gift (no abbreviations or tech jargon), e.g. CHECKLIST, REFUND, PAPERS, WALLPAPER, AARTI; never {taken}>",
  "gift": "<what they get, 2-5 words Hinglish, e.g. 'refund checklist PDF', 'Shiv ji HD wallpaper'>",
  "title": "<sheet title, 2-6 words>",
  "items": [{{"head": "<2-5 words>", "text": "<one line, under 16 words>"}}],
  "wallpaper_scene": <scene number whose picture is the best wallpaper, 1-based, for wallpaper only>,
  "say": "<the spoken closing line, Hinglish, under 14 words, e.g. 'Ye poori checklist chahiye? Comment karo REFUND, main DM kar dunga.'>"}}"""
+
+
+CHECK = """You check a free cheat sheet before it is sent to viewers. SCRIPT of the video (the only source):
+{script}
+SHEET "{gift}":
+{lines}
+1) List the line numbers that say anything the script does not state (a new fact, number, rule, deadline, website, step or
+claim). Rewording is fine; new information is not.
+2) Score 1-10 how much a typical viewer of this page would want this sheet enough to comment for it (10 = a practical tool
+they will use: steps to claim money, a checklist to follow; 3 = a recap of facts they just watched).
+Return JSON {{"unsupported": [numbers], "worth": number, "why": "<one line>"}}"""
 
 
 def _cfg(ch):
@@ -100,6 +116,8 @@ def decide(ch, plan, job, force=False):
                                       script=script[:7000], kinds=", ".join(kinds), taken=", ".join(sorted(taken))), max_tokens=2500)
     except Exception as e:
         log("offer design failed:", str(e)[:120]); return False
+    if o.get("kind") == "none":
+        log("offer: no gift worth a comment in this video -> normal reel"); return False
     kind = o.get("kind") if o.get("kind") in kinds else kinds[0]
     kw = re.sub(r"[^A-Z0-9]", "", str(o.get("keyword") or "").upper())[:12]
     if len(kw) < 3 or kw in taken:
@@ -117,6 +135,21 @@ def decide(ch, plan, job, force=False):
         if bad:
             log("offer: dropped a sheet line with numbers not in the script", bad, repr(it["text"][:60])); continue
         items.append({"head": str(it.get("head") or "")[:40], "text": str(it["text"])[:140]})
+    if kind == "sheet" and items:
+        # 19 Nov test: a finance line said "the bank gets 30 more days for lost papers", not checked against the script.
+        # A second, separate call checks every line against the script and scores the gift; weak gifts are dropped.
+        try:
+            v = planner.ask(CHECK.format(script=script[:7000], gift=o.get("gift", ""),
+                                         lines="\n".join(f"{i + 1}. {x['head']}: {x['text']}" for i, x in enumerate(items))), max_tokens=1200)
+            bad = {int(x) for x in (v.get("unsupported") or []) if str(x).isdigit()}
+            if bad:
+                log("offer: dropped lines the script does not say:", sorted(bad))
+            items = [x for i, x in enumerate(items) if i + 1 not in bad]
+            score = float(v.get("worth") or 0)
+            if score < 7:
+                log("offer: gift scored", score, "/10 (", str(v.get("why", ""))[:100], ") -> no offer on this video"); return False
+        except Exception as e:
+            log("offer check failed -> no offer:", str(e)[:100]); return False
     if kind == "sheet" and len(items) < 3:
         log("offer: sheet has", len(items), "checked lines -> no offer on this video"); return False
     gift = str(o.get("gift") or ("checklist" if kind == "sheet" else "HD wallpaper"))[:40]
@@ -142,7 +175,7 @@ def decide(ch, plan, job, force=False):
 
 
 SHEET = """<!doctype html><html><head><meta charset="utf-8"><style>
-body{{margin:0;background:#0b0d12;font-family:'Noto Sans',sans-serif;color:#111}}
+body{{margin:0;background:#151a24;font-family:'Noto Sans',sans-serif;color:#111}}
 .pg{{width:1080px;min-height:1920px;box-sizing:border-box;padding:90px 70px;background:linear-gradient(180deg,#0b0d12,#151a24)}}
 .hd{{color:#fff;font-size:34px;letter-spacing:6px;opacity:.75}}
 .t{{color:#fff;font-size:86px;font-weight:800;line-height:1.05;margin:24px 0 50px}}
@@ -172,7 +205,7 @@ def _shot(html_doc, out):
 def _sheet(ch, o, out):
     th = ch.get("theme") or {}
     acc = th.get("accent") or "#ffd84d"
-    handle = th.get("handle") or ""
+    handle = ch.get("handle") or th.get("handle") or ""
     items = "".join(f'<div class="it"><div class="n">{i + 1}</div><div><div class="h">{html.escape(x["head"])}</div>'
                     f'<div class="x">{html.escape(x["text"])}</div></div></div>' for i, x in enumerate(o["items"]))
     foot = f"Save karo, kaam aayega. Aise aur ke liye follow karo <b>{html.escape(handle)}</b>"
@@ -197,7 +230,7 @@ def _wallpaper(ch, plan, o, assets, out):
             break
     if not src:
         raise RuntimeError("no picture for the wallpaper")
-    handle = (ch.get("theme") or {}).get("handle") or ""
+    handle = ch.get("handle") or (ch.get("theme") or {}).get("handle") or ""
     vf = ("scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920"
           + (f",drawtext=text='{handle}':fontcolor=white@0.55:fontsize=34:x=(w-text_w)/2:y=h-90:"
              "fontfile=/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf" if handle and re.fullmatch(r"[@\w.]+", handle) else ""))
