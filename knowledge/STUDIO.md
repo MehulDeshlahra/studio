@@ -102,3 +102,10 @@
 - Score 7+: GitHub -> learner queue, tips -> brain, features -> build-queue.md, sign-ups -> listed as optional for the owner (never signs up itself). Dashboard Radar page (knowledge/radar.json), one Telegram digest only when something scored 7+.
 - First run 17 Nov: 309 items, 4 repos queued for the learner (HTML/GSAP animation library, hook A/B patterns, render review tooling, YouTube SEO).
 
+
+## Comment-to-DM (18 Nov)
+- engine/dm.py, timer studio-dm every 10 min (:03). Comment keyword -> private reply DM (1 per comment, within 7 days) + public 'DM check karo'; keyword typed in DM -> same reply inside 24 h. Instagram + Facebook/Messenger. No webhook, no App Review (owner's own pages).
+- Keywords/CTA: raaz PART2, katha AAGE, tech TECH (defaults in dm.py; override with channel.json 'dm'). seo.text_for adds the CTA line to IG + FB captions.
+- DM links the next post after the commented one (serial = next part), else 'jaldi aa raha hai, follow karo' + profile.
+- Token: ~/.studio-meta-connect.token (Planstalk Connect, own rate budget) if present, else the Ads MCP login. Ads MCP app hit Meta #4 app limit 18 Nov; dm.py pauses 30 min on #4 or X-App-Usage >= 60 %.
+- New channel: ~/.studio-accounts/<id>.json + Instagram 'Allow access to messages' ON + optional 'dm' block. Caps 40 DMs/page/day. State ~/studio-out/dm-state.json.
