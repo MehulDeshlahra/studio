@@ -67,6 +67,13 @@ def write():
     except Exception:
         pass
     L.append("")
+    try:                                                     # 18 Nov: the goal is money: distance to every payout gate
+        import money
+        ml = money.lines()
+        if ml:
+            L += ["## Money milestones (engine/money.py; plan in knowledge/MONEY.md)"] + ml + [""]
+    except Exception:
+        pass
     try:                                                     # 18 Nov: Mehul's laptop renders when it is on (engine/laptop.py)
         import laptop, re as _re
         s = laptop.status()
