@@ -17,12 +17,13 @@
   {
    "n": 2,
    "title": "Jawab",
-   "status": "todo",
+   "status": "made",
    "beats": "The answer, step by step like a detective: C, the groom's friend. There was no plug point behind the stage, so he could not have gone to charge his phone. The bag has no syrup, so it was not the halwai; the photographer's photos show him on stage the whole time. Show the three clues again (photos on stage, no syrup on the bag, no plug point behind the stage) and how each one rules a suspect out, then the friend caught with the envelope. Thank the viewers who commented C.",
    "cliffhanger": "Kal ek naya case. Detective, taiyaar ho?"
   }
  ],
  "made_jobs": {
-  "1": "case2-p1"
+  "1": "case2-p1",
+  "2": "1118-1155"
  }
 }
