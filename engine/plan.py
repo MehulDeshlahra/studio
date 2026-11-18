@@ -469,6 +469,13 @@ def numbers_check(plan, sources=""):
             log("numbers check: blind ask failed", str(e)[:80]); continue
         if b2.get("input") or not b2.get("expr"):
             continue
+        # 19 Nov: a model 'worked out' ₹5,000/day as 500 from its memory of another rule (credit cards). A formula may
+        # only use numbers that are in the (masked) script, plus everyday constants; otherwise it is outside knowledge.
+        known = {float(x.replace(",", "")) for x in re.findall(r"\d[\d,]*\.?\d*", masked)}
+        CONST = {0, 1, 2, 3, 4, 7, 10, 12, 24, 30, 52, 60, 100, 365, 1000, 100000}
+        lits = [float(x) for x in re.findall(r"\d+\.?\d*", str(b2["expr"]))]
+        if any(v not in known and v not in CONST for v in lits):
+            log("numbers check: formula uses a number not in the script, ignored:", b2["expr"]); continue
         try:
             got = float(_safe_eval(b2["expr"]))
         except Exception as e:
