@@ -61,3 +61,6 @@ knowledge/lessons-learnt.md for the engine.
   review passed 8/10). When adding a scene kind or a planner field, check on real frames that every field appears.
   Now: lab_fix turns such titles into "list"; comparisons use the "table" kind.
 - Never write a script file and run it in the same parallel batch (did it again with of_live.sh; it only worked by luck).
+- No inline python inside `ssh "..."` from PowerShell, ever (broke 3 times on 19 Nov): write .tmp/x.py, scp, run.
+- A new tool step gets tested on the real server right away: faster-whisper with a file path fails here (PyAV), pass an
+  array like align.py; a full-frame gblur on 1080p crawls on the shared CPU (blur a small copy).
