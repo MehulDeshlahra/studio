@@ -318,7 +318,7 @@ def main():
         cover = 0.0
         try:
             timed, vdur, cover = align.words_by_line(vo, [s["vo"] for s in p["scenes"]], p.get("lang") or ch.get("lang", "hi"))
-            method = "whisper"; log("aligned words with whisper, matched", f"{cover:.0%}")
+            method = "whisper"; log("aligned words with whisper, matched", f"{cover:.0%}", "by", align.LAST_ENGINE[0])
         except Exception as e:
             log("whisper alignment failed, pause estimate:", str(e)[:150])
             timed, vdur = align.lines(vo, [s["vo"] for s in p["scenes"]]); method = "pauses"

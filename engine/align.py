@@ -39,18 +39,49 @@ def _sim(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 
-def _whisper(wav, lang="hi", prompt=None):
-    from faster_whisper import WhisperModel
+LAST_ENGINE = [""]                          # which engine gave the timing that was used (make.py logs it)
+
+
+def _groq_words(wav, lang):
+    """18 Nov: Whisper large-v3 on Groq's free tier through OmniRoute (the local model is 'small' on 2 CPU cores).
+    Returns [(word, start, end)] or raises."""
+    import json, os, subprocess, tempfile, urllib.request, uuid
+    import llm
+    flac = os.path.join(tempfile.gettempdir(), f"al-{uuid.uuid4().hex[:8]}.flac")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-ac", "1", "-ar", "16000", "-c:a", "flac", flac], check=True, timeout=120)
+    try:
+        b = uuid.uuid4().hex
+        fields = {"model": "groq/whisper-large-v3", "language": lang, "response_format": "verbose_json",
+                  "timestamp_granularities[]": "word", "temperature": "0"}
+        body = b"".join(f"--{b}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode() for k, v in fields.items())
+        body += (f"--{b}\r\nContent-Disposition: form-data; name=\"file\"; filename=\"vo.flac\"\r\nContent-Type: audio/flac\r\n\r\n").encode()
+        body += open(flac, "rb").read() + f"\r\n--{b}--\r\n".encode()
+        req = urllib.request.Request(llm.URL.replace("/chat/completions", "/audio/transcriptions"), data=body,
+                                     headers={"Authorization": "Bearer " + llm._key(), "Content-Type": f"multipart/form-data; boundary={b}"})
+        d = json.load(urllib.request.urlopen(req, timeout=180))
+    finally:
+        os.remove(flac)
+    words = [(str(w.get("word", "")).strip(), float(w["start"]), float(w["end"])) for w in d.get("words") or [] if str(w.get("word", "")).strip()]
+    if len(words) < 5:
+        raise RuntimeError("groq whisper gave no word times")
+    return words
+
+
+def _whisper(wav, lang="hi", prompt=None, engine="local"):
     a, sr = sf.read(wav, dtype="float32")
     if a.ndim > 1:
         a = a.mean(axis=1)
     if sr != 16000:
         a = np.interp(np.arange(0, len(a), sr / 16000), np.arange(len(a)), a).astype("float32")
-    # 17 Nov: Hinglish matched only 62-84% (Devanagari output vs our Latin script). The script as initial_prompt makes
-    # Whisper write the same Latin spellings, so the words line up (English editions already match ~95%).
-    segs, _ = WhisperModel("small", compute_type="int8").transcribe(a, language=lang, word_timestamps=True, beam_size=5,
-                                                                    initial_prompt=(prompt or None) and prompt[:600])
-    out = [(w.word.strip(), float(w.start), float(w.end)) for s in segs for w in s.words if w.word.strip()]
+    if engine == "groq":
+        out = _groq_words(wav, lang)
+    else:
+        from faster_whisper import WhisperModel
+        # 17 Nov: Hinglish matched only 62-84% (Devanagari output vs our Latin script). The script as initial_prompt makes
+        # Whisper write the same Latin spellings, so the words line up (English editions already match ~95%).
+        segs, _ = WhisperModel("small", compute_type="int8").transcribe(a, language=lang, word_timestamps=True, beam_size=5,
+                                                                        initial_prompt=(prompt or None) and prompt[:600])
+        out = [(w.word.strip(), float(w.start), float(w.end)) for s in segs for w in s.words if w.word.strip()]
     # speech end by energy (drops hallucinated words in a silent tail)
     hop = 160
     n = len(a) // hop
@@ -99,14 +130,32 @@ def words_by_line(wav, texts, lang="hi"):
         for w in t.split():
             if re.search(r"[A-Za-z0-9]", w):
                 toks.append(w); line_of.append(k)
-    W, total, t0, t1 = _whisper(wav, lang)   # 17 Nov: the script as initial_prompt made Whisper loop on garbage ("Ṭ Ṭ Ṭ") and run 3x slower; keep plain
-    heard = [skel_lat(w[0]) if lang == "en" else (skel_dev(w[0]) or skel_lat(w[0])) for w in W]
     sk = [skel_lat(w) for w in toks]
-    pairs = _nw(sk, heard)
-    # 17 Nov: words like "hai ka ho ki" have an EMPTY consonant skeleton and can never match, so a perfect Hinglish voice
-    # scored only 58-79%. Coverage counts only words that can be matched (a missing sentence still shows up here).
     can = [i for i, x in enumerate(sk) if len(x) >= 1]
-    cover = sum(1 for i in can if i in pairs) / max(1, len(can))
+
+    def match(W):
+        heard = [skel_lat(w[0]) if lang == "en" else (skel_dev(w[0]) or skel_lat(w[0])) for w in W]
+        pairs = _nw(sk, heard)
+        # 17 Nov: words like "hai ka ho ki" have an EMPTY consonant skeleton and can never match, so a perfect Hinglish
+        # voice scored only 58-79%. Coverage counts only words that can be matched (a missing sentence still shows up).
+        return pairs, sum(1 for i in can if i in pairs) / max(1, len(can))
+    # 18 Nov: Groq Whisper large-v3 (free, via OmniRoute) first; the local 'small' model runs too when Groq is busy or
+    # matches less than 90%, and the better match wins.
+    best = None
+    for eng in ("groq", "local"):
+        try:
+            W_, total_, t0_, t1_ = _whisper(wav, lang, engine=eng)   # 17 Nov: no script as initial_prompt (made Whisper loop)
+        except Exception as e:
+            if eng == "local" and best is None:
+                raise
+            continue
+        pairs_, cover_ = match(W_)
+        if best is None or cover_ > best[1]:
+            best = (pairs_, cover_, W_, total_, t0_, t1_, eng)
+        if best[1] >= 0.9:
+            break
+    pairs, cover, W, total, t0, t1, engine_used = best
+    LAST_ENGINE[0] = engine_used
     if cover < 0.5:
         raise RuntimeError(f"alignment matched only {cover:.0%} of the words")
     s = [None] * len(toks); e = [None] * len(toks)
