@@ -78,9 +78,9 @@
   },
   {
    "vo": "Karuna se sone ka dhaga bana. Saanp aag se bahaar aaya.",
-   "type": "clip",
+   "type": "image",
    "prompt": "The golden thread wraps gently around the serpent, lifting it from the burning log. The log's flames part like curtains. The serpent glows gold as it rises, unharmed. Slow, graceful motion. Serene painterly Indian style, saffron gold white marble light, calm peaceful, ornate Jain temple details.",
-   "motion": "pull",
+   "motion": "push",
    "title": "DHAGA NE BACHAYA",
    "keywords": [
     "bachaya",
@@ -199,7 +199,7 @@
   {
    "vo": "Ek chhoti karuna ne hazaron janam ka karz chukaya.",
    "type": "card",
-   "prompt": "Soft saffron gradient background, subtle marble texture. Golden thread forms an infinity loop connecting two lotuses — one small (past), one radiant (present). Serene painterly Indian style, calm, uncluttered.",
+   "prompt": "Soft saffron gradient background with subtle marble texture. A single thin golden infinity loop centered, minimal and elegant. Large clear vertical safe zones above and below the loop for text. No other elements. Serene Indian aesthetic, uncluttered, 9:16 aspect ratio.",
    "motion": "push",
    "title": "",
    "big": "KARUNA CHUKATI KARZ",
@@ -209,7 +209,8 @@
     "karz"
    ],
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Tum hote toh kya karte? Comment mein likho.",

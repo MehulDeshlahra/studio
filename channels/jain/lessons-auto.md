@@ -50,3 +50,14 @@
 ## 1119-0305 What happens during Paryushana's Pratikraman — the Jain ritual of self‑purification (source: Agam)
 - Scene 10: Image clarity is lower than surrounding frames.
 - Scene 12: Minor AI-generated anatomical artifacts on hands.
+
+## 1119-0335 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s12b
+
+## 1119-0335 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s12b
+
+## 1119-0335 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s12b
+- FIT: Dharanendra is depicted as a female deity instead of a male nagraj as per traditional iconography and the voiceover.
+- DUP: The secondary text 'Jai Jinendra' is duplicated inside the card.

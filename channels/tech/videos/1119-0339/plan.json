@@ -1,0 +1,311 @@
+{
+ "slug": "biz-structure-2026",
+ "title": "Business structure galat chuni toh ghar bhi ja sakta hai?",
+ "hooks": [
+  "Business structure galat chuni toh ghar bhi ja sakta hai",
+  "Proprietorship mein karz aapka, ghar bhi ja sakta hai",
+  "Funding chahiye toh Pvt Ltd hi kyun? Baaki sab fail"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct high-stakes claim about personal asset risk — matches top-performing 'urgent interruption' hook pattern; visual of house cracking works sound-off",
+ "metaphor": "Protection Shield — each structure is a different level of shield between business risk and your personal assets (house, savings, car)",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Business structure galat chuni toh ghar bhi ja sakta hai",
+   "type": "clip",
+   "prompt": "Indian middle-class house at night, single crack appears on wall glowing red, camera pushes in fast",
+   "motion": "punch",
+   "title": "Business structure galat chuni",
+   "keywords": [
+    "ghar",
+    "ja sakta hai"
+   ],
+   "bg_prompt": "Indian middle-class house exterior at night, clean photoreal, pure black background",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Paanch structure, sirf teen bachate aapko",
+   "type": "title",
+   "big": "5 STRUCTURE",
+   "sub": "3 BACHATE",
+   "label": "INTRO",
+   "bg_prompt": "Five geometric shields in row on pure black, first two cracked, last three solid, premium studio lighting",
+   "keywords": [
+    "paanch",
+    "teen bachate"
+   ],
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Proprietorship — aap hi business, karz bhi aapka",
+   "type": "object",
+   "prompt": "One person behind cracked shield, red debt arrows piercing through to hit person directly",
+   "motion": "push",
+   "title": "Proprietorship — aap hi",
+   "keywords": [
+    "aap hi business",
+    "karz aapka"
+   ],
+   "bg_prompt": "One silhouette, broken shield, red arrows passing through, photoreal on pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Partnership — do log, karz dono ka, ek bhaage toh doosra phanse",
+   "type": "object",
+   "prompt": "Two people behind cracked shield, debt arrows hitting both, one fading leaving other taking double hit",
+   "motion": "pan",
+   "title": "Partnership — do log,",
+   "keywords": [
+    "do log",
+    "ek bhaage"
+   ],
+   "bg_prompt": "Two silhouettes, joint cracked shield, arrows splitting to hit both, one disappearing, pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "LLP — alag entity, limited liability, shield pakka",
+   "type": "object",
+   "prompt": "Two partners behind solid glowing shield, debt arrows bouncing off, partners safe inside",
+   "motion": "pull",
+   "title": "LLP — alag entity,",
+   "keywords": [
+    "alag entity",
+    "limited liability"
+   ],
+   "bg_prompt": "Two silhouettes, solid blue shield deflecting red arrows, photoreal on pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "OPC — ek founder, company status, shield chota par mazboot",
+   "type": "object",
+   "prompt": "Single founder behind compact solid shield, debt arrows deflecting, company badge on shield",
+   "motion": "tilt",
+   "title": "OPC — ek founder,",
+   "keywords": [
+    "ek founder",
+    "company status"
+   ],
+   "bg_prompt": "One silhouette, compact hexagonal shield with badge, arrows deflecting, pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Pvt Ltd — VC funding ke liye bani, sabse mazboot shield",
+   "type": "object",
+   "prompt": "Multiple shareholders behind multi-layered fortress shield, green investment arrows entering controlled gate, red debt arrows blocked",
+   "motion": "push",
+   "title": "Pvt Ltd — VC",
+   "keywords": [
+    "VC funding",
+    "sabse mazboot"
+   ],
+   "bg_prompt": "Group silhouettes, layered shield with gate for green arrows, red arrows blocked, premium render",
+   "real": {
+    "q": "Startup India logo",
+    "kind": "logo",
+    "subject": "Startup India official logo"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Liability test — Prop aur Partner: unlimited, baaki: limited",
+   "type": "compare",
+   "items": [
+    {
+     "label": "PROP PARTNER",
+     "value": "UNLIMITED"
+    },
+    {
+     "label": "LLP OPC PVT",
+     "value": "LIMITED"
+    }
+   ],
+   "label": "LIABILITY",
+   "bg_prompt": "Split screen: left cracked shield person exposed, right solid shield person safe, pure black",
+   "keywords": [
+    "unlimited",
+    "limited"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "terminal"
+  },
+  {
+   "vo": "Funding chahiye? Sirf Pvt Ltd le sakta VC equity",
+   "type": "compare",
+   "items": [
+    {
+     "label": "PVT LTD",
+     "value": "YES"
+    },
+    {
+     "label": "BAAKI",
+     "value": "NO"
+    }
+   ],
+   "label": "FUNDING",
+   "bg_prompt": "Green arrow entering Pvt Ltd gate, bouncing off other shields, photoreal",
+   "keywords": [
+    "VC equity",
+    "sirf Pvt Ltd"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "terminal"
+  },
+  {
+   "vo": "Compliance — Prop 1, Partnership 2, LLP 4, OPC 5, Pvt Ltd 8 filings saal",
+   "type": "stat",
+   "value": "8",
+   "title": "PVT LTD 8 FILINGS",
+   "bg_prompt": "Clean HUD bar chart rising left to right on pure black, mono chrome",
+   "keywords": [
+    "compliance",
+    "filings saal"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "terminal"
+  },
+  {
+   "vo": "Decision — risk high ya funding chahiye? Pvt Ltd banao. Warna LLP ya OPC",
+   "type": "flow",
+   "nodes": [
+    "RISK HIGH?",
+    "YES -> PVT LTD",
+    "FUNDING?",
+    "YES -> PVT LTD",
+    "LOW RISK -> LLP OPC"
+   ],
+   "label": "DECISION",
+   "bg_prompt": "Clean flowchart on pure black, decision diamonds, green yes paths to Pvt Ltd, blue paths to LLP OPC",
+   "keywords": [
+    "risk high",
+    "funding chahiye"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Aaj hi CA se baat karo, structure fix karo, ghar bachao",
+   "type": "title",
+   "big": "CA SE BAAT KARO",
+   "small": "STRUCTURE FIX KARO",
+   "label": "ACTION",
+   "bg_prompt": "Clean card on pure black, yellow accent line, subtle phone screen reflection",
+   "keywords": [
+    "CA se baat",
+    "structure fix"
+   ],
+   "motion": "push",
+   "title": "",
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Save karo, share karo, agla video dekhna mat bhoolna",
+   "type": "title",
+   "big": "SAVE KARO",
+   "sub": "SHARE KARO",
+   "label": "END",
+   "bg_prompt": "Clean end card on pure black, KaiseTech handle, yellow accent",
+   "keywords": [
+    "save karo",
+    "share karo"
+   ],
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Business structure galat chuni toh ghar bhi ja sakta hai 🏠\n\nProp, Partnership, LLP, OPC, Pvt Ltd — kaunsi shield tumhare assets bachayegi?\n\nAaj hi CA se baat karo, structure fix karo, ghar bachao\n\nSave karo, share karo\n\n#KaiseTech #BusinessStructure #StartupIndia #LLP #PvtLtd #FounderTips",
+ "hashtags": [
+  "#KaiseTech",
+  "#BusinessStructure",
+  "#StartupIndia",
+  "#LLP",
+  "#PvtLtd",
+  "#FounderTips"
+ ],
+ "claims": [
+  {
+   "claim": "Sole proprietorship and partnership have unlimited personal liability",
+   "basis": "Companies Act 2013; Indian Partnership Act 1932; MCA guidelines"
+  },
+  {
+   "claim": "LLP, OPC, and Private Limited are separate legal entities with limited liability",
+   "basis": "Limited Liability Partnership Act 2008; Companies Act 2013 Section 2(68); MCA notifications"
+  },
+  {
+   "claim": "Only Private Limited companies can raise venture capital equity via CCPS",
+   "basis": "SEBI ICDR Regulations 2018; Companies Act 2013 Section 62; standard VC term sheet practice"
+  },
+  {
+   "claim": "OPC has only one shareholder and must convert to Pvt Ltd to add investors",
+   "basis": "Companies Act 2013 Section 2(62); Rule 3 of Companies (Incorporation) Rules 2014"
+  },
+  {
+   "claim": "Annual compliance filings increase from Proprietorship (1) to Private Limited (8+)",
+   "basis": "MCA annual return forms MGT-7, AOC-4; LLP Form 11, 8; GST returns; Income Tax returns; typical filing counts per structure"
+  }
+ ],
+ "brain_ids": [
+  "f945e2a937",
+  "fc294ac58f",
+  "1e1964f463",
+  "b2fabb69c4",
+  "6ce7203c71",
+  "161339712e",
+  "7fa182f8ef",
+  "7f620e6fdf",
+  "4396759d41",
+  "6055c69660",
+  "efef8ced81",
+  "1e60a34718",
+  "78ebfe0925",
+  "b601da7de5"
+ ],
+ "skin": "blueprint"
+}

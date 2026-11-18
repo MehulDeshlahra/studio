@@ -23,5 +23,16 @@
   "qc_ok": true,
   "status": "approved",
   "review": []
+ },
+ {
+  "job": "1119-0335",
+  "topic": "What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)",
+  "title": "Jalte lakdi mein saanp phansa tha",
+  "status": "held",
+  "review": [
+   "before render, scene 6: FIT: Dharanendra is depicted as a female deity instead of a male nagraj as per traditional iconography and the voiceover.",
+   "before render, scene 13: OVERLAP/CUT (layout audit): text_occluded on #s12b",
+   "before render, scene 15: DUP: The secondary text 'Jai Jinendra' is duplicated inside the card."
+  ]
  }
 ]
