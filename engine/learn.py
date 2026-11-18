@@ -298,10 +298,22 @@ if __name__ == "__main__":
     elif a[0] == "deep":                 # python engine/learn.py deep <github-url>... [--max N]   (whole repo, resumable)
         mx = int(a[a.index("--max") + 1]) if "--max" in a else 10 ** 6
         urls = [x for x in a[1:] if x.startswith("http")] or list((load(os.path.join(OUT, "learn-deep-list.json"), []) or []))
+        prog = load(os.path.join(OUT, "learn-deep.json"), {}) or {}
         for u in urls:
-            name, nf, nc, k, b = learn_deep(u, max_chunks=mx)
-            print(json.dumps({"repo": name, "files": nf, "chunks": nc, "knowledge": k, "build": b}))
-            mx -= 0
+            nm = "/".join(u.rstrip("/").split("/")[-2:])
+            if prog.get(nm) and prog[nm]["next"] >= prog[nm]["chunks"]:
+                continue                                   # read completely already
+            try:
+                name, nf, nc, k, b = learn_deep(u, max_chunks=mx)
+                print(json.dumps({"repo": name, "files": nf, "chunks": nc, "knowledge": k, "build": b}))
+            except Exception as e:                         # a moved / private repo must not stop the others
+                log("learn deep: cannot read", u, str(e)[:150])
+                continue
+            p2 = (load(os.path.join(OUT, "learn-deep.json"), {}) or {}).get(name, {})
+            used = p2.get("next", 0) - (prog.get(name, {}) or {}).get("next", 0)
+            mx -= max(1, used)
+            if mx <= 0 or p2.get("next", 0) < p2.get("chunks", 0):
+                break                                      # the night's chunk budget is used up
         subprocess_sync()
     else:
         r = learn({"kind": "github", "url": a[0]})
