@@ -111,10 +111,10 @@
 - [x] 18-Nov studio-scout failed every run since 17 Nov 17:01 (its unit pulled git without --autostash): unit fixed on the server and in scout/install.sh, scout ran again 05:35.
 - [x] 18-Nov Mehul agent contact sheet: ffmpeg crashed on odd row height (213 px) -> 214 px; sheet verified on kuber-01 + 1117-0655.
 - [x] 18-Nov Quality gates: preflight + review check sacred figures (gender/form/modesty) and split pictures (z-image drew Kartikeya as a woman; z-image removed); a provider's "top up your credits" text is never accepted as an answer.
-- [ ] [mehul] 18 Nov katha: Fix layout engine in renderer/layout.py to completely reject or automatically re-wrap lines causing content_overlap before marking ready.
-- [ ] [mehul] 18 Nov katha: Add character persistence validation in image_gen/generator.py to ensure deity/hero descriptions remain identical across all scenes of a single video.
+- [ ] [mehul] 18 Nov katha: Fix layout engine in engine/compose.py to completely reject or automatically re-wrap lines causing content_overlap before marking ready.
+- [ ] [mehul] 18 Nov katha: Add character persistence validation in engine/make.py (picture prompts) to ensure deity/hero descriptions remain identical across all scenes of a single video.
 - [x] [mehul] 18 Nov raaz: engine/planner.py: hard-block any English language job generation for @aagesuno as per the November 18 rule update. (already true 18 Nov: English is off on every page and never posted, no handle_en)
-- [ ] [mehul] 18 Nov raaz: engine/reviewer.py: add a pre-render check to ensure the first spoken word perfectly matches the generated audio buffer without clipping.
+- [ ] [mehul] 18 Nov raaz: engine/preflight.py: add a pre-render check to ensure the first spoken word perfectly matches the generated audio buffer without clipping.
 - [ ] [mehul] 18 Nov tech: Fix TTS generation pipeline in engine/tts.py to ensure 100% script alignment before marking audio ready.
 
 - [ ] [radar] Prompt Regression Testing (Free CI Gate) (https://dev.to/aws-builders/prompt-regression-testing-for-llm-apps-a-free-ci-gate-tested-on-3-real-models-1n22, 2026-11-18): We have 10+ critical prompts (plan.py, research.py, scout.py, compose.py, review.py, etc.); a CI gate prevents silent quality drops when prompts are tweaked. FREE: Uses free tiers of multiple LLM APIs; GitHub Actions free tier runs the CI. HOW: Create tests/prompts/ golden-output fixtures; add GitHub Actions workflow that calls Gemini/OpenRouter free endpoints on every PR; fail if semantic diff > threshold.

@@ -25,6 +25,10 @@ DRY = "--dry" in sys.argv
 KNOBS = {"schedule.backlog": (3, 15), "schedule.posts_per_day": (1, 3), "serial.parts": (5, 12),
          "edit.length_s.0": (20, 45), "edit.length_s.1": (35, 70)}
 MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
+FILES = ("engine/plan.py (script + scenes), engine/compose.py (katha/raaz layout), engine/compose_lab.py (tech layout), "
+         "engine/make.py (build steps, picture prompts), engine/realmedia.py (real photos/logos), engine/muse.py (pictures), "
+         "engine/tts.py (voice), engine/align.py (caption timing), engine/pace.py (pauses), engine/preflight.py (pre-render check), "
+         "engine/review.py (final review), engine/thumb.py (covers), engine/serials.py (Aage Suno arcs), engine/publish.py (posting)")
 
 ASK = """You are Mehul, the owner of three faceless Shorts pages. You are reviewing today's work of your automatic studio.
 HOW YOU THINK (your own words and rules):
@@ -41,6 +45,7 @@ Allowed actions:
   {{"do": "knob", "key": "<one of {knobs}>", "value": <number>, "why": "..."}}
   {{"do": "rebuild", "job": "<job id of a held video>", "note": "what to fix"}}
   {{"do": "task", "text": "a code change only a developer can do (be specific: file/feature + expected result)"}}
+  Real code files (name only these): {files}
 Return JSON {{"verdict": "one honest sentence on today's quality", "score": 1-10, "actions": [...]}}"""
 
 
@@ -164,7 +169,7 @@ def run():
             log("mehul agent: no contact sheet for", cid, str(e)[:80]); sheet = None
         rules = (read(os.path.join(ROOT, "channels", cid, "lessons.md"), 3000) + "\n" + "\n".join("- " + r for r in ch.get("rules", [])))[-3500:]
         parts = [{"text": ASK.format(profile=profile, page=f"{ch.get('name', cid)} ({cid})", rules=rules, data=_data(cid, done, since),
-                                     knobs=", ".join(KNOBS))}]
+                                     knobs=", ".join(KNOBS), files=FILES)}]
         if sheet:
             parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(open(sheet, "rb").read()).decode()}})
         r = _gem(parts) or {}
@@ -202,6 +207,11 @@ def run():
                 elif a.get("do") == "task" and a.get("text"):
                     bq = os.path.join(ROOT, "knowledge", "build-queue.md")
                     t = a["text"].strip().replace("\n", " ")[:300]
+                    # 18 Nov: it invented renderer/layout.py, image_gen/generator.py, engine/reviewer.py. A made-up path is
+                    # dropped (the coding agent finds the file itself) instead of sending it to a file that does not exist.
+                    for pth in set(re.findall(r"[\w./-]+\.py\b", t)):
+                        if not os.path.exists(os.path.join(ROOT, pth)):
+                            t = re.sub(r"\s*\b(in|to|of)?\s*" + re.escape(pth), "", t).strip(" :;,-")
                     if t[:40].lower() not in read(bq).lower():
                         if not DRY:
                             with open(bq, "a", encoding="utf-8", newline="\n") as f:
