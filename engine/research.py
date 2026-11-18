@@ -49,6 +49,12 @@ def run(topic, queries, job, watch_n=3):
         except Exception as e:
             log("watch fail", v["url"], str(e)[:120])
     r = {"topic": topic, "queries": queries, "top": found[:10], "watched": watched}
+    try:                                     # 18 Nov: real articles too, so facts come from sources, not from memory
+        import web
+        r["web"] = web.facts(queries[0] if queries else topic, n=3)
+        log("research web:", len(r["web"]), "chars from articles")
+    except Exception as e:
+        log("research web fail", str(e)[:120])
     save(os.path.join(job, "research.json"), r)
     return r
 
@@ -59,4 +65,7 @@ def summary(r):
     for w in r["watched"]:
         lines.append(f"- {w.get('views', 0):,} views '{w.get('title')}': hook '{w.get('hook_line')}'; frame0 {w.get('frame0')}; "
                      f"metaphor {w.get('visual_metaphor')}; works because {w.get('why_it_works')}; weak: {w.get('weak_points')}")
+    if r.get("web"):
+        lines.append("\nWEB SOURCES (use these for facts; every claim must agree with them; prefer their concrete details "
+                     "and numbers over generic lines):\n" + r["web"][:9000])
     return "\n".join(lines)
