@@ -56,6 +56,9 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
 - [ ] Series formats that bring followers back daily (raaz serials exist; katha 5-7 part series; tech "myth vs sach").
 - [x] 18 Nov https://scrollhouse.in live (GitHub Pages, HTTPS enforced, cert approved; www -> apex). Bios: Mehul pastes.
 ### Brand readiness (start before 10k, so the first brand finds us ready)
+- [x] 19 Nov brand kit automated (engine/brand.py, daily 06:20): real IG DPs -> Facebook DP + cover set via Graph API on all 5 pages
+      (proof: journal studio-job-brand "Facebook DP set"/"cover set" x5), circle-safe DP, YouTube banner, IG highlight covers in
+      brand/<id>/ on the server. Not possible by API (Mehul uploads): IG DP + highlights, YouTube DP + banner.
 - [ ] Media kit page per page (GitHub Pages, auto-updated from money.json + results): audience, reach, best reels,
       formats offered, contact. Build when each page has ~2 weeks of numbers.
 - [ ] Business contact: a dedicated email for brand inquiries (ASK MEHUL: a sign-up), shown in every bio.
