@@ -28,10 +28,6 @@
     "memory": {
       "use": "a memory, a flashback, the past, what someone remembers or imagines",
       "pic": "faded 1990s film photograph, warm washed-out colours, soft focus, light leaks, dust and scratches, nostalgic Indian home or street"
-    },
-    "evidence": {
-      "use": "a clue, an object that matters, a document or photo that was found, a recap of the facts",
-      "pic": "top-down forensic evidence photo of the object on a dark wooden table under one desk lamp, sharp detail, deep shadows, no readable writing"
     }
   },
   "looks_on": false,
