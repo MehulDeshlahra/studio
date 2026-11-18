@@ -9,3 +9,22 @@
 
 ## review 1118-2242
 - visual: Scene 7 card shows overlapping text where 'SAMATA' is printed twice on top of each other, creating visual clutter.
+
+## 1118-2242 The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)
+- Scene 6: Minor AI artifacts on the giant figure's extra heads.
+- Scene 8: Slight anatomical distortion in the bowing figure's hands.
+
+## 1119-0215 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s12b
+- FIT: Indra is depicted with a normal human appearance instead of his traditional form with a crown and vajra riding Airavata
+
+## review 1118-2242
+- visual: Scene 7 card shows overlapping text where 'SAMATA' is printed directly on top of another 'SAMATA' causing severe visual clutter and readability issues.
+
+## 1119-0215 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s12b
+
+## 1119-0215 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s12b
+- FIT: Indra is depicted incorrectly (missing crown, vajra, and riding a normal elephant rather than the white elephant Airavata)
+- FIT: Shows two divine human figures instead of a pigeon and a hawk as described in the voice

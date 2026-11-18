@@ -6,7 +6,18 @@
   "qc_ok": false,
   "status": "held",
   "review": [
-   "visual: Scene 7 card shows overlapping text where 'SAMATA' is printed twice on top of each other, creating visual clutter."
+   "visual: Scene 7 card shows overlapping text where 'SAMATA' is printed directly on top of another 'SAMATA' causing severe visual clutter and readability issues."
+  ]
+ },
+ {
+  "job": "1119-0215",
+  "topic": "Why King Megharath Cut His Own Flesh to Save a Pigeon (Source: Adipurana)",
+  "title": "Raja ne apna maans kaise kaata kabutar bachane?",
+  "status": "held",
+  "review": [
+   "before render, scene 2: FIT: Indra is depicted incorrectly (missing crown, vajra, and riding a normal elephant rather than the white elephant Airavata)",
+   "before render, scene 3: FIT: Shows two divine human figures instead of a pigeon and a hawk as described in the voice",
+   "before render, scene 13: OVERLAP/CUT (layout audit): text_occluded on #s12b"
   ]
  }
 ]

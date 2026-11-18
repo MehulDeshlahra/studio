@@ -12,230 +12,223 @@
  "cast": {},
  "scenes": [
   {
+   "type": "wa",
+   "title": "Aditya",
+   "messages": [
+    {
+     "from": "Aditya",
+     "text": "Bhai home loan poora chuka diya 🎉"
+    },
+    {
+     "from": "Aditya",
+     "text": "Par 2 mahine se bank papers nahi de raha 😤"
+    },
+    {
+     "from": "me",
+     "text": "Toh bank tujhe roz ₹5,000 dega!"
+    }
+   ],
    "vo": "Loan chukaya, papers abhi tak nahi mile? Roz ₹5,000 bante hain.",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "₹5,000",
     "papers"
    ],
-   "motion": "push",
-   "type": "object",
-   "label": "LOAN CLOSED",
-   "prompt": "a set of original property papers in a bank file on a dark desk, a 'loan closed' stamp, soft green light",
    "big": null,
-   "small": null,
-   "title": null,
-   "skin": "keynote"
+   "small": null
   },
   {
-   "vo": "RBI ka niyam: loan band hone ke 30 din mein papers wapas karne hain.",
-   "keywords": [
-    "RBI",
-    "30 din"
-   ],
-   "motion": "punch",
-   "type": "object",
-   "label": "RBI CIRCULAR · 13 SEP 2023",
-   "prompt": "the official Reserve Bank of India logo",
+   "type": "rule",
+   "title": "RBI circular",
+   "sub": "13 Sep 2023 · laagu 1 Dec 2023",
    "real": {
     "q": "Reserve Bank of India logo",
     "kind": "logo",
     "subject": "the official RBI logo"
    },
+   "lines": [
+    "Loan poora chukaya: 30 din mein original papers",
+    "Der hui: ₹5,000 har din",
+    "Papers kho gaye: 30 din aur"
+   ],
+   "stamp": "ASLI NIYAM",
+   "vo": "RBI ka niyam: loan band hone ke 30 din mein papers wapas karne hain.",
+   "skin": "keynote",
+   "motion": "push",
+   "keywords": [
+    "RBI",
+    "30 din"
+   ],
    "big": null,
-   "small": null,
-   "title": null,
-   "skin": "keynote"
+   "small": null
   },
   {
-   "vo": "31ve din se bank apni jeb se ₹5,000 roz dega.",
    "type": "stat",
-   "prompt": "Dark studio. Large gold number '₹5,000' centered. Below in white: 'PER DAY PENALTY'. Red upward arrow beside it. Small text: 'FROM DAY 31'.",
-   "motion": "punch",
-   "title": "",
    "value": "₹5,000",
-   "sub": "PER DAY PENALTY",
-   "label": "FROM DAY 31",
+   "sub": "har din, 31ve din se",
+   "vo": "31ve din se bank apni jeb se ₹5,000 roz dega.",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "₹5,000",
     "penalty",
     "day 31"
    ],
-   "real": null,
-   "bg_prompt": "Dark studio, large gold ₹5,000 number with red upward arrow, 'PER DAY PENALTY' text, premium lighting",
    "big": null,
    "small": null,
-   "skin": "keynote"
+   "title": null
   },
   {
+   "type": "title",
+   "big": "HOME · CAR · PROPERTY",
+   "sub": "har secured loan ke papers",
    "vo": "Home loan, car loan, property ke against loan, sab ke papers pe laagu.",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "home loan",
     "car loan",
     "gold loan",
     "secured"
    ],
-   "motion": "tilt",
-   "type": "title",
-   "big": "HOME · CAR · PROPERTY",
-   "sub": "har secured loan ke papers",
    "small": null,
-   "title": null,
-   "skin": "blueprint"
+   "title": null
   },
   {
+   "type": "flow",
+   "title": "SAB PE LAAGU",
+   "nodes": [
+    "SARKARI BANK",
+    "PRIVATE BANK",
+    "NBFC/HFC"
+   ],
    "vo": "Sarkari bank, private, NBFC, HFC — koi nahi bach sakta.",
-   "type": "object",
-   "prompt": "Dark studio. Row of 4 realistic building facades on a reflective surface: government bank (columns), private bank (glass tower), NBFC (modern), HFC (brick). Each has a small gold nameplate. Soft green-gold uplighting.",
-   "motion": "pan",
-   "title": "",
-   "label": "BANKS · NBFC · HFC",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "sarkari bank",
     "private bank",
     "NBFC",
     "HFC"
    ],
-   "real": null,
-   "bg_prompt": "Dark studio, row of 4 realistic bank building facades on reflective surface: government, private, NBFC, HFC, gold nameplates, green-gold uplighting",
    "big": null,
-   "small": null,
-   "skin": "blueprint"
+   "small": null
   },
   {
+   "type": "title",
+   "big": "PAPERS KHO GAYE?",
+   "sub": "bank ko 30 din aur, certified copy ke liye",
    "vo": "Papers kho gaye? Bank ko 30 din extra milte hain certified copy ke liye.",
-   "type": "flow",
-   "prompt": "Dark studio. Flow with 3 nodes connected by gold arrows. Node 1: 'PAPER LOST' (red alert). Node 2: '+30 DIN' (gold clock). Node 3: 'CERTIFIED COPY' (green doc). Soft green glow on active node.",
+   "skin": "keynote",
    "motion": "push",
-   "title": "",
-   "nodes": [
-    "PAPER LOST",
-    "+30 DIN",
-    "CERTIFIED COPY"
-   ],
-   "big": "",
-   "small": "",
    "keywords": [
     "paper kho gaye",
     "certified copy",
     "30 din extra"
    ],
-   "real": null,
-   "bg_prompt": "Dark studio, flow diagram: paper lost alert, +30 days clock, certified copy document, gold arrows, soft green glow",
-   "skin": "blueprint"
+   "small": null,
+   "title": null
   },
   {
+   "type": "bill",
+   "title": "BANK KO DENA HOGA",
+   "sub": "papers 10 din late",
+   "tone": "good",
+   "rows": [
+    {
+     "label": "Late din",
+     "value": "10"
+    },
+    {
+     "label": "Har din",
+     "value": "₹5,000"
+    }
+   ],
+   "total": {
+    "label": "Aapko milega",
+    "value": "₹50,000"
+   },
    "vo": "Phir bhi delay hua to wahi ₹5,000 roz.",
-   "type": "stat",
-   "prompt": "Dark studio. Large gold '₹5,000' with red upward arrow. Below white: 'PER DAY PENALTY'. Small text: 'AFTER 60 DAYS TOTAL'.",
-   "motion": "punch",
-   "title": "",
-   "value": "₹5,000",
-   "sub": "PER DAY PENALTY",
-   "label": "AFTER 60 DAYS TOTAL",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "₹5,000",
     "penalty",
     "60 din"
    ],
-   "real": null,
-   "bg_prompt": "Dark studio, large gold ₹5,000 number with red upward arrow, 'PER DAY PENALTY' text, small 'AFTER 60 DAYS TOTAL' label",
    "big": null,
-   "small": null,
-   "skin": "terminal"
+   "small": null
   },
   {
-   "vo": "Pehle bank ko likh ke complaint do, 30 din intezaar karo.",
-   "type": "ui",
-   "prompt": "Phone screen mockup on dark studio surface. Shows a drafted complaint letter to bank. Green check animation on 'SENT'. Text rows: 'STEP 1: WRITE TO BANK' (green), 'WAIT 30 DAYS' (gold).",
-   "motion": "punch",
-   "title": "",
-   "rows": [
+   "type": "wa",
+   "title": "Bank Manager",
+   "messages": [
     {
-     "label": "STEP 1",
-     "value": "WRITE TO BANK",
-     "pct": 50
+     "from": "me",
+     "text": "Loan closed 19 Sep. Original papers abhi tak nahi mile. Please wapas karein."
     },
     {
-     "label": "WAIT",
-     "value": "30 DAYS",
-     "pct": 100
+     "from": "Bank Manager",
+     "text": "Complaint register ho gayi hai 🙏"
     }
    ],
-   "label": "ACTION PLAN",
+   "vo": "Pehle bank ko likh ke complaint do, 30 din intezaar karo.",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "complaint",
     "bank",
     "30 din"
    ],
-   "real": null,
-   "bg_prompt": "Dark studio, phone screen showing drafted complaint letter to bank with 'SENT' animation, green-gold UI accents",
    "big": null,
-   "small": null,
-   "skin": "terminal"
+   "small": null
   },
   {
+   "type": "title",
+   "big": "RBI CMS PORTAL",
+   "sub": "cms.rbi.org.in",
    "vo": "Nahi hua to RBI CMS portal pe jao, track karo.",
-   "type": "ui",
-   "prompt": "Phone screen mockup on dark studio surface showing RBI CMS portal homepage. Green check on 'FILE COMPLAINT'. Text rows: 'STEP 2: RBI CMS PORTAL' (gold), 'TRACK STATUS' (white).",
-   "motion": "punch",
-   "title": "",
-   "rows": [
-    {
-     "label": "STEP 2",
-     "value": "RBI CMS PORTAL",
-     "pct": 50
-    },
-    {
-     "label": "TRACK",
-     "value": "STATUS",
-     "pct": 100
-    }
-   ],
-   "label": "ESCALATE",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "RBI CMS",
     "portal",
     "track"
    ],
-   "real": {
-    "q": "RBI CMS portal screenshot",
-    "kind": "photo",
-    "subject": "RBI Complaint Management System portal homepage"
-   },
-   "bg_prompt": "Dark studio, phone screen showing RBI CMS portal with complaint filing steps, green-gold UI accents",
-   "big": null,
    "small": null,
-   "skin": "keynote"
+   "title": null
   },
   {
+   "type": "stat",
+   "value": "₹5,000",
+   "sub": "roz, ye aapka haq hai",
    "vo": "Ye haq hai tumhara — maango, paisa tumhaara hai.",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "haq",
     "₹5,000",
     "maango"
    ],
-   "motion": "pull",
-   "type": "title",
-   "big": "₹5,000 ROZ",
-   "sub": "ye aapka haq hai",
+   "big": null,
    "small": null,
-   "title": null,
-   "skin": "keynote"
+   "title": null
   },
   {
+   "type": "title",
+   "big": "SAVE KARO",
+   "sub": "papers kab mile the?",
    "vo": "Save karo. Tumhare papers kab mile the?",
+   "skin": "keynote",
+   "motion": "push",
    "keywords": [
     "save",
     "papers",
     "comment"
    ],
-   "motion": "punch",
-   "type": "title",
-   "big": "SAVE KARO",
-   "sub": "papers kab mile the?",
    "small": null,
-   "title": null,
-   "skin": "keynote"
+   "title": null
   }
  ],
  "music_mood": "driving",
@@ -290,7 +283,7 @@
   "6dad050e27",
   "d52bfa64b5"
  ],
- "kiro_checked": "19 Nov: checked by hand against RBI 13 Sep 2023 circular (ET, Indian Express, Mint): 30 days, ₹5,000/day, lost papers +30 days, all REs; gold loan removed",
- "visual_done": "kiro",
+ "kiro_checked": "19 Nov: checked by hand against RBI 13 Sep 2023 circular (ET, Indian Express, Mint): 30 days, ₹5,000/day, lost papers +30 days, all REs; gold loan removed | phone look 19 Nov",
+ "visual_done": "kiro phone",
  "skin": "keynote"
 }

@@ -1,0 +1,125 @@
+{
+ "lufs": -14,
+ "music": {
+  "file": "music/close-up.mp3",
+  "offset": 0,
+  "gain_db": -22,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "t": 3.79,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -17,
+   "align": "onset"
+  },
+  {
+   "t": 3.74,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 6.24,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 9.82,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -18,
+   "align": "peak"
+  },
+  {
+   "t": 12.39,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -17,
+   "align": "onset"
+  },
+  {
+   "t": 12.34,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 15.17,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -17,
+   "align": "onset"
+  },
+  {
+   "t": 15.12,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 18.24,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -18,
+   "align": "peak"
+  },
+  {
+   "t": 21.89,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -17,
+   "align": "onset"
+  },
+  {
+   "t": 21.84,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 25.14,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 28.98,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -18,
+   "align": "peak"
+  },
+  {
+   "t": 31.84,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 34.36,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 38.14,
+   "file": "sfx/impact.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 38.12,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -18,
+   "align": "peak"
+  },
+  {
+   "t": 42.651,
+   "file": "sfx/whoosh-cine.mp3",
+   "gain_db": -16,
+   "align": "peak"
+  },
+  {
+   "t": 42.701,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -14,
+   "align": "onset"
+  }
+ ]
+}

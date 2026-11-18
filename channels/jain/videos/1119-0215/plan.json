@@ -1,0 +1,268 @@
+{
+ "slug": "megharath-kabutar-balidan",
+ "title": "Raja ne apna maans kaise kaata kabutar bachane?",
+ "hooks": [
+  "Raja ne apna maans kaata... kabutar bachane ke liye",
+  "Ek Raja apni jaan tarazu pe rakh di... ek chhote kabutar ke liye",
+  "Baaz ne maang liya Raja ka maans... phir kya hua?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the most shocking visual — a king cutting his own flesh — in the first 4 words. The pigeon gives an instant visual anchor. No greeting, no intro.",
+ "metaphor": "Tarazu (weighing scale) — the scale is the visual backbone: each beat adds weight to one pan (king's flesh) vs the other (pigeon), showing compassion outweighing self-preservation.",
+ "cast": {
+  "Raja Megharath": "ancient Indian king, calm compassionate face, saffron dhoti with gold border, seated on marble throne in ornate Jain temple courtyard, gentle glow",
+  "Kabutar": "white pigeon, soft feathers, gentle dark eyes, small and vulnerable",
+  "Baaz": "fierce hawk, sharp hooked beak, piercing eyes, powerful wings, predator stance",
+  "Mantri": "elderly minister in white cotton dhoti-angvastra, folded hands, concerned expression",
+  "Devta": "two celestial beings in radiant white silk, golden ornaments, serene divine glow, floating above ground"
+ },
+ "scenes": [
+  {
+   "vo": "Raja ne apna maans kaata kabutar bachane ke liye",
+   "type": "image",
+   "prompt": "King Megharath in royal court, dagger in hand, cutting a piece of flesh from his own thigh, pigeon on his lap, hawk perched nearby, courtiers stunned, serene painterly Indian style, soft saffron gold white marble light, ornate Jain temple details",
+   "motion": "push",
+   "title": "RAJA NE MAANS KAATA",
+   "keywords": [
+    "maans",
+    "kabutar"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Indra ne do devon ko bheja test karne",
+   "type": "image",
+   "prompt": "Indra seated on Airavata the white elephant, wearing crown and holding vajra, two devas standing before him, celestial court, golden light, Indian miniature style, 9:16 vertical, space above and below for text",
+   "motion": "push",
+   "title": "INDRA'S COURT",
+   "keywords": [
+    "Indra",
+    "devon"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "real": null
+  },
+  {
+   "vo": "Ek bana kabutar dusra baaz Raja ke paas aaye",
+   "type": "image",
+   "prompt": "Two devas transforming — one into a white pigeon, other into a fierce hawk, mid-transformation shimmer, celestial background, gentle glow",
+   "motion": "pan",
+   "title": "DEV BANE KABUTAR BAAZ",
+   "keywords": [
+    "kabutar",
+    "baaz"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Kabutar khidki se aaya Raja ki godi mein gira",
+   "type": "image",
+   "prompt": "King Megharath seated on marble throne in open pillared hall, white pigeon flying through arched window, landing gently on his lap, king's hand raised in protection, saffron marble light",
+   "motion": "push",
+   "title": "KABUTAR GODI MEIN",
+   "keywords": [
+    "kabutar",
+    "godi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Baaz bhi aaya yeh mera shikaar hai bola",
+   "type": "image",
+   "prompt": "Fierce hawk swooping into the same hall, perching on pillar, beak open speaking, King Megharath looking up calmly, courtiers amazed, ornate temple pillars",
+   "motion": "tilt",
+   "title": "BAAZ KI MAANG",
+   "keywords": [
+    "baaz",
+    "shikaar"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Raja ne mithai maansi sab mana kar diya",
+   "type": "image",
+   "prompt": "Servants bringing silver tray of Indian sweets, hawk turning head away dismissively, king shaking head, minister pleading with folded hands, butcher shop faint in distant background, king refusing all, marble courtyard",
+   "motion": "pan",
+   "title": "SAB OPTION NAHI CHALE",
+   "keywords": [
+    "mithai",
+    "maans",
+    "mana"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Raja ne katar nikaali apna maans kaatne ko",
+   "type": "image",
+   "prompt": "King Megharath drawing a small ornate dagger from waistband, determined calm face, pigeon on lap, hawk watching intently, courtiers gasping, serene painterly style",
+   "motion": "push",
+   "title": "KATAR NIKAALI",
+   "keywords": [
+    "katar",
+    "maans"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Raja ne jaangh se maans kaata baaz ko diya",
+   "type": "image",
+   "prompt": "Close view: king's hand placing a small piece of flesh on a golden plate, hawk stepping forward to take it, pigeon untouched on lap, saffron gold light",
+   "motion": "push",
+   "title": "PEHLA TUKDA DIYA",
+   "keywords": [
+    "jaangh",
+    "maans"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Baaz bola barabar wazan chahiye tarazu layi gayi",
+   "type": "image",
+   "prompt": "Large ornate brass weighing scale brought by servants, pigeon placed on left pan, hawk perched on right side watching, king standing beside scale, marble courtyard",
+   "motion": "pull",
+   "title": "TARAZU LAYI GAYI",
+   "keywords": [
+    "barabar",
+    "tarazu"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Raja maans rakhta gaya kabutar ka wazan na hua",
+   "type": "image",
+   "prompt": "King repeatedly cutting flesh from thigh/arm, placing pieces on right pan, scale still tilting toward pigeon side, king's face calm but body weakening, courtiers weeping, hawk impatient",
+   "motion": "push",
+   "title": "MAANS KAM PAD GAYA",
+   "keywords": [
+    "maans",
+    "wazan"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aakhiri mein Raja khud tarazu pe baith gaya",
+   "type": "image",
+   "prompt": "King Megharath stepping onto the right pan of the large scale himself, sitting in padmasana, eyes closed, pigeon on left pan, scale balancing perfectly, divine hush over court",
+   "motion": "pull",
+   "title": "RAJA KHUD BAITHA",
+   "keywords": [
+    "khud",
+    "tarazu"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aankhen band kar dhyan kiya baaz kabutar roop badle",
+   "type": "image",
+   "prompt": "King in deep meditation on scale pan, pigeon and hawk glowing with golden light, transforming into two radiant devas with folded hands, bowing to the king, celestial shower of flowers",
+   "motion": "push",
+   "title": "DEVTA ROOP BADLE",
+   "keywords": [
+    "dhyan",
+    "roop badle"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Devon ne aashirwad diya yehi atma bani Shantinath",
+   "type": "card",
+   "prompt": "Serene white marble background with soft saffron glow, minimal lotus motif, ample negative space top and bottom for text",
+   "motion": "push",
+   "title": "",
+   "big": "16TH TIRTHANKAR",
+   "small": "LORD SHANTINATH",
+   "keywords": [
+    "aashirwad",
+    "Shantinath"
+   ],
+   "sub": null,
+   "label": null,
+   "real": null
+  }
+ ],
+ "music_mood": "emotional",
+ "caption": "Raja Megharath ne apna maans kaat diya ek kabutar bachane ke liye. Yehi karuna unhe 16ve Tirthankar Shantinath bana di. Srot: Adipurana.\n\nTum hote toh apna maans dete?\n\nJai Jinendra 🙏",
+ "hashtags": [
+  "#JainKatha",
+  "#Megharath",
+  "#Shantinath",
+  "#Ahimsa",
+  "#Karuna",
+  "#Adipurana",
+  "#NavkarBhav"
+ ],
+ "claims": [
+  {
+   "claim": "King Megharath cut his own flesh to save a pigeon from a hawk",
+   "basis": "Adipurana / Trishashti-shalaka-purusha-charitra (Hemachandra) — both jainknowledge.com and jainworld.com recount the identical episode"
+  },
+  {
+   "claim": "The pigeon and hawk were devas testing the king's compassion",
+   "basis": "Same sources: Indra sent two devas in pigeon and hawk form to test earthly kings"
+  },
+  {
+   "claim": "King refused butcher's meat to avoid indirect killing",
+   "basis": "Explicit in both sources: 'butcher may have to kill another animal'"
+  },
+  {
+   "claim": "King sat on the weighing scale himself when flesh was insufficient",
+   "basis": "Both sources: 'Finally the king was getting ready to put his whole body on the scale'"
+  },
+  {
+   "claim": "King Megharath's soul became the 16th Tirthankara Shantinath",
+   "basis": "Both sources conclude: 'Later on, the soul of King Meghrath became the sixteenth Tirthankar, Shantinath'"
+  }
+ ],
+ "brain_ids": [
+  "161339712e",
+  "7f620e6fdf",
+  "a688e48ca2",
+  "fc294ac58f",
+  "1e1964f463",
+  "97e1b2fcbb",
+  "f945e2a937",
+  "4396759d41",
+  "e15cfaed29",
+  "b349ca221e",
+  "b2fabb69c4",
+  "7fa182f8ef",
+  "0755cc155a",
+  "9db4cc694f"
+ ]
+}

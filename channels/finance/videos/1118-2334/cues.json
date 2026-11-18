@@ -8,6 +8,30 @@
  },
  "sfx": [
   {
+   "t": 0.25,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 0.909,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 1.567,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 8.474,
+   "file": "sfx/impact.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
    "t": 4.89,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -24,
@@ -32,11 +56,28 @@
    "align": "onset"
   },
   {
-   "t": 16.02,
-   "file": "sfx/type-soft.mp3",
-   "gain_db": -24,
-   "align": "onset",
-   "dur": 1.2
+   "t": 16.22,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 16.77,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 17.32,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -26,
+   "align": "onset"
+  },
+  {
+   "t": 18.02,
+   "file": "sfx/impact.mp3",
+   "gain_db": -20,
+   "align": "onset"
   },
   {
    "t": 15.77,
@@ -45,15 +86,9 @@
    "align": "onset"
   },
   {
-   "t": 21.89,
-   "file": "sfx/click-select.mp3",
-   "gain_db": -24,
-   "align": "onset"
-  },
-  {
-   "t": 22.11,
-   "file": "sfx/click-select.mp3",
-   "gain_db": -24,
+   "t": 21.76,
+   "file": "sfx/impact.mp3",
+   "gain_db": -20,
    "align": "onset"
   },
   {
@@ -63,15 +98,21 @@
    "align": "onset"
   },
   {
-   "t": 24.37,
-   "file": "sfx/click-select.mp3",
+   "t": 23.87,
+   "file": "sfx/whoosh-fast.mp3",
    "gain_db": -24,
    "align": "onset"
   },
   {
-   "t": 23.87,
-   "file": "sfx/whoosh-fast.mp3",
-   "gain_db": -24,
+   "t": 27.76,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -20,
+   "align": "onset"
+  },
+  {
+   "t": 28.39,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -20,
    "align": "onset"
   },
   {
@@ -100,8 +141,20 @@
   },
   {
    "t": 31.01,
-   "file": "sfx/air-zoom.mp3",
+   "file": "sfx/sweep-small.mp3",
    "gain_db": -24,
+   "align": "onset"
+  },
+  {
+   "t": 35.97,
+   "file": "sfx/click-ui.mp3",
+   "gain_db": -22,
+   "align": "onset"
+  },
+  {
+   "t": 36.494,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -22,
    "align": "onset"
   },
   {
@@ -112,7 +165,7 @@
   },
   {
    "t": 38.29,
-   "file": "sfx/air-zoom.mp3",
+   "file": "sfx/whoosh-fast.mp3",
    "gain_db": -24,
    "align": "onset"
   },

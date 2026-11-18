@@ -120,5 +120,127 @@
     "score": 4.45
    }
   ]
+ },
+ {
+  "t": "2026-11-19 02:16",
+  "picked": "Why King Megharath Cut His Own Flesh to Save a Pigeon (Source: Adipurana)",
+  "ideas": [
+   {
+    "topic": "Why King Megharath Cut His Own Flesh to Save a Pigeon (Source: Adipurana)",
+    "note": "",
+    "search": "King Megharath pigeon story Jain",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.9,
+    "score": 6.68
+   },
+   {
+    "topic": "The Day India's Greatest Scholar Lost a Debate to a Barefoot Monk (Source: Kalpasutra)",
+    "note": "",
+    "search": "Gautam Swami Mahavira debate Jain",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.6,
+    "score": 6.42
+   },
+   {
+    "topic": "The Monk Who Recognized His Mother in a Goat Bound for Sacrifice (Source: Uttaradhyayana Sutra)",
+    "note": "",
+    "search": "Aimutta Muni goat past life Jain",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.5,
+    "score": 6.4
+   },
+   {
+    "topic": "Why Neminath Released 700 Animals Minutes Before His Own Wedding (Source: Harivamsa Purana)",
+    "note": "",
+    "search": "Neminath wedding animals release Jain",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 12,
+    "fresh": 6.1,
+    "score": 4.72
+   },
+   {
+    "topic": "How Chandanbala's Silent Fast Behind Prison Walls Humbled a King (Source: Kalpasutra)",
+    "note": "",
+    "search": "Chandanbala fasting story Jainism",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 56,
+    "fresh": 5.9,
+    "score": 4.68
+   },
+   {
+    "topic": "Bahubali Stood Motionless for a Year — The Ego That Blocked Kevalgyan (Source: Adipurana)",
+    "note": "",
+    "search": "Bahubali kayotsarga one year meditation",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 469,
+    "fresh": 5.3,
+    "score": 4.56
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 1.1,
+    "median_views": 2682,
+    "fresh": 6.7,
+    "score": 4.29
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 256,
+    "fresh": 8.7,
+    "score": 4.19
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 677,
+    "fresh": 7.7,
+    "score": 3.99
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 577,
+    "fresh": 6.5,
+    "score": 3.75
+   }
+  ]
  }
 ]
