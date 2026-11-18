@@ -278,7 +278,8 @@ def page(plan, timed, total, theme, assets):
             js.append(f'tl.to("#{sid}h",{{y:-18,rotation:0.6,duration:{max(0.5, d - 0.9 - (t_img - a)):.3f},ease:"sine.inOut"}},{t_img + 0.9:.3f});')
             js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
         elif kind == "stat":
-            v = str(s.get("value", ""))
+            # 19 Nov: plans put the number in "big" with "value": null -> the screen said 'None' (finance 1118-2334)
+            v = str(s.get("value") or s.get("big") or "")
             nm = _num(v)
             # 18 Nov v2: one line always: the font fits the value in 940 px (bold glyphs ~0.62 em); "2 HOURS" wrapped at 250 px
             sty = (' style="font-size:%dpx;white-space:nowrap"' % int(min(250, 940 / (0.62 * max(3, len(v)))))) if film else ""
