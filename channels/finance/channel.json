@@ -88,5 +88,6 @@
   "handle_instagram": "@finance.fuel",
   "tagline": "Paisa samjho, simple bhasha mein.",
   "youtube": null,
-  "caption_footer": "Education only, not financial advice."
+  "caption_footer": "Education only, not financial advice.",
+  "numbers_check": true
 }

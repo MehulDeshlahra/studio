@@ -262,10 +262,78 @@ PLAN:
             log("plan v2 (reviewed)", len(plan["scenes"]), "scenes")
     except Exception as e:
         log("plan review failed, keeping v1:", str(e)[:120])
+    if ch.get("numbers_check"):                    # 18 Nov (finance 1118-2228 said Rs 50k -> Rs 1,02,000 with Rs 5k/month paid)
+        for rnd in range(2):
+            probs = numbers_check(plan)
+            if not probs:
+                log("numbers check: all calculations and rules correct" + (" after a fix" if rnd else ""))
+                plan.pop("numbers_hold", None)
+                break
+            log("numbers check found", len(probs), "problem(s):", " | ".join(probs)[:300])
+            plan["numbers_hold"] = probs
+            if rnd == 0:
+                try:
+                    fixed = ask("Fix ONLY these factual / arithmetic errors in this Shorts plan; keep everything else the same "
+                                "(same JSON shape). Change the numbers (or the scenario) so every number is exactly right, and "
+                                "attribute every rule to whoever really sets it.\nERRORS:\n- " + "\n- ".join(probs)
+                                + "\nPLAN:\n" + json.dumps(plan, ensure_ascii=False))
+                    if len(fixed.get("scenes", [])) >= 6:
+                        plan = fixed
+                except Exception as e:
+                    log("numbers fix failed:", str(e)[:120]); break
     out = clean(plan)
     if isinstance(out, dict):
         out["brain_ids"] = bids                    # which brain items this video used (scored after its review)
     return out
+
+
+NUMCHK = """You check the NUMBERS in this Hindi/Hinglish money-explainer script before it is published. Be exact.
+1) For EVERY number in the voice-over that is the RESULT of a calculation from the script's own scenario (interest, a
+balance after N months, totals, EMI, a percent of an amount, growth), write ONE Python arithmetic expression that computes
+it from the scenario exactly as the script states it. Use only numbers, + - * / ** ( ) and round/min/max/abs (no names).
+Example: balance after 12 months, Rs 45,000 at 42%/yr compounded monthly with Rs 5,000 paid each month:
+"45000*(1+0.42/12)**12 - 5000*((1+0.42/12)**12-1)/(0.42/12)".
+2) For every RULE or market fact (a rate, a limit, 'RBI says', a tax slab), say if it is correct for India today and who
+really sets it.
+SCRIPT (scene | voice-over | on-screen number):
+{rows}
+Return JSON {{"calc": [{{"scene": n, "says": <the number the script states, as a plain number>, "expr": "..."}}],
+"facts": [{{"scene": n, "fact": "...", "correct": true/false, "why": "short"}}]}}"""
+
+
+def _safe_eval(expr):
+    import ast as _ast
+    tree = _ast.parse(str(expr), mode="eval")
+    ok = (_ast.Expression, _ast.BinOp, _ast.UnaryOp, _ast.Constant, _ast.Add, _ast.Sub, _ast.Mult, _ast.Div, _ast.Pow,
+          _ast.USub, _ast.UAdd, _ast.Mod, _ast.FloorDiv, _ast.Call, _ast.Name, _ast.Load)
+    for n in _ast.walk(tree):
+        if not isinstance(n, ok) or (isinstance(n, _ast.Name) and n.id not in ("round", "min", "max", "abs")):
+            raise ValueError("not allowed: " + type(n).__name__)
+        if isinstance(n, _ast.Constant) and not isinstance(n.value, (int, float)):
+            raise ValueError("not a number")
+    return eval(compile(tree, "<n>", "eval"), {"__builtins__": {}}, {"round": round, "min": min, "max": max, "abs": abs})
+
+
+def numbers_check(plan):
+    """Problems with the plan's numbers ([] = fine). Arithmetic is computed by Python, not judged by the model."""
+    rows = "\n".join(f"{i + 1} | {s.get('vo', '')} | {s.get('value') or s.get('big') or s.get('end_label') or ''}"
+                     for i, s in enumerate(plan.get("scenes", [])))
+    try:
+        r = ask(NUMCHK.format(rows=rows), max_tokens=2500) or {}
+    except Exception as e:
+        log("numbers check failed to run:", str(e)[:120]); return []
+    probs = []
+    for c in r.get("calc") or []:
+        try:
+            got, says = float(_safe_eval(c.get("expr"))), float(str(c.get("says")).replace(",", ""))
+            if says and abs(got - says) / abs(says) > 0.05:
+                probs.append(f"scene {c.get('scene')}: says {says:,.0f} but the script's own scenario gives {got:,.0f} ({c.get('expr')})")
+        except Exception as e:
+            log("numbers check: skipped one expression", str(c.get("expr"))[:80], str(e)[:60])
+    for f in r.get("facts") or []:
+        if f.get("correct") is False:
+            probs.append(f"scene {f.get('scene')}: '{str(f.get('fact'))[:100]}' is wrong: {str(f.get('why'))[:120]}")
+    return probs
 
 
 def clean(plan):

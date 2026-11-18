@@ -613,6 +613,17 @@ def main():
     if "plan" in redo or not os.path.exists(pp):
         p = planner.make(ch, topic, rtext); save(pp, p)
     p = load(pp)
+    if p.get("numbers_hold"):     # 18 Nov: wrong maths after one fix round -> held before any voice / render time is spent
+        done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or []
+        row = next((d for d in done if d["job"] == job_id), None)
+        if not row:
+            row = {"job": job_id, "topic": topic, "title": p.get("title")}; done.append(row)
+        row.update(status="held", review=["NUMBERS: " + x for x in p["numbers_hold"]][:6])
+        save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
+        meta = load(os.path.join(job, "meta.json"), {}) or {}
+        meta.update(stage="held", held_at=time.strftime("%Y-%m-%d %H:%M")); save(os.path.join(job, "meta.json"), meta)
+        log("numbers check: still wrong after a fix, held BEFORE voice", ch["id"], job_id)
+        return
     if _brand_guard(ch, p):
         save(pp, p)
     try:                                     # real pictures first, then the looks (a REAL scene stays keynote)
