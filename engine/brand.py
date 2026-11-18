@@ -75,11 +75,22 @@ def youtube(cid, acc, ch, d, s, h, st):
     s["yt_id"] = cur["id"]
     bs = cur.get("brandingSettings", {})
     bs.setdefault("channel", {}).update({"description": f"{long}\n{link}", "country": "IN"})
-    if sisters:                                      # the network's other channels on this channel's page (cross-promotion)
-        bs["channel"].update({"featuredChannelsTitle": "More from Scroll House", "featuredChannelsUrls": sisters[:100]})
+
     bs.setdefault("image", {})["bannerExternalUrl"] = up["url"]
     publish._req("https://www.googleapis.com/youtube/v3/channels?part=brandingSettings",
                  data=json.dumps({"id": cur["id"], "brandingSettings": bs}).encode(), headers=dict(au, **{"Content-Type": "application/json"}), method="PUT")
+    if sisters:        # the network's other channels as a shelf on this channel's home page (cross-promotion; channelSections is the current API)
+        jh = dict(au, **{"Content-Type": "application/json"})
+        body = {"snippet": {"type": "multipleChannels", "style": "horizontalRow", "title": "More from Scroll House"},
+                "contentDetails": {"channels": sisters[:100]}}
+        have = publish._req("https://www.googleapis.com/youtube/v3/channelSections?part=snippet,contentDetails&mine=true", headers=au).get("items", [])
+        mine = next((x for x in have if x.get("snippet", {}).get("title") == "More from Scroll House"), None)
+        if mine:
+            body["id"] = mine["id"]
+            publish._req("https://www.googleapis.com/youtube/v3/channelSections?part=snippet,contentDetails", data=json.dumps(body).encode(), headers=jh, method="PUT")
+        else:
+            publish._req("https://www.googleapis.com/youtube/v3/channelSections?part=snippet,contentDetails", data=json.dumps(body).encode(), headers=jh, method="POST")
+        log("brand: YouTube sister-channel shelf set", cid, len(sisters))
     s["yt"] = key
     log("brand: YouTube banner + description set", cid)
 
