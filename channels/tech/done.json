@@ -27,7 +27,7 @@
   "topic": "UPI paisa 2 second mein kaise pahunchta hai",
   "title": "How does UPI transfer money in 2 seconds?",
   "qc_ok": false,
-  "status": "rejected",
+  "status": "removed",
   "review": [
    "visual: Multiple scenes (2, 3, 4, 5, 6, 8, 11, and 12) are completely missing visual backgrounds or generated images.",
    "visual: Missing final branded end card displaying page handle @kaise.tech.",
@@ -39,7 +39,7 @@
   "topic": "UPI paisa 2 second mein kaise pahunchta hai",
   "title": "How ChatGPT actually generates your answers!",
   "qc_ok": false,
-  "status": "rejected",
+  "status": "removed",
   "review": [
    "the video does not start with the first line \"When you ask ChatGPT something, it never thinks up\" (heard: \"in indian english curious warm energetic young indian\")",
    "visual: Most scenes (2, 3, 4, 5, 6, 8, 9, 10, and 11) lack visual generation, displaying only empty dark gradient backgrounds.",
@@ -52,7 +52,7 @@
   "topic": "WiFi deewar ke paar kaise jaata hai",
   "title": "How ChatGPT actually writes answers",
   "qc_ok": true,
-  "status": "rejected",
+  "status": "removed",
   "review": [
    "the video does not start with the first line \"ChatGPT doesn't actually think or reason like a hu\" (heard: \"in indian english curious warm energetic young indian\")",
    "visual: Scene 7 contains no visual asset or graphic, leaving the center frame completely empty.",
@@ -73,7 +73,7 @@
   "topic": "Fingerprint unlock kaise kaam karta hai",
   "title": "Why Does Your Phone Overheat?",
   "qc_ok": true,
-  "status": "rejected",
+  "status": "removed",
   "review": [
    "owner agent: Cancel this job entirely as English editions are restricted; focus only on Hindi v2-01.",
    "before render, scene 10: READ: subtitle 'Right or Wrong?' is too dark and faint to read clearly against the dark background"

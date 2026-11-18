@@ -11,7 +11,7 @@
   "topic": "Eklavya ka angootha (Mahabharata, Adi Parva)",
   "title": "Kuber's Pride and Ganesha's Hunger",
   "qc_ok": true,
-  "status": "approved",
+  "status": "removed",
   "review": []
  },
  {
@@ -32,7 +32,7 @@
   "topic": "Shravan Kumar ki katha (Valmiki Ramayana)",
   "title": "When an 8-Year-Old Boy Stood Up to Yamraj",
   "qc_ok": true,
-  "status": "rejected",
+  "status": "removed",
   "review": [
    "visual: Severe character design inconsistency: Yamraj appears blue-skinned with multi-arms in scenes 5 and 12, but suddenly appears human-skinned with a different look in scene 10."
   ]
@@ -54,7 +54,7 @@
   "topic": "Ganesh ji aur Kuber ka bhoj",
   "title": "How Did Four Pandavas Fall Without a Battle?",
   "qc_ok": true,
-  "status": "approved",
+  "status": "removed",
   "review": []
  },
  {
@@ -70,7 +70,7 @@
   "topic": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
   "title": "When Krishna himself stormed Narakasura's fortress",
   "qc_ok": true,
-  "status": "rejected",
+  "status": "removed",
   "review": []
  },
  {
