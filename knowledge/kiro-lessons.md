@@ -14,6 +14,10 @@ knowledge/lessons-learnt.md for the engine.
 - ALWAYS look at real frames, not logs, before saying a video works.
 
 ## New page / new niche
+- NEVER give a new niche another page's look (finance on the tech look felt "similar to tech, not catchy"). Design the look
+  from how the viewer meets the topic in life (money = their phone), build it, render a test, look at the frames.
+- When the owner says "I don't know what's odd", find it in the frames yourself: AI text on screens, random logos, a
+  picture that doesn't match the line, nothing the viewer recognises as their own life.
 - ALWAYS run knowledge/new-page.md fully (rivals, trends, format, money, ship) before the first post; set
   schedule.manual_first so the owner sees the first videos.
 - ALWAYS check the niche's legal rules first (finance: SEBI; mythology: respect; fiction: no real victims).

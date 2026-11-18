@@ -68,3 +68,10 @@ length follows information, short question ending, one colour identity, no effec
 - A real logo or app screen chosen for a scene is correct, not a mistake; a picture prompt's "no logos" is only for the AI
   background, never a reason to drop the real logo.
 - A stat scene needs its number in "value" (a null value printed "None" on screen).
+## Relatability beats a template (owner 19 Nov, first Finance Fuel video: "similar to tech, not catchy, random logo/image placement, euro was showing")
+- A page's look must come from how its viewers see the topic in real life, not from another page's template. Money
+  happens on the phone: chats with friends, bank SMS, the payment app, a receipt. Finance reels are drawn as exactly that
+  (engine/phone_scenes.py), with no AI pictures.
+- An AI picture of a screen or document always invents text (€500). Draw screens in HTML instead.
+- A real logo appears once, where a person would really see it (the rule card's letterhead), never decorating a scene.
+- Before a new page's first post, ask: "would the viewer think this is THEIR situation in the first second?"
