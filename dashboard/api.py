@@ -792,8 +792,16 @@ def make_now(cid, topic=""):
     if cid not in _pages():
         raise ValueError("unknown channel")
     unit = f"studio-job-dash-{int(time.time())}"
-    cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M", "-p", "Nice=15", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}",
-           PY, os.path.join(ROOT, "engine", "make.py"), cid] + ([topic[:600], "--request"] if topic else [])   # 19 Nov: researched + named, not copied
+    ch = jload(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}
+    if ch.get("kind") == "clips":                  # 19 Nov: CutCapsule: a video link -> the best moments as finished clips
+        m = re.search(r"https?://\S+", topic or "")
+        if not m:
+            raise ValueError("paste a YouTube link for a clip page")
+        tail = [m.group(0)] + (["--n", re.search(r"\b(\d{1,2})\s*clips?\b", topic).group(1)] if re.search(r"\b(\d{1,2})\s*clips?\b", topic) else [])
+        engine = [PY, os.path.join(ROOT, "engine", "clipper.py"), cid] + tail
+    else:
+        engine = [PY, os.path.join(ROOT, "engine", "make.py"), cid] + ([topic[:600], "--request"] if topic else [])   # 19 Nov: researched + named, not copied
+    cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M", "-p", "Nice=15", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}"] + engine
     subprocess.run(cmd, capture_output=True, timeout=20)
     return {"ok": True, "unit": unit}
 

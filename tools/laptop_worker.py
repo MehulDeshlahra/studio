@@ -112,6 +112,60 @@ def render(jid):
         shutil.rmtree(work, ignore_errors=True)
 
 
+def fetch(jid, spec):
+    """19 Nov (CutCapsule clips): YouTube blocks downloads from the server, so the laptop downloads only the parts the
+    server asked for (yt-dlp --download-sections, exact cuts) and sends them back as one .tgz with info.json."""
+    work = os.path.join(HOME, "jobs", jid)
+    shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
+    try:
+        url = spec["url"]
+        info = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist", "-J", url], timeout=180)
+        meta = {}
+        try:
+            j = json.loads(info.stdout or "{}")
+            meta = {k: j.get(k) for k in ("id", "title", "channel", "channel_id", "uploader", "uploader_id", "duration",
+                                           "license", "webpage_url", "upload_date", "language", "width", "height")}
+        except ValueError:
+            pass
+        json.dump(meta, open(os.path.join(work, "info.json"), "w"))
+        got = 0
+        for i, (s, e) in enumerate(spec.get("sections") or []):
+            f = os.path.join(work, f"c{i}.mp4")
+            r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
+                     "-f", "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]/bv*[height<=1080]+ba/b",
+                     "--merge-output-format", "mp4", "--download-sections", f"*{float(s):.2f}-{float(e):.2f}",
+                     "--force-keyframes-at-cuts", "-o", f, url], timeout=1200)
+            if os.path.exists(f) and os.path.getsize(f) > 20000:
+                got += 1
+            else:
+                log("fetch", jid, "section", i, "failed:", (r.stderr or "")[-200:])
+        if not got:
+            raise RuntimeError("no section downloaded: " + (info.stderr or "")[-200:])
+        out = os.path.join(HOME, "jobs", jid + ".tgz")
+        with tarfile.open(out, "w") as t:
+            t.add(work, arcname="fetch")
+        r = run(SCP + [out, f"{HOST}:{R}/done/{jid}.tgz.part"], timeout=900)
+        if r.returncode:
+            raise RuntimeError("upload failed: " + r.stderr[-200:])
+        run(SSH + [f"mv {R}/done/{jid}.tgz.part {R}/done/{jid}.tgz"], timeout=40)
+        log("fetched", jid, got, "sections of", url)
+        os.remove(out)
+    except Exception as e:
+        log("fetch", jid, "failed:", str(e)[:300])
+        msg = str(e)[:1500].replace("'", " ")
+        run(SSH + [f"echo '{msg}' > {R}/done/{jid}.err"], timeout=40)
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
+def job_spec(jid):
+    r = run(SSH + [f"cat {R}/claimed/{jid}.json"], timeout=40)
+    try:
+        return json.loads(r.stdout or "{}")
+    except ValueError:
+        return {}
+
+
 def measure_one(url, work):
     """Editing numbers of one competitor Short: length, cuts (scene changes), first cut, cuts per 10 s, loudness."""
     import re
@@ -198,7 +252,8 @@ def main():
                             pass
                 th = threading.Thread(target=beat, daemon=True); th.start()
                 try:
-                    render(jid)
+                    spec = job_spec(jid)
+                    fetch(jid, spec) if spec.get("kind") == "fetch" else render(jid)
                 finally:
                     stop.set()
                 continue

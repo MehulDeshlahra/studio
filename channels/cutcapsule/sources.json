@@ -1,0 +1,17 @@
+{
+  "_how": "Clips are posted ONLY from sources listed here (a paid clipping campaign, or a creator who allows clipping in writing). engine/clipper.py checks every URL against 'match'. Anything else is made as a test and never posted. Add one entry per campaign you join on Whop Content Rewards / Vyro / ClipFarm.",
+  "_example": {
+    "key": "whop-example",
+    "platform": "whop|vyro|clipfarm|creator",
+    "campaign_url": "https://whop.com/...",
+    "match": ["youtube.com/@CreatorHandle", "VIDEO_ID"],
+    "rate_per_1k": 1.0,
+    "cap_per_clip": 100,
+    "platforms": ["instagram", "youtube"],
+    "rules": ["tag @creator in the caption", "30-60 s", "must use the campaign sound"],
+    "caption_add": "@creator #ad",
+    "credit_link": true,
+    "active": false
+  },
+  "sources": {}
+}

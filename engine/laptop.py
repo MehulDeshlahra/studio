@@ -83,5 +83,49 @@ def render(rdir, out, total, label=""):
                 pass
 
 
+def fetch(url, sections, label="", wait=1800):
+    """19 Nov (CutCapsule): YouTube blocks this server, so the laptop downloads the asked parts of a video.
+    sections = [(start_s, end_s), ...]. Returns (info dict, [local mp4 path or None per section]); raises when the laptop
+    is away or the download fails."""
+    if not available():
+        raise RuntimeError("the laptop is off or busy-off: YouTube downloads need it (YouTube blocks the server)")
+    for sub in ("queue", "claimed", "done"):
+        os.makedirs(os.path.join(D, sub), exist_ok=True)
+    jid = time.strftime("%m%d-%H%M%S") + "-f"
+    q = os.path.join(D, "queue", jid)
+    json.dump({"id": jid, "kind": "fetch", "url": url, "sections": [[float(a), float(b)] for a, b in sections], "label": label,
+               "t": time.time()}, open(q + ".json.part", "w"))
+    os.replace(q + ".json.part", q + ".json")
+    t0 = time.time()
+    claimed = os.path.join(D, "claimed", jid + ".json")
+    done, err = os.path.join(D, "done", jid + ".tgz"), os.path.join(D, "done", jid + ".err")
+    try:
+        while time.time() - t0 < wait:
+            if os.path.exists(err):
+                raise RuntimeError("laptop download failed: " + open(err, encoding="utf-8", errors="ignore").read()[-300:])
+            if os.path.exists(done):
+                break
+            if time.time() - t0 > CLAIM_WAIT * 2 and not os.path.exists(claimed) and os.path.exists(q + ".json"):
+                raise RuntimeError("the laptop did not pick the download up")
+            time.sleep(4)
+        else:
+            raise RuntimeError("laptop download too slow")
+        out = os.path.join(OUT, "laptop", "fetched", jid)
+        os.makedirs(out, exist_ok=True)
+        with tarfile.open(done) as t:
+            t.extractall(out, filter="data")
+        base = os.path.join(out, "fetch")
+        info = json.load(open(os.path.join(base, "info.json"))) if os.path.exists(os.path.join(base, "info.json")) else {}
+        files = [os.path.join(base, f"c{i}.mp4") if os.path.exists(os.path.join(base, f"c{i}.mp4")) else None for i in range(len(sections))]
+        log(f"laptop: fetched {sum(1 for f in files if f)}/{len(files)} parts in {time.time() - t0:.0f} s ({label})")
+        return info, files
+    finally:
+        for f in (q + ".json", claimed, err, done):
+            try:
+                os.remove(f)
+            except OSError:
+                pass
+
+
 if __name__ == "__main__":
     print(json.dumps(dict(status(), available=available()), indent=1))

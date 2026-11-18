@@ -1,0 +1,54 @@
+{
+  "id": "cutcapsule",
+  "name": "Cut Capsule",
+  "kind": "clips",
+  "status": "clips",
+  "language": "the source video's language (captions in it)",
+  "format": "Entertainment clip page: the best 20-59 s moments from long videos (podcasts, streams, interviews, GTA 6 streams), cut to start on the hook and end on the payoff; blurred fill, the video full width, hook title on top, word-by-word captions",
+  "clip": {
+    "rules": [
+      "never a GTA 6 story spoiler: no ending, no cutscene compilations, no big plot reveals (Rockstar removes them)",
+      "no hate, no harassment, no sexual content, no real-life violence",
+      "the clip must make sense to someone who never saw the video"
+    ],
+    "layout": "fill"
+  },
+  "schedule": {
+    "posts_per_day": 2,
+    "backlog": 6,
+    "manual_first": 3
+  },
+  "warmup": {
+    "post_from": "2026-11-20",
+    "one_a_day_until": "2026-11-27",
+    "note": "new account (created 19 Nov): standard warm-up"
+  },
+  "handle": "@cutcapsule",
+  "handle_instagram": "@cutcapsule",
+  "accounts": {
+    "instagram": "@cutcapsule",
+    "facebook_page": "Cut Capsule - Entertainment",
+    "youtube": null
+  },
+  "theme": {
+    "handle": "@cutcapsule",
+    "accent": "#ffd830"
+  },
+  "hashtags_base": [
+    "#clips",
+    "#viralclips"
+  ],
+  "english": false,
+  "offers": {
+    "on": false
+  },
+  "dm": {
+    "keywords": [
+      "FULL",
+      "LINK"
+    ],
+    "cta": "",
+    "text_next": "Full video 👇\n{next}\n\nRoz ke best clips ke liye follow karo {handle}",
+    "text_wait": "Roz ke best clips ke liye follow karo {handle} 🔔\n{profile}"
+  }
+}

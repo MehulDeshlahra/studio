@@ -119,7 +119,7 @@ def dead_builds(cid, done):
         return gone, freed
     for j in os.listdir(cd):
         jd = os.path.join(cd, j)
-        if j in listed or not os.path.isdir(jd):
+        if j in listed or not os.path.isdir(jd) or j == "sources":   # 19 Nov: clip pages keep their source notes
             continue
         m = load(os.path.join(jd, "meta.json"), {}) or {}
         if m.get("stage"):                                  # prepped / rendering: the lanes own it

@@ -36,7 +36,9 @@ STATE = os.path.join(OUT, "healer.json")
 UNKNOWN = os.path.join(OUT, "doctor-unknown.json")
 FIXES = os.path.join(ROOT, "knowledge", "fixes.json")
 PY = "/home/ubuntu/studio-venv/bin/python"
-PAGES = _pages()
+# 19 Nov: clip pages (CutCapsule, channel.json kind "clips") are made by engine/clipper.py, not make.py: the healer's
+# make.py rebuilds would break them, and a held test clip is held on purpose (no permission to post).
+PAGES = [p for p in _pages() if (load(os.path.join(ROOT, "channels", p, "channel.json"), {}) or {}).get("kind") != "clips"]
 S = load(STATE, {}) or {}
 S.setdefault("items", {}); S.setdefault("seen_unknown", []); S.setdefault("log", [])
 did = []
