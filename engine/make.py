@@ -749,7 +749,14 @@ def main():
     # 2 plan
     pp = os.path.join(job, "plan.json")
     if "plan" in redo or not os.path.exists(pp):
-        p = planner.make(ch, topic, rtext); save(pp, p)
+        p = planner.make(ch, topic, rtext)
+        try:                                  # 19 Nov: ~1 in 4 videos ends with "Comment KEYWORD" for a free gift (engine/offers.py)
+            import offers
+            if not p.get("numbers_hold"):
+                offers.decide(ch, p, job)
+        except Exception as e:
+            log("offer skipped:", str(e)[:120])
+        save(pp, p)
     p = load(pp)
     if p.get("numbers_hold"):     # 18 Nov: wrong maths after one fix round -> held before any voice / render time is spent
         done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or []
@@ -867,6 +874,12 @@ def main():
     total = round(vdur + 0.7 + (1.4 if theme.get("handle") else 0.0), 3)
     # 4 assets
     assets = stage_assets(ch, p, job)
+    if p.get("offer") and not p["offer"].get("url"):
+        try:
+            import offers
+            offers.build(ch, p, job, assets)
+        except Exception as e:
+            log("offer build skipped:", str(e)[:120])
     if a.until == "assets":
         meta.update({"stage": "prepped", "lang": p.get("lang") or ch.get("lang", "hi"), "prepped_at": time.strftime("%Y-%m-%d %H:%M")})
         save(os.path.join(job, "meta.json"), meta)
@@ -1022,7 +1035,8 @@ def main():
     # 9 send for approval + remember
     done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), [])
     if not any(d["job"] == job_id for d in done):
-        done.append({"job": job_id, "topic": topic, "title": p.get("title"), "qc_ok": rep["ok"], "status": "made"})
+        done.append({"job": job_id, "topic": topic, "title": p.get("title"), "qc_ok": rep["ok"], "status": "made",
+                     **({"offer": p["offer"]["keyword"]} if (p.get("offer") or {}).get("url") else {})})
         save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
     import thumb; thumb.make(ch["id"], job_id)
     import review

@@ -26,7 +26,7 @@ G = "https://graph.facebook.com/v23.0"
 STATE = os.path.join(OUT, "dm-state.json")
 DRY = "--dry" in sys.argv
 ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
-DAY_CAP, LOOKBACK_DAYS, USAGE_STOP = 40, 7, 60
+DAY_CAP, LOOKBACK_DAYS, USAGE_STOP = 250, 7, 60   # 19 Nov: offer reels bring hundreds of comments (Meta allows 750 private replies/h)
 DEFAULT = {
     "raaz": {"keywords": ["PART2", "PART 2", "AAGE"], "cta": "Comment karo \"PART2\", agla part seedha DM mein 📩"},
     "katha": {"keywords": ["AAGE", "KATHA", "PART2", "PART 2"], "cta": "Comment karo \"AAGE\", agli katha seedha DM mein 📩",
@@ -95,7 +95,109 @@ def _cfg(cid):
     c = dict(BASE); c.update(DEFAULT.get(cid, {}))
     c.update((channel(cid) or {}).get("dm") or {})
     c["keywords"] = [k.upper() for k in c["keywords"]]
+    c["offers"] = ((load(OFFERS, {}) or {}).get(cid) or {})          # 19 Nov: KEYWORD -> {url, gift, job, stats}
     return c
+
+# ---- offer reels + follow gate (19 Nov, knowledge/comment-dm.md) ----
+OFFERS = os.path.join(OUT, "offers.json")
+GATE_ASK = ("Hi{user}! 🎁 Aapka {gift} ready hai.\n\nLink sirf followers ko jaata hai:\n1) {handle} ko follow karo\n"
+            "2) Yahin reply mein DONE likho\n\nLink turant aa jayega 👇")
+GATE_NOT_YET = "Abhi follow nahi dikh raha 🙂\n{profile} pe Follow dabao, phir yahan DONE likho."
+GATE_LINK = "Ye raha aapka {gift} 🎁\n{url}\n\nSave kar lo. Aise aur ke liye {handle} pe bane raho 🔔"
+GATE_SOON = "Aapka {gift} bas ban raha hai ⏳ 15-20 min mein phir DONE likho, link bhej dunga."
+MAX_ASKS = 3
+
+
+def _offer_hit(text, offers):
+    for kw in sorted(offers, key=len, reverse=True):
+        if _match(text, [kw]):
+            return kw
+    return None
+
+
+def _offer_stat(cid, kw, key, n=1):
+    reg = load(OFFERS, {}) or {}
+    o = (reg.get(cid) or {}).get(kw)
+    if not o or DRY:
+        return
+    o.setdefault("stats", {})[key] = o["stats"].get(key, 0) + n
+    save(OFFERS, reg)
+
+
+def _follows(acc, igsid):
+    """True / False from Meta, None when Meta gives no answer (then we fail open: a real follower is never stuck)."""
+    st, cid = acc.get("_st"), acc.get("_cid")
+    toks = [acc["page_token"]]
+    if st is not None:
+        try:
+            alt = _alt_token(cid, st)
+            if alt:
+                toks = [alt, acc["page_token"]] if (st.get("send_app") or {}).get(cid) == "ads" else [acc["page_token"], alt]
+        except RuntimeError:
+            pass
+    for tok in toks:                               # the app that may message the public may also read the profile
+        try:
+            d = _r(f"{G}/{igsid}?fields=is_user_follow_business&access_token={tok}")
+            v = d.get("is_user_follow_business")
+            if isinstance(v, bool):
+                return v
+        except RuntimeError as e:
+            log("dm follow check failed", str(e)[:120])
+    return None
+
+
+def _deliver(acc, sender, cid, rid, gate, offer):
+    handle, profile = _links(acc)
+    if not offer.get("url"):
+        _send(acc, sender, {"id": rid}, GATE_SOON.format(gift=offer.get("gift", "gift"))); return False
+    _send(acc, sender, {"id": rid}, GATE_LINK.format(gift=offer.get("gift", "gift"), url=offer["url"], handle=handle).strip())
+    if gate is not None:
+        gate["delivered"] = int(time.time())
+    _offer_stat(cid, gate.get("kw") if gate else offer.get("_kw"), "delivered")
+    if gate and gate.get("said_no"):
+        _offer_stat(cid, gate["kw"], "new_follows")             # was not following when asked, follows now
+    return True
+
+
+def gate_reply(cid, acc, cfg, st, frm, text, sender):
+    """A DM from someone in the follow gate (or an offer keyword typed in DM). Returns True when it handled the message."""
+    g = st.setdefault("gate", {})
+    key = f"{cid}:{frm}"
+    gate = g.get(key)
+    kw = _offer_hit(text, cfg["offers"])
+    if kw and (not gate or gate.get("delivered")):
+        gate = g[key] = {"kw": kw, "t": int(time.time()), "asks": 0}
+        _offer_stat(cid, kw, "comments")
+    if not gate or gate.get("delivered"):
+        return False
+    offer = dict(cfg["offers"].get(gate["kw"]) or {}, _kw=gate["kw"])
+    f = _follows(acc, frm)
+    if f is False:
+        if gate["asks"] >= MAX_ASKS:
+            return True                                         # asked 3 times: stay quiet, never spam
+        gate["asks"] += 1; gate["said_no"] = True
+        _send(acc, sender, {"id": frm}, GATE_NOT_YET.format(profile=_links(acc)[1] or _links(acc)[0]))
+        log("dm gate: not following yet", cid, frm, gate["kw"])
+        return True
+    if _deliver(acc, sender, cid, frm, gate, offer):
+        log("dm gate: link sent", cid, frm, gate["kw"], "(follows)" if f else "(no follow status: fail open)")
+    return True
+
+
+def _more_comments(acc, m, known):
+    """Offer reels get hundreds of comments; the media call returns 50. Page through the rest (up to 500 a run), stop at
+    comments already handled."""
+    out, url = [], f"{G}/{m['id']}/comments?fields={CF_IG}&limit=50&access_token={acc['page_token']}"
+    for _ in range(10):
+        d = _r(url)
+        rows = d.get("data", [])
+        new = [c for c in rows if f"ig:{c['id']}" not in known]
+        out += [{"id": c["id"], "text": c.get("text", ""), "who": (c.get("from") or {}).get("id") or c.get("username", ""),
+                 "user": c.get("username", ""), "t": _ts(c.get("timestamp"))} for c in new]
+        url = (d.get("paging") or {}).get("next")
+        if not url or len(new) < len(rows):
+            break
+    return out
 
 def _match(text, kws):
     t = re.sub(r"\s+", " ", " " + re.sub(r"[^A-Z0-9 ]", " ", (text or "").upper()) + " ")
@@ -163,8 +265,8 @@ def _media(acc, plat):
     """Recent posts WITH their comments, one call per edge."""
     tok = acc["page_token"]
     if plat == "ig":
-        d = _r(f"{G}/{acc['ig_user_id']}/media?fields=id,permalink,timestamp,comments.limit(50){{{CF_IG}}}&limit=15&access_token={tok}")
-        return [{"id": m["id"], "url": m.get("permalink", ""), "t": _ts(m.get("timestamp")),
+        d = _r(f"{G}/{acc['ig_user_id']}/media?fields=id,permalink,timestamp,comments_count,comments.limit(50){{{CF_IG}}}&limit=15&access_token={tok}")
+        return [{"id": m["id"], "url": m.get("permalink", ""), "t": _ts(m.get("timestamp")), "n": m.get("comments_count") or 0,
                  "c": [{"id": c["id"], "text": c.get("text", ""), "who": (c.get("from") or {}).get("id") or c.get("username", ""),
                         "user": c.get("username", ""), "t": _ts(c.get("timestamp"))} for c in (m.get("comments") or {}).get("data", [])]}
                 for m in d.get("data", [])]
@@ -216,15 +318,16 @@ def _blocked(st, cid, msg):
 
 def _send(acc, sender_id, recipient, text):
     if DRY:
-        log("dm DRY", sender_id, json.dumps(recipient), text[:90].replace("\n", " | ")); return
+        log("dm DRY", sender_id, json.dumps(recipient), text[:90].replace("\n", " | ")); return {}
     body = {"recipient": json.dumps(recipient), "message": json.dumps({"text": text})}
     st, cid = acc.get("_st"), acc.get("_cid")
     use_alt = st is not None and (st.get("send_app") or {}).get(cid) == "ads"
     tok = (_alt_token(cid, st) if use_alt else None) or acc["page_token"]
     try:
-        _r(f"{G}/{sender_id}/messages", {**body, "access_token": tok})
+        res = _r(f"{G}/{sender_id}/messages", {**body, "access_token": tok})
         if st is not None and not use_alt:
             st.setdefault("send_app", {})[cid] = "own"
+        return res
     except RuntimeError as e:
         if use_alt or st is None or not any(p in str(e).lower() for p in [x.lower() for x in PERM]):
             raise
@@ -232,13 +335,20 @@ def _send(acc, sender_id, recipient, text):
         if not alt:
             raise
         log("dm: own app may not message this person (", str(e)[:90], ") -> retry through the Ads MCP app")
-        _r(f"{G}/{sender_id}/messages", {**body, "access_token": alt})
+        res = _r(f"{G}/{sender_id}/messages", {**body, "access_token": alt})
         st.setdefault("send_app", {})[cid] = "ads"
         log("dm: Ads MCP app can message the public on", cid, "- used from now on")
+        return res
+
+PUBLIC_VARIANTS = ["DM check karo 📩", "Bhej diya, inbox dekho 📩", "DM mein hai 🎁", "Check karo DM 👀", "Done ✅ DM dekho",
+                   "Inbox mein bheja hai 📬"]
+
 
 def _public(acc, plat, comment_id, text):
     if DRY or not text:
         return
+    if text == BASE["public_reply"]:           # 19 Nov: the same line under hundreds of comments looks like spam to Meta
+        text = PUBLIC_VARIANTS[sum(map(ord, str(comment_id))) % len(PUBLIC_VARIANTS)]
     try:
         _r(f"{G}/{comment_id}/replies" if plat == "ig" else f"{G}/{comment_id}/comments", {"message": text, "access_token": acc["page_token"]})
     except RuntimeError as e:
@@ -251,11 +361,49 @@ def comments_to_dm(cid, acc, cfg, st, budget, media_by):
         media = media_by.get(plat) or []
         sender = acc.get("ig_user_id") if plat == "ig" else acc["page_id"]
         for m in media:
+            if plat == "ig" and cfg["offers"] and m.get("n", 0) > len(m["c"]) and time.time() - m["t"] < LOOKBACK_DAYS * 86400:
+                try:
+                    have = {c["id"] for c in m["c"]}
+                    m["c"] = m["c"] + [c for c in _more_comments(acc, m, st["done"]) if c["id"] not in have]
+                except RuntimeError as e:
+                    log("dm more comments fail", cid, str(e)[:100])
             for c in m["c"]:
                 if sent >= budget:
                     return sent
                 key, pkey = f"{plat}:{c['id']}", f"{plat}:{m['id']}:{c['who']}"
                 if key in st["done"] or c["who"] in me or c["user"] in me or time.time() - c["t"] > LOOKBACK_DAYS * 86400:
+                    continue
+                kw = _offer_hit(c["text"], cfg["offers"])
+                if kw:                                     # offer reel keyword: follow gate on Instagram, link on Facebook
+                    if DRY:
+                        log("dm DRY offer", cid, plat, c["user"], kw); continue
+                    st["done"][key] = int(time.time())
+                    if pkey in st["done"]:
+                        continue
+                    offer = dict(cfg["offers"][kw], _kw=kw)
+                    try:
+                        _offer_stat(cid, kw, "comments")
+                        if plat == "ig":
+                            handle, _p = _links(acc)
+                            res = _send(acc, sender, {"comment_id": c["id"]},
+                                        GATE_ASK.format(user=(" " + c["user"]) if c.get("user") else "", gift=offer.get("gift", "gift"), handle=handle))
+                            rid = (res or {}).get("recipient_id")
+                            if rid:
+                                st.setdefault("gate", {})[f"{cid}:{rid}"] = {"kw": kw, "t": int(time.time()), "asks": 0}
+                            _offer_stat(cid, kw, "asked")
+                        elif offer.get("url"):
+                            _send(acc, sender, {"comment_id": c["id"]}, GATE_LINK.format(gift=offer.get("gift", "gift"), url=offer["url"],
+                                                                                         handle=_links(acc)[0]).strip())
+                            _offer_stat(cid, kw, "delivered")
+                        else:
+                            _send(acc, sender, {"comment_id": c["id"]}, GATE_SOON.format(gift=offer.get("gift", "gift")))
+                        st["done"][pkey] = int(time.time()); sent += 1
+                        log("dm offer", cid, plat, c["user"], kw)
+                        _public(acc, plat, c["id"], cfg.get("public_reply"))
+                        time.sleep(1)
+                    except RuntimeError as e:
+                        log("dm offer send fail", cid, plat, c["id"], str(e)[:200])
+                        _blocked(st, cid, str(e))
                     continue
                 if not _match(c["text"], cfg["keywords"]):
                     continue
@@ -318,7 +466,31 @@ def inbox_keywords(cid, acc, cfg, st, budget, media_by):
                         pass
                 continue
             key = f"msg:{msg['id']}"
-            if key in st["done"] or not _match(msg.get("message", ""), cfg["keywords"]):
+            if key in st["done"]:
+                continue
+            txt = msg.get("message", "")
+            if plat == "instagram" and (f"{cid}:{frm}" in (st.get("gate") or {}) or _offer_hit(txt, cfg["offers"])):
+                if DRY:
+                    log("dm DRY gate", cid, frm, repr(txt[:30])); continue
+                st["done"][key] = int(time.time())
+                try:
+                    if gate_reply(cid, acc, cfg, st, frm, txt, sender):
+                        sent += 1; time.sleep(1); continue
+                except RuntimeError as e:
+                    log("dm gate send fail", cid, str(e)[:200]); _blocked(st, cid, str(e)); continue
+            elif plat == "messenger" and _offer_hit(txt, cfg["offers"]):
+                kw = _offer_hit(txt, cfg["offers"])
+                if DRY:
+                    log("dm DRY messenger offer", cid, frm, kw); continue
+                st["done"][key] = int(time.time())
+                try:
+                    _offer_stat(cid, kw, "comments")
+                    if _deliver(acc, sender, cid, frm, None, dict(cfg["offers"][kw], _kw=kw)):
+                        sent += 1
+                except RuntimeError as e:
+                    log("dm messenger offer fail", cid, str(e)[:200]); _blocked(st, cid, str(e))
+                continue
+            if not _match(txt, cfg["keywords"]):
                 continue
             text = _text(cfg, acc, media_by.get("ig" if plat == "instagram" else "fb") or [], 0)
             if DRY:
@@ -403,6 +575,7 @@ def run():
         log("dm paused 30 min (Meta app limit, posting goes first):", str(e))
     cut = time.time() - 40 * 86400
     st["done"] = {k: v for k, v in st["done"].items() if v > cut}
+    st["gate"] = {k: v for k, v in (st.get("gate") or {}).items() if v.get("t", 0) > time.time() - 8 * 86400}
     st["day"] = {k: v for k, v in st["day"].items() if k[:10] >= time.strftime("%Y-%m-%d", time.localtime(time.time() - 3 * 86400))}
     save(STATE, st)                                        # dry runs never mark anything sent (only caches / pause are kept)
     try:

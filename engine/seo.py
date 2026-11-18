@@ -138,8 +138,8 @@ def text_for(plan, platform, music_credit=None, cid=None):
     line = ""
     if cid and platform in ("ig", "fb"):
         try:
-            import dm
-            line = dm.cta(cid)
+            import dm, offers
+            line = offers.caption_line(plan) if (plan.get("offer") or {}).get("url") else dm.cta(cid)   # 19 Nov: offer reels
         except Exception:
             line = ""
     if line:
