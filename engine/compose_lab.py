@@ -433,7 +433,10 @@ def page(plan, timed, total, theme, assets):
             for j, w in enumerate(words):
                 last = j == len(words) - 1 and len(words) > 1
                 spans.append(f'<span class="kwm"><span class="kw{" acc" if last else ""}" id="{sid}w{j}">{w}</span></span>')
-            hero = '<div id="%sh" class="kin">%s<div id="%sul" class="uline"></div>%s</div>' % (sid, " ".join(spans), sid, sub)
+            # 19 Nov: a long word ('CMS.RBI.ORG.IN') ran off the frame at 168 px; the size fits the longest word in 940 px
+            lw = max([len(w_) for w_ in words] + [1])
+            ksty = f' style="font-size:{int(min(168, 940 / (0.62 * lw)))}px"' if lw > 8 else ""
+            hero = '<div id="%sh" class="kin"%s>%s<div id="%sul" class="uline"></div>%s</div>' % (sid, ksty, " ".join(spans), sid, sub)
             js.append(f'tl.set("#{sid}ul",{{scaleX:0}},{a:.3f});')
             js.append(f'tl.to("#{sid}ul",{{scaleX:1,duration:0.5,ease:"power3.inOut"}},{a + 0.2 + len(words) * 0.09:.3f});')
             for j in range(len(words)):
