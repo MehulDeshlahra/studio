@@ -147,3 +147,9 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - Test renders checked frame by frame (.tmp/phone_test.py -> studio-render/phonetest). Fixes from frames: bigger phone, captions below it, hook on screen at frame 0, items in by 45% of a scene, no count-up on money, wide logos, long titles fit.
 - 3 videos rebuilt in the phone look (same checked voice): 1118-2334 UPI, 1119-0005 property papers, 1119-0028 jump-deposit scam. Final recomposes queued (/tmp/after3.sh, /tmp/after4.sh); all go to Telegram for owner approval (manual_first 3).
 - Engine-written gold script test: strict check found wrong maths + an unsourced claim after 2 rounds -> would be held (correct). Queue #4 source updated with verified HUID/GST facts.
+## 19 Nov 03:50 Finance: real-life world behind the phone (owner: "good now, can be better... images/videos in background like v2, v3 of tech; don't change these 3")
+- The 3 phone videos (1118-2334, 1119-0005, 1119-0028) are all "made", review clean, and untouched: their plans have no "phone_bg".
+- theme.phone_bg (finance channel.json) -> plan.PHONE_BG asks a "bg_prompt" per scene (candid Indian moment, no screens/text) or "bg_real" (real building) on a rule card; plan.make sets plan["phone_bg"]=True. Only such plans get pictures.
+- make._phone_bg: bg_real via realmedia (s{i}pr.jpg) else Muse/omni/cloudflare/pollinations still (s{i}pb*), with PHONE_BG_SAFE suffix; scene 0 also tries a Muse clip (s0pv.mp4) -> a["bgvid"].
+- compose_lab: phone scene with bgvid = top-level <video class="vid pbg">, scene "over", still takes over if the clip ends early. phone_scenes.css: picture brightness .78, blur 2px, dark band only behind captions.
+- Tested on 5 real FLUX pictures + frames: first prompt left fake signboard text (SAPPRCT, TADLET) -> "no signboards/posters/writing on vehicles" fixed it (0 of 5 readable); first shade (brightness .5) hid the pictures -> lightened.

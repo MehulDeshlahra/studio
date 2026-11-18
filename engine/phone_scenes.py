@@ -204,5 +204,7 @@ def css(acc, phone_page=False):
         # a phone page: the phone fills the frame (zoom 1.2 -> 768 x 1236 px, ends y 1332); captions sit below it
         ".cap{top:1395px!important}"
         # 19 Nov: the real-life picture / clip behind the phone (plans with phone_bg) stays atmosphere: dim, soft, normal blend
-        "#root .scene .bgimg,#root .vid.pbg{mix-blend-mode:normal!important;opacity:1;filter:brightness(.5) saturate(.9) blur(3px)!important}"
+        "#root .scene .bgimg,#root .vid.pbg{mix-blend-mode:normal!important;opacity:1;filter:brightness(.78) saturate(1) blur(2px)!important}"
+        # first test (brightness .5 + the film shade) hid the pictures: only a dark band behind the captions now
+        "#root .scene .bgshade{background:linear-gradient(180deg,#07080b73 0%,#07080b26 30%,#07080b26 62%,#07080bb3 74%,#07080bd9 86%,#07080bf2 100%)!important}"
         if phone_page else "")).replace("SANS", SANS).replace("MONO", MONO).replace("ACC", acc)

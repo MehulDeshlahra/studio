@@ -613,7 +613,7 @@ def lab_fix(plan, phone=False):
                 s["type"] = t = "bill"
             else:
                 s["type"] = t = "title"; s["big"] = words(s)
-            s.pop("prompt", None); s.pop("bg_prompt", None)
+            s.pop("prompt", None)                 # bg_prompt stays: phone_bg plans paint it behind the phone
             log("lab fix (phone): scene ->", t)
         if t in LAB_TYPES and not ok.get(t, False):
             # 19 Nov: the pre-render repair wrote a 'ui' holding compare items and a 'chart' holding flow nodes (both drew
