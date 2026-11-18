@@ -78,9 +78,7 @@
   "job": "1118-1433",
   "topic": "Chouthi Manzil Ka Raaz - Part 8",
   "title": "Chouthi manzil ki deewar aaina kaise bani?",
-  "status": "held",
-  "review": [
-   "before render, scene 3: OVERLAP/CUT (layout audit): text_occluded on #s2b"
-  ]
+  "status": "approved",
+  "review": []
  }
 ]

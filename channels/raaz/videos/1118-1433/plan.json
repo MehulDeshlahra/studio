@@ -48,17 +48,17 @@
   },
   {
    "vo": "Dhaag se dhaag saaf kiya, sach samne aaya.",
-   "type": "card",
-   "prompt": "Cinematic night thriller, 9:16. Mehul (27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt) wiping a dusty wall with a cloth. Dust clouds swirl in amber light beam. Glass surface emerging. Cold teal shadows. Subject centered, leaving space above for text.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, 9:16. Mehul (27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt) centered, standing against a plain dark wall. Soft amber light from top left, teal shadows. Central vertical third completely clear, ample negative space above and below subject for text overlays. No dust, no reflections, simple background.",
    "motion": "pan",
-   "title": "SACH",
+   "title": "",
    "keywords": [
     "saaf kiya",
     "sach",
     "samne aaya"
    ],
-   "big": "SACH SAMNE AAYA",
-   "small": "Dhaag saaf kiya",
+   "big": null,
+   "small": null,
    "real": null
   },
   {
@@ -165,12 +165,12 @@
   },
   {
    "vo": "Part 9 mein, Mehul ka dar aur Vikrant ka raaz. Follow karo.",
-   "type": "card",
-   "prompt": "Cinematic night thriller, 9:16. Abstract dark textured background with cold teal and warm amber lighting. Minimalist composition with a clear, empty center for text. No logos or religious imagery.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, 9:16. Mehul (27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt) centered, looking thoughtful. Plain dark background with subtle amber and teal lighting. Ample negative space above and below for text. No other characters.",
    "motion": "tilt",
    "title": "",
-   "big": "PART 9 MEIN",
-   "small": "Mehul, Vikrant, Follow karo",
+   "big": null,
+   "small": null,
    "keywords": [
     "part 9",
     "kal",

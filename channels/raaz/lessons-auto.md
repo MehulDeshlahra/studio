@@ -119,3 +119,7 @@
 ## 1118-1328 Chouthi Manzil Ka Raaz - Part 5
 - scene 9: shadow shape appears slightly unnatural
 - scene 10: hand anatomy shows minor AI distortion
+
+## 1118-1433 Chouthi Manzil Ka Raaz - Part 8
+- Scene 4: Text layout on the paper graphic is slightly crowded.
+- Scene 9: Minor AI anatomical distortion in the hand holding the device.

@@ -1,27 +1,29 @@
 {
  "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
- "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
+ "title": "Nachiketa ne Yamraj se kya maanga?",
  "format": {
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -14.6,
-  "true_peak": -1.1,
-  "dur": 53.43
+  "lufs": -14.2,
+  "true_peak": -2.5,
+  "dur": 50.13
  },
  "vision": {
-  "score": 9,
+  "score": 8,
   "ok": true,
   "problems": [
-   "scene 5: The image shows Yamraj, but the caption 'AUR' seems disconnected from the specific visual of him holding a flame, though it fits the narrative flow.",
-   "scene 11: The text 'GYAN HI AMAR' is clear, but the 'KATHA UPANISHAD' text is slightly small and could be more prominent for readability on a mobile screen."
+   "scene 3: The text overlay 'MAIN KISE DAAN' is a bit awkward as it cuts off the sentence 'Main kise daan doge' abruptly, though it follows the '2-3 words' rule.",
+   "scene 5: The text 'DWAR' is placed over the boy's body, making it slightly hard to read against the busy background.",
+   "scene 12: The image shows a deity with too many arms/hands (at least 6 visible), which is stylistically inconsistent with the human-like depiction of Yamraj in previous frames, though acceptable in a mythological context.",
+   "scene 13: The text 'HI NACHIKETA AZAD' is slightly confusing as it doesn't clearly match the script line 'Ye gyaan milte hi Nachiketa azad ho gaya'."
   ]
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.7484276729559748,
-  "words": 159,
+  "matched": 0.8625954198473282,
+  "words": 140,
   "problems": []
  },
  "ok": true

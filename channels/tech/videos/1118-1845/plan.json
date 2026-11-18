@@ -1,0 +1,339 @@
+{
+ "slug": "whatsapp-ai-agent-kaise-kaam-karta-hai",
+ "title": "Chatbot aur AI Agent mein farak kya hai?",
+ "hooks": [
+  "WhatsApp pe business se baat ki? Jawab aaya — par kaun de raha tha?",
+  "Chatbot sirf menu deta hai, AI agent samajhta hai — kaise?",
+  "Tera 24/7 digital employee jo kabhi sota nahi"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Relatable pain point in first 2 seconds: everyone has messaged a business on WhatsApp. Instant curiosity — was it human or AI? Visual: phone screen with notification + question mark, no jargon.",
+ "metaphor": "The Neural Switchboard: one continuous camera push. WhatsApp bubble enters left → central AI brain pulses → golden context thread weaves through → three tool nodes (CRM, Calendar, Payment) light up right → reply bubble exits. No cuts, the move IS the explanation.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "WhatsApp pe business se baat ki? Jawab aaya — par kaun de raha tha?",
+   "type": "object",
+   "label": "",
+   "prompt": "Smartphone floating on pure black, WhatsApp notification visible, large glowing question mark over the chat, premium studio lighting",
+   "motion": "push",
+   "bg_prompt": "Camera pushes into the notification, screen dissolves into neural particles",
+   "title": "",
+   "keywords": [
+    "WhatsApp",
+    "Business"
+   ],
+   "big": null,
+   "small": null,
+   "real": {
+    "q": "WhatsApp logo",
+    "kind": "logo",
+    "subject": "the official WhatsApp logo"
+   },
+   "skin": "keynote"
+  },
+  {
+   "vo": "Chatbot? Sirf menu. '1 dabao, 2 dabao.' Galat likha toh gadbad.",
+   "type": "object",
+   "label": "",
+   "prompt": "Rigid grey decision tree frozen in space, locked nodes, one red X over a typed 'helop', mechanical cold feel, photoreal on black",
+   "motion": "push",
+   "bg_prompt": "Camera orbits slowly showing the tree cannot bend",
+   "title": "",
+   "keywords": [
+    "Chatbot",
+    "Menu"
+   ],
+   "big": null,
+   "small": null,
+   "real": {
+    "q": "old style automated menu bot chat interface",
+    "kind": "photo",
+    "subject": "A phone screen displaying a rigid, numbered menu chatbot interface (1. Press 1, 2. Press 2)"
+   },
+   "skin": "keynote"
+  },
+  {
+   "vo": "AI agent alag: LLM se samajhta hai — slang, typo, context sab.",
+   "type": "object",
+   "label": "",
+   "prompt": "WhatsApp bubble with messy text 'hey can u book appt 2moro?' glowing gold, fluid neural pathways lighting up around it, understanding as living connections, premium render on black",
+   "motion": "pull",
+   "bg_prompt": "Camera pulls back showing bubble absorbed into central glowing brain, gold context threads weaving",
+   "title": "",
+   "keywords": [
+    "LLM",
+    "Natural Language"
+   ],
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Message aaya → LLM samjha → Context joda → Tool decide → Action → Jawab.",
+   "type": "flow",
+   "label": "",
+   "nodes": [
+    "MSG IN",
+    "LLM",
+    "CONTEXT",
+    "TOOL",
+    "ACTION",
+    "REPLY"
+   ],
+   "bg_prompt": "One continuous camera push: WhatsApp bubble enters left → central brain pulses → golden thread weaves → three tool icons light up (CRM, Calendar, Payment) → reply bubble exits right, all photoreal on pure black",
+   "title": "",
+   "keywords": [
+    "Mechanism",
+    "Flow"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Context yaad rakhta hai. Pehle 'dentist', phir 'kal 10 baje' — dono jod diya.",
+   "type": "flow",
+   "label": "",
+   "nodes": [
+    "MSG 1",
+    "MSG 2",
+    "THREAD",
+    "ACTION"
+   ],
+   "bg_prompt": "Golden thread persisting through three WhatsApp bubbles entering brain, each bubble thickens the thread, final node triggers calendar icon, photoreal on black",
+   "title": "",
+   "keywords": [
+    "Context",
+    "Memory"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "hologram",
+   "prompt": ""
+  },
+  {
+   "vo": "Tools: CRM, Calendar, Payment — ek saath, real-time.",
+   "type": "ui",
+   "label": "",
+   "title": "",
+   "rows": [
+    {
+     "label": "CRM",
+     "value": "LEAD CAPTURE"
+    },
+    {
+     "label": "CALENDAR",
+     "value": "AUTO BOOKING"
+    },
+    {
+     "label": "PAYMENT",
+     "value": "ORDER STATUS"
+    }
+   ],
+   "bg_prompt": "Central brain with three distinct glowing pathways to system nodes: CRM database, Calendar grid, Payment terminal, all premium photoreal on pure black",
+   "keywords": [
+    "CRM",
+    "Calendar",
+    "Payment"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "real": {
+    "q": "CRM dashboard on mobile phone screen",
+    "kind": "photo",
+    "subject": "A hand scrolling through a CRM or Calendar app on a smartphone, showing real-time data"
+   },
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Demo: 'Dentist book karo kal 10 baje' → 'Done, Dr. Sharma confirmed.'",
+   "type": "chat",
+   "label": "",
+   "title": "",
+   "messages": [
+    {
+     "role": "user",
+     "text": "Dentist book karo kal 10 baje"
+    },
+    {
+     "role": "ai",
+     "text": "Done. Dr. Sharma 10 AM confirmed."
+    }
+   ],
+   "bg_prompt": "Real smartphone screen recording of WhatsApp chat showing the above exchange, floating on pure black with subtle studio lighting",
+   "real": {
+    "q": "WhatsApp chat appointment booking screenshot",
+    "kind": "photo",
+    "subject": "Real WhatsApp conversation showing AI agent booking appointment"
+   },
+   "keywords": [
+    "Booking",
+    "Instant"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Apne docs se train — website, PDF, FAQ. Minute mein ready.",
+   "type": "code",
+   "label": "",
+   "title": "",
+   "lines": [
+    "ingest(website)",
+    "ingest(pdf_docs)",
+    "ingest(faq_json)",
+    "model.ready()"
+   ],
+   "highlight": 3,
+   "bg_prompt": "Terminal window on black, code typing animation, final line glows gold, premium mono font render, no printed text on image",
+   "keywords": [
+    "Auto-train",
+    "Minutes"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "100+ bhasha, bina setup. Hindi, Tamil, English — sab automatic.",
+   "type": "stat",
+   "label": "",
+   "value": "100+",
+   "sub": "LANGUAGES INSTANT",
+   "bg_prompt": "Globe made of glowing WhatsApp bubbles, each bubble a different script (Devanagari, Tamil, Latin, Arabic), neural connections between them, premium render on black",
+   "title": "",
+   "keywords": [
+    "Languages",
+    "Global"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Complex sawal? Human ko transfer — context saath, repeat nahi.",
+   "type": "flow",
+   "label": "",
+   "nodes": [
+    "AI",
+    "ESCALATE",
+    "HUMAN",
+    "DONE"
+   ],
+   "bg_prompt": "Brain node pulses orange, pathway opens to human headset icon, gold context thread passes along smoothly, photoreal on black",
+   "title": "",
+   "keywords": [
+    "Handoff",
+    "Human"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Tera 24/7 digital employee — kabhi sota nahi.",
+   "type": "title",
+   "label": "",
+   "big": "24/7 AGENT",
+   "sub": "NEVER SLEEPS",
+   "bg_prompt": "Central brain glowing steady, three tool nodes pulsing in rhythm, golden context thread looping infinitely, premium photoreal on pure black",
+   "title": "",
+   "keywords": [
+    "24/7",
+    "Digital Employee"
+   ],
+   "motion": "push",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Tune kab AI agent se baat ki pata bhi nahi chala? Comment bata.",
+   "type": "title",
+   "label": "",
+   "big": "COMMENT KARO",
+   "sub": "PATA BHI NAHI CHALA",
+   "bg_prompt": "Smartphone floating, WhatsApp icon glowing, keyboard sliding up with cursor blinking, inviting interaction, premium render on black",
+   "title": "",
+   "keywords": [
+    "Comment",
+    "Experience"
+   ],
+   "motion": "push",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Chatbot ≠ AI Agent. Farak samjho 60 second mein. 🧠\n\nWhatsApp pe business msg kiya? LLM samajhta hai, context yaad rakhta hai, CRM/Calendar/Payment se judta hai. 100+ bhasha, auto-train, human handoff — sab automatic.\n\nTune kab AI agent se baat ki pata bhi nahi chala? Comment bata 👇",
+ "hashtags": [
+  "#KaiseTech",
+  "#AIAgents",
+  "#WhatsAppAutomation",
+  "#TechExplained",
+  "#BusinessAutomation"
+ ],
+ "claims": [
+  {
+   "claim": "AI Agents use LLMs and NLU for natural language understanding",
+   "basis": "yourgpt.ai source: 'Powered by Advanced AI Models (LLMs) and Natural Language Understanding'"
+  },
+  {
+   "claim": "Rule-based chatbots rely on If/Then logic and rigid decision trees",
+   "basis": "yourgpt.ai comparison table: 'Core Technology: Relies on basic If/Then logic and rigid decision trees'"
+  },
+  {
+   "claim": "AI Agents maintain context memory across conversations",
+   "basis": "yourgpt.ai: 'Remembers conversation history, allowing for follow-up questions and flow'"
+  },
+  {
+   "claim": "AI Agents auto-train from existing website, PDFs, docs in minutes",
+   "basis": "yourgpt.ai: 'Auto-trains in minutes by reading your existing website, PDFs, and docs'"
+  },
+  {
+   "claim": "AI Agents support 100+ languages without additional setup",
+   "basis": "yourgpt.ai: 'Instantly fluent in 100+ languages without any additional setup'"
+  },
+  {
+   "claim": "AI Agents integrate with CRM, Calendar, Payment systems",
+   "basis": "botpenguin.com: 'integrate with CRMs, automate payment processing, manage e-commerce workflows'"
+  },
+  {
+   "claim": "Complex queries can be escalated to human agents seamlessly",
+   "basis": "yourgpt.ai: 'pass complicated requests to your actual support team'"
+  }
+ ],
+ "brain_ids": [
+  "4396759d41",
+  "1e60a34718",
+  "1e2336282f",
+  "b601da7de5",
+  "6055c69660",
+  "efef8ced81",
+  "fc294ac58f",
+  "d52bfa64b5",
+  "6ce7203c71",
+  "1e1964f463",
+  "7f620e6fdf",
+  "c29ee6cacb",
+  "e0a9909ca9",
+  "f945e2a937"
+ ],
+ "skin": "keynote"
+}

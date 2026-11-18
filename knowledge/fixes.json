@@ -52,5 +52,32 @@
   "first": "2026-11-18 16:37",
   "last": "2026-11-18 16:37",
   "example": "format/loudness: h264,1080,1920,30/1 -14.5 LUFS, true peak 0.3"
+ },
+ {
+  "sig": "before render, scene #: fit: the visual only shows an om symbol and does not match the action of nachiketa ret",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 17:52",
+  "last": "2026-11-18 17:52",
+  "example": "before render, scene 13: FIT: The visual only shows an Om symbol and does not match the action of Nachiketa returning home"
+ },
+ {
+  "sig": "visual: scene # headline says '…' which is completely unrelated to the story of ganga descending (which belong",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 18:07",
+  "last": "2026-11-18 18:07",
+  "example": "visual: Scene 2 headline says 'SKANDHA NAV' which is completely unrelated to the story of Ganga descending (which belongs to the Bhagavata Purana / Ramayana, not Skandha Purana context for this specif"
+ },
+ {
+  "sig": "before render, scene #: overlap/cut (layout audit): text_occluded on #s",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 19:52",
+  "last": "2026-11-18 19:52",
+  "example": "before render, scene 3: OVERLAP/CUT (layout audit): text_occluded on #s2b"
  }
 ]

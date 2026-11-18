@@ -1,0 +1,28 @@
+{
+ "topic": "Chouthi Manzil Ka Raaz - Part 8",
+ "title": "Chouthi manzil ki deewar aaina kaise bani?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.9,
+  "true_peak": -2.1,
+  "dur": 43.5
+ },
+ "vision": {
+  "score": 7,
+  "ok": true,
+  "problems": [
+   "Scene 4: Text layout on the paper graphic is slightly crowded.",
+   "Scene 9: Minor AI anatomical distortion in the hand holding the device."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9393939393939394,
+  "words": 103,
+  "problems": []
+ },
+ "ok": true
+}

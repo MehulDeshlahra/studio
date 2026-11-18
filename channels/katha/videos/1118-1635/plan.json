@@ -29,7 +29,8 @@
     "sir"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Shuruat mein Brahma aur Vishnu mein ladai chhid gayi ki sabse bada kaun hai.",
@@ -44,7 +45,8 @@
     "shreshth"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Tabhi beech mein agni ka ek vishal Jyotirlinga prakat hua, jiska koi chhor nahi tha.",
@@ -59,7 +61,8 @@
     "ant"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "pattachitra"
   },
   {
    "vo": "Dono mein shart lagi—jo iska ant dhundhega, wahi sabse bada kehlayega.",
@@ -74,7 +77,8 @@
     "varaha"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Vishnu ji pataal tak gaye, par ant na milne par unhone sach sweekar kiya.",
@@ -89,7 +93,8 @@
     "sweekar"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Lekin Brahma ji ne upar jaakar Ketaki ke phool se jhoothi gawahi dilwa di.",
@@ -104,7 +109,8 @@
     "gawahi"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Unke paanchvein sir ne ghamand mein aakar Shiva ke saamne jhooth bol diya.",
@@ -119,7 +125,8 @@
     "jhooth"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!",
@@ -134,7 +141,8 @@
     "Bhairava"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "puppet"
   },
   {
    "vo": "Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya.",
@@ -149,7 +157,8 @@
     "kaat"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "puppet"
   },
   {
    "vo": "Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya.",
@@ -164,22 +173,24 @@
     "toot gaya"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Katha sikhati hai: gyaan kitna bhi ho, ahankaar sach ko nigal hi leta hai.",
    "type": "card",
-   "prompt": "Minimalist spiritual art: a golden crown fracturing into dust against deep maroon velvet background, soft sacred flame below, painterly Indian philosophical style, clean and uncluttered, no text.",
+   "prompt": "Minimalist spiritual art: a golden crown fracturing into dust against deep maroon velvet background, soft sacred flame below, painterly Indian philosophical style, clean and uncluttered, ample negative space top and bottom for text, no text.",
    "motion": "push",
    "title": "ASLI SEEKH",
-   "big": "AHANKAAR KA ANT",
-   "small": "SATYA HI SUPREME HAI",
+   "big": "AHANKAAR",
+   "small": "SATYA PARMESHWAR",
    "keywords": [
     "gyaan",
     "ahankaar",
     "sach",
     "seekh"
-   ]
+   ],
+   "skin": "pattachitra"
   },
   {
    "vo": "Agar aapki jagah Vishnu ji hote, toh kya sach bolna aasan hota?",
@@ -194,11 +205,12 @@
     "sach",
     "aasan",
     "comment"
-   ]
+   ],
+   "skin": "painting"
   }
  ],
  "music_mood": "epic",
- "caption": "Brahma ji ka paanchwa sir kyun kaata gaya? Jab gyaan ahankaar ban jaaye, tab satya hi dand deta hai. 🕉️\n\nSroat: Shiva Purana (Shatarudra Samhita)\n\nAapki nazar mein sabse mushkil kya hai—apni haar manna ya sach bolna? Batayein comments mein!",
+ "caption": "Brahma ji ka paanchwa sir kyun kaata gaya? Jab gyaan ahankaar ban jaaye, tab satya hi dand deta hai. 🕉️\n\nSroat: Shiva Purana (Shatarudra Samhita)\n\nAapki nazar mein sabse mushkil kya hai—apni haar manna ya sach bolna? Batayein comments mein!\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#ShivaPurana",
   "#Mahadev",
@@ -244,5 +256,7 @@
   "7fa182f8ef",
   "9db4cc694f",
   "1e1964f463"
- ]
+ ],
+ "skin": "painting",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

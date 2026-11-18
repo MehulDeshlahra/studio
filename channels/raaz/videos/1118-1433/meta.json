@@ -2,8 +2,9 @@
  "channel": "raaz",
  "job": "1118-1433",
  "topic": "Chouthi Manzil Ka Raaz - Part 8",
- "stage": "held",
+ "stage": "done",
  "lang": "hi",
  "prepped_at": "2026-11-18 14:52",
- "held_at": "2026-11-18 17:23"
+ "held_at": "2026-11-18 18:41",
+ "brain_judged": true
 }

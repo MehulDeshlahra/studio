@@ -296,3 +296,23 @@
 ## 1118-1015 12 Jyotirlinga ki katha - Part 3: Mahakaleshwar
 - scene 4: Minor anatomical blurring and overlapping limbs on the demonic figure.
 - scene 12: Gibberish symbols and distorted text within the central circular dial.
+
+## 1117-0145 Nachiketa aur Yamraj (Katha Upanishad)
+- scene 3: The text overlay 'MAIN KISE DAAN' is a bit awkward as it cuts off the sentence 'Main kise daan doge' abruptly, though it follows the '2-3 words' rule.
+- scene 5: The text 'DWAR' is placed over the boy's body, making it slightly hard to read against the busy background.
+- scene 12: The image shows a deity with too many arms/hands (at least 6 visible), which is stylistically inconsistent with the human-like depiction of Yamraj in previous frames, though acceptable in a mythological context.
+- scene 13: The text 'HI NACHIKETA AZAD' is slightly confusing as it doesn't clearly match the script line 'Ye gyaan milte hi Nachiketa azad ho gaya'.
+
+## 1118-0035 The Origin of River Ganga and Why She Fell from Heaven (Bhagavata Purana, Skandha 9)
+- scene 1: The caption 'VISHAL SAILAB SEEDHE' does not match the intended line 'Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta, toh kya hota?'.
+- scene 2: The caption 'YEH KATHA HAI' does not match the intended line 'Puraanon ke anusar, yeh katha hai Raja Bhagirath ki.'
+- scene 3: The caption 'SHRAP KI WAJAH' does not match the intended line 'Unke purvaj ek shrap ki wajah se mukt nahi ho pa rahe the.'
+- scene 4: The caption 'PAVITRA JAL HI' does not match the intended line 'Sirf Ganga ka pavitra jal hi unhe moksha dila sakta tha.'
+- scene 5: The caption 'KATHOR TAPASYA KI' does not match the intended line 'Bhagirath ne saalon kathor tapasya ki aur Brahma ji ko prasann kiya.'
+- scene 6: The caption 'GANGA SWARG SE' does not match the intended line 'Brahma ji ne varan diya ki Ganga swarg se zameen par aayengi.'
+- scene 7: The caption 'MAHASAMASYA' is a title, not a caption for the line 'Par ek badi samasya thi, unke veg ko kaun sambhalta?'
+- scene 8: The caption 'ZAMEEN PAR GIRTI' does not match the intended line 'Agar Ganga seedhe zameen par girti, toh dharti patal mein chali jaati.'
+- scene 9: The caption 'LORD SHIVA SE' does not match the intended line 'Tab Bhagirath ne Lord Shiva se prarthna ki.'
+- scene 10: The caption 'GANGA KE VEG' does not match the intended line 'Shiva ji ne apni jataon mein Ganga ke veg ko aasaani se rok liya.'
+- scene 11: The caption 'PAR SABKA KALYAN' does not match the intended line 'Aur is tarah Ganga ji dharti par sabka kalyan karne aayin.'
+- scene 12: The caption 'SACCHI LAGAN SE' does not match the intended line 'Sroat: Bhagavata Purana. Aapke anusar, sacchi lagan se kya namumkin bhi mumkin ho jata hai?'

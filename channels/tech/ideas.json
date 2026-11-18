@@ -290,5 +290,128 @@
     "score": 3.47
    }
   ]
+ },
+ {
+  "t": "2026-11-18 18:46",
+  "picked": "AI Agents (WhatsApp automation)",
+  "ideas": [
+   {
+    "topic": "AI Agents (WhatsApp automation)",
+    "search": "How AI agents work",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "The news about IT professionals building 57 AI agents using WhatsApp is viral tech news. It demystifies AI for the common user, making it highly clickable.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.0,
+    "score": 7.35
+   },
+   {
+    "topic": "Prison jammers in Bengaluru have left residents without signal for nearly two years",
+    "search": "how mobile jammers block signal",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Trending on Reddit r/india about prison jammers cutting off entire neighborhoods; highly relatable tech curiosity.",
+    "demand_known": true,
+    "demand": 3.3,
+    "median_views": 20237,
+    "fresh": 7.1,
+    "score": 7.05
+   },
+   {
+    "topic": "NotebookLM aapki files se podcast kaise bana deta hai?",
+    "note": "",
+    "search": "notebooklm podcast demo",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 6.6,
+    "median_views": 428678,
+    "fresh": 4.4,
+    "score": 7.0
+   },
+   {
+    "topic": "GPS ko kaise pata ki aap kahan ho",
+    "search": "GPS ko kaise pata ki aap kahan ho",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 7.2,
+    "median_views": 740303,
+    "fresh": 4.9,
+    "score": 6.67
+   },
+   {
+    "topic": "Apple Server Outage",
+    "search": "Apple iCloud down reason",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "The 'Apple outages' trend is massive (2000+ searches). Users are frustrated and curious why a giant like Apple goes down. Explaining server load balancing via a 'traffic jam' metaphor fits the 'Kaise Tech' style perfectly.",
+    "demand_known": true,
+    "demand": 2.1,
+    "median_views": 6916,
+    "fresh": 6.4,
+    "score": 6.38
+   },
+   {
+    "topic": "GPS bina internet ke kaise kaam karta hai?",
+    "note": "",
+    "search": "how gps works offline",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 4.7,
+    "median_views": 73221,
+    "fresh": 3.1,
+    "score": 6.24
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 5.27
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 4.7,
+    "median_views": 77136,
+    "fresh": 2.7,
+    "score": 5.1
+   },
+   {
+    "topic": "Incognito mode sachmuch aapko chhupa leta hai?",
+    "note": "",
+    "search": "incognito mode privacy myth",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 7,
+    "fresh": 5.6,
+    "score": 4.27
+   },
+   {
+    "topic": "Ye free AI tool Photoshop jaisa background removal kaise karta hai?",
+    "note": "",
+    "search": "free background remover ai",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1558,
+    "fresh": 4.9,
+    "score": 4.0
+   }
+  ]
  }
 ]

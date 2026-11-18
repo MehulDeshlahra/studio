@@ -27,22 +27,24 @@
     "phaad diya"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Woh kavach-kundal uski mrityu se raksha the, Surya ka varadaan",
    "type": "image",
-   "prompt": "Karna full figure, kavach and kundal radiating golden aura around him like a second skin, divine protection visible as shimmering circle, painterly cinematic Indian miniature-meets-epic style, warm gold deep maroon",
+   "prompt": "Warrior Karna standing centered, glowing divine golden chest armor kavach and golden earrings kundal, radiant solar aura, traditional Indian epic art style, clean vertical composition, 9:16 aspect ratio with empty space above and below, no text, no letters",
    "motion": "pull",
-   "title": "Kavach Kundal",
+   "title": "",
    "keywords": [
     "kavach-kundal",
     "raksha",
     "varadaan"
    ],
-   "big": "Raksha Kavach",
-   "small": "Surya ka Varadaan",
-   "real": null
+   "big": "Surya ka Varadaan",
+   "small": "Kavach aur Kundal",
+   "real": null,
+   "skin": "pattachitra"
   },
   {
    "vo": "Indra brahmin ban ke aaya, haath faila ke maang liya sab kuch",
@@ -57,7 +59,8 @@
    ],
    "big": "Aaya Maangne",
    "small": "Sab Kuch Maanga",
-   "real": null
+   "real": null,
+   "skin": "painting"
   },
   {
    "vo": "Pita Surya ne pehle hi chetaaya tha: 'Indra maange ga, dena mat'",
@@ -71,22 +74,24 @@
     "Indra maange ga"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Par Karna rukha nahi — daan hi uski pehchaan thi, Surya ki baat yaad thi",
    "type": "image",
-   "prompt": "Karna standing tall, handing a glowing donation to an elderly brahmin (Indra in disguise), Karna's expression calm and determined, no hesitation, soft golden light, painterly cinematic Indian miniature-meets-epic style, warm gold deep maroon, focus on Karna's resolve, no Surya in background",
-   "motion": "tilt",
-   "title": "Karna Daan",
+   "prompt": "Karna standing alone, offering his golden armor to a Brahmin, humble and determined expression, warm golden light, Indian miniature epic style, 9:16 vertical with room above and below for text, no text, no letters",
+   "motion": "zoom",
+   "title": "Mahaan Daan",
    "keywords": [
     "Karna",
     "rukha nahi",
     "pehchaan"
    ],
-   "big": "Pehchaan Daan",
-   "small": "Surya ki Yaad",
-   "real": null
+   "big": "Rukha Nahi",
+   "small": "Daan hi Pehchaan",
+   "real": null,
+   "skin": "painting"
   },
   {
    "vo": "Kavach utarta hi khoon baha, ghaw khule, mrityu paas aa gayi",
@@ -100,22 +105,24 @@
     "mrityu"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Indra ne asli roop dikhaya, Shakti baan diya — par kavach wapas nahi mila",
    "type": "image",
-   "prompt": "Indra in traditional kingly form, wearing a crown, holding Vajra, mounted on Airavata the white elephant, handing a single glowing Shakti arrow to Karna, Karna's chest shows empty armor space, respectful exchange, divine radiance, painterly cinematic Indian miniature-meets-epic style, Indra with fair skin, no trident",
-   "motion": "tilt",
-   "title": "Indra Shakti",
+   "prompt": "Lord Indra in regal attire, presenting a glowing divine Shakti weapon to Karna, Karna's chest is bare, divine radiance, Indian miniature epic style, 9:16 vertical with space above and below for text, no text, no letters",
+   "motion": "pan",
+   "title": "Indra ka Vardaan",
    "keywords": [
     "Indra",
     "Shakti baan",
     "kavach wapas nahi"
    ],
-   "big": "Vajra Airavata",
-   "small": "Kavach Wapas Nahi",
-   "real": null
+   "big": "Shakti Baan",
+   "small": "Kavach wapas nahi",
+   "real": null,
+   "skin": "painting"
   },
   {
    "vo": "Aaj bhi usse 'Daanveer' kehte hain, 'Amartya' nahi — daan bada hua raksha se",
@@ -129,7 +136,8 @@
     "Daanveer",
     "daan bada",
     "raksha se"
-   ]
+   ],
+   "skin": "pattachitra"
   },
   {
    "vo": "Tum hote toh kya karte? Suraksha bachte ya daan nibhate?",
@@ -143,7 +151,8 @@
     "suraksha ya daan"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   }
  ],
  "music_mood": "epic",
@@ -193,5 +202,6 @@
   "d7b38f2237",
   "4204a43442"
  ],
- "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "skin": "painting"
 }
