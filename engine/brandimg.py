@@ -103,6 +103,26 @@ def highlight(label, bg, a1, a2, logo=None, w=1080, h=1920):
     return img
 
 
+def og_card(bg, a1, a2):
+    """docs/og.png (1200x630): the link preview of scrollhouse.in (WhatsApp, LinkedIn, Facebook, X). PNG on purpose:
+    .gitignore skips jpg/png but sync.py adds docs with -f."""
+    w, h = 1200, 630
+    img = backdrop(w, h, bg, a1, a2)
+    d = ImageDraw.Draw(img)
+    ctext(d, w / 2, 215, "SCROLL HOUSE", font(104), a1, track=4)
+    ctext(d, w / 2, 315, "ORIGINAL SHORT-VIDEO PAGES FOR EVERY AUDIENCE", font(30), (225, 225, 225), track=3)
+    ids = [i for i in ("tech", "katha", "raaz", "finance", "jain") if os.path.exists(os.path.join(ROOT, "docs", "img", i + ".webp"))]
+    size, gap = 150, 34
+    x = (w - (len(ids) * size + (len(ids) - 1) * gap)) / 2
+    for i in ids:
+        lg = Image.open(os.path.join(ROOT, "docs", "img", i + ".webp")).convert("RGB").resize((size, size), Image.LANCZOS)
+        m = Image.new("L", (size, size), 0)
+        ImageDraw.Draw(m).ellipse([0, 0, size - 1, size - 1], fill=255)
+        img.paste(lg, (int(x), 400), m)
+        x += size + gap
+    img.save(os.path.join(ROOT, "docs", "og.png"))
+
+
 def main():
     cid = sys.argv[1]
     out = os.path.join(ROOT, "brand", cid)
@@ -114,6 +134,7 @@ def main():
         ctext(d, 540, 500, "SH", font(380), rgb(a1), track=-10)
         d.rounded_rectangle([430, 740, 650, 756], 8, fill=rgb(a2))
         img.save(os.path.join(out, "dp_safe.png"))
+        og_card(rgb(bg), rgb(a1), rgb(a2))
         lg = img.crop((0, 300, 1080, 800))
         logo, bgc, rnd = lg, rgb(bg), False
     else:

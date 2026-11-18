@@ -86,6 +86,8 @@ def build():
 <title>Scroll House: original short-video pages for every audience</title>
 <meta name="description" content="{esc(BRAND['line'])}">
 <meta property="og:title" content="Scroll House"><meta property="og:description" content="{esc(BRAND['line'])}">
+<meta property="og:image" content="https://{DOMAIN}/og.png"><meta property="og:type" content="website"><meta property="og:url" content="https://{DOMAIN}/">
+<meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://{DOMAIN}/"><link rel="icon" href="img/scrollhouse.webp">
 <style>
 *{{box-sizing:border-box}}body{{margin:0;background:#0b0c10;color:#e9ecf1;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}}
 a{{color:#ffd84d;text-decoration:none}}a:hover{{text-decoration:underline}}
