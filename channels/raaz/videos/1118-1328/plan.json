@@ -1,0 +1,206 @@
+{
+ "slug": "chouthi-manzil-ka-raaz-part-5",
+ "title": "CCTV Mein 5 Saal Puraani Maut Ka Raaz",
+ "hooks": [
+  "Mehul ne kaanpte haathon se kamre ka darwaza dhakela.",
+  "Laptop screen par paanch saal puraani apni hi video chal rahi thi.",
+  "Bistar ke neeche se ek murda haath Mehul ki taraf badha."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Starts immediately at frame zero with physical suspense, protagonist name, and instant narrative tension.",
+ "metaphor": "The time-loop mirror: watching a five-year-old CCTV recording of yourself in a room you only just rented.",
+ "cast": {
+  "Mehul": "27 years old Indian man, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, clutching a cracked smartphone.",
+  "Raghav": "27 years old Indian man, Mehul's close friend, cheerful round face, short curly hair, mustard hoodie, carrying a steel water bottle."
+ },
+ "scenes": [
+  {
+   "vo": "Mehul ne kaanpte haathon se kamre ka darwaza dhakela.",
+   "type": "clip",
+   "prompt": "Cinematic night thriller, rain on glass, film grain, cold teal shadows with amber highlights. 27 years old Indian man, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, slowly pushing open a weathered wooden door into a pitch dark Mumbai apartment bedroom. Camera slowly pushes inward. Clean cinematic frame, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "kaanpte haathon",
+    "darwaza"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Peeche khada Raghav phusphusaaya, bhai andar koi nahi hai.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, moody hallway. 27 years old Indian man, cheerful round face, short curly hair, mustard hoodie, holding steel bottle, whispering nervously behind Mehul in the dim shadowy corridor. Realistic textures, dramatic side lighting, no text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "Raghav",
+    "phusphusaaya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Andar sannata tha, par table par pada laptop achanak jal utha.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still. Inside an old Indian apartment bedroom, a modern slim laptop on an old wooden study table suddenly lights up, casting an eerie cold blue glow over scattered papers and dark curtains. High contrast, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "laptop",
+    "jal utha"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Screen par isi kamre ka live CCTV footage chal raha tha.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still. Over-the-shoulder shot looking at the glowing laptop screen showing a high-angle grainy monochrome surveillance camera view of the exact same bedroom. Clean UI, realistic camera perspective, no visible typography.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "CCTV",
+    "footage"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Bistar par Mehul khud sota hua dikh raha tha.",
+   "type": "image",
+   "prompt": "Cinematic CCTV camera feed view. High-angle grainy footage of 27 years old Indian man in faded blue t-shirt sleeping motionless on a single wooden bed under a faded cotton bedsheet. Night vision grain, cold green-tinted shadows, no text.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "khud sota",
+    "bistar"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Lekin screen ke kone mein timestamp dekh kar Mehul ke hosh ud gaye.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still. Extreme close-up of Mehul's face illuminated by cold monitor light, wide terrified eyes staring in disbelief, pupils dilated, sweat glinting on temple. Cinematic shallow depth of field, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "timestamp",
+    "hosh ud gaye"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Date thi pandrah October do hazaar athaarah, theek paanch saal puraani!",
+   "type": "card",
+   "prompt": "Cinematic dark thriller background, out-of-focus digital surveillance screen bokeh, dark moody teal vignette, atmospheric smoke and shadow.",
+   "motion": "tilt",
+   "title": "",
+   "big": "15 OCT 2018",
+   "small": "5 SAAL PURAANA",
+   "keywords": [
+    "pandrah October",
+    "do hazaar athaarah"
+   ]
+  },
+  {
+   "vo": "Jabki Mehul is shahar mein che mahine pehle aaya tha!",
+   "type": "image",
+   "prompt": "Cinematic night thriller still. Mehul and Raghav in the bedroom looking at each other in frozen dread, mutual shock, cold light from laptop illuminating their stunned expressions. Dark Mumbai room, realistic shadows, no text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "che mahine",
+    "shahar"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Tabhi video mein bistar ke neeche ek kaali parchhayi sarki.",
+   "type": "image",
+   "prompt": "Cinematic CCTV footage view. Low-angle shot beneath the wooden bed in grainy night-vision, deep pitch darkness under the mattress where an unnatural shadowy silhouette slowly creeps out across the tiled floor. Eerie tension, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "bistar ke neeche",
+    "kaali parchhayi"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Ek peela murda haath nikla, aur sote hue Mehul ka pair pakad liya!",
+   "type": "clip",
+   "prompt": "Cinematic CCTV footage view. A pale, discolored sinister human hand darts out from the pitch-black void under the bed, cold bony fingers clamping tightly around the sleeping man's ankle. Fast tense movement, dark grainy footage, no text.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "murda haath",
+    "pair pakad liya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Aur theek usi pal, asli Mehul ke pair par bhi thandi ungliyan chhu gayi!",
+   "type": "image",
+   "prompt": "Cinematic night thriller still. Floor-level shot in the real dark bedroom, Mehul standing frozen in terror as long shadowy fingers reach from beneath the real wooden bed toward his bare ankle. Shock and chilling suspense, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "thandi ungliyan",
+    "asli Mehul"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Batao, kya Mehul paanch saal pehle bhi is kamre mein tha, ya ye koi chhal hai?",
+   "type": "image",
+   "prompt": "Cinematic night thriller still. Mehul stumbling backward in sheer terror, knocking into the table, screen flickering wildly behind him in the stormy dark apartment. Cinematic climax, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "paanch saal pehle",
+    "chhal"
+   ],
+   "big": null,
+   "small": null
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Video 5 saal puraani thi... par bistar par Mehul khud kaise so raha tha? Aur bistar ke neeche se woh thanda haath kiska nikla?\n\n'Chouthi Manzil Ka Raaz' Part 5.\nApni theory comments mein batao!",
+ "hashtags": [
+  "#ChouthiManzilKaRaaz",
+  "#HindiSuspense",
+  "#MysteryShorts",
+  "#HorrorStoryHindi",
+  "#IndianThriller"
+ ],
+ "claims": [
+  {
+   "claim": "Mehul watches an impossible 2018 surveillance recording showing himself in the same bedroom.",
+   "basis": "Original scripted fictional serial story for 'Chouthi Manzil Ka Raaz' Part 5."
+  }
+ ],
+ "brain_ids": [
+  "0755cc155a",
+  "12739745ca",
+  "402d1572ae",
+  "c6b8948127",
+  "8d7dda7ee5",
+  "2cf6b5009c",
+  "7d6aabb430",
+  "fe85d2a45c",
+  "d6c858d669",
+  "6ce7203c71",
+  "9c71213e9b",
+  "443bcb1e8a",
+  "7ad0de964d",
+  "e15cfaed29"
+ ],
+ "cliff_done": true
+}

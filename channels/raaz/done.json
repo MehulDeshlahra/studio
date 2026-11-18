@@ -53,5 +53,15 @@
   "review": [
    "visual: Scenes 6 and 7 display a giant multi-armed entity standing at the balcony, directly contradicting the narration which states only red ink drops and an abandoned pen were found."
   ]
+ },
+ {
+  "job": "1118-1315",
+  "topic": "Chouthi Manzil Ka Raaz - Part 4",
+  "title": "Aaine Mein Kiska Saaya Tha?",
+  "qc_ok": false,
+  "status": "held",
+  "review": [
+   "length 64.13 s is outside 25-55 s"
+  ]
  }
 ]

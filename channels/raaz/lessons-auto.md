@@ -79,3 +79,10 @@
 
 ## review 1118-1218
 - visual: Scenes 6 and 7 display a giant multi-armed entity standing at the balcony, directly contradicting the narration which states only red ink drops and an abandoned pen were found.
+
+## 1118-1315 Chouthi Manzil Ka Raaz - Part 4
+- scene 7: the hand splashing water is severely distorted with melted shapes and extra/missing finger structure
+- scene 11: the pointing hand of the shadow figure is anatomically broken and looks like gibberish
+
+## review 1118-1315
+- length 64.13 s is outside 25-55 s

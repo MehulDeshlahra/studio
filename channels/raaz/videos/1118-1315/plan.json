@@ -1,0 +1,213 @@
+{
+ "slug": "chouthi-manzil-ka-raaz-part-4",
+ "title": "Aaine Mein Kiska Saaya Tha?",
+ "hooks": [
+  "Mehul bathroom ke aaine ke saamne apne haathon ki laal siyahi dho raha tha.",
+  "Aaine ke andar ek aisa saaya dikha jo asal mein tha hi nahi.",
+  "Bijli gul hote hi aaine ke peeche ek khaufnaak sach samne aaya."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Starts at frame 0 with immediate protagonist action and visual intrigue continuing from part 3.",
+ "metaphor": "A haunting reflection revealing an entity lurking in the blind spot of reality.",
+ "cast": {
+  "Mehul": "27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone.",
+  "Vikrant": "27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt, holding Mehul's cracked black smartphone.",
+  "Raghav": "27 years old, Mehul's college friend and neighbour, cheerful round face, short curly hair, light stubble, mustard hoodie, always carries a steel water bottle",
+  "Sharma ji": "58 years old, weathered face with deep laugh lines, thick graying mustache, receding salt-and-pepper hair tied in a small knot at the back, khaki watchman uniform with brass buttons and a faded society badge, always carries a wooden lathi with a red cloth wrapped around its handle"
+ },
+ "scenes": [
+  {
+   "vo": "Mehul bathroom ke aaine ke saamne apne haathon ki laal siyahi dho raha tha.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain outside, film grain, cold teal shadows, warm amber practical lights, Indian apartment bathroom. Mehul, 27, tired brown eyes, messy hair, faded blue t-shirt, scrubbing deep red ink off his wet hands under a running chrome faucet.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Mehul",
+    "aaine",
+    "laal siyahi"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Raghav darwaze par khada bola, bhai tu tension mat le, sab theek ho jayega.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, film grain, moody lighting. Raghav in a mustard hoodie standing by the wooden doorway of the bathroom, holding a stainless steel water bottle, speaking warmly with a supportive expression.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Raghav",
+    "tension mat le"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Tabhi aaine ke reflection mein peeche ka peela bulb achanak jhilmilane laga.",
+   "type": "image",
+   "prompt": "Cinematic over-the-shoulder view into the bathroom mirror. In the glass reflection, the hallway behind shows a solitary vintage yellow filament bulb violently flickering and stuttering in the dark corridor.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "reflection",
+    "bulb",
+    "jhilmilane"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Aur agle hi pal poore ghar ki bijli ek jhatke mein gul ho gayi.",
+   "type": "image",
+   "prompt": "Cinematic darkness, deep shadows, moody teal moonlight cutting through bathroom window grilles. The bathroom and apartment corridor pitch into near-blackness, silhouettes barely visible in cold ambient light.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "bijli gul",
+    "andhera"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Raghav bahar meter check karne dauda, aur Mehul bathroom mein akela reh gaya.",
+   "type": "image",
+   "prompt": "Cinematic thriller frame. Raghav hurrying out into the dark apartment hallway with a small phone flashlight, leaving Mehul alone inside the dim bathroom beside the damp sink.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Raghav",
+    "meter check",
+    "akela"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mehul ne ghoom kar dekha, par corridor bilkul shaant aur khaali pada tha.",
+   "type": "image",
+   "prompt": "Cinematic wide shot from inside the bathroom looking out. Mehul turns his head back toward the open doorway, seeing only an empty, eerie, quiet corridor under dim blue shadows.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "ghoom kar dekha",
+    "khaali"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Usne rahat ki saans li aur chehre par thande paani ke cheente maare.",
+   "type": "image",
+   "prompt": "Cinematic close-up. Mehul cupping cool tap water in his wet hands and splashing it across his tired face, drops running down his cheeks as he exhales in brief relief.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "rahat ki saans",
+    "paani"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Lekin jaise hi usne aaine mein dekha, uski saansein wahi tham gayin!",
+   "type": "clip",
+   "prompt": "Cinematic thriller clip. Mehul lifts his wet face and looks directly into the mirror glass, his pupils dilating in sheer paralyzing shock as his breath catches.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "aaine mein dekha",
+    "saansein tham"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Haqeeqat mein Mehul akela tha, par aaine mein uske theek peeche koi khada tha!",
+   "type": "clip",
+   "prompt": "Cinematic split perspective in mirror reflection. The physical bathroom behind Mehul is totally empty, yet inside the mirror glass a tall looming human figure stands directly behind his back.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "haqeeqat",
+    "aaine mein peeche"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Ek lamba andhera saaya, jiska na koi chehra tha, na koi aawaz.",
+   "type": "image",
+   "prompt": "Cinematic spine-chilling close-up on the reflection. A tall, faceless dark silhouette cloaked in shadow standing motionless, blank void where facial features should be, eerie and menacing.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "andhera saaya",
+    "bina chehra"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Dheere se us saaye ne Mehul ke band bedroom ki taraf ungli utha di.",
+   "type": "image",
+   "prompt": "Cinematic mirror reflection view. The faceless dark silhouette raises a pale, slender arm and points an accusatory index finger toward Mehul's closed bedroom door visible in the reflection.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "ungli utha di",
+    "bedroom"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Kya bedroom ke andar wahi kaatil chupa hai? Apni raye comments mein batao.",
+   "type": "card",
+   "prompt": "Cinematic vertical shot, dark hallway with a single wooden door slightly ajar, warm eerie light spilling through the crack onto the floor, centered composition, 9:16 aspect ratio, room above and below for text, no text, no logos.",
+   "motion": "pull",
+   "big": "KAATIL?",
+   "small": "Comments Mein Batao",
+   "title": "",
+   "keywords": [
+    "kaatil chupa",
+    "comments"
+   ]
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Aaine mein dikha ek aisa saaya jo kamre mein tha hi nahi! 😱 Kya bedroom ke andar wahi chupa hai? Comments mein apna guess batao. Next part kal!\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#chouthimanzilkaraaz",
+  "#aagesuno",
+  "#hindithriller",
+  "#suspensestories",
+  "#mysteryreels",
+  "#desithriller"
+ ],
+ "claims": [
+  {
+   "claim": "Chouthi Manzil Ka Raaz is an original fictional mystery thriller serial by Aage Suno.",
+   "basis": "Channel production bible for fictional daily serials."
+  }
+ ],
+ "brain_ids": [
+  "0755cc155a",
+  "12739745ca",
+  "402d1572ae",
+  "8d7dda7ee5",
+  "7d6aabb430",
+  "2cf6b5009c",
+  "c6b8948127",
+  "fe85d2a45c",
+  "9c71213e9b",
+  "443bcb1e8a",
+  "a949f2b573",
+  "8429b58dc5",
+  "81fe0d2573",
+  "d6c858d669"
+ ],
+ "cliff_done": true,
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}
