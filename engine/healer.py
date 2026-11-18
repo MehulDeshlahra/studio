@@ -206,9 +206,8 @@ def want_turn(on):
     has work but the server is busy it raises this flag; the prep lane skips one round (engine/daily.py)."""
     if DRY:
         return
-    if on:
-        if not os.path.exists(WANT):
-            open(WANT, "w").write(time.strftime("%Y-%m-%d %H:%M"))
+    if on:                                      # 18 Nov: refreshed every round; written once it went stale after 1 h
+        open(WANT, "w").write(time.strftime("%Y-%m-%d %H:%M"))      # (the lanes ignore a flag older than 1 h)
     elif os.path.exists(WANT):
         os.remove(WANT)
 
