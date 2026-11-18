@@ -22,6 +22,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, HOME, log, load, save, read
 
 DRY = "--dry" in sys.argv
+_save = save
+
+
+def save(path, data):
+    """18 Nov: --dry still wrote healer.json from inside heal_held (a dry run marked steps as tried). Dry writes nothing."""
+    if not DRY:
+        _save(path, data)
+
+
 STATE = os.path.join(OUT, "healer.json")
 UNKNOWN = os.path.join(OUT, "doctor-unknown.json")
 FIXES = os.path.join(ROOT, "knowledge", "fixes.json")
