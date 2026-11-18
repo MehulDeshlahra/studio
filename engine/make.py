@@ -408,8 +408,11 @@ def stage_assets(ch, p, job):
 
 
 PHONE_BG_SAFE = (" Photoreal, candid, natural light, shallow depth of field, Indian everyday setting, vertical 9:16. Any phone, "
-                 "laptop or card is seen from the side or back with no visible screen. No text, no letters, no numbers, no "
-                 "currency signs, no documents, no logos, no watermark.")
+                 "laptop or card is seen from the side or back with no visible screen. No signboards, no shop signs, no "
+                 "posters, no banners, plain walls; no writing on vehicles, clothes or packets. No text, no letters, no "
+                 "numbers, no currency signs, no documents, no logos, no watermark.")
+# 19 Nov test: without the signboard line, 3 of 5 pictures had made-up sign text ("SAPPRCT", a fake Hindi shop sign, a
+# scooter badge "TADLET") showing above the phone.
 
 
 def _phone_bg(p, s, i, adir, old):
