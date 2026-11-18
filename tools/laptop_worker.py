@@ -6,7 +6,7 @@ Mode (C:\\Users\\mehul\\studio-render\\mode.txt, set with tools\\studio-mode.cmd
   quiet gentle always (below-normal priority, 3 workers: your apps stay smooth)
   off   take no jobs
 On battery it takes no jobs (the server renders as before)."""
-import ctypes, json, os, shutil, subprocess, sys, tarfile, time, traceback
+import ctypes, json, os, re, shutil, subprocess, sys, tarfile, time, traceback
 
 HOST = "ubuntu@137.23.60.164"
 KEY = r"C:\Users\mehul\Desktop\job\oracle.key"
@@ -165,6 +165,96 @@ def fetch(jid, spec):
         shutil.rmtree(work, ignore_errors=True)
 
 
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CACHE = os.path.join(HOME, "yt-cache")
+
+
+def _yt_json(url):
+    r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist", "-J", url], timeout=180)
+    return json.loads(r.stdout or "{}")
+
+
+def _send_back(jid, work):
+    out = os.path.join(HOME, "jobs", jid + ".tgz")
+    with tarfile.open(out, "w") as t:
+        t.add(work, arcname="fetch")
+    r = run(SCP + [out, f"{HOST}:{R}/done/{jid}.tgz.part"], timeout=900)
+    if r.returncode:
+        raise RuntimeError("upload failed: " + r.stderr[-200:])
+    run(SSH + [f"mv {R}/done/{jid}.tgz.part {R}/done/{jid}.tgz"], timeout=40)
+    os.remove(out)
+
+
+def info_job(jid, spec):
+    """Title, chapters and YouTube's 'most replayed' heatmap (19 Nov: the free crowd signal the best clippers use)."""
+    work = os.path.join(HOME, "jobs", jid)
+    shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
+    try:
+        j = _yt_json(spec["url"])
+        keep = {k: j.get(k) for k in ("id", "title", "channel", "channel_id", "uploader", "uploader_id", "duration", "license",
+                                       "webpage_url", "upload_date", "language", "width", "height", "view_count", "chapters", "heatmap",
+                                       "description", "is_live", "was_live")}
+        keep["description"] = (keep.get("description") or "")[:2000]
+        json.dump(keep, open(os.path.join(work, "info.json"), "w"))
+        _send_back(jid, work)
+        log("info", jid, spec["url"], "heatmap points", len(keep.get("heatmap") or []))
+    except Exception as e:
+        log("info", jid, "failed:", str(e)[:300])
+        msg = str(e)[:1500].replace("'", " ")
+        run(SSH + [f"echo '{msg}' > {R}/done/{jid}.err"], timeout=40)
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
+def clip_job(jid, spec):
+    """Download the video once (cached by id), then build every asked clip with engine/clipcore.py on this machine."""
+    sys.path.insert(0, os.path.join(REPO, "engine"))
+    import clipcore
+    work = os.path.join(HOME, "jobs", jid)
+    shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
+    os.makedirs(CACHE, exist_ok=True)
+    try:
+        url = spec["url"]
+        vid = spec.get("id") or re.sub(r"\W", "", url)[-24:]
+        full = os.path.join(CACHE, vid + ".mp4")
+        if not os.path.exists(full):
+            r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
+                     "-f", "bv*[height<=1080][ext=mp4]+ba/b[height<=1080]/bv*+ba/b", "--merge-output-format", "mp4", "-N", "4",
+                     "-o", full, url], timeout=2400)
+            if not os.path.exists(full):
+                raise RuntimeError("download failed: " + (r.stderr or "")[-300:])
+        for old in sorted((os.path.join(CACHE, f) for f in os.listdir(CACHE)), key=os.path.getmtime)[:-3]:
+            os.remove(old)                                    # keep the last 3 sources
+        pad, done = float(spec.get("pad", 4)), 0
+        for i, c in enumerate(spec.get("clips") or []):
+            cd = os.path.join(work, f"c{i}"); os.makedirs(cd)
+            s0 = max(0.0, float(c["a"]) - pad)
+            win = os.path.join(cd, "window.mp4")
+            try:
+                clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full,
+                              "-c:v", "libx264", "-preset", "veryfast", "-crf", "15", "-c:a", "aac", "-b:a", "192k", win], 900)
+                res = clipcore.make_clip(win, float(c["a"]) - s0, float(c["b"]) - s0, c.get("hook", ""), cd, spec.get("lang"))
+                res["offset"] = s0
+                json.dump(res, open(os.path.join(cd, "result.json"), "w"), ensure_ascii=False)
+                done += 1
+            except Exception as e:
+                json.dump({"error": str(e)[:600]}, open(os.path.join(cd, "result.json"), "w"))
+                log("clip", jid, i, "failed:", str(e)[:300])
+            finally:
+                if os.path.exists(win):
+                    os.remove(win)
+        if not done:
+            raise RuntimeError("no clip could be made")
+        _send_back(jid, work)
+        log("clipped", jid, done, "clips of", url)
+    except Exception as e:
+        log("clip job", jid, "failed:", str(e)[:300])
+        msg = str(e)[:1500].replace("'", " ")
+        run(SSH + [f"echo '{msg}' > {R}/done/{jid}.err"], timeout=40)
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
 def job_spec(jid):
     r = run(SSH + [f"cat {R}/claimed/{jid}.json"], timeout=40)
     try:
@@ -260,7 +350,7 @@ def main():
                 th = threading.Thread(target=beat, daemon=True); th.start()
                 try:
                     spec = job_spec(jid)
-                    fetch(jid, spec) if spec.get("kind") == "fetch" else render(jid)
+                    {"fetch": fetch, "info": info_job, "clip": clip_job}.get(spec.get("kind"), lambda j, s: render(j))(jid, spec)
                 finally:
                     stop.set()
                 continue

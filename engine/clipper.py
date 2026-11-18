@@ -3,41 +3,54 @@ it sees the best moments, suggests clips and auto-creates them"). Research: know
 
   python engine/clipper.py <cid> <youtube url> [--n 4] [--test] [--campaign KEY]
 
-1 moments   Gemini watches the YouTube URL (no download) and returns the N best standalone moments (20-59 s) with a hook
-            title, why it works and a score.
-2 fetch     the laptop downloads only those parts (YouTube blocks this server): engine/laptop.fetch, 4 s padding.
-3 cut       faster-whisper word times: start on the first word of a sentence, end on a sentence end (no cut mid-word).
-4 render    ffmpeg 1080x1920: blurred fill of the same frame, the video full width in the middle, hook title on top,
-            3-word captions with the spoken word highlighted, -14 LUFS.
-5 hand-off  each clip = its own job (plan.json, review.json, cover.jpg, done.json row "made") -> Telegram for approval.
+1 info      the laptop reads the video's title, chapters and YouTube's "most replayed" heatmap (yt-dlp -J; free crowd signal)
+2 moments   Gemini watches the YouTube URL (no download) with the heatmap peaks, returns the best standalone moments
+            (hook = who + action + twist, accurate; 30-45 s target, 58 s cap; start 1-3 s before the action)
+3 clip      the laptop downloads once and builds each clip with engine/clipcore.py: whisper words, sentence-boundary cut,
+            dead pauses removed, layout from faces (face crop / webcam-over-gameplay / blurred fill), pop captions, -14 LUFS
+4 check     format + loudness + a vision check of the frame sheet against the transcript (hook honest, captions readable,
+            nothing covers the face)
+5 hand-off  each clip = its own job (plan.json, review.json, cover.jpg, done.json "made") -> Telegram for approval
 
 PERMISSION GATE: clips are posted only from sources the page may use: channels/<cid>/sources.json (a paid clipping
-campaign or a creator who allows clipping). Anything else runs only with --test (made, never posted): reposting other
-people's videos without permission gets copyright strikes and can close the account."""
-import argparse, json, os, re, shutil, subprocess, sys, time
+campaign or a creator who allows clipping). Anything else runs only as a test (made, never posted)."""
+import argparse, json, os, re, shutil, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from core import ROOT, OUT, ASSETS, log, load, save, channel, telegram, note_problem
+from core import ROOT, OUT, log, load, save, channel, telegram, note_problem
 import llm
 
-FONTS = os.path.join(ASSETS, "fonts")
-W, H = 1080, 1920
+GENERIC_TAGS = ["fyp", "viral", "reels", "trending"]     # OpusClip 13.5M-clip study: niche + generic tags beat niche-only 2.5x
 
-MOMENTS = """You are the best short-form video clipper in the world. Watch this whole video and pick the {n} best moments to
-post as standalone Reels / Shorts for the page "{page}" ({about}).
-A great moment: hooks in its first 2 seconds (a bold claim, a shocking line, a laugh, a fight, a reveal, a question),
-makes sense with no context, has ONE clear payoff, and ends right after it. Prefer moments where someone reacts or says
-something quotable over quiet stretches. Each moment is 20 to 59 seconds long. Moments must not overlap.
+MOMENTS = """You are the best short-form clipper in the world. Watch this whole video and pick the {n} best moments to post
+as standalone Reels / Shorts on the page "{page}" ({about}).
+VIDEO: "{title}" by {creator}{chapters}
+{heat}
+A great moment:
+- hooks in its FIRST 2 SECONDS: a bold claim, a shocking line, a laugh, a fight, a reveal, a question. Start 1-3 s before
+  the action, never on dead air or an intro.
+- makes sense with zero context, has ONE clear payoff, and ends right after it.
+- 30-45 s is ideal (the viral median is about 41 s); 20 s minimum, 58 s maximum.
+- prefer reactions, quotable lines, conflict, surprises and "first time" moments over quiet stretches.
+- moments must not overlap.
 {rules}
+HOOK TITLE (on screen from frame 1): who + action + twist, 3-7 words, in the video's language (Hinglish in Roman script
+for Hindi), e.g. "DAD SMASHES SON'S CONSOLE, THEN REGRETS IT". It must be TRUE to what happens: no fake claims.
 Return JSON:
-{{"video": {{"title": "<video title>", "speaker": "<who is talking / the creator>", "language": "<main spoken language>"}},
- "moments": [{{"start": "<MM:SS or HH:MM:SS where the hook begins>", "end": "<MM:SS where the payoff ends>",
-   "hook": "<on-screen title, 3-7 words, the curiosity or the claim, in the video's language (Hinglish in Roman script for Hindi)>",
-   "why": "<why people will watch to the end, one line>", "score": <1-10 viral potential>,
-   "caption": "<Instagram caption, one or two short lines, no hashtags>", "tags": ["<3-5 hashtags without #>"]}}]}}"""
+{{"moments": [{{"start": "<MM:SS where the hook begins>", "end": "<MM:SS where the payoff ends>", "hook": "<hook title>",
+   "why": "<why people will watch to the end, one line>",
+   "score": {{"hook": <1-10>, "flow": <1-10>, "value": <1-10>, "trend": <1-10>}},
+   "caption": "<Instagram caption: one or two short lines that add the context the clip leaves out, no hashtags>",
+   "tags": ["<4-6 specific hashtags without # (people, game, topic)>"]}}]}}"""
+
+CHECK = """You check a finished vertical clip before it is posted on the clip page "{page}". The image is 6 frames across the
+clip, left to right. The on-screen hook title is "{hook}". What is said in the clip: "{text}"
+Score 1-10 how good and postable it is, and list real problems only, e.g.: the hook title is misleading or not what happens,
+captions cover a face or the mouth, captions unreadable, a black or frozen frame, the main person cut out of the frame, the
+layout is broken (a webcam box cut in half, two copies of the same person), a watermark of another clip app, nudity, gore.
+Return JSON {{"score": <1-10>, "problems": ["..."], "minor": ["..."]}}"""
 
 
 def ts(x):
-    """'1:02:03' / '02:03' / 123 -> seconds."""
     if isinstance(x, (int, float)):
         return float(x)
     parts = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", str(x))][-3:]
@@ -48,148 +61,84 @@ def ts(x):
 
 
 def permitted(cid, url, campaign=None):
-    """The source entry that allows this URL (campaign or creator permission), else None."""
     src = load(os.path.join(ROOT, "channels", cid, "sources.json"), {}) or {}
     for key, s in (src.get("sources") or {}).items():
         if campaign and key != campaign:
             continue
         if not s.get("active", True):
             continue
-        pats = s.get("match") or []
-        if any(p and p.lower() in url.lower() for p in pats) or (campaign and key == campaign):
+        if any(p and p.lower() in url.lower() for p in s.get("match") or []) or (campaign and key == campaign):
             return dict(s, key=key)
     return None
 
 
-def find_moments(ch, url, n, source=None):
+def heat_peaks(info, k=6):
+    """The 'most replayed' peaks: local maxima of YouTube's 100-point curve, skipping the opening 3% (always high)."""
+    hm = [h for h in (info or {}).get("heatmap") or [] if isinstance(h, dict)]
+    if len(hm) < 10:
+        return []
+    dur = float(info.get("duration") or hm[-1].get("end_time") or 0)
+    pts = [(float(h["start_time"]), float(h["end_time"]), float(h.get("value") or 0)) for h in hm]
+    peaks = [p for i, p in enumerate(pts) if 0 < i < len(pts) - 1 and p[2] >= pts[i - 1][2] and p[2] >= pts[i + 1][2]
+             and p[0] > 0.03 * dur]
+    peaks.sort(key=lambda p: -p[2])
+    out = []
+    for p in peaks:
+        if all(abs(p[0] - q[0]) > 45 for q in out):
+            out.append(p)
+        if len(out) >= k:
+            break
+    return [{"at": round(p[0]), "until": round(p[1]), "replay": round(p[2], 2)} for p in sorted(out)]
+
+
+def mmss(s):
+    s = int(s)
+    return f"{s // 3600}:{s % 3600 // 60:02d}:{s % 60:02d}" if s >= 3600 else f"{s // 60}:{s % 60:02d}"
+
+
+def find_moments(ch, url, n, info, source=None):
     rules = ""
     if source:
         rules = "CAMPAIGN RULES (every clip must follow them):\n- " + "\n- ".join(source.get("rules") or []) + "\n"
     rules += "- " + "\n- ".join((ch.get("clip") or {}).get("rules") or [])
-    p = MOMENTS.format(n=n + 2, page=ch.get("name", ch["id"]), about=ch.get("format", ""), rules=rules)
-    d = llm.watch(url, p, max_tokens=4000)
+    pk = heat_peaks(info)
+    heat = ("MOST REPLAYED by viewers (YouTube's own heatmap, strongest crowd signal; look here first, the moment usually "
+            "starts 5-20 s before the peak): " + ", ".join(f"{mmss(p['at'])} ({p['replay']})" for p in pk)) if pk else ""
+    chap = info.get("chapters") or []
+    chapters = ("\nCHAPTERS: " + "; ".join(f"{mmss(c.get('start_time', 0))} {c.get('title', '')}" for c in chap[:20])) if chap else ""
+    p = MOMENTS.format(n=n + 2, page=ch.get("name", ch["id"]), about=ch.get("format", ""), rules=rules, heat=heat,
+                       title=info.get("title") or "?", creator=info.get("channel") or info.get("uploader") or "?", chapters=chapters)
+    d = llm.watch(url, p, max_tokens=5000)
     ms = []
     for m in d.get("moments") or []:
         try:
             a, b = ts(m["start"]), ts(m["end"])
         except Exception:
             continue
-        if b - a < 20:             # 19 Nov test: Gemini gave 12-13 s moments; the whisper step then ends them on a sentence
-            b = a + 28
-        if b - a > 62:
-            b = a + 58
+        if b - a < 20:
+            b = a + 32
+        if b - a > 60:
+            b = a + 55
         if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
             continue
-        ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:60], "why": str(m.get("why") or "")[:200],
-                   "score": float(m.get("score") or 5), "caption": str(m.get("caption") or "")[:300],
-                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:5]})
-    ms.sort(key=lambda m: -m["score"])
-    return d.get("video") or {}, ms[:n]
+        sc = m.get("score") if isinstance(m.get("score"), dict) else {"hook": m.get("score") or 5}
+        total = round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2)
+        near = any(x["at"] - 25 <= b and a <= x["until"] + 5 for x in pk)
+        ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200], "score": total,
+                   "scores": sc, "replayed": near, "caption": str(m.get("caption") or "")[:300],
+                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6]})
+    ms.sort(key=lambda m: -(m["score"] + (1.0 if m["replayed"] else 0)))     # a replayed moment gets a bonus
+    return ms[:n], pk
 
 
-def words(mp4, lang=None):
-    """faster-whisper words [(start, end, text)] of a clip (CPU int8, small model; ~1 min of audio in ~1 min)."""
-    from faster_whisper import WhisperModel
-    import soundfile as sf
-    wav = mp4 + ".wav"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-ac", "1", "-ar", "16000", wav], check=True, timeout=300)
-    a_, _sr = sf.read(wav, dtype="float32")         # 19 Nov: an array, not a path (PyAV here rejects faster-whisper's open())
-    segs, info = WhisperModel("small", compute_type="int8").transcribe(a_, language=lang, word_timestamps=True, beam_size=4,
-                                                                     vad_filter=True)
-    out = [(w.start, w.end, w.word.strip()) for s in segs for w in (s.words or []) if w.word.strip()]
-    os.remove(wav)
-    return out, info.language
-
-
-def trim(W_, want_a, want_b, pad):
-    """Start on a sentence start at/after the asked start (within 3 s), end on a sentence end near the asked end."""
-    if not W_:
-        return want_a, want_b
-    ends = {i for i, w in enumerate(W_) if re.search(r"[.!?…]$", w[2])}
-    a_i = next((i for i, w in enumerate(W_) if w[0] >= want_a - 0.6 and (i == 0 or (i - 1) in ends or W_[i][0] - W_[i - 1][1] > 0.6)), None)
-    if a_i is None or W_[a_i][0] > want_a + 3:
-        a_i = next((i for i, w in enumerate(W_) if w[0] >= want_a - 0.3), 0)
-    b_cands = [i for i in ends if i > a_i and abs(W_[i][1] - want_b) < 6]
-    b_i = min(b_cands, key=lambda i: abs(W_[i][1] - want_b)) if b_cands else max(
-        (i for i, w in enumerate(W_) if w[1] <= want_b + 1.5), default=len(W_) - 1)
-    a = max(0.0, W_[a_i][0] - 0.12)
-    b = W_[b_i][1] + 0.35
-    if b - a < 10:
-        a, b = want_a, want_b
-    return a, b
-
-
-def _ass_time(t):
-    t = max(0.0, t)
-    return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
-
-
-def ass(path, hook, W_, a, b, accent="&H0030D8FF&"):
-    """Hook title on top (whole clip) + 3-word caption groups below the video, the spoken word in the accent colour."""
-    esc = lambda s: str(s).replace("{", "(").replace("}", ")").replace("\n", " ")
-    lines = ["[Script Info]", "ScriptType: v4.00+", f"PlayResX: {W}", f"PlayResY: {H}", "WrapStyle: 0", "",
-             "[V4+ Styles]",
-             "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, "
-             "StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-             "Style: Hook,Anton,92,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,0,0,0,0,100,100,1,0,3,18,0,5,70,70,0,1",
-             # the ExtraBold file (fontsource mirror) names its family "Montserrat Thin"; its weight is ExtraBold (205)
-             "Style: Cap,Montserrat Thin,76,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,7,3,5,60,60,0,1",
-             "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
-    dur = b - a
-    if hook:
-        lines.append(f"Dialogue: 1,{_ass_time(0)},{_ass_time(dur)},Hook,,0,0,0,,{{\\pos({W // 2},400)\\fad(120,0)}}{esc(hook.upper())}")
-    ws = [(max(0, s - a), max(0, e - a), t) for s, e, t in W_ if e > a and s < b]
-    groups, cur = [], []
-    for w in ws:
-        cur.append(w)
-        if len(cur) == 3 or re.search(r"[.!?,…]$", w[2]):
-            groups.append(cur); cur = []
-    if cur:
-        groups.append(cur)
-    for gi, g in enumerate(groups):
-        g_end = groups[gi + 1][0][0] if gi + 1 < len(groups) else min(dur, g[-1][1] + 0.4)
-        for k, w in enumerate(g):
-            st = w[0]
-            en = g[k + 1][0] if k + 1 < len(g) else g_end
-            if en <= st:
-                continue
-            txt = " ".join((f"{{\\c{accent}}}{esc(x[2]).upper()}{{\\c&H00FFFFFF&}}" if j == k else esc(x[2]).upper())
-                           for j, x in enumerate(g))
-            lines.append(f"Dialogue: 0,{_ass_time(st)},{_ass_time(en)},Cap,,0,0,0,,{{\\pos({W // 2},1440)}}{txt}")
-    open(path, "w", encoding="utf-8").write("\n".join(lines) + "\n")
-
-
-def render(src, a, b, assf, out):
-    """Blurred cover background + the video full width in the middle + captions; loudness -14 LUFS."""
-    d = b - a
-    fs = FONTS.replace("\\", "/").replace(":", "\\:")
-    af = assf.replace("\\", "/").replace(":", "\\:").replace("'", "\\'")
-    vf = (f"[0:v]split=2[bg][fg];"
-          # 19 Nov: a full-size gblur crawled on the shared server; blurring a 270x480 copy and scaling it up looks the same
-          f"[bg]scale=270:480:force_original_aspect_ratio=increase,crop=270:480,gblur=sigma=7,eq=brightness=-0.18:saturation=0.85,"
-          f"scale={W}:{H}:flags=bilinear[bgb];"
-          f"[fg]scale={W}:-2:flags=lanczos[fgs];"
-          f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2+40,ass='{af}':fontsdir='{fs}',format=yuv420p[v]")
-    subprocess.run(["nice", "-n", "15", "ffmpeg", "-v", "error", "-y", "-threads", "3", "-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", src, "-filter_complex", vf,
-                    "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "libx264", "-preset", "veryfast",
-                    "-crf", "20", "-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-movflags", "+faststart", out],
-                   check=True, timeout=1800)
-    return out
-
-
-def probe(f):
-    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type,width,height:format=duration", "-of", "json", f],
-                       capture_output=True, text=True, timeout=60)
-    j = json.loads(r.stdout or "{}")
-    v = next((s for s in j.get("streams", []) if s.get("codec_type") == "video"), {})
-    return {"dur": round(float((j.get("format") or {}).get("duration") or 0), 2), "w": v.get("width"), "h": v.get("height"),
-            "audio": any(s.get("codec_type") == "audio" for s in j.get("streams", []))}
-
-
-def lufs(f):
-    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", f, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True, timeout=300)
-    m = re.findall(r"I:\s+(-?[\d.]+) LUFS", r.stderr)
-    return float(m[-1]) if m else None
+def vision(ch, jd, hook, text):
+    try:
+        import base64
+        img = open(os.path.join(jd, "sheet.jpg"), "rb").read()
+        return llm.vision(CHECK.format(page=ch.get("name", ch["id"]), hook=hook, text=text[:1500]), img)
+    except Exception as e:
+        log("clipper: vision check failed", str(e)[:120])
+        return {"score": None, "problems": [], "minor": ["vision check unavailable"]}
 
 
 def make(cid, url, n=4, test=False, campaign=None):
@@ -198,65 +147,65 @@ def make(cid, url, n=4, test=False, campaign=None):
         raise SystemExit(f"no page {cid}")
     src = permitted(cid, url, campaign)
     if not src and not test:
-        msg = (f"{cid}: {url} is not in channels/{cid}/sources.json (no clipping campaign or creator permission). "
-               "Made as a TEST only: it will not be posted.")
-        log(msg); test = True
+        log(f"{cid}: {url} is not in channels/{cid}/sources.json (no campaign / creator permission): TEST only, never posted")
+        test = True
     base = time.strftime("%m%d-%H%M")
     sdir = os.path.join(OUT, cid, "sources", base)
     os.makedirs(sdir, exist_ok=True)
     log("clipper:", cid, url, "n", n, "test" if test else f"source {src['key']}")
-    video, ms = find_moments(ch, url, n, src)
-    save(os.path.join(sdir, "moments.json"), {"url": url, "video": video, "moments": ms, "source": src, "test": test})
+    import laptop
+    try:
+        info = laptop.info(url, f"{cid} {base}")
+    except Exception as e:
+        log("clipper: no video info (", str(e)[:120], ")"); info = {}
+    ms, pk = find_moments(ch, url, n, info, src)
+    save(os.path.join(sdir, "moments.json"), {"url": url, "info": {k: v for k, v in info.items() if k != "heatmap"}, "peaks": pk,
+                                              "moments": ms, "source": src, "test": test})
     if not ms:
         raise RuntimeError("no moments found")
-    log("clipper: moments", [(round(m["a"]), round(m["b"]), m["hook"], m["score"]) for m in ms])
-    PAD = 4.0
-    import laptop
-    info, files = laptop.fetch(url, [(max(0, m["a"] - PAD), m["b"] + PAD) for m in ms], label=f"{cid} {base}")
-    save(os.path.join(sdir, "info.json"), info)
+    log("clipper: replay peaks", [(mmss(p["at"]), p["replay"]) for p in pk])
+    log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
+    out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4,
+                      "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"]} for m in ms]}, f"{cid} {base}", wait=3600)
     done_p = os.path.join(ROOT, "channels", cid, "done.json")
     made = []
-    for i, (m, f) in enumerate(zip(ms, files)):
-        if not f:
-            continue
+    who = info.get("channel") or info.get("uploader") or ""
+    for i, m in enumerate(ms):
+        cd = os.path.join(out, f"c{i}")
+        res = load(os.path.join(cd, "result.json"), {}) or {}
+        if res.get("error") or not os.path.exists(os.path.join(cd, "final.mp4")):
+            log("clipper: clip", i + 1, "failed on the laptop:", res.get("error", "no file")[:200]); continue
         jid = f"{base}-c{i + 1}"
         jd = os.path.join(OUT, cid, jid)
         os.makedirs(jd, exist_ok=True)
-        raw = os.path.join(jd, "source.mp4")
-        shutil.move(f, raw)
-        off = max(0, m["a"] - PAD)
-        try:
-            W_, lang = words(raw)
-        except Exception as e:
-            log("clipper: whisper failed", str(e)[:120]); W_, lang = [], None
-        a, b = trim(W_, m["a"] - off, m["b"] - off, PAD)
-        assf = os.path.join(jd, "captions.ass")
-        ass(assf, m["hook"], W_, a, b)
-        out = os.path.join(jd, f"{cid}-{jid}.mp4")
-        render(raw, a, b, assf, out)
-        q = probe(out)
-        q["lufs"] = lufs(out)
+        mp4 = os.path.join(jd, f"{cid}-{jid}.mp4")
+        shutil.move(os.path.join(cd, "final.mp4"), mp4)
+        for f in ("cover.jpg", "sheet.jpg", "clip.json", "captions.ass"):
+            if os.path.exists(os.path.join(cd, f)):
+                shutil.move(os.path.join(cd, f), os.path.join(jd, f))
+        q = res.get("format") or {}
         probs = []
-        if not (12 <= q["dur"] <= 62):
-            probs.append(f"length {q['dur']} s")
-        if (q["w"], q["h"]) != (W, H):
-            probs.append(f"size {q['w']}x{q['h']}")
-        if not q["audio"]:
+        if not (12 <= (q.get("dur") or 0) <= 60):
+            probs.append(f"length {q.get('dur')} s")
+        if (q.get("w"), q.get("h")) != (1080, 1920):
+            probs.append(f"size {q.get('w')}x{q.get('h')}")
+        if not q.get("audio"):
             probs.append("no audio")
-        if len(W_) < 15:
-            probs.append("almost no speech found (captions empty)")
-        sheet = os.path.join(jd, "sheet.jpg")
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out, "-vf", f"fps={6 / max(1, q['dur'])},scale=270:480,tile=6x1", "-frames:v", "1", sheet],
-                       timeout=120)
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "1.2", "-i", out, "-frames:v", "1", "-q:v", "2", os.path.join(jd, "cover.jpg")], timeout=60)
-        who = info.get("channel") or info.get("uploader") or video.get("speaker") or ""
-        credit = f"🎥 Credit: {who}" + (f" ({info.get('webpage_url') or url})" if not src or src.get("credit_link", True) else "")
-        req = (src or {}).get("caption_add") or ""
-        tags = list(dict.fromkeys([t for t in m["tags"] if t] + [t.lstrip("#") for t in (ch.get("hashtags_base") or [])]))[:6]
-        caption = "\n\n".join(x for x in [m["caption"], req, credit] if x)
-        plan = {"title": m["hook"], "topic": m["hook"], "caption": caption, "hashtags": ["#" + t for t in tags], "lang": lang or "",
-                "clip": {"url": url, "start": round(off + a, 2), "end": round(off + b, 2), "why": m["why"], "score": m["score"],
-                         "source": (src or {}).get("key"), "test": test, "video": video, "info": info},
+        if q.get("lufs") is not None and abs(q["lufs"] + 14) > 2:
+            probs.append(f"loudness {q['lufs']} LUFS")
+        if (res.get("words") or 0) < 12:
+            probs.append("almost no speech (captions nearly empty)")
+        v = vision(ch, jd, m["hook"], res.get("text", ""))
+        probs += [str(x)[:200] for x in v.get("problems") or []]
+        credit = f"🎥 Credit: {who}" + (f" ({info.get('webpage_url') or url})" if (not src or src.get("credit_link", True)) else "")
+        tags = list(dict.fromkeys([t for t in m["tags"] if t] + [t.lstrip("#") for t in (ch.get("hashtags_base") or [])]
+                                  + GENERIC_TAGS))[:12]
+        caption = "\n\n".join(x for x in [m["caption"], (src or {}).get("caption_add") or "", credit] if x)
+        start = round(res.get("offset", 0) + res["cut"][0], 2)
+        plan = {"title": m["hook"], "topic": m["hook"], "caption": caption, "hashtags": ["#" + t for t in tags], "lang": res.get("lang", ""),
+                "clip": {"url": url, "start": start, "end": round(res.get("offset", 0) + res["cut"][1], 2), "layout": res.get("layout"),
+                         "removed_s": res.get("removed_s"), "why": m["why"], "scores": m["scores"], "replayed": m["replayed"],
+                         "source": (src or {}).get("key"), "test": test, "creator": who},
                 "seo": {"ig": {"caption": caption, "hashtags": ["#" + t for t in tags]},
                         "fb": {"caption": caption, "hashtags": ["#" + t for t in tags]},
                         "yt": {"title": m["hook"][:90], "description": caption, "tags": tags}},
@@ -264,27 +213,27 @@ def make(cid, url, n=4, test=False, campaign=None):
         save(os.path.join(jd, "plan.json"), plan)
         save(os.path.join(jd, "qc.json"), {"format": q, "ok": not probs})
         rv = {"ok": not probs and not test, "problems": probs + (["TEST: no clipping permission for this source, never post"] if test else []),
-              "minor": [], "checks": {"format": q, "vision": {"score": None}}}
+              "minor": [str(x)[:200] for x in v.get("minor") or []],
+              "checks": {"format": q, "vision": {"score": v.get("score")}, "layout": res.get("layout")}}
         save(os.path.join(jd, "review.json"), rv)
         save(os.path.join(jd, "meta.json"), {"channel": cid, "job": jid, "topic": m["hook"], "stage": "done", "source_url": url,
                                              "kind": "clip", "test": test})
         done = load(done_p, []) or []
         if not any(d["job"] == jid for d in done):
             done.append({"job": jid, "topic": m["hook"], "title": m["hook"], "status": "held" if (probs or test) else "made",
-                         "review": rv["problems"][:4], "clip": {"url": url, "start": plan["clip"]["start"], "end": plan["clip"]["end"]}})
+                         "review": rv["problems"][:4], "clip": {"url": url, "start": start, "layout": res.get("layout")}})
             save(done_p, done)
         if probs:
             note_problem(cid, jid, probs, "clipper")
-        made.append((jid, q, probs))
-        log("clipper: made", jid, q, probs or "ok")
+        made.append((jid, q, probs, res.get("layout"), v.get("score")))
+        log("clipper: made", jid, res.get("layout"), q, "vision", v.get("score"), probs or "ok")
         if rv["ok"]:
             import send
             send.send(cid, jid)
+    shutil.rmtree(os.path.dirname(out), ignore_errors=True)
     if test and made:
-        telegram(f"✂️ {cid} TEST clips made from {url} (not for posting: no permission entry): " + ", ".join(j for j, _, _ in made))
-    for f in files:                                   # the laptop's download folder (parts already moved into the jobs)
-        if f:
-            shutil.rmtree(os.path.dirname(os.path.dirname(f)), ignore_errors=True); break
+        telegram(f"✂️ {cid} TEST clips from {url} (not for posting, no permission entry): "
+                 + ", ".join(f"{j} ({lay}, {sc}/10)" for j, _, _, lay, sc in made))
     return made
 
 
@@ -294,4 +243,4 @@ if __name__ == "__main__":
     ap.add_argument("--n", type=int, default=4); ap.add_argument("--test", action="store_true"); ap.add_argument("--campaign")
     a = ap.parse_args()
     r = make(a.cid, a.url, a.n, a.test, a.campaign)
-    print(json.dumps([{"job": j, "format": q, "problems": p} for j, q, p in r]))
+    print(json.dumps([{"job": j, "format": q, "problems": p, "layout": lay, "vision": sc} for j, q, p, lay, sc in r]))

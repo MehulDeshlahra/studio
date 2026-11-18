@@ -1,0 +1,359 @@
+"""The clip renderer (19 Nov, CutCapsule). Runs on the LAPTOP (tools/laptop_worker.py "clip" jobs): YouTube blocks the
+server and the laptop has 8 threads + a CUDA GPU. Pure ffmpeg / faster-whisper / OpenCV, no engine imports.
+Ideas taken from the best open tools (knowledge/clipping.md):
+  - cut on sentence boundaries, never mid-word (ClippyMe); remove pauses > 0.55 s inside the clip (auto-editor style)
+  - layout chosen from faces: one talking head -> full 9:16 face crop, held still within each shot (ClippyMe, AutoFrame);
+    a small face in a fixed corner over a game -> facecam on top + gameplay below (GTA stream clip layout);
+    otherwise blurred fill with the video full width
+  - hook banner from frame 1, word-by-word pop captions with the spoken word highlighted, below the mouth
+make_clip(src, a, b, hook, out_dir) -> dict with final.mp4, cover.jpg, sheet.jpg, words.json, layout, duration."""
+import json, os, re, subprocess, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FONTS = os.path.join(ROOT, "assets", "fonts")
+W, H = 1080, 1920
+NOWIN = 0x08000000 if os.name == "nt" else 0
+GAP = 0.55            # a pause longer than this inside a clip is cut out
+KEEP_PAD = 0.12       # silence kept on each side of a cut
+
+
+def run(cmd, timeout=1800):
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, creationflags=NOWIN)
+    if r.returncode:
+        raise RuntimeError(f"{os.path.basename(cmd[0])} failed: {r.stderr[-600:]}")
+    return r
+
+
+def probe(f):
+    r = run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type,width,height,r_frame_rate:format=duration", "-of", "json", f], 60)
+    j = json.loads(r.stdout or "{}")
+    v = next((s for s in j.get("streams", []) if s.get("codec_type") == "video"), {})
+    return {"dur": round(float((j.get("format") or {}).get("duration") or 0), 2), "w": v.get("width"), "h": v.get("height"),
+            "audio": any(s.get("codec_type") == "audio" for s in j.get("streams", []))}
+
+
+# ---------------- words ----------------
+_MODEL = [None]
+
+
+def words(mp4, lang=None):
+    """[(start, end, word)] + language. GPU (medium) when CUDA works, else CPU (small, int8)."""
+    import numpy as np
+    from faster_whisper import WhisperModel
+    wav = mp4 + ".wav"
+    run(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-ac", "1", "-ar", "16000", "-f", "wav", wav], 300)
+    import soundfile as sf
+    a, _ = sf.read(wav, dtype="float32")
+    os.remove(wav)
+    if a.ndim > 1:
+        a = a.mean(axis=1)
+    if _MODEL[0] is None:
+        for args in (("medium", "cuda", "int8_float16"), ("small", "cpu", "int8")):
+            try:
+                m = WhisperModel(args[0], device=args[1], compute_type=args[2])
+                list(m.transcribe(np.zeros(16000, dtype="float32"))[0])          # fails here when cuDNN is missing
+                _MODEL[0] = m; break
+            except Exception:
+                continue
+    segs, info = _MODEL[0].transcribe(a, language=lang, word_timestamps=True, beam_size=5, vad_filter=True,
+                                      condition_on_previous_text=False)
+    return [(float(w.start), float(w.end), w.word.strip()) for s in segs for w in (s.words or []) if w.word.strip()], info.language
+
+
+def trim(Wd, want_a, want_b):
+    """Start on a sentence start near the asked start (the hook line), end on a sentence end near the asked end."""
+    if not Wd:
+        return want_a, want_b
+    ends = {i for i, w in enumerate(Wd) if re.search(r"[.!?…]$", w[2])}
+    starts = [i for i in range(len(Wd)) if i == 0 or (i - 1) in ends or Wd[i][0] - Wd[i - 1][1] > 0.6]
+    a_c = [i for i in starts if want_a - 2.5 <= Wd[i][0] <= want_a + 3]
+    a_i = min(a_c, key=lambda i: abs(Wd[i][0] - want_a)) if a_c else next((i for i, w in enumerate(Wd) if w[0] >= want_a - 0.3), 0)
+    b_c = [i for i in ends if i > a_i and abs(Wd[i][1] - want_b) < 6]
+    b_i = min(b_c, key=lambda i: abs(Wd[i][1] - want_b)) if b_c else max((i for i, w in enumerate(Wd) if w[1] <= want_b + 1.5), default=len(Wd) - 1)
+    a, b = max(0.0, Wd[a_i][0] - 0.15), Wd[b_i][1] + 0.4
+    if b - a < 10:
+        return want_a, want_b
+    if b - a > 58.5:                                    # cap: under 60 s every platform treats it as a Short / Reel
+        b_i = max((i for i in ends if Wd[i][1] - a <= 58), default=None)
+        b = Wd[b_i][1] + 0.4 if b_i is not None else a + 58
+    return a, b
+
+
+def loudness(src):
+    """Audio level in dB per 50 ms (for 'is this gap really quiet?')."""
+    import numpy as np, soundfile as sf
+    wav = src + ".rms.wav"
+    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-ac", "1", "-ar", "16000", "-f", "wav", wav], 300)
+    a, sr = sf.read(wav, dtype="float32")
+    os.remove(wav)
+    if a.ndim > 1:
+        a = a.mean(axis=1)
+    hop = sr // 20
+    n = len(a) // hop
+    r = np.sqrt(np.mean(a[:n * hop].reshape(n, hop) ** 2, axis=1) + 1e-10)
+    return 20 * np.log10(r)
+
+
+def keep_ranges(Wd, a, b, db=None, max_cut=0.25):
+    """Speech ranges inside [a, b] with dead pauses removed. 19 Nov test: on a reaction video, cutting every gap between
+    words removed 16 of 27 s (the laughs, the crowbar, the reactions ARE the moment). A gap is cut only when the audio in
+    it is really quiet (18 dB under the clip's speech level), and at most 25% of the clip is removed."""
+    import numpy as np
+    ws = [w for w in Wd if w[1] > a and w[0] < b]
+    if not ws:
+        return [(a, b)]
+    quiet = None
+    if db is not None and len(db):
+        sp = [db[int(w[0] * 20):max(int(w[0] * 20) + 1, int(w[1] * 20))] for w in ws]
+        lvl = float(np.median(np.concatenate([x for x in sp if len(x)]))) if any(len(x) for x in sp) else -30
+        quiet = lvl - 18
+    gaps = []
+    for p, w in zip(ws, ws[1:]):
+        g = w[0] - p[1]
+        if g <= GAP:
+            continue
+        if quiet is not None:
+            seg = db[int((p[1] + KEEP_PAD) * 20):int((w[0] - KEEP_PAD) * 20)]
+            if len(seg) and float(np.percentile(seg, 90)) > quiet:
+                continue                                  # something is happening in this gap: keep it
+        gaps.append((g - 2 * KEEP_PAD, p, w))
+    budget = max_cut * (b - a)
+    chosen = set()
+    for g, p, w in sorted(gaps, key=lambda x: -x[0]):    # longest dead gaps first, within the budget
+        if g <= budget:
+            chosen.add((p, w)); budget -= g
+    out = [[a, ws[0][1]]]
+    for p, w in zip(ws, ws[1:]):
+        if (p, w) in chosen:
+            out[-1][1] = p[1] + KEEP_PAD
+            out.append([max(p[1] + KEEP_PAD, w[0] - KEEP_PAD), w[1]])
+        else:
+            out[-1][1] = w[1]
+    out[-1][1] = b
+    return [(round(x, 3), round(y, 3)) for x, y in out if y - x > 0.08]
+
+
+def remap(Wd, ranges):
+    """Word times on the tightened timeline."""
+    out, t0 = [], 0.0
+    for s, e in ranges:
+        for w in Wd:
+            if w[0] >= s - 0.02 and w[1] <= e + 0.05:
+                out.append((round(t0 + w[0] - s, 3), round(t0 + min(w[1], e) - s, 3), w[2]))
+        t0 += e - s
+    return out
+
+
+def tighten(src, ranges, out):
+    """One file of only the kept ranges (frame-accurate trim + concat), high quality for the next steps."""
+    parts, fc = [], []
+    for i, (s, e) in enumerate(ranges):
+        fc.append(f"[0:v]trim=start={s}:end={e},setpts=PTS-STARTPTS[v{i}];[0:a]atrim=start={s}:end={e},asetpts=PTS-STARTPTS,"
+                  f"afade=t=in:d=0.02,afade=t=out:st={max(0, e - s - 0.03):.3f}:d=0.03[a{i}]")
+        parts.append(f"[v{i}][a{i}]")
+    fc.append("".join(parts) + f"concat=n={len(ranges)}:v=1:a=1[v][a]")
+    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]",
+         "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-r", "30", "-c:a", "aac", "-b:a", "192k", out], 1800)
+    return out
+
+
+# ---------------- faces + layout ----------------
+YUNET = os.path.join(ROOT, "assets", "models", "face_detection_yunet_2023mar.onnx")
+YUNET_URL = "https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx"
+
+
+def _detector(w, h):
+    import cv2
+    if not os.path.exists(YUNET):
+        import urllib.request
+        os.makedirs(os.path.dirname(YUNET), exist_ok=True)
+        urllib.request.urlretrieve(YUNET_URL, YUNET)
+    d = cv2.FaceDetectorYN.create(YUNET, "", (w, h), 0.75, 0.3, 5000)
+    return d
+
+
+def analyse(mp4, fps=4):
+    """Faces sampled at 4 fps (640 px wide) + shot changes. Returns the layout and, per shot, where to aim."""
+    import cv2, numpy as np
+    cap = cv2.VideoCapture(mp4)
+    sw, sh = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    vfps = cap.get(cv2.CAP_PROP_FPS) or 30
+    step = max(1, int(round(vfps / fps)))
+    sc = 640 / max(1, sw)
+    dw, dh = 640, int(sh * sc)
+    det = _detector(dw, dh)
+    samples, prev, cuts, i = [], None, [0.0], 0
+    while True:
+        ok = cap.grab()
+        if not ok:
+            break
+        if i % step == 0:
+            ok, fr = cap.retrieve()
+            if not ok:
+                break
+            t = i / vfps
+            sm = cv2.resize(fr, (dw, dh))
+            hist = cv2.calcHist([cv2.cvtColor(sm, cv2.COLOR_BGR2HSV)], [0, 1], None, [32, 32], [0, 180, 0, 256])
+            cv2.normalize(hist, hist)
+            if prev is not None and cv2.compareHist(prev, hist, cv2.HISTCMP_BHATTACHARYYA) > 0.42 and t - cuts[-1] > 0.6:
+                cuts.append(round(t, 2))
+            prev = hist
+            _, f = det.detect(sm)
+            faces = [] if f is None else [(float(x[0] + x[2] / 2) / dw, float(x[1] + x[3] / 2) / dh, float(x[3]) / dh, float(x[14]))
+                                          for x in f if x[14] > 0.75]
+            samples.append((t, faces))
+        i += 1
+    cap.release()
+    dur = i / vfps
+    n = max(1, len(samples))
+    with_face = [s for s in samples if s[1]]
+    big = [max(s[1], key=lambda f: f[2]) for s in with_face]
+    share = len(with_face) / n
+    med_h = float(np.median([f[2] for f in big])) if big else 0
+    info = {"src": [sw, sh], "dur": round(dur, 2), "face_share": round(share, 2), "face_h": round(med_h, 3), "cuts": cuts}
+    # 19 Nov test (a reaction video): the face crop followed the skit's actors and cut the reactor's webcam box in half.
+    # A webcam overlay = a face that stays in one spot near an edge in most samples, whatever bigger faces come and go.
+    cam = None
+    allf = [(t, f) for t, fs in samples for f in fs]
+    for t0, f0 in allf:
+        near = {t for t, f in allf if abs(f[0] - f0[0]) < 0.04 and abs(f[1] - f0[1]) < 0.05 and abs(f[2] - f0[2]) < 0.06}
+        if len(near) / n >= 0.5 and f0[2] < 0.35 and (f0[0] < 0.33 or f0[0] > 0.67 or f0[1] < 0.3 or f0[1] > 0.7):
+            pts = [f for t, f in allf if abs(f[0] - f0[0]) < 0.04 and abs(f[1] - f0[1]) < 0.05]
+            cam = [round(float(np.median([p[i] for p in pts])), 3) for i in range(3)]
+            break
+    if cam:
+        layout = "stack"                                     # webcam on top, the game / video below
+        info["cam"] = cam
+    elif share >= 0.6 and med_h >= 0.16:
+        layout = "crop"                                      # a talking head fills the frame
+    else:
+        layout = "fill"
+    if layout == "crop":                                     # one aim per shot (median of that shot's biggest face)
+        shots = cuts + [dur]
+        aims = []
+        for s, e in zip(shots, shots[1:]):
+            fx = [max(f, key=lambda q: q[2])[0] for t, f in samples if s <= t < e and f]
+            aims.append([round(s, 2), round(float(np.median(fx)) if fx else (aims[-1][1] if aims else 0.5), 3)])
+        info["aims"] = aims
+    info["layout"] = layout
+    return info
+
+
+def _crop_x_expr(aims, sw, sh):
+    cw = int(sh * 9 / 16) // 2 * 2
+    xs = [max(0, min(sw - cw, int(a * sw - cw / 2))) for _, a in aims]
+    expr = str(xs[-1])
+    for (t, _), x in reversed(list(zip(aims[1:], xs[:-1]))):
+        expr = f"if(lt(t,{t}),{x},{expr})"
+    return cw, expr
+
+
+# ---------------- captions ----------------
+def _ts(t):
+    t = max(0.0, t)
+    return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
+
+
+def ass(path, hook, Wd, dur, layout, accent="&H0030D8FF&"):
+    """Hook banner (frame 1 to the end) + 3-word pop captions; the spoken word in the accent colour, a touch larger."""
+    esc = lambda s: str(s).replace("{", "(").replace("}", ")").replace("\\", "/").replace("\n", " ")
+    # 19 Nov frames: on the stack layout the hook sat on the reactor's eyes; it goes on the seam between the two panels,
+    # captions low on the gameplay (off the actors' faces)
+    hook_y = {"stack": 700, "crop": 300}.get(layout, 400)
+    cap_y = {"stack": 1560, "crop": 1450}.get(layout, 1450)
+    L = ["[Script Info]", "ScriptType: v4.00+", f"PlayResX: {W}", f"PlayResY: {H}", "WrapStyle: 0", "ScaledBorderAndShadow: yes", "",
+         "[V4+ Styles]",
+         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, "
+         "StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
+         "Style: Hook,Anton,84,&H00111111,&H00111111,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,1,0,3,22,0,5,80,80,0,1",
+         "Style: Cap,Montserrat Thin,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,8,4,5,60,60,0,1",
+         "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
+    if hook:
+        L.append(f"Dialogue: 2,{_ts(0)},{_ts(dur)},Hook,,0,0,0,,{{\\pos({W // 2},{hook_y})}}{esc(hook.upper())}")
+    groups, cur = [], []
+    for w in Wd:
+        cur.append(w)
+        if len(cur) == 3 or re.search(r"[.!?,…]$", w[2]):
+            groups.append(cur); cur = []
+    if cur:
+        groups.append(cur)
+    for gi, g in enumerate(groups):
+        g_end = groups[gi + 1][0][0] if gi + 1 < len(groups) else min(dur, g[-1][1] + 0.5)
+        for k, w in enumerate(g):
+            st, en = w[0], (g[k + 1][0] if k + 1 < len(g) else g_end)
+            if en - st < 0.03:
+                continue
+            pop = "\\fscx86\\fscy86\\t(0,90,\\fscx100\\fscy100)" if k == 0 else ""
+            txt = " ".join((f"{{\\c{accent}\\fscx112\\fscy112}}{esc(x[2]).upper()}{{\\c&H00FFFFFF&\\fscx100\\fscy100}}" if j == k
+                            else esc(x[2]).upper()) for j, x in enumerate(g))
+            L.append(f"Dialogue: 1,{_ts(st)},{_ts(en)},Cap,,0,0,0,,{{\\pos({W // 2},{cap_y}){pop}}}{txt}")
+    open(path, "w", encoding="utf-8").write("\n".join(L) + "\n")
+
+
+# ---------------- render ----------------
+def _ff(p):
+    return p.replace("\\", "/").replace(":", "\\:").replace("'", "\\'")
+
+
+def render(src, info, assf, out):
+    sw, sh = info["src"]
+    lay = info["layout"]
+    sub = f"ass='{_ff(assf)}':fontsdir='{_ff(FONTS)}'"
+    if lay == "crop":
+        cw, xe = _crop_x_expr(info["aims"], sw, sh)
+        vf = f"[0:v]crop={cw}:{sh}:'{xe}':0,scale={W}:{H}:flags=lanczos,{sub},format=yuv420p[v]"
+    elif lay == "stack":
+        fx, fy, fh = info["cam"]
+        bw, bh = int(fh * sh * 3.3), int(fh * sh * 3.3 * 700 / W)          # ~3.3 face heights wide (head + shoulders)
+        bw, bh = min(bw, sw) // 2 * 2, min(bh, sh) // 2 * 2
+        bx = max(0, min(sw - bw, int(fx * sw - bw / 2)))
+        by = max(0, min(sh - bh, int(fy * sh - bh * 0.42)))                  # face a little above the box centre
+        gw = int(sh * W / 1220) // 2 * 2                                      # gameplay: centre, 1080x1220 shape
+        gx = (sw - min(gw, sw)) // 2
+        vf = (f"[0:v]split=2[c][g];[c]crop={bw}:{bh}:{bx}:{by},scale={W}:700:flags=lanczos[cam];"
+              f"[g]crop={min(gw, sw)}:{sh}:{gx}:0,scale={W}:1220:flags=lanczos[game];"
+              f"[cam][game]vstack,{sub},format=yuv420p[v]")
+    else:
+        vf = (f"[0:v]split=2[bg][fg];[bg]scale=270:480:force_original_aspect_ratio=increase,crop=270:480,gblur=sigma=7,"
+              f"eq=brightness=-0.18:saturation=0.85,scale={W}:{H}:flags=bilinear[bgb];[fg]scale={W}:-2:flags=lanczos[fgs];"
+              f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2+40,{sub},format=yuv420p[v]")
+    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", vf, "-map", "[v]", "-map", "0:a?",
+         "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-r", "30",
+         "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-movflags", "+faststart", out], 2400)
+    return out
+
+
+def lufs(f):
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", f, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True,
+                       timeout=300, creationflags=NOWIN)
+    m = re.findall(r"I:\s+(-?[\d.]+) LUFS", r.stderr)
+    return float(m[-1]) if m else None
+
+
+def make_clip(src, a, b, hook, out_dir, lang=None):
+    """src = a downloaded window of the video; a, b = the asked moment inside it (seconds in src)."""
+    os.makedirs(out_dir, exist_ok=True)
+    Wd, lang = words(src, lang)
+    a2, b2 = trim(Wd, a, b)
+    ranges = keep_ranges(Wd, a2, b2, loudness(src))
+    tight = tighten(src, ranges, os.path.join(out_dir, "tight.mp4"))
+    Wt = remap(Wd, ranges)
+    info = analyse(tight)
+    assf = os.path.join(out_dir, "captions.ass")
+    ass(assf, hook, Wt, info["dur"], info["layout"])
+    final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"))
+    q = probe(final); q["lufs"] = lufs(final)
+    d = max(1.0, q["dur"])
+    run(["ffmpeg", "-v", "error", "-y", "-i", final, "-vf", f"fps={6 / d},scale=270:480,tile=6x1", "-frames:v", "1",
+         os.path.join(out_dir, "sheet.jpg")], 120)
+    run(["ffmpeg", "-v", "error", "-y", "-ss", "0.8", "-i", final, "-frames:v", "1", "-q:v", "2", os.path.join(out_dir, "cover.jpg")], 60)
+    os.remove(tight)
+    res = {"layout": info["layout"], "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]),
+           "cut": [round(a2, 2), round(b2, 2)], "kept": ranges, "removed_s": round((b2 - a2) - sum(e - s for s, e in ranges), 2),
+           "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt)}
+    json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w"), ensure_ascii=False)
+    return res
+
+
+if __name__ == "__main__":       # python engine/clipcore.py <src.mp4> <a> <b> "<hook>" <out_dir>
+    print(json.dumps(make_clip(sys.argv[1], float(sys.argv[2]), float(sys.argv[3]), sys.argv[4], sys.argv[5]), indent=1))

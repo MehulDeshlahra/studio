@@ -83,6 +83,51 @@ def render(rdir, out, total, label=""):
                 pass
 
 
+def job(spec, label="", wait=2400):
+    """Hand one job (spec["kind"] = info | clip) to the laptop and wait. Returns the folder with what it sent back."""
+    if not available():
+        raise RuntimeError("the laptop is off: clip jobs need it (YouTube blocks the server)")
+    for sub in ("queue", "claimed", "done"):
+        os.makedirs(os.path.join(D, sub), exist_ok=True)
+    jid = time.strftime("%m%d-%H%M%S") + "-" + spec["kind"][:1]
+    q = os.path.join(D, "queue", jid)
+    json.dump(dict(spec, id_=jid, label=label, t=time.time()), open(q + ".json.part", "w"))
+    os.replace(q + ".json.part", q + ".json")
+    t0 = time.time()
+    claimed = os.path.join(D, "claimed", jid + ".json")
+    done, err = os.path.join(D, "done", jid + ".tgz"), os.path.join(D, "done", jid + ".err")
+    try:
+        while time.time() - t0 < wait:
+            if os.path.exists(err):
+                raise RuntimeError(f"laptop {spec['kind']} failed: " + open(err, encoding="utf-8", errors="ignore").read()[-300:])
+            if os.path.exists(done):
+                break
+            if time.time() - t0 > CLAIM_WAIT * 2 and not os.path.exists(claimed) and os.path.exists(q + ".json"):
+                raise RuntimeError("the laptop did not pick the job up")
+            if os.path.exists(claimed) and status().get("age", 999) > 180:
+                raise RuntimeError("the laptop went away during the job")
+            time.sleep(4)
+        else:
+            raise RuntimeError(f"laptop {spec['kind']} too slow")
+        out = os.path.join(OUT, "laptop", "fetched", jid)
+        os.makedirs(out, exist_ok=True)
+        with tarfile.open(done) as t:
+            t.extractall(out, filter="data")
+        log(f"laptop: {spec['kind']} done in {time.time() - t0:.0f} s ({label})")
+        return os.path.join(out, "fetch")
+    finally:
+        for f in (q + ".json", claimed, err, done):
+            try:
+                os.remove(f)
+            except OSError:
+                pass
+
+
+def info(url, label=""):
+    d = job({"kind": "info", "url": url}, label, wait=300)
+    return json.load(open(os.path.join(d, "info.json")))
+
+
 def fetch(url, sections, label="", wait=1800):
     """19 Nov (CutCapsule): YouTube blocks this server, so the laptop downloads the asked parts of a video.
     sections = [(start_s, end_s), ...]. Returns (info dict, [local mp4 path or None per section]); raises when the laptop
