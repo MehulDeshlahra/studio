@@ -700,13 +700,23 @@ def state():
     st = {"auto_approve": False, "min_score": 9, **(jload(SETTINGS, {}) or {})}
     out = {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
             "schedule": sched, "issues": iss, "channels": chs, "budgets": budgets(), "activity": activity(), "settings": st,
-            "token_days": token_days, "render_median": render_median(), "quality": quality()}
+            "token_days": token_days, "render_median": render_median(), "quality": quality(), "offers": offers_list()}
     out["needs"] = extra.needs_you(out)
     _last.update(t=time.time(), s=out)
     return out
 
 
 _last = {"t": 0, "s": None}
+
+
+def offers_list():
+    """19 Nov: offer reels (engine/offers.py registry, counts kept by engine/dm.py), newest first."""
+    out = []
+    for cid, kws in (jload(os.path.join(OUT, "offers.json"), {}) or {}).items():
+        for kw, o in (kws or {}).items():
+            out.append({"cid": cid, "kw": kw, "gift": o.get("gift", ""), "url": o.get("url"), "job": o.get("job", ""),
+                        "made": o.get("made", ""), "stats": o.get("stats") or {}})
+    return sorted(out, key=lambda x: x["made"], reverse=True)[:40]
 
 
 def state_cache():

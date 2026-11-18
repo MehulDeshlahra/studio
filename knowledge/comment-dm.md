@@ -29,7 +29,23 @@ pages where it fits, not every reel. Set up the automation on Meta.
   delay, no follow check, set per post by the owner).
 - dm.py polls every 10 min (no webhook: dev-mode webhooks reach app roles only), so the link arrives in <= 10 min.
 
-## Plan (not built yet, waiting for the owner's go)
+## BUILT 19 Nov (owner: "go ahead")
+- engine/offers.py: channel.json "offers": {on, every 4, kinds}. ON for finance + tech (sheet), katha + jain (wallpaper
+  preferred, sheet only for a real vidhi/aarti). Raaz keeps its PART2 -> next part DM.
+  decide() after the plan: design call (script + the video's research web sources) -> code drops lines with numbers not in
+  script/sources -> separate check call drops unsupported lines and scores the gift; < 6/10 or "none" = normal reel (tech
+  wake-word video and a recap sheet were rightly refused). Adds a closing "Comment KEYWORD" scene before the goodbye.
+  build() after assets: sheet = HTML -> headless Chrome screenshot; wallpaper = video's own picture + handle; pushed to
+  studio-media offers/<page>/; registry ~/studio-out/offers.json. Caption line via seo.text_for.
+  Test: python engine/offers.py <cid> <job> (writes only /tmp).
+- dm.py: offer keyword comment -> IG private reply asking follow + DONE (gate keyed by the IGSID Meta returns) -> any reply
+  -> is_user_follow_business -> link, or "abhi follow nahi dikh raha" (max 3) -> fail open when Meta gives no answer.
+  Facebook comments get the link directly. Offer posts page through all comments (500/run). Public replies vary.
+  Cap 250 DMs/page/day. Mock test .tmp/gate_test.py (passes).
+- Dashboard Channels page: "Offer reels" table (comments, asked, links sent, new follows).
+- STILL UNPROVEN: Meta accepting DMs to strangers (see ACCESS above): first real comment from a non-team account.
+
+## Original plan
 1. Freebies made by the engine, free hosting (studio-media repo / GitHub Pages), one per offer reel, matching its topic:
    finance: checklist / calculator sheet / "documents to keep" PDF; tech: tools list, settings checklist, prompt pack;
    katha: HD deity wallpaper, aarti / vrat katha PDF, festival puja vidhi; raaz: the full story or next part early;

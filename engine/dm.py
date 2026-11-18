@@ -101,7 +101,7 @@ def _cfg(cid):
 # ---- offer reels + follow gate (19 Nov, knowledge/comment-dm.md) ----
 OFFERS = os.path.join(OUT, "offers.json")
 GATE_ASK = ("Hi{user}! 🎁 Aapka {gift} ready hai.\n\nLink sirf followers ko jaata hai:\n1) {handle} ko follow karo\n"
-            "2) Yahin reply mein DONE likho\n\nLink turant aa jayega 👇")
+            "2) Yahin reply mein DONE likho\n\nLink kuch hi minute mein aa jayega 👇")   # the poller runs every 10 min
 GATE_NOT_YET = "Abhi follow nahi dikh raha 🙂\n{profile} pe Follow dabao, phir yahan DONE likho."
 GATE_LINK = "Ye raha aapka {gift} 🎁\n{url}\n\nSave kar lo. Aise aur ke liye {handle} pe bane raho 🔔"
 GATE_SOON = "Aapka {gift} bas ban raha hai ⏳ 15-20 min mein phir DONE likho, link bhej dunga."

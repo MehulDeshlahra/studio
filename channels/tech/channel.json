@@ -94,5 +94,12 @@
     "one_a_day_until": "2026-11-27",
     "note": "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
   },
-  "youtube": "@kaise.tech.official"
+  "youtube": "@kaise.tech.official",
+  "offers": {
+    "on": true,
+    "every": 4,
+    "kinds": [
+      "sheet"
+    ]
+  }
 }

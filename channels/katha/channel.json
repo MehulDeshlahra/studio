@@ -79,5 +79,13 @@
   "handle": "@puraankikatha",
   "handle_instagram": "@puraankikatha",
   "tagline": "Puranon ki asli kathayein.",
-  "youtube": "@puraankikatha"
+  "youtube": "@puraankikatha",
+  "offers": {
+    "on": true,
+    "every": 4,
+    "kinds": [
+      "wallpaper",
+      "sheet"
+    ]
+  }
 }

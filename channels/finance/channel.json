@@ -103,5 +103,12 @@
     "#financeinhindi",
     "#moneytips"
   ],
-  "facts_strict": true
+  "facts_strict": true,
+  "offers": {
+    "on": true,
+    "every": 4,
+    "kinds": [
+      "sheet"
+    ]
+  }
 }

@@ -82,5 +82,13 @@
   "handle": "@navkarbhav",
   "handle_instagram": "@navkarbhav",
   "tagline": "Jain dharma ki kathayein, saral bhasha mein.",
-  "youtube": null
+  "youtube": null,
+  "offers": {
+    "on": true,
+    "every": 4,
+    "kinds": [
+      "wallpaper",
+      "sheet"
+    ]
+  }
 }
