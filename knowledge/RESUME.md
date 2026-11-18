@@ -137,3 +137,8 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - 1119-0005 property papers ₹5,000/day: fixed by hand (gold loan removed, circular 13 Sep 2023, one RBI logo), rebuilding from voice.
 - 1119-0028 jumped-deposit scam: building (queue #3; sources Sanchar Saathi + SBI 10 Oct 2026).
 - Engine fixes tonight: numbers check (sources only, blind recompute, two agreeing answers, script-only numbers), lab_fix (types + data, logo = card, after every repair), lab repair re-fetches pictures, visual director once per video, preflight: real logos ok + no bar/pill nitpicks, stat 'None', YouTube thumbnails blocked, lessons agent + rule book.
+
+- Dashboard (19 Nov): every channel shows its real DP (dashboard/app.js dp(), route /dp/<id>.jpg from ~/studio-out/dp, refreshed daily by brand.py avatars(): studio pages from the IG DP, business accounts via Instagram Business Discovery). Hardcoded "6 channels" replaced by the real count.
+- scrollhouse.in: docs/og.png link-preview card, canonical, favicon. Brand email: when Mehul makes hello@scrollhouse.in (task "brand-email" on the dashboard), write the address into ~/.studio-brand-email on the server: site, media kits and the Facebook page email pick it up on the next daily run.
+- YouTube channels list each other as featured channels ("More from Scroll House"), set by brand.py once every page's channel id is known (brand/state.json yt_id).
+- dm.py skips the FB "posts" edge (#10, needs Page Public Content Access); our posts are Reels, the video_reels edge works.
