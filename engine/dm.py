@@ -16,7 +16,7 @@ messages" must be ON in the app.
   python engine/dm.py [--dry] [--only <channel>]"""
 import datetime, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from core import OUT, log, load, save, channel
+from core import OUT, log, load, save, channel, telegram
 G = "https://graph.facebook.com/v23.0"
 STATE = os.path.join(OUT, "dm-state.json")
 DRY = "--dry" in sys.argv
@@ -165,6 +165,18 @@ def _text(cfg, acc, media, after_t):
         return cfg["text_next"].format(next=newer[0]["url"], handle=handle, profile=profile).strip()
     return cfg["text_wait"].format(handle=handle, profile=profile).strip()
 
+BLOCK_CODES = ("#368/", "#10/", "#100/33", "#613/", "spam", "blocked", "temporarily")
+
+def _blocked(st, cid, msg):
+    """Meta spam/action-block style errors: stop all DMs for 24 h and tell the owner once (never keep hammering a flagged page)."""
+    if any(b in msg for b in BLOCK_CODES):
+        st["block_until"] = time.time() + 24 * 3600
+        log("dm STOPPED 24 h", cid, msg[:120])
+        try:
+            telegram(f"⚠ Studio DM bot stopped for 24 h: Meta refused a DM on '{cid}' ({msg[:140]}). Nothing to do unless it repeats tomorrow.")
+        except Exception:
+            pass
+
 def _send(acc, sender_id, recipient, text):
     if DRY:
         log("dm DRY", sender_id, json.dumps(recipient), text[:90].replace("\n", " | ")); return
@@ -207,6 +219,7 @@ def comments_to_dm(cid, acc, cfg, st, budget, media_by):
                     time.sleep(2)
                 except RuntimeError as e:
                     log("dm send fail", cid, plat, c["id"], str(e)[:200])
+                    _blocked(st, cid, str(e))
                     if "#10900" in str(e) or "#551" in str(e) or "#100" in str(e):
                         continue                                    # this comment/person cannot be DMed; go on with the next one
     return sent
@@ -244,12 +257,13 @@ def inbox_keywords(cid, acc, cfg, st, budget, media_by):
                 time.sleep(2)
             except RuntimeError as e:
                 log("dm inbox send fail", cid, plat, str(e)[:200])
+                _blocked(st, cid, str(e))
     return sent
 
 def run():
     st = load(STATE, {}) or {}
     st.setdefault("done", {}); st.setdefault("day", {})
-    if time.time() < st.get("pause_until", 0) and not DRY:
+    if (time.time() < st.get("pause_until", 0) or time.time() < st.get("block_until", 0)) and not DRY:
         return
     today = time.strftime("%Y-%m-%d")
     adir = os.path.expanduser("~/.studio-accounts")
