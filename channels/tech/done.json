@@ -20,8 +20,7 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "owner agent: Regenerate voice audio ensuring full script is read properly without truncation.",
-   "only 0% of the script was found in the voice"
+   "before render, scene 7: CUT: Letters \"Base+Ne\" are physically clipped by the right edge of the card/box."
   ],
   "mehul_rebuilt": "2026-11-18"
  },

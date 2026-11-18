@@ -1,0 +1,208 @@
+{
+ "slug": "katha-mallikarjun-jyotirlinga",
+ "title": "Ganesha ki Buddhi aur Mallikarjun ki Kahani",
+ "hooks": [
+  "Kartikeya poori duniya ghoomne nikal gaye, par Ganesha ne bina hile race kaise jeet li?",
+  "Kya Maa-Baap ke charno mein poori duniya basi hai? Ganesha ne ye sach kar dikhaya.",
+  "Mallikarjun Jyotirlinga kaise bana? Iske peeche hai bhaiyon ki ek anokhi race."
+ ],
+ "hook_choice": 0,
+ "hook_why": "It creates immediate curiosity about the 'how' and uses a relatable competitive scenario between brothers.",
+ "metaphor": "Physical speed vs. spiritual wisdom.",
+ "cast": {
+  "Shiva": "Lord Shiva, calm divine face, meditative eyes, tiger skin attire, crescent moon in matted hair, warm gold aura, painterly style.",
+  "Parvati": "Goddess Parvati, graceful and serene, traditional maroon silk saree, ornate gold jewelry, divine glow, painterly style.",
+  "Ganesha": "Lord Ganesha, wise eyes, elephant head, yellow silk dhoti, calm posture, holding a modak, painterly style.",
+  "Kartikeya": "Lord Kartikeya, young athletic warrior, holding a golden spear, determined expression, traditional warrior attire, painterly style."
+ },
+ "scenes": [
+  {
+   "vo": "Kartikeya poori duniya ghoomne nikal gaye, par Ganesha ne bina hile race kaise jeet li?",
+   "type": "clip",
+   "prompt": "Cinematic split screen: Kartikeya flying fast on a peacock vs Ganesha standing calmly with a smile. Painterly style, vibrant divine colors.",
+   "motion": "pull",
+   "keywords": [
+    "Ganesha",
+    "Kartikeya"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mahadev aur Parvati Maa ne ek shart rakhi: jo prithvi ke chakkar pehle lagaega, wahi jeetega.",
+   "type": "image",
+   "prompt": "Shiva and Parvati sitting on a stone throne in Kailash, gesturing to their sons. Warm golden divine aura.",
+   "motion": "push",
+   "keywords": [
+    "Shiva",
+    "Parvati"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Kartikeya turant apne mayur par sawar hokar tezi se nikal pade.",
+   "type": "image",
+   "prompt": "Lord Kartikeya flying through swirling clouds on a magnificent peacock. Action shot, golden spear glowing.",
+   "motion": "punch",
+   "keywords": [
+    "Kartikeya",
+    "Mayur"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Lekin Ganesha ka vahan toh ek nanha sa mooshak tha. Woh itni door kaise jaate?",
+   "type": "image",
+   "prompt": "Close up of Ganesha looking thoughtful, with a small mouse looking up at him. Soft focus background.",
+   "motion": "pull",
+   "keywords": [
+    "Ganesha",
+    "Mooshak"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Tab Ganesha ne apni buddhi lagayi aur wahin baithe apne Mata-Pita ki parikrama shuru kar di.",
+   "type": "clip",
+   "prompt": "Ganesha walking respectfully in a circle around Shiva and Parvati. Golden light trails following his steps.",
+   "motion": "pan",
+   "keywords": [
+    "Parikrama",
+    "Mata-Pita"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Unhone kaha—Hamare shastra kehte hain ki Mata-Pita ke charno mein hi poori srishti basi hai.",
+   "type": "image",
+   "prompt": "A symbolic visual: as Ganesha bows, the ground under Shiva-Parvati shows a glowing map of the universe.",
+   "motion": "push",
+   "keywords": [
+    "Srishti",
+    "Universe"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Ganesha jeet gaye! Par jab Kartikeya laute, toh naraz hokar door Krauncha parvat par chale gaye.",
+   "type": "image",
+   "prompt": "Kartikeya standing alone on a misty, dark mountain peak, looking away. Moody atmosphere.",
+   "motion": "pull",
+   "keywords": [
+    "Kartikeya",
+    "Krauncha parvat"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Apne bete ko manane Mahadev 'Arjun' aur Mata 'Mallika' ke roop mein wahan pahunche.",
+   "type": "image",
+   "prompt": "Shiva and Parvati appearing on the mountain in glowing, humble forms. Soft divine light illuminating the rocks.",
+   "motion": "push",
+   "keywords": [
+    "Mallika",
+    "Arjun"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Isi wajah se is pavitra sthan ka naam pada—Mallikarjun Jyotirlinga.",
+   "type": "image",
+   "prompt": "The glowing Jyotirlinga inside a temple sanctum, decorated with flowers and lamps. Divine atmosphere.",
+   "motion": "pull",
+   "keywords": [
+    "Jyotirlinga",
+    "Temple"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Ye mandir Andhra Pradesh ke Srisailam mein hai, jahan aaj bhi bhakt umadte hain.",
+   "type": "image",
+   "prompt": "Wide shot of the majestic Mallikarjun Temple at Srisailam during sunset. Real photo style.",
+   "motion": "pan",
+   "real": {
+    "q": "Mallikarjun Jyotirlinga Temple Srisailam aerial view",
+    "kind": "photo",
+    "subject": "Mallikarjun Temple"
+   },
+   "keywords": [
+    "Srisailam",
+    "Andhra Pradesh"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Kya aapne kabhi Mallikarjun ke darshan kiye hain? Comment mein 'Har Har Mahadev' likhiye.",
+   "type": "card",
+   "prompt": "Ornate maroon background with golden borders. No text in image.",
+   "motion": "pull",
+   "big": "DARSHAN KIYE HAIN?",
+   "small": "Comment mein bataiye",
+   "keywords": [
+    "Mahadev",
+    "Comment"
+   ],
+   "title": ""
+  }
+ ],
+ "music_mood": "devotional_epic",
+ "caption": "Ganesha ki buddhi ya Kartikeya ki raftar? 🙏\n\nJaaniye Mallikarjun Jyotirlinga ki ye adbhut katha jahan Ganesha ne bataya ki Mata-Pita hi asli duniya hain.\n\nKya aapne kabhi Srisailam ke darshan kiye hain? \n\n#Mallikarjun #Jyotirlinga #Mahadev #Ganesha #Srisailam #PuranKatha",
+ "hashtags": [
+  "#Mallikarjun",
+  "#Jyotirlinga",
+  "#Mahadev",
+  "#Ganesha",
+  "#Srisailam",
+  "#PuranKatha"
+ ],
+ "claims": [
+  {
+   "claim": "Mallikarjun is one of the 12 Jyotirlingas.",
+   "basis": "Shiva Purana and established Hindu tradition."
+  },
+  {
+   "claim": "The story involves a race between Ganesha and Kartikeya.",
+   "basis": "Shiva Purana, Kotirudra Samhita."
+  },
+  {
+   "claim": "The temple is located in Srisailam, Andhra Pradesh.",
+   "basis": "Geographical fact."
+  }
+ ],
+ "brain_ids": [
+  "e15cfaed29",
+  "9db4cc694f",
+  "0adc696a75",
+  "97e1b2fcbb",
+  "13a94bf865",
+  "a688e48ca2",
+  "82055e32f5",
+  "1ad22ef225",
+  "7a67022fb6",
+  "d7b38f2237",
+  "ef573ce014",
+  "3cec28c3e9",
+  "4204a43442",
+  "1662db247e"
+ ]
+}

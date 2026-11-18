@@ -21,7 +21,9 @@
     "nahi deta"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "type": "title",
@@ -33,7 +35,8 @@
     "bante kaise"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "small": null
   },
   {
    "type": "object",
@@ -45,28 +48,31 @@
     "super-sized"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "type": "flow",
    "nodes": [
-    "Aapka Prompt",
+    "Prompt",
     "Tokens",
-    "Probability",
     "Agla Shabd"
    ],
-   "label": "STEP 1: TOKENS",
+   "label": "STEP 1: Tokens",
    "vo": "Aapka sawaal aate hi yeh use chhote tukdon yani tokens mein todta hai.",
    "keywords": [
     "tokens",
     "todta hai"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "type": "ui",
-   "title": "AGLE SHABD KA CHANCE",
+   "title": "AGLE SHABD CHANCE",
    "rows": [
     {
      "label": "Bharat",
@@ -90,7 +96,9 @@
     "sabse sahi",
     "calculate"
    ],
-   "motion": "push"
+   "motion": "push",
+   "big": null,
+   "small": null
   },
   {
    "type": "stat",
@@ -103,19 +111,21 @@
     "agla tukda"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "type": "compare",
    "items": [
     {
-     "label": "Pichla Text",
-     "value": "Input Prompt",
+     "label": "Pichla",
+     "value": "Base",
      "pct": 40
     },
     {
-     "label": "Naya Loop",
-     "value": "Prompt + Naya Token",
+     "label": "Naya",
+     "value": "Base+New",
      "pct": 100
     }
    ],
@@ -126,7 +136,9 @@
     "sentence"
    ],
    "motion": "push",
-   "title": ""
+   "title": "LOOP PROCESS",
+   "big": null,
+   "small": null
   },
   {
    "type": "object",
@@ -138,7 +150,9 @@
     "predict"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "type": "object",
@@ -150,7 +164,9 @@
     "live typing"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "type": "object",
@@ -162,7 +178,9 @@
     "guesser"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "type": "title",
@@ -174,10 +192,11 @@
     "galat jawab"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "small": null
   }
  ],
- "caption": "ChatGPT sochta nahi, bas predict karta hai! Agla shabd chunne ka ye math jaankar dimaag hil jaayega. Kya aapke saath kabhi ChatGPT ne galat jawab diya hai?",
+ "caption": "ChatGPT sochta nahi, bas predict karta hai! Agla shabd chunne ka ye math jaankar dimaag hil jaayega. Kya aapke saath kabhi ChatGPT ne galat jawab diya hai?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#techexplained",
   "#chatgpt",
@@ -199,5 +218,6 @@
    "claim": "The next token is chosen using calculated probability distributions over vocabulary",
    "basis": "Softmax distribution over token logits used in standard LLM inference."
   }
- ]
+ ],
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
