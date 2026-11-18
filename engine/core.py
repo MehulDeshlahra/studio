@@ -85,6 +85,19 @@ def save(path, data, force=()):
     os.replace(tmp, path)
 
 
+def pages():
+    """Every Studio page = a folder in channels/ with a channel.json whose status is not 'off' (18 Nov: the 3 pages were
+    hard-coded in 15 files; a new page now only needs its channels/<id>/ folder). Original pages first, then by name."""
+    first = ["tech", "katha", "raaz"]
+    out = []
+    d = os.path.join(ROOT, "channels")
+    for cid in sorted(os.listdir(d)) if os.path.isdir(d) else []:
+        c = load(os.path.join(d, cid, "channel.json"))
+        if isinstance(c, dict) and c.get("status") != "off":
+            out.append(cid)
+    return tuple(sorted(out, key=lambda x: (first.index(x) if x in first else 9, x)))
+
+
 def channel(cid):
     c = load(os.path.join(ROOT, "channels", cid, "channel.json"))
     if not c:

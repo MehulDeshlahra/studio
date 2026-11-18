@@ -5,6 +5,7 @@ brain.jsonl and the dashboard's own needs-you list. No LLM: plain facts, so it n
 import json, os, re, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, log, load, telegram
+from core import pages as _pages
 
 WEEK = 7 * 86400
 
@@ -69,7 +70,7 @@ def build():
     out.append(f"   Gemini keys: today {calls} calls, out of quota today: {sum(1 for v in (kj.get('keys') or {}).values() if v.get('out'))} of {len(kj.get('keys') or {})}")
     # ---- needs the owner
     needs = []
-    for cid in ("tech", "katha", "raaz"):
+    for cid in _pages():
         acc = load(os.path.expanduser(f"~/.studio-accounts/{cid}.json"), {}) or {}
         if not acc.get("yt"):
             needs.append(f"YouTube login for {cid}: on the laptop run  python tools/yt_login.py {cid}  (20 s)")

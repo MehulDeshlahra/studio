@@ -29,6 +29,22 @@ FORMS = {
     "Ganga": (r"\bganga\b|gangaji|ganga maa", "goddess in white, seated on a makara (crocodile-like creature), flowing water"),
     "Narad": (r"narad|narada", "sage in white or saffron with a veena (tanpura), a tuft of hair, walks on clouds"),
     "Kuber": (r"kuber|kubera", "plump god of wealth with gold jewellery, a money pot, sometimes a mongoose"),
+    # 18 Nov, Navkar Bhav (Jain page). Patterns never match the Hindu 'Mahavir' (a name of Hanuman) on its own.
+    "Mahavir Swami": (r"mahavir swami|mahaveer swami|bhagwan mahavir|bhagwan mahaveer|vardhaman|tirthankar mahavir|mahavira\b",
+                      "the 24th Tirthankara: serene meditating figure, seated padmasana or standing kayotsarga, eyes half closed, "
+                      "calm face, curled hair, shrivatsa mark on the chest, lion emblem below; no weapons, no crown; often a "
+                      "temple idol in white marble or gold"),
+    "Rishabhdev": (r"rishabh ?dev|rishabhanatha|adinath|adinatha|aadinath", "the 1st Tirthankara: serene meditating figure with "
+                   "locks of hair on the shoulders, bull emblem below, calm face, no weapons"),
+    "Parshvanath": (r"parshvanath|parshwanath|parasnath|parshva\b", "the 23rd Tirthankara: serene meditating figure sheltered by "
+                    "a seven-hooded serpent canopy over the head, calm face, no weapons"),
+    "Neminath": (r"neminath|nemi ?nath|arishtanemi", "the 22nd Tirthankara: serene meditating figure, conch emblem below, dark "
+                 "complexion, calm face"),
+    "Bahubali": (r"bahubali|gommateshwara|gomateshwara", "a tall standing figure in kayotsarga meditation, creepers growing up "
+                 "the arms and legs, anthills at the feet, perfectly calm (like the Shravanabelagola statue)"),
+    "Jain monk": (r"\bmuni\b|sadhvi|jain monk|acharya|maharaj saheb|digambar|shwetambar|svetambar",
+                  "Jain monk or nun in plain white robes with a rajoharan (soft whisk broom) and a mouth cloth (muhpatti), "
+                  "calm and simple, no jewellery"),
 }
 # 18 Nov: the checkers held Kartikeya for "five faces instead of six" twice; in a turned head some faces are hidden.
 NO_COUNT = (" Never count faces, heads or arms (in a painting at an angle some are hidden): report a deity only for a clearly "

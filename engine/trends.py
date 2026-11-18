@@ -24,6 +24,10 @@ PAGE = {
               ("reddit r/hinduism", "https://www.reddit.com/r/hinduism/top/.rss?t=week")],
     "raaz": [("news: mystery", GN + "mystery+unsolved+strange+india+when:7d"), ("news: history", GN + "history+secret+discovered+when:7d"),
              ("reddit r/UnresolvedMysteries", "https://www.reddit.com/r/UnresolvedMysteries/top/.rss?t=week")],
+    "jain": [("news: jain", GN + "jain+tirthankar+mahavir+paryushan+when:7d"), ("reddit r/Jainism", "https://www.reddit.com/r/Jainism/top/.rss?t=week")],
+    "finance": [("news: money", GN + "RBI+SEBI+income+tax+bank+loan+india+when:2d"), ("news: personal finance", GN + "personal+finance+savings+UPI+credit+card+india+when:2d"),
+             ("reddit r/IndiaInvestments", "https://www.reddit.com/r/IndiaInvestments/top/.rss?t=day"),
+             ("reddit r/personalfinanceindia", "https://www.reddit.com/r/personalfinanceindia/top/.rss?t=day")],
 }
 FIT = """You pick TRENDING topics for the faceless Shorts page "{name}" (format: {fmt}). Audience: Hindi-speaking India, 16-35.
 Today's headlines and trending searches (India):

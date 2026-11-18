@@ -15,10 +15,11 @@ Never touches posted, approved, waiting or held videos' files, prepped jobs, or 
 import json, os, re, shutil, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, log, load, save
+from core import pages as _pages
 
 DRY = "--dry" in sys.argv
 NOW = "--now" in sys.argv
-PAGES = ("tech", "katha", "raaz")
+PAGES = _pages()
 KEEP = re.compile(r"\.(json|md|txt)$|^cover-s\.jpg$")
 report = []
 

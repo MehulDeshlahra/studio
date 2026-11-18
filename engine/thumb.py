@@ -28,6 +28,10 @@ STYLE = {   # per page: fonts, colours, grade and layout name
               "kicker": "PURAAN KI KATHA", "grade": "contrast(1.12) saturate(1.2) sepia(.12)"},
     "raaz": {"layout": "noir", "font": "'Anton',sans-serif", "acc": "#ffd400", "acc2": "#e63946", "ink": "#0a0a0a",
              "kicker": "AAGE SUNO", "grade": "contrast(1.15) saturate(.85)"},
+    "jain": {"layout": "myth", "font": "'Cinzel',serif", "acc": "#f2c14e", "acc2": "#e8571a", "ink": "#1a0d00",
+             "kicker": "NAVKAR BHAV", "grade": "contrast(1.1) saturate(1.15) sepia(.1)"},
+    "finance": {"layout": "lab", "font": "'Montserrat',sans-serif", "acc": "#33d17a", "acc2": "#f5c542", "ink": "#0b0d12",
+             "kicker": "FINANCE FUEL", "grade": "contrast(1.08) saturate(1.1)"},
 }
 
 HOOKS = """Write cover lines (thumbnail text) for this vertical short video. The cover is what makes someone stop scrolling and tap.

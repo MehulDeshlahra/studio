@@ -14,6 +14,13 @@ import extra
 
 HOME = os.path.expanduser("~")
 ROOT = os.path.join(HOME, "studio")
+
+def _pages():
+    """Studio pages from channels/ (18 Nov: was hard-coded)."""
+    sys.path.insert(0, os.path.join(ROOT, "engine"))
+    import core
+    return core.pages()
+
 OUT = os.path.join(HOME, "studio-out")
 APP = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(OUT, "engine.log")
@@ -26,13 +33,17 @@ G = "https://graph.facebook.com/v23.0"
 TTS_CAP = os.environ.get("STUDIO_TTS_CAP"); REELS_CAP = os.environ.get("STUDIO_REELS_CAP")
 TTS_CAP = int(TTS_CAP) if TTS_CAP else "no cap"; REELS_CAP = int(REELS_CAP) if REELS_CAP else "no cap"
 
-CHANNELS = [  # the 6 channels on the dashboard (owner, 17 Nov)
+CHANNELS = [  # channels on the dashboard (owner 17 Nov; Navkar Bhav, Finance Fuel, Getmeflat, Fibbi added 18 Nov)
     {"id": "tech", "name": "Kaise Tech", "group": "Studio", "color": "#facc15", "page": "1474228909103892", "ig": "kaise.tech", "yt": "@kaise.tech.official"},
     {"id": "katha", "name": "Puraan Ki Katha", "group": "Studio", "color": "#fb923c", "page": "1453056947892202", "ig": "puraankikatha", "yt": "@puraankikatha"},
     {"id": "raaz", "name": "Aage Suno", "group": "Studio", "color": "#a78bfa", "page": "1501633449691931", "ig": "aagesuno", "yt": "@aagesuno"},
+    {"id": "jain", "name": "Navkar Bhav", "group": "Studio", "color": "#f2c14e", "page": "1498175213370788", "ig": "navkarbhav", "yt": None},
+    {"id": "finance", "name": "Finance Fuel", "group": "Studio", "color": "#84cc16", "page": "1445486545315323", "ig": "finance.fuel", "yt": None},
     {"id": "vajra", "name": "Vajra Formwork", "group": "Business", "color": "#34d399", "page": "1296793536861294", "ig": "vajraformwork", "yt": "channel/UCLl1cgbkcTjv5188ZIeAIlQ"},
     {"id": "planstalk", "name": "Planstalk", "group": "Business", "color": "#38bdf8", "page": None, "ig": "planstalkindia", "yt": None},
     {"id": "marginmart", "name": "MarginMart", "group": "Business", "color": "#f472b6", "page": None, "ig": "marginmartofficial", "yt": None},
+    {"id": "getmeflat", "name": "Getmeflat", "group": "Business", "color": "#f97316", "page": None, "ig": "getmeflat", "yt": None},
+    {"id": "fibbi", "name": "Fibbi", "group": "Business", "color": "#e11d48", "page": None, "ig": "fibbi.club", "yt": None},
 ]
 STAGES = [("research", "Research", "research.json"), ("plan", "Script", "plan.json"), ("voice", "Voice", "vo-raw.wav"),
           ("pace", "Pace", "vo-paced.wav"), ("align", "Captions", "timing.json"), ("images", "Visuals", "assets.json"),
@@ -290,7 +301,7 @@ def jobs(running):
             k = (p["cid"], p["job"])
             if k not in act or r["age"] < act[k]["age"]:        # the newest process is the one doing the work (a re-voice child)
                 act[k] = {"started": time.time() - r["age"], "frm": p.get("frm"), "until": p.get("until"), "age": r["age"]}
-        elif p and p.get("script") == "make.py" and p.get("cid") in ("tech", "katha", "raaz"):
+        elif p and p.get("script") == "make.py" and p.get("cid") in _pages():
             base = os.path.join(OUT, p["cid"])                    # new video without --job: its folder is the newest one made after start
             t0 = time.time() - r["age"]
             ds = [d for d in (os.listdir(base) if os.path.isdir(base) else []) if os.path.getmtime(os.path.join(base, d)) >= t0 - 30]
@@ -298,7 +309,7 @@ def jobs(running):
                 d = max(ds, key=lambda d: os.path.getmtime(os.path.join(base, d)))
                 act[(p["cid"], d)] = {"started": t0, "frm": None, "until": p.get("until"), "age": r["age"]}
     sent = tgmap(); out = []
-    for c in ("tech", "katha", "raaz"):
+    for c in _pages():
         done = {d["job"]: d for d in (jload(os.path.join(ROOT, "channels", c, "done.json"), []) or [])}
         base = os.path.join(OUT, c)
         if not os.path.isdir(base):
@@ -504,7 +515,7 @@ def job_channel(msg):
     """Log lines that only name a job (preflight 1117-0145 ...) get that job's page."""
     if time.time() - _jc["t"] > 60:
         m = []
-        for c in ("tech", "katha", "raaz"):
+        for c in _pages():
             base = os.path.join(OUT, c)
             if os.path.isdir(base):
                 m += [(j, c) for j in os.listdir(base)]
@@ -756,7 +767,7 @@ def decide(cid, job, action, note=""):
 
 
 def make_now(cid, topic=""):
-    if cid not in ("tech", "katha", "raaz"):
+    if cid not in _pages():
         raise ValueError("unknown channel")
     unit = f"studio-job-dash-{int(time.time())}"
     cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M", "-p", "Nice=15", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}",

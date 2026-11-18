@@ -35,6 +35,12 @@ DEFAULT = {
     "tech": {"keywords": ["TECH", "LINK", "PART2", "PART 2"], "cta": "Comment karo \"TECH\", agla explainer seedha DM mein 📩",
              "text_next": "Ye raha agla explainer 👇\n{next}\n\nAise aur ke liye follow karo {handle}",
              "text_wait": "Agla explainer jaldi aa raha hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
+    "jain": {"keywords": ["AAGE", "KATHA", "JAI JINENDRA"], "cta": "Comment karo \"AAGE\", agli katha seedha DM mein 📩",
+             "text_next": "Ye rahi agli katha 👇\n{next}\n\nRoz ek Jain katha ke liye follow karo {handle}",
+             "text_wait": "Agli katha jaldi aa rahi hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
+    "finance": {"keywords": ["PAISA", "MONEY", "LINK"], "cta": "Comment karo \"PAISA\", agla money explainer seedha DM mein 📩",
+             "text_next": "Ye raha agla money explainer 👇\n{next}\n\nAise aur ke liye follow karo {handle}",
+             "text_wait": "Agla explainer jaldi aa raha hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
 }
 
 def cta(cid):

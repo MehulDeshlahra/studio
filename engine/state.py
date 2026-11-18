@@ -5,6 +5,7 @@ A new Kiro session reads THIS first; RESUME.md keeps only decisions and history.
 import glob, json, os, re, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, load
+from core import pages as _pages
 
 PATH = os.path.join(ROOT, "knowledge", "STATE.md")
 
@@ -40,7 +41,7 @@ def write():
     L.append("")
     # videos
     L.append("## Videos (channels/*/done.json)")
-    for cid in ("tech", "katha", "raaz"):
+    for cid in _pages():
         done = load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
         c = {}
         for d in done:

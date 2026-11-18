@@ -4,6 +4,13 @@ api.py, and compare with /api/state. Exit 1 and print the mismatches. Run after 
 import glob, json, os, re, subprocess, sys, time, urllib.request
 
 HOME = os.path.expanduser("~"); ROOT = os.path.join(HOME, "studio"); OUT = os.path.join(HOME, "studio-out")
+
+def _pages():
+    """Studio pages from channels/ (18 Nov: was hard-coded)."""
+    sys.path.insert(0, os.path.join(ROOT, "engine"))
+    import core
+    return core.pages()
+
 S = json.load(urllib.request.urlopen("http://127.0.0.1:4788/api/state", timeout=90))
 bad, ok = [], 0
 
@@ -24,7 +31,7 @@ def jl(p, d=None):
 
 
 # 1 runs: one per job folder of the 3 studio pages
-folders = [(c, j) for c in ("tech", "katha", "raaz") for j in os.listdir(os.path.join(OUT, c)) if os.path.isdir(os.path.join(OUT, c, j)) and os.path.exists(os.path.join(OUT, c, j, "plan.json"))]
+folders = [(c, j) for c in _pages() for j in os.listdir(os.path.join(OUT, c)) if os.path.isdir(os.path.join(OUT, c, j)) and os.path.exists(os.path.join(OUT, c, j, "plan.json"))]
 shown = {(j["cid"], j["job"]) for j in S["jobs"]}
 check("runs: videos with a plan", len(shown), len(folders))
 for k in set(folders) - shown:

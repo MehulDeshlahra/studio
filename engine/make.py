@@ -133,7 +133,11 @@ BRANDS = ["ChatGPT", "OpenAI", "Gemini", "Google", "YouTube", "Android", "Chrome
           "Spotify", "Telegram", "Snapchat", "Twitter", "LinkedIn", "Uber", "Ola", "Rapido", "Zomato", "Swiggy", "Blinkit", "Zepto",
           "Paytm", "PhonePe", "UPI", "BHIM", "Jio", "Airtel", "BSNL", "Tesla", "Nvidia", "Intel", "Qualcomm", "Snapdragon",
           "MediaTek", "Bluetooth", "Wi-Fi", "USB", "Aadhaar", "DigiLocker", "IRCTC", "Starlink", "ISRO", "NASA", "SpaceX", "Hotstar",
-          "JioCinema", "Truecaller", "Canva", "Perplexity", "DeepSeek", "Grok", "Midjourney"]
+          "JioCinema", "Truecaller", "Canva", "Perplexity", "DeepSeek", "Grok", "Midjourney",
+          # 18 Nov: Finance Fuel (money explainers) - banks, regulators, brokers, payment and credit brands
+          "RBI", "SEBI", "NPCI", "SBI", "HDFC Bank", "ICICI Bank", "Axis Bank", "Kotak", "LIC", "Zerodha", "Groww", "Upstox",
+          "Angel One", "CRED", "CIBIL", "NSE", "BSE", "Sensex", "Nifty", "Bajaj Finance", "Paytm Money", "Jupiter", "Fi Money",
+          "Income Tax", "GST", "EPFO", "PPF", "Visa", "Mastercard", "RuPay", "Bitcoin", "Navi", "Slice", "Policybazaar"]
 
 
 def _real_brands(ch, p):
@@ -180,7 +184,7 @@ def _real_brands(ch, p):
     return changed
 
 
-DIRECTOR = """You are the art director of a Hindi tech-explainer Reels page (vertical, about 10 scenes, a full-frame picture
+DIRECTOR = """You are the art director of the Hindi explainer Reels page {page} (vertical, about 10 scenes, a full-frame picture
 behind every scene). Decide for each scene whether its picture should be REAL and which kind, so the reel feels real and
 relatable (like the viewer's own phone) without stamping a logo on every line.
 RULES LEARNT FROM THE TOP TECH REELS ON INSTAGRAM:
@@ -229,7 +233,7 @@ def _pick_skin(ch, p):
     r = {}
     try:
         r = _quick_ask(
-            "You are the creative director of a Hindi tech-explainer Reels page. Choose a LOOK for EACH scene, like a film "
+            f"You are the creative director of the Hindi explainer Reels page {ch.get('name', ch['id'])}. Choose a LOOK for EACH scene, like a film "
             "editor who changes the visual world when the story changes (the real world -> inside the machine -> the smart "
             "part -> back to the real world).\nLooks:\n" + menu + "\n"
             f"Topic: {p.get('title') or p.get('topic')}\nSCENES (n | type | real picture? | spoken line):\n{rows}\n"
@@ -334,11 +338,11 @@ def _visual_director(ch, p, film):
     """One planner call: which scenes get a real logo / app screen / product photo. Writes scene["real"]. True if any."""
     try:
         import plan as planner
-        rules = read(os.path.join(ROOT, "channels", ch["id"], "visual-rules.md"), 3500) or \
+        rules = read(os.path.join(ROOT, "channels", ch["id"], "visual-rules.md"), 3500) or read(os.path.join(ROOT, "channels", "tech", "visual-rules.md"), 3500) or \
             "- a brand's official logo once, at its first mention or the reveal; the real app screen when the line shows what the app does"
         sc = "\n".join(f"{i + 1} | {s.get('type')} | {s.get('vo', '')} | {s.get('label') or s.get('title') or ''}"
                        for i, s in enumerate(p.get("scenes", [])))
-        r = _quick_ask(DIRECTOR.format(rules=rules, scenes=sc), 2000)
+        r = _quick_ask(DIRECTOR.format(rules=rules, scenes=sc, page=ch.get("name", ch["id"])), 2000)
     except Exception as e:
         log("visual director failed:", str(e)[:120]); return False
     did = 0

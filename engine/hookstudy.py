@@ -11,6 +11,7 @@ Our own posted reels join the comparison automatically once stats.py has numbers
 import json, os, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, load, save, log
+from core import pages as _pages
 import llm, research
 
 QUERIES = {
@@ -20,11 +21,16 @@ QUERIES = {
               "hindu mythology facts hindi shorts", "shiv ji ki katha shorts"],
     "raaz": ["real crime story hindi shorts", "rahasya kahani shorts hindi", "mystery story hindi shorts",
              "sachi ghatna hindi shorts", "detective story hindi shorts", "horror kahani hindi shorts", "crime story animated hindi shorts"],
+    "jain": ["jain katha shorts", "mahavir swami katha shorts", "jain dharma facts hindi shorts", "navkar mantra shorts", "tirthankar katha hindi shorts"],
+    "finance": ["personal finance hindi shorts", "paisa kaise bachaye shorts", "sip kya hai shorts", "credit score hindi shorts", "income tax hindi shorts", "money tips hindi shorts"],
 }
 
 NICHE = {"tech": "an explainer or fact video about technology, science or how everyday things work (phones, internet, apps, AI, gadgets, machines)",
          "katha": "a Hindu mythology / puranic story or explanation told in Hindi (gods, epics, temples, legends)",
-         "raaz": "a narrated story or case about crime, mystery, horror, suspense or strange real events (not a movie scene, not a vlog)"}
+         "raaz": "a narrated story or case about crime, mystery, horror, suspense or strange real events (not a movie scene, not a vlog)",
+    "jain": "a Jain dharma story or explanation told in Hindi (Tirthankaras, Mahavir Swami, Jain saints and kings, Jain festivals, ahimsa, Jain philosophy)",
+    "finance": "a personal-finance or money explainer for Indians (saving, investing basics, loans, credit cards, tax, UPI, banking, scams); not stock tips or get-rich schemes",
+}
 
 HOOK_PROMPT = """You study short-video hooks. Watch ONLY the first 3 seconds of this Short very carefully, then the rest once.
 FIRST decide if this Short is really {niche_desc}. Movie scenes, trailers, ads, gossip, vlogs, news, music, comedy skits and
@@ -96,6 +102,8 @@ IG_ACCOUNTS = {   # public business/creator accounts in each niche (owner can ad
     "tech": ["samjho.exe", "techburner", "trakintech", "technicalguruji", "gyanfactory"],
     "katha": ["sanatani.kahaniyan", "bhakti.stories", "mythology.in.hindi", "dharmikgyan", "puranikkatha"],
     "raaz": ["horror.kahaniya", "crimetak", "rahasya.kahani", "hindistoryshorts", "kahaniwala"],
+    "jain": [],
+    "finance": [],
 }
 
 
@@ -130,6 +138,8 @@ HASHTAGS = {   # 18 Nov (owner: "you only see top creators; search hashtags for 
              "techfacts", "androidhacks", "jiophone"],
     "katha": ["mahabharat", "ramayan", "sanatandharma", "hindumythology", "krishna", "shivpuran", "puranas", "bhakti"],
     "raaz": ["hindistory", "mysterystory", "horrorstories", "kahani", "crimestory", "suspense", "storytime"],
+    "jain": ["jainism", "jaindharma", "mahavirswami", "navkarmantra", "jainstories", "paryushan", "jaintemple", "jainstatus"],
+    "finance": ["personalfinance", "financetips", "moneytips", "sipinvestment", "mutualfunds", "financeinhindi", "creditscore", "incometax", "savingmoney"],
 }
 HT_STATE = os.path.join(os.path.expanduser("~/studio-out"), "ig-hashtags.json")
 
@@ -142,7 +152,7 @@ def hashtag_top(page, tags=None, per=4, min_likes=500):
     now = time.time()
     st = load(HT_STATE, {}) or {}
     accs = []                                     # 30 tags/week PER account: use whichever of our pages has slots left
-    for p_ in [page] + [x for x in ("tech", "katha", "raaz") if x != page]:
+    for p_ in [page] + [x for x in _pages() if x != page]:
         a_ = publish.resolve(load(os.path.expanduser(f"~/.studio-accounts/{p_}.json")) or {})
         if a_.get("ig_user_id"):
             used = {k: v for k, v in (st.get(a_["ig_user_id"]) or {}).items() if now - v.get("t", 0) < 7 * 86400}

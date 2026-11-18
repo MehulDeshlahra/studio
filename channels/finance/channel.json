@@ -1,0 +1,92 @@
+{
+  "id": "finance",
+  "name": "Finance Fuel",
+  "status": "pilot",
+  "language": "Hinglish (Roman script captions)",
+  "format": "One money question ('X ka asli hisaab kya hai?'), one visual idea, real numbers with their source, 30-60 s, speech from frame 0. Education, never advice",
+  "voice": {
+    "engine": "gemini-3.8-flash-tts",
+    "voice": "Charon",
+    "one_request_per_reel": true,
+    "style": "a confident, friendly young Indian money explainer talking to a friend who is just starting to earn; clear with numbers, a little surprised at the reveal, never preachy; speak slightly slower than a normal fast reel, with clear pauses between sentences"
+  },
+  "visuals": {
+    "primary": "muse",
+    "look": "photorealistic premium studio render on deep black-green, money and banking objects, soft green and gold light",
+    "cast": "no characters: real objects (cards, phones, coins, notes, documents), numbers, charts, UI, flows; hands only"
+  },
+  "edit": {
+    "size": "1080x1920",
+    "fps": 30,
+    "lufs": -14,
+    "true_peak": -1.5,
+    "wps": 2.5,
+    "length_s": [
+      25,
+      65
+    ]
+  },
+  "rules": [
+    "education only: never tell viewers to buy or sell a stock, fund, coin or policy; no 'best fund' or price targets; no guaranteed returns",
+    "every number is real and current, with its source (RBI, SEBI, NPCI, Income Tax Dept, AMFI, the bank's own page) in sources.json; no guessed rates",
+    "tax and rate figures name the year they apply to (e.g. FY 2026-27)",
+    "scam reels show how the scam works and how to stay safe, never a working method",
+    "the caption ends with 'Education only, not financial advice.'",
+    "no on-screen AI label"
+  ],
+  "schedule": {
+    "posts_per_day": 1,
+    "approve_first": 10,
+    "backlog": 10
+  },
+  "accounts": {
+    "instagram": "@finance.fuel",
+    "facebook_page": "Finance Fuel",
+    "youtube": null
+  },
+  "topics_backlog": [
+    "Credit score kaise banta hai",
+    "Credit card ka minimum due trap",
+    "EMI ka asli hisaab: bank kitna kamata hai",
+    "SIP mein compounding ka jaadu (sirf concept)",
+    "Inflation aapke paise ko kaise khaata hai",
+    "Repo rate badhne se aapki EMI kyun badhti hai",
+    "UPI fraud kaise hota hai, aur kaise bachein",
+    "Loan app scam kaise phansata hai",
+    "Emergency fund kitna hona chahiye",
+    "Buy Now Pay Later ka sach",
+    "FD ka interest aur tax: asli kamai kitni",
+    "Salary slip ka har hissa samjho"
+  ],
+  "theme": {
+    "bg": "#04100b",
+    "accent": "#33d17a",
+    "accent2": "#f5c542",
+    "font": "Archivo Black",
+    "music": "music/deep-urban.mp3",
+    "music_offset": 8,
+    "style": "lab",
+    "film": true,
+    "hud": "FINANCE.FUEL",
+    "end_line": "Follow karo, paisa samjho"
+  },
+  "pillars": [
+    "Paisa kaise kaam karta hai: credit score, EMI, interest, UPI, explained with one visual idea and real numbers",
+    "Trap alert: credit card minimum due, BNPL, loan apps, hidden charges, how they really work",
+    "Scam se bacho: UPI, KYC, job and investment scams, how they work and how to stay safe (sourced)",
+    "Tax simple: the rules for the current FY explained in 30-45 s, sourced from the Income Tax Dept",
+    "Money news samjho: RBI repo rate, budget, new SEBI/NPCI rules, what changes for you (verified, 2+ sources)",
+    "Investing basics: concepts only (compounding, SIP, inflation, diversification), never a product pick"
+  ],
+  "english": false,
+  "warmup": {
+    "post_from": "2026-11-22",
+    "one_a_day_until": "2026-11-29",
+    "note": "new account (added 18 Nov): profile + manual engagement 19-21 Nov, 1 reel/day (evening) 22-28 Nov"
+  },
+  "handle": "@finance.fuel",
+  "handle_instagram": "@finance.fuel",
+  "tagline": "Paisa samjho, simple bhasha mein.",
+  "youtube": null,
+  "caption_footer": "Education only, not financial advice."
+}

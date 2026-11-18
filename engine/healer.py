@@ -20,6 +20,7 @@ Everything is logged (engine.log "healer:" lines, ~/studio-out/healer.json, know
 import glob, hashlib, json, os, re, subprocess, sys, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, HOME, log, load, save, read
+from core import pages as _pages
 
 DRY = "--dry" in sys.argv
 _save = save
@@ -35,7 +36,7 @@ STATE = os.path.join(OUT, "healer.json")
 UNKNOWN = os.path.join(OUT, "doctor-unknown.json")
 FIXES = os.path.join(ROOT, "knowledge", "fixes.json")
 PY = "/home/ubuntu/studio-venv/bin/python"
-PAGES = ("tech", "katha", "raaz")
+PAGES = _pages()
 S = load(STATE, {}) or {}
 S.setdefault("items", {}); S.setdefault("seen_unknown", []); S.setdefault("log", [])
 did = []

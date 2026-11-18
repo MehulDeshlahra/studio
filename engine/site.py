@@ -13,11 +13,17 @@ BRAND = {"name": "Scroll House", "ig": "scrollhouse.in", "yt": "scrollhouse", "e
          "line": "A network of original short-video pages. Every genre, every audience, one booking."}
 YT = {"tech": "kaise.tech.official", "katha": "puraankikatha", "raaz": "aagesuno"}   # verified 18 Nov (publish launch check)
 LIVE = ("pilot", "active", "live", "live (warm-up)")
-GENRE = {"tech": "Tech explainers", "katha": "Mythology", "raaz": "Fiction serials"}
+GENRE = {"tech": "Tech explainers", "katha": "Mythology", "raaz": "Fiction serials",
+    "jain": "Jain stories",
+    "finance": "Money explainers",
+}
 BLURB = {   # what a viewer or a brand reads (channel.json "site_blurb" wins when set)
     "tech": "How everyday tech really works, in under a minute: phones, apps, AI, the internet. Clear visuals, real brands, no jargon.",
     "katha": "Stories from the Puranas and the epics, told the way grandparents tell them, with the source named in every reel.",
-    "raaz": "Original mystery and drama serials, one part a day, every part ending on a cliffhanger. The audience comes back daily."}
+    "raaz": "Original mystery and drama serials, one part a day, every part ending on a cliffhanger. The audience comes back daily.",
+    "jain": "Stories of the Tirthankaras, Jain saints and kings, with the source named in every reel. Calm, respectful, one story a day.",
+    "finance": "Money made simple for young India: saving, credit, tax, UPI and scams, explained in under a minute with real numbers. Education, not advice.",
+}
 
 
 def esc(s):

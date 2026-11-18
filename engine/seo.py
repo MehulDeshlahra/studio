@@ -129,13 +129,24 @@ def text_for(plan, platform, music_credit=None, cid=None):
         else:
             plan = dict(plan, caption=(plan.get("caption", "").strip() + "\n\n" + line).strip())
     credits = [c for c in ([music_credit] if music_credit else []) + ["Video: " + c for c in plan.get("credits", [])] if c]
+    # 18 Nov: a fixed line from channel.json "caption_footer" on every platform (Finance Fuel: the not-advice line that
+    # SEBI's finfluencer rules expect), never left to the model
+    foot = ""
+    if cid:
+        try:
+            from core import ROOT as _R, load as _ld
+            foot = str((_ld(os.path.join(_R, "channels", cid, "channel.json"), {}) or {}).get("caption_footer") or "").strip()
+        except Exception:
+            foot = ""
+    if foot:
+        credits = [foot] + credits
     tail = ("\n\n" + "\n".join(credits)) if credits else ""
     if platform == "yt" and s.get("title"):
         d = s.get("description", "") + "\n\n" + " ".join(s.get("hashtags", [])[:3]) + tail
         return {"title": s["title"][:90], "description": d.strip(), "tags": s.get("tags", [])[:12]}
     if s.get("caption"):
         return (s["caption"].strip() + "\n\n" + " ".join(s.get("hashtags", [])) + tail).strip()
-    base = (plan.get("caption", "") + "\n\n" + " ".join(plan.get("hashtags", [])[:8])).strip()
+    base = (plan.get("caption", "") + "\n\n" + " ".join(plan.get("hashtags", [])[:8]) + tail).strip()   # 18 Nov: + footer/credits
     if platform == "yt":
         return {"title": plan.get("title", "")[:90], "description": base, "tags": []}
     return base

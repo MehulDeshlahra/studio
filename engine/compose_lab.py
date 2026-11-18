@@ -224,7 +224,7 @@ def page(plan, timed, total, theme, assets):
     acc = theme.get("accent", "#ffd84d")
     cool = theme.get("accent2", "#3ec7ff")
     handle = theme.get("handle", "")
-    series = (plan.get("hud_left") or "KAISE.TECH").upper()
+    series = (plan.get("hud_left") or theme.get("hud") or "KAISE.TECH").upper()     # 18 Nov: theme.hud per lab page
     endcard = 1.4 if handle else 0.0
     keys = set()
     for s in plan["scenes"]:

@@ -1,0 +1,86 @@
+{
+  "id": "jain",
+  "name": "Navkar Bhav (@navkarbhav)",
+  "status": "pilot",
+  "language": "Hindi",
+  "format": "One Jain story (Tirthankaras, saints, kings, Jain festivals and practices) with one clear lesson, 40-75 s; every story names its source (Agam / Kalpasutra / Adipurana / Trishashti-shalaka-purusha-charitra)",
+  "voice": {
+    "engine": "gemini-3.8-flash-tts",
+    "voice": "Charon",
+    "one_request_per_reel": true,
+    "style": "a calm, gentle Hindi storyteller with deep respect, soft and warm like an elder telling a story after evening prayers, clear pronunciation of Prakrit and Sanskrit names, a quiet emotional pause at the turning point; speak slightly slower than a normal fast reel, with clear pauses between sentences"
+  },
+  "visuals": {
+    "primary": "muse",
+    "look": "serene painterly Indian style, soft saffron, gold and white marble light, calm and peaceful, ornate Jain temple details, gentle glow, uncluttered",
+    "cast": "the story's people in ancient Indian attire, calm faces; Tirthankaras only as serene meditating temple idols (seated padmasana or standing kayotsarga, eyes half closed, with their emblem) or as symbols (lotus, light, footprints, the siddhashila crescent), never as action characters; Jain monks and nuns in plain white robes with a broom (rajoharan); never Hindu gods, never weapons in a Tirthankara's hands"
+  },
+  "looks": {
+    "painting": {
+      "use": "the main story: the people, the place, the moment itself (default, most scenes)",
+      "pic": "serene painterly Indian style, soft saffron, gold and white marble light, calm and peaceful, ornate Jain temple details, gentle glow, uncluttered"
+    },
+    "manuscript": {
+      "use": "a scene from scripture, a past life, a Tirthankara's life event, the cosmos (lokakash), the meaning of the story",
+      "pic": "Jain Kalpasutra manuscript painting: flat vermilion red ground, gold leaf and ultramarine blue, fine black outlines, stylised figures in profile, ornamental border motifs, palm-leaf and paper texture, one single scene"
+    }
+  },
+  "looks_on": false,
+  "rules": [
+    "respectful, no mockery, no sect bashing: when Shwetambar and Digambar versions differ, say so",
+    "sourced stories only (Agam, Kalpasutra, Adipurana, Trishashti-shalaka-purusha-charitra, Uttaradhyayana); name the source",
+    "never mix Hindu gods or Hindu iconography into Jain stories",
+    "no miracles claimed as history, no medical or astrological claims",
+    "no on-screen AI label"
+  ],
+  "schedule": {
+    "posts_per_day": 1,
+    "approve_first": 10,
+    "backlog": 10
+  },
+  "accounts": {
+    "instagram": "@navkarbhav",
+    "facebook_page": "Navkar Bhav - Jain Dharma",
+    "youtube": null
+  },
+  "theme": {
+    "bg": "#160d04",
+    "accent": "#f2c14e",
+    "accent2": "#e8571a",
+    "font": "Archivo Black",
+    "music": "music/close-up.mp3",
+    "music_offset": 0,
+    "end_line": "Jai Jinendra. Kal ek nayi katha"
+  },
+  "topics_backlog": [
+    "Chandanbala ki katha (Kalpasutra)",
+    "Mahavir Swami aur Chandkaushik naag",
+    "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "Navkar Mantra ka asli arth",
+    "Paryushan kyun manate hain",
+    "Micchami Dukkadam kyun bolte hain",
+    "Meghkumar ki diksha (Gyatadharmakatha)",
+    "Raja Shrenik aur Abhaykumar ki buddhi",
+    "Rishabhdev ne duniya ko kheti aur likhna sikhaya",
+    "Jain dharma mein suryast ke baad bhojan kyun nahi",
+    "Sthulibhadra aur Kosha (Parishishtaparvan)",
+    "Mahavir Swami ke kaan mein keelein kisne thoki"
+  ],
+  "edit": {
+    "wps": 2.3,
+    "length_s": [
+      30,
+      78
+    ]
+  },
+  "english": false,
+  "warmup": {
+    "post_from": "2026-11-22",
+    "one_a_day_until": "2026-11-29",
+    "note": "new account (added 18 Nov): profile + manual engagement 19-21 Nov, 1 reel/day (evening) 22-28 Nov"
+  },
+  "handle": "@navkarbhav",
+  "handle_instagram": "@navkarbhav",
+  "tagline": "Jain dharma ki kathayein, saral bhasha mein.",
+  "youtube": null
+}

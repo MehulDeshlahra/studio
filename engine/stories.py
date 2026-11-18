@@ -23,8 +23,14 @@ W, H = 1080, 1920
 FONT = next((f for f in ("/usr/share/fonts/truetype/montserrat/Montserrat-Black.ttf", os.path.expanduser("~/.fonts/Montserrat-Black.ttf"),
              "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf") if os.path.exists(f)), "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
 FORMATS = {"tech": ["myth", "fact", "teaser", "poll"], "katha": ["katha", "quiz", "teaser", "festival"],
-           "raaz": ["recap", "guess", "cast", "teaser"]}
-THEME = {"tech": ("#0b0d12", "#f5c542"), "katha": ("#1a0d05", "#e8b04a"), "raaz": ("#05080a", "#f2b134")}
+           "raaz": ["recap", "guess", "cast", "teaser"],
+    "jain": ["katha", "quiz", "teaser", "festival"],
+    "finance": ["myth", "fact", "teaser", "poll"],
+}
+THEME = {"tech": ("#0b0d12", "#f5c542"), "katha": ("#1a0d05", "#e8b04a"), "raaz": ("#05080a", "#f2b134"),
+    "jain": ("#160d04", "#f2c14e"),
+    "finance": ("#06110c", "#33d17a"),
+}
 
 ASK = """You write ONE Instagram Story for the faceless page "{name}" ({fmt_page}). Story type: {kind}.
 Use ONLY facts from this material (our own reel; never invent facts, numbers or names):

@@ -11,9 +11,10 @@ Gates (checked 18 Nov 2026, sources in knowledge/MONEY.md):
 import json, os, sys, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, log, load, save
+from core import pages as _pages
 
 STORE = os.path.join(ROOT, "knowledge", "money.json")
-PAGES = ("tech", "katha", "raaz")
+PAGES = _pages()
 GATES = [("yt", "subs", 500, "YouTube fan funding (+3M Shorts views/90d)"),
          ("yt", "subs", 1000, "YouTube ads (+10M Shorts views/90d; 20M from Feb 2027)"),
          ("ig", "followers", 500, "Instagram Gifts"), ("ig", "followers", 1000, "Instagram Creator Marketplace"),

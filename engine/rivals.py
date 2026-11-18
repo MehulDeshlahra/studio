@@ -11,15 +11,18 @@ Per page, every day (timer studio-rivals 05:10, light):
 import json, os, re, statistics, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, log, load, save, read
+from core import pages as _pages
 
 STORE = os.path.join(ROOT, "knowledge", "rivals.json")
 BRANDS = os.path.join(ROOT, "knowledge", "brands.json")
 YTDLP = os.path.expanduser("~/studio-venv/bin/yt-dlp")
-PAGES = ("tech", "katha", "raaz")
+PAGES = _pages()
 RIVALS = {   # seeds; discovery adds the biggest channels that post Shorts in the niche
     "tech": ["@TechnicalGuruji", "@TechBurner", "@TrakinTech", "@GyanTherapy", "@TechWiserHindi", "@ManojSaru", "@samjhoexe"],
     "katha": ["@ShriKrishnaMeriKahani", "@BhaktiSagarAR", "@SanatanSamvad", "@IndianMythologyShorts", "@DharmikKahaniyan"],
     "raaz": ["@HindiKahaniyan", "@CrimeTak", "@HorrorStoriesHindi", "@NitishRajputHindi", "@SachiKahaniyan"],
+    "jain": [],
+    "finance": ["@pranjalkamra", "@CARachanaRanade", "@LabourLawAdvisor", "@AssetYogi", "@financewithsharan"],
 }
 MAX_TRACK = 14
 SPONSOR = re.compile(r"(sponsor|paid promotion|paid partnership|#ad\b|#collab|in collaboration with|use (my )?code|coupon|promo ?code|"

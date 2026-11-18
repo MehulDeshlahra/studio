@@ -7,6 +7,7 @@ Unknown problems are written to ~/studio-out/doctor-unknown.json; engine/healer.
 import glob, json, os, re, shutil, subprocess, sys, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, HOME, log, load, save, telegram
+from core import pages as _pages
 
 DRY = "--dry" in sys.argv
 STATE = os.path.join(OUT, "doctor-state.json")
@@ -200,7 +201,7 @@ def check_held():
     """A held video whose problem the engine can repair is rebuilt once: caption timing (re-align with the current
     aligner) or loudness (re-master). Other holds (visual) are noted for the next fix session."""
     busy = sh("systemctl list-units --state=active --no-legend 'studio-job-*.service' 'studio-make.service' 'studio-prep.service'")[1].strip()
-    for cid in ("tech", "katha", "raaz"):
+    for cid in _pages():
         done = load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
         for d in done:
             if d.get("status") != "held":
@@ -260,7 +261,7 @@ def check_owner_items():
     if time.strftime("%Y-%m-%d") != st.get("yt-check"):    # 18 Nov: a revoked YouTube login is found the same day
         st["yt-check"] = time.strftime("%Y-%m-%d")
         import urllib.parse
-        for cid in ("tech", "katha", "raaz"):
+        for cid in _pages():
             yt = (load(os.path.join(HOME, ".studio-accounts", f"{cid}.json"), {}) or {}).get("yt") or {}
             if not yt.get("refresh_token"):
                 continue

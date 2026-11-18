@@ -220,7 +220,7 @@ def post_one(cid, dry=False):
     mc = plan.get("music_credit")
     caption = seo.text_for(plan, "ig", mc, cid=cid) if "seo" in sys.modules else (plan.get("caption", "") + "\n\n" + " ".join(plan.get("hashtags", [])[:8])).strip()
     fbcap = seo.text_for(plan, "fb", mc, cid=cid) if "seo" in sys.modules else caption
-    ytx = seo.text_for(plan, "yt", mc) if "seo" in sys.modules else {"title": plan.get("title", ""), "description": caption, "tags": []}
+    ytx = seo.text_for(plan, "yt", mc, cid=cid) if "seo" in sys.modules else {"title": plan.get("title", ""), "description": caption, "tags": []}
     cv = os.path.join(job, "cover.jpg")
     if os.path.exists(cv):
         try:

@@ -25,7 +25,10 @@ MOODS = sorted(set(FEEL2MOOD.values()))
 # how many tracks of each mood each page keeps (≈25 per page)
 PLAN = {"tech": {"driving": 7, "uplifting": 5, "mystery": 5, "playful": 4, "suspense": 4},
         "katha": {"epic": 6, "mystery": 6, "emotional": 5, "calm": 4, "suspense": 4},
-        "raaz": {"suspense": 8, "dark": 6, "mystery": 6, "emotional": 5}}
+        "raaz": {"suspense": 8, "dark": 6, "mystery": 6, "emotional": 5},
+    "jain": {"calm": 7, "emotional": 6, "epic": 5, "mystery": 4},
+    "finance": {"driving": 7, "uplifting": 6, "playful": 5, "suspense": 4},
+}
 AVOID = re.compile(r"christmas|holiday|medieval|ren faire|tavern|polka|march|anthem|kids|carol|halloween|circus|banjo|bagpipe", re.I)
 
 
