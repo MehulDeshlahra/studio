@@ -127,6 +127,15 @@ def dead_builds(cid, done):
             continue
         freed += mb(jd); gone.add(j)
         report.append(f"{cid} {j}: dead build ({m.get('topic', '?')[:50]}) deleted")
+        t = str(m.get("topic") or "")
+        if re.match(r".+ - Part \d+:", t) and t not in {str(d.get("topic")) for d in done}:   # katha series part
+            sp = os.path.join(ROOT, "channels", cid, "series-state.json")
+            st = load(sp, {}) or {}
+            if st and t not in (st.get("redo") or []):
+                st.setdefault("redo", []).insert(0, t)
+                report.append(f"{cid} series part '{t[:60]}' will be made again first")
+                if not DRY:
+                    save(sp, st)
         if not DRY:
             shutil.rmtree(jd, ignore_errors=True)
     return gone, freed

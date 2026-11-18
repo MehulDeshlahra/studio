@@ -127,6 +127,9 @@ def katha_next(ch):
     """Next topic of the running Katha series: '<series> - Part n: <subject>' (state in channels/katha/series-state.json)."""
     p = os.path.join(ROOT, "channels", ch["id"], "series-state.json")
     st = load(p, {"i": 0, "n": 0}) or {"i": 0, "n": 0}
+    if st.get("redo"):          # 18 Nov: a part whose build died (janitor.py) is made again before the series moves on
+        topic = st["redo"].pop(0); save(p, st)
+        return topic
     name, subs = KATHA_SERIES[st["i"] % len(KATHA_SERIES)]
     if st["n"] >= len(subs):
         st = {"i": st["i"] + 1, "n": 0}; name, subs = KATHA_SERIES[st["i"] % len(KATHA_SERIES)]

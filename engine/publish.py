@@ -5,7 +5,7 @@ never expires, data access renews when he logs in to Meta). The Page key and the
 every run, so posts can later be promoted as ads on the existing post. A fixed "page_token" in the file still works.
 Instagram: resumable upload of the local file (no public hosting needed). Facebook Page: video reels. YouTube: Shorts.
   python engine/publish.py [channel] [--dry]"""
-import json, os, sys, time, urllib.error, urllib.parse, urllib.request
+import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, log, load, save, telegram, sh
 
@@ -147,6 +147,33 @@ def serial_order(ch, done, cands):
     return sorted(ok, key=lambda d: ((info[d["job"]][0] or {}).get("started", ""), info[d["job"]][1] or 0)), ""
 
 
+SERIES_RX = re.compile(r"(.+) - Part (\d+):")
+
+
+def series_order(cid, done, cands):
+    """18 Nov: Katha series parts ('12 Jyotirlinga ki katha - Part 2: ...') go out in order. A part waits while the part
+    before it is still coming (approved, building, held, or in the redo queue); other videos post meanwhile."""
+    st = load(os.path.join(ROOT, "channels", cid, "series-state.json"), {}) or {}
+    posted = {str(d.get("topic")) for d in done if d.get("status") == "posted"}
+    coming = {str(d.get("topic")) for d in done if d.get("status") in ("approved", "made", "waiting", "ready", "held")}
+    coming |= set(st.get("redo") or [])
+    def key(d):
+        m = SERIES_RX.match(str(d.get("topic") or ""))
+        return (m.group(1), int(m.group(2))) if m else None
+    def ready(d):
+        k = key(d)
+        if not k or k[1] == 1:
+            return True
+        prev = [t for t in posted | coming if (SERIES_RX.match(t) and SERIES_RX.match(t).group(1) == k[0]
+                                                 and int(SERIES_RX.match(t).group(2)) == k[1] - 1)]
+        return any(t in posted for t in prev) or not prev
+    out = [d for d in cands if ready(d)]
+    held_back = [d["job"] for d in cands if d not in out]
+    if held_back:
+        log("publish", cid, "series parts wait for the part before them:", ", ".join(held_back))
+    return sorted(out, key=lambda d: (key(d) or ("", 0))[1])
+
+
 def post_one(cid, dry=False):
     ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {})
     if ch.get("post") is False:
@@ -174,6 +201,8 @@ def post_one(cid, dry=False):
         cands, why = serial_order(dict(ch, id=cid), done, cands)
         if why:
             log("publish", cid, why)
+    elif cands:
+        cands = series_order(cid, done, cands)
     nxt = cands[0] if cands else None
     if not nxt:
         log("publish", cid, "nothing approved"); return
