@@ -229,9 +229,12 @@ def _stage_assets(ch, p, job):
             # 18 Nov v2 (owner: "same only, no improvement"): every tech scene gets a full-frame real picture behind its
             # card/number/flow, instead of a small element on black. Prompt from the plan, else built from the spoken line.
             s.setdefault("prompt", "")
+            # never quote the spoken line: image models then paint its words into the picture (pilot 18 Nov, scene 6)
+            subj = ", ".join(x for x in [str(s.get("label") or ""), str(s.get("title") or ""), " ".join(s.get("keywords") or []),
+                                          str(p.get("topic") or p.get("title") or "")] if x).lower()
             s["bg_prompt"] = s.get("bg_prompt") or (
-                f"Cinematic photoreal vertical scene that shows what this sentence is about: \"{s.get('vo', '')}\" "
-                f"({s.get('label') or s.get('title') or ''}). Real hardware, real devices, real places; one clear subject in the middle "
+                f"Cinematic photoreal vertical scene for a technology documentary about: {subj}. "
+                "Real hardware, real devices, real places; one clear subject in the middle "
                 "third, dark low-key lighting with deep shadows at the top and bottom, teal and amber accents, shallow depth of "
                 "field, premium tech documentary look, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16.")
             f = os.path.join(adir, f"s{i}bg.webp")
