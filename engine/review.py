@@ -53,6 +53,14 @@ def vision_review(mp4, plan, timing, out_jpg, lang, handle):
     times.append(max(0.1, dur - 0.5))                     # end card
     qc.sheet(mp4, times[:26], out_jpg)
     from compose import _dup
+    forms = ""
+    try:                                          # 18 Nov: same deity reference as the picture prompts (engine/iconography.py)
+        import iconography
+        n = iconography.notes(" ".join(s.get("vo", "") + " " + s.get("prompt", "") for s in plan["scenes"]))
+        if n:
+            forms = "\nTraditional forms (correct, never report them as a mistake): " + n
+    except Exception:
+        pass
     desc = "\n".join(f"scene {i + 1}: says \"{s['vo']}\" | type {s['type']}"
                      + ("" if (not s.get("title") or _dup(s["title"], s.get("vo"))) else f" | headline \"{s['title']}\"")
                      + (f" | CARD words shown on screen (intended, do not flag them): \"{s.get('big', '')}\" / \"{s.get('small', '')}\"" if s.get("type") == "card" else "")
@@ -60,7 +68,7 @@ def vision_review(mp4, plan, timing, out_jpg, lang, handle):
     prompt = f"""You are the strictest reviewer at a top short-video studio. The contact sheet shows frames in time order:
 two frames per scene (scene start, scene middle), then the very last frame (end card).
 Scenes:
-{desc}
+{desc}{forms}
 Language of the video: {"English" if lang == "en" else "Hindi/Hinglish (Roman script)"}. Page handle: {handle or "none"}.
 Rules of our template (do NOT report these as problems): captions show only 2-3 words of the line at a time, the
 spoken word is highlighted in a yellow box (in the dark tech look: words not yet spoken are shown dimmed and light up as they are said, which is intended); cards show 1-3 big summary words; a small top bar shows the page/part.

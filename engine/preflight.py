@@ -77,15 +77,37 @@ def stills(rdir, timed, total, out_jpg):
     return out_jpg if os.path.exists(out_jpg) else None
 
 
+def _shown(s):
+    """The on-screen fields the page really shows. 18 Nov: compose hides a title that repeats the spoken line
+    (compose._dup), but the checker was told about it and held videos for 'title pill missing'."""
+    f = {k: v for k, v in s.items() if k not in ("vo", "prompt", "keywords", "motion", "real", "hold") and v not in (None, "", [])}
+    try:
+        from compose import _dup
+        if f.get("title") and _dup(f["title"], s.get("vo")):
+            f.pop("title")
+    except Exception:
+        pass
+    return f
+
+
 def vision(sheet, plan, lang):
     desc = "\n".join(f"scene {i + 1} ({s.get('type')}): voice says \"{s.get('vo', '')}\"; on-screen fields "
-                     f"{json.dumps({k: v for k, v in s.items() if k not in ('vo', 'prompt', 'keywords', 'motion')}, ensure_ascii=False)[:220]}"
+                     f"{json.dumps(_shown(s), ensure_ascii=False)[:220]}"
                      for i, s in enumerate(plan["scenes"]))
+    forms = ""
+    try:
+        import iconography
+        n = iconography.notes(" ".join(s.get("vo", "") + " " + s.get("prompt", "") for s in plan["scenes"]))
+        if n:
+            forms = ("\nTraditional forms (correct, never report them as a mistake): " + n +
+                     ". Report a deity only when it clearly breaks these forms or is shown without dignity.")
+    except Exception:
+        pass
     prompt = f"""You are the strictest finishing editor at a premium short-video studio. The sheet shows two stills per scene,
 in order, each labelled with its scene number (yellow). Captions at the lower third are expected and show only a PART of the spoken line (one phrase at a time), so a caption with missing words is NOT a problem, and words not yet spoken are dimmed on purpose; a small mono top bar
 (page name left, tag right) is expected; a small yellow tag pill above the main visual is expected.
 Scenes:
-{desc}
+{desc}{forms}
 On-screen language must be {"English only" if lang == "en" else "Hinglish in Roman letters (English tech words are fine)"}.
 For EACH scene, report only real problems a viewer would notice:
 - EMPTY: the centre of the frame has no main visual (just a dark gradient) in the middle still
@@ -94,7 +116,10 @@ For EACH scene, report only real problems a viewer would notice:
 - READ: text too small/faint to read on a phone, or too much text
 - LANG: wrong language on screen
 - FIT: the visual does not match what the voice says, or looks broken/glitchy
-- DUP: the same words shown twice at once
+- DUP: the same words shown twice at once IN ONE STILL (the two stills of one scene often show the same caption phrase:
+  that is expected, never a problem)
+- Captions show the words the voice actually speaks: an English word inside a Hinglish caption is NOT a LANG problem.
+  Only report a field that is listed for the scene as missing; a scene with no title listed is meant to have none.
 - FIT also covers: a split / collage picture when one scene was meant, or a character whose gender or form differs from the line
 - RESPECT: a god, goddess or sacred figure shown wrongly (wrong gender or form, missing attributes, revealing clothes,
   mocking or cartoonish) -- report it as "FIT: RESPECT ..." so the picture is made again

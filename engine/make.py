@@ -170,6 +170,14 @@ def _stage_assets(ch, p, job):
         if not a and s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
             prompt = s["prompt"] + (". " + look if look and look.lower()[:20] not in s["prompt"].lower() else "") + \
                 ". Vertical 9:16, no text, no letters, no logos, no watermark."
+            # 18 Nov: split / collage pictures and deities in the wrong form were the top picture holds. One scene per
+            # frame, and the traditional form of every deity the scene names (engine/iconography.py).
+            prompt += " One single scene in one frame: no split screen, no panels, no collage, no side-by-side copies."
+            try:
+                import iconography
+                prompt += iconography.prompt_addition(s["prompt"] + " " + s.get("vo", ""))
+            except Exception as e:
+                log("iconography skipped", str(e)[:80])
             if theme.get("style") == "lab":
                 prompt = (s["prompt"] + ". Photorealistic studio product render, single object centred, isolated on a pure black "
                           "background, dramatic soft rim light, subtle reflections, shallow depth of field, premium Apple-style "
