@@ -1,0 +1,31 @@
+{
+ "topic": "Proprietorship vs LLP vs Pvt Ltd: Tax Slab vs 30% vs 25%, Ghar Pe Risk, Audit Ka Jhameela (2026)",
+ "title": "Galat structure chuni to ghar bhi ja sakta hai",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.4,
+  "true_peak": -2.0,
+  "dur": 39.3
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 1: The caption 'structure chuni to' is slightly cut off at the bottom edge of the frame.",
+   "scene 5: The caption '40 lakh turnover' is slightly cut off at the bottom edge of the frame.",
+   "scene 6: The caption 'Pvt Ltd ka tax 25 percen' is slightly cut off at the bottom edge of the frame.",
+   "scene 7: The caption 'CA fees ROC filing compliance' is slightly cut off at the bottom edge of the frame.",
+   "scene 12: The caption 'Comment batao tum' is slightly cut off at the bottom edge of the frame."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8617021276595744,
+  "words": 105,
+  "problems": []
+ },
+ "ok": true
+}

@@ -1,4 +1,4 @@
-# Rivals of tech (engine/rivals.py, 2026-11-18)
+# Rivals of tech (engine/rivals.py, 2026-11-19)
 Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title: take the QUESTION behind it.
 
 ## Dhruv Rathee [leader, adjacent] (33,300,000 subs; usual Short 11,000,000 views)
@@ -8,33 +8,33 @@ Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title:
 - 1,500,000 views: First Look of  #iPhone18Pro, #iPhone18ProMax, #iPhoneUltra and more...#TGFamily #shorts 🔥 🔥 🔥
 - 1,100,000 views: The Honor #RobotPhone is here, and it's not AI😅...#TGFamily #shorts 🔥 🔥 🔥
 ## Hafu Go [leader, adjacent] (19,300,000 subs; usual Short 11,000,000 views)
-- 95,000,000 views: I Tested the Instant Coke Slushie Hack
-- 98,000,000 views: I Tested the Ice Hammer Hack
+- 96,000,000 views: I Tested the Instant Coke Slushie Hack
+- 99,000,000 views: I Tested the Ice Hammer Hack
 - 55,000,000 views: The IMPOSSIBLE Puzzle...
 - 51,000,000 views: I Tested the Illegal Dice Trick
 ## Professor Of How [leader, direct] (16,200,000 subs; usual Short 5,250,000 views)
 - 17,000,000 views: Salman Khan’s Y+ Security (3D) by Professor of How
 - 24,000,000 views: Tiger Shroff vs Lawrence Bishnoi (3D) by Professor of How
 - 24,000,000 views: 💀Mukti Laabh Bhawan (3D) by Professor of How
-## Trakin Tech [leader, adjacent] (15,600,000 subs; usual Short 686,000 views)
+## Trakin Tech [leader, adjacent] (15,600,000 subs; usual Short 686,500 views)
 - 2,900,000 views: Top Dhurandhar Smartphones Of 2026 ⚡ The Best "Ultra" Is...
 - 2,900,000 views: Top 5 Best Smartphones Under ₹50000 ⚡ June 2026
 - 3,500,000 views: Ye Hain Duniya Ka Sabse Best iPhone!? 🤯 ⚡️#Shorts
 ## Tech Burner [leader, adjacent] (12,500,000 subs; usual Short 489,000 views)
-## CodeWithHarry [leader, adjacent] (10,000,000 subs; usual Short 183,000 views)
-- 688,000 views: This girl shouted against AI!
-- 667,000 views: GTA 6 got hacked again!
+## CodeWithHarry [leader, adjacent] (10,000,000 subs; usual Short 183,500 views)
+- 689,000 views: This girl shouted against AI!
+- 671,000 views: GTA 6 got hacked again!
 ## Quick Support [leader, direct] (7,320,000 subs; usual Short 23,000 views)
 ## Live Hindi Facts [climber, adjacent] (1,030,000 subs; usual Short 94,500 views)
-- 1,100,000 views: The Secret Behind This Bottle!😱
+- 1,200,000 views: The Secret Behind This Bottle!😱
 - 1,900,000 views: How This Company Rule Colours?
-- 616,000 views: India’s Hidden Smartphone King
+- 619,000 views: India’s Hidden Smartphone King
 - 2,500,000 views: Dabbawalas Are Disappearing 🥲
-## science to technology [climber, direct] (393,000 subs; usual Short 103,500 views)
-- 328,000 views: Adding MicroController to Torch is DUMB In Hindi
-## Info Family [climber, adjacent] (311,000 subs; usual Short 99,000 views)
-- 341,000 views: What is a Death Shadow? | Info Family
-- 418,000 views: Number of Moons in the Solar System | Info Family
+## science to technology [climber, direct] (393,000 subs; usual Short 106,000 views)
+- 329,000 views: Adding MicroController to Torch is DUMB In Hindi
+## Info Family [climber, adjacent] (311,000 subs; usual Short 99,500 views)
+- 342,000 views: What is a Death Shadow? | Info Family
+- 419,000 views: Number of Moons in the Solar System | Info Family
 - 576,000 views: Why does Earth have no rings | Info Family
 
 ## Brands that pay creators in this niche (from sponsor lines)

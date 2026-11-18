@@ -1,0 +1,352 @@
+{
+ "slug": "prop-llp-pvtltd-2026",
+ "title": "Galat structure chuni to ghar bhi ja sakta hai",
+ "hooks": [
+  "Galat structure chuni to ghar bhi ja sakta hai",
+  "Rahul ne Proprietorship liya, ab bank ghar pe notice bhej raha",
+  "30% tax ya 25%? Audit ka kharcha kaun jhelta hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct threat to personal assets (ghar) in first 4 words matches the 'mistake warning' pattern; viewer instantly sees their own risk.",
+ "metaphor": "Phone screen as decision tool: WhatsApp shows the problem, calculator shows tax math, notes show audit rules, final chat gives 3-question framework.",
+ "cast": {
+  "Rahul": "Young Indian male, 26, casual shirt, worried, holding phone",
+  "Friend": "Young Indian male, 27, smart casual, confident, typing on phone"
+ },
+ "scenes": [
+  {
+   "vo": "Galat structure chuni to ghar bhi ja sakta hai",
+   "type": "wa",
+   "title": "GALAT STRUCTURE",
+   "prompt": "WhatsApp chat dark mode, Rahul at top, his message bubble visible, reply box empty",
+   "motion": "push",
+   "keywords": [
+    "galat structure",
+    "ghar",
+    "risk"
+   ],
+   "messages": [
+    {
+     "from": "Rahul",
+     "text": "Bhai, maine Proprietorship liya tha. Ab business down hai, bank ghar pe notice bhej raha hai 😰"
+    }
+   ],
+   "bg_prompt": "Phone held in hand, bedroom background blurred, night light",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Rahul ne Proprietorship liya, bank ne ghar pe notice bheja",
+   "type": "sms",
+   "title": "BANK NOTICE",
+   "prompt": "Lock screen with HDFC Bank SMS, red alert, sender VM-HDFCBK",
+   "motion": "punch",
+   "keywords": [
+    "loan reject",
+    "notice",
+    "ghar"
+   ],
+   "messages": [
+    {
+     "app": "Messages",
+     "from": "VM-HDFCBK",
+     "text": "Business Loan declined. Reason: Unlimited liability, personal assets at risk. Ref: XL7721"
+    }
+   ],
+   "bg_prompt": "Phone on bed, morning light through window",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Proprietorship mein tum aur business ek hi ho, debt bhi tumhara",
+   "type": "title",
+   "title": "PROP = TUM",
+   "motion": "tilt",
+   "keywords": [
+    "unlimited liability",
+    "personal assets"
+   ],
+   "lines": [
+    "Proprietorship = Owner aur Business ek hain",
+    "Business debt = Aapka personal debt",
+    "Ghar, gaadi, savings attach ho sakte hain"
+   ],
+   "bg_prompt": "Phone screen close-up, notes app, warm desk lamp light",
+   "big": "PROP = TUM",
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "LLP se liability limited, par tax flat 30 percent",
+   "type": "title",
+   "title": "LLP TAX 30%",
+   "motion": "pan",
+   "keywords": [
+    "LLP",
+    "30 percent",
+    "limited liability"
+   ],
+   "items": [
+    {
+     "label": "Proprietorship",
+     "value": "Slab 0-30%"
+    },
+    {
+     "label": "LLP",
+     "value": "Flat 30% + Cess"
+    },
+    {
+     "label": "Pvt Ltd",
+     "value": "~25.17% Effective"
+    }
+   ],
+   "bg_prompt": "Phone on co-working desk, laptop blur behind",
+   "big": "LLP TAX 30%",
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "40 lakh turnover ke baad audit bhi mandatory",
+   "type": "title",
+   "title": "LLP AUDIT LIMIT",
+   "motion": "pull",
+   "keywords": [
+    "audit",
+    "40 lakh",
+    "turnover"
+   ],
+   "lines": [
+    "LLP Audit: Turnover > 40 Lakh",
+    "LLP Capital > 25 Lakh = Audit",
+    "Pvt Ltd: Audit har saal mandatory"
+   ],
+   "bg_prompt": "Phone in hand, small office background, paperwork blur",
+   "big": "LLP AUDIT LIMIT",
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Pvt Ltd ka tax 25 percent, lekin har saal audit",
+   "type": "title",
+   "title": "PVT LTD COMPLIANCE",
+   "motion": "tilt",
+   "keywords": [
+    "25 percent",
+    "audit",
+    "CA fees",
+    "ROC"
+   ],
+   "lines": [
+    "Tax ~25.17% (Sec 115BAA)",
+    "Statutory audit har saal",
+    "AOC-4, MGT-7 ROC filing",
+    "CA fees 50k se 2L+"
+   ],
+   "bg_prompt": "Phone on CA desk, certificates blur on wall",
+   "big": "PVT LTD COMPLIANCE",
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "CA fees, ROC filing, compliance ka kharcha alag",
+   "type": "title",
+   "title": "COST COMPARISON",
+   "motion": "push",
+   "keywords": [
+    "CA fees",
+    "ROC",
+    "compliance cost"
+   ],
+   "items": [
+    {
+     "label": "Proprietorship",
+     "value": "₹0 compliance"
+    },
+    {
+     "label": "LLP",
+     "value": "Audit only if >40L"
+    },
+    {
+     "label": "Pvt Ltd",
+     "value": "₹1.5L+ yearly"
+    }
+   ],
+   "bg_prompt": "Phone held, calculator screen, cafe table blur",
+   "big": "COST COMPARISON",
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Toh kya chuno? Teen sawal puch lo apne aap se",
+   "type": "wa",
+   "title": "TEEN SAWAAL",
+   "prompt": "WhatsApp chat, Friend's reply bubble green, three numbered questions visible",
+   "motion": "punch",
+   "keywords": [
+    "teen sawal",
+    "decide",
+    "structure"
+   ],
+   "messages": [
+    {
+     "from": "Friend",
+     "text": "1. Risk kitna le sakte ho? 2. Tax bachana ya funding? 3. Compliance ka time-paisa hai?"
+    }
+   ],
+   "bg_prompt": "Phone screen, morning light, relieved expression blur",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Risk kitna le sakte ho? Tax bachana ya funding?",
+   "type": "title",
+   "title": "SAWAAL 1-2",
+   "motion": "pan",
+   "keywords": [
+    "risk",
+    "tax",
+    "funding"
+   ],
+   "lines": [
+    "Risk high = Proprietorship (unlimited liability)",
+    "Risk medium = LLP",
+    "High growth + funding = Pvt Ltd",
+    "Tax bachana = Pvt Ltd/LLP"
+   ],
+   "bg_prompt": "Phone on table, notebook and pen beside",
+   "big": "SAWAAL 1-2",
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Compliance ka time-paisa hai tumhare paas?",
+   "type": "title",
+   "title": "SAWAAL 3",
+   "motion": "tilt",
+   "keywords": [
+    "compliance",
+    "time",
+    "paisa"
+   ],
+   "lines": [
+    "Proprietorship = ITR + GST (if applicable)",
+    "LLP = audit only if >40L",
+    "Pvt Ltd = yearly audit + ROC + CA",
+    "Time + paisa chahiye"
+   ],
+   "bg_prompt": "Phone screen, clock visible on wall blur",
+   "big": "SAWAAL 3",
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Save karo, yeh sawal decide karenge tumhara structure",
+   "type": "wa",
+   "title": "SAVE KARO",
+   "prompt": "WhatsApp chat, my reply with save icon, checklist summary: Risk? Tax? Funding? Compliance? Decide. Comment batao.",
+   "motion": "push",
+   "keywords": [
+    "save karo",
+    "decide",
+    "comment"
+   ],
+   "messages": [
+    {
+     "from": "Me",
+     "text": "Save karo 📌 Risk? Tax? Funding? Compliance? Yeh 4 sawal decide karenge. Tum kis situation mein ho? Comment mein batao"
+    }
+   ],
+   "bg_prompt": "Phone in hand, window light, calm face",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Comment batao, tum kis situation mein ho?",
+   "type": "title",
+   "title": "COMMENT KARO",
+   "motion": "push",
+   "keywords": [
+    "comment",
+    "situation",
+    "handle"
+   ],
+   "bg_prompt": "Clean gradient, page logo bottom right",
+   "big": "COMMENT KARO",
+   "small": null,
+   "sub": null,
+   "label": null
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Galat structure chuni to ghar bhi ja sakta hai\n\nProprietorship = Tum aur business ek, unlimited liability\nLLP = Liability limited, tax 30%, audit >40L turnover\nPvt Ltd = Tax ~25%, par har saal audit + ROC + CA fees\n\nApna risk, tax goal, funding need, compliance capacity — yeh 4 sawal puch lo.\n\nSource: Income Tax Act 1961 (Sec 115BAA), LLP Act 2008, Companies Act 2013\nSave karo, kaam aayega 📌\n\nTum kis situation mein ho? Comment mein batao\n\n#personalfinance #financeinhindi #moneytips #businessstructure #llp #pvtltd #proprietorship #taxplanning #compliance #startupindia",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#businessstructure",
+  "#llp",
+  "#pvtltd",
+  "#proprietorship",
+  "#taxplanning",
+  "#compliance",
+  "#startupindia"
+ ],
+ "claims": [
+  {
+   "claim": "Proprietorship has unlimited liability - personal assets exposed to business debts",
+   "basis": "Income Tax Act 1961; Indian Partnership Act 1932; taxgst.in comparison; skla.in liability section"
+  },
+  {
+   "claim": "LLP taxed at flat 30% plus surcharge and cess",
+   "basis": "Income Tax Act 1961; taxgst.in LLP table; skla.in tax treatment"
+  },
+  {
+   "claim": "Pvt Ltd effective tax ~25.17% under Section 115BAA",
+   "basis": "Finance Act provisions for concessional corporate rate; taxgst.in Pvt Ltd table; skla.in"
+  },
+  {
+   "claim": "LLP audit required only if turnover exceeds ₹40 lakh or contribution exceeds ₹25 lakh",
+   "basis": "LLP Act 2008; taxgst.in LLP table (Audit row)"
+  },
+  {
+   "claim": "Pvt Ltd statutory audit mandatory every year under Companies Act 2013",
+   "basis": "Companies Act 2013; taxgst.in Pvt Ltd table (Audit row); skla.in compliance section"
+  },
+  {
+   "claim": "Proprietorship taxed at individual slab rates",
+   "basis": "Income Tax Act 1961 slab rates FY 2025-26; taxgst.in Proprietorship table; skla.in"
+  }
+ ],
+ "phone_bg": true,
+ "brain_ids": [
+  "7f620e6fdf",
+  "b2fabb69c4",
+  "f945e2a937",
+  "fc294ac58f",
+  "6ce7203c71",
+  "7fa182f8ef",
+  "1e1964f463",
+  "161339712e",
+  "0755cc155a",
+  "4396759d41",
+  "a688e48ca2",
+  "12739745ca",
+  "b69d65467f",
+  "1e60a34718"
+ ]
+}

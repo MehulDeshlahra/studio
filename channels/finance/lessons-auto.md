@@ -84,3 +84,41 @@
 ## 1118-2334 UPI payment fail, paisa kat gaya? Bank aapko har din ₹100 dega (RBI circular 20 Sep 2019)
 - scene 3: missing title 'REFUND KAB TAK' as specified in the instructions
 - scene 8: missing title 'COMPLAINT' as specified in the instructions
+
+## Proprietorship vs LLP vs Pvt Ltd: Tax Slab vs 30% vs 25%, Gh (numbers check)
+- NUMBERS: scene 9: 'Risk low = Proprietorship' is wrong: rdatax.in states: 'Sole Proprietorship... The simplest and cheapest, and the riskiest.'
+- NUMBERS: scene 10: 'Proprietorship = zero compliance' is wrong: taxgst.in states: 'Compliance is the lightest of the four: one income-tax return, GST registration where turnover demand
+
+## 1119-0351 Proprietorship vs LLP vs Pvt Ltd: Tax Slab vs 30% vs 25%, Ghar Pe Risk, Audit Ka Jhameela (2026)
+- scene 1: The caption 'structure chuni to' is slightly cut off at the bottom edge of the frame.
+- scene 5: The caption '40 lakh turnover' is slightly cut off at the bottom edge of the frame.
+- scene 6: The caption 'Pvt Ltd ka tax 25 percen' is slightly cut off at the bottom edge of the frame.
+- scene 7: The caption 'CA fees ROC filing compliance' is slightly cut off at the bottom edge of the frame.
+- scene 12: The caption 'Comment batao tum' is slightly cut off at the bottom edge of the frame.
+
+## Business Ka Structure - Part 1: Proprietorship, Partnership, (numbers check)
+- NUMBERS: scene 7: 'OPC must convert if paid-up capital is above 50 lakh.' is not in the sources: remove it or say only what the sources say
+
+## Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 9 (numbers check)
+- NUMBERS: scene 6: 'Silver volatility gold se 2.5x' is wrong: ipomarket.in states: 'Silver's volatility is roughly 1.5-2x gold's'
+
+## 1119-0426-p2 Business Ka Structure - Part 2: Ek table mein poora comparison (risk, tax, audit, kharcha, funding)
+- scene 1: The caption 'LLP Pvt Ltd — kisne' does not match the provided script 'Proprietorship, LLP, Pvt Ltd — kisne bachaya sabse zyada tax?'.
+- scene 2: The caption 'tak baat aati' is a fragment, but the script says 'Risk pehle: Proprietorship mein ghar tak baat aati hai...'. This is acceptable, but the visual text 'Unlimited personal assets' vs 'Limited to contribution' is clear and good.
+- scene 3: The script says 'Tax: Proprietorship slab pe, LLP 30% flat, Pvt Ltd ~25% effective', but the caption reads 'Tax: Proprietorship slab pe LLP 30%'. It is missing the Pvt Ltd part.
+- scene 4: The script says 'Ye rates Income Tax Act 1961 ke hain, FY 25-26 ke liye — naya Act 2026 se', but the caption reads 'ke hain FY'. This is a significant mismatch in content.
+- scene 5: The script says 'Audit: Proprietorship >1Cr pe, LLP >40L turnover, Pvt Ltd har saal', but the caption reads 'AUDIT: PROPRIETORSHIP >1CR'. The caption is missing the rest of the comparison.
+- scene 6: The script says 'Funding chahiye? Sirf Pvt Ltd — LLP limited, Proprietorship impossible', but the caption reads 'Sirf Pvt Ltd — LLP'. It is missing the Proprietorship part.
+- scene 7: The script says 'OPC solo founder ke liye — limited risk, par funding ke liye Pvt Ltd banana padega', but the caption reads '1 shareholder'. This is a very brief summary compared to the script.
+- scene 8: The script says 'Ab decide kar: 1. Solo hai? 2. Funding chahiye? 3. Audit kam chahiye?', but the caption reads 'Comment GUIDE'. This is a complete mismatch with the intended script for this scene.
+- only 0% of the script was found in the voice
+
+## review 1119-0426-p2
+- only 0% of the script was found in the voice
+
+## 1119-0426-p2 (pre-render check)
+- FIT: Third comparison column for Pvt Ltd is missing in the visual representation
+- READ: Too much text in the list card to comfortably read on a small mobile screen
+
+## 1119-0426-p2 (pre-render check)
+- FIT: chat UI shown while voice introduces proprietorship, LLP, Pvt Ltd comparison

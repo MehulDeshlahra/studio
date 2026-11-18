@@ -1,0 +1,329 @@
+{
+ "slug": "biz-structure-1",
+ "title": "Business ka structure kaun sa chunna chahiye?",
+ "hooks": [
+  "Business start karna hai — structure kaun sa chune?",
+  "Dukaan kholni ya startup? Structure decide karega risk",
+  "Proprietorship, LLP, Pvt Ltd — asli difference kya hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct question mirrors viewer's dilemma; first 4 words carry problem and surprise.",
+ "metaphor": "Phone screen shows founder's real chat, SMS, app screens — viewer sees exactly what founder sees.",
+ "cast": {
+  "Raghav": "young Indian man, 28, simple cotton shirt, standing behind small kirana counter with jars of dal and spices, warm afternoon light",
+  "Aditya": "young Indian man, 27, casual kurta, sitting on plastic chair at roadside chai stall, steam rising from two glasses",
+  "Shobhit": "young Indian man, 27, checked shirt, leaning against scooter at same chai stall, nodding while listening",
+  "Saumya": "young Indian woman, 26, cotton kurti, at home desk with laptop and stack of files, morning window light",
+  "Suhail": "young Indian man, 29, polo tee, in co-working cabin with whiteboard behind him, focused expression",
+  "Jahnvi": "young Indian woman, 28, smart casual shirt, in modern meeting room with pitch deck on screen, confident"
+ },
+ "scenes": [
+  {
+   "vo": "Business start karna hai — structure kaun sa chune?",
+   "type": "wa",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Business",
+    "structure"
+   ],
+   "bg_prompt": "young person at busy Indian co-working cafe, laptop open, looking at phone thoughtfully, morning light",
+   "messages": [
+    {
+     "from": "Aditya",
+     "text": "Business start karna hai, structure kaun sa chune? 🤔"
+    },
+    {
+     "from": "me",
+     "text": "Chal, 3 sawal mein decide karte hain"
+    }
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Proprietorship: tu hi maalik, unlimited risk — ghar tak pe baat aa sakti hai.",
+   "type": "list",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Proprietorship",
+    "Raghav",
+    "risk"
+   ],
+   "bg_prompt": "small kirana shop in Indian neighbourhood, shelves packed with packets and jars, sunlight through shutter gaps",
+   "lines": [
+    "Single owner",
+    "No separate entity",
+    "Unlimited liability",
+    "Minimal compliance"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Court case hua to ghar bhi ja sakta hai — real SMS aisa dikhta hai.",
+   "type": "sms",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "court",
+    "ghar",
+    "SMS"
+   ],
+   "bg_prompt": "phone screen showing Messages app, dark mode, single SMS notification centered",
+   "time": "14:22",
+   "messages": [
+    {
+     "app": "Messages",
+     "from": "VM-HDFCBK",
+     "text": "DEBIT ALERT: Rs 2,50,000 debited for legal settlement. Avl Bal: Rs 12,345"
+    }
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Partnership: do partner, donon ka unlimited risk — 1932 Act kehta hai.",
+   "type": "list",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Partnership",
+    "Aditya",
+    "Shobhit"
+   ],
+   "bg_prompt": "two friends at roadside chai stall, cutting chai glasses, one gesturing with pen, other nodding",
+   "lines": [
+    "2+ partners",
+    "Partnership Act 1932",
+    "Joint unlimited liability",
+    "Flat 30% tax"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "LLP bana: alag legal entity, limited liability — ghar bach gaya.",
+   "type": "list",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "LLP",
+    "Saumya",
+    "limited"
+   ],
+   "bg_prompt": "home office urban India, laptop with GST portal open, files stacked neatly, quiet morning",
+   "lines": [
+    "Separate legal entity",
+    "LLP Act 2008",
+    "Liability limited to contribution",
+    "Audit only above 40L turnover"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "LLP mein risk sirf investment — personal assets safe.",
+   "type": "stat",
+   "prompt": "",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "risk",
+    "safe"
+   ],
+   "bg_prompt": "family living room India, evening tea on table, relaxed atmosphere, TV low volume",
+   "value": "0",
+   "sub": "personal assets at risk",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "OPC: ek founder, limited liability milti hai — Companies Act 2013.",
+   "type": "list",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "OPC",
+    "Suhail",
+    "founder"
+   ],
+   "bg_prompt": "modern co-working cabin Bangalore, whiteboard with product roadmap, one person working late",
+   "lines": [
+    "Single shareholder",
+    "Companies Act 2013",
+    "Limited liability",
+    "Nominee required"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Pvt Ltd: VC funding chahiye, ESOP bhi — only structure for it.",
+   "type": "pay",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Pvt Ltd",
+    "Jahnvi",
+    "VC",
+    "ESOP"
+   ],
+   "bg_prompt": "sleek meeting room Mumbai, projector showing pitch deck, investors listening",
+   "status": "success",
+   "value": "2 Cr",
+   "to": "Seed Investors",
+   "sub": "CCPS allotted via Pvt Ltd",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Pvt Ltd: 2-200 shareholders, audit mandatory — compliance heavy.",
+   "type": "list",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Pvt Ltd",
+    "shareholders",
+    "audit"
+   ],
+   "bg_prompt": "registered office India, company nameplate on door, compliance calendar on wall",
+   "lines": [
+    "2-200 shareholders",
+    "Companies Act 2013",
+    "Limited liability",
+    "Mandatory audit, ROC filings"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ab decide karo: 1. Risk kitna? 2. Funding chahiye? 3. Compliance handle karoge?",
+   "type": "flow",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "decide",
+    "3 sawal"
+   ],
+   "bg_prompt": "phone screen showing simple 3-step decision flow: Risk -> Funding -> Compliance, clean UI",
+   "nodes": [
+    "Risk level?",
+    "Need funding?",
+    "Can handle compliance?"
+   ],
+   "edges": [
+    [
+     "Risk level?",
+     "Need funding?"
+    ],
+    [
+     "Need funding?",
+     "Can handle compliance?"
+    ]
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Apna structure aaj hi decide karo — follow karo Part 2 ke liye.",
+   "type": "title",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "decide",
+    "follow",
+    "Part 2"
+   ],
+   "bg_prompt": "hand scrolling Instagram on phone, thumb hovering over follow button, warm indoor light",
+   "big": "STRUCTURE DECIDE KARO",
+   "sub": "Part 2: Tax, Risk, Compliance table",
+   "small": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Business start karna hai — structure kaun sa chune?\nProprietorship, Partnership, LLP, OPC, Pvt Ltd — 3 sawal mein decide karo.\nPart 2 mein table compare milega.\nSource: Partnership Act 1932, LLP Act 2008, Companies Act 2013\nApna structure aaj hi decide karo — Save karo 📌\n#businessstructure #proprietorship #partnership #llp #opc #pvtltd #startupindia #financeinhindi",
+ "hashtags": [
+  "#businessstructure",
+  "#proprietorship",
+  "#partnership",
+  "#llp",
+  "#opc",
+  "#pvtltd",
+  "#startupindia",
+  "#financeinhindi"
+ ],
+ "claims": [
+  {
+   "claim": "Proprietorship has no separate legal entity; owner has unlimited liability",
+   "basis": "taxgst.in comparison table: 'Separate legal entity: No', 'Liability: Unlimited — personal assets exposed'"
+  },
+  {
+   "claim": "Partnership governed by Indian Partnership Act, 1932; joint & several unlimited liability",
+   "basis": "taxgst.in: 'Governing law: Indian Partnership Act, 1932', 'Liability: Unlimited, joint and several'"
+  },
+  {
+   "claim": "LLP is separate legal entity under LLP Act, 2008; liability limited to contribution",
+   "basis": "taxgst.in: 'Separate legal entity: Yes', 'Liability: Limited to the agreed contribution'; rdatax.in: 'LLP — separate legal entity with limited liability'"
+  },
+  {
+   "claim": "OPC under Companies Act, 2013; single shareholder; limited liability; nominee required",
+   "basis": "Companies Act 2013, Section 2(62); Companies (Incorporation) Rules, 2014, Rule 3"
+  },
+  {
+   "claim": "Private Limited: 2-200 shareholders; Companies Act 2013; limited liability; mandatory audit; VC funding via CCPS",
+   "basis": "taxgst.in: 'Minimum people: Two directors and two shareholders', 'Annual filings: AOC-4 and MGT-7', 'Audit: Statutory audit mandatory'; rdatax.in: 'only structure built to raise venture capital and issue ESOPs'"
+  },
+  {
+   "claim": "LLP audit required only if turnover exceeds ₹40 lakh or contribution exceeds ₹25 lakh",
+   "basis": "taxgst.in: 'Audit: Only if turnover exceeds ₹40 lakh or contribution exceeds ₹25 lakh'"
+  }
+ ],
+ "phone_bg": true,
+ "brain_ids": [
+  "f945e2a937",
+  "fc294ac58f",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "6ce7203c71",
+  "161339712e",
+  "4396759d41",
+  "1e1964f463",
+  "a688e48ca2",
+  "12739745ca",
+  "7fa182f8ef",
+  "0755cc155a",
+  "b69d65467f",
+  "1e60a34718"
+ ]
+}

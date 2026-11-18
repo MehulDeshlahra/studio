@@ -1,0 +1,292 @@
+{
+ "slug": "gta-6-pc-release",
+ "title": "GTA 6 PC pe kab aayega?",
+ "hooks": [
+  "GTA 6 PC kab aayega? Rockstar ne chhupa rakha hai secret",
+  "GTA 6 PC requirements sab fake hain",
+  "Console pe khel rahe ho ya PC ka wait kar rahe ho?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the exact question every PC gamer is asking, adds urgency with 'secret', no greeting.",
+ "metaphor": "A timeline showing Rockstar's console-first pattern: announce -> launch -> optimize -> PC port.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "GTA 6 PC kab aayega? Rockstar ne chhupa rakha hai secret.",
+   "type": "clip",
+   "prompt": "Cinematic 3D gaming PC in dark room, neon blue glow, camera pushes in slow.",
+   "motion": "push",
+   "title": "GTA 6 PC KAB",
+   "keywords": [
+    "GTA 6",
+    "PC"
+   ],
+   "bg_prompt": "Dark studio, high-end gaming PC, neon blue rim light, pure black background.",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Trailer aaya December 2023 mein. Console launch 2025 ke liye confirm hai.",
+   "type": "object",
+   "prompt": "PlayStation 5 console on dark reflective surface, subtle spotlight.",
+   "label": "CONSOLE 2025",
+   "real": {
+    "q": "person holding modern gaming console",
+    "kind": "photo",
+    "subject": "A hand holding a modern, unbranded gaming console (like PS5/Xbox style) in a living room setting."
+   },
+   "bg_prompt": "Dark studio, PS5 product shot, clean lighting, pure black.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "PC version? Abhi tak zero official announcement.",
+   "type": "title",
+   "big": "PC VERSION: KUCH NAHI",
+   "sub": "Rockstar ne kuch nahi bola",
+   "bg_prompt": "Dark studio, minimal card with yellow text on black, no icons.",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "YouTube pe jo specs dikh rahe hain — sab fake, clickbait.",
+   "type": "clip",
+   "prompt": "Phone screen recording style: fake spec list scrolling, red X stamp appears.",
+   "motion": "push",
+   "title": "SPECS SAB FAKE HAIN",
+   "keywords": [
+    "fake specs",
+    "clickbait"
+   ],
+   "bg_prompt": "Dark studio, phone UI mockup showing fake list crossed out, pure black.",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Rockstar ka pattern dekho: GTA 5 console 2013, PC 2015. RDR2 console 2018, PC 2019.",
+   "type": "flow",
+   "nodes": [
+    "GTA 5 CONSOLE 2013",
+    "GTA 5 PC 2015",
+    "RDR2 CONSOLE 2018",
+    "RDR2 PC 2019"
+   ],
+   "label": "PURANA PATTERN",
+   "bg_prompt": "Dark studio, horizontal timeline with 4 yellow nodes, pure black.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Matlab 1-2 saal ka gap. Optimization ke liye waqt chahiye.",
+   "type": "object",
+   "prompt": "Code on monitor: shader compilation, memory profiling graphs, dark room.",
+   "label": "OPTIMIZATION WAQT",
+   "bg_prompt": "Dark studio, dev monitor close-up, code graphs, pure black.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Alag architecture, driver hell, testing — Rockstar jaldi nahi karta.",
+   "type": "title",
+   "big": "ARCHITECTURE ALAG HAI",
+   "sub": "Driver hell, testing lamba chalta hai",
+   "bg_prompt": "Dark studio, minimal text card, yellow on black.",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Toh realistic? Late 2026 ya early 2027 se pehle mat sochna.",
+   "type": "image",
+   "prompt": "Calendar pages flipping: 2025 -> 2026 -> 2027, stop on 2027.",
+   "motion": "push",
+   "title": "LATE 2026 YA 2027",
+   "keywords": [
+    "timeline",
+    "estimate"
+   ],
+   "bg_prompt": "Dark studio, calendar flip animation, pure black.",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Abhi kya karein? Wishlist daal do, hardware ready rakho.",
+   "type": "ui",
+   "title": "ABHI KYA KAREIN",
+   "rows": [
+    {
+     "label": "WISHLIST",
+     "value": "STEAM/EPIC",
+     "pct": 100
+    },
+    {
+     "label": "GPU UPGRADE",
+     "value": "PLAN KARO",
+     "pct": 80
+    }
+   ],
+   "label": "ACTION PLAN",
+   "bg_prompt": "Dark studio, two-row action card, yellow accents, pure black.",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "phone wishlist screen on a major platform",
+    "kind": "photo",
+    "subject": "A close-up of a phone screen showing a 'Wishlist' feature on a generic, recognizable platform (like Steam or a major retailer), with a thumb scrolling."
+   },
+   "skin": "keynote"
+  },
+  {
+   "vo": "Fake news se bachna hai toh sirf Rockstar Newswire follow karo.",
+   "type": "object",
+   "prompt": "Browser window: Rockstar Newswire homepage, clean, dark mode.",
+   "label": "OFFICIAL SOURCE",
+   "real": {
+    "q": "Rockstar Newswire website screenshot",
+    "kind": "photo",
+    "subject": "Rockstar Games Newswire homepage on dark mode."
+   },
+   "bg_prompt": "Dark studio, browser UI mockup, pure black.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Console pe khel rahe ho ya PC ka wait kar rahe ho? Comment mein batao.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "CONSOLE",
+     "value": "KHEL RAHA HOON",
+     "pct": 50
+    },
+    {
+     "label": "PC",
+     "value": "WAIT KAR RAHA HOON",
+     "pct": 50
+    }
+   ],
+   "label": "TU KAHAN HAI",
+   "bg_prompt": "Dark studio, split choice card, yellow divider, pure black.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "type": "title",
+   "big": "Comment GUIDE",
+   "sub": "GTA 6 PC wait checklist DM mein 📩",
+   "small": "GTA 6 PC wait checklist DM mein",
+   "vo": "Ye GTA 6 PC wait guide chahiye? Comment karo GUIDE, main DM bhej dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "title": null,
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "GTA 6 PC kab aayega? Rockstar ne abhi tak date nahi di. Fake specs se bachna. Console 2025, PC 2026-27 expected. Tu console pe khel raha hai ya PC ka wait? Comment mein batao! #GTA6 #KaiseTech #PCGaming",
+ "hashtags": [
+  "#GTA6",
+  "#KaiseTech",
+  "#PCGaming",
+  "#RockstarGames",
+  "#GTA6PC"
+ ],
+ "claims": [
+  {
+   "claim": "GTA 6 trailer released December 2023; console launch window confirmed for 2025 by Take-Two.",
+   "basis": "Official Rockstar Games trailer and Take-Two earnings calls."
+  },
+  {
+   "claim": "No official PC version announcement exists as of 2024.",
+   "basis": "Rockstar Games official platform announcements and Newswire."
+  },
+  {
+   "claim": "Historical pattern: GTA V console 2013 -> PC 2015 (1.5 years); RDR2 console 2018 -> PC 2019 (1 year).",
+   "basis": "Public release date records for both titles."
+  }
+ ],
+ "brain_ids": [
+  "f945e2a937",
+  "1e1964f463",
+  "b2fabb69c4",
+  "fc294ac58f",
+  "4396759d41",
+  "6ce7203c71",
+  "7f620e6fdf",
+  "7fa182f8ef",
+  "b69d65467f",
+  "161339712e",
+  "1e60a34718",
+  "9db4cc694f",
+  "6055c69660",
+  "a688e48ca2"
+ ],
+ "offer": {
+  "kind": "sheet",
+  "keyword": "GUIDE",
+  "gift": "GTA 6 PC wait checklist",
+  "title": "GTA 6 PC Launch Prep Guide",
+  "items": [
+   {
+    "head": "Official source only",
+    "text": "Follow Rockstar Newswire @ rockstargames.com/newswire for every PC announcement"
+   },
+   {
+    "head": "Wishlist now",
+    "text": "Add GTA 6 to Steam & Epic wishlists — gets you launch-day notification auto"
+   },
+   {
+    "head": "Fake specs red flags",
+    "text": "Ignore any 'minimum/recommended specs' video — Rockstar has released ZERO PC specs"
+   },
+   {
+    "head": "Historical gap reference",
+    "text": "GTA V: 2 yr gap | RDR2: 1 yr gap → expect 1–2 yrs after Nov 19, 2026 console launch"
+   },
+   {
+    "head": "Realistic PC target",
+    "text": "Plan for late 2026 / early 2027; do not pre-order or buy hardware on rumours"
+   }
+  ],
+  "wallpaper_scene": 1,
+  "job": "1119-0426"
+ },
+ "visual_done": "2026-11-19 04:36",
+ "skin": "keynote"
+}

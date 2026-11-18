@@ -40,5 +40,32 @@
   "qc_ok": true,
   "status": "approved",
   "review": []
+ },
+ {
+  "job": "1119-0351",
+  "topic": "Proprietorship vs LLP vs Pvt Ltd: Tax Slab vs 30% vs 25%, Ghar Pe Risk, Audit Ka Jhameela (2026)",
+  "title": "Galat structure chuni to ghar bhi ja sakta hai",
+  "qc_ok": true,
+  "status": "rejected",
+  "review": [],
+  "feedback": [
+   "could have been better, maybe create 2 parts so that it’s clearly distinguishable. i am still confused about difference. in part 2 you can create mat be table form comparing each. ir create longer video. its fine"
+  ]
+ },
+ {
+  "job": "1119-0426-p2",
+  "topic": "Business Ka Structure - Part 2: Ek table mein poora comparison (risk, tax, audit, kharcha, funding)",
+  "title": "Proprietorship vs LLP vs Pvt Ltd - kaun winner?",
+  "qc_ok": false,
+  "status": "made",
+  "offer": "GUIDE"
+ },
+ {
+  "job": "1119-0429",
+  "topic": "Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 90+ hai, ab ye strategy kaam karegi",
+  "title": "Gold ya Silver? 2026 mein sahi decision kaise lein",
+  "qc_ok": true,
+  "status": "approved",
+  "review": []
  }
 ]

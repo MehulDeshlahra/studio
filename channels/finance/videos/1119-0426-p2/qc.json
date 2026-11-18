@@ -1,0 +1,36 @@
+{
+ "topic": "Business Ka Structure - Part 2: Ek table mein poora comparison (risk, tax, audit, kharcha, funding)",
+ "title": "Proprietorship vs LLP vs Pvt Ltd - kaun winner?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.9,
+  "true_peak": -3.6,
+  "dur": 51.73
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 1: The caption 'LLP Pvt Ltd — kisne' does not match the provided script 'Proprietorship, LLP, Pvt Ltd — kisne bachaya sabse zyada tax?'.",
+   "scene 2: The caption 'tak baat aati' is a fragment, but the script says 'Risk pehle: Proprietorship mein ghar tak baat aati hai...'. This is acceptable, but the visual text 'Unlimited personal assets' vs 'Limited to contribution' is clear and good.",
+   "scene 3: The script says 'Tax: Proprietorship slab pe, LLP 30% flat, Pvt Ltd ~25% effective', but the caption reads 'Tax: Proprietorship slab pe LLP 30%'. It is missing the Pvt Ltd part.",
+   "scene 4: The script says 'Ye rates Income Tax Act 1961 ke hain, FY 25-26 ke liye — naya Act 2026 se', but the caption reads 'ke hain FY'. This is a significant mismatch in content.",
+   "scene 5: The script says 'Audit: Proprietorship >1Cr pe, LLP >40L turnover, Pvt Ltd har saal', but the caption reads 'AUDIT: PROPRIETORSHIP >1CR'. The caption is missing the rest of the comparison.",
+   "scene 6: The script says 'Funding chahiye? Sirf Pvt Ltd — LLP limited, Proprietorship impossible', but the caption reads 'Sirf Pvt Ltd — LLP'. It is missing the Proprietorship part.",
+   "scene 7: The script says 'OPC solo founder ke liye — limited risk, par funding ke liye Pvt Ltd banana padega', but the caption reads '1 shareholder'. This is a very brief summary compared to the script.",
+   "scene 8: The script says 'Ab decide kar: 1. Solo hai? 2. Funding chahiye? 3. Audit kam chahiye?', but the caption reads 'Comment GUIDE'. This is a complete mismatch with the intended script for this scene."
+  ]
+ },
+ "voice": {
+  "ok": false,
+  "method": "pauses",
+  "matched": 0.0,
+  "words": 124,
+  "problems": [
+   "only 0% of the script was found in the voice"
+  ]
+ },
+ "ok": false
+}

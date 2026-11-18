@@ -1,0 +1,402 @@
+{
+ "slug": "gta6-ps5pro-30fps-df",
+ "title": "PS5 Pro pe bhi GTA 6 30 FPS pe kyun atak gaya?",
+ "hooks": [
+  "PS5 Pro pe bhi 60 FPS nahi mila?",
+  "Digital Foundry ne pakda: GTA 6 ka sach",
+  "Har baal ka physics... 30 FPS ka kaaran?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct question matches viewer's exact doubt; colloquial Hindi; frames the stakes instantly — expensive console, missing 60 FPS.",
+ "metaphor": "Power budget pie: a single console 'power bar' gets sliced — hair physics, ray tracing, world simulation, AI — until zero headroom remains for 60 FPS.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "PS5 Pro pe bhi 60 FPS nahi mila?",
+   "type": "clip",
+   "prompt": "A PlayStation 5 Pro console glowing on a pure black studio pedestal, subtle camera push-in, faint blue light pulse from the front vent",
+   "motion": "push",
+   "title": "PS5 PRO",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "PS5 Pro",
+    "60 FPS"
+   ],
+   "real": {
+    "q": "PlayStation 5 Pro console",
+    "kind": "photo",
+    "subject": "real PS5 Pro hardware"
+   },
+   "bg_prompt": "PlayStation 5 Pro console on black studio pedestal, dramatic rim lighting, photorealistic",
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Digital Foundry ne 50 ghante test kiya",
+   "type": "object",
+   "prompt": "Digital Foundry logo as a sleek 3D chrome badge floating on pure black, slow rotation",
+   "motion": "pan",
+   "title": "DIGITAL FOUNDRY",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Digital Foundry",
+    "test"
+   ],
+   "real": {
+    "q": "Digital Foundry logo",
+    "kind": "logo",
+    "subject": "Digital Foundry brand logo"
+   },
+   "bg_prompt": "Digital Foundry logo floating in dark studio space, chrome finish, cinematic lighting",
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "John Linneman ne kaha: 30 FPS locked",
+   "type": "stat",
+   "value": "30 FPS",
+   "sub": "locked frame rate",
+   "label": "PS5 PRO RESULT",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "30 FPS",
+    "locked"
+   ],
+   "real": null,
+   "bg_prompt": "Clean 30 FPS counter overlay on dark game capture, photoreal UI element on black",
+   "motion": "push",
+   "skin": "hologram"
+  },
+  {
+   "vo": "Par kyun? Saari power simulation mein chali gayi",
+   "type": "compare",
+   "items": [
+    {
+     "label": "SIMULATION",
+     "value": "95%",
+     "pct": 95
+    },
+    {
+     "label": "FRAME BUDGET",
+     "value": "5%",
+     "pct": 5
+    }
+   ],
+   "label": "POWER BUDGET",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "power",
+    "simulation"
+   ],
+   "real": null,
+   "bg_prompt": "Abstract power budget visualization: glowing bar split into simulation vs frame rate, dark studio render",
+   "motion": "push",
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "CPU ka budget bhi poora bhara",
+   "type": "object",
+   "prompt": "Extreme close-up of a CPU die with power budget bars filling up, dark studio lighting",
+   "motion": "push",
+   "title": "CPU BUDGET",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "CPU",
+    "budget"
+   ],
+   "real": null,
+   "bg_prompt": "CPU die close-up with power budget visualization, pure black background, macro photography",
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "GPU bhi ray tracing ke liye thaka",
+   "type": "object",
+   "prompt": "GPU chip glowing with ray tracing workload, heat waves visualised, dark studio",
+   "motion": "pan",
+   "title": "GPU LOAD",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "GPU",
+    "ray tracing"
+   ],
+   "real": null,
+   "bg_prompt": "GPU silicon with ray tracing rays, dark studio render, cinematic lighting",
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "PSSR upscale 4K banata par frame budget kam",
+   "type": "object",
+   "prompt": "PSSR upscaling visualization: 1440p to 4K reconstruction arrows, dark background",
+   "motion": "push",
+   "title": "PSSR UPSCALE",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "PSSR",
+    "4K"
+   ],
+   "real": null,
+   "bg_prompt": "PSSR upscaling diagram, dark studio, clean lines",
+   "sub": null,
+   "label": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Frame pacing lock 30 FPS stable",
+   "type": "stat",
+   "value": "30 FPS",
+   "sub": "locked frame pacing",
+   "label": "FRAME PACING",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "frame pacing",
+    "30 FPS"
+   ],
+   "real": null,
+   "bg_prompt": "Clean 30 FPS counter with lock icon on dark game capture, photoreal UI",
+   "motion": "push",
+   "skin": "hologram"
+  },
+  {
+   "vo": "Har NPC ke baal ka physics alag calculate hota hai",
+   "type": "object",
+   "prompt": "Extreme close-up of a single human hair strand with physics nodes, floating in dark space, subtle wind animation",
+   "motion": "push",
+   "title": "HAIR PHYSICS",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "NPC",
+    "hair physics"
+   ],
+   "real": null,
+   "bg_prompt": "Microscopic hair strand with physics simulation nodes, pure black background, studio macro photography style",
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Ray tracing + global illumination har frame",
+   "type": "object",
+   "prompt": "Ray tracing visualization: light rays bouncing off wet pavement, car chrome, glass windows in a dark city street corner",
+   "motion": "pan",
+   "title": "RAY TRACING",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "ray tracing",
+    "global illumination"
+   ],
+   "real": null,
+   "bg_prompt": "Ray traced reflections on wet city street at night, photoreal, pure black surroundings",
+   "sub": null,
+   "label": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Duniya kabhi nahi sota: traffic, police AI sab active",
+   "type": "flow",
+   "nodes": [
+    "TRAFFIC",
+    "PEDESTRIANS",
+    "POLICE AI",
+    "DESTRUCTION"
+   ],
+   "label": "WORLD SIMULATION",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "traffic",
+    "police AI"
+   ],
+   "real": null,
+   "bg_prompt": "Top-down city simulation map with active agents, dark theme, neon data lines, studio render",
+   "motion": "push",
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Base PS5 pe stutters, Pro pe stable 30",
+   "type": "compare",
+   "items": [
+    {
+     "label": "BASE PS5",
+     "value": "STUTTERS",
+     "pct": 40
+    },
+    {
+     "label": "PS5 PRO",
+     "value": "STABLE 30",
+     "pct": 90
+    }
+   ],
+   "label": "COMPARISON",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Base PS5",
+    "stable"
+   ],
+   "real": {
+    "q": "PlayStation 5 console",
+    "kind": "photo",
+    "subject": "PS5 and PS5 Pro side by side"
+   },
+   "bg_prompt": "PS5 and PS5 Pro consoles side by side on black studio surface, dramatic lighting",
+   "motion": "push",
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "60 FPS mode matlab: graphics kam karna padta",
+   "type": "title",
+   "big": "TRADE-OFF",
+   "sub": "60 FPS = kam detail",
+   "label": "",
+   "title_text": "",
+   "big_text": "",
+   "small_text": "",
+   "keywords": [
+    "60 FPS",
+    "trade-off"
+   ],
+   "real": null,
+   "bg_prompt": "Split screen: high detail 30 FPS vs reduced detail 60 FPS, dark studio comparison render",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Rockstar ne choose kiya: detail over frames",
+   "type": "object",
+   "prompt": "Rockstar Games logo as a premium 3D metal emblem on black velvet, slow dramatic reveal",
+   "motion": "pull",
+   "title": "",
+   "big": "DETAIL > FRAMES",
+   "small": "Rockstar ka faisla",
+   "keywords": [
+    "Rockstar",
+    "detail"
+   ],
+   "real": {
+    "q": "Rockstar Games logo",
+    "kind": "logo",
+    "subject": "Rockstar Games official logo"
+   },
+   "bg_prompt": "Rockstar Games logo on black velvet, premium metal finish, cinematic studio lighting",
+   "label": "DETAIL > FRAMES",
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Aaj launch hai... kya tum kheloge 30 FPS pe?",
+   "type": "object",
+   "prompt": "GTA 6 game case for PS5 standing upright on black pedestal, subtle glow from cover art, camera orbits slowly",
+   "motion": "pan",
+   "title": "GTA 6 LAUNCH",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "launch",
+    "kheloge"
+   ],
+   "real": {
+    "q": "GTA 6 PS5 game case",
+    "kind": "photo",
+    "subject": "Grand Theft Auto 6 physical game case for PlayStation 5"
+   },
+   "bg_prompt": "GTA 6 PS5 game case on black pedestal, cover art visible, premium studio product photography",
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "dark",
+ "caption": "PS5 Pro leke bhi 30 FPS? 😤 Digital Foundry ne bata diya asli kaaran: har baal, har ray, har NPC ka physics... power khatam ho gayi. Rockstar ne detail choose kiya, frames nahi.\n\nAaj launch hai — tum kya karoge? 30 FPS pe kheloge ya wait karoge?",
+ "hashtags": [
+  "#GTA6",
+  "#PS5Pro",
+  "#DigitalFoundry",
+  "#GamingTech",
+  "#KaiseTech"
+ ],
+ "claims": [
+  {
+   "claim": "Digital Foundry (John Linneman) tested GTA 6 on PS5 Pro for over 50 hours",
+   "basis": "PlayFront 2026-11-18: 'Digital Foundry has extensively tested the technology behind GTA 6... approved John Linneman of Digital Foundry after over 50 hours of gameplay on the PS5 Pro'"
+  },
+  {
+   "claim": "PS5 Pro runs GTA 6 at a rock-solid 30 FPS with clean frame pacing",
+   "basis": "PlayFront 2026-11-18: 'In over 50 hours on the PS5 Pro, GTA 6 ran almost continuously at a rock-solid 30 FPS with clean frame pacing'"
+  },
+  {
+   "claim": "Base PS5 has occasional stutters and drops below 30 FPS during intense explosions",
+   "basis": "PlayFront 2026-11-18: 'On the standard PS5... occasional slight stutters. During intense explosions, the frame rate drops below 30 fps for extended periods'"
+  },
+  {
+   "claim": "Both consoles render internally at 1440p; PS5 Pro uses PSSR for 4K reconstruction and ray-traced shadows",
+   "basis": "PlayFront 2026-11-18: 'Both consoles render the game internally at 1440p. While the standard PS5 relies on simple spatial upscaling, the PS5 Pro, thanks to PSSR, reconstructs a convincing 4K image and also features ray-traced shadows'"
+  },
+  {
+   "claim": "Rockstar calculates physics-based hair strands for main characters and virtually all NPCs, each reacting to wind, water, and movement",
+   "basis": "PlayFront 2026-11-18: 'Rockstar calculates physics-based hair strands not only for the two main characters, Jason and Lucia, but for virtually all NPCs on the streets. Each individual strand reacts separately to wind, water, and movement'"
+  },
+  {
+   "claim": "World simulation persists over distance: traffic, pedestrians, police with real visual contact and coordinated pursuits",
+   "basis": "PlayFront 2026-11-18: 'Traffic and pedestrians remain constantly active, while the police plan their operations with real visual contact, fixed deployment locations and coordinated pursuits'"
+  },
+  {
+   "claim": "Ray tracing used for global illumination and reflections; interactive objects, dynamic destruction, detailed vehicle damage models",
+   "basis": "PlayFront 2026-11-18: 'When you add interactive objects, dynamic destruction, detailed damage models for vehicles, and ray tracing for global illumination and reflections, the hardware is pushed to its absolute limit'"
+  },
+  {
+   "claim": "A 60 FPS mode would have required drastically reducing graphics quality and simulation vibrancy",
+   "basis": "PlayFront 2026-11-18: 'Technically, a 60 FPS mode wouldn't have been entirely impossible... However, Rockstar would have had to drastically reduce the graphics quality and the vibrancy of the simulation'"
+  },
+  {
+   "claim": "GTA 6 launches November 19, 2026 on PlayStation 5 and Xbox Series X|S",
+   "basis": "91mobiles 2026-11-17: 'GTA 6 releases on November 19, 2026 globally, including India'; The Economic Times 2026-11-16: 'GTA 6 is set to release on November 19, 2026, for PlayStation 5 and Xbox Series X|S'"
+  },
+  {
+   "claim": "GTA 6 runs on upgraded RAGE Engine (same as Red Dead Redemption 2)",
+   "basis": "gta6info.com: 'GTA 6 runs on Rockstar's RAGE Engine... the same proprietary technology that powered Red Dead Redemption 2... For GTA 6, the engine has been substantially upgraded'"
+  }
+ ],
+ "brain_ids": [
+  "1e1964f463",
+  "b2fabb69c4",
+  "4396759d41",
+  "fc294ac58f",
+  "f945e2a937",
+  "7f620e6fdf",
+  "6ce7203c71",
+  "7fa182f8ef",
+  "1e60a34718",
+  "b69d65467f",
+  "161339712e",
+  "e15cfaed29",
+  "9db4cc694f",
+  "c29ee6cacb"
+ ],
+ "skin": "keynote"
+}

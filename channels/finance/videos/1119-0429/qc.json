@@ -1,0 +1,25 @@
+{
+ "topic": "Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 90+ hai, ab ye strategy kaam karegi",
+ "title": "Gold ya Silver? 2026 mein sahi decision kaise lein",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.7,
+  "true_peak": -3.2,
+  "dur": 43.3
+ },
+ "vision": {
+  "score": 10,
+  "ok": true,
+  "problems": []
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.95,
+  "words": 94,
+  "problems": []
+ },
+ "ok": true
+}

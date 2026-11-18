@@ -1,0 +1,331 @@
+{
+ "slug": "gta6-launch-today",
+ "title": "GTA 6 aaj launch ho gaya",
+ "hooks": [
+  "GTA 6 aaj launch ho gaya",
+  "212 GB preload abhi shuru karo",
+  "Jason Lucia ka Vice City aaj se"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct statement with named entity (GTA 6) and time marker (aaj launch) hits the hook rule — voice starts at frame 0 with the surprise fact, no greeting, colloquial Hinglish.",
+ "metaphor": "Game menu unlocks row by row: platform → price → size → protagonists → map → reviews → bonus → play button. Each row locks in on the beat, like a save file completing.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "GTA 6 aaj launch ho gaya, ab khel sakte ho. Intezaar khatam.",
+   "type": "clip",
+   "prompt": "PS5 and Xbox Series X side by side on black, each screen showing GTA 6 key art with Jason and Lucia, console LEDs pulsing subtle blue",
+   "motion": "punch",
+   "title": "GTA 6 AAJ LAUNCH",
+   "keywords": [
+    "GTA 6",
+    "aaj launch",
+    "release day"
+   ],
+   "real": {
+    "q": "GTA 6 key art Jason Lucia",
+    "kind": "photo",
+    "subject": "official GTA 6 key art showing both protagonists"
+   },
+   "bg_prompt": "PlayStation 5 and Xbox Series X on black studio surface, screens displaying GTA 6 artwork",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "PS5 Xbox pe aaj se live hai. Power button dabate hi loading.",
+   "type": "object",
+   "prompt": "DualSense and Xbox controllers on black velvet, each guide button glowing faint white, no text on screen",
+   "motion": "push",
+   "title": "AAJ SE LIVE",
+   "keywords": [
+    "PS5",
+    "Xbox",
+    "live now"
+   ],
+   "real": {
+    "q": "PlayStation 5 logo",
+    "kind": "logo",
+    "subject": "official PlayStation 5 logo"
+   },
+   "bg_prompt": "DualSense and Xbox controllers on black velvet with subtle rim lighting",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Price $79.99 standard edition. Rockstar ne announce kiya, hidden charge nahi.",
+   "type": "object",
+   "value": "$79.99",
+   "sub": "STANDARD EDITION",
+   "label": "PRICE",
+   "motion": "tilt",
+   "title": "$79.99",
+   "keywords": [
+    "$79.99",
+    "price"
+   ],
+   "real": {
+    "q": "Rockstar Games logo",
+    "kind": "logo",
+    "subject": "official Rockstar Games logo"
+   },
+   "bg_prompt": "Premium GTA 6 game case on black, price tag floating beside it",
+   "prompt": "official Rockstar Games logo",
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Preload 212 GB chahiye. SSD me jagah banao, game turant chalega.",
+   "type": "stat",
+   "value": "212 GB",
+   "sub": "PRELOAD SIZE",
+   "label": "STORAGE",
+   "motion": "pull",
+   "title": "212 GB",
+   "keywords": [
+    "212 GB",
+    "preload"
+   ],
+   "bg_prompt": "NVMe SSD being inserted into PS5 expansion slot, extreme close-up",
+   "big": null,
+   "small": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Jason Duval aur Lucia Caminos dono lead hain. Jason purana criminal, Lucia nayi.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "JASON DUVAL",
+     "value": "MALE LEAD"
+    },
+    {
+     "label": "LUCIA CAMINOS",
+     "value": "FEMALE LEAD"
+    }
+   ],
+   "label": "DUO LEADS",
+   "motion": "pan",
+   "title": "JASON AUR LUCIA",
+   "keywords": [
+    "Jason",
+    "Lucia",
+    "duo"
+   ],
+   "real": {
+    "q": "GTA 6 Jason Lucia artwork",
+    "kind": "photo",
+    "subject": "official artwork of both protagonists together"
+   },
+   "bg_prompt": "Split composition showing Jason and Lucia back-to-back in Vice City neon lighting",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Lucia pehli female lead hai series me. Uski kahani ab sunege.",
+   "type": "title",
+   "big": "PEHLI FEMALE LEAD",
+   "sub": "GTA HISTORY MEIN",
+   "motion": "punch",
+   "title": "PEHLI FEMALE LEAD",
+   "keywords": [
+    "Lucia",
+    "female",
+    "first"
+   ],
+   "bg_prompt": "Single spotlight on Lucia character model in dark studio, photoreal",
+   "small": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Map Vice City aur Leonida, Florida jaisa. Neon, beaches, Everglades sab milega.",
+   "type": "flow",
+   "nodes": [
+    "VICE CITY",
+    "LEONIDA",
+    "KEYS",
+    "EVERGLADES"
+   ],
+   "label": "MAP REGIONS",
+   "motion": "push",
+   "title": "VICE CITY LEONIDA",
+   "keywords": [
+    "Vice City",
+    "Leonida",
+    "Florida"
+   ],
+   "real": {
+    "q": "GTA 6 Vice City map artwork",
+    "kind": "photo",
+    "subject": "official GTA 6 map artwork showing Vice City and Leonida"
+   },
+   "bg_prompt": "Aerial view of fictional Miami-inspired coastline at sunset, neon signs reflecting on water",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Vice review: 'Rockstar's Magnum Opus'. Critics bole best open world ever.",
+   "type": "ui",
+   "title": "REVIEWS",
+   "rows": [
+    {
+     "label": "Vice",
+     "value": "Rockstar's Magnum Opus"
+    },
+    {
+     "label": "Critics",
+     "value": "Universal Acclaim"
+    }
+   ],
+   "label": "SCORES",
+   "motion": "tilt",
+   "keywords": [
+    "reviews",
+    "Magnum Opus"
+   ],
+   "bg_prompt": "Wall of gaming monitors each showing a different review site praise",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Pre-order bonus launch ke saath unlock hoga. Extra cash aur vehicle skin included.",
+   "type": "title",
+   "prompt": "Rockstar Games Launcher screen showing PRE-ORDER BONUS UNLOCKED AT LAUNCH, clean UI",
+   "motion": "punch",
+   "big": "BONUS UNLOCK",
+   "small": "LAUNCH KE SAATH",
+   "keywords": [
+    "pre-order",
+    "bonus",
+    "launch"
+   ],
+   "real": {
+    "q": "Rockstar Games Launcher screenshot",
+    "kind": "photo",
+    "subject": "Rockstar Games Launcher showing GTA 6 pre-order page"
+   },
+   "bg_prompt": "Close-up of monitor showing Rockstar Games Launcher store page",
+   "title": "",
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Console on karo, Vice City chalo. Power button dabate hi Jason Lucia dikhenge.",
+   "type": "clip",
+   "prompt": "Finger presses PS5 power button, console LED pulses blue, hard cut to GTA 6 loading screen with Jason and Lucia",
+   "motion": "punch",
+   "title": "ABHI KHELO",
+   "keywords": [
+    "console",
+    "play",
+    "Vice City"
+   ],
+   "bg_prompt": "Finger pressing PS5 power button, console lighting up in dark room",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Save karo, doston ko bhejo. Vice City me milte hain.",
+   "type": "title",
+   "big": "SAVE KARO",
+   "sub": "DOSTON KO BHEJO",
+   "motion": "punch",
+   "title": "SAVE KARO",
+   "keywords": [
+    "save",
+    "share"
+   ],
+   "bg_prompt": "Clean dark gradient with KaiseTech handle centered",
+   "small": null,
+   "label": null,
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "GTA 6 aaj launch ho gaya! 🎮 $79.99, 212 GB, Jason-Lucia ka Vice City — tum pehle kya karoge: preload ya straight mission?\n\n#GTA6 #GTAVI #ViceCity #GamingNews #KaiseTech",
+ "hashtags": [
+  "#GTA6",
+  "#GTAVI",
+  "#ViceCity",
+  "#GamingNews",
+  "#KaiseTech"
+ ],
+ "claims": [
+  {
+   "claim": "GTA 6 launches November 19, 2026 on PS5 and Xbox Series X|S",
+   "basis": "Rockstar Games Newswire Nov 6 2025; Good Morning America Nov 18 2026; Gadget Review Nov 16 2026"
+  },
+  {
+   "claim": "Standard edition price is $79.99",
+   "basis": "Gadget Review via Yahoo Tech Nov 16 2026"
+  },
+  {
+   "claim": "Preload requires at least 210-212 GB free space",
+   "basis": "Good Morning America Nov 18 2026 ('at least 210 GB'); Gadget Review Nov 16 2026 ('212 GB preload')"
+  },
+  {
+   "claim": "Protagonists are Jason Duval and Lucia Caminos",
+   "basis": "Good Morning America Nov 18 2026; The Mirror Nov 16 2026"
+  },
+  {
+   "claim": "Lucia is the series' first female protagonist",
+   "basis": "Good Morning America Nov 18 2026; Yahoo Tech Nov 17 2026"
+  },
+  {
+   "claim": "Setting is Vice City and Leonida (inspired by Miami/Florida)",
+   "basis": "Good Morning America Nov 18 2026; The Mirror Nov 16 2026"
+  },
+  {
+   "claim": "Release time is midnight local time",
+   "basis": "Good Morning America Nov 18 2026; WEBTECH 360 Nov 16 2026"
+  },
+  {
+   "claim": "Vice review calls GTA 6 'Rockstar's Magnum Opus', critics praise open world",
+   "basis": "Vice Nov 18 2026"
+  },
+  {
+   "claim": "Pre-order bonuses available until launch, automatically applied at release",
+   "basis": "Rockstar Games Newswire Nov 6 2025 ('Last Chance for Pre-Order Bonuses')"
+  }
+ ],
+ "fresh_fixed": [
+  "scene 1: 'GTA 6 aaj raat se khel sakte ho' implies it is not yet playable, but it is release day (Nov 19, 2026) -> The game is launching today/is available.",
+  "scene 2: 'PS5 Xbox pe midnight se live' implies it is not yet live, but it is Nov 19 -> The game is live/releasing today.",
+  "scene 8: 'Reviews 10/10 IGN GameSpot Eurogamer' -> The sources do not confirm these specific review scores (IGN, GameSpot, Eurogamer, GamesRadar) as 10/10 or 5/5; they mention a review by Vice calling it 'Rockstar’s Magnum Opus' but do not provide these specific aggregate scores.",
+  "scene 9: 'Pre-order bonus abhi mil raha' -> Since the game is launching/released today, pre-order bonuses are typically no longer available for purchase, as the game is now in its release phase."
+ ],
+ "brain_ids": [
+  "f945e2a937",
+  "4396759d41",
+  "b2fabb69c4",
+  "fc294ac58f",
+  "1e1964f463",
+  "7f620e6fdf",
+  "6ce7203c71",
+  "7fa182f8ef",
+  "1e60a34718",
+  "b69d65467f",
+  "161339712e",
+  "9db4cc694f",
+  "a688e48ca2",
+  "e15cfaed29"
+ ],
+ "skin": "keynote"
+}

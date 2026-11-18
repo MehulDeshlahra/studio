@@ -1,25 +1,25 @@
-# Rivals of raaz (engine/rivals.py, 2026-11-18)
+# Rivals of raaz (engine/rivals.py, 2026-11-19)
 Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title: take the QUESTION behind it.
 
-## Crime Tak [leader, direct] (13,600,000 subs; usual Short 28,000 views)
+## Crime Tak [leader, direct] (13,600,000 subs; usual Short 27,500 views)
 - 121,000 views: Death of a Disciple at Vrindavan Ashram: 11-Second CCTV Footage Raises Questions
 - 160,000 views: 'The Hero' Captain Smit Machchhar
 - 91,000 views: Father poisoned food at night, then crushed his wife and 3 innocent daughters to death with a sto...
 ## SR PAY [leader, direct] (2,400,000 subs; usual Short 146,500 views)
 - 485,000 views: Jealous BF Stabbed GF
-- 790,000 views: Crazy Boyfriend Killed His Girlfriend For Cheating
+- 792,000 views: Crazy Boyfriend Killed His Girlfriend For Cheating
 - 658,000 views: Even CBI Couldn't Solve This Case
 ## Wronged [leader, direct] (1,910,000 subs; usual Short 932,000 views)
 - 13,000,000 views: When Kids became Devils😡#justicefornirbhay #wronged
 - 7,600,000 views: When Parents became Demons😰
 - 8,800,000 views: When he crossed all the limits 😡
 - 8,600,000 views: When Friends became Monsters😡 #wronged #justiceforakul #aurangabad
-## Amaan parkar [leader, direct] (1,190,000 subs; usual Short 33,500 views)
+## Amaan parkar [leader, direct] (1,200,000 subs, +10,000 in 7 days; usual Short 33,500 views)
 - 351,000 views: Who is the indian illuminati ?
 - 7,200,000 views: For Full video click 👆🏻👆🏻👆🏻
 - 167,000 views: Japanese Urban legend - Kuchisake Onna
 ## The Crime Show by Khooni Monday [leader, direct] (537,000 subs; usual Short 125,000 views)
-## Vikal Here [leader, direct] (165,000 subs; usual Short 3,650 views)
+## Vikal Here [leader, direct] (166,000 subs, +1,000 in 7 days; usual Short 3,650 views)
 - 344,000 views: Kolkata Doctor case dark reality
 
 ## Brands that pay creators in this niche (from sponsor lines)

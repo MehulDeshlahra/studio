@@ -104,12 +104,6 @@
    "align": "onset"
   },
   {
-   "t": 46.92,
-   "file": "sfx/impact.mp3",
-   "gain_db": -18,
-   "align": "onset"
-  },
-  {
    "t": 46.9,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,

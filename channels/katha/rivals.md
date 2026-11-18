@@ -1,11 +1,11 @@
-# Rivals of katha (engine/rivals.py, 2026-11-18)
+# Rivals of katha (engine/rivals.py, 2026-11-19)
 Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title: take the QUESTION behind it.
 
-## Tilak [leader, adjacent] (40,700,000 subs; usual Short 21,000 views)
-- 92,000 views: Sita in love, Ram in righteousness; a hundred bows to the feet of both.
-- 89,000 views: रामकथा के मधुर सुरों में, जीवन के आदर्श मिलें।
-- 108,000 views: Singing the deeds of Sita Ram, awakening love and reverence in the heart.
-- 173,000 views: धर्म का संकल्प अडिग रहेगा, सत्य का प्रकाश जग में फैलेगा।
+## Tilak [leader, adjacent] (40,700,000 subs; usual Short 22,500 views)
+- 121,000 views: Sita in love, Ram in righteousness; a hundred bows to the feet of both.
+- 103,000 views: रामकथा के मधुर सुरों में, जीवन के आदर्श मिलें।
+- 117,000 views: Singing the deeds of Sita Ram, awakening love and reverence in the heart.
+- 176,000 views: धर्म का संकल्प अडिग रहेगा, सत्य का प्रकाश जग में फैलेगा।
 ## The Divine Tales [leader, direct] (7,750,000 subs; usual Short 5,250 views)
 - 22,000 views: नवरात्रि में जौ क्यों बोए जाते हैं? | Why Barley? - The Navratri Mystery 🌾
 ## Bhakti Gyan [leader, direct] (1,490,000 subs; usual Short 6,600 views)
@@ -15,12 +15,12 @@ Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title:
 ## Rahasya Duniya Hindi  [leader, adjacent] (949,000 subs; usual Short 4,250 views)
 - 146,000 views: प्राचीन काल में खज़ाना छुपाने की तकनीकें और उनका विज्ञान 🪙 Ancient Treasure Techniques
 - 26,000 views: क्या सच में काल्पनिक है रामायण? 📜 Historic Proofs & Ramayan Evidence Analysis
-## The Divine Journey [leader, direct] (125,000 subs; usual Short 2,100 views)
+## The Divine Journey [leader, direct] (125,000 subs; usual Short 2,150 views)
 - 6,900 views: Don't Make This Big Mistake on Dhanteras! 😱 Dhanteras Puja Rituals #shorts
 - 35,000 views: Did Neem Karoli Baba Foresee His Own Death? A True Mysterious Story || neem karoli baba story
 - 34,000 views: Why did Lord Krishna bear this terrible weapon of Kurukshetra on his chest? #fast #shorts #facts
 - 19,000 views: When Mahadev himself became enchanted upon seeing Vishnu's Mohini form!
-## Pauranikk Maraatthi [climber, adjacent] (86,700 subs; usual Short 1,300,000 views)
+## Pauranikk Maraatthi [climber, adjacent] (86,800 subs, +100 in 7 days; usual Short 1,300,000 views)
 
 ## Brands that pay creators in this niche (from sponsor lines)
 - Tilak: Subscribe to Tilak for more devotional contents - https://bit.ly/SubscribeTilak

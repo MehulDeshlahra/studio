@@ -1,0 +1,348 @@
+{
+ "slug": "biz-structure-pt2-table",
+ "title": "Proprietorship vs LLP vs Pvt Ltd - kaun winner?",
+ "hooks": [
+  "Proprietorship, LLP, Pvt Ltd — kisne bachaya sabse zyada tax?",
+  "30% flat, 25% effective, ya slab — tera kaun sa?",
+  "Ghar pe risk, audit ka jhanjhat — decide kar ab"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the three structures and a direct money question (who saved most tax) in friend tone, matches the channel's comparison format, promises a clear winner.",
+ "metaphor": "A phone screen that becomes your decision tool: three cards flip to show risk, tax, audit, funding — you tap, you see, you choose.",
+ "cast": {
+  "Mehul": "Young Indian male, 26, casual kurta, holding a mid-range Android phone, warm brown skin, short black hair, slight stubble — looks like a founder checking numbers at a cafe table.",
+  "Aditya": "Young Indian male, 27, polo shirt, glasses, holding a chai cup next to a laptop — the friend who asks the practical questions."
+ },
+ "scenes": [
+  {
+   "vo": "Proprietorship, LLP, Pvt Ltd — kisne bachaya sabse zyada tax?",
+   "type": "wa",
+   "prompt": "WhatsApp chat on dark green-black, phone frame visible, soft gold accent bar at top",
+   "motion": "push",
+   "title": "Tax Comparison",
+   "keywords": [
+    "Proprietorship",
+    "LLP",
+    "Pvt Ltd",
+    "tax"
+   ],
+   "bg_prompt": "Mehul at a busy Mumbai cafe, morning light, laptop half-open, chai cup steaming, checking phone with focused expression",
+   "messages": [
+    {
+     "from": "Mehul",
+     "text": "Proprietorship, LLP, Pvt Ltd — tax bachat kaun?"
+    },
+    {
+     "from": "Raghav",
+     "text": "Sab compare karte hain 📊"
+    }
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Risk pehle: Proprietorship mein ghar tak baat aati hai, LLP-Pvt Ltd mein limited rehta hai",
+   "type": "compare",
+   "prompt": "Split screen on deep black-green, left red card 'Unlimited Risk' with cracking house icon, right green card 'Limited Risk' with shield icon, gold divider",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Unlimited",
+    "Limited",
+    "ghar"
+   ],
+   "bg_prompt": "Mehul tapping screen, Aditya leaning in, cafe blurred, sunlight shifting",
+   "items": [
+    {
+     "label": "Proprietorship",
+     "value": "Unlimited — personal assets at risk",
+     "pct": 100
+    },
+    {
+     "label": "LLP / Pvt Ltd",
+     "value": "Limited to contribution / shares",
+     "pct": 0
+    }
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Tax: Proprietorship slab pe, LLP 30% flat, Pvt Ltd ~25% effective",
+   "type": "stat",
+   "prompt": "Three stat cards in a row on deep black-green, gold numbers 'Slab', '30%', '~25.17%', white labels below, soft green shimmer",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Slab",
+    "30%",
+    "25.17%"
+   ],
+   "bg_prompt": "Close-up of phone in Mehul's hand, cafe blurred, Aditya's chai cup foreground",
+   "value": "~25.17%",
+   "sub": "Pvt Ltd effective (Sec 115BAA)",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Ye rates Income Tax Act 1961 ke hain, FY 25-26 ke liye — naya Act 2026 se",
+   "type": "rule",
+   "prompt": "Official rule card on deep black-green, Income Tax Dept logo top left, gold border, white text lines, red stamp 'ASLI NIYAM'",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "IT Act",
+    "FY 25-26",
+    "2026"
+   ],
+   "bg_real": {
+    "q": "Income Tax Department headquarters Delhi",
+    "kind": "photo",
+    "subject": "the real building"
+   },
+   "lines": [
+    "Proprietorship: slab rates",
+    "LLP: 30% + surcharge + cess",
+    "Pvt Ltd: 22% u/s 115BAA (~25.17% eff.)",
+    "FY 2025-26 (AY 2026-27)"
+   ],
+   "stamp": "ASLI NIYAM",
+   "real": {
+    "q": "Income Tax India logo",
+    "kind": "logo",
+    "subject": "official Income Tax Department logo"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Audit: Proprietorship >1Cr pe, LLP >40L turnover, Pvt Ltd har saal",
+   "type": "title",
+   "prompt": "Three stat cards on deep black-green, gold numbers '>₹1Cr', '>₹40L', 'Har saal', white labels 'Proprietorship', 'LLP', 'Pvt Ltd'",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    ">1Cr",
+    ">40L",
+    "Har saal"
+   ],
+   "bg_prompt": "Phone screen close-up, Mehul scrolling, chai steam rising",
+   "value": "Har saal",
+   "sub": "Pvt Ltd mandatory audit",
+   "big": "AUDIT: PROPRIETORSHIP >1CR",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Funding chahiye? Sirf Pvt Ltd — LLP limited, Proprietorship impossible",
+   "type": "compare",
+   "prompt": "Three cards on deep black-green: left red 'No equity', middle yellow 'Very limited', right green 'VC ready', gold icons",
+   "motion": "pan",
+   "title": "Funding Options",
+   "keywords": [
+    "No equity",
+    "Limited",
+    "VC ready"
+   ],
+   "bg_prompt": "Mehul and Aditya discussing, phone between them, cafe noise",
+   "items": [
+    {
+     "label": "Proprietorship",
+     "value": "NoEquity",
+     "pct": 0
+    },
+    {
+     "label": "LLP",
+     "value": "Limited",
+     "pct": 50
+    },
+    {
+     "label": "Pvt Ltd",
+     "value": "VC ready",
+     "pct": 100
+    }
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "OPC solo founder ke liye — limited risk, par funding ke liye Pvt Ltd banana padega",
+   "type": "stat",
+   "prompt": "Single card on deep black-green, gold 'OPC', white 'Solo founder → Limited risk → Convert for funding'",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "OPC",
+    "Solo",
+    "Convert"
+   ],
+   "bg_prompt": "Mehul nods, phone shows OPC card, Aditya sips chai",
+   "value": "1 shareholder",
+   "sub": "Must convert to raise equity",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Ab decide kar: 1. Solo hai? 2. Funding chahiye? 3. Audit kam chahiye?",
+   "type": "list",
+   "prompt": "Checklist card on deep black-green, three numbered lines with gold bullets, white text, subtle checkmark animation",
+   "motion": "punch",
+   "title": "Decision Checklist",
+   "keywords": [
+    "Solo",
+    "Funding",
+    "Audit"
+   ],
+   "bg_prompt": "Mehul and Aditya clinking chai cups, phone on table showing list, both smiling",
+   "lines": [
+    "Solo? → OPC/Prop",
+    "Funding? → Pvt Ltd",
+    "Low audit? → LLP (<₹40L)"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "type": "title",
+   "big": "Comment GUIDE",
+   "sub": "Structure guide PDF DM mein 📩",
+   "small": "Structure guide PDF DM mein",
+   "vo": "Ye structure guide chahiye? Comment GUIDE, DM bhej dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "title": null,
+   "bg_prompt": "A person in India in the middle of this money moment: Proprietorship vs LLP vs Pvt Ltd - kaun winner?"
+  },
+  {
+   "vo": "Save karo, apne CA se baat karo — galat structure mehenga padega",
+   "type": "title",
+   "prompt": "End card on deep black-green, big gold 'SAVE KARO', white sub-text, Finance Fuel handle bottom, soft green glow pulse",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Save karo",
+    "CA",
+    "structure"
+   ],
+   "bg_prompt": "Wide shot of cafe, Mehul paying bill, Aditya waving bye, phone left on table with this screen visible",
+   "big": "SAVE KARO",
+   "sub": "Apne CA se baat karo — galat structure mehenga padega",
+   "small": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Proprietorship, LLP, Pvt Ltd — kisne bachaya sabse zyada tax?\n\nRisk: Proprietorship unlimited, LLP-Pvt Ltd limited.\nTax: Slab vs 30% flat vs ~25% effective.\nAudit: >1Cr, >40L, har saal.\nFunding: Sirf Pvt Ltd VC ready.\nOPC solo ke liye, par convert karna padega.\n\nSource: IT Act 1961, LLP Act 2008, Companies Act 2013 (FY 25-26 rates)\n\nSave karo, kaam aayega 📌\n\nTera kaun sa? Comment bata.\n\n#personalfinance #financeinhindi #moneytips #businessstructure #startupindia #taxplanning #llp #pvtltd",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#businessstructure",
+  "#startupindia",
+  "#taxplanning",
+  "#llp",
+  "#pvtltd"
+ ],
+ "claims": [
+  {
+   "claim": "Proprietorship taxed at individual slab rates for FY 2025-26",
+   "basis": "Income Tax Act 1961 (still applicable for FY 2025-26 returns per taxgst.in)"
+  },
+  {
+   "claim": "LLP taxed at 30% plus surcharge and cess",
+   "basis": "taxgst.in comparison table and skla.in — flat 30% + surcharge & cess"
+  },
+  {
+   "claim": "Private Limited effective tax ~25.17% under Section 115BAA",
+   "basis": "taxgst.in: '22% under Section 115BAA plus applicable surcharge and cess — about 25.17% effective'; skla.in confirms ~25.17% effective"
+  },
+  {
+   "claim": "LLP audit required only if turnover exceeds ₹40 lakh or contribution exceeds ₹25 lakh",
+   "basis": "taxgst.in comparison table: 'Audit: Only if turnover exceeds ₹40 lakh or contribution exceeds ₹25 lakh'"
+  },
+  {
+   "claim": "Private Limited statutory audit mandatory every year",
+   "basis": "taxgst.in comparison table: 'Audit: Statutory audit mandatory every year'"
+  },
+  {
+   "claim": "Proprietorship has unlimited liability — personal assets exposed",
+   "basis": "taxgst.in: 'Liability: Unlimited — personal assets exposed'; rdatax.in: 'The simplest and cheapest, and the riskiest.'"
+  },
+  {
+   "claim": "LLP and Pvt Ltd have limited liability",
+   "basis": "taxgst.in: LLP 'Limited to the agreed contribution', Pvt Ltd 'Limited to shareholding'; skla.in confirms both are separate legal entities with capped liability"
+  },
+  {
+   "claim": "Private Limited is the standard structure for raising venture capital",
+   "basis": "rdatax.in: 'If you intend to raise external equity… the choice is effectively made for you: you need a Private Limited company'; skla.in: 'Raising equity: Standard — angels & VCs'"
+  },
+  {
+   "claim": "OPC has single shareholder and must convert to Pvt Ltd to raise equity",
+   "basis": "rdatax.in: 'An OPC has only one shareholder by definition, so it cannot bring in an investor without first converting to a Private Limited'"
+  },
+  {
+   "claim": "New Income Tax Act 2025 applies from tax year 2026-27; FY 2025-26 still under 1961 Act",
+   "basis": "taxgst.in: 'From 1 April 2026, the Income-tax Act, 2025 replaces the Income-tax Act, 1961. Returns for FY 2025-26 (AY 2026-27) are still filed under the 1961 Act'"
+  }
+ ],
+ "phone_bg": true,
+ "brain_ids": [
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "f945e2a937",
+  "fc294ac58f",
+  "6ce7203c71",
+  "1e1964f463",
+  "4396759d41",
+  "161339712e",
+  "7fa182f8ef",
+  "0755cc155a",
+  "a688e48ca2",
+  "b69d65467f",
+  "1e60a34718",
+  "12739745ca"
+ ],
+ "offer": {
+  "kind": "sheet",
+  "keyword": "GUIDE",
+  "gift": "Structure guide PDF",
+  "title": "Business Structure Decision Guide",
+  "items": [
+   {
+    "head": "Liability Check",
+    "text": "Proprietorship = unlimited risk, LLP/Pvt Ltd = limited to investment"
+   },
+   {
+    "head": "Tax Compare",
+    "text": "Prop: slab rates, LLP: 30% flat, Pvt Ltd: ~25.17% effective"
+   },
+   {
+    "head": "Audit Limit",
+    "text": "Prop >1Cr, LLP >40L turnover, Pvt Ltd mandatory yearly"
+   },
+   {
+    "head": "Funding Need",
+    "text": "Only Pvt Ltd for VC/equity, LLP limited, Prop impossible"
+   },
+   {
+    "head": "Solo Founder",
+    "text": "OPC gives limited liability but must convert for funding"
+   }
+  ],
+  "wallpaper_scene": 1,
+  "job": "1119-0426-p2",
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/finance/offer-guide.jpg"
+ }
+}

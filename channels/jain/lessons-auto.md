@@ -61,3 +61,13 @@
 - OVERLAP/CUT (layout audit): text_occluded on #s12b
 - FIT: Dharanendra is depicted as a female deity instead of a male nagraj as per traditional iconography and the voiceover.
 - DUP: The secondary text 'Jai Jinendra' is duplicated inside the card.
+
+## 1119-0335 (pre-render check)
+- FIT: text overlaps awkwardly with the main fire bowl visual element in the first still
+- EMPTY: the visual is just an empty gradient background with no meaningful graphic or central subject
+
+## 1119-0335 (pre-render check)
+- OVERLAP: title text 'EK CHHOTI KARUNA' overlaps heavily with the large number 8 in the background visual
+
+## 1119-0335 (pre-render check)
+- EMPTY: centre of frame has no main visual in the second still

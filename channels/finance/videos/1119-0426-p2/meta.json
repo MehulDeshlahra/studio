@@ -1,0 +1,10 @@
+{
+ "channel": "finance",
+ "job": "1119-0426-p2",
+ "topic": "Business Ka Structure - Part 2: Ek table mein poora comparison (risk, tax, audit, kharcha, funding)",
+ "request": "Owner feedback on the first version: 'still confused about the difference; make 2 parts so it is clearly distinguishable; in part 2 a table comparing each'. The first version showed only headings, the comparison never appeared on screen. PART 2 of 2: the side-by-side comparison. Use 'table' scenes (cols: Proprietorship, LLP, Pvt Ltd; OPC and partnership in one line or a second table): personal risk, tax rate, audit rule, yearly compliance, raising money, best for. Then a 3-question 'kaunsa chuno' list. Recall Part 1 in one line at the start.",
+ "request_wishes": "clear difference; tables; phone look",
+ "replaces": "1119-0351",
+ "brain_judged": true,
+ "voice_retry": 1
+}
