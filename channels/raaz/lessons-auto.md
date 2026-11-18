@@ -55,3 +55,10 @@
 ## case2-p1-en Case 1: Haveli ka band kamra (part 1)
 - scene 5: The image of the sweet maker's hands holding the syrup shows a slight AI artifacting issue where the fingers look somewhat melted/blended into the syrup bowl, though it is acceptable for a quick social media clip.
 - scene 6: The friend's hand holding the phone looks slightly distorted/unnatural in its grip.
+
+## 1118-1105 Chouthi Manzil Ka Raaz - Part 1
+- scene 9: Paper contains distorted AI-generated markings and gibberish symbols.
+- scene 11: Text 'PART 2 KAL' deviates slightly from the provided script dialogue.
+
+## review 1118-1105
+- length 59.3 s is outside 25-55 s

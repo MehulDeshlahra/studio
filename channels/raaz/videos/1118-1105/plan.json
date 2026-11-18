@@ -59,7 +59,7 @@
   {
    "vo": "Mehul balcony mein aaya aur ghabra kar upar ki khidki ki taraf dekhne laga.",
    "type": "image",
-   "prompt": "Medium shot of Mehul, 27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, stepping onto a wet balcony under pouring rain, water droplets on skin, looking upward in nervous curiosity, teal and amber cinematic lighting, no text.",
+   "prompt": "Dramatic vertical 9:16 shot of a 27-year-old Indian man standing outside on an open outdoor apartment balcony at night, hands gripping the wet metal railing, looking upward with a nervous terrified expression, dark night sky and rain pouring around him, apartment building exterior visible, centered subject, copy space top and bottom, cinematic lighting, photorealistic, no text.",
    "motion": "tilt",
    "title": "",
    "keywords": [
@@ -68,20 +68,22 @@
     "upar ki khidki"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Andar kaanch ke paar wahi brass study lamp dheere-dheere hawa mein hil raha tha.",
-   "type": "clip",
-   "prompt": "Eerie thriller shot through rain-streaked window glass of a deserted dusty room, an antique brass study lamp glowing warm amber, hovering and swaying gently above a barren wooden desk, atmospheric volumetric dust motes, no text.",
-   "motion": "push",
+   "type": "image",
+   "prompt": "Vertical 9:16 cinematic suspense shot looking directly through dark glass windowpane with light raindrops, centered vintage polished brass study lamp with curved gooseneck swaying slowly in mid-air, hovering without support above a distant empty wooden desk, warm tungsten bulb glow against deep shadows, completely deserted room with no humans, ample space above and below for text overlay, atmospheric psychological thriller lighting, no text.",
+   "motion": "slow_zoom",
    "title": "",
    "keywords": [
     "brass study lamp",
     "hawa mein hilta"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Aur hairani ki baat, theek waisa hi lamp niche Mehul ke table par bhi tha!",
@@ -162,7 +164,7 @@
   }
  ],
  "music_mood": "mystery",
- "caption": "Flat 402 pichhle teen saal se band hai... toh raat theek 3 baje andar baith kar kaun likh raha tha? Chouthi Manzil Ka Raaz (Part 1). Agar tum Mehul ki jagah hote, toh kya upar jaate?",
+ "caption": "Flat 402 pichhle teen saal se band hai... toh raat theek 3 baje andar baith kar kaun likh raha tha? Chouthi Manzil Ka Raaz (Part 1). Agar tum Mehul ki jagah hote, toh kya upar jaate?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#AageSuno",
   "#ChouthiManzilKaRaaz",
@@ -193,5 +195,6 @@
   "1ad22ef225",
   "d7b38f2237"
  ],
- "cliff_done": true
+ "cliff_done": true,
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
