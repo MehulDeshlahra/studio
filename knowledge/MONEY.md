@@ -72,7 +72,16 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
 ### More inventory (owner likes new pages; expansion on hold until the 3 pages run clean, then)
 - [ ] Jain stories, English stories, finance explainers (order agreed 18 Nov). Each new page = another audience to sell.
 
+## 5b. Parent brand: Off Hours Lab (owner 18 Nov)
+- One parent for every page: "Off Hours Lab: Hindi stories and explainers for curious India". Each bio: "An Off Hours Lab page".
+- Domain: offhourslab.in (free on 18 Nov; Mehul buys it, ~Rs 500-900/yr). offhourslab.com is someone else's (reg. Jul 2026).
+- Until then the site runs free at offhours-lab.github.io (GitHub org offhours-lab is Mehul's); the .in points to it later.
+- Handles: YouTube @offhourslab is taken (empty channel), use @offhours.lab; Instagram to check (Meta limit on 18 Nov).
+- Site = network showcase + media kit per page with live numbers (money.json), best reels, formats for brands, contact.
+
 ## 6. What only Mehul can do (ask, don't wait silently)
+- Buy offhourslab.in; create repo offhours-lab.github.io (public) or a token that can write to it; create IG @offhourslab
+  (or @offhours.lab) and connect it to the Meta login; one Gmail for brand mail (e.g. offhourslab.collab@gmail.com).
 - A business email for brand deals (one free Gmail, e.g. kaise.tech.collab@...): needs his sign-up.
 - Affiliate accounts (Amazon Associates, Flipkart, app referral programs) when the gates are close.
 - Approve outreach wording and rates before any brand is contacted; sign contracts; receive payments.
