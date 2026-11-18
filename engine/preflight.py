@@ -99,8 +99,7 @@ def vision(sheet, plan, lang):
         import iconography
         n = iconography.notes(" ".join(s.get("vo", "") + " " + s.get("prompt", "") for s in plan["scenes"]))
         if n:
-            forms = ("\nTraditional forms (correct, never report them as a mistake): " + n +
-                     ". Report a deity only when it clearly breaks these forms or is shown without dignity.")
+            forms = ("\nTraditional forms (correct, never report them as a mistake): " + n + "." + iconography.NO_COUNT)
     except Exception:
         pass
     prompt = f"""You are the strictest finishing editor at a premium short-video studio. The sheet shows two stills per scene,

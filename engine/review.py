@@ -58,7 +58,7 @@ def vision_review(mp4, plan, timing, out_jpg, lang, handle):
         import iconography
         n = iconography.notes(" ".join(s.get("vo", "") + " " + s.get("prompt", "") for s in plan["scenes"]))
         if n:
-            forms = "\nTraditional forms (correct, never report them as a mistake): " + n
+            forms = "\nTraditional forms (correct, never report them as a mistake): " + n + "." + iconography.NO_COUNT
     except Exception:
         pass
     desc = "\n".join(f"scene {i + 1}: says \"{s['vo']}\" | type {s['type']}"

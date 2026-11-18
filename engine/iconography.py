@@ -30,6 +30,9 @@ FORMS = {
     "Narad": (r"narad|narada", "sage in white or saffron with a veena (tanpura), a tuft of hair, walks on clouds"),
     "Kuber": (r"kuber|kubera", "plump god of wealth with gold jewellery, a money pot, sometimes a mongoose"),
 }
+# 18 Nov: the checkers held Kartikeya for "five faces instead of six" twice; in a turned head some faces are hidden.
+NO_COUNT = (" Never count faces, heads or arms (in a painting at an angle some are hidden): report a deity only for a clearly "
+            "wrong form (wrong gender, an animal head that does not belong, missing the defining weapon or mount) or a lack of dignity.")
 DECENCY = "every figure fully and modestly dressed in traditional attire, correct gender and form, devotional and dignified"
 
 
