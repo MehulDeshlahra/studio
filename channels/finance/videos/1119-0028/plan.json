@@ -1,0 +1,273 @@
+{
+ "slug": "unknown-credit-scam-alert",
+ "title": "Account mein anjaan paisa aaya? Wapas mat bhejna",
+ "hooks": [
+  "Account mein anjaan ₹50,000 aaya? Ruko, wapas mat bhejna.",
+  "Kisi ne galat paisa bheja? Wapas bhejne se pehle ye dekh lo.",
+  "Bank se anjaan credit aaya? Ye naya scam hai, bach ke raho."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with specific amount + immediate stop command; mirrors top finance shorts that lead with concrete threat and action in first 3 seconds.",
+ "metaphor": "Money mule trap: unexpected credit is bait; returning it makes you a layer in the laundering chain.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Account mein anjaan ₹50,000 aaya? Ruko, wapas mat bhejna.",
+   "type": "object",
+   "prompt": "Smartphone face up on dark green-black surface, screen showing bank SMS: '₹50,000 credited', soft green glow, gold rim light",
+   "motion": "push",
+   "title": "",
+   "label": "UNKNOWN CREDIT",
+   "keywords": [
+    "anjaan paisa",
+    "wapas mat bhejna"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, smartphone showing bank credit SMS, soft green and gold light",
+   "real": {
+    "q": "mobile banking app notification unknown credit 50000 rupees",
+    "kind": "photo",
+    "subject": "A physical smartphone held by a hand showing a mobile banking app notification with 'Credit of ₹50,000' from an unknown source"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Ye naya scam hai — scammer khud paisa daalta hai.",
+   "type": "object",
+   "prompt": "Shadowy figure at laptop, digital arrow sending money toward glowing bank account icon, dark green-black background, green-gold accent",
+   "motion": "pan",
+   "title": "",
+   "label": "STEP 1: BAIT",
+   "keywords": [
+    "scammer",
+    "paisa daalta"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, abstract money flow from shadowy source to bank account icon, soft green and gold light",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Phir call aata: 'Galat chala gaya, QR se wapas karo.'",
+   "type": "object",
+   "prompt": "Phone screen showing WhatsApp chat with scam message and QR code, dark green-black background, soft green glow",
+   "motion": "push",
+   "title": "",
+   "label": "STEP 2: TRAP",
+   "keywords": [
+    "galat chala gaya",
+    "QR code"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, WhatsApp interface showing scam refund message with QR code, soft green and gold light",
+   "real": {
+    "q": "whatsapp call incoming unknown number scam",
+    "kind": "photo",
+    "subject": "A phone screen displaying an incoming WhatsApp call or message from an unknown number, held in hand"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Tum wapas bhejte ho, par wo paisa kisi aur victim ka hai.",
+   "type": "object",
+   "prompt": "Split view: distressed person holding phone left, your account highlighted as 'LAYER' in red right, dark green-black background",
+   "motion": "push",
+   "title": "",
+   "label": "VICTIM'S MONEY",
+   "keywords": [
+    "victim ka paisa",
+    "money mule"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, split screen showing victim and your account marked as layer, soft green and gold light",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Matlab tum ban gaye money mule — layer ban gaye uska.",
+   "type": "object",
+   "prompt": "Chain diagram: Victim → Your Account → Scammer, each link glowing, your account pulsing red, dark green-black background",
+   "motion": "push",
+   "title": "",
+   "label": "MONEY MULE",
+   "keywords": [
+    "money mule",
+    "layer"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, three-node chain diagram with middle node highlighted red, soft green and gold light",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Police transaction trace karegi, seedha tumhare door pe pahunchegi.",
+   "type": "object",
+   "prompt": "Cyber cell screen showing transaction trace highlighting your account as endpoint, dark green-black background, green-gold accent",
+   "motion": "pan",
+   "title": "",
+   "label": "POLICE TRACE",
+   "keywords": [
+    "police trace",
+    "transaction"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, police cyber cell interface with transaction trace, soft green and gold light",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "indian police officer cyber crime unit investigating",
+    "kind": "photo",
+    "subject": "A real photo of an Indian police officer or cyber crime unit member at a desk with a laptop, looking serious"
+   },
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Scammer? Wo toh saaf bach nikalta hai.",
+   "type": "object",
+   "prompt": "Shadowy figure fading away behind digital smoke, clean escape, dark green-black background",
+   "motion": "push",
+   "title": "",
+   "label": "SCAMMER ESCAPES",
+   "keywords": [
+    "scammer bach gaya"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, shadowy figure dissolving into digital particles, soft green and gold light",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "RBI bolta hai: anjaan credit ko haath mat lagao.",
+   "type": "object",
+   "prompt": "RBI logo embossed on dark metal card with circular stamp, highlighted guideline text visible, dark green-black background",
+   "motion": "push",
+   "title": "",
+   "label": "RBI GUIDELINE",
+   "keywords": [
+    "RBI bolta hai",
+    "anjaan credit"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, RBI official document with highlighted guideline, soft green and gold light",
+   "real": {
+    "q": "Reserve Bank of India official logo",
+    "kind": "logo",
+    "subject": "The official RBI logo appearing briefly as a visual marker"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Bank ko bolo, cybercrime.gov.in pe report karo — turant.",
+   "type": "object",
+   "prompt": "Laptop showing cybercrime.gov.in portal, phone beside it with banking app complaint open, dark green-black background",
+   "motion": "push",
+   "title": "",
+   "label": "ACTION PLAN",
+   "keywords": [
+    "bank complaint",
+    "cybercrime.gov.in"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, laptop with cybercrime portal and phone with banking app, soft green and gold light",
+   "real": {
+    "q": "web search cybercrime.gov.in report",
+    "kind": "photo",
+    "subject": "web search cybercrime.gov.in report"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Bank trail freeze karega, scammer pakda jayega, tum safe.",
+   "type": "object",
+   "prompt": "Lock icon sealing transaction trail, scammer caught in net, you with green shield, dark green-black background",
+   "motion": "push",
+   "title": "",
+   "label": "YOU'RE SAFE",
+   "keywords": [
+    "trail freeze",
+    "safe"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, lock sealing money trail with shield protection, soft green and gold light",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Save karo, kaam aayega. Tere saath bhi hua kya?",
+   "type": "object",
+   "prompt": "Finance Fuel logo with save bookmark icon, dark green-black background, soft green-gold glow",
+   "motion": "push",
+   "title": "",
+   "label": "OUTRO",
+   "keywords": [
+    "save karo",
+    "kaam aayega"
+   ],
+   "bg_prompt": "Photorealistic premium studio render on deep black-green, Finance Fuel logo with bookmark icon, soft green and gold light",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Account mein anjaan ₹50,000 aaya? Ruko, wapas mat bhejna — ye naya scam hai.\n\nScammer khud paisa daalta hai, phir QR se wapas mangta hai.\n\nTum wapas bhejte ho → wo paisa kisi victim ka → tum money mule ban gaye.\n\nPolice trace tumhare door pe, scammer saaf bach nikalta hai.\n\nRBI bolta hai: anjaan credit ko haath mat lagao.\nBank ko bolo, cybercrime.gov.in pe report karo turant.\nBank trail freeze karega, scammer pakda jayega, tum safe.\n\nSave karo, kaam aayega 📌\nTere saath bhi hua kya? Comment mein batao.\n\nEducation only, not financial advice.",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#scamalert",
+  "#rbi",
+  "#upi",
+  "#cybercrime"
+ ],
+ "claims": [
+  {
+   "claim": "Scammers deposit money then ask victim to return via QR/UPI",
+   "basis": "Legal Warning India article on Online Refund Scam 2026; documented scam pattern"
+  },
+  {
+   "claim": "Returning the money makes you a money mule layer in laundering chain",
+   "basis": "Cybercrime investigation pattern: police trace transaction to return sender; scammer remains hidden"
+  },
+  {
+   "claim": "RBI guideline: do not return unknown credits, inform bank",
+   "basis": "RBI circulars on customer protection and unauthorized transactions; standard banking ombudsman advice"
+  },
+  {
+   "claim": "Report to bank immediately and cybercrime.gov.in for account freezing and recovery",
+   "basis": "Aseem Juneja guide: bank complaint within 24-48 hours + cybercrime portal for account freezing and recovery"
+  }
+ ],
+ "brain_ids": [
+  "4396759d41",
+  "1e60a34718",
+  "161339712e",
+  "a688e48ca2",
+  "7fa182f8ef",
+  "97e1b2fcbb",
+  "e15cfaed29",
+  "9db4cc694f",
+  "12739745ca",
+  "0d27978044",
+  "0755cc155a",
+  "6ce7203c71",
+  "7f620e6fdf",
+  "fc294ac58f"
+ ],
+ "visual_done": "2026-11-19 00:37",
+ "skin": "keynote"
+}
