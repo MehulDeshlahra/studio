@@ -350,8 +350,11 @@ def fetch(real, out_path, lab=False, raw=False):
     shutil.rmtree(work, ignore_errors=True); os.makedirs(work, exist_ok=True)
     try:
         qs = [q + (" logo" if kind == "logo" and "logo" not in q.lower() else "")]
+        fav = None
         if kind == "logo":                                        # the official file first: no judging needed
             off = download(official_logo(q), work, kind, want=2, min_side=120)
+            if off and "favicons" in off[0]["url"] and not raw:   # a 256 px site icon is blurry full frame: web first, icon last
+                fav, off = off[0], []
             if off:
                 src = trim_margins(off[0]["path"], work)
                 if raw:
@@ -362,6 +365,8 @@ def fetch(real, out_path, lab=False, raw=False):
                 return out_path
         urls = bing(qs[0] + " -transparent -checkered") + commons(q)
         cands = download(urls, work, kind)
+        if not cands and fav:
+            layout(fav["path"], out_path, kind, lab); log("realmedia ok", repr(q), "site icon", fav["url"][:80]); return out_path
         if not cands:
             log("realmedia: no usable images for", q); return None
         if kind == "photo":                                       # never the same picture within 30 days (URL or look-alike)
@@ -369,6 +374,8 @@ def fetch(real, out_path, lab=False, raw=False):
             if not cands:
                 log("realmedia: every candidate was used in the last 30 days:", q); return None
         i, why = pick(cands[:6], subject, kind, work)
+        if i < 0 and fav:
+            layout(fav["path"], out_path, kind, lab); log("realmedia ok", repr(q), "site icon", fav["url"][:80]); return out_path
         if i < 0:
             log("realmedia: none fits", repr(subject), why); return None
         src = trim_margins(cands[i]["path"], work) if kind == "logo" else cands[i]["path"]
