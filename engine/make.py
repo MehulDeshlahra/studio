@@ -195,6 +195,19 @@ Return JSON {{"scenes": [{{"n": <scene number>, "kind": "...", "q": "the image s
 "subject": "what the picture must show", "why": "short"}}]}} listing ONLY the scenes that get something real."""
 
 
+def _quick_ask(prompt, max_tokens=800):
+    """18 Nov: small creative decisions go to the fast free models first (Groq via OmniRoute studio-fast, ~1 s); the
+    planner (Gemini, which hung up to 5 min a try today) only if they fail."""
+    import llm, plan as planner
+    try:
+        r = llm.parse_json(llm.text(prompt, json_mode=True, max_tokens=max_tokens, fast=True))
+        if isinstance(r, dict) and r:
+            return r
+    except Exception as e:
+        log("quick ask fell back to the planner:", str(e)[:100])
+    return planner.ask(prompt, max_tokens=max_tokens) or {}
+
+
 def _pick_skin(ch, p):
     """18 Nov (owner: "use your brain and pick what template suits what; take ownership"). Chooses the look of THIS
     video from compose_lab.SKINS (styles learnt from the Lemo-Opuscar library), by topic, and rotates so two videos in a
@@ -214,7 +227,7 @@ def _pick_skin(ch, p):
                      f"{s.get('vo', '')}" for i, s in enumerate(sc_))
     r = {}
     try:
-        r = planner.ask(
+        r = _quick_ask(
             "You are the creative director of a Hindi tech-explainer Reels page. Choose a LOOK for EACH scene, like a film "
             "editor who changes the visual world when the story changes (the real world -> inside the machine -> the smart "
             "part -> back to the real world).\nLooks:\n" + menu + "\n"
@@ -223,7 +236,7 @@ def _pick_skin(ch, p):
             "last scene are in the real world (keynote) unless the topic itself lives inside a screen; a scene marked REAL "
             "(a real logo / app screen / product photo) is keynote; pick the look that makes THAT part easiest to understand.\n"
             f"Our last videos used: {recent[-3:]} - vary the mix.\n"
-            'Return JSON {"looks": ["<look for scene 1>", "<scene 2>", ...], "why": "short"}', max_tokens=500) or {}
+            'Return JSON {"looks": ["<look for scene 1>", "<scene 2>", ...], "why": "short"}', 600)
     except Exception as e:
         log("look pick failed:", str(e)[:100])
     looks = [str(x).strip().lower() for x in (r.get("looks") or [])]
@@ -250,7 +263,7 @@ def _visual_director(ch, p, film):
             "- a brand's official logo once, at its first mention or the reveal; the real app screen when the line shows what the app does"
         sc = "\n".join(f"{i + 1} | {s.get('type')} | {s.get('vo', '')} | {s.get('label') or s.get('title') or ''}"
                        for i, s in enumerate(p.get("scenes", [])))
-        r = planner.ask(DIRECTOR.format(rules=rules, scenes=sc), max_tokens=2000) or {}
+        r = _quick_ask(DIRECTOR.format(rules=rules, scenes=sc), 2000)
     except Exception as e:
         log("visual director failed:", str(e)[:120]); return False
     did = 0
