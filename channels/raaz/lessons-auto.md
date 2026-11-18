@@ -86,3 +86,10 @@
 
 ## review 1118-1315
 - length 64.13 s is outside 25-55 s
+
+## 1118-1328 Chouthi Manzil Ka Raaz - Part 5
+- scene 9: shadow geometry appears slightly unnatural
+- scene 10: hand rendering shows minor AI structural artifacts
+
+## review 1118-1328
+- format/loudness: h264,1080,1920,30/1 -14.5 LUFS, true peak 0.3

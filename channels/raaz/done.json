@@ -63,5 +63,15 @@
   "review": [
    "length 64.13 s is outside 25-55 s"
   ]
+ },
+ {
+  "job": "1118-1328",
+  "topic": "Chouthi Manzil Ka Raaz - Part 5",
+  "title": "CCTV Mein 5 Saal Puraani Maut Ka Raaz",
+  "qc_ok": false,
+  "status": "held",
+  "review": [
+   "format/loudness: h264,1080,1920,30/1 -14.5 LUFS, true peak 0.3"
+  ]
  }
 ]
