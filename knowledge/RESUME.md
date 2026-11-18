@@ -111,3 +111,9 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 9. After stats exist: comment replies, Part 2 series, drop-off lessons.
 10. Katha Hindi caption timing still weak.
 11. Later: new pages (owner prefers new pages over more versions).
+
+## 18 Nov 22:30 new pages
+- Navkar Bhav (jain, page 1498175213370788, IG 17841410169576875) and Finance Fuel (finance, page 1445486545315323, IG 17841423953560807). Account files ~/.studio-accounts/jain.json, finance.json (page_id only; keys resolved).
+- Page list now comes from channels/ (core.pages()); per-page tables (dm, rivals, hookstudy, site, trends, stories, musiclib, thumb) have both pages.
+- Finance = lab film look (theme.hud FINANCE.FUEL, finance brands in make.BRANDS), caption_footer 'Education only, not financial advice.' (seo.text_for, all platforms). Jain = story look, Tirthankara forms in iconography.py, looks (manuscript) OFF until a picture pilot.
+- Owner: YouTube channels for both (his sign-up), bios 'A @scrollhouse.in page', warm-up likes/comments 19-21 Nov. Business pages Getmeflat + Fibbi added to the dashboard (manual).

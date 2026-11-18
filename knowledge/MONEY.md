@@ -70,7 +70,8 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
 - [ ] Affiliate: Amazon Associates / Flipkart (ASK MEHUL to sign up when tech has steady views).
 - [ ] YPP ads at 1,000 subs + 10M Shorts views (before Feb 2027, when it becomes 20M).
 ### More inventory (owner likes new pages; expansion on hold until the 3 pages run clean, then)
-- [ ] Jain stories, English stories, finance explainers (order agreed 18 Nov). Each new page = another audience to sell.
+- [x] 18 Nov 22:30: Navkar Bhav (channels/jain, @navkarbhav, Jain stories) + Finance Fuel (channels/finance, @finance.fuel, money explainers, lab look, SEBI-safe rules + not-advice caption footer) added; first videos building; posting from 22 Nov (warm-up). Proof: Meta page keys + IG ids resolved on the server.
+- [ ] English stories page (next in the agreed order).
 
 ## 5b. Parent brand: Scroll House (owner picked 18 Nov)
 - Genre-, language- and format-neutral network name. Every page bio: "A Scroll House page".
