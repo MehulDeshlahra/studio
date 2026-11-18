@@ -109,10 +109,12 @@ def skin_css(skin, acc):
 .scene:after{{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:url("{paper}") 0 0/100% 100%,
   linear-gradient(#e7f0f914 1.5px,transparent 1.5px) 0 0/60px 60px,linear-gradient(90deg,#e7f0f914 1.5px,transparent 1.5px) 0 0/60px 60px,
   linear-gradient(#e7f0f926 2px,transparent 2px) 0 0/300px 300px,linear-gradient(90deg,#e7f0f926 2px,transparent 2px) 0 0/300px 300px}}
-.bgimg{{mix-blend-mode:screen;opacity:.95;filter:saturate(.6)}}
+.bgimg{{mix-blend-mode:screen;opacity:.6;filter:saturate(.6)}}
 .bgshade{{background:linear-gradient(180deg,#132e63cc 0%,#132e6300 25%,#132e6300 60%,#132e63d9 82%,#132e63 100%)}}
 .glow,.vign,.grain{{display:none}}
-.cam,.kin,.stat,.statsub,.node,.cl,.cv,.ptitle,.rl,.rv,.cap,.lpill,.hud span,.endh,.endf{{font-family:'Architects Daughter',cursive!important;color:#e7f0f9!important}}
+.cam,.kin,.stat,.statsub,.node,.cl,.cv,.ptitle,.rl,.rv,.lpill,.hud span,.endh,.endf{{font-family:'Architects Daughter',cursive!important;color:#e7f0f9!important}}
+.node,.cl,.cv,.rl,.rv{{text-shadow:0 0 10px #132e63,0 0 22px #132e63,0 0 4px #132e63!important}}
+.cap{{color:#fff!important}}
 .stat,.kin{{letter-spacing:0;text-shadow:none!important;font-weight:400}}
 .kw.acc,.cap .key{{color:#e7f0f9!important;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:8px}}
 .uline{{background:#e7f0f9;box-shadow:none}}
@@ -280,6 +282,8 @@ def page(plan, timed, total, theme, assets):
             nm = _num(v)
             # 18 Nov v2: one line always: the font fits the value in 940 px (bold glyphs ~0.62 em); "2 HOURS" wrapped at 250 px
             sty = (' style="font-size:%dpx;white-space:nowrap"' % int(min(250, 940 / (0.62 * max(3, len(v)))))) if film else ""
+            if nm and nm[2] < 10:     # 18 Nov pilot: counting 0 -> 2 read as "1 HOURS"; small numbers just land
+                nm = None
             if nm:
                 st, en, val, dec, comma = nm
                 hero = (f'<div id="{sid}h" class="stat"{sty}>{esc(v[:st])}<span id="{sid}n" class="tab">{esc(v[st:en])}</span>{esc(v[en:])}</div>')
