@@ -466,6 +466,8 @@ def code_fix(what, evidence, files, verify=None, task=False):
         note(f"[dry] would ask the coding agent: {what} ({files})"); return {}
     if mem_mb() < 3000:
         note(f"code fix for {what} waits: only {mem_mb()} MB free"); return {}
+    if busy():                                   # 18 Nov: one heavy thing at a time (the checks build a video too)
+        return {}
     day = time.strftime("%Y-%m-%d")
     S.setdefault("code_day", {})[day] = S["code_day"].get(day, 0) + 1
     S["code_day"] = dict(sorted(S["code_day"].items())[-7:])
