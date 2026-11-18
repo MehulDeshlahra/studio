@@ -384,6 +384,15 @@ def heal_unknown():
             it.update(state="gone", why="did not happen again in the last hour"); continue
         it.update(state="open")
     S["seen_unknown"] = list(seen)[-400:]
+    # 18 Nov: a failed unit is judged by the unit itself (scout was fixed in its unit file, not in engine code)
+    for key, it in S["items"].items():
+        if not key.startswith("unk:") or it.get("state") not in ("open", "parked"):
+            continue
+        m = re.search(r"(studio-[\w.-]+?)(?:\.service|$)", it.get("what", ""))
+        if m and re.match(r"(unit failed|code error in)", it.get("what", "")) and "#" not in m.group(1):
+            res = sh(f"systemctl show {m.group(1)}.service -p Result --value")[1].strip()
+            if res == "success":
+                it.update(state="gone", why="the unit runs fine again"); note(f"closed: {it['what'][:80]} (the unit runs fine again)")
     # open items: try a code fix (one per run)
     for key, it in S["items"].items():
         if not key.startswith("unk:") or it.get("state") != "open":
