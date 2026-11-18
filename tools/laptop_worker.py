@@ -116,7 +116,7 @@ def measure_one(url, work):
     """Editing numbers of one competitor Short: length, cuts (scene changes), first cut, cuts per 10 s, loudness."""
     import re
     f = os.path.join(work, "v.mp4")
-    r = run([sys.executable, "-m", "yt_dlp", "-q", "-f", "best[height<=720][ext=mp4]/best[height<=720]/best", "-o", f, url], timeout=240)
+    r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "-f", "best[height<=720][ext=mp4]/best[height<=720]/best", "-o", f, url], timeout=240)
     if r.returncode or not os.path.exists(f):
         return {"url": url, "error": (r.stderr or "download failed")[-160:]}
     d = run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], timeout=60).stdout.strip()
