@@ -257,6 +257,21 @@ def main():
         theme["handle"] = ch["handle"]
     job_id = a.job or time.strftime("%m%d-%H%M")
     job = os.path.join(OUT, ch["id"], job_id); os.makedirs(job, exist_ok=True)
+    # 18 Nov: one build per job, whoever starts it (lanes, healer, owner agent, a manual run). The lock is held for the
+    # whole process and survives the os.execv re-voice restart (same process, inherited file descriptor).
+    try:
+        import fcntl
+    except ImportError:                               # laptop (Windows) test runs: no lock
+        fcntl = None
+    if fcntl and os.environ.get("STUDIO_JOB_LOCKED") != job_id:
+        _lk = open(os.path.join(job, ".build.lock"), "w")
+        try:
+            fcntl.flock(_lk, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError:
+            log("job", ch["id"], job_id, "is already being built by another process; not starting a second build")
+            return
+        os.set_inheritable(_lk.fileno(), True)
+        os.environ["STUDIO_JOB_LOCKED"] = job_id
     order = ["research", "plan", "voice", "assets", "compose", "mix", "render", "qc", "send"]
     redo = set(order[order.index(a.frm):]) if a.frm in order else set()
     meta = load(os.path.join(job, "meta.json"), {})
