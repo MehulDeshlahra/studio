@@ -289,9 +289,10 @@ def page(plan, timed, total, theme, assets):
                 st, en, val, dec, comma = nm
                 hero = (f'<div id="{sid}h" class="stat"{sty}>{esc(v[:st])}<span id="{sid}n" class="tab">{esc(v[st:en])}</span>{esc(v[en:])}</div>')
                 js.append(f'(function(){{const o={{v:0}},el=document.getElementById("{sid}n");'
-                          # 18 Nov: 1.4 s count -> the pre-render check's first still read '98+' for '100+' and held the video
-                          f'tl.to(o,{{v:{val},duration:{min(0.7, d * 0.3):.2f},ease:"power2.out",onUpdate:()=>{{el.textContent='
-                          f'o.v.toLocaleString("{"en-IN" if comma else "en-US"}",{{minimumFractionDigits:{dec},maximumFractionDigits:{dec}}})}}}},{a + 0.2:.3f});'
+                          # 18 Nov: 1.4 s count -> the pre-render check's first still read '98+' for '100+' and held the video.
+                          # 19 Nov: still read 98+ on SHORT scenes (still at 0.45 d, count ended 0.2 + 0.3 d): now 0.1 + 0.22 d, always done first
+                          f'tl.to(o,{{v:{val},duration:{min(0.7, d * 0.22):.2f},ease:"power2.out",onUpdate:()=>{{el.textContent='
+                          f'o.v.toLocaleString("{"en-IN" if comma else "en-US"}",{{minimumFractionDigits:{dec},maximumFractionDigits:{dec}}})}}}},{a + 0.1:.3f});'
                           f'tl.set(o,{{v:0}},{a:.3f});}})();')
             else:
                 hero = f'<div id="{sid}h" class="stat"{sty}>{esc(v)}</div>'
