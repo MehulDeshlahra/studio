@@ -58,8 +58,56 @@ STAGE_DY, STAGE_S, STAGE_CAP_Y = 110, 1.15, 1395
 STAGE_TEXT = ("title", "stat")        # text-only scenes move down but keep their size (150-200 px type would overflow)
 
 
+def _film_on(theme):
+    """18 Nov v2 "film grammar" (owner: the stage pilot looked the same; use the skills). From the HyperFrames skill
+    (references/motion.md, types/explainer.md, types/vertical.md): a deliberate camera move per scene instead of a breathing
+    scale; transitions with a cause that change at every seam; no tag pill + HUD on every scene (reads as slides); bigger
+    hero; per-word blur captions with the keyword larger; render-time motion blur. theme {"film": true} or STUDIO_LAB_FILM=1."""
+    return bool(theme.get("film")) or os.environ.get("STUDIO_LAB_FILM") == "1"
+
+
+def _camera(sid, kind, a, d):
+    """One camera move per scene on the .cam wrapper (never on the timed clip). Titles land and hold dead still."""
+    c = f"#{sid}cam"
+    if kind in ("title", "stat"):                    # pull-back reveal: arrives close, settles, then still
+        return [f'tl.fromTo("{c}",{{scale:1.32,filter:"blur(10px)"}},{{scale:1,filter:"blur(0px)",duration:0.8,ease:"expo.out",immediateRender:false}},{a:.3f});']
+    if kind in ("ui", "chart", "compare", "chat", "code"):   # UI focus zoom: establish, then push toward the first rows
+        t2 = a + max(0.9, d * 0.45)
+        return [f'tl.set("{c}",{{scale:1,transformOrigin:"50% 36%"}},{a:.3f});',
+                f'tl.to("{c}",{{scale:1.16,duration:{min(1.0, max(0.5, d * 0.35)):.2f},ease:"power2.inOut"}},{t2:.3f});']
+    if kind == "flow":                               # camera travels down the path with the dot
+        return [f'tl.fromTo("{c}",{{y:90}},{{y:-70,duration:{max(0.8, d - 0.2):.2f},ease:"power2.inOut",immediateRender:false}},{a:.3f});']
+    # object / clip / image: slow push with a slight drift (the product is the subject)
+    return [f'tl.fromTo("{c}",{{scale:1.0,x:-14}},{{scale:1.12,x:14,duration:{max(0.8, d):.2f},ease:"power1.inOut",immediateRender:false}},{a:.3f});']
+
+
+def _seam(i, prev, sid, a, kind, cues):
+    """Four transitions, each with a cause, never the same twice in a row (motion.md 'Transitions with a cause')."""
+    p, n = f"#{prev}", f"#{sid}"
+    k = i % 4
+    if k == 1:      # whip: horizontal smear out, the next lands blurred and sharpens
+        out = [f'tl.to("{p}",{{xPercent:-35,filter:"blur(16px)",duration:0.2,ease:"power3.in"}},{a - 0.2:.3f});',
+               f'tl.fromTo("{n}",{{xPercent:35,filter:"blur(16px)"}},{{xPercent:0,filter:"blur(0px)",duration:0.32,ease:"expo.out",immediateRender:false}},{a:.3f});']
+        snd = "sfx/whoosh-fast.mp3"
+    elif k == 2:    # zoom through: the old frame flies into the lens, the new one grows out of it
+        out = [f'tl.to("{p}",{{scale:1.6,opacity:0,filter:"blur(12px)",duration:0.25,ease:"power3.in"}},{a - 0.25:.3f});',
+               f'tl.fromTo("{n}",{{scale:0.7,opacity:0,filter:"blur(12px)"}},{{scale:1,opacity:1,filter:"blur(0px)",duration:0.45,ease:"expo.out",immediateRender:false}},{a:.3f});']
+        snd = "sfx/air-zoom.mp3"
+    elif k == 3:    # blur swap on one stage
+        out = [f'tl.to("{p}",{{opacity:0,filter:"blur(8px)",duration:0.16,ease:"power2.in"}},{a - 0.16:.3f});',
+               f'tl.fromTo("{n}",{{opacity:0,filter:"blur(8px)"}},{{opacity:1,filter:"blur(0px)",duration:0.16,ease:"power2.out",immediateRender:false}},{a:.3f});']
+        snd = "sfx/sweep-small.mp3"
+    else:           # dip cut: the outgoing frame darkens before a hard cut, so the cut reads as meant
+        out = [f'tl.to("{p}",{{filter:"brightness(0.55)",duration:0.1,ease:"none"}},{a - 0.1:.3f});',
+               f'tl.fromTo("{n}",{{filter:"brightness(1.6)"}},{{filter:"brightness(1)",duration:0.25,ease:"power2.out",immediateRender:false}},{a:.3f});']
+        snd = "sfx/impact.mp3"
+    cues.append({"t": round(a - 0.05, 3), "file": snd, "gain_db": -24, "align": "onset"})
+    return out
+
+
 def page(plan, timed, total, theme, assets):
     stage = _stage_on(theme)
+    film = _film_on(theme)
     acc = theme.get("accent", "#ffd84d")
     cool = theme.get("accent2", "#3ec7ff")
     handle = theme.get("handle", "")
@@ -263,7 +311,7 @@ def page(plan, timed, total, theme, assets):
             if s.get("sub"):
                 js.append(f'tl.fromTo("#{sid}u",{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{a + 0.5:.3f});')
                 js.append(f'tl.set("#{sid}u",{{opacity:0}},{a:.3f});')
-        if s.get("label"):
+        if s.get("label") and (not film or kind in ("object", "clip")):     # v2: a tag pill on every scene reads as slides
             inner += f'<div id="{sid}p" class="lpill"><i></i>{esc(s["label"].upper())}</div>'
             js.append(f'tl.fromTo("#{sid}p",{{y:-14,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out",immediateRender:false}},{a + 0.15:.3f});')
             js.append(f'tl.set("#{sid}p",{{opacity:0}},{a:.3f});')
@@ -276,11 +324,17 @@ def page(plan, timed, total, theme, assets):
                 stat_win.append((a, b))
         else:
             inner += f'<div id="{sid}cam" class="cam">{hero}</div>'
-        inner += (f'<div class="hud"><span class="hl"><b></b>{esc(series)}</span>'
-                  f'<span class="hr">{esc("" if (s.get("hud_right") or "").upper() in ("", (s.get("label") or "").upper()) else s["hud_right"].upper())}</span></div>')   # no duplicate of the pill
-        js.append(f'tl.fromTo("#{sid}cam",{{scale:1.05}},{{scale:1.0,duration:0.9,ease:"power3.out",immediateRender:false}},{a:.3f});')
-        js.append(f'tl.to("#{sid}cam",{{scale:1.03,duration:{max(0.4, d - 0.9):.3f},ease:"sine.inOut"}},{a + 0.9:.3f});')
-        if i:
+        if not film or i == 0:
+            inner += (f'<div class="hud"><span class="hl"><b></b>{esc(series)}</span>'
+                      f'<span class="hr">{esc("" if (s.get("hud_right") or "").upper() in ("", (s.get("label") or "").upper()) else s["hud_right"].upper())}</span></div>')   # no duplicate of the pill
+        if film:
+            js += _camera(sid, kind, a, d)
+        else:
+            js.append(f'tl.fromTo("#{sid}cam",{{scale:1.05}},{{scale:1.0,duration:0.9,ease:"power3.out",immediateRender:false}},{a:.3f});')
+            js.append(f'tl.to("#{sid}cam",{{scale:1.03,duration:{max(0.4, d - 0.9):.3f},ease:"sine.inOut"}},{a + 0.9:.3f});')
+        if i and film:
+            js += _seam(i, f"s{i - 1}", sid, a, kind, cues)
+        elif i:
             tr = i % 3
             if tr == 1:      # push up with motion blur
                 js.append(f'tl.fromTo("#{sid}",{{yPercent:7,opacity:0,filter:"blur(14px)"}},{{yPercent:0,opacity:1,filter:"blur(0px)",duration:0.38,ease:"power3.out",immediateRender:false}},{a:.3f});')
@@ -316,8 +370,12 @@ def page(plan, timed, total, theme, assets):
             kk = re.sub(r"[^a-z0-9]", "", w["w"].lower())
             word = esc(re.sub(r"[,]+$", "", w["w"]).replace("...", ""))
             spans.append(f'<span id="c{j}w{k}" class="w{" key" if kk in keys else ""}">{word}</span>')
-            cap_js.append(f'tl.to("#c{j}w{k}",{{opacity:1,duration:0.08}},{max(st, w["s"] - 0.03):.3f});')
-            cap_js.append(f'tl.set("#c{j}w{k}",{{opacity:0.55}},{st:.3f});')
+            if film:                                  # v2: each word blurs in when it is spoken (motion.md), keyword larger
+                cap_js.append(f'tl.fromTo("#c{j}w{k}",{{opacity:0,filter:"blur(6px)"}},{{opacity:1,filter:"blur(0px)",duration:0.13,ease:"power2.out",immediateRender:false}},{max(st, w["s"] - 0.05):.3f});')
+                cap_js.append(f'tl.set("#c{j}w{k}",{{opacity:0}},{st:.3f});')
+            else:
+                cap_js.append(f'tl.to("#c{j}w{k}",{{opacity:1,duration:0.08}},{max(st, w["s"] - 0.03):.3f});')
+                cap_js.append(f'tl.set("#c{j}w{k}",{{opacity:0.55}},{st:.3f});')
         capdiv.append(f'<div id="c{j}" class="clip cap" data-start="{st:.3f}" data-duration="{en - st:.3f}" data-track-index="9">{" ".join(spans)}</div>')
         cap_js.append(f'tl.fromTo("#c{j}",{{y:16,opacity:0}},{{y:0,opacity:1,duration:0.18,ease:"power2.out",immediateRender:false}},{st:.3f});')
     brand = []
@@ -409,13 +467,17 @@ body{{margin:0;background:#07080b}}
 .cap{{left:0;right:0;margin:auto;width:fit-content;max-width:960px;top:{STAGE_CAP_Y}px;font-size:52px;line-height:1.2;padding:18px 34px 20px 64px;
   background:#0b0d12e0;border:1.5px solid #ffffff24;border-radius:30px;box-shadow:0 18px 40px #0009;text-shadow:none;box-sizing:border-box}}
 .cap:before{{content:"";position:absolute;left:28px;top:38px;width:14px;height:14px;border-radius:50%;background:{acc};box-shadow:0 0 12px {acc}}}
-""" if stage else "") + f"""
+""" if stage else "") + (f"""
+.prop{{left:0;top:250px;width:1080px;height:980px;-webkit-mask-image:radial-gradient(ellipse 72% 66% at 50% 50%,#000 62%,transparent 100%)}}
+.cap .key{{font-size:1.22em;color:{acc}}}
+.grain{{opacity:.04}}
+""" if film else "") + f"""
 .endh{{position:absolute;left:0;width:{W}px;top:800px;text-align:center;font-weight:800;font-size:110px;letter-spacing:-3px}}
 .endf{{position:absolute;left:0;width:{W}px;top:950px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:6px;color:{acc}}}
 """
     doc = f"""<!doctype html><html><head><meta charset="utf-8">
 <style>{css}</style></head><body>
-<div id="root" data-composition-id="main" data-width="{W}" data-height="{H}" data-duration="{total:.3f}" data-start="0">
+<div id="root"{' data-motion-blur="on"' if film else ''} data-composition-id="main" data-width="{W}" data-height="{H}" data-duration="{total:.3f}" data-start="0">
 {chr(10).join(top)}
 {chr(10).join(scenes)}
 {chr(10).join(capdiv)}
