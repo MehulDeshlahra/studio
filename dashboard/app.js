@@ -2,7 +2,7 @@
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 // 18 Nov: held videos belong to the healer (engine/healer.py); say what it is doing, in plain words
-const HEAL_STEP = { known: "applying a fix it learned before", rebuild: "rebuilding with the newer code", simplify: "re-planned the failing scenes, rebuilding",
+const HEAL_STEP = { replan: "making a new plan the owner agent asked for", known: "applying a fix it learned before", rebuild: "rebuilding with the newer code", simplify: "re-planned the failing scenes, rebuilding",
   code: "trying a code fix (checked before it goes live)", resume: "finishing the interrupted build" };
 const healerLine = (j) => { const h = j.healer || {}; if (h.state === "parked") return "Healer parked it: " + (h.why || "every step tried") + ".";
   if (h.state === "fixed") return "Healer fixed it."; if (h.step) return "Healer: " + (HEAL_STEP[h.step] || h.step) + (h.result ? " (last: " + h.result + ")" : "") + ".";

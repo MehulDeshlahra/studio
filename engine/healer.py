@@ -219,6 +219,12 @@ def heal_held():
                 continue
             stg = stage_for(probs)
             files = STAGE_FILES.get(stg, []) + STAGE_FILES["preflight"] + ["engine/make.py", "engine/plan.py"]
+            # 0 the owner agent (engine/mehul.py) asked for a new plan: honour it first, once per request
+            req = d.get("replan_requested")
+            if req and not any(s["step"] == "replan" and s.get("req") == req for s in it["steps"]):
+                it["state"] = "working"
+                it["steps"].append({"step": "replan", "req": req, "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
+                rebuild(cid, job, "plan", "the owner agent asked for a new plan"); save(STATE, S); return
             # 1 known fix
             kf = known_fix(probs)
             if kf and ("known", h) not in tried:
@@ -313,7 +319,7 @@ def check_cleared():
             continue
         st = status.get(key)
         if st and st != "held":
-            last = next((s for s in reversed(it["steps"]) if s.get("step") in ("known", "rebuild", "simplify")), None)
+            last = next((s for s in reversed(it["steps"]) if s.get("step") in ("known", "rebuild", "simplify", "replan")), None)
             it.update(state="fixed", fixed=time.strftime("%Y-%m-%d %H:%M"), status=st)
             if last:
                 last.update(pending=False, result="passed")

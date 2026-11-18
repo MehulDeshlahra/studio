@@ -190,12 +190,12 @@ def run():
                     row = next((d for d in done if d["job"] == a["job"] and d.get("status") == "held"), None)
                     if row and not row.get("mehul_rebuilt"):
                         row["mehul_rebuilt"] = time.strftime("%Y-%m-%d"); row.setdefault("review", []).insert(0, "owner agent: " + str(a.get("note", ""))[:200])
+                        # 18 Nov: it started its own build next to the healer's (3 Studio builds at once, 1.9 GB free).
+                        # Now it only asks; engine/healer.py runs the new plan when nothing else is building.
+                        row["replan_requested"] = time.strftime("%Y-%m-%d %H:%M")
                         if not DRY:
                             save(os.path.join(ROOT, "channels", cid, "done.json"), done)
-                            subprocess.Popen(["sudo", "systemd-run", f"--unit=studio-job-mehul-{a['job']}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M", "-p", "Nice=15",
-                                              "--working-directory=" + ROOT, "-E", "HOME=/home/ubuntu", sys.executable, os.path.join(ROOT, "engine", "make.py"),
-                                              cid, "--job", a["job"], "--from", "plan"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                        did.append(f"rebuild {a['job']}: {str(a.get('note', ''))[:80]}")
+                        did.append(f"asked the healer to re-plan {a['job']}: {str(a.get('note', ''))[:80]}")
                 elif a.get("do") == "task" and a.get("text"):
                     bq = os.path.join(ROOT, "knowledge", "build-queue.md")
                     t = a["text"].strip().replace("\n", " ")[:300]
