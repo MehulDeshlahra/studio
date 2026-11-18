@@ -268,7 +268,27 @@ def _visual_director(ch, p, film):
         s["real"] = {"q": x["q"], "kind": "logo" if kind == "logo" else "photo", "subject": x.get("subject") or x["q"]}
         did += 1
         log("visual director: scene", i + 1, kind, repr(x["q"]), "-", str(x.get("why", ""))[:80])
+    # 18 Nov (owner: "why are we not using the Google logo?"): a reel about a brand always shows its real logo once. The
+    # learnt rule says not in the first ~5 s, so it goes on the brand's first mention from scene 3 on (the reveal), or on
+    # its last mention if all mentions are earlier.
+    if film and not any(isinstance(s.get("real"), dict) and s["real"].get("kind") == "logo" for s in p.get("scenes", [])):
+        ms = [(i, b) for i, s in enumerate(p.get("scenes", []))
+              for b in [_brand_in(s.get("vo", "") + " " + str(s.get("label", "")) + " " + str(s.get("title", "")))]
+              if b and s.get("type") not in ("chat", "code", "clip")]
+        if ms:
+            i, b = next((m for m in ms if m[0] >= 2), ms[-1])
+            p["scenes"][i]["real"] = {"q": f"{b} logo", "kind": "logo", "subject": f"the official {b} logo"}
+            did += 1
+            log("visual director: scene", i + 1, "logo", repr(b), "- the brand's logo once, at its reveal")
     return did > 0
+
+
+def _brand_in(text):
+    import re as _re
+    for b in sorted(BRANDS, key=len, reverse=True):
+        if _re.search(rf"(?<![\w@]){_re.escape(b)}(?![\w])", text or "", _re.I if len(b) > 2 else 0):
+            return b
+    return None
 
 
 def stage_assets(ch, p, job):
