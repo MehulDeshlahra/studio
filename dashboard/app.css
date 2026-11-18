@@ -86,7 +86,7 @@ textarea{height:auto;padding:8px 10px;width:100%}
 .run .top{display:flex;gap:10px;align-items:center}
 .run .foot{display:flex;justify-content:space-between;color:var(--mut);font-size:12.5px;margin-top:6px}
 /* waterfall */
-.wf{margin-top:6px}.wf .r{display:grid;grid-template-columns:86px minmax(0,1fr) 58px;gap:10px;align-items:center;height:26px;font-size:12.5px}
+.wf{margin-top:6px}.wf .r{display:grid;grid-template-columns:86px minmax(0,1fr) 104px;gap:10px;align-items:center;height:26px;font-size:12.5px}
 .wf .tr{position:relative;height:10px;background:var(--sub);border-radius:3px}.wf .b{position:absolute;top:0;bottom:0;border-radius:3px;background:var(--c);min-width:3px}
 .wf .r.p .tr .b{display:none}.wf .r.p{color:var(--faint)}
 /* drawer */

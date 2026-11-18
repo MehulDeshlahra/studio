@@ -132,7 +132,7 @@ def sources(state):
     add("Cloudflare FLUX", "Backup images", "ok" if cf else "bad", "Key saved" if cf else "No key", ts(cl[-1]) if cl else None)
     yt = [c for c in state["channels"] if c["group"] == "Studio" and c.get("yt")]
     linked = [c for c in yt if c.get("yt_ok")]
-    add("YouTube uploader", "Shorts upload", "ok" if yt and len(linked) == len(yt) else "info", f"{len(linked)} of {len(yt)} channels linked · needs a one-time login", None)
+    add("YouTube uploader", "Shorts upload", "ok" if yt and len(linked) == len(yt) else "info", f"{len(linked)} of {len(yt)} channels linked" + ("" if len(linked) == len(yt) else " · the rest need a one-time login"), None)
     tsj = cached("tsc", 300, lambda: json.loads(run(["tailscale", "status", "--json"]) or "{}"))
     online = (tsj.get("Self") or {}).get("Online") if isinstance(tsj, dict) else None
     add("Tailscale", "Private access to this page", "ok" if online else "warn", "Online" if online else "Status unknown", None)

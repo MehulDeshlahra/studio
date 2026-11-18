@@ -442,6 +442,14 @@ def _stage_assets(ch, p, job):
             s["bg_prompt"] = s.get("bg_prompt") or (
                 f"Vertical scene for a technology explainer about: {subj}. Style: {pic}. One clear subject in the middle third, "
                 "empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16.")
+            # 18 Nov (tech 1118-1845 held): behind a code / chat / UI card the planner asked for "a terminal window, code
+            # typing"; the image model painted fake code ('ttying.lia') that showed around our real card. These cards
+            # carry the text themselves, so their picture is a soft scene with no screen in it.
+            if s.get("type") in ("code", "chat", "ui", "chart") or re.search(r"terminal|\bcode\b|code typing|chat window|interface|dashboard|app ui|spreadsheet",
+                                                                               s["bg_prompt"], re.I):
+                s["bg_prompt"] = (f"Soft, out-of-focus ambient background for a technology explainer about: {subj}. Style: {pic}. "
+                                  "Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no "
+                                  "terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.")
             f = os.path.join(adir, f"s{i}bg.webp")
             img = (muse.image(s["bg_prompt"], f) or muse.omni_image(s["bg_prompt"], os.path.join(adir, f"s{i}bgo.jpg"))
                    or muse.cloudflare(s["bg_prompt"], os.path.join(adir, f"s{i}bg.jpg"))

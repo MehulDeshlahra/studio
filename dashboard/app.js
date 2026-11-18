@@ -39,7 +39,7 @@ let S = null, prev = "", runFilter = "all", runCh = "all", logQ = "", logLvl = "
 const nf = (x) => (x == null ? "—" : x >= 1e5 ? (x / 1e5).toFixed(1).replace(".0", "") + "L" : x >= 1e4 ? (x / 1000).toFixed(1).replace(".0", "") + "k" : Number(x).toLocaleString("en-IN"));
 const now = () => (S ? S.now : Date.now() / 1000);
 const ago = (t) => { if (!t) return "—"; const d = Math.max(0, now() - t); return d < 60 ? "just now" : d < 3600 ? `${(d / 60) | 0} min ago` : d < 86400 ? `${(d / 3600) | 0} h ago` : `${(d / 86400) | 0} d ago`; };
-const dur = (s) => (s == null ? "—" : s < 60 ? `${s | 0}s` : s < 3600 ? `${(s / 60) | 0}m ${String(s % 60 | 0).padStart(2, "0")}s` : `${(s / 3600) | 0}h ${String(((s % 3600) / 60) | 0).padStart(2, "0")}m`);
+const dur = (s) => (s == null ? "—" : s < 60 ? `${s | 0}s` : s < 3600 ? `${(s / 60) | 0}m ${String(s % 60 | 0).padStart(2, "0")}s` : s < 86400 ? `${(s / 3600) | 0}h ${String(((s % 3600) / 60) | 0).padStart(2, "0")}m` : `${(s / 86400) | 0}d ${(s % 86400 / 3600) | 0}h`);
 const inT = (s) => (s == null ? "—" : s <= 0 ? "now" : s < 3600 ? `in ${Math.ceil(s / 60)} min` : `in ${(s / 3600) | 0} h ${((s % 3600) / 60) | 0} m`);
 const ch = (id) => (S?.channels || []).find((c) => c.id === id) || { name: id, color: "#737373" };
 const badge = (k, j) => { let [t, c, run] = ST[k] || [k, K.gray]; if (k === "held" && j) t = j.held_state === "waiting" ? "Held · waits for a fix" : "Held · being rebuilt"; return `<span class="badge ${run ? "run" : ""}" style="--c:${c}"><i class="dot"></i>${t}</span>`; };
@@ -188,7 +188,7 @@ const V = {
     return `<div class="h1">Channels</div><div class="lead">${S.channels.length} channels. Follower numbers come from Meta every 30 minutes. Click one for its latest posts.</div>
      <div class="sec"><h3>Studio pages</h3><span class="mut">made by the engine</span></div><div class="card tw"><table>${head}<tbody>${st.map(row).join("")}</tbody></table></div>
      <div class="sec"><h3>Businesses</h3></div><div class="card tw"><table>${head}<tbody>${bz.map(row).join("")}</tbody></table></div>
-     <div class="sec"><h3>Make a video now</h3></div><div class="card pad"><div class="tools" style="margin:0"><select id="mkc">${st.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join("")}</select><input id="mkt" type="text" placeholder="Topic (optional)" style="flex:1;min-width:200px"><button class="btn pri" onclick="makeNow()">Start</button></div><div class="mut" style="margin-top:8px;font-size:12.5px">Runs in the background and counts toward today's budget. It appears under Runs within a few seconds.</div></div>`;
+     <div class="sec"><h3>Make a video now</h3></div><div class="card pad"><div class="tools" style="margin:0"><select id="mkc">${st.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join("")}</select><input id="mkt" type="text" placeholder="Topic (optional)" style="flex:1;min-width:200px"><button class="btn pri" onclick="makeNow()">Start</button></div><div class="mut" style="margin-top:8px;font-size:12.5px">Runs in the background at low priority (the job bot always comes first). It appears under Runs within a few seconds.</div></div>`;
   },
   server() {
     const s = S.server;

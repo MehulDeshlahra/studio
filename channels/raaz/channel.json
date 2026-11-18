@@ -91,5 +91,6 @@
   "serial": {
     "parts": 10,
     "note": "engine/serials.py plans the whole arc once (story bible), then one part per slot"
-  }
+  },
+  "youtube": "@aagesuno"
 }

@@ -72,7 +72,8 @@
     "font": "Archivo Black",
     "music": "music/deep-urban.mp3",
     "music_offset": 8,
-    "style": "lab", "film": true
+    "style": "lab",
+    "film": true
   },
   "handle_instagram": "@kaise.tech",
   "handle_youtube": "@kaise.tech.official",
@@ -92,5 +93,6 @@
     "post_from": "2026-11-20",
     "one_a_day_until": "2026-11-27",
     "note": "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
-  }
+  },
+  "youtube": "@kaise.tech.official"
 }

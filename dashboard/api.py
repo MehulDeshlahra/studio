@@ -21,11 +21,14 @@ SETTINGS = os.path.join(OUT, "dash-settings.json")
 FOLLOW_HIST = os.path.join(OUT, "dash-followers.json")
 PY = os.path.join(HOME, "studio-venv", "bin", "python")
 G = "https://graph.facebook.com/v23.0"
-TTS_CAP = int(os.environ.get("STUDIO_TTS_CAP", "30")); REELS_CAP = int(os.environ.get("STUDIO_REELS_CAP", "8"))
+# 18 Nov: same defaults as engine/daily.py (owner: no self-imposed daily caps; free keys are the only limit). The old 30/8
+# here made the brief say "15 of 8 budget cap, over limit" while nothing was capped.
+TTS_CAP = os.environ.get("STUDIO_TTS_CAP"); REELS_CAP = os.environ.get("STUDIO_REELS_CAP")
+TTS_CAP = int(TTS_CAP) if TTS_CAP else "no cap"; REELS_CAP = int(REELS_CAP) if REELS_CAP else "no cap"
 
 CHANNELS = [  # the 6 channels on the dashboard (owner, 17 Nov)
     {"id": "tech", "name": "Kaise Tech", "group": "Studio", "color": "#facc15", "page": "1474228909103892", "ig": "kaise.tech", "yt": "@kaise.tech.official"},
-    {"id": "katha", "name": "Puraan Ki Katha", "group": "Studio", "color": "#fb923c", "page": "1453056947892202", "ig": "puraankikatha", "yt": None},
+    {"id": "katha", "name": "Puraan Ki Katha", "group": "Studio", "color": "#fb923c", "page": "1453056947892202", "ig": "puraankikatha", "yt": "@puraankikatha"},
     {"id": "raaz", "name": "Aage Suno", "group": "Studio", "color": "#a78bfa", "page": "1501633449691931", "ig": "aagesuno", "yt": "@aagesuno"},
     {"id": "vajra", "name": "Vajra Formwork", "group": "Business", "color": "#34d399", "page": "1296793536861294", "ig": "vajraformwork", "yt": "channel/UCLl1cgbkcTjv5188ZIeAIlQ"},
     {"id": "planstalk", "name": "Planstalk", "group": "Business", "color": "#38bdf8", "page": None, "ig": "planstalkindia", "yt": None},
@@ -347,7 +350,11 @@ NICE = {"studio-inbox": "Read Telegram replies", "studio-prep": "Prep lane (scri
         "studio-selfcheck": "Self-check and self-fix", "studio-radar": "Tools radar (daily)",
         "studio-trends": "Trending topics scout (daily)", "studio-hooks": "Hook study of top Shorts (weekly)",
         "studio-weekly": "Weekly report (Sunday)", "studio-comments": "Pinned question + comment replies", "studio-mehul": "Mehul agent (acts for the owner)", "studio-stories": "Daily Stories (IG + FB)",
-        "studio-healer": "Healer (fixes held videos + unknown errors)", "studio-omnimap": "Model map (tests every free model, daily)"}
+        "studio-healer": "Healer (fixes held videos + unknown errors)", "studio-omnimap": "Model map (tests every free model, daily)",
+        "studio-dm": "Comment-to-DM (every 10 min)", "studio-domainwatch": "scrollhouse.in watcher (hourly)",
+        "studio-learn-deep": "Deep repo reader (3 a day)", "studio-janitor": "Janitor (cleanup, daily)",
+        "studio-rivals": "Competitors + brands (daily)", "studio-money": "Money milestones (daily)",
+        "studio-site": "scrollhouse.in site rebuild (daily)"}
 
 
 def schedule():
@@ -609,6 +616,7 @@ def issues(srv, fails, jl, sched, token_days, chs):
                 or "gemini text fail" in e["msg"] or "vision fail" in e["msg"] or "alignment failed" in e["msg"] \
                 or " ig skip " in e["msg"] or "omniroute image fail" in e["msg"] \
                 or "clip failed -> still image" in e["msg"] or "web search fail" in e["msg"] \
+                or e["msg"].startswith("preflight ") \
                 or re.search(r"gemini[\w -]* fail.*(429|503|Too Many Requests|Service Unavailable|timed out)", e["msg"]):      # recovered by a fallback
             continue
         seen.add(k); add("warn", "Error in the last 2 h", e["msg"][:240], "", None, "log-" + k)
