@@ -872,5 +872,130 @@
     "score": 3.53
    }
   ]
+ },
+ {
+  "t": "2026-11-18 07:36",
+  "picked": "Karna tears off his divine armor and earrings, knowing it makes him mortal — Mahabharata, Vana Parva. Lesson: Identity rooted in generosity outlives invincibility.",
+  "ideas": [
+   {
+    "topic": "Karna tears off his divine armor and earrings, knowing it makes him mortal — Mahabharata, Vana Parva. Lesson: Identity rooted in generosity outlives invincibility.",
+    "note": "",
+    "search": "Karna Kavach Kundal Mahabharata",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 5.9,
+    "median_views": 221198,
+    "fresh": 7.1,
+    "score": 7.58
+   },
+   {
+    "topic": "Dhruva, a neglected child, meditates until Vishnu makes him the immovable Pole Star — Bhagavata Purana, Skandha 4. Lesson: Single-pointed determination turns rejection into eternal significance.",
+    "note": "",
+    "search": "Dhruva Pole Star Bhagavata Purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 5.7,
+    "median_views": 183213,
+    "fresh": 7.0,
+    "score": 7.46
+   },
+   {
+    "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
+    "search": "did ravan touch sita maa valmiki ramayana",
+    "fit": 10.0,
+    "from": "trend",
+    "note": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
+    "demand_known": true,
+    "demand": 1.9,
+    "median_views": 5969,
+    "fresh": 6.9,
+    "score": 6.74
+   },
+   {
+    "topic": "Pushpaka Vimana – Ravana’s flying chariot and the danger of pride",
+    "search": "Pushpaka Vimana myth",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Searches for Vande Bharat Express and Rickshaw show high interest in transport; linking ancient flying chariot to modern fast trains creates a relatable contrast and delivers a moral about humility.",
+    "demand_known": true,
+    "demand": 2.8,
+    "median_views": 13256,
+    "fresh": 6.5,
+    "score": 6.71
+   },
+   {
+    "topic": "Prahlada survives fire, poison, and elephants — until Narasimha erupts from a pillar — Bhagavata Purana, Skandha 7. Lesson: Faith in the formless protects beyond any form of tyranny.",
+    "note": "",
+    "search": "Prahlada Narasimha Bhagavata Purana",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.2,
+    "score": 6.54
+   },
+   {
+    "topic": "Manu and the Great Flood (Satapatha Brahmana) – How the world was saved from a deluge",
+    "search": "Manu flood story",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Cyclone Akvan updates are trending; viewers are searching for storm news, so a myth about a massive flood offers a timely, curiosity‑driven hook and teaches the lesson of heeding divine warnings.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 300,
+    "fresh": 6.1,
+    "score": 5.37
+   },
+   {
+    "topic": "Savitri outwits Yama to win back Satyavan's life — Mahabharata, Vana Parva. Lesson: Unshakable devotion and sharp wit can overturn even death's decree.",
+    "note": "",
+    "search": "Savitri Satyavan Yama Mahabharata",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 2,
+    "fresh": 6.9,
+    "score": 4.88
+   },
+   {
+    "topic": "Vamana asks Bali for three steps of land, then covers the universe in two — Bhagavata Purana, Skandha 8. Lesson: Humility surrenders what ego claims to own.",
+    "note": "",
+    "search": "Vamana Bali three steps Bhagavata",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 173,
+    "fresh": 6.4,
+    "score": 4.78
+   },
+   {
+    "topic": "King Harishchandra sells his wife, son, and himself to keep a vow — Markandeya Purana / Mahabharata. Lesson: Truth honored at total personal cost becomes its own liberation.",
+    "note": "",
+    "search": "Harishchandra truth vow Markandeya Purana",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 42,
+    "fresh": 7.2,
+    "score": 4.59
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1648,
+    "fresh": 4.3,
+    "score": 3.53
+   }
+  ]
  }
 ]

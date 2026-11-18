@@ -1,0 +1,193 @@
+{
+ "slug": "karna-kavach-tyaag",
+ "title": "Karna ne apna kavach kyun phaada?",
+ "hooks": [
+  "Karna ne apna amartya kavach khud phaad diya — jaante hue ab mar jayega",
+  "Indra brahmin ban ke aaya, Karna ne apni mrityu daan kar di",
+  "Amartya hoke bhi Karna ne chhodi suraksha — kyun?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with named entity 'Karna', immediate high-stakes action (tearing armor), and the consequence (death now possible) in one breath. Forces retention past 3 seconds. Matches myth-bust hook type proven in top katha Shorts.",
+ "metaphor": "Golden protection circle (kavach-kundal) that Karna shatters by choice — not force — showing identity rooted in generosity outlives invincibility.",
+ "cast": {
+  "Karna": "tall warrior with golden skin, wearing ornate ancient Indian armor (kavach) and large circular earrings (kundal), calm dignified face, long dark hair tied back, warm golden light around him",
+  "Indra": "regal deity with fair complexion, wearing white silk dhoti and gold jewelry, riding white elephant Airavata, holding vajra, serene but commanding presence",
+  "Surya": "radiant figure in golden chariot pulled by seven horses, golden crown, warm benevolent gaze, rays of light emanating"
+ },
+ "scenes": [
+  {
+   "vo": "Karna ne apna amartya kavach khud phaad diya — jaante hue ab mar jayega",
+   "type": "clip",
+   "prompt": "Karna standing in battlefield dawn light, golden armor glowing intensely, he grips the kavach edges and tears it upward with both hands, armor shatters like light, warm gold and deep maroon tones, painterly cinematic Indian miniature-meets-epic style, soft divine light, ornate but uncluttered",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Karna",
+    "amartya kavach",
+    "phaad diya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Woh kavach-kundal uski mrityu se raksha the, Surya ka varadaan",
+   "type": "image",
+   "prompt": "Karna full figure, kavach and kundal radiating golden aura around him like a second skin, divine protection visible as shimmering circle, painterly cinematic Indian miniature-meets-epic style, warm gold deep maroon",
+   "motion": "pull",
+   "title": "Kavach Kundal",
+   "keywords": [
+    "kavach-kundal",
+    "raksha",
+    "varadaan"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Indra brahmin ban ke aaya, haath faila ke maang liya sab kuch",
+   "type": "image",
+   "prompt": "Indra disguised as elderly brahmin, simple cotton dhoti, wooden staff, standing before Karna with palms extended in request, Karna towering but humble, painterly cinematic Indian miniature-meets-epic style",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Indra",
+    "brahmin",
+    "daan maanga"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Pita Surya ne pehle hi chetaaya tha: 'Indra maange ga, dena mat'",
+   "type": "image",
+   "prompt": "Surya in golden chariot seven horses, leaning forward warning gesture toward Karna below, rays of light carrying message, majestic but fatherly warmth, painterly cinematic Indian miniature-meets-epic style",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Surya",
+    "chetaaya",
+    "Indra maange ga"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Par Karna rukha nahi — daan hi uski pehchaan thi, Surya ki baat yaad thi",
+   "type": "image",
+   "prompt": "Karna nods once, hands folded in acceptance, no hesitation in eyes, brahmin Indra receives invisible gift, soft golden hour light, painterly cinematic Indian miniature-meets-epic style",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "Karna",
+    "rukha nahi",
+    "pehchaan"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Kavach utarta hi khoon baha, ghaw khule, mrityu paas aa gayi",
+   "type": "image",
+   "prompt": "Karna's armor separating from skin, raw red wounds appearing where golden plates lifted, blood mixing with golden light, painful but peaceful expression, dramatic low-key warm lighting, painterly cinematic Indian miniature-meets-epic style",
+   "motion": "push",
+   "title": "Kavach Utar Khoon",
+   "keywords": [
+    "kavach",
+    "khoon",
+    "mrityu"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Indra ne asli roop dikhaya, Shakti baan diya — par kavach wapas nahi mila",
+   "type": "image",
+   "prompt": "Indra reveals true form, four-armed, radiating power, hands Karna a single glowing arrow (Shakti), exchange respectful, Airavata behind, empty armor space on Karna's chest visible, painterly cinematic Indian miniature-meets-epic style",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "Indra",
+    "Shakti baan",
+    "kavach wapas nahi"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Aaj bhi usse 'Daanveer' kehte hain, 'Amartya' nahi — daan bada hua raksha se",
+   "type": "card",
+   "prompt": "Silhouette of Karna tearing armor, background warm gold gradient, deep maroon texture, painterly cinematic Indian miniature-meets-epic style, ornate but uncluttered",
+   "motion": "push",
+   "title": "DAANVEER KARNA",
+   "big": "DAANVEER",
+   "small": "Karna",
+   "keywords": [
+    "Daanveer",
+    "daan bada",
+    "raksha se"
+   ]
+  },
+  {
+   "vo": "Tum hote toh kya karte? Suraksha bachte ya daan nibhate?",
+   "type": "image",
+   "prompt": "Karna statue at temple niche, oil lamps flickering, devotee hands folded, timeless reverence, warm cinematic low-key lighting, painterly cinematic Indian miniature-meets-epic style",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Tum",
+    "kya karte",
+    "suraksha ya daan"
+   ],
+   "big": null,
+   "small": null
+  }
+ ],
+ "music_mood": "epic",
+ "caption": "Karna ne apna amartya kavach khud phaad diya — jaante hue ab mar jayega. Kyun? Kyunki uske pita Surya ne chetaaya tha: 'Indra maange ga, dena mat.' Par daan hi Karna ki pehchaan thi.\n\nAaj bhi usse 'Daanveer' kehte hain, 'Amartya' nahi. Daan bada hua raksha se.\n\nTum hote toh kya karte? Suraksha bachte ya daan nibhate?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#Karna",
+  "#Mahabharata",
+  "#Daanveer",
+  "#PuraanKiKatha",
+  "#VanaParva"
+ ],
+ "claims": [
+  {
+   "claim": "Karna was born with divine armor (kavach) and earrings (kundal) that made him invulnerable",
+   "basis": "Mahabharata, Vana Parva (Araneya Parva), chapters 300-301"
+  },
+  {
+   "claim": "Indra disguised as a brahmin asked Karna for his kavach and kundal as daan",
+   "basis": "Mahabharata, Vana Parva, chapter 301"
+  },
+  {
+   "claim": "Karna gave them away despite knowing it would make him mortal",
+   "basis": "Mahabharata, Vana Parva, chapter 301"
+  },
+  {
+   "claim": "Surya (Karna's father) had warned him about Indra's request",
+   "basis": "Mahabharata, Vana Parva, chapter 300"
+  },
+  {
+   "claim": "Indra gave Karna the Shakti weapon in return",
+   "basis": "Mahabharata, Vana Parva, chapter 301"
+  }
+ ],
+ "brain_ids": [
+  "e15cfaed29",
+  "9db4cc694f",
+  "038dd5be5a",
+  "0adc696a75",
+  "97e1b2fcbb",
+  "13a94bf865",
+  "a688e48ca2",
+  "82055e32f5",
+  "ef573ce014",
+  "3cec28c3e9",
+  "7a67022fb6",
+  "1ad22ef225",
+  "d7b38f2237",
+  "4204a43442"
+ ],
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}
