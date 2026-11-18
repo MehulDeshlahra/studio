@@ -7,6 +7,16 @@ HOME = os.path.expanduser("~")
 ASSETS = os.environ.get("STUDIO_ASSETS", os.path.join(HOME, "studio-assets"))   # audio library (not in git)
 OUT = os.environ.get("STUDIO_OUT", os.path.join(HOME, "studio-out"))
 PY = sys.executable
+def github_headers(extra=None):
+    """GitHub API headers; with the owner's read-only token (~/.studio-github.token) the limit is 5000/h, not 60/h."""
+    h = {"User-Agent": "studio-learner", "Accept": "application/vnd.github+json"}
+    try:
+        t = open(os.path.join(HOME, ".studio-github.token")).read().strip()
+        if t:
+            h["Authorization"] = "Bearer " + t
+    except OSError:
+        pass
+    return dict(h, **(extra or {}))
 
 
 def log(*a):
