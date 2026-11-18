@@ -126,8 +126,8 @@ def ig_top(page, per=6):
 
 
 HASHTAGS = {   # 18 Nov (owner: "you only see top creators; search hashtags for similar topics")
-    "tech": ["googleassistant", "chatgpt", "upi", "iphonetricks", "androidhacks", "mobiletricks", "techfacts", "aitools",
-             "howitworks", "gadgets"],
+    "tech": ["techinhindi", "hinditech", "techgyan", "mobiletipsinhindi", "googleassistant", "chatgpthindi", "upipayment",
+             "techfacts", "androidhacks", "jiophone"],
     "katha": ["mahabharat", "ramayan", "sanatandharma", "hindumythology", "krishna", "shivpuran", "puranas", "bhakti"],
     "raaz": ["hindistory", "mysterystory", "horrorstories", "kahani", "crimestory", "suspense", "storytime"],
 }
@@ -199,7 +199,28 @@ def hashtag_top(page, tags=None, per=4, min_likes=500):
     for r in out:
         if r["url"] not in seen:
             seen.add(r["url"]); uniq.append(r)
-    return uniq
+    return _fit_reels(page, uniq)
+
+
+def _fit_reels(page, rows):
+    """Hashtags are global: #iphonetricks gave Arabic posts and street magic. One cheap planner call on the captions keeps
+    only reels on our niche for an Indian (Hindi/Hinglish/English) audience, before any video is downloaded or watched."""
+    if not rows:
+        return rows
+    try:
+        import plan as planner
+        lines = "\n".join(f'{i + 1}. [{r["channel"]}] {r["title"][:160]}' for i, r in enumerate(rows))
+        r = planner.ask(f"Our page makes {NICHE.get(page, page)} for an Indian audience (Hindi, Hinglish or English).\n"
+                        "Below are captions of Instagram reels found under hashtags. Keep a reel only if it is clearly on that niche "
+                        "AND made for Indian / Hindi / Hinglish / English viewers (other languages, ads of big brands, "
+                        "comedy, magic, music, memes = drop).\n" + lines +
+                        '\nReturn JSON {"keep": [numbers of the reels to keep]}', max_tokens=400) or {}
+        keep = {int(x) for x in r.get("keep", []) if str(x).isdigit()}
+        kept = [x for i, x in enumerate(rows) if i + 1 in keep]
+        log("hashtag reels:", len(rows), "found,", len(kept), "on niche")
+        return kept
+    except Exception as e:
+        log("hashtag fit check failed", str(e)[:100]); return rows
 
 
 def watch_file(mp4_url, prompt):
