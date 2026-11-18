@@ -1,0 +1,43 @@
+{
+ "hook_first_words": "Here's your first look at the new",
+ "first_frame": "A man holding a microphone, talking to the camera, with a MacBook Pro on a stand in the foreground.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 34,
+ "cuts_estimate": 10,
+ "avg_shot_s": 3.4,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-2 s: Hook, introducing the new MacBook Pro.",
+  "2-14 s: Demonstrating touchscreen features (drawing, swiping).",
+  "14-17 s: Highlighting the Dynamic Island feature.",
+  "17-21 s: Showing the glowing Apple logo.",
+  "21-34 s: Discussing the weight and asking for price guesses in the comments."
+ ],
+ "visual_techniques": [
+  "Handheld camera movement (0-34s)",
+  "Close-up shots of the screen (7-16s)",
+  "Quick cuts between the screen and the presenter (0-34s)",
+  "On-screen text overlay (0-34s)"
+ ],
+ "captions": "Style: Bold, white text with a red background, positioned in the lower third of the screen. Words per chunk: 3-5.",
+ "sound": "Voice type: Energetic, fast-paced, conversational. Music: Upbeat, modern background track. Sound effects: None.",
+ "recurring_element": "The MacBook Pro unit being demonstrated.",
+ "ending": "CTA asking for price guesses in the comments.",
+ "why": "It features a highly anticipated product, uses a fast-paced, energetic delivery, and includes a direct CTA that encourages audience engagement.",
+ "reusable_faceless": [
+  "Fast-paced editing to maintain viewer retention",
+  "On-screen text overlays to highlight key features",
+  "Direct CTA to drive engagement"
+ ],
+ "id": "mzwYz2Zd7RA",
+ "url": "https://www.youtube.com/watch?v=mzwYz2Zd7RA",
+ "channel": "IshanSharma7390",
+ "niche": "AI tools, Hinglish",
+ "title": "Apple’s NEW Touchscreen MacBook Pro🔥",
+ "views": 172000,
+ "channel_median": 76000,
+ "ratio": 2.26,
+ "label": "winner",
+ "watched": "2026-11-19T05:15+05:30"
+}

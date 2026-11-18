@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "Yeh headphone aap dekh rahe ho",
+ "first_frame": "The creator holding a pair of black Sony headphones, sitting at a desk with a laptop and phone visible.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 130,
+ "cuts_estimate": 45,
+ "avg_shot_s": 2.8,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Hook: Bold claim about comfort.",
+  "3-15 s: Demonstration: Putting on headphones, showing fit and comfort.",
+  "15-30 s: Close-up: Demonstrating the soft material and build quality.",
+  "30-45 s: Features: Explaining ANC and 360 mode with screen recording overlay.",
+  "45-60 s: Specs: Technical details displayed as text on screen.",
+  "60-110 s: Comparison: Discussing Sony XM series evolution and design.",
+  "110-125 s: Unboxing: Showing the case and product packaging.",
+  "125-130 s: Conclusion: Price and final verdict."
+ ],
+ "visual_techniques": [
+  "Jump cuts to maintain pacing (throughout)",
+  "B-roll shots of the product (0:05, 0:15, 0:55, 1:13)",
+  "Screen recording overlay for app features (0:37, 0:41, 1:34)",
+  "Text overlay for technical specifications (0:44)",
+  "Close-up shots for detail demonstration (0:22, 1:21)"
+ ],
+ "captions": "White text with black outline, 3-5 words per chunk, centered at the bottom, no specific highlight colour.",
+ "sound": "Creator's voiceover, upbeat background music, subtle sound effects for transitions.",
+ "recurring_element": "The creator holding and demonstrating the headphones.",
+ "ending": "Summary of pros/cons and a final recommendation based on budget.",
+ "why": "The video succeeds by combining a strong, relatable hook ('most comfortable') with high-quality, close-up product demonstrations and clear, concise technical information that doesn't overwhelm the viewer.",
+ "reusable_faceless": [
+  "Using screen recordings to demonstrate app features",
+  "Overlaying technical specs as text while talking",
+  "Using close-up B-roll to emphasize product quality",
+  "Fast-paced editing to keep viewer engagement high"
+ ],
+ "id": "JxKHhwBVD-A",
+ "url": "https://www.youtube.com/watch?v=JxKHhwBVD-A",
+ "channel": "GyanTherapy",
+ "niche": "Hindi tech",
+ "title": "I Got The Most Comfortable Headphone #shorts",
+ "views": 2300000,
+ "channel_median": 1100000,
+ "ratio": 2.09,
+ "label": "winner",
+ "watched": "2026-11-19T05:16+05:30"
+}

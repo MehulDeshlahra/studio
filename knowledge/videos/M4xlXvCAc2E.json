@@ -1,0 +1,39 @@
+{
+ "hook_first_words": "This is what elite camera work looks like.",
+ "first_frame": "A camera operator filming a basketball game from a high vantage point, with a cheat sheet of player photos attached to the camera.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 27,
+ "cuts_estimate": 2,
+ "avg_shot_s": 13.5,
+ "words_per_s_estimate": 0.3,
+ "beats": [
+  "0-22 s: A montage of a broadcast camera operator capturing various players on the court, showing the 'cheat sheet' used to identify them.",
+  "23-27 s: MKBHD appears on camera, looking around the arena."
+ ],
+ "visual_techniques": [
+  "Handheld camera work",
+  "POV shot of the camera operator's screen",
+  "Quick cut to MKBHD at the end"
+ ],
+ "captions": "None",
+ "sound": "Upbeat hip-hop background music, no voiceover until the end (MKBHD speaks)",
+ "recurring_element": "The camera operator's 'cheat sheet' of player faces",
+ "ending": "A simple cut to MKBHD looking around, no clear CTA or resolution",
+ "why": "The video lacks a strong narrative or educational value. It's essentially a 'cool clip' without context, explanation, or a hook that keeps the viewer engaged beyond the initial visual curiosity.",
+ "reusable_faceless": [
+  "Use of 'cheat sheets' or reference materials in a professional setting",
+  "POV-style filming of specialized equipment",
+  "Syncing visual cuts to a rhythmic beat"
+ ],
+ "id": "M4xlXvCAc2E",
+ "url": "https://www.youtube.com/watch?v=M4xlXvCAc2E",
+ "channel": "mkbhd",
+ "niche": "tech products",
+ "title": "ELITE Camera Work",
+ "views": 1100000,
+ "channel_median": 4500000,
+ "ratio": 0.24,
+ "label": "flop",
+ "watched": "2026-11-19T05:16+05:30"
+}

@@ -1,0 +1,42 @@
+{
+ "hook_first_words": "Driving license ko banane ke liye",
+ "first_frame": "A man in glasses and a brown shirt talking to the camera, with a graphic of a driving license overlayed at the bottom.",
+ "hook_type": "other",
+ "format": "talking head + screen recording",
+ "length_s": 122,
+ "cuts_estimate": 25,
+ "avg_shot_s": 4.8,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-7 s: Hook and intro, explaining the topic and showing the license.",
+  "7-124 s: Step-by-step tutorial on how to download the learning license from the Parivahan website, including navigation and data entry.",
+  "124-141 s: Showing the downloaded license and explaining its validity.",
+  "141-162 s: Outro with a CTA for another video and a final tip about driving with a mentor."
+ ],
+ "visual_techniques": [
+  "Picture-in-picture (talking head over screen recording)",
+  "Graphic overlays (arrows, highlights)",
+  "Screen recording of the official website",
+  "Blurring sensitive information"
+ ],
+ "captions": "None",
+ "sound": "Voiceover (Hindi), no background music, clear audio.",
+ "recurring_element": "The Parivahan website interface.",
+ "ending": "CTA for a follow-up video and a final safety tip.",
+ "why": "It addresses a specific, high-intent user need (downloading a document) with a clear, step-by-step tutorial. The use of screen recording makes the process easy to follow, and the host's direct, informative style builds trust.",
+ "reusable_faceless": [
+  "Step-by-step screen recording tutorials",
+  "Using arrows and highlights to guide the viewer",
+  "Providing clear, actionable information on government services"
+ ],
+ "id": "sBYV-IgMYnU",
+ "url": "https://www.youtube.com/watch?v=sBYV-IgMYnU",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "How to Download Learning License | Learning License Online Download 2025 | Sarkari DNA",
+ "views": 281000,
+ "channel_median": 123000,
+ "ratio": 2.28,
+ "label": "winner",
+ "watched": "2026-11-19T05:15+05:30"
+}

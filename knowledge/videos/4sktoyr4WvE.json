@@ -1,0 +1,39 @@
+{
+ "hook_first_words": "My kind of fun",
+ "first_frame": "Technical Guruji standing in front of a white wall, holding a handful of iPhones in each hand.",
+ "hook_type": "visual surprise",
+ "format": "talking head + showcase",
+ "length_s": 10,
+ "cuts_estimate": 1,
+ "avg_shot_s": 5.0,
+ "words_per_s_estimate": 0.5,
+ "beats": [
+  "0-5 s: Technical Guruji smiling while holding multiple iPhones in both hands, swaying to the music.",
+  "5-10 s: He continues to pose and smile with the phones, looking at the camera."
+ ],
+ "visual_techniques": [
+  "Handheld camera movement (0-10s)",
+  "Slow-motion swaying (0-10s)",
+  "Direct eye contact (0-10s)"
+ ],
+ "captions": "None",
+ "sound": "Upbeat, rhythmic hip-hop/pop instrumental music; no voiceover.",
+ "recurring_element": "The collection of iPhones held in both hands.",
+ "ending": "Loop",
+ "why": "It leverages the creator's strong personal brand and the 'flex' factor of owning multiple unreleased/new flagship devices, creating a visual spectacle that encourages re-watching to identify the models.",
+ "reusable_faceless": [
+  "Using a 'collection' of high-value items to create visual intrigue",
+  "Syncing movement to a trending, high-energy beat",
+  "Using a 'flex' style video to drive engagement through curiosity"
+ ],
+ "id": "4sktoyr4WvE",
+ "url": "https://www.youtube.com/watch?v=4sktoyr4WvE",
+ "channel": "TechnicalGuruji",
+ "niche": "Consumer Tech (Hindi)",
+ "title": "My kind of fun...#iPhone18Pro #iPhone18ProMax #iPhoneDuo #TGFamily #shorts  🔥 🔥 🔥",
+ "views": 1000000,
+ "channel_median": 482000,
+ "ratio": 2.07,
+ "label": "winner",
+ "watched": "2026-11-19T05:16+05:30"
+}

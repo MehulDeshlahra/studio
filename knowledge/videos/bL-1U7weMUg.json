@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "It's a beautiful day",
+ "first_frame": "A T-Rex wearing a hat and a pink floral shirt jumping into a swimming pool.",
+ "hook_type": "visual surprise",
+ "format": "3D how-it-works",
+ "length_s": 81,
+ "cuts_estimate": 25,
+ "avg_shot_s": 3.2,
+ "words_per_s_estimate": 0.5,
+ "beats": [
+  "0-10 s: T-Rex (Bork) jumps into a pool, causing a massive splash that knocks over people.",
+  "10-20 s: An FIB agent approaches Bork with a mission brief.",
+  "20-40 s: Bork goes to a warehouse, gets into a shootout with armed men, and uses a weapon wheel to switch guns.",
+  "40-50 s: Bork kills the men and receives a mission complete screen.",
+  "50-60 s: Bork runs from police cars, gaining a 3-star wanted level.",
+  "60-80 s: Bork hides in an alley, uses the weapon wheel to change his disguise, and fools a passing police officer.",
+  "80-81 s: Bork stands in the alley as the video ends."
+ ],
+ "visual_techniques": [
+  "Slow motion (0-5 s)",
+  "Match cuts (14 s, 17 s)",
+  "POV shots (25 s, 104 s)",
+  "UI overlay (weapon wheel) (25 s, 104 s)",
+  "Wanted level stars overlay (55 s, 105 s)"
+ ],
+ "captions": "None",
+ "sound": "Ambient pool sounds, dramatic action music, sound effects for gunshots and explosions, voiceover for the FIB agent.",
+ "recurring_element": "The T-Rex (Bork) character and the weapon wheel UI.",
+ "ending": "The video ends with the character standing in an alleyway, looping back to the start.",
+ "why": "The video is significantly longer than the channel's typical high-performing content, leading to a drop in retention. The narrative structure is loose and lacks the tight, educational 'how-it-works' hook that usually drives engagement for this channel.",
+ "reusable_faceless": [
+  "Using UI elements from popular games to create a 'how-it-works' narrative",
+  "Integrating 3D character models into game environments",
+  "Using slow-motion and match cuts for comedic effect",
+  "Creating a recurring character to build brand recognition"
+ ],
+ "id": "bL-1U7weMUg",
+ "url": "https://www.youtube.com/watch?v=bL-1U7weMUg",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "Bork In GTA 🦖",
+ "views": 898000,
+ "channel_median": 4000000,
+ "ratio": 0.22,
+ "label": "flop",
+ "watched": "2026-11-19T05:16+05:30"
+}

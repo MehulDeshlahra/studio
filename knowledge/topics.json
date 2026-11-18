@@ -1,136 +1,125 @@
 {
  "picks": [
   {
-   "title": "Introducing GPT-6.2 Astra and Sol",
-   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
-   "src": "OpenAI",
-   "angle": "New AI models that change how we interact with apps and voice assistants.",
-   "hook": "OpenAI ka naya update, game changer hai!",
+   "title": "The Gemini app is now available on lower-memory Android devices",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+   "src": "Google AI Blog",
+   "angle": "2GB/3GB RAM wale phones pe bhi Gemini ab kaam karega",
+   "hook": "Kam RAM wale phone pe bhi Gemini chalega ab",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 10,
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
+   "url": "https://huggingface.co/blog/rumble-2-flash",
+   "src": "Hugging Face Blog",
+   "angle": "0.5B ka speech model jo 40+ bhashayein samjhta hai — phone pe offline chalega",
+   "hook": "Rumble-2-Flash: chhota model, 40+ bhashayein",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 10,
-   "found": "2026-11-18T17:03+05:30"
+   "found": "2026-11-19T05:13+05:30"
   },
   {
-   "title": "Google's AI answers reducing search traffic by 40%",
-   "url": "https://revscope.co/blog/search-seo-geo-2026/",
-   "src": "RevScope",
-   "angle": "Why your website traffic might be dropping due to AI search.",
-   "hook": "Google search par traffic kyun kam ho raha?",
-   "format": "story",
+   "title": "Introducing Gemini 4 Neon",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+   "src": "Google AI Blog",
+   "angle": "Google ka naya lightweight model jo budget phones pe bhi tez chalega",
+   "hook": "Gemini 4 Neon aagaya — chhota par powerful",
+   "format": "evidence",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-18T17:03+05:30"
+   "found": "2026-11-19T05:13+05:30"
   },
   {
-   "title": "Suno now lets you make AI videos for your AI music",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature",
-   "src": "The Verge",
-   "angle": "Create professional music videos from text prompts instantly.",
-   "hook": "Ab music ke saath video bhi banao AI se!",
+   "title": "Genie 4 is now available",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+   "src": "Google DeepMind Blog",
+   "angle": "Text-to-game AI ab public hai — bina code ke games banao",
+   "hook": "Genie 4 se ab koi bhi game bana sakta hai",
    "format": "tool-demo",
    "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-18T17:03+05:30"
+   "score": 8,
+   "found": "2026-11-19T05:13+05:30"
   },
   {
-   "title": "Google’s Spark AI agent becomes ‘Tasks’ — and now it’s free",
-   "url": "https://www.theverge.com/tech/1035756/google-spark-ai-tasks-free",
-   "src": "The Verge",
-   "angle": "A free AI assistant to manage your daily schedule and tasks.",
-   "hook": "Google ka ye naya feature bilkul free hai!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-18T17:03+05:30"
-  },
-  {
-   "title": "n8n-io/n8n: Fair-code workflow automation platform",
-   "url": "https://github.com/n8n-io/n8n",
-   "src": "GitHub Trending",
-   "angle": "Automate business tasks and workflows without writing code.",
-   "hook": "Business automation ab bina coding ke karo!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-18T17:03+05:30"
-  },
-  {
-   "title": "Tech leaders are convinced that Jensen Huang’s exit was a plot against him",
-   "url": "https://www.theverge.com/tech/1035027/tech-leaders-nvidia-jensen-huang-theories",
-   "src": "The Verge",
-   "angle": "The massive leadership shift at Nvidia and its impact on AI.",
-   "hook": "Nvidia ke CEO ne company kyun chhodi?",
-   "format": "story",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-18T17:03+05:30"
-  },
-  {
-   "title": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
-   "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
-   "src": "ComplexDiscovery",
-   "angle": "AI writes code fast, but humans are now stuck reviewing it.",
-   "hook": "AI code toh likhega, par check kaun karega?",
+   "title": "Seven new models at scalable price-performance",
+   "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
+   "src": "Microsoft AI",
+   "angle": "Microsoft Ignite mein 7 naye models — saste aur tez, Indian startups ke liye achha",
+   "hook": "Microsoft ne 7 naye models dikhaye Ignite pe",
    "format": "evidence",
    "freshness": "this week",
    "score": 8,
-   "found": "2026-11-18T17:03+05:30"
+   "found": "2026-11-19T05:13+05:30"
   },
   {
-   "title": "astral-sh/uv: An extremely fast Python package and project manager",
-   "url": "https://github.com/astral-sh/uv",
-   "src": "GitHub Trending",
-   "angle": "Students and devs can speed up Python projects significantly.",
-   "hook": "Python coding ab hogi 10x fast!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-18T17:03+05:30"
-  },
-  {
-   "title": "mvanhorn/last30days-skill",
-   "url": "https://github.com/mvanhorn/last30days-skill",
-   "src": "GitHub Trending",
-   "angle": "AI agent that researches and summarizes the web for you.",
-   "hook": "Poore internet ka summary ab ek click mein!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-18T17:03+05:30"
-  },
-  {
-   "title": "FastFrames: Video Generation at Interactive Latency",
-   "url": "https://huggingface.co/papers/2611.23226",
-   "src": "Hugging Face",
-   "angle": "High-speed video generation that works in real-time.",
-   "hook": "Video generation ab real-time mein possible hai!",
-   "format": "evidence",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-18T17:03+05:30"
-  },
-  {
-   "title": "jiangshan-map: Interactive Historical Atlas of China",
-   "url": "https://github.com/DeanChensj/jiangshan-map",
-   "src": "GitHub Trending",
-   "angle": "Visualizing history through interactive maps for students.",
-   "hook": "History padhne ka tarika ab badal gaya!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-18T17:03+05:30"
-  },
-  {
-   "title": "Cerebras Disaggregated Inference",
-   "url": "https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference",
-   "src": "Cerebras",
-   "angle": "New tech to make AI models run much faster for developers.",
-   "hook": "AI models ab aur bhi fast chalenge!",
+   "title": "Cuttlefish on Mac: Android's Virtual Device Framework on Apple Silicon",
+   "url": "https://engineering.fb.com/2026/11/13/android/cuttlefish-on-mac/",
+   "src": "Meta Engineering",
+   "angle": "Mac pe Android emulator bina ARM translation ke — Indian devs ke liye bada time-saver",
+   "hook": "Mac pe ab Cuttlefish se Android tez chalega",
    "format": "how-it-works",
    "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "title": "appwrite/appwrite: The open-source cloud for agents & devs",
+   "url": "https://github.com/appwrite/appwrite",
+   "src": "GitHub Trending",
+   "angle": "Open-source backend platform — auth, DB, functions sab free, Indian builders ke liye",
+   "hook": "Appwrite: apna backend cloud bina paise ke",
+   "format": "how-it-works",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "title": "openvinotoolkit/openvino: Open source toolkit for optimizing and deploying AI inference",
+   "url": "https://github.com/openvinotoolkit/openvino",
+   "src": "GitHub Trending",
+   "angle": "AI models ko edge devices pe optimize karne ka best tool — Indian edge AI projects ke liye",
+   "hook": "OpenVINO se AI models phone pe tez chalao",
+   "format": "how-it-works",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "title": "ExitPath – Open-source ways out of Slack, Notion and Microsoft 365",
+   "url": "https://exitpath-ruddy.vercel.app/",
+   "src": "Hacker News (Show HN)",
+   "angle": "Vendor lock-in se bachne ke open-source tools — students aur freelancers ke liye useful",
+   "hook": "ExitPath se Slack/Notion se data nikaalo easily",
+   "format": "tool-demo",
+   "freshness": "this week",
    "score": 7,
-   "found": "2026-11-18T17:03+05:30"
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "title": "Search Browser – Minimalist WebKit browser with Chrome extension support",
+   "url": "https://searchbrowser.app/",
+   "src": "Hacker News (Show HN)",
+   "angle": "Lightweight browser jo Chrome extensions support karta hai — purane phones ke liye best",
+   "hook": "Search Browser: halka, Chrome extensions ke saath",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "title": "HKUDS/CLI-Anything: Making ALL Software Agent-Native",
+   "url": "https://github.com/HKUDS/CLI-Anything",
+   "src": "GitHub Trending",
+   "angle": "Koi bhi CLI tool ko AI agent bana do — automation ke liye powerful",
+   "hook": "CLI-Anything se koi bhi tool agent banao",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-19T05:13+05:30"
   }
  ],
  "history": [
@@ -433,7 +422,62 @@
    "url": "https://www.theverge.com/tech/1035027/tech-leaders-nvidia-jensen-huang-theories",
    "title": "Tech leaders are convinced that Jensen Huang’s exit was a plot against him",
    "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+   "title": "Introducing Gemini 4 Neon",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+   "title": "Genie 4 is now available",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+   "title": "The Gemini app is now available on lower-memory Android devices",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://huggingface.co/blog/rumble-2-flash",
+   "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
+   "title": "Seven new models at scalable price-performance",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://engineering.fb.com/2026/11/13/android/cuttlefish-on-mac/",
+   "title": "Cuttlefish on Mac: Android's Virtual Device Framework on Apple Silicon",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://exitpath-ruddy.vercel.app/",
+   "title": "ExitPath – Open-source ways out of Slack, Notion and Microsoft 365",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://searchbrowser.app/",
+   "title": "Search Browser – Minimalist WebKit browser with Chrome extension support",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://github.com/appwrite/appwrite",
+   "title": "appwrite/appwrite: The open-source cloud for agents & devs",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://github.com/openvinotoolkit/openvino",
+   "title": "openvinotoolkit/openvino: Open source toolkit for optimizing and deploying AI inference",
+   "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://github.com/HKUDS/CLI-Anything",
+   "title": "HKUDS/CLI-Anything: Making ALL Software Agent-Native",
+   "found": "2026-11-19T05:13+05:30"
   }
  ],
- "updated": "2026-11-18T17:03+05:30"
+ "updated": "2026-11-19T05:13+05:30"
 }

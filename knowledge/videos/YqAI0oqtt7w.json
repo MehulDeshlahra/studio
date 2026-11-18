@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "What actually is dust?",
+ "first_frame": "A cartoon hand with a magnifying glass over a black, spider-like dust mite, with the text 'WHAT IS DUST?' in white and pink.",
+ "hook_type": "question",
+ "format": "animation",
+ "length_s": 72,
+ "cuts_estimate": 15,
+ "avg_shot_s": 4.8,
+ "words_per_s_estimate": 2.1,
+ "beats": [
+  "0-12 s: Defining household dust composition.",
+  "12-20 s: Introducing dust mites and their impact.",
+  "20-27 s: Explaining allergic reactions.",
+  "27-38 s: Discussing fine particles (soot) and health risks.",
+  "38-56 s: Explaining the role of dust in rain and the Amazon rainforest.",
+  "56-65 s: Introducing cosmic dust.",
+  "65-72 s: Concluding with a poetic perspective on cleaning."
+ ],
+ "visual_techniques": [
+  "Zoom/magnifying glass effect (0 s)",
+  "Dynamic text overlays highlighting percentages and units (2 s, 13 s, 31 s, 46 s, 59 s)",
+  "Anatomical cross-section animation (22 s, 33 s)",
+  "Character animation (bird character) for narrative continuity (55 s, 65 s)"
+ ],
+ "captions": "White text with a slight drop shadow, centered, 3-6 words per chunk, highlighting key terms in yellow or pink.",
+ "sound": "Professional British male voiceover, calm and educational. Soft, upbeat orchestral background music. Subtle sound effects for dust, breathing, and sweeping.",
+ "recurring_element": "The yellow circular 'focus' ring used to highlight specific details in the animation.",
+ "ending": "A reflective, poetic conclusion (CTA-free) that reframes a mundane chore (dusting) as interacting with stardust.",
+ "why": "It uses high-quality, recognizable animation to make a mundane topic (dust) feel like a grand scientific mystery. It balances 'gross' facts (mites/fecal pellets) with 'awe' facts (Amazon/stardust), keeping the viewer engaged through emotional contrast.",
+ "reusable_faceless": [
+  "Use a consistent 'magnifying glass' or 'focus' graphic to draw attention to specific parts of a frame.",
+  "Use a recurring character to act as a surrogate for the viewer.",
+  "Structure the narrative as a 'surprising journey' (from your house to the Amazon to space).",
+  "Use clean, high-contrast text overlays to make complex data points instantly readable."
+ ],
+ "id": "YqAI0oqtt7w",
+ "url": "https://www.youtube.com/watch?v=YqAI0oqtt7w",
+ "channel": "kurzgesagt",
+ "niche": "animated science",
+ "title": "Dust Is Not What You Think",
+ "views": 3000000,
+ "channel_median": 1400000,
+ "ratio": 2.14,
+ "label": "winner",
+ "watched": "2026-11-19T05:15+05:30"
+}

@@ -1,0 +1,39 @@
+{
+ "hook_first_words": "Ever wondered how big data pipelines",
+ "first_frame": "A complex, multi-layered data pipeline diagram with a talking head of a man in the bottom right corner.",
+ "hook_type": "question",
+ "format": "talking head + graphics",
+ "length_s": 58,
+ "cuts_estimate": 1,
+ "avg_shot_s": 58.0,
+ "words_per_s_estimate": 2.4,
+ "beats": [
+  "0-54 s: The speaker explains the data pipeline process while the diagram is animated in real-time to highlight specific sections.",
+  "54-58 s: Transition to a static promotional graphic for a free system design ebook."
+ ],
+ "visual_techniques": [
+  "Animated highlighting of diagram components (0-54 s)",
+  "Color-coded flow arrows appearing on the right side of the screen (0-54 s)",
+  "Hard cut to a static promotional end card (54 s)"
+ ],
+ "captions": "White text with black outline, 5-8 words per chunk, centered at the bottom, no highlight color.",
+ "sound": "Clear, professional voiceover, no background music, no sound effects.",
+ "recurring_element": "The data pipeline diagram remains on screen for the entire duration of the explanation.",
+ "ending": "CTA (Call to Action) for a free ebook.",
+ "why": "The video provides high-density, valuable technical information in a clear, visual format. By keeping the diagram on screen throughout, it allows the viewer to follow the complex process easily, which is highly engaging for the target audience.",
+ "reusable_faceless": [
+  "Real-time diagram animation synchronized with voiceover",
+  "Color-coded process flow indicators",
+  "Static promotional end card with clear CTA"
+ ],
+ "id": "Yj9qOWnipTQ",
+ "url": "https://www.youtube.com/watch?v=Yj9qOWnipTQ",
+ "channel": "ByteByteGo",
+ "niche": "tech diagrams",
+ "title": "Data Pipeline Overview",
+ "views": 992000,
+ "channel_median": 456000,
+ "ratio": 2.18,
+ "label": "winner",
+ "watched": "2026-11-19T05:15+05:30"
+}

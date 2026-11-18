@@ -1,0 +1,43 @@
+{
+ "hook_first_words": "These four",
+ "first_frame": "A close-up of four matchsticks arranged in a plus sign on a wooden table.",
+ "hook_type": "question",
+ "format": "3D how-it-works",
+ "length_s": 29,
+ "cuts_estimate": 8,
+ "avg_shot_s": 3.6,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Setup of the puzzle and the challenge.",
+  "3-14 s: Showing incorrect attempts to solve the puzzle.",
+  "14-23 s: The correct solution is revealed.",
+  "23-29 s: Zoom-in on the final result and conclusion."
+ ],
+ "visual_techniques": [
+  "3D animation of characters interacting with the table",
+  "On-screen graphical overlays (red lines) to highlight shapes",
+  "Extreme close-up (macro shot) at 0:25",
+  "Camera pan and zoom to guide viewer focus"
+ ],
+ "captions": "White, sans-serif, centered at the bottom, 3-5 words per chunk, no highlight colour.",
+ "sound": "Clear voice-over narration, subtle background music, sound effects for match movement.",
+ "recurring_element": "The matchsticks and the wooden table.",
+ "ending": "Punchline (the solution is revealed).",
+ "why": "It uses a 'try-fail-succeed' narrative structure that keeps the viewer engaged, combined with high-quality 3D visuals that make the solution feel satisfying and 'aha!' moment-driven.",
+ "reusable_faceless": [
+  "Using 3D models to demonstrate physical puzzles",
+  "Highlighting shapes with simple graphical overlays",
+  "Macro camera angles for small details",
+  "Step-by-step logical progression"
+ ],
+ "id": "X4HlBBPM6l0",
+ "url": "https://www.youtube.com/watch?v=X4HlBBPM6l0",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "Can You Solve This Matchstick Puzzle 🤔",
+ "views": 10000000,
+ "channel_median": 4000000,
+ "ratio": 2.5,
+ "label": "winner",
+ "watched": "2026-11-19T05:15+05:30"
+}

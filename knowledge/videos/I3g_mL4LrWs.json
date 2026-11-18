@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "8 apps you pay for.",
+ "first_frame": "A dark blue background with a grid pattern. A list of 8 paid apps (ElevenLabs, Notion, Wispr Flow, Asana, Intercom, Loom, Calendly, Semrush) is displayed in two columns.",
+ "hook_type": "bold claim",
+ "format": "evidence/news",
+ "length_s": 57,
+ "cuts_estimate": 10,
+ "avg_shot_s": 5.7,
+ "words_per_s_estimate": 2.2,
+ "beats": [
+  "0-3 s: Introduction of the 8 paid apps.",
+  "3-7 s: Transition to their free open-source alternatives on GitHub.",
+  "7-44 s: Rapid-fire comparison of each paid app with its free alternative, showing key features.",
+  "44-53 s: The 'catch'—explaining limitations of OpenSEO and Cal.diy.",
+  "53-57 s: Final summary list and CTA."
+ ],
+ "visual_techniques": [
+  "Motion graphics: Smooth sliding animations for app lists (0-7 s)",
+  "Split-screen/Cards: Each pair is presented in a consistent card format (7-44 s)",
+  "Dynamic text highlighting: Words appear in sync with the narration (throughout)",
+  "Progress bar: A 'swapped' counter at the top tracks progress (7-53 s)"
+ ],
+ "captions": "Bold, sans-serif font, white with occasional green highlights, centered, 3-5 words per chunk.",
+ "sound": "Clear, professional AI voiceover, upbeat lo-fi background music, subtle UI 'pop' sound effects during transitions.",
+ "recurring_element": "The consistent card-based UI layout for each app comparison.",
+ "ending": "CTA: A list of all 8 links and a prompt to subscribe to the channel's website.",
+ "why": "The video performs well because it solves a high-value problem (saving money on software) with actionable, concrete alternatives. The 'catch' at the end adds credibility and honesty, which builds trust with the audience.",
+ "reusable_faceless": [
+  "Use a consistent UI card template for list-based content.",
+  "Include a progress bar to keep viewers engaged with the length.",
+  "Add a 'catch' or 'limitation' section to provide balanced, trustworthy information.",
+  "Use clean, minimal motion graphics to keep the focus on the information."
+ ],
+ "id": "I3g_mL4LrWs",
+ "url": "https://www.youtube.com/watch?v=I3g_mL4LrWs",
+ "channel": "TheAIUniversity",
+ "niche": "Beginner-friendly AI fundamentals using diagrams, examples, and code snippets",
+ "title": "8 Paid Apps With Free Open-Source Twins on GitHub",
+ "views": 460,
+ "channel_median": 178,
+ "ratio": 2.58,
+ "label": "winner",
+ "watched": "2026-11-19T05:14+05:30"
+}
