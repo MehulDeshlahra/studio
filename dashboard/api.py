@@ -936,7 +936,8 @@ class H(BaseHTTPRequestHandler):
         self.send_response(200); self.send_header("Content-Type", ct); self.send_header("Content-Length", str(size))
         if ext == "mp4":
             self.send_header("Accept-Ranges", "bytes")
-        self.send_header("Cache-Control", "no-cache"); self.end_headers(); self.wfile.write(data)
+        # 19 Nov: profile pictures were re-asked on every 4 s redraw (no-cache); they change at most daily
+        self.send_header("Cache-Control", "max-age=3600" if os.sep + "dp" + os.sep in p else "no-cache"); self.end_headers(); self.wfile.write(data)
 
     def do_POST(self):
         u = urllib.parse.urlparse(self.path).path

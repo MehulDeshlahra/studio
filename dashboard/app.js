@@ -374,13 +374,13 @@ function feedback(cid, job) {
   $("#panel").innerHTML = `<div class="ph"><div style="flex:1;font-weight:600">Feedback</div><button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div><div class="pb"><div class="mut">Saved as a lesson for this page; the video is marked for a fix.</div><textarea id="fb" rows="6" style="margin-top:10px" placeholder="What should change?"></textarea><div style="display:flex;gap:8px;margin-top:10px"><button class="btn pri" onclick="sendFb('${cid}','${job}')">Send</button><button class="btn" onclick="closeDrawer()">Cancel</button></div></div>`;
   setTimeout(() => $("#fb").focus(), 40);
 }
-async function sendFb(cid, job) { const note = $("#fb").value.trim(); if (!note) return; try { await post("/api/decide", { cid, job, action: "fix", note }); closeDrawer(); toast("Feedback saved"); load(); } catch (e) { toast("Failed: " + e.message); } }
+async function sendFb(cid, job) { const note = $("#fb").value.trim(); if (!note) return; try { await post("/api/decide", { cid, job, action: "fix", note }); clearDraft("fb"); closeDrawer(); toast("Feedback saved"); load(); } catch (e) { toast("Failed: " + e.message); } }
 async function changeRun(cid, job, action) {
   const to = ($("#chTo") || {}).value || cid, topic = (($("#chTopic") || {}).value || "").trim(), name = (ch(to) || {}).name || to;
   if (!confirm(action === "stop" ? "Stop this run? It will be marked cancelled." : `Make "${topic.slice(0, 80)}" on ${name}?` + (to !== cid ? " This run will be cancelled." : ""))) return;
-  try { const r = await post("/api/change", { cid, job, action, to, topic }); toast(action === "stop" ? "Stopped" : "Started on " + name); closeDrawer(); setTimeout(load, 3000); } catch (e) { toast("Failed: " + e.message); }
+  try { const r = await post("/api/change", { cid, job, action, to, topic }); toast(action === "stop" ? "Stopped" : "Started on " + name); clearDraft("chTopic", "chTo"); closeDrawer(); setTimeout(load, 3000); } catch (e) { toast("Failed: " + e.message); }
 }
-async function makeNow() { try { await post("/api/make", { cid: $("#mkc").value, topic: $("#mkt").value.trim() }); toast("Started"); setTimeout(load, 3000); } catch (e) { toast("Failed: " + e.message); } }
+async function makeNow() { try { await post("/api/make", { cid: $("#mkc").value, topic: $("#mkt").value.trim() }); toast("Started"); clearDraft("mkt"); $("#mkt").value = ""; setTimeout(load, 3000); } catch (e) { toast("Failed: " + e.message); } }
 async function setS(b) { try { S.settings = await post("/api/settings", b); render(1); toast("Saved"); } catch (e) { toast("Failed: " + e.message); } }
 async function resetFailed() { await post("/api/reset-failed", {}); toast("Cleared"); load(); }
 async function doneTask(id) { await post("/api/task", { id, done: true }); toast("Marked done"); load(); }
@@ -406,8 +406,24 @@ function render(force) {
   $("#crumb").innerHTML = `<span class="mut hide-m">Studio /</span>${esc(label)}`;
   if (p === "brain") { if (force || !$("#brainc")) { $("#view").innerHTML = V.brain(); prev = ""; startBrain(); } return; }
   const html = V[p]();
-  if (force || html !== prev) { const a = document.activeElement, y = scrollY; $("#view").innerHTML = html; prev = html; scrollTo(0, y); if (a && a.id && $("#" + a.id)) $("#" + a.id).focus(); }
+  if (force || html !== prev) { const a = document.activeElement, y = scrollY, keep = drafts($("#view")); $("#view").innerHTML = html; prev = html; restoreDrafts($("#view"), keep); scrollTo(0, y); if (a && a.id && $("#" + a.id)) $("#" + a.id).focus(); }
 }
+/* 19 Nov (owner: "I was writing a topic, it auto reloaded and my typed thing vanished"): the 4 s refresh rebuilt the view
+   and every box came back empty. Typed text and chosen options survive every redraw (and a page reload, sessionStorage). */
+const DRAFT = "studio-drafts";
+function drafts(root) {
+  const d = JSON.parse(sessionStorage.getItem(DRAFT) || "{}");
+  (root || document).querySelectorAll("input[id],textarea[id],select[id]").forEach((el) => { if (el.type !== "checkbox" && el.type !== "radio") d[el.id] = el.value; });
+  return d;
+}
+function restoreDrafts(root, d) {
+  (root || document).querySelectorAll("input[id],textarea[id],select[id]").forEach((el) => {
+    if (d[el.id] != null && d[el.id] !== "" && el.type !== "checkbox" && el.type !== "radio") el.value = d[el.id];
+  });
+}
+function clearDraft(...ids) { const d = JSON.parse(sessionStorage.getItem(DRAFT) || "{}"); ids.forEach((i) => delete d[i]); sessionStorage.setItem(DRAFT, JSON.stringify(d)); }
+document.addEventListener("input", (e) => { const el = e.target; if (el && el.id && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) { const d = JSON.parse(sessionStorage.getItem(DRAFT) || "{}"); d[el.id] = el.value; sessionStorage.setItem(DRAFT, JSON.stringify(d)); } });
+document.addEventListener("change", (e) => { const el = e.target; if (el && el.id && el.tagName === "SELECT") { const d = JSON.parse(sessionStorage.getItem(DRAFT) || "{}"); d[el.id] = el.value; sessionStorage.setItem(DRAFT, JSON.stringify(d)); } });
 function moreMenu() {
   drawerKey = "more"; $("#drawer").classList.add("on");
   $("#panel").innerHTML = `<div class="ph"><div style="flex:1;font-weight:600">More</div><button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div><div>${[["sources", "Connected apps"], ["activity", "Activity log"], ["brain", "Brain"], ["settings", "Settings"]].map(([k, t]) => `<a class="row click" href="#${k}" onclick="closeDrawer()">${ic(ICON[k])}<span class="grow">${t}</span></a>`).join("")}<a class="row click" href="javascript:closeDrawer();openPalette()">${ic("spark")}<span class="grow">Ask a question</span></a></div>`;
@@ -416,7 +432,7 @@ async function load() {
   try {
     const r = await fetch("/api/state", { cache: "no-store" }); if (!r.ok) throw 0; S = await r.json(); fails = 0;
     $("#sync").innerHTML = `<i class="dot live"></i><span>Live · ${new Date(S.now * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>`;
-    const ae = document.activeElement; if (ae && ae.tagName === "INPUT" && $("#view").contains(ae) && page() !== "activity") return; render();
+    const ae = document.activeElement; if (ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName) && ($("#view").contains(ae) || $("#panel").contains(ae))) return; render();
   } catch (e) { if (++fails > 1) $("#sync").innerHTML = `<i class="dot" style="--c:var(--red)"></i><span>Offline · retrying</span>`; }
 }
 addEventListener("hashchange", () => { prev = ""; scrollTo(0, 0); closeDrawer(); render(1); if (page() === "sources") loadSources(); });
