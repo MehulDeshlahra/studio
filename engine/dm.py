@@ -13,6 +13,11 @@ call, page key + username are cached for 12 h, so a page costs ~5 calls a run. E
 the run stops and the next runs skip for 30 min. Caps: 40 DMs per page per day, one DM per person per post.
 State ~/studio-out/dm-state.json. New channel = add ~/.studio-accounts/<id>.json (page_id); Instagram "Allow access to
 messages" must be ON in the app.
+
+Human Agent (7-day window, 18 Nov): Meta allows the HUMAN_AGENT tag only for a real person answering, never for a bot. So the bot
+never uses it. Keyword DMs that arrive older than 23 h (poller paused, DMs stopped, window missed) are listed in Telegram once
+("late"), and the owner sends the reply himself:
+  python engine/dm.py --human <channel> <ig|messenger> <recipient_id> "text"      (tag HUMAN_AGENT, up to 7 days after the message)
   python engine/dm.py [--dry] [--only <channel>]"""
 import datetime, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -224,6 +229,15 @@ def comments_to_dm(cid, acc, cfg, st, budget, media_by):
                         continue                                    # this comment/person cannot be DMed; go on with the next one
     return sent
 
+def send_human(cid, plat, rid, text):
+    """Owner-triggered reply with the HUMAN_AGENT tag (7 days). Not used by the poller."""
+    st = load(STATE, {}) or {}
+    acc = _account(cid, st)
+    sender = acc["ig_user_id"] if plat in ("ig", "instagram") else acc["page_id"]
+    _r(f"{G}/{sender}/messages", {"recipient": json.dumps({"id": rid}), "messaging_type": "MESSAGE_TAG", "tag": "HUMAN_AGENT",
+                                  "message": json.dumps({"text": text}), "access_token": acc["page_token"]})
+    print("sent with HUMAN_AGENT tag")
+
 def inbox_keywords(cid, acc, cfg, st, budget, media_by):
     """Keyword typed in DM: one answer per message, only inside the 24 h window."""
     sent = 0
@@ -242,7 +256,18 @@ def inbox_keywords(cid, acc, cfg, st, budget, media_by):
                 return sent
             msg = ((conv.get("messages") or {}).get("data") or [{}])[0]
             frm = (msg.get("from") or {}).get("id")
-            if not msg.get("id") or frm in mine or time.time() - _ts(msg.get("created_time")) > 23 * 3600:
+            if not msg.get("id") or frm in mine:
+                continue
+            age = time.time() - _ts(msg.get("created_time"))
+            if age > 23 * 3600:
+                lk = f"late:{msg['id']}"
+                if age < 7 * 86400 and lk not in st["done"] and _match(msg.get("message", ""), cfg["keywords"]) and not DRY:
+                    st["done"][lk] = int(time.time())
+                    try:
+                        telegram(f"Studio DM, window missed ({cid}, {plat}): '{msg.get('message', '')[:60]}' from {frm}. Reply yourself within 7 days:\n"
+                                 f"python engine/dm.py --human {cid} {plat} {frm} \"text\"")
+                    except Exception:
+                        pass
                 continue
             key = f"msg:{msg['id']}"
             if key in st["done"] or not _match(msg.get("message", ""), cfg["keywords"]):
@@ -312,4 +337,8 @@ def run():
     save(STATE, st)                                        # dry runs never mark anything sent (only caches / pause are kept)
 
 if __name__ == "__main__":
-    run()
+    if "--human" in sys.argv:
+        a = sys.argv[sys.argv.index("--human") + 1:]
+        send_human(a[0], a[1], a[2], a[3])
+    else:
+        run()
