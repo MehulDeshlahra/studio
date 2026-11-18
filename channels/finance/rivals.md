@@ -144,7 +144,7 @@ Posts per week = uploads in the last 28 days / 4. Reddit blocks the server and n
 |---|---:|---:|---:|---|---|---|
 | 1 | 126,514 | 1,380 | 92 s | 2026-11-05 | How to Earn ₹1 Lakh/Month After Retirement? / Retirement Planning | not watched: from the title and length 92 s |
 | 2 | 113,012 | 697 | 72 s | 2026-11-09 | Silver Price Crash! Sell Now or Hold? / Silver Price Analysis 2026 | watched: hook "Silver to Crash to 1 lakh/kg" (shocking number); talking head; Yellow text boxes with black text, simple sans-serif font, frequent cuts every 3-5 seconds, man wearing glasse. Why: Addresses a common financial fear with a clear, authoritative tone and provides actionable advice, keeping the viewer engaged with fast-paced visual changes. |
-| 3 | 92,932 | 1,191 | 90 s | 2026-10-30 | Want More From Your SIP? Try These 3 Strategies! / Mutual Fund Tips | not watched: from the title and length 90 s |
+| 3 | 92,932 | 1,191 | 90 s | 2026-10-30 | Want More From Your SIP? Try These 3 Strategies! / Mutual Fund Tips | watched: hook "3 SIP Strategies 2x Return" (hack/tip); talking head; Bold white and yellow fonts on black and green rounded boxes, clean text-on-screen overlays, switching between. Why: Clear financial advice with high-value promises (2x returns) supported by easy-to-understand visual diagrams and step-by-step strategies. |
 | 4 | 29,081 | 286 | 69 s | 2026-10-22 | This Mutual Fund Mistake Can Eat Your Profits! / Exit Load Explained | not watched: from the title and length 69 s |
 | 5 | 17,584 | 584 | 67 s | 2026-11-15 | New UPI Scam Alert! Don't Fall for This Trick / Jump Deposit Scam Warn | not watched: from the title and length 67 s |
 | 6 | 16,271 | 193 | 75 s | 2026-10-25 | Mutual Fund Up 10%, But Your SIP Is in Loss? / SIP Returns vs XIRR Exp | not watched: from the title and length 75 s |
@@ -242,9 +242,9 @@ Posts per week = uploads in the last 28 days / 4. Reddit blocks the server and n
 ### @ankurwarikoo (Ankur Warikoo) · 4,062,201 followers · 12.5 posts/week
 | # | likes | comments | published | caption | what worked |
 |---|---:|---:|---|---|---|
-| 1 | 13,616 | 245 | 2026-11-16 | How much can Sourav Joshi earn from YouTube after buying a car? | not watched: from the title |
-| 2 | 9,655 | 77 | 2026-11-08 | What does your journey look like once you clear SSC CGL? | not watched: from the title |
-| 3 | 6,623 | 51 | 2026-11-12 | 6 banking exams - did you know about all of them? | not watched: from the title |
+| 1 | 13,616 | 245 | 2026-11-16 | How much can Sourav Joshi earn from YouTube after buying a car? | watched: hook "Sourav Joshi agar ek gaadi khareedte hain, toh usse kitna kama sakte hain? Aaiye" (question); talking head + animation; Dynamic captions in white with yellow highlights, 3D car model, table with data points, 10 cuts per 10 seconds. Why: Curiosity about influencer earnings and clear, data-driven visualization. |
+| 2 | 9,655 | 77 | 2026-11-08 | What does your journey look like once you clear SSC CGL? | watched: hook "SSC CGL. Maan lijiye aapka SSC CGL mein ho jata hai." (question); talking head; Captions in white text with a black background, dynamic numbers and job titles appear on screen, 2-3 cuts per . Why: Provides clear, actionable financial data and uses a simple visual hierarchy to explain complex career paths. |
+| 3 | 6,623 | 51 | 2026-11-12 | 6 banking exams - did you know about all of them? | watched: hook "6 banking exam chote se sabse bada" (money comparison); talking head; Numbered list from 6 to 1 appearing progressively on screen with exam names, starting salaries, and top positi. Why: Clear countdown structure from 6 to 1 creates curiosity about the top exam, and concrete salary and designation figures satisfy financial curiosity. |
 | 4 | 6,415 | 15 | 2026-11-10 | How much cash can you legally keep at home? | not watched: from the title |
 | 5 | 6,107 | 17 | 2026-11-05 | “Tell me about yourself” - how do you answer this question in an inter | not watched: from the title |
 | 6 | 5,968 | 53 | 2026-11-15 | PCB vs PCM - what is your pick? | not watched: from the title |
@@ -257,8 +257,8 @@ Posts per week = uploads in the last 28 days / 4. Reddit blocks the server and n
 | # | likes | comments | published | caption | what worked |
 |---|---:|---:|---|---|---|
 | 1 | 16,995 | 119 | 2026-11-11 | A movie doesn't necessarily have to be a box office hit to become a ma | not watched: from the title |
-| 2 | 12,622 | 337 | 2026-10-29 | Platinum is 30 times rarer than gold, yet it costs far less. 👀 Gold ma | not watched: from the title |
-| 3 | 10,785 | 38 | 2026-11-16 | You can pay for a property and STILL lose ownership of it. Here's why! | not watched: from the title |
+| 2 | 12,622 | 337 | 2026-10-29 | Platinum is 30 times rarer than gold, yet it costs far less. 👀 Gold ma | watched: hook "Platinum is approximately 30 times rarer than gold, yet its market price is curr" (money comparison); talking head; Bold white captions with dark background bars, platinum jewelry props, infographic slides for industrial uses . Why: Counterintuitive financial fact right at the start combined with clear visual proof and actionable buying advice. |
+| 3 | 10,785 | 38 | 2026-11-16 | You can pay for a property and STILL lose ownership of it. Here's why! | watched: hook "Amitabh Bachchan could lose his 100 crore rupees Mumbai bungalow Jalsa" (famous person); talking head / faceless with stock/b-roll; Yellow and white captions, prominent Rs 100 crore callout, frequent b-roll cuts averaging 4-5 cuts per 10 seco. Why: Uses a major celebrity hook and high-stakes money figure (Rs 100 crore) to instantly grab attention, then pivots to a relatable wealth-protection dilemma affect |
 | 4 | 10,376 | 28 | 2026-11-13 | Jensen Huang's exit from Nvidia could create some very unexpected winn | not watched: from the title |
 | 5 | 9,680 | 22 | 2026-11-04 | Could a political shake-up in the US become a big opportunity for Indi | not watched: from the title |
 | 6 | 6,299 | 71 | 2026-10-21 | Jio is preparing for what could be India's biggest-ever IPO. But is it | not watched: from the title |
@@ -270,9 +270,9 @@ Posts per week = uploads in the last 28 days / 4. Reddit blocks the server and n
 ### @labourlawadvisor (Labour Law Advisor) · 1,306,736 followers · 6.2 posts/week
 | # | likes | comments | published | caption | what worked |
 |---|---:|---:|---|---|---|
-| 1 | 131,502 | 644 | 2026-11-09 | Don’t miss these IRCTC Hacks! - #irctc #hack #indianrailways #indianra | not watched: from the title |
-| 2 | 105,979 | 835 | 2026-10-23 | London to UP, Bachaa Paida Karne - #london #ivf #uttarpradesh #ivfjour | not watched: from the title |
-| 3 | 9,185 | 60 | 2026-10-28 | FSSAI vs Influencer - #fssai #influencer #foodsafety #indiangovernment | not watched: from the title |
+| 1 | 131,502 | 644 | 2026-11-09 | Don’t miss these IRCTC Hacks! - #irctc #hack #indianrailways #indianra | watched: hook "3 IRCTC HACKS nobody tells you!!!" (hack/tip); talking head; Captions are in a bold, white font with a black outline, often highlighted with yellow or red boxes. The video. Why: The hook promises exclusive, valuable information ('nobody tells you') and the content addresses a common, relatable pain point for millions of Indian train tra |
+| 2 | 105,979 | 835 | 2026-10-23 | London to UP, Bachaa Paida Karne - #london #ivf #uttarpradesh #ivfjour | watched: hook "एक ब्रिटिश कपल 7000 किलोमीटर दूर लंदन से यूपी आते हैं" (story); talking head; Dynamic map animation, text overlays with data points, professional studio lighting, fast-paced cuts (approx. . Why: It uses a relatable, counter-intuitive story to challenge a common belief and supports it with clear, easy-to-read data visualizations. |
+| 3 | 9,185 | 60 | 2026-10-28 | FSSAI vs Influencer - #fssai #influencer #foodsafety #indiangovernment | watched: hook "इतिहास में ऐसा शायद पहली बार हुआ होगा जब एक इंस्टाग्राम इन्फ्लुएंसर को टॉप 5 रिक" (shocking number); talking head; Dynamic captions, yellow and white text, brand logo in top left, social media handle at the bottom, 5-7 cuts p. Why: The hook creates immediate curiosity about a relatable topic (influencer marketing) and the fast-paced editing keeps the viewer engaged. |
 | 4 | 7,036 | 82 | 2026-11-16 | Telecom companies have new rules to follow. Do you know your rights as | not watched: from the title |
 | 5 | 6,460 | 38 | 2026-10-29 | Chai Wale se Panga Mehenga - #chai #tea #legalbattle | not watched: from the title |
 | 6 | 5,690 | 62 | 2026-11-04 | Dark Side of Government Jobs - #governmentjobs #governmentjobsindia #i | not watched: from the title |
@@ -318,9 +318,9 @@ Posts per week = uploads in the last 28 days / 4. Reddit blocks the server and n
 ### @financewithskt (Finance With SKT) · 149,467 followers · 2.2 posts/week
 | # | likes | comments | published | caption | what worked |
 |---|---:|---:|---|---|---|
-| 1 | 28,798 | 117 | 2026-10-21 | 20s में Wealth बनाने के 4 Rules! 🔥💸/ Finance With SKT #reels #fws #skt | not watched: from the title |
-| 2 | 23,190 | 745 | 2026-11-10 | क्या आपमें हैं ये 5 Millionaire Signs❓/ Finance With SKT #fws #skt #ne | not watched: from the title |
-| 3 | 14,210 | 101 | 2026-11-07 | अमीर बनने की Zuckerberg की 5 बातें! 💰/ Finance With SKT #fws #skt | not watched: from the title |
+| 1 | 28,798 | 117 | 2026-10-21 | 20s में Wealth बनाने के 4 Rules! 🔥💸/ Finance With SKT #reels #fws #skt | watched: hook "अगर आपकी उम्र 20 से 29 साल के बीच है और आप अमीर बनना चाहते हो तो ये 4 बातें ध्या" (mistake warning); talking head; Animated yellow captions and bold numeric counters on screen with b-roll cuts averaging 4 cuts per 10 seconds.. Why: Targeted a specific age group with high aspirational value and provided actionable, structured financial advice using engaging b-rolls. |
+| 2 | 23,190 | 745 | 2026-11-10 | क्या आपमें हैं ये 5 Millionaire Signs❓/ Finance With SKT #fws #skt #ne | watched: hook "Kya tum bhi ek millionaire banna chahte ho?" (question); talking head; Dynamic Hindi/English captions, yellow background highlights on key numbers like '01', '02', '03', '04', '05',. Why: Uses direct questions addressing viewer aspirations combined with fast-paced B-roll visuals and authority building through structured self-improvement lists. |
+| 3 | 14,210 | 101 | 2026-11-07 | अमीर बनने की Zuckerberg की 5 बातें! 💰/ Finance With SKT #fws #skt | watched: hook "Agar tumhe ameer banna hai" (famous person); talking head; Dynamic captions, bold yellow/red text, stock footage overlays, approximately 3-4 cuts per 10 seconds.. Why: Uses a high-authority figure (Mark Zuckerberg) to build credibility and provides actionable, structured advice. |
 | 4 | 8,585 | 57 | 2026-10-20 | अमीर बनने के 5 Mindset Rules! 🔥💸/ Finance With SKT #skt #reels #richvs | not watched: from the title |
 | 5 | 6,971 | 56 | 2026-11-06 | अमीर बनने की Buffett की 5 बातें! 💰/ Finance With SKT #newreels #fws #s | not watched: from the title |
 | 6 | 5,290 | 34 | 2026-11-09 | अमीर बनने के 5 Bezos Secrets! 🔥😱/ Finance With SKT #amazon #skt #newre | not watched: from the title |
@@ -331,9 +331,9 @@ Posts per week = uploads in the last 28 days / 4. Reddit blocks the server and n
 ### @financebyraviraj (Ravi Gupta | Finance) · 73,444 followers · 4.0 posts/week
 | # | likes | comments | published | caption | what worked |
 |---|---:|---:|---|---|---|
-| 1 | 23,343 | 27 | 2026-11-17 | 6 Important Government Websites Save these 6 official government websi | not watched: from the title |
-| 2 | 9,685 | 83 | 2026-10-30 | 4 ESIC Benefits Every Employee Should Know Salary se ESIC deduct hota  | not watched: from the title |
-| 3 | 734 | 3 | 2026-11-11 | 3 Investments That Pay You Regular Income Want regular monthly income  | not watched: from the title |
+| 1 | 23,343 | 27 | 2026-11-17 | 6 Important Government Websites Save these 6 official government websi | watched: hook "agar aapko aadhar card banwana hai ya usme koi update ya change karna ho toh" (hack/tip); talking head; Numbered list 1 to 6 with ID card icons, names, arrows, and dynamically populating URL boxes in white text wit. Why: High utility value providing direct official links for essential Indian documents in one place, combined with rapid visual list-building that makes viewers want |
+| 2 | 9,685 | 83 | 2026-10-30 | 4 ESIC Benefits Every Employee Should Know Salary se ESIC deduct hota  | watched: hook "Agar aapki salary mein se ESIC ka deduction hota hai" (money comparison); talking head; Bold white captions with black outlines, red highlights on key terms, professional office background, 2-3 cuts. Why: Addresses a common financial deduction that many employees don't understand and provides actionable information on how to claim benefits. |
+| 3 | 734 | 3 | 2026-11-11 | 3 Investments That Pay You Regular Income Want regular monthly income  | watched: hook "3 Investment schemes for regular income" (hack/tip); talking head; Captions are in white text with a black background, appearing word-by-word. The video uses a mix of static sho. Why: The video promises a clear, actionable benefit (regular income) and breaks down complex financial concepts into simple, easy-to-understand segments. |
 | 4 | 483 | 10 | 2026-11-05 | ₹3,000 SIP: 3 Best Mutual Funds for 10 Years If I had to start a ₹3,00 | not watched: from the title |
 | 5 | 444 | 12 | 2026-11-01 | Best Mutual Funds Based on Your Investment Horizon Which mutual funds  | not watched: from the title |
 | 6 | 404 | 4 | 2026-11-09 | 5 Signs You’re Good at Managing Money Are you managing your money the  | not watched: from the title |
@@ -359,9 +359,9 @@ Posts per week = uploads in the last 28 days / 4. Reddit blocks the server and n
 ### @hindiadvices (Nitesh Agarwal) · 10,347 followers · 12.5 posts/week
 | # | likes | comments | published | caption | what worked |
 |---|---:|---:|---|---|---|
-| 1 | 64 | 0 | 2026-11-03 | Axis Bank Freecharge Credit Card 🔥 #axisbank #freechargecreditcard #cr | not watched: from the title |
-| 2 | 43 | 1 | 2026-11-09 | RBL BookMyShow Credit Card का धमाका! 🎬 #rblbank #bookmyshow #creditcar | not watched: from the title |
-| 3 | 46 | 0 | 2026-11-03 | Best Credit Card for Students 🔥 / KreditPe Credit Card by SBM Bank Kre | not watched: from the title |
+| 1 | 64 | 0 | 2026-11-03 | Axis Bank Freecharge Credit Card 🔥 #axisbank #freechargecreditcard #cr | watched: hook "Agar aap Freecharge application use karte ho" (hack/tip); talking head; No captions, single static shot of the credit card held by a hand, 0 cuts.. Why: It addresses a specific user base (Freecharge users) and promises financial rewards, which is highly engaging. |
+| 2 | 43 | 1 | 2026-11-09 | RBL BookMyShow Credit Card का धमाका! 🎬 #rblbank #bookmyshow #creditcar | watched: hook "RBL bank ke is credit card ki madad se" (hack/tip); talking head; No captions, single static shot of the card, 0 cuts.. Why: Direct value proposition (free movie tickets) and social proof (personal usage). |
+| 3 | 46 | 0 | 2026-11-03 | Best Credit Card for Students 🔥 / KreditPe Credit Card by SBM Bank Kre | watched: hook "Disclaimer This video is for educational and informational purposes only." (other); text-on-screen + voice; The video starts with a disclaimer screen, then cuts to a person holding a credit card. The card is black with. Why: It addresses a specific pain point for students (getting a credit card) and offers a concrete solution with a low barrier to entry (2000 INR deposit). |
 | 4 | 28 | 6 | 2026-11-02 | ROAR Bank Credit Card Cashback कैसे Activate करें? 💳🔥 ROAR Bank Credit | not watched: from the title |
 | 5 | 35 | 3 | 2026-11-03 | Tide Prepaid Card 🔥 / Benefits & Features #tidecard #tideprepaidcard # | not watched: from the title |
 | 6 | 42 | 0 | 2026-11-18 | AU Small Finance Bank Welcome Kit Unboxing 📦✨ #AUSmallFinanceBank #Wel | not watched: from the title |
