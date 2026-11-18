@@ -56,13 +56,14 @@ def texts(cid, ch):
     return tag[:150], long, link, ig
 
 
-def youtube(cid, acc, ch, d, s, h):
+def youtube(cid, acc, ch, d, s, h, st):
     """YouTube allows the banner, description, keywords and country through the API (not the profile picture)."""
     y = acc.get("yt")
     if not y:
         return
     about, long, link, _ig = texts(cid, ch)
-    key = hashlib.sha1((h + long + link).encode()).hexdigest()[:10]
+    sisters = sorted(v["yt_id"] for k, v in st.items() if k != cid and isinstance(v, dict) and v.get("yt_id"))
+    key = hashlib.sha1((h + long + link + ",".join(sisters)).encode()).hexdigest()[:10]
     if s.get("yt") == key:
         return
     tok = publish._req("https://oauth2.googleapis.com/token", {"client_id": y["client_id"], "client_secret": y["client_secret"],
@@ -71,8 +72,11 @@ def youtube(cid, acc, ch, d, s, h):
     cur = publish._req("https://www.googleapis.com/youtube/v3/channels?part=id,brandingSettings&mine=true", headers=au)["items"][0]
     up = publish._req("https://www.googleapis.com/upload/youtube/v3/channelBanners/insert?uploadType=media",
                       data=open(os.path.join(d, "yt_banner.png"), "rb").read(), headers=dict(au, **{"Content-Type": "image/png"}), method="POST")
+    s["yt_id"] = cur["id"]
     bs = cur.get("brandingSettings", {})
     bs.setdefault("channel", {}).update({"description": f"{long}\n{link}", "country": "IN"})
+    if sisters:                                      # the network's other channels on this channel's page (cross-promotion)
+        bs["channel"].update({"featuredChannelsTitle": "More from Scroll House", "featuredChannelsUrls": sisters[:100]})
     bs.setdefault("image", {})["bannerExternalUrl"] = up["url"]
     publish._req("https://www.googleapis.com/youtube/v3/channels?part=brandingSettings",
                  data=json.dumps({"id": cur["id"], "brandingSettings": bs}).encode(), headers=dict(au, **{"Content-Type": "application/json"}), method="PUT")
@@ -208,9 +212,20 @@ def do_page(cid, st, force):
         except Exception as e:
             log("brand: Facebook about failed", cid, str(e)[:200])
     try:
-        youtube(cid, acc, ch, d, s, h)
+        youtube(cid, acc, ch, d, s, h, st)
     except Exception as e:
         log("brand: YouTube failed", cid, str(e)[:300])
+    try:
+        mail = open(os.path.expanduser("~/.studio-brand-email"), encoding="utf-8").read().strip()
+    except OSError:
+        mail = ""
+    if pid and mail and s.get("fb_email") != mail:
+        try:
+            publish._req(f"{publish.G}/{pid}", {"access_token": acc["page_token"], "emails": json.dumps([mail])}, method="POST")
+            s["fb_email"] = mail
+            log("brand: Facebook email set", cid)
+        except Exception as e:
+            log("brand: Facebook email failed", cid, str(e)[:200])
     if changed:
         s["owner_note"] = False
 
