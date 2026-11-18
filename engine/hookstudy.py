@@ -126,8 +126,8 @@ def ig_top(page, per=6):
 
 
 HASHTAGS = {   # 18 Nov (owner: "you only see top creators; search hashtags for similar topics")
-    "tech": ["techtips", "techfacts", "techinhindi", "smartphonetips", "androidtips", "howitworks", "aitools", "chatgpt",
-             "googleassistant", "phonehacks"],
+    "tech": ["googleassistant", "chatgpt", "upi", "iphonetricks", "androidhacks", "mobiletricks", "techfacts", "aitools",
+             "howitworks", "gadgets"],
     "katha": ["mahabharat", "ramayan", "sanatandharma", "hindumythology", "krishna", "shivpuran", "puranas", "bhakti"],
     "raaz": ["hindistory", "mysterystory", "horrorstories", "kahani", "crimestory", "suspense", "storytime"],
 }
@@ -139,13 +139,18 @@ def hashtag_top(page, tags=None, per=4, min_likes=500):
     the big creators). Instagram allows 30 different hashtags per account per 7 days: tracked in HT_STATE, and a tag
     searched in the last 7 days reuses its id (no new slot). Returns the same shape as ig_top."""
     import publish
-    acc = publish.resolve(load(os.path.expanduser(f"~/.studio-accounts/{page}.json")) or {})
-    if not acc.get("ig_user_id"):
-        return []
-    st = load(HT_STATE, {}) or {}
-    mine = st.setdefault(acc["ig_user_id"], {})
     now = time.time()
-    mine = {k: v for k, v in mine.items() if now - v.get("t", 0) < 7 * 86400}
+    st = load(HT_STATE, {}) or {}
+    accs = []                                     # 30 tags/week PER account: use whichever of our pages has slots left
+    for p_ in [page] + [x for x in ("tech", "katha", "raaz") if x != page]:
+        a_ = publish.resolve(load(os.path.expanduser(f"~/.studio-accounts/{p_}.json")) or {})
+        if a_.get("ig_user_id"):
+            used = {k: v for k, v in (st.get(a_["ig_user_id"]) or {}).items() if now - v.get("t", 0) < 7 * 86400}
+            accs.append((a_, used))
+    if not accs:
+        return []
+    want = [t_.lstrip("#").lower() for t_ in (tags or HASHTAGS.get(page, []))]
+    acc, mine = next(((a_, u) for a_, u in accs if any(t_ in u for t_ in want)), None) or max(accs, key=lambda x: -len(x[1]))
     out = []
     for tag in (tags or HASHTAGS.get(page, [])):
         tag = tag.lstrip("#").lower()
@@ -177,7 +182,7 @@ def hashtag_top(page, tags=None, per=4, min_likes=500):
                     age_h = 24.0
                 if edge == "top_media" and likes >= min_likes:
                     m["_score"] = likes
-                elif edge == "recent_media" and likes / age_h >= 4:   # >= 4 likes an hour while young
+                elif edge == "recent_media" and likes >= 200 and likes / age_h >= 20:   # real breakouts only (tested: broad tags are noise)
                     m["_score"] = likes / age_h * 24
                 else:
                     continue
