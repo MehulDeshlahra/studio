@@ -13,6 +13,10 @@ API, web); never guess numbers. Finish all 5, then send the owner a short report
 2. TRENDING NOW: what the niche talks about this week (news, regulators, Google Trends India, Reddit). 20 ranked
    video ideas, each with its hook line. Best ones -> channels/<id>/ideas.json (front of the queue).
 3. FORMAT: from step 1, our best format: length, hook pattern, look, cover style, caption, hashtags.
+   LOOK = how the viewer meets this topic in real life, never another page's template (19 Nov: finance on the tech look
+   was "similar to tech, not catchy"; rebuilt as the viewer's own phone: chats, bank SMS, payment screen, receipt, rule
+   card, engine/phone_scenes.py). Build the look, render a test with one scene of each kind, look at the frames, fix,
+   only then make the first videos. Screens and documents are drawn in HTML: an AI picture invents text.
    -> channels/<id>/bible.md, hooks.md, channel.json. Keep the niche's legal rules (finance: SEBI, education only).
 4. MONEY: brands that sponsor creators of our size in the niche, what they pay, when to approach.
    -> knowledge/brands.json + MONEY.md.
