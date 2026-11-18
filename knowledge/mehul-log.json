@@ -1,0 +1,39 @@
+[
+ {
+  "t": "2026-11-18 05:52",
+  "page": "katha",
+  "score": 5,
+  "verdict": "Too many character inconsistencies and layout overlaps slipping through, plus English editions are violating our core rule against cross-language ports.",
+  "did": [
+   "rule: Never generate English editions for Puraan Ki Katha; maintain strictly as a Hindi-only mythology page.",
+   "code task (the healer works on it): Fix layout engine in renderer/layout.py to completely reject or automatically re-wrap lines causing content_overlap before marking ready.",
+   "code task (the healer works on it): Add character persistence validation in image_gen/generator.py to ensure deity/hero descriptions remain identical across all scenes of a single video.",
+   "rebuild 1117-0145: Fix character design consistency for Yamraj across all scenes and ensure 100% of"
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-18 05:56",
+  "page": "raaz",
+  "score": 6,
+  "verdict": "English editions are sneaking back in despite my strict rule, and case1 failed audio sync on the opening line.",
+  "did": [
+   "code task (the healer works on it): engine/planner.py: hard-block any English language job generation for @aagesuno as per the November 18 rule update.",
+   "code task (the healer works on it): engine/reviewer.py: add a pre-render check to ensure the first spoken word perfectly matches the generated audio buffer without clipping."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-18 05:59",
+  "page": "tech",
+  "score": 5,
+  "verdict": "Too many English editions slipping through despite the rule, and audio-text mismatch holds are wasting render cycles.",
+  "did": [
+   "rule: Block all generation of '-en' English suffix jobs immediately on this Hindi-first tech page.",
+   "code task (the healer works on it): Fix TTS generation pipeline in engine/tts.py to ensure 100% script alignment before marking audio ready.",
+   "rebuild lab-gpt-01: Regenerate voice audio ensuring full script is read properly without truncation.",
+   "rebuild v2-01-en: Cancel this job entirely as English editions are restricted; focus only on Hindi"
+  ],
+  "dry": false
+ }
+]

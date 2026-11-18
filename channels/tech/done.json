@@ -20,8 +20,10 @@
   "qc_ok": true,
   "status": "held",
   "review": [
+   "owner agent: Regenerate voice audio ensuring full script is read properly without truncation.",
    "only 0% of the script was found in the voice"
-  ]
+  ],
+  "mehul_rebuilt": "2026-11-18"
  },
  {
   "job": "upi-01-en",
@@ -76,8 +78,10 @@
   "qc_ok": true,
   "status": "held",
   "review": [
+   "owner agent: Cancel this job entirely as English editions are restricted; focus only on Hindi v2-01.",
    "before render, scene 10: READ: subtitle 'Right or Wrong?' is too dark and faint to read clearly against the dark background"
-  ]
+  ],
+  "mehul_rebuilt": "2026-11-18"
  },
  {
   "job": "1117-0729",

@@ -21,9 +21,12 @@
   "qc_ok": true,
   "status": "held",
   "review": [
+   "owner agent: Fix character design consistency for Yamraj across all scenes and ensure 100% of the script matches the voice track.",
    "only 75% of the script was found in the voice",
    "visual: Severe character inconsistency for Yamraj: depicted with blue skin and distinct attire in scenes 5 and 12, but suddenly appears with human skin tone and an entirely different face in scene 10."
-  ]
+  ],
+  "mehul_rebuilt": "2026-11-18",
+  "replan_requested": "2026-11-18 05:54"
  },
  {
   "job": "1117-0145-en",
