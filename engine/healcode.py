@@ -251,6 +251,9 @@ def fix(what, problems, files, verify=None, task=False):
 
 
 def merge(wt, br, what, changed, verified):
+    # 18 Nov: the checks run make.py from the worktree, which writes done.json etc. there; only the agent's commit counts
+    git("reset", "-q", "--hard", "HEAD", cwd=wt)
+    git("clean", "-fdq", cwd=wt)
     git("pull", "-q", "--rebase", "--autostash", timeout=120)
     rc, out = git("rebase", "-q", "main", cwd=wt)
     if rc != 0:
