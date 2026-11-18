@@ -48,6 +48,9 @@ BASE = {
 class Busy(Exception):
     pass
 
+class Blocked(Exception):
+    """Meta restricted messaging on this page (spam / action block): stop sending for the rest of the day and tell the owner."""
+
 USAGE = {"max": 0}
 
 def _r(url, data=None):
@@ -62,6 +65,8 @@ def _r(url, data=None):
             err = json.loads(e.read()).get("error", {})
         except ValueError:
             err = {}
+        if err.get("code") in (368, 1390008, 2018292) or "temporarily blocked" in (err.get("message") or "").lower():
+            raise Blocked(f"#{err.get('code')} {err.get('message', '')[:140]}")
         if err.get("code") in (4, 17, 32, 613, 80001, 80002, 80005, 80006):
             USAGE["max"] = 100
             raise Busy(f"#{err.get('code')} {err.get('message', '')[:120]}")
@@ -202,6 +207,8 @@ def comments_to_dm(cid, acc, cfg, st, budget, media_by):
                     time.sleep(2)
                 except RuntimeError as e:
                     log("dm send fail", cid, plat, c["id"], str(e)[:200])
+                    if "#10900" in str(e) or "#551" in str(e) or "#100" in str(e):
+                        continue                                    # this comment/person cannot be DMed; go on with the next one
     return sent
 
 def inbox_keywords(cid, acc, cfg, st, budget, media_by):
@@ -273,6 +280,15 @@ def run():
             used += comments_to_dm(cid, acc, cfg, st, DAY_CAP - used, media_by)
             used += inbox_keywords(cid, acc, cfg, st, DAY_CAP - used, media_by)
             st["day"][dk] = used
+    except Blocked as e:
+        st["pause_until"] = time.mktime(time.strptime(today, "%Y-%m-%d")) + 86400 + 3600     # rest of today + 1 h
+        log("dm BLOCKED by Meta, stopped until tomorrow:", str(e))
+        if not DRY:
+            try:
+                from core import telegram
+                telegram("⚠ Studio DM bot: Meta limited messaging on a page (" + str(e)[:140] + "). Stopped until tomorrow; nothing else is affected.")
+            except Exception as te:
+                log("dm telegram fail", str(te)[:80])
     except Busy as e:
         st["pause_until"] = time.time() + 30 * 60          # leave the shared app budget to posting for 30 min
         log("dm paused 30 min (Meta app limit, posting goes first):", str(e))
