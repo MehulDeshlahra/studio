@@ -90,9 +90,11 @@ def find_moments(ch, url, n, source=None):
 def words(mp4, lang=None):
     """faster-whisper words [(start, end, text)] of a clip (CPU int8, small model; ~1 min of audio in ~1 min)."""
     from faster_whisper import WhisperModel
+    import soundfile as sf
     wav = mp4 + ".wav"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-ac", "1", "-ar", "16000", wav], check=True, timeout=300)
-    segs, info = WhisperModel("small", compute_type="int8").transcribe(wav, language=lang, word_timestamps=True, beam_size=4,
+    a_, _sr = sf.read(wav, dtype="float32")         # 19 Nov: an array, not a path (PyAV here rejects faster-whisper's open())
+    segs, info = WhisperModel("small", compute_type="int8").transcribe(a_, language=lang, word_timestamps=True, beam_size=4,
                                                                      vad_filter=True)
     out = [(w.start, w.end, w.word.strip()) for s in segs for w in (s.words or []) if w.word.strip()]
     os.remove(wav)
