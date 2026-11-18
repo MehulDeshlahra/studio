@@ -491,7 +491,9 @@ def _stage_assets(ch, p, job):
             if theme.get("style") == "lab":
                 prompt = (s["prompt"] + ". Photorealistic studio product render, single object centred, isolated on a pure black "
                           "background, dramatic soft rim light, subtle reflections, shallow depth of field, premium Apple-style "
-                          "product photography, no people, no faces, no cartoon, no text, no logos, no watermark, vertical 9:16.")
+                          "product photography, no people, no faces, no cartoon, no text, no logos, no watermark, vertical 9:16. "
+                          # 19 Nov: a "payment failed screen" prompt painted €500 on the phone (finance 1118-2334)
+                          "Any phone, laptop or card screen is blank or a soft coloured glow: no words, no numbers, no currency signs.")
             if s["type"] == "flow":
                 prompt = "Soft, simple, uncluttered background for a diagram: " + prompt
             f = os.path.join(adir, f"s{i}.webp")
