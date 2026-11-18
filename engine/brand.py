@@ -36,6 +36,60 @@ def render(cid, th, tag, name):
     return r.stdout.strip()
 
 
+def _site_mod():
+    """engine/site.py by path ("import site" would give the standard library module)."""
+    import importlib.util
+    sp = importlib.util.spec_from_file_location("studio_site", os.path.join(ROOT, "engine", "site.py"))
+    m = importlib.util.module_from_spec(sp)
+    sp.loader.exec_module(m)
+    return m
+
+
+def texts(cid, ch):
+    """Page texts used on every platform: (about <=150, long description <=250, link, IG bio <=150)."""
+    sm = _site_mod()
+    tag = ch.get("tagline") or TAG.get(cid, "")
+    blurb = ch.get("site_blurb") or sm.BLURB.get(cid, "")
+    link = f"https://scrollhouse.in/go/{cid}.html"
+    long = (blurb + " A Scroll House page.")[:250]
+    ig = f"{tag}\nA Scroll House page".strip()[:150]
+    return tag[:150], long, link, ig
+
+
+def youtube(cid, acc, ch, d, s, h):
+    """YouTube allows the banner, description, keywords and country through the API (not the profile picture)."""
+    y = acc.get("yt")
+    if not y:
+        return
+    about, long, link, _ig = texts(cid, ch)
+    key = hashlib.sha1((h + long + link).encode()).hexdigest()[:10]
+    if s.get("yt") == key:
+        return
+    tok = publish._req("https://oauth2.googleapis.com/token", {"client_id": y["client_id"], "client_secret": y["client_secret"],
+                       "refresh_token": y["refresh_token"], "grant_type": "refresh_token"})["access_token"]
+    au = {"Authorization": "Bearer " + tok}
+    cur = publish._req("https://www.googleapis.com/youtube/v3/channels?part=id,brandingSettings&mine=true", headers=au)["items"][0]
+    up = publish._req("https://www.googleapis.com/upload/youtube/v3/channelBanners/insert?uploadType=media",
+                      data=open(os.path.join(d, "yt_banner.png"), "rb").read(), headers=dict(au, **{"Content-Type": "image/png"}), method="POST")
+    bs = cur.get("brandingSettings", {})
+    bs.setdefault("channel", {}).update({"description": f"{long}\n{link}", "country": "IN"})
+    bs.setdefault("image", {})["bannerExternalUrl"] = up["url"]
+    publish._req("https://www.googleapis.com/youtube/v3/channels?part=brandingSettings",
+                 data=json.dumps({"id": cur["id"], "brandingSettings": bs}).encode(), headers=dict(au, **{"Content-Type": "application/json"}), method="PUT")
+    s["yt"] = key
+    log("brand: YouTube banner + description set", cid)
+
+
+def bios(pgs, st):
+    out = ["# Bios (auto-written by engine/brand.py; the API cannot set these on Instagram or YouTube: paste once)", ""]
+    for cid in pgs:
+        ch = channel(cid)
+        about, long, link, ig = texts(cid, ch)
+        out += [f"## {ch.get('name', cid)}", f"- Instagram bio ({len(ig)} chars):", "```", ig, "```", f"- Instagram link: {link}",
+                f"- YouTube description: {long} {link}", f"- Facebook (set automatically): {about}", ""]
+    open(os.path.join(ROOT, "knowledge", "bios.md"), "w", encoding="utf-8", newline="\n").write("\n".join(out))
+
+
 def do_page(cid, st, force):
     ch = channel(cid)
     acc = load(os.path.expanduser(f"~/.studio-accounts/{cid}.json"))
@@ -77,6 +131,19 @@ def do_page(cid, st, force):
             log("brand: Facebook cover set", cid)
         except Exception as e:
             log("brand: Facebook cover failed", cid, str(e)[:200])
+    about, long, link, _ig = texts(cid, ch)
+    key = hashlib.sha1((about + long + link).encode()).hexdigest()[:10]
+    if pid and s.get("fb_profile") != key:
+        try:
+            publish._req(f"{publish.G}/{pid}", {"access_token": acc["page_token"], "about": about, "description": long, "website": link}, method="POST")
+            s["fb_profile"] = key
+            log("brand: Facebook about/website set", cid)
+        except Exception as e:
+            log("brand: Facebook about failed", cid, str(e)[:200])
+    try:
+        youtube(cid, acc, ch, d, s, h)
+    except Exception as e:
+        log("brand: YouTube failed", cid, str(e)[:300])
     if changed:
         s["owner_note"] = False
 
@@ -85,6 +152,10 @@ def main():
     force = "--force" in sys.argv
     want = [a for a in sys.argv[1:] if not a.startswith("--")] or list(pages())
     st = load(STATE, {}) or {}
+    try:
+        bios(list(pages()), st)
+    except Exception as e:
+        log("brand: bios failed", str(e)[:150])
     for cid in want:
         try:
             do_page(cid, st, force)

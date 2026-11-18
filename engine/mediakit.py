@@ -135,4 +135,29 @@ def run(ps_site):
         "".join(f"<url><loc>{u}</loc><lastmod>{time.strftime('%Y-%m-%d')}</lastmod></url>\n" for u in urls) + "</urlset>\n")
     open(os.path.join(DOCS, "robots.txt"), "w", encoding="utf-8", newline="\n").write(f"User-agent: *\nAllow: /\nSitemap: https://{DOMAIN}/sitemap.xml\n")
     ratecard(ps)
+    linkpages(ps, css)
     return len(ps)
+
+
+def linkpages(ps, css):
+    """scrollhouse.in/go/<page>: the link-in-bio / website for each page (viewer-facing): follow buttons and the sister pages
+    (cross-promotion inside the network). One URL per page for IG bio, FB website, YouTube description."""
+    os.makedirs(os.path.join(DOCS, "go"), exist_ok=True)
+    for p in ps:
+        acc = load(os.path.expanduser(f"~/.studio-accounts/{p['id']}.json"), {}) or {}
+        btn = [("Instagram", f"https://instagram.com/{p['ig']}")]
+        if acc.get("page_id"):
+            btn.append(("Facebook", f"https://facebook.com/{acc['page_id']}"))
+        if p["yt"]:
+            btn.append(("YouTube", f"https://youtube.com/@{p['yt']}"))
+        b = "".join(f'<p><a class="btn" style="display:block;text-align:center" href="{esc(u)}">{esc(n)}</a></p>' for n, u in btn)
+        sis = "".join(f'<li><a href="{q["id"]}.html">{esc(q["name"])}</a>: {esc(q["genre"])}</li>' for q in ps if q["id"] != p["id"])
+        logo = (f'<img src="../img/{p["id"]}.webp" alt="" width="96" height="96" style="border-radius:50%;display:block;margin:0 auto 12px">'
+                if os.path.exists(os.path.join(DOCS, "img", p["id"] + ".webp")) else "")
+        doc = (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+               f'<title>{esc(p["name"])}</title><meta name="robots" content="noindex">{css}</head><body><div class="wrap" style="max-width:480px;text-align:center">'
+               f'<header style="padding:40px 0 10px;border:0">{logo}<h1 style="font-size:30px;margin:8px 0">{esc(p["name"])}</h1>'
+               f'<p class="lead" style="font-size:16px">{esc(p["tagline"])}</p></header>{b}'
+               f'<h2 style="font-size:18px;margin-top:34px">More from Scroll House</h2><ul class="best" style="text-align:left">{sis}</ul>'
+               f'<footer>A Scroll House page · {DOMAIN}</footer></div></body></html>')
+        open(os.path.join(DOCS, "go", p["id"] + ".html"), "w", encoding="utf-8", newline="\n").write(doc)
