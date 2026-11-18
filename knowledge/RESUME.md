@@ -11,6 +11,9 @@
   was out; compose end-card overlap (katha holds) and motion "none" crash.
 - Not touched on purpose: the job bot's OmniRoute combos (claude-free etc. start with the slowest model; changing them is
   the job bot's decision).
+- OPEN FOR THE OWNER: jb-careers (job bot) has no memory limit (MemoryMax=infinity) and its browser renderer grew to
+  4.8 GB / 6.7 GB unit memory with load 17 on 2 cores (18 Nov 05:44-06:03). This is the freeze risk and it slows every
+  Studio build. Suggested: MemoryHigh=4G, MemoryMax=5G on jb-careers (systemd restarts it, Restart=always). Asked, not done.
 
 # RESUME (updated 17 Nov 2026 ~21:55 IST)
 
