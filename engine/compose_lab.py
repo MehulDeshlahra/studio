@@ -182,6 +182,9 @@ def page(plan, timed, total, theme, assets):
                 col = acc if j == 0 else "#d7dbe3"
                 vtx = str(it.get("value") or "")
                 vfs = 86 if len(vtx) <= 8 else 64 if len(vtx) <= 14 else 46       # fits in 2 lines, never climbs into the pill
+                # 18 Nov: "Base+New" (8 chars, no space) at 86 px is ~410 px wide in a 360 px column -> clipped (lab-gpt-01 held).
+                # The longest unbreakable word must fit the column width (bold glyphs ~0.66 em).
+                vfs = min(vfs, int(350 / (0.66 * max([len(w) for w in vtx.split()] or [1]))))
                 hero += (f'<div class="cc"><div class="cv" style="color:{col};font-size:{vfs}px">{esc(vtx)}</div>'
                          f'<div class="ctrack"><div id="{sid}c{j}" class="cbar" style="height:{pct * 4.0:.0f}px;background:{col}"></div></div>'
                          f'<div class="cl">{esc(it.get("label"))}</div></div>')

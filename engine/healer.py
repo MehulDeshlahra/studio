@@ -243,6 +243,8 @@ def heal_held():
             if last and last.get("pending"):
                 last["pending"] = False
                 last["result"] = "still held: " + "; ".join(probs)[:160]
+            # 18 Nov: a code step that crashed mid-way (no result) is not a try; drop it so it runs again
+            it["steps"] = [s for s in it["steps"] if not (s["step"] == "code" and "result" not in s)]
             tried = {(s["step"], s.get("code")) for s in it["steps"]}
             today_steps = sum(1 for s in it["steps"] if s.get("t", "")[:10] == time.strftime("%Y-%m-%d"))
             if today_steps >= 6:                            # a hard daily cap per video: never loop on one job
@@ -287,7 +289,10 @@ def heal_held():
             if ("code", h) not in tried and S.get("code_day", {}).get(time.strftime("%Y-%m-%d"), 0) < 6:
                 it["state"] = "working"; it["steps"].append({"step": "code", "code": h, "t": time.strftime("%Y-%m-%d %H:%M")})
                 save(STATE, S)
-                if code_fix(f"held video {cid} {job}", probs, STAGE_FILES.get(stg, []) + ["engine/preflight.py"], verify=(cid, job)).get("merged"):
+                r = code_fix(f"held video {cid} {job}", probs, STAGE_FILES.get(stg, []) + ["engine/preflight.py"], verify=(cid, job))
+                if r.get("skipped"):                     # 18 Nov: low memory / busy is not a try; the next round asks again
+                    it["steps"].pop(); save(STATE, S); return
+                if r.get("merged"):
                     it["steps"][-1]["result"] = "code fixed"; learn(probs[0], "code", "see git log: healer")
                     it["state"] = "working"; it["steps"].append({"step": "rebuild", "code": head(), "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                     rebuild(cid, job, stg, "code fixed by the healer")
@@ -497,9 +502,9 @@ def code_fix(what, evidence, files, verify=None, task=False):
     if DRY:
         note(f"[dry] would ask the coding agent: {what} ({files})"); return {}
     if mem_mb() < 3000:
-        note(f"code fix for {what} waits: only {mem_mb()} MB free"); return {}
+        note(f"code fix for {what} waits: only {mem_mb()} MB free"); return {"skipped": True}
     if busy():                                   # 18 Nov: one heavy thing at a time (the checks build a video too)
-        return {}
+        return {"skipped": True}
     day = time.strftime("%Y-%m-%d")
     cd = S.setdefault("code_day", {})          # 18 Nov 07:07: S["code_day"] was read before it existed -> KeyError
     cd[day] = cd.get(day, 0) + 1
