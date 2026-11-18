@@ -722,6 +722,8 @@ def decide(cid, job, action, note=""):
         inbox.set_status(cid, job, "approved"); inbox.telegram(f"✅ {cid} {job} approved (dashboard)")
     elif action == "reject":
         inbox.set_status(cid, job, "rejected"); inbox.telegram(f"❌ {cid} {job} rejected (dashboard)")
+    elif action == "remove":      # 18 Nov (owner): take an approved video out of the queue; never posted, files kept
+        inbox.set_status(cid, job, "removed"); inbox.telegram(f"🗑 {cid} {job} removed from the queue (dashboard)")
     elif action == "fix":
         inbox.set_status(cid, job, "fix", note); inbox.add_lesson(cid, note, job); inbox.telegram(f"✍️ {cid} {job} feedback (dashboard): {note[:200]}")
     else:

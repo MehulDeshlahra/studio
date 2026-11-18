@@ -10,7 +10,7 @@ const healerLine = (j) => { const h = j.healer || {}; if (h.state === "parked") 
 const K = { green: "var(--green)", amber: "var(--amber)", red: "var(--red)", blue: "var(--blue)", violet: "var(--violet)", teal: "var(--teal)", gray: "var(--gray)" };
 const ST = {
   building: ["Building", K.blue, 1], prepped: ["Prepped", K.blue], waiting: ["Needs approval", K.violet], ready: ["Ready, not sent", K.violet],
-  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], paused: ["Stopped midway", K.gray], made: ["Made", K.gray],
+  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], removed: ["Removed", K.gray], paused: ["Stopped midway", K.gray], made: ["Made", K.gray],
 };
 const LV = { ok: K.green, warn: K.amber, bad: K.red, info: K.gray, run: K.blue, wait: K.violet };
 const P = {
@@ -169,7 +169,8 @@ const V = {
        <div class="chips" style="margin-top:8px">${j.review.ok ? lvlBadge("ok", "Passed review") : ""}${j.review.score ? lvlBadge(j.review.score >= 8 ? "ok" : "warn", `Visual ${j.review.score}/10`) : ""}${j.qc.lufs ? lvlBadge("info", `${j.qc.lufs} LUFS`) : ""}</div>
        ${(j.review.problems || []).length ? `<ul class="mut" style="margin:8px 0 0 16px;font-size:12.5px">${j.review.problems.slice(0, 3).map((p) => `<li>${esc(String(p).slice(0, 160))}</li>`).join("")}</ul>` : ""}
        ${["waiting", "ready"].includes(j.status) ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn ok" onclick="decide('${j.cid}','${j.job}','approve')">Approve</button><button class="btn no" onclick="decide('${j.cid}','${j.job}','reject')">Reject</button><button class="btn" onclick="feedback('${j.cid}','${j.job}')">Feedback</button></div>`
-        : j.status === "held" ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center"><span class="mut" style="font-size:12.5px">${esc(healerLine(j))}</span><button class="btn sm" onclick="decide('${j.cid}','${j.job}','approve')">Approve anyway</button></div>` : ""}
+        : j.status === "held" ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center"><span class="mut" style="font-size:12.5px">${esc(healerLine(j))}</span><button class="btn sm" onclick="decide('${j.cid}','${j.job}','approve')">Approve anyway</button><button class="btn sm no" onclick="if(confirm('Remove this video? It will never be posted.'))decide('${j.cid}','${j.job}','remove')">Remove</button></div>`
+        : j.status === "approved" ? `<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn sm no" onclick="if(confirm('Remove this video from the queue? It will never be posted.'))decide('${j.cid}','${j.job}','remove')">Remove</button></div>` : ""}
        </div></div></div>`; };
     return `<div class="h1">Approvals</div><div class="lead">Only videos that passed the server's review come here. Approving here or in Telegram does the same thing.${S.settings.auto_approve ? ` Auto-approve is on for scores of ${S.settings.min_score}/10 and up.` : ""}</div>
      <div class="sec"><i class="dot" style="--c:${K.violet}"></i><h3>Needs approval</h3><span class="mut">${w.length}</span></div><div class="g2">${w.map(card).join("") || `<div class="card empty">Nothing is waiting for you.</div>`}</div>
@@ -357,7 +358,7 @@ async function loadLearned() {
      <span class="mut num" style="white-space:nowrap">+${x.knowledge}${x.build ? ` · ${x.build} build` : ""}</span></div>`).join("") || `<div class="empty">Nothing learned yet. Send a GitHub link or a PDF in Studio360.</div>`}`;
 }
 /* ---------- actions ---------- */
-async function decide(cid, job, action) { try { await post("/api/decide", { cid, job, action }); toast(action === "approve" ? "Approved" : "Rejected"); if (drawerKey) closeDrawer(); load(); } catch (e) { toast("Failed: " + e.message); } }
+async function decide(cid, job, action) { try { await post("/api/decide", { cid, job, action }); toast(action === "approve" ? "Approved" : action === "remove" ? "Removed" : "Rejected"); if (drawerKey) closeDrawer(); load(); } catch (e) { toast("Failed: " + e.message); } }
 function feedback(cid, job) {
   drawerKey = "fb"; $("#drawer").classList.add("on");
   $("#panel").innerHTML = `<div class="ph"><div style="flex:1;font-weight:600">Feedback</div><button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div><div class="pb"><div class="mut">Saved as a lesson for this page; the video is marked for a fix.</div><textarea id="fb" rows="6" style="margin-top:10px" placeholder="What should change?"></textarea><div style="display:flex;gap:8px;margin-top:10px"><button class="btn pri" onclick="sendFb('${cid}','${job}')">Send</button><button class="btn" onclick="closeDrawer()">Cancel</button></div></div>`;
