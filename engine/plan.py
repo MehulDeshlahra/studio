@@ -294,6 +294,8 @@ PLAN:
                         plan = fixed
                 except Exception as e:
                     log("numbers fix failed:", str(e)[:120]); break
+    if ch.get("theme", {}).get("style") == "lab":
+        plan = lab_fix(plan)
     out = clean(plan)
     if isinstance(out, dict):
         out["brain_ids"] = bids                    # which brain items this video used (scored after its review)
@@ -491,6 +493,41 @@ def _no_article(s):
         return s
     out = ART.sub("", s.strip()).strip()
     return out if out else s
+
+
+LAB_TYPES = ("object", "stat", "ui", "chart", "flow", "compare", "title", "clip", "chat", "code")
+
+
+def lab_fix(plan):
+    """19 Nov (finance 1118-2334 held: the planner wrote 'info' and 'image' scenes and a 'ui' with no rows on a lab page;
+    the screen showed 'None' and a bare logo). Every lab scene gets a type the lab compositor draws, with its data;
+    a scene that cannot be drawn becomes a 'title' (big words over its full-frame picture)."""
+    def words(s):
+        t = s.get("big") or s.get("title") or s.get("label") or " ".join(str(s.get("vo", "")).split()[:3])
+        return " ".join(str(t).split()[:4]).upper()
+    for s in plan.get("scenes", []):
+        t = s.get("type")
+        ok = {
+            "stat": bool(re.search(r"\d", str(s.get("value") or s.get("big") or ""))),
+            "ui": len(s.get("rows") or []) >= 1,
+            "chart": len(s.get("points") or []) >= 2,
+            "flow": len(s.get("nodes") or []) >= 2,
+            "compare": len(s.get("items") or []) >= 2,
+            "chat": len(s.get("messages") or []) >= 1,
+            "code": len(s.get("lines") or []) >= 1,
+            "object": bool(s.get("prompt") or (isinstance(s.get("real"), dict) and s["real"].get("q"))),
+            "clip": bool(s.get("prompt")),
+            "title": True,
+        }
+        if t == "stat" and ok["stat"] and not s.get("value"):
+            s["value"] = s.get("big")
+        if t in ("image", "card", "info") and (s.get("prompt") or (isinstance(s.get("real"), dict) and s["real"].get("q"))) \
+                and not s.get("big"):
+            s["type"] = "object"; continue
+        if t not in LAB_TYPES or not ok.get(t, False):
+            s["type"] = "title"; s["big"] = words(s)
+            log("lab fix: scene type", t, "-> title", repr(s["big"]))
+    return plan
 
 
 def clean(plan):
