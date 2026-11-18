@@ -1,0 +1,124 @@
+[
+ {
+  "t": "2026-11-18 22:43",
+  "picked": "The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)",
+  "ideas": [
+   {
+    "topic": "The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)",
+    "note": "",
+    "search": "Mahavira cremation ground Yaksha test",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 10.0,
+    "score": 7.3
+   },
+   {
+    "topic": "The Merchant Who Fed a Monk Poisoned Kheer — And Why the Monk Blessed Him (Source: Antakrida Sutra)",
+    "note": "",
+    "search": "Jain merchant poisoned kheer monk blessing",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 10.0,
+    "score": 6.95
+   },
+   {
+    "topic": "What Happens During Samvatsari Pratikraman — The 3-Step Internal Audit No App Can Replace (Source: Dasha-vaikalika Sutra)",
+    "note": "",
+    "search": "Samvatsari Pratikraman steps Jain",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 10.0,
+    "score": 6.95
+   },
+   {
+    "topic": "Why Jains Say 'Michhami Dukkadam' — The Exact Verse from the Agam That Defines Forgiveness (Source: Uttaradhyayana Sutra)",
+    "note": "",
+    "search": "Michhami Dukkadam meaning Agam verse",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 10014,
+    "fresh": 10.0,
+    "score": 6.28
+   },
+   {
+    "topic": "Why King Shrenik Could Not Attain Kevalgyan Despite 10 Lifetimes of Merit — The One Missing Vow (Source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "King Shrenik Jain story Kevalgyan",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.1,
+    "median_views": 1078,
+    "fresh": 10.0,
+    "score": 5.54
+   },
+   {
+    "topic": "How a Butcher's Daughter Became the First Nun of the 24th Tirthankar — The Power of Samyak Darshan (Source: Adipurana)",
+    "note": "",
+    "search": "Chandana Bala first nun Mahavira",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 335,
+    "fresh": 10.0,
+    "score": 5.5
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1525,
+    "fresh": 10.0,
+    "score": 4.67
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 577,
+    "fresh": 10.0,
+    "score": 4.45
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 14,
+    "fresh": 10.0,
+    "score": 4.45
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 477,
+    "fresh": 10.0,
+    "score": 4.45
+   }
+  ]
+ }
+]

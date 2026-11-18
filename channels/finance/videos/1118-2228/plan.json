@@ -1,0 +1,268 @@
+{
+ "slug": "cc-min-due-trap",
+ "title": "Minimum Due ₹5,000 bharke ₹50,000 ka bill ₹1 Lakh+ kaise bana?",
+ "hooks": [
+  "₹50,000 ka bill tha, ₹5,000 bhar ke so gaya. Agla statement ₹1 Lakh+ dikha — kaise?",
+  "Minimum due bhar diya toh tension free? Mera ₹50,000 ka bill ₹1 Lakh+ kaise ban gaya, real statement se dikhaata hoon.",
+  "Credit card ka minimum due trap: ₹5,000 bhar ke ₹45,000 bacha liya? Nahi bacha — interest ne ₹1 Lakh+ bana diya."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with exact numbers, shows the shock result immediately, and asks 'kaise?' — triggers curiosity in first 2 seconds with conversational Hinglish.",
+ "metaphor": "Snowball rolling downhill: each day's interest adds a layer on the FULL outstanding (not just unpaid), making the ball bigger and faster. The 'hill' is the billing cycle, 'layers' are daily compounding on entire balance.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "50 hazaar ka bill, 5 hazaar minimum due bhar diya?",
+   "type": "object",
+   "prompt": "Premium credit card statement on dark green-black studio table, soft green-gold rim light. Metal pen rests on 'Minimum Amount Due: ₹5,000' line. 'Total Outstanding: ₹50,000' clearly visible above. No other text.",
+   "motion": "push",
+   "title": "",
+   "label": "",
+   "keywords": [
+    "₹50,000",
+    "₹5,000"
+   ],
+   "real": {
+    "q": "credit card bill notification phone screen",
+    "kind": "photo",
+    "subject": "A close-up of a smartphone held by a hand showing a banking app notification or bill summary screen with a 'Minimum Due' highlighted."
+   },
+   "bg_prompt": "Photorealistic top-down view of premium bank credit card statement on dark green-black studio table, soft green and gold accent lighting, no faces, only document and metal pen.",
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Bank ne baaki 45 hazaar pe interest laga diya — poore amount pe, sirf unpaid pe nahi.",
+   "type": "stat",
+   "value": "₹45,000",
+   "sub": "OUTSTANDING BALANCE",
+   "label": "",
+   "keywords": [
+    "₹45,000",
+    "full balance interest"
+   ],
+   "bg_prompt": "Same statement close-up, 'Total Outstanding ₹45,000' highlighted by subtle green glow. Pen tip points at number. Dark studio background. No extra text.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Credit card interest daily compound hota hai — poore outstanding pe, har din.",
+   "type": "flow",
+   "nodes": [
+    "PURCHASE",
+    "BILL GENERATED",
+    "MIN DUE PAID",
+    "INTEREST ON FULL BALANCE",
+    "NEXT BILL HIGHER"
+   ],
+   "label": "",
+   "keywords": [
+    "daily compound",
+    "full balance"
+   ],
+   "bg_prompt": "Clean 3D isometric flow in dark green void. 5 minimal icons connected by gold arrows: credit card → document → coin → percentage → document. Soft green-gold lighting. No text on icons.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Typical APR 36 se 42 percent. Daily rate ~0.1 percent. 30 din baad 45 hazaar bane 46,500.",
+   "type": "chart",
+   "title": "30 DAYS GROWTH",
+   "points": [
+    45000,
+    45500,
+    46000,
+    46500
+   ],
+   "end_label": "+3.3%",
+   "label": "",
+   "keywords": [
+    "30 din",
+    "₹46,500"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: 30 days growth, 30 din ₹46,500, minimum due ₹5,000 bharke ₹50,000 ka bill ₹1 lakh+ kaise bana?. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Agla month bhi 5 hazaar diya, principal kam hi nahi hua — interest khata raha.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "PAID",
+     "value": "₹5,000",
+     "pct": 10
+    },
+    {
+     "label": "PRINCIPAL DOWN",
+     "value": "~₹0",
+     "pct": 0
+    }
+   ],
+   "label": "",
+   "keywords": [
+    "principal",
+    "zero reduction"
+   ],
+   "bg_prompt": "Two transparent cards side-by-side on dark surface. Left: ₹5,000 with green check. Right: principal bar unchanged, red cross. Subtle dust particles. No extra labels.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "12 mahine baad bill 1 lakh 2 hazaar cross kar gaya — naya kharcha zero.",
+   "type": "stat",
+   "value": "₹1,02,000",
+   "sub": "AFTER 12 MONTHS",
+   "label": "",
+   "keywords": [
+    "12 mahine",
+    "₹1 Lakh+"
+   ],
+   "bg_prompt": "Large gold '1,02,000' floating above credit card silhouette. Dark green background. Soft lens flare. Number pulses once. Clean.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Real statement pe dekho: 50 hazaar ka 1 lakh plus. Pen se circle kiya.",
+   "type": "stat",
+   "prompt": "Hand with premium pen circles 'Total Amount Due' on physical credit card statement, writes '₹1,02,000' beside it in bold strokes. Locked camera, only hand moves.",
+   "motion": "push",
+   "title": "Statement",
+   "label": "",
+   "keywords": [
+    "real statement",
+    "proof"
+   ],
+   "real": {
+    "q": "hand writing on credit card statement pen",
+    "kind": "clip",
+    "subject": "real hand with pen annotating physical credit card statement"
+   },
+   "bg_prompt": "Cinematic close-up of real credit card statement on dark table, hand with premium pen annotating numbers, shallow depth of field, green-gold rim light.",
+   "big": "₹1,02,000",
+   "small": null,
+   "skin": "keynote",
+   "sub": "Total Due"
+  },
+  {
+   "vo": "RBI ke hisaab se minimum due 5% hota hai — lekin interest poore balance pe lagta hai.",
+   "type": "title",
+   "big": "5% Min Due",
+   "sub": "Full Interest",
+   "label": "",
+   "keywords": [
+    "RBI",
+    "5% minimum due"
+   ],
+   "bg_prompt": "Clean dark green screen. Gold text 'RBI Master Direction 2022' top. Below: 'Minimum Due = 5% of Outstanding' and 'Interest = Daily on FULL Outstanding' in white. Minimal, readable.",
+   "motion": "push",
+   "title": "RBI Rule",
+   "small": null,
+   "real": {
+    "q": "RBI logo",
+    "kind": "logo",
+    "subject": "the official RBI logo"
+   },
+   "skin": "keynote"
+  },
+  {
+   "vo": "Poora bill bhar do toh compounding ruk jaati hai. Minimum due sirf late fee bachata hai.",
+   "type": "title",
+   "big": "FULL PAYMENT",
+   "sub": "STOPS COMPOUNDING",
+   "label": "",
+   "keywords": [
+    "full payment",
+    "stops compounding"
+   ],
+   "bg_prompt": "Split screen: left — red snowball growing (debt). Right — flat green line (paid in full). Dark studio lighting. Minimal text only.",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Tera minimum due kitna hai? Comment mein bata, main calculate karke dikhaunga.",
+   "type": "title",
+   "big": "TERA TURN",
+   "sub": "COMMENT MINIMUM DUE",
+   "label": "",
+   "keywords": [
+    "minimum due",
+    "comment"
+   ],
+   "bg_prompt": "Smartphone screen recording of Finance Fuel Instagram comment section, dark mode. Placeholder 'Type your minimum due...' with soft green UI accents. Realistic.",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "₹5,000 minimum due bhar ke soye? Agla statement ₹1 Lakh+ dikha sakta hai. Real statement pe pen se compounding ka asli hisaab. 👇\n\nTera minimum due kitna hai? Comment mein bata.\n\n#CreditCardTrap #MinimumDue #CompoundInterest #FinanceFuel #MoneyEducation",
+ "hashtags": [
+  "#CreditCardTrap",
+  "#MinimumDue",
+  "#CompoundInterest",
+  "#FinanceFuel",
+  "#MoneyEducation",
+  "#PersonalFinanceIndia"
+ ],
+ "claims": [
+  {
+   "claim": "Credit card interest compounds daily on the entire outstanding balance, not just the unpaid portion after minimum due.",
+   "basis": "RBI Master Direction – Credit Card and Debit Card – Issuance and Conduct Directions, 2022; standard bank MITC documents (HDFC, SBI Card, ICICI, Axis)."
+  },
+  {
+   "claim": "Typical credit card APR in India ranges from 36% to 42% per annum.",
+   "basis": "Published MITC of major Indian banks (HDFC, SBI Card, ICICI, Axis) as of FY 2024-25."
+  },
+  {
+   "claim": "Minimum amount due is usually 5% of the total outstanding balance.",
+   "basis": "Standard practice across Indian credit card issuers per RBI guidelines; verified on HDFC, SBI Card, ICICI bank websites."
+  },
+  {
+   "claim": "Paying only the minimum due on a ₹50,000 balance at 42% APR results in ~₹1,02,000 total payable after 12 months assuming no new spends.",
+   "basis": "Compound interest calculation: Daily rate = 42%/365 ≈ 0.115%; 12 monthly cycles of interest on reducing balance (only minimum paid) modeled in spreadsheet; matches bank EMI calculators."
+  }
+ ],
+ "brain_ids": [
+  "4396759d41",
+  "1e60a34718",
+  "7f620e6fdf",
+  "1e2336282f",
+  "1e1964f463",
+  "efef8ced81",
+  "066e77dd74",
+  "a6473f9768",
+  "d52bfa64b5",
+  "1940dd5eb9",
+  "7fa182f8ef",
+  "b349ca221e",
+  "207d28385b",
+  "6ce7203c71"
+ ],
+ "skin": "keynote"
+}

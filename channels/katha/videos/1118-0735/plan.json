@@ -33,7 +33,7 @@
   {
    "vo": "Woh kavach-kundal uski mrityu se raksha the, Surya ka varadaan",
    "type": "image",
-   "prompt": "Warrior Karna standing centered, glowing divine golden chest armor kavach and golden earrings kundal, radiant solar aura, traditional Indian epic art style, clean vertical composition, 9:16 aspect ratio with empty space above and below, no text, no letters",
+   "prompt": "Warrior Karna standing centered, glowing divine golden chest armor kavach and golden earrings kundal, radiant solar aura, traditional Indian epic art style, clean vertical composition, 9:16 aspect ratio with empty space above and below, no text, no letters, no logos",
    "motion": "pull",
    "title": "",
    "keywords": [
@@ -41,8 +41,8 @@
     "raksha",
     "varadaan"
    ],
-   "big": "Surya ka Varadaan",
-   "small": "Kavach aur Kundal",
+   "big": "Raksha",
+   "small": "Surya ka varadaan",
    "real": null,
    "skin": "pattachitra"
   },
@@ -80,33 +80,34 @@
   {
    "vo": "Par Karna rukha nahi — daan hi uski pehchaan thi, Surya ki baat yaad thi",
    "type": "image",
-   "prompt": "Karna standing alone, offering his golden armor to a Brahmin, humble and determined expression, warm golden light, Indian miniature epic style, 9:16 vertical with room above and below for text, no text, no letters",
+   "prompt": "Karna standing centered, holding his golden armor kavach in his hands, offering it with humble determination, warm golden light, Indian miniature epic style, 9:16 vertical with room above and below for text, no text, no letters",
    "motion": "zoom",
-   "title": "Mahaan Daan",
+   "title": "",
    "keywords": [
     "Karna",
     "rukha nahi",
     "pehchaan"
    ],
-   "big": "Rukha Nahi",
-   "small": "Daan hi Pehchaan",
+   "big": "",
+   "small": "",
    "real": null,
    "skin": "painting"
   },
   {
    "vo": "Kavach utarta hi khoon baha, ghaw khule, mrityu paas aa gayi",
    "type": "image",
-   "prompt": "Karna's armor separating from skin, raw red wounds appearing where golden plates lifted, blood mixing with golden light, painful but peaceful expression, dramatic low-key warm lighting, painterly cinematic Indian miniature-meets-epic style",
+   "prompt": "Karna's golden armor lifting from his chest, revealing raw red wounds, blood mixing with golden light, his expression a mix of pain and calm, dramatic low-key warm lighting, painterly cinematic Indian miniature style, centered subject, 9:16 vertical with clear space above and below for text, no text or logos",
    "motion": "push",
-   "title": "Kavach Utar Khoon",
+   "title": "Kavach Utar",
    "keywords": [
     "kavach",
     "khoon",
     "mrityu"
    ],
-   "big": null,
-   "small": null,
-   "skin": "painting"
+   "big": "Khoon",
+   "small": "Ghaav Khule",
+   "skin": "painting",
+   "real": null
   },
   {
    "vo": "Indra ne asli roop dikhaya, Shakti baan diya — par kavach wapas nahi mila",

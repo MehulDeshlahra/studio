@@ -13,33 +13,34 @@
  "scenes": [
   {
    "vo": "WhatsApp pe business se baat ki? Jawab aaya — par kaun de raha tha?",
-   "type": "object",
-   "label": "",
+   "type": "title",
+   "label": "WhatsApp AI",
    "prompt": "Smartphone floating on pure black, WhatsApp notification visible, large glowing question mark over the chat, premium studio lighting",
    "motion": "push",
    "bg_prompt": "Camera pushes into the notification, screen dissolves into neural particles",
-   "title": "",
+   "title": "Kaun Hai?",
    "keywords": [
     "WhatsApp",
     "Business"
    ],
-   "big": null,
+   "big": "KAUN HAI?",
    "small": null,
    "real": {
     "q": "WhatsApp logo",
     "kind": "logo",
     "subject": "the official WhatsApp logo"
    },
-   "skin": "keynote"
+   "skin": "keynote",
+   "sub": "LIVE"
   },
   {
    "vo": "Chatbot? Sirf menu. '1 dabao, 2 dabao.' Galat likha toh gadbad.",
-   "type": "object",
-   "label": "",
+   "type": "ui",
+   "label": "WhatsApp AI",
    "prompt": "Rigid grey decision tree frozen in space, locked nodes, one red X over a typed 'helop', mechanical cold feel, photoreal on black",
    "motion": "push",
    "bg_prompt": "Camera orbits slowly showing the tree cannot bend",
-   "title": "",
+   "title": "Purana Chatbot",
    "keywords": [
     "Chatbot",
     "Menu"
@@ -47,42 +48,52 @@
    "big": null,
    "small": null,
    "real": {
-    "q": "Old style automated menu phone keypad 1 press 2 press screenshot",
+    "q": "WhatsApp auto-reply menu options screenshot",
     "kind": "photo",
-    "subject": "A phone screen showing a rigid, text-based automated menu (1. Sales, 2. Support) to illustrate the pain point"
+    "subject": "A phone screen displaying a rigid, numbered menu list in a chat app, simulating a basic chatbot response."
    },
-   "skin": "keynote"
+   "skin": "keynote",
+   "sub": "LIVE",
+   "rows": [
+    {
+     "label": "1. Sales",
+     "value": "MENU"
+    },
+    {
+     "label": "2. Support",
+     "value": "MENU"
+    }
+   ]
   },
   {
    "vo": "AI agent alag: LLM se samajhta hai — slang, typo, context sab.",
-   "type": "object",
-   "label": "",
+   "type": "title",
+   "label": "WhatsApp AI",
    "prompt": "WhatsApp bubble with messy text 'hey can u book appt 2moro?' glowing gold, fluid neural pathways lighting up around it, understanding as living connections, premium render on black",
    "motion": "pull",
    "bg_prompt": "Camera pulls back showing bubble absorbed into central glowing brain, gold context threads weaving",
-   "title": "",
+   "title": "AI Agent",
    "keywords": [
     "LLM",
     "Natural Language"
    ],
-   "big": null,
+   "big": "AI AGENT",
    "small": null,
-   "skin": "keynote"
+   "skin": "keynote",
+   "sub": "LIVE"
   },
   {
    "vo": "Message aaya → LLM samjha → Context joda → Tool decide → Action → Jawab.",
    "type": "flow",
-   "label": "",
+   "label": "WhatsApp AI",
    "nodes": [
-    "MSG IN",
+    "MSG",
     "LLM",
-    "CONTEXT",
     "TOOL",
-    "ACTION",
     "REPLY"
    ],
    "bg_prompt": "One continuous camera push: WhatsApp bubble enters left → central brain pulses → golden thread weaves → three tool icons light up (CRM, Calendar, Payment) → reply bubble exits right, all photoreal on pure black",
-   "title": "",
+   "title": "Process",
    "keywords": [
     "Mechanism",
     "Flow"
@@ -91,20 +102,21 @@
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "prompt": ""
+   "prompt": "",
+   "sub": "LIVE"
   },
   {
    "vo": "Context yaad rakhta hai. Pehle 'dentist', phir 'kal 10 baje' — dono jod diya.",
    "type": "flow",
-   "label": "",
+   "label": "WhatsApp AI",
    "nodes": [
-    "MSG 1",
-    "MSG 2",
-    "THREAD",
-    "ACTION"
+    "DENTIST",
+    "10 AM",
+    "LINK",
+    "BOOKED"
    ],
    "bg_prompt": "Golden thread persisting through three WhatsApp bubbles entering brain, each bubble thickens the thread, final node triggers calendar icon, photoreal on black",
-   "title": "",
+   "title": "Context Memory",
    "keywords": [
     "Context",
     "Memory"
@@ -113,12 +125,18 @@
    "big": null,
    "small": null,
    "skin": "hologram",
-   "prompt": ""
+   "prompt": "",
+   "real": {
+    "q": "AI chat history context screenshot",
+    "kind": "photo",
+    "subject": "A chat interface showing a multi-turn conversation where previous context ('dentist') influences the current response."
+   },
+   "sub": "LIVE"
   },
   {
    "vo": "Tools: CRM, Calendar, Payment — ek saath, real-time.",
    "type": "ui",
-   "label": "",
+   "label": "WhatsApp AI",
    "title": "Tools",
    "rows": [
     {
@@ -144,26 +162,27 @@
    "big": null,
    "small": null,
    "real": {
-    "q": "CRM dashboard calendar payment gateway integration screen",
+    "q": "Business dashboard calendar CRM interface",
     "kind": "photo",
-    "subject": "A split-screen or collage of real UI elements: a CRM contact list, a calendar slot, and a payment confirmation"
+    "subject": "A split-screen or dashboard view on a tablet/phone showing a calendar and CRM tool simultaneously."
    },
    "skin": "keynote",
-   "prompt": ""
+   "prompt": "",
+   "sub": "LIVE"
   },
   {
    "vo": "Demo: 'Dentist book karo kal 10 baje' → 'Done, Dr. Sharma confirmed.'",
    "type": "chat",
-   "label": "",
-   "title": "",
+   "label": "WhatsApp AI",
+   "title": "Demo",
    "messages": [
     {
      "role": "user",
-     "text": "Dentist book karo kal 10 baje"
+     "text": "Book dentist"
     },
     {
      "role": "ai",
-     "text": "Done. Dr. Sharma 10 AM confirmed."
+     "text": "Done. 10 AM."
     }
    ],
    "bg_prompt": "Real smartphone screen recording of WhatsApp chat showing the above exchange, floating on pure black with subtle studio lighting",
@@ -180,18 +199,19 @@
    "big": null,
    "small": null,
    "skin": "keynote",
-   "prompt": ""
+   "prompt": "",
+   "sub": "LIVE"
   },
   {
    "vo": "Apne docs se train — website, PDF, FAQ. Minute mein ready.",
-   "type": "title",
-   "label": "",
+   "type": "code",
+   "label": "WhatsApp AI",
    "title": "Auto Train",
    "lines": [
-    "ingest(website)",
-    "ingest(pdf)",
-    "ingest(faq)",
-    "model.ready()"
+    "site",
+    "pdf",
+    "faq",
+    "ready()"
    ],
    "highlight": 3,
    "bg_prompt": "Terminal window on black, code typing animation, final line glows gold, premium mono font render, no printed text on image",
@@ -204,14 +224,19 @@
    "small": null,
    "skin": "keynote",
    "prompt": "",
-   "sub": ""
+   "sub": "LIVE",
+   "real": {
+    "q": "Document upload AI training interface",
+    "kind": "photo",
+    "subject": "A mobile app screen showing a 'Upload PDF' or 'Train Model' button being tapped by a thumb."
+   }
   },
   {
    "vo": "100+ bhasha, bina setup. Hindi, Tamil, English — sab automatic.",
    "type": "stat",
-   "label": "",
+   "label": "WhatsApp AI",
    "value": "100+",
-   "sub": "LANGUAGES",
+   "sub": "LIVE",
    "bg_prompt": "Globe made of glowing WhatsApp bubbles, each bubble a different script (Devanagari, Tamil, Latin, Arabic), neural connections between them, premium render on black",
    "title": "Bhasha",
    "keywords": [
@@ -222,20 +247,26 @@
    "big": null,
    "small": null,
    "skin": "keynote",
-   "prompt": ""
+   "prompt": "",
+   "real": {
+    "q": "Multilingual chat interface Hindi English",
+    "kind": "photo",
+    "subject": "A chat interface displaying messages in both Hindi and English side-by-side or sequentially."
+   },
+   "lines": [],
+   "messages": []
   },
   {
    "vo": "Complex sawal? Human ko transfer — context saath, repeat nahi.",
    "type": "flow",
-   "label": "",
+   "label": "WhatsApp AI",
    "nodes": [
     "AI",
-    "ESCALATE",
-    "HUMAN",
-    "DONE"
+    "TRANSFER",
+    "HUMAN"
    ],
    "bg_prompt": "Brain node pulses orange, pathway opens to human headset icon, gold context thread passes along smoothly, photoreal on black",
-   "title": "",
+   "title": "Handoff",
    "keywords": [
     "Handoff",
     "Human"
@@ -244,16 +275,22 @@
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "prompt": ""
+   "prompt": "",
+   "real": {
+    "q": "Chat transfer to human agent notification",
+    "kind": "photo",
+    "subject": "A chat screen showing a system message 'Connecting you with a human agent' with a progress indicator."
+   },
+   "sub": "LIVE"
   },
   {
    "vo": "Tera 24/7 digital employee — kabhi sota nahi.",
    "type": "title",
-   "label": "",
+   "label": "WhatsApp AI",
    "big": "24/7 AGENT",
-   "sub": "NEVER SLEEPS",
+   "sub": "LIVE",
    "bg_prompt": "Central brain glowing steady, three tool nodes pulsing in rhythm, golden context thread looping infinitely, premium photoreal on pure black",
-   "title": "",
+   "title": "24/7 Agent",
    "keywords": [
     "24/7",
     "Digital Employee"
@@ -266,11 +303,11 @@
   {
    "vo": "Tune kab AI agent se baat ki pata bhi nahi chala? Comment bata.",
    "type": "title",
-   "label": "",
+   "label": "WhatsApp AI",
    "big": "COMMENT KARO",
-   "sub": "PATA BHI NAHI CHALA",
+   "sub": "LIVE",
    "bg_prompt": "Smartphone floating, WhatsApp icon glowing, keyboard sliding up with cursor blinking, inviting interaction, premium render on black",
-   "title": "",
+   "title": "Comment Karo",
    "keywords": [
     "Comment",
     "Experience"

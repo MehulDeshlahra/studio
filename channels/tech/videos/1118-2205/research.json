@@ -1,0 +1,138 @@
+{
+ "topic": "Semiconductor/Chip Manufacturing",
+ "queries": [
+  "Semiconductor/Chip Manufacturing",
+  "Semiconductor/Chip Manufacturing shorts",
+  "Semiconductor/Chip Manufacturing explained"
+ ],
+ "top": [
+  {
+   "id": "9RZreu5z_Gc",
+   "title": "Computational lithography: Driving nanometer precision in microchip manufacturing | ASML",
+   "views": 1049805,
+   "dur": 147,
+   "channel": "ASML",
+   "url": "https://www.youtube.com/shorts/9RZreu5z_Gc"
+  },
+  {
+   "id": "c9arR8T0Qts",
+   "title": "The Semiconductor Production Process Explained Clearly",
+   "views": 597668,
+   "dur": 125,
+   "channel": "Bosch Global",
+   "url": "https://www.youtube.com/shorts/c9arR8T0Qts"
+  },
+  {
+   "id": "Qg_INhcCPOY",
+   "title": "What is an Outsourced Semiconductor Assembly and Test?  #TMS",
+   "views": 24703,
+   "dur": 169,
+   "channel": "Business Standard",
+   "url": "https://www.youtube.com/shorts/Qg_INhcCPOY"
+  },
+  {
+   "id": "FjWfSm6TfLI",
+   "title": "Semiconductor Manufacturing Process (Step-by-Step)",
+   "views": 23989,
+   "dur": 97,
+   "channel": "Technical Guideji",
+   "url": "https://www.youtube.com/shorts/FjWfSm6TfLI"
+  },
+  {
+   "id": "6O63GSCMqHw",
+   "title": "How Computer Chips Are Made in 30 Seconds 🤯 | Semiconductor Manufacturing #shorts",
+   "views": 180,
+   "dur": 31,
+   "channel": "Origin Works",
+   "url": "https://www.youtube.com/shorts/6O63GSCMqHw"
+  }
+ ],
+ "watched": [
+  {
+   "hook_line": "A chip is a tiny skyscraper.",
+   "frame0": "A close-up shot of a computer chip on a motherboard.",
+   "visual_metaphor": "Comparing the intricate, multi-layered architecture of a semiconductor chip to a modern skyscraper.",
+   "structure": [
+    "Introduction: Defining the chip as a 'skyscraper' with billions of transistors.",
+    "The Problem: The complexity of connecting these microscopic structures.",
+    "The Solution: ASML's lithography systems and the 'blueprint' (mask) process.",
+    "The Challenge: Physical and chemical deformation at the nanometer scale.",
+    "The Innovation: Computational lithography (optimizing source, mask, and wavefront).",
+    "Conclusion: ASML's role in enabling mass production for future technology."
+   ],
+   "editing": "High-end 3D motion graphics, smooth camera pans, split-screen comparisons, subtle text overlays for key terms, and professional, rhythmic sound design.",
+   "length_s": 147,
+   "why_it_works": "It simplifies a highly complex engineering process using a relatable metaphor (skyscraper) and high-quality visuals that make the abstract concept of 'lithography' tangible.",
+   "weak_points": "The technical jargon might be overwhelming for a general audience; it relies heavily on corporate branding rather than a narrative arc.",
+   "facts_claimed": [
+    "Chips are tiny skyscrapers with billions of transistors.",
+    "Chips have over 100 layers.",
+    "ASML uses lithography to print chip patterns using light.",
+    "Computational lithography uses models and algorithms to predict and correct pattern printing.",
+    "Source, mask, and wavefront optimization are key to improving chip quality."
+   ],
+   "url": "https://www.youtube.com/shorts/9RZreu5z_Gc",
+   "title": "Computational lithography: Driving nanometer precision in microchip manufacturing | ASML",
+   "views": 1049805,
+   "channel": "ASML"
+  },
+  {
+   "hook_line": "Humble sand. This is what the building blocks of the future are made of.",
+   "frame0": "A minimalist graphic of a chip with lines extending outwards, with the text 'THE FUTURE' in the center.",
+   "visual_metaphor": "The 'mini skyscraper' animation showing the stacking of chip layers.",
+   "structure": [
+    "Introduction: Sand as the raw material",
+    "Stage 1: Silicon purification and wafer cutting",
+    "Stage 2: Processing, etching, and doping",
+    "Stage 3: Thermal processing and quality control",
+    "Stage 4: Assembly and layering",
+    "Conclusion: The complexity of the final product"
+   ],
+   "editing": "Clean, corporate-style cuts; high-quality stock footage mixed with 3D motion graphics; simple, bold sans-serif text overlays for stats; ambient, tech-focused background music.",
+   "length_s": 126,
+   "why_it_works": "It simplifies a highly complex industrial process into digestible, sequential steps. The use of 3D animations bridges the gap between abstract concepts (like doping or etching) and physical reality, while the large, bold text overlays emphasize the staggering scale of the manufacturing process.",
+   "weak_points": "The pacing is somewhat slow and dry, leaning heavily into a corporate presentation style which may not engage a younger, fast-paced audience. It lacks a strong human element or a specific 'why' beyond the generic 'future' branding.",
+   "facts_claimed": [
+    "Silicon dioxide in sand is converted into pure silicon",
+    "Raw wafers are 300mm in diameter and <1mm thick",
+    "Up to 35,000 chips are made from one wafer",
+    "Structures are hundreds of times finer than a human hair",
+    "Wafers are heated to over 1,100°C",
+    "Manufacturing can involve 700 processing steps and 14 weeks of time"
+   ],
+   "url": "https://www.youtube.com/shorts/c9arR8T0Qts",
+   "title": "The Semiconductor Production Process Explained Clearly",
+   "views": 597668,
+   "channel": "Bosch Global"
+  },
+  {
+   "hook_line": "Foxconn Technology Group of Taiwan and India's HCL Group have announced a joint venture",
+   "frame0": "A stylized, red-themed motion graphic intro for 'The Business Standard Morning Show' with a man working at a desk in the background.",
+   "visual_metaphor": "The 'bridge' - OSAT acts as a vital bridge connecting semiconductor foundries to end consumers.",
+   "structure": [
+    "Introduction of the Foxconn-HCL joint venture",
+    "Explanation of OSAT (Outsourced Semiconductor Assembly and Test)",
+    "Definition of a semiconductor fab (fabrication plant)",
+    "Market growth statistics for the OSAT industry",
+    "Detailed breakdown of OSAT services and their role in the supply chain",
+    "Outro/Call to action"
+   ],
+   "editing": "Fast-paced cuts between stock footage of chip manufacturing, on-screen text overlays for definitions and statistics, and a professional voiceover narration.",
+   "length_s": 168,
+   "why_it_works": "It breaks down a complex technical topic into digestible segments using clear terminology, relevant statistics, and high-quality B-roll, making it accessible for a general business audience.",
+   "weak_points": "The video is quite long for a Short, and the pacing feels more like a traditional news segment than a native social media video. The ending is abrupt with a generic outro.",
+   "facts_claimed": [
+    "Foxconn and HCL have a joint venture for an OSAT unit in India.",
+    "Foxconn is investing $37.2 million for a 40% stake.",
+    "OSAT stands for Outsourced Semiconductor Assembly and Test.",
+    "OSAT market size was ~$51.7 billion in 2023 and is projected to reach ~$76.23 billion by 2028.",
+    "The compound annual growth rate (CAGR) for the forecast period is 8.07%."
+   ],
+   "url": "https://www.youtube.com/shorts/Qg_INhcCPOY",
+   "title": "What is an Outsourced Semiconductor Assembly and Test?  #TMS",
+   "views": 24703,
+   "channel": "Business Standard"
+  }
+ ],
+ "web": "SOURCE en.wikipedia.org (Semiconductor device fabrication - Wikipedia):\n| Semiconductor device fabrication | \n|---|\n| MOSFET scaling (process nodes) | \nSemiconductor device fabrication is the process used to manufacture semiconductor devices, typically integrated circuits (ICs) such as microprocessors, microcontrollers, and memories (such as RAM and flash memory). It is a multiple-step photolithographic and physico-chemical process, with steps such as thermal oxidation, thin-film deposition, ion implantation, and etching, during which electronic circuits are gradually created on a wafer, typically made of pure single-crystal semiconducting material. These processing steps are repeated in different sequences to form the device structure and the interconnection required for an integrated circuits.[1] Silicon is almost always used, but various compound semiconductors are used for specialized applications. Steps such as etching and photolithography can be used to manufacture other devices, such as LCD and OLED displays.[2]\nThe fabrication process is performed in highly specialized semiconductor fabrication plants, also called foundries or \"fabs\",[3] with the central part being the \"clean room\". In more advanced semiconductor devices, such as modern 14/10/7 nm nodes, fabrication can take up to 15 weeks, with 11–13 weeks being the industry average.[4] Production in advanced fabrication facilities is completely automated, with automated material handling systems taking care of the transport of wafers from machine to machine.[5]\nA wafer often has several integrated circuits, which are called dies as they are pieces diced from a single wafer. Individual dies are separated from a finished wafer in a process called die singulation, also called wafer dicing. The dies can then undergo further assembly and packaging.[6]\nWithin fabrication plants, the wafers are transported inside special sealed plastic boxes called FOUPs.[5][7] FOUPs in many fabs contain an internal nitrogen atmosphere[8][9] which helps prevent copper from oxidizing on the wafers. Copper is used in modern semiconductors for wiring.[10] The interior components of the processing equipment and FOUPs are kept cleaner than the surrounding air in the cleanroom. This internal atmosphere is known as a mini-environment and helps improve yield, which is the number of working devices on a wafer. This mini environment is within an EFEM (equipment front end module)[11] which allows a machine to receive FOUPs, and introduces wafers from the FOUPs into the machine. Additionally, many machines also handle wafers in clean nitrogen or vacuum environments to reduce contamination and improve process control.[5] Fabrication plants need large amounts of liquid nitrogen to maintain the atmosphere inside production machinery and FOUPs, which are constantly purged with nitrogen.[8][9] There can also be an air curtain or a mesh[12] between the FOUP and the EFEM which helps reduce the amount of humidity that enters the FOUP and improves yield.[13][14]\nSome of the companies that manufacture machines used in the industrial semiconductor fabrication process include ASML, Applied Materials, Tokyo Electron, and Lam Research.\nFeature size (or process size) is determined by the width of the smallest lines that can be patterned in a semiconductor fabrication process; this measurement is known as the linewidth.[15][16] Patterning often refers to photolithography which allows a device design or pattern to be defined on the device during fabrication.[17] F2 is used as a measurement of area f\n\nSOURCE microchipusa.com (Simple Guide to Semiconductor Manufacturing - Microchip USA):\n1. Silicon Purification\n2. Wafer manufacturing\n3. Thin-film deposition\n4. Photolithography\n5. Etching\n6. Doping and ion implantation\n7. Metallization and interconnect formation\n8. Wafer testing\n9. Packaging and assembly\n10. Final testing and quality assurance\n· Ground to precise dimensions\n· Sliced into thin wafers\n· Polished to achieve a mirror-like finish\n· Cleaned to remove microscopic contaminants\n· Electrical performance\n· Power consumption\n· Signal integrity\n· Functional operation\n· Shields the chip from contamination and moisture\n· Provides heat dissipation\n· Creates electrical connections to external systems\n· Enables integration into electronic products\n· Ball Grid Array (BGA)\n· Flip Chip Packaging\n· System-in-Package (SiP)\n· 2.5D Packaging\n· 3D IC Packaging\n· Functional testing\n· Reliability testing\n· Thermal testing\n· Environmental stress testing\n· Burn-in testing\nSemiconductor manufacturing is the process of creating integrated circuits and microchips on silicon wafers through a series of fabrication, testing, and packaging steps.\nSemiconductor chips are made by building microscopic electronic circuits on ultra-pure silicon wafers using processes such as deposition, photolithography, etching, doping, and metallization.\nSilicon is abundant, cost-effective, and possesses electrical properties that can be precisely controlled, making it ideal for semiconductor devices.\nA semiconductor wafer is a thin slice of ultra-pure silicon that serves as the foundation for integrated circuits and semiconductor devices.\nPhotolithography is the process of transferring circuit patterns onto a semiconductor wafer using light and a photosensitive material called photoresist.\nExtreme Ultraviolet (EUV) lithography uses 13.5-nanometer wavelength light to create extremely small circuit features required for advanced semiconductor devices.\nThe primary steps include silicon purification, wafer manufacturing, deposition, photolithography, etching, doping, metallization, testing, packaging, and final quality assurance.\nDepending on complexity, producing a semiconductor chip can take anywhere from 10 to 20 weeks and involve hundreds of manufacturing steps.\nIndustries that depend on semiconductors include consumer electronics, automotive, aerospace, telecommunications, healthcare, industrial automation, renewable energy, and artificial intelligence.\nSemiconductor fabrication involves building circuits and transistors on a wafer, while packaging protects the finished chip and provides electrical connections for integration into electronic systems.\n\nSOURCE asml.com (Six crucial steps in semiconductor manufacturing - ASML):\nUpdated - by Alison Li, October 4, 2023\nBy now you’ll have heard word on the street: a new iPhone 15 is here. But it’s under the hood of this iPhone – and other digital devices – where things really get interesting. That’s where top-of-the-line chips like Apple’s A17 Pro and A16 Bionic SoCs are making new, innovative technology possible. So how are these chips made and what are the most important steps?\nWe don’t need to tell you that modern digital devices – smartphones, PCs, gaming consoles and more – are powerful pieces of technology. Much of this power comes from microchips, some of the smallest but most detailed pieces of tech that exist. In 2021, semiconductor unit sales reached a record 1.15 trillion shipments. That’s about 145 chips for every person on earth. But despite what their widespread presence might suggest, manufacturing a microchip is no mean feat. To make any chip, numerous processes play a role. Let’s discuss six critical semiconductor manufacturing steps: deposition, photoresist, lithography, etch, ionization and packaging.\nDeposition\nThe process begins with a silicon wafer. Wafers are sliced from a salami-shaped bar of 99.99% pure silicon (known as an 'ingot') and polished to extreme smoothness. Thin films of conducting, isolating or semiconducting materials – depending on the type of structure being made – are deposited on the wafer to enable the first layer to be printed on it. This important step is commonly known as 'deposition'.\nAs microchip structures 'shrink', the process of patterning the wafer becomes more complex. Advances in deposition, as well as etch and lithography – more on that later – are enablers of shrink and the pursuit of Moore's Law. These advances include the use of new materials and innovations that enable increased precision when depositing these materials.\nPhotoresist coating\nThe wafer is then covered with a light-sensitive coating called 'photoresist', or 'resist' for short. There are two types of resist: positive and negative.\nThe main difference between positive and negative resist is the chemical structure of the material and the way that the resist reacts with light. With positive resist, the areas exposed to ultraviolet light change their structure and are made more soluble – ready for etching and deposition. The opposite is true for negative resist, where areas hit by light polymerize, meaning they become stronger and more difficult to dissolve. Positive resist is most commonly used in semiconductor manufacturing because its higher resolution capability makes it the better choice for the lithography stage.\nSeveral companies around the world produce resist for semiconductor manufacturing, such as Fujifilm Electronics Materials, The Dow Chemical Company and JSR Corporation.\nLithography\nLithography is a crucial step in the chipmaking process, because it determines just how small the transistors on a chip can be. During this stage, the chip wafer is inserted into a lithography machine (that's us!) where it's exposed to deep ultraviolet (DUV) or extreme ultraviolet (EUV) light. This light has a wavelength anywhere from 365 nm for less complex chip designs to 13.5 nm, which is used to produce some of the finest details of a chip – some of which are thousands of times smaller than a grain of sand.\nLight is projected onto the wafer through the 'reticle', which holds the blueprint of the pattern to be printed. The system's optics (lenses in a DUV system and mirrors in an EUV system) shrink an"
+}

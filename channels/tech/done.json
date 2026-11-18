@@ -121,5 +121,16 @@
   ],
   "mehul_rebuilt": "2026-11-18",
   "replan_requested": "2026-11-18 22:37"
+ },
+ {
+  "job": "1118-2205",
+  "topic": "Semiconductor/Chip Manufacturing",
+  "title": "Chip banta kaise hai? Ret se supercomputer tak.",
+  "status": "held",
+  "review": [
+   "before render, scene 6: FIT: UI type requested ASML value, but the visual shows a generic blue blueprint UI with faint text instead of the ASML machine UI",
+   "before render, scene 7: FIT: Scene calls for a stat value of 13.5nm with EUV light, but the visual incorrectly renders a graphic containing 'ASML' text logo box overlapping poorly",
+   "before render, scene 13: FIT: Subtitle text says 'AB ARAB TRANSISTORS' while big text says 'RET THA', which conflicts with the requested title specifications"
+  ]
  }
 ]

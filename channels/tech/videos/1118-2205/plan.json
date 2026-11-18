@@ -1,0 +1,370 @@
+{
+ "slug": "chip-fab-uv-city",
+ "title": "Chip banta kaise hai? Ret se supercomputer tak.",
+ "hooks": [
+  "Tere phone ka dimag... ret se banta hai!",
+  "Ret se supercomputer? Haa, asli magic yahan hai.",
+  "Ek chip mein arab switches... kaise bane?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Second-person, colloquial Hinglish, names the surprise (sand to supercomputer) in first 5 words. No greeting, no buildup.",
+ "metaphor": "Chip manufacturing is 3D printing a microscopic city layer-by-layer using extreme UV light (13.5 nm), where each floor is a circuit pattern 10,000x thinner than hair.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Tere phone ka dimag... ret se banta hai!",
+   "type": "object",
+   "prompt": "pure silicon ingot glowing faintly, cylindrical, mirror finish, centered on black",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Phone",
+    "Dimag",
+    "Ret"
+   ],
+   "bg_prompt": "photorealistic silicon ingot 99.99% pure, studio lighting, pure black background",
+   "real": {
+    "q": "silicon ingot 99.99 percent pure",
+    "kind": "photo",
+    "subject": "raw silicon ingot before slicing"
+   },
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Shuruat 99.99% pure silicon ingot se hoti hai.",
+   "type": "stat",
+   "value": "99.99%",
+   "sub": "SILICON PURITY",
+   "label": "INGOT SPEC",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "99.99%",
+    "Silicon",
+    "Ingot"
+   ],
+   "bg_prompt": "silicon ingot being measured for purity, cleanroom environment, pure black background",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Ingot kaate jaate wafer-thin slices mein.",
+   "type": "stat",
+   "prompt": "thin silicon wafer sliced from ingot, iridescent rainbow sheen, held by precision tool",
+   "motion": "tilt",
+   "title": "Wafer Slice",
+   "keywords": [
+    "Ingot",
+    "Wafer",
+    "Slice"
+   ],
+   "bg_prompt": "diamond wire saw slicing silicon ingot into wafers, cleanroom, pure black background",
+   "real": {
+    "q": "silicon wafer slicing machine",
+    "kind": "photo",
+    "subject": "wafer slicing in fab"
+   },
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "label": "Tool",
+   "value": "Diamond"
+  },
+  {
+   "vo": "Har wafer polish hota, mirror jaisa smooth.",
+   "type": "stat",
+   "value": "0.1 nm",
+   "sub": "ROUGHNESS",
+   "label": "POLISH SPEC",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Wafer",
+    "Polish",
+    "Mirror"
+   ],
+   "bg_prompt": "chemical mechanical polishing machine smoothing wafer to atomic flatness, pure black background",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Ab deposition: conducting, insulating layers deposit.",
+   "type": "flow",
+   "nodes": [
+    "DEPOSIT",
+    "RESIST",
+    "LITHO",
+    "ETCH",
+    "DOPE"
+   ],
+   "label": "FAB LOOP",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Deposition",
+    "Layers",
+    "Loop"
+   ],
+   "bg_prompt": "deposition chamber interior, thin films coating wafer, pure black background",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Photoresist lagta, EUV light pattern bana deta.",
+   "type": "ui",
+   "prompt": "EUV scanner exposing wafer, 13.5nm light writing circuits, camera tracks light path",
+   "motion": "push",
+   "title": "EUV Machine",
+   "keywords": [
+    "Photoresist",
+    "EUV",
+    "Pattern"
+   ],
+   "label": "Tool",
+   "real": {
+    "q": "ASML EUV lithography machine",
+    "kind": "clip",
+    "subject": "EUV scanner in operation writing circuits"
+   },
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "value": "ASML",
+   "items": [
+    "Scanner",
+    "Mirrors",
+    "Lens"
+   ]
+  },
+  {
+   "vo": "13.5 nanometer... baal se hazaron guna patla.",
+   "type": "stat",
+   "value": "13.5nm",
+   "sub": null,
+   "label": "Wavelength",
+   "motion": "pull",
+   "title": "EUV Light",
+   "keywords": [
+    "13.5 nm",
+    "EUV",
+    "Baal"
+   ],
+   "bg_prompt": "EUV light beam focusing through mirrors, extreme ultraviolet, pure black background",
+   "real": {
+    "q": "ASML logo",
+    "kind": "logo",
+    "subject": "ASML company logo"
+   },
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Plasma etch unwanted hata, circuits bana deta.",
+   "type": "object",
+   "prompt": "plasma etch chamber, blue glow carving trenches into wafer, atomic precision",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Etch",
+    "Circuits",
+    "Plasma"
+   ],
+   "bg_prompt": "reactive ion etch chamber, plasma etching silicon, pure black background",
+   "big": null,
+   "small": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Ion implantation se transistors on/off switch bante.",
+   "type": "ui",
+   "title": "ION IMPLANT",
+   "rows": [
+    {
+     "label": "BORON",
+     "value": "P-TYPE",
+     "pct": 50
+    },
+    {
+     "label": "PHOSPHORUS",
+     "value": "N-TYPE",
+     "pct": 50
+    }
+   ],
+   "label": "DOPING CONTROL",
+   "motion": "push",
+   "keywords": [
+    "Doping",
+    "Transistor",
+    "Switch"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: doping control, ion implant, doping transistor switch, chip banta kaise hai? ret se supercomputer tak.. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Ye loop chalta 100+ layers tak... 3D city banti.",
+   "type": "chart",
+   "title": "LAYER COUNT",
+   "points": [
+    10,
+    25,
+    50,
+    75,
+    100
+   ],
+   "end_label": "+100 LAYERS",
+   "label": "3D STACK",
+   "motion": "tilt",
+   "keywords": [
+    "100+",
+    "Layers",
+    "3D City"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: 3d stack, layer count, 100+ layers 3d city, chip banta kaise hai? ret se supercomputer tak.. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Wafer test, dice, package... 15 weeks lagte.",
+   "type": "object",
+   "prompt": "probe card testing wafer, then diamond saw dicing, then BGA package assembly",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Test",
+    "Dice",
+    "Package"
+   ],
+   "bg_prompt": "wafer probe test station, cleanroom, pure black background",
+   "real": {
+    "q": "TSMC cleanroom wafer test",
+    "kind": "photo",
+    "subject": "wafer probing in TSMC fab"
+   },
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Result: arab transistors tere haath mein.",
+   "type": "object",
+   "prompt": "finished processor package, gold pads, substrate, tiny but powerful, hero lighting",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Arab",
+    "Transistors",
+    "Haath"
+   ],
+   "bg_prompt": "Apple A17 Pro chip package on black velvet, studio macro, pure black background",
+   "real": {
+    "q": "Apple A17 Pro chip package",
+    "kind": "photo",
+    "subject": "finished Apple A17 Pro processor"
+   },
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Agla phone use kar, yaad rakh: ret tha. Comment: transistor kitna chhota?",
+   "type": "title",
+   "big": "RET THA",
+   "sub": "AB ARAB TRANSISTORS",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Ret",
+    "Phone",
+    "Transistor"
+   ],
+   "bg_prompt": "smartphone on black surface, screen glowing, x-ray view showing chip inside, pure black background",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Tere phone ka dimag... ret se banta hai! 🏭➡️📱 Comment: transistor kitna chhota?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#KaiseTech",
+  "#ChipManufacturing",
+  "#Semiconductor",
+  "#EUV",
+  "#ASML",
+  "#TechExplained"
+ ],
+ "claims": [
+  {
+   "claim": "Semiconductor fabrication starts with 99.99% pure silicon ingots",
+   "basis": "ASML source: 'Wafers are sliced from a salami-shaped bar of 99.99% pure silicon (known as an ingot)'"
+  },
+  {
+   "claim": "Wafers are sliced thin and polished to atomic smoothness (~0.1 nm roughness)",
+   "basis": "ASML: 'polished to extreme smoothness'; Microchip USA: 'Sliced into thin wafers, Polished to achieve a mirror-like finish'"
+  },
+  {
+   "claim": "Deposition adds thin films of conducting and insulating materials",
+   "basis": "ASML: 'Thin films of conducting, isolating or semiconducting materials... are deposited on the wafer'"
+  },
+  {
+   "claim": "Photoresist is coated then patterned by EUV lithography",
+   "basis": "ASML: 'The wafer is then covered with a light-sensitive coating called photoresist... lithography stage'"
+  },
+  {
+   "claim": "EUV lithography uses 13.5 nm wavelength light",
+   "basis": "Microchip USA: 'Extreme Ultraviolet (EUV) lithography uses 13.5-nanometer wavelength light'"
+  },
+  {
+   "claim": "Etch removes unwanted material to form circuit patterns",
+   "basis": "ASML: 'advances in... etch... are enablers of shrink'; Wikipedia: 'etching... during which electronic circuits are gradually created'"
+  },
+  {
+   "claim": "Doping/ion implantation creates transistor switches (P-type/N-type)",
+   "basis": "ASML: 'ionization'; Microchip USA: 'Doping and ion implantation'; Wikipedia: 'ion implantation'"
+  },
+  {
+   "claim": "The process repeats for 100+ layers in advanced chips",
+   "basis": "Wikipedia: 'processing steps are repeated in different sequences'; Microchip USA: 'hundreds of manufacturing steps'"
+  },
+  {
+   "claim": "Advanced chip fabrication takes up to 15 weeks (11–13 weeks industry average)",
+   "basis": "Wikipedia: 'fabrication can take up to 15 weeks, with 11–13 weeks being the industry average'"
+  },
+  {
+   "claim": "Modern chips contain billions of transistors",
+   "basis": "Wikipedia: 'modern 14/10/7 nm nodes' implying high density; general semiconductor knowledge"
+  }
+ ],
+ "brain_ids": [
+  "4396759d41",
+  "1e1964f463",
+  "7fa182f8ef",
+  "1e60a34718",
+  "efef8ced81",
+  "1e2336282f",
+  "161339712e",
+  "7f620e6fdf",
+  "a6473f9768",
+  "d52bfa64b5",
+  "b349ca221e",
+  "6ce7203c71",
+  "6055c69660",
+  "f945e2a937"
+ ],
+ "skin": "blueprint",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}
