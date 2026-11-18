@@ -69,19 +69,38 @@ def discover(page, per_q=25):
     return list(found)
 
 
+_YT_TOKEN = [None, 0]
+
+
+def _yt_api(path):
+    """YouTube Data API v3 with our own page's login (18 Nov: YouTube asks the server's datacenter IP to 'sign in to
+    confirm you are not a bot' for full video pages, so yt-dlp -j fails here; the official API does not)."""
+    import publish, urllib.request
+    if not _YT_TOKEN[0] or time.time() - _YT_TOKEN[1] > 3000:
+        acc = load(os.path.expanduser("~/.studio-accounts/tech.json")) or {}
+        y = acc["yt"]
+        _YT_TOKEN[0] = publish._req("https://oauth2.googleapis.com/token", {"client_id": y["client_id"], "client_secret": y["client_secret"],
+                                    "refresh_token": y["refresh_token"], "grant_type": "refresh_token"})["access_token"]
+        _YT_TOKEN[1] = time.time()
+    r = urllib.request.Request("https://www.googleapis.com/youtube/v3/" + path, headers={"Authorization": "Bearer " + _YT_TOKEN[0]})
+    return json.load(urllib.request.urlopen(r, timeout=30))
+
+
 def sponsors(video_ids, cname):
-    """Full metadata of a few recent videos: sponsor lines and the brands / links in them."""
+    """Descriptions of recent videos (50 per API call, 1 quota unit): sponsor lines and the brands / links in them."""
     hits = []
-    for vid in video_ids:
+    ids = [v for v in dict.fromkeys(video_ids) if v]
+    for i in range(0, len(ids), 50):
         try:
-            d = json.loads(_yt(["-j", "--skip-download", f"https://www.youtube.com/watch?v={vid}"], 120) or "{}")
-        except ValueError:
-            continue
-        desc = d.get("description") or ""
-        for line in desc.splitlines():
-            if SPONSOR.search(line):
-                hits.append({"video": vid, "title": (d.get("title") or "")[:90], "line": line.strip()[:220],
-                             "links": LINK.findall(line)[:3], "channel": cname, "date": d.get("upload_date")})
+            items = _yt_api("videos?part=snippet&id=" + ",".join(ids[i:i + 50])).get("items", [])
+        except Exception as e:
+            log("rivals: youtube api failed", str(e)[:120]); return hits
+        for it in items:
+            sn = it.get("snippet") or {}
+            for line in (sn.get("description") or "").splitlines():
+                if SPONSOR.search(line):
+                    hits.append({"video": it["id"], "title": (sn.get("title") or "")[:90], "line": line.strip()[:220],
+                                 "links": LINK.findall(line)[:3], "channel": cname, "date": (sn.get("publishedAt") or "")[:10]})
     return hits
 
 
@@ -169,8 +188,8 @@ def brand_scan(page):
     hits = []
     for cid, rec in (db.get(page) or {}).get("channels", {}).items():
         url = f"https://www.youtube.com/channel/{cid}/videos"
-        ids = [json.loads(l).get("id") for l in _yt(["--flat-playlist", "-j", "--playlist-end", "3", url]).splitlines() if l.strip().startswith("{")]
-        ids += [s["id"] for s in (rec.get("shorts") or [])[:2]]
+        ids = [json.loads(l).get("id") for l in _yt(["--flat-playlist", "-j", "--playlist-end", "8", url]).splitlines() if l.strip().startswith("{")]
+        ids += [s["id"] for s in (rec.get("shorts") or [])[:6]]
         hits += sponsors([i for i in ids if i], rec["name"])
     pb = bj.setdefault(page, {"hits": []})
     keys = {(h["video"], h["line"]) for h in pb["hits"]}
