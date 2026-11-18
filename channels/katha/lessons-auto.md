@@ -275,3 +275,20 @@
 - scene 4: The image is a stock photo of a man in a suit, which completely breaks the visual style and narrative immersion of the mythological story being told in the other frames.
 - scene 11: The text 'SHIVLING' and 'SHIVA PURAN' are present, but the intended script line for this scene is 'Wahi pathar bana bail ka kubad, aaj Kedarnath ka trikoniya Shivling hai.' The visual doesn't clearly show the 'trikoniya' (triangular) aspect well, and the text on the card doesn't match the script provided in the prompt.
 - scene 12: The text 'COMMENT' and 'JAI BHOLE' are present, but the intended script line is 'Aapke hisab se, kya sacha pashchatap har purani galti ko mita sakta hai?'. The card text 'SOCH' is okay, but the overall text layout seems disconnected from the prompt's script.
+
+## 1118-0035 The Origin of River Ganga and Why She Fell from Heaven (Bhagavata Purana, Skandha 9)
+- scene 1: The caption 'VISHAL SAILAB SEEDHE' does not match the script line 'Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta, toh kya hota?'. It is missing 'SOCHO AGAR' and 'ZAMEEN PAR GIRTA'.
+- scene 2: The caption 'YEH KATHA HAI' does not match the script line 'Puraanon ke anusar, yeh katha hai Raja Bhagirath ki.'
+- scene 3: The caption 'SHRAP KI WAJAH' does not match the script line 'Unke purvaj ek shrap ki wajah se mukt nahi ho pa rahe the.'
+- scene 4: The caption 'PAVITRA JAL HI' does not match the script line 'Sirf Ganga ka pavitra jal hi unhe moksha dila sakta tha.'
+- scene 5: The caption 'KATHOR TAPASYA KI' does not match the script line 'Bhagirath ne saalon kathor tapasya ki aur Brahma ji ko prasann kiya.'
+- scene 6: The caption 'GANGA SWARG SE' does not match the script line 'Brahma ji ne varan diya ki Ganga swarg se zameen par aayengi.'
+- scene 7: The caption 'UNKE VEG KO' does not match the script line 'Par ek badi samasya thi, unke veg ko kaun sambhalta?'
+- scene 8: The caption 'ZAMEEN PAR GIRTI' does not match the script line 'Agar Ganga seedhe zameen par girti, toh dharti patal mein chali jaati.'
+- scene 9: The caption 'LORD SHIVA SE' does not match the script line 'Tab Bhagirath ne Lord Shiva se prarthna ki.'
+- scene 10: The caption 'GANGA KE VEG' does not match the script line 'Shiva ji ne apni jataon mein Ganga ke veg ko aasaani se rok liya.'
+- scene 11: The caption 'PAR SABKA KALYAN' does not match the script line 'Aur is tarah Ganga ji dharti par sabka kalyan karne aayin.'
+- scene 12: The caption 'SACCHI LAGAN SE' does not match the script line 'Sroat: Bhagavata Purana. Aapke anusar, sacchi lagan se kya namumkin bhi mumkin ho jata hai?'
+
+## review 1118-0035
+- visual: Scene 2 headline says 'SKANDHA NAV' which is completely unrelated to the story of Ganga descending (which belongs to the Bhagavata Purana / Ramayana, not Skandha Purana context for this specific title).
