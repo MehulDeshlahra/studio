@@ -109,5 +109,13 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
 - studio-scout had failed every run since 17 Nov 17:01 (unit pulled git without --autostash) -> unit fixed.
 - Captions: Groq Whisper large-v3 via OmniRoute = 97% vs 76% / 100% vs 91% match, 3 s; waits up to 150 s when Groq is
   busy (the job bot shares the Groq key) before falling back to the local model.
+- 05:45 Mehul agent FIRST REAL RUN (knowledge/mehul-log.json): katha 5/10, raaz 6/10, tech 5/10; rules added (Hindi only),
+  code tasks written for the healer. Problems found + fixed: it started its own builds next to the healer's (two of
+  them on lab-gpt-01 at once, one on an English edition) -> stopped; it now only asks the healer (replan_requested);
+  make.py holds a per-job lock so no job is ever built twice at once; it counted old English editions as a violation
+  -> they are excluded from its data; owner-agent code tasks may not touch the core pipeline and are always
+  regression-checked.
+- 06:03 the healer's lab-gpt-01 rebuild sat 23 min in local Whisper under swap (load 17): stopped; it is retried with
+  Groq-first alignment once free memory is back above 2.5 GB.
 - Server load: the job bot's careers browser (jb-careers, chromium renderer) grew to 4.8 GB and ~60% CPU; load 17 on
   2 cores at 05:44; swap 2 GB used. Not Studio's process: left for the owner to decide.
