@@ -471,7 +471,8 @@ def code_fix(what, evidence, files, verify=None, task=False):
     if busy():                                   # 18 Nov: one heavy thing at a time (the checks build a video too)
         return {}
     day = time.strftime("%Y-%m-%d")
-    S.setdefault("code_day", {})[day] = S["code_day"].get(day, 0) + 1
+    cd = S.setdefault("code_day", {})          # 18 Nov 07:07: S["code_day"] was read before it existed -> KeyError
+    cd[day] = cd.get(day, 0) + 1
     S["code_day"] = dict(sorted(S["code_day"].items())[-7:])
     import healcode
     r = healcode.fix(what, evidence, files, verify=verify, task=task)
