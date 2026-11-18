@@ -195,6 +195,8 @@ RESEARCH ON THIS TOPIC (the best existing Shorts; beat them, do not copy them):
 REQUIREMENTS
 - 10-15 scenes; each scene = ONE spoken line of 4-16 words; total 95-150 words (about 40-55 s).
 - Scene 1: the hook. The question or a surprising result in the first line, with the strongest visual. No intro, no greeting.
+  2026 data: Shorts reach is decided by swipe-away in the first 1-2 s, so the first 4-6 spoken words already carry the
+  surprise (not a setup), and the first frame already shows the subject big; never a slow build or a logo first.
 - One new piece of information per scene. The same visual idea never repeats. Max 8 s per idea.
 - Explain the mechanism simply with the ONE metaphor, in order, so a 14-year-old understands.
 - The last scene: a short payoff + a question the viewer answers in comments.

@@ -24,6 +24,8 @@ WHAT THE TOP SHORTS IN THIS NICHE USE (from their real titles/descriptions/tags)
 {seo}
 Rules: the first 90 characters of every caption must make a stranger want to watch (curiosity, no spoilers, no clickbait lie);
 one clear question at the end that is easy to answer in a comment; Roman script Hinglish unless the video is English;
+ig and fb captions also carry ONE natural send line naming who to send it to (2026: Instagram ranks sends per reach above
+comments), specific to this video, e.g. "Us dost ko bhejo jo phone 24 ghante charge pe rakhta hai" (never "share karo");
 no price/medical/political claims; no 'follow for follow'; hashtags only relevant ones (mix 2 big + 2-4 niche).
 Return JSON {{"ig": {{"caption": "...", "hashtags": ["#..", ...4-6]}},
 "fb": {{"caption": "...", "hashtags": ["#..", "#.."]}},
