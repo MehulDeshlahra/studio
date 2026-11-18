@@ -75,10 +75,11 @@ def build():
         if p["yt"]:
             links += f' · <a href="https://youtube.com/@{esc(p["yt"])}">YouTube</a>'
         best = "".join(f'<li>{esc(b["title"][:70])} <b>{fmt(b["views"])} views</b></li>' for b in p["best"])
-        cards.append(f"""<article class="card"><div class="tag">{esc(p['genre'])} · {esc(p['lang'])}</div>
+        logo = f'<img src="img/{p["id"]}.webp" alt="" width="64" height="64" style="border-radius:50%;float:right;margin-left:12px">' if os.path.exists(os.path.join(DOCS, "img", p["id"] + ".webp")) else ""
+        cards.append(f"""<article class="card">{logo}<div class="tag">{esc(p['genre'])} · {esc(p['lang'])}</div>
 <h3>{esc(p['name'])}</h3><p class="tl">{esc(p['tagline'])}</p><p>{esc(p['about'])}</p>
 {nums(p)}
-{('<ul class="best">' + best + '</ul>') if best else ''}<p class="links">{links}</p></article>""")
+{('<ul class="best">' + best + '</ul>') if best else ''}<p class="links">{links} · <a href="kit/{p["id"]}.html">Media kit</a></p></article>""")
     contact = (f'<a class="btn" href="mailto:{esc(BRAND["email"])}">{esc(BRAND["email"])}</a>' if BRAND["email"] else
                f'<a class="btn" href="https://instagram.com/{BRAND["ig"]}">Message @{BRAND["ig"]}</a>')
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -124,6 +125,11 @@ footer{{margin:70px 0 40px;color:#6d7586;font-size:13px}}
     open(os.path.join(DOCS, "index.html"), "w", encoding="utf-8", newline="\n").write(doc)
     open(os.path.join(DOCS, "CNAME"), "w", encoding="utf-8", newline="\n").write(DOMAIN + "\n")
     open(os.path.join(DOCS, ".nojekyll"), "w").write("")
+    try:                                   # 19 Nov: per-page media kits, sitemap, internal rate card
+        import mediakit
+        mediakit.run(ps)
+    except Exception as e:
+        print("mediakit failed:", e)
     return len(ps)
 
 

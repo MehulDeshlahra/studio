@@ -125,6 +125,9 @@ def main():
     banner(logo, bgc2, A1, A2, tag, 1640, 624, 210, 30, bgc, rnd).save(os.path.join(out, "fb_cover.png"))
     for lab in ("SERIES", "SOURCES", "ABOUT"):
         highlight(lab, bgc2, A1, A2).save(os.path.join(out, "hl_" + lab.lower() + ".png"))
+    docs = os.path.join(ROOT, "docs", "img")           # small logo for the website (webp is not gitignored)
+    os.makedirs(docs, exist_ok=True)
+    Image.open(os.path.join(out, "dp_safe.png")).convert("RGB").resize((256, 256), Image.LANCZOS).save(os.path.join(docs, cid + ".webp"), quality=88)
     print("round" if rnd else "wide", cid)
 
 
