@@ -1,7 +1,7 @@
 """Research before every video (knowledge/PREFLIGHT.md step 2, automatic part):
 YouTube Shorts on the topic (yt-dlp search listing; works from the server), top ones by views are WATCHED by
 Gemini through OmniRoute (by URL, no download). Result: <job>/research.json + a short text for the planner."""
-import json, os, subprocess
+import json, os, re, subprocess
 from core import log, save, PY
 import llm
 
@@ -70,6 +70,14 @@ def run(topic, queries, job, watch_n=3):
     try:                                     # 18 Nov: real articles too, so facts come from sources, not from memory
         import web
         r["web"] = web.facts(queries[0] if queries else topic, n=3)
+        if len(r.get("web") or "") < 500:
+            # 18 Nov: a 30-word idea full of '₹' found nothing (finance 1118-2228: 0 chars). Retry short and plain:
+            # the first words before any '?', '₹' and digits removed, then the other planned queries.
+            short = re.sub(r"[₹\d,.+%'\"]+", " ", re.split(r"[?:(]", str(topic))[0])
+            short = " ".join(short.split()[:7])
+            for q in [short] + list(queries[1:3]):
+                if q and len(r.get("web") or "") < 500:
+                    r["web"] = web.facts(q, n=3) or r.get("web") or ""
         log("research web:", len(r["web"]), "chars from articles")
     except Exception as e:
         log("research web fail", str(e)[:120])
