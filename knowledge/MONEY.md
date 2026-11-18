@@ -54,7 +54,7 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
 - [ ] Weekly: read knowledge/rivals.md, turn the 5 money moves into build-queue items, apply the proven topics.
 - [ ] Posting pace after warm-up (27 Nov): tech 2/day, katha 1, raaz 1; raise when the first-pass rate allows.
 - [ ] Series formats that bring followers back daily (raaz serials exist; katha 5-7 part series; tech "myth vs sach").
-- [ ] Follow-worthy profile: bio with the promise + a link page (free GitHub Pages; needs nothing from Mehul).
+- [x] 18 Nov https://scrollhouse.in live (GitHub Pages, HTTPS enforced, cert approved; www -> apex). Bios: Mehul pastes.
 ### Brand readiness (start before 10k, so the first brand finds us ready)
 - [ ] Media kit page per page (GitHub Pages, auto-updated from money.json + results): audience, reach, best reels,
       formats offered, contact. Build when each page has ~2 weeks of numbers.
@@ -78,6 +78,7 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
   Taken by others: scrollhouse.com (2021), .co.in and .co (2026). Optional backup: scrollhousemedia.com (free 18 Nov).
 - Site: engine/site.py -> docs/ (GitHub Pages of offhours-lab/studio), rebuilt daily 09:05 from money.json + done.json;
   numbers appear once they exist ("Launching 20 Nov" until then). Brand email to add when Mehul makes it.
+- LIVE 18 Nov: https://scrollhouse.in (DNS at GoDaddy: 4 A records to GitHub + CNAME www; .IN KYC approved same day).
 
 ## 6. What only Mehul can do (ask, don't wait silently)
 - A business email for brand deals (one free Gmail, e.g. kaise.tech.collab@...): needs his sign-up.
