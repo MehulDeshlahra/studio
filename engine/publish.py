@@ -101,9 +101,17 @@ def post_one(cid, dry=False):
         log("publish", cid, "warm-up: no posts before", w["post_from"]); return
     if w.get("one_a_day_until") and day < w["one_a_day_until"] and int(time.strftime("%H")) < 17:
         log("publish", cid, "warm-up: only the evening slot until", w["one_a_day_until"]); return
-    acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     p = os.path.join(ROOT, "channels", cid, "done.json")
     done = load(p, [])
+    # 18 Nov: posts_per_day was never read, so after the warm-up (27 Nov) every page would post at both slots
+    # (13:00 and 20:00), katha and Aage Suno (1 a day) included. One a day = the evening slot only.
+    ppd = int((ch.get("schedule") or {}).get("posts_per_day", 1) or 1)
+    today_n = sum(1 for d in done if str((d.get("posted") or {}).get("at", "")).startswith(day))
+    if today_n >= ppd:
+        log("publish", cid, f"already posted {today_n} today (posts_per_day {ppd})"); return
+    if ppd == 1 and int(time.strftime("%H")) < 17:
+        log("publish", cid, "one post a day: the evening slot"); return
+    acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     # 17 Nov: English editions (-en) only go out once the page has an English account (handle_en); the English page is parked
     nxt = next((d for d in done if d.get("status") == "approved" and (not d["job"].endswith("-en") or ch.get("handle_en"))), None)
     if not nxt:
