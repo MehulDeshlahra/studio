@@ -47,7 +47,19 @@ def cap_groups(words):
     return out
 
 
+def _stage_on(theme):
+    """18 Nov pilot ("stage" layout, keynote grammar): the main visual is bigger and lower, captions are a toast pill
+    nearer the bottom, a big number gets its screen without a caption, a faint hairline grid replaces film grain.
+    On with theme {"stage": true} or STUDIO_LAB_STAGE=1; off by default until the owner approves the side-by-side."""
+    return bool(theme.get("stage")) or os.environ.get("STUDIO_LAB_STAGE") == "1"
+
+
+STAGE_DY, STAGE_S, STAGE_CAP_Y = 110, 1.15, 1395
+STAGE_TEXT = ("title", "stat")        # text-only scenes move down but keep their size (150-200 px type would overflow)
+
+
 def page(plan, timed, total, theme, assets):
+    stage = _stage_on(theme)
     acc = theme.get("accent", "#ffd84d")
     cool = theme.get("accent2", "#3ec7ff")
     handle = theme.get("handle", "")
@@ -58,6 +70,7 @@ def page(plan, timed, total, theme, assets):
         for k in s.get("keywords") or []:
             keys.update(re.sub(r"[^a-z0-9 ]", "", k.lower()).split())
     scenes, top, js, cues, caps = [], [], [], [], []
+    stat_win = []
     n = len(timed)
     for i, (s, t) in enumerate(zip(plan["scenes"], timed)):
         a = 0.0 if i == 0 else t["start"] - 0.1
@@ -252,7 +265,15 @@ def page(plan, timed, total, theme, assets):
             inner += f'<div id="{sid}p" class="lpill"><i></i>{esc(s["label"].upper())}</div>'
             js.append(f'tl.fromTo("#{sid}p",{{y:-14,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out",immediateRender:false}},{a + 0.15:.3f});')
             js.append(f'tl.set("#{sid}p",{{opacity:0}},{a:.3f});')
-        inner += f'<div id="{sid}cam" class="cam">{hero}</div>'
+        if stage:
+            sc = 1.0 if kind in STAGE_TEXT else STAGE_S
+            inner = inner.replace('<div class="glow"', '<div class="hgrid" data-layout-ignore></div><div class="glow"', 1)
+            inner += (f'<div class="stg" style="transform:translateY({STAGE_DY}px) scale({sc})">'
+                      f'<div id="{sid}cam" class="cam">{hero}</div></div>')
+            if kind == "stat":
+                stat_win.append((a, b))
+        else:
+            inner += f'<div id="{sid}cam" class="cam">{hero}</div>'
         inner += (f'<div class="hud"><span class="hl"><b></b>{esc(series)}</span>'
                   f'<span class="hr">{esc("" if (s.get("hud_right") or "").upper() in ("", (s.get("label") or "").upper()) else s["hud_right"].upper())}</span></div>')   # no duplicate of the pill
         js.append(f'tl.fromTo("#{sid}cam",{{scale:1.05}},{{scale:1.0,duration:0.9,ease:"power3.out",immediateRender:false}},{a:.3f});')
@@ -282,6 +303,8 @@ def page(plan, timed, total, theme, assets):
         if j + 1 < len(caps):
             en = min(en, caps[j + 1][0]["s"] - 0.06)
         en = max(en, st + 0.3)
+        if stage and any(sa - 0.05 <= (st + en) / 2 < sb for sa, sb in stat_win):
+            continue                                  # the big number is the message: no caption over it
         if endcard:                                   # 17 Nov: captions bled into the end card (review HOLD)
             if st >= total - endcard - 0.2:
                 continue
@@ -373,6 +396,16 @@ body{{margin:0;background:#07080b}}
 .grain{{position:absolute;inset:-50px;z-index:30;pointer-events:none;opacity:.07;background-image:url("{grain}");mix-blend-mode:overlay}}
 .vign{{position:absolute;inset:0;z-index:29;pointer-events:none;background:radial-gradient(ellipse 80% 70% at 50% 48%,transparent 55%,#000c 100%)}}
 .endc{{position:absolute;inset:0;z-index:20;background:#07080b}}
+""" + (f"""
+.stg{{position:absolute;inset:0;transform-origin:50% 730px}}
+.hgrid{{position:absolute;inset:0;opacity:1;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px),
+  linear-gradient(#ffffff0f 1px,transparent 1px),linear-gradient(90deg,#ffffff0f 1px,transparent 1px);
+  background-size:48px 48px,48px 48px,192px 192px,192px 192px;-webkit-mask-image:radial-gradient(ellipse 75% 60% at 50% 45%,#000 30%,transparent 85%)}}
+.grain{{display:none}}
+.cap{{left:0;right:0;margin:auto;width:fit-content;max-width:900px;top:{STAGE_CAP_Y}px;font-size:52px;line-height:1.2;padding:18px 34px 20px 64px;
+  background:#0b0d12e0;border:1.5px solid #ffffff24;border-radius:30px;box-shadow:0 18px 40px #0009;text-shadow:none;box-sizing:border-box}}
+.cap:before{{content:"";position:absolute;left:28px;top:38px;width:14px;height:14px;border-radius:50%;background:{acc};box-shadow:0 0 12px {acc}}}
+""" if stage else "") + f"""
 .endh{{position:absolute;left:0;width:{W}px;top:800px;text-align:center;font-weight:800;font-size:110px;letter-spacing:-3px}}
 .endf{{position:absolute;left:0;width:{W}px;top:950px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:6px;color:{acc}}}
 """
