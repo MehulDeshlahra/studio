@@ -202,4 +202,7 @@ def css(acc, phone_page=False):
   font-size:32px;letter-spacing:2px;padding:12px 24px;border-radius:14px}
 """ + (
         # a phone page: the phone fills the frame (zoom 1.2 -> 768 x 1236 px, ends y 1332); captions sit below it
-        ".cap{top:1395px!important}" if phone_page else "")).replace("SANS", SANS).replace("MONO", MONO).replace("ACC", acc)
+        ".cap{top:1395px!important}"
+        # 19 Nov: the real-life picture / clip behind the phone (plans with phone_bg) stays atmosphere: dim, soft, normal blend
+        "#root .scene .bgimg,#root .vid.pbg{mix-blend-mode:normal!important;opacity:1;filter:brightness(.5) saturate(.9) blur(3px)!important}"
+        if phone_page else "")).replace("SANS", SANS).replace("MONO", MONO).replace("ACC", acc)

@@ -96,9 +96,21 @@ IGNORE the visual types above and use ONLY these scene types; never two of the s
   {"type":"title","big":"<2-4 words>","sub":"<short line>"}   for the one action to take and the ending
 Flow of a reel: hook (wa or sms: the problem as it happens) -> what it means (pay / sms / stat) -> the real rule (rule card)
 -> the maths (bill or stat) -> what to do (title or wa reply) -> "Save karo" + a question (title).
-No "object", "image", "ui", "chart" or "clip" scenes, no picture prompts: everything is drawn exactly.
+No "object", "image", "ui", "chart" or "clip" scenes: everything on the phone, receipt and card is drawn exactly.
 The on-screen texts (chat lines, SMS, receipt rows) are part of the story, not a copy of the voice: the voice explains
 what the viewer is looking at.
+"""
+
+# 19 Nov (owner on the first 3 phone reels: "good now, but can be better... images/videos in background like v2, v3 of
+# tech"). Added only when channel.json theme.phone_bg is on; plans made before have no "phone_bg" and stay as they are.
+PHONE_BG = """
+THE WORLD BEHIND THE PHONE: every scene also gets "bg_prompt": one photoreal, candid shot of the real moment around the
+person, in India, that the line is about (e.g. "a young man at a busy Indian railway ticket counter at night, worried",
+"hands counting rupee notes on a wooden shop counter in a small kirana store", "a crowded bank branch hall in India, people
+waiting with token slips"). It is atmosphere around the phone, so: no phone or laptop screens facing the camera, no
+documents, no text, no numbers, no currency symbols, no logos. Never two similar pictures in a row; together they tell the
+story like a documentary. A rule scene may instead carry "bg_real": {"q": "<real building, e.g. Reserve Bank of India
+headquarters Mumbai>", "kind": "photo", "subject": "the real building"} (real places only, never a person).
 """
 
 
@@ -274,6 +286,8 @@ Return JSON with exactly this shape:
 {SCHEMA}"""
     if ch.get("theme", {}).get("style") == "lab":
         p += PHONE if ch.get("theme", {}).get("phone") else LAB      # 19 Nov: finance tells reels on the viewer's phone
+        if ch.get("theme", {}).get("phone") and ch.get("theme", {}).get("phone_bg"):
+            p += PHONE_BG
     plan = ask(p)
     for _ in range(2):
         words = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))
@@ -331,6 +345,8 @@ PLAN:
     if ch.get("theme", {}).get("style") == "lab":
         plan = lab_fix(plan, bool(ch.get("theme", {}).get("phone")))
     out = clean(plan)
+    if isinstance(out, dict) and ch.get("theme", {}).get("phone") and ch.get("theme", {}).get("phone_bg"):
+        out["phone_bg"] = True                     # only plans made from now get pictures behind the phone
     if isinstance(out, dict):
         out["brain_ids"] = bids                    # which brain items this video used (scored after its review)
     return out

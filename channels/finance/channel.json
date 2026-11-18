@@ -76,7 +76,8 @@
     "film": true,
     "hud": "FINANCE.FUEL",
     "end_line": "Follow karo, paisa samjho",
-    "phone": true
+    "phone": true,
+    "phone_bg": true
   },
   "pillars": [
     "Bank aapko paisa dega (series): RBI rules where the bank must pay YOU (failed UPI ₹100/day, property papers ₹5,000/day, card closure ₹500/day, CIBIL fix ₹100/day)",

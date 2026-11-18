@@ -407,6 +407,44 @@ def stage_assets(ch, p, job):
         _muse_awake(False)
 
 
+PHONE_BG_SAFE = (" Photoreal, candid, natural light, shallow depth of field, Indian everyday setting, vertical 9:16. Any phone, "
+                 "laptop or card is seen from the side or back with no visible screen. No text, no letters, no numbers, no "
+                 "currency signs, no documents, no logos, no watermark.")
+
+
+def _phone_bg(p, s, i, adir, old):
+    """19 Nov (owner: "images/videos in background like v2, v3 of tech", future finance reels only): the real-life moment
+    around the phone. Only plans with p["phone_bg"] (made after this change) come here. A real building photo for a rule
+    card ("bg_real"), else a generated still; the hook scene also tries a short moving clip made from its still."""
+    a = {}
+    bg = old.get("bg") if old.get("bg") and os.path.exists(old["bg"]) else None
+    real = s.get("bg_real")
+    if not bg and isinstance(real, dict) and real.get("q"):
+        import realmedia                                  # named s{i}pr (not rb): no "establish first" pause on phone pages
+        bg = realmedia.fetch({"q": real["q"], "kind": "photo", "subject": real.get("subject") or real["q"]},
+                             os.path.join(adir, f"s{i}pr.jpg"), lab=False)
+    if not bg:
+        subj = str(p.get("topic") or p.get("title") or "")
+        s["bg_prompt"] = (s.get("bg_prompt") or f"A person in India in the middle of this money moment: {subj}").rstrip(". ")
+        prompt = s["bg_prompt"] + "." + PHONE_BG_SAFE
+        bg = (muse.image(prompt, os.path.join(adir, f"s{i}pb.webp"))
+              or muse.omni_image(prompt, os.path.join(adir, f"s{i}pbo.jpg"))
+              or muse.cloudflare(prompt, os.path.join(adir, f"s{i}pb.jpg"))
+              or muse.pollinations(prompt, os.path.join(adir, f"s{i}pbp.jpg")))
+    if bg:
+        a["bg"] = bg
+        if i == 0 and not (old.get("bgvid") and os.path.exists(old["bgvid"])):
+            v = muse.video((s.get("bg_prompt") or "") + ". Slow natural motion, handheld feel, no text, no subtitles, no speech.",
+                           bg, os.path.join(adir, f"s{i}pv.mp4"))
+            if v:
+                a["bgvid"] = v
+        elif old.get("bgvid"):
+            a["bgvid"] = old["bgvid"]
+    else:
+        log("scene", i, "phone background: no picture (the scene stays on the plain dark backdrop)")
+    return a
+
+
 def _stage_assets(ch, p, job):
     look = ch.get("visuals", {}).get("look", "")
     theme = ch.get("theme", {})
@@ -428,6 +466,8 @@ def _stage_assets(ch, p, job):
                                      os.path.join(adir, f"s{i}rl.jpg"), lab=False, raw=True)
                 if lg:
                     a["logo"] = lg
+            if p.get("phone_bg"):
+                a.update(_phone_bg(p, s, i, adir, got.get(k) or {}))
             if a:
                 got[k] = a
             continue

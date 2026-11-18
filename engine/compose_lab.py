@@ -249,6 +249,7 @@ def page(plan, timed, total, theme, assets):
         glow = acc if i % 3 != 1 else cool
         inner = f'<div class="glow" data-layout-ignore style="background:radial-gradient(circle at 50% 44%,{glow}33 0%,{glow}14 28%,transparent 62%)"></div>'
         hero = ""
+        over_bg = False
         img = (assets.get(i) or {}).get("image")
         vid = (assets.get(i) or {}).get("video")
         if kind in phone_scenes.KINDS:          # 19 Nov: phone-story scenes (engine/phone_scenes.py), exact HTML, no AI picture
@@ -479,6 +480,23 @@ def page(plan, timed, total, theme, assets):
                 inner = inner.replace('<div class="bgshade" data-layout-ignore></div>', '<div class="bgshade real" data-layout-ignore></div>', 1)
             end_sc = 1.08 if real_bg else 1.14              # a real screen must stay readable: gentler push
             js.append(f'tl.fromTo("#{sid}bg",{{scale:1.04,x:{-dx}}},{{scale:{end_sc},x:{dx},duration:{max(0.8, d):.2f},ease:"power1.inOut",immediateRender:false}},{a:.3f});')
+            bgv = (assets.get(i) or {}).get("bgvid")
+            if bgv and kind in phone_scenes.KINDS and os.path.exists(bgv):
+                # 19 Nov: a moving clip behind the hook's phone (plans with phone_bg only); the still takes over if it ends early
+                try:
+                    import subprocess as _sp
+                    vlen = float(_sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", bgv],
+                                         capture_output=True, text=True, timeout=30).stdout.strip()) - 0.3
+                except Exception:
+                    vlen = 0
+                vd = round(max(0.0, min(d, vlen)), 3)
+                if vd >= 1.0:
+                    top.append(f'<video id="v{i}" class="clip vid pbg" src="assets/{os.path.basename(bgv)}" muted playsinline '
+                               f'data-start="{a:.3f}" data-duration="{vd:.3f}" data-media-start="0.2" data-track-index="0"></video>')
+                    js.append(f'tl.set("#{sid}bg",{{opacity:0}},{a:.3f});')
+                    if vd < d:
+                        js.append(f'tl.set("#{sid}bg",{{opacity:1}},{a + vd:.3f});')
+                    over_bg = True
         if film:
             js += _camera(sid, kind, a, d)
         else:
@@ -499,7 +517,7 @@ def page(plan, timed, total, theme, assets):
         # props, UI panels, stats and compares rendered invisible. Resets go first, so the entrance tween wins.
         mine = js[js0:]
         js[js0:] = [x for x in mine if x.startswith("tl.set(")] + [x for x in mine if not x.startswith("tl.set(")]
-        scenes.append(f'<div id="{sid}" class="clip scene{" over" if kind == "clip" and vid else ""}{(" sk-" + sks[i]) if film else ""}" data-start="{a:.3f}" '
+        scenes.append(f'<div id="{sid}" class="clip scene{" over" if (kind == "clip" and vid) or over_bg else ""}{(" sk-" + sks[i]) if film else ""}" data-start="{a:.3f}" '
                       f'data-duration="{d:.3f}" data-track-index="1">{inner}</div>')
         for c in cap_groups(t["words"]):
             caps.append(c); capscene.append(i)
