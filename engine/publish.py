@@ -91,6 +91,35 @@ def resolve(acc):
     return acc
 
 
+def serial_order(ch, done, cands):
+    """18 Nov: serial parts must go out in order, one story at a time. The approved list was posted oldest first, so a new
+    story's Part 1 (built earlier) could jump in before the running story's next part. Rules: a part goes out only after
+    the part before it; the story already on air comes first; if its next part is not ready, nothing goes out today
+    (a day's gap is better than a cliffhanger answered by a different story). Returns (ordered candidates, reason)."""
+    import serials
+    posted = {d["job"] for d in done if d.get("status") == "posted"}
+    info = {d["job"]: serials._find(ch, d.get("topic")) for d in cands}
+    def ready(d):
+        s, n = info[d["job"]]
+        return not s or n == 1 or s["made_jobs"].get(str(n - 1)) in posted
+    on_air = [s for s in serials.stories(ch["id"]) if any(j in posted for j in (s.get("made_jobs") or {}).values())
+              and not s.get("closed") and not all(s["made_jobs"].get(str(p["n"])) in posted for p in s["parts"])]
+    if on_air:
+        s = on_air[0]
+        mine = [d for d in cands if info[d["job"]][0] and info[d["job"]][0]["slug"] == s["slug"] and ready(d)]
+        if mine:
+            return sorted(mine, key=lambda d: info[d["job"]][1]), ""
+        last = max((str((d.get("posted") or {}).get("at", "")) for d in done if d["job"] in set(s["made_jobs"].values())), default="")
+        if last and time.time() - time.mktime(time.strptime(last[:16], "%Y-%m-%d %H:%M")) < 2 * 86400:
+            return [], f"serial '{s['title']}' is on air and its next part is not approved yet: nothing posted today"
+        # waited 2 days (a part rejected or stuck): do not block the page for ever; the next story goes on
+        why = f"serial '{s['title']}' waited 2 days for its next part: posting the next story instead"
+        ok = [d for d in cands if ready(d)]
+        return sorted(ok, key=lambda d: ((info[d["job"]][0] or {}).get("started", ""), info[d["job"]][1] or 0)), why
+    ok = [d for d in cands if ready(d)]
+    return sorted(ok, key=lambda d: ((info[d["job"]][0] or {}).get("started", ""), info[d["job"]][1] or 0)), ""
+
+
 def post_one(cid, dry=False):
     ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {})
     if ch.get("post") is False:
@@ -113,7 +142,12 @@ def post_one(cid, dry=False):
         log("publish", cid, "one post a day: the evening slot"); return
     acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     # 17 Nov: English editions (-en) only go out once the page has an English account (handle_en); the English page is parked
-    nxt = next((d for d in done if d.get("status") == "approved" and (not d["job"].endswith("-en") or ch.get("handle_en"))), None)
+    cands = [d for d in done if d.get("status") == "approved" and (not d["job"].endswith("-en") or ch.get("handle_en"))]
+    if ch.get("serial") and cands:
+        cands, why = serial_order(dict(ch, id=cid), done, cands)
+        if why:
+            log("publish", cid, why)
+    nxt = cands[0] if cands else None
     if not nxt:
         log("publish", cid, "nothing approved"); return
     if not acc:
