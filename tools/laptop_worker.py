@@ -122,7 +122,7 @@ def measure_one(url, work):
     d = run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], timeout=60).stdout.strip()
     dur = float(d or 0)
     s = run(["ffmpeg", "-hide_banner", "-i", f, "-vf", "scale=270:-2,select='gt(scene,0.32)',showinfo", "-an", "-f", "null", "-"], timeout=600).stderr
-    cuts = [float(x) for x in re.findall(r"pts_time:([\d.]+)", s)]
+    cuts = [float(x) for x in re.findall(r"pts_time:([\d.]+)", s) if float(x) > 0.15]   # frame 0 is not a cut
     l = run(["ffmpeg", "-hide_banner", "-i", f, "-af", "ebur128", "-f", "null", "-"], timeout=300).stderr
     lufs = re.findall(r"I:\s+(-?[\d.]+) LUFS", l)
     os.remove(f)
