@@ -402,6 +402,28 @@ def _fact_sources(ch, topic, research_text):
         out.append(str(research_text))
     return "\n".join(out)
 
+
+def _mask(text, value):
+    """Hide every way the script writes this number (5000, 5,000, ₹5,000, 5 hazaar for round thousands) as X."""
+    v = int(value) if float(value).is_integer() else value
+    forms = {str(v)}
+    if isinstance(v, int):
+        forms.add(f"{v:,}")
+        s = str(v)
+        if len(s) > 3:                                  # Indian grouping 1,02,000
+            head, tail = s[:-3], s[-3:]
+            head = ",".join([head[max(0, i - 2):i] for i in range(len(head), 0, -2)][::-1])
+            forms.add(head + "," + tail)
+        if v % 1000 == 0 and v < 100000:
+            forms.add(f"{v // 1000} hazaar"); forms.add(f"{v // 1000} hazar")
+        if v % 100000 == 0:
+            forms.add(f"{v // 100000} lakh")
+    out, n = text, 0
+    for fm in sorted(forms, key=len, reverse=True):
+        out, k = re.subn(rf"(?<![\d,.])(?:₹\s?)?{re.escape(fm)}(?![\d,])", "X", out, flags=re.I)
+        n += k
+    return out, n
+
 def numbers_check(plan, sources=""):
     """Problems with the plan's numbers ([] = fine). Arithmetic is computed by Python, not judged by the model."""
     rows = "\n".join(f"{i + 1} | {s.get('vo', '')} | {s.get('value') or s.get('big') or s.get('end_label') or ''}"
@@ -411,37 +433,38 @@ def numbers_check(plan, sources=""):
     except Exception as e:
         log("numbers check failed to run:", str(e)[:120]); return []
     probs = []
-    # 19 Nov: the model "proved" '3 x 100 = 500' with the expression "500". A formula with no arithmetic, or that
-    # contains its own answer, proves nothing: ask again for those, built only from the script's other numbers.
-    def _lazy(c):
-        e = re.sub(r"\s", "", str(c.get("expr") or ""))
-        s = re.sub(r"[^\d.]", "", str(c.get("says") or ""))
-        return not re.search(r"[-+*/%]", e.lstrip("-")) or (s and re.search(rf"(?<![\d.]){re.escape(s.rstrip('0').rstrip('.') or s)}(?:\.0+)?(?![\d.])", e))
-    lazy = [c for c in (r.get("calc") or []) if _lazy(c)]
-    if lazy:
-        ask_rows = "\n".join(f"scene {c.get('scene')}: the script says {c.get('says')}" for c in lazy)
+    # 19 Nov: shown its answer, the model bends the maths to fit it ('3 x 100 = 500' became "500", then
+    # "3*100 + 100*(3 - round(3/3))"). So the first answer only says WHICH numbers are results; each one is then worked
+    # out BLIND: hidden as X in the script, a fresh call writes the formula from the words, Python computes it.
+    for c in (r.get("calc") or [])[:8]:
         try:
-            r2 = ask("For each number below, write the Python arithmetic expression that computes it ONLY from the OTHER "
-                     "numbers in the script (never write the answer itself). If the number is a plain input (a rule, a price, "
-                     "a date) and not calculated from others, set \"input\": true.\nSCRIPT:\n" + rows + "\nNUMBERS:\n" + ask_rows +
-                     '\nReturn JSON {"calc": [{"scene": n, "says": <number>, "expr": "...", "input": false}]}', max_tokens=1500) or {}
-            redo = [c for c in (r2.get("calc") or []) if not c.get("input")]
-            r["calc"] = [c for c in (r.get("calc") or []) if not _lazy(c)] + redo
-            for c in redo:
-                if _lazy(c):
-                    probs.append(f"scene {c.get('scene')}: {c.get('says')} is said as a result but no formula reaches it from the script's numbers")
-        except Exception as e:
-            log("numbers check re-ask failed:", str(e)[:80])
-    for c in r.get("calc") or []:
-        if _lazy(c):
+            says = float(str(c.get("says")).replace(",", ""))
+        except Exception:
+            continue
+        if not says:
+            continue
+        masked, hits = _mask(rows, says)
+        if not hits:
             continue
         try:
-            got, says = float(_safe_eval(c.get("expr"))), float(str(c.get("says")).replace(",", ""))
-            tol = max(0.05 * abs(says), 0.5 if abs(says) < 100 else 0)     # spoken rounding: "3 percent" for 3.04
-            if says and abs(got - says) > tol:
-                probs.append(f"scene {c.get('scene')}: says {says:,.2f} but the script's own scenario gives {got:,.2f} ({c.get('expr')})")
+            b2 = ask("In this short money-explainer script one number is hidden as X. Work X out from the OTHER numbers and "
+                     "the words exactly as the script describes the situation (what is paid, for how long, at what rate). "
+                     "Write ONE Python arithmetic expression for X using only numbers and + - * / ** ( ), round, min, max, "
+                     "abs, sum(... for k in range(n)). If X is a plain input (a rule, a price, a date) that cannot be worked "
+                     "out from other numbers, set \"input\": true.\nSCRIPT:\n" + masked +
+                     '\nReturn JSON {"expr": "...", "input": false, "how": "short"}', max_tokens=800) or {}
         except Exception as e:
-            log("numbers check: skipped one expression", str(c.get("expr"))[:80], str(e)[:60])
+            log("numbers check: blind ask failed", str(e)[:80]); continue
+        if b2.get("input") or not b2.get("expr"):
+            continue
+        try:
+            got = float(_safe_eval(b2["expr"]))
+        except Exception as e:
+            log("numbers check: skipped one expression", str(b2.get("expr"))[:80], str(e)[:60]); continue
+        tol = max(0.05 * abs(says), 0.5 if abs(says) < 100 else 0)     # spoken rounding: "3 percent" for 3.04
+        if abs(got - says) > tol:
+            probs.append(f"scene {c.get('scene')}: says {says:,.2f} but worked out from the script it is {got:,.2f} "
+                         f"({b2['expr']}; {str(b2.get('how', ''))[:80]})")
     for f in r.get("facts") or []:
         if f.get("correct") is False:
             probs.append(f"scene {f.get('scene')}: '{str(f.get('fact'))[:100]}' is wrong: {str(f.get('why'))[:120]}")
