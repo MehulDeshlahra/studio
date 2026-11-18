@@ -407,6 +407,8 @@ def heal_unknown():
             it.update(state="gone", why="stopped by itself"); note(f"closed: {it['what'][:80]} (stopped by itself)"); continue
         if it.get("tried_code") == head() or S.get("code_day", {}).get(time.strftime("%Y-%m-%d"), 0) >= 6:
             continue
+        if busy() or mem_mb() < 3000:              # wait for a quiet moment; do not burn this code version's try
+            return
         it["tried_code"] = head()
         files = code_location(it["detail"]) or code_location(it["what"])
         if not files:
@@ -440,7 +442,7 @@ def watch_unverified():
 def heal_tasks():
     """Open '- [ ] [mehul] ...' tasks the Mehul agent wrote for code: one attempt per task per code version, max 1 a day."""
     day = time.strftime("%Y-%m-%d")
-    if S.get("task_day") == day:
+    if S.get("task_day") == day or busy() or mem_mb() < 3000:      # wait for a quiet moment; do not burn today's try
         return
     q = read(os.path.join(ROOT, "knowledge", "build-queue.md"))
     for line in q.splitlines():
