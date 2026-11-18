@@ -65,6 +65,79 @@ def fetch_repo(url, budget=160_000):
             "stars": info.get("stargazers_count", 0), "text": head + "".join(parts)}
 
 
+REFS = os.path.join(HOME, "studio-work", "refs")
+DATA_SKIP = re.compile(r"(fonts?\.css$|events\.json$|/assets/|/models?/|/data/|\.min\.|/vendor/|/node_modules/|/\.git/|package-lock|/stills/|/gen/)", re.I)
+CHUNK = 110_000
+
+
+def deep_files(url):
+    """18 Nov (owner: "you don't read repos 100%"): fetch_repo reads <= 160k characters, docs first, so a big repo was
+    mostly unread (Lemo-Opuscar: 26 MB of text, < 1% read). Deep mode makes a shallow clone (read only, nothing is
+    installed or run) and returns EVERY text file except bulk data (fonts, event dumps, model/asset json), grouped by
+    folder so related files stay in one chunk."""
+    import subprocess
+    m = re.search(r"github\.com/([\w.-]+)/([\w.-]+)", url)
+    owner, repo = m.group(1), m.group(2).removesuffix(".git")
+    d = os.path.join(REFS, f"{owner}__{repo}")
+    os.makedirs(REFS, exist_ok=True)
+    if os.path.isdir(os.path.join(d, ".git")):
+        subprocess.run(["git", "-C", d, "pull", "-q", "--depth", "1"], timeout=600)
+    else:
+        subprocess.run(["git", "clone", "-q", "--depth", "1", "--filter=blob:limit=3m", f"https://github.com/{owner}/{repo}.git", d],
+                       timeout=1200, check=True)
+    out = []
+    for root, dirs, files in os.walk(d):
+        dirs[:] = sorted(x for x in dirs if x not in (".git", "node_modules", "dist", "build", "__pycache__"))
+        for f in sorted(files):
+            p = os.path.join(root, f)
+            rel = os.path.relpath(p, d).replace("\\", "/")
+            if not rel.lower().endswith(TEXT_EXT + (".mjs", ".cjs", ".svelte", ".vue", ".glsl", ".frag", ".vert")) or DATA_SKIP.search("/" + rel):
+                continue
+            try:
+                if os.path.getsize(p) > 200_000:
+                    continue
+                txt = open(p, encoding="utf-8", errors="ignore").read()
+            except OSError:
+                continue
+            if txt.strip():
+                out.append((rel, txt))
+    rank = lambda x: (0 if re.search(r"(^|/)readme", x[0], re.I) else 1 if x[0].lower().endswith((".md", ".mdx", ".txt")) else 2, x[0])
+    return f"{owner}/{repo}", sorted(out, key=lambda x: (x[0].split("/")[0] if "/" in x[0] else "", rank(x)))
+
+
+def learn_deep(url, start=0, max_chunks=10 ** 6):
+    """Read a whole repo, chunk by chunk; every chunk is judged against what we already know (brain titles grow as it
+    goes, so later chunks do not repeat earlier ones). Progress is saved, so a stopped run continues where it was."""
+    name, files = deep_files(url)
+    chunks, cur, n = [], [], 0
+    for rel, txt in files:
+        piece = f"\n===== FILE {rel} =====\n{txt[:60_000]}"
+        if n + len(piece) > CHUNK and cur:
+            chunks.append(cur); cur, n = [], 0
+        cur.append(piece); n += len(piece)
+    if cur:
+        chunks.append(cur)
+    prog_f = os.path.join(OUT, "learn-deep.json")
+    prog = load(prog_f, {}) or {}
+    start = max(start, prog.get(name, {}).get("next", 0))
+    total_k = total_b = 0
+    log("learn deep:", name, len(files), "files,", len(chunks), "chunks, from chunk", start + 1)
+    for ci in range(start, min(len(chunks), start + max_chunks)):   # a nightly run reads max_chunks, the next one goes on
+        body = "".join(chunks[ci])
+        src = {"name": name, "url": f"https://github.com/{name}", "license": "see repo",
+               "text": f"REPO {name}, part {ci + 1} of {len(chunks)} (the whole repo is being read in parts; judge THIS part)\n" + body}
+        try:
+            res = judge_source(src) or {}
+            ids, bids = apply(src, res)
+            total_k += len(ids); total_b += len(bids)
+            log("learn deep:", name, f"chunk {ci + 1}/{len(chunks)}", res.get("verdict"), f"+{len(ids)} knowledge +{len(bids)} build")
+        except Exception as e:
+            log("learn deep: chunk failed", name, ci + 1, str(e)[:150])
+        prog[name] = {"next": ci + 1, "chunks": len(chunks), "files": len(files), "t": time.strftime("%Y-%m-%d %H:%M")}
+        save(prog_f, prog)
+    return name, len(files), len(chunks), total_k, total_b
+
+
 def fetch_telegram_file(file_id, name):
     cfg = load(os.path.join(HOME, ".studio-telegram.json"))
     p = _get(f"https://api.telegram.org/bot{cfg['token']}/getFile?file_id={file_id}")["result"]["file_path"]
@@ -222,6 +295,14 @@ if __name__ == "__main__":
         run_queue()
     elif a[0] == "explore":
         explore()
+    elif a[0] == "deep":                 # python engine/learn.py deep <github-url>... [--max N]   (whole repo, resumable)
+        mx = int(a[a.index("--max") + 1]) if "--max" in a else 10 ** 6
+        urls = [x for x in a[1:] if x.startswith("http")] or list((load(os.path.join(OUT, "learn-deep-list.json"), []) or []))
+        for u in urls:
+            name, nf, nc, k, b = learn_deep(u, max_chunks=mx)
+            print(json.dumps({"repo": name, "files": nf, "chunks": nc, "knowledge": k, "build": b}))
+            mx -= 0
+        subprocess_sync()
     else:
         r = learn({"kind": "github", "url": a[0]})
         print(json.dumps(r[1] if r else {}, ensure_ascii=False, indent=1))
