@@ -472,7 +472,8 @@ def _stage_assets(ch, p, job):
                 a["bg"] = img
         if not a and s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
             prompt = _look_prompt(ch, s, s["prompt"], look) + \
-                ". Vertical 9:16, no text, no letters, no logos, no watermark."
+                ". Vertical 9:16, no text, no letters, no logos, no watermark." + \
+                (" " + ch["visuals"]["avoid"] if (ch.get("visuals") or {}).get("avoid") else "")   # 19 Nov: raaz showed Durga (fiction page, no religion)
             # 18 Nov: split / collage pictures and deities in the wrong form were the top picture holds. One scene per
             # frame, and the traditional form of every deity the scene names (engine/iconography.py).
             prompt += " One single scene in one frame: no split screen, no panels, no collage, no side-by-side copies."

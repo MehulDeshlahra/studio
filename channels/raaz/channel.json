@@ -1,4 +1,4 @@
-{
+﻿{
  "id": "raaz",
  "name": "Aage Suno",
  "status": "live (warm-up)",
@@ -14,7 +14,8 @@
  "visuals": {
   "primary": "muse",
   "look": "cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location",
-  "cast": "one recurring narrator-detective (fixed description) + case cast"
+  "cast": "one recurring narrator-detective (fixed description) + case cast",
+  "avoid": "No gods, goddesses, deities, idols, religious statues, religious paintings or temple shrines anywhere in the picture."
  },
  "looks": {
   "film": {
