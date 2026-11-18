@@ -515,7 +515,7 @@ def numbers_check(plan, sources="", strict=False):
         known = {float(x.replace(",", "")) for x in re.findall(r"\d[\d,]*\.?\d*", masked)}
         CONST = {0, 1, 2, 3, 4, 7, 10, 12, 24, 30, 52, 60, 100, 365, 1000, 100000}
         lits = [float(x) for x in re.findall(r"\d+\.?\d*", str(b2["expr"]))]
-        if any(v not in known and v not in CONST and round(v * 100, 6) not in known and round(v / 100, 6) not in known for v in lits):   # 3% = 0.03
+        if any(v not in known and v not in CONST and round(v * 100, 6) not in known and round(v / 100, 6) not in known and round((v - 1) * 100, 6) not in known and round((1 - v) * 100, 6) not in known for v in lits):   # 1.12 = +12%   # 3% = 0.03
             log("numbers check: formula uses a number not in the script, ignored:", b2["expr"]); continue
         try:
             got = float(_safe_eval(b2["expr"]))
