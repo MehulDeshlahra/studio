@@ -49,6 +49,23 @@ def write():
         for d in done:
             if d.get("status") == "held":
                 L.append(f"  - HELD {d['job']}: {'; '.join(map(str, d.get('review') or []))[:200]}")
+    # 18 Nov focus week: the quality number to push up - share of videos that pass the pre-render check on the FIRST try
+    try:
+        first, held = {}, set()
+        for ln in open(os.path.join(OUT, "engine.log"), encoding="utf-8", errors="ignore").readlines()[-30000:]:
+            if ln[:10] < time.strftime("%Y-%m-%d", time.localtime(time.time() - 86400)):
+                continue
+            m = re.match(r"\S+ \S+ preflight (\S+) (OK|\d+ scene)", ln)
+            if m and m.group(1) not in first:
+                first[m.group(1)] = m.group(2) == "OK"
+            m = re.search(r"held BEFORE render \(no render time spent\) \S+ (\S+)", ln)
+            if m:
+                held.add(m.group(1))
+        if first:
+            L.append(f"- Last 24 h: {sum(first.values())} of {len(first)} videos passed the pre-render check first time "
+                     f"({100 * sum(first.values()) // len(first)}%); {len(held)} held before render after repairs")
+    except Exception:
+        pass
     L.append("")
     # healer
     hs = load(os.path.join(OUT, "healer.json"), {}) or {}
