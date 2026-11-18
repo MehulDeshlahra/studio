@@ -67,6 +67,17 @@ def write():
     except Exception:
         pass
     L.append("")
+    try:                                                     # 18 Nov: Mehul's laptop renders when it is on (engine/laptop.py)
+        import laptop, re as _re
+        s = laptop.status()
+        n = sum(1 for l in open(os.path.join(OUT, "engine.log"), encoding="utf-8", errors="ignore")
+                if "laptop: rendered in" in l and l.startswith(time.strftime("%Y-%m-%d")))
+        L.append("## Laptop render worker")
+        L.append(f"- {'ON' if laptop.available() else 'off/away'}: mode {s.get('mode', '-')} (set: {s.get('wanted', '-')}), "
+                 f"plugged in {s.get('ac', '-')}, last seen {s.get('age', '-')} s ago; rendered {n} video(s) today")
+        L.append("")
+    except Exception:
+        pass
     # healer
     hs = load(os.path.join(OUT, "healer.json"), {}) or {}
     items = hs.get("items", {})
