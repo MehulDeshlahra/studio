@@ -133,3 +133,8 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
 - Why: raaz Chouthi Part 7 and katha Jyotirlinga Part 1 died mid-build but were counted as made (serial marks at plan time, katha_next advances at pick time).
 - publish.series_order: katha series parts post only after the part before them. Dashboard Runs hides removed/rejected under All; Approvals has a Remove button.
 - On demand: python engine/janitor.py --now [--dry]. First run 18 Nov 17:55: 21 actions, 2.2 GB freed, disk 83% -> 78%.
+
+## 18 Nov 22:15 Meta app limit (#4) - cause and fix
+- selfcheck commit c2ba6d7 (07:49) set the dashboard Meta cache to 0 s ('stale follower counts'): every /api/state (5 s per open tab) made 2 Meta calls; the app hit 167% and Meta refused everything (13:00 and 22:00 errors).
+- Fixed: META_TTL 1800 s (never < 600), cache on disk (dash-meta-cache.json), 15-min back-off on any Meta error, Connected apps says 'Busy' not 'Broken'.
+- selfcheck now refuses any patch touching cache / rate limit / timeout / retry / back-off code (left for a human session).
