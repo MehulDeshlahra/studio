@@ -268,6 +268,67 @@ def _pick_skin(ch, p):
     return True
 
 
+def _story_looks_on(ch):
+    return bool(ch.get("looks")) and (bool(ch.get("looks_on")) or os.environ.get("STUDIO_LOOKS") == "1")
+
+
+def _pick_story_looks(ch, p):
+    """18 Nov (owner: "mix and match styles, choose what part suits what"), for the picture pages (katha, raaz): the main
+    story stays in the page's base picture style (the first entry of channel.json "looks", so characters stay
+    recognisable); a part that is a different KIND of moment (a story inside the story, a memory, a camera watching,
+    the cosmic big picture) cuts away to the look made for it. Writes scene["skin"]. Overlay textures were rejected
+    (lemo.md), so a look here is only the picture language."""
+    looks = ch.get("looks") or {}
+    sc_ = p.get("scenes", [])
+    if not _story_looks_on(ch) or not sc_ or all(s.get("skin") in looks for s in sc_):
+        return False
+    base = next(iter(looks))
+    menu = "\n".join(f'- {k}: {v["use"]}' for k, v in looks.items())
+    rows = "\n".join(f"{i + 1} | {s.get('type')} | {s.get('vo', '')}" for i, s in enumerate(sc_))
+    r = {}
+    try:
+        r = _quick_ask(
+            f"You are the creative director of the Instagram page {ch.get('name', ch['id'])}. Pick the picture LOOK of EACH "
+            "scene, like a film editor who cuts to another visual world only when the KIND of moment changes.\nLooks:\n" + menu +
+            f"\nTitle: {p.get('title') or p.get('topic')}\nSCENES (n | type | spoken line):\n{rows}\n"
+            f"Rules: '{base}' is the main story and holds most scenes (at least 60%), always scene 1 and the last scene; use "
+            "another look only where the line really is that kind of moment, as a cutaway of 1-3 scenes in a row; at most 2 "
+            "other looks in one video; zero other looks is fine when nothing fits.\n"
+            f'Return JSON {{"looks": [exactly {len(sc_)} look names in order], "why": "short"}}', 600)
+    except Exception as e:
+        log("story looks failed:", str(e)[:100])
+    got = [str(x).strip().lower() for x in (r.get("looks") or [])]
+    if len(got) != len(sc_) or any(x not in looks for x in got):
+        log("story looks: unusable answer", str(r)[:160])
+        got = [base] * len(sc_)
+    got[0] = got[-1] = base
+    extra = [k for k in dict.fromkeys(got) if k != base]
+    for k in extra[2:]:                                 # at most 2 cutaway looks
+        got = [base if x == k else x for x in got]
+    if got.count(base) < 0.6 * len(got):                # the main story must stay recognisable
+        log("story looks: too few base scenes", got)
+        got = [base] * len(got)
+    for s, k in zip(sc_, got):
+        s["skin"] = k
+    p["skin"] = base
+    log("story looks", " ".join(f"{i + 1}:{k}" for i, k in enumerate(got)), "-", str(r.get("why", ""))[:100])
+    return True
+
+
+def _look_prompt(ch, s, prompt, look):
+    """The scene's picture prompt in its own look: the planner pasted the base look into every prompt, so a cutaway
+    swaps it out (and leads with its own style, image models weight the start)."""
+    looks = ch.get("looks") or {}
+    k = s.get("skin")
+    if not _story_looks_on(ch) or k not in looks or k == next(iter(looks)):
+        return prompt + (". " + look if look and look.lower()[:20] not in prompt.lower() else "")
+    pic = looks[k]["pic"]
+    for old in (look, looks[next(iter(looks))].get("pic", "")):
+        if old:
+            prompt = re.sub(re.escape(old), "", prompt, flags=re.I)
+    return f"{pic}. {prompt.strip(' .,')}. Style: {pic}"
+
+
 def _visual_director(ch, p, film):
     """One planner call: which scenes get a real logo / app screen / product photo. Writes scene["real"]. True if any."""
     try:
@@ -387,7 +448,7 @@ def _stage_assets(ch, p, job):
             if img:
                 a["bg"] = img
         if not a and s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
-            prompt = s["prompt"] + (". " + look if look and look.lower()[:20] not in s["prompt"].lower() else "") + \
+            prompt = _look_prompt(ch, s, s["prompt"], look) + \
                 ". Vertical 9:16, no text, no letters, no logos, no watermark."
             # 18 Nov: split / collage pictures and deities in the wrong form were the top picture holds. One scene per
             # frame, and the traditional form of every deity the scene names (engine/iconography.py).
@@ -549,6 +610,8 @@ def main():
     try:
         th_ = ch.get("theme", {})
         if th_.get("style") == "lab" and (th_.get("film") or os.environ.get("STUDIO_LAB_FILM") == "1") and _pick_skin(ch, p):
+            save(pp, p)
+        elif th_.get("style") != "lab" and _pick_story_looks(ch, p):
             save(pp, p)
     except Exception as e:
         log("look pick skipped", str(e)[:100])

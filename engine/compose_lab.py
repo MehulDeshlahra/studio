@@ -538,7 +538,7 @@ body{{margin:0;background:#07080b}}
 .cam{{position:absolute;inset:0}}
 .prop{{position:absolute;left:40px;top:330px;width:1000px;height:900px;object-fit:contain;mix-blend-mode:lighten;
   -webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 60%,transparent 100%)}}
-.prop.real{{left:0;right:0;top:250px;bottom:690px;margin:auto;width:auto;height:auto;max-width:940px;max-height:860px;object-fit:fill;
+.prop.real{{left:0;right:0;top:250px;bottom:690px;margin:auto;width:auto;height:auto;max-width:860px;max-height:800px;object-fit:fill;
   mix-blend-mode:normal;-webkit-mask-image:none!important;mask-image:none!important;border-radius:32px;
   box-shadow:0 40px 90px #000c,0 0 0 1.5px #ffffff22}}
 .hud{{position:absolute;left:64px;right:64px;top:196px;display:flex;justify-content:space-between;font-family:{MONO};font-size:30px;

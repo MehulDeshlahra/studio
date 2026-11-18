@@ -16,6 +16,21 @@
     "look": "painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, ornate but uncluttered",
     "cast": "the story's figures, respectful, one fixed style"
   },
+  "looks": {
+    "painting": {
+      "use": "the main story: the characters, the place, the moment itself (default, most scenes)",
+      "pic": "painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, ornate but uncluttered"
+    },
+    "puppet": {
+      "use": "a story told inside the story, an old legend someone recounts, a battle or confrontation shown as drama",
+      "pic": "Indian leather shadow-puppet theatre (tholu bommalata): translucent painted leather figures with jointed limbs, lit from behind by an oil lamp on a glowing saffron cloth screen, rich red, ochre and black, deep shadow around the lit screen, one single scene"
+    },
+    "pattachitra": {
+      "use": "the big picture: the cosmos, creation, a lineage, the gods in their own realm, the meaning of the story",
+      "pic": "Odisha Pattachitra cloth painting: bold dark outlines, flat vermilion, yellow ochre, indigo and white, stylised figures with large eyes, fine decorative patterns inside the clothes, handmade cloth texture, one single scene, no border"
+    }
+  },
+  "looks_on": false,
   "rules": [
     "respectful, no mockery",
     "sourced retellings only, mention when versions differ",

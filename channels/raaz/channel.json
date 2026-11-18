@@ -16,6 +16,25 @@
     "look": "cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location",
     "cast": "one recurring narrator-detective (fixed description) + case cast"
   },
+  "looks": {
+    "film": {
+      "use": "the story as it happens (default, most scenes)",
+      "pic": "cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location"
+    },
+    "cctv": {
+      "use": "someone is being watched, a recording, a camera, a moment seen from far away or from above",
+      "pic": "grainy security camera still from a high corner angle, wide lens distortion, desaturated green-grey, low resolution noise, night, no on-screen text, no timestamp"
+    },
+    "memory": {
+      "use": "a memory, a flashback, the past, what someone remembers or imagines",
+      "pic": "faded 1990s film photograph, warm washed-out colours, soft focus, light leaks, dust and scratches, nostalgic Indian home or street"
+    },
+    "evidence": {
+      "use": "a clue, an object that matters, a document or photo that was found, a recap of the facts",
+      "pic": "top-down forensic evidence photo of the object on a dark wooden table under one desk lamp, sharp detail, deep shadows, no readable writing"
+    }
+  },
+  "looks_on": false,
   "rules": [
     "fiction clearly fiction, no real crimes/people",
     "no gore",
@@ -49,7 +68,10 @@
   ],
   "edit": {
     "wps": 2.5,
-    "length_s": [25, 68]
+    "length_s": [
+      25,
+      68
+    ]
   },
   "handle": "@aagesuno",
   "handle_en": "",
