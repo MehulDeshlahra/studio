@@ -8,12 +8,6 @@
  },
  "sfx": [
   {
-   "t": 3.79,
-   "file": "sfx/pop-light.mp3",
-   "gain_db": -17,
-   "align": "onset"
-  },
-  {
    "t": 3.74,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
@@ -94,12 +88,6 @@
   {
    "t": 34.36,
    "file": "sfx/sweep-small.mp3",
-   "gain_db": -18,
-   "align": "onset"
-  },
-  {
-   "t": 38.14,
-   "file": "sfx/impact.mp3",
    "gain_db": -18,
    "align": "onset"
   },

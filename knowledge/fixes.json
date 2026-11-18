@@ -88,5 +88,14 @@
   "first": "2026-11-18 20:37",
   "last": "2026-11-18 20:37",
   "example": "before render, scene 4: FIT: the text on screen says 'LAGI JO' and 'ISKA ANT DHUNDHEGA' which misses the beginning part of the voice line 'Dono mein shart lagi—jo...' in the expected manner, but the v"
+ },
+ {
+  "sig": "before render, scene #: fit: indra is depicted incorrectly (missing crown, vajra, and riding a normal elephant",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-19 03:37",
+  "last": "2026-11-19 03:37",
+  "example": "before render, scene 2: FIT: Indra is depicted incorrectly (missing crown, vajra, and riding a normal elephant rather than the white elephant Airavata)"
  }
 ]

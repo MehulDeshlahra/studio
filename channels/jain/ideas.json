@@ -364,5 +364,127 @@
     "score": 3.75
    }
   ]
+ },
+ {
+  "t": "2026-11-19 03:35",
+  "picked": "What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)",
+  "ideas": [
+   {
+    "topic": "What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)",
+    "note": "",
+    "search": "Parshvanatha snake story Jain",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 956,
+    "fresh": 7.0,
+    "score": 4.9
+   },
+   {
+    "topic": "How a feared burglar named Rohineya became an Arihant in one lifetime — the power of true confession (source: Uttaradhyayana Sutra)",
+    "note": "",
+    "search": "Rohineya thief Jain story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.8,
+    "median_views": 2140,
+    "fresh": 6.3,
+    "score": 4.77
+   },
+   {
+    "topic": "Marudeva Mata: The first soul to attain moksha in this era — a mother's enlightenment before her son Rishabhdev (source: Adipurana / Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Marudeva Mata moksha Jain",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 177,
+    "fresh": 6.3,
+    "score": 4.76
+   },
+   {
+    "topic": "Why Prince Neminatha abandoned his wedding procession after hearing animals cry — the moment compassion overpowered duty (source: Kalpasutra / Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Neminatha renunciation story Jain",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 124,
+    "fresh": 6.2,
+    "score": 4.74
+   },
+   {
+    "topic": "The hidden meaning of 'Michchhami Dukkadam' — why Jains seek forgiveness from every living being on Samvatsari (source: Kalpasutra / Dashavaikalika Sutra)",
+    "note": "",
+    "search": "Michchhami Dukkadam meaning Jain",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 53,
+    "fresh": 6.2,
+    "score": 4.39
+   },
+   {
+    "topic": "Why Emperor Chandragupta Maurya left his throne to die by sallekhana in a Karnataka cave — a king's final lesson on impermanence (source: Sthaviravali / Brihatkathakosha)",
+    "note": "",
+    "search": "Chandragupta Maurya Jain monk",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 35,
+    "fresh": 6.0,
+    "score": 4.35
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 477,
+    "fresh": 8.7,
+    "score": 4.19
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1526,
+    "fresh": 6.7,
+    "score": 4.01
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 577,
+    "fresh": 6.5,
+    "score": 3.75
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 14,
+    "fresh": 6.5,
+    "score": 3.75
+   }
+  ]
  }
 ]

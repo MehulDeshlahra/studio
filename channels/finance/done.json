@@ -23,14 +23,14 @@
   "job": "1118-2334",
   "topic": "UPI payment fail, paisa kat gaya? Bank aapko har din ₹100 dega (RBI circular 20 Sep 2019)",
   "title": "UPI fail hua, paisa kata? Bank roz ₹100 dega?",
-  "status": "made",
+  "status": "approved",
   "review": []
  },
  {
   "job": "1119-0005",
   "topic": "Home loan khatam, bank ne property ke papers nahi lautaye? ₹5,000 roz milenge (RBI rule, 1 Dec 2023)",
   "title": "Loan chukaya, papers nahi mile? Roz ₹5,000.",
-  "status": "made",
+  "status": "approved",
   "review": []
  },
  {
@@ -38,7 +38,7 @@
   "topic": "Account mein achanak anjaan paisa aaya? Wapas mat bhejna, ye naya scam hai",
   "title": "Anjaan paisa aaya, call aaya? Ye jump deposit scam hai",
   "qc_ok": true,
-  "status": "made",
+  "status": "approved",
   "review": []
  }
 ]

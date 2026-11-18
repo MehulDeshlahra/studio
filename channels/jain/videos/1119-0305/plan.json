@@ -193,9 +193,9 @@
   {
    "vo": "Ant mein... Micchami Dukkadam. Sabse maafi, bojh halka.",
    "type": "image",
-   "prompt": "Close-up folded hands in pranam, words Micchami Dukkadam forming in soft gold Devanagari above hands then dissolving into light, marble floor reflection, serene",
+   "prompt": "Close-up folded hands in pranam, soft golden glow above hands dissolving into light particles, marble floor reflection, serene atmosphere, centered, 9:16 vertical, space above and below for text overlay",
    "motion": "push",
-   "title": "",
+   "title": "Micchami Dukkadam",
    "keywords": [
     "maafi",
     "bojh halka"
@@ -203,7 +203,8 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Ye ritual karma dho deta hai... agar poore dhyan se kiya.",

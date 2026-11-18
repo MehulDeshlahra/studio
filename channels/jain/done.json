@@ -13,11 +13,15 @@
   "job": "1119-0215",
   "topic": "Why King Megharath Cut His Own Flesh to Save a Pigeon (Source: Adipurana)",
   "title": "Raja ne apna maans kaise kaata kabutar bachane?",
-  "status": "held",
-  "review": [
-   "before render, scene 2: FIT: Indra is depicted incorrectly (missing crown, vajra, and riding a normal elephant rather than the white elephant Airavata)",
-   "before render, scene 3: FIT: Shows two divine human figures instead of a pigeon and a hawk as described in the voice",
-   "before render, scene 13: OVERLAP/CUT (layout audit): text_occluded on #s12b"
-  ]
+  "status": "approved",
+  "review": []
+ },
+ {
+  "job": "1119-0305",
+  "topic": "What happens during Paryushana's Pratikraman — the Jain ritual of self‑purification (source: Agam)",
+  "title": "Paryushan mein Pratikraman kaise hota hai?",
+  "qc_ok": true,
+  "status": "approved",
+  "review": []
  }
 ]

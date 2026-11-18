@@ -1,0 +1,28 @@
+{
+ "topic": "What happens during Paryushana's Pratikraman — the Jain ritual of self‑purification (source: Agam)",
+ "title": "Paryushan mein Pratikraman kaise hota hai?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.6,
+  "true_peak": -4.6,
+  "dur": 53.43
+ },
+ "vision": {
+  "score": 7,
+  "ok": true,
+  "problems": [
+   "Scene 10: Image clarity is lower than surrounding frames.",
+   "Scene 12: Minor AI-generated anatomical artifacts on hands."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9719626168224299,
+  "words": 117,
+  "problems": []
+ },
+ "ok": true
+}

@@ -35,9 +35,9 @@
   {
    "vo": "Indra ne do devon ko bheja test karne",
    "type": "image",
-   "prompt": "Indra seated on Airavata the white elephant, wearing crown and holding vajra, two devas standing before him, celestial court, golden light, Indian miniature style, 9:16 vertical, space above and below for text",
+   "prompt": "Indra seated on the white elephant Airavata, wearing a crown and holding a vajra, celestial court with golden light, Indian miniature style, 9:16 vertical, space above and below for text",
    "motion": "push",
-   "title": "INDRA'S COURT",
+   "title": "",
    "keywords": [
     "Indra",
     "devon"
@@ -51,9 +51,9 @@
   {
    "vo": "Ek bana kabutar dusra baaz Raja ke paas aaye",
    "type": "image",
-   "prompt": "Two devas transforming — one into a white pigeon, other into a fierce hawk, mid-transformation shimmer, celestial background, gentle glow",
+   "prompt": "A white pigeon and a fierce hawk flying side by side towards a royal palace, celestial light, Indian miniature style, 9:16 vertical, space above and below for text",
    "motion": "pan",
-   "title": "DEV BANE KABUTAR BAAZ",
+   "title": "",
    "keywords": [
     "kabutar",
     "baaz"
@@ -61,7 +61,8 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Kabutar khidki se aaya Raja ki godi mein gira",
@@ -201,12 +202,12 @@
   },
   {
    "vo": "Devon ne aashirwad diya yehi atma bani Shantinath",
-   "type": "card",
+   "type": "image",
    "prompt": "Serene white marble background with soft saffron glow, minimal lotus motif, ample negative space top and bottom for text",
    "motion": "push",
    "title": "",
-   "big": "16TH TIRTHANKAR",
-   "small": "LORD SHANTINATH",
+   "big": null,
+   "small": null,
    "keywords": [
     "aashirwad",
     "Shantinath"
