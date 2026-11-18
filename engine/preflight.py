@@ -80,7 +80,13 @@ def stills(rdir, timed, total, out_jpg):
 def _shown(s):
     """The on-screen fields the page really shows. 18 Nov: compose hides a title that repeats the spoken line
     (compose._dup), but the checker was told about it and held videos for 'title pill missing'."""
-    f = {k: v for k, v in s.items() if k not in ("vo", "prompt", "keywords", "motion", "real", "hold") and v not in (None, "", [])}
+    # 19 Nov: bg_prompt ("... no text, no logos") and skin are production notes, not on-screen fields: the checker held
+    # tech 1118-2205 three times for showing the REAL ASML logo the visual director had chosen on purpose
+    f = {k: v for k, v in s.items() if k not in ("vo", "prompt", "bg_prompt", "skin", "keywords", "motion", "real", "hold", "logo_q")
+         and v not in (None, "", [])}
+    r = s.get("real")
+    if isinstance(r, dict) and r.get("q"):
+        f["real_picture"] = f"the REAL {r.get('kind', 'photo')} of '{r['q']}' is shown here on purpose (correct, not a mistake)"
     try:
         from compose import _dup
         if f.get("title") and _dup(f["title"], s.get("vo")):
