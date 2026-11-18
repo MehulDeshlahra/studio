@@ -28,7 +28,8 @@ EXPLORE_Q = ["short form video automation", "faceless youtube shorts generator",
 
 
 def _get(url, raw=False, timeout=40):
-    r = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout)
+    from core import github_headers
+    r = urllib.request.urlopen(urllib.request.Request(url, headers=github_headers() if "api.github.com" in url else UA), timeout=timeout)
     b = r.read()
     return b if raw else json.loads(b)
 
@@ -280,7 +281,7 @@ def explore(n=3):
             if u in seen or r.get("archived") or r.get("stargazers_count", 0) < 30:
                 continue
             cands[u] = (r["stargazers_count"], r["html_url"], r.get("description") or "")
-        time.sleep(7)                                    # unauthenticated search: 10 requests a minute
+        time.sleep(2)                                    # token: 30 searches a minute
     best = sorted(cands.values(), reverse=True)[:n]
     q = load(QUEUE, []) or []
     q += [{"kind": "github", "url": u, "from": "explore"} for _, u, _ in best]

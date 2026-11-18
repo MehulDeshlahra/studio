@@ -31,7 +31,8 @@ KEYS = re.compile(r"\b(free|open[- ]source|self[- ]host|credits?|tier|api|launch
 
 
 def _get(url, raw=True, timeout=30):
-    b = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
+    from core import github_headers
+    b = urllib.request.urlopen(urllib.request.Request(url, headers=github_headers() if "api.github.com" in url else UA), timeout=timeout).read()
     return b if raw else json.loads(b)
 
 
