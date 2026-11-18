@@ -99,7 +99,9 @@ def lane_prep(dry):
     chans = []
     for cid in sorted(os.listdir(os.path.join(ROOT, "channels"))):
         c = load(os.path.join(ROOT, "channels", cid, "channel.json"))
-        if c and c.get("status") in ("pilot", "active"):
+        # 18 Nov: Aage Suno went "live (warm-up)" on 17 Nov 01:12 and no lane built a single raaz video after that
+        # (only pilot/active were built); mehul.py and stories.py already counted the live statuses.
+        if c and c.get("status") in ("pilot", "active", "live", "live (warm-up)"):
             chans.append((cid, c))
     # 1) English editions (no Muse cost)
     for cid, c in chans:
