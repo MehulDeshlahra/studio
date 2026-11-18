@@ -1,4 +1,13 @@
 # RESUME
+## 18 Nov 09:30-10:45: focus week + new keys + Lemo-Opuscar
+- Keys: 7 new Gemini (key file 4 -> 11; OmniRoute studio-gemini-5..11) and 2 Groq (studio-groq-1/2), each tested with a
+  real call. omnimap rebuilt 10:25: studio-fast starts with groq qwen3.8-27b, long text passes on groq gpt-oss-120b.
+- Fixed: duplicate FOLLOW card before the end card; lab compare values clipped ("Base+New"); healer counted crashed or
+  skipped code steps as tries; healer --dry wrote its state; Mehul agent invented file paths; a Gemini model that times
+  out / 503s goes last for 30 min (preflight, review, plan each waited 180-600 s on gemini-3.8-flash).
+- Lemo-Opuscar: see knowledge/lemo.md (licence rules, pilots behind switches, specials after launch). Pilot results in
+  ~/studio-out/pilot/. Waiting for Mehul's OK on the tech "stage" layout and the katha/raaz textures.
+- Owner rule repeated: NEVER sleep; run long jobs in the background and work in parallel.
 ## 18 Nov 04:00-05:00: self-healing server + full OmniRoute (read knowledge/selfheal.md for the details)
 - Current state is NOT in this file any more: read knowledge/STATE.md on the server (written every 15 min by the server).
   The OPEN ITEMS list below is history; several items there were stale when checked on 18 Nov.
