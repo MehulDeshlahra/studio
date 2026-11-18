@@ -114,7 +114,7 @@ def track(page, rediscover=False):
     # keep 8 leaders (most subscribers) + 6 climbers (smaller channels with big Shorts: how a NEW page grows), on niche only
     subs = lambda r: r["subs_hist"][-1][1] if r.get("subs_hist") else 0
     ok = {k: v for k, v in chans.items() if v.get("fit", True)}
-    leaders = sorted(ok.items(), key=lambda kv: -subs(kv[1]))[:8]
+    leaders = sorted([kv for kv in ok.items() if subs(kv[1]) >= 100_000], key=lambda kv: -subs(kv[1]))[:8]
     rest = [kv for kv in ok.items() if kv[0] not in dict(leaders) and 10_000 <= subs(kv[1]) < 2_000_000 and kv[1].get("median", 0) >= 20_000]
     climbers = sorted(rest, key=lambda kv: -(kv[1].get("median", 0) / max(1, subs(kv[1]))))[:6]
     for k, v in leaders:
@@ -138,14 +138,18 @@ def _fit(page, chans):
     lines = [f'{i + 1}. "{todo[k]["name"]}" | about: {todo[k].get("about", "")[:160]} | Shorts: '
              + " / ".join(s["title"][:60] for s in (todo[k].get("shorts") or [])[:6]) for i, k in enumerate(keys)]
     r = planner.ask(f"Our page makes {hookstudy.NICHE.get(page, page)} for an Indian Hindi/Hinglish audience.\n"
-                    "For each YouTube channel below say if it is a DIRECT competitor: mostly the same kind of Shorts, same "
-                    "audience (Indian, Hindi/Hinglish). Big general creators (politics, podcasts, life hacks, comedy, vlogs, "
-                    "finance, news, YouTube-growth tips, English-only) = false.\n"
-                    + "\n".join(lines) + '\nReturn JSON {"fit": [true or false for channel 1, 2, 3, ... in order]}', max_tokens=1500) or {}
+                    "Label each YouTube channel below: \"direct\" = mostly the same kind of Shorts for the same audience "
+                    "(Indian, Hindi/Hinglish); \"adjacent\" = same audience and same broad topic (e.g. phone reviews for a tech "
+                    "explainer page, devotional songs for a mythology page): brands that sponsor them would sponsor us; "
+                    "\"no\" = anything else (politics, podcasts, life hacks, comedy, vlogs, finance, news, YouTube-growth "
+                    "tips, English-only, other countries).\n"
+                    + "\n".join(lines) + '\nReturn JSON {"fit": ["direct"|"adjacent"|"no" for channel 1, 2, 3, ... in order]}', max_tokens=1500) or {}
     fit = r.get("fit")
     if isinstance(fit, list) and len(fit) == len(keys):
         for k, v in zip(keys, fit):
-            chans[k]["fit"] = bool(v)
+            v = str(v).lower()
+            chans[k]["fit"] = v in ("direct", "adjacent", "true")
+            chans[k]["kind"] = v if v in ("direct", "adjacent") else "no"
     else:
         log("rivals: niche check gave no usable answer", str(r)[:120])
 
@@ -185,7 +189,7 @@ def page_md(page):
     for cid, r in sorted(chans.items(), key=lambda kv: -(kv[1]["subs_hist"][-1][1] if kv[1].get("subs_hist") else 0)):
         subs = r["subs_hist"][-1][1] if r.get("subs_hist") else 0
         g = growth(r)
-        L.append(f"## {r['name']} [{r.get('tier', '')}] ({subs:,} subs{', +%s in 7 days' % f'{g:,}' if g else ''}; usual Short {r.get('median', 0):,} views)")
+        L.append(f"## {r['name']} [{r.get('tier', '')}, {r.get('kind', '')}] ({subs:,} subs{', +%s in 7 days' % f'{g:,}' if g else ''}; usual Short {r.get('median', 0):,} views)")
         for s in r.get("outliers", [])[:4]:
             L.append(f"- {s['views']:,} views: {s['title'][:100]}")
     bj = (load(BRANDS, {}) or {}).get(page, {})
