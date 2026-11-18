@@ -7,7 +7,7 @@
   knowledge/rivals.md); money.py (gates + ETA in STATE.md); Meta page keys cached 12 h (the #4 limit); parent brand
   Scroll House: https://scrollhouse.in live (GitHub Pages /docs, HTTPS, daily rebuild), IG @scrollhouse.in.
 - FIXED 14:45: raaz serial made Parts 1-8 in a day, all held (length 58-64 s > 55): raaz length now 25-68 s, a serial makes
-  no new part while 2+ parts are held; Part 1 re-checked -> approved 10. Mastering kept the worst of 3 tries (TP +0.3):
+  no new part while 2+ parts are held; Parts 1, 2, 4 re-checked from qc -> approved 10 (raaz 1 -> 4 approved). Mastering kept the worst of 3 tries (TP +0.3):
   now best of 4 with a lower limiter ceiling (tested on 1118-1328: -14.5 LUFS, TP -2.6).
 - OWNER: turn on the tech "stage" layout? pick the first Lemo special; paste bios (Scroll House line); claim YT @scrollhouse;
   brand email; optional Mistral key.
