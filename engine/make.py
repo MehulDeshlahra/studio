@@ -285,17 +285,33 @@ def remux(raw, mix, total, out):
     lim = mix.replace(".wav", "-tp.wav")
     L0, _ = _loud(mix)
     gain = -14 - L0 + 2.8
-    for _ in range(3):
+    # 18 Nov: raaz 1118-1328 went -0.8, -1.3, then +0.3 dB TP and the LAST (worst) try was kept -> held for loudness.
+    # The AAC overshoot is not monotonic in gain, so every try is kept and the best one wins; tries 3-4 also lower the
+    # limiter ceiling (0.6 -> 0.5 -> 0.42) instead of only the gain.
+    best, ceil = None, 0.6
+    for k in range(4):
         sh(["ffmpeg", "-v", "error", "-y", "-i", mix, "-af",
-            f"apad=whole_dur={total:.3f},volume={gain:.2f}dB,alimiter=limit=0.6:level=false:attack=1:release=40,aresample=48000",
+            f"apad=whole_dur={total:.3f},volume={gain:.2f}dB,alimiter=limit={ceil}:level=false:attack=1:release=40,aresample=48000",
             "-c:a", "pcm_s16le", lim])
+        tryf = out + f".try{k}.mp4"
         sh(["ffmpeg", "-v", "error", "-y", "-i", raw, "-i", lim, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-            "-c:a", "aac", "-b:a", "256k", "-t", f"{total:.3f}", "-movflags", "+faststart", out])
-        L, tp = _loud(out)
-        log("master", f"gain {gain:+.1f} dB -> {L} LUFS, TP {tp}")
+            "-c:a", "aac", "-b:a", "256k", "-t", f"{total:.3f}", "-movflags", "+faststart", tryf])
+        L, tp = _loud(tryf)
+        log("master", f"gain {gain:+.1f} dB, ceiling {ceil} -> {L} LUFS, TP {tp}")
+        score = (0 if tp <= -1.5 else 1, abs(L + 14) if tp <= -1.5 else tp)
+        if best is None or score < best[0]:
+            if best:
+                os.remove(best[1])
+            best = (score, tryf)
+        else:
+            os.remove(tryf)
         if abs(L + 14) <= 0.6 and tp <= -1.5:
             break
-        gain += (-14 - L) if tp <= -1.5 else -1.0
+        if tp > -1.5:
+            gain -= 1.0; ceil = round(max(0.42, ceil - 0.08), 2)
+        else:
+            gain += (-14 - L)
+    os.replace(best[1], out)
 
 
 def main():
