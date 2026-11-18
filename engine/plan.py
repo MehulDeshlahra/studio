@@ -266,7 +266,7 @@ PLAN:
         log("plan review failed, keeping v1:", str(e)[:120])
     if ch.get("numbers_check"):                    # 18 Nov (finance 1118-2228 said Rs 50k -> Rs 1,02,000 with Rs 5k/month paid)
         for rnd in range(3):                       # 19 Nov: 2 fix rounds (one was not enough for unsourced claims)
-            probs = numbers_check(plan)
+            probs = numbers_check(plan, _fact_sources(ch, topic, research_text))
             if not probs:
                 log("numbers check: all calculations and rules correct" + (" after a fix" if rnd else ""))
                 plan.pop("numbers_hold", None)
@@ -298,12 +298,16 @@ balance after N months, totals, EMI, a percent of an amount, growth), write ONE 
 it from the scenario exactly as the script states it. Use only numbers, + - * / ** ( ) and round/min/max/abs (no names).
 Example: balance after 12 months, Rs 45,000 at 42%/yr compounded monthly with Rs 5,000 paid each month:
 "45000*(1+0.42/12)**12 - 5000*((1+0.42/12)**12-1)/(0.42/12)".
-2) For every RULE or market fact (a rate, a limit, 'RBI says', a tax slab), say if it is correct for India today and who
-really sets it.
+2) For every RULE or market fact (a rate, a limit, 'RBI says', a tax slab), judge it ONLY against the SOURCES below
+(articles and official circulars found for this video). Your own memory of Indian rules is often out of date: never
+mark a fact wrong from memory. "correct": true when the sources support it; false ONLY when a source clearly
+contradicts it (quote that source in "why"); null when the sources say nothing about it.
+SOURCES:
+{sources}
 SCRIPT (scene | voice-over | on-screen number):
 {rows}
 Return JSON {{"calc": [{{"scene": n, "says": <the number the script states, as a plain number>, "expr": "..."}}],
-"facts": [{{"scene": n, "fact": "...", "correct": true/false, "why": "short"}}]}}"""
+"facts": [{{"scene": n, "fact": "...", "correct": true/false/null, "why": "short, quote the source"}}]}}"""
 
 
 def _safe_eval(expr):
@@ -381,12 +385,28 @@ def _safe_eval(expr):
     return ev(tree, {})
 
 
-def numbers_check(plan):
+
+def _fact_sources(ch, topic, research_text):
+    """19 Nov: what the numbers check may judge facts against: the verified source written for this topic in
+    channels/<id>/queue.json (checked by hand in the deep dive) + this video's research (web articles)."""
+    out = []
+    try:
+        q = json.load(open(os.path.join(ROOT, "channels", ch["id"], "queue.json"), encoding="utf-8"))
+        it = next((x for x in q if isinstance(x, dict) and str(x.get("topic", "")).strip().lower() == str(topic).strip().lower()), None)
+        if it and it.get("source"):
+            out.append("VERIFIED (checked against the official circular and 2+ news sources): " + it["source"])
+    except Exception:
+        pass
+    if research_text:
+        out.append(str(research_text))
+    return "\n".join(out)
+
+def numbers_check(plan, sources=""):
     """Problems with the plan's numbers ([] = fine). Arithmetic is computed by Python, not judged by the model."""
     rows = "\n".join(f"{i + 1} | {s.get('vo', '')} | {s.get('value') or s.get('big') or s.get('end_label') or ''}"
                      for i, s in enumerate(plan.get("scenes", [])))
     try:
-        r = ask(NUMCHK.format(rows=rows), max_tokens=2500) or {}
+        r = ask(NUMCHK.format(rows=rows, sources=(sources or "(none found: mark facts null, never false)")[:9000]), max_tokens=2500) or {}
     except Exception as e:
         log("numbers check failed to run:", str(e)[:120]); return []
     probs = []
