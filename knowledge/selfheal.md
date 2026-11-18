@@ -126,3 +126,10 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
   parked ones last).
 - Server load: the job bot's careers browser (jb-careers, chromium renderer) grew to 4.8 GB and ~60% CPU; load 17 on
   2 cores at 05:44; swap 2 GB used. Not Studio's process: left for the owner to decide.
+
+## Janitor (engine/janitor.py, daily 03:30; owner 18 Nov: 'keep an agent for this activity')
+- Duplicates (same topic, unposted) -> older one 'removed'. Rejected/removed older than a day -> video files deleted, history (json, cover-s) kept.
+- Dead builds (no list, no stage, idle 12 h) deleted; a raaz serial part goes back to todo, a katha series part into series-state.json 'redo' (made first). Pilot renders older than 3 days deleted.
+- Why: raaz Chouthi Part 7 and katha Jyotirlinga Part 1 died mid-build but were counted as made (serial marks at plan time, katha_next advances at pick time).
+- publish.series_order: katha series parts post only after the part before them. Dashboard Runs hides removed/rejected under All; Approvals has a Remove button.
+- On demand: python engine/janitor.py --now [--dry]. First run 18 Nov 17:55: 21 actions, 2.2 GB freed, disk 83% -> 78%.
