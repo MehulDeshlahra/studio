@@ -84,7 +84,7 @@
   {
    "vo": "Unhone kaha—Hamare shastra kehte hain ki Mata-Pita ke charno mein hi poori srishti basi hai.",
    "type": "image",
-   "prompt": "A symbolic visual: as Ganesha bows, the ground under Shiva-Parvati shows a glowing map of the universe.",
+   "prompt": "Ganesha bowing with folded hands to Shiva and Parvati seated on Mount Kailash, a glowing subtle map of the universe visible beneath their feet, centered composition, 9:16 vertical, space above and below for text, no text or logos.",
    "motion": "push",
    "keywords": [
     "Srishti",
@@ -92,12 +92,13 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Ganesha jeet gaye! Par jab Kartikeya laute, toh naraz hokar door Krauncha parvat par chale gaye.",
    "type": "image",
-   "prompt": "Kartikeya standing alone on a misty, dark mountain peak, looking away. Moody atmosphere.",
+   "prompt": "Kartikeya (six-faced, holding vel spear, peacock beside him) standing angrily on Krauncha mountain peak, misty background, centered, 9:16 vertical, room for text, no text or logos.",
    "motion": "pull",
    "keywords": [
     "Kartikeya",
@@ -105,12 +106,13 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Apne bete ko manane Mahadev 'Arjun' aur Mata 'Mallika' ke roop mein wahan pahunche.",
    "type": "image",
-   "prompt": "Shiva and Parvati appearing on the mountain in glowing, humble forms. Soft divine light illuminating the rocks.",
+   "prompt": "Shiva as Arjun (hunter/tribal form with bow and arrow, wearing simple leaves) and Parvati as Mallika (tribal woman with jasmine flowers in hair) standing together on a mountain, humble divine light around them, centered, 9:16 vertical, space for text, no text or logos.",
    "motion": "push",
    "keywords": [
     "Mallika",
@@ -118,12 +120,13 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Isi wajah se is pavitra sthan ka naam pada—Mallikarjun Jyotirlinga.",
    "type": "image",
-   "prompt": "The glowing Jyotirlinga inside a temple sanctum, decorated with flowers and lamps. Divine atmosphere.",
+   "prompt": "The Mallikarjun Jyotirlinga in a sanctum, the linga adorned with a garland of white jasmine (mallika) flowers and a small golden bow (symbol of Arjun) placed beside it, divine atmosphere with soft light, centered, 9:16 vertical, space for text, no text or logos.",
    "motion": "pull",
    "keywords": [
     "Jyotirlinga",
@@ -131,18 +134,15 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Ye mandir Andhra Pradesh ke Srisailam mein hai, jahan aaj bhi bhakt umadte hain.",
    "type": "image",
-   "prompt": "Wide shot of the majestic Mallikarjun Temple at Srisailam during sunset. Real photo style.",
+   "prompt": "Wide shot of the majestic Mallikarjun Temple at Srisailam during golden sunset, intricate architecture visible, devotees walking, serene atmosphere, 9:16 vertical, space for text, no text or logos.",
    "motion": "pan",
-   "real": {
-    "q": "Mallikarjun Jyotirlinga Temple Srisailam aerial view",
-    "kind": "photo",
-    "subject": "Mallikarjun Temple"
-   },
+   "real": null,
    "keywords": [
     "Srisailam",
     "Andhra Pradesh"
@@ -154,10 +154,10 @@
   {
    "vo": "Kya aapne kabhi Mallikarjun ke darshan kiye hain? Comment mein 'Har Har Mahadev' likhiye.",
    "type": "card",
-   "prompt": "Ornate maroon background with golden borders. No text in image.",
+   "prompt": "Clean maroon gradient background with subtle gold accents, ample empty space for text, no text in image.",
    "motion": "pull",
-   "big": "DARSHAN KIYE HAIN?",
-   "small": "Comment mein bataiye",
+   "big": "DARSHAN KIYE?",
+   "small": "Comment karein",
    "keywords": [
     "Mahadev",
     "Comment"
@@ -166,7 +166,7 @@
   }
  ],
  "music_mood": "devotional_epic",
- "caption": "Ganesha ki buddhi ya Kartikeya ki raftar? 🙏\n\nJaaniye Mallikarjun Jyotirlinga ki ye adbhut katha jahan Ganesha ne bataya ki Mata-Pita hi asli duniya hain.\n\nKya aapne kabhi Srisailam ke darshan kiye hain? \n\n#Mallikarjun #Jyotirlinga #Mahadev #Ganesha #Srisailam #PuranKatha",
+ "caption": "Ganesha ki buddhi ya Kartikeya ki raftar? 🙏\n\nJaaniye Mallikarjun Jyotirlinga ki ye adbhut katha jahan Ganesha ne bataya ki Mata-Pita hi asli duniya hain.\n\nKya aapne kabhi Srisailam ke darshan kiye hain? \n\n#Mallikarjun #Jyotirlinga #Mahadev #Ganesha #Srisailam #PuranKatha\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#Mallikarjun",
   "#Jyotirlinga",
@@ -204,5 +204,6 @@
   "3cec28c3e9",
   "4204a43442",
   "1662db247e"
- ]
+ ],
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
