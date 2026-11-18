@@ -12,7 +12,7 @@ User=ubuntu
 WorkingDirectory=/home/ubuntu/studio
 Nice=15
 TimeoutStartSec=3h
-ExecStartPre=/usr/bin/git -C /home/ubuntu/studio pull -q --rebase
+ExecStartPre=-/usr/bin/git -C /home/ubuntu/studio pull -q --rebase --autostash
 ExecStart=/bin/bash -c 'python3 scout/scout.py >> /home/ubuntu/scout.log 2>&1'
 EOF
 sudo tee /etc/systemd/system/studio-scout.timer >/dev/null <<EOF
