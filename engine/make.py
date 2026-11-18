@@ -233,22 +233,34 @@ def _pick_skin(ch, p):
             "editor who changes the visual world when the story changes (the real world -> inside the machine -> the smart "
             "part -> back to the real world).\nLooks:\n" + menu + "\n"
             f"Topic: {p.get('title') or p.get('topic')}\nSCENES (n | type | real picture? | spoken line):\n{rows}\n"
-            "Rules: a look holds for at least 2 scenes in a row; 1 to 3 looks in the whole video; scene 1 (the hook) and the "
-            "last scene are in the real world (keynote) unless the topic itself lives inside a screen; a scene marked REAL "
-            "(a real logo / app screen / product photo) is keynote; pick the look that makes THAT part easiest to understand.\n"
+            "Rules: use 2 or 3 looks (a video of 6+ scenes is never all one look); scene 1 (the hook) and the last scene are "
+            "in the real world (keynote) unless the topic itself lives inside a screen; a scene with a REAL logo or REAL "
+            "app_screen is keynote; a REAL product photo may sit in any look; a diagram scene (flow, compare, ui, chart) may "
+            "switch look on its own, like a cutaway; other looks hold 2+ scenes. Pick the look that makes THAT part easiest "
+            "to understand.\n"
             f"Our last videos used: {recent[-3:]} - vary the mix.\n"
-            'Return JSON {"looks": ["<look for scene 1>", "<scene 2>", ...], "why": "short"}', 600)
+            f'Return JSON {{"looks": [exactly {len(sc_)} look names, one per scene in order], "why": "short"}}', 600)
     except Exception as e:
         log("look pick failed:", str(e)[:100])
     looks = [str(x).strip().lower() for x in (r.get("looks") or [])]
     if len(looks) != len(sc_) or any(x not in compose_lab.SKINS for x in looks):
+        log("look pick: unusable answer", str(r)[:160])
         looks = ["keynote"] * len(sc_)
     for i, s in enumerate(sc_):                        # hard rules the model may forget
-        if isinstance(s.get("real"), dict) and s["real"].get("q"):
+        if isinstance(s.get("real"), dict) and s["real"].get("q") and s["real"].get("kind") == "logo":
             looks[i] = "keynote"
-    for i in range(1, len(looks) - 1):                 # no single-scene flicker
-        if looks[i] != looks[i - 1] and looks[i] != looks[i + 1]:
+        if isinstance(s.get("real"), dict) and "screen" in str(s["real"].get("q", "")).lower():
+            looks[i] = "keynote"
+    diagram = ("flow", "compare", "ui", "chart", "stat")
+    for i in range(1, len(looks) - 1):                 # no single-scene flicker, except a diagram cutaway
+        if looks[i] != looks[i - 1] and looks[i] != looks[i + 1] and sc_[i].get("type") not in diagram:
             looks[i] = looks[i - 1]
+    if len(sc_) >= 6 and len(set(looks)) == 1:         # never one look for a whole 6+ scene video (owner: mix and match)
+        pick = next((k for k in ("blueprint", "hologram", "terminal") if k != looks[0]), "blueprint")
+        for i, s in enumerate(sc_):
+            if s.get("type") in diagram and not (isinstance(s.get("real"), dict) and s["real"].get("kind") == "logo"):
+                looks[i] = pick
+        log("look pick: one look only -> diagrams in", pick)
     for s, k in zip(sc_, looks):
         s["skin"] = k
     p["skin"] = max(set(looks), key=looks.count) if looks else "keynote"
