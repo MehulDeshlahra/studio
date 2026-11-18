@@ -146,11 +146,12 @@ const V = {
     </div>`;
   },
   runs() {
-    const F = [["all", "All"], ["active", "Building"], ["need", "Needs you"], ["held", "Held"], ["approved", "Approved"], ["posted", "Posted"], ["rejected", "Rejected"]];
-    const ok = (j) => runFilter === "all" || (runFilter === "active" ? j.active : runFilter === "need" ? ["waiting", "ready"].includes(j.status) : j.status === runFilter);
+    const F = [["all", "All"], ["active", "Building"], ["need", "Needs you"], ["held", "Held"], ["approved", "Approved"], ["posted", "Posted"], ["rejected", "Rejected"], ["removed", "Removed"]];
+    const gone = (j) => ["rejected", "removed"].includes(j.status);  // 18 Nov (owner): All hides removed/rejected
+    const ok = (j) => (runFilter === "all" ? !gone(j) : (runFilter === "active" ? j.active : runFilter === "need" ? ["waiting", "ready"].includes(j.status) : j.status === runFilter));
     const list = S.jobs.filter((j) => ok(j) && (runCh === "all" || j.cid === runCh));
     return `<div class="h1">Runs</div><div class="lead">Every video the engine has made or is making. Click a row for the full timeline, review and log.</div>
-    <div class="tools"><div class="tabs">${F.map(([k, t]) => `<button class="${runFilter === k ? "on" : ""}" onclick="runFilter='${k}';render(1)">${t} <span class="faint">${S.jobs.filter((j) => k === "all" || (k === "active" ? j.active : k === "need" ? ["waiting", "ready"].includes(j.status) : j.status === k)).length}</span></button>`).join("")}</div>
+    <div class="tools"><div class="tabs">${F.map(([k, t]) => `<button class="${runFilter === k ? "on" : ""}" onclick="runFilter='${k}';render(1)">${t} <span class="faint">${S.jobs.filter((j) => k === "all" ? !gone(j) : (k === "active" ? j.active : k === "need" ? ["waiting", "ready"].includes(j.status) : j.status === k)).length}</span></button>`).join("")}</div>
      <select onchange="runCh=this.value;render(1)"><option value="all">All pages</option>${S.channels.filter((c) => c.group === "Studio").map((c) => `<option value="${c.id}" ${runCh === c.id ? "selected" : ""}>${esc(c.name)}</option>`).join("")}</select></div>
     <div class="card tw" style="margin-top:12px"><table class="stack"><thead><tr><th>Status</th><th>Video</th><th class="hide-m">Page</th><th>Progress</th><th class="hide-m">Review</th><th class="hide-m">Updated</th></tr></thead><tbody>
     ${list.map((j) => { const c = ch(j.cid); return `<tr class="click" onclick="openJob('${j.cid}','${j.job}')"><td>${badge(j.status, j)}</td>

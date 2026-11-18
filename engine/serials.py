@@ -93,7 +93,8 @@ def new_story(ch):
 
 
 def _current(ch):
-    for s in stories(ch["id"]):
+    # 18 Nov: the story already on air (most parts made) first; an older story's lost Part 2 must not cut into it
+    for s in sorted(stories(ch["id"]), key=lambda s: -sum(p["status"] == "made" for p in s["parts"])):
         if any(p["status"] == "todo" for p in s["parts"]) and not s.get("closed"):
             return s
     return new_story(ch)
