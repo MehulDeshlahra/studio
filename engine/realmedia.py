@@ -64,6 +64,39 @@ def commons(q, n=6):
         log("realmedia commons fail", str(e)[:80]); return []
 
 
+def official_logo(q):
+    """18 Nov: Bing gave junk for "ChatGPT logo" and the judge rightly refused all of it. Wikidata keeps each brand's
+    official logo file (P154, rendered to PNG by Commons) and website (P856 -> app icon). Returns [urls], best first."""
+    name = re.sub(r"\b(official|logo|icon|app)\b", "", q, flags=re.I).strip() or q
+    try:
+        s = json.loads(_get("https://www.wikidata.org/w/api.php?" + urllib.parse.urlencode(
+            {"action": "wbsearchentities", "search": name, "language": "en", "limit": 3, "format": "json"}), 20)[0])
+        out = []
+        for hit in s.get("search", [])[:3]:
+            e = json.loads(_get(f"https://www.wikidata.org/wiki/Special:EntityData/{hit['id']}.json", 20)[0])["entities"][hit["id"]]
+            cl = e.get("claims", {})
+            for c in cl.get("P154", [])[:1]:
+                f = c["mainsnak"].get("datavalue", {}).get("value")
+                if f:
+                    out.append("https://commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(f.replace(" ", "_")) + "?width=1000")
+            for c in cl.get("P856", [])[:1]:
+                site = c["mainsnak"].get("datavalue", {}).get("value")
+                if site:
+                    dom = urllib.parse.urlparse(site).netloc
+                    out.append(f"https://www.google.com/s2/favicons?domain={dom}&sz=256")
+            if out:
+                return out
+    except Exception as e:
+        log("realmedia wikidata fail", name, str(e)[:80])
+    return []
+
+
+def _icon(src, out):
+    """A square app-icon JPEG on white (transparent logos would turn black)."""
+    sh(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", "color=c=white:s=256x256[bg];[0:v]scale=232:232:force_original_aspect_ratio=decrease[l];[bg][l]overlay=(W-w)/2:(H-h)/2",
+        "-frames:v", "1", "-q:v", "2", out], timeout=60)
+
+
 def _probe(path):
     try:
         o = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0", path],
@@ -73,7 +106,7 @@ def _probe(path):
         return 0, 0
 
 
-def download(urls, work, kind, want=6):
+def download(urls, work, kind, want=6, min_side=None):
     got = []
     for i, u in enumerate(urls):
         if len(got) >= want:
@@ -89,7 +122,7 @@ def download(urls, work, kind, want=6):
             png = os.path.join(work, f"c{len(got)}.png")
             sh(["ffmpeg", "-v", "error", "-y", "-i", raw, "-frames:v", "1", "-vf", "scale='min(1600,iw)':-2", png], timeout=60)
             w, h = _probe(png)
-            if min(w, h) < (300 if kind == "logo" else 600):
+            if min(w, h) < (min_side or (300 if kind == "logo" else 600)):
                 continue
             got.append({"path": png, "w": w, "h": h, "url": u})
         except Exception:
@@ -301,6 +334,16 @@ def fetch(real, out_path, lab=False, raw=False):
     shutil.rmtree(work, ignore_errors=True); os.makedirs(work, exist_ok=True)
     try:
         qs = [q + (" logo" if kind == "logo" and "logo" not in q.lower() else "")]
+        if kind == "logo":                                        # the official file first: no judging needed
+            off = download(official_logo(q), work, kind, want=2, min_side=120)
+            if off:
+                src = trim_margins(off[0]["path"], work)
+                if raw:
+                    _icon(src, out_path)
+                else:
+                    layout(src, out_path, kind, lab)
+                log("realmedia ok", repr(q), "official logo", off[0]["url"][:90])
+                return out_path
         urls = bing(qs[0] + " -transparent -checkered") + commons(q)
         cands = download(urls, work, kind)
         if not cands:
@@ -314,7 +357,7 @@ def fetch(real, out_path, lab=False, raw=False):
             log("realmedia: none fits", repr(subject), why); return None
         src = trim_margins(cands[i]["path"], work) if kind == "logo" else cands[i]["path"]
         if raw:
-            sh(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", "scale=256:256:force_original_aspect_ratio=decrease", "-frames:v", "1", "-q:v", "2", out_path], timeout=60)
+            _icon(src, out_path)
         else:
             layout(src, out_path, kind, lab)
         if kind == "photo":
