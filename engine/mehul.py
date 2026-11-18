@@ -71,7 +71,7 @@ def _sheet(cid, jobs, out):
         try:
             d = float(sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp4]).strip())
             r = out + f".{k}.jpg"
-            sh(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-vf", f"fps=12/{d:.2f},scale=120:214,tile=12x1,"   # 18 Nov: 213 (odd) crashed vstack (malloc corrupted, ffmpeg 6.1.1 arm64)
+            sh(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-vf", f"fps=12/{d:.2f},scale=120:214,tile=12x1,"   # 18 Nov: NOT keyframes only (they sit on scene cuts: half-black frames)   # 18 Nov: 213 (odd) crashed vstack (malloc corrupted, ffmpeg 6.1.1 arm64)
                 "drawtext=text='" + j.replace("'", "") + "':x=6:y=6:fontsize=20:fontcolor=yellow:box=1:boxcolor=black@0.7", "-frames:v", "1", "-threads", "1", r], timeout=420)
             rows.append(r)
         except Exception as e:                            # 18 Nov: the log kept only the command (first 80 chars), never the reason
