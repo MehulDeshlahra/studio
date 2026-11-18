@@ -119,7 +119,7 @@ const V = {
     return `<div class="h1">${d.toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" })}</div>
     <div class="lead">${esc(S.doing)}.</div>
     <div class="card strip">
-     <div><div class="lbl">Followers</div><div class="val">${nf(fol)}</div><div class="dl">6 channels · Instagram + Facebook</div></div>
+     <div><div class="lbl">Followers</div><div class="val">${nf(fol)}</div><div class="dl">${S.channels.length} channels · Instagram + Facebook</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${K.violet}"></i>Needs approval</div><div class="val">${wait}</div><div class="dl">${appr} approved, waiting for a slot</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${(S.quality.rate7 ?? 0) >= 70 ? K.green : (S.quality.rate7 ?? 0) >= 40 ? K.amber : K.red}"></i>First-pass rate</div><div class="val">${S.quality.rate7 == null ? "—" : S.quality.rate7 + "%"}</div><div class="dl">${S.quality.passed7} of ${S.quality.videos7} videos passed review on the first try (7 days) · ${made} rendered today</div></div>
      <div><div class="lbl"><i class="dot" style="--c:${act.length ? K.blue : K.gray}"></i>Building</div><div class="val">${act.length}</div><div class="dl">typical render ${dur(S.render_median)}</div></div>
