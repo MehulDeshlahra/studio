@@ -55,3 +55,4 @@ Library: github.com/lemomo-ai/lemo-opuscar, laptop copy `C:\Users\mehul\lemo-opu
   make._pick_story_looks + _look_prompt. katha: painting / puppet (shadow-puppet theatre) / pattachitra; raaz: film /
   cctv / memory / evidence. Base keeps >= 60% of scenes, scene 1 + last always base, cutaways of 1-3 scenes, max 2 extra
   looks. OFF ("looks_on": false) until the picture pilot (~/studio-out/pilot/looks-*/pair*.jpg) passes.
+- 18 Nov 17:05 picture pilot (katha 1118-1015 Ujjain/Mahakal: puppet on scenes 4, 6, 7; raaz 1118-1433: evidence on 3 clue scenes). Katha puppet = clearly new look, deities keep their traditional form -> katha looks ON. Raaz evidence = no visible change + a Durga idol crept in -> raaz stays OFF (try cctv/memory later). Pairs: C:\Users\mehul\studio-render\looks\.

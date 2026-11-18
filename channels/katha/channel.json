@@ -30,7 +30,7 @@
       "pic": "Odisha Pattachitra cloth painting: bold dark outlines, flat vermilion, yellow ochre, indigo and white, stylised figures with large eyes, fine decorative patterns inside the clothes, handmade cloth texture, one single scene, no border"
     }
   },
-  "looks_on": false,
+  "looks_on": true,
   "rules": [
     "respectful, no mockery",
     "sourced retellings only, mention when versions differ",
