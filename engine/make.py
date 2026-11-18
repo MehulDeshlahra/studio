@@ -4,7 +4,7 @@ Stages: research -> plan -> voice -> assets -> compose -> mix -> render -> qc ->
 Each stage writes into ~/studio-out/<channel>/<job>/ and is skipped when its output already exists (rerun-safe)."""
 import argparse, json, os, re, shutil, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from core import ROOT, ASSETS, OUT, PY, log, sh, load, save, channel, telegram, dur
+from core import ROOT, ASSETS, OUT, PY, log, sh, load, save, channel, telegram, dur, read
 import research, plan as planner, tts, align, muse, compose, qc
 
 # chrome-headless-shell enables HyperFrames' fast BeginFrame capture (full Chromium falls back to screenshots).
@@ -159,19 +159,69 @@ def _real_brands(ch, p):
             b = found(s.get("title", "")) or found(s.get("vo", ""))
             if b:
                 s["logo_q"] = f"{b} logo"; s["title"] = s.get("title") or b; changed = True
-    if any(isinstance(s.get("real"), dict) and s["real"].get("q") for s in p.get("scenes", [])):
+    # 18 Nov (owner): "why are we not using the Google logo?" then "not necessarily all of them, you decide where it suits,
+    # check related reels". The old rule gave ONE logo per video and none if the plan had any real picture. Now a visual
+    # director decides scene by scene, using the rules learnt from top tech reels (channels/tech/visual-rules.md).
+    film = bool(ch.get("theme", {}).get("film")) or os.environ.get("STUDIO_LAB_FILM") == "1"
+    hits = [(i, s, found(s.get("vo", "") + " " + str(s.get("label", "")) + " " + str(s.get("title", ""))))
+            for i, s in enumerate(p.get("scenes", []))]
+    if not any(b for _, _, b in hits):
         return changed
-    hits = [(i, s, found(s.get("vo", "") + " " + str(s.get("label", "")))) for i, s in enumerate(p.get("scenes", []))]
-    hits = [h for h in hits if h[2] and h[1].get("type") not in ("chat", "code", "flow", "compare", "clip")]
-    if not hits:
-        return changed
-    i, s, b = next((h for h in hits if h[1].get("type") == "object"), hits[0])
-    if s.get("type") != "object":                # a stat/title/ui scene: its words are spoken anyway; the logo takes the frame
-        s["type"] = "object"
-        s.setdefault("prompt", f"{b} official logo")
-    s["real"] = {"q": f"{b} logo", "kind": "logo", "subject": f"the official {b} logo"}
-    log("real brands: scene", i + 1, "gets the real", b, "logo")
-    return True
+    if _visual_director(ch, p, film):
+        return True
+    # fallback (director failed): the official logo at the brand's first mention only
+    for i, s, b in hits:
+        if b and s.get("type") not in ("chat", "code", "clip", "flow") and not (isinstance(s.get("real"), dict) and s["real"].get("q")):
+            s["real"] = {"q": f"{b} logo", "kind": "logo", "subject": f"the official {b} logo"}
+            if not film and s.get("type") not in ("object", "image", "card"):
+                s["type"] = "object"; s.setdefault("prompt", f"{b} official logo")
+            log("real brands (fallback): scene", i + 1, "gets the real", b, "logo")
+            return True
+    return changed
+
+
+DIRECTOR = """You are the art director of a Hindi tech-explainer Reels page (vertical, about 10 scenes, a full-frame picture
+behind every scene). Decide for each scene whether its picture should be REAL and which kind, so the reel feels real and
+relatable (like the viewer's own phone) without stamping a logo on every line.
+RULES LEARNT FROM THE TOP TECH REELS ON INSTAGRAM:
+{rules}
+SCENES (n | type | spoken line | on-screen label):
+{scenes}
+Kinds: "logo" (the brand's official logo, big), "app_screen" (a real screenshot of the app / feature on a phone, e.g. the
+Google Assistant listening screen), "product" (a real photo of the product / device / hardware), "real_photo" (a real photo of
+a real place or event), "none" (keep the generated cinematic picture). Only real things: never invent a screen that does
+not exist. A chat, code or clip scene stays "none".
+Return JSON {{"scenes": [{{"n": <scene number>, "kind": "...", "q": "the image search query a person would type",
+"subject": "what the picture must show", "why": "short"}}]}} listing ONLY the scenes that get something real."""
+
+
+def _visual_director(ch, p, film):
+    """One planner call: which scenes get a real logo / app screen / product photo. Writes scene["real"]. True if any."""
+    try:
+        import plan as planner
+        rules = read(os.path.join(ROOT, "channels", ch["id"], "visual-rules.md"), 3500) or \
+            "- a brand's official logo once, at its first mention or the reveal; the real app screen when the line shows what the app does"
+        sc = "\n".join(f"{i + 1} | {s.get('type')} | {s.get('vo', '')} | {s.get('label') or s.get('title') or ''}"
+                       for i, s in enumerate(p.get("scenes", [])))
+        r = planner.ask(DIRECTOR.format(rules=rules, scenes=sc), max_tokens=2000) or {}
+    except Exception as e:
+        log("visual director failed:", str(e)[:120]); return False
+    did = 0
+    for x in r.get("scenes") or []:
+        try:
+            i = int(x.get("n")) - 1
+            s = p["scenes"][i]
+        except (TypeError, ValueError, IndexError):
+            continue
+        kind = str(x.get("kind", "none")).lower()
+        if kind == "none" or not x.get("q") or s.get("type") in ("chat", "code", "clip"):
+            continue
+        if not film and s.get("type") in ("flow", "compare", "ui", "chart", "stat", "title"):
+            continue                                     # classic look: no picture slot in these scenes
+        s["real"] = {"q": x["q"], "kind": "logo" if kind == "logo" else "photo", "subject": x.get("subject") or x["q"]}
+        did += 1
+        log("visual director: scene", i + 1, kind, repr(x["q"]), "-", str(x.get("why", ""))[:80])
+    return did > 0
 
 
 def stage_assets(ch, p, job):
