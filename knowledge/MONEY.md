@@ -72,10 +72,12 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
 ### More inventory (owner likes new pages; expansion on hold until the 3 pages run clean, then)
 - [ ] Jain stories, English stories, finance explainers (order agreed 18 Nov). Each new page = another audience to sell.
 
-## 5b. Parent brand: NOT DECIDED (owner is choosing, 18 Nov)
-- Candidates checked 18 Nov: Baithak Media (baithakmedia.com + YouTube free), Off Hours Lab (.com taken since Jul 2026,
-  YouTube @offhourslab taken; .in/.co/.net free), Kissa Network (.com + YouTube free). Do not use any name until Mehul picks.
-- Plan once picked: free GitHub Pages site (network showcase + media kit with live numbers), parent IG page, one brand inbox.
+## 5b. Parent brand: Scroll House (owner picked 18 Nov)
+- Genre-, language- and format-neutral network name. Every page bio: "A Scroll House page".
+- Domain scrollhouse.in (Mehul bought it 18 Nov). Instagram @scrollhouse.in (Mehul created). YouTube @scrollhouse free (claim it).
+  Taken by others: scrollhouse.com (2021), .co.in and .co (2026). Optional backup: scrollhousemedia.com (free 18 Nov).
+- Site: engine/site.py -> docs/ (GitHub Pages of offhours-lab/studio), rebuilt daily 09:05 from money.json + done.json;
+  numbers appear once they exist ("Launching 20 Nov" until then). Brand email to add when Mehul makes it.
 
 ## 6. What only Mehul can do (ask, don't wait silently)
 - A business email for brand deals (one free Gmail, e.g. kaise.tech.collab@...): needs his sign-up.
