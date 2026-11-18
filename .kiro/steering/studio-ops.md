@@ -40,6 +40,9 @@ Free, 24x7, self-running faceless Reels/Shorts engine on the Oracle server for 3
 - Fiction names: owner Mehul + friends (Raghav, Aditya, Shobhit, Shwetal, Saumya, Suhail, Jahnvi, Masood, Animesh, Jayesh,
   Aaryan, Dhruv, Mudit, Shruti), rotating. Villains always made-up names, never "Rohan", never a friend.
 - Real photos/logos/faces of public figures are fine; on story pages real photos only for places/landmarks.
+- DON'T BE DEFENSIVE (owner 18 Nov): real brand logos, app screens, product photos and public figures are normal on
+  IG/YT/FB, so use them fully (a ChatGPT reel shows the ChatGPT logo). Read repos and files 100% (engine/learn.py deep),
+  never a sample. Set up the free scrapers/crawlers that help (engine/web.py). Licence notes are a footnote, not a brake.
 - Telegram "mehul: <opinion>" feeds knowledge/mehul.md (the Mehul agent + planner follow it).
 
 ## Server (shared with the job bot: never starve it)
