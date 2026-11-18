@@ -75,6 +75,29 @@ SKINS = {   # 18 Nov (owner: "learn from the library and pick what template suit
 }
 
 
+def _scope(css, k):
+    """Scope a look's CSS to its own scenes (.scene.sk-k) and captions (.cap.sk-k); root and end-card rules stay shared."""
+    out = []
+    for rule in css.split("}"):
+        if "{" not in rule:
+            continue
+        sel, body = rule.split("{", 1)
+        sels = []
+        for x in sel.split(","):
+            x = x.strip()
+            if not x or x.startswith(("#root", ".endc", ".endh", ".endf", ".vign", ".grain")):
+                continue
+            if x.startswith(".scene"):
+                sels.append(f".scene.sk-{k}" + x[len(".scene"):])
+            elif x.startswith(".cap"):
+                sels.append(f".cap.sk-{k}" + x[len(".cap"):])
+            else:
+                sels.append(f".sk-{k} " + x)
+        if sels:
+            out.append(",".join(sels) + "{" + body + "}")
+    return "\n".join(out) + "\n"
+
+
 def skin_css(skin, acc):
     if skin == "blueprint":
         paper = ("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='540' height='960'><filter id='n'>"
@@ -207,6 +230,11 @@ def page(plan, timed, total, theme, assets):
             keys.update(re.sub(r"[^a-z0-9 ]", "", k.lower()).split())
     scenes, top, js, cues, caps = [], [], [], [], []
     stat_win = []
+    # 18 Nov (owner: "mix and match styles, choose what part suits what"): a look per SCENE (s["skin"], set by the creative
+    # director in make.py); the plan-wide look is the fallback. Each look's CSS is scoped to its scenes and captions.
+    sks = [str(s.get("skin") or plan.get("skin") or theme.get("skin") or "keynote") for s in plan["scenes"]]
+    sks = [k if k in SKINS else "keynote" for k in sks]
+    capscene = []
     n = len(timed)
     for i, (s, t) in enumerate(zip(plan["scenes"], timed)):
         a = 0.0 if i == 0 else t["start"] - 0.1
@@ -429,7 +457,7 @@ def page(plan, timed, total, theme, assets):
             js.append(f'tl.fromTo("#{sid}cam",{{scale:1.05}},{{scale:1.0,duration:0.9,ease:"power3.out",immediateRender:false}},{a:.3f});')
             js.append(f'tl.to("#{sid}cam",{{scale:1.03,duration:{max(0.4, d - 0.9):.3f},ease:"sine.inOut"}},{a + 0.9:.3f});')
         if i and film:
-            js += _seam(i, f"s{i - 1}", sid, a, kind, cues)
+            js += _seam(i if sks[i] == sks[i - 1] else 2, f"s{i - 1}", sid, a, kind, cues)   # a new look enters by zooming through
         elif i:
             tr = i % 3
             if tr == 1:      # push up with motion blur
@@ -443,10 +471,10 @@ def page(plan, timed, total, theme, assets):
         # props, UI panels, stats and compares rendered invisible. Resets go first, so the entrance tween wins.
         mine = js[js0:]
         js[js0:] = [x for x in mine if x.startswith("tl.set(")] + [x for x in mine if not x.startswith("tl.set(")]
-        scenes.append(f'<div id="{sid}" class="clip scene{" over" if kind == "clip" and vid else ""}" data-start="{a:.3f}" '
+        scenes.append(f'<div id="{sid}" class="clip scene{" over" if kind == "clip" and vid else ""}{(" sk-" + sks[i]) if film else ""}" data-start="{a:.3f}" '
                       f'data-duration="{d:.3f}" data-track-index="1">{inner}</div>')
         for c in cap_groups(t["words"]):
-            caps.append(c)
+            caps.append(c); capscene.append(i)
     # captions: one sentence chunk at a time, words light up as spoken
     capdiv, cap_js = [], []
     for j, c in enumerate(caps):
@@ -472,7 +500,7 @@ def page(plan, timed, total, theme, assets):
             else:
                 cap_js.append(f'tl.to("#c{j}w{k}",{{opacity:1,duration:0.08}},{max(st, w["s"] - 0.03):.3f});')
                 cap_js.append(f'tl.set("#c{j}w{k}",{{opacity:0.55}},{st:.3f});')
-        capdiv.append(f'<div id="c{j}" class="clip cap" data-start="{st:.3f}" data-duration="{en - st:.3f}" data-track-index="9">{" ".join(spans)}</div>')
+        capdiv.append(f'<div id="c{j}" class="clip cap{(" sk-" + sks[capscene[j]]) if film else ""}" data-start="{st:.3f}" data-duration="{en - st:.3f}" data-track-index="9">{" ".join(spans)}</div>')
         cap_js.append(f'tl.fromTo("#c{j}",{{y:16,opacity:0}},{{y:0,opacity:1,duration:0.18,ease:"power2.out",immediateRender:false}},{st:.3f});')
     brand = []
     if handle:
@@ -579,7 +607,7 @@ body{{margin:0;background:#07080b}}
 .cv{{text-shadow:0 6px 28px #000}} .cl{{font-size:40px;color:#fff;text-shadow:0 3px 14px #000}}
 .bub{{font-size:46px}}
 .cap{{font-size:62px;text-shadow:0 4px 22px #000,0 0 3px #000}}
-""" if film else "") + (skin_css(plan.get("skin") or theme.get("skin") or "keynote", acc) if film else "") + f"""
+""" if film else "") + ("".join(_scope(skin_css(k, acc), k) for k in sorted(set(sks))) if film else "") + f"""
 .endh{{position:absolute;left:0;width:{W}px;top:800px;text-align:center;font-weight:800;font-size:110px;letter-spacing:-3px}}
 .endf{{position:absolute;left:0;width:{W}px;top:950px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:6px;color:{acc}}}
 """

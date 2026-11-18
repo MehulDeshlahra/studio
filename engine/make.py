@@ -199,28 +199,46 @@ def _pick_skin(ch, p):
     """18 Nov (owner: "use your brain and pick what template suits what; take ownership"). Chooses the look of THIS
     video from compose_lab.SKINS (styles learnt from the Lemo-Opuscar library), by topic, and rotates so two videos in a
     row rarely share a look. Writes p["skin"]. Every other system (pictures, layout, captions) follows it."""
+    # 18 Nov (owner: "mix and match styles, not one style throughout; choose what part suits what"): the look is chosen
+    # PER SCENE, in runs (a look holds 2+ scenes so the video does not flicker), at most 3 looks per video.
     import compose_lab, plan as planner
-    if p.get("skin") in compose_lab.SKINS:
+    sc_ = p.get("scenes", [])
+    if sc_ and all(s.get("skin") in compose_lab.SKINS for s in sc_):
         return False
     recent = []
     for d in (load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or [])[-6:]:
         pj = load(os.path.join(OUT, ch["id"], d["job"], "plan.json"), {}) or {}
-        recent.append(pj.get("skin") or "keynote")
+        recent.append(sorted({s.get("skin") or pj.get("skin") or "keynote" for s in pj.get("scenes", [])}) or ["keynote"])
     menu = "\n".join(f'- {k}: for {v["use"]}' for k, v in compose_lab.SKINS.items())
-    lines = " / ".join(s.get("vo", "") for s in p.get("scenes", []))[:900]
+    rows = "\n".join(f"{i + 1} | {s.get('type')} | {'REAL ' + s['real'].get('kind', '') if isinstance(s.get('real'), dict) else ''} | "
+                     f"{s.get('vo', '')}" for i, s in enumerate(sc_))
     r = {}
     try:
-        r = planner.ask(f"You are the creative director of a Hindi tech-explainer Reels page. Pick the LOOK for this video.\n"
-                        f"Topic: {p.get('title') or p.get('topic')}\nScript: {lines}\nLooks:\n{menu}\n"
-                        f"Our last videos used (newest last): {recent}. Rarely repeat the look of the last two; the best fit "
-                        'for the topic wins. Return JSON {"skin": "<one key>", "why": "short"}', max_tokens=300) or {}
+        r = planner.ask(
+            "You are the creative director of a Hindi tech-explainer Reels page. Choose a LOOK for EACH scene, like a film "
+            "editor who changes the visual world when the story changes (the real world -> inside the machine -> the smart "
+            "part -> back to the real world).\nLooks:\n" + menu + "\n"
+            f"Topic: {p.get('title') or p.get('topic')}\nSCENES (n | type | real picture? | spoken line):\n{rows}\n"
+            "Rules: a look holds for at least 2 scenes in a row; 1 to 3 looks in the whole video; scene 1 (the hook) and the "
+            "last scene are in the real world (keynote) unless the topic itself lives inside a screen; a scene marked REAL "
+            "(a real logo / app screen / product photo) is keynote; pick the look that makes THAT part easiest to understand.\n"
+            f"Our last videos used: {recent[-3:]} - vary the mix.\n"
+            'Return JSON {"looks": ["<look for scene 1>", "<scene 2>", ...], "why": "short"}', max_tokens=500) or {}
     except Exception as e:
-        log("skin pick failed:", str(e)[:100])
-    k = str(r.get("skin", "")).strip().lower()
-    if k not in compose_lab.SKINS:
-        k = next((x for x in compose_lab.SKINS if x not in recent[-2:]), "keynote")
-    p["skin"] = k
-    log("creative director: look", k, "-", str(r.get("why", ""))[:100])
+        log("look pick failed:", str(e)[:100])
+    looks = [str(x).strip().lower() for x in (r.get("looks") or [])]
+    if len(looks) != len(sc_) or any(x not in compose_lab.SKINS for x in looks):
+        looks = ["keynote"] * len(sc_)
+    for i, s in enumerate(sc_):                        # hard rules the model may forget
+        if isinstance(s.get("real"), dict) and s["real"].get("q"):
+            looks[i] = "keynote"
+    for i in range(1, len(looks) - 1):                 # no single-scene flicker
+        if looks[i] != looks[i - 1] and looks[i] != looks[i + 1]:
+            looks[i] = looks[i - 1]
+    for s, k in zip(sc_, looks):
+        s["skin"] = k
+    p["skin"] = max(set(looks), key=looks.count) if looks else "keynote"
+    log("creative director: looks", " ".join(f"{i + 1}:{k}" for i, k in enumerate(looks)), "-", str(r.get("why", ""))[:100])
     return True
 
 
@@ -312,7 +330,7 @@ def _stage_assets(ch, p, job):
             subj = ", ".join(x for x in [str(s.get("label") or ""), str(s.get("title") or ""), " ".join(s.get("keywords") or []),
                                           str(p.get("topic") or p.get("title") or "")] if x).lower()
             import compose_lab
-            pic = compose_lab.SKINS.get(p.get("skin") or "keynote", compose_lab.SKINS["keynote"])["pic"]
+            pic = compose_lab.SKINS.get(s.get("skin") or p.get("skin") or "keynote", compose_lab.SKINS["keynote"])["pic"]
             s["bg_prompt"] = s.get("bg_prompt") or (
                 f"Vertical scene for a technology explainer about: {subj}. Style: {pic}. One clear subject in the middle third, "
                 "empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16.")
@@ -477,17 +495,17 @@ def main():
     p = load(pp)
     if _brand_guard(ch, p):
         save(pp, p)
+    try:                                     # real pictures first, then the looks (a REAL scene stays keynote)
+        if _real_brands(ch, p):
+            save(pp, p)
+    except Exception as e:
+        log("real brands skipped", str(e)[:100])
     try:
         th_ = ch.get("theme", {})
         if th_.get("style") == "lab" and (th_.get("film") or os.environ.get("STUDIO_LAB_FILM") == "1") and _pick_skin(ch, p):
             save(pp, p)
     except Exception as e:
-        log("skin pick skipped", str(e)[:100])
-    try:
-        if _real_brands(ch, p):
-            save(pp, p)
-    except Exception as e:
-        log("real brands skipped", str(e)[:100])
+        log("look pick skipped", str(e)[:100])
     if ch.get("serial") and " - Part " in str(topic) and not p.get("cliff_done"):
         try:
             import extras
