@@ -110,7 +110,8 @@ def vision(sheet, plan, lang):
         pass
     prompt = f"""You are the strictest finishing editor at a premium short-video studio. The sheet shows two stills per scene,
 in order, each labelled with its scene number (yellow). Captions at the lower third are expected and show only a PART of the spoken line (one phrase at a time), so a caption with missing words is NOT a problem, and words not yet spoken are dimmed on purpose; a small mono top bar
-(page name left, tag right) is expected; a small yellow tag pill above the main visual is expected.
+(page name left, tag right) MAY appear; a small tag pill above the main visual MAY appear. On our film look they show only on some
+scenes BY DESIGN: never report a missing top bar, a missing tag pill or a missing label as a problem.
 Scenes:
 {desc}{forms}
 On-screen language must be {"English only" if lang == "en" else "Hinglish in Roman letters (English tech words are fine)"}.
