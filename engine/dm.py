@@ -335,6 +335,10 @@ def run():
     st["done"] = {k: v for k, v in st["done"].items() if v > cut}
     st["day"] = {k: v for k, v in st["day"].items() if k[:10] >= time.strftime("%Y-%m-%d", time.localtime(time.time() - 3 * 86400))}
     save(STATE, st)                                        # dry runs never mark anything sent (only caches / pause are kept)
+    try:
+        os.chmod(STATE, 0o600)                             # the file caches page keys
+    except OSError:
+        pass
 
 if __name__ == "__main__":
     if "--human" in sys.argv:
