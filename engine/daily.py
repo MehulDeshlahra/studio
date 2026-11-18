@@ -62,6 +62,23 @@ def backlog(cid):
     return n + sum(1 for c, j, m in jobs_in("prepped") if c == cid and not j.endswith("-en"))
 
 
+URGENT_MIN = 2
+
+
+def urgent_pages():
+    """18 Nov: live pages with fewer than URGENT_MIN ready videos, emptiest first. They get the next build before the
+    healer's rebuilds (engine/healer.py checks this too): from 04:35 to 10:50 only 3 new videos were started because healer
+    rebuilds held the server, while Aage Suno had 1 ready video two days before launch."""
+    out = []
+    for cid in sorted(os.listdir(os.path.join(ROOT, "channels"))):
+        c = load(os.path.join(ROOT, "channels", cid, "channel.json")) or {}
+        if str(c.get("status", "")).startswith("live"):
+            n = backlog(cid)
+            if n < URGENT_MIN:
+                out.append((n, cid))
+    return [cid for n, cid in sorted(out)]
+
+
 def run(args, hours=4):
     log("daily: run", " ".join(args))
     return subprocess.run([PY] + args, timeout=hours * 3600).returncode
@@ -124,9 +141,17 @@ def lane_prep(dry):
     # 2) a new video
     if b.get("reels", 0) >= REELS_CAP:
         log("prep lane: reel budget used today", b); return
+    urgent = [cid for cid in urgent_pages() if any(cid == x for x, _ in chans)]
     w = os.path.join(OUT, "healer-wants-turn")    # 18 Nov: held videos get fixed before more new ones are started
-    if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600:
+    if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600 and not urgent:
         log("prep lane: the healer needs a turn to fix held videos, skip this round"); return
+    if urgent:
+        log("prep lane: new video for", urgent[0], f"(urgent: fewer than {URGENT_MIN} ready videos on a live page)")
+        if dry:
+            return
+        note("reels"); note("tts")
+        run([os.path.join(ENGINE, "make.py"), urgent[0], "--until", "assets"])
+        return
     if not muse._bridges("image"):     # 18 Nov: this stopped ALL new videos although pictures fall back to free FLUX
         log("prep lane: Muse image budget used today; pictures come from the free FLUX sources (OmniRoute, Cloudflare, Pollinations)")
     want = []

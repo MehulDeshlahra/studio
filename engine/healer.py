@@ -230,6 +230,15 @@ def heal_held():
         if any(r[0].startswith("0") for r in rows):
             want_turn(True)
         return
+    try:                                         # 18 Nov: a live page about to run out of videos gets the server first
+        import daily
+        urg = daily.urgent_pages()
+    except Exception as e:
+        urg = []; log("healer: urgent check failed", str(e)[:100])
+    if urg:
+        want_turn(False)
+        log("healer: rebuilds wait, new videos first for", ", ".join(urg), f"(fewer than {daily.URGENT_MIN} ready)")
+        return
     if mem_mb() < 2500:
         note(f"waiting: only {mem_mb()} MB free (needs 2500)"); return
     want_turn(False)
