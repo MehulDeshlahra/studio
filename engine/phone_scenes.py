@@ -232,12 +232,12 @@ def css(acc, phone_page=False):
 .pq-rs{position:absolute;right:44px;bottom:-34px;transform:rotate(-8deg);border:5px solid #12805c;color:#12805c;background:#fbfaf7;font-weight:900;
   font-size:32px;letter-spacing:2px;padding:12px 24px;border-radius:14px}
 .pq-list{padding-bottom:40px}.pq-list .pq-rt{font-size:52px;margin-bottom:6px}.pq-list .pq-rd{margin-bottom:16px}
-.pq-tab{position:absolute;left:40px;width:1000px;top:330px;background:#fbfaf7;color:#14161a;border-radius:28px;padding:36px 28px 30px;box-sizing:border-box;
+.pq-tab{position:absolute;left:80px;width:920px;top:360px;background:#fbfaf7;color:#14161a;border-radius:28px;padding:36px 28px 30px;box-sizing:border-box;
   box-shadow:0 50px 100px #000c;font-family:SANS;z-index:2}
 .pq-tt{font-size:46px;font-weight:800;text-align:center;margin-bottom:22px}
 .pq-tr{display:grid;grid-template-columns:1.05fr repeat(calc(var(--n) - 1),1fr);border-top:1.5px solid #e6e2d9}
 .pq-thr{border-top:none}
-.pq-tc{padding:20px 12px;font-size:30px;line-height:1.22;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center}
+.pq-tc{padding:22px 10px;font-size:33px;line-height:1.2;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center}
 .pq-tc.lab{justify-content:flex-start;text-align:left;font-weight:800;color:#55595f;font-size:28px}
 .pq-th{font-size:33px;font-weight:900;color:#fff;background:#1f2a37;border-radius:14px;margin:0 4px;padding:16px 8px}
 .pq-th:first-child{background:none}
