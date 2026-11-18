@@ -46,7 +46,10 @@ def collect():
 ASK = """You keep the RULE BOOK of a faceless Reels studio with several pages ({pages}). Below are the CURRENT rules and
 every problem our checks and the owner found, with how often and on which pages.
 Merge them into AT MOST 40 short, general, actionable rules that stop these mistakes from happening again on ANY page,
-including new pages in new niches. Most frequent / most costly first. Each rule: one line, starts with ALWAYS or NEVER,
+including new pages in new niches. ONLY rules the SCRIPT WRITER and VIDEO PLANNER can act on (the spoken lines,
+facts and numbers, on-screen text, scene choice, pictures, captions, hook, ending). Skip engine / code / server /
+process items: the planner cannot act on them. Our pages speak Hindi or Hinglish in Roman script: never a rule
+against Hindi; a rule about language means "no stray English articles or Devanagari in on-screen text". Most frequent / most costly first. Each rule: one line, starts with ALWAYS or NEVER,
 concrete (what to do instead), no page names unless the rule only fits one format, end with "(seen N times: pages)".
 Keep every current rule that is still right (merge duplicates, update counts); drop nothing that was learnt the hard way.
 OWNER problems weigh 5x.
@@ -65,7 +68,7 @@ def run():
     for k, n in sorted(cnt.items(), key=lambda kv: -(kv[1] * (5 if example[kv[0]].startswith("OWNER") else 1)))[:180]:
         rows.append(f"{n} | {', '.join(sorted(pages_of[k]))} | {example[k]}")
     current = "\n".join(x for x in read(OUTF).splitlines() if x.startswith("- "))
-    kiro = read(os.path.join(ROOT, "knowledge", "kiro-lessons.md"), 4000)
+    kiro = ""          # 19 Nov: Kiro's engine/process lessons stay in knowledge/kiro-lessons.md (not planner rules)
     import plan
     r = plan.ask(ASK.format(pages=", ".join(_pages()), current=(current or "(none yet)") + ("\nFROM KIRO SESSIONS:\n" + kiro if kiro else ""),
                             problems="\n".join(rows)), max_tokens=5000) or {}
