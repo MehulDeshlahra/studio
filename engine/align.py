@@ -56,9 +56,23 @@ def _groq_words(wav, lang):
         body = b"".join(f"--{b}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode() for k, v in fields.items())
         body += (f"--{b}\r\nContent-Disposition: form-data; name=\"file\"; filename=\"vo.flac\"\r\nContent-Type: audio/flac\r\n\r\n").encode()
         body += open(flac, "rb").read() + f"\r\n--{b}--\r\n".encode()
-        req = urllib.request.Request(llm.URL.replace("/chat/completions", "/audio/transcriptions"), data=body,
-                                     headers={"Authorization": "Bearer " + llm._key(), "Content-Type": f"multipart/form-data; boundary={b}"})
-        d = json.load(urllib.request.urlopen(req, timeout=180))
+        url = llm.URL.replace("/chat/completions", "/audio/transcriptions")
+        hdr = {"Authorization": "Bearer " + llm._key(), "Content-Type": f"multipart/form-data; boundary={b}"}
+        for attempt in range(2):
+            try:
+                d = json.load(urllib.request.urlopen(urllib.request.Request(url, data=body, headers=hdr), timeout=180))
+                break
+            except urllib.error.HTTPError as e:
+                # Groq busy (the job bot shares the key): a wait of <= 150 s beats minutes of local CPU at a worse match
+                wait = 0
+                try:
+                    wait = int(json.loads(e.read() or b"{}").get("error", {}).get("retry_after") or 0)
+                except Exception:
+                    pass
+                if e.code != 429 or attempt or not 0 < wait <= 150:
+                    raise
+                import time as _t
+                _t.sleep(wait + 2)
     finally:
         os.remove(flac)
     words = [(str(w.get("word", "")).strip(), float(w["start"]), float(w["end"])) for w in d.get("words") or [] if str(w.get("word", "")).strip()]
