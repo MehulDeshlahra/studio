@@ -4418,5 +4418,522 @@
    }
   ],
   "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:11",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated framework for synchronized audio-visual production, featuring procedural music/SFX synthesis and automated quality audits. It excels at 'shared timing' where a single JSON spine drives both 3D/2D visual events and sample-accurate musical scoring.",
+  "knowledge": 3,
+  "build": 1,
+  "items": [
+   {
+    "title": "The 'Suck' Transition",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Material-Specific Transient Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Spectral SNR Quality Gate",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Cylindrical Camera Pathing",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Automated Cue-Sync Auditor",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "The 'Verdict' UI Plate",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Narrative Rhythmic Phasing",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Dynamic 'Air' Whoosh Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Stack-Top Readout Pinning",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Hero Asset Impact Logic",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:12",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated framework for data physicalization and procedural storytelling, utilizing Three.js for 3D object rendering and canvas-based procedural animation. It is an exceptionally high-quality example of how to combine data-driven visuals with rhythmic, beat-synced narrative pacing.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Beat-Locked Narrative Pacing",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural Pencil/Graphite Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Word-Anchored Subtitle Reveal",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Dynamic Font Subsetting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Audio Plausibility Gating",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:13",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated procedural pipeline for audio synthesis, camera rigging, and physics-based animation. It is highly valuable for automating high-end motion graphics and sound design without relying on external assets.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Procedural Audio Synthesis",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Hermite Camera Rig",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Squash and Stretch Physics",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "EBU R128 Loudness Normalization",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Ducking Envelope System",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:18",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a high-end 3D rendering and audio pipeline for 'tabletop' style explainers, emphasizing procedural motion and professional-grade audio mastering. It is exceptionally well-engineered, offering advanced techniques for camera pathing, voxel rigging, and sub-frame motion blur.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Sub-frame Accumulation for Motion Blur",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Voxel Toy Rigging",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Camera Speed Diagnostics",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Automated Font Subsetting",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Voice-to-Music Ducking",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:21",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a high-performance WebGL2 shader-based rendering pipeline and a procedural copperplate engraving engine. It demonstrates advanced techniques for silhouette-based compositing, form-following hatching, and procedural texture generation.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "WebGL Shader Compositing",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Engraving Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Multi-Channel Silhouette Masks",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Fur and Stipple",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:21",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated procedural engine for simulating copperplate engraving, including ink hatching, paper texturing, and hand-coloring. It is an exceptional reference for high-fidelity, non-stock visual aesthetics and procedural audio foley.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Procedural Engraving Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Granular Hand-Coloring Simulation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Event-Driven Music Ducking",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural Paper Texture Generator",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:22",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated procedural engraving engine and robust pipeline validation tools for timing and readability. It is highly useful for elevating the visual quality and technical reliability of our automated studio.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Burin Engine Engraving",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Cue-Sync Auditor",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Readability Auditor",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Blur-Pyramid Splatting",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:22",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source provides a highly optimized, deterministic, and procedural animation engine that uses analytic functions of time to compute frame states. It is excellent for our studio because it demonstrates how to achieve complex, continuous visual transitions and procedural sound synthesis without relying on heavy asset state management.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Analytic Motion Functions",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic Frame Engine",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural Foley Synthesis",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Particle-Pool Continuity",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Readcheck Auditor",
+    "kind": "build",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:23",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a robust procedural animation and audio-mixing framework for high-quality SVG explainers. It demonstrates advanced techniques for organic motion, procedural Foley synthesis, and clean two-tone visual design.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Procedural Foley & Ducking Engine",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Spring and Wobble Easing Functions",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Two-Tone Shading System",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Sight-Line and Next-Stop Logic",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:24",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a highly sophisticated, math-driven explainer engine that uses WebGL shaders and procedural geometry to render complex scientific visualizations. It is an excellent reference for high-end, data-driven visual storytelling.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Scale Ribbon Instrument",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Perspective Camera Rig",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Engraved Hatching Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dynamic Font Subsetting",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Character Expression Sheet",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:25",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated procedural engine for rendering scientific flow-field visualizations and high-precision audio mixing techniques. It is an excellent reference for creating data-driven, map-based storytelling with professional-grade audio ducking and perspective-correct overlays.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Flow-field Wind Line Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Monotone Cubic Time-Warping",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Spectral Band-Pass Ducking",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Affine Frame Text Overlay",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:27",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source contains build scripts and animation code for a 150 BPM rhythm-game explainer demo featuring vector character choreography and procedural motion utilities. It provides production-ready mathematical formulations for physical impact recoil, volume-preserving kinetic spring easing, and comic-style badge presentation.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Damped Harmonic Cosine Squash Impulse",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Volume-Preserving Eased Spring Squash",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Asymmetric Multiply-Plate Caption Badge",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:28",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a high-level framework for a rhythm-based, event-driven video rendering pipeline using SVG/GSAP. It demonstrates how to synchronize complex visual animations, character poses, and sound effects to a specific BPM.",
+  "knowledge": 1,
+  "build": 0,
+  "items": [
+   {
+    "title": "BPM-Locked Event Registry",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural Squash and Stretch",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Event-Driven SFX Scoring",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Layered Reveal Technique",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:31",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a procedural SVG animation framework for a series on AI history, featuring a modular character system and a robust beat-synced timeline. It is highly effective for creating consistent, scalable visual assets for tech explainers.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Modular 'Bean' Character System",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Beat-Synced Timeline Engine",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural UI/Prop Factory",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
  }
 ]

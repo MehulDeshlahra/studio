@@ -1,96 +1,96 @@
 {
-  "id": "raaz",
-  "name": "Aage Suno",
-  "status": "live (warm-up)",
-  "language": "Hindi / Hinglish",
-  "format": "ORIGINAL fiction serials in Hindi/Hinglish: one story runs about 10 parts, one part a day, every part ends on a cliffhanger (mystery thriller, emotional family drama, light horror, fantasy, karma twist, love with a secret, survival, small-town sci-fi). Never mythology, religion or real people.",
-  "voice": {
-    "engine": "gemini-3.8-flash-tts",
-    "voice": "Charon",
-    "one_request_per_reel": true,
-    "style": "a low, calm, tense Indian male thriller narrator; unhurried and tense, about 2.6 words per second, short pauses, a suspenseful beat only before the final question; speak slightly slower than a normal fast reel, with clear pauses between sentences",
-    "style_en": "a low, calm, tense Indian male, clear Indian-English accent thriller narrator; unhurried and tense, about 2.6 words per second, short pauses, a suspenseful beat only before the final question; speak slightly slower than a normal fast reel, with clear pauses between sentences"
+ "id": "raaz",
+ "name": "Aage Suno",
+ "status": "live (warm-up)",
+ "language": "Hindi / Hinglish",
+ "format": "ORIGINAL fiction serials in Hindi/Hinglish: one story runs about 10 parts, one part a day, every part ends on a cliffhanger (mystery thriller, emotional family drama, light horror, fantasy, karma twist, love with a secret, survival, small-town sci-fi). Never mythology, religion or real people.",
+ "voice": {
+  "engine": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "one_request_per_reel": true,
+  "style": "a low, calm, tense Indian male thriller narrator; unhurried and tense, about 2.6 words per second, short pauses, a suspenseful beat only before the final question; speak slightly slower than a normal fast reel, with clear pauses between sentences",
+  "style_en": "a low, calm, tense Indian male, clear Indian-English accent thriller narrator; unhurried and tense, about 2.6 words per second, short pauses, a suspenseful beat only before the final question; speak slightly slower than a normal fast reel, with clear pauses between sentences"
+ },
+ "visuals": {
+  "primary": "muse",
+  "look": "cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location",
+  "cast": "one recurring narrator-detective (fixed description) + case cast"
+ },
+ "looks": {
+  "film": {
+   "use": "the story as it happens (default, most scenes)",
+   "pic": "cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location"
   },
-  "visuals": {
-    "primary": "muse",
-    "look": "cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location",
-    "cast": "one recurring narrator-detective (fixed description) + case cast"
+  "cctv": {
+   "use": "someone is being watched, a recording, a camera, a moment seen from far away or from above",
+   "pic": "grainy security camera still from a high corner angle, wide lens distortion, desaturated green-grey, low resolution noise, night, no on-screen text, no timestamp"
   },
-  "looks": {
-    "film": {
-      "use": "the story as it happens (default, most scenes)",
-      "pic": "cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location"
-    },
-    "cctv": {
-      "use": "someone is being watched, a recording, a camera, a moment seen from far away or from above",
-      "pic": "grainy security camera still from a high corner angle, wide lens distortion, desaturated green-grey, low resolution noise, night, no on-screen text, no timestamp"
-    },
-    "memory": {
-      "use": "a memory, a flashback, the past, what someone remembers or imagines",
-      "pic": "faded 1990s film photograph, warm washed-out colours, soft focus, light leaks, dust and scratches, nostalgic Indian home or street"
-    }
-  },
-  "looks_on": false,
-  "rules": [
-    "fiction clearly fiction, no real crimes/people",
-    "no gore",
-    "no on-screen AI label",
-    "fiction only: no mythology, gods, religion or real events"
-  ],
-  "schedule": {
-    "posts_per_day": 1,
-    "approve_first": 10,
-    "backlog": 10
-  },
-  "accounts": {
-    "instagram": "@aagesuno 17841413280544411",
-    "facebook_page": "Aage Suno 1501633449691931",
-    "youtube": "@aagesuno (uploader not connected)"
-  },
-  "theme": {
-    "bg": "#05080a",
-    "accent": "#f2b134",
-    "accent2": "#3fb6b2",
-    "font": "Archivo Black",
-    "music": "music/deep-urban.mp3",
-    "music_offset": 0,
-    "end_line": "Kal ek nayi kahani",
-    "signature": "aage suno"
-  },
-  "topics_backlog": [
-    "Case 1: Haveli ka band kamra (part 1)",
-    "Case 2: Aakhri train ka musafir (part 1)",
-    "Case 3: Hotel room 304 (part 1)"
-  ],
-  "edit": {
-    "wps": 2.5,
-    "length_s": [
-      25,
-      68
-    ]
-  },
-  "handle": "@aagesuno",
-  "handle_en": "",
-  "series": [
-    "Raaz Ka Faisla (mystery, you vote)",
-    "Karma (revenge/karma twist)",
-    "Dil Se (emotional, love, family)",
-    "Jaadu (fantasy, talking objects/animals)",
-    "Darr (light horror)"
-  ],
-  "english": false,
-  "post": true,
-  "warmup": {
-    "post_from": "2026-11-20",
-    "one_a_day_until": "2026-11-27",
-    "note": "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
-  },
-  "handle_instagram": "@aagesuno",
-  "handle_youtube": "@aagesuno",
-  "tagline": "Har roz ek nayi kahani.",
-  "serial": {
-    "parts": 10,
-    "note": "engine/serials.py plans the whole arc once (story bible), then one part per slot"
-  },
-  "youtube": "@aagesuno"
+  "memory": {
+   "use": "a memory, a flashback, the past, what someone remembers or imagines",
+   "pic": "faded 1990s film photograph, warm washed-out colours, soft focus, light leaks, dust and scratches, nostalgic Indian home or street"
+  }
+ },
+ "looks_on": false,
+ "rules": [
+  "fiction clearly fiction, no real crimes/people",
+  "no gore",
+  "no on-screen AI label",
+  "fiction only: no mythology, gods, religion or real events"
+ ],
+ "schedule": {
+  "posts_per_day": 1,
+  "approve_first": 10,
+  "backlog": 10
+ },
+ "accounts": {
+  "instagram": "@aagesuno 17841413280544411",
+  "facebook_page": "Aage Suno 1501633449691931",
+  "youtube": "@aagesuno (uploader not connected)"
+ },
+ "theme": {
+  "bg": "#05080a",
+  "accent": "#f2b134",
+  "accent2": "#3fb6b2",
+  "font": "Archivo Black",
+  "music": "music/deep-urban.mp3",
+  "music_offset": 0,
+  "end_line": "Kal ek nayi kahani",
+  "signature": "aage suno"
+ },
+ "topics_backlog": [
+  "Case 1: Haveli ka band kamra (part 1)",
+  "Case 2: Aakhri train ka musafir (part 1)",
+  "Case 3: Hotel room 304 (part 1)"
+ ],
+ "edit": {
+  "wps": 2.5,
+  "length_s": [
+   25,
+   68
+  ]
+ },
+ "handle": "@aagesuno",
+ "handle_en": "",
+ "series": [
+  "Raaz Ka Faisla (mystery, you vote)",
+  "Karma (revenge/karma twist)",
+  "Dil Se (emotional, love, family)",
+  "Jaadu (fantasy, talking objects/animals)",
+  "Darr (light horror)"
+ ],
+ "english": false,
+ "post": true,
+ "warmup": {
+  "post_from": "2026-11-20",
+  "one_a_day_until": "2026-11-27",
+  "note": "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
+ },
+ "handle_instagram": "@aagesuno",
+ "handle_youtube": "@aagesuno",
+ "tagline": "Har roz ek nayi kahani.",
+ "serial": {
+  "parts": 5,
+  "note": "engine/serials.py plans the whole arc once (story bible), then one part per slot"
+ },
+ "youtube": "@aagesuno"
 }

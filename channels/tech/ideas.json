@@ -413,5 +413,128 @@
     "score": 4.0
    }
   ]
+ },
+ {
+  "t": "2026-11-18 22:06",
+  "picked": "Semiconductor/Chip Manufacturing",
+  "ideas": [
+   {
+    "topic": "Semiconductor/Chip Manufacturing",
+    "search": "How computer chips work",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With the 'Semiconductor and AI Revolution' news and India's electronics export jump, this is a hot topic. It's the backbone of all tech, and people are curious about the 'sand to silicon' process.",
+    "demand_known": true,
+    "demand": 10.0,
+    "median_views": 27031964,
+    "fresh": 7.3,
+    "score": 9.76
+   },
+   {
+    "topic": "Apple Server Outage",
+    "search": "Apple iCloud down reason",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "The 'Apple outages' trend is massive (2000+ searches). Users are frustrated and curious why a giant like Apple goes down. Explaining server load balancing via a 'traffic jam' metaphor fits the 'Kaise Tech' style perfectly.",
+    "demand_known": true,
+    "demand": 7.6,
+    "median_views": 1080728,
+    "fresh": 6.4,
+    "score": 8.85
+   },
+   {
+    "topic": "GPS ko kaise pata ki aap kahan ho",
+    "search": "GPS ko kaise pata ki aap kahan ho",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 9.1,
+    "median_views": 4170389,
+    "fresh": 4.9,
+    "score": 7.53
+   },
+   {
+    "topic": "Prison jammers in Bengaluru have left residents without signal for nearly two years",
+    "search": "how mobile jammers block signal",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Trending on Reddit r/india about prison jammers cutting off entire neighborhoods; highly relatable tech curiosity.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.1,
+    "score": 7.37
+   },
+   {
+    "topic": "Bluetooth pairing do devices ke beech invisible handshake kaise hoti hai?",
+    "note": "",
+    "search": "bluetooth pairing how it works",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 5.7,
+    "median_views": 196644,
+    "fresh": 5.6,
+    "score": 6.83
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 7.0,
+    "median_views": 615979,
+    "fresh": 2.7,
+    "score": 6.14
+   },
+   {
+    "topic": "AI video generator (Sora, Runway) noise se video kaise banata hai?",
+    "note": "",
+    "search": "ai video generation explained",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.0,
+    "score": 5.95
+   },
+   {
+    "topic": "Apple Intelligence aur Gemini Live: naya AI phone mein kya badlega?",
+    "note": "",
+    "search": "apple intelligence gemini live features",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.5,
+    "score": 5.9
+   },
+   {
+    "topic": "Fast charging 80% ke baad dhire kyun hota hai? Battery chemistry ka raaz",
+    "note": "",
+    "search": "fast charging slow after 80 percent",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.6,
+    "median_views": 26890,
+    "fresh": 6.3,
+    "score": 5.68
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 5.27
+   }
+  ]
  }
 ]

@@ -23,3 +23,7 @@
 - Last spoken line (end card shows FOLLOW KARO @aagesuno + KAL EK NAYI KAHANI): "Kal ek nayi kahani. Follow karo."
   Set plan end_line = "Kal ek nayi kahani".
 - English edition: no "aage suno" line (signature is Hindi only); English page name still open (What Happened Next).
+
+## Mehul agent (rules added automatically, acting for the owner)
+- 18 Nov: Never use 'Mehul' or any real-world names of staff/owners as character names in fiction scripts; use a randomized list of common Indian names.
+- 18 Nov: Stop using generic 'Comments mein batao' end cards; every video must end with the mandatory 'Kal ek nayi kahani. Follow karo.' signature.

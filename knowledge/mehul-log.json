@@ -35,5 +35,43 @@
    "rebuild v2-01-en: Cancel this job entirely as English editions are restricted; focus only on Hindi"
   ],
   "dry": false
+ },
+ {
+  "t": "2026-11-18 22:30",
+  "page": "katha",
+  "score": 8,
+  "verdict": "Videos look visually stunning and clean, but we still have minor English article leakage on screen text which breaks the Hinglish feel.",
+  "did": [
+   "rule: Never use English articles like 'THE', 'A', or 'AN' in on-screen caption text; keep all generated on-screen text strictly in natural Hinglish.",
+   "asked the healer to re-plan 1118-0735: Remove the English article 'THE' from scene 2 on-screen text and regenerate layo",
+   "code task (the healer works on it): engine/plan.py: Add a pre-filter step to automatically strip English articles ('the', 'a', 'an') from title and caption generation for Hindi/Hinglish pages."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-18 22:33",
+  "page": "raaz",
+  "score": 7,
+  "verdict": "Visuals are consistent and the captioning is finally hitting the mark, but the scripts are getting lazy with character naming and generic ending calls to action.",
+  "did": [
+   "rule: Never use 'Mehul' or any real-world names of staff/owners as character names in fiction scripts; use a randomized list of common Indian names.",
+   "rule: Stop using generic 'Comments mein batao' end cards; every video must end with the mandatory 'Kal ek nayi kahani. Follow karo.' signature.",
+   "setting serial.parts: 10 -> 5 (Stories are dragging into 7+ parts; 5 parts is the sweet spot to keep retention )",
+   "code task (the healer works on it): engine/plan.py: Add a character name generator that pulls from a static list of 50 common names, explicitly excluding 'Mehul' and other internal team names."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-18 22:37",
+  "page": "tech",
+  "score": 7,
+  "verdict": "The lab-style visual formatting is solid and clean, but we still have text overlap artifacts and voice drift bugs slipping through pre-render checks.",
+  "did": [
+   "asked the healer to re-plan 1118-1845: Fix text artifact 'ttying.lia' overlapping scene 8 bottom third, and correct the",
+   "rule: Never allow text overlapping or corrupted character strings ('ttying.lia') in the bottom third of any lab graphic.",
+   "code task (the healer works on it): engine/preflight.py: Add an automated OCR or string-sanity check to flag and block jobs where data values or labels mismatch source numbers before rendering starts.",
+   "code task (the healer works on it): engine/align.py: Fix the voice-to-script alignment bug that causes partial audio mapping errors and English accent slips in Hindi text-to-speech."
+  ],
+  "dry": false
  }
 ]

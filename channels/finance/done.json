@@ -1,1 +1,13 @@
-[]
+[
+ {
+  "job": "1118-2228",
+  "topic": "Credit card minimum due",
+  "title": "Minimum Due trap",
+  "status": "rejected",
+  "review": [
+   "FACTS (Kiro check 18 Nov): scene 6 says paying Rs 5,000/month on Rs 50,000 at 42% grows to Rs 1,02,000 in 12 months - false (the balance falls; even with no payment it is ~Rs 76,000)",
+   "FACTS: scene 5 'principal kam hi nahi hua' false; scene 8 'RBI ke hisaab se minimum due 5%' - RBI does not set it, banks do; 5% of 50,000 is 2,500 not 5,000"
+  ],
+  "removed_why": "wrong maths; remade with the numbers check"
+ }
+]

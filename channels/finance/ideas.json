@@ -1,0 +1,124 @@
+[
+ {
+  "t": "2026-11-18 22:29",
+  "picked": "Credit Card Minimum Due ₹5,000 bharke ₹50,000 ka bill kaise ₹1 Lakh+ ban jata hai? Real statement pe pen se interest compounding ka 'Physical Utility Reveal'.",
+  "ideas": [
+   {
+    "topic": "Credit Card Minimum Due ₹5,000 bharke ₹50,000 ka bill kaise ₹1 Lakh+ ban jata hai? Real statement pe pen se interest compounding ka 'Physical Utility Reveal'.",
+    "note": "",
+    "search": "credit card minimum due trap interest calculation",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 10.0,
+    "score": 7.3
+   },
+   {
+    "topic": "Naye Tax Regime FY 2024-25: ₹7.5 Lakh salary pe Zero Tax kaise? Standard Deduction ₹75k + Slab + 87A Rebate ka 'Diagram Evolution' waterfall chart.",
+    "note": "",
+    "search": "new tax regime fy 2024-25 calculation zero tax",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 10.0,
+    "score": 7.3
+   },
+   {
+    "topic": "Savings Account 3.5% vs Inflation 6%: 10 saal mein ₹1 Lakh ki purchasing power kitni bachi? 'Diagram Evolution' bar chart se real return (negative) dikhao — RBI MOSPI data sourced.",
+    "note": "",
+    "search": "inflation vs savings account real return india",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.6,
+    "median_views": 26348,
+    "fresh": 10.0,
+    "score": 7.12
+   },
+   {
+    "topic": "Credit score kaise banta hai",
+    "search": "Credit score kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 10.0,
+    "score": 6.25
+   },
+   {
+    "topic": "SIP mein compounding ka jaadu (sirf concept)",
+    "search": "SIP mein compounding ka jaadu (sirf concept)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 10.0,
+    "score": 6.25
+   },
+   {
+    "topic": "EMI ka asli hisaab: bank kitna kamata hai",
+    "search": "EMI ka asli hisaab: bank kitna kamata hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 3.9,
+    "median_views": 35317,
+    "fresh": 10.0,
+    "score": 6.21
+   },
+   {
+    "topic": "Credit Score 900 kaise banta hai? 5 factors ka exact weightage (CIBIL formula) dikha ke samjhao — Diagram Evolution style mein ek hi chart banta jaye.",
+    "note": "",
+    "search": "credit score calculation india cibil weightage",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 181,
+    "fresh": 10.0,
+    "score": 5.5
+   },
+   {
+    "topic": "UPI 'Request Money' scam naya version: Fake bank call se 'Approve' dabwaya, paisa gaya. 'Skeptic Dialogue' (do TTS voices) se screen flow decode karo — NPCI/I4C data ke saath.",
+    "note": "",
+    "search": "upi request money scam prevention india",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 38,
+    "fresh": 10.0,
+    "score": 5.15
+   },
+   {
+    "topic": "UPI pe Credit Line mila toh Credit Card ka kaam tamam? RBI circular ke baad interest rate (12-18% vs 42%) aur limit ka 'Physical Utility Reveal' — real NPCI screenshot ke saath.",
+    "note": "",
+    "search": "upi credit line rbi rules vs credit card",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 740,
+    "fresh": 10.0,
+    "score": 5.15
+   },
+   {
+    "topic": "Credit card ka minimum due trap",
+    "search": "Credit card ka minimum due trap",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 7,
+    "fresh": 10.0,
+    "score": 4.45
+   }
+  ]
+ }
+]
