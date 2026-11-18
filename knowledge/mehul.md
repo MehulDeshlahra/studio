@@ -39,3 +39,4 @@ Built 17 Nov from everything Mehul said while building Studio. Add a line whenev
 - (17 Nov) Katha: festival stories on the day; 5-7 part series. Tech: a weekly myth-buster.
 - (18 Nov) Keep the server busy, but Studio must never push the job bot into swap (free memory >= 1.8 GB).
 - (18 Nov) English: no English editions on any page for now (Hindi audience, different voice and a separate page would be needed). Revisit only as a separate, natively written English page.
+- 18 Nov: never sleep or wait idle for a job; start it in the background and do other useful work in parallel, check later.

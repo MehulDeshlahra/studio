@@ -14,7 +14,10 @@ Free, 24x7, self-running faceless Reels/Shorts engine on the Oracle server for 3
   without checking them against it and the live server (owner 18 Nov: "be honest, you brought stale data").
 - knowledge/selfheal.md (how the server heals itself), knowledge/RESUME.md (decisions + history),
   knowledge/mehul.md (how the owner thinks), end of knowledge/build-queue.md.
-- Never use workflows in this workspace (owner 18 Nov). Never `sleep` to wait: do other work, then check.
+- Never use workflows in this workspace (owner 18 Nov).
+- NEVER SLEEP (owner, said 3 times, 18 Nov). No `sleep`/`Start-Sleep`/wait loops, no command that blocks on a long job
+  (`systemctl start` of a long unit: use `--no-block`). Start long jobs in the background, then do other useful work in
+  parallel and check the result later with a quick status call.
 
 ## Self-healing (18 Nov) - the server fixes itself; Kiro builds new abilities, not repairs
 - doctor (10 min): services, timers, disk, git, OmniRoute; hands every unknown failure to the healer.
