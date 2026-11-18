@@ -243,6 +243,12 @@ def post_one(cid, dry=False):
             res[name] = fn(); log("published", cid, name, res[name])
         except Exception as e:
             res[name + "_error"] = str(e)[:300]; log("publish fail", cid, name, e)
+    if res.get("yt"):                                          # 19 Nov: serial / series parts go into one YouTube playlist per story
+        try:
+            import ytlists
+            ytlists.add(acc, dict(ch, id=cid), nxt, res["yt"])
+        except Exception as e:
+            log("ytlists failed", str(e)[:150])
     nxt["status"] = "posted" if any(k in res for k in ("ig", "fb", "yt")) else "approved"
     nxt["posted"] = {"at": time.strftime("%Y-%m-%d %H:%M"), **res}
     save(p, done)
