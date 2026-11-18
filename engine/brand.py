@@ -13,7 +13,7 @@ import publish
 BRAND = os.path.join(ROOT, "brand")
 STATE = os.path.join(BRAND, "state.json")
 IMG = os.path.join(ROOT, "engine", "brandimg.py")
-PY = "/usr/bin/python3"               # has Pillow; the studio venv does not
+TAG = {"tech": "Har cheez kaise kaam karti hai"}\nPY = "/usr/bin/python3"               # has Pillow; the studio venv does not
 
 
 def multipart(url, fields, fname, path):
@@ -55,7 +55,7 @@ def do_page(cid, st, force):
     changed = force or s.get("src") != h or not os.path.exists(os.path.join(d, "yt_banner.png"))
     if changed:
         open(os.path.join(d, "src.jpg"), "wb").write(raw)
-        kind = render(cid, ch["theme"], ch.get("tagline", ""), ch.get("name", cid))
+        kind = render(cid, ch["theme"], ch.get("tagline") or TAG.get(cid, ""), ch.get("name", cid))
         s.update(src=h, kind=kind, fb_dp=None, fb_cover=None)
         log("brand: rendered", cid, kind)
     pid = acc.get("page_id")

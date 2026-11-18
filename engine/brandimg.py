@@ -75,14 +75,19 @@ def dp_safe(logo, bg, is_round, size=1080):
     return img
 
 
-def banner(logo, bg, a1, a2, tagline, w, h, logo_h, tag_px):
+def banner(logo, bg, a1, a2, tagline, w, h, logo_h, tag_px, lbg=None, is_round=False):
     img = backdrop(w, h, bg, a1, a2)
     d = ImageDraw.Draw(img)
     lg = fit(logo, int(w * .42), logo_h)
     gap = int(tag_px * 1.4) if tagline else 0
     total = lg.height + gap + (tag_px if tagline else 0)
     y0 = (h - total) // 2
-    img.paste(lg, ((w - lg.width) // 2, y0))
+    if is_round:
+        m = Image.new("L", lg.size, 0)
+        ImageDraw.Draw(m).ellipse([0, 0, lg.width - 1, lg.height - 1], fill=255)
+    else:                                         # flat-background wordmark: its background becomes see-through
+        m = ImageChops.difference(lg.convert("RGB"), Image.new("RGB", lg.size, lbg)).convert("L").point(lambda v: min(255, v * 5))
+    img.paste(lg, ((w - lg.width) // 2, y0), m)
     if tagline:
         ctext(d, w / 2, y0 + lg.height + gap + tag_px / 2, tagline.upper(), font(tag_px), (240, 240, 240), track=tag_px // 8)
     return img
@@ -116,8 +121,8 @@ def main():
         logo, bgc, rnd = content(Image.open(os.path.join(out, "src.jpg")))
         dp_safe(logo, bgc, rnd).save(os.path.join(out, "dp_safe.png"))
     bgc2, A1, A2 = rgb(bg), rgb(a1), rgb(a2)
-    banner(logo, bgc2, A1, A2, tag, 2560, 1440, 330, 58).save(os.path.join(out, "yt_banner.png"))
-    banner(logo, bgc2, A1, A2, tag, 1640, 624, 210, 30).save(os.path.join(out, "fb_cover.png"))
+    banner(logo, bgc2, A1, A2, tag, 2560, 1440, 330, 58, bgc, rnd).save(os.path.join(out, "yt_banner.png"))
+    banner(logo, bgc2, A1, A2, tag, 1640, 624, 210, 30, bgc, rnd).save(os.path.join(out, "fb_cover.png"))
     for lab in ("SERIES", "SOURCES", "ABOUT"):
         highlight(lab, bgc2, A1, A2).save(os.path.join(out, "hl_" + lab.lower() + ".png"))
     print("round" if rnd else "wide", cid)
