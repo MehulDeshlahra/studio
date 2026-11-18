@@ -72,7 +72,7 @@
     "font": "Archivo Black",
     "music": "music/deep-urban.mp3",
     "music_offset": 8,
-    "style": "lab"
+    "style": "lab", "film": true
   },
   "handle_instagram": "@kaise.tech",
   "handle_youtube": "@kaise.tech.official",
