@@ -192,8 +192,12 @@ def brand_scan(page):
         ids += [s["id"] for s in (rec.get("shorts") or [])[:6]]
         hits += sponsors([i for i in ids if i], rec["name"])
     pb = bj.setdefault(page, {"hits": []})
-    keys = {(h["video"], h["line"]) for h in pb["hits"]}
-    pb["hits"] = (pb["hits"] + [h for h in hits if (h["video"], h["line"]) not in keys])[-300:]
+    k = lambda h: (h["channel"], h["line"].lower()[:120])          # the same disclaimer on every video counts once
+    seen, merged = set(), []
+    for h in pb["hits"] + hits:
+        if k(h) not in seen:
+            seen.add(k(h)); merged.append(h)
+    pb["hits"] = merged[-300:]
     pb["updated"] = time.strftime("%Y-%m-%d %H:%M")
     save(BRANDS, bj)
     return hits
