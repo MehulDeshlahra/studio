@@ -40,22 +40,24 @@
     "raksha",
     "varadaan"
    ],
-   "big": null,
-   "small": null
+   "big": "Raksha Kavach",
+   "small": "Surya ka Varadaan",
+   "real": null
   },
   {
    "vo": "Indra brahmin ban ke aaya, haath faila ke maang liya sab kuch",
    "type": "image",
    "prompt": "Indra disguised as elderly brahmin, simple cotton dhoti, wooden staff, standing before Karna with palms extended in request, Karna towering but humble, painterly cinematic Indian miniature-meets-epic style",
    "motion": "pan",
-   "title": "",
+   "title": "Indra Brahmin",
    "keywords": [
     "Indra",
     "brahmin",
     "daan maanga"
    ],
-   "big": null,
-   "small": null
+   "big": "Aaya Maangne",
+   "small": "Sab Kuch Maanga",
+   "real": null
   },
   {
    "vo": "Pita Surya ne pehle hi chetaaya tha: 'Indra maange ga, dena mat'",
@@ -74,16 +76,17 @@
   {
    "vo": "Par Karna rukha nahi — daan hi uski pehchaan thi, Surya ki baat yaad thi",
    "type": "image",
-   "prompt": "Karna nods once, hands folded in acceptance, no hesitation in eyes, brahmin Indra receives invisible gift, soft golden hour light, painterly cinematic Indian miniature-meets-epic style",
+   "prompt": "Karna standing tall, handing a glowing donation to an elderly brahmin (Indra in disguise), Karna's expression calm and determined, no hesitation, soft golden light, painterly cinematic Indian miniature-meets-epic style, warm gold deep maroon, focus on Karna's resolve, no Surya in background",
    "motion": "tilt",
-   "title": "",
+   "title": "Karna Daan",
    "keywords": [
     "Karna",
     "rukha nahi",
     "pehchaan"
    ],
-   "big": null,
-   "small": null
+   "big": "Pehchaan Daan",
+   "small": "Surya ki Yaad",
+   "real": null
   },
   {
    "vo": "Kavach utarta hi khoon baha, ghaw khule, mrityu paas aa gayi",
@@ -102,16 +105,17 @@
   {
    "vo": "Indra ne asli roop dikhaya, Shakti baan diya — par kavach wapas nahi mila",
    "type": "image",
-   "prompt": "Indra reveals true form, four-armed, radiating power, hands Karna a single glowing arrow (Shakti), exchange respectful, Airavata behind, empty armor space on Karna's chest visible, painterly cinematic Indian miniature-meets-epic style",
+   "prompt": "Indra in traditional kingly form, wearing a crown, holding Vajra, mounted on Airavata the white elephant, handing a single glowing Shakti arrow to Karna, Karna's chest shows empty armor space, respectful exchange, divine radiance, painterly cinematic Indian miniature-meets-epic style, Indra with fair skin, no trident",
    "motion": "tilt",
-   "title": "",
+   "title": "Indra Shakti",
    "keywords": [
     "Indra",
     "Shakti baan",
     "kavach wapas nahi"
    ],
-   "big": null,
-   "small": null
+   "big": "Vajra Airavata",
+   "small": "Kavach Wapas Nahi",
+   "real": null
   },
   {
    "vo": "Aaj bhi usse 'Daanveer' kehte hain, 'Amartya' nahi — daan bada hua raksha se",

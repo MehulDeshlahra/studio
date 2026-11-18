@@ -69,7 +69,7 @@
   {
    "vo": "Narakasura hansa: 'Vardaan yaad hai na? Koi purush nahi maar sakta.'",
    "type": "image",
-   "prompt": "Painterly Indian epic style, demon king laughing arrogantly on obsidian throne, red aura, vertical 9:16 composition, generous empty space at top and bottom for text, no text",
+   "prompt": "Painterly Indian epic style, single demon king laughing arrogantly, centred in frame, seated on dark obsidian throne, faint red aura around him, vertical 9:16 composition with large clear empty space above and below the subject for text, no text, no letters, no logos",
    "motion": "pull",
    "keywords": [
     "hansi",
@@ -82,7 +82,7 @@
   {
    "vo": "Krishna muskuraye. Ungli pe Sudarshan Chakra ghumaya - surya jaisi roshni.",
    "type": "image",
-   "prompt": "Painterly Indian epic style, close-up: spinning golden disc on fingertip, blinding light cutting darkness, no text",
+   "prompt": "Painterly Indian epic style, one spinning golden discus balanced on a single fingertip, centred in frame, blinding warm light rays cutting through darkness, vertical 9:16 composition with generous empty space above and below the subject for text, no text, no letters, no logos",
    "motion": "push",
    "keywords": [
     "chakra",

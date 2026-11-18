@@ -98,5 +98,17 @@
    "before render, scene 2: LANG: English word 'THE' used on screen instead of Hinglish",
    "before render, scene 5: FIT: Split or collage picture shown instead of a single cohesive scene"
   ]
+ },
+ {
+  "job": "1118-1015",
+  "topic": "12 Jyotirlinga ki katha - Part 3: Mahakaleshwar",
+  "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
+  "status": "held",
+  "review": [
+   "before render, scene 1: DUP: the same caption words POORI DUNIYA KA appear simultaneously in both stills of the scene",
+   "before render, scene 3: FIT: missing the required big title KOTIRUDRA and small title Shiv Puran Katha",
+   "before render, scene 8: READ: text in the second still DAKSHIN MUKHI JYOTIRLINGA is too small and cluttered over the complex temple background",
+   "before render, scene 9: FIT: missing the required big title DAKSHIN = KAAL and small title MAHAKAL HAI SWAMI"
+  ]
  }
 ]

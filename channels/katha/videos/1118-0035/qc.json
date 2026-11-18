@@ -1,0 +1,38 @@
+{
+ "topic": "The Origin of River Ganga and Why She Fell from Heaven (Bhagavata Purana, Skandha 9)",
+ "title": "Ganga swarg se zameen par kaise aayin?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.6,
+  "true_peak": -2.4,
+  "dur": 48.57
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 1: The caption 'VISHAL SAILAB SEEDHE' does not match the script line 'Socho agar swarg se paani ka ek vishal sailab seedhe zameen par girta, toh kya hota?'. It is missing 'SOCHO AGAR' and 'ZAMEEN PAR GIRTA'.",
+   "scene 2: The caption 'YEH KATHA HAI' does not match the script line 'Puraanon ke anusar, yeh katha hai Raja Bhagirath ki.'",
+   "scene 3: The caption 'SHRAP KI WAJAH' does not match the script line 'Unke purvaj ek shrap ki wajah se mukt nahi ho pa rahe the.'",
+   "scene 4: The caption 'PAVITRA JAL HI' does not match the script line 'Sirf Ganga ka pavitra jal hi unhe moksha dila sakta tha.'",
+   "scene 5: The caption 'KATHOR TAPASYA KI' does not match the script line 'Bhagirath ne saalon kathor tapasya ki aur Brahma ji ko prasann kiya.'",
+   "scene 6: The caption 'GANGA SWARG SE' does not match the script line 'Brahma ji ne varan diya ki Ganga swarg se zameen par aayengi.'",
+   "scene 7: The caption 'UNKE VEG KO' does not match the script line 'Par ek badi samasya thi, unke veg ko kaun sambhalta?'",
+   "scene 8: The caption 'ZAMEEN PAR GIRTI' does not match the script line 'Agar Ganga seedhe zameen par girti, toh dharti patal mein chali jaati.'",
+   "scene 9: The caption 'LORD SHIVA SE' does not match the script line 'Tab Bhagirath ne Lord Shiva se prarthna ki.'",
+   "scene 10: The caption 'GANGA KE VEG' does not match the script line 'Shiva ji ne apni jataon mein Ganga ke veg ko aasaani se rok liya.'",
+   "scene 11: The caption 'PAR SABKA KALYAN' does not match the script line 'Aur is tarah Ganga ji dharti par sabka kalyan karne aayin.'",
+   "scene 12: The caption 'SACCHI LAGAN SE' does not match the script line 'Sroat: Bhagavata Purana. Aapke anusar, sacchi lagan se kya namumkin bhi mumkin ho jata hai?'"
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9343065693430657,
+  "words": 143,
+  "problems": []
+ },
+ "ok": true
+}

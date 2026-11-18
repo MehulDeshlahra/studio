@@ -16,7 +16,7 @@
    "title": "Batti Upar Wali",
    "beats": "Mehul shifts into flat 302 of Orchid Towers on a rainy Tuesday night. At exactly 3:00 AM, he wakes up to a bright yellow glow spilling onto his ceiling from the balcony above. He looks up and realizes the apartment directly overhead, flat 402, has been sealed with a permanent iron padlock for years. Yet, through the window, he sees a glowing study lamp moving on its own.",
    "cliffhanger": "Mehul hears a soft knock from inside the locked flat above him, followed by the distinct sound of a pen scratching on paper.",
-   "status": "todo"
+   "status": "made"
   },
   {
    "n": 2,
@@ -82,6 +82,8 @@
    "status": "todo"
   }
  ],
- "made_jobs": {},
+ "made_jobs": {
+  "1": "1118-1105"
+ },
  "owner_names": "Owner 18 Nov: hero Mehul, friend Raghav for this story; later stories rotate his friends; villains are made-up names."
 }

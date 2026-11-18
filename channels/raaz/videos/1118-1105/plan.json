@@ -1,0 +1,197 @@
+{
+ "slug": "chouthi-manzil-part-1",
+ "title": "Band flat 402 mein 3 baje roshni kaise jali?",
+ "hooks": [
+  "Raat ke theek teen baje, teen saal se band flat 402 ki light jal uthi.",
+  "Agar band flat se aadhi raat ko dastak aaye, toh kya tum darwaza khologe?",
+  "Flat 402 par zang laga tala tha, fir andar kaun likh raha tha?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Instantly establishes the impossible mystery at second zero with a specific location, time, and active eerie hook without slow exposition.",
+ "metaphor": "The glowing duplicate study lamp above mirroring Mehul's own desk through the dark rain",
+ "cast": {
+  "Mehul": "27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone.",
+  "Vikrant": "27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt, holding Mehul's cracked black smartphone.",
+  "Raghav": "27 years old, Mehul's college friend and neighbour, cheerful round face, short curly hair, light stubble, mustard hoodie, always carries a steel water bottle"
+ },
+ "scenes": [
+  {
+   "vo": "Raat ke theek teen baje, teen saal se band flat 402 ki light jal uthi.",
+   "type": "clip",
+   "prompt": "Cinematic night thriller film still, heavy monsoon rain lashing apartment window, cold teal darkness, single high floor balcony window suddenly blazing with vivid amber light, Indian high-rise building, realistic depth of field, no text, no watermark.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "teen baje",
+    "flat 402",
+    "light jal uthi"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Niche flat 302 mein Mehul chhat par ajeeb peeli roshni dekhkar chaunk gaya.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, Mehul, 27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, sitting up abruptly on a mattress in a shadowy room, amber light leaking onto the ceiling above him, high contrast, photorealistic, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Mehul",
+    "peeli roshni",
+    "chaunk gaya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Upar flat 402 par mota zang laga tala tha, chabi kisi ke paas nahi thi.",
+   "type": "image",
+   "prompt": "Macro cinematic shot of an ancient rusted iron padlock hanging on a dark weathered apartment grill gate, thick dust and cobwebs, hallway emergency bulb casting eerie green glow, realistic texture, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "zang laga tala",
+    "chabi nahi thi"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mehul balcony mein aaya aur ghabra kar upar ki khidki ki taraf dekhne laga.",
+   "type": "image",
+   "prompt": "Medium shot of Mehul, 27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, stepping onto a wet balcony under pouring rain, water droplets on skin, looking upward in nervous curiosity, teal and amber cinematic lighting, no text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "balcony",
+    "ghabra kar",
+    "upar ki khidki"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Andar kaanch ke paar wahi brass study lamp dheere-dheere hawa mein hil raha tha.",
+   "type": "clip",
+   "prompt": "Eerie thriller shot through rain-streaked window glass of a deserted dusty room, an antique brass study lamp glowing warm amber, hovering and swaying gently above a barren wooden desk, atmospheric volumetric dust motes, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "brass study lamp",
+    "hawa mein hilta"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Aur hairani ki baat, theek waisa hi lamp niche Mehul ke table par bhi tha!",
+   "type": "image",
+   "prompt": "Cinematic close-up of Mehul's wooden study desk in flat 302, an identical vintage brass lamp emitting warm glow next to open books and a cracked smartphone, cold teal shadows around it, moody atmosphere, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "hairani ki baat",
+    "waisa hi lamp"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Aage suno.",
+   "type": "card",
+   "prompt": "Dark cinematic hallway perspective, shadowy closed apartment doors vanishing into deep blackness, cold rain haze, high tension, no text.",
+   "motion": "punch",
+   "title": "",
+   "big": "AAGE SUNO",
+   "small": "THE LOCKED ROOM",
+   "keywords": [
+    "Aage suno"
+   ]
+  },
+  {
+   "vo": "Sannate ke beech upar ke band darwaze par theek do dheemi dastak hui.",
+   "type": "image",
+   "prompt": "Tense low angle shot of flat 402 locked entrance door in a silent deserted hallway, shadows stretching across damp tiles, moody film grain, suspenseful thriller framing, no text.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "sannate ke beech",
+    "do dastak"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mehul ki saans atak gayi jab usse kaagaz par tez pen chalne ki aawaz aayi.",
+   "type": "image",
+   "prompt": "Extreme close-up on a vintage blank yellowed sheet of paper resting on dark wood under amber lamp light, shadowy ink scratch marks appearing in the dimness, shallow depth of field, dramatic vignette, no text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "saans atak gayi",
+    "tez pen"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Tala bahar se band tha, toh andar baith kar kaun likh raha tha?",
+   "type": "image",
+   "prompt": "Chilling silhouette profile of an unidentified figure seated at a desk inside a locked dark apartment, seen through rain-blurred window glass, amber backlight outlining subtle human posture, mystery thriller tone, no text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "tala band tha",
+    "kaun likh raha tha"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Part 2 mein, kya Mehul khulega flat 402 ka raaz?. Follow karo.",
+   "type": "card",
+   "prompt": "Mehul standing frozen in the dark doorway of the apartment corridor, looking up the concrete staircase into pitch black shadow, rain outside window behind him, cinematic contrast, no text.",
+   "motion": "pull",
+   "title": "",
+   "big": "PART 2 KAL",
+   "small": "KNOW THE TRUTH",
+   "keywords": [
+    "tum wahan hote",
+    "Part 2 kal"
+   ]
+  }
+ ],
+ "music_mood": "mystery",
+ "caption": "Flat 402 pichhle teen saal se band hai... toh raat theek 3 baje andar baith kar kaun likh raha tha? Chouthi Manzil Ka Raaz (Part 1). Agar tum Mehul ki jagah hote, toh kya upar jaate?",
+ "hashtags": [
+  "#AageSuno",
+  "#ChouthiManzilKaRaaz",
+  "#HindiSuspense",
+  "#MysteryStory",
+  "#UrbanLegendsIndia",
+  "#ShortsThriller"
+ ],
+ "claims": [
+  {
+   "claim": "Pure original fiction suspense drama serial set in a Mumbai apartment building with no depiction of real crimes or real individuals.",
+   "basis": "Original channel creative universe bible for Aage Suno series"
+  }
+ ],
+ "brain_ids": [
+  "97e1b2fcbb",
+  "9db4cc694f",
+  "13a94bf865",
+  "038dd5be5a",
+  "a688e48ca2",
+  "e15cfaed29",
+  "7a67022fb6",
+  "82055e32f5",
+  "0adc696a75",
+  "ef573ce014",
+  "3cec28c3e9",
+  "4204a43442",
+  "1ad22ef225",
+  "d7b38f2237"
+ ],
+ "cliff_done": true
+}

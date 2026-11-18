@@ -3,10 +3,11 @@
  "job": "lab-gpt-01",
  "topic": "ChatGPT jawab kaise banata hai",
  "voice_retry": 1,
- "stage": "held",
+ "stage": "done",
  "doctor_rebuilt": "2026-11-17 10:23",
  "doctor_code": "94c89f2",
  "doctor_tries": 3,
  "voice_gate": 1,
- "held_at": "2026-11-18 06:45"
+ "held_at": "2026-11-18 06:45",
+ "brain_judged": true
 }

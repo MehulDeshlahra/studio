@@ -1,0 +1,29 @@
+[
+ {
+  "sig": "before render, scene #: overlap/cut (layout audit): content_overlap on #s",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 09:37",
+  "last": "2026-11-18 09:37",
+  "example": "before render, scene 10: OVERLAP/CUT (layout audit): content_overlap on #s9b"
+ },
+ {
+  "sig": "before render, scene #: fit: kartikeya is depicted with five heads instead of his traditional form",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 10:07",
+  "last": "2026-11-18 10:07",
+  "example": "before render, scene 7: FIT: Kartikeya is depicted with five heads instead of his traditional form"
+ },
+ {
+  "sig": "before render, scene #: cut: letters '…' are physically clipped by the right edge of the card/box.",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 11:07",
+  "last": "2026-11-18 11:07",
+  "example": "before render, scene 7: CUT: Letters \"Base+Ne\" are physically clipped by the right edge of the card/box."
+ }
+]

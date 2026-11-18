@@ -1,0 +1,28 @@
+{
+ "slug": "shaadi-ka-lifafa",
+ "title": "Shaadi ka lifafa",
+ "genre": "mystery (detective case: question, then the answer)",
+ "logline": "At a wedding the groom's 5 lakh envelope vanishes from behind the stage; three people went there. The viewer is the detective.",
+ "setting": "a big Indian wedding at night: stage, halwai's bhatti, the area behind the stage",
+ "cast": {},
+ "started": "2026-11-17 00:00",
+ "parts": [
+  {
+   "n": 1,
+   "title": "Chor kaun?",
+   "status": "made",
+   "beats": "Tum ho detective. Aur ye shaadi... ab crime scene hai. Dulhe ka paanch lakh ka lifafa, gayab! Bag stage ke peeche tha. Aur wahan sirf teen log gaye. Photographer bola: main toh poore time stage pe photo le raha tha. Halwai bola: main bhatti pe tha. Dekho, haath abhi bhi chashni mein hain. Aur dulhe ka dost bola: main toh bas phone charge karne gaya tha. Ab suno. Bag pe chashni ka ek bhi nishaan nahi. Aur stage ke peeche... ek bhi plug point nahi tha. Toh chor kaun? Teen second. Socho. Comment mein likho A, B ya C. Jawab kal.",
+   "cliffhanger": "Comment A, B ya C. Jawab kal."
+  },
+  {
+   "n": 2,
+   "title": "Jawab",
+   "status": "todo",
+   "beats": "The answer, step by step like a detective: C, the groom's friend. There was no plug point behind the stage, so he could not have gone to charge his phone. The bag has no syrup, so it was not the halwai; the photographer's photos show him on stage the whole time. Show the three clues again (photos on stage, no syrup on the bag, no plug point behind the stage) and how each one rules a suspect out, then the friend caught with the envelope. Thank the viewers who commented C.",
+   "cliffhanger": "Kal ek naya case. Detective, taiyaar ho?"
+  }
+ ],
+ "made_jobs": {
+  "1": "case2-p1"
+ }
+}

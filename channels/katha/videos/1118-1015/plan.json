@@ -1,0 +1,251 @@
+{
+ "slug": "mahakaleshwar-katha-3",
+ "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
+ "hooks": [
+  "Greenwich se pehle, poori duniya ka samay Ujjain se chalta tha.",
+  "Mahakal ka ek roop jo kaal ko bhi bandhe rakhta hai.",
+  "Dakshin mukhi kyun hai Mahakal? Raaz hai Shiv Puran mein."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Shock-fact hook with named entities (Greenwich, Ujjain) and specific claim about world time reference — creates immediate curiosity loop; matches high-retention pattern of 'unknown history fact' openings in Indian shorts.",
+ "metaphor": "Kaal Chakra — an ancient cosmic wheel of time with Mahakal at its center, controlling the flow of past, present, future; rendered in painterly Indian miniature style with gold zodiac bands and maroon spokes",
+ "cast": {
+  "Mahakal": "Serene four-armed form, ash-smeared blue skin, crescent moon on matted locks, third eye closed in calm, tiger skin draped, trident and damru in upper hands, lower hands in abhaya and varada mudra, facing south, soft golden divine light, warm gold and deep maroon palette, Indian miniature-meets-epic style",
+  "Dushana": "Dark-skinned asura, muscular, multiple arms wielding swords and maces, fierce red eyes, crown of skulls, menacing posture, rendered in same painterly style but with shadowed tones",
+  "Raja Chandrasena": "Royal attire in deep red and gold, crown with pearl strings, folded hands in devotion, calm peaceful face, seated on throne in temple courtyard",
+  "Avanti Nagar": "Ancient temple city on Shipra river banks, golden spires, stone ghats, banyan trees, soft morning mist, warm cinematic lighting"
+ },
+ "scenes": [
+  {
+   "vo": "Greenwich se pehle, poori duniya ka samay Ujjain se chalta tha.",
+   "type": "image",
+   "prompt": "Ancient Ujjain skyline at sunrise, Shipra river foreground, Mahakaleshwar temple spires glowing, giant ornate sundial (Kaal Chakra) at center casting sharp shadow, gold zodiac bands and maroon spokes, warm gold and deep maroon palette, Indian miniature-meets-epic style, 9:16",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Greenwich",
+    "Ujjain",
+    "samay"
+   ],
+   "real": {
+    "q": "Ujjain Mahakaleshwar temple sunrise aerial",
+    "kind": "photo",
+    "subject": "Mahakaleshwar temple complex at sunrise with Shipra river"
+   },
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Pata hai kyun? Kyunki yahan Mahakal ka ek roop hai jo kaal ko bandhe rakhta hai.",
+   "type": "image",
+   "prompt": "Close-up Mahakal face profile, serene, third eye faintly glowing, crescent moon on matted locks, ash smears, soft golden light from left, deep maroon background with subtle gold Kaal Chakra motif behind, dakshin mukhi lingam silhouette in background, painterly Indian miniature style, 9:16",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Mahakal",
+    "kaal",
+    "bandhan"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Ye kahani Shiv Puran ke Kotirudra Samhita mein hai.",
+   "type": "image",
+   "prompt": "Glowing ancient sacred Vedic scripture scroll resting on an ornate carved temple altar, warm oil lamp glow, mystical smoke, painterly style, centered composition, vertical 9:16, room above and below for text, no text, no script, no letters",
+   "motion": "zoom_in",
+   "title": "Kotirudra Samhita",
+   "big": "KOTIRUDRA",
+   "small": "Shiv Puran Katha",
+   "keywords": [
+    "Shiv Puran",
+    "Kotirudra Samhita"
+   ]
+  },
+  {
+   "vo": "Avanti nagar mein Dushana naam ka rakshas tha, vedon ka dushman.",
+   "type": "image",
+   "prompt": "Dushana standing on Avanti palace steps, dark menacing form, multiple arms with weapons, red eyes, skull crown, terrified citizens fleeing, golden temple spires behind, dramatic low-key lighting with maroon shadows, painterly epic style, 9:16",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Avanti",
+    "Dushana",
+    "rakshas"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Raja Chandrasena Shiv bhakt the, wo dar ke Shiv ko pukare.",
+   "type": "image",
+   "prompt": "Raja Chandrasena on throne in temple courtyard, folded hands, eyes closed in prayer, golden light on face, courtiers anxious behind, soft divine glow, painterly miniature style, 9:16",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Chandrasena",
+    "bhakt",
+    "pukar"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Shiv ne suni, zameen phad ke Mahakal roop mein nikle.",
+   "type": "clip",
+   "prompt": "Ground cracking open with golden light erupting, slow motion, particles of gold dust rising, Mahakal silhouette emerging from fissure, warm gold and deep maroon, cinematic, 9:16",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "Shiv",
+    "zameen",
+    "Mahakal"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Ek trishul se Dushana bhasm ho gaya.",
+   "type": "image",
+   "prompt": "Lord Shiva Mahakal raising a radiant glowing golden trishul, demon turning into swirling fiery embers and smoke, dramatic divine light piercing dark clouds, painterly epic style, centered subject, vertical 9:16, generous room above and below, no text, no letters, no logos",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "trishul",
+    "Dushana",
+    "bhasm"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Phir wo wahi sthir ho gaye — dakshin mukhi Jyotirlinga ban ke.",
+   "type": "image",
+   "prompt": "Mahakaleshwar Jyotirlinga in sanctum, self-manifested lingam, silver sheath, facing south, oil lamps glowing, maroon and gold drapes, soft divine light, reverent composition, painterly style, 9:16",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "sthir",
+    "dakshin mukhi",
+    "Jyotirlinga"
+   ],
+   "real": {
+    "q": "Mahakaleshwar Jyotirlinga sanctum interior",
+    "kind": "photo",
+    "subject": "Mahakaleshwar lingam in garbhagriha with silver sheath"
+   },
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Dakshin mukhi matlab Yama (kaal) ki disha — Mahakal uska bhi swami.",
+   "type": "image",
+   "prompt": "A majestic golden Trishul of Lord Shiva radiating divine cosmic energy against a dark spiritual background, soft ethereal embers, painterly style, centered composition, vertical 9:16, room above and below for text, no text, no letters, no compass",
+   "motion": "zoom_in",
+   "title": "Kaal Ke Swami",
+   "big": "DAKSHIN = KAAL",
+   "small": "MAHAKAL HAI SWAMI",
+   "keywords": [
+    "dakshin",
+    "Yama",
+    "swami"
+   ]
+  },
+  {
+   "vo": "Isliye Ujjain ka mandir samay ka kendra bana, yahan ka sundial desh ka reference tha.",
+   "type": "image",
+   "prompt": "Giant stone sundial (Kaal Chakra) at Mahakaleshwar temple courtyard, astronomers in ancient attire noting shadow position, golden morning light, maroon temple architecture, painterly style, 9:16",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "sundial",
+    "reference",
+    "samay"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Aaj bhi har subah bhasma aarti hoti hai — kaal ki puja.",
+   "type": "clip",
+   "prompt": "Bhasma Aarti at dawn: priests offering sacred ash, flames rising, bells ringing, devotees in silhouette, golden light through smoke, slow cinematic, 9:16",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "bhasma aarti",
+    "kaal",
+    "puja"
+   ],
+   "real": {
+    "q": "Mahakaleshwar Bhasma Aarti morning",
+    "kind": "clip",
+    "subject": "Bhasma Aarti ceremony at Mahakaleshwar temple dawn"
+   },
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Tumhe pata tha Ujjain Greenwich se pehle time ka center tha? Comment mein batao.",
+   "type": "image",
+   "prompt": "Kaal Chakra wheel spinning slowly, Mahakal silhouette at center, gold and maroon, infinite depth, soft divine glow, painterly epic, 9:16",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Ujjain",
+    "Greenwich",
+    "time"
+   ],
+   "big": null,
+   "small": null
+  }
+ ],
+ "music_mood": "epic",
+ "caption": "Greenwich se pehle poori duniya ka samay Ujjain se chalta tha. 🕉️ Mahakaleshwar ki katha jo kaal ko bhi bandhe rakhti hai — Shiv Puran ke Kotirudra Samhita se.\n\nTumhe pata tha? Comment mein batao.\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#Mahakaleshwar",
+  "#Jyotirlinga",
+  "#ShivPuran",
+  "#Ujjain",
+  "#Kaal",
+  "#PuraanKiKatha"
+ ],
+ "claims": [
+  {
+   "claim": "Ujjain (75.78°E) was the prime meridian for Hindu astronomical calculations before Greenwich",
+   "basis": "Surya Siddhanta and Indian astronomical tradition; Ujjain used as reference meridian for Hindu calendars and timekeeping"
+  },
+  {
+   "claim": "Mahakaleshwar is a dakshin mukhi (south-facing) Jyotirlinga",
+   "basis": "Shiva Purana, Kotirudra Samhita, Chapters 14-18; temple tradition and pilgrimage texts"
+  },
+  {
+   "claim": "Dushana demon terrorized Avanti and was destroyed by Shiva as Mahakal",
+   "basis": "Shiva Purana, Kotirudra Samhita, Chapters 14-18"
+  },
+  {
+   "claim": "Bhasma Aarti is performed daily at dawn at Mahakaleshwar",
+   "basis": "Living temple tradition since centuries; documented in temple records and pilgrim accounts"
+  },
+  {
+   "claim": "King Chandrasena was a devotee of Shiva in Avanti",
+   "basis": "Shiva Purana, Kotirudra Samhita, Chapter 16"
+  }
+ ],
+ "brain_ids": [
+  "9db4cc694f",
+  "97e1b2fcbb",
+  "13a94bf865",
+  "e15cfaed29",
+  "038dd5be5a",
+  "0adc696a75",
+  "a688e48ca2",
+  "82055e32f5",
+  "ef573ce014",
+  "7a67022fb6",
+  "1ad22ef225",
+  "d7b38f2237",
+  "3cec28c3e9",
+  "4204a43442"
+ ],
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}

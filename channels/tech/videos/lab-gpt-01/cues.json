@@ -1,12 +1,18 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/tech/loopster.mp3",
+  "file": "music/lib/tech/in-your-arms.mp3",
   "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
  "sfx": [
+  {
+   "t": 0.0,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -15,
+   "align": "onset"
+  },
   {
    "t": 3.87,
    "file": "sfx/whoosh-fast.mp3",

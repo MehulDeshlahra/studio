@@ -1,0 +1,25 @@
+{
+ "topic": "12 Jyotirlinga ki katha - Part 2: Mallikarjun",
+ "title": "Ganesha ki Buddhi aur Mallikarjun ki Kahani",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.7,
+  "true_peak": -3.3,
+  "dur": 49.63
+ },
+ "vision": {
+  "score": 10,
+  "ok": true,
+  "problems": []
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9736842105263158,
+  "words": 156,
+  "problems": []
+ },
+ "ok": true
+}
