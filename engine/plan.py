@@ -481,6 +481,18 @@ def numbers_check(plan, sources=""):
     return probs
 
 
+ART = re.compile(r"(?:(?<=\s)|^)the\s+|^an?\s+", re.I)
+
+
+def _no_article(s):
+    """19 Nov: the vision check held pages for an English article on screen ("THE" in a Hinglish title). On-screen
+    text is short and Hinglish: drop "the" and a leading "a/an" (never when it would leave the field empty)."""
+    if not isinstance(s, str):
+        return s
+    out = ART.sub("", s.strip()).strip()
+    return out if out else s
+
+
 def clean(plan):
     clips = 0
     for s in plan["scenes"]:
@@ -497,5 +509,10 @@ def clean(plan):
         s["type"] = t
         s["motion"] = s.get("motion") if s.get("motion") in ("push", "pull", "pan", "punch", "tilt") else "push"
         s["title"] = " ".join((s.get("title") or "").split()[:4])
+        for k in ("title", "big", "small", "sub", "label"):
+            s[k] = _no_article(s[k]) if s.get(k) else s.get(k)
+        for k in ("title", "big", "small", "sub", "label"):
+            if s.get(k):
+                s[k] = _no_article(s[k])
     plan["scenes"] = [s for s in plan["scenes"] if s["vo"]]
     return plan
