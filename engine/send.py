@@ -2,7 +2,7 @@
   python engine/send.py <channel> <job> [<channel> <job> ...]"""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from core import OUT, load, save, telegram, log, sh
+from core import ROOT, OUT, load, save, telegram, log, sh
 
 
 def send(cid, job):
@@ -49,6 +49,16 @@ def auto_approve(cid, job, rv):
     score = ((rv or {}).get("checks") or {}).get("vision", {}).get("score")
     if not st.get("auto_approve") or not (rv or {}).get("ok") or score is None or score < st.get("min_score", 9):
         return
+    # 19 Nov (owner: "show me the frames before the first one posts"): channel.json schedule.manual_first = a new page's
+    # first N videos wait for the owner's own approval, whatever their score.
+    ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}
+    n = int((ch.get("schedule") or {}).get("manual_first") or 0)
+    if n:
+        seen = sum(1 for d in (load(os.path.join(ROOT, "channels", cid, "done.json"), []) or [])
+                   if d.get("status") in ("approved", "posted") and d.get("job") != job)
+        if seen < n:
+            log("auto-approve skipped:", cid, job, f"the page's first {n} videos wait for the owner ({seen} so far)")
+            return
     import inbox
     inbox.set_status(cid, job, "approved")
     telegram(f"🤖 {cid} {job} auto-approved (score {score}/10). Reply 'no' to the video above to stop it.")

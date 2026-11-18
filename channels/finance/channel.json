@@ -43,7 +43,8 @@
   "schedule": {
     "posts_per_day": 1,
     "approve_first": 10,
-    "backlog": 10
+    "backlog": 10,
+    "manual_first": 3
   },
   "accounts": {
     "instagram": "@finance.fuel",
