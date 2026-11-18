@@ -88,6 +88,8 @@ def _sheet(cid, jobs, out):
 def _data(cid, done, since):
     lines = []
     for d in done:
+        if d["job"].endswith("-en"):                    # 18 Nov: old English editions are history (English is off and
+            continue                                    # never posted: no handle_en); it kept "finding" them as a violation
         st = d.get("stats") or {}
         lines.append(f"- {d['job']} [{d.get('status')}] {str(d.get('title') or d.get('topic'))[:70]}"
                      + (f" | views {st.get('views')} avg watch {st.get('avg_watch_s')} s" if st else "")
@@ -103,6 +105,7 @@ def _data(cid, done, since):
     for h in holds:
         c[h] = c.get(h, 0) + 1
     top = sorted(c.items(), key=lambda x: -x[1])[:5]
+    lines.append("(English editions are switched off on every page and are never posted; old -en jobs are history.)")
     return "\n".join(lines[-14:]) + ("\nMost common hold reasons this week:\n" + "\n".join(f"  {n}x {h}" for h, n in top) if top else "")
 
 
