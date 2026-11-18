@@ -13,7 +13,8 @@ import publish
 BRAND = os.path.join(ROOT, "brand")
 STATE = os.path.join(BRAND, "state.json")
 IMG = os.path.join(ROOT, "engine", "brandimg.py")
-TAG = {"tech": "Har cheez kaise kaam karti hai"}\nPY = "/usr/bin/python3"               # has Pillow; the studio venv does not
+TAG = {"tech": "Har cheez kaise kaam karti hai"}
+PY = "/usr/bin/python3"               # has Pillow; the studio venv does not
 
 
 def multipart(url, fields, fname, path):
