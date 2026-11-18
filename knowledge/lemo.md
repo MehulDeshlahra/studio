@@ -27,8 +27,8 @@ Library: github.com/lemomo-ai/lemo-opuscar, laptop copy `C:\Users\mehul\lemo-opu
   need the hand-made specials, not an overlay.
 
 ## Specials (after the 20 Nov launch): hand-directed in a Kiro session with the skill, posted through Studio publish
-- Katha: Shadow Puppetry (close to India's leather puppet theatre). First candidate: Kartik Purnima / Dev Deepawali (24 Nov)
-  or Gita Jayanti (1 Dec).
+- Katha: Shadow Puppetry (close to India's leather puppet theatre). APPROVED by Mehul 18 Nov: first special =
+  Dev Deepawali (24 Nov), made on the laptop (WebGL/GPU) in a Kiro session with the lemo-opuscar skill; ready by 23 Nov.
 - Aage Suno: Halftone Dossier (printed case file).
 - Kaise Tech: Exploded Teardown.
 - One per page per week at most; a new format, never a copy of an existing video. Mehul picks the first style.
