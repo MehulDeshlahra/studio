@@ -80,6 +80,48 @@ def youtube(cid, acc, ch, d, s, h):
     log("brand: YouTube banner + description set", cid)
 
 
+def pack(cid, ch):
+    """One zip per page with exactly what only the owner can upload (no API): written for a phone, sent on Telegram."""
+    import zipfile
+    d = os.path.join(BRAND, cid)
+    about, long, link, ig = texts(cid, ch)
+    readme = (f"{ch.get('name', cid)}: upload pack\n\nInstagram: Edit profile > bio, paste:\n{ig}\nLink: {link}\n"
+              "Instagram DP: use dp_safe.png only if the current DP is a wide wordmark (the circle crop cuts it).\n"
+              "Instagram highlights: New highlight, pick any story, edit cover, upload hl_series / hl_sources / hl_about.\n"
+              "YouTube (studio.youtube.com > Customization > Profile): DP = dp_safe.png. Banner and description are already set.\n")
+    z = os.path.join(d, f"{cid}-brand-pack.zip")
+    with zipfile.ZipFile(z, "w", zipfile.ZIP_DEFLATED) as zf:
+        for n in ("dp_safe.png", "yt_banner.png", "hl_series.png", "hl_sources.png", "hl_about.png"):
+            if os.path.exists(os.path.join(d, n)):
+                zf.write(os.path.join(d, n), n)
+        zf.writestr("README.txt", readme)
+    return z
+
+
+def tg_document(path, caption):
+    cfg = load(os.path.expanduser("~/.studio-telegram.json"))
+    if not cfg:
+        return False
+    r = subprocess.run(["curl", "-s", "-m", "300", "-F", f"chat_id={cfg['chat']}", "-F", f"caption={caption[:900]}", "-F", f"document=@{path}",
+                        f"https://api.telegram.org/bot{cfg['token']}/sendDocument"], capture_output=True, text=True)
+    return '"ok":true' in r.stdout.replace(" ", "")
+
+
+def owner_tasks(todo):
+    """Dashboard 'Needs you' (dashboard/extra.py reads owner-tasks.json; ticking there marks it done)."""
+    from core import OUT
+    p = os.path.join(OUT, "owner-tasks.json")
+    ts = load(p, []) or []
+    have = {x.get("id") for x in ts if isinstance(x, dict)}
+    new = [{"id": "brand-ig-" + c, "title": f"Upload the {c} brand pack (Instagram highlights, bio, YouTube DP)",
+            "why": "Instagram and YouTube have no API for these. The zip is on Telegram; bios in knowledge/bios.md.", "done": False}
+           for c in todo if "brand-ig-" + c not in have]
+    for x in ts:                                     # YouTube was linked 18 Nov for the pages with a "yt" token
+        if isinstance(x, dict) and x.get("id") == "yt-login" and not x.get("done"):
+            x["done"] = True
+    json.dump(ts + new, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
+
 def bios(pgs, st):
     out = ["# Bios (auto-written by engine/brand.py; the API cannot set these on Instagram or YouTube: paste once)", ""]
     for cid in pgs:
@@ -166,9 +208,17 @@ def main():
         st["scrollhouse"] = {"src": "v1"} if r.returncode == 0 else {}
     todo = [c for c in want if c in st and st[c].get("src") and not st[c].get("owner_note")]
     if todo:
-        telegram("🎨 Brand kit ready on the server (brand/<page>/): " + ", ".join(todo) +
-                 ". Facebook DP + cover are set automatically. For you to upload by hand (no API): Instagram DP (dp_safe.png, "
-                 "only if the logo is a wide wordmark), highlight covers (hl_*.png), YouTube DP + banner (yt_banner.png).")
+        telegram("\U0001F3A8 Brand kit done. Set automatically: Facebook DP, cover, about and website on all pages; YouTube banner and "
+                 "description where YouTube is linked. Next: one zip per page with what only you can upload (Instagram highlights and bio, YouTube DP).")
+        for c in todo:
+            try:
+                tg_document(pack(c, channel(c)), f"{channel(c).get('name', c)}: upload pack")
+            except Exception as e:
+                log("brand: pack failed", c, str(e)[:150])
+        try:
+            owner_tasks(todo)
+        except Exception as e:
+            log("brand: owner tasks failed", str(e)[:150])
         for c in todo:
             st[c]["owner_note"] = True
     save(STATE, st)
