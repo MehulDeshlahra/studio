@@ -151,6 +151,8 @@ def _media(acc, plat):
         try:
             d = _r(f"{G}/{acc['page_id']}/{edge}?fields=id,permalink_url,created_time,comments.limit(50){{{CF_FB}}}&limit=15&access_token={tok}")
         except RuntimeError as e:
+            if edge == "posts" and "#10/" in str(e):
+                continue        # 19 Nov: our posts are Reels (video_reels edge works); the plain posts edge needs Page Public Content Access and logged 13 errors per 2 h
             log("dm fb media fail", edge, str(e)[:120]); continue
         for m in d.get("data", []):
             if m["id"] in seen:
