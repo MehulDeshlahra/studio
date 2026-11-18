@@ -48,6 +48,47 @@ def _dup(title, vo):
     return bool(tw) and len(tw & vw) / len(tw) >= 0.5
 
 
+def _texture(theme, total, js):
+    """18 Nov pilot: a page-wide material over the pictures, under captions and the end card. theme {"texture": "lamp"|"print"}
+    or STUDIO_TEXTURE=lamp|print; none by default. Ideas learnt from Lemo-Opuscar (MIT code / CC BY-NC docs, written here in
+    our own words): katha = oil-lamp light (warm flicker, brown vignette, never grey); raaz = printed case file (paper
+    mottling multiplied over everything, halftone dots crowding the frame edges, centre left clean for faces and text).
+    Deterministic: the flicker is a fixed seeded sequence on the timeline, so every seek gives the same frame."""
+    kind = os.environ.get("STUDIO_TEXTURE") or theme.get("texture") or ""
+    if kind == "lamp":
+        import random
+        rnd = random.Random(7)
+        t, v = 0.0, 0.5
+        while t < total:
+            v = min(1.0, max(0.0, v + rnd.uniform(-0.35, 0.35)))
+            js.append(f'tl.to("#lampf",{{opacity:{0.10 + 0.12 * v:.3f},duration:0.14,ease:"sine.inOut"}},{t:.3f});')
+            t += 0.14
+        html_ = ('<div id="lampf" class="tex lampf" data-layout-ignore></div>'
+                 '<div class="tex lampv" data-layout-ignore></div>')
+        css_ = """
+.tex{position:absolute;inset:0;pointer-events:none;z-index:4}
+.lampf{opacity:.16;mix-blend-mode:soft-light;background:radial-gradient(ellipse 70% 55% at 50% 38%,#ffb35c 0%,#ff8a2a 45%,transparent 80%)}
+.lampv{background:radial-gradient(ellipse 85% 75% at 50% 45%,transparent 55%,#2b1205b3 100%)}
+"""
+        return html_, css_
+    if kind == "print":
+        paper = ("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='540' height='960'>"
+                 "<filter id='p'><feTurbulence type='fractalNoise' baseFrequency='.012 .02' numOctaves='3' seed='4'/>"
+                 "<feColorMatrix values='0 0 0 0 .93  0 0 0 0 .86  0 0 0 0 .72  0 0 0 .9 0'/></filter>"
+                 "<rect width='100%' height='100%' filter='url(%23p)'/></svg>")
+        html_ = ('<div class="tex paper" data-layout-ignore></div>'
+                 '<div class="tex dots" data-layout-ignore></div><div class="tex dots d2" data-layout-ignore></div>')
+        css_ = f"""
+.tex{{position:absolute;inset:0;pointer-events:none;z-index:4}}
+.paper{{background:url("{paper}") 0 0/100% 100%;mix-blend-mode:multiply;opacity:.32}}
+.dots{{inset:-200px;background:radial-gradient(circle,#0d0a08 34%,transparent 37%) 0 0/22px 22px;mix-blend-mode:multiply;opacity:.55;transform:rotate(15deg);
+  -webkit-mask-image:radial-gradient(ellipse 52% 46% at 50% 50%,transparent 62%,#000 100%)}}
+.dots.d2{{background:radial-gradient(circle,#7a1f14 30%,transparent 33%) 0 0/26px 26px;opacity:.28;transform:rotate(-30deg) translate(4px,4px)}}
+"""
+        return html_, css_
+    return "", ""
+
+
 def page(plan, timed, total, theme, assets):
     acc, acc2, bg = theme.get("accent", "#ffd84d"), theme.get("accent2", "#3ec7ff"), theme.get("bg", "#050b1a")
     font = theme.get("font", "Archivo Black")
@@ -270,10 +311,13 @@ body{{margin:0;background:{bg}}}
 .cap .key{{color:{acc}}}
 .cap .w.on{{background:{acc};color:#111;-webkit-text-stroke:0;text-shadow:none;transform:scale(1.08);box-shadow:0 8px 0 #000}}
 """
+    tex_html, tex_css = _texture(theme, total, js)
+    css += tex_css
     doc = f"""<!doctype html><html><head><meta charset="utf-8"><style>{css}</style></head><body>
 <div id="root" data-composition-id="main" data-width="{W}" data-height="{H}" data-duration="{total:.3f}" data-start="0">
 {chr(10).join(top)}
 {chr(10).join(scenes)}
+{tex_html}
 {chr(10).join(capdiv)}
 {chr(10).join(brand)}
 <audio id="mix" class="clip" src="assets/mix.wav" data-start="0" data-duration="{total:.3f}" data-track-index="10"></audio>
