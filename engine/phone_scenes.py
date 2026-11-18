@@ -11,7 +11,9 @@ No AI pictures: the real logo (rule) is the only fetched image, placed on purpos
 """
 import html, os
 
-KINDS = ("wa", "sms", "pay", "bill", "rule")
+KINDS = ("wa", "sms", "pay", "bill", "rule", "table", "list")
+#  table comparison grid {"title": "..", "cols": ["", "Prop", "LLP", "Pvt Ltd"], "rows": [{"label": "Risk", "cells": ["..", "..", ".."]}], "best": 2}
+#  list  checklist card  {"title": "..", "sub": "..", "lines": ["..", ".."]}
 SANS = "'Inter',sans-serif"
 MONO = "'JetBrains Mono','IBM Plex Mono',monospace"
 
@@ -121,12 +123,41 @@ def scene(kind, s, sid, a, d, asset):
         js += [f'tl.set("#{sid}rs",{{opacity:0}},{a:.3f});',
                f'tl.fromTo("#{sid}rs",{{scale:2.2,opacity:0,rotation:-20}},{{scale:1,opacity:1,rotation:-8,duration:0.35,ease:"power4.in",immediateRender:false}},{ts:.3f});']
         cues.append({"t": round(ts + 0.33, 3), "file": "sfx/impact.mp3", "gain_db": -18, "align": "onset"})
+    elif kind == "table":
+        # 19 Nov (owner on the LLP vs Pvt Ltd reel: "table form comparing each"): rows reveal one by one with the voice
+        cols = [str(c) for c in (s.get("cols") or [])][:4]
+        rows = [r for r in (s.get("rows") or []) if isinstance(r, dict)][:6]
+        best = s.get("best")
+        hd = "".join(f'<div class="pq-tc pq-th{" best" if best == j else ""}">{esc(c)}</div>' for j, c in enumerate(cols))
+        body = ""
+        for j, r in enumerate(rows):
+            cells = [r.get("label", "")] + [str(x) for x in (r.get("cells") or [])][:len(cols) - 1]
+            cells += [""] * (len(cols) - len(cells))
+            body += (f'<div id="{sid}t{j}" class="pq-tr">' + "".join(
+                f'<div class="pq-tc{" lab" if k == 0 else ""}{" best" if best == k else ""}">{esc(c)}</div>' for k, c in enumerate(cells))
+                + "</div>")
+        hero = (f'<div id="{sid}tb" class="pq-tab" style="--n:{max(2, len(cols))}"><div class="pq-tt">{esc(s.get("title") or "")}</div>'
+                f'<div class="pq-tr pq-thr">{hd}</div>{body}</div>')
+        js += _rev(f"#{sid}tb", a + 0.05, a, y=60, dur=0.5, ease="power4.out")
+        step = max(0.3, min(0.9, (d * 0.6) / max(1, len(rows))))
+        for j in range(len(rows)):
+            js += _rev(f"#{sid}t{j}", a + 0.45 + j * step, a, y=14, dur=0.28)
+            cues.append({"t": round(a + 0.45 + j * step, 3), "file": "sfx/click-ui.mp3", "gain_db": -26, "align": "onset"})
+    elif kind == "list":
+        lines = [str(x) for x in (s.get("lines") or []) if str(x).strip()][:5]
+        li = "".join(f'<div id="{sid}l{j}" class="pq-rli">{esc(x)}</div>' for j, x in enumerate(lines))
+        hero = (f'<div id="{sid}lc" class="pq-rule pq-list"><div class="pq-rt">{esc(s.get("title") or s.get("big") or "")}</div>'
+                f'<div class="pq-rd">{esc(s.get("sub") or "")}</div>{li}</div>')
+        js += _rev(f"#{sid}lc", a + 0.05, a, y=70, dur=0.5, ease="power4.out")
+        for j in range(len(lines)):
+            js += _rev(f"#{sid}l{j}", a + 0.4 + j * max(0.3, min(0.9, d * 0.55 / max(1, len(lines)))), a, y=14, dur=0.3)
     else:
         return "", [], []
     if a < 0.4:
         # 19 Nov: the hook scene is on screen from frame 0 (the first frame decides the swipe): no entrance fades, and the
         # first message / card is already there; later items still arrive with the voice.
-        first = {"wa": f"#{sid}w0", "sms": f"#{sid}n0", "pay": f"#{sid}pi", "bill": f"#{sid}bl", "rule": f"#{sid}rc"}.get(kind)
+        first = {"wa": f"#{sid}w0", "sms": f"#{sid}n0", "pay": f"#{sid}pi", "bill": f"#{sid}bl", "rule": f"#{sid}rc",
+                 "table": f"#{sid}tb", "list": f"#{sid}lc"}.get(kind)
         js = [x for x in js if not (first and f'"{first}"' in x)]
         js = [x.replace("opacity:0,", "opacity:1,", 1) if ("fromTo" in x and first and f'"{first}"' in x) else x for x in js]
         return hero, js, cues
@@ -200,6 +231,17 @@ def css(acc, phone_page=False):
 .pq-rli:before{content:"";position:absolute;left:4px;top:30px;width:26px;height:26px;border-radius:8px;background:ACC}
 .pq-rs{position:absolute;right:44px;bottom:-34px;transform:rotate(-8deg);border:5px solid #12805c;color:#12805c;background:#fbfaf7;font-weight:900;
   font-size:32px;letter-spacing:2px;padding:12px 24px;border-radius:14px}
+.pq-list{padding-bottom:40px}.pq-list .pq-rt{font-size:52px;margin-bottom:6px}.pq-list .pq-rd{margin-bottom:16px}
+.pq-tab{position:absolute;left:40px;width:1000px;top:330px;background:#fbfaf7;color:#14161a;border-radius:28px;padding:36px 28px 30px;box-sizing:border-box;
+  box-shadow:0 50px 100px #000c;font-family:SANS;z-index:2}
+.pq-tt{font-size:46px;font-weight:800;text-align:center;margin-bottom:22px}
+.pq-tr{display:grid;grid-template-columns:1.05fr repeat(calc(var(--n) - 1),1fr);border-top:1.5px solid #e6e2d9}
+.pq-thr{border-top:none}
+.pq-tc{padding:20px 12px;font-size:30px;line-height:1.22;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center}
+.pq-tc.lab{justify-content:flex-start;text-align:left;font-weight:800;color:#55595f;font-size:28px}
+.pq-th{font-size:33px;font-weight:900;color:#fff;background:#1f2a37;border-radius:14px;margin:0 4px;padding:16px 8px}
+.pq-th:first-child{background:none}
+.pq-th.best{background:ACC;color:#111}.pq-tc.best:not(.pq-th){background:ACC22}
 """ + (
         # a phone page: the phone fills the frame (zoom 1.2 -> 768 x 1236 px, ends y 1332); captions sit below it
         ".cap{top:1395px!important}"

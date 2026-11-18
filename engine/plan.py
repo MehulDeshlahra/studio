@@ -93,7 +93,11 @@ IGNORE the visual types above and use ONLY these scene types; never two of the s
       the official rule card (2-3 lines). The ONLY place a real logo appears: add "real":{"q":"<regulator> logo","kind":"logo"}.
   {"type":"stat","value":"₹100","sub":"<what it is, 2-5 words>"}   one huge number (use once or twice)
   {"type":"compare","items":[{"label":"...","value":"...","pct":0-100},{"label":"...","value":"...","pct":0-100}]}
-  {"type":"title","big":"<2-4 words>","sub":"<short line>"}   for the one action to take and the ending
+  {"type":"table","title":"<2-5 words>","cols":["","<option A>","<option B>","<option C>"],"rows":[{"label":"<what is compared, 1-3 words>","cells":["<A, 1-4 words>","<B>","<C>"]}],"best":<column number that wins, optional>}
+      a comparison table (2-4 options, 3-6 rows). ANY comparison of 2+ options uses this, never a title.
+  {"type":"list","title":"<2-5 words>","lines":["<point, under 8 words>", "..."]}   a checklist / steps card (2-5 lines)
+  {"type":"title","big":"<2-4 words>","sub":"<short line>"}   for the one action to take and the ending (a title shows ONLY
+      big + sub: never put lines, items or a comparison in it)
 Flow of a reel: hook (wa or sms: the problem as it happens) -> what it means (pay / sms / stat) -> the real rule (rule card)
 -> the maths (bill or stat) -> what to do (title or wa reply) -> "Save karo" + a question (title).
 No "object", "image", "ui", "chart" or "clip" scenes: everything on the phone, receipt and card is drawn exactly.
@@ -577,8 +581,34 @@ def _no_article(s):
     return out if out else s
 
 
-LAB_TYPES = ("object", "stat", "ui", "chart", "flow", "compare", "title", "clip", "chat", "code", "wa", "sms", "pay", "bill", "rule")
-PHONE_TYPES = ("wa", "sms", "pay", "bill", "rule", "stat", "compare", "title", "flow")
+LAB_TYPES = ("object", "stat", "ui", "chart", "flow", "compare", "title", "clip", "chat", "code", "wa", "sms", "pay", "bill", "rule",
+             "table", "list")
+PHONE_TYPES = ("wa", "sms", "pay", "bill", "rule", "stat", "compare", "title", "flow", "table", "list")
+FRIENDS = ["Mehul", "Raghav", "Aditya", "Shobhit", "Shwetal", "Saumya", "Suhail", "Jahnvi", "Masood", "Animesh", "Jayesh",
+           "Aaryan", "Dhruv", "Mudit", "Shruti"]
+NOT_NAMES = {"me", "friend", "dost", "bhai", "mummy", "papa", "bank", "messages", "save karo", ""}
+
+
+def _friend_names(plan):
+    """19 Nov (finance 1119-0351 used 'Rahul'): the chat person must be one of the owner's friends. A chat name that is not
+    one is replaced everywhere in the plan (voice, chats, titles) by an unused friend."""
+    used = set()
+    for s in plan.get("scenes", []):
+        if s.get("type") != "wa":
+            continue
+        for m in s.get("messages") or []:
+            if isinstance(m, dict):
+                used.add(str(m.get("from") or "").strip())
+        used.add(str(s.get("title") or "").strip())
+    free = [f for f in FRIENDS if f not in used]
+    for n in sorted(used, key=len, reverse=True):
+        if not n or n.lower() in NOT_NAMES or n in FRIENDS or not re.fullmatch(r"[A-Z][a-z]{2,12}", n) or not free:
+            continue
+        new = free.pop(0)
+        blob = re.sub(rf"\b{re.escape(n)}\b", new, json.dumps(plan, ensure_ascii=False))
+        plan.clear(); plan.update(json.loads(blob))
+        log("lab fix: chat name", n, "->", new, "(owner's friends only)")
+    return plan
 
 
 def lab_fix(plan, phone=False):
@@ -604,7 +634,17 @@ def lab_fix(plan, phone=False):
             "wa": len(s.get("messages") or []) >= 1, "sms": len(s.get("messages") or []) >= 1,
             "pay": bool(s.get("value") or s.get("big")), "bill": len(s.get("rows") or []) >= 1,
             "rule": len(s.get("lines") or []) >= 1,
+            "table": len(s.get("cols") or []) >= 2 and len(s.get("rows") or []) >= 1,
+            "list": len(s.get("lines") or []) >= 2,
         }
+        if phone and t == "title" and (len(s.get("lines") or []) >= 2 or len(s.get("items") or []) >= 2):
+            # 19 Nov (finance 1119-0351, owner: "still confused about the difference"): 7 title scenes held the comparison
+            # in lines/items, and a title draws only its heading, so the whole comparison was invisible. Keep the data.
+            if not s.get("lines"):
+                s["lines"] = [f"{x.get('label', '')}: {x.get('value', '')}".strip(": ") for x in s["items"] if isinstance(x, dict)]
+            s["title"] = s.get("title") or s.get("big")
+            s["type"] = t = "list"; ok["list"] = len(s["lines"]) >= 2
+            log("lab fix (phone): title holding", len(s["lines"]), "lines -> list card")
         if phone and t not in PHONE_TYPES:
             # 19 Nov: a phone page draws everything; a picture scene becomes the drawn scene its data allows, else a title
             if t == "chat" and ok["chat"]:
@@ -644,6 +684,8 @@ def lab_fix(plan, phone=False):
         if t not in LAB_TYPES or not ok.get(t, False):
             s["type"] = "title"; s["big"] = words(s)
             log("lab fix: scene type", t, "-> title", repr(s["big"]))
+    if phone:
+        _friend_names(plan)
     return plan
 
 
