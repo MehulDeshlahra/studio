@@ -402,7 +402,7 @@ body{{margin:0;background:#07080b}}
   linear-gradient(#ffffff0f 1px,transparent 1px),linear-gradient(90deg,#ffffff0f 1px,transparent 1px);
   background-size:48px 48px,48px 48px,192px 192px,192px 192px;-webkit-mask-image:radial-gradient(ellipse 75% 60% at 50% 45%,#000 30%,transparent 85%)}}
 .grain{{display:none}}
-.cap{{left:0;right:0;margin:auto;width:fit-content;max-width:900px;top:{STAGE_CAP_Y}px;font-size:52px;line-height:1.2;padding:18px 34px 20px 64px;
+.cap{{left:0;right:0;margin:auto;width:fit-content;max-width:960px;top:{STAGE_CAP_Y}px;font-size:52px;line-height:1.2;padding:18px 34px 20px 64px;
   background:#0b0d12e0;border:1.5px solid #ffffff24;border-radius:30px;box-shadow:0 18px 40px #0009;text-shadow:none;box-sizing:border-box}}
 .cap:before{{content:"";position:absolute;left:28px;top:38px;width:14px;height:14px;border-radius:50%;background:{acc};box-shadow:0 0 12px {acc}}}
 """ if stage else "") + f"""
