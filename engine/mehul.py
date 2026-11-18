@@ -50,7 +50,8 @@ Return JSON {{"verdict": "one honest sentence on today's quality", "score": 1-10
 
 
 def _gem(parts):
-    import tts, llm, urllib.request
+    import tts, llm, urllib.request, core
+    parts = [{"text": core.today_line()}] + list(parts)          # 19 Nov: today's date in every prompt
     body = {"contents": [{"parts": parts}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0.3, "maxOutputTokens": 2500}}
     for m in tts.usable(MODELS):
         try:

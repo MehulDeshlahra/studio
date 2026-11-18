@@ -19,6 +19,29 @@ def github_headers(extra=None):
     return dict(h, **(extra or {}))
 
 
+def today_line():
+    """19 Nov (owner: "gold/silver came out as 2025; GTA 6 became 'kab aayega' when it is already here. This should never
+    happen"). The models' memory ends before today; every writing/reading prompt starts with the real date."""
+    t = time.localtime()
+    return (f"TODAY IS {time.strftime('%A, %d %B %Y', t)} (India). Your training memory ends well before today: anything you "
+            f"remember as upcoming, rumoured, unreleased or 'coming in {t.tm_year - 1}' may already have happened. For anything "
+            f"about the present (launches, releases, prices, rates, rules, events, who holds a post), trust only the dated sources "
+            f"given in this prompt, newest first. Never present an older year as the current one: the current year is {t.tm_year}.\n\n")
+
+
+def fresh_query(q, raw=""):
+    """A search query never carries a past year the owner did not ask for (19 Nov: the model wrote 'gold silver stocks 2024'
+    from memory). Past years become the current year; a year the owner typed stays."""
+    import re as _re
+    now = time.localtime().tm_year
+    return _re.sub(r"\b(20[0-9]{2})\b", lambda m: m.group(1) if int(m.group(1)) >= now or m.group(1) in str(raw) else str(now), str(q))
+
+
+def dated(prompt):
+    """The prompt with today's date in front (once)."""
+    return prompt if str(prompt).startswith("TODAY IS ") else today_line() + str(prompt)
+
+
 def log(*a):
     line = time.strftime("%Y-%m-%d %H:%M:%S ") + " ".join(str(x) for x in a)
     print(line, flush=True)

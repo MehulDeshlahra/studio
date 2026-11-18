@@ -55,8 +55,29 @@ def parse_json(s):
     return json.loads(m.group(0) if m else s)
 
 
+def _today():
+    t = time.localtime()
+    return (f"TODAY IS {time.strftime('%A, %d %B %Y', t)} (India). Your training memory ends well before today: anything you "
+            f"remember as upcoming, rumoured, unreleased or 'coming in {t.tm_year - 1}' may already have happened. For anything "
+            f"about the present (launches, releases, prices, rates, rules, events, who holds a post), trust only the dated sources "
+            f"given in this prompt, newest first. Never present an older year as the current one: the current year is {t.tm_year}.\n\n")
+
+
+def _dated(content):
+    """19 Nov (owner: GTA 6 became 'kab aayega' though it is out; gold came out as 2025): every call carries today's date
+    (same text as core.today_line; lib/ does not import the engine)."""
+    if isinstance(content, str):
+        return content if content.startswith("TODAY IS ") else _today() + content
+    if isinstance(content, list) and content and isinstance(content[0], dict) and content[0].get("type") == "text" \
+            and not content[0]["text"].startswith("TODAY IS "):
+        content = [dict(content[0], text=_today() + content[0]["text"])] + content[1:]
+    return content
+
+
 def _chain(models, content, json_mode, max_tokens, timeout=300):
     errs = []
+    if models is not CODE_MODELS:
+        content = _dated(content)
     for m in models:
         for attempt in range(2):
             try:

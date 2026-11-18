@@ -1,7 +1,7 @@
 """Brief + shot plan for one video: the LLM writes a plan from channel rules + lessons + playbook + research,
 then a second pass reviews it as a strict editor and returns the fixed plan."""
 import json, os, re
-from core import ROOT, read, log
+from core import ROOT, read, log, dated
 import llm, tts, urllib.request, urllib.error, time
 
 GEM_TEXT = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
@@ -33,7 +33,7 @@ def _gem(models, prompt, max_tokens):
         if m in slow_now:                                    # ...but not a second 300 s wait on a model that just hung
             continue
         try:
-            body = {"contents": [{"parts": [{"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
+            body = {"contents": [{"parts": [{"text": dated(prompt) + "\n\nReturn ONLY valid JSON."}]}],   # 19 Nov: today's date
                     "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": max_tokens, "temperature": 0.7}}
             r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
                                        data=json.dumps(body).encode(),
@@ -319,6 +319,10 @@ PLAN:
             log("plan v2 (reviewed)", len(plan["scenes"]), "scenes")
     except Exception as e:
         log("plan review failed, keeping v1:", str(e)[:120])
+    try:                                           # 19 Nov: before the numbers check, so a rewritten number is checked too
+        plan = fresh_fix(plan, research_text)
+    except Exception as e:
+        log("freshness check skipped:", str(e)[:120])
     if ch.get("numbers_check"):                    # 18 Nov (finance 1118-2228 said Rs 50k -> Rs 1,02,000 with Rs 5k/month paid)
         for rnd in range(3):                       # 19 Nov: 2 fix rounds (one was not enough for unsourced claims)
             probs = numbers_check(plan, _fact_sources(ch, topic, research_text), strict=bool(ch.get("facts_strict")))
@@ -354,6 +358,41 @@ PLAN:
     if isinstance(out, dict):
         out["brain_ids"] = bids                    # which brain items this video used (scored after its review)
     return out
+
+
+FRESH = """You check that a Reels script is up to date before it is published. Compare it with the dated SOURCES (the
+LATEST NEWS block is newest first and is what is true now).
+SOURCES:
+{src}
+SCRIPT (JSON):
+{plan}
+List every place where the script is out of date: it calls something upcoming / unreleased / rumoured that the sources
+show already launched or happened; it gives an old price, rate, rule, date or holder of a post when the sources give a
+newer one; or it uses a past year as if it were this year ({year}). A past year as the date of a past event is fine.
+Return JSON {{"stale": ["<scene n: what is wrong -> what the sources say now>"]}} (empty list when all is current)."""
+
+
+def fresh_fix(plan, src):
+    """19 Nov (owner: "GTA 6 kab aayega" when GTA 6 is out; "2025" for gold on 19 Nov 2026): one check against the dated
+    sources, then one rewrite of the stale lines. Runs on every plan."""
+    if not src or not plan.get("scenes"):
+        return plan
+    year = time.localtime().tm_year
+    v = ask(FRESH.format(src=src[:9000], plan=json.dumps({"title": plan.get("title"), "scenes": plan["scenes"]}, ensure_ascii=False)[:9000],
+                         year=year), max_tokens=1500)
+    stale = [str(x) for x in (v.get("stale") or []) if str(x).strip()][:8]
+    if not stale:
+        log("freshness check: current"); return plan
+    log("freshness check found", len(stale), "stale line(s):", " | ".join(stale)[:300])
+    fixed = ask("Rewrite this Reels plan so it is current. Fix ONLY these out-of-date points, using the sources; keep the same "
+                "JSON shape, scene count and length:\n- " + "\n- ".join(stale) + "\n\nSOURCES:\n" + src[:7000]
+                + "\n\nPLAN:\n" + json.dumps(plan, ensure_ascii=False))
+    if isinstance(fixed, dict) and fixed.get("scenes"):
+        keep = {k: plan[k] for k in ("brain_ids", "phone_bg", "numbers_hold") if k in plan}
+        fixed.update(keep)
+        fixed["fresh_fixed"] = stale
+        return fixed
+    return plan
 
 
 NUMCHK = """You check the NUMBERS in this Hindi/Hinglish money-explainer script before it is published. Be exact.

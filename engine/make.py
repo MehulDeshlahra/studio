@@ -40,7 +40,7 @@ hurry, mixing the subject with production wishes:
 "{raw}"
 Understand what video he wants. Return JSON:
 {{"subject": "<the real subject in plain English, 3-10 words, e.g. 'LLP vs private limited vs proprietorship in India'>",
- "queries": ["<4 web/YouTube search queries that find the facts and the best reels on it: official rules, costs, comparisons; Hinglish or English as people search>"],
+ "queries": ["<4 web/YouTube search queries that find the CURRENT facts and the best reels on it: official rules, costs, comparisons, latest news; Hinglish or English as people search; no year unless it is the current one>"],
  "wishes": "<his production wishes in one short line (style, pictures, length...), or empty>"}}"""
 
 NAME = """You name videos for the {lang} Reels page "{name}". The owner asked for: "{raw}" (his words are a brief, never the
@@ -50,7 +50,9 @@ RESEARCH (real Shorts + articles):
 {research}
 Write the topic for this video from the research: specific, curious, in the page's language style, one clear angle a viewer
 would stop for. Any number, rule, date or cost in it must come from the research above; if the research has none, use no
-number. Return JSON: {{"topic": "<the topic, under 120 characters>", "hook": "<first spoken line, under 12 words>",
+number. The owner asks about what is happening NOW: build the angle on the LATEST NEWS block (newest first). If the news
+shows a thing has launched / happened / changed, the topic is about that (never "kab aayega" for something already out).
+A past year is fine only as the date of a past event or rule (e.g. "RBI circular 2019"), never as "this year". Return JSON: {{"topic": "<the topic, under 120 characters>", "hook": "<first spoken line, under 12 words>",
 "angle": "<the one idea the video proves, one line>"}}"""
 
 
@@ -78,6 +80,15 @@ def _shape_request(ch, raw, job):
                                     research=research.summary(r)[:6000], **info), max_tokens=1500)
         topic = str(n.get("topic") or "").strip() or subject
         hook, angle = str(n.get("hook") or "")[:200], str(n.get("angle") or "")[:300]
+        now = time.localtime().tm_year
+        old = [y for y in re.findall(r"\b(20\d\d)\b", topic + " " + hook) if int(y) < now and y not in raw]
+        if old:                                    # 19 Nov: "Gold vs Silver ... 2025" named on 19 Nov 2026
+            log("request topic has past year(s)", old, "-> asking again")
+            n = planner.ask(NAME.format(raw=raw[:600], subject=subject, examples="\n".join("- " + x for x in ex) or "-",
+                                        research=research.summary(r)[:6000], **info)
+                            + f"\n\nYOUR LAST ANSWER used {', '.join(old)} as if it were now: '{topic}'. It is {now}. Fix it.", max_tokens=1500)
+            topic = str(n.get("topic") or topic).strip()
+            hook, angle = str(n.get("hook") or hook)[:200], str(n.get("angle") or angle)[:300]
     except Exception as e:
         log("request naming failed:", str(e)[:120]); topic, hook, angle = subject, "", ""
     log("request named:", repr(topic))

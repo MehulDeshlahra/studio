@@ -33,7 +33,32 @@ def search(query, n=12):
     return sorted(vids, key=lambda v: -v["views"])
 
 
+def latest(topic, queries, days=30, read_n=2):
+    """19 Nov (GTA 6 is out, the video asked 'kab aayega'): the last 30 days of news on the subject, newest first, with
+    dates; the two newest articles are read in full. Goes at the top of the sources."""
+    import web
+    short = re.sub(r"[₹\d,.+%'\"]+", " ", re.split(r"[?:(]", str(topic))[0])
+    short = " ".join(short.split()[:6])
+    seen, rows = set(), []
+    for q in dict.fromkeys([short] + [re.sub(r"\b20\d\d\b", "", x).strip() for x in (queries or [])[:2]]):
+        for n in web.news(q, n=8, days=days) or []:
+            if n.get("url") and n["url"] not in seen:
+                seen.add(n["url"]); rows.append(n)
+    rows.sort(key=lambda n: n.get("date") or "", reverse=True)
+    if not rows:
+        return ""
+    out = [f"LATEST NEWS (last {days} days, newest first; this is what is true NOW, it beats older articles and memory):"]
+    out += [f"- {n.get('date')} {n.get('source')}: {n.get('title')} — {str(n.get('snippet') or '')[:220]}" for n in rows[:10]]
+    for n in rows[:read_n]:
+        t = web.read(n["url"], 3000)
+        if len(t) > 400:
+            out.append(f"\nNEWS {n.get('date')} {n.get('source')} ({n.get('title', '')[:90]}):\n{t}")
+    return "\n".join(out)
+
+
 def run(topic, queries, job, watch_n=3):
+    import core
+    queries = [core.fresh_query(q, topic) for q in queries]       # 19 Nov: no past years from model memory
     found, seen = [], set()
     for q in queries:
         for v in search(q):
@@ -78,6 +103,13 @@ def run(topic, queries, job, watch_n=3):
             for q in [short] + list(queries[1:3]):
                 if q and len(r.get("web") or "") < 500:
                     r["web"] = web.facts(q, n=3) or r.get("web") or ""
+        try:
+            news = latest(topic, queries)
+            if news:
+                r["web"] = news + "\n\n" + (r.get("web") or "")
+                log("research latest news:", len(news), "chars")
+        except Exception as e:
+            log("research latest news fail", str(e)[:100])
         log("research web:", len(r["web"]), "chars from articles")
     except Exception as e:
         log("research web fail", str(e)[:120])

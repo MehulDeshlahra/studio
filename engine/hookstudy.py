@@ -238,7 +238,7 @@ def watch_file(mp4_url, prompt):
     import base64, urllib.request, tts
     b = urllib.request.urlopen(urllib.request.Request(mp4_url, headers={"User-Agent": "Mozilla/5.0"}), timeout=90).read(26_000_000)
     body = {"contents": [{"parts": [{"inline_data": {"mime_type": "video/mp4", "data": base64.b64encode(b).decode()}},
-                                    {"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
+                                    {"text": __import__("core").dated(prompt) + "\n\nReturn ONLY valid JSON."}]}],
             "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2, "maxOutputTokens": 8000}}
     # 18 Nov: 1500 tokens cut shot-by-shot answers mid-JSON; more models because 3.8-flash/3.5-lite were 503 for hours
     for m in tts.usable(["gemini-3.8-flash", "gemini-3-flash-preview", "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"]):

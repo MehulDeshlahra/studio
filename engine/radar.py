@@ -107,7 +107,8 @@ def google_sweep():
          "for FREE: new free AI APIs or free tiers, free credits programs, open-source models for video, voice/TTS, music, image, "
          "captions or upscaling, new free features for YouTube Shorts / Instagram Reels creators, and new free automation tools. "
          "Return up to 15 items as JSON list [{\"title\",\"url\",\"about\"}] with the real source URL. Only real, verifiable items.")
-    body = {"contents": [{"parts": [{"text": q}]}], "tools": [{"google_search": {}}], "generationConfig": {"temperature": 0.2}}
+    import core
+    body = {"contents": [{"parts": [{"text": core.dated(q)}]}], "tools": [{"google_search": {}}], "generationConfig": {"temperature": 0.2}}
     for m in ("gemini-3.8-flash", "gemini-3.5-flash-lite"):
         try:
             r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent", data=json.dumps(body).encode(),
