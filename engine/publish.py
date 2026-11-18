@@ -5,7 +5,7 @@ never expires, data access renews when he logs in to Meta). The Page key and the
 every run, so posts can later be promoted as ads on the existing post. A fixed "page_token" in the file still works.
 Instagram: resumable upload of the local file (no public hosting needed). Facebook Page: video reels. YouTube: Shorts.
   python engine/publish.py [channel] [--dry]"""
-import json, os, sys, time, urllib.parse, urllib.request
+import json, os, sys, time, urllib.error, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, log, load, save, telegram, sh
 
@@ -15,7 +15,18 @@ G = "https://graph.facebook.com/v23.0"
 def _req(url, data=None, headers=None, method=None):
     body = urllib.parse.urlencode(data).encode() if isinstance(data, dict) else data
     r = urllib.request.Request(url, data=body, headers=headers or {}, method=method)
-    return json.load(urllib.request.urlopen(r, timeout=600))
+    try:
+        return json.load(urllib.request.urlopen(r, timeout=600))
+    except urllib.error.HTTPError as e:
+        if e.code in (400, 401) and "graph.facebook.com" in url:   # 190 = token refused: drop cached page keys
+            try:
+                b = e.read(2000).decode("utf-8", "ignore")
+                e.fp = __import__("io").BytesIO(b.encode()); e.read = e.fp.read
+                if '"code":190' in b.replace(" ", "") and os.path.exists(META_CACHE):
+                    os.remove(META_CACHE); log("meta: a cached key was refused, cache cleared")
+            except Exception:
+                pass
+        raise
 
 
 def instagram(acc, mp4, caption):
@@ -72,22 +83,38 @@ def youtube(acc, mp4, title, desc, tags=None, thumb=None):
     return vid
 
 
+META_CACHE = os.path.join(OUT, "meta-cache.json")
+
+
 def resolve(acc):
-    """Fill page_token + ig_user_id from the Ads MCP user login."""
+    """Fill page_token + ig_user_id from the Ads MCP user login.
+    18 Nov: every caller (publish, stats, comments, stories, hookstudy, money, rivals) asked Meta again, 2 calls each; a burst
+    hit the app's hourly limit (#4 'Application request limit reached', 114%). Page tokens made from a long-lived user
+    token do not expire, so they are cached for 12 h (a refused token clears the cache: see _req), the login check once a day."""
     if not acc or acc.get("page_token") or not acc.get("page_id"):
         return acc
+    cache = load(META_CACHE, {}) or {}
+    c = cache.get(acc["page_id"])
+    if c and time.time() - c.get("t", 0) < 12 * 3600:
+        return dict(acc, **{k: v for k, v in c.items() if k in ("page_token", "ig_user_id")})
     try:
         ut = open(os.path.expanduser("~/.studio-meta-user.token")).read().strip()
         d = _req(f"{G}/{acc['page_id']}?fields=access_token,instagram_business_account&access_token={ut}")
         acc = dict(acc, page_token=d["access_token"])
         if d.get("instagram_business_account"):
             acc["ig_user_id"] = d["instagram_business_account"]["id"]
-        dbg = _req(f"{G}/debug_token?input_token={ut}&access_token={ut}")["data"]
-        left = (dbg.get("data_access_expires_at", 0) - time.time()) / 86400
-        if left < 21:
-            telegram(f"⚠️ Meta login data access ends in {left:.0f} days: Mehul, log in to Meta Business Suite once, or posting stops.")
+        cache[acc["page_id"]] = {"page_token": acc["page_token"], "ig_user_id": acc.get("ig_user_id"), "t": time.time()}
+        if time.time() - cache.get("_login_checked", 0) > 86400:
+            cache["_login_checked"] = time.time()
+            dbg = _req(f"{G}/debug_token?input_token={ut}&access_token={ut}")["data"]
+            left = (dbg.get("data_access_expires_at", 0) - time.time()) / 86400
+            if left < 21:
+                telegram(f"⚠️ Meta login data access ends in {left:.0f} days: Mehul, log in to Meta Business Suite once, or posting stops.")
+        save(META_CACHE, cache)
     except Exception as e:
         log("meta login: no page key", str(e)[:200])
+        if c:                                             # Meta busy or rate-limited: yesterday's key still works
+            return dict(acc, **{k: v for k, v in c.items() if k in ("page_token", "ig_user_id")})
     return acc
 
 
