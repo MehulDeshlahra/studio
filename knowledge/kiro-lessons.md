@@ -29,6 +29,12 @@ knowledge/lessons-learnt.md for the engine.
 - When a fix applies only to future builds, say so and rebuild the affected video instead of leaving it.
 - NEVER trust the planner's scene types: it wrote 'info'/'image' and empty panels on a lab page ('None' on screen).
   plan.lab_fix() now repairs them; a new look or page needs the same type check.
+- ALWAYS look at the pre-render check SHEET (preflight-sheet.jpg), not just its log line: it showed the repair had
+  deleted the compare bars and kept a thumbnail with burnt-in text.
+- A step that "decides" (visual director, creative director, repair) must decide ONCE per video and keep its choice on
+  rebuilds; re-running it undid fixes. Check every new step for this.
+- An automatic repair must be re-validated (lab_fix after repair) and must re-fetch what it changed (pictures).
+- One blind model answer can be wrong too (read "31st day" as 30+30): two must agree before a fix changes a number.
 - NEVER run a long command in the foreground (owner: "never sleep"): systemctl start --no-block / systemd-run --no-block,
   then do other work and check back.
 
