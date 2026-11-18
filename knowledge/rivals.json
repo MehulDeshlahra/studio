@@ -3553,5 +3553,2046 @@
    "UCv2fH7qjvBKoc6v0s2bVVBg",
    "UCyP8b_UMs2nZeXpVKuPtjdg"
   ]
+ },
+ "finance": {
+  "channels": {
+   "UCRzYN32xtBf3Yxsx5BvJWJw": {
+    "name": "warikoo",
+    "handle": "@warikoo",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      7180000
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 390414,
+    "shorts": [
+     {
+      "id": "6OHyxqxqjFw",
+      "title": "Sourav Joshi Ki DEFENDER Se YouTube Par Kitni Kamai Ho Sakti Hai? #shorts",
+      "views": 2154702,
+      "dur": 37,
+      "published": "2026-11-02"
+     },
+     {
+      "id": "aBa0NpwLSx0",
+      "title": "Samay Ki Ticket Sales Se Ambani Ke Paas Zameen Aa Jayegi? #shorts",
+      "views": 860784,
+      "dur": 42,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "7ddps0EfIgg",
+      "title": "1 Lakh Ka GOLD Bechne Par Kitna Paisa Wapas Milega? #shorts",
+      "views": 552538,
+      "dur": 39,
+      "published": "2026-11-07"
+     },
+     {
+      "id": "RZUeGqIyYgM",
+      "title": "Kya Ather LOAN pe lena Sahi Decision tha?! #shorts",
+      "views": 476356,
+      "dur": 34,
+      "published": "2026-11-08"
+     },
+     {
+      "id": "TOns_a-kicQ",
+      "title": "Note Printing Ka Kharcha Kitna? #shorts",
+      "views": 390414,
+      "dur": 29,
+      "published": "2026-10-27"
+     },
+     {
+      "id": "fGamXIhLPVU",
+      "title": "₹5 Ka Pen Ya Lakhon Ka? SASTA vs MEHENGA! #shorts",
+      "views": 387722,
+      "dur": 37,
+      "published": "2026-11-13"
+     },
+     {
+      "id": "YEMwT89ROJ8",
+      "title": "Movie Theatre Ka Hisab #shorts",
+      "views": 357287,
+      "dur": 51,
+      "published": "2026-10-24"
+     },
+     {
+      "id": "Renqi2NkB30",
+      "title": "iPhone Duo Days: Kya Hai? #shorts",
+      "views": 354510,
+      "dur": 27,
+      "published": "2026-10-23"
+     },
+     {
+      "id": "5p98iPeCb9g",
+      "title": "Meri Team ki Sabse FALTU MEHENGI Purchase Kaunsi hai?! #shorts",
+      "views": 314759,
+      "dur": 28,
+      "published": "2026-11-01"
+     },
+     {
+      "id": "VGAFd1Un-LY",
+      "title": "Gaadi Se Bhi Mehengi NUMBER PLATE?! #shorts",
+      "views": 291088,
+      "dur": 43,
+      "published": "2026-11-14"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "leader",
+    "posts_per_week": 9.0,
+    "shorts_per_week": 7.0
+   },
+   "UCVOTBwF0vnSxMRIbfSE_K_g": {
+    "name": "Labour Law Advisor",
+    "handle": "@labourlawadvisor",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      5490000
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 435506,
+    "shorts": [
+     {
+      "id": "MA6qikiGJI0",
+      "title": "London to UP, Baccha Paida Karne | #LLAShorts 1678",
+      "views": 2025065,
+      "dur": 92,
+      "published": "2026-10-23"
+     },
+     {
+      "id": "txODrXHR-Nw",
+      "title": "Crazy Indian Railways Hack! | #LLAShorts 1691",
+      "views": 1577752,
+      "dur": 94,
+      "published": "2026-11-09"
+     },
+     {
+      "id": "ehjIr-KtJt0",
+      "title": "FSSAI vs Influencers | #LLAShorts 1681",
+      "views": 597531,
+      "dur": 73,
+      "published": "2026-10-28"
+     },
+     {
+      "id": "SK7I12VhoOg",
+      "title": "Secret Chinese Wholesale Market | #LLAShorts 1683",
+      "views": 473626,
+      "dur": 70,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "xPfMOkyRVX0",
+      "title": "Patients’ Rights are Human Rights | #LLAShorts1675",
+      "views": 435506,
+      "dur": 115,
+      "published": "2026-10-20"
+     },
+     {
+      "id": "FFeuK-eMibU",
+      "title": "Chaiwale se Panga Pada Mehenga | #LLAShorts 1682",
+      "views": 402634,
+      "dur": 85,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "-o0VJNZKeyY",
+      "title": "Craziest By-Election Stories | Siyaasi Shanivaar Ep. 6 | #LLAShorts 1679",
+      "views": 331077,
+      "dur": 119,
+      "published": "2026-10-24"
+     },
+     {
+      "id": "vyrT8fwG-hU",
+      "title": "Does India Really Need a Bullet Train? | #LLAShorts 1685",
+      "views": 295909,
+      "dur": 86,
+      "published": "2026-11-02"
+     },
+     {
+      "id": "EuzK275hDps",
+      "title": "Dark Side of Government Jobs | #LLAShorts 1687",
+      "views": 293929,
+      "dur": 81,
+      "published": "2026-11-04"
+     },
+     {
+      "id": "lqW-0cTtngQ",
+      "title": "BJP Roasted Congress! Why? | Siyaasi Shanivaar Ep. 7 | #LLAShorts 1684",
+      "views": 239430,
+      "dur": 109,
+      "published": "2026-10-31"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "leader",
+    "posts_per_week": 6.5,
+    "shorts_per_week": 5.8
+   },
+   "UCwVEhEzsjLym_u1he4XWFkg": {
+    "name": "Finance With Sharan",
+    "handle": "@financewithsharan",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      3740000
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 284844,
+    "shorts": [
+     {
+      "id": "5--Q4m3ZcxY",
+      "title": "Watch This Before Buying a New iPhone #shorts",
+      "views": 1076754,
+      "dur": 94,
+      "published": "2026-11-02"
+     },
+     {
+      "id": "muX5LPsoPLk",
+      "title": "What If Every American Child Owned SpaceX Shares? #shorts",
+      "views": 409170,
+      "dur": 62,
+      "published": "2026-10-23"
+     },
+     {
+      "id": "MPii1ncl8to",
+      "title": "The Truth About Jio's IPO #shorts",
+      "views": 343890,
+      "dur": 110,
+      "published": "2026-10-21"
+     },
+     {
+      "id": "hzecR72d4Yk",
+      "title": "Amitabh Bachchan's ₹100 Crore Bungalow Has a Legal Problem #shorts",
+      "views": 308421,
+      "dur": 87,
+      "published": "2026-11-17"
+     },
+     {
+      "id": "yBqVg1w5KqQ",
+      "title": "RBI Wants to Restrict Indians From Investing in US Stocks? #shorts",
+      "views": 284844,
+      "dur": 77,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "39Cf7T85YPw",
+      "title": "NVIDIA Could Fire Its Own Founder? #shorts",
+      "views": 253413,
+      "dur": 76,
+      "published": "2026-11-12"
+     },
+     {
+      "id": "4u-6x5BIQ3Q",
+      "title": "Microsoft Is Profitable. So Why Are Jobs at Risk? 👀 #shorts",
+      "views": 220517,
+      "dur": 71,
+      "published": "2026-10-28"
+     },
+     {
+      "id": "Bu1yhZPZg6o",
+      "title": "5 Years. Zero Returns?! What’s Happening to Indian Stocks? #shorts",
+      "views": 206464,
+      "dur": 61,
+      "published": "2026-10-24"
+     },
+     {
+      "id": "dPGeFNXt2Og",
+      "title": "Ramayana's Secret Business Strategy #shorts",
+      "views": 200754,
+      "dur": 89,
+      "published": "2026-11-12"
+     },
+     {
+      "id": "6nnl_owwlFQ",
+      "title": "Buying an iPhone on EMI? It Could Cost India More #shorts",
+      "views": 74065,
+      "dur": 49,
+      "published": "2026-10-29"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "leader",
+    "posts_per_week": 9.5,
+    "shorts_per_week": 8.8
+   },
+   "UCwAdQUuPT6laN-AQR17fe1g": {
+    "name": "Pranjal Kamra",
+    "handle": "@pranjalkamra",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      6500000
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 46682,
+    "shorts": [
+     {
+      "id": "QaPwUpfVJPQ",
+      "title": "Stock Market is NOT for You!’",
+      "views": 105899,
+      "dur": 175,
+      "published": "2026-11-02"
+     },
+     {
+      "id": "CggMskIXTaM",
+      "title": "Should You Buy a Car in 2026?",
+      "views": 59044,
+      "dur": 99,
+      "published": "2026-10-22"
+     },
+     {
+      "id": "rwXxlvvZPdQ",
+      "title": "Why You’ll Never Make Money in Stocks!",
+      "views": 56995,
+      "dur": 124,
+      "published": "2026-10-26"
+     },
+     {
+      "id": "I077OSVtKb8",
+      "title": "Beware of Things Advertised Too Much!",
+      "views": 55510,
+      "dur": 55,
+      "published": "2026-11-13"
+     },
+     {
+      "id": "CsE0y5e9vz4",
+      "title": "Never Fall for the FOMO Trap!!",
+      "views": 46682,
+      "dur": 153,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "c7Pf7TbcvB4",
+      "title": "PK Bola Ep 10: Bharti Airtel",
+      "views": 44135,
+      "dur": 109,
+      "published": "2026-11-05"
+     },
+     {
+      "id": "aN74FhtCcn0",
+      "title": "PK Bola EP 9: IndusInd Bank",
+      "views": 35848,
+      "dur": 70,
+      "published": "2026-10-31"
+     },
+     {
+      "id": "ROibM-SbbSg",
+      "title": "I Don’t Reject Every Stock!",
+      "views": 29406,
+      "dur": 62,
+      "published": "2026-11-04"
+     },
+     {
+      "id": "HN8ni8UGljc",
+      "title": "PK Bola EP 11: United Foodbrands",
+      "views": 21022,
+      "dur": 112,
+      "published": "2026-11-10"
+     },
+     {
+      "id": "PUh2g-xJOjI",
+      "title": "Beware of Startup Vultures!",
+      "views": 20883,
+      "dur": 101,
+      "published": "2026-10-28"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "leader",
+    "posts_per_week": 5.2,
+    "shorts_per_week": 3.2
+   },
+   "UCe3qdG0A_gr-sEdat5y2twQ": {
+    "name": "CA Rachana Phadke Ranade",
+    "handle": "@carachanaranade",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      5420000
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 27558,
+    "shorts": [
+     {
+      "id": "8JGj_2gihJ4",
+      "title": "3 Global events that may impact Indian Stock Markets | Key things to know|CA Rachana Ranade|#shorts",
+      "views": 68438,
+      "dur": 105,
+      "published": "2026-10-26"
+     },
+     {
+      "id": "PhktKHgJ34c",
+      "title": "$500 Billion Wiped Out from Google's Parent Company! What Went Wrong? 📉 | CA Rachana Ranade|#shorts",
+      "views": 55621,
+      "dur": 121,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "Ulubp8ruR7E",
+      "title": "Why Did Page Industries Stock Crash 13% on 12 Nov 2026? 📉| CA Rachana Ranade | #shorts",
+      "views": 41449,
+      "dur": 83,
+      "published": "2026-11-13"
+     },
+     {
+      "id": "gFrO5nl0yUk",
+      "title": "Ather Energy Stock Surged nearly 22%: What could be the reasons? | CA Rachana Ranade | #shorts",
+      "views": 27875,
+      "dur": 71,
+      "published": "2026-10-28"
+     },
+     {
+      "id": "A4c0A-XWgzw",
+      "title": "Nifty IT Index Rallies 12% in a Week! | CA Rachana Ranade| #shorts",
+      "views": 27558,
+      "dur": 84,
+      "published": "2026-10-21"
+     },
+     {
+      "id": "jzS1BVxs__o",
+      "title": "Why Is Nifty Rising? 3 Reasons Behind the Rally! 📈 | CA Rachana Ranade | #shorts",
+      "views": 25634,
+      "dur": 65,
+      "published": "2026-11-06"
+     },
+     {
+      "id": "3svGEjksjyU",
+      "title": "Reliance Industries Stock Surges 8% After Q2 Results! Here's a Highlight |CA Rachana Ranade |#shorts",
+      "views": 24208,
+      "dur": 110,
+      "published": "2026-11-02"
+     },
+     {
+      "id": "5xDykwijyok",
+      "title": "Vedanta Demerger: 5 Companies | Which is performing better? | CA Rachana Ranade | #shorts",
+      "views": 23319,
+      "dur": 111,
+      "published": "2026-10-27"
+     },
+     {
+      "id": "iOWxzgZKIgM",
+      "title": "🪔✨ Celebrate This Diwali with BIGGER Savings! ✨🪔 | CA Rachana Ranade | #shorts #diwali",
+      "views": 16287,
+      "dur": 34,
+      "published": "2026-11-06"
+     },
+     {
+      "id": "_fstal8Ro0s",
+      "title": "How does Lenskart make money? Business model explained in 2 minutes. | CA Rachana Ranade | #shorts",
+      "views": 13655,
+      "dur": 124,
+      "published": "2026-10-22"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "leader",
+    "posts_per_week": 5.8,
+    "shorts_per_week": 3.0
+   },
+   "UCfmwwI3be03dPiQSCGQnQMg": {
+    "name": "Mayank Gupta",
+    "handle": "@mayankonmoney",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      105000
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 176896,
+    "shorts": [
+     {
+      "id": "YICcXiD6rd8",
+      "title": "₹80,000 iPhone for ₹34,000? Here’s How!",
+      "views": 550183,
+      "dur": 76,
+      "published": "2026-11-01"
+     },
+     {
+      "id": "lT7h97pNlZ4",
+      "title": "10 Lakh Bike Loan | Rich Vs Poor Mindset",
+      "views": 396786,
+      "dur": 65,
+      "published": "2026-11-03"
+     },
+     {
+      "id": "anB4BWMReos",
+      "title": "₹2 Lakh Investment | PPF vs Mutual Funds - What Makes You Richer?",
+      "views": 252948,
+      "dur": 63,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "Klc5u58cG0c",
+      "title": "Rich vs Poor SIP Strategy | Best SIP plans for 2026",
+      "views": 221186,
+      "dur": 81,
+      "published": "2026-11-07"
+     },
+     {
+      "id": "7sBtPE5dNpo",
+      "title": "₹6 Lakh FD Investment | Rich Vs Poor Mindset",
+      "views": 176896,
+      "dur": 71,
+      "published": "2026-11-12"
+     },
+     {
+      "id": "0XozX7y6yE8",
+      "title": "1 Crore Home | Rich Vs Middle Class Mindset",
+      "views": 118194,
+      "dur": 60,
+      "published": "2026-10-26"
+     },
+     {
+      "id": "O8BOS9eocmI",
+      "title": "lndia Vs Dubai Lifestyle Comparison 2026",
+      "views": 61698,
+      "dur": 32,
+      "published": "2026-11-15"
+     },
+     {
+      "id": "sgYi6M5kKi0",
+      "title": "Never Buy Car On Diwali 2026",
+      "views": 51425,
+      "dur": 51,
+      "published": "2026-10-23"
+     },
+     {
+      "id": "I3DNvxNo2nU",
+      "title": "Best Month to Buy an iPhone & More",
+      "views": 47954,
+      "dur": 50,
+      "published": "2026-11-10"
+     },
+     {
+      "id": "30LjHSdWljI",
+      "title": "SIP Vs Recurring Deposit | Which Investment Makes You Richer?",
+      "views": 43896,
+      "dur": 44,
+      "published": "2026-11-05"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 3.2,
+    "shorts_per_week": 3.0
+   },
+   "UCtjvCyA0eq8klToVcr6Zmvg": {
+    "name": "Mutual Globe",
+    "handle": "@mutualglobe",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      19100
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 16391,
+    "shorts": [
+     {
+      "id": "9zoWVUaeIG8",
+      "title": "40 की उम्र में बेफ़िक्र ज़िंदगी बिना salary के ?",
+      "views": 421758,
+      "dur": 92,
+      "published": "2026-10-26"
+     },
+     {
+      "id": "iY3JMFyafac",
+      "title": "बुढ़ापे में कभी खत्म नहीं होगा पैसा ! बस ये 4% WALA Rule समझ लें.",
+      "views": 310609,
+      "dur": 80,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "HUtH9Zxp_Lc",
+      "title": "15 साल का डेटा: इस एक Index Fund ने सबको चौंका दिया!",
+      "views": 29527,
+      "dur": 65,
+      "published": "2026-10-28"
+     },
+     {
+      "id": "zkEeOeqBf20",
+      "title": "3 अलग Funds लेने से बेहतर है सिर्फ 1 Multi Cap? जानिए क्यों !",
+      "views": 17976,
+      "dur": 71,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "YzRJqMp1flY",
+      "title": "40 की उम्र में नौकरी से आज़ादी चाहिए तो पहले ये हिसाब लगाइये",
+      "views": 16391,
+      "dur": 136,
+      "published": "2026-11-07"
+     },
+     {
+      "id": "TLSzs3cudYU",
+      "title": "क्या Multi Cap best Fund है?",
+      "views": 8139,
+      "dur": 73,
+      "published": "2026-10-21"
+     },
+     {
+      "id": "J6UwBhrSLCQ",
+      "title": "बुढ़ापे की पेंशन खत्म Penny Stocks से! संभल जाइए",
+      "views": 7334,
+      "dur": 119,
+      "published": "2026-10-31"
+     },
+     {
+      "id": "wjtQBIWCOcw",
+      "title": "40 साल की उम्र तक कितने पैसे होने चाहिए ताकि Retirement हो सके?",
+      "views": 7255,
+      "dur": 63,
+      "published": "2026-11-13"
+     },
+     {
+      "id": "OAU8aOxWhls",
+      "title": "Salary आते ही खर्च? बचत कैसे बढ़ाएँ? Emergency Fund कितना रखें?",
+      "views": 4164,
+      "dur": 62,
+      "published": "2026-11-04"
+     },
+     {
+      "id": "gK7kwbnWLsU",
+      "title": "Mutual Fund में 50:50 Strategy: ज़्यादा रिटर्न काफॉर्मूला !",
+      "views": 3131,
+      "dur": 47,
+      "published": "2026-10-27"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 7.0,
+    "shorts_per_week": 5.8
+   },
+   "UCu_vpIaLRjILrJTte2ME6SA": {
+    "name": "Tarun Talks",
+    "handle": "@taruntalks90",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      856
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 12928,
+    "shorts": [
+     {
+      "id": "sada_pjBZgI",
+      "title": "Gold Kharidte Waqt Ye Galti Mat Karna! 😨‼️#gold #jwellery #goldprice",
+      "views": 611819,
+      "dur": 41,
+      "published": "2026-10-27"
+     },
+     {
+      "id": "qShwRV_eh_0",
+      "title": "₹30,000 vs ₹1.5 Lakh Gold Necklace 😱#gold #investment #jewellery #goldprice",
+      "views": 40135,
+      "dur": 71,
+      "published": "2026-10-24"
+     },
+     {
+      "id": "cLui2-6100Q",
+      "title": "₹4,000 Crore Ki Ramayana!😯 #ramayan #india #shorts #saipallavi  #tseries",
+      "views": 15169,
+      "dur": 30,
+      "published": "2026-11-04"
+     },
+     {
+      "id": "xvFVRj3YknM",
+      "title": "Doctor Nahi, Farishta Hai ❤️ #doctor #shorts #humanity #artificialeye",
+      "views": 14625,
+      "dur": 34,
+      "published": "2026-11-07"
+     },
+     {
+      "id": "kJr9xfUCda4",
+      "title": "70 Lakh Bachaye, Lekin Zindagi Haar Gaye 💔#savings #shorts",
+      "views": 12928,
+      "dur": 73,
+      "published": "2026-11-11"
+     },
+     {
+      "id": "2CVuX8cD3ig",
+      "title": "AQI 400+ Hai… Kya Air Purifier Zaroori Hai? 😨#airpurifier #shorts",
+      "views": 8901,
+      "dur": 33,
+      "published": "2026-11-12"
+     },
+     {
+      "id": "OziRA-0AA4A",
+      "title": "Viral boy in social media 🔥#viral #shorts #viralboy",
+      "views": 5388,
+      "dur": 27,
+      "published": "2026-11-16"
+     },
+     {
+      "id": "dLWK1cliaes",
+      "title": "Home Loan Close Karne Ke Baad Ye 2 Documents Lena Mat Bhoolna! ⚠️ #shorts #finance",
+      "views": 3993,
+      "dur": 37,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "mDgxh4pO9zM",
+      "title": "Last Soul Ultra: Insaan Hai Ya Machine? 😳🏃‍♂️#shorts",
+      "views": 3259,
+      "dur": 93,
+      "published": "2026-10-27"
+     },
+     {
+      "id": "yZF2xGsFcrk",
+      "title": "Marwari Families Ka Money Mindset 💰#marwadi #loan #rich #mindset",
+      "views": 2717,
+      "dur": 66,
+      "published": "2026-10-26"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 7.8,
+    "shorts_per_week": 7.8
+   },
+   "UC7ucKLUaJeabXNVuH6EpLhw": {
+    "name": "Finance with SKT",
+    "handle": "@financewithskt",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      106000
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 54156,
+    "shorts": [
+     {
+      "id": "KNCZDr1EmlM",
+      "title": "क्या आपमें हैं ये 5 Millionaire Signs❓| Finance With SKT #fws #skt #shorts",
+      "views": 131380,
+      "dur": 135,
+      "published": "2026-11-10"
+     },
+     {
+      "id": "xVLcg4JV7nI",
+      "title": "20s में Wealth बनाने के 4 Rules! 🔥💸| Finance With SKT #shorts #fws #skt #wealth",
+      "views": 62878,
+      "dur": 100,
+      "published": "2026-10-21"
+     },
+     {
+      "id": "eHg3GfIXMdU",
+      "title": "अमीर बनने के 5 Mindset Rules! 🔥💸| Finance With SKT #skt #shorts #richvspoor",
+      "views": 57398,
+      "dur": 128,
+      "published": "2026-10-20"
+     },
+     {
+      "id": "JggPIOUYSiI",
+      "title": "अमीर बनने की Buffett की 5 बातें! 💰| Finance With SKT #shorts #fws #skt",
+      "views": 54156,
+      "dur": 150,
+      "published": "2026-11-06"
+     },
+     {
+      "id": "4u--NpmN57g",
+      "title": "अमीर बनने के 5 Bezos Secrets! 🔥😱| Finance With SKT #amazon #skt #shorts",
+      "views": 51996,
+      "dur": 118,
+      "published": "2026-11-09"
+     },
+     {
+      "id": "7QZCQTPA9Z4",
+      "title": "अमीर बनने की Zuckerberg की 5 बातें! 💰| Finance With SKT #shorts #skt",
+      "views": 45969,
+      "dur": 138,
+      "published": "2026-11-07"
+     },
+     {
+      "id": "thmJywRcFEo",
+      "title": "Ratan Tata की सफलता की 5 बातें! 🔥 | Finance With SKT #ratantata #fws #shorts",
+      "views": 42382,
+      "dur": 98,
+      "published": "2026-11-11"
+     },
+     {
+      "id": "AEyYHJ4T-po",
+      "title": "Jobs की 5 बातें, जो सोच बदल दें! 🔥| Finance With SKT #fws #skt #shorts",
+      "views": 34956,
+      "dur": 80,
+      "published": "2026-11-12"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 1.5,
+    "shorts_per_week": 1.5
+   },
+   "UCn7hVmQG0LY2y80Sa0o0xgw": {
+    "name": "Money Vs ME",
+    "handle": "@professorvinnyarora",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      23300
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 17584,
+    "shorts": [
+     {
+      "id": "7mR1iiZ7Ors",
+      "title": "How to Earn ₹1 Lakh/Month After Retirement? | Retirement Planning",
+      "views": 126514,
+      "dur": 92,
+      "published": "2026-11-05"
+     },
+     {
+      "id": "xXKu3-xyItY",
+      "title": "Silver Price Crash! Sell Now or Hold? | Silver Price Analysis 2026",
+      "views": 113012,
+      "dur": 72,
+      "published": "2026-11-09"
+     },
+     {
+      "id": "ZoEhqju5RF0",
+      "title": "Want More From Your SIP? Try These 3 Strategies! | Mutual Fund Tips",
+      "views": 92932,
+      "dur": 90,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "AKTIHceNbo4",
+      "title": "This Mutual Fund Mistake Can Eat Your Profits! | Exit Load Explained",
+      "views": 29081,
+      "dur": 69,
+      "published": "2026-10-22"
+     },
+     {
+      "id": "IDBhS43Ggfk",
+      "title": "New UPI Scam Alert! Don't Fall for This Trick | Jump Deposit Scam Warning",
+      "views": 17584,
+      "dur": 67,
+      "published": "2026-11-15"
+     },
+     {
+      "id": "4rZeVRqZYr0",
+      "title": "Mutual Fund Up 10%, But Your SIP Is in Loss? | SIP Returns vs XIRR Explained",
+      "views": 16271,
+      "dur": 75,
+      "published": "2026-10-25"
+     },
+     {
+      "id": "0bs6EPBaK7g",
+      "title": "5 Money Mistakes That Keep Salaried People Poor! | Personal Finance Tips",
+      "views": 15092,
+      "dur": 77,
+      "published": "2026-11-02"
+     },
+     {
+      "id": "PIfNcw1H5EQ",
+      "title": "What If Your Mutual Fund Shuts Down? | Is Your Money Safe?",
+      "views": 12855,
+      "dur": 54,
+      "published": "2026-11-03"
+     },
+     {
+      "id": "cCrhK8Mt-Ak",
+      "title": "The Smartest Way to Invest in Gold? | Gold Buying Strategy",
+      "views": 12265,
+      "dur": 99,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "cFRAz2EB-BY",
+      "title": "ITR Refund Delayed? Here's What You Should Do! | Income Tax 2026",
+      "views": 7004,
+      "dur": 83,
+      "published": "2026-10-31"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 6.5,
+    "shorts_per_week": 5.8
+   },
+   "UC2RDsDYDRoQiiizWbCQv3Ng": {
+    "name": "Finance Wali Dost",
+    "handle": "@financewalidost",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      986
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 2996,
+    "shorts": [
+     {
+      "id": "zZ5M6HLRTL8",
+      "title": "Unexpected Money in Your Bank Account Could Be a Scam! #youtubeshorts #shortvideo #shorts #bank",
+      "views": 388508,
+      "dur": 47,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "4RrZ9i58v-w",
+      "title": "Get 100% Car Value! #youtubeshorts #shortvideo #shorts #car #money #finance #loss",
+      "views": 27215,
+      "dur": 37,
+      "published": "2026-11-13"
+     },
+     {
+      "id": "DGs6m0dcVY0",
+      "title": "Check this Before Buying Gold #youtubeshorts #shortvideo #shorts #gold #jewellery #new #finance",
+      "views": 6817,
+      "dur": 34,
+      "published": "2026-11-06"
+     },
+     {
+      "id": "9oWGn-J6foQ",
+      "title": "Check This Before Buying Gold! #youtubeshorts #shortvideo #shorts #gold #jewellery #huid",
+      "views": 3024,
+      "dur": 42,
+      "published": "2026-10-31"
+     },
+     {
+      "id": "VQ3Yyd_cFZE",
+      "title": "₹5000 Fine for Loud Music #youtubeshorts #shortvideo #shorts #railway #music #reels #finance #train",
+      "views": 2996,
+      "dur": 38,
+      "published": "2026-11-09"
+     },
+     {
+      "id": "BquIEB4rm94",
+      "title": "Get ₹5,000 for Missing Papers! #youtubeshorts #shortvideo #shorts #bank #finance #paper",
+      "views": 2769,
+      "dur": 41,
+      "published": "2026-11-14"
+     },
+     {
+      "id": "Dtir_dhPAos",
+      "title": "Buy Bike at Lower Price! #youtubeshorts #shortvideo #short #bike #bank #auction #save #finance",
+      "views": 2682,
+      "dur": 30,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "RfbOtQ1jq6k",
+      "title": "Don’t Share PAN or Aadhaar! #youtubeshorts #shortvideo #shorts #gold #share #phone",
+      "views": 2322,
+      "dur": 41,
+      "published": "2026-11-16"
+     },
+     {
+      "id": "p0hM3GiR7-s",
+      "title": "Find Unclaimed Money Online! #youtubeshorts #shortvideo  #shorts #finance #money #government",
+      "views": 2135,
+      "dur": 31,
+      "published": "2026-11-11"
+     },
+     {
+      "id": "0qtZxPicZBI",
+      "title": "Get Money Against Gold Without Selling It! #youtubeshorts #shortvideo #shorts #bank #money #gold",
+      "views": 1874,
+      "dur": 36,
+      "published": "2026-11-03"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 3.8,
+    "shorts_per_week": 3.8
+   },
+   "UCLSVacNcywLdxtik_bQRTIQ": {
+    "name": "Techguru ramji",
+    "handle": "@techgururamji",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      6780
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 45946,
+    "shorts": [
+     {
+      "id": "2Ww8Q2IR9h4",
+      "title": "गाड़ी नंबर से चालान कैसे चेक करें 2026 | घर बैठे मोबाइल से Traffic Challan Check kare |",
+      "views": 114168,
+      "dur": 69,
+      "published": "2026-10-26"
+     },
+     {
+      "id": "0aKbBZcCors",
+      "title": "CIBIL Score Check Kaise Kare 2026 | मोबाइल से फ्री में CIBIL Score कैसे चेक करें | New Process",
+      "views": 94942,
+      "dur": 71,
+      "published": "2026-10-25"
+     },
+     {
+      "id": "8C766AREXzQ",
+      "title": "Birth Certificate Download Kaise Kare 2026 | जन्म प्रमाण पत्र कैसे डाउनलोड करें मोबाइल से घर बैठे |",
+      "views": 55152,
+      "dur": 99,
+      "published": "2026-10-23"
+     },
+     {
+      "id": "BAdtvZuHTO0",
+      "title": "Aadhaar Card में कौन सा बैंक खाता Link है कैसे पता करें 2026 | आधार से लिंक बैंक खाता ऐसे चेक करें |",
+      "views": 47892,
+      "dur": 100,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "EV6MQPA6EZ4",
+      "title": "Aadhaar Card Biometric Lock/Unlock Kaise Kare 2026 | सभी scam से बचें",
+      "views": 45946,
+      "dur": 123,
+      "published": "2026-10-31"
+     },
+     {
+      "id": "TQoT8hK42Kg",
+      "title": "Aadhar card mein kon sa mobile number link pata kare 2026 | How to check Aadhar linked mobile number",
+      "views": 22765,
+      "dur": 71,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "G6id0aG-R_8",
+      "title": "Court Case Status Kaise Check Kare 2026 | कोर्ट केस की अगली तारीख कैसे पता करें | new process",
+      "views": 10275,
+      "dur": 94,
+      "published": "2026-11-10"
+     },
+     {
+      "id": "vpPzR5sJe1g",
+      "title": "PF का पूरा पैसा कैसे निकालें 2026 | EPF Withdrawal Online New Process",
+      "views": 5854,
+      "dur": 34,
+      "published": "2026-11-18"
+     },
+     {
+      "id": "BHyWhpZn7CU",
+      "title": "आपके आधार कार्ड से कितने SIM Card चल रहे हैं 2026 | ऐसे करें घर बैठे चेक | New Process",
+      "views": 4408,
+      "dur": 96,
+      "published": "2026-10-24"
+     },
+     {
+      "id": "hJ9YtPgv-3I",
+      "title": "आधार कार्ड में पति का नाम व पता कैसे जोड़ें 2026 | How to change address in aadhar card |",
+      "views": 3751,
+      "dur": 21,
+      "published": "2026-11-13"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 8.5,
+    "shorts_per_week": 5.0
+   },
+   "UCHYpz3VZDOSJjj_nGvxLkkA": {
+    "name": "Bachat Se Ameer ",
+    "handle": "@bachatse",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      802
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 2049,
+    "shorts": [
+     {
+      "id": "22wJwHbkHCY",
+      "title": "💰 रोज़ ₹50 बचाए और 1 साल में जमा किए ₹18,250! 😱 | Hindi Finance Story #shorts #shortsfeed",
+      "views": 252060,
+      "dur": 158,
+      "published": "2026-11-02"
+     },
+     {
+      "id": "OXcCSyMPz-Y",
+      "title": "😱 ₹45,000 की सैलरी में EMI का जाल! अमीर बनने के 2 नियम सीख लो | Hindi Finance Story #shorts",
+      "views": 3365,
+      "dur": 135,
+      "published": "2026-11-11"
+     },
+     {
+      "id": "wBTCBrR-4E0",
+      "title": "💰 सिर्फ ₹500 से शुरू किया दिवाली बिजनेस, फिर हुआ कमाल! 😱 | Hindi Finance Story #shorts #shortsfeed",
+      "views": 2989,
+      "dur": 118,
+      "published": "2026-11-04"
+     },
+     {
+      "id": "lg69jCyyvbo",
+      "title": "💰सिर्फ ₹500 से शुरू किया सैंडविच बिजनेस! 😱 | Hindi Finance Story #shorts #shortsfeed",
+      "views": 2304,
+      "dur": 153,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "qTrlip2vsdM",
+      "title": "💰 रोज़ ₹100 बचाकर जमा किए ₹18,000! फिर आई ऐसी मुसीबत 😱 | Hindi Finance Story #shorts #shortsfeed",
+      "views": 2049,
+      "dur": 72,
+      "published": "2026-10-29"
+     },
+     {
+      "id": "Vo-q0v1P7sU",
+      "title": "💸 कबाड़ के डिब्बों से कमाए ₹250! 😱 | सिर्फ ₹125 का बिजनेस | Hindi Finance Story #shorts #shortsfeed",
+      "views": 1932,
+      "dur": 99,
+      "published": "2026-11-02"
+     },
+     {
+      "id": "uWHqltc3KLQ",
+      "title": "😱 सिर्फ ₹100 से शुरू किया ऐसा बिजनेस! 💰 | Hindi Finance Story #shorts #viral #shortsfeed",
+      "views": 1849,
+      "dur": 49,
+      "published": "2026-10-20"
+     },
+     {
+      "id": "eBbCrT3-Hm4",
+      "title": "😱 हर महीने 20 तारीख को पर्स खाली… फिर इतना पैसा कहाँ से आया? 💸 | Hindi Finance Story #shorts #viral",
+      "views": 1472,
+      "dur": 89,
+      "published": "2026-10-31"
+     },
+     {
+      "id": "jULgNSsH4Vc",
+      "title": "😱 सिर्फ ₹800 से शुरू किया बिजनेस!💸| रोहित की कहानी | Hindi Finance Story🔥#shorts #viral #shortsfeed",
+      "views": 1425,
+      "dur": 80,
+      "published": "2026-10-23"
+     },
+     {
+      "id": "8wwlCTXIw74",
+      "title": "😱💸 ₹18,000 सैलरी में ₹6,000 की बचत! सुमित का कमाल 🔥 | Hindi Finance Story #shorts #shortsfeed",
+      "views": 960,
+      "dur": 60,
+      "published": "2026-10-24"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 2.5,
+    "shorts_per_week": 2.5
+   },
+   "UCNvFAiSc5EIjyvpYAfYcr9g": {
+    "name": "Indian Dollar",
+    "handle": "@indiandollar-v47",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      271
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 3230,
+    "shorts": [
+     {
+      "id": "8A5ZbdewfTA",
+      "title": "Sona Chandi Kya Rate Hai? पुराना गहना बेचने पर पूरा पैसा क्यों नहीं मिलता? 😱⚠️",
+      "views": 173033,
+      "dur": 31,
+      "published": "2026-11-01"
+     },
+     {
+      "id": "3Pyibq2Xi2I",
+      "title": "दिवाली के दिन कभी सोना मत खरीदना! सुनार का सबसे बड़ा खेल ⚠️❌",
+      "views": 4023,
+      "dur": 29,
+      "published": "2026-11-04"
+     },
+     {
+      "id": "LGTwPliVuWo",
+      "title": "Bank में ₹1 लाख पड़े हैं? सालभर का असली ब्याज चौंका देगा! 🤯💸",
+      "views": 3417,
+      "dur": 32,
+      "published": "2026-11-16"
+     },
+     {
+      "id": "RhmdYCi-oTY",
+      "title": "Dhanteras पर Gold Coin लें या Jewellery? Sona Chandi Kya Rate Hai जान लो! ⚠️🪙",
+      "views": 3241,
+      "dur": 28,
+      "published": "2026-10-31"
+     },
+     {
+      "id": "JFShSI21Gdg",
+      "title": "सिर्फ ₹500 की SIP से क्या होगा? 10 साल का असली गणित देख लो! 🤯📈",
+      "views": 3230,
+      "dur": 37,
+      "published": "2026-11-10"
+     },
+     {
+      "id": "F51DLt-CM8Q",
+      "title": "₹1 लाख कहाँ रखें: SBI Bank या Post Office? असली ब्याज चौंका देगा! 🤯🏦",
+      "views": 2456,
+      "dur": 40,
+      "published": "2026-11-17"
+     },
+     {
+      "id": "nDkZdGHqgZs",
+      "title": "Zero से ₹1 लाख कैसे कमाएं? ये 3 काम 5 महीने में गेम बदल देंगे! 🤯💸",
+      "views": 2351,
+      "dur": 36,
+      "published": "2026-11-15"
+     },
+     {
+      "id": "0eJeWGUs-4E",
+      "title": "Diwali से पहले Gold-Silver हुआ सस्ता! 📉 खरीदने से पहले 3 सच जान लो! ⚠️🪙",
+      "views": 2157,
+      "dur": 39,
+      "published": "2026-10-30"
+     },
+     {
+      "id": "XgYY3S4k5Ak",
+      "title": "Mahila Samman Yojana vs Post Office FD: किसमें ज्यादा फायदा है? 💰📮",
+      "views": 1763,
+      "dur": 27,
+      "published": "2026-10-24"
+     },
+     {
+      "id": "fQ05ctXqu-A",
+      "title": "Sona Chandi Kya Rate Hai? पुराना गहना बदलकर नया लेना सबसे बड़ा नुकसान? 😱⚠️",
+      "views": 1511,
+      "dur": 36,
+      "published": "2026-11-02"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 12.2,
+    "shorts_per_week": 12.2
+   },
+   "UCNGJbo2_p9NhrgnxGZs8Zsw": {
+    "name": "CA Sumit Sharma",
+    "handle": "@casumitsharma",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      562000
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 13568,
+    "shorts": [
+     {
+      "id": "G7ptOtt6OZg",
+      "title": "Disadvantage Of FD (Fixed Deposit) FD के नुकसान!? #fd #fixeddeposit #incometax #casumitsharma",
+      "views": 83172,
+      "dur": 138,
+      "published": "2026-11-13"
+     },
+     {
+      "id": "8zPCeNoiqG0",
+      "title": "अपने एक Account से दूसरे Account में पैसे Transfer करने पर आ सकता है Notice!? #savingaccount #income",
+      "views": 25725,
+      "dur": 95,
+      "published": "2026-11-04"
+     },
+     {
+      "id": "bpRUCBQpw4I",
+      "title": "10 ऐसी Financial Transaction जिन पर आ सकता है Income Tax Notice!?  #incometax #financialtransactions",
+      "views": 22927,
+      "dur": 145,
+      "published": "2026-11-15"
+     },
+     {
+      "id": "5fgYCtfluSw",
+      "title": "1st November से लागू New Rules! जो आम आदमी को करेंगे प्रभावित!? #incometax #newrules #ca #income",
+      "views": 17315,
+      "dur": 166,
+      "published": "2026-10-31"
+     },
+     {
+      "id": "xZGr3Gq-4sQ",
+      "title": "एक व्यक्ति को कितने Bank Account रखने चाहिए!? #incometax #casumitsharma #bankaccount",
+      "views": 13568,
+      "dur": 67,
+      "published": "2026-11-16"
+     },
+     {
+      "id": "9TBS4jt_K0Q",
+      "title": "Mobile OTP से अपना CIBIL/Credit Score Check करें!मात्र 1 मिनट में #cibilscore #creditscore",
+      "views": 7803,
+      "dur": 108,
+      "published": "2026-10-26"
+     },
+     {
+      "id": "zSj7--2ylK0",
+      "title": "FD Vs RD Vs SIP पैसा कहां Invest करें? #fd #rd #sip #casumitsharma",
+      "views": 6628,
+      "dur": 80,
+      "published": "2026-11-17"
+     },
+     {
+      "id": "qPwNsj0R688",
+      "title": "क्या आपको भी आया है Income Tax Department (ITDCPC) से ये Message! #incometax #casumitsharma",
+      "views": 6271,
+      "dur": 102,
+      "published": "2026-11-08"
+     },
+     {
+      "id": "9_hED_flypE",
+      "title": "₹5,000 Invest करके बना सकते है ₹10 करोड़!? #investment #invest #5000 #crores",
+      "views": 5295,
+      "dur": 90,
+      "published": "2026-11-11"
+     },
+     {
+      "id": "6Bw5j5pzH0o",
+      "title": "MSME/Udyam Registration करने के बाद करने वाले जरूरी काम!? #msme #udyamregistration #incometax",
+      "views": 4730,
+      "dur": 74,
+      "published": "2026-10-25"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 12.5,
+    "shorts_per_week": 6.8
+   },
+   "UCJRiQl2kMVIC6KTKBHTSOtg": {
+    "name": "Finance With Rahul & Raman Agarwal ",
+    "handle": "@financewithrahulraman",
+    "subs_hist": [
+     [
+      "2026-11-18",
+      44800
+     ]
+    ],
+    "first": "2026-11-18",
+    "median": 2055,
+    "shorts": [
+     {
+      "id": "31wK5VZTEvg",
+      "title": "Silver Price Crash: Should You Buy the Dip or Stay Away? 📉 | Silver Investment Strategy #shorts",
+      "views": 97468,
+      "dur": 66,
+      "published": "2026-11-11"
+     },
+     {
+      "id": "tSP-AtiWHz8",
+      "title": "Sabse Kharab Investment Kya Hai? 🤔 | Investment Mistakes to Avoid #shorts",
+      "views": 24756,
+      "dur": 40,
+      "published": "2026-10-23"
+     },
+     {
+      "id": "-BoRDYvLqcw",
+      "title": "FOMO in Investing: Don't Follow the Crowd! 📉📈 | Smart Investment Tips #shorts",
+      "views": 2832,
+      "dur": 63,
+      "published": "2026-11-14"
+     },
+     {
+      "id": "ZddPmtzMPPk",
+      "title": "HDFC Life Insurance vs Mutual Funds 🤔 Which Is Better for You? #shorts",
+      "views": 2537,
+      "dur": 71,
+      "published": "2026-11-01"
+     },
+     {
+      "id": "aFOtvIAptBA",
+      "title": "₹2 Lakh Diwali Bonus: Home Loan Prepay Karein Ya Invest? 💰🏠 #shorts",
+      "views": 2055,
+      "dur": 63,
+      "published": "2026-10-27"
+     },
+     {
+      "id": "9Vh5npdf3pc",
+      "title": "GIFT City: India's Gateway to Global Investments! 🌍💰 #shorts",
+      "views": 1519,
+      "dur": 62,
+      "published": "2026-11-17"
+     },
+     {
+      "id": "su8hGmA3sUg",
+      "title": "Invest in Real Estate with ₹5,000? 🏢 | REITs Explained for Beginners",
+      "views": 1413,
+      "dur": 79,
+      "published": "2026-10-21"
+     },
+     {
+      "id": "gRXZAgKUn7k",
+      "title": "🤔 Biggest Investing Mistake: Are You Falling for This Myth? | #shorts",
+      "views": 1284,
+      "dur": 51,
+      "published": "2026-11-03"
+     },
+     {
+      "id": "atZJg6vS24U",
+      "title": "Everyone Is Buying in the Stock Market! Should You? 📈 | Herd Mentality Explained #shorts",
+      "views": 1125,
+      "dur": 59,
+      "published": "2026-10-31"
+     },
+     {
+      "id": "5q5SZ_HZqC8",
+      "title": "Are Your Emotions Making Your Investment Decisions? 📉📈 | Investor Psychology #shorts",
+      "views": 1066,
+      "dur": 42,
+      "published": "2026-11-07"
+     }
+    ],
+    "outliers": [],
+    "fit": true,
+    "kind": "direct",
+    "tier": "riser",
+    "posts_per_week": 2.5,
+    "shorts_per_week": 2.5
+   }
+  },
+  "instagram": {
+   "ankurwarikoo": {
+    "followers": 4062201,
+    "posts_per_week": 12.5,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DfzoNtgqeat/",
+      "likes": 13616,
+      "comments": 245,
+      "caption": "How much can Sourav Joshi earn from YouTube after buying a car?"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfe3fhCKoGv/",
+      "likes": 9655,
+      "comments": 77,
+      "caption": "What does your journey look like once you clear SSC CGL?"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfpWfqmKbSV/",
+      "likes": 6623,
+      "comments": 51,
+      "caption": "6 banking exams - did you know about all of them?"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfkGLeiqLE_/",
+      "likes": 6415,
+      "comments": 15,
+      "caption": "How much cash can you legally keep at home?"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfXO1TLKCNt/",
+      "likes": 6107,
+      "comments": 17,
+      "caption": "“Tell me about yourself” - how do you answer this question in an interview? \n\n3 points you can follow."
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfw-ZAdKDVE/",
+      "likes": 5968,
+      "comments": 53,
+      "caption": "PCB vs PCM - what is your pick?"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfT10iAKq4n/",
+      "likes": 4358,
+      "comments": 28,
+      "caption": "Asking for a job referral doesn't have to be awkward. \nThe key is to make it easy for the other person to say yes or no.\n\n1/ Someone you know\n\n“Hi Rahul, I'm applying for the analyst role at your comp"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfrzq8RKCkX/",
+      "likes": 4256,
+      "comments": 12,
+      "caption": "5 high-paying careers after you complete Grade 12!"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfeFcFFKVpC/",
+      "likes": 3215,
+      "comments": 10,
+      "caption": "Negotiating a job offer isn’t just about the salary. \nHere are 4 other things you can ask about before accepting.\n\n1/ Joining date: Negotiate a little breathing room between jobs if your circumstances"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfmhM4UKbsv/",
+      "likes": 3149,
+      "comments": 5,
+      "caption": "5 careers with more than 50 LPA salary!"
+     }
+    ]
+   },
+   "financewithsharan": {
+    "followers": 2937137,
+    "posts_per_week": 6.2,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DfmwQ9eMlS5/",
+      "likes": 16995,
+      "comments": 119,
+      "caption": "A movie doesn't necessarily have to be a box office hit to become a massive business.\n\nRamayana's real money-making opportunity could lie beyond theatres, through merchandise, collectibles, games and "
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfFA032M64N/",
+      "likes": 12622,
+      "comments": 337,
+      "caption": "Platinum is 30 times rarer than gold, yet it costs far less. 👀\n\nGold may be grabbing all the attention, but platinum brings something valuable to the table too.\n\nFrom jewellery to hydrogen fuel cells,"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfz1ySqM0CL/",
+      "likes": 10785,
+      "comments": 38,
+      "caption": "You can pay for a property and STILL lose ownership of it. Here's why!\n\nThe Amitabh Bachchan family property dispute is a reminder that when it comes to real estate, who pays for the property and who "
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfr0Y9jMamF/",
+      "likes": 10376,
+      "comments": 28,
+      "caption": "Jensen Huang's exit from Nvidia could create some very unexpected winners. 👀\n\nAfter leading Nvidia for 33 years, Jensen has stepped down as CEO. And while his departure is a massive loss for him perso"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfUtyors6zS/",
+      "likes": 9680,
+      "comments": 22,
+      "caption": "Could a political shake-up in the US become a big opportunity for Indian stocks? 🇮🇳\n\nWith Democrats gaining more influence over US policy, America’s AI boom could face fresh scrutiny. Some lawmakers h"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dewa1wtg6k6/",
+      "likes": 6299,
+      "comments": 71,
+      "caption": "Jio is preparing for what could be India's biggest-ever IPO. \nBut is it really a tech company, or a telecom business in disguise? 📱\n\nWith a reported valuation of over ₹10 lakh crore, Jio's next big op"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DezIfdxsG8B/",
+      "likes": 6402,
+      "comments": 34,
+      "caption": "What if your child’s first investment was in SpaceX? 👀\n\nElon Musk’s reported plan to give SpaceX shares to children in America raises a bigger question about the future of money.\n\nIf AI and robots end"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De4WhCfsRkt/",
+      "likes": 6300,
+      "comments": 49,
+      "caption": "Is Mukesh Ambani really “running India”? 👀🇮🇳\n\nElon Musk once made a controversial remark comparing Mukesh Ambani’s influence in India to that of a Prime Minister.\n\nBut according to this take, the real"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfo8f7KMKYj/",
+      "likes": 5943,
+      "comments": 30,
+      "caption": "After building Nvidia for 33 years, could Jensen Huang actually lose control of his own company? 👀\n\nReports allege that Nvidia's board is considering his removal following allegations about two extram"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfCyxZZMx2j/",
+      "likes": 5440,
+      "comments": 124,
+      "caption": "Could Indians soon lose the freedom to invest in US stocks? 👀\n\nThe Nifty 50 has struggled while the S&P 500 has delivered much stronger returns over the past two years. Now, a proposed RBI change coul"
+     }
+    ]
+   },
+   "labourlawadvisor": {
+    "followers": 1306736,
+    "posts_per_week": 6.2,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DfhgNATxcjG/",
+      "likes": 131502,
+      "comments": 644,
+      "caption": "Don’t miss these IRCTC Hacks!\n\n-\n\n#irctc #hack #indianrailways #indianrailway"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De13cFotBww/",
+      "likes": 105979,
+      "comments": 835,
+      "caption": "London to UP, Bachaa Paida Karne\n\n-\n\n#london #ivf #uttarpradesh #ivfjourney #indianhealthcare"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfCtqfaoZ4_/",
+      "likes": 9185,
+      "comments": 60,
+      "caption": "FSSAI vs Influencer \n\n-\n\n#fssai #influencer #foodsafety #indiangovernment"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfzoDe8zu8h/",
+      "likes": 7036,
+      "comments": 82,
+      "caption": "Telecom companies have new rules to follow. Do you know your rights as a customer?\n\nTRAI has introduced major changes to its telecom complaint redressal framework to make customer support more accessi"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfFLE3Qo9xr/",
+      "likes": 6460,
+      "comments": 38,
+      "caption": "Chai Wale se Panga Mehenga \n\n-\n\n#chai #tea #legalbattle"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfUrzFNNPWM/",
+      "likes": 5690,
+      "comments": 62,
+      "caption": "Dark Side of Government Jobs\n\n-\n\n#governmentjobs #governmentjobsindia #indianjobs #sarkarinaukri"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DeuLIODTnXA/",
+      "likes": 5085,
+      "comments": 43,
+      "caption": "Patients’ Rights are Human Rights\n\nThe NHRC Charter of Patients’ Rights lays out 17 rights every patient should know:\n\n1. Right to Information: Know your illness, treatment and costs in a language you"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfmt393zwCt/",
+      "likes": 4234,
+      "comments": 54,
+      "caption": "Comment ‘Reel’ and we will send you the Link\n\n-\n\n#lays #layschips #consumercourt"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfKe5kbtbN0/",
+      "likes": 3944,
+      "comments": 45,
+      "caption": "BJP Roasted Congress! Why?\n\n-\n\n#bjp #congress #narendramodi"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfsOyupSntJ/",
+      "likes": 3879,
+      "comments": 31,
+      "caption": "Just A Color Theory or More Than That?\n\n-\n\n#lla #colour"
+     }
+    ]
+   },
+   "pranjalkamra": {
+    "followers": 906338,
+    "posts_per_week": 4.8,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DfrvL4_SedT/",
+      "likes": 2120,
+      "comments": 66,
+      "caption": "The more something is advertised, the more carefully you should evaluate it. Especially when it comes to your money. \n\nWatch the reel to understand why.\n.\n.\n.\n.\n.\n.\n.\n.\n.\nStock market India, share mar"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DezCF0VSl9Y/",
+      "likes": 2024,
+      "comments": 40,
+      "caption": "Should you even buy a car in 2026? \n\nWith rising costs and changing priorities, let’s break down whether buying a car makes financial sense today. Watch till the end.\n.\n.\n.\n.\n.\n.\n.\n.\nStock market Indi"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De9UE-tNEVp/",
+      "likes": 1662,
+      "comments": 23,
+      "caption": "Following every stock market tip, prediction and promise on social media won’t make you a better investor. Understanding what you’re investing in will.\n\nStop chasing tips. Start building your own unde"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfPXg6XSreu/",
+      "likes": 1010,
+      "comments": 22,
+      "caption": "Did you enter the stock market because you understand investing, or because you saw others making money? \n\nThere’s a big difference. \nWatch the reel to know more.\n.\n.\n.\n.\n.\n.\n.\n.\nStock market India, s"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfFDpohN2LM/",
+      "likes": 990,
+      "comments": 14,
+      "caption": "Silver prices rise, everyone wants to invest. Prices fall, everyone panics. But is that really how investing works? \n\nWatch the reel to know more.\n.\n.\n.\n.\n.\n.\n.\n.\nStock market India, pranjal kamra, sh"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfZ1UGINr7f/",
+      "likes": 741,
+      "comments": 16,
+      "caption": "It genuinely hurts to see people approach investing the wrong way. But are you focusing on the right things when you invest? \n\nWatch the reel to understand what I mean.\n.\n.\n.\n.\n.\n.\n.\n.\nStock market In"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfKOnoeSCto/",
+      "likes": 634,
+      "comments": 16,
+      "caption": "PK Bola Stock Review Series\nEP 9: IndusInd Bank\n\nDisclaimer: Pranjal Kamra is the Director of Finology Ventures Pvt. Ltd., a SEBI Registered Research Analyst entity (Reg. No. INH000024277) and Investm"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De_5HgKScW_/",
+      "likes": 508,
+      "comments": 8,
+      "caption": "Join me at ET Wealth Expo 2026 on 31st October at NESCO, Mumbai, as we discuss wealth creation, investing and the future of the creator economy.\n\nRegister now and be part of the conversation!\nLink in "
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfR88rSSBOX/",
+      "likes": 444,
+      "comments": 13,
+      "caption": "Think we dislike all stocks? Not really. \n\nWe’re just choosy about the stocks we pick. There’s a difference between being critical and being selective. \n\nWatch the reel to know why.\n.\n.\n.\n.\n.\n.\n.\nStoc"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfmhIzzNv_6/",
+      "likes": 434,
+      "comments": 4,
+      "caption": "Why does Sreeleathers stay away from malls despite being a well-known footwear brand? There’s a strategic business decision behind it, and Soham Dey explains the thinking.\n\nWatch the reel to understan"
+     }
+    ]
+   },
+   "financewithrahulraman": {
+    "followers": 566075,
+    "posts_per_week": 3.2,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DfkT3CbBDJO/",
+      "likes": 1614,
+      "comments": 17,
+      "caption": "Silver Crash: Market ka sabse bada trap ya investors ke liye ek opportunity? 📉\n\nJab silver prices girte hain, toh kya panic selling karni chahiye ya smart investment strategy ke saath decision lena ch"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfKn8u_P1IA/",
+      "likes": 702,
+      "comments": 77,
+      "caption": "HDFC Life Insurance ya Mutual Fund – better investment option kaunsa hai? 🤔\n.\n.\n\n#HDFCLife #MutualFunds #InvestmentOptions #LifeInsurance #WealthCreation\n[ HDFC Life vs Mutual Funds, mutual fund inves"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DezaUtfulJ2/",
+      "likes": 413,
+      "comments": 48,
+      "caption": "💸 Sabse kharaab investment kya hai? 🤔 Kya aap bhi apne paise galat jagah invest kar rahe hain?\n\nWatch this reel to know more and make smarter financial decisions! 📈\n.\n.\n#Investment #FinancialAwareness"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfulHLJu5N_/",
+      "likes": 291,
+      "comments": 53,
+      "caption": "India mein investment ka ek global gateway – GIFT City! 🌍💰\n\nKya aap jaante hain ki India mein rehkar bhi aapko international investment opportunities explore karne ka option mil sakta hai?\n.\n.\n#GIFTci"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De9u64ChlmM/",
+      "likes": 292,
+      "comments": 13,
+      "caption": "💰 ₹10 Lakh Ka Home Loan Aur ₹2 Lakh Ka Diwali Bonus… Aap Kya Karoge? 🏠🪔\nDiwali bonus milna khushi ki baat hai, lekin us paise ko smartly use karna financial planning ka hissa hai.\n.\n.\n#FinancialEducat"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfz15xIhAqA/",
+      "likes": 98,
+      "comments": 38,
+      "caption": ""
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfcUXbLO2Tx/",
+      "likes": 154,
+      "comments": 0,
+      "caption": "Diwali is here, and we’re almost ready to celebrate! 🪔✨\n\nWishing you all a Diwali filled with happiness, prosperity and success. ❤️\n\nAt Santushti Capital, we promise to keep guiding you towards smarte"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfC59IFgSqq/",
+      "likes": 126,
+      "comments": 2,
+      "caption": "💸 Do You Know What Behavioural Finance Is? 🤔\n.\n.\n💬 Have you ever made a financial decision based on fear, greed, or FOMO? Tell us in the comments!\n\n#BehaviouralFinance #BehavioralFinance #FinancialLit"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfphOxcvn8B/",
+      "likes": 116,
+      "comments": 3,
+      "caption": "Don’t Let FOMO Make Your Financial Decisions! 📉📈\n\nJust because everyone is investing in something doesn’t mean you should too. Don't chase trends, hype or quick returns. Understand your financial goal"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfPuHMhhPAn/",
+      "likes": 80,
+      "comments": 2,
+      "caption": "Investing mein sabse badi galatfahmi kya hai? 🤔 Kya aap bhi isi misconception ke saath apna paisa invest kar rahe hain?\n\nWatch this reel and rethink the way you look at investments. Because smart inve"
+     }
+    ]
+   },
+   "assetyogi": {
+    "followers": 203251,
+    "posts_per_week": 0.5,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DfPcRphMuFp/",
+      "likes": 84,
+      "comments": 8,
+      "caption": "₹1 Became ₹6,872 Crore in 3 Years! Magic of Compounding!\n\n[Compounding, Investing, Money]\n\n#assetyogi #finance #compounding"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfpHxVDMtsj/",
+      "likes": 45,
+      "comments": 3,
+      "caption": "Best Credit Cards in 2026: Cashback, Travel & Luxury! 💳🔥\n\nCashback, food delivery, shopping, travel ya luxury—2026 mein aapke spending pattern ke liye kaunsa credit card sabse best hai? Is video mein "
+     }
+    ]
+   },
+   "financewithskt": {
+    "followers": 149467,
+    "posts_per_week": 2.2,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DewfBvCvqtl/",
+      "likes": 28798,
+      "comments": 117,
+      "caption": "20s में Wealth बनाने के 4 Rules! 🔥💸| Finance With SKT #reels #fws #skt #wealth"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfj_HUQP-U5/",
+      "likes": 23190,
+      "comments": 745,
+      "caption": "क्या आपमें हैं ये 5 Millionaire Signs❓| Finance With SKT #fws #skt #newreels"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfcPF9Dv8kX/",
+      "likes": 14210,
+      "comments": 101,
+      "caption": "अमीर बनने की Zuckerberg की 5 बातें! 💰| Finance With SKT #fws #skt"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Det-0qsP6Jg/",
+      "likes": 8585,
+      "comments": 57,
+      "caption": "अमीर बनने के 5 Mindset Rules! 🔥💸| Finance With SKT #skt #reels #richvspoor"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfZrhJxzYlz/",
+      "likes": 6971,
+      "comments": 56,
+      "caption": "अमीर बनने की Buffett की 5 बातें! 💰| Finance With SKT #newreels #fws #skt"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfhbtlXvR8l/",
+      "likes": 5290,
+      "comments": 34,
+      "caption": "अमीर बनने के 5 Bezos Secrets! 🔥😱| Finance With SKT #amazon #skt #newreels"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfmijM8NTnH/",
+      "likes": 4536,
+      "comments": 51,
+      "caption": "Ratan Tata की सफलता की 5 बातें! 🔥 | Finance With SKT #ratantata #fws #newreels"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfpNI9RvROj/",
+      "likes": 3543,
+      "comments": 29,
+      "caption": "Jobs की 5 बातें, जो सोच बदल दें!🔥Finance with SKT #newreels  #fws #skt"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfEEmw7Ntmr/",
+      "likes": 679,
+      "comments": 8,
+      "caption": "मौके बार बार मिल सकते हैं लेकिन 31 Oct 2026 तो एक ही बार आएगा 😍 | Book Your Seat Now : 9090-46-9393"
+     }
+    ]
+   },
+   "financebyraviraj": {
+    "followers": 73444,
+    "posts_per_week": 4.0,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/Df2FeA1T_Vy/",
+      "likes": 23343,
+      "comments": 27,
+      "caption": "6 Important Government Websites\n\nSave these 6 official government websites for Aadhaar, Voter ID, PAN Card, Driving Licence, Passport and Ayushman Card services. These links can save you time when you"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfHifk5zpaB/",
+      "likes": 9685,
+      "comments": 83,
+      "caption": "4 ESIC Benefits Every Employee Should Know\n\nSalary se ESIC deduct hota hai? Toh medical treatment, sickness benefit, employment injury coverage aur maternity benefits jaise advantages ke baare mein ja"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfmfyjWT0Y2/",
+      "likes": 734,
+      "comments": 3,
+      "caption": "3 Investments That Pay You Regular Income\n\nWant regular monthly income from your investments? Explore 3 options: REITs, Corporate Bonds and Post Office MIS that can help you earn passive income throug"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfWpUqhT8eT/",
+      "likes": 483,
+      "comments": 10,
+      "caption": "₹3,000 SIP: 3 Best Mutual Funds for 10 Years\n\nIf I had to start a ₹3,000 monthly SIP for the next 10 years,\n💰 SIP Allocation:\n\n₹1,500 – Mid Cap Funds\n₹1,000 – Flexi Cap Funds\n₹500 – Small Cap Funds\n\nA"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfMrY3aTNG9/",
+      "likes": 444,
+      "comments": 12,
+      "caption": "Best Mutual Funds Based on Your Investment Horizon \n\nWhich mutual funds are best for 1, 3, 5, 8 or 15 years? Find the right investment options based on your financial goals and risk appetite.\n\n#Mutual"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfhV81BzaL0/",
+      "likes": 404,
+      "comments": 4,
+      "caption": "5 Signs You’re Good at Managing Money\n\nAre you managing your money the right way? These 5 financial habits reveal how good you are at handling money, saving, investing and building long-term wealth.\n\n"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfZmYI4Te9s/",
+      "likes": 274,
+      "comments": 2,
+      "caption": "ATM Cash Not Received? \n\nATM se paisa debit ho gaya, lekin cash nahi nikla? Know the RBI rules, refund process and how to claim ₹100 per day compensation if the bank delays your refund.\n\n#ATM #ATMWith"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De9Rf-ZzRmv/",
+      "likes": 0,
+      "comments": 86,
+      "caption": "SIP + SWP: Retirement Ka Master Plan\n\nSIP vs SWP: Build Wealth & Get Monthly Learn how SIP builds wealth and SWP helps generate regular income during retirement. Understand the strategy with a practic"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De4IfafzVoG/",
+      "likes": 227,
+      "comments": 1,
+      "caption": "EPF Withdrawal Rules Explained 💰\n\nEPF has 3 components: Employee Share, Employer Share & Pension. Learn when you can withdraw each amount, which forms to use, and the rules you should know.\n\n📌 Step-by"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfEVjqUTMJc/",
+      "likes": 159,
+      "comments": 8,
+      "caption": "That Helps You Trade Smarter? 🤖\n\nExplore Lemonn app’s Zing feature to discover trading strategies, check win rates and review past performance before choosing a strategy.\n\n💬 Comment **“TRADE”** and DM"
+     }
+    ]
+   },
+   "financewalidost": {
+    "followers": 12357,
+    "posts_per_week": 4.0,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DfrlJqNBzFB/",
+      "likes": 4354,
+      "comments": 13,
+      "caption": "Your car insurance may not cover the full price you paid for your car!\n\nThat’s where an RTI (Return to Invoice) add-on helps. It covers the difference between your car’s IDV and invoice value in case "
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfu6JQpu-fS/",
+      "likes": 3268,
+      "comments": 4,
+      "caption": "Your missing property papers can cost the bank ₹5,000 daily!\n\nIf your bank delays returning your original documents, you can raise a complaint through the RBI Complaint Management System - (Link- http"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DewW0h2PoUt/",
+      "likes": 2828,
+      "comments": 17,
+      "caption": "Boys up to Class 12 and girls up to graduation can get a free Monthly Season Ticket (MST) for travel between home and school/college on routes up to 150 km.\n\nGet a Railway concession form from your sc"
+     },
+     {
+      "url": "https://www.instagram.com/reel/De6px_nhenw/",
+      "likes": 2605,
+      "comments": 11,
+      "caption": "If you need a business loan without collateral, this government-backed scheme is for you!\n\nNote:\n- The government guarantee usually covers 75-90% of the loan for eligible businesses.\n- Banks can still"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfSLUFnOfrV/",
+      "likes": 1843,
+      "comments": 4,
+      "caption": "Your Gold Can Help You Get Money Without Selling It!\n\nImportant: Interest rates and charges vary by bank. If you fail to repay, the bank can auction your gold.\n\nWatch the video to know more!\nFollow fi"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfZkpufRs0E/",
+      "likes": 1749,
+      "comments": 6,
+      "caption": "One small stamp can save you thousands!\n\nImportant- Always check the BIS hallmark, verify the HUID using the BIS CARE app, and check your jewellery bill before paying. \n\nIf hallmarked gold is found to"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfIPAInS3F1/",
+      "likes": 1038,
+      "comments": 3,
+      "caption": "An unexpected bank credit could be a trap! \n\nFraudsters can use fake payment screenshots, QR codes and refund requests to trick people into transferring their own money.\n\nStay alert and don’t let a sm"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfKGhbPhKDM/",
+      "likes": 630,
+      "comments": 6,
+      "caption": "Before you leave the jewellery shop, make sure you’ve checked these:\n\n-Check the gold’s weight, purity, making charges and GST.\n-Verify the 6-character HUID on the BIS Care app.\n-Check the jeweller’s "
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfmbLHQtiVB/",
+      "likes": 415,
+      "comments": 7,
+      "caption": "Don’t leave your family’s money unclaimed!\n\nImportant: The portal is free to use and requires no registration.\n\nFinding an asset doesn’t automatically transfer the money. \nYou need to:\n\n• Contact the "
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfzUODhBnC6/",
+      "likes": 379,
+      "comments": 3,
+      "caption": "Don’t share your PAN or Aadhaar just because a jeweller asks. \n\nBefore buying gold, always check its 6-digit HUID number through the BIS Care app to verify its purity and authenticity.\n\nSave this post"
+     }
+    ]
+   },
+   "hindiadvices": {
+    "followers": 10347,
+    "posts_per_week": 12.5,
+    "top": [
+     {
+      "url": "https://www.instagram.com/reel/DfRnE4iydCR/",
+      "likes": 64,
+      "comments": 0,
+      "caption": "Axis Bank Freecharge Credit Card 🔥\n\n#axisbank #freechargecreditcard #creditcard #creditcardbenefits\n\nAxis Bank Freecharge Credit Card, Freecharge Card Benefits, Axis Bank Credit Card, Credit Card Offe"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfgqp7BSJZZ/",
+      "likes": 43,
+      "comments": 1,
+      "caption": "RBL BookMyShow Credit Card का धमाका! 🎬\n#rblbank #bookmyshow #creditcard #movieoffers\n\nRBL Credit Card, Movie Offers, BookMyShow Benefits, Credit Card Offers"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfQrGDNomqz/",
+      "likes": 46,
+      "comments": 0,
+      "caption": "Best Credit Card for Students 🔥 | KreditPe Credit Card by SBM Bank\n\nKreditPe Credit Card for Students, SBM Bank Credit Card, Student Credit Card India\n#kreditpe #creditcard #studentcreditcard #sbmbank"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfPwlH0gZ5w/",
+      "likes": 28,
+      "comments": 6,
+      "caption": "ROAR Bank Credit Card Cashback कैसे Activate करें? 💳🔥\n\nROAR Bank Credit Card, Cashback Rewards, Reward Activation, Credit Card Tips\n\n#ROARBank #CreditCard #Cashback #CreditCardTips"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfRZbcLSaQf/",
+      "likes": 35,
+      "comments": 3,
+      "caption": "Tide Prepaid Card 🔥 | Benefits & Features\n\n#tidecard #tideprepaidcard #prepaidcard #tide\n\nTide Card, Tide Prepaid Card, Tide Card Benefits, Tide Card Features, Prepaid Card"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Df3Z9ipA0i-/",
+      "likes": 42,
+      "comments": 0,
+      "caption": "AU Small Finance Bank Welcome Kit Unboxing 📦✨\n#AUSmallFinanceBank #WelcomeKit #Unboxing #Banking\n\nAU Bank Kit, Welcome Kit Unboxing, Debit Card, Banking Experience, AU Bank Account"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfRFr79ytIN/",
+      "likes": 30,
+      "comments": 4,
+      "caption": "Jupiter Debit Card 🔥 | Benefits & Offers Cashback, Rewards, Card Benefits\n\nJupiter Debit Card, Jupiter Card Benefits, Jupiter Cashback, Debit Card Offers, Jupiter Bank"
+     },
+     {
+      "url": "https://www.instagram.com/reel/Dfg8zF9S19F/",
+      "likes": 36,
+      "comments": 1,
+      "caption": "Amazon Pay ICICI Card – कितना Cashback मिलता है? 💳\n\n #amazonpayicici #icicicreditcard #cashback #creditcard\n\nAmazon Pay Card, Cashback Offers, ICICI Bank, Credit Card Benefits"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfR6c8IS_lu/",
+      "likes": 29,
+      "comments": 3,
+      "caption": "FamX Prepaid Card 🔥 | Benefits & Features\n\n#famx #prepaidcard #famxcard #cardbenefits\n\nFamX Prepaid Card, FamX Card Benefits, FamX Card Features, Prepaid Card India"
+     },
+     {
+      "url": "https://www.instagram.com/reel/DfhEbTEyG_2/",
+      "likes": 28,
+      "comments": 3,
+      "caption": "ICICI Coral Credit Card के खास फायदे! 💳\n#icicibank #icicicoral #creditcard #creditcardbenefits\n\nICICI Coral Card, Reward Points, Movie Offers, Credit Card Benefits"
+     }
+    ]
+   }
+  },
+  "updated": "2026-11-18 23:32",
+  "off_niche": [],
+  "source": "deep dive 19 Nov 2026 (knowledge/new-page.md)"
  }
 }

@@ -149,6 +149,8 @@ def _rules(ch):
 
 
 def make(ch, topic, research_text):
+    # 19 Nov: per page (channel.json edit.words); finance reels win at 30-48 s, the other pages keep 95-150
+    W0, W1 = [int(x) for x in ((ch.get("edit") or {}).get("words") or [95, 150])]
     lessons = read(os.path.join(ROOT, "knowledge", "lessons.md"))
     ch_lessons = all_lessons(ch["id"])
     bible = read(os.path.join(ROOT, "channels", ch["id"], "bible.md"))
@@ -198,7 +200,7 @@ RESEARCH ON THIS TOPIC (the best existing Shorts; beat them, do not copy them):
 {research_text}
 
 REQUIREMENTS
-- 10-15 scenes; each scene = ONE spoken line of 4-16 words; total 95-150 words (about 40-55 s).
+- 10-15 scenes; each scene = ONE spoken line of 4-16 words; total {W0}-{W1} words (about {round(W0 / 2.4)}-{round(W1 / 2.6)} s).
 - Scene 1: the hook. The question or a surprising result in the first line, with the strongest visual. No intro, no greeting.
   2026 data: Shorts reach is decided by swipe-away in the first 1-2 s, so the first 4-6 spoken words already carry the
   surprise (not a setup), and the first frame already shows the subject big; never a slow build or a logo first.
@@ -238,10 +240,10 @@ Return JSON with exactly this shape:
     plan = ask(p)
     for _ in range(2):
         words = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))
-        if 95 <= words <= 160:
+        if W0 <= words <= W1 + 10:
             break
         log("plan has", words, "words -> asking for a fix")
-        plan = ask(f"This plan has {words} spoken words; it needs 100-145 (40-55 s). Rewrite it to fit: add the missing "
+        plan = ask(f"This plan has {words} spoken words; it needs {W0 + 5}-{W1 - 5}. Rewrite it to fit: add the missing "
                    f"steps of the mechanism (or cut repetition), keep the same JSON shape.\n{EXAMPLE}\n"
                    f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}")
     log("plan v1", len(plan.get("scenes", [])), "scenes")
@@ -249,7 +251,7 @@ Return JSON with exactly this shape:
 then return the IMPROVED plan (same JSON shape). Fix: weak hook, repeated visuals, lines over 16 words, scenes that add
 no new information, unclear mechanism, prompts that would make cluttered or text-filled images, risky or unverifiable
 claims (remove them), a weak ending question, stiff or bookish Hindi (make it sound like a friend talking),
-production-label titles. Make the mechanism complete (no missing step). Keep 10-15 scenes and 95-150 words total.
+production-label titles. Make the mechanism complete (no missing step). Keep 10-15 scenes and {W0}-{W1} words total.
 LESSONS:
 {lessons}
 PLAN:
@@ -257,7 +259,7 @@ PLAN:
     try:
         better = ask(review)
         bw = sum(len(s.get("vo", "").split()) for s in better.get("scenes", []))
-        if len(better.get("scenes", [])) >= 6 and 90 <= bw <= 165:
+        if len(better.get("scenes", [])) >= 6 and W0 - 5 <= bw <= W1 + 15:
             plan = better
             log("plan v2 (reviewed)", len(plan["scenes"]), "scenes")
     except Exception as e:

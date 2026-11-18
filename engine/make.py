@@ -36,6 +36,16 @@ def render_workers():
 
 
 def pick_topic(ch):
+    # 19 Nov: channels/<id>/queue.json = topics chosen by a deep dive (knowledge/new-page.md) or the owner, made first, in
+    # order. A topic counts as used once any video with that topic exists in done.json (held/rejected included).
+    q = load(os.path.join(ROOT, "channels", ch["id"], "queue.json"), []) or []
+    if q:
+        used = {str(d.get("topic", "")).strip().lower() for d in (load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or [])}
+        for it in q:
+            t = it.get("topic") if isinstance(it, dict) else it
+            if t and t.strip().lower() not in used:
+                log("topic from the queue:", t[:100])
+                return t
     try:                                                 # 17 Nov owner-approved extras (engine/extras.py)
         import extras
         done_ = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or []

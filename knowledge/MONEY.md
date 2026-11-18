@@ -73,6 +73,21 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
 - [x] 18 Nov 22:30: Navkar Bhav (channels/jain, @navkarbhav, Jain stories) + Finance Fuel (channels/finance, @finance.fuel, money explainers, lab look, SEBI-safe rules + not-advice caption footer) added; first videos building; posting from 22 Nov (warm-up). Proof: Meta page keys + IG ids resolved on the server.
 - [ ] English stories page (next in the agreed order).
 
+### 5a. Finance Fuel: the highest-paying niche (deep dive 19 Nov; data in knowledge/brands.json "finance")
+- Proof of who pays (their own video descriptions, YouTube API, 19 Nov): Ditto (Warikoo, Pranjal Kamra, CA Rachana
+  Ranade), Zerodha/Coin (4 big creators), INDmoney, slice (Labour Law Advisor promo code), Scapia + Tata Neu card
+  referrals (Rajesh Singh, 47.7k subs), Monzy card finder, CreditCase, smallcase, Tickertape, CG Police awareness collab.
+- Rates (India 2026): nano ₹2,000-8,000 per post; micro (10k-100k) ₹8,000-80,000 per deliverable (Tring, upGrowth);
+  rates follow average views; finance sits at the top of each band.
+- SEBI line we never cross: education only, no tips, no return claims, no market prices from the last 3 months.
+  That keeps brokers/AMCs possible (SEBI Common Advertisement Code, approved 24 Sep 2026); banks, cards, insurance,
+  payments and tax apps are not SEBI-regulated and can work with us from day 1.
+- [ ] NOW (ASK MEHUL, sign-ups): card referral programs (Scapia, Tata Neu, slice) and an insurance partner link
+      (Ditto) in the bio link; each needs his own account.
+- [ ] At 10k followers or 3 reels over 100k views: pitch slice, CRED, Ditto, Jupiter, Fi (paid reel, ₹8k-25k at that size).
+- [ ] Scam-alert series + numbers: offer it to bank fraud-awareness / police campaigns.
+- [ ] ITR season (June-July 2027): tax-filing affiliates (ClearTax, Quicko, TaxBuddy).
+
 ## 5b. Parent brand: Scroll House (owner picked 18 Nov)
 - Genre-, language- and format-neutral network name. Every page bio: "A Scroll House page".
 - Domain scrollhouse.in (Mehul bought it 18 Nov). Instagram @scrollhouse.in (Mehul created). YouTube @scrollhouse free (claim it).
