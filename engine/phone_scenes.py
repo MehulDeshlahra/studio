@@ -121,6 +121,13 @@ def scene(kind, s, sid, a, d, asset):
         cues.append({"t": round(ts + 0.33, 3), "file": "sfx/impact.mp3", "gain_db": -18, "align": "onset"})
     else:
         return "", [], []
+    if a < 0.4:
+        # 19 Nov: the hook scene is on screen from frame 0 (the first frame decides the swipe): no entrance fades, and the
+        # first message / card is already there; later items still arrive with the voice.
+        first = {"wa": f"#{sid}w0", "sms": f"#{sid}n0", "pay": f"#{sid}pi", "bill": f"#{sid}bl", "rule": f"#{sid}rc"}.get(kind)
+        js = [x for x in js if not (first and f'"{first}"' in x)]
+        js = [x.replace("opacity:0,", "opacity:1,", 1) if ("fromTo" in x and first and f'"{first}"' in x) else x for x in js]
+        return hero, js, cues
     if kind in ("wa", "sms", "pay"):
         js += [f'tl.set("#{sid}ph",{{opacity:0}},{a:.3f});',
                f'tl.fromTo("#{sid}ph",{{y:90,opacity:0,rotation:-2}},{{y:0,opacity:1,rotation:0,duration:0.55,ease:"power4.out",immediateRender:false}},{a:.3f});']
