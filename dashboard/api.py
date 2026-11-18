@@ -396,8 +396,8 @@ META_TTL = 1800      # 18 Nov: selfcheck 'fixed' this to 0 at 07:49 -> 2 Meta ca
 def meta_pages():
     if time.time() - _cache.get("t", 0) < max(600, META_TTL) and _cache.get("pages"):
         return _cache["pages"]
-    if time.time() < _cache.get("busy_until", 0) and _cache.get("pages"):   # Meta said 'limit reached': back off 15 min
-        return _cache["pages"]
+    if time.time() < _cache.get("busy_until", 0):          # Meta refused us: back off 15 min, even with nothing cached
+        return _cache.get("pages") or {}
     try:
         ut = open(os.path.join(HOME, ".studio-meta-user.token")).read().strip()
         d = json.load(urllib.request.urlopen(f"{G}/me/accounts?fields=name,id,followers_count,fan_count,instagram_business_account{{id,username,followers_count,media_count}}&limit=50&access_token={ut}", timeout=30))
@@ -415,7 +415,12 @@ def meta_pages():
         h[day] = {k: v["ig"] + v["fb"] for k, v in pages.items() if isinstance(v, dict)}
         jsave(FOLLOW_HIST, dict(sorted(h.items())[-90:]))
     except Exception as e:
-        _cache["err"] = str(e)[:200]
+        body = ""
+        try:
+            body = e.read().decode()[:200] if hasattr(e, "read") else ""
+        except Exception:
+            pass
+        _cache["err"] = (str(e) + " " + body)[:300]
         _cache["busy_until"] = time.time() + 900            # do not retry on every 5 s refresh while Meta is limiting us
         jsave(META_DISK, _cache)
     return _cache["pages"]
