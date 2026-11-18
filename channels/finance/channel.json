@@ -101,5 +101,6 @@
     "#personalfinance",
     "#financeinhindi",
     "#moneytips"
-  ]
+  ],
+  "facts_strict": true
 }

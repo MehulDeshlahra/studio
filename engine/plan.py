@@ -303,7 +303,7 @@ PLAN:
         log("plan review failed, keeping v1:", str(e)[:120])
     if ch.get("numbers_check"):                    # 18 Nov (finance 1118-2228 said Rs 50k -> Rs 1,02,000 with Rs 5k/month paid)
         for rnd in range(3):                       # 19 Nov: 2 fix rounds (one was not enough for unsourced claims)
-            probs = numbers_check(plan, _fact_sources(ch, topic, research_text))
+            probs = numbers_check(plan, _fact_sources(ch, topic, research_text), strict=bool(ch.get("facts_strict")))
             if not probs:
                 log("numbers check: all calculations and rules correct" + (" after a fix" if rnd else ""))
                 plan.pop("numbers_hold", None)
@@ -470,7 +470,7 @@ def _mask(text, value):
         n += k
     return out, n
 
-def numbers_check(plan, sources=""):
+def numbers_check(plan, sources="", strict=False):
     """Problems with the plan's numbers ([] = fine). Arithmetic is computed by Python, not judged by the model."""
     def _screen(s):                                   # 19 Nov: phone scenes carry numbers on screen (receipt rows, SMS)
         out = [str(s.get("value") or s.get("big") or s.get("end_label") or "")]
@@ -521,7 +521,7 @@ def numbers_check(plan, sources=""):
             got = float(_safe_eval(b2["expr"]))
         except Exception as e:
             log("numbers check: skipped one expression", str(b2.get("expr"))[:80], str(e)[:60]); continue
-        tol = max(0.05 * abs(says), 0.5 if abs(says) < 100 else 0)     # spoken rounding: "3 percent" for 3.04
+        tol = (1.0 if abs(says) >= 100 else 0.5) if strict else max(0.05 * abs(says), 0.5 if abs(says) < 100 else 0)
         if abs(got - says) > tol:
             # 19 Nov: one blind answer can be wrong too ("31st day" read as 30+30 = 60). A second blind answer must agree
             # before the number counts as wrong, else the fix round would change a correct number.
@@ -540,6 +540,8 @@ def numbers_check(plan, sources=""):
             probs.append(f"scene {c.get('scene')}: says {says:,.2f} but worked out from the script it is {got:,.2f} "
                          f"({b2['expr']}; {str(b2.get('how', ''))[:80]})")
     for f in r.get("facts") or []:
+        if strict and f.get("correct") is None:
+            probs.append(f"scene {f.get('scene')}: '{str(f.get('fact'))[:100]}' is not in the sources: remove it or say only what the sources say")
         if f.get("correct") is False:
             probs.append(f"scene {f.get('scene')}: '{str(f.get('fact'))[:100]}' is wrong: {str(f.get('why'))[:120]}")
     return probs
