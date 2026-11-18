@@ -151,6 +151,12 @@ def _rules(ch):
 def make(ch, topic, research_text):
     # 19 Nov: per page (channel.json edit.words); finance reels win at 30-48 s, the other pages keep 95-150
     W0, W1 = [int(x) for x in ((ch.get("edit") or {}).get("words") or [95, 150])]
+    # 19 Nov: the verified facts in channels/<id>/queue.json went only to the checker; the writer missed the core safety
+    # facts of a scam reel (finance 1119-0028). The writer now builds the script on them.
+    vf = [x for x in _fact_sources(ch, topic, "").splitlines() if x.startswith("VERIFIED")]
+    if vf:
+        research_text = ("VERIFIED FACTS FOR THIS VIDEO (checked by hand against official sources; build the script on these, "
+                         "include every safety step they name, and claim no rule beyond them):\n" + "\n".join(vf) + "\n\n" + str(research_text))
     lessons = read(os.path.join(ROOT, "knowledge", "lessons.md"))
     # 19 Nov: the rule book distilled from every page's mistakes (engine/lessons.py); a new page starts with all of it
     learnt = read(os.path.join(ROOT, "knowledge", "lessons-learnt.md"), 7000)

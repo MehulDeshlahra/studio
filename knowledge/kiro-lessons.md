@@ -35,6 +35,10 @@ knowledge/lessons-learnt.md for the engine.
   rebuilds; re-running it undid fixes. Check every new step for this.
 - An automatic repair must be re-validated (lab_fix after repair) and must re-fetch what it changed (pictures).
 - One blind model answer can be wrong too (read "31st day" as 30+30): two must agree before a fix changes a number.
+- Facts I verify must reach the WRITER, not only the checker (a scam script missed every safety step). plan.make now
+  puts the queue's verified source at the top of the research.
+- A checker can only catch what is wrong, never what is MISSING: for safety/scam reels check by hand that the key
+  actions are in the script.
 - NEVER rename a queue topic while a build may be using it: the topic text is the key for its verified source and for
   "already made". Change the "source" field, keep the topic.
 - NEVER run a long command in the foreground (owner: "never sleep"): systemctl start --no-block / systemd-run --no-block,
