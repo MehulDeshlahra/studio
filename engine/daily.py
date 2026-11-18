@@ -180,7 +180,26 @@ def main():
     try:
         fcntl.flock(lk, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except OSError:
-        log(f"{lane} lane: the other lane is building, wait"); return
+        # 18 Nov: while the laptop renders, the render lane only waits (no CPU here): the prep lane may build the next
+        # video meanwhile. Its own lock keeps it to one prep at a time; the memory floor below still applies.
+        lp = os.path.join(OUT, "laptop", "rendering")
+        if lane == "prep" and os.path.exists(lp) and time.time() - os.path.getmtime(lp) < 1800:
+            lk = open(os.path.join(OUT, "engine-prep.lock"), "w")
+            try:
+                fcntl.flock(lk, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError:
+                log("prep lane: a prep is already running next to the laptop render, wait"); return
+            log("prep lane: the laptop is rendering, so the server builds the next video meanwhile")
+        else:
+            log(f"{lane} lane: the other lane is building, wait"); return
+    else:                                                   # we hold engine.lock: a prep beside a laptop render may still run
+        lk2 = open(os.path.join(OUT, "engine-prep.lock"), "w")
+        try:
+            fcntl.flock(lk2, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError:
+            log(f"{lane} lane: a prep started beside a laptop render is still building, wait"); return
+        if lane != "prep":                                  # the render lane holds it only for this check
+            fcntl.flock(lk2, fcntl.LOCK_UN)
     if manual_busy():
         log(f"{lane} lane: a manual job is running, skip"); return
     try:                                                    # 18 Nov: the job bot shares this server; never push it into swap

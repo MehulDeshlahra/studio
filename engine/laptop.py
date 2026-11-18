@@ -60,6 +60,7 @@ def render(rdir, out, total, label=""):
             if not os.path.exists(claimed):
                 log("laptop: did not pick the job up, rendering here"); return False
         log("laptop: rendering", label, "on", status().get("mode", "?"), "mode")
+        open(os.path.join(D, "rendering"), "w").write(label)   # engine/daily.py: the prep lane may build meanwhile
         while time.time() - t0 < MAX_RENDER:
             if os.path.exists(err):
                 log("laptop: render failed:", open(err, encoding="utf-8", errors="ignore").read()[-300:]); return False
@@ -75,7 +76,7 @@ def render(rdir, out, total, label=""):
             time.sleep(4)
         log("laptop: too slow, rendering here"); return False
     finally:
-        for f in (q + ".tgz", q + ".json", claimed, err):
+        for f in (q + ".tgz", q + ".json", claimed, err, os.path.join(D, "rendering")):
             try:
                 os.remove(f)
             except OSError:
