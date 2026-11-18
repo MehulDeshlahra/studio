@@ -533,6 +533,17 @@ def lab_fix(plan):
             "clip": bool(s.get("prompt")),
             "title": True,
         }
+        if t in LAB_TYPES and not ok.get(t, False):
+            # 19 Nov: the pre-render repair wrote a 'ui' holding compare items and a 'chart' holding flow nodes (both drew
+            # nothing). Use the type whose data the scene really has.
+            for t2, k2 in (("compare", "items"), ("flow", "nodes"), ("ui", "rows"), ("chart", "points"), ("chat", "messages"), ("code", "lines")):
+                if ok[t2]:
+                    if t2 == "compare":
+                        for j, it in enumerate(s["items"]):
+                            it.setdefault("pct", 40 + 50 * j // max(1, len(s["items"]) - 1))
+                    log("lab fix: scene type", t, "->", t2, "(it holds", k2 + ")")
+                    s["type"] = t = t2
+                    break
         if t == "stat" and ok["stat"] and not s.get("value"):
             s["value"] = s.get("big")
         r_ = s.get("real") if isinstance(s.get("real"), dict) else {}

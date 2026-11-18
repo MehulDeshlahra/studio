@@ -796,7 +796,19 @@ def main():
             if theme.get("style") == "lab":
                 if not preflight.repair(p, pr["bad"], lang_p):
                     break
+                # 19 Nov (finance 1118-2334): the repair rewrote types the lab cannot draw (ui holding compare items) and new
+                # picture prompts were never fetched, so the same bad picture failed 3 times. Fix the types, re-fetch the
+                # pictures of the repaired scenes.
+                planner.lab_fix(p)
                 save(pp, p)
+                got = load(os.path.join(job, "assets.json"), {}) or {}
+                for k in pr["bad"]:
+                    got.pop(str(k), None)
+                save(os.path.join(job, "assets.json"), got)
+                assets = stage_assets(ch, p, job)
+                for v in assets.values():
+                    for f in v.values():
+                        shutil.copy(f, os.path.join(rdir, "assets", os.path.basename(f)))
                 import compose_lab
                 doc, cues = compose_lab.page(p, timed, total, theme, assets)
             else:                                         # 17 Nov: classic pages rendered known-bad scenes (no repair) -> held after render

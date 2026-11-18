@@ -14,7 +14,7 @@ from core import log, sh
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 H = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
 MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
-WATERMARKED = re.compile(r"alamy|shutterstock|dreamstime|istockphoto|gettyimages|depositphotos|123rf|bigstock|adobestock|stock\.adobe|canstock|agefotostock|pond5|makeuseofimages|freepik\.com/premium", re.I)   # 18 Nov: MUO + Freepik premium previews carry marks
+WATERMARKED = re.compile(r"alamy|shutterstock|dreamstime|istockphoto|gettyimages|depositphotos|123rf|bigstock|adobestock|stock\.adobe|canstock|agefotostock|pond5|makeuseofimages|freepik\.com/premium|ytimg\.com|maxresdefault|hqdefault", re.I)   # 18 Nov: MUO + Freepik premium previews carry marks
 
 
 WM_UA = {"User-Agent": "StudioBot/1.0 (https://kaise.tech; mehuldeshlahra12@gmail.com) python-urllib", "Accept-Language": "en"}
