@@ -43,10 +43,10 @@
   },
   {
    "vo": "Ye RBI ka niyam hai, 20 September 2019 se. Dost ko bheja paisa agle din tak wapas aana chahiye.",
-   "type": "title",
+   "type": "stat",
    "prompt": "Simple calendar graphic: two dates highlighted – ‘T+1’ for person‑to‑person, ‘T+5’ for merchant.",
    "motion": "punch",
-   "title": "RBI Circular",
+   "title": "RBI Rule",
    "keywords": [
     "RBI",
     "refund timeline"
@@ -57,13 +57,18 @@
     "kind": "photo",
     "subject": "The official RBI headquarters building"
    },
-   "big": "RBI KA NIYAM",
+   "big": "RBI",
    "small": null,
    "skin": "keynote",
-   "sub": "Circular · 20 Sep 2019",
+   "sub": "20 Sep 2019",
    "label": "Rule Date",
    "value": null,
-   "rows": null,
+   "rows": [
+    {
+     "label": "Effective",
+     "value": "20 Sep"
+    }
+   ],
    "items": null,
    "nodes": null,
    "points": null,
@@ -73,10 +78,10 @@
   },
   {
    "vo": "Dukaan ko kiya payment fail hua, toh paanch din tak.",
-   "type": "compare",
+   "type": "ui",
    "prompt": "Three nodes: YOUR BANK → NPCI SWITCH → RECIPIENT BANK. Red X on RECIPIENT BANK.",
    "motion": "pan",
-   "title": "REFUND KAB TAK",
+   "title": "Refund Time",
    "keywords": [
     "payment flow",
     "failed"
@@ -90,20 +95,18 @@
    "big": null,
    "small": null,
    "skin": "keynote",
-   "sub": "T+5 Days",
-   "label": "Refund Time",
+   "sub": "T+5",
+   "label": "Refund",
    "value": null,
    "rows": null,
    "items": [
     {
      "label": "DOST KO",
-     "value": "T+1",
-     "pct": 25
+     "value": "T+1"
     },
     {
      "label": "DUKAAN KO",
-     "value": "T+5",
-     "pct": 90
+     "value": "T+5"
     }
    ],
    "nodes": null,
@@ -228,10 +231,10 @@
   },
   {
    "vo": "Bank ne 30 din mein theek nahi kiya? RBI ke CMS portal pe complaint karo.",
-   "type": "flow",
+   "type": "chart",
    "prompt": "Vertical ladder: 1. YOUR BANK → 2. NPCI PORTAL → 3. RBI CMS, each lighting up.",
    "motion": "tilt",
-   "title": "COMPLAINT",
+   "title": "Escalate",
    "keywords": [
     "escalation",
     "NPCI",
@@ -246,15 +249,15 @@
    "big": null,
    "small": null,
    "skin": "terminal",
-   "sub": "Escalation Path",
+   "sub": "30 Din",
    "label": "Steps",
    "value": null,
    "rows": null,
    "items": null,
    "nodes": [
-    "BANK",
-    "30 DIN",
-    "RBI CMS"
+    "Bank",
+    "30 Din",
+    "RBI"
    ],
    "points": null,
    "end_label": null,
