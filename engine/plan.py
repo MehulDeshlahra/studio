@@ -411,7 +411,30 @@ def numbers_check(plan, sources=""):
     except Exception as e:
         log("numbers check failed to run:", str(e)[:120]); return []
     probs = []
+    # 19 Nov: the model "proved" '3 x 100 = 500' with the expression "500". A formula with no arithmetic, or that
+    # contains its own answer, proves nothing: ask again for those, built only from the script's other numbers.
+    def _lazy(c):
+        e = re.sub(r"\s", "", str(c.get("expr") or ""))
+        s = re.sub(r"[^\d.]", "", str(c.get("says") or ""))
+        return not re.search(r"[-+*/%]", e.lstrip("-")) or (s and re.search(rf"(?<![\d.]){re.escape(s.rstrip('0').rstrip('.') or s)}(?:\.0+)?(?![\d.])", e))
+    lazy = [c for c in (r.get("calc") or []) if _lazy(c)]
+    if lazy:
+        ask_rows = "\n".join(f"scene {c.get('scene')}: the script says {c.get('says')}" for c in lazy)
+        try:
+            r2 = ask("For each number below, write the Python arithmetic expression that computes it ONLY from the OTHER "
+                     "numbers in the script (never write the answer itself). If the number is a plain input (a rule, a price, "
+                     "a date) and not calculated from others, set \"input\": true.\nSCRIPT:\n" + rows + "\nNUMBERS:\n" + ask_rows +
+                     '\nReturn JSON {"calc": [{"scene": n, "says": <number>, "expr": "...", "input": false}]}', max_tokens=1500) or {}
+            redo = [c for c in (r2.get("calc") or []) if not c.get("input")]
+            r["calc"] = [c for c in (r.get("calc") or []) if not _lazy(c)] + redo
+            for c in redo:
+                if _lazy(c):
+                    probs.append(f"scene {c.get('scene')}: {c.get('says')} is said as a result but no formula reaches it from the script's numbers")
+        except Exception as e:
+            log("numbers check re-ask failed:", str(e)[:80])
     for c in r.get("calc") or []:
+        if _lazy(c):
+            continue
         try:
             got, says = float(_safe_eval(c.get("expr"))), float(str(c.get("says")).replace(",", ""))
             tol = max(0.05 * abs(says), 0.5 if abs(says) < 100 else 0)     # spoken rounding: "3 percent" for 3.04
