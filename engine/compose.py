@@ -67,6 +67,11 @@ def page(plan, timed, total, theme, assets):
         d = round(b - a, 3)
         sid = f"s{i}"
         kind, img = s["type"], assets.get(i, {}).get("image")
+        # 18 Nov: the last scene was often a "FOLLOW / NAYI KAHANI" card right before the end card's "FOLLOW KARO @handle"
+        # (the same ask twice). With an end card, a closing follow/subscribe card shows only its picture.
+        if kind == "card" and i == n - 1 and endcard and img and \
+                re.search(r"follow|subscribe|share|like|nayi kahani|kal milte", f"{s.get('big', '')} {s.get('small', '')}", re.I):
+            kind = "image"
         inner = ""
         if kind == "clip" and assets.get(i, {}).get("video"):
             top.append(f'<video id="v{i}" class="clip bg" src="assets/{os.path.basename(assets[i]["video"])}" muted playsinline '
