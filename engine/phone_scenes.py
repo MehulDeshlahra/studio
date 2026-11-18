@@ -85,6 +85,8 @@ def scene(kind, s, sid, a, d, asset):
             js += _rev(f"#{sid}pn", T(0.38), a)
     elif kind == "bill":
         rows = [r for r in (s.get("rows") or []) if isinstance(r, dict)][:6]
+        if isinstance(s.get("total"), dict) and s["total"].get("value"):
+            rows = [r for r in rows if "total" not in str(r.get("label", "")).lower()]
         tone = "bad" if str(s.get("tone") or "bad") == "bad" else "good"
         tot = s.get("total") if isinstance(s.get("total"), dict) else {}
         body = "".join(f'<div id="{sid}b{j}" class="pq-br"><span>{esc(r.get("label"))}</span><b>{esc(r.get("value"))}</b></div>'
@@ -189,8 +191,8 @@ def css(acc, phone_page=False):
 .pq-bx.bad b{color:#d92d20}.pq-bx.good b{color:#12805c}
 .pq-rule{position:absolute;left:80px;width:920px;top:430px;background:#fbfaf7;color:#14161a;border-radius:28px;padding:46px 52px 70px;box-sizing:border-box;
   box-shadow:0 50px 100px #000c;font-family:SANS;z-index:2}
-.pq-rh{display:flex;gap:26px;align-items:center;border-bottom:2px solid #e4e0d7;padding-bottom:28px;margin-bottom:12px}
-.pq-rl{width:120px;height:120px;object-fit:contain}
+.pq-rh{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;border-bottom:2px solid #e4e0d7;padding-bottom:28px;margin-bottom:12px}
+.pq-rl{width:360px;height:130px;object-fit:contain;object-position:left center}
 .pq-rf{width:110px;height:110px;border-radius:50%;background:#1f3a5f;color:#fff;font-size:38px;font-weight:900;display:flex;align-items:center;justify-content:center}
 .pq-rt{font-size:42px;font-weight:800;line-height:1.1}.pq-rd{font-size:26px;color:#6b6b6b;margin-top:8px;font-family:MONO}
 .pq-rli{font-size:38px;line-height:1.3;padding:18px 0 18px 54px;position:relative;font-weight:600;border-bottom:1.5px solid #efece5}
