@@ -128,17 +128,24 @@ def fetch(jid, spec):
         except ValueError:
             pass
         json.dump(meta, open(os.path.join(work, "info.json"), "w"))
+        # 19 Nov test: yt-dlp --download-sections (ffmpeg on the DASH streams) sat at 0 bytes for minutes. A normal
+        # download is fast; the laptop then cuts the parts itself and uploads only those.
+        full = os.path.join(work, "full.mp4")
+        r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
+                 "-f", "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]/bv*[height<=1080]+ba/b",
+                 "--merge-output-format", "mp4", "-N", "4", "-o", full, url], timeout=2400)
+        if not os.path.exists(full):
+            raise RuntimeError("download failed: " + (r.stderr or "")[-300:])
         got = 0
         for i, (s, e) in enumerate(spec.get("sections") or []):
             f = os.path.join(work, f"c{i}.mp4")
-            r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
-                     "-f", "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]/bv*[height<=1080]+ba/b",
-                     "--merge-output-format", "mp4", "--download-sections", f"*{float(s):.2f}-{float(e):.2f}",
-                     "--force-keyframes-at-cuts", "-o", f, url], timeout=1200)
+            run(["ffmpeg", "-v", "error", "-y", "-ss", f"{float(s):.2f}", "-to", f"{float(e):.2f}", "-i", full,
+                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-c:a", "aac", "-b:a", "192k", f], timeout=900)
             if os.path.exists(f) and os.path.getsize(f) > 20000:
                 got += 1
             else:
-                log("fetch", jid, "section", i, "failed:", (r.stderr or "")[-200:])
+                log("fetch", jid, "section", i, "cut failed")
+        os.remove(full)
         if not got:
             raise RuntimeError("no section downloaded: " + (info.stderr or "")[-200:])
         out = os.path.join(HOME, "jobs", jid + ".tgz")
