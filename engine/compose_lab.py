@@ -58,6 +58,94 @@ STAGE_DY, STAGE_S, STAGE_CAP_Y = 110, 1.15, 1395
 STAGE_TEXT = ("title", "stat")        # text-only scenes move down but keep their size (150-200 px type would overflow)
 
 
+SKINS = {   # 18 Nov (owner: "learn from the library and pick what template suits what"). Written from the Lemo-Opuscar
+    # style grammars (blueprint, hologram-hud, ascii-crt, dark-keynote), in our own words; each = picture language + CSS.
+    "keynote": {"use": "default premium dark look: products, apps, phones, money, everyday tech",
+                "pic": "cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary"},
+    "blueprint": {"use": "HOW something works inside: machines, chips, networks, signals, engines, any mechanism or process",
+                  "pic": "technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, "
+                         "orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, "
+                         "no shading, no photo"},
+    "hologram": {"use": "AI, future tech, space, scans, anything 'smart' or invisible made visible",
+                 "pic": "glowing cyan wireframe hologram made of thin light lines floating above a round projector pad, near-black "
+                        "stage, faint dot grid, depth fog, no solid surfaces, no photo"},
+    "terminal": {"use": "hacking, passwords, internet, code, data, privacy, scams, anything 'inside the computer'",
+                 "pic": "image made only of glowing amber monospace ASCII characters on dark CRT glass, scanlines, slight screen "
+                        "curvature, monochrome amber phosphor, no photo"},
+}
+
+
+def skin_css(skin, acc):
+    if skin == "blueprint":
+        paper = ("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='540' height='960'><filter id='n'>"
+                 "<feTurbulence type='fractalNoise' baseFrequency='.006 .012' numOctaves='4' seed='9'/><feColorMatrix values='0 0 0 0 .55 "
+                 "0 0 0 0 .7  0 0 0 0 1  0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")
+        return f"""
+#root,.scene{{background:#1d3f80}}
+.scene{{background:radial-gradient(ellipse 90% 70% at 50% 45%,#2a58a6 0%,#1d3f80 55%,#132e63 100%)}}
+.scene:after{{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:url("{paper}") 0 0/100% 100%,
+  linear-gradient(#e7f0f914 1.5px,transparent 1.5px) 0 0/60px 60px,linear-gradient(90deg,#e7f0f914 1.5px,transparent 1.5px) 0 0/60px 60px,
+  linear-gradient(#e7f0f926 2px,transparent 2px) 0 0/300px 300px,linear-gradient(90deg,#e7f0f926 2px,transparent 2px) 0 0/300px 300px}}
+.bgimg{{mix-blend-mode:screen;opacity:.95;filter:saturate(.6)}}
+.bgshade{{background:linear-gradient(180deg,#132e63cc 0%,#132e6300 25%,#132e6300 60%,#132e63d9 82%,#132e63 100%)}}
+.glow,.vign,.grain{{display:none}}
+.cam,.kin,.stat,.statsub,.node,.cl,.cv,.ptitle,.rl,.rv,.cap,.lpill,.hud span,.endh,.endf{{font-family:'Architects Daughter',cursive!important;color:#e7f0f9!important}}
+.stat,.kin{{letter-spacing:0;text-shadow:none!important;font-weight:400}}
+.kw.acc,.cap .key{{color:#e7f0f9!important;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:8px}}
+.uline{{background:#e7f0f9;box-shadow:none}}
+.panel,.chat,.term{{background:#132e6399!important;border:3px double #e7f0f9cc!important;border-radius:4px!important;box-shadow:none!important}}
+.fill,.cbar{{background:repeating-linear-gradient(45deg,#e7f0f9 0 3px,transparent 3px 11px)!important;border:2px solid #e7f0f9}}
+.bar{{background:transparent;border:1.5px dashed #e7f0f988}}
+.nd{{background:transparent!important;border:3px solid #e7f0f9!important;box-shadow:none!important}}
+.lpill{{background:transparent!important;border:2px solid #e7f0f9;border-radius:2px;color:#e7f0f9!important}}
+.lpill i{{background:#e7f0f9}}
+.cap{{background:#132e63e6;border:3px double #e7f0f9cc;border-radius:4px;padding:14px 26px;width:auto;left:70px;right:70px;text-shadow:none!important}}
+.cap .w{{opacity:1}}
+.endc{{background:#1d3f80}}
+"""
+    if skin == "hologram":
+        h = "#5ef2ff"
+        return f"""
+#root,.scene{{background:#02070a}}
+.scene{{background:radial-gradient(ellipse 70% 50% at 50% 46%,#0b2a33 0%,#02070a 70%)}}
+.scene:after{{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(circle,{h}33 1.3px,transparent 1.6px) 0 0/40px 40px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000,transparent 85%)}}
+.bgimg{{mix-blend-mode:screen}}
+.bgshade{{background:linear-gradient(180deg,#02070acc 0%,#02070a00 25%,#02070a00 62%,#02070ae6 82%,#02070a 100%)}}
+.glow,.grain{{display:none}}
+.cam,.kin,.stat,.statsub,.node,.cl,.cv,.ptitle,.rl,.rv,.cap,.lpill,.hud span,.endh,.endf{{font-family:'Rajdhani',sans-serif!important;text-transform:uppercase}}
+.stat,.kin{{font-weight:300;letter-spacing:6px;color:#eaffff;text-shadow:0 0 30px {h}aa!important}}
+.kw.acc,.cap .key{{color:#ffb547!important}}
+.panel,.chat,.term,.cap{{background:#02070ad9!important;border:1px solid {h}88!important;border-radius:2px!important;box-shadow:0 0 24px {h}22!important}}
+.cap{{left:70px;right:70px;width:auto;padding:14px 26px;color:#eaffff;text-shadow:none!important;font-weight:600}}
+.cap .w{{opacity:1}}
+.fill,.cbar{{background:{h}!important;box-shadow:0 0 18px {h}}} .nd{{border-color:{h}!important}}
+.lpill{{background:transparent!important;border:1px solid {h};color:{h}!important;letter-spacing:4px}} .lpill i{{background:{h}}}
+.uline{{background:{h};box-shadow:0 0 20px {h}}}
+"""
+    if skin == "terminal":
+        a = "#ffb000"
+        return f"""
+#root,.scene{{background:#0d0702}}
+.scene{{background:radial-gradient(ellipse 85% 70% at 50% 46%,#1c1206 0%,#0d0702 75%)}}
+.scene:after{{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;
+  background:repeating-linear-gradient(0deg,#00000055 0 2px,transparent 2px 4px),radial-gradient(ellipse 100% 90% at 50% 50%,transparent 60%,#000c 100%)}}
+.bgimg{{mix-blend-mode:screen;filter:sepia(1) saturate(3) hue-rotate(-12deg) brightness(.9)}}
+.bgshade{{background:linear-gradient(180deg,#0d0702d9 0%,#0d070200 25%,#0d070200 60%,#0d0702e6 82%,#0d0702 100%)}}
+.glow,.grain{{display:none}}
+.cam,.kin,.stat,.statsub,.node,.cl,.cv,.ptitle,.rl,.rv,.cap,.lpill,.hud span,.endh,.endf,.bub{{font-family:'VT323',monospace!important;color:{a}!important;text-shadow:0 0 12px {a}aa!important;text-transform:uppercase}}
+.stat,.kin{{letter-spacing:4px;font-weight:400}}
+.kw.acc,.cap .key{{color:#fff1c9!important}}
+.panel,.chat,.term,.cap{{background:#0d0702e6!important;border:2px solid {a}88!important;border-radius:0!important;box-shadow:none!important}}
+.cap{{left:60px;right:60px;width:auto;padding:12px 24px;font-size:66px}} .cap .w{{opacity:1}}
+.cap:before{{content:"> ";color:{a}}}
+.fill,.cbar{{background:{a}!important}} .nd{{border-color:{a}!important;border-radius:0!important}}
+.lpill{{background:{a}!important;color:#0d0702!important;border-radius:0;text-shadow:none!important}}
+.uline{{background:{a}}}
+"""
+    return ""
+
+
 def _film_on(theme):
     """18 Nov v2 "film grammar" (owner: the stage pilot looked the same; use the skills). From the HyperFrames skill
     (references/motion.md, types/explainer.md, types/vertical.md): a deliberate camera move per scene instead of a breathing
@@ -491,7 +579,7 @@ body{{margin:0;background:#07080b}}
 .cv{{text-shadow:0 6px 28px #000}} .cl{{font-size:40px;color:#fff;text-shadow:0 3px 14px #000}}
 .bub{{font-size:46px}}
 .cap{{font-size:62px;text-shadow:0 4px 22px #000,0 0 3px #000}}
-""" if film else "") + f"""
+""" if film else "") + (skin_css(plan.get("skin") or theme.get("skin") or "keynote", acc) if film else "") + f"""
 .endh{{position:absolute;left:0;width:{W}px;top:800px;text-align:center;font-weight:800;font-size:110px;letter-spacing:-3px}}
 .endf{{position:absolute;left:0;width:{W}px;top:950px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:6px;color:{acc}}}
 """

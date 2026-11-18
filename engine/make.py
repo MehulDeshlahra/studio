@@ -195,6 +195,35 @@ Return JSON {{"scenes": [{{"n": <scene number>, "kind": "...", "q": "the image s
 "subject": "what the picture must show", "why": "short"}}]}} listing ONLY the scenes that get something real."""
 
 
+def _pick_skin(ch, p):
+    """18 Nov (owner: "use your brain and pick what template suits what; take ownership"). Chooses the look of THIS
+    video from compose_lab.SKINS (styles learnt from the Lemo-Opuscar library), by topic, and rotates so two videos in a
+    row rarely share a look. Writes p["skin"]. Every other system (pictures, layout, captions) follows it."""
+    import compose_lab, plan as planner
+    if p.get("skin") in compose_lab.SKINS:
+        return False
+    recent = []
+    for d in (load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or [])[-6:]:
+        pj = load(os.path.join(OUT, ch["id"], d["job"], "plan.json"), {}) or {}
+        recent.append(pj.get("skin") or "keynote")
+    menu = "\n".join(f'- {k}: for {v["use"]}' for k, v in compose_lab.SKINS.items())
+    lines = " / ".join(s.get("vo", "") for s in p.get("scenes", []))[:900]
+    r = {}
+    try:
+        r = planner.ask(f"You are the creative director of a Hindi tech-explainer Reels page. Pick the LOOK for this video.\n"
+                        f"Topic: {p.get('title') or p.get('topic')}\nScript: {lines}\nLooks:\n{menu}\n"
+                        f"Our last videos used (newest last): {recent}. Rarely repeat the look of the last two; the best fit "
+                        'for the topic wins. Return JSON {"skin": "<one key>", "why": "short"}', max_tokens=300) or {}
+    except Exception as e:
+        log("skin pick failed:", str(e)[:100])
+    k = str(r.get("skin", "")).strip().lower()
+    if k not in compose_lab.SKINS:
+        k = next((x for x in compose_lab.SKINS if x not in recent[-2:]), "keynote")
+    p["skin"] = k
+    log("creative director: look", k, "-", str(r.get("why", ""))[:100])
+    return True
+
+
 def _visual_director(ch, p, film):
     """One planner call: which scenes get a real logo / app screen / product photo. Writes scene["real"]. True if any."""
     try:
@@ -282,11 +311,11 @@ def _stage_assets(ch, p, job):
             # never quote the spoken line: image models then paint its words into the picture (pilot 18 Nov, scene 6)
             subj = ", ".join(x for x in [str(s.get("label") or ""), str(s.get("title") or ""), " ".join(s.get("keywords") or []),
                                           str(p.get("topic") or p.get("title") or "")] if x).lower()
+            import compose_lab
+            pic = compose_lab.SKINS.get(p.get("skin") or "keynote", compose_lab.SKINS["keynote"])["pic"]
             s["bg_prompt"] = s.get("bg_prompt") or (
-                f"Cinematic photoreal vertical scene for a technology documentary about: {subj}. "
-                "Real hardware, real devices, real places; one clear subject in the middle "
-                "third, dark low-key lighting with deep shadows at the top and bottom, teal and amber accents, shallow depth of "
-                "field, premium tech documentary look, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16.")
+                f"Vertical scene for a technology explainer about: {subj}. Style: {pic}. One clear subject in the middle third, "
+                "empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16.")
             f = os.path.join(adir, f"s{i}bg.webp")
             img = (muse.image(s["bg_prompt"], f) or muse.omni_image(s["bg_prompt"], os.path.join(adir, f"s{i}bgo.jpg"))
                    or muse.cloudflare(s["bg_prompt"], os.path.join(adir, f"s{i}bg.jpg"))
@@ -448,6 +477,12 @@ def main():
     p = load(pp)
     if _brand_guard(ch, p):
         save(pp, p)
+    try:
+        th_ = ch.get("theme", {})
+        if th_.get("style") == "lab" and (th_.get("film") or os.environ.get("STUDIO_LAB_FILM") == "1") and _pick_skin(ch, p):
+            save(pp, p)
+    except Exception as e:
+        log("skin pick skipped", str(e)[:100])
     try:
         if _real_brands(ch, p):
             save(pp, p)
