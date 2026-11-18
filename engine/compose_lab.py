@@ -619,6 +619,7 @@ body{{margin:0;background:#07080b}}
 .bgimg{{position:absolute;left:0;top:0;width:{W}px;height:{H}px;object-fit:cover;z-index:0}}
 .bgshade{{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#07080bd9 0%,#07080b66 18%,#07080b33 42%,#07080b8c 62%,#07080bf2 80%,#07080b 100%)}}
 .cam{{z-index:1}} .scene .hud,.scene .lpill{{z-index:3}}
+.cam:has(.prop:not(.real)){{mix-blend-mode:lighten}}
 .bgshade.real{{background:linear-gradient(180deg,#07080b99 0%,#07080b00 16%,#07080b00 70%,#07080bcc 88%,#07080b 100%)}}
 .stat{{font-size:250px;top:520px;text-shadow:0 8px 40px #000e,0 0 70px {acc}55}}
 .statsub{{font-size:58px;top:800px;text-shadow:0 4px 24px #000}}
