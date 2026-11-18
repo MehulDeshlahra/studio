@@ -68,16 +68,24 @@ def _material(cid, ch, kind):
             return None, None
     if kind in ("recap", "guess", "cast") and ch.get("serial"):
         import serials
-        sts = [s for s in serials.stories(cid) if s.get("made_jobs")]
+        # 18 Nov: a recap / cast card of a part nobody has seen (or a rejected one) makes no sense: posted parts only
+        posted = {d["job"] for d in done if d.get("status") == "posted"}
+        sts = [s for s in serials.stories(cid) if any(j in posted for j in (s.get("made_jobs") or {}).values())]
         if not sts:
             return None, None
         s = sts[-1]
-        n = max(int(k) for k in s["made_jobs"])
+        n = max(int(k) for k, j in s["made_jobs"].items() if j in posted)
         part = s["parts"][n - 1]
         job = s["made_jobs"][str(n)]
         mat = f"Serial: {s['title']} ({s['genre']}). Logline: {s['logline']}\nPart {n}: {part.get('beats')}\nCliffhanger: {part.get('cliffhanger')}\nCast: {json.dumps(s['cast'], ensure_ascii=False)}"
         return mat, job
-    rows = rows[-6:]
+    # 18 Nov: picked from any of the last 6 rows, so Stories teased rejected and held videos ("AAJ KA REEL" for a reel that
+    # never goes out). Teaser = the next approved video (the one publish.py posts today); others = posted or approved ones.
+    if kind == "teaser":
+        nxt = next((d for d in rows if d.get("status") == "approved"), None)
+        rows = [nxt] if nxt else []
+    else:
+        rows = [d for d in rows if d.get("status") in ("posted", "approved")][-6:]
     if not rows:
         return None, None
     d = random.choice(rows)
