@@ -120,5 +120,294 @@
     "score": 4.45
    }
   ]
+ },
+ {
+  "t": "2026-11-18 23:04",
+  "picked": "'Digital Arrest' scam ka blueprint: video call pe police wala kaise darata hai, aur ek screenshot se bachav.",
+  "ideas": [
+   {
+    "topic": "'Digital Arrest' scam ka blueprint: video call pe police wala kaise darata hai, aur ek screenshot se bachav.",
+    "note": "",
+    "search": "digital arrest scam explained India safety",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 5.2,
+    "median_views": 124592,
+    "fresh": 8.0,
+    "score": 7.44
+   },
+   {
+    "topic": "Savings account 3% vs Inflation 5%: 10 saal mein ₹1 lakh ki purchasing power kitni ghati, asli number dikhao.",
+    "note": "",
+    "search": "inflation vs savings account return India",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 8.6,
+    "score": 6.67
+   },
+   {
+    "topic": "New Tax Regime FY 2024-25: ₹75k standard deduction + slab change se ₹10L income pe tax kitna bacha?",
+    "note": "",
+    "search": "new tax regime 2024 25 calculation salary",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 8.2,
+    "score": 6.59
+   },
+   {
+    "topic": "UPI pe merchant ko kitna kaat ta hai? NPCI ka 0.3% interchange fee ka asli hisaab.",
+    "note": "",
+    "search": "UPI interchange fee merchant charges explained",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.1,
+    "median_views": 6761,
+    "fresh": 8.7,
+    "score": 5.83
+   },
+   {
+    "topic": "SIP mein compounding ka jaadu (sirf concept)",
+    "search": "SIP mein compounding ka jaadu (sirf concept)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.3,
+    "score": 5.71
+   },
+   {
+    "topic": "Credit score kaise banta hai",
+    "search": "Credit score kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.1,
+    "score": 5.47
+   },
+   {
+    "topic": "BNPL 'no cost EMI' ka jhooth: processing fee + GST mila ke real interest kitna banta hai?",
+    "note": "",
+    "search": "BNPL hidden charges calculation India",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 23,
+    "fresh": 8.4,
+    "score": 4.83
+   },
+   {
+    "topic": "RBI ne UPI Lite wallet limit ₹5k kiya: chhote payments ke liye PIN kyun nahi lagta, aur risk kya hai?",
+    "note": "",
+    "search": "UPI Lite limit increase RBI rules 2024",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 446,
+    "fresh": 8.2,
+    "score": 4.44
+   },
+   {
+    "topic": "EMI ka asli hisaab: bank kitna kamata hai",
+    "search": "EMI ka asli hisaab: bank kitna kamata hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 300,
+    "fresh": 8.8,
+    "score": 4.21
+   },
+   {
+    "topic": "Credit card ka minimum due trap",
+    "search": "Credit card ka minimum due trap",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 4,
+    "fresh": 1.5,
+    "score": 2.75
+   }
+  ]
+ },
+ {
+  "t": "2026-11-18 23:34",
+  "picked": null,
+  "from": "deep-dive",
+  "ideas": [
+   {
+    "topic": "UPI payment fail, paisa kat gaya? Bank aapko har din ₹100 dega (RBI circular 20 Sep 2019)",
+    "hook": "UPI fail hua, paisa kata? Bank aapko roz ₹100 dega.",
+    "score": 10.0,
+    "evidence": "Mint 9 Nov 2026 + 'failed UPI' stories this week; Technical Taco 'UPI payment failed but money deducted' on YT Shorts",
+    "source": "RBI/2019-20/67, 20 Sep 2019: P2P reversal T+1, P2M T+5, else ₹100/day",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Home loan khatam, bank ne property ke papers nahi lautaye? ₹5,000 roz milenge (RBI rule, 1 Dec 2023)",
+    "hook": "Loan chuka diya, papers nahi mile? Bank aapko roz ₹5,000 dega.",
+    "score": 9.7,
+    "evidence": "Finance Wali Dost IG: 3,268 likes (14 Nov) on the same rule; Mint/ET stories Oct-Nov 2026",
+    "source": "RBI 13 Sep 2023, effective 1 Dec 2023: originals within 30 days, else ₹5,000/day",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Account mein achanak anjaan paisa aaya? Wapas mat bhejna, ye naya scam hai",
+    "hook": "Account mein anjaan paisa aaya? Ruko. Wapas mat bhejna.",
+    "score": 9.4,
+    "evidence": "Finance Wali Dost YT Short 388,508 views in 30 days with 986 subscribers; NPCI + Google anti-fraud news 13 Nov",
+    "source": "cybercrime.gov.in / helpline 1930; bank's own reversal process",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Gold kharidte waqt ye 3 galtiyan mat karna: HUID hallmark, making charge, GST",
+    "hook": "Gold kharidne ja rahe ho? Ye 3 galtiyan aapka paisa kha jaati hain.",
+    "score": 9.1,
+    "evidence": "Tarun Talks YT Short 611,819 views in 30 days (856 subs); FXStreet: gold at one-year low 16-18 Nov",
+    "source": "BIS: 6-digit HUID mandatory since 1 Apr 2023; GST 3% on gold; making charges set by the jeweller",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "₹80,000 ka phone 'No Cost EMI' pe: asli mein kitna extra lagta hai",
+    "hook": "No Cost EMI matlab free? Phone ₹80,000 ka, bill kuch aur.",
+    "score": 8.8,
+    "evidence": "Finance With Sharan 'Watch this before buying a new iPhone' 1,076,754 views; Mayank Gupta iPhone short 550,183 views",
+    "source": "processing fee + 18% GST on the interest part; discount given up (bank/brand T&Cs)",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Purana sona bechne par poora paisa kyun nahi milta",
+    "hook": "₹1 lakh ka sona becho, haath mein kitna aata hai?",
+    "score": 8.5,
+    "evidence": "Indian Dollar YT Short 173,033 views (271 subs)",
+    "source": "purity (karat) test, making charges not returned, hallmarking (BIS)",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Repo rate 0.75% badha toh ₹30 lakh home loan ki EMI kitni badhegi",
+    "hook": "Home loan hai? Agle saal EMI badh sakti hai. Kitni, ye dekho.",
+    "score": 8.2,
+    "evidence": "Dainik Jagran 5 Nov, Business Standard 16 Nov, India TV 13 Nov",
+    "source": "forecast only (Goldman Sachs), say so; EMI computed exactly (numbers check)",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Online fraud ho gaya? 1930 pe call aur 3 din ka rule (RBI zero liability)",
+    "hook": "Fraud hua? Pehle ghante mein ye karo, paisa wapas aa sakta hai.",
+    "score": 7.9,
+    "evidence": "Newspoint 16 Nov 'RBI's new 6-hour cyber fraud reporting rule'",
+    "source": "RBI 6 Jul 2017 customer liability circular (report within 3 working days = zero liability); helpline 1930",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Credit card band karne ko bola, bank 7 din mein band nahi kare toh ₹500 roz (RBI rule)",
+    "hook": "Credit card band nahi ho raha? Bank aapko roz ₹500 dega.",
+    "score": 7.6,
+    "evidence": "Mint + ET Nov 2026 'times you get up to ₹5,000/day as per RBI rules'",
+    "source": "RBI Master Direction on cards, 21 Apr 2022: closure in 7 working days, else ₹500/day",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "CIBIL report mein galti? 30 din mein theek nahi hui toh ₹100 roz (RBI rule)",
+    "hook": "CIBIL mein galti hai? Theek na ho toh roz ₹100 milenge.",
+    "score": 7.3,
+    "evidence": "Mint Nov 2026 compensation explainer; credit score shorts in search results",
+    "source": "RBI 26 Oct 2023 circular on credit information: resolve in 30 days, else ₹100/day (effective 26 Apr 2024)",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Roz ₹50 bachao: 1 saal mein ₹18,250, aur 10 saal mein compounding se kitna",
+    "hook": "Roz sirf ₹50. Ek saal mein ₹18,250. Aur dus saal mein?",
+    "score": 7.0,
+    "evidence": "Bachat Se Ameer YT Short 252,060 views (802 subs)",
+    "source": "arithmetic (numbers check); no product named",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "6 sarkari websites jo har kamane wale Indian ko pata honi chahiye (UDGAM, Sanchar Saathi, AIS)",
+    "hook": "Ye 6 sarkari websites aapka paisa bacha sakti hain. Save karo.",
+    "score": 6.7,
+    "evidence": "financebyraviraj IG: 23,343 likes (17 Nov) for '6 important government websites'",
+    "source": "RBI UDGAM, Sanchar Saathi (DoT), Income Tax AIS, EPFO passbook, cybercrime.gov.in, CIBIL free report",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Car lene se pehle 20/4/10 rule: salary ke hisaab se kitni car le sakte ho",
+    "hook": "Salary ₹50,000 hai? Toh car kitne ki le sakte ho, ye rule batata hai.",
+    "score": 6.4,
+    "evidence": "Pranjal Kamra 'Should you even buy a car in 2026?' (IG); Mayank Gupta bike comparison short",
+    "source": "a common budgeting rule of thumb, said as a guideline, not advice",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Credit card minimum due bharte rahe toh kya hota hai (sahi hisaab)",
+    "hook": "Har mahine sirf minimum due? Ye hisaab dekh lo.",
+    "score": 6.1,
+    "evidence": "card-trap shorts in the YT results; CRED/Monzy links on the big pages",
+    "source": "bank MITC rates; balance computed month by month (numbers check)",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "PF balance WhatsApp pe kaise check karein (EPFO ki nayi suvidha)",
+    "hook": "PF ka paisa kitna hai? Ab WhatsApp pe 'Hi' bhejo.",
+    "score": 5.8,
+    "evidence": "Moneycontrol 12 Nov 2026; Hindustan, Sakal, Times Now stories",
+    "source": "EPFO official number from epfindia.gov.in only (verify before use)",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "UPI pe charge (MDR) lagega kya? Kya sach hai, kya afwaah",
+    "hook": "UPI pe charge lagega? Pehle ye sach jaan lo.",
+    "score": 5.5,
+    "evidence": "ABP, Navbharat Times, Punjabi Jagran 4-17 Nov on MDR for payments above ₹2,000",
+    "source": "say only what NPCI / the finance ministry has announced; label proposals as proposals",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Car insurance mein zero depreciation nahi liya toh claim mein kitna kat jaata hai",
+    "hook": "Car insurance hai? Phir bhi claim mein aadha paisa kat sakta hai.",
+    "score": 5.2,
+    "evidence": "Finance Wali Dost IG 4,354 likes (13 Nov)",
+    "source": "IRDAI depreciation schedule for parts",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Salary se ESIC katta hai? Ye 4 fayde aapko pata hone chahiye",
+    "hook": "Salary se ESIC kat raha hai? Iske 4 fayde koi nahi batata.",
+    "score": 4.9,
+    "evidence": "financebyraviraj IG 9,685 likes (30 Oct)",
+    "source": "esic.gov.in benefits list",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Digital arrest scam: video call pe 'police' aaye toh kya karein",
+    "hook": "Video call pe police? Ruko. Asli police aise nahi karti.",
+    "score": 4.6,
+    "evidence": "I4C / police awareness drives; Pranjal Kamra x CG Police cyber-fraud collab (Sept)",
+    "source": "MHA I4C advisories; helpline 1930 (no unsourced loss figures)",
+    "from": "deep-dive"
+   },
+   {
+    "topic": "Loan reject hua? Dobara apply karne se pehle ye 5 cheezein karo",
+    "hook": "Loan reject hua? Turant dobara apply mat karna.",
+    "score": 4.3,
+    "evidence": "NDTV 10 Nov 'Loan rejected? 7 things to do before reapplying'",
+    "source": "credit bureau inquiry rules (CIBIL), RBI fair practices code",
+    "from": "deep-dive"
+   }
+  ]
  }
 ]
