@@ -227,10 +227,49 @@ def apply(src, res):
     return ids, bids
 
 
+WEB_Q = ["youtube shorts retention what makes viewers stay 2026", "instagram reels algorithm 2026 watch time shares",
+         "short form video hook first 3 seconds data study", "faceless youtube channel growth case study 2026",
+         "reels caption style best practice retention", "youtube shorts analytics swipe away rate how to improve",
+         "explainer video storytelling structure short form", "hindi youtube shorts growth strategy",
+         "kinetic typography motion design tips short video", "sound design for short form video retention"]
+
+
+def fetch_web(url):
+    import web
+    t = web.read(url, 60_000)
+    if len(t) < 600:
+        raise ValueError("no readable text")
+    return {"name": url.split("//")[-1][:80], "url": url, "license": "web article", "text": f"WEB ARTICLE {url}\n\n{t}"}
+
+
+def explore_web(n=6):
+    """18 Nov (owner: "learn from web"): the best fresh articles on what makes shorts work, read in full and judged
+    like a repo (only concrete, testable techniques reach the brain)."""
+    import web
+    seen = {d["url"].lower() for d in (load(LEARNED, []) or [])}
+    picks = []
+    for q in WEB_Q:
+        for r in web.search(q, n=6):
+            u = r["url"]
+            if u and u.lower() not in seen and not web.SKIP.search(u) and u not in [p["url"] for p in picks]:
+                picks.append({"kind": "web", "url": u}); break
+        if len(picks) >= n:
+            break
+    q = load(QUEUE, []) or []
+    save(QUEUE, q + picks)
+    log("learn explore web:", len(picks), "articles queued")
+    return picks
+
+
 def learn(entry):
-    src = fetch_repo(entry["url"]) if entry["kind"] == "github" else fetch_telegram_file(entry["file_id"], entry.get("name"))
+    if entry["kind"] == "github":
+        src = fetch_repo(entry["url"])
+    elif entry["kind"] == "web":
+        src = fetch_web(entry["url"])
+    else:
+        src = fetch_telegram_file(entry["file_id"], entry.get("name"))
     done = load(LEARNED, []) or []
-    if entry["kind"] == "github" and any(d["url"].lower() == src["url"].lower() and d["t"][:10] == time.strftime("%Y-%m-%d") for d in done):
+    if entry["kind"] in ("github", "web") and any(d["url"].lower() == src["url"].lower() and d["t"][:10] == time.strftime("%Y-%m-%d") for d in done):
         return None
     res = judge_source(src) or {}
     ids, bids = apply(src, res)
@@ -296,6 +335,15 @@ if __name__ == "__main__":
         run_queue()
     elif a[0] == "explore":
         explore()
+        explore_web()
+        run_queue()
+    elif a[0] == "web":                   # python engine/learn.py web [url...]   (no url: search and learn the best articles)
+        urls = [x for x in a[1:] if x.startswith("http")]
+        if urls:
+            save(QUEUE, (load(QUEUE, []) or []) + [{"kind": "web", "url": u} for u in urls])
+        else:
+            explore_web()
+        run_queue()
     elif a[0] == "deep":                 # python engine/learn.py deep <github-url>... [--max N]   (whole repo, resumable)
         mx = int(a[a.index("--max") + 1]) if "--max" in a else 10 ** 6
         urls = [x for x in a[1:] if x.startswith("http")] or list((load(os.path.join(OUT, "learn-deep-list.json"), []) or []))
