@@ -32,3 +32,14 @@ Library: github.com/lemomo-ai/lemo-opuscar, laptop copy `C:\Users\mehul\lemo-opu
 - Aage Suno: Halftone Dossier (printed case file).
 - Kaise Tech: Exploded Teardown.
 - One per page per week at most; a new format, never a copy of an existing video. Mehul picks the first style.
+
+## Creative system in the daily engine (18 Nov, owner: "learn from the library, use your brain, mix and match styles")
+- Looks (engine/compose_lab.py SKINS, grammar learnt from Lemo styles, in our own words): keynote (real world, products,
+  apps), blueprint (how it works inside), hologram (AI / invisible / future), terminal (hacking, code, data, privacy).
+  Add a look = one SKINS entry (use, picture style) + its CSS in skin_css(); everything else follows.
+- make.py, per video: (1) visual director: which scenes get a REAL logo / app screen / product photo, from
+  channels/tech/visual-rules.md (learnt from 14 IG reels: big creators + hashtag pages); a brand's logo always once, at the
+  reveal (scene 3+). (2) creative director: a look PER SCENE, in runs of 2+, max 3 looks, REAL scenes keynote, varied
+  against the last videos. Pictures are made in each scene's look; the layout/captions are scoped per look; a change of
+  look enters with a zoom-through.
+- Hand-made Lemo specials (full films, laptop GPU) stay separate: Dev Deepawali shadow puppetry approved for 24 Nov.
