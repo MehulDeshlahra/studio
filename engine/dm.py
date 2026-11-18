@@ -285,9 +285,30 @@ def inbox_keywords(cid, acc, cfg, st, budget, media_by):
                 _blocked(st, cid, str(e))
     return sent
 
+def token_watch(st):
+    """Once a day: warn on Telegram 14 days before the Planstalk Connect login runs out of data access (renew = Graph API Explorer,
+    generate + extend token, send it, drop it in ~/.studio-meta-connect.token)."""
+    if time.strftime("%Y-%m-%d") == st.get("token_checked") or DRY:
+        return
+    st["token_checked"] = time.strftime("%Y-%m-%d")
+    try:
+        ut = open(_token_file()).read().strip()
+        d = _r(f"{G}/debug_token?input_token={ut}&access_token={ut}")["data"]
+        left = (d.get("data_access_expires_at", 0) - time.time()) / 86400 if d.get("data_access_expires_at") else 999
+        if not d.get("is_valid", True):
+            telegram("⚠ Studio DM token is no longer valid. Mehul: generate a new Planstalk Connect token (Graph API Explorer) and send it.")
+        elif left < 14:
+            telegram(f"⚠ Studio DM token data access ends in {left:.0f} days. Mehul: generate + extend a new Planstalk Connect token and send it.")
+    except Exception as e:
+        log("dm token watch fail", str(e)[:120])
+
 def run():
     st = load(STATE, {}) or {}
     st.setdefault("done", {}); st.setdefault("day", {})
+    try:
+        token_watch(st)
+    except Busy:
+        pass
     if (time.time() < st.get("pause_until", 0) or time.time() < st.get("block_until", 0)) and not DRY:
         return
     today = time.strftime("%Y-%m-%d")
