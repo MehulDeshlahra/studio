@@ -67,11 +67,31 @@ def image(prompt, dest, tries=3):
     return None
 
 
+BREAKER = os.path.expanduser("~/studio-out/muse-breaker.json")
+
+
+def _broken(i, kind):
+    """18 Nov: bridge 0 answered 502 for every video while each try waited minutes, so one clip scene held the prep lane
+    for 30+ min. Two failures in 30 min -> skip that bridge for this kind for an hour (the scene becomes a still)."""
+    d = load(BREAKER, {}) or {}
+    fails = [t for t in d.get(f"{i}:{kind}", []) if time.time() - t < 1800]
+    return len(fails) >= 2 and time.time() - fails[-1] < 3600
+
+
+def _fail(i, kind):
+    d = load(BREAKER, {}) or {}
+    k = f"{i}:{kind}"
+    d[k] = [t for t in d.get(k, []) if time.time() - t < 3600] + [time.time()]
+    json.dump(d, open(BREAKER, "w"))
+
+
 def video(prompt, start_image, dest, tries=3):
     body = {"prompt": prompt, "size": "9:16"}
     if start_image:
         body["image_b64"] = base64.b64encode(open(start_image, "rb").read()).decode()
     for i, b in _bridges("video"):
+        if _broken(i, "video"):
+            log("muse video: bridge", i, "failed twice in 30 min, skipped for an hour"); continue
         for t in range(tries):
             try:
                 f = _post(b, "/v1/videos", body, 700)["file"]
@@ -79,7 +99,11 @@ def video(prompt, start_image, dest, tries=3):
                 return dest
             except Exception as e:
                 last = t == tries - 1
-                log("muse video " + ("fail" if last else "retry"), i, str(e)[:120]); time.sleep(0 if last else 30 if "502" in str(e) else 15)
+                _fail(i, "video")
+                log("muse video " + ("fail" if last else "retry"), i, str(e)[:120])
+                if _broken(i, "video"):
+                    break
+                time.sleep(0 if last else 30 if "502" in str(e) else 15)
     return None
 
 
