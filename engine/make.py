@@ -557,9 +557,16 @@ def main():
     if "render" in redo or not os.path.exists(final):
         env = dict(os.environ, PUPPETEER_EXECUTABLE_PATH=CHROME)
         t0 = time.time()
-        sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--workers", render_workers(), "--no-low-memory-mode", "--output", raw],
-           env=env, timeout=7200, cwd=rdir) if os.name != "nt" else sh(["npx.cmd", "-y", "hyperframes@latest", "render", "--output", raw], cwd=rdir)
-        log("rendered in", round(time.time() - t0), "s")
+        off = False
+        try:                                              # 18 Nov: the laptop renders 3x faster when it is on (engine/laptop.py)
+            import laptop
+            off = os.name != "nt" and laptop.available() and laptop.render(rdir, raw, total, f"{ch['id']} {job_id}")
+        except Exception as e:
+            log("laptop render skipped:", str(e)[:120])
+        if not off:
+            sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--workers", render_workers(), "--no-low-memory-mode", "--output", raw],
+               env=env, timeout=7200, cwd=rdir) if os.name != "nt" else sh(["npx.cmd", "-y", "hyperframes@latest", "render", "--output", raw], cwd=rdir)
+        log("rendered in", round(time.time() - t0), "s", "(laptop)" if off else "")
         remux(raw, mix, total, final)
         for junk in (raw, os.path.join(job, "mix-tp.wav")):         # ~120 MB per video; rebuilt if ever needed
             try:
