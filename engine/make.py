@@ -185,6 +185,7 @@ def stage_assets(ch, p, job):
 def _stage_assets(ch, p, job):
     look = ch.get("visuals", {}).get("look", "")
     theme = ch.get("theme", {})
+    film = theme.get("style") == "lab" and (bool(theme.get("film")) or os.environ.get("STUDIO_LAB_FILM") == "1")
     adir = os.path.join(job, "assets"); os.makedirs(adir, exist_ok=True)
     got = load(os.path.join(job, "assets.json"), {})
     last_img = None
@@ -194,7 +195,12 @@ def _stage_assets(ch, p, job):
             last_img = got[k].get("image", last_img); continue
         a = {}
         real = s.get("real")
-        if isinstance(real, dict) and real.get("q") and s.get("type") in ("image", "card", "object"):
+        if film and isinstance(real, dict) and real.get("q") and s.get("type") not in ("object", "clip", "chat", "code"):
+            import realmedia                                     # v2: a real photo/logo/screen as the scene's full-frame picture
+            r = realmedia.fetch(real, os.path.join(adir, f"s{i}rb.jpg"), lab=False)
+            if r:
+                a["bg"] = r
+        elif isinstance(real, dict) and real.get("q") and s.get("type") in ("image", "card", "object"):
             import realmedia
             if str(real.get("kind", "")).lower() == "clip":      # a real video clip (Wikimedia Commons)
                 vc = realmedia.video_clip(real["q"], os.path.join(adir, f"s{i}rv.mp4"), real.get("subject"))
@@ -219,6 +225,21 @@ def _stage_assets(ch, p, job):
             lg = realmedia.fetch({"q": s["logo_q"], "kind": "logo", "subject": s["logo_q"]}, os.path.join(adir, f"s{i}cl.jpg"), lab=False, raw=True)
             if lg:
                 a["chatlogo"] = lg
+        if film and not a and s.get("type") not in ("object", "clip"):
+            # 18 Nov v2 (owner: "same only, no improvement"): every tech scene gets a full-frame real picture behind its
+            # card/number/flow, instead of a small element on black. Prompt from the plan, else built from the spoken line.
+            s.setdefault("prompt", "")
+            s["bg_prompt"] = s.get("bg_prompt") or (
+                f"Cinematic photoreal vertical scene that shows what this sentence is about: \"{s.get('vo', '')}\" "
+                f"({s.get('label') or s.get('title') or ''}). Real hardware, real devices, real places; one clear subject in the middle "
+                "third, dark low-key lighting with deep shadows at the top and bottom, teal and amber accents, shallow depth of "
+                "field, premium tech documentary look, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16.")
+            f = os.path.join(adir, f"s{i}bg.webp")
+            img = (muse.image(s["bg_prompt"], f) or muse.omni_image(s["bg_prompt"], os.path.join(adir, f"s{i}bgo.jpg"))
+                   or muse.cloudflare(s["bg_prompt"], os.path.join(adir, f"s{i}bg.jpg"))
+                   or muse.pollinations(s["bg_prompt"], os.path.join(adir, f"s{i}bgp.jpg")))
+            if img:
+                a["bg"] = img
         if not a and s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
             prompt = s["prompt"] + (". " + look if look and look.lower()[:20] not in s["prompt"].lower() else "") + \
                 ". Vertical 9:16, no text, no letters, no logos, no watermark."

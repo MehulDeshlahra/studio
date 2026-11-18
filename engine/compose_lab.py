@@ -327,6 +327,12 @@ def page(plan, timed, total, theme, assets):
         if not film or i == 0:
             inner += (f'<div class="hud"><span class="hl"><b></b>{esc(series)}</span>'
                       f'<span class="hr">{esc("" if (s.get("hud_right") or "").upper() in ("", (s.get("label") or "").upper()) else s["hud_right"].upper())}</span></div>')   # no duplicate of the pill
+        bgp = (assets.get(i) or {}).get("bg")
+        if film and bgp:                                # v2: the world behind the card: full frame, it moves, the type stays still
+            inner = (f'<img id="{sid}bg" class="bgimg" src="assets/{os.path.basename(bgp)}"><div class="bgshade" data-layout-ignore></div>'
+                     + inner.replace('<div class="glow"', '<div class="glow" style="display:none"', 1))
+            dx = 24 if i % 2 else -24
+            js.append(f'tl.fromTo("#{sid}bg",{{scale:1.04,x:{-dx}}},{{scale:1.14,x:{dx},duration:{max(0.8, d):.2f},ease:"power1.inOut",immediateRender:false}},{a:.3f});')
         if film:
             js += _camera(sid, kind, a, d)
         else:
@@ -471,6 +477,18 @@ body{{margin:0;background:#07080b}}
 .prop{{left:0;top:250px;width:1080px;height:980px;-webkit-mask-image:radial-gradient(ellipse 72% 66% at 50% 50%,#000 62%,transparent 100%)}}
 .cap .key{{font-size:1.22em;color:{acc}}}
 .grain{{opacity:.04}}
+.bgimg{{position:absolute;left:0;top:0;width:{W}px;height:{H}px;object-fit:cover;z-index:0}}
+.bgshade{{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#07080bd9 0%,#07080b66 18%,#07080b33 42%,#07080b8c 62%,#07080bf2 80%,#07080b 100%)}}
+.cam{{z-index:1}} .scene .hud,.scene .lpill{{z-index:3}}
+.stat{{font-size:250px;top:520px;text-shadow:0 8px 40px #000e,0 0 70px {acc}55}}
+.statsub{{font-size:58px;top:800px;text-shadow:0 4px 24px #000}}
+.kin{{font-size:168px;text-shadow:0 10px 50px #000e}} .kinsub{{font-size:56px}}
+.panel,.chat,.term{{left:60px;width:960px;background:linear-gradient(180deg,#151922f0,#0e1117f2)}}
+.rl,.rv{{font-size:50px}} .ptitle{{font-size:34px}}
+.node{{font-size:56px;text-shadow:0 4px 22px #000}} .nd{{width:64px;height:64px}}
+.cv{{text-shadow:0 6px 28px #000}} .cl{{font-size:40px;color:#fff;text-shadow:0 3px 14px #000}}
+.bub{{font-size:46px}}
+.cap{{font-size:62px;text-shadow:0 4px 22px #000,0 0 3px #000}}
 """ if film else "") + f"""
 .endh{{position:absolute;left:0;width:{W}px;top:800px;text-align:center;font-weight:800;font-size:110px;letter-spacing:-3px}}
 .endf{{position:absolute;left:0;width:{W}px;top:950px;text-align:center;font-family:{MONO};font-size:36px;letter-spacing:6px;color:{acc}}}
