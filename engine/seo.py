@@ -112,9 +112,22 @@ def make(cid, plan, job_dir=None):
     return r
 
 
-def text_for(plan, platform, music_credit=None):
-    """Final text for 'ig' / 'fb' / 'yt' (falls back to the plan's own caption + hashtags)."""
+def text_for(plan, platform, music_credit=None, cid=None):
+    """Final text for 'ig' / 'fb' / 'yt' (falls back to the plan's own caption + hashtags).
+    18 Nov: with cid, ig/fb get the channel's comment-to-DM line (engine/dm.py cta) before the hashtags."""
     s = (plan.get("seo") or {}).get(platform) or {}
+    line = ""
+    if cid and platform in ("ig", "fb"):
+        try:
+            import dm
+            line = dm.cta(cid)
+        except Exception:
+            line = ""
+    if line:
+        if s.get("caption"):
+            s = dict(s, caption=s["caption"].strip() + "\n\n" + line)
+        else:
+            plan = dict(plan, caption=(plan.get("caption", "").strip() + "\n\n" + line).strip())
     credits = [c for c in ([music_credit] if music_credit else []) + ["Video: " + c for c in plan.get("credits", [])] if c]
     tail = ("\n\n" + "\n".join(credits)) if credits else ""
     if platform == "yt" and s.get("title"):

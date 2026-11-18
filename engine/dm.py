@@ -23,10 +23,21 @@ DRY = "--dry" in sys.argv
 ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
 DAY_CAP, LOOKBACK_DAYS, USAGE_STOP = 40, 7, 60
 DEFAULT = {
-    "raaz": {"keywords": ["PART2", "PART 2", "AAGE"]},
-    "katha": {"keywords": ["KATHA", "AAGE", "PART2", "PART 2"]},
-    "tech": {"keywords": ["TECH", "LINK", "PART2", "PART 2"]},
+    "raaz": {"keywords": ["PART2", "PART 2", "AAGE"], "cta": "Comment karo \"PART2\", agla part seedha DM mein 📩"},
+    "katha": {"keywords": ["AAGE", "KATHA", "PART2", "PART 2"], "cta": "Comment karo \"AAGE\", agli katha seedha DM mein 📩",
+              "text_next": "Ye rahi agli katha 👇\n{next}\n\nRoz ek katha ke liye follow karo {handle}",
+              "text_wait": "Agli katha jaldi aa rahi hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
+    "tech": {"keywords": ["TECH", "LINK", "PART2", "PART 2"], "cta": "Comment karo \"TECH\", agla explainer seedha DM mein 📩",
+             "text_next": "Ye raha agla explainer 👇\n{next}\n\nAise aur ke liye follow karo {handle}",
+             "text_wait": "Agla explainer jaldi aa raha hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
 }
+
+def cta(cid):
+    """Caption line that tells viewers the keyword (seo.text_for adds it on Instagram + Facebook). "" = none."""
+    try:
+        return _cfg(cid).get("cta", "")
+    except Exception:
+        return ""
 BASE = {
     "keywords": ["PART2", "PART 2"],
     "text_next": "Ye raha agla part 👇\n{next}\n\nAise aur ke liye follow karo {handle}",
