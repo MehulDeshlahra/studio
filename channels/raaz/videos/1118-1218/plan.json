@@ -87,30 +87,32 @@
   {
    "vo": "Darwaza khulte hi farsh par taaza laal siyahi ki boondein dikhin.",
    "type": "image",
-   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. High angle view of vintage apartment mosaic floor, wet crimson ink droplets glistening like fresh blood drops in a neat dotted trail. No text.",
+   "prompt": "Cinematic night thriller, Indian apartment interior, high angle view of mosaic floor just inside an open doorway, fresh red ink droplets in a neat dotted trail on the floor, wet glistening, cold teal shadows, warm amber light spilling from doorway. No people, no figures, no text.",
    "motion": "push",
-   "title": "",
+   "title": "Laal Boondein",
    "keywords": [
     "farsh",
     "laal",
     "siyahi"
    ],
-   "big": null,
-   "small": null
+   "big": "Laal Siyahi",
+   "small": "Taaza boondein",
+   "real": null
   },
   {
    "vo": "Yeh laal nishan living room se seedhe khuli balcony ki railing tak gaye the.",
    "type": "image",
-   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Living room corridor leading to an open wet balcony window blowing curtains inward, line of red drops leading forward on tiles. No text.",
+   "prompt": "Cinematic night thriller, Indian living room leading to open balcony, wet tiles, a clear line of red ink drops trailing from the living room floor across the threshold to the balcony railing, curtains blowing inward, rain, cold teal shadows, warm amber practical lights. No people, no figures, no text.",
    "motion": "pan",
-   "title": "",
+   "title": "Balcony Tak",
    "keywords": [
     "laal",
     "balcony",
     "railing"
    ],
-   "big": null,
-   "small": null
+   "big": "Laal Nishan",
+   "small": "Railing tak trail",
+   "real": null
   },
   {
    "vo": "Railing par ek puraana metallic fountain pen akele chhod diya gaya tha.",
@@ -173,8 +175,8 @@
    "type": "card",
    "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Mehul and Raghav frozen in hallway doorway looking terrified at the wall mirror. High contrast shadows. No text.",
    "motion": "punch",
-   "title": "AB KYA?",
-   "big": "AAINA YA BHAAGO?",
+   "title": "",
+   "big": "AAINA? BHAAGO?",
    "small": "comment karo",
    "keywords": [
     "Mehul",
@@ -184,7 +186,7 @@
   }
  ],
  "music_mood": "suspense",
- "caption": "Mehul ne anjaan number dial kiya aur phone uski apni hi jeb mein baji! Pen par likhi chetavni: aaine mein mat dekhna. Tum hote toh kya karte? Part 4 kal!",
+ "caption": "Mehul ne anjaan number dial kiya aur phone uski apni hi jeb mein baji! Pen par likhi chetavni: aaine mein mat dekhna. Tum hote toh kya karte? Part 4 kal!\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#ChouthiManzilKaRaaz",
   "#AageSuno",
@@ -218,5 +220,6 @@
   "5a702a85dd",
   "b9042f4ea0"
  ],
- "cliff_done": true
+ "cliff_done": true,
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

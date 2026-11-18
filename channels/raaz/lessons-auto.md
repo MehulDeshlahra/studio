@@ -71,3 +71,11 @@
 
 ## review 1118-1202
 - length 58.33 s is outside 25-55 s
+
+## 1118-1218 Chouthi Manzil Ka Raaz - Part 3
+- Scene 6 & 7: Silhouette of the figure is somewhat amorphous and lacks clear definition.
+- Scene 10: Hand anatomy appears slightly distorted or melted where the ink is applied.
+- Scenes 6 & 7: The specific requested titles 'Laal Boondein' and 'Balcony Tak' are missing from the frames.
+
+## review 1118-1218
+- visual: Scenes 6 and 7 display a giant multi-armed entity standing at the balcony, directly contradicting the narration which states only red ink drops and an abandoned pen were found.

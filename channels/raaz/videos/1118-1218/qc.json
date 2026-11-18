@@ -1,0 +1,29 @@
+{
+ "topic": "Chouthi Manzil Ka Raaz - Part 3",
+ "title": "Apni hi jeb mein baji maut ki ringtone?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.6,
+  "true_peak": -3.4,
+  "dur": 54.53
+ },
+ "vision": {
+  "score": 6,
+  "ok": true,
+  "problems": [
+   "Scene 6 & 7: Silhouette of the figure is somewhat amorphous and lacks clear definition.",
+   "Scene 10: Hand anatomy appears slightly distorted or melted where the ink is applied.",
+   "Scenes 6 & 7: The specific requested titles 'Laal Boondein' and 'Balcony Tak' are missing from the frames."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8656716417910447,
+  "words": 142,
+  "problems": []
+ },
+ "ok": true
+}
