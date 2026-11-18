@@ -110,12 +110,39 @@ def track(page, rediscover=False):
         rec["outliers"] = [s for s in c["shorts"] if rec["median"] and s["views"] >= 3 * rec["median"]][:6]
         seen_ids.add(c["id"])
         time.sleep(1)
-    # keep the biggest MAX_TRACK (by subscribers) that really post Shorts
-    ranked = sorted(chans.items(), key=lambda kv: -(kv[1]["subs_hist"][-1][1] if kv[1].get("subs_hist") else 0))
-    pg["channels"] = dict(ranked[:MAX_TRACK])
+    _fit(page, chans)
+    # keep 8 leaders (most subscribers) + 6 climbers (smaller channels with big Shorts: how a NEW page grows), on niche only
+    subs = lambda r: r["subs_hist"][-1][1] if r.get("subs_hist") else 0
+    ok = {k: v for k, v in chans.items() if v.get("fit", True)}
+    leaders = sorted(ok.items(), key=lambda kv: -subs(kv[1]))[:8]
+    rest = [kv for kv in ok.items() if kv[0] not in dict(leaders) and subs(kv[1]) < 2_000_000]
+    climbers = sorted(rest, key=lambda kv: -(kv[1].get("median", 0) / max(1, subs(kv[1]))))[:6]
+    for k, v in leaders:
+        v["tier"] = "leader"
+    for k, v in climbers:
+        v["tier"] = "climber"
+    pg["channels"] = dict(leaders + climbers)
+    pg["off_niche"] = sorted(set(pg.get("off_niche", [])) | {k for k, v in chans.items() if v.get("fit") is False})
     pg["updated"] = time.strftime("%Y-%m-%d %H:%M")
     save(STORE, db)
     return pg
+
+
+def _fit(page, chans):
+    """One planner call for every channel not judged yet: is it really a Hindi/Indian channel of this niche?"""
+    import hookstudy, plan as planner
+    todo = {k: v for k, v in chans.items() if "fit" not in v}
+    if not todo:
+        return
+    lines = [f'{k}: "{v["name"]}" | about: {v.get("about", "")[:160]} | Shorts: ' + " / ".join(s["title"][:60] for s in (v.get("shorts") or [])[:6])
+             for k, v in todo.items()]
+    r = planner.ask(f"Our page makes {hookstudy.NICHE.get(page, page)} for an Indian Hindi/Hinglish audience.\n"
+                    "For each YouTube channel below say if it is a DIRECT competitor: same kind of Shorts, same audience "
+                    "(Indian, Hindi/Hinglish). Big general creators, English-only, vlogs, news, finance, comedy = false.\n"
+                    + "\n".join(lines) + '\nReturn JSON {"fit": {"<channel id>": true|false}}', max_tokens=1500) or {}
+    for k, v in (r.get("fit") or {}).items():
+        if k in chans:
+            chans[k]["fit"] = bool(v)
 
 
 def growth(rec, days=7):
@@ -153,7 +180,7 @@ def page_md(page):
     for cid, r in sorted(chans.items(), key=lambda kv: -(kv[1]["subs_hist"][-1][1] if kv[1].get("subs_hist") else 0)):
         subs = r["subs_hist"][-1][1] if r.get("subs_hist") else 0
         g = growth(r)
-        L.append(f"## {r['name']} ({subs:,} subs{', +%s in 7 days' % f'{g:,}' if g else ''}; usual Short {r.get('median', 0):,} views)")
+        L.append(f"## {r['name']} [{r.get('tier', '')}] ({subs:,} subs{', +%s in 7 days' % f'{g:,}' if g else ''}; usual Short {r.get('median', 0):,} views)")
         for s in r.get("outliers", [])[:4]:
             L.append(f"- {s['views']:,} views: {s['title'][:100]}")
     bj = (load(BRANDS, {}) or {}).get(page, {})
