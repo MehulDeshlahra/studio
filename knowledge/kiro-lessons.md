@@ -45,6 +45,9 @@ knowledge/lessons-learnt.md for the engine.
   actions are in the script.
 - NEVER rename a queue topic while a build may be using it: the topic text is the key for its verified source and for
   "already made". Change the "source" field, keep the topic.
+- NEVER write a script and run it in the same batch of tool calls: the run starts before the file exists (lost ~10 runs
+  on 19 Nov). Write first, run in the next call.
+- A reviewer that sees stills must be told what the scenes are and that items appear over time, or it holds good videos.
 - NEVER run a long command in the foreground (owner: "never sleep"): systemctl start --no-block / systemd-run --no-block,
   then do other work and check back.
 
