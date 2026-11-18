@@ -263,7 +263,7 @@ PLAN:
     except Exception as e:
         log("plan review failed, keeping v1:", str(e)[:120])
     if ch.get("numbers_check"):                    # 18 Nov (finance 1118-2228 said Rs 50k -> Rs 1,02,000 with Rs 5k/month paid)
-        for rnd in range(2):
+        for rnd in range(3):                       # 19 Nov: 2 fix rounds (one was not enough for unsourced claims)
             probs = numbers_check(plan)
             if not probs:
                 log("numbers check: all calculations and rules correct" + (" after a fix" if rnd else ""))
@@ -271,11 +271,14 @@ PLAN:
                 break
             log("numbers check found", len(probs), "problem(s):", " | ".join(probs)[:300])
             plan["numbers_hold"] = probs
-            if rnd == 0:
+            if rnd < 2:
                 try:
                     fixed = ask("Fix ONLY these factual / arithmetic errors in this Shorts plan; keep everything else the same "
                                 "(same JSON shape). Change the numbers (or the scenario) so every number is exactly right, and "
-                                "attribute every rule to whoever really sets it.\nERRORS:\n- " + "\n- ".join(probs)
+                                "attribute every rule to whoever really sets it. A claim that has no official source (RBI, SEBI, "
+                                "NPCI, a ministry, the I4C cyber-crime centre, a court) is REMOVED, or said without the number "
+                                "('lakhs of people', 'crores of rupees'). Keep the story working after the removal."
+                                "\nERRORS:\n- " + "\n- ".join(probs)
                                 + "\nPLAN:\n" + json.dumps(plan, ensure_ascii=False))
                     if len(fixed.get("scenes", [])) >= 6:
                         plan = fixed
