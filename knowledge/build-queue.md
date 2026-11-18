@@ -107,3 +107,7 @@
 - [x] 18-Nov Free FLUX.1-dev (NVIDIA) + z-image pictures through OmniRoute (768x1344, ~10 s, frames checked); used live in a preflight repair 04:42.
 - [x] 18-Nov compose: last scene no longer runs under the end card (katha 1117-1935 / 1118-0035 holds; healcode --check 1117-1935 passed) + unknown motion no longer crashes compose.
 - [x] 18-Nov Self-healing: engine/healer.py (held-video ladder, orphan resume, unknown errors, [mehul] tasks, known fixes), engine/healcode.py (aider on studio-code in a git worktree; end-to-end test on a sandbox clone found and fixed an injected bug), engine/state.py (knowledge/STATE.md every 15 min), doctor hands every failure + failed repair to the healer, daily YouTube login check (all 3 pages log in).
+- [x] 18-Nov Captions: word timing now from Groq Whisper large-v3 (free, via OmniRoute) with the local model as fallback: 97% vs 76% (katha 1118-0435) and 100% vs 91% (1117-0655) word match, 3 s instead of minutes of CPU.
+- [x] 18-Nov studio-scout failed every run since 17 Nov 17:01 (its unit pulled git without --autostash): unit fixed on the server and in scout/install.sh, scout ran again 05:35.
+- [x] 18-Nov Mehul agent contact sheet: ffmpeg crashed on odd row height (213 px) -> 214 px; sheet verified on kuber-01 + 1117-0655.
+- [x] 18-Nov Quality gates: preflight + review check sacred figures (gender/form/modesty) and split pictures (z-image drew Kartikeya as a woman; z-image removed); a provider's "top up your credits" text is never accepted as an answer.
