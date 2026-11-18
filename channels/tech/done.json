@@ -128,9 +128,7 @@
   "title": "Chip banta kaise hai? Ret se supercomputer tak.",
   "status": "held",
   "review": [
-   "before render, scene 6: FIT: UI type requested ASML value, but the visual shows a generic blue blueprint UI with faint text instead of the ASML machine UI",
-   "before render, scene 7: FIT: Scene calls for a stat value of 13.5nm with EUV light, but the visual incorrectly renders a graphic containing 'ASML' text logo box overlapping poorly",
-   "before render, scene 13: FIT: Subtitle text says 'AB ARAB TRANSISTORS' while big text says 'RET THA', which conflicts with the requested title specifications"
+   "before render, scene 7: FIT: scene 7 shows ASML logo prominently which violates the prompt's negative constraint 'no logos'"
   ]
  }
 ]

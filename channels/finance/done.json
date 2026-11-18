@@ -9,5 +9,20 @@
    "FACTS: scene 5 'principal kam hi nahi hua' false; scene 8 'RBI ke hisaab se minimum due 5%' - RBI does not set it, banks do; 5% of 50,000 is 2,500 not 5,000"
   ],
   "removed_why": "wrong maths; remade with the numbers check"
+ },
+ {
+  "job": "1118-2303",
+  "topic": "'Digital Arrest' scam ka blueprint: video call pe police wala kaise darata hai, aur ek screenshot se bachav.",
+  "title": "Digital Arrest scam ka asli blueprint kya hai?",
+  "status": "held",
+  "review": [
+   "NUMBERS: scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing varie"
+  ]
+ },
+ {
+  "job": "1118-2334",
+  "topic": "UPI payment fail, paisa kat gaya? Bank aapko har din ₹100 dega (RBI circular 20 Sep 2019)",
+  "title": "UPI fail hua, paisa kata? Bank roz ₹100 dega?",
+  "status": "building"
  }
 ]

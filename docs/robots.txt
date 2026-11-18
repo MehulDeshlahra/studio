@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://scrollhouse.in/sitemap.xml

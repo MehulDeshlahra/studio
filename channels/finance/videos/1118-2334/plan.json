@@ -1,0 +1,351 @@
+{
+ "slug": "upi-fail-rbi-100-rupees-daily",
+ "title": "UPI fail hua, paisa kata? Bank roz ₹100 dega?",
+ "hooks": [
+  "UPI fail, paisa kat gaya? RBI aapko ₹100 roz dega!",
+  "Payment failed, money deducted? Get ₹100 daily from the bank.",
+  "UPI transaction failed? RBI says you’ll earn ₹100 each day."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Starts with the pain point and the ₹ amount in the first four words, matching the channel’s high‑performing hook pattern.",
+ "metaphor": "A highway of payments where a stalled car (failed UPI) triggers a daily fine until it moves again.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "UPI fail hua, aur paisa kat gaya? Bank aapko har din ₹100 dega.",
+   "type": "object",
+   "prompt": "a smartphone on a dark desk showing a red 'payment failed' screen, money debited alert",
+   "motion": "push",
+   "title": "UPI Fail Rule",
+   "keywords": [
+    "UPI fail",
+    "₹100 roz"
+   ],
+   "bg_prompt": "Close‑up of a smartphone showing a failed UPI alert, deep green‑black background, cinematic lighting",
+   "real": {
+    "q": "UPI payment failed error message smartphone screen",
+    "kind": "photo",
+    "subject": "A close-up of a hand holding a phone showing a generic UPI app interface with a red 'Transaction Failed' banner and a transaction ID visible."
+   },
+   "big": null,
+   "small": null,
+   "skin": "keynote",
+   "sub": "Bank Penalty",
+   "label": "UPI FAIL",
+   "value": "₹100",
+   "rows": null,
+   "items": null,
+   "nodes": null,
+   "points": null,
+   "end_label": null,
+   "lines": null,
+   "messages": null
+  },
+  {
+   "vo": "Ye RBI ka niyam hai, 20 September 2019 se. Dost ko bheja paisa agle din tak wapas aana chahiye.",
+   "type": "title",
+   "prompt": "Simple calendar graphic: two dates highlighted – ‘T+1’ for person‑to‑person, ‘T+5’ for merchant.",
+   "motion": "punch",
+   "title": "RBI Circular",
+   "keywords": [
+    "RBI",
+    "refund timeline"
+   ],
+   "bg_prompt": "Minimalist calendar on dark background, green highlights on T+1 and T+5 boxes",
+   "real": {
+    "q": "Reserve Bank of India building exterior",
+    "kind": "photo",
+    "subject": "The official RBI headquarters building"
+   },
+   "big": "RBI KA NIYAM",
+   "small": null,
+   "skin": "keynote",
+   "sub": "Circular · 20 Sep 2019",
+   "label": "Rule Date",
+   "value": null,
+   "rows": null,
+   "items": null,
+   "nodes": null,
+   "points": null,
+   "end_label": null,
+   "lines": null,
+   "messages": null
+  },
+  {
+   "vo": "Dukaan ko kiya payment fail hua, toh paanch din tak.",
+   "type": "compare",
+   "prompt": "Three nodes: YOUR BANK → NPCI SWITCH → RECIPIENT BANK. Red X on RECIPIENT BANK.",
+   "motion": "pan",
+   "title": "REFUND KAB TAK",
+   "keywords": [
+    "payment flow",
+    "failed"
+   ],
+   "bg_prompt": "Abstract data highway with glowing nodes, dark green backdrop, red cross on recipient side",
+   "real": {
+    "q": "Indian local shopkeeper accepting UPI payment on phone",
+    "kind": "photo",
+    "subject": "A small business owner holding a phone to scan a QR code"
+   },
+   "big": null,
+   "small": null,
+   "skin": "keynote",
+   "sub": "T+5 Days",
+   "label": "Refund Time",
+   "value": null,
+   "rows": null,
+   "items": [
+    {
+     "label": "DOST KO",
+     "value": "T+1",
+     "pct": 25
+    },
+    {
+     "label": "DUKAAN KO",
+     "value": "T+5",
+     "pct": 90
+    }
+   ],
+   "nodes": null,
+   "points": null,
+   "end_label": null,
+   "lines": null,
+   "messages": null
+  },
+  {
+   "vo": "Usse ek din bhi der hui, toh bank har din ₹100 khud dega. Claim nahi karna padta.",
+   "type": "stat",
+   "prompt": "Digital counter showing ‘₹100/DAY’ ticking up, green LED style on black background.",
+   "motion": "punch",
+   "title": "BANK DEGA",
+   "keywords": [
+    "₹100",
+    "auto credit"
+   ],
+   "bg_prompt": "Floating green numbers on dark background, subtle gold glow",
+   "real": {},
+   "big": "₹100",
+   "small": null,
+   "skin": "keynote",
+   "sub": "har din der ka",
+   "label": null,
+   "value": "₹100",
+   "rows": null,
+   "items": null,
+   "nodes": null,
+   "points": null,
+   "end_label": null,
+   "lines": null,
+   "messages": null
+  },
+  {
+   "vo": "Sabse pehle app khol, transaction status dekho.",
+   "type": "ui",
+   "prompt": "Phone screen recording: UPI app list, one row highlighted ‘FAILED’ with amount.",
+   "motion": "push",
+   "title": "TRANSACTION",
+   "keywords": [
+    "app",
+    "status"
+   ],
+   "bg_prompt": "UPI app transaction list, hand holding phone, realistic lighting",
+   "real": {
+    "q": "banking app transaction history status screen",
+    "kind": "photo",
+    "subject": "A thumb scrolling through a banking app's 'Transaction History' list, highlighting a specific entry marked as 'Failed' or 'Pending'."
+   },
+   "big": null,
+   "small": null,
+   "skin": "keynote",
+   "rows": [
+    {
+     "label": "STATUS",
+     "value": "FAILED",
+     "pct": 100
+    },
+    {
+     "label": "PAISA",
+     "value": "KATA",
+     "pct": 100
+    }
+   ]
+  },
+  {
+   "vo": "Agar failed dikh raha, turant 'Raise Dispute' dabao.",
+   "type": "ui",
+   "prompt": "Tap on ‘Raise Dispute’ button, modal appears with dispute ID.",
+   "motion": "punch",
+   "title": "APP MEIN",
+   "keywords": [
+    "dispute",
+    "button"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: raise dispute, dispute button, upi fail hua, paisa kata? bank roz ₹100 dega?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "real": {
+    "q": "raise dispute button banking app interface",
+    "kind": "photo",
+    "subject": "A finger pressing a prominent 'Raise Dispute' or 'Report Issue' button within a transaction detail view on a mobile phone."
+   },
+   "big": "Raise Dispute",
+   "small": null,
+   "skin": "keynote",
+   "sub": "Tap to File",
+   "label": "Urgent",
+   "value": "",
+   "rows": [
+    {
+     "label": "RAISE DISPUTE",
+     "value": "TAP",
+     "pct": 100
+    }
+   ],
+   "items": null,
+   "nodes": null,
+   "points": null,
+   "end_label": null,
+   "lines": null,
+   "messages": null
+  },
+  {
+   "vo": "Reference number, screenshot, aur SMS sab save kar lo.",
+   "type": "object",
+   "prompt": "Stack of cards: SMS alert, app screenshot, dispute ticket, bank acknowledgment.",
+   "motion": "pull",
+   "title": "Keep Proof",
+   "keywords": [
+    "proof",
+    "screenshots"
+   ],
+   "bg_prompt": "Photorealistic evidence cards fanned on dark surface, soft glow",
+   "real": {
+    "q": "hand holding phone taking screenshot of message",
+    "kind": "photo",
+    "subject": "A realistic photo of a hand holding a phone, with the screen showing a notification or SMS, while the other hand's thumb is about to press the power/volume buttons to take a screenshot."
+   },
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Bank ne 30 din mein theek nahi kiya? RBI ke CMS portal pe complaint karo.",
+   "type": "flow",
+   "prompt": "Vertical ladder: 1. YOUR BANK → 2. NPCI PORTAL → 3. RBI CMS, each lighting up.",
+   "motion": "tilt",
+   "title": "COMPLAINT",
+   "keywords": [
+    "escalation",
+    "NPCI",
+    "RBI"
+   ],
+   "bg_prompt": "Three-tier diagram with gold connectors on dark green background",
+   "real": {
+    "q": "RBI logo",
+    "kind": "logo",
+    "subject": "the official RBI logo"
+   },
+   "big": null,
+   "small": null,
+   "skin": "terminal",
+   "sub": "Escalation Path",
+   "label": "Steps",
+   "value": null,
+   "rows": null,
+   "items": null,
+   "nodes": [
+    "BANK",
+    "30 DIN",
+    "RBI CMS"
+   ],
+   "points": null,
+   "end_label": null,
+   "lines": null,
+   "messages": null
+  },
+  {
+   "vo": "Kabhi bhi PIN ya OTP kisi ko mat do.",
+   "type": "title",
+   "prompt": "Red shield icon with bold ‘NEVER SHARE’ text, PIN·OTP crossed out.",
+   "motion": "punch",
+   "title": "Scam Alert",
+   "keywords": [
+    "scam",
+    "PIN",
+    "OTP"
+   ],
+   "bg_prompt": "Red shield on dark background, dramatic lighting",
+   "real": {
+    "q": "Close up of finger typing OTP on phone keypad",
+    "kind": "photo",
+    "subject": "A close-up of a thumb typing a 4-digit code on a phone screen"
+   },
+   "big": "PIN / OTP",
+   "small": null,
+   "skin": "terminal",
+   "sub": "kabhi mat do",
+   "label": "Warning",
+   "value": "",
+   "rows": null,
+   "items": null,
+   "nodes": null,
+   "points": null,
+   "end_label": null,
+   "lines": null,
+   "messages": null
+  },
+  {
+   "vo": "Save karo, agle baar aise situation se bach jao!",
+   "type": "title",
+   "prompt": "Centered gold ‘SAVE KARO’ text, white sub‑text ‘Bach jao!’ below, small RBI logo at corner.",
+   "motion": "pull",
+   "title": "Save Now",
+   "keywords": [
+    "save",
+    "call to action"
+   ],
+   "bg_prompt": "Minimal end card, deep green‑black gradient, premium finish",
+   "real": {},
+   "big": "SAVE KARO",
+   "small": null,
+   "skin": "keynote",
+   "sub": "kaam aayega",
+   "label": null,
+   "value": null,
+   "rows": null,
+   "items": null,
+   "nodes": null,
+   "points": null,
+   "end_label": "RBI",
+   "lines": null,
+   "messages": null
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "UPI fail hua, paisa kata? Bank aapko har din ₹100 dega 💸\nRBI ka niyam (circular, 20 Sep 2019): dost ko bheja paisa T+1 din mein, dukaan ka T+5 din mein wapas. Der hui toh bank har din ₹100 khud dega.\nBank 30 din mein theek na kare? cms.rbi.org.in pe complaint.\nSource: RBI circular RBI/2019-20/67, 20 Sep 2019\nSave karo, kaam aayega 📌",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#upi",
+  "#rbi",
+  "#upifail"
+ ],
+ "claims": [],
+ "brain_ids": [
+  "161339712e",
+  "4396759d41",
+  "1e60a34718",
+  "7fa182f8ef",
+  "a688e48ca2",
+  "97e1b2fcbb",
+  "f945e2a937",
+  "6ce7203c71",
+  "12739745ca",
+  "d52bfa64b5",
+  "7f620e6fdf",
+  "1e1964f463",
+  "0755cc155a",
+  "b2fabb69c4"
+ ],
+ "skin": "keynote",
+ "kiro_checked": "19 Nov: facts checked by hand against RBI/2019-20/67 (Mint, ET); bank pays, not RBI; ₹100/day after T+1 / T+5"
+}

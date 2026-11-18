@@ -1,0 +1,268 @@
+{
+ "slug": "digital-arrest-scam-blueprint",
+ "title": "Digital Arrest scam ka asli blueprint kya hai?",
+ "hooks": [
+  "Digital arrest ka koi kanoon nahi — victims lost hundreds of crores.",
+  "Video call pe police wala darata kaise? Ek screenshot se bachav.",
+  "WhatsApp pe koi arrest nahi kar sakta. Par log dar ke paise kyun bhejte hain?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the legal truth and the scale of losses (hundreds of crores) in one breath — immediate stakes, zero fluff, fits the 'High-Utility Evidence' hook pattern that wins on Shorts.",
+ "metaphor": "A glowing red LOCK snaps shut on a smartphone screen (the fake 'digital arrest'); a single CAMERA SHUTTER click breaks the lock — the screenshot is the key.",
+ "cast": {
+  "hands": "clean, neutral-toned hands holding a modern smartphone; only fingers and device visible, no face, no wristwear"
+ },
+ "scenes": [
+  {
+   "vo": "Digital arrest ka koi kanoon nahi — victims lost hundreds of crores.",
+   "type": "title",
+   "big": "NO LAW",
+   "sub": "Digital Arrest",
+   "bg_prompt": "photorealistic premium studio render on deep black-green, a smartphone floating in soft green-gold light, screen shows a glowing red LOCK icon snapping shut, coins and cards scattered below, 9:16 composition, subject centred, room above and below for text",
+   "keywords": [
+    "kanoon",
+    "digital arrest"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Scammer video call karta, police uniform mein.",
+   "type": "object",
+   "prompt": "clean hands holding a smartphone, screen shows a WhatsApp video call frame with a person in khaki police uniform, fake badge visible, soft green-gold studio lighting, deep black-green background, 9:16",
+   "label": "",
+   "motion": "push",
+   "keywords": [
+    "video call",
+    "police",
+    "uniform"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "Fake FIR, warrant dikhake darta hai.",
+   "type": "object",
+   "prompt": "clean hands holding a smartphone, screen shows a video call where the caller holds up a folded paper document with a red stamp, soft green-gold light, deep black-green background, 9:16",
+   "motion": "punch",
+   "keywords": [
+    "fake FIR",
+    "warrant",
+    "darta"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "'Safe account' mein paisa maangta, warna jail.",
+   "type": "flow",
+   "nodes": [
+    "VICTIM",
+    "UPI APP",
+    "MULE A/C",
+    "OFFSHORE"
+   ],
+   "bg_prompt": "photorealistic premium studio render on deep black-green, a glowing green UPI arrow moving from a phone screen through a chain of masked bank cards into a dark globe, soft gold accents, 9:16",
+   "keywords": [
+    "safe account",
+    "paisa",
+    "mule"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Paisa mule accounts se zyadaatar Myanmar, Cambodia chala jata.",
+   "type": "chart",
+   "title": "TOP OFFSHORE HUBS 2024",
+   "points": [
+    42,
+    33,
+    20
+   ],
+   "end_label": "MAJORITY OFFSHORE",
+   "bg_prompt": "photorealistic premium studio render on deep black-green, a dark 3D globe with three pulsing red nodes over Myanmar, Laos, Cambodia, connected by faint gold lines to India, soft green-gold atmosphere, 9:16",
+   "keywords": [
+    "Myanmar",
+    "Cambodia",
+    "offshore"
+   ],
+   "motion": "push"
+  },
+  {
+   "vo": "Asli police kabhi WhatsApp pe arrest nahi karti.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "REAL POLICE",
+     "value": "PHYSICAL PRESENCE",
+     "pct": 100
+    },
+    {
+     "label": "SCAMMER",
+     "value": "WHATSAPP VIDEO",
+     "pct": 100
+    }
+   ],
+   "bg_prompt": "photorealistic premium studio render on deep black-green, split frame: left side a police station entrance with real signage, right side a smartphone showing WhatsApp call UI, soft green-gold light, 9:16",
+   "keywords": [
+    "police",
+    "WhatsApp",
+    "arrest"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Call record karo, screenshot lo — proof banta.",
+   "type": "object",
+   "prompt": "clean hands holding a smartphone, screen shows a screen-recording indicator (red dot) active over a WhatsApp video call, soft green-gold studio light, deep black-green background, 9:16",
+   "motion": "punch",
+   "keywords": [
+    "record",
+    "screenshot",
+    "proof"
+   ],
+   "title": ""
+  },
+  {
+   "vo": "1930 pe bhejo, bank ko bhi, turant.",
+   "type": "ui",
+   "title": "REPORT NOW",
+   "rows": [
+    {
+     "label": "CYBER HELPLINE",
+     "value": "1930",
+     "pct": 100
+    },
+    {
+     "label": "NCRP PORTAL",
+     "value": "cybercrime.gov.in",
+     "pct": 100
+    },
+    {
+     "label": "YOUR BANK",
+     "value": "CALL / APP",
+     "pct": 100
+    }
+   ],
+   "bg_prompt": "photorealistic premium studio render on deep black-green, a smartphone showing the official cybercrime.gov.in homepage with 'File Complaint' button highlighted in gold, a bank app open beside it, soft green-gold light, 9:16",
+   "keywords": [
+    "1930",
+    "bank",
+    "turant"
+   ],
+   "motion": "push"
+  },
+  {
+   "vo": "Pehle ghante mein report karne se recovery ke chances badhte hain.",
+   "type": "stat",
+   "value": "EARLY REPORTING",
+   "sub": "Report Within 3 Working Days For Zero Liability (RBI)",
+   "bg_prompt": "photorealistic premium studio render on deep black-green, a golden hourglass with green digital sand flowing upward (reversal metaphor), soft gold rim light, 9:16",
+   "keywords": [
+    "ghante",
+    "report",
+    "wapas"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "OTP, PIN, CVV — kabhi kisi ko mat dena.",
+   "type": "title",
+   "big": "NEVER SHARE",
+   "sub": "OTP • PIN • CVV",
+   "bg_prompt": "photorealistic premium studio render on deep black-green, a debit card and smartphone side by side, the card's CVV and the phone's OTP input field both covered by a glowing green shield icon, soft green-gold light, 9:16",
+   "keywords": [
+    "OTP",
+    "PIN",
+    "CVV"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Police video call pe verification nahi maangti, yaad rakho.",
+   "type": "card",
+   "big": "REAL POLICE",
+   "small": "NO VIDEO CALL VERIFICATION",
+   "bg_prompt": "photorealistic premium studio render on deep black-green, a police ID card and a smartphone with a red 'X' over a video call icon, soft green-gold light, 9:16",
+   "keywords": [
+    "police",
+    "video call",
+    "verification"
+   ],
+   "motion": "push",
+   "title": ""
+  },
+  {
+   "vo": "Tune kabhi aisa call uthaya? Comment kar.",
+   "type": "title",
+   "big": "COMMENT BELOW",
+   "sub": "Tune aisa call uthaya?",
+   "bg_prompt": "photorealistic premium studio render on deep black-green, a smartphone floating, screen shows an Instagram comment box with cursor blinking, soft green-gold light, 9:16",
+   "keywords": [
+    "call",
+    "uthaya",
+    "comment"
+   ],
+   "motion": "push",
+   "title": ""
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Digital Arrest ka kanoon nahi — victims lost hundreds of crores. Scammer video call pe police banta, fake FIR dikhake 'safe account' mein paisa maangta. Ek screenshot (1930 pe bhejo) bacha sakta tera paisa. Kabhi OTP/PIN mat dena. Pehle ghante mein report karne se recovery ke chances badhte hain. Tune kabhi aisa call uthaya?\n\nEducation only, not financial advice.",
+ "hashtags": [
+  "#DigitalArrest",
+  "#CyberScam",
+  "#FinanceFuel",
+  "#1930",
+  "#CyberCrime",
+  "#ScamAlert",
+  "#MoneySafety"
+ ],
+ "claims": [
+  {
+   "claim": "Digital arrest is not a legal procedure in India.",
+   "basis": "Ministry of Home Affairs, I4C advisories; no provision in CrPC/IT Act for 'digital arrest' via video call."
+  },
+  {
+   "claim": "Digital arrest scams have caused losses running into hundreds of crores, as per Ministry of Home Affairs advisories and media reports (2024).",
+   "basis": "Ministry of Home Affairs advisories and media reports (2024)."
+  },
+  {
+   "claim": "Scammers operate primarily from Myanmar, Laos, Cambodia.",
+   "basis": "MHA / I4C reports; multiple arrests and call-centre busts linked to these jurisdictions."
+  },
+  {
+   "claim": "No genuine law-enforcement agency conducts arrest or verification via WhatsApp/video call.",
+   "basis": "Repeated advisories by Delhi Police, Mumbai Police, CBI, RBI, and I4C."
+  },
+  {
+   "claim": "Reporting unauthorized transactions within 3 working days limits customer liability per RBI; immediate reporting on 1930 or cybercrime.gov.in improves recovery chances.",
+   "basis": "RBI circular on customer liability (2017, updated 2021) for zero liability within 3 working days; I4C SOP for immediate reporting."
+  },
+  {
+   "claim": "Never share OTP, PIN, CVV with anyone claiming to be police or bank official.",
+   "basis": "Universal banking safety rule reinforced by RBI, NPCI, and all major banks."
+  }
+ ],
+ "numbers_hold": [
+  "scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing varie"
+ ],
+ "brain_ids": [
+  "4396759d41",
+  "1e60a34718",
+  "7f620e6fdf",
+  "1e1964f463",
+  "1e2336282f",
+  "a6473f9768",
+  "efef8ced81",
+  "d52bfa64b5",
+  "066e77dd74",
+  "9db4cc694f",
+  "161339712e",
+  "1940dd5eb9",
+  "7fa182f8ef",
+  "b349ca221e"
+ ]
+}

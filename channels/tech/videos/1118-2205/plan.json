@@ -24,9 +24,9 @@
    ],
    "bg_prompt": "photorealistic silicon ingot 99.99% pure, studio lighting, pure black background",
    "real": {
-    "q": "silicon ingot 99.99 percent pure",
+    "q": "close up of smartphone back glass and camera module",
     "kind": "photo",
-    "subject": "raw silicon ingot before slicing"
+    "subject": "A high-quality, real photo of a modern smartphone's back, focusing on the glass and camera, held by a hand to satisfy the 'Human Touch' rule."
    },
    "big": null,
    "small": null,
@@ -49,7 +49,12 @@
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "prompt": ""
+   "prompt": "",
+   "real": {
+    "q": "silicon ingot crystal growth industrial process",
+    "kind": "photo",
+    "subject": "A real industrial photo of a large, cylindrical silicon ingot or the crystal pulling furnace in a semiconductor factory."
+   }
   },
   {
    "vo": "Ingot kaate jaate wafer-thin slices mein.",
@@ -64,9 +69,9 @@
    ],
    "bg_prompt": "diamond wire saw slicing silicon ingot into wafers, cleanroom, pure black background",
    "real": {
-    "q": "silicon wafer slicing machine",
+    "q": "silicon wafer slicing machine industrial close up",
     "kind": "photo",
-    "subject": "wafer slicing in fab"
+    "subject": "A real photo of a wire saw or slicing machine cutting a silicon ingot into thin wafers."
    },
    "big": null,
    "small": null,
@@ -91,7 +96,12 @@
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "prompt": ""
+   "prompt": "",
+   "real": {
+    "q": "polished silicon wafer mirror surface reflection",
+    "kind": "photo",
+    "subject": "A close-up real photo of a polished silicon wafer showing its mirror-like, reflective surface."
+   }
   },
   {
    "vo": "Ab deposition: conducting, insulating layers deposit.",
@@ -128,16 +138,16 @@
     "EUV",
     "Pattern"
    ],
-   "label": "Tool",
+   "label": "Parts",
    "real": {
-    "q": "ASML EUV lithography machine",
-    "kind": "clip",
-    "subject": "EUV scanner in operation writing circuits"
+    "q": "EUV lithography machine interior view",
+    "kind": "photo",
+    "subject": "Close-up of EUV scanner optics with mirrors and lens"
    },
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "value": "ASML",
+   "value": null,
    "items": [
     "Scanner",
     "Mirrors",
@@ -157,11 +167,11 @@
     "EUV",
     "Baal"
    ],
-   "bg_prompt": "EUV light beam focusing through mirrors, extreme ultraviolet, pure black background",
+   "bg_prompt": "EUV beam reflecting off multilayer mirrors, high contrast on black background, schematic line art, no logos",
    "real": {
-    "q": "ASML logo",
-    "kind": "logo",
-    "subject": "ASML company logo"
+    "q": "EUV light beam focusing through mirrors",
+    "kind": "photo",
+    "subject": "Beam of EUV light being reflected by multilayer mirrors"
    },
    "big": null,
    "small": null,
@@ -181,7 +191,12 @@
    "bg_prompt": "reactive ion etch chamber, plasma etching silicon, pure black background",
    "big": null,
    "small": null,
-   "skin": "blueprint"
+   "skin": "blueprint",
+   "real": {
+    "q": "plasma etching chamber semiconductor manufacturing",
+    "kind": "photo",
+    "subject": "A real photo of a plasma etch chamber or the glowing plasma inside a semiconductor fabrication tool."
+   }
   },
   {
    "vo": "Ion implantation se transistors on/off switch bante.",
@@ -199,14 +214,14 @@
      "pct": 50
     }
    ],
-   "label": "DOPING CONTROL",
+   "label": "Doping Ctrl",
    "motion": "push",
    "keywords": [
     "Doping",
     "Transistor",
     "Switch"
    ],
-   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: doping control, ion implant, doping transistor switch, chip banta kaise hai? ret se supercomputer tak.. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "bg_prompt": "Blueprint style ion‑implant diagram, crisp white line art on deep blue cyanotype, isometric view, no text or logos",
    "big": null,
    "small": null,
    "skin": "blueprint",
@@ -215,7 +230,7 @@
   {
    "vo": "Ye loop chalta 100+ layers tak... 3D city banti.",
    "type": "chart",
-   "title": "LAYER COUNT",
+   "title": "Layer Count",
    "points": [
     10,
     25,
@@ -223,19 +238,24 @@
     75,
     100
    ],
-   "end_label": "+100 LAYERS",
-   "label": "3D STACK",
+   "end_label": "+100 Layers",
+   "label": "3D Stack",
    "motion": "tilt",
    "keywords": [
     "100+",
     "Layers",
     "3D City"
    ],
-   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: 3d stack, layer count, 100+ layers 3d city, chip banta kaise hai? ret se supercomputer tak.. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "bg_prompt": "Blueprint of 3D NAND stack, white line art on dark cyanotype, isometric layers, no logos or text",
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "prompt": ""
+   "prompt": "",
+   "real": {
+    "q": "3D NAND chip cross section microscopy",
+    "kind": "photo",
+    "subject": "A real electron microscope image or macro photo of a 3D NAND stack showing the layered structure."
+   }
   },
   {
    "vo": "Wafer test, dice, package... 15 weeks lagte.",
@@ -250,9 +270,9 @@
    ],
    "bg_prompt": "wafer probe test station, cleanroom, pure black background",
    "real": {
-    "q": "TSMC cleanroom wafer test",
+    "q": "semiconductor wafer dicing and packaging line",
     "kind": "photo",
-    "subject": "wafer probing in TSMC fab"
+    "subject": "A real photo of a wafer being diced into individual chips or the packaging assembly line in a factory."
    },
    "big": null,
    "small": null,
@@ -271,9 +291,9 @@
    ],
    "bg_prompt": "Apple A17 Pro chip package on black velvet, studio macro, pure black background",
    "real": {
-    "q": "Apple A17 Pro chip package",
+    "q": "hand holding smartphone showing screen with many apps",
     "kind": "photo",
-    "subject": "finished Apple A17 Pro processor"
+    "subject": "A real photo of a hand holding a smartphone, with the screen on, showing a grid of app icons (no specific brand logo visible, just the UI grid)."
    },
    "big": null,
    "small": null,
