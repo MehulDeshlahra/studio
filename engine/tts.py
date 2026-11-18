@@ -69,11 +69,15 @@ class _KeyWatch(urllib.request.BaseHandler):
         e["models"][m] = e["models"].get(m, 0) + 1
         if code < 300:
             e["ok"] += 1
+            if m in e["out"]:                  # 18 Nov: it answered, so it was never out for the day: self-correct
+                e["out"].remove(m)
         else:
             e["fail"] += 1
             b = body.lower()
-            daily = ("per day" in b or "perday" in b or "requests per day" in b or "daily" in b or "spend cap" in b
-                     or ("quota" in b and "minute" not in b))
+            # 18 Nov: "quota and not minute" marked per-MINUTE limits as daily (the limit name sits past the first 600
+            # characters), so all 4 keys showed TTS "out" after 3-8 calls while voices kept working, and planning
+            # skipped the strongest text model for the rest of the day. Daily only when Google says so.
+            daily = ("per day" in b or "perday" in b or "per_day" in b or "requests per day" in b or "daily" in b or "spend cap" in b)
             if code in (403, 429) and daily and m not in e["out"]:
                 e["out"].append(m)
                 if "spend cap" in b or "permission" in b:
@@ -86,7 +90,7 @@ class _KeyWatch(urllib.request.BaseHandler):
         body = ""
         if resp.status >= 300:
             try:
-                raw = resp.read(); body = raw[:600].decode("utf8", "ignore")
+                raw = resp.read(); body = raw[:6000].decode("utf8", "ignore")
                 import io as _io
                 resp.fp = _io.BytesIO(raw); resp.read = resp.fp.read
             except Exception:
