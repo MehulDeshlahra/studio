@@ -38,7 +38,7 @@ def scene(kind, s, sid, a, d, asset):
         msgs = [m for m in (s.get("messages") or []) if isinstance(m, dict) and m.get("text")][:4]
         who = s.get("title") or next((m.get("from") for m in msgs if str(m.get("from", "")).lower() not in ("me", "")), "Dost")
         rows = ""
-        step = max(0.45, min(1.2, (d - 0.5) / max(1, len(msgs))))
+        step = max(0.3, min(0.9, d * 0.4 / max(1, len(msgs))))
         for j, m in enumerate(msgs):
             me = str(m.get("from", "")).lower() == "me" or m.get("role") == "user"
             tick = '<b class="pq-tk">✓✓</b>' if me else ""
@@ -58,7 +58,7 @@ def scene(kind, s, sid, a, d, asset):
             app = esc(m.get("app") or "Messages")
             cards += (f'<div id="{sid}n{j}" class="pq-nc"><div class="pq-nh"><b class="pq-ic">{app[:1]}</b>{app}<em>now</em></div>'
                       f'<div class="pq-nf">{esc(m.get("from") or "Bank")}</div><div class="pq-nt">{esc(m["text"])}</div></div>')
-            t = a + 0.35 + j * max(0.5, min(1.0, (d - 0.6) / max(1, len(msgs))))
+            t = a + 0.3 + j * max(0.3, min(0.8, d * 0.35 / max(1, len(msgs))))
             js += _rev(f"#{sid}n{j}", t, a, y=-60, dur=0.45, ease="back.out(1.4)")
             cues.append({"t": round(t, 3), "file": "sfx/pop-light.mp3", "gain_db": -20, "align": "onset"})
         inner = (f'<div class="pq-ld">{esc(s.get("date") or "Wednesday, 19 November")}</div>'
@@ -80,9 +80,9 @@ def scene(kind, s, sid, a, d, asset):
         js += [f'tl.set("#{sid}pi",{{opacity:0}},{a:.3f});',
                f'tl.fromTo("#{sid}pi",{{scale:0.3,opacity:0}},{{scale:1,opacity:1,duration:0.5,ease:"back.out(2.6)",immediateRender:false}},{a + 0.3:.3f});']
         cues.append({"t": round(a + 0.32, 3), "file": "sfx/impact.mp3", "gain_db": -20, "align": "onset"})
-        js += _rev(f"#{sid}ps", a + 0.55, a) + _rev(f"#{sid}pa", a + 0.7, a) + _rev(f"#{sid}pc", T(0.35), a)
+        js += _rev(f"#{sid}ps", a + 0.5, a) + _rev(f"#{sid}pa", a + 0.62, a) + _rev(f"#{sid}pc", T(0.25), a)
         if note:
-            js += _rev(f"#{sid}pn", T(0.55), a)
+            js += _rev(f"#{sid}pn", T(0.38), a)
     elif kind == "bill":
         rows = [r for r in (s.get("rows") or []) if isinstance(r, dict)][:6]
         tone = "bad" if str(s.get("tone") or "bad") == "bad" else "good"
@@ -94,12 +94,12 @@ def scene(kind, s, sid, a, d, asset):
         hero = (f'<div id="{sid}bl" class="pq-bill"><div class="pq-bt">{esc(s.get("title") or "BILL")}</div>'
                 f'<div class="pq-bs">{esc(s.get("sub") or "")}</div><div class="pq-bh"></div>{body}{tl_}</div>')
         js += _rev(f"#{sid}bl", a + 0.05, a, y=60, dur=0.5, ease="power4.out")
-        step = max(0.3, min(0.8, (d * 0.6) / max(1, len(rows))))
+        step = max(0.22, min(0.55, (d * 0.3) / max(1, len(rows))))
         for j in range(len(rows)):
             js += _rev(f"#{sid}b{j}", a + 0.4 + j * step, a, y=12, dur=0.25)
             cues.append({"t": round(a + 0.4 + j * step, 3), "file": "sfx/click-ui.mp3", "gain_db": -26, "align": "onset"})
         if tl_:
-            tt = a + 0.4 + len(rows) * step + 0.2
+            tt = min(a + 0.4 + len(rows) * step + 0.15, T(0.45))
             js += [f'tl.set("#{sid}bx",{{opacity:0}},{a:.3f});',
                    f'tl.fromTo("#{sid}bx",{{scale:1.25,opacity:0}},{{scale:1,opacity:1,duration:0.45,ease:"back.out(2)",immediateRender:false}},{tt:.3f});']
             cues.append({"t": round(tt, 3), "file": "sfx/impact.mp3", "gain_db": -20, "align": "onset"})
@@ -114,8 +114,8 @@ def scene(kind, s, sid, a, d, asset):
                 f'<div id="{sid}rs" class="pq-rs">{esc(s.get("stamp") or "ASLI NIYAM")}</div></div>')
         js += _rev(f"#{sid}rc", a + 0.05, a, y=70, dur=0.55, ease="power4.out")
         for j in range(len(lines)):
-            js += _rev(f"#{sid}r{j}", a + 0.5 + j * max(0.35, min(0.9, d * 0.5 / max(1, len(lines)))), a, y=14, dur=0.3)
-        ts = T(0.62)
+            js += _rev(f"#{sid}r{j}", a + 0.45 + j * max(0.25, min(0.7, d * 0.3 / max(1, len(lines)))), a, y=14, dur=0.3)
+        ts = T(0.45)
         js += [f'tl.set("#{sid}rs",{{opacity:0}},{a:.3f});',
                f'tl.fromTo("#{sid}rs",{{scale:2.2,opacity:0,rotation:-20}},{{scale:1,opacity:1,rotation:-8,duration:0.35,ease:"power4.in",immediateRender:false}},{ts:.3f});']
         cues.append({"t": round(ts + 0.33, 3), "file": "sfx/impact.mp3", "gain_db": -18, "align": "onset"})
