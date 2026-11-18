@@ -61,10 +61,10 @@
   {
    "vo": "SURAAG EK: Wo deewar thi bada do taraf ka aaina.",
    "type": "card",
-   "prompt": "Cinematic night thriller, 9:16. Paper clue card 'SURAAG 1' with rubber stamp texture, pinned on a corkboard with red string. Background: blurred dark room with amber light. Cold teal shadows, film grain. Indian location.",
+   "prompt": "Cinematic night thriller, 9:16. Blank paper clue card with rubber stamp texture, pinned on a corkboard with red string. Background: blurred dark room with amber light. Cold teal shadows, film grain. Indian location. Ample empty space in center for text overlay.",
    "motion": "tilt",
    "title": "SURAAG 1",
-   "big": "DO TARAF KA AAINA",
+   "big": "DO TARAF AAINA",
    "small": "Deewar thi aaina",
    "keywords": [
     "suraag ek",
@@ -88,7 +88,7 @@
   {
    "vo": "SURAAG DO: Neeche living room mein Vikrant zinda khada tha.",
    "type": "card",
-   "prompt": "Cinematic night thriller, 9:16. Paper clue card 'SURAAG 2' with rubber stamp texture, pinned on a corkboard with red string. Background: blurred view of living room through mirror. Cold teal shadows, warm amber light, film grain.",
+   "prompt": "Cinematic night thriller, 9:16. Dimly lit living room corner with a vintage floor lamp casting amber glow, teal shadows. A wooden coffee table in the foreground holds a single clue card centered, surrounded by ample blank space for text overlay. Background blurred living room. No text or logos.",
    "motion": "tilt",
    "title": "SURAAG 2",
    "big": "VIKRANT ZINDA THA",
@@ -102,9 +102,9 @@
   {
    "vo": "SURAAG TEEN: Usne pehen rakhi thi Mehul ki purani neeli t-shirt.",
    "type": "card",
-   "prompt": "Cinematic night thriller, 9:16. Paper clue card 'SURAAG 3' with rubber stamp texture, pinned on a corkboard with red string. Background: close-up of faded blue cotton t-shirt fabric texture. Cold teal shadows, warm amber light, film grain.",
+   "prompt": "Cinematic night thriller, 9:16. Blank paper clue card with rubber stamp texture, pinned on a corkboard with red string. Background: close-up of faded blue cotton t-shirt fabric texture. Cold teal shadows, warm amber light, film grain. Clean top area for title, ample empty space in center for text overlay.",
    "motion": "tilt",
-   "title": "SURAAG 3",
+   "title": "",
    "big": "MEHUL KI T-SHIRT",
    "small": "Vikrant ne pehen rakhi thi",
    "keywords": [
@@ -115,8 +115,8 @@
   },
   {
    "vo": "Vikrant ne aankhen uthayi, seedha chhat ki taraf dekha.",
-   "type": "image",
-   "prompt": "Cinematic night thriller, 9:16. Vikrant (27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt, holding Mehul's cracked black smartphone) standing in a living room, head tilted up, eyes fixed on the ceiling/floor above. Direct gaze into camera. Warm amber room light, cold teal shadows from window. Film grain. Rain outside. Suburban Mumbai flat 302.",
+   "type": "card",
+   "prompt": "Cinematic night thriller, 9:16. Vikrant (27, sharp features, neat black hair, wearing faded blue cotton t-shirt) standing in a dim living room, head tilted upward, eyes fixed on the ceiling. Warm amber room light, cold teal shadows from window, rain visible outside. Ample empty space in center for text overlay.",
    "motion": "push",
    "title": "",
    "keywords": [
@@ -124,8 +124,9 @@
     "aankhen uthayi",
     "chhat ki taraf"
    ],
-   "big": null,
-   "small": null
+   "big": "VIKRANT NE AANKHEN UTHAYI",
+   "small": "SEEDHA CHHAT KI TARAF DEKHA",
+   "real": null
   },
   {
    "vo": "Usne phone uthaya, number milaya, ek ghanti baji.",
@@ -158,20 +159,21 @@
   {
    "vo": "Part 9 mein, Mehul ka dar aur Vikrant ka raaz. Follow karo.",
    "type": "card",
-   "prompt": "Cinematic night thriller, 9:16. End card: Dark textured background with film grain. Bold text 'PART 9 KAL' centered. Below: 'FOLLOW KARO @raazkafaisla'. Cold teal and warm amber color split. Subtle rain animation. Indian thriller aesthetic.",
+   "prompt": "Cinematic night thriller, 9:16. Dark textured background split between cold teal and warm amber, subtle rain animation, film grain. Center empty for text overlay, no logos.",
    "motion": "tilt",
-   "title": "PART 9 KAL",
-   "big": "PART 9 KAL",
-   "small": "FOLLOW KARO",
+   "title": "",
+   "big": "PART 9 MEIN",
+   "small": "MEHUL KA DAR, VIKRANT KA RAaz, FOLLOW KARO",
    "keywords": [
     "part 9",
     "kal",
     "follow karo"
-   ]
+   ],
+   "real": null
   }
  ],
  "music_mood": "suspense",
- "caption": "Chouthi manzil ki deewar khol di ek naya raaz. 🪞\n\nMehul ne dekha apna hi duplicate neeche rehta hai — uske kapde pehen ke.\n\nAb Vikrant ne phone milaya... aur Mehul ki jeb mein ghanti baji. Ye connection kya hai? 📱\n\n#ChouthiManzilKaRaaz #Raaz #MysteryThriller #Part8",
+ "caption": "Chouthi manzil ki deewar khol di ek naya raaz. 🪞\n\nMehul ne dekha apna hi duplicate neeche rehta hai — uske kapde pehen ke.\n\nAb Vikrant ne phone milaya... aur Mehul ki jeb mein ghanti baji. Ye connection kya hai? 📱\n\n#ChouthiManzilKaRaaz #Raaz #MysteryThriller #Part8\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#ChouthiManzilKaRaaz",
   "#Raaz",
@@ -201,5 +203,6 @@
   "7d90cb75e6",
   "1e60a34718"
  ],
- "cliff_done": true
+ "cliff_done": true,
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

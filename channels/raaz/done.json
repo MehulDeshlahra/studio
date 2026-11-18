@@ -75,5 +75,16 @@
   "qc_ok": true,
   "status": "approved",
   "review": []
+ },
+ {
+  "job": "1118-1433",
+  "topic": "Chouthi Manzil Ka Raaz - Part 8",
+  "title": "Chouthi manzil ki deewar aaina kaise bani?",
+  "status": "held",
+  "review": [
+   "before render, scene 6: OVERLAP/CUT (layout audit): text_occluded on #s5b",
+   "before render, scene 8: OVERLAP/CUT (layout audit): text_occluded on #s7b",
+   "before render, scene 11: FIT: RESPECT - Deity image shown instead of the required card visual for part 9 ending"
+  ]
  }
 ]
