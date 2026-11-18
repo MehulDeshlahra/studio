@@ -1,0 +1,51 @@
+{
+ "hook_first_words": "As an Indian, USA has been a culture shock to me",
+ "first_frame": "A medium shot of the host standing in front of the Golden Gate Bridge, wearing a white t-shirt, holding a small microphone",
+ "hook_type": "bold claim",
+ "format": "talking head + b-roll/vlog style",
+ "length_s": 78,
+ "cuts_estimate": 45,
+ "avg_shot_s": 1.7,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Hook and intro",
+  "3-8 s: Transition to the 3 points",
+  "8-14 s: Fact about Golden Gate Bridge",
+  "14-30 s: Point 1: Big cars",
+  "30-43 s: Point 2: Big food portions",
+  "43-52 s: Point 3: Massive scale of USA",
+  "52-60 s: Rapid-fire observations",
+  "60-72 s: The 'downside' and conclusion",
+  "72-78 s: Outro and CTA"
+ ],
+ "visual_techniques": [
+  "Text overlay at 0s",
+  "Fast-paced B-roll cuts at 4s",
+  "Text-on-screen for numbers 1, 2, 3",
+  "Push-up animation at 22s",
+  "Map animation at 44s",
+  "Fast-paced montage at 108s"
+ ],
+ "captions": "Simple white text with black shadow, 3-5 words per chunk, centered, no highlight colour",
+ "sound": "Upbeat, energetic background music, sound effects for transitions and emphasis, clear voiceover",
+ "recurring_element": "The host's face and the '3 points' structure",
+ "ending": "CTA to subscribe to the channel",
+ "why": "The video combines a relatable 'outsider' perspective with high-energy editing and visual variety. It keeps the viewer engaged by constantly switching between the host talking and interesting B-roll footage, and the '3 points' structure provides a clear, satisfying narrative arc.",
+ "reusable_faceless": [
+  "Fast-paced B-roll montages",
+  "Text-on-screen for key points",
+  "Map animations to illustrate scale",
+  "Clear, energetic voiceover",
+  "Simple, effective CTA"
+ ],
+ "id": "GiDHBsBRDro",
+ "url": "https://www.youtube.com/watch?v=GiDHBsBRDro",
+ "channel": "TechWiser",
+ "niche": "Consumer tech & AI tips (Hindi/English)",
+ "title": "Desi Guy For the First Time In USA!",
+ "views": 1100000,
+ "channel_median": 465000,
+ "ratio": 2.37,
+ "label": "winner",
+ "watched": "2026-11-18T17:06+05:30"
+}

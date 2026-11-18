@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "So, you're Richard Branson in the 1980s",
+ "first_frame": "A medium shot of a young Richard Branson holding a bouquet of flowers in an airport terminal, with a blurred departure board in the background.",
+ "hook_type": "visual surprise",
+ "format": "AI-generated image narrative",
+ "length_s": 42,
+ "cuts_estimate": 17,
+ "avg_shot_s": 2.47,
+ "words_per_s_estimate": 2.3,
+ "beats": [
+  "0-3 s: Hook setup with Branson in the airport.",
+  "3-8 s: The flight cancellation conflict.",
+  "8-14 s: The solution: chartering a private plane.",
+  "14-22 s: The pivot: selling tickets to others.",
+  "22-34 s: The epiphany: starting an airline.",
+  "34-42 s: The resolution: Virgin Atlantic is born."
+ ],
+ "visual_techniques": [
+  "AI-generated imagery (Midjourney style) throughout",
+  "Ken Burns effect (slow zooms/pans) on static images",
+  "Masking/Layering: 'Burning eyes' effect at 0:06",
+  "Graphic overlay: Lightbulb icon appearing over head at 0:29",
+  "Halftone/dot-matrix filter applied to archival-style photos at 0:37"
+ ],
+ "captions": "Style: Bold, sans-serif font, yellow background, black text. Position: Bottom center. Words per chunk: 3-6 words.",
+ "sound": "Voice: Deep, authoritative male narrator (AI). Music: Upbeat, rhythmic, synth-driven corporate/documentary track. SFX: Subtle whooshes on transitions.",
+ "recurring_element": "The consistent AI-generated character model of Richard Branson used in every scene.",
+ "ending": "Punchline: The reveal of the Virgin Atlantic logo and the birth of the company.",
+ "why": "It uses a 'story-first' approach that turns a business anecdote into a high-stakes adventure. The AI consistency makes it feel like a cohesive, high-budget short film rather than a slideshow, which keeps the viewer engaged through the narrative arc.",
+ "reusable_faceless": [
+  "Using a consistent AI character model to act out historical events",
+  "Using simple graphic overlays (like the lightbulb) to signify abstract concepts",
+  "Applying texture filters (halftone) to blend AI images with real historical footage",
+  "Pacing the story around a 'what if' moment to drive curiosity"
+ ],
+ "id": "xxO81tbylKs",
+ "url": "https://www.youtube.com/watch?v=xxO81tbylKs",
+ "channel": "MagnatesMedia",
+ "niche": "Business/Tech Documentaries",
+ "title": "Crazy Richard Branson Airline Story",
+ "views": 271000,
+ "channel_median": 48000,
+ "ratio": 5.65,
+ "label": "winner",
+ "watched": "2026-11-18T17:05+05:30"
+}

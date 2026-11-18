@@ -91,5 +91,138 @@
     "title": "CzzzzzzJ/mdldm-maitian"
    }
   ]
+ },
+ {
+  "day": "2026-11-18",
+  "t": "06:49",
+  "scanned": 294,
+  "new": 79,
+  "sources": [
+   "dev.to",
+   "github",
+   "google news",
+   "hacker news",
+   "hugging face models",
+   "hugging face spaces",
+   "product hunt"
+  ],
+  "picks": [
+   {
+    "name": "YouTube Shorts Series Subscriptions",
+    "what": "YouTube is rolling out a 'Shorts Series' feature that lets creators group shorts into subscribe-able series.",
+    "why": "Our 'Puraan Ki Katha' (mythology) and 'Aage Suno' (stories) pages are perfect episodic series; this feature directly boosts retention, subscriber conversion, and algorithmic reach on YouTube Shorts.",
+    "free": "Platform feature, free for all creators; no API yet but can be used manually via YouTube Studio.",
+    "action": "add_to_brain",
+    "how": "Document series structure (season/episode metadata) in brain.jsonl; update plan.py to output series-aware scripts; later build publish.py support when API arrives.",
+    "effort": "small",
+    "score": 9,
+    "risk": "API not public yet; manual setup needed for now.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBVTm5CY001U3dIZ3FHeURGeU1zckgtVkRXckVTREQyMXVianljTEcwLWRtQXBxR0M4NzRCYXQ4TEFoQWk3RWNzWDRfTUQ1WEFjYW9IWFpOU0N2LWROdFpSUHhwbWQ?oc=5",
+    "title": "YouTube Rolls Out 'Shorts Series' Subscriptions 10/29/2026 - MediaPost",
+    "done": "added to the brain"
+   },
+   {
+    "name": "Instagram Amazon Affiliate Links in Reels",
+    "what": "Instagram now lets creators add Amazon affiliate product links directly in Reels and feed posts.",
+    "why": "Kaise Tech can link gadgets/components; Puraan Ki Katha/Aage Suno can link books/merch. Direct monetization on our existing IG Reels pipeline (publish.py already uses Meta API).",
+    "free": "Free to join Amazon Associates; Instagram takes no cut. Only need owner signup.",
+    "action": "owner_signup",
+    "how": "Owner applies to Amazon Associates India; then build a link-picker step in publish.py that attaches relevant affiliate URLs to Reels via Meta API's product_tag field.",
+    "effort": "medium",
+    "score": 8,
+    "risk": "Requires Amazon Associates approval; compliance with Meta/Amazon disclosure rules.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcGtfSW95dGFqM2ZJRWt2RHZDNnRLTW9BeXNJMjl1UHVLMDkxOWNjc21mNlF6dXNsQTM1dEFyRnM3Q1AwZk9VYWlIY2UyZWRVRVVFME85TzhHQ3pWNzkxOFFQUEZ6WUNCU2RiaGdrMUFzcElPdVduMGx2YTJOeVFBOG5Ra25pbFlfYlhwRENhWXNMRlJNRy1oN29fMjQwQUpNSzNQTVFjcF9mekZ5a1Vz0gGvAUFVX3lxTFBwa19Jb3l0YWozZklFa3ZEdkM2dEtNb0F5c0kyOXVQdUswOTE5Y2NzbWY2UXp1c2xBMzV0QXJGczdDUDBmT1VhaUhjZTJlZFVFVUUwTzlPOEdDelY3OTE4UVBQRnpZQ0JTZGJoZ2sxQXNwSU91V24wbHZhMk55UUE4blFrbmlsWV9iWHBEQ2FZc0xGUk1HLWg3b18yNDBBSk1LM1BNUWNwX2Z6RnlrVXM?oc=5",
+    "title": "Instagram integrates Amazon affiliate links into Reels and feed posts - Social Samosa",
+    "done": "needs a free sign-up by the owner (optional)"
+   },
+   {
+    "name": "Allo Typeface",
+    "what": "Free, open-source (OFL-1.1) variable font family designed for UI and display.",
+    "why": "Replaces generic system fonts in HyperFrames captions, kinetic titles, thumbnails, and end-cards across all three pages — consistent branding, better readability at vertical short resolution, zero cost.",
+    "free": "OFL-1.1 licence — free for commercial use, self-host, modify.",
+    "action": "learn_repo",
+    "how": "Download variable font files; add to compose.py/compose_lab.py font stack; update thumb.py for hook titles; test legibility at 1080x1920.",
+    "effort": "small",
+    "score": 7,
+    "risk": "None — mature font, permissive licence.",
+    "src": "github",
+    "url": "https://github.com/joshpuckett/allo",
+    "title": "joshpuckett/allo",
+    "done": "queued for the learner"
+   },
+   {
+    "name": "Prompt Regression Testing (Free CI Gate)",
+    "what": "Dev.to article describing a free CI pipeline that runs prompt regression tests against 3 real LLMs to catch regressions.",
+    "why": "We have 10+ critical prompts (plan.py, research.py, scout.py, compose.py, review.py, etc.); a CI gate prevents silent quality drops when prompts are tweaked.",
+    "free": "Uses free tiers of multiple LLM APIs; GitHub Actions free tier runs the CI.",
+    "action": "build",
+    "how": "Create tests/prompts/ golden-output fixtures; add GitHub Actions workflow that calls Gemini/OpenRouter free endpoints on every PR; fail if semantic diff > threshold.",
+    "effort": "medium",
+    "score": 7,
+    "risk": "Free API rate limits; need deterministic seeds for reproducible tests.",
+    "src": "dev.to",
+    "url": "https://dev.to/aws-builders/prompt-regression-testing-for-llm-apps-a-free-ci-gate-tested-on-3-real-models-1n22",
+    "title": "Prompt Regression Testing for LLM Apps: A Free CI Gate, Tested on 3 Real Models",
+    "done": "added to the build list"
+   },
+   {
+    "name": "Omni-Image-Editor (HF Space)",
+    "what": "Gradio-hosted free image editor (inpainting, background removal, style transfer, upscale) with 2945 likes.",
+    "why": "Supplements Muse/FLUX/Pollinations: fix artifacts, remove backgrounds for lab-look object props, upscale low-res assets — all via free HF Inference API, no GPU on our server.",
+    "free": "Free HF Inference API tier (rate-limited); open-source backend can be self-hosted later if needed.",
+    "action": "learn_repo",
+    "how": "Test HF API endpoints for background removal & inpainting; add optional post-process step in compose_lab.py before Ken Burns / panel shine.",
+    "effort": "small",
+    "score": 6,
+    "risk": "HF free tier has concurrency limits; fallback to Pollinations needed.",
+    "src": "hugging face spaces",
+    "url": "https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor",
+    "title": "selfit-camera/Omni-Image-Editor"
+   },
+   {
+    "name": "Qwen-Image-2.1 LoRA Playground (HF Space)",
+    "what": "Gradio space offering Qwen-Image 2.1 with multiple LoRAs for style control via free HF API.",
+    "why": "Additional free image generation backend with LoRA styles (anime, technical, cinematic) — diversifies visual sources beyond Muse/FLUX/Pollinations for niche scenes.",
+    "free": "Free HF Inference API tier; LoRAs included.",
+    "action": "learn_repo",
+    "how": "Benchmark prompt adherence & style range vs. FLUX; add as tertiary image source in compose.py with automatic fallback.",
+    "effort": "small",
+    "score": 6,
+    "risk": "Same HF rate limits; Qwen-Image may need safety filtering.",
+    "src": "hugging face spaces",
+    "url": "https://huggingface.co/spaces/Guaryn/qwen-image-2.1-uncensored-aio-loras",
+    "title": "Guaryn/qwen-image-2.1-uncensored-aio-loras"
+   },
+   {
+    "name": "Boring Marketing Skills",
+    "what": "32 MIT-licensed Markov-style skills for AI agents covering research, positioning, copy, SEO, AI search, content, etc.",
+    "why": "Our scout.py only does tech/news radar; these skills can automate hashtag research, posting-time tuning, competitor analysis, SEO-optimized descriptions — all free, runs on our ARM server.",
+    "free": "MIT licence, self-hostable, no external API calls required.",
+    "action": "learn_repo",
+    "how": "Clone repo; pick 5-6 skills (hashtag research, posting-time, competitor audit); wrap as Python modules; call from stats.py or new growth.py job.",
+    "effort": "medium",
+    "score": 6,
+    "risk": "Skills are prompt templates — need adaptation to our JSONL brain & Telegram feedback loop.",
+    "src": "github",
+    "url": "https://github.com/boringmarketer/boring-marketing-skills",
+    "title": "boringmarketer/boring-marketing-skills"
+   },
+   {
+    "name": "Claude Code Animation Plugin",
+    "what": "Open-source Claude Code plugin that generates cinematic motion graphics / animated explainers as code.",
+    "why": "If it outputs GSAP/HTML/JSON compatible with HyperFrames, it could automate complex lab-look animations (stat counters, flows, terminal typing) that we currently hand-code in compose_lab.py.",
+    "free": "Open-source (licence TBD); runs inside Claude Code CLI (free tier available).",
+    "action": "learn_repo",
+    "how": "Install Claude Code free tier; test plugin with a sample 'stat counter panel' prompt; verify output can be dropped into compose_lab.py's HyperFrames schema.",
+    "effort": "medium",
+    "score": 6,
+    "risk": "May require Claude Code subscription for heavy use; output format unknown until tested.",
+    "src": "dev.to",
+    "url": "https://dev.to/vivek_shetye/i-found-an-open-source-claude-code-plugin-that-creates-insane-animations-30dn",
+    "title": "I Found an Open-Source Claude Code Plugin That Creates Insane Animations 🎬"
+   }
+  ]
  }
 ]

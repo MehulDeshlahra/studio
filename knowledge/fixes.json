@@ -25,5 +25,32 @@
   "first": "2026-11-18 11:07",
   "last": "2026-11-18 11:07",
   "example": "before render, scene 7: CUT: Letters \"Base+Ne\" are physically clipped by the right edge of the card/box."
+ },
+ {
+  "sig": "before render, scene #: dup: the same caption words poori duniya ka appear simultaneously in both stills of th",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 16:07",
+  "last": "2026-11-18 16:07",
+  "example": "before render, scene 1: DUP: the same caption words POORI DUNIYA KA appear simultaneously in both stills of the scene"
+ },
+ {
+  "sig": "visual: scenes # and # display a giant multi-armed entity standing at the balcony, directly contradicting the ",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 16:22",
+  "last": "2026-11-18 16:22",
+  "example": "visual: Scenes 6 and 7 display a giant multi-armed entity standing at the balcony, directly contradicting the narration which states only red ink drops and an abandoned pen were found."
+ },
+ {
+  "sig": "format/loudness: h#,#,#,#/# -#.# lufs, true peak #.#",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 16:37",
+  "last": "2026-11-18 16:37",
+  "example": "format/loudness: h264,1080,1920,30/1 -14.5 LUFS, true peak 0.3"
  }
 ]

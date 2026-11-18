@@ -1,6 +1,26 @@
 {
  "tech": [
   {
+   "topic": "Apple Server Outage",
+   "search": "Apple iCloud down reason",
+   "fit": 9,
+   "why": "The 'Apple outages' trend is massive (2000+ searches). Users are frustrated and curious why a giant like Apple goes down. Explaining server load balancing via a 'traffic jam' metaphor fits the 'Kaise Tech' style perfectly.",
+   "question": "Apple ke servers down kaise ho jaate hain?",
+   "metaphor": "Imagine a highway with 100 toll gates, but suddenly 1 million cars try to pass through at once. The toll gates (servers) get jammed, not because they are broken, but because they can't process the crowd fast enough.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
+   "topic": "AI Agents (WhatsApp automation)",
+   "search": "How AI agents work",
+   "fit": 9,
+   "why": "The news about IT professionals building 57 AI agents using WhatsApp is viral tech news. It demystifies AI for the common user, making it highly clickable.",
+   "question": "AI Agents bina coding ke kaise kaam karte hain?",
+   "metaphor": "Think of an AI agent like a digital 'personal assistant' who has read every manual in the world. You give him a task, he reads the instructions, and executes them step-by-step just like a human would, but at light speed.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
    "topic": "Prison jammers in Bengaluru have left residents without signal for nearly two years",
    "search": "how mobile jammers block signal",
    "fit": 9,
@@ -9,13 +29,24 @@
    "source": "trend"
   },
   {
-   "topic": "Bank app outage causes: 10 reasons banking apps go down",
-   "search": "why bank apps crash suddenly",
-   "fit": 9,
-   "why": "Tech news regarding bank app outages; highly relevant to everyday Indian users facing sudden digital payment failures.",
-   "day": "2026-11-17",
-   "source": "trend",
-   "used": "2026-11-17"
+   "topic": "Semiconductor/Chip Manufacturing",
+   "search": "How computer chips work",
+   "fit": 8,
+   "why": "With the 'Semiconductor and AI Revolution' news and India's electronics export jump, this is a hot topic. It's the backbone of all tech, and people are curious about the 'sand to silicon' process.",
+   "question": "Ret (sand) se computer chip kaise banti hai?",
+   "metaphor": "Imagine building a city of billions of tiny light switches on a piece of glass the size of your fingernail. That’s a chip—it's just billions of 'on/off' gates that process your data.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
+   "topic": "Cyclone Tracking Technology",
+   "search": "How cyclone tracking works",
+   "fit": 8,
+   "why": "With Cyclone 'Akvan' trending, people are naturally curious about how we predict these storms. It's a perfect 'Tech in Real Life' topic.",
+   "question": "Cyclone ki location kaise track ki jaati hai?",
+   "metaphor": "Think of a giant invisible net spread over the ocean. Satellites and buoys are the 'sensors' on that net that feel the wind speed and pressure, telling us exactly where the monster is moving.",
+   "day": "2026-11-18",
+   "source": "trend"
   },
   {
    "topic": "New phones, old chips: Inside the rise of recycled memory in smartphones",
@@ -36,25 +67,63 @@
    "source": "trend"
   },
   {
-   "topic": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
-   "search": "setting sun worship Chhath mythology story",
+   "topic": "Manu and the Great Flood (Satapatha Brahmana) – How the world was saved from a deluge",
+   "search": "Manu flood story",
    "fit": 9,
-   "why": "Ties into the festival buzz around Chhath Puja / Sun temples, connecting ancient Puranic legends of Surya Dev to current cultural interest. Source: Samba Purana, Chapter 27.",
-   "day": "2026-11-17",
-   "source": "trend",
-   "used": "2026-11-17"
+   "why": "Cyclone Akvan updates are trending; viewers are searching for storm news, so a myth about a massive flood offers a timely, curiosity‑driven hook and teaches the lesson of heeding divine warnings.",
+   "day": "2026-11-18",
+   "source": "trend"
   },
   {
-   "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
-   "search": "when lord krishna visited naraka purana",
+   "topic": "Pushpaka Vimana – Ravana’s flying chariot and the danger of pride",
+   "search": "Pushpaka Vimana myth",
+   "fit": 9,
+   "why": "Searches for Vande Bharat Express and Rickshaw show high interest in transport; linking ancient flying chariot to modern fast trains creates a relatable contrast and delivers a moral about humility.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
+   "topic": "Krishna as the ultimate team captain in the Mahabharata – Strategy over brute force",
+   "search": "Krishna Mahabharata strategy",
    "fit": 8,
-   "why": "Directly inspired by the r/hinduism trending discussion 'When Lord Krishna visited Naraka', aligning with post-festival spiritual interest. Source: Bhagavata Purana, Canto 10, Chapter 59.",
-   "day": "2026-11-17",
-   "source": "trend",
-   "used": "2026-11-17"
+   "why": "IPL and cricket‑related queries dominate today’s trends; presenting Krishna’s strategic role in the war mirrors a captain’s duties in cricket, offering a lesson on teamwork and smart play.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
+   "topic": "Arjuna’s archery contest – Mastery through focus",
+   "search": "Arjuna archery story",
+   "fit": 8,
+   "why": "Test cricket searches are soaring; an archery competition from the Mahabharata parallels a sports event, drawing curiosity and teaching the value of concentration.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
+   "topic": "Samudra Manthan – Churning the ocean for Amrita, patience and cooperation",
+   "search": "Samudra Manthan story",
+   "fit": 8,
+   "why": "Apple service outages have generated massive search volume; the myth of the cosmic churning illustrates collaborative effort to resolve a crisis, resonating with today’s tech disruption concerns.",
+   "day": "2026-11-18",
+   "source": "trend"
   }
  ],
  "raaz": [
+  {
+   "topic": "The 'Akvan' Cyclone Mystery: A small-town survival thriller where a village realizes the cyclone isn't just weather, but a cover for something ancient waking up.",
+   "search": "Cyclone Akvan mystery story",
+   "fit": 9,
+   "why": "The 'Cyclone Akvan' trend is current and urgent. Framing it as a fictional, supernatural thriller (where the storm hides a secret) taps into the fear/curiosity of the audience while keeping it engaging for a 10-part series.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
+   "topic": "Apple Outage: A sci-fi thriller about a guy whose phone goes dead during the global outage, only to realize he's the only one who can still hear 'signals' from the future.",
+   "search": "Apple outage mystery story",
+   "fit": 9,
+   "why": "The Apple outage is a massive trending topic. Turning it into a 'glitch in the matrix' style sci-fi serial is perfect for the 16-35 demographic.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
   {
    "topic": "Ek gaddhe mein 8,000 mendhakon ke kankal: 2000 saal puraana Roman rahasya",
    "search": "roman ditch frog bones mystery",
@@ -69,6 +138,22 @@
    "fit": 9,
    "why": "Google trend 'marvel avengers doomsday' (10,000+ searches) and comic theory reports. High-interest fantasy/comic lore for the 16-35 age group explaining how Victor Von Doom rewrites reality.",
    "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "The Hidden Coin Stash: A family drama/mystery about a struggling middle-class family finding a hidden fortune under their floorboards, only to realize it comes with a dangerous curse.",
+   "search": "hidden treasure mystery story",
+   "fit": 8,
+   "why": "The news about the worker finding gold coins in Tennessee is a classic 'hidden treasure' hook. This translates perfectly into a relatable Indian family drama with a suspenseful twist.",
+   "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
+   "topic": "The Butterfly Effect: A fantasy/karma serial about a researcher who discovers a 'fake' butterfly that has been manipulating human history for 200 years, and now it's targeting them.",
+   "search": "butterfly mystery secret story",
+   "fit": 8,
+   "why": "The 'butterfly that fooled scientists' headline is weird and intriguing. It provides a great foundation for a fantasy/thriller serial about hidden history and secrets.",
+   "day": "2026-11-18",
    "source": "trend"
   },
   {

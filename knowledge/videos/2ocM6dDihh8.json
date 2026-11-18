@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "12 मई की ये न्यूज़ देखिए",
+ "first_frame": "Dhruv Rathee speaking directly to the camera with a blurred gold background.",
+ "hook_type": "visual surprise",
+ "format": "talking head + graphics",
+ "length_s": 91,
+ "cuts_estimate": 25,
+ "avg_shot_s": 3.6,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-8 s: Hook using a news headline about gold import duty.",
+  "8-16 s: Explaining the contradiction in the news.",
+  "16-36 s: Transition to the emotional/cultural value of gold in India.",
+  "36-52 s: Pivot to the need for financial planning.",
+  "52-70 s: Introducing insurance as a better alternative to gold for emergencies.",
+  "70-91 s: Call to action for PolicyBazaar and closing statement."
+ ],
+ "visual_techniques": [
+  "Text overlays of news headlines (0:01, 0:08)",
+  "Stock footage of gold bars and jewelry (0:16, 0:18)",
+  "3D animation of a hand holding gold (0:23)",
+  "Montage of life emergencies (0:28)",
+  "Screen recording walkthrough of an insurance app (1:08)",
+  "Picture-in-picture of the creator during screen recordings (1:08)"
+ ],
+ "captions": "White text with black outline, 3-5 words per chunk, centered, no highlight colour.",
+ "sound": "Clear voiceover, upbeat background music, subtle transition sound effects.",
+ "recurring_element": "The creator's hand gestures and the blurred gold background.",
+ "ending": "CTA to check the link in the bio for insurance plans.",
+ "why": "The video is essentially a 90-second advertisement for an insurance aggregator. The audience likely felt 'baited' by the news-style hook, as the content shifts quickly from a financial news analysis to a sponsored product pitch, which usually lowers retention and engagement.",
+ "reusable_faceless": [
+  "Using news headlines as a hook to build credibility.",
+  "Integrating screen recordings with a floating head for tutorials.",
+  "Using 3D motion graphics to illustrate abstract financial concepts.",
+  "Transitioning from a general problem (gold value) to a specific solution (insurance)."
+ ],
+ "id": "2ocM6dDihh8",
+ "url": "https://www.youtube.com/watch?v=2ocM6dDihh8",
+ "channel": "dhruvrathee",
+ "niche": "Hindi explainers",
+ "title": "No GOLD in EMERGENCY! What to do now....?",
+ "views": 3000000,
+ "channel_median": 13000000,
+ "ratio": 0.23,
+ "label": "flop",
+ "watched": "2026-11-18T17:06+05:30"
+}

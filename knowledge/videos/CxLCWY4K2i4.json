@@ -1,0 +1,41 @@
+{
+ "hook_first_words": "None (no spoken words)",
+ "first_frame": "Close-up of an iPhone box standing upright on a wooden floor, with a row of other iPhone boxes behind it.",
+ "hook_type": "visual surprise",
+ "format": "stunt/visual spectacle",
+ "length_s": 11,
+ "cuts_estimate": 1,
+ "avg_shot_s": 5.5,
+ "words_per_s_estimate": 0.0,
+ "beats": [
+  "0-6 s: Domino effect of iPhone boxes falling in a long sequence through a room.",
+  "6-11 s: The final box hits the creator sitting on a bed covered in dozens of iPhone boxes, smiling and holding a phone."
+ ],
+ "visual_techniques": [
+  "Domino effect (0-6s)",
+  "Camera tracking/following the falling boxes (0-6s)",
+  "Wide shot reveal (6s)",
+  "Slow motion (implied by the smooth flow of the dominoes)"
+ ],
+ "captions": "None",
+ "sound": "Upbeat, trending Punjabi hip-hop song playing throughout. No voiceover.",
+ "recurring_element": "iPhone boxes",
+ "ending": "The creator laughing on the bed, surrounded by the product, serving as a visual punchline.",
+ "why": "It uses a high-effort, satisfying visual 'stunt' (dominoes) that creates immediate curiosity and retention. It avoids talking head fluff, focusing entirely on the spectacle of the product volume, which aligns with the channel's 'tech enthusiast' brand identity.",
+ "reusable_faceless": [
+  "Satisfying physics-based visual stunts (dominoes, chain reactions)",
+  "High-volume product reveals to signal success/authority",
+  "Syncing visual 'climax' with the beat drop of a trending song",
+  "Using a single, continuous-feeling camera move to maintain momentum"
+ ],
+ "id": "CxLCWY4K2i4",
+ "url": "https://www.youtube.com/watch?v=CxLCWY4K2i4",
+ "channel": "TechnicalGuruji",
+ "niche": "Consumer Tech (Hindi)",
+ "title": "It's #iPhone day! #iPhone18Pro #iPhone18ProMax #TGFamily #shorts  🔥 🔥 🔥",
+ "views": 1400000,
+ "channel_median": 536000,
+ "ratio": 2.61,
+ "label": "winner",
+ "watched": "2026-11-18T17:05+05:30"
+}

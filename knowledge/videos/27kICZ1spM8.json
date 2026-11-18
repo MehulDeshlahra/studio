@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "Guys, Apple event is official",
+ "first_frame": "Gaurav (Technical Guruji) sitting at a desk with several colorful smartphones laid out in front of him, gesturing with his hands.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 103,
+ "cuts_estimate": 45,
+ "avg_shot_s": 2.3,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-10 s: Hook and official Apple event announcement.",
+  "10-58 s: Detailed breakdown of the new iPhone 18 Pro and Pro Max features and colors.",
+  "58-95 s: Introduction and features of the new foldable iPhone.",
+  "95-103 s: Teasing other upcoming Apple products and closing CTA."
+ ],
+ "visual_techniques": [
+  "Picture-in-picture (PiP) of the host throughout the video",
+  "Overlay of Apple event invitation email at 0:02",
+  "Rapid-fire product renders and mockups",
+  "On-screen text overlays for specs (e.g., battery capacity, camera MP)",
+  "Split-screen comparisons",
+  "Zoom-ins on specific phone features"
+ ],
+ "captions": "Minimalist, white text with black outline, centered, no specific highlight color used consistently.",
+ "sound": "Host's voiceover, upbeat background music, subtle sound effects for transitions and pop-ups.",
+ "recurring_element": "The colorful smartphones on the desk and the circular PiP of the host.",
+ "ending": "CTA asking viewers which device they would pick.",
+ "why": "The video leverages high-authority tech news (Apple event) combined with speculative, high-quality renders of 'future' products, which creates strong curiosity and high engagement.",
+ "reusable_faceless": [
+  "Using high-quality product renders to visualize leaks or rumors",
+  "Incorporating split-screen layouts for comparison",
+  "Adding on-screen text overlays for technical specifications",
+  "Using a consistent, engaging background music track"
+ ],
+ "id": "27kICZ1spM8",
+ "url": "https://www.youtube.com/watch?v=27kICZ1spM8",
+ "channel": "TechnicalGuruji",
+ "niche": "Consumer Tech (Hindi)",
+ "title": "First Look of  #iPhone18Pro, #iPhone18ProMax, #iPhoneUltra and more...#TGFamily #shorts 🔥 🔥 🔥",
+ "views": 1500000,
+ "channel_median": 536000,
+ "ratio": 2.8,
+ "label": "winner",
+ "watched": "2026-11-18T17:05+05:30"
+}

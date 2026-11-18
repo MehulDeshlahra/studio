@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "Okay, so you can",
+ "first_frame": "A close-up of a hand using a pipette to drop liquid onto a glass surface, creating a cluster of bubbles.",
+ "hook_type": "visual surprise",
+ "format": "talking head + physical experiment + 3D animation",
+ "length_s": 71,
+ "cuts_estimate": 19,
+ "avg_shot_s": 3.7,
+ "words_per_s_estimate": 2.4,
+ "beats": [
+  "0-6 s: Introduction to the bubble raft experiment as a model for atomic structures.",
+  "6-16 s: Identifying the 'edge dislocation' in the bubble lattice.",
+  "16-21 s: Defining the concept of edge dislocation.",
+  "21-37 s: Demonstrating how dislocations move through the lattice when pulled.",
+  "37-45 s: Explaining that multiple dislocations cause material deformation.",
+  "45-52 s: Connecting the concept to real-world metal stress testing.",
+  "52-66 s: 3D animation explaining how thermal energy helps dislocations move.",
+  "66-71 s: Final demonstration of blacksmithing to explain why heat softens metal."
+ ],
+ "visual_techniques": [
+  "Macro cinematography (0-6s, 13-16s, 31-37s)",
+  "On-screen annotations: Red arrow pointing to dislocation (17s, 34s)",
+  "Split screen: Physical raft vs. zoomed-in view (21s)",
+  "3D motion graphics/animation (52-66s)",
+  "Real-world footage: Blacksmithing (45-47s, 107s)"
+ ],
+ "captions": "White text with black outline, 3-6 words per chunk, centered at the bottom, no highlight colour.",
+ "sound": "Clear, direct-to-camera voiceover; ambient lab sounds; subtle, low-key background music; no specific sound effects.",
+ "recurring_element": "The bubble raft experiment, which serves as the primary visual anchor for the explanation.",
+ "ending": "A practical, real-world application (blacksmithing) that provides a satisfying conclusion to the scientific explanation.",
+ "why": "It uses a tactile, visual model (bubbles) to explain an abstract, invisible phenomenon (atomic structure), making complex material science immediately intuitive and satisfying to watch.",
+ "reusable_faceless": [
+  "Using physical models (like bubbles, sand, or magnets) to represent abstract concepts",
+  "Overlaying simple red arrows or markers on video to guide the viewer's eye",
+  "Combining macro-footage of experiments with clean 3D animations",
+  "Connecting a micro-scale phenomenon directly to a macro-scale real-world application"
+ ],
+ "id": "j9p3Sn8ROL4",
+ "url": "https://www.youtube.com/watch?v=j9p3Sn8ROL4",
+ "channel": "Veritasium",
+ "niche": "Science/Tech Curiosity",
+ "title": "What is edge dislocation?",
+ "views": 4800000,
+ "channel_median": 1600000,
+ "ratio": 3.0,
+ "label": "winner",
+ "watched": "2026-11-18T17:05+05:30"
+}

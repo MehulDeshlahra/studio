@@ -1,136 +1,136 @@
 {
  "picks": [
   {
-   "title": "Google Gemini Tasks Expansion",
-   "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
-   "src": "Google Blog",
-   "angle": "Indian users can now use Gemini to automate calls and purchases for free.",
-   "hook": "Ab Gemini aapke liye calls aur shopping karega!",
-   "format": "tool-demo",
-   "freshness": "today",
-   "score": 10,
-   "found": "2026-11-18T05:39+05:30"
-  },
-  {
-   "title": "New Ask Maps Features",
-   "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
-   "src": "Google Blog",
-   "angle": "Planning holiday travel in India gets easier with new AI-powered Maps features.",
-   "hook": "Holiday planning ab aur bhi easy ho gayi!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-18T05:39+05:30"
-  },
-  {
-   "title": "Introducing ChatGPT for Sales",
-   "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+   "title": "Introducing GPT-6.2 Astra and Sol",
+   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
    "src": "OpenAI",
-   "angle": "Small business owners in India can use this to automate customer interactions.",
-   "hook": "Small business owners, ye AI sales badhayega!",
+   "angle": "New AI models that change how we interact with apps and voice assistants.",
+   "hook": "OpenAI ka naya update, game changer hai!",
    "format": "tool-demo",
    "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-18T05:39+05:30"
+   "score": 10,
+   "found": "2026-11-18T17:03+05:30"
   },
   {
-   "title": "Hugging Face and OpenRouter Partnership",
-   "url": "https://huggingface.co/blog/openrouter",
-   "src": "Hugging Face Blog",
-   "angle": "Easily run open-source models without expensive hardware setups.",
-   "hook": "Ab saare top AI models ek hi jagah!",
-   "format": "tool-demo",
+   "title": "Google's AI answers reducing search traffic by 40%",
+   "url": "https://revscope.co/blog/search-seo-geo-2026/",
+   "src": "RevScope",
+   "angle": "Why your website traffic might be dropping due to AI search.",
+   "hook": "Google search par traffic kyun kam ho raha?",
+   "format": "story",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-18T05:39+05:30"
+   "found": "2026-11-18T17:03+05:30"
   },
   {
-   "title": "Sam Altman Deepfake on Instagram",
-   "url": "https://www.theverge.com/news/1035957/meta-alexandr-wang-sam-altman-instagram-ai-deepfake",
+   "title": "Suno now lets you make AI videos for your AI music",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature",
    "src": "The Verge",
-   "angle": "Even tech leaders are being impersonated; a reminder for Indian users to stay alert.",
-   "hook": "Sam Altman ka deepfake? AI scams se bacho!",
+   "angle": "Create professional music videos from text prompts instantly.",
+   "hook": "Ab music ke saath video bhi banao AI se!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "title": "Google’s Spark AI agent becomes ‘Tasks’ — and now it’s free",
+   "url": "https://www.theverge.com/tech/1035756/google-spark-ai-tasks-free",
+   "src": "The Verge",
+   "angle": "A free AI assistant to manage your daily schedule and tasks.",
+   "hook": "Google ka ye naya feature bilkul free hai!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "title": "n8n-io/n8n: Fair-code workflow automation platform",
+   "url": "https://github.com/n8n-io/n8n",
+   "src": "GitHub Trending",
+   "angle": "Automate business tasks and workflows without writing code.",
+   "hook": "Business automation ab bina coding ke karo!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "title": "Tech leaders are convinced that Jensen Huang’s exit was a plot against him",
+   "url": "https://www.theverge.com/tech/1035027/tech-leaders-nvidia-jensen-huang-theories",
+   "src": "The Verge",
+   "angle": "The massive leadership shift at Nvidia and its impact on AI.",
+   "hook": "Nvidia ke CEO ne company kyun chhodi?",
    "format": "story",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-18T05:39+05:30"
+   "found": "2026-11-18T17:03+05:30"
   },
   {
-   "title": "Minimind: Train an LLM in 2 hours",
-   "url": "https://github.com/jingyaogong/minimind",
-   "src": "GitHub Trending",
-   "angle": "Students can learn how LLMs are built by training a small one themselves.",
-   "hook": "Sirf 2 ghante mein apna khud ka AI!",
-   "format": "story",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-18T05:39+05:30"
-  },
-  {
-   "title": "School Phone Bans and Test Scores",
-   "url": "https://www.nytimes.com/2026/11/17/upshot/school-phone-bans-study-scores.html",
-   "src": "New York Times",
-   "angle": "Evidence suggests banning phones in schools improves student focus and grades.",
-   "hook": "School mein phone ban hone se marks badhte?",
+   "title": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
+   "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
+   "src": "ComplexDiscovery",
+   "angle": "AI writes code fast, but humans are now stuck reviewing it.",
+   "hook": "AI code toh likhega, par check kaun karega?",
    "format": "evidence",
-   "freshness": "today",
-   "score": 8,
-   "found": "2026-11-18T05:39+05:30"
-  },
-  {
-   "title": "Microsoft MAI Code 2",
-   "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
-   "src": "Microsoft AI",
-   "angle": "New coding assistant tools for developers to speed up their workflow.",
-   "hook": "Microsoft ka naya coding AI, super fast!",
-   "format": "tool-demo",
    "freshness": "this week",
    "score": 8,
-   "found": "2026-11-18T05:39+05:30"
+   "found": "2026-11-18T17:03+05:30"
   },
   {
-   "title": "Claude Code Skill Bundle",
-   "url": "https://github.com/sponsors/elementalsouls",
+   "title": "astral-sh/uv: An extremely fast Python package and project manager",
+   "url": "https://github.com/astral-sh/uv",
    "src": "GitHub Trending",
-   "angle": "A collection of 82 skills to supercharge your AI coding agent.",
-   "hook": "AI coding agents ke liye best tools mil!",
+   "angle": "Students and devs can speed up Python projects significantly.",
+   "hook": "Python coding ab hogi 10x fast!",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 8,
-   "found": "2026-11-18T05:39+05:30"
+   "found": "2026-11-18T17:03+05:30"
   },
   {
-   "title": "Alloy CSS: Web components without JS",
-   "url": "https://alloyhtml.com/example.html",
-   "src": "Hacker News",
-   "angle": "Developers can build faster, lighter websites that work even without JavaScript.",
-   "hook": "Bina JavaScript ke bhi website chalegi ab!",
+   "title": "mvanhorn/last30days-skill",
+   "url": "https://github.com/mvanhorn/last30days-skill",
+   "src": "GitHub Trending",
+   "angle": "AI agent that researches and summarizes the web for you.",
+   "hook": "Poore internet ka summary ab ek click mein!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "title": "FastFrames: Video Generation at Interactive Latency",
+   "url": "https://huggingface.co/papers/2611.23226",
+   "src": "Hugging Face",
+   "angle": "High-speed video generation that works in real-time.",
+   "hook": "Video generation ab real-time mein possible hai!",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "title": "jiangshan-map: Interactive Historical Atlas of China",
+   "url": "https://github.com/DeanChensj/jiangshan-map",
+   "src": "GitHub Trending",
+   "angle": "Visualizing history through interactive maps for students.",
+   "hook": "History padhne ka tarika ab badal gaya!",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-18T05:39+05:30"
+   "found": "2026-11-18T17:03+05:30"
   },
   {
-   "title": "Mouse Party: How a mouse works",
-   "url": "https://aboard.com/lets-have-a-mouse-party/",
-   "src": "Hacker News",
-   "angle": "A fun, interactive way to understand the hardware inside your computer mouse.",
-   "hook": "Mouse kaise kaam karta hai? Ye website dekho!",
-   "format": "story",
+   "title": "Cerebras Disaggregated Inference",
+   "url": "https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference",
+   "src": "Cerebras",
+   "angle": "New tech to make AI models run much faster for developers.",
+   "hook": "AI models ab aur bhi fast chalenge!",
+   "format": "how-it-works",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-18T05:39+05:30"
-  },
-  {
-   "title": "Jensen Huang's Nvidia Return Statement",
-   "url": "https://www.theverge.com/tech/1035420/jensen-huang-nvidia-return-as-ceo-statement",
-   "src": "The Verge",
-   "angle": "The biggest name in AI chips is making headlines regarding his potential return.",
-   "hook": "Jensen Huang phir se Nvidia CEO banenge?",
-   "format": "story",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-18T05:39+05:30"
+   "found": "2026-11-18T17:03+05:30"
   }
  ],
  "history": [
@@ -373,7 +373,67 @@
    "url": "https://www.theverge.com/tech/1035420/jensen-huang-nvidia-return-as-ceo-statement",
    "title": "Jensen Huang's Nvidia Return Statement",
    "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+   "title": "Introducing GPT-6.2 Astra and Sol",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://revscope.co/blog/search-seo-geo-2026/",
+   "title": "Google's AI answers reducing search traffic by 40%",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature",
+   "title": "Suno now lets you make AI videos for your AI music",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
+   "title": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/tech/1035756/google-spark-ai-tasks-free",
+   "title": "Google’s Spark AI agent becomes ‘Tasks’ — and now it’s free",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://github.com/astral-sh/uv",
+   "title": "astral-sh/uv: An extremely fast Python package and project manager",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://github.com/DeanChensj/jiangshan-map",
+   "title": "jiangshan-map: Interactive Historical Atlas of China",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://github.com/mvanhorn/last30days-skill",
+   "title": "mvanhorn/last30days-skill",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.23226",
+   "title": "FastFrames: Video Generation at Interactive Latency",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://github.com/n8n-io/n8n",
+   "title": "n8n-io/n8n: Fair-code workflow automation platform",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference",
+   "title": "Cerebras Disaggregated Inference",
+   "found": "2026-11-18T17:03+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/tech/1035027/tech-leaders-nvidia-jensen-huang-theories",
+   "title": "Tech leaders are convinced that Jensen Huang’s exit was a plot against him",
+   "found": "2026-11-18T17:03+05:30"
   }
  ],
- "updated": "2026-11-18T05:39+05:30"
+ "updated": "2026-11-18T17:03+05:30"
 }

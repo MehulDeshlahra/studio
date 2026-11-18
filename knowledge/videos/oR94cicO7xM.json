@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "As fans crowded",
+ "first_frame": "A stylized, glowing blue/red 3D animation of a crowd of people on an escalator.",
+ "hook_type": "visual surprise",
+ "format": "talking head + 3D how-it-works",
+ "length_s": 78,
+ "cuts_estimate": 12,
+ "avg_shot_s": 6.5,
+ "words_per_s_estimate": 2.1,
+ "beats": [
+  "0-3 s: Hook: Visual of the escalator incident with a dramatic, stylized filter.",
+  "3-26 s: 3D Animation: Explaining the mechanics of the motor and the primary brake system.",
+  "26-42 s: Talking Head: Derek explains the failure and the test results.",
+  "42-59 s: 3D Animation: Explaining the auxiliary brake system.",
+  "59-78 s: Talking Head + Reveal: The shocking discovery of the zip-tied brake wedge."
+ ],
+ "visual_techniques": [
+  "Stylized filter on stock footage (0-3 s)",
+  "High-fidelity 3D cross-section animation (3-26 s, 42-59 s)",
+  "Talking head with soft-focus background (26-42 s, 59-78 s)",
+  "Red circle graphic highlight (74-78 s)"
+ ],
+ "captions": "White text, 3-6 words per chunk, centered, no highlight colour.",
+ "sound": "Clear, professional voiceover; subtle, tense, low-frequency atmospheric music; crisp mechanical sound effects (clamping, whirring).",
+ "recurring_element": "The 3D model of the escalator motor mechanism.",
+ "ending": "Punchline/Reveal: The visual proof of the zip-tied brake, followed by a hard cut to black.",
+ "why": "It combines high-stakes storytelling with high-quality 3D visuals. The 'mystery' structure (how did it fail? -> oh, it was sabotaged) keeps retention high, and the visual reveal at the end provides a satisfying payoff.",
+ "reusable_faceless": [
+  "Using stylized filters on stock footage for dramatic effect",
+  "3D cross-section animations to explain complex mechanical failures",
+  "The 'mystery reveal' structure where the cause of the failure is hidden until the end",
+  "Using simple graphic overlays (like a red circle) to draw attention to small details in footage"
+ ],
+ "id": "oR94cicO7xM",
+ "url": "https://www.youtube.com/watch?v=oR94cicO7xM",
+ "channel": "Veritasium",
+ "niche": "Science/Tech Curiosity",
+ "title": "The Most Dangerous Escalator In Europe",
+ "views": 8200000,
+ "channel_median": 1600000,
+ "ratio": 5.12,
+ "label": "winner",
+ "watched": "2026-11-18T17:05+05:30"
+}

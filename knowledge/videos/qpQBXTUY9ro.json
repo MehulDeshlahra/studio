@@ -1,0 +1,50 @@
+{
+ "hook_first_words": "I got the cheapest 2 TB SSD from Amazon",
+ "first_frame": "A person sitting at a desk holding a black SSD device up to the camera, with a caption below reading 'AMAZON'S CHEAPEST 2TB SSD!'",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 79,
+ "cuts_estimate": 35,
+ "avg_shot_s": 2.2,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Hook: Bold claim about buying the cheapest 2TB SSD.",
+  "3-8 s: Showing the product page and low price, establishing the 'miracle' value.",
+  "8-16 s: Unboxing and hardware inspection, highlighting the metallic build and included accessories.",
+  "16-25 s: Testing the device with a phone and laptop to show it 'works' at first.",
+  "25-30 s: Showing the slow copy speed, hinting at a problem.",
+  "30-36 s: The reveal: tearing the device apart with a hammer to show it's a fake.",
+  "36-45 s: Proving the actual capacity is only 8GB using software.",
+  "45-55 s: Summary of the scam and warning about similar listings on other e-commerce sites.",
+  "55-79 s: Final verdict, advice on avoiding such scams, and channel outro."
+ ],
+ "visual_techniques": [
+  "Text overlays for emphasis (0:01, 0:04, 0:09, 0:11, 0:14)",
+  "Screen recording inserts for software tests (0:02, 0:03, 0:21, 0:24, 0:28, 0:39, 0:42)",
+  "Close-up shots of hardware components (0:09, 0:12, 0:15, 0:33, 0:37)",
+  "Jump cuts to maintain pacing (throughout)",
+  "Hammer-smash reveal (0:31)"
+ ],
+ "captions": "Bold, white sans-serif font with a black drop shadow, centered, 2-4 words per chunk, yellow highlights for key terms like 'METALLIC BUILD' and 'TYPE-C PORT'.",
+ "sound": "Upbeat, rhythmic background music; crisp voiceover narration; sound effects for hammer impact and UI clicks.",
+ "recurring_element": "The physical SSD device held by the host, which is later destroyed.",
+ "ending": "CTA (Call to Action) to subscribe, accompanied by a visual animation of the 'Subscribe' button.",
+ "why": "It uses a 'scam-busting' narrative arc that builds curiosity, provides immediate visual proof (the hammer reveal), and delivers high-value consumer advice. The fast-paced editing keeps the viewer engaged through the technical explanation.",
+ "reusable_faceless": [
+  "Hammer/destructive reveal of fake products",
+  "Screen recording overlays for software validation",
+  "High-contrast text overlays for key features",
+  "Comparison of 'too good to be true' prices vs. reality",
+  "Step-by-step investigative structure"
+ ],
+ "id": "qpQBXTUY9ro",
+ "url": "https://www.youtube.com/watch?v=qpQBXTUY9ro",
+ "channel": "TechWiser",
+ "niche": "Consumer tech & AI tips (Hindi/English)",
+ "title": "The Cheapest 2 TB SSD From Amazon!",
+ "views": 1400000,
+ "channel_median": 465000,
+ "ratio": 3.01,
+ "label": "winner",
+ "watched": "2026-11-18T17:05+05:30"
+}

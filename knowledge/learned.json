@@ -422,5 +422,4001 @@
    }
   ],
   "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:35",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Lemo-Opuscar is a code-driven procedural video generation framework offering 99 distinct visual styles rendered frame-by-frame via Canvas/WebGL and browser automation. This introductory README outlines the system architecture, style customization workflows, and category taxonomy.",
+  "knowledge": 1,
+  "build": 0,
+  "items": [
+   {
+    "title": "Three-Tier Style Variation Constraint Hierarchy",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Side-by-Side Style Frame Gate",
+    "kind": "build",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:37",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This repository provides an agent-driven film production framework containing strict directorial guidelines, style specifications, and technical standards for automated animation. It offers actionable rules on narrative structure, transition audio design, staging scale, and frame-level transition auditing.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Narrative Arc Echo Rule (Setup-Turn-Echo)",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Cross-Scene J-Cut and L-Cut Sound Transitions",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "0.2-Second Transition Strip Preflight Audit",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Hero Subject 1/3 Vertical Frame Height Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:37",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides the technical architecture, custom style derivation workflow, and code-based rendering pipeline for Lemo-Opuscar. It details headless browser video capture, TTS/ASR verification, audio synthesis, and dynamic asset management.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "FFmpeg Post-Render Grain Injection",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Small-Speaker Harmonic Bass Mastering",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Spelled-Out TTS with Digitized Captions",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Google Fonts Query-Text Dynamic Subsetting",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Stepped Animation Camera Decoupling Rule",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:38",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "some",
+  "summary": "This source contains open-source license texts and the core CLI architecture documentation for the lemo-opuscar engine. It provides concrete engineering techniques for resilient headless WebGL rendering and audio true-peak compliance under lossy compression.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "AAC Inter-Sample Peak Stepback Loop",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Headless SwiftShader ANGLE Fallback",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:38",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated Python-based audio synthesis and sampling engine capable of generating original musical scores using real-instrument samples and physical modeling. It includes specialized logic for realistic string slides, velocity-sensitive layering, and automated asset fetching.",
+  "knowledge": 3,
+  "build": 4,
+  "items": [
+   {
+    "title": "Procedural Instrument Scoring Engine",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Style-Specific Instrument Palettes",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Cross-Faded Long-Note Extension",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Authentic String Slide Modeling (Yin-Nao)",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Just-In-Time Audio Asset Fetcher",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Automated Music Credit Attribution",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Velocity-Based Timbre Darkening",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:39",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a modular production engine for procedural sound generation, WebGL/CRT post-processing shaders, headless browser rendering orchestration, and ASR audio verification. It offers immediately useful implementations for synthesizing SFX mathematically and hardening automated headless video rendering.",
+  "knowledge": 0,
+  "build": 4,
+  "items": [
+   {
+    "title": "NumPy Procedural Foley & UI SFX Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Capture-Phase WebGL Context Loss Sentinel",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Boundary-Padded Whisper ASR Verification",
+    "kind": "build",
+    "area": "voice"
+   },
+   {
+    "title": "NTSC Horizontal Chroma-Bleed Shader Pass",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:42",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source contains a robust TTS pipeline featuring offline Kokoro and online Edge-TTS with advanced silence trimming and caching logic. It also includes a manifest of over 50 distinct visual styles and a checksum-based dependency management system.",
+  "knowledge": 4,
+  "build": 3,
+  "items": [
+   {
+    "title": "Dynamic Silence Trimming Thresholds",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "Kokoro Offline TTS Integration",
+    "kind": "build",
+    "area": "voice"
+   },
+   {
+    "title": "SHA1 Param-Based Audio Caching",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Audio Plausibility Gate",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Dependency Checksum Sentinel",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Themed Style Expansion",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Hinglish Phoneme Guard",
+    "kind": "knowledge",
+    "area": "voice"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:43",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Source contains build scripts and a comprehensive design system for a visual showcase site, featuring Playwright-based asset rendering, WebP compression workflows, and strict typographic/layout rules. Key engineering takeaways include adaptive background luminance testing for scrim opacity and CSS transform isolation to avoid breaking fixed coordinates.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "95th-Percentile Scrim Stepper Gate",
+    "kind": "build",
+    "area": "preflight"
+   },
+   {
+    "title": "Fixed-Coordinate Parent Transform Prohibition",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:44",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part contains the OPUSCAR 98 styleboard catalog detailing 99 distinct visual storytelling modes and automated site preflight verification scripts. The verification logic introduces automated WCAG relative luminance contrast audits, placeholder leakage scanning, and specialized visual explainer archetypes.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Unrendered Template Placeholder Sentinel",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Programmatic CSS Relative Luminance Contrast Gate",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Telestrator Freeze-Draw Breakdown Pattern",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Color-Coded Subsystem Flow Isolation",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:45",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source contains media generation, build tooling, and QA logic from Lemo-Opuscar, including automated video still selection, contrast checks, and a large visual style taxonomy. It features practical algorithms for detecting bad video stills (flash, black, mid-cut blur) and mathematical formulas for procedural grain tile synthesis.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Clean Still Frame Heuristic Auditor",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Seamless Procedural Grain Tile Generator",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Headless Fonttools Character Whitelist Subsetter",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:45",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides technical implementation details for three specialized visual styles: an archival light-table documentary with optical loupe shaders, an Art Deco animated poster system with gold engraving pipelines, and an ASCII CRT terminal simulation with character-morphing shaders. It includes exact rendering math, optical formulas, audio spatialization progressions, and motion curves.",
+  "knowledge": 1,
+  "build": 6,
+  "items": [
+   {
+    "title": "Pincushion Loupe Shader with Explicit Gradient Sampling",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Silver-Gelatin Glass Negative Transmission Formula",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ground-Plane Perspective Distance Ruler Formula",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Tri-Layer Engraved Gold Keyline Stroke",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Marquee Bulb Skeleton Crossing-Number & Ignition Model",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Acoustic Distance Progression for Narrator VO",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Constrained Glyph-Pool ASCII Dissolve Morph",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:46",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Source contains style specifications and demo codebases for ASCII CRT terminals, assembly-line cutaway diagrams, 1990s VHS found footage, and Bauhaus geometric explainers. It provides rigorous mathematical formulas for camera-scaling vector strokes, local-light fog modulation, and quantitative area scaling.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Camera-Scale Stroke and LOD Attenuation Formula",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Local-Light Modulated Volumetric Fog",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Construction Grid to Typography Baseline Morph",
+    "kind": "motion",
+    "area": "motion"
+   },
+   {
+    "title": "True-Area Geometric Quantity Scaling Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:46",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source details three production styles (Blueprint, Brick Toy, and Engineering Briefing Board) with complete camera grammar, timing grids, rendering math, and staging rules. It offers robust techniques for 2D-to-oblique projection without 3D engines, comparative data storytelling, and physical prop expressiveness.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Oblique Depth Factor Sweep Extrusion",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Comparative Judgement Frame Protocol",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Inanimate Prop Expressive Acting States",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Thin-Geometry Vector Overlay for Matched Cutouts",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:48",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part contains production blueprints and style prompts for Caption News, 80s Cel Anime, and Chalkboard explainer styles. It provides highly practical editorial structures, audio EQ tricks, and motion graphics mechanics directly applicable to automated shorts.",
+  "knowledge": 1,
+  "build": 5,
+  "items": [
+   {
+    "title": "Proportion-by-Darkness Sweep",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Consonant-Band Spectral Music Ducking",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "PDF Bounding-Box Swept Highlighter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Emissive Buffer Silhouette Occlusion",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Diegetic Band-Pass Filter Snap",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Write-Wipe-Rewrite Misconception Correction",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Chunk-Slam Caption with Keyword Wipe",
+    "kind": "build",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:48",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source details two complete visual and editorial styles (Chalkboard and Circuit Board) and an edit system (City Symphony). It introduces precise procedural rendering models for physical chalkboard strokes and top-down circuit simulations, along with mathematical score-driven cut tables.",
+  "knowledge": 2,
+  "build": 5,
+  "items": [
+   {
+    "title": "Two-Octave FR-4 Clearance-Pour Board Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Differential AC/DC Current Motion Kinetics",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Waveform-Correlated Functional State Audio Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "BPM-Locked Multi-Subdivision Cutting Ladder",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Adaptive 360-Degree Shutter Speed Accumulator",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Centroid-Linked Median Background Crowd Tracking",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Chalk Coverage Sprite Accumulator with World-Space Slate Tile",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Handwriting Stroke Pacing Limits",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:49",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part details three visual production pipelines: a 3D colored-pencil cutaway engine with anchor-coordinate projection and focus-by-drawing, a 2.5D comic cut-out animation system with paper physics and puppet rigging, and a multi-camera countdown split-screen format. It offers robust techniques for non-optical depth-of-field, elevation shadows, auditory countdown fatigue prevention, and multi-c",
+  "knowledge": 0,
+  "build": 4,
+  "items": [
+   {
+    "title": "Anchor Coordinate Texture Projection",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Focus by Drawing Level-of-Detail",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Elevation-Scaled Drop Shadow Rig",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Alternating-Pitch Biphonic Audio Ticks",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Many-Into-One Climax Grid Collapse",
+    "kind": "build",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:50",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source defines three complete video styles with production code: Live Countdown Split-screen (real-time sync, dynamic multi-cell layouts, official facts auditing), Crayon Picture Book (2D wax resist and live stroke boiling on paper), and Crayon World 3D (first-person 3D world traced into 12 fps crayon animation via NPR pass). It offers concrete techniques for editorial integrity, narrative PO",
+  "knowledge": 3,
+  "build": 1,
+  "items": [
+   {
+    "title": "Call-Locked Layout Shift Grammar",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Dual-Mark Zero Timestamp Calibration",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "First-Person Mystery POV Inversion",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Pressure-Coupled Wax Adhesion Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "NPR Screen-Space Ring Traced 3D Crayon Renderer",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Pre-Ignition Quarter-Second Score Mute",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:51",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides production documentation and styles for dark documentary and tech keynote animations, detailing analytical scan shaders, precision grid collapsing, and 2.5D rendering techniques. These methods provide concrete formulas and motion behaviors directly adaptable to our lab-style tech explainers.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Dual-Scan Plane State Rewrite Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Categorical Type-Stream Grid Snapping",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "CRT Collapse-to-Scan Plane Transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Strip-Perspective Opaque Projection Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:51",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides complete production specifications, engines, and demo implementations for three animation styles: physicalized 3D data visualization, paper-and-pencil data storytelling, and tabletop voxel app flythroughs. It features deep integration between mathematical camera motion, procedural foley generation, and data-bound visual kinetics.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Voxel Sticker-to-Toy Hinge Rig",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Camera Velocity Proportional Foley Whooshing",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Pentatonic Landmark Unit Sonification",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Camera-to-Subject Minimum Pixel Coverage Audit",
+    "kind": "build",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:52",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source documents two production-grade visual styles from Lemo-Opuscar: Double Exposure (monochrome photographic silhouettes with parallax and register transitions) and Firefly Pointillism (multi-scale pyramid splatting particle systems), alongside copperplate engraving formulas. It provides exact mathematical laws for optical line swelling, multi-scale particle bokeh, and silhouette compositi",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Three-Channel Silhouette Mask Shading",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Non-Morphing Silhouette Superimposition",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Sinusoidal Engraving Hatch Swell Law",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "5-Level Multi-Resolution Splatting Pyramid",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Jittered Grid Text Particle Sampling",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Outline Union Occlusion Dimming",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:53",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source documents two visual explainer styles from lemo-opuscar: a flat-space scale zoom explainer (Powers of Ten style) and a flow-field wind streamline map engine. Both styles include precise math, rendering mechanics, typography constraints, and data-driven audio synthesis.",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Logarithmic Scale Ribbon with Dynamic FOV Readout",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Fixed-Step LOD Streamline Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Field-Velocity Modulated Wind Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Grazing-Angle Projection-to-Pin Text Switching",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Hard-Edged Two-Step Screen-Print Glow",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:53",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides style architectures, build tooling, and animation/audio specs for two distinct animated styles: a flat-vector 150 BPM rhythm game show and a gilded medieval manuscript illumination. It offers mathematically precise motion formulas, audio alignment tricks, and visual highlight safeguards.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Lead-Consonant Beat Pre-Roll Offset",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Downbeat Exponential Squash Decay",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Channel-Cap Specular Highlight Guard",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Remix Thumbnail Parking Rail",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:55",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides complete production guides and style prompts for three visual aesthetics: glass product launch films, retro halftone investigative dossiers, and 3D line-art technical cutaways. It delivers rigorous, production-tested parameters for 3D shaders, line hierarchies, animation timing curves, and audio-visual synchronization.",
+  "knowledge": 3,
+  "build": 1,
+  "items": [
+   {
+    "title": "Single-Entity Carrier Verb Guard",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Gap-Fill Material Dive Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Stamp Slam Impact Timing with Flash Capping",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Selective 10 FPS Line Boil with Text Masking",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Three-Tier Screen-Constant Line Art Shading",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Diagrammatic Limb Peripheral Alpha Fade",
+    "kind": "visual",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 11:58",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source details production blueprints and engine code for 2.5D pixel art dioramas, technical hologram HUDs, and impasto painting styles. It provides concrete mathematical and architectural parameters for 3D/billboard lighting, HUD docking logic, explosion staging, and audio ducking.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Accumulating Side-Rail Spec Chip Docking",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Held-Envelope Foley Ducking with Transient Bypass",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Billboard Practical Light Camera-Vector Offset",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Target-Box Bounding Flag Filter",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Axial Explode with Stationary Luminescent Core",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Coordinated Multi-Channel Flash Curve",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 12:22",
+  "name": "www.shortimize.com/blog/youtube-shorts-retention-rate",
+  "url": "https://www.shortimize.com/blog/youtube-shorts-retention-rate",
+  "license": "web article",
+  "verdict": "some",
+  "summary": "This article analyzes the post-March 2025 YouTube Shorts algorithm update, distinguishing raw views from engaged views and swipe-away rates. It outlines a structured retention funnel diagnostic to separate hook failure from mid-roll pacing collapse.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Micro Open Loop Interval Rule",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Dual-Metric Funnel Diagnostic Gate",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "Payoff-Snap Zero-Linger Outro",
+    "kind": "knowledge",
+    "area": "script"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 12:22",
+  "name": "www.usefastlane.ai/blog/instagram-reels-algorithm-2026",
+  "url": "https://www.usefastlane.ai/blog/instagram-reels-algorithm-2026",
+  "license": "web article",
+  "verdict": "useful",
+  "summary": "This source outlines Instagram Reels algorithm updates including the primary ranking weight of skip-rate (first 3 seconds), watch completion, DM shares, saves, and a strict 5-hashtag limit. While partially an AI marketing post, it provides concrete platform distribution mechanics that directly affect short-form video delivery and script structuring.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Strict 5-Hashtag Niche Clamping",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "Share-Save Utility Payoff Structure",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "First-Three-Second Skip-Rate Gate",
+    "kind": "build",
+    "area": "hook"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 12:22",
+  "name": "www.go-viral.app/blog/best-hooks-for-short-form-video/",
+  "url": "https://www.go-viral.app/blog/best-hooks-for-short-form-video/",
+  "license": "web article",
+  "verdict": "skip",
+  "summary": "This source is a top-of-funnel marketing blog post outlining 15 common short-form hook formulas and standard creator retention advice. It offers generic copywriting tropes with little technical depth for automated production pipelines.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [],
+  "skip": "Generic creator advice and standard social media templates (e.g., 'POV', 'Unpopular opinion') that do not fit automated faceless Hinglish channels; our studio already enforces stricter, channel-specific hook timing and asset rules in plan.py."
+ },
+ {
+  "t": "2026-11-18 12:23",
+  "name": "outlierkit.com/resources/faceless-youtube-growth-strategy/",
+  "url": "https://outlierkit.com/resources/faceless-youtube-growth-strategy/",
+  "license": "web article",
+  "verdict": "some",
+  "summary": "High-level growth guide and promotional piece for OutlierKit detailing faceless YouTube channel archetypes and validation rules. It contains mostly general strategy, but provides a concrete heuristic for demand validation using small-channel breakout ratios.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Small-Channel Outlier Validation Gate",
+    "kind": "build",
+    "area": "ideas"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 12:23",
+  "name": "rendercut.io/best-caption-styles-retention-engagement",
+  "url": "https://rendercut.io/best-caption-styles-retention-engagement",
+  "license": "web article",
+  "verdict": "some",
+  "summary": "This source is a guide on optimizing short-form video captions for retention and engagement, highlighting chunking, word-level highlights, and visual fatigue risks. While much of it is standard creator advice, it offers concrete tactical rules on caption rhythm, mid-video pattern interrupts, and phase-based styling.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Midpoint Caption Pattern Interrupt",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Three-Phase Caption Hierarchy Rule",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 12:24",
+  "name": "1of10.com/blog/youtube-shorts-analytics/",
+  "url": "https://1of10.com/blog/youtube-shorts-analytics/",
+  "license": "web article",
+  "verdict": "useful",
+  "summary": "The article explains YouTube Studio's Shorts analytics ecosystem, highlighting the March 31, 2025 metric split between instant raw views and dwell-based engaged views. It provides diagnostic benchmarks for swipe rates, retention curves, and duration-adjusted viewer behavior.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Post-2025 Shorts Engaged-View Telemetry Decoupling",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "Duration-Tiered Shorts Retention Benchmark Rule",
+    "kind": "knowledge",
+    "area": "growth"
+   },
+   {
+    "title": "Sound-Off First-Two-Second Visual Loop Verification",
+    "kind": "knowledge",
+    "area": "hook"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:30",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides four comprehensive visual style specifications (Impasto, Ink Wash, Instruction Manual, and Tablet Sketch) including rendering logic, motion grammar, and audio palettes. It is an exceptional blueprint for procedural animation, offering specific mathematical rules for stroke behavior, isometric projection, and thematic color logic.",
+  "knowledge": 5,
+  "build": 3,
+  "items": [
+   {
+    "title": "Isometric Assembly Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Yellow = New Part Rule",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Wet-Bleed Ink Compositor",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Magnifier Match-Cut",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Fixed-Seed Stroke Stability",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Parts Explosion Logic",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Digital Zero Silence Rule",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Raking Light Height Field",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Boustrophedon Coloring Path",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Reading Check Sentinel (TEXTS)",
+    "kind": "knowledge",
+    "area": "growth"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:34",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides two distinct isometric animation styles (Infographic and Picture Book) with detailed rules for 3D-to-2D projection, shading, and narrative motion. It is a high-quality technical blueprint for procedural diorama-style storytelling using flat three-tone solids and infographic elements.",
+  "knowledge": 3,
+  "build": 4,
+  "items": [
+   {
+    "title": "Log-Interpolated Zoom",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Nested Cutaway Dive Timing",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Isotype Silhouette Generation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Focus + Context Desaturation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Isometric Floor-Type Landing",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Hinged Lid-Off Reveal",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Three-Tone Normal Shading Formula",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Automated Motion/Collision Audit",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Lead-Line Movement Rule",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:34",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides two sophisticated visual styles: 'Kino-Montage' (Soviet-style archive montage) and 'LiDAR Survey' (3D point cloud visualization). It offers high-end technical frameworks for archive-driven storytelling and data-heavy explainers using WebGL and advanced CSS/GSAP techniques.",
+  "knowledge": 5,
+  "build": 4,
+  "items": [
+   {
+    "title": "Percentile-Stretch Print Grade",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Intellectual Montage (A + B → C)",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "U2Net Human Segmentation Cut-outs",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "LiDAR Point Cloud Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Structural Type Axis",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Procedural UI Foley",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Primary Source Fact-Check Pattern",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "The Canopy Peel Signature",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Archive Footage License Auditor",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Biphonic Audio Alternation",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:35",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three distinct, high-end automated visual styles (Living Screencast, Low-poly Island, and Manga Panels) with detailed rules for motion, rendering, and event-driven audio. It is an exceptional reference for advanced procedural storytelling and technical aesthetics.",
+  "knowledge": 4,
+  "build": 3,
+  "items": [
+   {
+    "title": "DOM-Anchored Actor Placement",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Screentone Thresholding Pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Panel-as-a-Cut Grammar",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Building-is-Composing MIDI Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Arrival Curve Overshoot Rule",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Prop Consistency via Image-to-Image Edit",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "The Quiet Panel (Ma) Interval",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Time-Lapse Palette Keyframing",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Anisotropic Motion Blur on Whips",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Match-Cut Origin Story",
+    "kind": "knowledge",
+    "area": "hook"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:37",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides four distinct, high-quality visual styles (3D Map Explainer, Marker Paper, Memphis Diorama, and Manga Panels) with full technical specs for rendering, camera grammar, and audio synthesis. It is an elite-tier reference for procedural storytelling and specialized 3D/2D animation pipelines.",
+  "knowledge": 3,
+  "build": 2,
+  "items": [
+   {
+    "title": "3D Terrain Explainer Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Marker-on-Paper Canvas Renderer",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "The Dive from Orbit",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Event-Driven Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Chroma-Key Manga Asset Prompting",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Seasonal Wave Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Semantic Color Discipline",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Text Reading Duration Formula",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Halftone Shading Pass",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:38",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three highly distinct, code-driven visual styles (Memphis Diorama, Microgame Frenzy, and Microscope) with rigorous rules for motion, UI, and audio-visual synchronization. It is an exceptional reference for advanced procedural animation and retention-focused editing logic.",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Log-Spiral Similarity Dive",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Acceleration Speed Ladder",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "State-Change Wave Transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Pixel-Color Counting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Slam-and-Dock Command Hook",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Squash-and-Spring State Trigger",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Multi-Medium Shader Pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Color Instrument per Style",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "World-Space Pattern Tiling",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Failure-as-Solution Arc",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Tuned Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Three-Tone Hard Shading Formula",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:39",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three highly detailed procedural style guides: 'Under the Microscope' (scientific microscopy), 'Mid-century Cartoon' (1950s flat animation), and 'Neon Tubes' (realistic neon physics). It is an exceptional resource for technical implementation of specific aesthetics and narrative grammars.",
+  "knowledge": 2,
+  "build": 6,
+  "items": [
+   {
+    "title": "Log-Spiral Camera Zoom",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Off-Register Cel Jitter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Neon Tube Cross-Section Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Limited Animation Pose Rig",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Puddle Reflection Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Strike = Life Rule",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Potential-Flow Route Generator",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "FACTS.md Verification Pattern",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Focal Plane Sweep",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Instrument Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "1-2-5 Scale Bar Sequence",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Frosted Glass Panel UI",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:40",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source defines two highly structured visual 'packages'—Broadcast News and 1920s Newsreel—with specific 'native moves' for data visualization and historical storytelling. It is an exceptional blueprint for high-authority layouts, rhythmic editing, and rigorous fact-checking protocols.",
+  "knowledge": 2,
+  "build": 8,
+  "items": [
+   {
+    "title": "Sting-to-Bug Continuity",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Proportional Spec Card",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Threshold Break Logic",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Fact-Source Grading Matrix",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Strap-Tab Category System",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Grease-Pencil Detail Highlight",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Map Document Fly-out",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Grid-to-Flipbook Sequence",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Spinning Paper Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Bilingual Non-Wrap Rule",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Split-Screen Audio Gating",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "120/200 BPM Rhythmic Grid",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:41",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source details two advanced procedural animation styles: a 3D 1-bit dithered 'newsreel' aesthetic and a continuous 'one-line' drawing engine. It provides rigorous rules for object-anchored textures, diegetic typography, and 'scale-reveal' narrative structures.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Object-Anchored Bayer Dither",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Diegetic-Only Typography",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Reverse-Designed Scale Reveal",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Speed-Correlated Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Lossless Intermediate Mastering",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Bilingual Reading Duration Formula",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Inversion Strike Impact",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Nib-Follow Camera Logic",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:41",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three distinct, procedurally-driven animation styles: One-line Drawing, Oscilloscope Math, and Paper-cut Lightbox. It is an exceptional technical reference for implementing high-end, math-accurate visual grammars using code-based rendering.",
+  "knowledge": 3,
+  "build": 2,
+  "items": [
+   {
+    "title": "Curvature-Weighted Timing",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Speed-Based Pen Pressure Simulation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Phosphor Bloom Shader Pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Logarithmic Knob Zoom Logic",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Layered Value Ladder for Depth",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Backlit Translucency Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Biphonic Event Sonification",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Computed Readout Verification",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Epicycle Chain Engine",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:43",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three distinct, high-fidelity procedural animation styles: a 3D Paper Pop-up book, a 2D Red Paper-cut folk art system, and a mechanical Pen Plotter for data viz. It is an exceptional resource for physical-world simulation, offering specific kinematic numbers, foley synthesis rules, and visual metaphors for storytelling.",
+  "knowledge": 3,
+  "build": 3,
+  "items": [
+   {
+    "title": "Trapezoidal Plotter Kinematics",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Fold-Cut-Unfold Climax Logic",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Backlit Paper Transmission Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Pen Change as Punctuation",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Synthesized Paper Foley Signature",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "12/24 FPS Hybrid Sampling",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Macro Scale Mismatch Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Contours Growing Outward",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Biphonic Character Blips",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Inset Contour Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:44",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source contains detailed style guides and technical implementations for three distinct automated video aesthetics: Pictogram Motion, Pip Simulation, and Pixel RPG. It provides high-level editorial rules for beat-locking, color discipline, and using game/simulation mechanics as narrative devices.",
+  "knowledge": 4,
+  "build": 2,
+  "items": [
+   {
+    "title": "Grid-Locked Transition Suite",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Chapter-Hue Color Discipline",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "One Verb Per Item Rule",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Data-to-Pitch Sonification",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "The Morning Wave Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "System-as-Metaphor Narration",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Palette Swapping for Emotional Cues",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Protected Color Anchor",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Integer-Pixel Motion Quantization",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Automated Reading-Time Audit",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Biphonic Text-Entry Blips",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Pace Ladder Sequencing",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:44",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source defines three high-retention visual frameworks—16-bit RPG, Pop Art, and Color-Coded Mechanisms—with precise technical rules for rendering, camera grammar, and sound. It provides a blueprint for moving beyond simple 'lab' looks into sophisticated, system-driven automated storytelling.",
+  "knowledge": 4,
+  "build": 3,
+  "items": [
+   {
+    "title": "Indexed Palette LUT System",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Page-Space Ben-Day Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Functional System Color Discipline",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Plate-by-Plate Stamping",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "World-Space Section Hatching",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "The Dot-Pull Reveal",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Pitch-Shifted Text Blips",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Own-Color Outline Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Exploded-View Axis Logic",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Mosaic Echo Ending",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "RPG Dialog Box Grammar",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:45",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides complete styling guides and implementation engines for three distinct visual styles: Scratchboard Long Take (3D diorama/woodcut), Risograph Print (multi-plate stencil overprint), and 1930s Rubber Hose Cartoon. It contains precise technical specifications for multi-channel plate rendering, registration drift mechanics, and synchronized tempo-based object breathing.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "RGB-as-Plates Multi-Channel Stencil Compositor",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Registration Kick and Drift Easing",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Paper-White Knockout Ring Halo Trap",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Plate-Layered Arrangement Orchestration",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "BPM-Locked Harmonized Prop Breathing",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Lossless YUV444 Intermediate Encoding Pipeline",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:51",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three distinct, high-quality procedural animation styles: 'Satellite Briefing' (data-driven map analysis), 'Sci-Fi Toon' (character-driven adult animation), and 'Scratch Film' (direct-animation aesthetic). It includes detailed technical specifications for motion, audio synthesis, and factual verification workflows.",
+  "knowledge": 2,
+  "build": 5,
+  "items": [
+   {
+    "title": "Georeferenced Plate Nesting Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "The Map Against the Photograph Reveal",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Constant Screen-Space Line Boil",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Reaction Close-Up Rule",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Line-by-Line FACTS.md Audit",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Scratch-In Reveal Engine",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Drawn Tone Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Analyst Grade Color Logic",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Range Line with Rolling Counter",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Lip-Sync Envelope Mapping",
+    "kind": "build",
+    "area": "voice"
+   },
+   {
+    "title": "Suck-Out Impact Prep",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Hatching as Gradient",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:56",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three highly detailed visual 'engines'—Security X-ray, Shadow Puppet, and Silent Film—complete with WebGL/Canvas implementation logic, color theory, and rhythmic scoring rules. It is a masterclass in procedural style-clamping and technical storytelling.",
+  "knowledge": 3,
+  "build": 4,
+  "items": [
+   {
+    "title": "Thickness-Pass X-ray Rendering",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dual-Energy Colorizer Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Scan-Line Sweep Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Carving-as-Density Texture Logic",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Pendulum/Spring Chain Simulation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Redraw Ink-Hatch Pass",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Hand-Crank Sampling Mix",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Abduction-First Arm Rigging",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Verbatim FACTS.md Audit",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Percussion-First Rhythmic Scoring",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "World-to-Film Iris Tracking",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Single-Source Timeline Spine",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:57",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides highly detailed style definitions and technical implementation rules for four distinct automated animation aesthetics: Silent Film, Silhouette Rhythm, Silkscreen Poster, and Sketchnote. It is an exceptional reference for creating high-end, mathematically driven visual grammars that go beyond generic AI generation.",
+  "knowledge": 3,
+  "build": 0,
+  "items": [
+   {
+    "title": "Beat-Locked Pose Snapping",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Stepped Gradient Constraint",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Intertitle-First Narrative",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Pen-Tip 'Ride' Camera",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Registration Offset Logic",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Mixed-Rate Hand-Crank Effect",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "The 'Freeze-Orbit' Signature",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Squeegee/Wipe Transition",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Biphonic Event Sonification",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Silhouette-on-Light Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:58",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides comprehensive technical and creative specifications for four distinct automated visual styles: Sketchnote, Spreadsheet, 60s Spy Titles, and Stained Glass. It is an elite-tier reference for procedural animation, offering concrete rules for rendering, motion grammar, and audio-visual synchronization.",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Sketchnote Stroke Rendering",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Pen-Tip Camera Tracking",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Spreadsheet Pixelation Logic",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Formula-Bar Dialogue",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Hybrid Frame-Rate Animation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Architectural Typography",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Scissor-Cut Edge Displacement",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Event-Linked Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Light-Sweep Narrative Clock",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Diagonal Grid Assembly",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "MacGuffin Title Reveal",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Diegetic Caption Anchoring",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:59",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides highly rigorous procedural style definitions for four distinct visual languages: Stained Glass, Stick-figure Explainer, Swiss Motion, and Exploded Teardown. It is an exceptional reference for mapping data structures (like CAD or music scores) directly to motion and foley.",
+  "knowledge": 3,
+  "build": 3,
+  "items": [
+   {
+    "title": "Tangent-Continuous Hose Rig",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Light-as-Clock Logic",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Poster-as-Score Mapping",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Swiss Snap-to-Beat Rigor",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "CAD-to-Video Pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Wave-Lift Separation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Accent Run Pulse",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Banderole/Parchment Subtitle Logic",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Extreme Scale Contrast Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Material-First Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 15:59",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides technical style guides for three distinct visual languages: 3D exploded hardware teardowns, sports-style telestrator analysis, and avant-garde 'text-flash' anime. It includes specific code logic for CAD-to-mesh conversion, perspective homography, and beat-locked motion graphics.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "CAD-to-Video PCB Pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ground-Plane Homography Mapping",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Count-up Acceleration Pattern",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Speaker Dialogue Rails",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Freeze-and-Draw Grammar",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Overshoot Head-Tilt Rig",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Measured-Fact Audit",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "BPM-Locked Drum Gating",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Red-Black Inversion Accent",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Official Rights Chain Verification",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:00",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides detailed specifications for three sophisticated procedural animation styles: Thermal Camera, Tilt-Shift Miniature, and Transit Map growth. It is an exceptional resource for technical storytelling, offering precise rules for physics-based rendering, diegetic HUDs, and event-driven audio.",
+  "knowledge": 3,
+  "build": 2,
+  "items": [
+   {
+    "title": "Thermal Emissivity Realism Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Diegetic Sensor Simulation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Tilt-Shift Time-Lapse Stutter Rule",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Dynamic Blur Band DOF",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Event-Gated Procedural Scoring",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Ink-on-Paper Schematic Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Automated Reading-Time Validator",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "The 'Speed Drop' Twist",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:01",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides comprehensive style guides and technical specifications for three distinct visual languages: Transit Map (schematic), Ukiyo-e (woodblock), and Urban Sketch (pen and wash). It is an exceptional resource for procedural animation, offering precise geometric rules, camera grammars, and sound design logic.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Octilinear Schematic Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "FACTS.md Audit Pattern",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Event-Driven Color Arrival Field",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Jo-Ha-Kyū Narrative Pacing",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Layered Arrangement Growth",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural Media Texturing",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Hybrid Frame Rate Sampling",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Material-Specific Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "The 'Ride the Tip' Camera",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Handwritten Margin Colophon",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Mode-Based Line Grammar",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:06",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides two advanced, code-driven design systems—Vintage Collage and Visual Investigation—focused on historical and forensic storytelling. It is an exceptional reference for procedural animation, multi-source evidence synchronization, and diegetic data visualization.",
+  "knowledge": 3,
+  "build": 4,
+  "items": [
+   {
+    "title": "Copperplate Data Engraving",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Through-the-Hole Transition",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Hard Sync Multi-Source Grid",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Ransom Letter Eighth-Note Slap",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Known vs. Unresolved Columnar Logic",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Audible Stopwatch Ticking",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "White Paper Margin Dilation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Telegrams on the Clock",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Hand Jitter for Still Assets",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:07",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three highly sophisticated procedural animation styles (Watercolor, White-Model, and Whiteboard) built on Canvas2D and WebGL. It offers precise mathematical rules for 'painting' strokes, projecting data onto 3D models, and synchronizing foley to animation speed.",
+  "knowledge": 3,
+  "build": 5,
+  "items": [
+   {
+    "title": "Procedural Painting-In Engine",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "The Gradient Walk Structure",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Projection-on-White-Model Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Stroke-Speed Correlated Foley",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Glossy Window Sheen Layer",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Peak-to-RMS Look-ahead Limiting",
+    "kind": "build",
+    "area": "voice"
+   },
+   {
+    "title": "The 'Hole' Visual Logic",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Dynamic CJK/Devanagari Subsetting",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "1/z Zoom Interpolation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Eraser Rewind Transition",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Beat-Locked Object Phasing",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:11",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides comprehensive style definitions and rendering engines for Whiteboard, Woodcut, and Archive Light Table visual styles. It includes advanced techniques for procedural audio synthesis, 2D-to-3D parallax effects, and form-following hatching logic.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "1/z Zoom Interpolation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Parallax Photograph Space",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Stroke Sonification",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Map-Based Camera Grammar",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Loupe Detail Readout",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ghost Mark Realism",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Structure-Tensor Hatching",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Mirror-to-Print Transition",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Modal Metal Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Glossy Sheen Drift",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Index Panel Summary",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "Fact-to-Voice Audit Table",
+    "kind": "knowledge",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:13",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source contains high-end procedural animation and audio mixing scripts for an automated 2D video pipeline. It features advanced Art Deco character rigging, a marquee bulb sign engine, and sophisticated image matting/inpainting techniques.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Procedural Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Narrative Audio Sucking Gate",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Faceted Lacquer Shading",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Zhang-Suen Marquee Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dynamic Glyph-Level Font Subsetting",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Difference Matting with Hull Constraints",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Two-Bone Analytical IK",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Word-Anchored Subtitle Triggers",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Push-Pull Membrane Inpainting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Peak-to-RMS Limiting Ratio",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:15",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a deterministic Canvas2D Art Deco motion graphics engine alongside an automated score mixing and spatial audio pipeline. It contains valuable techniques for multi-phase graphic title unfolds and efficient continuous low-pass audio distance automation in NumPy.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Log-Bank Filter Crossfade for Continuous Audio Distance",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Hairline-to-Plaque Symmetrical Title Unfold",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:21",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated Art Deco animation framework using 2D Canvas to simulate complex 3D perspective, rhythmic choreography, and procedural textures. It is an elite reference for high-precision timing and cinematic 2D-to-3D visual tricks.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Shared Timing Source-of-Truth",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural Marble and Metal Textures",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "2D-to-3D Perspective Card Transform",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Silhouette Rim Lighting Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Visual-Audio Cue Validation (CueCheck)",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Match-Cut Zoom Transition",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Ballistic Arc and Spin Formula",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Mode-7 Floor Rendering",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:22",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated procedural pipeline for ASCII-based sci-fi visuals, including WebGL CRT post-processing, NumPy-based SFX synthesis, and density-mapped character rendering. It is an excellent technical reference for high-end 'lab look' automation.",
+  "knowledge": 3,
+  "build": 4,
+  "items": [
+   {
+    "title": "Film-Standard Subtitle Hold Formula",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Voice Aging via Resampling",
+    "kind": "build",
+    "area": "voice"
+   },
+   {
+    "title": "Density-Mapped ASCII Ramp",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ordered Dither Character Selection",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "NumPy Mechanical SFX Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "CRT Phosphor Post-Process",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "NASA-Style Voice Treatment",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "Procedural Degauss & Modem SFX",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Fractal Text Zoom Metaphor",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Oversampled Peak Limiter",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:23",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a sophisticated SVG-based animation engine for educational 'disassembly' diagrams, featuring advanced camera interpolation and print-style rendering. It is an excellent reference for high-end procedural motion graphics using a free stack.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "KS-Factor Line Weight Attenuation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Color Plate Misregistration System",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "LOD Detail Culling Gate",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Velocity-Based Directional Camera Blur",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural Fiber Grain Generator",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Non-Linear Story Time Warping",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "ASR Script-to-Voice Verification",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Monotone Cubic Spline Camera Paths",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:24",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides advanced procedural animation and audio techniques for both 2D diagrammatic 'assembly' styles and 3D 'found footage' aesthetics. It excels in physical simulations like non-sliding run cycles, spectral audio ducking, and camcorder sensor emulation.",
+  "knowledge": 2,
+  "build": 6,
+  "items": [
+   {
+    "title": "Non-Linear Time Warp Stretch",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Vocal-Band Spectral Ducking",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Ground-Pinned Stance Cycle",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Autofocus Hunting Simulation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "5x7 Dot-Matrix OSD Renderer",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Diegetic Ceiling Speaker Filter",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Tracking Tear Audio Glitch",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Murmur Voice Treatment",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "AGC Darkness Memory",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Gantry Sign Bounce Logic",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:25",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a high-fidelity 'Backrooms' liminal horror style implementation, featuring advanced procedural textures, a sophisticated VHS analog degradation shader, and precise camera/focus automation. It excels in creating 'uncanny' atmospheres through mathematical rules for asset design and environmental aging.",
+  "knowledge": 2,
+  "build": 6,
+  "items": [
+   {
+    "title": "VHS Analog Degradation Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Hand-Shake 'Fear' Parameter",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural Material Aging Shaders",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Two-Pass Loudnorm Mastering",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "ASR Speech-to-Text Verification Gate",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "CEA-608 Style Retro Captions",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "The 15-40% Uncanny Rule",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Walking Segment Time-Warping",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Data-Texture Driven Lighting Grid",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "The 'Hush' Breath Interval",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:25",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated framework for procedural technical animations and spectral audio mixing. It excels in mathematical 2D drafting (blueprints), luminosity-aware paper textures, and frequency-selective music ducking.",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Spectral Voice-Band Ducking",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Luminosity-Aware Paper Tooth Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Cabinet Oblique Projection Logic",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Bounding-Box Readcheck Auditor",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Pen-Tip Glow Tracking",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Chord-Map Procedural Scoring",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Hidden-Line Knockout Fill",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Exponential Growth Pathing",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:27",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Full blueprint animation pipeline featuring procedural Baroque scoring, WebGL blueprint/wet-ink paper compositor, dynamic exploded CAD dimensions, and numpy foley synthesis. It provides concrete mathematical algorithms for foley ducking, mechanical wind-down deceleration, and dynamic CAD dimension tracking.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Proportional Foley Half-Ducking Under Narration",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Geometric Interval Flywheel Wind-Down Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Tide-Mark Boundary Wet-Stain Shader Formula",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dynamic Separation-Gap Dimension Callout",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:28",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides advanced 3D and 2D procedural rendering techniques, including a stop-motion 'on-twos' animation system, physics-based collapse simulations, and an ASR-driven audio intelligibility QA tool.",
+  "knowledge": 3,
+  "build": 4,
+  "items": [
+   {
+    "title": "ASR Mix Intelligibility Guard",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Stop-Motion 'On Twos' Quantization",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Librosa Beat-Grid Music Splicing",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Softbox Rectangular Highlight Rig",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Plastic Smudge Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Precomputed Rigid Body Collapse",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Diegetic Hand Shadow Overlay",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Revision Cloud Scallop Geometry",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Mission Control Radio Treatment",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "ASR-Verified Subtitle Burn-in",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:33",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated 'Briefing Board' rendering engine and a procedural audio mixing pipeline. It excels at physical simulation (magnets, paper, ink) and automated asset preparation like dynamic font subsetting and logo removal.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Beta Ease Easing Function",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural Marker Writing Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Dynamic Font Subsetting via Google API",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Median Filter Logo Wipe",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Sine-Based Hand-Held Camera Breath",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Bilingual Subtitle Box Logic",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Shutter-Based Multi-Sample Motion Blur",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural Board Texture Ghosts",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Rhythm and ASR Post-Render Report",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Biphonic Event Sonification",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:34",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated asset preparation and scene orchestration pipeline for 'briefing board' style explainers. It features advanced image masking (BiRefNet), procedural redrawing of thin structures (cables/hangers), and a centralized coordinate-based camera system.",
+  "knowledge": 0,
+  "build": 4,
+  "items": [
+   {
+    "title": "BiRefNet Masking & Edge Decontamination",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Normalized Asset Anchors",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Top-Hat Sky Keying for Thin Parts",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Thin-Line Redrawing",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Non-Uniform Span Stretching",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Judgement Frame Safe-Zone Logic",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "BPM-Locked 16th-Note Event Scripting",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Logarithmic Camera Zoom (lz)",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:35",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a highly detailed JSON schema for a 'Briefing Board' visual style, featuring physical metaphors like magnets, markers, and rulers. It also includes a structured asset candidate library with metadata for automated image selection and quality scoring.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Procedural Dimension Line Rig",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Magnet Snap and Pop Physics",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Striking Correction Animation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Diegetic Prop Tray",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Selective Motion Blur Brackets",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Asset Cut-out Difficulty Heuristic",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Global Shade/Sheen Sweeps",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Object-Following Wake Effect",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Safe-Zone Graphic Intrusion Gate",
+    "kind": "knowledge",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:39",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides production tooling from the briefing-board and caption-news demo pipelines, including camera kinematics verification, automated rhythm/flat-stretch reporting, and audio-visual onset alignment audits. The testing and validation scripts offer robust quantitative gates for camera smoothness, visual motion energy, and sync precision.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Post-Render Motion Energy & Audio-Visual Hit Alignment Audit",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "4x-Sampled Camera Kinematic Hitch & Jerk Spike Sentinel",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Pre-Reveal Canvas Concealment Guard",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:39",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated framework for procedural '80s cel-anime' aesthetics and an automated archival footage pipeline. It excels in mathematical visual construction (projections, rigging) and high-fidelity audio synthesis (RPM-based engine sounds).",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Final Mix ASR Verification",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Archival Footage Sourcing Engine",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Albers Equal-Area Map Projection",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "RPM-Based Engine Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "80s Cel-Anime Rigging Rules",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Anamorphic Lens Flare System",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dynamic Font Subsetting",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Biphonic Radio Squelch Logic",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Wet-Road Reflection Logic",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:42",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a fully synthesized 80s anime city-pop score generator (NumPy/Numba/SciPy) and a custom WebGL2/Canvas2D rendering pipeline featuring CRT/videotape degradation shaders and lighting-aware cel color palettes. It contains excellent procedural audio routing tricks, CRT ignition mathematics, and luminance-compensated shader techniques.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "CRT Two-Phase Anamorphic Ignition Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Luminance-Compensated Scanline Depth Formula",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Split-Buffer Reverb Send Gating for Silent Stops",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Lighting-Conditioned Three-Tier Palette Transform",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:43",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source demonstrates 80s anime-style rendering, timeline-locked cutting, gauge physics, and granular audio synthesis for chalkboard foley in Canvas and Python. It provides concrete formulas for analog gauge needle ballistics, 2-frame monochrome impact cuts, and stroke-length foley grain chaining.",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Gauge Needle Ballistic Formula",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Two-Frame Inverted Impact Cut",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural Drawing Foley Grain Chaining",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:44",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a sophisticated procedural rendering engine for hand-drawn chalk animations, featuring a robust stroke-based physics engine and high-fidelity foley metadata. It is excellent for building high-end, hand-crafted aesthetic visuals for educational or storytelling content.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Procedural Foley Engine",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Chalk Stroke Physics",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Wet Slate Transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dynamic Subtitle Plate",
+    "kind": "better",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:50",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a high-fidelity procedural animation engine for 'chalkboard' style educational content, featuring advanced stroke-based handwriting physics and camera-to-writing synchronization. It is an excellent reference for building procedural, hand-drawn visual assets that feel organic rather than static.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Procedural Handwriting Physics",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Event-Driven Foley Scoring",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural Grain Tile Generation",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Camera-to-Subject Tracking",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:56",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a sophisticated procedural rendering engine for circuit-board style animations, offering a high-quality aesthetic and robust coordinate-based rendering logic. It is extremely useful for enhancing our 'lab look' and implementing programmatic 'dive' transitions.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "PCB-Routed Font Renderer",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Nested Coordinate Level Renderer",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Octilinear Routing Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Macro-Lens Post-Processing",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Component Staging",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:56",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source contains advanced pipeline tools for geography-to-PCB mapping, automated public-domain footage sourcing (NASA, Archive.org), and sophisticated video pre-processing including frame-blending for light-trail effects. It is a high-quality engineering reference for procedural video generation.",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Public Domain Footage Engine",
+    "kind": "build",
+    "area": "ideas"
+   },
+   {
+    "title": "Octilinear Diagram Routing",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "360-Degree Shutter Frame Blending",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Mathematical Readcheck Audit",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Sample-Based Procedural Scoring",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Dynamic Font Subsetting",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Geographic-to-PCB Coordinate Mapping",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:57",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a robust, code-driven framework for procedural video compositing, including advanced color grading, beat-synced grid layouts, and automated text-readability verification. It is highly valuable for scaling professional-grade visual effects and quality control in an automated pipeline.",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Procedural Crowd Light Trails",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Readcheck Text Auditor",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Procedural Film-Look LUTs",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Beat-Locked Grid Engine",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Hand-Lettering Skeleton Data",
+    "kind": "knowledge",
+    "area": "script"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:57",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides advanced techniques for procedural 3D-to-2D illustration, specifically shader-based pencil hatching and handwriting skeletonization. It is highly useful for elevating our studio's 'lab' look with more organic, hand-drawn aesthetics.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Anti-Swim Surface Anchoring",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Zhang-Suen Handwriting Skeletonization",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Reveal-Time Shader Masking",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "RMS-Based Voice Ducking",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 16:59",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "skip",
+  "summary": "This file is a TopoJSON dataset containing European country boundaries with compressed geometry arcs. It is a raw data asset, not a technique or codebase, so there is no actionable method to extract for our pipeline.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [],
+  "skip": "This part is only a static TopoJSON data file for European boundaries; no code, technique, or pipeline insight to adopt."
+ },
+ {
+  "t": "2026-11-18 17:00",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated engine for procedural 2D paper-puppet animation and audio synthesis, including automated sprite extraction and IK-based rigging. It is highly useful for elevating our storytelling-focused 'Katha' and 'Raaz' content.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Procedural Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Automated Puppet Extraction",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "2D IK Puppet Rigging",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural Paper Texture",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Voice-Ducking Mix Engine",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:01",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a robust, code-first pipeline for complex, multi-source documentary-style video editing, focusing on frame-accurate synchronization and event-driven layout orchestration. It is highly useful for scaling production of high-fidelity, data-rich content.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "RMS Envelope Sidechain Ducking",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Automated Asset Provenance Tracker",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Event-Driven Layout Orchestrator",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Post-Render ASR Verification",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Look-Ahead Limiter for Master Bus",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:01",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated procedural drawing engine and WebGL compositor designed to create a hand-drawn, 'crayon-on-paper' aesthetic with parametric character rigging. It is an excellent reference for high-end visual styling and procedural foley synthesis.",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Crayon Stroke Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "WebGL Paper-Tooth Compositor",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Parametric Character Rigging",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Book-Pullback Transition",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:02",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated procedural NPR (Non-Photorealistic Rendering) pipeline for creating hand-drawn, crayon-style animations with simulated paper grain and procedural audio. It offers a robust framework for converting 3D or vector assets into organic, 'boiling' hand-drawn visuals.",
+  "knowledge": 1,
+  "build": 0,
+  "items": [
+   {
+    "title": "Boiling Line Engine",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "WebGL Paper Tooth Shader",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Modal Synthesis Foley",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "NPR Analysis Pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Wax-Resist Watercolour Simulation",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:04",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "some",
+  "summary": "A 3D crayon-style animation demo with NPR rendering, layered depth systems, and environmental dynamics. Highly technical but impractical for our short-form pipeline due to complexity and asset intensity.",
+  "knowledge": 3,
+  "build": 0,
+  "items": [
+   {
+    "title": "Grouped Layer NPR Rendering",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Gradual Revelation Technique",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Dynamic Environmental Simulation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Text Duration Validator",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Dynamic Font Subsetting",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Synchronous Foley Layering",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:05",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a high-end procedural rendering and audio-mixing pipeline for documentary-style video content using Three.js and NumPy. It demonstrates advanced techniques for synchronizing WebGL visuals with procedurally generated foley and music stems.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Procedural Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Scan-Line Reveal Shader",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Stem-Based Ducking and Mastering",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Dynamic Font Subsetting",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Events-Driven Timeline Sync",
+    "kind": "knowledge",
+    "area": "script"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-18 17:06",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides full implementations for 'dark-keynote' and 'dark-documentary' video styles in Canvas2D, featuring custom UI animations, procedural Foley sound design, and automated mix/onset verification pipelines. It shows elegant mathematical implementations for light-sweep reveals, scramble number rolls, 2.5D camera rigs, and Foley synthesizers in NumPy.",
+  "knowledge": 0,
+  "build": 3,
+  "items": [
+   {
+    "title": "Light-Sweep Reveal Canvas Shader Pass",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Per-Glyph Rolling Digit Scramble",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Pitch-Detuned Chaotic to In-Key Foley System",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Dual-Band Spectral Midrange Occupancy Audit",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Greedy Nearest-Slot Tile Flight Transition",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
  }
 ]

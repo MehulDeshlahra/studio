@@ -1,0 +1,1372 @@
+[
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Creator talking to camera holding a phone",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Introduces the topic of Samsung trolling Apple"
+   },
+   {
+    "t": 4,
+    "what": "Samsung ad graphic showing a foldable phone with an apple inside",
+    "real": "graphic",
+    "brand": "Samsung",
+    "size": "large",
+    "why_here": "Shows the specific ad the creator is talking about"
+   },
+   {
+    "t": 8,
+    "what": "Samsung ad graphic showing phone thickness vs an apple",
+    "real": "product_photo",
+    "brand": "Samsung",
+    "size": "large",
+    "why_here": "Highlights Samsung's mockery of Apple's design"
+   },
+   {
+    "t": 12,
+    "what": "Samsung ad graphic showing display comparison with a sliced apple",
+    "real": "graphic",
+    "brand": "Samsung",
+    "size": "large",
+    "why_here": "Discusses how Samsung mocked the display and thickness"
+   },
+   {
+    "t": 18,
+    "what": "Samsung ad graphic with a sliced apple and foldable phone",
+    "real": "product_photo",
+    "brand": "Samsung",
+    "size": "large",
+    "why_here": "Mentions Samsung has been making foldables for 8 years"
+   },
+   {
+    "t": 25,
+    "what": "Creator holding an iPhone to the camera",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Compares the new Apple release to Samsung's established tech"
+   },
+   {
+    "t": 28,
+    "what": "Samsung ad graphic showing side profile of the phone",
+    "real": "product_photo",
+    "brand": "Samsung",
+    "size": "large",
+    "why_here": "Claims Apple's tech feels two generations behind"
+   },
+   {
+    "t": 32,
+    "what": "Creator smiling and talking to camera",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Expresses enjoyment of the brand competition"
+   },
+   {
+    "t": 38,
+    "what": "Creator holding the phone and asking the audience's opinion",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Call to action asking who is winning: Apple or Samsung"
+   }
+  ],
+  "logo_count": 0,
+  "logo_moments": "No official brand logos are shown; instead, a literal green apple is used as a visual metaphor for the Apple brand throughout the Samsung ad graphics.",
+  "screen_count": 5,
+  "screen_moments": "Samsung phone screens appear within the ad graphics at 0:04, 0:12, 0:18, and 0:28, framed as product mockups within the larger graphic composition.",
+  "never": "They never show the official Apple logo or actual screenshots of iOS; they rely on the 'bitten apple' fruit metaphor and Samsung's own marketing materials.",
+  "relatable": "The creator holding the physical devices in a casual room setting makes the high-level brand war feel like a conversation between tech-savvy friends.",
+  "url": "https://www.instagram.com/reel/DfAYOXDvIXN/",
+  "channel": "ig:techburner",
+  "likes": 630288,
+  "title": "Samsung Mocking Apple 🤣🤣\n\n#iphoneduo #apple"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Arun holding the folded device showing the home screen",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Okay so this is the iPhone Duo"
+   },
+   {
+    "t": 3,
+    "what": "Close-up of the front lock screen",
+    "real": "app_screen",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "and I think Apple cooked here. This is a 5.4in front screen"
+   },
+   {
+    "t": 7,
+    "what": "Arun holding the device showing the home screen icons",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "kind of tiny bezels they've really taken full advantage of the space"
+   },
+   {
+    "t": 11,
+    "what": "Close-up of the home screen demonstrating the side dock",
+    "real": "app_screen",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "see how they've completely reformatted the dock. So it now sits at the side of your screen"
+   },
+   {
+    "t": 19,
+    "what": "Arun talking to camera while holding the device",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "I will say I can't reach the whole screen with my thumb"
+   },
+   {
+    "t": 27,
+    "what": "Unfolding the device to reveal the large inner lock screen",
+    "real": "real_footage",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "it opens into this display and it looks insanely good"
+   },
+   {
+    "t": 34,
+    "what": "Arun holding the unfolded device showing the home screen",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "what they've done is added a nano texture on the inside"
+   },
+   {
+    "t": 45,
+    "what": "Close-up of the unfolded screen showing the lack of crease",
+    "real": "app_screen",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "This coating they've added minimizes the crease to the point where you almost can't see it"
+   },
+   {
+    "t": 53,
+    "what": "Side view of the device then back view showing Apple logo",
+    "real": "logo",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "It's absolutely expensive. They've got a $2,000 starting price. Plus there's no telephoto camera here"
+   },
+   {
+    "t": 59,
+    "what": "Arun talking about Touch ID",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "There's no Face ID, so instead you're using Touch ID on the side button"
+   },
+   {
+    "t": 105,
+    "what": "Unfolded screen showing the Netflix app interface",
+    "real": "app_screen",
+    "brand": "Netflix",
+    "size": "full_frame",
+    "why_here": "authenticate yourself"
+   },
+   {
+    "t": 107,
+    "what": "Unfolded screen showing the Settings menu",
+    "real": "app_screen",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "no matter which form factor you're using"
+   },
+   {
+    "t": 113,
+    "what": "Close-up of the device folding with UI animation",
+    "real": "app_screen",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Super impressed with the animations as well"
+   },
+   {
+    "t": 128,
+    "what": "Unfolded screen showing multitasking with Messages and Photos",
+    "real": "app_screen",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "It's definitely not introducing a lot of features that we haven't seen before"
+   },
+   {
+    "t": 132,
+    "what": "Hands interacting with the unfolded screen Control Center",
+    "real": "real_footage",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "every single thing I'm testing"
+   },
+   {
+    "t": 134,
+    "what": "Close-up of the unfolded home screen",
+    "real": "app_screen",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "the actual implementation of it is so, so nice"
+   }
+  ],
+  "logo_count": 1,
+  "logo_moments": "The Apple logo is revealed on the back of the device at 0:57 during the discussion of price and camera specs.",
+  "screen_count": 10,
+  "screen_moments": "Real app screens appear throughout as full-frame shots of the device being held. Key moments include the side dock demo (0:11), the crease-less display (0:45), Netflix (1:05), and multitasking (1:28).",
+  "never": "They never use static screenshots, digital mockups, or corner-placed logos; the branding and UI are always shown physically on the device in a real environment.",
+  "relatable": "The screen feels relatable because it shows common apps like Netflix and Messages, and the influencer demonstrates real-world ergonomics like thumb reachability and screen glare under bright lights.",
+  "url": "https://www.instagram.com/reel/DdFFQ0GslWR/",
+  "channel": "ig:mrwhosetheboss",
+  "likes": 360225,
+  "title": "iPhone Duo Hands On!"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Person sitting at a desk with a box",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Introduction to the special unboxing"
+   },
+   {
+    "t": 5,
+    "what": "Text overlay 'Custom iPhone 18 Pro Max'",
+    "real": "graphic",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Introducing the product"
+   },
+   {
+    "t": 13,
+    "what": "Close-up of a watch on a wrist",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Showing the watch worn for a specific reason"
+   },
+   {
+    "t": 18,
+    "what": "Logo 'Aurum Edition'",
+    "real": "logo",
+    "brand": "Aurum Edition",
+    "size": "full_frame",
+    "why_here": "Revealing the brand"
+   },
+   {
+    "t": 26,
+    "what": "Close-up of the custom iPhone",
+    "real": "product_photo",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Showing the product"
+   },
+   {
+    "t": 128,
+    "what": "Screenshot of user comments",
+    "real": "app_screen",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Showing viewer engagement"
+   },
+   {
+    "t": 133,
+    "what": "Footage of the manufacturing process",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Showing the effort behind the product"
+   },
+   {
+    "t": 145,
+    "what": "Person meditating with a CGI Hanuman",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Connecting the product to personal faith"
+   }
+  ],
+  "logo_count": 2,
+  "logo_moments": "0:18 (Aurum Edition), 0:21 (Aurum Edition)",
+  "screen_count": 1,
+  "screen_moments": "2:08 (Screenshot of YouTube comments, full frame)",
+  "never": "They never show the phone's actual software interface or app screens.",
+  "relatable": "The use of real-world footage, personal anecdotes, and community comments makes the content feel authentic and grounded.",
+  "url": "https://www.instagram.com/reel/DfeSBk9NUzA/",
+  "channel": "ig:technicalguruji",
+  "likes": 235476,
+  "title": "Presenting my new custom #iPhone18ProMax in gold...\nMade by lischyna.dmytro \n#TGFamily 🔥 🔥"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Arun in football jersey with confetti",
+    "real": "person",
+    "brand": "Sidemen",
+    "size": "full_frame",
+    "why_here": "If you saw me play in the Sidemen charity football match..."
+   },
+   {
+    "t": 2,
+    "what": "Arun in locker room showing 4 watches",
+    "real": "person",
+    "brand": "Apple, Samsung, Garmin, Google",
+    "size": "full_frame",
+    "why_here": "you might have noticed, I was wearing 4 smartwatches."
+   },
+   {
+    "t": 4,
+    "what": "Close up of wrists with brand labels",
+    "real": "graphic",
+    "brand": "Apple, Samsung, Garmin, Google",
+    "size": "full_frame",
+    "why_here": "A Samsung, Apple, Garmin and a Google Pixel Watch."
+   },
+   {
+    "t": 7,
+    "what": "Arun talking in front of a tree",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "and I've learned a lot about how good they actually are."
+   },
+   {
+    "t": 9,
+    "what": "Match footage with heart rate graph overlay",
+    "real": "real_footage",
+    "brand": "Sidemen",
+    "size": "full_frame",
+    "why_here": "Because for the first half of the game they were all telling the same story."
+   },
+   {
+    "t": 12,
+    "what": "Arun entering stadium with heart rate spike",
+    "real": "real_footage",
+    "brand": "Sidemen",
+    "size": "full_frame",
+    "why_here": "You can see my heart rate jump the moment that I step into the stadium in front of 90,000 fans."
+   },
+   {
+    "t": 18,
+    "what": "Arun colliding with goalie, heart rate graph",
+    "real": "real_footage",
+    "brand": "Sidemen",
+    "size": "full_frame",
+    "why_here": "when I accidentally plowed knee first into my own goalkeeper."
+   },
+   {
+    "t": 24,
+    "what": "Arun talking with peak heart rate graphic",
+    "real": "graphic",
+    "brand": "",
+    "size": "large",
+    "why_here": "And it peaked at 188 beats per minute."
+   },
+   {
+    "t": 26,
+    "what": "Arun walking to penalty spot, heart rate graph",
+    "real": "real_footage",
+    "brand": "Sidemen",
+    "size": "full_frame",
+    "why_here": "But then it was time for me to take the penalty that would determine the winner."
+   },
+   {
+    "t": 31,
+    "what": "Close up of Arun's face during match",
+    "real": "real_footage",
+    "brand": "Sidemen",
+    "size": "full_frame",
+    "why_here": "is while all I am doing physically is walking and taking one kick..."
+   },
+   {
+    "t": 36,
+    "what": "Penalty kick and celebration, heart rate graph",
+    "real": "real_footage",
+    "brand": "Sidemen",
+    "size": "full_frame",
+    "why_here": "my heart rate shot all the way up to 187 almost exactly the same as the peak from all the sprinting earlier."
+   },
+   {
+    "t": 44,
+    "what": "Apple and Samsung calorie comparison cards",
+    "real": "graphic",
+    "brand": "Apple, Samsung",
+    "size": "large",
+    "why_here": "Apple says 644, Samsung says 709..."
+   },
+   {
+    "t": 48,
+    "what": "Garmin and Google calorie comparison cards",
+    "real": "graphic",
+    "brand": "Garmin, Google",
+    "size": "large",
+    "why_here": "Garmin though says 1,377 and the Google Pixel Watch: 2,393 cal."
+   },
+   {
+    "t": 54,
+    "what": "Arun talking, showing watches on wrists",
+    "real": "person",
+    "brand": "Google",
+    "size": "full_frame",
+    "why_here": "And I realized you can't trust your smartwatch as much as you think you can. Especially if it's a Google."
+   }
+  ],
+  "logo_count": 4,
+  "logo_moments": "Logos appear as text labels during the initial reveal of the four watches and as brand icons on the final calorie comparison cards.",
+  "screen_count": 2,
+  "screen_moments": "The heart rate graph is a persistent data overlay during match footage; the calorie cards are stylized UI elements that stack vertically at the end.",
+  "never": "They never show a static screenshot of a watch app; data is always presented through custom, high-contrast motion graphics that match the video's energy.",
+  "relatable": "The heart rate graph visualizes the physical manifestation of anxiety and excitement (the 'stadium jump'), making the tech data feel like a human emotion.",
+  "url": "https://www.instagram.com/reel/DXolWNbDFwg/",
+  "channel": "ig:mrwhosetheboss",
+  "likes": 218532,
+  "title": "I compared every smartwatch at the sidemen Charity Match"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Arun Maini talking to camera",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Have you noticed that everyone is wearing wired earphones all of a sudden?"
+   },
+   {
+    "t": 3,
+    "what": "Paparazzi photo of Drake with wired earphones",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Drake wears them,"
+   },
+   {
+    "t": 4,
+    "what": "Paparazzi photo of Bella Hadid with wired earphones",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Bella Hadid,"
+   },
+   {
+    "t": 5,
+    "what": "Paparazzi photo of Zendaya with wired earphones",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Zendaya,"
+   },
+   {
+    "t": 6,
+    "what": "Paparazzi photo of Harry Styles with wired earphones",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Harry Styles and it's not just celebs,"
+   },
+   {
+    "t": 7,
+    "what": "Arun with red downward arrows graphic",
+    "real": "graphic",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "wired sales globally have been tanking every year for the last half a decade."
+   },
+   {
+    "t": 11,
+    "what": "Arun with blue upward line graph graphic",
+    "real": "graphic",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "But then 2026 hit and now they're exploding."
+   },
+   {
+    "t": 14,
+    "what": "Arun with floating currency symbols",
+    "real": "graphic",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "So is this a price thing?"
+   },
+   {
+    "t": 17,
+    "what": "Close up of Apple EarPods control module",
+    "real": "product_photo",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "wired earphones are simpler to make than wireless."
+   },
+   {
+    "t": 24,
+    "what": "Drake 'No' meme graphic over Arun",
+    "real": "graphic",
+    "brand": "",
+    "size": "large",
+    "why_here": "But I don't think $50 is the reason that Drake is using a less good product."
+   },
+   {
+    "t": 31,
+    "what": "Close up of fingers clicking the earphone remote",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "you get these nice physical controls on the side,"
+   },
+   {
+    "t": 33,
+    "what": "Arun holding the earphone mic to his mouth",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "you can bring the mic closer to your mouth if you're in a loud environment."
+   },
+   {
+    "t": 44,
+    "what": "Arun with top hat and monocle graphic overlay",
+    "real": "graphic",
+    "brand": "",
+    "size": "large",
+    "why_here": "Countersignaling, basically the inverse of flaunting your wealth."
+   }
+  ],
+  "logo_count": 0,
+  "logo_moments": "No brand logos are explicitly highlighted or mentioned to maintain a focus on the general product category rather than a specific manufacturer.",
+  "screen_count": 0,
+  "screen_moments": "No app screens or phone interfaces are shown in this video.",
+  "never": "They never show software interfaces or specific brand logos, keeping the aesthetic focused on physical hardware and celebrity lifestyle imagery.",
+  "relatable": "The close-up shots of clicking the physical remote and the common habit of holding the microphone closer to the mouth make the hardware feel familiar and functional to the viewer.",
+  "url": "https://www.instagram.com/reel/DYPFf0js4pE/",
+  "channel": "ig:mrwhosetheboss",
+  "likes": 165842,
+  "title": "Why is everyone wearing wired earphones? 🤨"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Influencer introduces the video talking about buying a car for parents",
+    "real": "person",
+    "brand": "",
+    "size": "none",
+    "why_here": "Money will come and go, but you will never be 25 unboxing your very first Mercedes for your parents."
+   },
+   {
+    "t": 7,
+    "what": "Influencer and family stand before a giant gift box covered in Mercedes logos",
+    "real": "logo",
+    "brand": "Mercedes-Benz",
+    "size": "large",
+    "why_here": "Let's make it happen."
+   },
+   {
+    "t": 11,
+    "what": "The giant box walls fall down to reveal the car",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Visual reveal of the surprise."
+   },
+   {
+    "t": 13,
+    "what": "The car is fully revealed with the Mercedes logo prominent on the grille",
+    "real": "logo",
+    "brand": "Mercedes-Benz",
+    "size": "large",
+    "why_here": "Celebratory moment of the car reveal."
+   },
+   {
+    "t": 17,
+    "what": "A priest performs a traditional Hindu ritual (Aarti) on the car",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Cultural grounding of the luxury purchase."
+   },
+   {
+    "t": 18,
+    "what": "Influencer honors his father with a shawl",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Showing respect and gratitude to parents."
+   },
+   {
+    "t": 19,
+    "what": "Father sits in the driver's seat for the first time",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Capturing the parent's reaction."
+   },
+   {
+    "t": 20,
+    "what": "Full exterior shot of the black Mercedes E-Class",
+    "real": "real_footage",
+    "brand": "Mercedes-Benz",
+    "size": "full_frame",
+    "why_here": "Showcasing the product."
+   },
+   {
+    "t": 21,
+    "what": "Influencer touches his father's feet in a traditional gesture of respect",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Emphasizing family values."
+   },
+   {
+    "t": 22,
+    "what": "Influencer inside the car with his mother, kissing her hand",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Emotional connection with the mother."
+   },
+   {
+    "t": 24,
+    "what": "Close up of the car hood decorated with flowers",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Detail shot of the celebration."
+   },
+   {
+    "t": 25,
+    "what": "Family toasts with glasses in front of the car",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Celebrating the achievement."
+   },
+   {
+    "t": 26,
+    "what": "POV shot of the steering wheel and digital dashboard",
+    "real": "app_screen",
+    "brand": "Mercedes-Benz",
+    "size": "large",
+    "why_here": "Highlighting the tech and luxury interior."
+   },
+   {
+    "t": 27,
+    "what": "The car driving on a city street",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Showing the car in motion."
+   },
+   {
+    "t": 30,
+    "what": "Influencer looks out through the open sunroof while driving",
+    "real": "real_footage",
+    "brand": "",
+    "size": "none",
+    "why_here": "Experiencing the car's features."
+   },
+   {
+    "t": 32,
+    "what": "Mother speaks to the camera while standing next to the car grille",
+    "real": "logo",
+    "brand": "Mercedes-Benz",
+    "size": "large",
+    "why_here": "Like this star of Mercedes, my son should also keep shining."
+   }
+  ],
+  "logo_count": 4,
+  "logo_moments": "The logo is first seen patterned on the giant gift box, then prominently on the car's grille during the reveal, on the steering wheel in a POV shot, and finally as a backdrop for the mother's closing words.",
+  "screen_count": 1,
+  "screen_moments": "The digital instrument cluster is shown briefly from the driver's perspective to highlight the luxury interior and tech features.",
+  "never": "They never use static product photos or generic stock footage; every shot is personal, high-energy, and filmed on-site.",
+  "relatable": "The inclusion of traditional Indian rituals like the Aarti and touching parents' feet grounds the high-end purchase in relatable cultural values and emotional family success.",
+  "url": "https://www.instagram.com/reel/DeuC_xfoPur/",
+  "channel": "ig:ishansharma7390",
+  "likes": 140142,
+  "title": "FINALLY we GOT IT!🤯🥹✨\n\nHad the best day ever, going with my parents to four seasons to get"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Speaker talking to camera with text overlay",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Hooking the audience with a promise to save over ₹50,000 on software."
+   },
+   {
+    "t": 3,
+    "what": "Scrolling through the OpenAlternative website",
+    "real": "app_screen",
+    "brand": "OpenAlternative",
+    "size": "full_frame",
+    "why_here": "Visual proof of the platform that lists free alternatives to popular paid apps."
+   },
+   {
+    "t": 22,
+    "what": "Adobe logo on a grid background",
+    "real": "logo",
+    "brand": "Adobe",
+    "size": "large",
+    "why_here": "Identifying the first major brand whose software can be replaced for free."
+   },
+   {
+    "t": 24,
+    "what": "Adobe Premiere Pro logo",
+    "real": "logo",
+    "brand": "Adobe Premiere Pro",
+    "size": "large",
+    "why_here": "Specifying a high-cost tool that viewers likely want for free."
+   },
+   {
+    "t": 25,
+    "what": "Adobe After Effects logo",
+    "real": "logo",
+    "brand": "Adobe After Effects",
+    "size": "large",
+    "why_here": "Continuing the list of expensive professional creative tools."
+   },
+   {
+    "t": 26,
+    "what": "Microsoft logo",
+    "real": "logo",
+    "brand": "Microsoft",
+    "size": "large",
+    "why_here": "Transitioning to the next major software suite mentioned in the narration."
+   },
+   {
+    "t": 28,
+    "what": "Screen recording of a video editing timeline",
+    "real": "app_screen",
+    "brand": "Adobe Premiere Pro",
+    "size": "full_frame",
+    "why_here": "Showing the complexity of the software being discussed to emphasize the value of a free version."
+   },
+   {
+    "t": 32,
+    "what": "Speaker talking to camera",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Adding personal commentary on the current state of software and AI."
+   },
+   {
+    "t": 35,
+    "what": "Scrolling through the ArtCraft website",
+    "real": "app_screen",
+    "brand": "ArtCraft",
+    "size": "full_frame",
+    "why_here": "Introducing a specific resource for open-source creative tools like AutoCAD alternatives."
+   },
+   {
+    "t": 49,
+    "what": "Speaker talking to camera",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Closing the video and promising to provide links in the comments."
+   }
+  ],
+  "logo_count": 4,
+  "logo_moments": "Logos appear as rapid-fire visual punctuation exactly when the speaker mentions the brand names (Adobe, Microsoft).",
+  "screen_count": 3,
+  "screen_moments": "Full-screen website captures are used to show the 'how-to' aspect, while a software interface screen is used to show the 'what' (the product).",
+  "never": "They never use generic stock photos of computers; every visual is a specific brand logo or a functional website/app interface.",
+  "relatable": "The use of screen recordings of websites (scrolling and clicking) mimics the exact action a viewer would take on their own laptop.",
+  "url": "https://www.instagram.com/reel/DfzQaoNBd1o/",
+  "channel": "ig:techburner",
+  "likes": 56642,
+  "title": "Open Source Alternative for All Paid Software’s 🔥"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Person holding a phone with a smaller video overlay of a phone screen",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Introducing the topic of iPhone Duo screen issues"
+   },
+   {
+    "t": 1,
+    "what": "Person holding a phone with a smaller video overlay of a phone screen",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Describing the screen breaking"
+   },
+   {
+    "t": 4,
+    "what": "Person talking to camera",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Expressing concern about the video"
+   },
+   {
+    "t": 6,
+    "what": "Person holding a phone with a smaller video overlay of a phone screen",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Describing the green line on the screen"
+   },
+   {
+    "t": 16,
+    "what": "Person making an L gesture with their hand",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Making a joke about the L-shaped screen issue"
+   },
+   {
+    "t": 17,
+    "what": "Person holding a phone",
+    "real": "person",
+    "brand": "Apple",
+    "size": "full_frame",
+    "why_here": "Discussing the first generation of iPhone Duo"
+   },
+   {
+    "t": 23,
+    "what": "Person talking to camera",
+    "real": "person",
+    "brand": "Samsung",
+    "size": "full_frame",
+    "why_here": "Comparing to Samsung and other phones"
+   },
+   {
+    "t": 27,
+    "what": "Person talking to camera",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "Offering advice on how to get a replacement"
+   }
+  ],
+  "logo_count": 1,
+  "logo_moments": "Apple is mentioned and shown via the device at 0:00, 0:17",
+  "screen_count": 5,
+  "screen_moments": "0:00, 0:01, 0:04, 0:06, 0:14 - all appear as small video overlays on top of the person's main shot",
+  "never": "They never use full-screen graphics or static screenshots; everything is integrated into the person's video or as a small overlay",
+  "relatable": "The use of a small, informal video overlay makes it feel like a friend sharing a viral video they found, rather than a formal tech review",
+  "url": "https://www.instagram.com/reel/DfClLpZvfxa/",
+  "channel": "ig:techburner",
+  "likes": 55763,
+  "title": "Duo par “L” aagaya 🥲\n\n#iphoneduo #iphone"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "A standard black computer keyboard with the Enter key circled in red.",
+    "real": "product_photo",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To immediately identify the subject of the video for the viewer."
+   },
+   {
+    "t": 2,
+    "what": "Manoj Saru speaking directly to the camera.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To pose the central question and establish a personal connection with the audience."
+   },
+   {
+    "t": 8,
+    "what": "Close-up real footage of a finger forcefully pressing the Enter key.",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To provide a visual and auditory example of the behavior being discussed."
+   },
+   {
+    "t": 11,
+    "what": "Manoj Saru explaining the psychology of task completion.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To explain that the Enter key is associated with finishing a task."
+   },
+   {
+    "t": 23,
+    "what": "Close-up of the Enter key being pressed.",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To emphasize the action of completing a paragraph."
+   },
+   {
+    "t": 25,
+    "what": "Manoj Saru talking about deleting files.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To provide another relatable example of when the key is used."
+   },
+   {
+    "t": 30,
+    "what": "Close-up of the Enter key being pressed.",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To punctuate the moment a file is deleted."
+   },
+   {
+    "t": 33,
+    "what": "Manoj Saru describing the 'happiness' of finishing a task.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To connect the physical action to an emotional response."
+   },
+   {
+    "t": 38,
+    "what": "Close-up of the Enter key being pressed.",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To reinforce the satisfying feeling of completion."
+   },
+   {
+    "t": 40,
+    "what": "Manoj Saru explaining the physical mechanics of hand movement.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To transition from psychology to the physical reason for the hard press."
+   },
+   {
+    "t": 52,
+    "what": "Close-up of the hand lifting off the keyboard before hitting Enter.",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To demonstrate the 'lift' that leads to a harder strike."
+   },
+   {
+    "t": 58,
+    "what": "Manoj Saru comparing finger pressure on standard keys.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To contrast normal typing with the specific action of hitting Enter."
+   },
+   {
+    "t": 61,
+    "what": "Graphic showing hand placement on a color-coded keyboard layout.",
+    "real": "graphic",
+    "brand": "",
+    "size": "large",
+    "why_here": "To provide a technical visual of standard typing positions."
+   },
+   {
+    "t": 67,
+    "what": "Manoj Saru explaining how the whole hand's force is applied.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To conclude the physical explanation of the force used."
+   },
+   {
+    "t": 72,
+    "what": "Close-up of the Enter key being hit with force.",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To show the result of the full hand force."
+   },
+   {
+    "t": 76,
+    "what": "Manoj Saru talking about the satisfaction of the sound.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To highlight the auditory feedback as a reward."
+   },
+   {
+    "t": 81,
+    "what": "Final close-up of the Enter key press with loud sound.",
+    "real": "real_footage",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To leave the viewer with the satisfying sound mentioned."
+   },
+   {
+    "t": 85,
+    "what": "Manoj Saru giving a thumbs up and asking for likes.",
+    "real": "person",
+    "brand": "",
+    "size": "full_frame",
+    "why_here": "To conclude the video with a call to action."
+   }
+  ],
+  "logo_count": 0,
+  "logo_moments": "None",
+  "screen_count": 0,
+  "screen_moments": "None",
+  "never": "They never show high-end or branded gaming peripherals, keeping the focus on a generic, slightly worn keyboard that looks like what the average viewer uses.",
+  "relatable": "The use of real, non-glamorous keyboard footage and the focus on a universal, subconscious habit makes the content feel like a shared secret among PC users.",
+  "url": "https://www.instagram.com/tv/CFE6rlUge1y/",
+  "channel": "#techgyan",
+  "likes": 8861,
+  "title": "#Computer #Laptop #Tech #keyboard #techgyan #technology #TechnologyGyan #manojsaru",
+  "source": "hashtag"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Manish Prajapati talking to camera with graphic overlay",
+    "real": "person",
+    "brand": "UPI, BHIM, PhonePe, Paytm, GPay",
+    "size": "full_frame",
+    "why_here": "Introduces the concept of UPI without a bank account."
+   },
+   {
+    "t": 8,
+    "what": "BHIM app screen showing Prepaid Wallet introduction",
+    "real": "app_screen",
+    "brand": "BHIM",
+    "size": "full_frame",
+    "why_here": "Shows the official feature announcement in the BHIM app."
+   },
+   {
+    "t": 10,
+    "what": "Play Store listing for Coupl: Joint Banking",
+    "real": "app_screen",
+    "brand": "Play Store, Coupl",
+    "size": "full_frame",
+    "why_here": "Instructs the viewer on which app to download."
+   },
+   {
+    "t": 14,
+    "what": "Coupl app login screen with phone number field",
+    "real": "app_screen",
+    "brand": "Coupl",
+    "size": "full_frame",
+    "why_here": "Demonstrates the first step of registration."
+   },
+   {
+    "t": 18,
+    "what": "Coupl dashboard showing wallet balance and KYC prompt",
+    "real": "app_screen",
+    "brand": "Coupl",
+    "size": "full_frame",
+    "why_here": "Shows the wallet interface and the need for KYC."
+   },
+   {
+    "t": 31,
+    "what": "Live video KYC call with a bank agent",
+    "real": "real_footage",
+    "brand": "Livquik",
+    "size": "full_frame",
+    "why_here": "Shows the actual verification process to build trust."
+   },
+   {
+    "t": 100,
+    "what": "KYC completion confirmation screen",
+    "real": "app_screen",
+    "brand": "Coupl",
+    "size": "full_frame",
+    "why_here": "Confirms the success of the verification step."
+   },
+   {
+    "t": 103,
+    "what": "Android notification bar showing KYC approval",
+    "real": "real_footage",
+    "brand": "Coupl",
+    "size": "full_frame",
+    "why_here": "Shows the real-world notification a user receives."
+   },
+   {
+    "t": 108,
+    "what": "Play Store listing for BHIM app",
+    "real": "app_screen",
+    "brand": "BHIM",
+    "size": "full_frame",
+    "why_here": "Transitions to the linking process in the BHIM app."
+   },
+   {
+    "t": 116,
+    "what": "BHIM app profile settings",
+    "real": "app_screen",
+    "brand": "BHIM",
+    "size": "full_frame",
+    "why_here": "Shows where to find the Prepaid Account option."
+   },
+   {
+    "t": 127,
+    "what": "Selecting LIVQUIK as the PPI Wallet Issuer",
+    "real": "app_screen",
+    "brand": "BHIM, Livquik",
+    "size": "full_frame",
+    "why_here": "Shows the specific technical selection required."
+   },
+   {
+    "t": 134,
+    "what": "Success message for account linking",
+    "real": "app_screen",
+    "brand": "BHIM",
+    "size": "full_frame",
+    "why_here": "Confirms the wallet is now linked to UPI."
+   },
+   {
+    "t": 142,
+    "what": "Entering debit card details for PIN setup",
+    "real": "app_screen",
+    "brand": "BHIM",
+    "size": "full_frame",
+    "why_here": "Shows the security setup process."
+   },
+   {
+    "t": 149,
+    "what": "Retrieving virtual card details from Coupl app",
+    "real": "app_screen",
+    "brand": "Coupl",
+    "size": "full_frame",
+    "why_here": "Shows where to get the card info needed for BHIM."
+   },
+   {
+    "t": 221,
+    "what": "Adding money to the Coupl wallet",
+    "real": "app_screen",
+    "brand": "Coupl",
+    "size": "full_frame",
+    "why_here": "Demonstrates how to fund the account."
+   },
+   {
+    "t": 237,
+    "what": "Scanning a QR code and selecting the Prepaid Account for payment",
+    "real": "app_screen",
+    "brand": "BHIM",
+    "size": "full_frame",
+    "why_here": "Shows the final utility: making a UPI payment without a bank."
+   },
+   {
+    "t": 256,
+    "what": "Cashback reward notification",
+    "real": "app_screen",
+    "brand": "BHIM",
+    "size": "full_frame",
+    "why_here": "Highlights the benefit of using the app."
+   }
+  ],
+  "logo_count": 7,
+  "logo_moments": "Logos for major UPI apps appear in the intro graphic (0:00). The Coupl and BHIM logos appear as app icons during the Play Store segments (0:10, 1:08). The Livquik logo appears during the issuer selection (1:27).",
+  "screen_count": 5,
+  "screen_moments": "Real app screens are shown as full-frame screen recordings. This includes the Play Store (0:10), the Coupl app interface (0:18), the BHIM app interface (1:16), the Video KYC web interface (0:31), and the phone's native notification system (1:03).",
+  "never": "They never use generic stock photos of phones or abstract illustrations of banking; every visual is a direct recording of the apps being discussed.",
+  "relatable": "The use of the actual Play Store search process, the real-time video call with a human agent, and the standard Android notification bar makes the tutorial feel like it's happening on the viewer's own device.",
+  "url": "https://www.instagram.com/reel/Df30Nr7s6CU/",
+  "channel": "#upipayment",
+  "likes": 607,
+  "title": "Without Bank Account UPI Payment कैसे करें? 😱 | UPI का नया अपडेट 2026 🔥\n#UPI #UPINewUpdate",
+  "source": "hashtag"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Rakshit Tandon greets the audience with folded hands in his office.",
+    "real": "person",
+    "brand": "US Polo Assn",
+    "size": "small_corner",
+    "why_here": "The speaker introduces himself and sets a serious tone for a cyber security alert."
+   },
+   {
+    "t": 12,
+    "what": "Speaker explains how fraudsters target users on the OLX platform.",
+    "real": "person",
+    "brand": "",
+    "size": "none",
+    "why_here": "Identifying the specific context (OLX) where the scam typically originates."
+   },
+   {
+    "t": 24,
+    "what": "Speaker describes the '1 rupee' tactic used to gain the victim's trust.",
+    "real": "person",
+    "brand": "",
+    "size": "none",
+    "why_here": "Explaining the psychological manipulation used by scammers to verify the account."
+   },
+   {
+    "t": 34,
+    "what": "Speaker warns about the QR code scam where money is deducted instead of received.",
+    "real": "person",
+    "brand": "",
+    "size": "none",
+    "why_here": "Highlighting the primary technical method of the financial theft."
+   },
+   {
+    "t": 42,
+    "what": "Speaker details the secondary scam involving a fake UPI 'self-transfer' link.",
+    "real": "person",
+    "brand": "",
+    "size": "none",
+    "why_here": "Describing the follow-up deception used when the first attempt is questioned."
+   },
+   {
+    "t": 56,
+    "what": "Speaker provides final safety tips regarding PINs and OTPs and concludes.",
+    "real": "person",
+    "brand": "",
+    "size": "none",
+    "why_here": "Reinforcing the core safety message: receiving money never requires a PIN or scanning."
+   }
+  ],
+  "logo_count": 5,
+  "logo_moments": "Logos are visible throughout the entire video as part of the physical environment: the US Polo Assn logo on the speaker's shirt and various professional awards/certificates (REX, TVS, Police emblems) in the background.",
+  "screen_count": 0,
+  "screen_moments": "No digital app screens or screenshots are displayed; the speaker relies entirely on verbal explanation and hand gestures.",
+  "never": "They never use digital overlays, screen recordings, or phone mockups to show the apps (OLX, UPI) or the scam messages mentioned.",
+  "relatable": "The authentic, non-edited office setting and the speaker's direct, expert-to-viewer communication style make the warning feel like a credible, real-life conversation rather than a produced advertisement.",
+  "url": "https://www.instagram.com/tv/CDOACWRnV_x/",
+  "channel": "#upipayment",
+  "likes": 1342,
+  "title": "olx_india #UPIPayment #CyberSafety #OlxScam #StaySafeOnline #CyberSurakshit #GPCSSI2020 #O",
+  "source": "hashtag"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Question about UPI payment failure or money debited",
+    "real": "graphic",
+    "brand": "SBI",
+    "size": "small_corner",
+    "why_here": "Introduces the common pain point and hooks the viewer's attention."
+   },
+   {
+    "t": 4,
+    "what": "Reassurance about refund timeline (48 hours)",
+    "real": "graphic",
+    "brand": "SBI",
+    "size": "small_corner",
+    "why_here": "Provides immediate reassurance to reduce customer anxiety."
+   },
+   {
+    "t": 8,
+    "what": "Introduction to grievance redressal steps",
+    "real": "graphic",
+    "brand": "SBI",
+    "size": "small_corner",
+    "why_here": "Transitions from reassurance to actionable instructions."
+   },
+   {
+    "t": 13,
+    "what": "Step 1: Instruction to register an in-app complaint",
+    "real": "graphic",
+    "brand": "SBI",
+    "size": "small_corner",
+    "why_here": "Explains the first and easiest level of resolution for the user."
+   },
+   {
+    "t": 19,
+    "what": "Step 2: Details for email support and transaction info needed",
+    "real": "graphic",
+    "brand": "SBI",
+    "size": "small_corner",
+    "why_here": "Provides a secondary escalation path with specific data requirements."
+   },
+   {
+    "t": 27,
+    "what": "Link and instructions for the Complaint Management System",
+    "real": "graphic",
+    "brand": "SBI",
+    "size": "small_corner",
+    "why_here": "Offers a comprehensive solution for non-financial or complex issues."
+   }
+  ],
+  "logo_count": 1,
+  "logo_moments": "The SBI logo is persistent in the top-left corner throughout the entire duration of the reel.",
+  "screen_count": 0,
+  "screen_moments": "No real app screens or screenshots are shown in this video.",
+  "never": "Show actual app interfaces, phone mockups, or real-life footage of people using the service.",
+  "relatable": "The direct address of a high-stress situation (money debited but payment failed) makes the text-only content feel personally relevant to the viewer's financial security.",
+  "url": "https://www.instagram.com/p/CHxPTJoJnWv/",
+  "channel": "#upipayment",
+  "likes": 1208,
+  "title": "Have you ever faced a situation where you've made a #UPI payment but, it failed and the mo",
+  "source": "hashtag"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "Shivan Chanana introduces the segment 'Tech Jugaad'",
+    "real": "person",
+    "brand": "Tech Tak",
+    "size": "small_corner",
+    "why_here": "He mentions how popular 'Tech Jugaad' has become on Tech Tak."
+   },
+   {
+    "t": 10,
+    "what": "Shivan introduces Vikrant Gupta from Sports Tak",
+    "real": "person",
+    "brand": "Tak App",
+    "size": "small_corner",
+    "why_here": "He is about to give a quick tech tip/jugaad to Vikrant."
+   },
+   {
+    "t": 28,
+    "what": "Shivan and Vikrant discuss phone usage in airplane mode",
+    "real": "real_footage",
+    "brand": "Tech Tak",
+    "size": "small_corner",
+    "why_here": "Shivan asks Vikrant what he does when his phone is in airplane mode."
+   },
+   {
+    "t": 106,
+    "what": "Outro animation with logo and tech products",
+    "real": "graphic",
+    "brand": "Tech Tak",
+    "size": "full_frame",
+    "why_here": "Closing the video with the channel branding and common tech gadgets."
+   }
+  ],
+  "logo_count": 3,
+  "logo_moments": "The 'Tech Tak' and 'Tak App' logos are present as persistent watermarks in the top right corner. The 'Tech Jugaad' logo appears in the top left. A large 'Tech Tak' logo is the centerpiece of the final outro animation.",
+  "screen_count": 1,
+  "screen_moments": "Shivan holds a real smartphone throughout the interaction, showing the physical device as he explains the trick to Vikrant.",
+  "never": "They never use simulated phone mockups or clean digital screenshots; the focus remains on the physical phone in the presenter's hand.",
+  "relatable": "The casual outdoor setting and the spontaneous interaction between two well-known presenters make the tech tip feel like a real-world hack shared between friends.",
+  "url": "https://www.instagram.com/tv/B8qxXC7nzAI/",
+  "channel": "#androidhacks",
+  "likes": 1423,
+  "title": ".\nshivan.chanana\nvikrant.gupta73\nsportstakofficial\n.\n.\n.\n#airplaneMode #Internet #connecti",
+  "source": "hashtag"
+ },
+ {
+  "shots": [
+   {
+    "t": 0,
+    "what": "A woman speaking to the camera with a news ticker and a video of Mukesh Ambani in the background",
+    "real": "person",
+    "brand": "Reliance Jio",
+    "size": "full_frame",
+    "why_here": "The woman is introducing the Jio phone and explaining the deposit and refund policy."
+   }
+  ],
+  "logo_count": 1,
+  "logo_moments": "The Reliance Jio logo is visible on the news ticker in the background throughout the entire video.",
+  "screen_count": 0,
+  "screen_moments": "None",
+  "never": "They never show a close-up of the phone itself or a screen recording of the phone's interface.",
+  "relatable": "The use of a news broadcast setting makes the information feel authoritative and urgent, which is a common way people consume news about new product launches.",
+  "url": "https://www.instagram.com/p/BWzLoVjhJka/",
+  "channel": "#jiophone",
+  "likes": 712,
+  "title": "So who all will pick the new Jio Phone for ₹1500 deposit? \n#tech #jiophone #technology #te",
+  "source": "hashtag"
+ }
+]

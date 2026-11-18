@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "If you ever think you've made a bad decision,",
+ "first_frame": "A person sitting at a desk with their head down on a computer, illuminated by blue light.",
+ "hook_type": "question",
+ "format": "3D animation",
+ "length_s": 25,
+ "cuts_estimate": 4,
+ "avg_shot_s": 6.25,
+ "words_per_s_estimate": 2.2,
+ "beats": [
+  "0-3 s: Introduction to the concept of bad decisions using a relatable visual metaphor.",
+  "3-7 s: MySpace vs Facebook scenario.",
+  "7-14 s: Blockbuster vs Netflix scenario.",
+  "14-24 s: Yahoo vs Google scenario.",
+  "24-25 s: Closing statement and loop."
+ ],
+ "visual_techniques": [
+  "3D low-poly character animation throughout",
+  "Camera pans and zooms to follow the narrative",
+  "Logo overlays above characters to represent companies",
+  "Color-coded backgrounds (red/blue/purple) to distinguish entities",
+  "Dynamic lighting changes to match the mood"
+ ],
+ "captions": "Bold, sans-serif font, center-aligned, 2-4 words per chunk, white text with subtle drop shadow, no highlight color.",
+ "sound": "Professional male voiceover, calm and rhythmic; background music is a low-fi, suspenseful electronic track; sound effects include subtle whooshes during transitions.",
+ "recurring_element": "The character at the desk at the beginning and end, creating a loop.",
+ "ending": "Loop, returning to the initial scene of the person at the desk.",
+ "why": "The video uses high-quality 3D animation to turn dry business history into a visual story. The 'what if' scenarios are highly relatable, and the loop structure encourages re-watching, which boosts the algorithm.",
+ "reusable_faceless": [
+  "Using 3D character avatars to act out historical or business anecdotes",
+  "Color-coding opposing sides of an argument or business deal",
+  "Creating a seamless loop by starting and ending with the same visual",
+  "Using simple, bold text overlays to emphasize key brand names"
+ ],
+ "id": "d4hypdMl3G4",
+ "url": "https://www.youtube.com/watch?v=d4hypdMl3G4",
+ "channel": "MagnatesMedia",
+ "niche": "Business/Tech Documentaries",
+ "title": "If you think you’ve made a bad choice, it could be worse…",
+ "views": 112000,
+ "channel_median": 48000,
+ "ratio": 2.33,
+ "label": "winner",
+ "watched": "2026-11-18T17:06+05:30"
+}
