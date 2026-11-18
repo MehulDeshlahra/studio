@@ -35,6 +35,8 @@ knowledge/lessons-learnt.md for the engine.
   rebuilds; re-running it undid fixes. Check every new step for this.
 - An automatic repair must be re-validated (lab_fix after repair) and must re-fetch what it changed (pictures).
 - One blind model answer can be wrong too (read "31st day" as 30+30): two must agree before a fix changes a number.
+- NEVER rename a queue topic while a build may be using it: the topic text is the key for its verified source and for
+  "already made". Change the "source" field, keep the topic.
 - NEVER run a long command in the foreground (owner: "never sleep"): systemctl start --no-block / systemd-run --no-block,
   then do other work and check back.
 

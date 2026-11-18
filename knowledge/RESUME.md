@@ -132,3 +132,8 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - publish.py -> engine/ytlists.py: every serial / series part uploaded to YouTube joins a playlist named after the story (ids in channels/<id>/playlists.json).
 - seo.clamp_tags: IG/FB at most 5 hashtags, broad reach tags dropped (Instagram cap since Dec 2025). plan.clean drops English articles from on-screen text. compose_lab stat count-up now ends before the pre-render still (98+ vs 100+ holds). channels/raaz visuals.avoid (no deities in fiction pictures; make.py honours visuals.avoid).
 - LESSONS: never write repo files with PowerShell Set-Content -Encoding utf8 (adds a BOM; json.load fails; it briefly broke raaz channel.json on the server). Use python io.open(newline="\n") or [IO.File]::WriteAllText with UTF8Encoding($false). An ssh call right after scp often prints nothing: run the ssh again.
+## 19 Nov 00:35 finance first 3 videos (hand-checked; owner approves, manual_first=3)
+- 1118-2334 UPI fail ₹100/day: script fixed by hand (bank pays, not RBI; after T+1/T+5; source card 20 Sep 2019), scenes rebuilt; preflight OK 10; rendering on the laptop.
+- 1119-0005 property papers ₹5,000/day: fixed by hand (gold loan removed, circular 13 Sep 2023, one RBI logo), rebuilding from voice.
+- 1119-0028 jumped-deposit scam: building (queue #3; sources Sanchar Saathi + SBI 10 Oct 2026).
+- Engine fixes tonight: numbers check (sources only, blind recompute, two agreeing answers, script-only numbers), lab_fix (types + data, logo = card, after every repair), lab repair re-fetches pictures, visual director once per video, preflight: real logos ok + no bar/pill nitpicks, stat 'None', YouTube thumbnails blocked, lessons agent + rule book.
