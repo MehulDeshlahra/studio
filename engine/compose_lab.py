@@ -160,15 +160,17 @@ def page(plan, timed, total, theme, assets):
         elif kind == "stat":
             v = str(s.get("value", ""))
             nm = _num(v)
+            # 18 Nov v2: one line always: the font fits the value in 940 px (bold glyphs ~0.62 em); "2 HOURS" wrapped at 250 px
+            sty = (' style="font-size:%dpx;white-space:nowrap"' % int(min(250, 940 / (0.62 * max(3, len(v)))))) if film else ""
             if nm:
                 st, en, val, dec, comma = nm
-                hero = (f'<div id="{sid}h" class="stat">{esc(v[:st])}<span id="{sid}n" class="tab">{esc(v[st:en])}</span>{esc(v[en:])}</div>')
+                hero = (f'<div id="{sid}h" class="stat"{sty}>{esc(v[:st])}<span id="{sid}n" class="tab">{esc(v[st:en])}</span>{esc(v[en:])}</div>')
                 js.append(f'(function(){{const o={{v:0}},el=document.getElementById("{sid}n");'
                           f'tl.to(o,{{v:{val},duration:{min(1.4, d * 0.55):.2f},ease:"power2.out",onUpdate:()=>{{el.textContent='
                           f'o.v.toLocaleString("{"en-IN" if comma else "en-US"}",{{minimumFractionDigits:{dec},maximumFractionDigits:{dec}}})}}}},{a + 0.2:.3f});'
                           f'tl.set(o,{{v:0}},{a:.3f});}})();')
             else:
-                hero = f'<div id="{sid}h" class="stat">{esc(v)}</div>'
+                hero = f'<div id="{sid}h" class="stat"{sty}>{esc(v)}</div>'
             if s.get("sub"):
                 hero += f'<div id="{sid}u" class="statsub">{esc(s["sub"])}</div>'
                 js.append(f'tl.fromTo("#{sid}u",{{y:24,opacity:0}},{{y:0,opacity:1,duration:0.5,ease:"power3.out",immediateRender:false}},{a + 0.6:.3f});')
