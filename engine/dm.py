@@ -91,6 +91,12 @@ def _ts(s):
     except ValueError:
         return 0
 
+def _token_file():
+    """Own app first: Planstalk Connect user token (~/.studio-meta-connect.token, own rate budget); else the shared Ads MCP
+    login used for posting (its app-wide limit #4 was hit on 18 Nov, so DMs should not live on it)."""
+    own = os.path.expanduser("~/.studio-meta-connect.token")
+    return own if os.path.exists(own) and os.path.getsize(own) > 20 else os.path.expanduser("~/.studio-meta-user.token")
+
 def _account(cid, st):
     """page key, ig id, username: cached 12 h (2-3 calls saved per run)."""
     c = st.setdefault("acc", {}).get(cid)
@@ -102,7 +108,7 @@ def _account(cid, st):
     if a.get("page_token"):
         c = {"page_id": a["page_id"], "page_token": a["page_token"]}
     else:
-        ut = open(os.path.expanduser("~/.studio-meta-user.token")).read().strip()
+        ut = open(_token_file()).read().strip()
         d = _r(f"{G}/{a['page_id']}?fields=access_token,instagram_business_account{{id,username}}&access_token={ut}")
         c = {"page_id": a["page_id"], "page_token": d["access_token"]}
         if d.get("instagram_business_account"):
