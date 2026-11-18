@@ -48,6 +48,24 @@ def run(topic, queries, job, watch_n=3):
             watched.append(a); log("watched", v["url"], v["views"])
         except Exception as e:
             log("watch fail", v["url"], str(e)[:120])
+    try:                                     # 18 Nov: Instagram reels under the topic's own hashtags (smaller pages too)
+        import hookstudy, re as _re
+        page = os.path.basename(os.path.dirname(job))
+        tags = []
+        for q in (queries or [topic])[:2]:
+            words = [w for w in _re.sub(r"[^a-z0-9 ]", "", q.lower()).split() if len(w) > 2 and w not in ("kaise", "kya", "how", "the", "and", "hai", "hindi", "shorts")]
+            if words:
+                tags.append("".join(words[:2]))
+        ht = hookstudy.hashtag_top(page, tags=list(dict.fromkeys(tags))[:2], per=3, min_likes=300) if tags else []
+        for v in ht[:2]:
+            try:
+                a = hookstudy.watch_file(v["video"], WATCH_PROMPT.format(topic=topic))
+                a.update({k: v[k] for k in ("url", "title", "views", "channel")})
+                watched.append(a); log("watched", v["channel"], v["url"], v.get("likes"), "likes")
+            except Exception as e:
+                log("watch fail", v["url"], str(e)[:100])
+    except Exception as e:
+        log("research hashtags skipped", str(e)[:100])
     r = {"topic": topic, "queries": queries, "top": found[:10], "watched": watched}
     try:                                     # 18 Nov: real articles too, so facts come from sources, not from memory
         import web

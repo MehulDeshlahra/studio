@@ -125,6 +125,60 @@ def ig_top(page, per=6):
     return out
 
 
+HASHTAGS = {   # 18 Nov (owner: "you only see top creators; search hashtags for similar topics")
+    "tech": ["techtips", "techfacts", "techinhindi", "smartphonetips", "androidtips", "howitworks", "aitools", "chatgpt",
+             "googleassistant", "phonehacks"],
+    "katha": ["mahabharat", "ramayan", "sanatandharma", "hindumythology", "krishna", "shivpuran", "puranas", "bhakti"],
+    "raaz": ["hindistory", "mysterystory", "horrorstories", "kahani", "crimestory", "suspense", "storytime"],
+}
+HT_STATE = os.path.join(os.path.expanduser("~/studio-out"), "ig-hashtags.json")
+
+
+def hashtag_top(page, tags=None, per=4, min_likes=500):
+    """Top reels for hashtags through the official Hashtag Search API (any public account posting with the tag, not only
+    the big creators). Instagram allows 30 different hashtags per account per 7 days: tracked in HT_STATE, and a tag
+    searched in the last 7 days reuses its id (no new slot). Returns the same shape as ig_top."""
+    import publish
+    acc = publish.resolve(load(os.path.expanduser(f"~/.studio-accounts/{page}.json")) or {})
+    if not acc.get("ig_user_id"):
+        return []
+    st = load(HT_STATE, {}) or {}
+    mine = st.setdefault(acc["ig_user_id"], {})
+    now = time.time()
+    mine = {k: v for k, v in mine.items() if now - v.get("t", 0) < 7 * 86400}
+    out = []
+    for tag in (tags or HASHTAGS.get(page, [])):
+        tag = tag.lstrip("#").lower()
+        h = mine.get(tag)
+        if not h:
+            if len(mine) >= 28:                           # keep 2 slots spare
+                log("hashtag: weekly limit near, skip", tag); continue
+            try:
+                d = publish._req(f"{publish.G}/ig_hashtag_search?user_id={acc['ig_user_id']}&q={tag}&access_token={acc['page_token']}")
+                h = mine[tag] = {"id": d["data"][0]["id"], "t": now}
+            except Exception as e:
+                log("hashtag search fail", tag, str(e)[:80]); continue
+        try:
+            f = "id,caption,like_count,comments_count,media_type,media_url,permalink,timestamp"
+            d = publish._req(f"{publish.G}/{h['id']}/top_media?user_id={acc['ig_user_id']}&fields={f}&limit=25&access_token={acc['page_token']}")
+        except Exception as e:
+            log("hashtag top fail", tag, str(e)[:80]); continue
+        vids = [m for m in d.get("data", []) if m.get("media_type") == "VIDEO" and m.get("media_url") and (m.get("like_count") or 0) >= min_likes]
+        vids.sort(key=lambda m: -((m.get("like_count") or 0) + 3 * (m.get("comments_count") or 0)))
+        for m in vids[:per]:
+            out.append({"id": m["permalink"], "url": m["permalink"], "video": m["media_url"], "title": (m.get("caption") or "")[:90],
+                        "views": (m.get("like_count") or 0) * 30, "likes": m.get("like_count"), "comments": m.get("comments_count"),
+                        "channel": "#" + tag, "followers": None})
+        time.sleep(1)
+    st[acc["ig_user_id"]] = mine
+    save(HT_STATE, st)
+    seen, uniq = set(), []
+    for r in out:
+        if r["url"] not in seen:
+            seen.add(r["url"]); uniq.append(r)
+    return uniq
+
+
 def watch_file(mp4_url, prompt):
     """Instagram reel: download the file (<= 25 MB) and send it inline to Gemini (free keys), returns parsed JSON."""
     import base64, urllib.request, tts
@@ -153,7 +207,9 @@ def study(page, n=10):
     try:                                                     # 18 Nov: Instagram winners join the YouTube ones
         ig = ig_top(page)
         found += ig
-        log("hookstudy", page, "instagram reels found:", len(ig))
+        ht = hashtag_top(page)                               # 18 Nov: smaller pages winning on the same topics
+        found += ht
+        log("hookstudy", page, "instagram reels found:", len(ig), "+ hashtag reels:", len(ht))
     except Exception as e:
         log("hookstudy instagram failed", str(e)[:100])
     found.sort(key=lambda v: -v["views"])
