@@ -55,6 +55,7 @@ svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.75;strok
 .meter{height:6px;border-radius:99px;background:var(--sub);overflow:hidden;border:1px solid var(--line)}.meter i{display:block;height:100%;background:var(--c,var(--blue));border-radius:99px;transition:width .5s}
 .seg{display:flex;gap:3px}.seg i{flex:1;height:6px;border-radius:2px;background:var(--sub);border:1px solid var(--line)}
 .seg i.d{background:var(--green);border-color:var(--green)}.seg i.a{background:var(--blue);border-color:var(--blue);animation:bl 1.4s infinite}
+.dp{border-radius:50%;background-color:var(--c);background-size:cover;background-position:center;flex:none;display:inline-block;box-shadow:0 0 0 1px #ffffff22}
 .sq{width:9px;height:9px;border-radius:3px;flex:none;display:inline-block;background:var(--c)}
 /* lists */
 .row{display:flex;align-items:center;gap:12px;padding:11px 16px;border-top:1px solid var(--line)}.row:first-child{border-top:0}

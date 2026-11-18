@@ -827,6 +827,12 @@ class H(BaseHTTPRequestHandler):
                     return self.send(500, {"error": str(e)})
             if u == "/api/brief":
                 return self.send(200, extra.brief(state_cache(), qs.get("force") == "1"))
+            if u.startswith("/dp/"):                           # 19 Nov: page profile pictures (engine/brand.py writes them)
+                n = u[4:].replace(".jpg", "")
+                p = os.path.join(OUT, "dp", n + ".jpg")
+                if not re.fullmatch(r"[a-z0-9_-]+", n) or not os.path.isfile(p):
+                    return self.send(404, {"error": "no picture"})
+                return self.file(p)
             if u.startswith("/media/"):
                 parts = u.split("/")[2:]
                 if len(parts) != 3 or any(p in ("", ".", "..") or "/" in p for p in parts):

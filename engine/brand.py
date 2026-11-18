@@ -6,7 +6,7 @@ The owner's real Instagram DP is the source of truth. Daily (and whenever it cha
   4. one Telegram note listing what only the owner can upload (IG DP and highlights, YouTube DP and banner: no API)
 Files are in brand/<id>/ (images are gitignored; server copy is the master). State: brand/state.json.
 Usage: brand.py [--force] [page ...]"""
-import hashlib, json, mimetypes, os, subprocess, sys, urllib.parse, urllib.request, uuid
+import hashlib, json, mimetypes, os, re, shutil, subprocess, sys, urllib.parse, urllib.request, uuid
 from core import ROOT, load, save, log, pages, channel, telegram
 import publish
 
@@ -122,6 +122,31 @@ def owner_tasks(todo):
     json.dump(ts + new, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
 
+def avatars(st):
+    """Dashboard pictures: ~/studio-out/dp/<id>.jpg for every channel the dashboard lists. Studio pages use the real IG DP
+    already downloaded; the business accounts (Vajra, Planstalk, ...) come from Instagram Business Discovery (public
+    business/creator accounts) through one of our page keys. Ids and handles are read from dashboard/api.py (one list)."""
+    from core import OUT
+    os.makedirs(os.path.join(OUT, "dp"), exist_ok=True)
+    src = open(os.path.join(ROOT, "dashboard", "api.py"), encoding="utf-8").read()
+    rows = re.findall(r'\{"id": "([a-z0-9_]+)", "name": "[^"]*", "group": "(\w+)".*?"ig": "([\w.]+)"', src)
+    acc = publish.resolve(load(os.path.expanduser("~/.studio-accounts/tech.json")))
+    got = 0
+    for cid, group, ig in rows:
+        dst = os.path.join(OUT, "dp", cid + ".jpg")
+        s = os.path.join(BRAND, cid, "src.jpg")
+        if os.path.exists(s):
+            shutil.copyfile(s, dst); got += 1
+            continue
+        try:
+            d = publish._req(f"{publish.G}/{acc['ig_user_id']}?fields=business_discovery.username({ig}){{profile_picture_url}}&access_token={acc['page_token']}")
+            u = d["business_discovery"]["profile_picture_url"]
+            open(dst, "wb").write(urllib.request.urlopen(u, timeout=60).read()); got += 1
+        except Exception as e:
+            log("brand: avatar", cid, ig, str(e)[:100])
+    log("brand: dashboard avatars", got, "of", len(rows))
+
+
 def bios(pgs, st):
     out = ["# Bios (auto-written by engine/brand.py; the API cannot set these on Instagram or YouTube: paste once)", ""]
     for cid in pgs:
@@ -194,6 +219,10 @@ def main():
     force = "--force" in sys.argv
     want = [a for a in sys.argv[1:] if not a.startswith("--")] or list(pages())
     st = load(STATE, {}) or {}
+    try:
+        avatars(st)
+    except Exception as e:
+        log("brand: avatars failed", str(e)[:150])
     try:
         bios(list(pages()), st)
     except Exception as e:
