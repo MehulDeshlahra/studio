@@ -43,3 +43,15 @@ Library: github.com/lemomo-ai/lemo-opuscar, laptop copy `C:\Users\mehul\lemo-opu
   against the last videos. Pictures are made in each scene's look; the layout/captions are scoped per look; a change of
   look enters with a zoom-through.
 - Hand-made Lemo specials (full films, laptop GPU) stay separate: Dev Deepawali shadow puppetry approved for 24 Nov.
+
+## 18 Nov evening: mixed-look pilot (tech 1117-0729 "Hey Google"), fixes from its frames
+- Looks chosen: 1-3 keynote, 4-5 blueprint, 6 keynote, 7 blueprint, 8-10 keynote. Side by side: Desktop\kaise-tech-OLD-vs-MIX.mp4.
+- Fixed: real logos/photos were shown as blended props (lighten + feathered mask): the white Google card turned grey at
+  the corners. Now realmedia lab layout = the card/photo itself, compose_lab `.prop.real` = clean rounded card.
+- Fixed: a real app screen behind a diagram (ui/flow) was hidden under the panel. Now establish-then-overlay: the real
+  screen plays alone for 1.0-1.8 s, then the card arrives and the picture dims + blurs (real bg = s<i>rb.jpg).
+- Watermark filter: makeuseofimages (MUO mark) and Freepik premium previews are skipped.
+- Story pages (katha, raaz): per-scene picture looks in channel.json "looks" (first = base = the page's current style),
+  make._pick_story_looks + _look_prompt. katha: painting / puppet (shadow-puppet theatre) / pattachitra; raaz: film /
+  cctv / memory / evidence. Base keeps >= 60% of scenes, scene 1 + last always base, cutaways of 1-3 scenes, max 2 extra
+  looks. OFF ("looks_on": false) until the picture pilot (~/studio-out/pilot/looks-*/pair*.jpg) passes.

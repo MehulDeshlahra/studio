@@ -305,9 +305,10 @@ def _pick_story_looks(ch, p):
     extra = [k for k in dict.fromkeys(got) if k != base]
     for k in extra[2:]:                                 # at most 2 cutaway looks
         got = [base if x == k else x for x in got]
-    if got.count(base) < 0.6 * len(got):                # the main story must stay recognisable
-        log("story looks: too few base scenes", got)
-        got = [base] * len(got)
+    while got.count(base) < 0.6 * len(got):             # the main story must stay recognisable: drop the rarest cutaway
+        rare = min((k for k in set(got) if k != base), key=got.count)
+        log("story looks: too few base scenes, dropping", rare, got)
+        got = [base if x == rare else x for x in got]
     for s, k in zip(sc_, got):
         s["skin"] = k
     p["skin"] = base
