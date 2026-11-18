@@ -93,3 +93,21 @@
 
 ## review 1118-1328
 - format/loudness: h264,1080,1920,30/1 -14.5 LUFS, true peak 0.3
+
+## 1118-1105 Chouthi Manzil Ka Raaz - Part 1
+- Scene 9: Minor AI distortion in hand and pen rendering.
+
+## 1118-1202 Chouthi Manzil Ka Raaz - Part 2
+- scene 1: gibberish text on the meter face ('NIEGT', etc.)
+- scene 6: missing the intended title 'IDLE METERS'
+- scene 9: the hand opening the box has distorted, melted-looking fingers
+
+## 1118-1315 Chouthi Manzil Ka Raaz - Part 4
+- scene 1: The character's left hand (in the mirror reflection) appears slightly distorted/melted where it meets the water.
+- scene 5: The character's silhouette in the doorway looks slightly unnatural/blended into the doorframe.
+- scene 11: The shadow figure's arm/hand pointing is anatomically indistinct and blurry.
+
+## 1118-1405 Chouthi Manzil Ka Raaz - Part 6
+- scene 11: The caption 'SEEDHIYAN UTAR RAHA' is grammatically redundant/awkward compared to the script 'wo seedhiyan utar raha hai aaj raat', though it is readable.
+- scene 15: The text 'MEHUL KI DARING' is cut off; the script intended 'Mehul ki daring chase ka naya twist!'.
+- scene 14: The image shows a balcony with a figure, but the text 'BALCONY KI TARAF' is slightly obscured by the dark environment, though readable.

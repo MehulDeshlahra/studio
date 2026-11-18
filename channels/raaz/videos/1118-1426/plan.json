@@ -1,0 +1,216 @@
+{
+ "slug": "chouthi-manzil-part-7",
+ "title": "Flat 402 Ka Khauf",
+ "hooks": [
+  "Sharma ji ki chabiyaan chura kar Mehul ne maut ko dawat de di thi.",
+  "Chouthi manzil ka wo darwaza aaj pehli baar khulne wala tha.",
+  "Flat 402 ka tala zang se bhara tha, par darwaza khula tha."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Creates immediate high stakes and curiosity by suggesting the protagonist made a fatal mistake with a specific action (stolen keys).",
+ "metaphor": "The single chair facing a blank wall acts as a psychological mirror, turning a simple room into a sinister interrogation chamber.",
+ "cast": {
+  "Mehul": "27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, looking anxious.",
+  "Sharma ji": "58 years old, weathered face, thick graying mustache, khaki watchman uniform, carrying a wooden lathi."
+ },
+ "scenes": [
+  {
+   "vo": "Sharma ji ki chabiyaan chura kar Mehul ne maut ko dawat de di thi.",
+   "type": "image",
+   "prompt": "Close up of a trembling hand holding a heavy bunch of old brass keys. Cinematic night thriller, rain on window, cold teal shadows, warm amber light, film grain.",
+   "motion": "push",
+   "title": "CHABIYAAN CHORI",
+   "keywords": [
+    "chabiyaan",
+    "maut"
+   ],
+   "real": {
+    "q": "hand holding old brass keys night",
+    "kind": "photo",
+    "subject": "brass keys"
+   },
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Chouthi manzil ka wo darwaza aaj pehli baar khulne wala tha.",
+   "type": "image",
+   "prompt": "Mehul looking up a dark, narrow apartment stairwell with flickering lights. Cinematic night thriller, rain, film grain, Indian apartment setting.",
+   "motion": "tilt",
+   "keywords": [
+    "Chouthi manzil",
+    "darwaza"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Seedhiyan chadhate waqt har kadam par ek ajeeb si thandak mehsoos hui.",
+   "type": "image",
+   "prompt": "Low angle shot of Mehul's worn sneakers on dark concrete stairs. Cinematic night thriller, heavy shadows, damp walls, film grain.",
+   "motion": "pan",
+   "keywords": [
+    "seedhiyan",
+    "thandak"
+   ],
+   "real": {
+    "q": "dark concrete stairs apartment night",
+    "kind": "photo",
+    "subject": "stairs"
+   },
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Flat 402... yahan pichle bees saal se koi nahi aaya tha.",
+   "type": "image",
+   "prompt": "A rusted iron padlock hanging on a wooden door with '402' painted in faded red. Cinematic night thriller, dust motes in air, film grain.",
+   "motion": "push",
+   "title": "FLAT 402",
+   "keywords": [
+    "bees saal",
+    "402"
+   ],
+   "real": {
+    "q": "rusted padlock on old wooden door",
+    "kind": "photo",
+    "subject": "rusted lock"
+   },
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Tala zang se bhara tha, par halka dhakka dete hi khul gaya.",
+   "type": "image",
+   "prompt": "Mehul's hand pushing the heavy wooden door open slowly. Cinematic night thriller, warm light spilling from the hallway into a dark room.",
+   "motion": "push",
+   "keywords": [
+    "tala",
+    "dhakka"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Andar kadam rakhte hi sadi hui lakdi ki boo naak mein ghusi.",
+   "type": "image",
+   "prompt": "Mehul covering his nose with his t-shirt collar, looking into a dark room. Cinematic night thriller, dust, shadows, film grain.",
+   "motion": "pull",
+   "keywords": [
+    "sadi hui lakdi",
+    "boo"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Kamra bilkul khaali tha, deewaron par sirf purani seelan thi.",
+   "type": "image",
+   "prompt": "Wide shot of a barren, dusty room with peeling wallpaper and damp stains. Cinematic night thriller, moonlight through a small window.",
+   "motion": "pan",
+   "keywords": [
+    "khaali",
+    "seelan"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Lekin beech kamre mein ek akeli kursi deewar ki taraf mukh kiye thi.",
+   "type": "image",
+   "prompt": "A single old wooden chair standing in the center of the room, facing a blank wall. Cinematic night thriller, high contrast, eerie shadows.",
+   "motion": "push",
+   "keywords": [
+    "akeli kursi",
+    "deewar"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Jaise hi Mehul kursi ke paas pahuncha, darwaza dhadaam se band hua!",
+   "type": "clip",
+   "prompt": "A heavy wooden door slamming shut violently in a dark room. Cinematic night thriller, fast motion, dust flying from the frame.",
+   "motion": "push",
+   "title": "QAID",
+   "keywords": [
+    "dhadaam",
+    "band"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mehul ne handle ghumaaya, par darwaza baahar se lock ho chuka tha.",
+   "type": "image",
+   "prompt": "Mehul desperately pulling and shaking the door handle. Cinematic night thriller, sweat on his face, panic in his eyes.",
+   "motion": "pull",
+   "keywords": [
+    "handle",
+    "lock"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Tabhi usne dekha... kursi par kisi ke baithe hone ka nishaan tha.",
+   "type": "image",
+   "prompt": "Close up of the dusty wooden chair seat showing a fresh impression as if someone just stood up. Cinematic night thriller, film grain.",
+   "motion": "punch",
+   "keywords": [
+    "kursi",
+    "nishaan"
+   ],
+   "title": "",
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Part 8 mein Mehul ke saamne khulega ek chaukane wala raaz. Follow karo.",
+   "type": "card",
+   "prompt": "A dark, moody background with rain on a window pane. Cinematic night thriller style.",
+   "motion": "punch",
+   "big": "PART 8 KAL",
+   "small": "Follow for the mystery",
+   "keywords": [
+    "trap",
+    "Part 8"
+   ],
+   "title": ""
+  }
+ ],
+ "music_mood": "dark",
+ "caption": "Mehul ne Flat 402 ka darwaza toh khol liya, par kya wo baahar nikal paayega? 🚪😱\n\nChouthi manzil ka asli raaz ab shuru hota hai.\n\nKya Mehul wahan akela hai? Comment mein batao!",
+ "hashtags": [
+  "#ChouthiManzil",
+  "#MysteryHindi",
+  "#Suspense",
+  "#AageSuno",
+  "#ThrillerShorts"
+ ],
+ "claims": [],
+ "brain_ids": [
+  "a688e48ca2",
+  "97e1b2fcbb",
+  "0755cc155a",
+  "9db4cc694f",
+  "7a67022fb6",
+  "db89565f59",
+  "786422428c",
+  "e15cfaed29",
+  "1e60a34718",
+  "91c0a425c5",
+  "4396759d41",
+  "a6473f9768",
+  "0adc696a75",
+  "12739745ca"
+ ],
+ "cliff_done": true
+}

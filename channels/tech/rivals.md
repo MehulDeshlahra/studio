@@ -36,3 +36,17 @@ Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title:
 - 341,000 views: What is a Death Shadow? | Info Family
 - 418,000 views: Number of Moons in the Solar System | Info Family
 - 576,000 views: Why does Earth have no rings | Info Family
+
+## Brands that pay creators in this niche (from sponsor lines)
+- Trakin Tech: ♫ 𝐉𝐢𝐨 𝐒𝐚𝐚𝐯𝐧 - https://bit.ly/3iWUfm4
+- Trakin Tech: ♫ 𝐆𝐚𝐚𝐧𝐚 - https://bit.ly/2YHUdaY
+- Trakin Tech: ♫ 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐌𝐮𝐬𝐢𝐜 - https://bit.ly/3Ax2yuF
+- Trakin Tech: ♫ 𝐀𝐦𝐚𝐳𝐨𝐧 𝐌𝐮𝐬𝐢𝐜 - https://amzn.to/3veYSgk
+- Trakin Tech: #Collab #OriginOS7 #vivoIndia #iqooindia #TrakinTech
+- CodeWithHarry: Important Note: This video is not at all sponsored by Google!
+- CodeWithHarry: Use this link along with coupon code "HARRYVPS" to get the best discount deal from Hostinger: https://hostinger.com/HARRYVPS
+- Quick Support: Watch Tiger Full Documentary: https://bit.ly/4kNBShT
+- Quick Support: Watch Full Documentary on https://bit.ly/3WwCGe3
+- Live Hindi Facts: ✉ Business Inquiries, Sponsors & Collaboration email: collab.livehindifacts@gmail.com
+- Live Hindi Facts: • Is Galgotias University affiliated with UGC?
+- Live Hindi Facts: To Get Access to Bolt Complete Kyc on Lemonn : https://lemonn.co.in/affiliate-deeplink?data=fxlvfk

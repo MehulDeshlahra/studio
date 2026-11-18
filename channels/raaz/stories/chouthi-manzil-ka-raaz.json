@@ -59,14 +59,14 @@
    "title": "Chhat Ka Raasta",
    "beats": "Determined to face whatever is up there, Mehul takes the master keys he stole from Sharma ji's desk and climbs the stairwell to the fourth floor. The heavy iron padlock on flat 402 is rusted shut, but the wooden door is unlocked and ajar. He pushes it open to find a room completely barren of furniture, except for a single wooden chair placed in the center facing a wall.",
    "cliffhanger": "As Mehul steps inside, the heavy wooden door slams shut behind him with a loud click, and the lock slides into place from the outside.",
-   "status": "todo"
+   "status": "made"
   },
   {
    "n": 8,
    "title": "Deewar Ke Us Paar",
    "beats": "Trapped, Mehul inspects the room and discovers that the wall facing the chair is actually a massive two-way mirror. He wipes the dust off the glass and peers through into the adjoining room. To his absolute horror, he sees his own flat 302 downstairs—and standing in his living room is Vikrant, alive, wearing Mehul's own blue t-shirt, looking directly up through the floor at him.",
    "cliffhanger": "Vikrant picks up a phone and dials, and a second later, Mehul's own phone in his pocket begins to ring.",
-   "status": "todo"
+   "status": "made"
   },
   {
    "n": 9,
@@ -89,7 +89,9 @@
   "3": "1118-1218",
   "4": "1118-1315",
   "5": "1118-1328",
-  "6": "1118-1405"
+  "6": "1118-1405",
+  "7": "1118-1426",
+  "8": "1118-1433"
  },
  "owner_names": "Owner 18 Nov: hero Mehul, friend Raghav for this story; later stories rotate his friends; villains are made-up names."
 }

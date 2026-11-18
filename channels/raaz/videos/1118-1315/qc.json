@@ -10,11 +10,12 @@
   "dur": 64.13
  },
  "vision": {
-  "score": 7,
-  "ok": false,
+  "score": 8,
+  "ok": true,
   "problems": [
-   "scene 7: the hand splashing water is severely distorted with melted shapes and extra/missing finger structure",
-   "scene 11: the pointing hand of the shadow figure is anatomically broken and looks like gibberish"
+   "scene 1: The character's left hand (in the mirror reflection) appears slightly distorted/melted where it meets the water.",
+   "scene 5: The character's silhouette in the doorway looks slightly unnatural/blended into the doorframe.",
+   "scene 11: The shadow figure's arm/hand pointing is anatomically indistinct and blurry."
   ]
  },
  "voice": {
@@ -24,5 +25,5 @@
   "words": 158,
   "problems": []
  },
- "ok": false
+ "ok": true
 }

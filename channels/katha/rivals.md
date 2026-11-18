@@ -21,3 +21,13 @@ Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title:
 - 34,000 views: Why did Lord Krishna bear this terrible weapon of Kurukshetra on his chest? #fast #shorts #facts
 - 19,000 views: When Mahadev himself became enchanted upon seeing Vishnu's Mohini form!
 ## Pauranikk Maraatthi [climber, adjacent] (86,700 subs; usual Short 1,300,000 views)
+
+## Brands that pay creators in this niche (from sponsor lines)
+- Tilak: Subscribe to Tilak for more devotional contents - https://bit.ly/SubscribeTilak
+- The Divine Tales: Website: www.thedivinetales.com Coupon Code: FESTIVE50
+- The Divine Tales: Website: www.thedivinetales.com Coupon Code: DIVINE50
+- The Divine Tales: Website: www.thedivinetales.com | Coupon Code: DIVINE50
+- The Divine Tales: Website: www.thedivinetales.com Coupon Code: DIVINE20
+- The Divine Tales: Use Coupon Code: DIVINE20
+- Bhakti Gyan: https://bit.ly/2SBW6hS
+- Amrit Kahaniya: ►Subscribe for Bhakti and Religious Stories - https://bit.ly/37BfO5r

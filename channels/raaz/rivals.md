@@ -21,3 +21,14 @@ Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title:
 ## The Crime Show by Khooni Monday [leader, direct] (537,000 subs; usual Short 125,000 views)
 ## Vikal Here [leader, direct] (165,000 subs; usual Short 3,650 views)
 - 344,000 views: Kolkata Doctor case dark reality
+
+## Brands that pay creators in this niche (from sponsor lines)
+- SR PAY: 🛒 All Gear (Amazon) →  https://amzn.to/4qz3ycA
+- SR PAY: 🎤 Mic — Shure SM7B  →  https://amzn.to/3XFhFOS
+- SR PAY: 📷 Camera — Sony ZVE-10  →  https://amzn.to/3kuCXAs
+- SR PAY: ⚡ Processor      →  https://amzn.to/3wbRd3E
+- SR PAY: 🎮 Graphics Card  →  https://amzn.to/3XFi2Jg
+- SR PAY: 🖱️ Mouse          →  https://amzn.to/3wdmCT5
+- SR PAY: 🎧 Headphones     →  https://amzn.to/3HewsKY
+- The Crime Show by Khooni Monday: Instagram ► / khoonimonday - https://bit.ly/46BkbcJ
+- Vikal Here: ⚡ Bonus is limited, so don’t miss the opportunity — register through my link and activate the promo code while the offer is still available.

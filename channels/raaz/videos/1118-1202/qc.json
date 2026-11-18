@@ -10,13 +10,12 @@
   "dur": 58.33
  },
  "vision": {
-  "score": 8,
-  "ok": true,
+  "score": 7,
+  "ok": false,
   "problems": [
-   "scene 1: The text on the meter face is gibberish ('NIEGT', 'अर', 'रखे').",
-   "scene 7: The text on the meter face is gibberish.",
-   "scene 11: The text on the note is gibberish/illegible, not the name 'Mehul' or a phone number as described in the prompt.",
-   "scene 13: The text on the card says 'PART 3 KAL' and 'JAWAAB COMMENT KARO', which does not match the prompt's script: 'Part 3 mein dekhiye Mehul ka darr aur wo raaz. Follow karo.'"
+   "scene 1: gibberish text on the meter face ('NIEGT', etc.)",
+   "scene 6: missing the intended title 'IDLE METERS'",
+   "scene 9: the hand opening the box has distorted, melted-looking fingers"
   ]
  },
  "voice": {
@@ -26,5 +25,5 @@
   "words": 155,
   "problems": []
  },
- "ok": true
+ "ok": false
 }

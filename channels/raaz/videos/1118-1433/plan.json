@@ -1,0 +1,205 @@
+{
+ "slug": "chouthi-manzil-raaz-08",
+ "title": "Chouthi manzil ki deewar aaina kaise bani?",
+ "hooks": [
+  "Chouthi manzil ki deewar... aaina nikli!",
+  "Flat 402 ki deewar... do taraf ka aaina!",
+  "Mehul ne dekha... uska apna flat neeche!"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with named place 'Chouthi manzil' as proper noun, immediate revelation of the two-way mirror, matches cliffhanger formula with visual proof in first frame",
+ "metaphor": "Two-way mirror as a window between two identical realities — the trapped man watches his duplicate live his life below",
+ "cast": {
+  "Mehul": "27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone.",
+  "Vikrant": "27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt, holding Mehul's cracked black smartphone.",
+  "Raghav": "27 years old, Mehul's college friend and neighbour, cheerful round face, short curly hair, light stubble, mustard hoodie, always carries a steel water bottle",
+  "Sharma ji": "58 years old, weathered face with deep laugh lines, thick graying mustache, receding salt-and-pepper hair tied in a small knot at the back, khaki watchman uniform with brass buttons and a faded society badge, always carries a wooden lathi with a red cloth wrapped around its handle"
+ },
+ "scenes": [
+  {
+   "vo": "Chouthi manzil ki deewar... aaina nikli, do taraf ka!",
+   "type": "clip",
+   "prompt": "Cinematic night thriller, 9:16. Extreme close-up of a dusty wall surface in a dark empty room. A hand wipes dust away revealing a massive two-way mirror. Cold teal shadows, warm amber practical light from a single bulb above. Film grain, rain streaks on window in background. The mirror reflects a brightly lit 1BHK flat below. Indian suburban housing society location.",
+   "motion": "punch",
+   "title": "CHOUTHI MANZIL",
+   "keywords": [
+    "chouthi manzil",
+    "aaina",
+    "do taraf ka"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mehul phansa hua tha, akela kursi ke paas.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, 9:16. Mehul (27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone) stands frozen near a single wooden chair facing a wall. Door slammed shut behind him. Dust motes dance in amber light. Cold teal shadows from rain-streaked window. Film grain. Suburban Mumbai housing society flat 402.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "mehul",
+    "phansa",
+    "kursi"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Dhaag se dhaag saaf kiya, sach samne aaya.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, 9:16. Mehul (27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt) wiping a dusty wall with a cloth. Dust clouds swirl in amber light beam. As dust clears, glass surface emerges. Cold teal shadows, film grain. Rain sounds. Suburban Mumbai housing society.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "saaf kiya",
+    "sach",
+    "samne aaya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "SURAAG EK: Wo deewar thi bada do taraf ka aaina.",
+   "type": "card",
+   "prompt": "Cinematic night thriller, 9:16. Paper clue card 'SURAAG 1' with rubber stamp texture, pinned on a corkboard with red string. Background: blurred dark room with amber light. Cold teal shadows, film grain. Indian location.",
+   "motion": "tilt",
+   "title": "SURAAG 1",
+   "big": "DO TARAF KA AAINA",
+   "small": "Deewar thi aaina",
+   "keywords": [
+    "suraag ek",
+    "do taraf ka aaina"
+   ]
+  },
+  {
+   "vo": "Us paar uska apna flat 302 chamak raha tha.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, 9:16. POV through a two-way mirror: looking down into a 1BHK flat (flat 302) brightly lit with warm amber lights. Living room visible with sofa, TV, dining table. Rain against windows. Cold teal shadows outside. Film grain. Suburban Mumbai housing society night.",
+   "motion": "pull",
+   "title": "FLAT 302",
+   "keywords": [
+    "flat 302",
+    "chamak raha tha",
+    "us paar"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "SURAAG DO: Neeche living room mein Vikrant zinda khada tha.",
+   "type": "card",
+   "prompt": "Cinematic night thriller, 9:16. Paper clue card 'SURAAG 2' with rubber stamp texture, pinned on a corkboard with red string. Background: blurred view of living room through mirror. Cold teal shadows, warm amber light, film grain.",
+   "motion": "tilt",
+   "title": "SURAAG 2",
+   "big": "VIKRANT ZINDA THA",
+   "small": "Living room mein khada",
+   "keywords": [
+    "suraag do",
+    "vikrant",
+    "zinda"
+   ]
+  },
+  {
+   "vo": "SURAAG TEEN: Usne pehen rakhi thi Mehul ki purani neeli t-shirt.",
+   "type": "card",
+   "prompt": "Cinematic night thriller, 9:16. Paper clue card 'SURAAG 3' with rubber stamp texture, pinned on a corkboard with red string. Background: close-up of faded blue cotton t-shirt fabric texture. Cold teal shadows, warm amber light, film grain.",
+   "motion": "tilt",
+   "title": "SURAAG 3",
+   "big": "MEHUL KI T-SHIRT",
+   "small": "Vikrant ne pehen rakhi thi",
+   "keywords": [
+    "suraag teen",
+    "neeli t-shirt",
+    "mehul ki"
+   ]
+  },
+  {
+   "vo": "Vikrant ne aankhen uthayi, seedha chhat ki taraf dekha.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, 9:16. Vikrant (27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt, holding Mehul's cracked black smartphone) standing in a living room, head tilted up, eyes fixed on the ceiling/floor above. Direct gaze into camera. Warm amber room light, cold teal shadows from window. Film grain. Rain outside. Suburban Mumbai flat 302.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "vikrant",
+    "aankhen uthayi",
+    "chhat ki taraf"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Usne phone uthaya, number milaya, ek ghanti baji.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, 9:16. Close-up: Vikrant (27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt) lifts Mehul's cracked black smartphone, thumb dialing. Screen glow on face. One ring vibration. Warm amber light, cold teal shadows. Film grain. Rain sounds. Suburban Mumbai flat 302.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "phone uthaya",
+    "number milaya",
+    "ek ghanti"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mehul ki jeb mein uska apna phone baj utha.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, 9:16. Extreme close-up: Mehul's (27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt) jeans pocket. Phone screen lights up inside pocket — incoming call. Fabric stretches. Vibration visible. Cold teal shadows, warm amber edge light. Film grain. Rain muffled. Flat 402.",
+   "motion": "push",
+   "title": "PHONE BAJA",
+   "keywords": [
+    "mehul ki jeb",
+    "phone baj utha",
+    "apna phone"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Part 9 mein, Mehul ka dar aur Vikrant ka raaz. Follow karo.",
+   "type": "card",
+   "prompt": "Cinematic night thriller, 9:16. End card: Dark textured background with film grain. Bold text 'PART 9 KAL' centered. Below: 'FOLLOW KARO @raazkafaisla'. Cold teal and warm amber color split. Subtle rain animation. Indian thriller aesthetic.",
+   "motion": "tilt",
+   "title": "PART 9 KAL",
+   "big": "PART 9 KAL",
+   "small": "FOLLOW KARO",
+   "keywords": [
+    "part 9",
+    "kal",
+    "follow karo"
+   ]
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Chouthi manzil ki deewar khol di ek naya raaz. 🪞\n\nMehul ne dekha apna hi duplicate neeche rehta hai — uske kapde pehen ke.\n\nAb Vikrant ne phone milaya... aur Mehul ki jeb mein ghanti baji. Ye connection kya hai? 📱\n\n#ChouthiManzilKaRaaz #Raaz #MysteryThriller #Part8",
+ "hashtags": [
+  "#ChouthiManzilKaRaaz",
+  "#Raaz",
+  "#MysteryThriller",
+  "#Part8",
+  "#HindiShorts"
+ ],
+ "claims": [
+  {
+   "claim": "This is a fictional mystery thriller serial 'Chouthi Manzil Ka Raaz' Part 8 of 10",
+   "basis": "Original fiction content created for @raazkafaisla channel"
+  }
+ ],
+ "brain_ids": [
+  "0755cc155a",
+  "97e1b2fcbb",
+  "7a67022fb6",
+  "6dad050e27",
+  "a688e48ca2",
+  "9db4cc694f",
+  "a6473f9768",
+  "207d28385b",
+  "d52bfa64b5",
+  "4396759d41",
+  "db89565f59",
+  "12739745ca",
+  "7d90cb75e6",
+  "1e60a34718"
+ ],
+ "cliff_done": true
+}

@@ -1,0 +1,29 @@
+{
+ "topic": "Chouthi Manzil Ka Raaz - Part 6",
+ "title": "Vikrant ki diary mein kya raaz tha?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.2,
+  "true_peak": -1.7,
+  "dur": 46.93
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 11: The caption 'SEEDHIYAN UTAR RAHA' is grammatically redundant/awkward compared to the script 'wo seedhiyan utar raha hai aaj raat', though it is readable.",
+   "scene 15: The text 'MEHUL KI DARING' is cut off; the script intended 'Mehul ki daring chase ka naya twist!'.",
+   "scene 14: The image shows a balcony with a figure, but the text 'BALCONY KI TARAF' is slightly obscured by the dark environment, though readable."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8411214953271028,
+  "words": 112,
+  "problems": []
+ },
+ "ok": true
+}

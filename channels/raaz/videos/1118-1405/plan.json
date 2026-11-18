@@ -1,0 +1,256 @@
+{
+ "slug": "chouthi-manzil-6",
+ "title": "Vikrant ki diary mein kya raaz tha?",
+ "hooks": [
+  "Vikrant ki diary mil gayi.",
+  "Bed ke neeche dabba mila.",
+  "12 November 2018 ki raat."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with proper noun 'Vikrant' at frame 0, immediate revelation hook, promises specific dated clue — matches top-performing mystery hooks with named entity + date stamp.",
+ "metaphor": "A dusty box under the bed acts as a time capsule — each artifact (receipt, ID, diary) peels back a layer of the identical stranger's life, culminating in a warning that the past is literally stepping into the present.",
+ "cast": {
+  "Mehul": "27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone.",
+  "Vikrant": "27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt, holding Mehul's cracked black smartphone.",
+  "Raghav": "27 years old, Mehul's college friend and neighbour, cheerful round face, short curly hair, light stubble, mustard hoodie, always carries a steel water bottle",
+  "Sharma ji": "58 years old, weathered face with deep laugh lines, thick graying mustache, receding salt-and-pepper hair tied in a small knot at the back, khaki watchman uniform with brass buttons and a faded society badge, always carries a wooden lathi with a red cloth wrapped around its handle",
+  "Inspector Vikram Rathore": "tall Indian man in his 40s, grey stubble, long dark brown coat, old steel wristwatch, always holding a small brass torch. Reuse this description verbatim in every prompt that shows him."
+ },
+ "scenes": [
+  {
+   "vo": "Vikrant ki purani diary mil gayi, dhul bhari.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Extreme close-up of a dusty old diary being pulled from a cardboard box under a bed. Cold teal shadows, warm amber practical light from a nearby window catching dust motes. Film grain, rain streaks on window glass. Indian suburban flat interior. No text on diary cover.",
+   "motion": "push",
+   "title": "SURAAG 1",
+   "keywords": [
+    "Vikrant",
+    "diary"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mehul dhadaam se gira, saans atak gayi.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Low angle from floor level: Mehul (27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone) dropping to his knees in panic, back to camera, silhouette against amber window light. Cold teal shadows, film grain, rain atmosphere. Indian 1BHK flat.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Mehul",
+    "gira"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Bed ke neeche jhanka, andhere mein dabba.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Low angle shot from floor looking under a bed in a cramped Mumbai flat. A cardboard box centered in the frame, partially illuminated by a shaft of amber streetlight cutting through darkness. Dust motes dancing in the light. Cold teal tones, film grain. No text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "bed",
+    "neeche"
+   ],
+   "big": null,
+   "small": null,
+   "real": null
+  },
+  {
+   "vo": "Dhul bhara dabba nikala, cardboard purana.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Close-up of a cardboard box covered in thick gray dust, sitting on concrete floor under a bed. A single amber light catches the dust texture. Film grain, cold teal shadows, Indian suburban setting. No readable text on box.",
+   "motion": "push",
+   "title": "SURAAG 2",
+   "keywords": [
+    "dabba",
+    "dhul"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Dabba khola to haath kaanp uthe.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Mehul's hands (wearing faded blue cotton t-shirt sleeves, cracked black smartphone on floor beside him) trembling as they lift the flaps of a dusty cardboard box. Warm amber light on fingers, cold teal background. Film grain, rain atmosphere. Indian flat interior.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "haath",
+    "kaanpe"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Andar purane kiraye ki receipts, naam Vikrant.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Top-down view inside the open box: yellowed rent receipts stacked neatly, edges frayed. Warm amber practical light illuminates paper texture, cold teal shadows at edges. Film grain, Indian context implied by paper style. No readable text on receipts.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "receipts",
+    "kiraye"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "College ID card mila, photo mein Vikrant.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Close-up of a laminated college ID card held between thumb and forefinger. Photo shows Vikrant (27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt, holding Mehul's cracked black smartphone) — face identical to Mehul. Warm amber light on card surface, cold teal bokeh background. Film grain.",
+   "motion": "push",
+   "title": "SURAAG 3",
+   "keywords": [
+    "ID card",
+    "Vikrant"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Naam Vikrant, chehra Mehul jaisa, baal alag.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Split composition: left half shows the ID card photo of Vikrant (sharp features, neat hair), right half shows Mehul's tired reflection in a cracked smartphone screen (messy hair, brown eyes). Both wear same faded blue t-shirt. Amber light splits the frame, teal shadows. Film grain, rain atmosphere.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Vikrant",
+    "Mehul",
+    "chehra"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Diary ke panne phate, syahi dhalti hui.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Diary pages fanning open under amber light, handwritten Devanagari script fading into the paper fibers. Warm light catches ink texture, cold teal shadows in gutter. Film grain, Indian flat setting. No readable words, just impression of aged handwriting.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "diary",
+    "likhaawat"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Akhri entry 12 November 2018, kalam ruk gayi.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Extreme close-up of an open diary page with a fountain pen resting on it. The date line at the top is blurred and illegible, warm amber pool of light on the page, cold teal surround. Film grain, dust motes. Indian context. No readable text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "12 November 2018",
+    "entry"
+   ],
+   "big": null,
+   "small": null,
+   "real": null
+  },
+  {
+   "vo": "Likha tha: wo seedhiyan utar raha hai aaj raat.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Diary page close-up: handwritten line 'Wo seedhiyan utar raha hai aaj raat' in shaky script. Amber light on words, teal shadows. Mehul's thumb enters frame at bottom, trembling. Film grain, rain on window implied. Indian flat.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "seedhiyan",
+    "utar raha hai"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Achanak chhat se awaz, bhaari kadam ghise.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Mehul (tired brown eyes, messy hair, faded blue t-shirt) frozen mid-motion, diary in hand, staring upward at ceiling. Dust particles falling in a shaft of amber light from a ceiling fixture. Cold teal shadows on walls. Film grain, rain atmosphere. Tension palpable.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "chhat",
+    "awaz"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Dhul chhat se giri, Mehul thitak gaya.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. Extreme close-up of ceiling plaster: fine dust cascading down in slow motion, each particle catching amber light. A hairline crack forms. Cold teal darkness above. Film grain, sound of heavy dragging footsteps implied. Indian suburban flat.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "kadam",
+    "ghisat",
+    "upar"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Kadam balcony ki taraf, baarish ke nishaan.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, 9:16. View from inside the flat: sliding glass balcony door at night, rain streaking glass. Heavy footsteps audible on ceiling above, moving left to right toward balcony. Reflection shows Mehul's terrified face (tired brown eyes, messy hair). Amber streetlight outside, cold teal interior. Film grain.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "balcony",
+    "badh rahe the"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Part 7 mein, Mehul ki daring chase ka naya twist!. Follow karo.",
+   "type": "card",
+   "prompt": "Cinematic night thriller background, 9:16. Dark teal background with film grain texture. Subtle rain streaks. A faint glowing brass torch icon centered. No text, no letters, no logos. Ample space at top and bottom for text overlay.",
+   "motion": "punch",
+   "title": "PART 7",
+   "big": "KAL AA RAHA HAI",
+   "small": "FOLLOW KARO",
+   "keywords": [
+    "Part 7",
+    "Follow karo"
+   ]
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Vikrant ka chehra Mehul jaisa kyun? 🤯\n12 November 2018 ki diary ne badla sab kuch.\nAb chhat se kadam sunai de rahe hain... kya hoga agla?\n#ChouthiManzilKaRaaz #MysteryThriller #AageSuno #Part6\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#ChouthiManzilKaRaaz",
+  "#MysteryThriller",
+  "#AageSuno",
+  "#Part6"
+ ],
+ "claims": [
+  {
+   "claim": "Story is original fiction set in a suburban Mumbai housing society.",
+   "basis": "Channel bible: pure fiction, no real crimes, places named generically, no real people."
+  },
+  {
+   "claim": "Diary date '12 November 2018' is a fictional story element.",
+   "basis": "Original serial narrative; no real event referenced."
+  }
+ ],
+ "brain_ids": [
+  "0755cc155a",
+  "12739745ca",
+  "a688e48ca2",
+  "97e1b2fcbb",
+  "7ad0de964d",
+  "8d7dda7ee5",
+  "c6b8948127",
+  "6ce7203c71",
+  "d52bfa64b5",
+  "e15cfaed29",
+  "1e60a34718",
+  "9db4cc694f",
+  "7a67022fb6",
+  "4396759d41"
+ ],
+ "cliff_done": true,
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}
