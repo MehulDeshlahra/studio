@@ -302,16 +302,78 @@ Return JSON {{"calc": [{{"scene": n, "says": <the number the script states, as a
 
 
 def _safe_eval(expr):
+    """Arithmetic only: numbers, + - * / ** %, round/min/max/abs, and sum(... for k in range(n)) with n <= 1000 (a
+    month-by-month balance). Names other than those functions and the loop variables are refused; no attributes."""
     import ast as _ast
     tree = _ast.parse(str(expr), mode="eval")
+    funcs = ("round", "min", "max", "abs", "sum", "range")
+    loopvars = {t.id for n in _ast.walk(tree) if isinstance(n, _ast.comprehension) for t in _ast.walk(n.target)
+                if isinstance(t, _ast.Name)}
     ok = (_ast.Expression, _ast.BinOp, _ast.UnaryOp, _ast.Constant, _ast.Add, _ast.Sub, _ast.Mult, _ast.Div, _ast.Pow,
-          _ast.USub, _ast.UAdd, _ast.Mod, _ast.FloorDiv, _ast.Call, _ast.Name, _ast.Load)
+          _ast.USub, _ast.UAdd, _ast.Mod, _ast.FloorDiv, _ast.Call, _ast.Name, _ast.Load, _ast.Store,
+          _ast.GeneratorExp, _ast.ListComp, _ast.comprehension)
     for n in _ast.walk(tree):
-        if not isinstance(n, ok) or (isinstance(n, _ast.Name) and n.id not in ("round", "min", "max", "abs")):
+        if not isinstance(n, ok):
             raise ValueError("not allowed: " + type(n).__name__)
+        if isinstance(n, _ast.Name) and n.id not in funcs and n.id not in loopvars:
+            raise ValueError("not allowed name: " + n.id)
+        if isinstance(n, _ast.Call) and not (isinstance(n.func, _ast.Name) and n.func.id in funcs):
+            raise ValueError("only round/min/max/abs/sum/range calls")
         if isinstance(n, _ast.Constant) and not isinstance(n.value, (int, float)):
             raise ValueError("not a number")
-    return eval(compile(tree, "<n>", "eval"), {"__builtins__": {}}, {"round": round, "min": min, "max": max, "abs": abs})
+        if isinstance(n, _ast.Constant) and isinstance(n.value, (int, float)) and abs(n.value) > 1e12:
+            raise ValueError("number too big")
+
+    # 18 Nov: evaluated by this small interpreter, not eval(): '9**9**9**9' hung eval for ever. Every power is capped.
+    import operator as _op
+    BIN = {_ast.Add: _op.add, _ast.Sub: _op.sub, _ast.Mult: _op.mul, _ast.Div: _op.truediv, _ast.Mod: _op.mod,
+           _ast.FloorDiv: _op.floordiv}
+
+    def ev(n, env):
+        if isinstance(n, _ast.Expression):
+            return ev(n.body, env)
+        if isinstance(n, _ast.Constant):
+            return float(n.value)
+        if isinstance(n, _ast.Name):
+            if n.id in env:
+                return env[n.id]
+            raise ValueError("unknown name " + n.id)
+        if isinstance(n, _ast.UnaryOp):
+            v = ev(n.operand, env)
+            return -v if isinstance(n.op, _ast.USub) else v
+        if isinstance(n, _ast.BinOp):
+            a, b = ev(n.left, env), ev(n.right, env)
+            if isinstance(n.op, _ast.Pow):
+                if abs(b) > 10000 or abs(a) > 1e9:
+                    raise ValueError("power too big")
+                r = float(a) ** float(b)
+            else:
+                r = BIN[type(n.op)](a, b)
+            if isinstance(r, complex) or abs(r) > 1e15:
+                raise ValueError("result out of range")
+            return r
+        if isinstance(n, _ast.Call):
+            f = n.func.id
+            if f == "sum" and len(n.args) == 1 and isinstance(n.args[0], (_ast.GeneratorExp, _ast.ListComp)):
+                g = n.args[0]
+                if len(g.generators) != 1 or g.generators[0].ifs or not isinstance(g.generators[0].target, _ast.Name):
+                    raise ValueError("one simple loop only")
+                it = g.generators[0].iter
+                if not (isinstance(it, _ast.Call) and isinstance(it.func, _ast.Name) and it.func.id == "range"):
+                    raise ValueError("loops only over range()")
+                bounds = [int(ev(x, env)) for x in it.args]
+                rg = range(*bounds)
+                if len(rg) > 1000:
+                    raise ValueError("range too long")
+                var = g.generators[0].target.id
+                return sum(ev(g.elt, dict(env, **{var: float(k)})) for k in rg)
+            args = [ev(x, env) for x in n.args]
+            if f in ("round", "min", "max", "abs"):
+                return {"round": lambda *x: round(x[0], int(x[1]) if len(x) > 1 else None),
+                        "min": min, "max": max, "abs": abs}[f](*args)
+            raise ValueError("call not allowed: " + f)
+        raise ValueError("not allowed: " + type(n).__name__)
+    return ev(tree, {})
 
 
 def numbers_check(plan):
@@ -326,8 +388,9 @@ def numbers_check(plan):
     for c in r.get("calc") or []:
         try:
             got, says = float(_safe_eval(c.get("expr"))), float(str(c.get("says")).replace(",", ""))
-            if says and abs(got - says) / abs(says) > 0.05:
-                probs.append(f"scene {c.get('scene')}: says {says:,.0f} but the script's own scenario gives {got:,.0f} ({c.get('expr')})")
+            tol = max(0.05 * abs(says), 0.5 if abs(says) < 100 else 0)     # spoken rounding: "3 percent" for 3.04
+            if says and abs(got - says) > tol:
+                probs.append(f"scene {c.get('scene')}: says {says:,.2f} but the script's own scenario gives {got:,.2f} ({c.get('expr')})")
         except Exception as e:
             log("numbers check: skipped one expression", str(c.get("expr"))[:80], str(e)[:60])
     for f in r.get("facts") or []:
