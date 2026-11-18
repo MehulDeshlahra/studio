@@ -113,6 +113,28 @@ def _token_file():
     own = os.path.expanduser("~/.studio-meta-connect.token")
     return own if os.path.exists(own) and os.path.getsize(own) > 20 else os.path.expanduser("~/.studio-meta-user.token")
 
+ADS_TOKEN = os.path.expanduser("~/.studio-meta-user.token")
+# 19 Nov: Meta's private-replies doc: "Standard Access apps can only access data for people who have a role on the app";
+# messaging the public needs Advanced Access (App Review + Business Verification). Our own app (Planstalk Connect) has
+# Standard Access only, so a DM to a stranger fails with a permission error. Meta's official Ads MCP app (the posting login)
+# serves the public, so a send that our app is not allowed to make is retried once through it; the app that worked is kept.
+PERM = ("#10/", "#3/", "#200/", "#230/", "advanced access", "does not have permission", "has not been approved")
+
+
+def _alt_token(cid, st):
+    """The same page's key from the Ads MCP login, cached 12 h."""
+    c = st.setdefault("alt", {}).get(cid)
+    if c and time.time() - c.get("at", 0) < 12 * 3600:
+        return c["page_token"]
+    a = load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")) or {}
+    if not a.get("page_id") or not os.path.exists(ADS_TOKEN) or _token_file() == ADS_TOKEN:
+        return None
+    ut = open(ADS_TOKEN).read().strip()
+    d = _r(f"{G}/{a['page_id']}?fields=access_token&access_token={ut}")
+    st["alt"][cid] = {"page_token": d["access_token"], "at": time.time()}
+    return d["access_token"]
+
+
 def _account(cid, st):
     """page key, ig id, username: cached 12 h (2-3 calls saved per run)."""
     c = st.setdefault("acc", {}).get(cid)
@@ -178,7 +200,9 @@ def _text(cfg, acc, media, after_t):
         return cfg["text_next"].format(next=newer[0]["url"], handle=handle, profile=profile).strip()
     return cfg["text_wait"].format(handle=handle, profile=profile).strip()
 
-BLOCK_CODES = ("#368/", "#10/", "#100/33", "#613/", "spam", "blocked", "temporarily")
+# 19 Nov: "#10/" removed: it is "Application does not have permission" (our app's Standard Access, or a closed window),
+# not a spam block; it stopped every DM for 24 h on the first stranger's comment.
+BLOCK_CODES = ("#368/", "#100/33", "#613/", "spam", "blocked", "temporarily")
 
 def _blocked(st, cid, msg):
     """Meta spam/action-block style errors: stop all DMs for 24 h and tell the owner once (never keep hammering a flagged page)."""
@@ -193,8 +217,24 @@ def _blocked(st, cid, msg):
 def _send(acc, sender_id, recipient, text):
     if DRY:
         log("dm DRY", sender_id, json.dumps(recipient), text[:90].replace("\n", " | ")); return
-    _r(f"{G}/{sender_id}/messages", {"recipient": json.dumps(recipient), "message": json.dumps({"text": text}),
-                                     "access_token": acc["page_token"]})
+    body = {"recipient": json.dumps(recipient), "message": json.dumps({"text": text})}
+    st, cid = acc.get("_st"), acc.get("_cid")
+    use_alt = st is not None and (st.get("send_app") or {}).get(cid) == "ads"
+    tok = (_alt_token(cid, st) if use_alt else None) or acc["page_token"]
+    try:
+        _r(f"{G}/{sender_id}/messages", {**body, "access_token": tok})
+        if st is not None and not use_alt:
+            st.setdefault("send_app", {})[cid] = "own"
+    except RuntimeError as e:
+        if use_alt or st is None or not any(p in str(e).lower() for p in [x.lower() for x in PERM]):
+            raise
+        alt = _alt_token(cid, st)
+        if not alt:
+            raise
+        log("dm: own app may not message this person (", str(e)[:90], ") -> retry through the Ads MCP app")
+        _r(f"{G}/{sender_id}/messages", {**body, "access_token": alt})
+        st.setdefault("send_app", {})[cid] = "ads"
+        log("dm: Ads MCP app can message the public on", cid, "- used from now on")
 
 def _public(acc, plat, comment_id, text):
     if DRY or not text:
@@ -332,6 +372,7 @@ def run():
                 log("dm account fail", cid, str(e)[:150]); continue
             if not acc:
                 continue
+            acc = {**acc, "_st": st, "_cid": cid}               # _send needs them for the Ads MCP retry (not saved: copy)
             cfg, dk = _cfg(cid), today + ":" + cid
             used = st["day"].get(dk, 0)
             media_by = {}
