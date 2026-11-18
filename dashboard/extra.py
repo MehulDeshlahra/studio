@@ -112,8 +112,16 @@ def sources(state):
         out.append({"name": name, "what": what, "lvl": lvl, "detail": detail, "last": last, "test": test})
     td = state.get("token_days")
     mp = grep_log(r"published|stats:|insights")
-    add("Meta (Ads MCP login)", "Posting, followers, insights", "ok" if (td or 0) >= 21 else "warn" if (td or 0) > 7 else "bad",
-        f"Data access {td} days left" if td is not None else "Not checked yet", int(os.path.getmtime(os.path.join(OUT, "dash-followers.json"))) if os.path.exists(os.path.join(OUT, "dash-followers.json")) else None, "meta")
+    try:
+        mc = json.load(open(os.path.join(OUT, "dash-meta-cache.json")))
+        merr = (mc.get("err") or "") if time.time() < mc.get("busy_until", 0) else ""
+    except Exception:
+        merr = ""
+    busy = "request limit" in merr
+    add("Meta (Ads MCP login)", "Posting, followers, insights",
+        "warn" if busy else "ok" if (td or 0) >= 21 else "warn" if (td or 0) > 7 else "bad",
+        ("Busy: Meta's hourly request limit, clears by itself; login is fine" + (f" · data access {td} days left" if td is not None else ""))
+        if busy else f"Data access {td} days left" if td is not None else ("Not checked yet" + (f": {merr[:80]}" if merr else "")), int(os.path.getmtime(os.path.join(OUT, "dash-followers.json"))) if os.path.exists(os.path.join(OUT, "dash-followers.json")) else None, "meta")
     t = cached("tg", 600, lambda: _tg())
     tg = grep_log(r"sent for approval|telegram")
     add("Telegram bot", "Approvals in Studio360", t[0] if isinstance(t, tuple) else "bad", t[1] if isinstance(t, tuple) else t.get("error", ""), ts(tg[-1]) if tg else None, "telegram")

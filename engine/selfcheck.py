@@ -285,6 +285,14 @@ def try_fix(f):
     new = re.sub(r"(?m)^\d+: ", "", r["new"]) if re.match(r"\d+: ", r["new"]) else r["new"]
     if DRY:
         log("selfcheck dry: would patch", path, "|", r.get("why", "")); return False
+    # 18 Nov: its 07:49 'fix' set the Meta cache to 0 s (a stale follower count looked like a bug); every 5 s dashboard
+    # refresh then called Meta twice and the whole Meta app was refused for hours. Caches, rate limits, timeouts,
+    # sleeps and back-offs protect shared free quotas: a patch that touches one is never applied automatically.
+    guard = re.compile(r"cache|_ttl|ttl\b|rate|limit|timeout|busy_until|pause_until|backoff|sleep|retry|interval|"
+                       r"time\.time\(\) - |< *0 and|graph\.facebook|googleapis|USAGE", re.I)
+    if guard.search(old) and old.strip() != new.strip():
+        note(f, "patch touches a cache / rate limit / timeout (protects free API quotas): left for a human session")
+        return False
     before, err = apply_patch(path, old, new)
     if err:
         note(f, "patch not applicable: " + err); return False

@@ -386,11 +386,17 @@ def failed_units():
 
 
 # ---------------- channels (Meta numbers cached 30 min) ----------------
-_cache = {"t": 0, "pages": {}}
+META_DISK = os.path.join(OUT, "dash-meta-cache.json")
+_cache = jload(META_DISK, {}) or {"t": 0, "pages": {}}     # 18 Nov: survives a dashboard restart (no burst on restart)
+META_TTL = 1800      # 18 Nov: selfcheck 'fixed' this to 0 at 07:49 -> 2 Meta calls per page refresh (every 5 s) -> the
+                     # whole Meta app hit '(#4) Application request limit reached' (167%) and posting/DMs/stats were refused.
+                     # Never lower this below 600; follower counts change slowly.
 
 
 def meta_pages():
-    if time.time() - _cache["t"] < 0 and _cache["pages"]:
+    if time.time() - _cache.get("t", 0) < max(600, META_TTL) and _cache.get("pages"):
+        return _cache["pages"]
+    if time.time() < _cache.get("busy_until", 0) and _cache.get("pages"):   # Meta said 'limit reached': back off 15 min
         return _cache["pages"]
     try:
         ut = open(os.path.join(HOME, ".studio-meta-user.token")).read().strip()
@@ -402,13 +408,16 @@ def meta_pages():
                                                    "posts": ig.get("media_count", 0) or 0, "page": p["id"], "name": p["name"], "igid": ig.get("id")}
         dbg = json.load(urllib.request.urlopen(f"{G}/debug_token?input_token={ut}&access_token={ut}", timeout=30))["data"]
         pages["_token_days"] = round((dbg.get("data_access_expires_at", 0) - time.time()) / 86400)
-        _cache.update(t=time.time(), pages=pages)
+        _cache.update(t=time.time(), pages=pages, err=None)
+        jsave(META_DISK, _cache)
         h = jload(FOLLOW_HIST, {}) or {}
         day = time.strftime("%Y-%m-%d")
         h[day] = {k: v["ig"] + v["fb"] for k, v in pages.items() if isinstance(v, dict)}
         jsave(FOLLOW_HIST, dict(sorted(h.items())[-90:]))
     except Exception as e:
         _cache["err"] = str(e)[:200]
+        _cache["busy_until"] = time.time() + 900            # do not retry on every 5 s refresh while Meta is limiting us
+        jsave(META_DISK, _cache)
     return _cache["pages"]
 
 
