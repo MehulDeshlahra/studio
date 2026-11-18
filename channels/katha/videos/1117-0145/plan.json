@@ -1,224 +1,264 @@
 {
- "slug": "nachiketa-yamraj-upanishad",
- "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
+ "slug": "nachiketa-yamraj-katha",
+ "title": "Nachiketa ne Yamraj se kya maanga?",
  "hooks": [
-  "Ek aath saal ke bachche ne seedhe Yamraj se maut ka sach maang liya!",
-  "Jab Yamraj ne sone-chandi ke dher laga diye, tab is bachche ne kya maanga?",
-  "Yamraj ke darbar mein bina dare khada hone wala akela bachcha kaun tha?"
+  "Ek 12 saal ke ladke ne Mrityu ko apna mehman bana liya",
+  "Teen din bina khaaye-pie Yamraj ke dwar pe kaun rukta hai?",
+  "Pita ne daan mein bete ko Mrityu ko de diya"
  ],
  "hook_choice": 0,
- "hook_why": "Immediate, shocking premise of an 8-year-old fearless child demanding the ultimate secret of death directly from Yamraj.",
- "metaphor": "Worldly treasures are temporary illusions compared to the eternal truth of the soul.",
+ "hook_why": "Specific age + personified Death as 'guest' creates instant curiosity gap; reframes a heavy myth into a relatable 'what would you do' moment",
+ "metaphor": "A single diya burning steady in a vast dark palace — the individual soul (Atman) lighting up the mansion of death",
  "cast": {
-  "nachiketa": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, painterly cinematic Indian miniature epic style, warm gold and deep maroon, soft divine rim light, clean uncluttered composition, no text",
-  "yamraj": "Majestic divine Yamraj seated on a dark obsidian throne, midnight blue skin, regal ornate crown, fierce but serene golden eyes, holding a glowing divine noose, painterly cinematic Indian miniature epic style, warm gold and deep maroon, clean uncluttered composition, no text"
+  "Nachiketa": "Young boy, 12-14 years, simple cotton dhoti, shaved head with single sikha, calm determined eyes, hands folded but spine straight",
+  "Yamraj": "Tall majestic figure, deep bronze skin, dark red dhoti with gold border, crown of rudraksha, eyes like burning coals yet compassionate, four arms hinted by shadow, black buffalo in deep background",
+  "Vajashrava": "Middle-aged rishi, white beard, saffron robes, performing fire sacrifice, face shifting from pride to regret"
  },
  "scenes": [
   {
-   "vo": "Ek aath saal ke bachche ne seedhe Yamraj se maut ka sach maang liya!",
-   "type": "clip",
-   "prompt": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, painterly cinematic Indian miniature epic style, warm gold and deep maroon, soft divine rim light, clean uncluttered composition, no text, standing fearless before colossal dark carved gates of Yamlok, cinematic push in as faint golden particles swirl around him.",
+   "vo": "Ek 12 saal ke ladke ne Mrityu ko apna mehman bana liya",
+   "type": "image",
+   "prompt": "Cinematic Indian miniature, warm gold and deep maroon. Vajashrava rishi by a blazing yagya fire, offering cows. Young Nachiketa stands beside him, watching with sharp questioning eyes. Firelight illuminates faces. Ornate but uncluttered, 9:16 vertical, subject centered, headroom for captions. No text, no letters, no numbers.",
    "motion": "push",
-   "title": "MAUT KA SACH",
-   "nodes": [],
-   "big": "",
-   "small": "",
-   "keywords": [
-    "aath saal",
-    "Yamraj",
-    "maut ka sach"
-   ]
-  },
-  {
-   "vo": "Pita ne gusse mein aakar keh diya—jao, maine tumhe Yamraj ko daan diya.",
-   "type": "image",
-   "prompt": "Ancient Indian hermit sage beside an ornate Vedic sacrificial fire pit, raising hand in sudden anger, painterly cinematic Indian miniature epic style, warm gold and deep maroon, embers rising in night air, dramatic lighting, clean uncluttered composition, no text.",
-   "motion": "pan",
    "title": "",
-   "nodes": [],
-   "big": "",
-   "small": "",
    "keywords": [
-    "pita",
-    "gusse mein",
-    "daan diya"
-   ]
+    "mehman",
+    "mrityu"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
   },
   {
-   "vo": "Nachiketa dara nahi, pita ki baat sach karne seedhe Yamlok pahunch gaya.",
+   "vo": "Papa ne yagya mein sab daan kar diya... mujhe bhi",
    "type": "image",
-   "prompt": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, painterly cinematic Indian miniature epic style, warm gold and deep maroon, walking resolute across an ethereal bridge made of mist toward a glowing fortress, clean uncluttered composition, no text.",
+   "prompt": "Same painterly style. Medium close-up: Nachiketa folds hands, calm but firm. Vajashrava looks troubled, firelight dancing on his face. Other rishis blurred in background. Warm gold light, deep maroon shadows. No text, no letters, no numbers.",
    "motion": "pull",
    "title": "",
-   "nodes": [],
-   "big": "",
-   "small": "",
    "keywords": [
-    "dara nahi",
-    "pita ki baat",
-    "Yamlok"
-   ]
+    "daan",
+    "beta"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
   },
   {
-   "vo": "Yamraj wahan teen din nahi the, aur yeh nanha baalak bhookha-pyaasa intezar karta raha.",
+   "vo": "Teen baar pucha: 'Main kise daan doge?' Papa bhadak gaye",
    "type": "image",
-   "prompt": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, sitting cross-legged in deep serene meditation on stone steps outside grand palace portal, three silhouettes of day and night passing in sky, painterly cinematic Indian miniature epic style, warm gold and deep maroon, clean uncluttered composition, no text.",
+   "prompt": "Dramatic low-key. Vajashrava half in shadow, half in firelight, angry regret. Nachiketa bows head in acceptance. Flames cast long shadows. Miniature texture, gold on maroon. No text, no letters, no numbers.",
    "motion": "tilt",
-   "title": "3 DIN INTEZAR",
-   "nodes": [],
-   "big": "",
-   "small": "",
+   "title": "",
    "keywords": [
-    "teen din",
-    "nanha baalak",
-    "intezar"
-   ]
+    "teen baar",
+    "bhadak"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
   },
   {
-   "vo": "Yamraj laute toh sharminda hue, aur bole—apne teeno din ke teen vardan maango!",
+   "vo": "'Ja, Mrityu ko daan deta hoon tujhe' — papa ne gusse mein kaha",
    "type": "image",
-   "prompt": "Majestic divine Yamraj seated on a dark obsidian throne, midnight blue skin, regal ornate crown, fierce but serene golden eyes, raising a golden open palm granting divine blessings, painterly cinematic Indian miniature epic style, warm gold and deep maroon, dramatic warm lighting, clean uncluttered composition, no text.",
+   "prompt": "Vast dark palace gates, massive carved doors slightly ajar. Small Nachiketa seated in meditation on stone steps. Three subtle golden arcs above show suns rising/setting. Buffalo silhouette in deep shadow. Warm gold spills from door crack. Epic scale. No text, no letters, no numbers.",
+   "motion": "pan",
+   "title": "Ja, Mrityu",
+   "keywords": [
+    "mrityu ko daan",
+    "gussa"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Nachiketa chala gaya Yamraj ke dwar... teen din bina paani",
+   "type": "image",
+   "prompt": "Nachiketa, a young boy, standing close to the massive dark gates of Yamraj's palace, seen from front, determined expression. Gates towering behind him, faint golden light seeping through cracks. Centered composition, vertical 9:16, space above and below for text. No text, no letters, no numbers.",
    "motion": "push",
    "title": "",
-   "nodes": [],
-   "big": "",
-   "small": "",
    "keywords": [
-    "Yamraj laute",
-    "sharminda",
-    "teen vardan"
-   ]
+    "dwar",
+    "teen din"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
   },
   {
-   "vo": "Nachiketa ne pehle pita ka shant man maanga, fir swarg ki agni ka rahasya.",
+   "vo": "Yamraj aaye: 'Atithi bhookha raha, maang teen var'",
    "type": "image",
-   "prompt": "A glowing sacred geometric altar with mystical floating spiritual golden flames illuminating ancient stone carvings, painterly cinematic Indian miniature epic style, warm gold and deep maroon, radiant divine glow, clean uncluttered composition, no text.",
+   "prompt": "Majestic Yamraj arriving on a dark buffalo at the gates of a glowing golden court, four-armed silhouette suggested by shadow, holding a noose and danda. Small boy Nachiketa stands waiting below, looking up. Warm gold and deep maroon tones, divine respectful atmosphere, single clear subject group centred. No text, no letters, no numbers.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "atithi",
+    "teen var"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Pehla var: 'Papa ka gussa shant ho, woh mujhe pehchane'",
+   "type": "image",
+   "prompt": "Nachiketa kneeling before Yamraj, hands folded in request, looking up. Yamraj seated on throne, benevolent expression. Background: subtle flames of a fire sacrifice. Centered, vertical 9:16, space for text. No text, no letters, no numbers.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "gussa shant",
+    "pehla var"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Doosra var: 'Swarg ka agni vidya sikhao'",
+   "type": "image",
+   "prompt": "Close-up: Yamraj's burning coal eyes show surprise. Nachiketa small but unwavering. Palace vastness behind. Single diya flame between them reflecting in both eyes. Dramatic low-key, gold on maroon. No text, no letters, no numbers.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "agni vidya",
+    "doosra var"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Teesra var: 'Mrityu ke baad kya hota hai?'",
+   "type": "image",
+   "prompt": "Nachiketa standing before Yamraj, pointing upward with questioning gesture. Yamraj listening, hand on chin. Background: cosmic void with faint stars, representing mystery of death. Centered, vertical 9:16, space for text. No text, no letters, no numbers.",
    "motion": "pan",
    "title": "",
-   "nodes": [],
-   "big": "",
-   "small": "",
    "keywords": [
-    "shant man",
-    "swarg ki agni",
-    "rahasya"
-   ]
+    "mrityu ke baad",
+    "teesra var"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
   },
   {
-   "vo": "Lekin teesre vardan mein usne poocha—Yamraj, maut ke baad aatma ka kya hota hai?",
-   "type": "clip",
-   "prompt": "Close-up of an eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, folded hands, looking straight ahead with unwavering calm conviction, painterly cinematic Indian miniature epic style, warm gold and deep maroon, subtle slow push in, clean uncluttered composition, no text.",
+   "vo": "Yamraj ne dhan, rajya, apsara sab offer kiye... Nachiketa ne mana kar diya",
+   "type": "image",
+   "prompt": "Nachiketa standing tall, small diya in cupped hands. Flame burns steady. Yamraj sits on throne, teaching posture. Light from diya expands to fill palace. Metaphor visual: one lamp illuminating vast darkness. Gold on deep maroon. No text, no letters, no numbers.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "offer",
+    "mana kiya"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "'Ye sab toh rehta nahi... mujhe Atma ka gyaan do'",
+   "type": "image",
+   "prompt": "Full-frame teaching scene, subject filling the centre: Yamraj seated on a golden throne leaning toward small Nachiketa, his hand gesturing a stream of glowing golden light flowing into the boy's heart. A subtle cosmic wheel of birth and death glows behind them, one unmoving point of light at its centre. Rich maroon and gold, painterly, no empty space, composition centred with room above and below. No text, no letters, no numbers.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "rehta nahi",
+    "atma gyaan"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Yamraj samjhaye: 'Atma na janam leti, na marti... woh nitya hai'",
+   "type": "image",
+   "prompt": "Nachiketa glowing with inner light, returning home. Vajashrava embraces him, tears of joy. Yagya fire burns bright. Whole scene bathed in warm gold. Resolution, peace, painterly beauty. No text, no letters, no numbers.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "na janam",
+    "nitya"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Ye gyaan milte hi Nachiketa azad ho gaya... ghar wapas",
+   "type": "image",
+   "prompt": "Single diya flame in vast dark palace, flame forms subtle Om shape. Warm gold on deep maroon, minimal, powerful. Negative space above and below for big/small text. No text, no letters, no numbers in image.",
    "motion": "punch",
-   "title": "TEESRA VARDAN",
-   "nodes": [],
-   "big": "",
-   "small": "",
+   "title": "",
    "keywords": [
-    "teesre vardan",
-    "maut ke baad",
-    "aatma"
-   ]
+    "azad",
+    "ghar wapas"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
   },
   {
-   "vo": "Yamraj bole—sona le lo, apsarayein le lo, par yeh rahasya mat maango!",
+   "vo": "Tum hote toh Mrityu se kya maangte? Comment karo",
    "type": "image",
-   "prompt": "Shimmering mirage of royal golden chariots, heaps of gemstones, and lush celestial gardens emerging from divine mist, painterly cinematic Indian miniature epic style, warm gold and deep maroon, tempting illusions, clean uncluttered composition, no text.",
+   "prompt": "Nachiketa and Yamraj sitting opposite each other, both looking directly at camera with curious expressions. A glowing diya floats between them. Warm golden light, inviting atmosphere. Vertical 9:16, ample space above and below for text overlay. No text, no letters, no numbers.",
    "motion": "pull",
-   "title": "",
-   "nodes": [],
-   "big": "",
-   "small": "",
+   "title": "Kya Maangte?",
    "keywords": [
-    "sona le lo",
-    "apsarayein",
-    "mat maango"
-   ]
-  },
-  {
-   "vo": "Nachiketa hasa aur bola—yeh sab ek din khatam hoga, mujhe toh amar gyan chahiye.",
-   "type": "image",
-   "prompt": "An eight year old Indian ascetic boy with glowing calm face, tied topknot hair, simple saffron dhoti cloth, painterly cinematic Indian miniature epic style, warm gold and deep maroon, standing calm as heaps of glittering gold crumble into fine grey dust around him, clean uncluttered composition, no text.",
-   "motion": "tilt",
-   "title": "",
-   "nodes": [],
-   "big": "",
-   "small": "",
-   "keywords": [
-    "khatam hoga",
-    "amar gyan"
-   ]
-  },
-  {
-   "vo": "Harkar Yamraj ne bataya—shareer mit sakta hai, lekin tumhari aatma hamesha zinda rehti hai.",
-   "type": "image",
-   "prompt": "Majestic divine Yamraj pointing a glowing finger of spiritual light toward a glowing translucent orb of soul essence inside human silhouette, cosmic stars swirling in background, painterly cinematic Indian miniature epic style, warm gold and deep maroon, clean uncluttered composition, no text.",
-   "motion": "push",
-   "title": "AMAR AATMA",
-   "nodes": [],
-   "big": "",
-   "small": "",
-   "keywords": [
-    "shareer mit sakta",
-    "aatma",
-    "zinda"
-   ]
-  },
-  {
-   "vo": "Katha Upanishad ka yeh kissa sikhata hai, asli daulat bas gyan hai.",
-   "type": "card",
-   "prompt": "Sacred glowing ancient palm-leaf manuscript emitting soft divine golden rays against deep maroon velvet background, painterly cinematic Indian miniature epic style, warm gold and deep maroon, clean uncluttered composition, no text.",
-   "motion": "pull",
-   "title": "",
-   "nodes": [],
-   "big": "GYAN HI AMAR",
-   "small": "Katha Upanishad",
-   "keywords": [
-    "Katha Upanishad",
-    "asli daulat",
-    "gyan"
-   ]
-  },
-  {
-   "vo": "Agar Yamraj se ek sach poochna ho, toh aap kya poochenge? Comment karo!",
-   "type": "image",
-   "prompt": "Majestic divine Yamraj seated on dark obsidian throne, midnight blue skin, regal ornate crown, looking with serene wisdom toward the viewer, painterly cinematic Indian miniature epic style, warm gold and deep maroon, divine temple hall, clean uncluttered composition, no text.",
-   "motion": "push",
-   "title": "AAP KYA POOCHENGE?",
-   "nodes": [],
-   "big": "",
-   "small": "",
-   "keywords": [
-    "Yamraj se",
-    "ek sach",
-    "Comment karo"
-   ]
+    "comment",
+    "kya maangte"
+   ],
+   "real": null,
+   "big": null,
+   "small": null
   }
  ],
- "caption": "Jab 8 saal ke Nachiketa ne Yamraj ke samne sona-chandi thukra diya aur maut ke paar ka sach maanga. Sroat: Katha Upanishad.\n\nAapko Yamraj se ek sawal poochna ho toh kya poochenge? Comment mein bataiye!",
+ "music_mood": "emotional",
+ "caption": "12 saal ke Nachiketa ne Mrityu ko hi apna guru bana liya. Katha Upanishad ki ye baat aaj bhi hila deti hai. 🕉️\n\nSrot: Katha Upanishad, Pratham Valli\n\nTum hote toh Mrityu se kya maangte? Neeche likho 👇\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#KathaUpanishad",
   "#Nachiketa",
   "#Yamraj",
-  "#SanatanDharm",
-  "#IndianWisdom",
-  "#AncientIndia"
+  "#AtmaGyaan",
+  "#PuraanKiKatha",
+  "#SanatanDharma"
  ],
  "claims": [
   {
-   "claim": "Nachiketa was sent to Yamraj's abode by his father sage Vajasravas in anger.",
-   "basis": "Katha Upanishad, Chapter 1, Valli 1, Verses 1-4"
+   "claim": "Nachiketa story appears in Katha Upanishad, Pratham Valli (First Chapter)",
+   "basis": "Katha Upanishad, one of the principal Upanishads, Krishna Yajurveda"
   },
   {
-   "claim": "Nachiketa waited at Yamraj's doorstep for three nights without food or water.",
-   "basis": "Katha Upanishad, Chapter 1, Valli 1, Verse 9"
+   "claim": "Nachiketa asked for three boons from Yamraj",
+   "basis": "Katha Upanishad 1.1.9-1.1.29"
   },
   {
-   "claim": "Yamraj offered Nachiketa immense wealth, horses, elephants, and heavenly pleasures instead of the third boon, which Nachiketa rejected.",
-   "basis": "Katha Upanishad, Chapter 1, Valli 1, Verses 20-27"
+   "claim": "Third boon was knowledge of what happens after death (Atman)",
+   "basis": "Katha Upanishad 1.1.20-1.1.29"
   },
   {
-   "claim": "Yamraj revealed the immortal nature of the Atman to Nachiketa.",
-   "basis": "Katha Upanishad, Chapter 1, Valli 2, Verses 18-20"
+   "claim": "Yamraj initially offered wealth, kingdom, pleasures to divert Nachiketa",
+   "basis": "Katha Upanishad 1.1.23-1.1.26"
+  },
+  {
+   "claim": "Nachiketa rejected transient pleasures for eternal knowledge",
+   "basis": "Katha Upanishad 1.2.1-1.2.5"
   }
- ]
+ ],
+ "brain_ids": [
+  "9db4cc694f",
+  "e15cfaed29",
+  "038dd5be5a",
+  "97e1b2fcbb",
+  "0adc696a75",
+  "13a94bf865",
+  "a688e48ca2",
+  "82055e32f5",
+  "7a67022fb6",
+  "ef573ce014",
+  "1ad22ef225",
+  "4204a43442",
+  "3cec28c3e9",
+  "d7b38f2237"
+ ],
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
