@@ -475,6 +475,20 @@ def numbers_check(plan, sources=""):
             log("numbers check: skipped one expression", str(b2.get("expr"))[:80], str(e)[:60]); continue
         tol = max(0.05 * abs(says), 0.5 if abs(says) < 100 else 0)     # spoken rounding: "3 percent" for 3.04
         if abs(got - says) > tol:
+            # 19 Nov: one blind answer can be wrong too ("31st day" read as 30+30 = 60). A second blind answer must agree
+            # before the number counts as wrong, else the fix round would change a correct number.
+            try:
+                b3 = ask("A careful second opinion. In this script one number is hidden as X. What is X, worked out ONLY from "
+                         "the other numbers and the words? Watch for counting days (the 31st day after a 30-day limit is 31), "
+                         "per-day vs total, and rates. Write ONE Python arithmetic expression. If X is a plain input that "
+                         "cannot be worked out, set \"input\": true.\nSCRIPT:\n" + masked +
+                         '\nReturn JSON {"expr": "...", "input": false}', max_tokens=600) or {}
+                got2 = None if b3.get("input") or not b3.get("expr") else float(_safe_eval(b3["expr"]))
+            except Exception:
+                got2 = None
+            if got2 is None or abs(got2 - says) <= tol or abs(got2 - got) > max(tol, 0.01 * abs(got)):
+                log("numbers check: blind answers disagree or confirm the script, not a problem:", c.get("scene"), says, got, got2)
+                continue
             probs.append(f"scene {c.get('scene')}: says {says:,.2f} but worked out from the script it is {got:,.2f} "
                          f"({b2['expr']}; {str(b2.get('how', ''))[:80]})")
     for f in r.get("facts") or []:
