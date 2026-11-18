@@ -36,8 +36,8 @@ mk studio-trends   "Studio trending topics scout (daily)"     "*-*-* 06:00:00"  
 mk studio-hooks    "Studio hook study of top Shorts (weekly)" "Mon *-*-* 05:30:00"  hookstudy.py 5400
 [ -f /home/ubuntu/studio/engine/weekly.py ]   && mk studio-weekly   "Studio weekly report (Sunday)"        "Sun *-*-* 20:00:00" weekly.py   900
 [ -f /home/ubuntu/studio/engine/comments.py ] && mk studio-comments "Studio pinned question + comment replies" "*-*-* *:25:00" comments.py 900
-# 18 Nov: comment-to-DM + keyword DM replies (engine/dm.py), every 5 min
-[ -f /home/ubuntu/studio/engine/dm.py ] && mk studio-dm "Studio comment-to-DM (every 5 min)" "*-*-* *:0/5:00" dm.py 240
+# 18 Nov: comment-to-DM + keyword DM replies (engine/dm.py), every 10 min
+[ -f /home/ubuntu/studio/engine/dm.py ] && mk studio-dm "Studio comment-to-DM (every 10 min)" "*-*-* *:03/10:00" dm.py 240
 [ -f /home/ubuntu/studio/engine/mehul.py ] && mk studio-mehul "Studio Mehul agent (acts for the owner, daily)" "*-*-* 22:30:00" mehul.py 3600
 # 18 Nov: competitors + brands (engine/rivals.py): daily track, Sunday brand scan + weekly strategy read
 mk studio-rivals "Studio competitor + brand tracker (daily)" "*-*-* 05:10:00" rivals.py 5400
