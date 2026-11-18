@@ -54,3 +54,17 @@ length follows information, short question ending, one colour identity, no effec
 ## Reviewer before sending (owner, 17 Nov: "add a reviewer which reviews before sending here, I am not free to point silly mistakes")
 - engine/review.py checks the FINAL mp4: first spoken words = script's first line (catches spoken instructions AND a cut-off opening), last line heard, no instruction phrases, alignment >= 80%, format/loudness, length range, strict vision review (2 frames per scene + end card) by gemini-3.8-flash. Only PASS goes to Telegram; HOLD stays on the server with its problems written to lessons-auto.md. Voice faults get one automatic re-voice + rebuild.
 - 16 Nov case2-p1-en: the instruction cut was segment-level and also removed the first line "You are the detective...". Cuts are now word-level, and the reviewer checks the opening.
+## Facts, numbers and rules (19 Nov, Finance Fuel launch; apply on EVERY page)
+- A regulator SETS a rule; the bank / company PAYS or acts. Never "RBI aapko ₹100 dega": say "bank aapko dega, RBI ka niyam hai".
+- Say a rule with its exact condition: "₹100 for each day of delay AFTER T+1", "₹500 a day only if nothing is outstanding",
+  "7 WORKING days". A rule without its condition is wrong.
+- Every rule shows who set it and when on screen (a source card: "RBI circular · 20 Sep 2019").
+- Never a loss figure, a percentage or a "most / majority" claim without an official source (RBI, SEBI, NPCI, a ministry,
+  I4C, a court). No source = say it without the number.
+- Every calculated number must come out of the script's own numbers (₹45,000 at 42% with ₹5,000 a month paid is paid off
+  in a year; it does not grow to ₹1,02,000). The numbers check works each one out blind.
+- Never invent an example that sounds scary but is false maths: viewers who check it stop trusting the page.
+## Real pictures (19 Nov)
+- A real logo or app screen chosen for a scene is correct, not a mistake; a picture prompt's "no logos" is only for the AI
+  background, never a reason to drop the real logo.
+- A stat scene needs its number in "value" (a null value printed "None" on screen).

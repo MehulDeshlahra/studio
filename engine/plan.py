@@ -152,6 +152,9 @@ def make(ch, topic, research_text):
     # 19 Nov: per page (channel.json edit.words); finance reels win at 30-48 s, the other pages keep 95-150
     W0, W1 = [int(x) for x in ((ch.get("edit") or {}).get("words") or [95, 150])]
     lessons = read(os.path.join(ROOT, "knowledge", "lessons.md"))
+    # 19 Nov: the rule book distilled from every page's mistakes (engine/lessons.py); a new page starts with all of it
+    learnt = read(os.path.join(ROOT, "knowledge", "lessons-learnt.md"), 7000)
+    lessons = (learnt + "\n" + lessons).strip()
     ch_lessons = all_lessons(ch["id"])
     bible = read(os.path.join(ROOT, "channels", ch["id"], "bible.md"))
     owner = read(os.path.join(ROOT, "knowledge", "mehul.md"), 4000)   # how the owner thinks (engine/mehul.py)
@@ -272,6 +275,11 @@ PLAN:
                 plan.pop("numbers_hold", None)
                 break
             log("numbers check found", len(probs), "problem(s):", " | ".join(probs)[:300])
+            try:                                   # 19 Nov: recorded even when the fix round repairs it (engine/lessons.py)
+                from core import note_problem
+                note_problem(ch["id"], str(topic)[:60], ["NUMBERS: " + x for x in probs], "numbers check")
+            except Exception:
+                pass
             plan["numbers_hold"] = probs
             if rnd < 2:
                 try:

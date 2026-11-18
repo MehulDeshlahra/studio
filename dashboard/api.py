@@ -365,7 +365,7 @@ NICE = {"studio-inbox": "Read Telegram replies", "studio-prep": "Prep lane (scri
         "studio-dm": "Comment-to-DM (every 10 min)", "studio-domainwatch": "scrollhouse.in watcher (hourly)",
         "studio-learn-deep": "Deep repo reader (3 a day)", "studio-janitor": "Janitor (cleanup, daily)",
         "studio-rivals": "Competitors + brands (daily)", "studio-money": "Money milestones (daily)",
-        "studio-site": "scrollhouse.in site rebuild (daily)"}
+        "studio-site": "scrollhouse.in site rebuild (daily)", "studio-lessons": "Lessons agent (rule book from mistakes, daily)"}
 
 
 def schedule():
@@ -716,7 +716,16 @@ def brain():
     shared = open(os.path.join(ROOT, "knowledge", "lessons.md"), encoding="utf-8").read() if os.path.exists(os.path.join(ROOT, "knowledge", "lessons.md")) else ""
     for i, l in enumerate([x[2:].strip() for x in shared.splitlines() if x.startswith("- ")][:24]):
         nodes.append({"id": f"s{i}", "label": l[:140], "kind": "lesson", "cid": None}); links.append({"s": "brain", "t": f"s{i}"})
-    for c in CHANNELS[:3]:
+    # 19 Nov: the rules distilled from every page's mistakes (engine/lessons.py), shown as their own hub
+    lr = os.path.join(ROOT, "knowledge", "lessons-learnt.md")
+    if os.path.exists(lr):
+        rules = [x[2:].strip() for x in open(lr, encoding="utf-8").read().splitlines() if x.startswith("- ")]
+        if rules:
+            nodes.append({"id": "learnt", "label": "Rules learnt from mistakes", "kind": "hub", "color": "#dc2626"})
+            links.append({"s": "brain", "t": "learnt"})
+            for i, l in enumerate(rules[:40]):
+                nodes.append({"id": f"lr{i}", "label": l[:160], "kind": "lesson", "cid": None}); links.append({"s": "learnt", "t": f"lr{i}"})
+    for c in [c for c in CHANNELS if c.get("group") == "Studio"]:     # 19 Nov: was CHANNELS[:3] (new pages missing)
         nodes.append({"id": c["id"], "label": c["name"], "kind": "page", "color": c["color"]}); links.append({"s": "brain", "t": c["id"]})
         for fn, kind in (("lessons.md", "lesson"), ("lessons-auto.md", "auto")):
             p = os.path.join(ROOT, "channels", c["id"], fn)

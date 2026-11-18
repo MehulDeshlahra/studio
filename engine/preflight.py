@@ -180,6 +180,13 @@ def run(job_dir, plan, timed, total, lang):
     save(os.path.join(job_dir, "preflight.json"), res)
     log("preflight", os.path.basename(job_dir), "OK" if res["ok"] else f"{len(bad)} scene(s) to fix: " +
         " | ".join(f"s{int(k) + 1}: {p[0][:70]}" for k, p in list(res["bad"].items())[:4]), f"score {res['score']}", f"({res['secs']} s)")
+    if bad:                                            # 19 Nov: recorded even when the repair fixes it (engine/lessons.py)
+        try:
+            from core import note_problem
+            cid = os.path.basename(os.path.dirname(job_dir.rstrip("/")))
+            note_problem(cid, os.path.basename(job_dir), [p for v_ in bad.values() for p in v_][:8], "pre-render check")
+        except Exception:
+            pass
     return res
 
 

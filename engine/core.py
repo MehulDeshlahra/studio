@@ -85,6 +85,19 @@ def save(path, data, force=()):
     os.replace(tmp, path)
 
 
+def note_problem(cid, job, problems, where):
+    """19 Nov: every problem a check finds is recorded, even when the engine repairs it (engine/lessons.py turns them into
+    permanent rules). channels/<cid>/lessons-auto.md, one line per problem."""
+    try:
+        probs = [str(p).strip().replace("\n", " ")[:300] for p in (problems if isinstance(problems, (list, tuple)) else [problems]) if str(p).strip()]
+        if not probs or not cid:
+            return
+        with open(os.path.join(ROOT, "channels", cid, "lessons-auto.md"), "a", encoding="utf-8") as f:
+            f.write(f"\n## {job} ({where})\n" + "\n".join("- " + p for p in probs) + "\n")
+    except Exception:
+        pass
+
+
 def pages():
     """Every Studio page = a folder in channels/ with a channel.json whose status is not 'off' (18 Nov: the 3 pages were
     hard-coded in 15 files; a new page now only needs its channels/<id>/ folder). Original pages first, then by name."""

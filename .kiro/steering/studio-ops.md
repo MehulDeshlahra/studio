@@ -19,6 +19,10 @@ Free, 24x7, self-running faceless Reels/Shorts engine on the Oracle server for 3
   without checking them against it and the live server (owner 18 Nov: "be honest, you brought stale data").
 - knowledge/selfheal.md (how the server heals itself), knowledge/RESUME.md (decisions + history),
   knowledge/mehul.md (how the owner thinks), end of knowledge/build-queue.md.
+- knowledge/kiro-lessons.md: Kiro's own mistakes and the rule that stops each; add a line the same day a mistake
+  happens (owner 19 Nov: "learn from mistakes, it should tend to very less; auto think, I will not be there").
+  knowledge/lessons-learnt.md: the engine's rule book from every page's mistakes (engine/lessons.py, daily).
+- A NEW PAGE: run knowledge/new-page.md fully before its first post, without being asked.
 - Never use workflows in this workspace (owner 18 Nov).
 - NEVER SLEEP (owner, said 3 times, 18 Nov). No `sleep`/`Start-Sleep`/wait loops, no command that blocks on a long job
   (`systemctl start` of a long unit: use `--no-block`). Start long jobs in the background, then do other useful work in

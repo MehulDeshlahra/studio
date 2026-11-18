@@ -47,6 +47,7 @@ mk studio-money "Studio money milestones (daily)" "*-*-* 08:50:00" money.py 600
 # 19 Nov: brand kit (engine/brand.py)
 mk studio-brand "Studio brand kit: real IG DPs -> FB DP/cover, banners, highlight covers (daily)" "*-*-* 06:20:00" brand.py 900
 mk studio-janitor "Studio cleanup: duplicates, rejected files, dead builds, serial gaps (daily)" "*-*-* 03:30:00" janitor.py 900
+mk studio-lessons "Studio rule book from every page's mistakes (daily)" "*-*-* 03:45:00" lessons.py 900
 # 18 Nov: whole-repo reading (engine/learn.py deep), 70 chunks a run, 3 runs a day through the repos in ~/studio-out/learn-deep-list.json
 mk studio-learn-deep "Studio deep repo reader (3x a day)" "*-*-* 01,09,15:30:00" "learn.py deep --max 70" 14400
 [ -f /home/ubuntu/studio/engine/stories.py ] && mk studio-stories "Studio daily Stories (IG + FB, every page)" "*-*-* 11,19:00:00" stories.py 1800
