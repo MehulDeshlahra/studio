@@ -27,6 +27,8 @@ TEXT = [
     ("gemini/gemini-3-flash-preview", 3), ("gemini/gemini-3.1-flash-lite", 2),
     ("groq/openai/gpt-oss-120b", 3), ("groq/qwen/qwen3.8-27b", 2), ("groq/openai/gpt-oss-20b", 1), ("groq/compound", 2),
     ("nvidia/nvidia/nemotron-3-ultra-550b-a55b", 3), ("nvidia/google/gemma-4-31b-it", 2),
+    # 18 Nov: on NVIDIA's free catalog but not in OmniRoute's list; tested through our key (natural Hinglish, 6.6 s / 10.8 s)
+    ("nvidia/minimaxai/minimax-m3.1-flash", 3), ("nvidia/stepfun-ai/step-5-preview", 3), ("nvidia/nvidia/nemotron-3.5-bolt-e4b", 1),
     ("nvidia/nvidia/nemotron-3.5-lightning-30b-a3b", 1), ("nvidia/poolside/laguna-xs-2.1", 1),
     ("cloudflare-ai/@cf/zai-org/glm-4.7-flash", 2), ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 2),
     ("cloudflare-ai/@cf/meta/llama-3.3-70b-instruct-fp8-fast", 1), ("cloudflare-ai/@cf/qwen/qwen2.5-coder-32b-instruct", 1),
@@ -44,6 +46,7 @@ VISION = [
     ("gemini/gemini-3.8-flash", 4), ("gemini/gemini-3.7-flash", 4), ("gemini/gemini-3-flash-preview", 3),
     ("gemini/gemini-3.1-flash-lite", 2),
     ("nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b", 3), ("openrouter/nvidia/nemotron-3.5-super-vl:free", 3),
+    ("nvidia/minimaxai/minimax-m3.1-flash", 3), ("nvidia/nvidia/nemotron-3.5-bolt-e4b", 1),      # 18 Nov: multimodal, not listed
     ("nvidia/google/gemma-4-31b-it", 2), ("openrouter/google/gemma-4-31b-it:free", 2),
     ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 2), ("pollinations/openai", 2), ("pollinations/qwen-vision", 2),
     ("pollinations/gemini", 2),
@@ -51,7 +54,7 @@ VISION = [
 CODE = {"gemini/gemini-3.1-pro-preview", "gemini/gemini-3.8-flash", "gemini/gemini-3.7-flash", "groq/openai/gpt-oss-120b",
         "nvidia/nvidia/nemotron-3-ultra-550b-a55b", "huggingface/deepseek-ai/DeepSeek-V3", "pollinations/kimi",
         "pollinations/deepseek", "pollinations/openai-large", "pollinations/qwen-coder-large", "gemini/gemini-3-flash-preview",
-        "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"}
+        "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", "nvidia/minimaxai/minimax-m3.1-flash", "nvidia/stepfun-ai/step-5-preview"}
 
 
 def _key():
