@@ -9,7 +9,15 @@ from core import ROOT, load
 
 DOCS = os.path.join(ROOT, "docs")
 DOMAIN = "scrollhouse.in"
-BRAND = {"name": "Scroll House", "ig": "scrollhouse.in", "yt": "scrollhouse", "email": "",
+def _email():
+    """The brand email (owner makes hello@scrollhouse.in; write the address in ~/.studio-brand-email and every page, kit and bio picks it up)."""
+    try:
+        return open(os.path.expanduser("~/.studio-brand-email"), encoding="utf-8").read().strip()
+    except OSError:
+        return ""
+
+
+BRAND = {"name": "Scroll House", "ig": "scrollhouse.in", "yt": "scrollhouse", "email": _email(),
          "line": "A network of original short-video pages. Every genre, every audience, one booking."}
 YT = {"tech": "kaise.tech.official", "katha": "puraankikatha", "raaz": "aagesuno"}   # verified 18 Nov (publish launch check)
 LIVE = ("pilot", "active", "live", "live (warm-up)")
@@ -49,7 +57,7 @@ def pages():
                     "yt": str(c.get("handle_youtube") or YT.get(cid, "")).lstrip("@"),
                     "lang": "English" if str(c.get("lang") or c.get("language") or "hi").lower().startswith("en") else "Hindi",
                     "followers": sum(int((m.get(p) or {}).get(k) or 0) for p, k in (("ig", "followers"), ("fb", "followers"), ("yt", "subs"))),
-                    "posts": len(posted), "views": views,
+                    "posts": len(posted), "views": views, "email": BRAND["email"],
                     "best": [{"title": d.get("title", ""), "views": d["stats"]["views"], "url": (d.get("posted") or {}).get("ig_url") or ""} for d in best]})
     return out
 
