@@ -105,11 +105,30 @@ def make(cid, plan, job_dir=None):
         log("seo: planner gave nothing for", cid); return {}
     for k in ("ig", "fb"):
         if isinstance(r.get(k), dict):
-            r[k]["hashtags"] = [h if h.startswith("#") else "#" + h for h in (r[k].get("hashtags") or [])][:8]
+            r[k]["hashtags"] = [h if h.startswith("#") else "#" + h for h in (r[k].get("hashtags") or [])][:12]
+            r[k]["hashtags"] = clamp_tags(r[k]["hashtags"])
     plan["seo"] = r
     if job_dir:
         save(os.path.join(job_dir, "plan.json"), plan)
     return r
+
+
+GENERIC = {"#viral", "#trending", "#reels", "#reel", "#fyp", "#foryou", "#foryoupage", "#explore", "#instagood", "#instareels",
+           "#explorepage", "#trend", "#shorts", "#follow", "#like", "#love"}
+
+
+def clamp_tags(tags, n=5):
+    """19 Nov: Instagram allows at most 5 hashtags per post (announced Dec 2025; source in knowledge/build-queue.md) and
+    ranks Reels by topic. Keep the first n specific tags, drop broad reach tags, no duplicates."""
+    out, seen = [], set()
+    for h in tags or []:
+        h = h if str(h).startswith("#") else "#" + str(h)
+        k = h.lower()
+        if k in GENERIC or k in seen or len(h) < 3:
+            continue
+        seen.add(k)
+        out.append(h)
+    return out[:n]
 
 
 def text_for(plan, platform, music_credit=None, cid=None):
@@ -145,8 +164,9 @@ def text_for(plan, platform, music_credit=None, cid=None):
         d = s.get("description", "") + "\n\n" + " ".join(s.get("hashtags", [])[:3]) + tail
         return {"title": s["title"][:90], "description": d.strip(), "tags": s.get("tags", [])[:12]}
     if s.get("caption"):
-        return (s["caption"].strip() + "\n\n" + " ".join(s.get("hashtags", [])) + tail).strip()
-    base = (plan.get("caption", "") + "\n\n" + " ".join(plan.get("hashtags", [])[:8]) + tail).strip()   # 18 Nov: + footer/credits
+        tags = s.get("hashtags", [])
+        return (s["caption"].strip() + "\n\n" + " ".join(clamp_tags(tags) if platform in ("ig", "fb") else tags) + tail).strip()
+    base = (plan.get("caption", "") + "\n\n" + " ".join(clamp_tags(plan.get("hashtags", [])) if platform in ("ig", "fb") else plan.get("hashtags", [])[:8]) + tail).strip()   # 18 Nov: + footer/credits
     if platform == "yt":
         return {"title": plan.get("title", "")[:90], "description": base, "tags": []}
     return base
