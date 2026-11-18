@@ -121,6 +121,11 @@ def lane_render(dry):
     todo = [t for t in jobs_in("prepped") if (t[0], t[1]) not in held]   # 18 Nov: a held job is the healer's, not the lane's
     if not todo:
         log("render lane: nothing prepped"); return
+    # 18 Nov: with the laptop the two lanes take turns non-stop, so the healer (runs only when nothing builds) got no turn
+    # from 11:07 to 15:10 with 6 videos held. Its flag now pauses the render lane too, once, until the healer has run.
+    w = os.path.join(OUT, "healer-wants-turn")
+    if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600 and not urgent_pages():
+        log("render lane: the healer needs a turn to fix held videos, skip this round"); return
     cid, j, m = todo[0]
     log("render lane:", cid, j)
     if dry:
