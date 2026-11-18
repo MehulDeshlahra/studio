@@ -47,6 +47,9 @@ def candidates(ch, used):
         if heads:
             trends += "\n\nFresh AI/tech news ideas from today's radar:\n- " + "\n- ".join(h for h in heads if h)
     results = read(os.path.join(ROOT, "knowledge", "results.md"), 2000) or ""
+    rv = read(os.path.join(ROOT, "channels", ch["id"], "rivals.md"), 2500)      # engine/rivals.py: proven competitor topics
+    if rv:
+        trends += "\n\nWhat the biggest channels in our niche got 3x+ their usual views with (take the question, never the title):\n" + rv
     p = (f"You plan short vertical videos (Reels/Shorts) for the page '{ch.get('name', ch['id'])}'.\n"
          f"Page format: {ch.get('format', '')}\nPillars/series: {json.dumps(ch.get('pillars') or ch.get('series') or [], ensure_ascii=False)}\n"
          f"Already made (do not repeat or rephrase): {sorted(used)[:60]}\n"
