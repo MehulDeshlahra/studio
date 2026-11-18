@@ -117,5 +117,12 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
   regression-checked.
 - 06:03 the healer's lab-gpt-01 rebuild sat 23 min in local Whisper under swap (load 17): stopped; it is retried with
   Groq-first alignment once free memory is back above 2.5 GB.
+- 07:07-07:32 FIRST FULL SELF-REPAIR WITH NO HUMAN: the healer found tech 1117-0721 (cut off by the 01:50 freeze),
+  resumed it -> prepped 07:12 -> rendered -> qc OK -> review PASS -> sent for approval 07:32 (now approved).
+- 07:07 healer bug: KeyError on the first code fix of the day (code_day) -> fixed 08:09.
+- Starvation: the prep lane builds new videos almost non-stop and the healer only acts when nothing builds, so the katha
+  holds (1117-1935, 1118-0035) were never reached; one tech video also took every run. Fixed 08:10: the healer raises
+  ~/studio-out/healer-wants-turn and the prep lane skips a round; held videos take turns (oldest attempt first,
+  parked ones last).
 - Server load: the job bot's careers browser (jb-careers, chromium renderer) grew to 4.8 GB and ~60% CPU; load 17 on
   2 cores at 05:44; swap 2 GB used. Not Studio's process: left for the owner to decide.
