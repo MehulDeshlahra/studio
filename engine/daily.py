@@ -122,6 +122,9 @@ def lane_prep(dry):
     # 2) a new video
     if b.get("reels", 0) >= REELS_CAP:
         log("prep lane: reel budget used today", b); return
+    w = os.path.join(OUT, "healer-wants-turn")    # 18 Nov: held videos get fixed before more new ones are started
+    if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600:
+        log("prep lane: the healer needs a turn to fix held videos, skip this round"); return
     if not muse._bridges("image"):     # 18 Nov: this stopped ALL new videos although pictures fall back to free FLUX
         log("prep lane: Muse image budget used today; pictures come from the free FLUX sources (OmniRoute, Cloudflare, Pollinations)")
     want = []

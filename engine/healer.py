@@ -189,17 +189,46 @@ def simplify(cid, job, probs):
     return True
 
 
+WANT = os.path.join(OUT, "healer-wants-turn")
+
+
+def want_turn(on):
+    """18 Nov: the prep lane builds new videos almost non-stop, so 'one build at a time' starved the healer. When it
+    has work but the server is busy it raises this flag; the prep lane skips one round (engine/daily.py)."""
+    if DRY:
+        return
+    if on:
+        if not os.path.exists(WANT):
+            open(WANT, "w").write(time.strftime("%Y-%m-%d %H:%M"))
+    elif os.path.exists(WANT):
+        os.remove(WANT)
+
+
 def heal_held():
+    rows = []
+    for cid in PAGES:
+        for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []:
+            if d.get("status") == "held" and not d["job"].endswith("-en"):
+                it = S["items"].get(f"held:{cid}:{d['job']}") or {}
+                parked = it.get("state") == "parked" and not d.get("replan_requested")
+                rows.append(("1" if parked else "0") + ((it.get("steps") or [{}])[-1]).get("t", ""), cid, d))
+    if not any(r[0].startswith("0") for r in rows):         # only parked ones: no need to take the prep lane's turn
+        want_turn(False)
+        if not rows:
+            return
     if busy():
+        if any(r[0].startswith("0") for r in rows):
+            want_turn(True)
         return
     if mem_mb() < 2500:
         note(f"waiting: only {mem_mb()} MB free (needs 2500)"); return
+    want_turn(False)
     h = head()
-    for cid in PAGES:
-        done = load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
-        for d in done:
-            if d.get("status") != "held":
-                continue
+    # oldest last attempt first: every held video gets its turn (18 Nov: one tech video took every run)
+    for _, cid, d in sorted(rows, key=lambda r: r[0]) + [(None, cid_, d_) for cid_ in PAGES
+                                                          for d_ in (load(os.path.join(ROOT, "channels", cid_, "done.json"), []) or [])
+                                                          if d_.get("status") == "held" and d_["job"].endswith("-en")]:
+        if True:
             job, probs = d["job"], [str(x) for x in (d.get("review") or [])]
             key = f"held:{cid}:{job}"
             it = S["items"].setdefault(key, {"first": time.strftime("%Y-%m-%d %H:%M"), "steps": []})
