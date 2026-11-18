@@ -262,14 +262,16 @@ def page(plan, timed, total, theme, assets):
         elif kind in ("object", "clip") and img:
             lg = (assets.get(i) or {}).get("logo")
             t_img = a
+            # 18 Nov pilot: a REAL logo / photo (realmedia, s<i>r.jpg / s<i>rl.jpg) is a clean card, not a blended prop
+            rc = lambda f: " real" if re.search(r"s\d+r[l]?\.jpg$", os.path.basename(f)) else ""
             if lg and d > 2.4:        # 17 Nov: the brand logo pops in (back.out), holds, shrinks away, THEN the photo/product arrives
-                hero = f'<img id="{sid}L" class="prop" src="assets/{os.path.basename(lg)}">'
+                hero = f'<img id="{sid}L" class="prop{rc(lg)}" src="assets/{os.path.basename(lg)}">'
                 js.append(f'tl.fromTo("#{sid}L",{{scale:0.35,opacity:0,rotation:-4}},{{scale:1,opacity:1,rotation:0,duration:0.45,ease:"back.out(2.4)",immediateRender:false}},{a + 0.05:.3f});')
                 js.append(f'tl.to("#{sid}L",{{scale:0.8,opacity:0,y:-60,duration:0.35,ease:"power2.in"}},{a + 1.15:.3f});')
                 js.append(f'tl.set("#{sid}L",{{opacity:0}},{a:.3f});')
                 cues.append({"t": round(a + 0.08, 3), "file": "sfx/impact.mp3", "gain_db": -22, "align": "onset"})
                 t_img = a + 1.3
-            hero += f'<img id="{sid}h" class="prop" src="assets/{os.path.basename(img)}">'
+            hero += f'<img id="{sid}h" class="prop{rc(img)}" src="assets/{os.path.basename(img)}">'
             js.append(f'tl.fromTo("#{sid}h",{{y:70,scale:0.92,opacity:0}},{{y:0,scale:1,opacity:1,duration:0.9,ease:"power4.out",immediateRender:false}},{t_img:.3f});')
             js.append(f'tl.to("#{sid}h",{{y:-18,rotation:0.6,duration:{max(0.5, d - 0.9 - (t_img - a)):.3f},ease:"sine.inOut"}},{t_img + 0.9:.3f});')
             js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
@@ -450,7 +452,19 @@ def page(plan, timed, total, theme, assets):
             inner = (f'<img id="{sid}bg" class="bgimg" src="assets/{os.path.basename(bgp)}"><div class="bgshade" data-layout-ignore></div>'
                      + inner.replace('<div class="glow"', '<div class="glow" style="display:none"', 1))
             dx = 24 if i % 2 else -24
-            js.append(f'tl.fromTo("#{sid}bg",{{scale:1.04,x:{-dx}}},{{scale:1.14,x:{dx},duration:{max(0.8, d):.2f},ease:"power1.inOut",immediateRender:false}},{a:.3f});')
+            real_bg = bool(re.search(r"s\d+rb\.jpg$", os.path.basename(bgp)))
+            if real_bg and kind not in ("object", "clip") and d > 2.2:
+                # 18 Nov pilot: the real Google Assistant screen sat behind the AUDIO BUFFER panel and nobody could see it.
+                # Establish, then overlay: the real screen / photo plays alone first, then the card arrives and it dims.
+                est = round(min(1.8, max(1.0, d * 0.35)), 2)
+                dx = 10 if i % 2 else -10
+                js.append(f'tl.fromTo("#{sid}cam",{{opacity:0}},{{opacity:1,duration:0.35,ease:"power2.out",immediateRender:false}},{a + est:.3f});')
+                js.append(f'tl.set("#{sid}cam",{{opacity:0}},{a:.3f});')
+                js.append(f'tl.fromTo("#{sid}bg",{{filter:"brightness(1) blur(0px)"}},{{filter:"brightness(0.42) blur(6px)",duration:0.45,ease:"power2.out",immediateRender:false}},{a + est:.3f});')
+                js.append(f'tl.set("#{sid}bg",{{filter:"brightness(1) blur(0px)"}},{a:.3f});')
+                inner = inner.replace('<div class="bgshade" data-layout-ignore></div>', '<div class="bgshade real" data-layout-ignore></div>', 1)
+            end_sc = 1.08 if real_bg else 1.14              # a real screen must stay readable: gentler push
+            js.append(f'tl.fromTo("#{sid}bg",{{scale:1.04,x:{-dx}}},{{scale:{end_sc},x:{dx},duration:{max(0.8, d):.2f},ease:"power1.inOut",immediateRender:false}},{a:.3f});')
         if film:
             js += _camera(sid, kind, a, d)
         else:
@@ -524,6 +538,9 @@ body{{margin:0;background:#07080b}}
 .cam{{position:absolute;inset:0}}
 .prop{{position:absolute;left:40px;top:330px;width:1000px;height:900px;object-fit:contain;mix-blend-mode:lighten;
   -webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 60%,transparent 100%)}}
+.prop.real{{left:0;right:0;top:250px;bottom:690px;margin:auto;width:auto;height:auto;max-width:940px;max-height:860px;object-fit:fill;
+  mix-blend-mode:normal;-webkit-mask-image:none!important;mask-image:none!important;border-radius:32px;
+  box-shadow:0 40px 90px #000c,0 0 0 1.5px #ffffff22}}
 .hud{{position:absolute;left:64px;right:64px;top:196px;display:flex;justify-content:space-between;font-family:{MONO};font-size:30px;
   letter-spacing:2px;color:#c9ced8;z-index:6}}
 .hud span{{border:1.5px solid #ffffff30;border-radius:10px;padding:8px 16px;background:#0b0d12cc}}
@@ -598,6 +615,7 @@ body{{margin:0;background:#07080b}}
 .bgimg{{position:absolute;left:0;top:0;width:{W}px;height:{H}px;object-fit:cover;z-index:0}}
 .bgshade{{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#07080bd9 0%,#07080b66 18%,#07080b33 42%,#07080b8c 62%,#07080bf2 80%,#07080b 100%)}}
 .cam{{z-index:1}} .scene .hud,.scene .lpill{{z-index:3}}
+.bgshade.real{{background:linear-gradient(180deg,#07080b99 0%,#07080b00 16%,#07080b00 70%,#07080bcc 88%,#07080b 100%)}}
 .stat{{font-size:250px;top:520px;text-shadow:0 8px 40px #000e,0 0 70px {acc}55}}
 .statsub{{font-size:58px;top:800px;text-shadow:0 4px 24px #000}}
 .kin{{font-size:168px;text-shadow:0 10px 50px #000e}} .kinsub{{font-size:56px}}

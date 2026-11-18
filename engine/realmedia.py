@@ -14,7 +14,7 @@ from core import log, sh
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 H = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
 MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
-WATERMARKED = re.compile(r"alamy|shutterstock|dreamstime|istockphoto|gettyimages|depositphotos|123rf|bigstock|adobestock|stock\.adobe|canstock|agefotostock|pond5", re.I)
+WATERMARKED = re.compile(r"alamy|shutterstock|dreamstime|istockphoto|gettyimages|depositphotos|123rf|bigstock|adobestock|stock\.adobe|canstock|agefotostock|pond5|makeuseofimages|freepik\.com/premium", re.I)   # 18 Nov: MUO + Freepik premium previews carry marks
 
 
 WM_UA = {"User-Agent": "StudioBot/1.0 (https://kaise.tech; mehuldeshlahra12@gmail.com) python-urllib", "Accept-Language": "en"}
@@ -214,12 +214,14 @@ def trim_margins(src, work):
 def layout(src, out, kind, lab):
     """Lay the real picture out for the video; out is a JPEG."""
     if lab:
-        # 1350x1140 (= 900:760 x1.5) on black. Logo: light rounded-ish card; photo: fitted.
+        # 18 Nov pilot: the old black 1350x1140 canvas was blended 'lighten' behind a feathered mask, which turned the
+        # white Google logo card grey at the corners. Now the card / photo itself, no padding; the lab compositor shows
+        # it as a clean rounded card (compose_lab .prop.real).
         if kind == "logo":
-            fc = ("color=c=black:s=1350x1140[bg];color=c=0xffffff:s=1100x900[card];[0:v]scale=860:660:force_original_aspect_ratio=decrease[l];"
-                  "[card][l]overlay=(W-w)/2:(H-h)/2[c];[bg][c]overlay=(W-w)/2:(H-h)/2")
+            fc = ("color=c=0xffffff:s=1100x760[card];[0:v]scale=860:560:force_original_aspect_ratio=decrease[l];"
+                  "[card][l]overlay=(W-w)/2:(H-h)/2")
         else:
-            fc = ("color=c=black:s=1350x1140[bg];[0:v]scale=1250:1040:force_original_aspect_ratio=decrease[p];[bg][p]overlay=(W-w)/2:(H-h)/2")
+            fc = "[0:v]scale=1250:1040:force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2"
     else:
         if kind == "logo":
             fc = ("[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=40:6,eq=brightness=-0.25[bg];"
