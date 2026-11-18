@@ -158,13 +158,31 @@ def hashtag_top(page, tags=None, per=4, min_likes=500):
                 h = mine[tag] = {"id": d["data"][0]["id"], "t": now}
             except Exception as e:
                 log("hashtag search fail", tag, str(e)[:80]); continue
-        try:
-            f = "id,caption,like_count,comments_count,media_type,media_url,permalink,timestamp"
-            d = publish._req(f"{publish.G}/{h['id']}/top_media?user_id={acc['ig_user_id']}&fields={f}&limit=25&access_token={acc['page_token']}")
-        except Exception as e:
-            log("hashtag top fail", tag, str(e)[:80]); continue
-        vids = [m for m in d.get("data", []) if m.get("media_type") == "VIDEO" and m.get("media_url") and (m.get("like_count") or 0) >= min_likes]
-        vids.sort(key=lambda m: -((m.get("like_count") or 0) + 3 * (m.get("comments_count") or 0)))
+        # 18 Nov: for broad tags "top" is mostly carousels/images and the reels sit in "recent" with few likes so far, so
+        # both edges are read; a recent reel ranks by likes per hour since posting (a small page breaking out right now).
+        f = "id,caption,like_count,comments_count,media_type,media_url,permalink,timestamp"
+        vids = []
+        for edge in ("top_media", "recent_media"):
+            try:
+                d = publish._req(f"{publish.G}/{h['id']}/{edge}?user_id={acc['ig_user_id']}&fields={f}&limit=50&access_token={acc['page_token']}")
+            except Exception as e:
+                log("hashtag", edge, "fail", tag, str(e)[:80]); continue
+            for m in d.get("data", []):
+                if m.get("media_type") != "VIDEO" or not m.get("media_url"):
+                    continue                                # no file = licensed music, cannot be watched
+                likes = (m.get("like_count") or 0) + 3 * (m.get("comments_count") or 0)
+                try:
+                    age_h = max(1.0, (now - time.mktime(time.strptime(m["timestamp"][:19], "%Y-%m-%dT%H:%M:%S"))) / 3600)
+                except Exception:
+                    age_h = 24.0
+                if edge == "top_media" and likes >= min_likes:
+                    m["_score"] = likes
+                elif edge == "recent_media" and likes / age_h >= 4:   # >= 4 likes an hour while young
+                    m["_score"] = likes / age_h * 24
+                else:
+                    continue
+                vids.append(m)
+        vids.sort(key=lambda m: -m["_score"])
         for m in vids[:per]:
             out.append({"id": m["permalink"], "url": m["permalink"], "video": m["media_url"], "title": (m.get("caption") or "")[:90],
                         "views": (m.get("like_count") or 0) * 30, "likes": m.get("like_count"), "comments": m.get("comments_count"),
