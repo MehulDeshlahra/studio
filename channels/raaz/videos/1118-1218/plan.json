@@ -1,0 +1,222 @@
+{
+ "slug": "chouthi-manzil-ka-raaz-part-3",
+ "title": "Apni hi jeb mein baji maut ki ringtone?",
+ "hooks": [
+  "Mehul ne parchi ka number milaya aur apni hi jeb mein phone baja",
+  "Screen par Mehul ka apna naam chamka aur pairo tale zameen khisaki",
+  "Laal siyahi ka raasta Mehul ko seedhe balcony le gaya"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Immediate visceral shock pairing an unknown phone number with protagonist's own pocket ringtone.",
+ "metaphor": "Fresh blood-red ink acting like a psychological tripwire connecting Mehul's identity to the crime scene.",
+ "cast": {
+  "Mehul": "27 years old Indian man, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone.",
+  "Raghav": "27 years old Indian man, Mehul's college friend, round face, short curly hair, light stubble, mustard hoodie, carrying a steel water bottle."
+ },
+ "scenes": [
+  {
+   "vo": "Mehul ne parche par likhe anjaan number par call lagaya...",
+   "type": "clip",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. 27 years old Indian man, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone. Mehul taps a call button on his glowing phone in a dim damp basement corridor. No text, no watermark.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Mehul",
+    "parche",
+    "call"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "...aur achanak Mehul ki apni hi jeb mein phone bajne laga!",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Close-up on the pocket of a faded blue cotton t-shirt vibrating violently with blue screen glare shining through the fabric. Extreme tension, dynamic lighting. No text.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "jeb",
+    "phone",
+    "bajne"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Screen par caller ID Mehul ka apna hi naam dikha rahi thi.",
+   "type": "card",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Cracked black smartphone screen illuminating Mehul's terrified expression in darkness. No readable text on phone.",
+   "motion": "push",
+   "title": "INCOMING CALL",
+   "big": "KHUD KA CALL",
+   "small": "unknown clone",
+   "keywords": [
+    "Screen",
+    "caller",
+    "naam"
+   ]
+  },
+  {
+   "vo": "Raghav darte hue bola, bhai tune khud ko hi call kaise mila diya?",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. 27 years old Indian man, Mehul's college friend, round face, short curly hair, light stubble, mustard hoodie, clutching a steel water bottle with wide startled eyes in a stairwell. No text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Raghav",
+    "khud",
+    "call"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Dono darr ke maare seedhe upar flat teen sau do mein bhaage.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Low angle view of two young men rushing up narrow apartment stairs towards an open wooden door under flickering yellow light. No text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "dono",
+    "flat",
+    "bhaage"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Darwaza khulte hi farsh par taaza laal siyahi ki boondein dikhin.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. High angle view of vintage apartment mosaic floor, wet crimson ink droplets glistening like fresh blood drops in a neat dotted trail. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "farsh",
+    "laal",
+    "siyahi"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Yeh laal nishan living room se seedhe khuli balcony ki railing tak gaye the.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Living room corridor leading to an open wet balcony window blowing curtains inward, line of red drops leading forward on tiles. No text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "laal",
+    "balcony",
+    "railing"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Railing par ek puraana metallic fountain pen akele chhod diya gaya tha.",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Extreme macro shot of an antique brass fountain pen resting on a wet concrete railing, crimson ink pooling around its nib, rain droplets glistening. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "fountain",
+    "pen",
+    "railing"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Mehul ne kaanpte haathon se jaise hi us pen ko uthaya...",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. 27 years old Indian man, tired brown eyes, messy black hair, faded blue t-shirt, trembling fingers grasping the brass fountain pen in pouring rain. No text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "Mehul",
+    "pen",
+    "uthaya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "...pen ki geeli siyahi se uski ungliyon par ek chetavni chhap gayi.",
+   "type": "card",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Macro focus on trembling palm and fingers covered in wet dark red ink stains. No text in scene.",
+   "motion": "punch",
+   "title": "SANDESH",
+   "big": "LAAVAARIS PEN",
+   "small": "haath par siyahi",
+   "keywords": [
+    "geeli",
+    "ungliyon",
+    "chetavni"
+   ]
+  },
+  {
+   "vo": "Siyahi mein ulta likha tha: aaine mein mat dekhna!",
+   "type": "image",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Mehul stares down in shock at his ink-stained palm, hallway mirror behind him draped partially in shadows with a faint reflection silhouette. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "aaine",
+    "mat",
+    "dekhna"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Agar tum Mehul ki jagah hote, toh kya aaina dekhte ya darwaze ki taraf bhaagte?",
+   "type": "card",
+   "prompt": "Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Mehul and Raghav frozen in hallway doorway looking terrified at the wall mirror. High contrast shadows. No text.",
+   "motion": "punch",
+   "title": "AB KYA?",
+   "big": "AAINA YA BHAAGO?",
+   "small": "comment karo",
+   "keywords": [
+    "Mehul",
+    "aaina",
+    "bhaagte"
+   ]
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Mehul ne anjaan number dial kiya aur phone uski apni hi jeb mein baji! Pen par likhi chetavni: aaine mein mat dekhna. Tum hote toh kya karte? Part 4 kal!",
+ "hashtags": [
+  "#ChouthiManzilKaRaaz",
+  "#AageSuno",
+  "#HindiThriller",
+  "#SuspenseShorts",
+  "#Kahani"
+ ],
+ "claims": [
+  {
+   "claim": "Mehul's own phone rings displaying his caller ID when dialing the paper slip number.",
+   "basis": "Original fictional suspense narrative beat for Chouthi Manzil Ka Raaz episode 3."
+  },
+  {
+   "claim": "A trail of fresh red ink leads to a fountain pen which transfers an embossed warning onto fingers.",
+   "basis": "Original fictional suspense narrative beat for Chouthi Manzil Ka Raaz episode 3."
+  }
+ ],
+ "brain_ids": [
+  "97e1b2fcbb",
+  "9db4cc694f",
+  "744e3f2bb1",
+  "0329fea9ed",
+  "13a94bf865",
+  "79ea51cd9a",
+  "2f7cea2cd3",
+  "122bf74782",
+  "ca6af6524c",
+  "19dda05782",
+  "038dd5be5a",
+  "da174fc80b",
+  "5a702a85dd",
+  "b9042f4ea0"
+ ],
+ "cliff_done": true
+}

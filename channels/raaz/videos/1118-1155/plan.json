@@ -1,0 +1,216 @@
+{
+ "slug": "shaadi-lifafa-part2",
+ "title": "Shaadi ka lifafa ka chor kaun?",
+ "hooks": [
+  "Shaadi mein paanch lakh ka lifafa gayab... chor kaun?",
+  "Vikram Rathore... jawab ab",
+  "Paanch lakh dost ne liye"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the stakes (5 lakh) and the question, no name-drop delay, immediate curiosity.",
+ "metaphor": "Three clues that eliminate suspects one by one like a detective's deduction board.",
+ "cast": {
+  "Inspector Vikram Rathore": "tall Indian man in his 40s, grey stubble, long dark brown coat, old steel wristwatch, always holding a small brass torch"
+ },
+ "scenes": [
+  {
+   "vo": "Shaadi mein paanch lakh ka lifafa gayab... chor kaun?",
+   "type": "clip",
+   "prompt": "Split-screen 9:16. Top half: 3D animation of a wedding envelope vanishing from a bag behind a decorated stage at night, rain falling. Bottom half: Inspector Vikram Rathore seen from behind, silhouette, holding a small brass torch beam cutting through rain, cold teal shadows with warm amber practical lights from wedding venue, film grain, cinematic night thriller still, Indian location. No text in image.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "shaadi",
+    "lifafa",
+    "chor"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Teen log the stage ke peeche: photographer, halwai, dulhe ka dost",
+   "type": "image",
+   "prompt": "Wide shot of a grand Indian wedding stage at night, area behind stage visible with a cloth bag on floor, three silhouettes in background (photographer with camera, halwai with ladle, friend with phone), rain, film grain, cold teal shadows, warm amber string lights and halogen lamps, cinematic night thriller still. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "teen log",
+    "stage peeche"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Pehl suraag: bag pe chashni hi nahi mili",
+   "type": "image",
+   "prompt": "Close-up of the cloth bag on wet ground behind stage, no syrup stains anywhere, water droplets on fabric, cold teal shadows, warm amber light from nearby halwai bhatti, film grain, cinematic night thriller still. No text.",
+   "motion": "punch",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "suraag",
+    "bag",
+    "chashni"
+   ]
+  },
+  {
+   "vo": "Halwai ke haath chashni mein the, wo bach gaya",
+   "type": "image",
+   "prompt": "Halwai at a massive iron bhatti stirring syrup, hands glistening with chashni, steam rising into amber light, face lit warm, cold teal background, rain, film grain, cinematic night thriller still, Indian location. No text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "halwai",
+    "chashni",
+    "bach gaya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Doosra suraag: photographer ki photo stage pe thi",
+   "type": "image",
+   "prompt": "Camera LCD screen showing a photo of the photographer on stage clicking the couple, timestamp visible, rain blur on screen edges, cold teal shadows, warm amber stage lights, film grain. No text.",
+   "motion": "punch",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "suraag",
+    "photographer",
+    "stage"
+   ]
+  },
+  {
+   "vo": "Wo bhi stage pe hi tha, bach gaya",
+   "type": "image",
+   "prompt": "Photographer on wedding stage, camera raised, capturing bride and groom under floral canopy, stage lights warm amber, rain in background, cold teal night, film grain, cinematic night thriller still. No text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "photographer",
+    "stage",
+    "bach gaya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Teesra suraag: stage ke peeche plug point hi nahi tha",
+   "type": "image",
+   "prompt": "Brick wall behind wedding stage, exposed wiring but no electrical socket, just a bare bulb holder, rain streaks, cold teal shadows, warm amber spill from stage, film grain, cinematic night thriller still. No text.",
+   "motion": "punch",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "suraag",
+    "plug point",
+    "nahi"
+   ]
+  },
+  {
+   "vo": "Dost bola phone charge karne gaya tha... jhooth pakda gaya",
+   "type": "image",
+   "prompt": "Groom's friend holding phone, looking at brick wall behind stage where no socket exists, confused expression, rain on face, cold teal shadows, warm amber practical light from stage, film grain, cinematic night thriller still. No text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "dost",
+    "phone",
+    "charge",
+    "jhooth"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Plug point na tha, uska jhooth pakda gaya",
+   "type": "image",
+   "prompt": "Same friend, Inspector's torch light hitting his face, hand reaching into coat pocket, envelope corner visible, rain, cold teal shadows, warm amber torch, film grain, cinematic night thriller still. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "plug point",
+    "jhooth",
+    "pakda"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Dulhe ka dost lifafe ke saath pakda gaya",
+   "type": "image",
+   "prompt": "Friend caught, envelope fully visible in hand, blurred wedding guests in background, Inspector's silhouette at edge of frame, rain, cold teal shadows, warm amber lights, film grain, cinematic night thriller still. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "dulhe ka dost",
+    "lifafa",
+    "pakda"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "C likha hai toh sahi pakda, shukriya",
+   "type": "image",
+   "prompt": "Red stamp slam on paper: big letter C, comment bubbles with 'C' floating, rain texture, cold teal, warm amber accent, film grain. No other text.",
+   "motion": "punch",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "C likhe",
+    "sahi",
+    "shukriya"
+   ]
+  },
+  {
+   "vo": "Agla raaz dekhna hai? Follow karo",
+   "type": "clip",
+   "prompt": "Inspector Vikram Rathore walking away into rain, silhouette, brass torch beam fading, cold teal night, warm amber street lamps, film grain, cinematic night thriller still. No text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "agla raaz",
+    "follow karo"
+   ],
+   "big": null,
+   "small": null
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Shaadi ka lifafa case solve hua. Teen suraag, ek chor. Tumne sahi pakda? #raaz #mystery",
+ "hashtags": [
+  "#raaz",
+  "#mystery",
+  "#shaadi",
+  "#detective",
+  "#cliffhanger"
+ ],
+ "claims": [
+  {
+   "claim": "Shaadi ka lifafa is a fictional mystery serial",
+   "basis": "Channel bible: pure fiction, no real crimes or people"
+  }
+ ],
+ "brain_ids": [
+  "744e3f2bb1",
+  "97e1b2fcbb",
+  "0329fea9ed",
+  "9db4cc694f",
+  "8b0251c9f1",
+  "13a94bf865",
+  "443bcb1e8a",
+  "ca6af6524c",
+  "038dd5be5a",
+  "79ea51cd9a",
+  "5a702a85dd",
+  "b9042f4ea0",
+  "da174fc80b",
+  "d52bfa64b5"
+ ],
+ "cliff_done": true
+}

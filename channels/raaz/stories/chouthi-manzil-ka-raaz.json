@@ -7,7 +7,8 @@
  "cast": {
   "Mehul": "27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone.",
   "Vikrant": "27 years old, sharp features, neat black hair, wearing Mehul's faded blue cotton t-shirt, holding Mehul's cracked black smartphone.",
-  "Raghav": "27 years old, Mehul's college friend and neighbour, cheerful round face, short curly hair, light stubble, mustard hoodie, always carries a steel water bottle"
+  "Raghav": "27 years old, Mehul's college friend and neighbour, cheerful round face, short curly hair, light stubble, mustard hoodie, always carries a steel water bottle",
+  "Sharma ji": "58 years old, weathered face with deep laugh lines, thick graying mustache, receding salt-and-pepper hair tied in a small knot at the back, khaki watchman uniform with brass buttons and a faded society badge, always carries a wooden lathi with a red cloth wrapped around its handle"
  },
  "started": "2026-11-17 23:59",
  "parts": [
@@ -23,14 +24,14 @@
    "title": "Chabi Wala",
    "beats": "The next morning, Mehul questions Sharma ji, the society watchman, about the fourth-floor flat. Sharma ji turns pale and drops his chai glass, swearing flat 402 has been empty since the original owner vanished in 2018. Mehul refuses to drop it and checks the electricity meter box downstairs in the basement. He discovers that meter number 402 is showing high active power consumption right at this moment. Mehul's friend Raghav is with him and helps (keeps the mood human, a little humour).",
    "cliffhanger": "Mehul opens meter box 402 and finds a fresh note inside with his exact name and current mobile number written in red ink.",
-   "status": "todo"
+   "status": "made"
   },
   {
    "n": 3,
    "title": "Laal Siyahi",
    "beats": "Shaken, Mehul calls the number written on the note, but it rings out to his own phone, which is sitting in his pocket. He rushes back upstairs and notices a trail of fresh red ink drops on his living room floor, leading directly from his front door toward the empty balcony. He follows the drops and finds a single red fountain pen resting on his outdoor ledge. Mehul's friend Raghav is with him and helps (keeps the mood human, a little humour).",
    "cliffhanger": "Mehul picks up the pen and realizes it is leaking, and the ink on his fingers spells out a warning: 'Don't look in the mirror'.",
-   "status": "todo"
+   "status": "made"
   },
   {
    "n": 4,
@@ -83,7 +84,9 @@
   }
  ],
  "made_jobs": {
-  "1": "1118-1105"
+  "1": "1118-1105",
+  "2": "1118-1202",
+  "3": "1118-1218"
  },
  "owner_names": "Owner 18 Nov: hero Mehul, friend Raghav for this story; later stories rotate his friends; villains are made-up names."
 }
