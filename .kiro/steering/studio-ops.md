@@ -8,6 +8,11 @@ Free, 24x7, self-running faceless Reels/Shorts engine on the Oracle server for 3
 - English editions are OFF on every page (owner 18 Nov). A future English page would be a separate, natively written page.
 - Owner prefers NEW PAGES over more versions of the same video (no A/B copies).
 
+## The goal: MONEY (owner 18 Nov)
+- Everything serves earning (brand deals, affiliate, fan funding, ads): knowledge/MONEY.md is the master plan and
+  checklist; read it every session, tick items with date + proof, recommend the next moves yourself. Keep both the server
+  and the laptop busy (MONEY.md section 4). Competitors: knowledge/rivals.md + rivals.json; brands: knowledge/brands.json.
+
 ## Read first in every session
 - knowledge/STATE.md ON THE SERVER (`cat ~/studio/knowledge/STATE.md`): written by the server every 15 min (memory,
   running jobs, held videos, healer actions, models, owner tasks). It is the truth; never report items from notes
