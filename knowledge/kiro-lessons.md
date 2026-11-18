@@ -54,3 +54,10 @@ knowledge/lessons-learnt.md for the engine.
 ## Talking to the owner
 - NEVER report old data: read the live server first (STATE.md + live checks).
 - Say what is NOT done, plainly. Don't blame an earlier fix without checking (the 13:00 Meta errors were the cache bug).
+
+## 19 Nov
+- Judge a run by its final state, not mid-build: I called the LLP finance title "copied" while research was still running.
+- A scene type can hold data its drawer never shows (phone "title" with lines/items: the LLP comparison was invisible and
+  review passed 8/10). When adding a scene kind or a planner field, check on real frames that every field appears.
+  Now: lab_fix turns such titles into "list"; comparisons use the "table" kind.
+- Never write a script file and run it in the same parallel batch (did it again with of_live.sh; it only worked by luck).
