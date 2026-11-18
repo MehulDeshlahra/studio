@@ -22,7 +22,9 @@
     "jaag jata hai"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Toh kya phone aapki har baat 24 ghante chupke se sun raha hai?",
@@ -34,7 +36,8 @@
     "chupke se"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "small": null
   },
   {
    "vo": "Bilkul nahi. Agar har baat internet par jaati, toh battery do ghante mein khatam ho jaati.",
@@ -57,7 +60,9 @@
     "battery khatam"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Asal mein phone ka main processor gehre sleep mode mein soya hota hai.",
@@ -69,7 +74,9 @@
     "sleep mode"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Pehre par baitha hota hai ek micro chip. Naam hai... DSP.",
@@ -82,7 +89,9 @@
     "DSP"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Ye chip aawaz ko lagataar chhotey digital pattern mein check karta hai.",
@@ -105,7 +114,9 @@
     "digital pattern",
     "check"
    ],
-   "motion": "push"
+   "motion": "push",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Sirf ek second ka audio banta hai, aur turant delete hota rehta hai.",
@@ -122,7 +133,9 @@
     "delete"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Lekin jaise hi Hey Google ka sound pattern match hota hai...",
@@ -134,7 +147,9 @@
     "pattern match"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Ye chip soye hue main processor ko jagata hai, aur screen on ho jaati hai.",
@@ -142,16 +157,19 @@
    "nodes": [
     "Wake Signal",
     "CPU Wakeup",
-    "Secure Pipeline",
+    "Secure Pipe",
     "Screen Active"
    ],
-   "label": "ACTIVATION FLOW",
+   "label": "Wake Flow",
    "keywords": [
     "main processor",
     "screen on"
    ],
    "motion": "push",
-   "title": ""
+   "title": "Chip Wake Up",
+   "big": "Chip wakes CPU",
+   "small": null,
+   "sub": "Screen turns on"
   },
   {
    "vo": "Matlab wake word phone ke andar pakda gaya, kisi server par nahi.",
@@ -174,7 +192,9 @@
     "server par nahi"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Aap voice assistant on rakhte ho ya off? Comment mein batao.",
@@ -186,10 +206,11 @@
     "comment"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "small": null
   }
  ],
- "caption": "Phone band hone par bhi 'Hey Google' kaise sun leta hai? 📱 Aur kya ye hamari sabhi baatein record karta hai? Sach jaano hardware level par. Aap voice assistant use karte ho ya off rakhte ho?",
+ "caption": "Phone band hone par bhi 'Hey Google' kaise sun leta hai? 📱 Aur kya ye hamari sabhi baatein record karta hai? Sach jaano hardware level par. Aap voice assistant use karte ho ya off rakhte ho?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#techfacts",
   "#smartphonetech",
@@ -211,5 +232,6 @@
    "claim": "Audio is kept in a rolling circular buffer of approximately one to a few seconds and continuously discarded unless the wake word acoustic pattern matches.",
    "basis": "Official Android Hotword Detection Service specification confirms raw audio is kept in an ephemeral local ring buffer and purged unless a verified hardware interrupt occurs."
   }
- ]
+ ],
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
