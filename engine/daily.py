@@ -62,6 +62,31 @@ def backlog(cid):
     return n + sum(1 for c, j, m in jobs_in("prepped") if c == cid and not j.endswith("-en"))
 
 
+SERIAL_AHEAD = 2
+
+
+def serial_blocked(cid):
+    """18 Nov: Aage Suno made Parts 1-8 of one story in a day while Parts 1-5 were all held, so 8 of 10 parts were used
+    up with nothing ready to post. A serial makes its next part only while fewer than SERIAL_AHEAD of its parts are held;
+    the healer fixes those first (a part that is held stays the story's Part n)."""
+    try:
+        import serials
+        ch = dict(load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}, id=cid)
+        st = {d["job"]: d.get("status") for d in done_list(cid)}
+        for s in serials.stories(cid):
+            if s.get("closed") or not any(p["status"] == "todo" for p in s["parts"]):
+                continue
+            held = [n for n, j in (s.get("made_jobs") or {}).items() if st.get(j) == "held"]
+            if len(held) >= SERIAL_AHEAD:
+                log(f"prep lane: {cid} serial '{s['title']}' has {len(held)} held parts ({', '.join(sorted(held, key=int))}): "
+                    "no new part until they are fixed")
+                return True
+            return False
+    except Exception as e:
+        log("prep lane: serial check failed", str(e)[:120])
+    return False
+
+
 URGENT_MIN = 2
 
 
@@ -141,7 +166,7 @@ def lane_prep(dry):
     # 2) a new video
     if b.get("reels", 0) >= REELS_CAP:
         log("prep lane: reel budget used today", b); return
-    urgent = [cid for cid in urgent_pages() if any(cid == x for x, _ in chans)]
+    urgent = [cid for cid in urgent_pages() if any(cid == x and not (c.get("serial") and serial_blocked(cid)) for x, c in chans)]
     w = os.path.join(OUT, "healer-wants-turn")    # 18 Nov: held videos get fixed before more new ones are started
     if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600 and not urgent:
         log("prep lane: the healer needs a turn to fix held videos, skip this round"); return
@@ -156,6 +181,8 @@ def lane_prep(dry):
         log("prep lane: Muse image budget used today; pictures come from the free FLUX sources (OmniRoute, Cloudflare, Pollinations)")
     want = []
     for cid, c in chans:
+        if c.get("serial") and serial_blocked(cid):
+            continue
         target = c.get("schedule", {}).get("backlog", 6)
         n = backlog(cid)
         log("prep lane:", cid, "backlog", n, "target", target)
