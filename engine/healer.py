@@ -211,7 +211,8 @@ def heal_held():
             if d.get("status") == "held" and not d["job"].endswith("-en"):
                 it = S["items"].get(f"held:{cid}:{d['job']}") or {}
                 parked = it.get("state") == "parked" and not d.get("replan_requested")
-                rows.append(("1" if parked else "0") + ((it.get("steps") or [{}])[-1]).get("t", ""), cid, d))
+                last_t = ((it.get("steps") or [{}])[-1]).get("t", "")
+                rows.append((("1" if parked else "0") + last_t, cid, d))
     if not any(r[0].startswith("0") for r in rows):         # only parked ones: no need to take the prep lane's turn
         want_turn(False)
         if not rows:
