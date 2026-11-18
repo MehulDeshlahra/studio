@@ -165,11 +165,13 @@ def render(src, a, b, assf, out):
     fs = FONTS.replace("\\", "/").replace(":", "\\:")
     af = assf.replace("\\", "/").replace(":", "\\:").replace("'", "\\'")
     vf = (f"[0:v]split=2[bg][fg];"
-          f"[bg]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=28,eq=brightness=-0.18:saturation=0.85[bgb];"
+          # 19 Nov: a full-size gblur crawled on the shared server; blurring a 270x480 copy and scaling it up looks the same
+          f"[bg]scale=270:480:force_original_aspect_ratio=increase,crop=270:480,gblur=sigma=7,eq=brightness=-0.18:saturation=0.85,"
+          f"scale={W}:{H}:flags=bilinear[bgb];"
           f"[fg]scale={W}:-2:flags=lanczos[fgs];"
           f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2+40,ass='{af}':fontsdir='{fs}',format=yuv420p[v]")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", src, "-filter_complex", vf,
-                    "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "libx264", "-preset", "medium",
+    subprocess.run(["nice", "-n", "15", "ffmpeg", "-v", "error", "-y", "-threads", "3", "-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", src, "-filter_complex", vf,
+                    "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "libx264", "-preset", "veryfast",
                     "-crf", "20", "-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-movflags", "+faststart", out],
                    check=True, timeout=1800)
     return out
