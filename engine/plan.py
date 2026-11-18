@@ -521,6 +521,14 @@ def lab_fix(plan):
         }
         if t == "stat" and ok["stat"] and not s.get("value"):
             s["value"] = s.get("big")
+        r_ = s.get("real") if isinstance(s.get("real"), dict) else {}
+        if str(r_.get("kind", "")).lower() == "logo" and t not in ("object", "chat"):
+            # 19 Nov: a real logo as a full-frame background is a white card behind white text (finance 1118-2334 s2).
+            # A logo is shown on its own card: an object scene; the words go in the label.
+            s["type"] = "object"; s["prompt"] = s.get("prompt") or r_.get("subject") or r_["q"]
+            s["label"] = s.get("label") or s.get("title") or s.get("big")
+            log("lab fix: logo scene -> object card", r_.get("q"))
+            continue
         if t in ("image", "card", "info") and (s.get("prompt") or (isinstance(s.get("real"), dict) and s["real"].get("q"))) \
                 and not s.get("big"):
             s["type"] = "object"; continue
