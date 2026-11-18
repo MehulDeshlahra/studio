@@ -14,12 +14,16 @@ SKIP = re.compile(r"(linkedin\.com|facebook\.com|instagram\.com|tiktok\.com|pint
 
 
 def search(q, n=8, region="in-en"):
-    try:
-        from ddgs import DDGS
-        return [{"title": r.get("title", ""), "url": r.get("href", ""), "snippet": r.get("body", "")}
-                for r in DDGS().text(q, region=region, max_results=n) or []]
-    except Exception as e:
-        log("web search fail", q[:60], str(e)[:100]); return []
+    from ddgs import DDGS
+    for reg in (region, "wt-wt"):                      # the India region sometimes answers "No results found"
+        try:
+            got = [{"title": r.get("title", ""), "url": r.get("href", ""), "snippet": r.get("body", "")}
+                   for r in DDGS().text(q, region=reg, max_results=n) or []]
+            if got:
+                return got
+        except Exception as e:
+            log("web search fail", reg, q[:60], str(e)[:100])
+    return []
 
 
 def news(q, n=8, days=7, region="in-en"):
