@@ -99,3 +99,15 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
   models; a provider's "top up" text in a 200 reply counts as a failure everywhere (lib/llm.py).
 - OmniRoute map 04:55: 32 of 59 answered; studio-code = Gemini 3.7 / 3.8 / 3.1-pro / nemotron-ultra (all read a whole
   engine file correctly).
+- 05:01 third run: correct fix, verified ("original problem gone, nothing new"), merge failed (the checks leave side
+  files in the worktree) -> worktree reset before rebase.
+- 05:45 FOURTH RUN: PASSED END TO END. Injected bug -> aider found it -> verified on the failing video and a good video
+  -> merged + pushed (sandbox commit 8f4c616, exactly the one-line fix). Sandbox deleted afterwards.
+- 05:37 the healer started its first real repair on its own: tech lab-gpt-01 rebuilt from voice (code changed).
+- KeyWatch bug: per-minute 429s were stored as "out for the day" (all 4 keys showed TTS out after 3-8 calls while
+  voices kept working) -> daily only on Google's per-day wording; a model that answers is unmarked; today's marks reset.
+- studio-scout had failed every run since 17 Nov 17:01 (unit pulled git without --autostash) -> unit fixed.
+- Captions: Groq Whisper large-v3 via OmniRoute = 97% vs 76% / 100% vs 91% match, 3 s; waits up to 150 s when Groq is
+  busy (the job bot shares the Groq key) before falling back to the local model.
+- Server load: the job bot's careers browser (jb-careers, chromium renderer) grew to 4.8 GB and ~60% CPU; load 17 on
+  2 cores at 05:44; swap 2 GB used. Not Studio's process: left for the owner to decide.
