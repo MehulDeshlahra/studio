@@ -108,5 +108,15 @@
   "review": [],
   "removed_why": "duplicate of 1117-0729",
   "pruned": "2026-11-18"
+ },
+ {
+  "job": "1118-1845",
+  "topic": "AI Agents (WhatsApp automation)",
+  "title": "Chatbot aur AI Agent mein farak kya hai?",
+  "status": "held",
+  "review": [
+   "before render, scene 8: CUT: Text 'ingest' is clipped/cut off at the left margin, showing only 'ttying.lia'",
+   "before render, scene 9: FIT: The visual displays '98+' while the voice-over and the second still specify '100+'"
+  ]
  }
 ]

@@ -1,0 +1,30 @@
+{
+ "topic": "Why Shiva manifested as Bhairava to sever Brahma's fifth head — Shiva Purana, Shatarudra Samhita. Lesson: Intellectual superiority paired with ego creates falsehood that demands immediate ego-death.",
+ "title": "Brahma Ka Paanchwa Sir Kyun Kata?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.4,
+  "true_peak": -3.2,
+  "dur": 54.93
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 7: The caption 'MEIN AAKAR SHIVA' does not match the intended scene text 'Unke paanchvein sir ne ghamand mein aakar Shiva ke saamne jhooth bol diya'.",
+   "scene 8: The caption 'NETRA SE PRAKAT' is a fragment of the intended scene text 'Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!'.",
+   "scene 9: The caption 'SE BRAHMA KA' is a fragment of the intended scene text 'Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya'.",
+   "scene 10: The caption 'AUR BRAHMA KA' is a fragment of the intended scene text 'Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya'."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.881578947368421,
+  "words": 161,
+  "problems": []
+ },
+ "ok": true
+}

@@ -79,5 +79,14 @@
   "first": "2026-11-18 19:52",
   "last": "2026-11-18 19:52",
   "example": "before render, scene 3: OVERLAP/CUT (layout audit): text_occluded on #s2b"
+ },
+ {
+  "sig": "before render, scene #: fit: the text on screen says '…' and '…' which misses the beginning part of the voice ",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-18 20:37",
+  "last": "2026-11-18 20:37",
+  "example": "before render, scene 4: FIT: the text on screen says 'LAGI JO' and 'ISKA ANT DHUNDHEGA' which misses the beginning part of the voice line 'Dono mein shart lagi—jo...' in the expected manner, but the v"
  }
 ]

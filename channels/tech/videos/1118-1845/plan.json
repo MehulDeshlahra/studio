@@ -47,9 +47,9 @@
    "big": null,
    "small": null,
    "real": {
-    "q": "old style automated menu bot chat interface",
+    "q": "Old style automated menu phone keypad 1 press 2 press screenshot",
     "kind": "photo",
-    "subject": "A phone screen displaying a rigid, numbered menu chatbot interface (1. Press 1, 2. Press 2)"
+    "subject": "A phone screen showing a rigid, text-based automated menu (1. Sales, 2. Support) to illustrate the pain point"
    },
    "skin": "keynote"
   },
@@ -119,19 +119,19 @@
    "vo": "Tools: CRM, Calendar, Payment — ek saath, real-time.",
    "type": "ui",
    "label": "",
-   "title": "",
+   "title": "Tools",
    "rows": [
     {
      "label": "CRM",
-     "value": "LEAD CAPTURE"
+     "value": "LEAD"
     },
     {
      "label": "CALENDAR",
-     "value": "AUTO BOOKING"
+     "value": "BOOK"
     },
     {
      "label": "PAYMENT",
-     "value": "ORDER STATUS"
+     "value": "PAY"
     }
    ],
    "bg_prompt": "Central brain with three distinct glowing pathways to system nodes: CRM database, Calendar grid, Payment terminal, all premium photoreal on pure black",
@@ -144,9 +144,9 @@
    "big": null,
    "small": null,
    "real": {
-    "q": "CRM dashboard on mobile phone screen",
+    "q": "CRM dashboard calendar payment gateway integration screen",
     "kind": "photo",
-    "subject": "A hand scrolling through a CRM or Calendar app on a smartphone, showing real-time data"
+    "subject": "A split-screen or collage of real UI elements: a CRM contact list, a calendar slot, and a payment confirmation"
    },
    "skin": "keynote",
    "prompt": ""
@@ -184,13 +184,13 @@
   },
   {
    "vo": "Apne docs se train — website, PDF, FAQ. Minute mein ready.",
-   "type": "code",
+   "type": "title",
    "label": "",
-   "title": "",
+   "title": "Auto Train",
    "lines": [
     "ingest(website)",
-    "ingest(pdf_docs)",
-    "ingest(faq_json)",
+    "ingest(pdf)",
+    "ingest(faq)",
     "model.ready()"
    ],
    "highlight": 3,
@@ -203,16 +203,17 @@
    "big": null,
    "small": null,
    "skin": "keynote",
-   "prompt": ""
+   "prompt": "",
+   "sub": ""
   },
   {
    "vo": "100+ bhasha, bina setup. Hindi, Tamil, English — sab automatic.",
    "type": "stat",
    "label": "",
    "value": "100+",
-   "sub": "LANGUAGES INSTANT",
+   "sub": "LANGUAGES",
    "bg_prompt": "Globe made of glowing WhatsApp bubbles, each bubble a different script (Devanagari, Tamil, Latin, Arabic), neural connections between them, premium render on black",
-   "title": "",
+   "title": "Bhasha",
    "keywords": [
     "Languages",
     "Global"
@@ -281,7 +282,7 @@
   }
  ],
  "music_mood": "driving",
- "caption": "Chatbot ≠ AI Agent. Farak samjho 60 second mein. 🧠\n\nWhatsApp pe business msg kiya? LLM samajhta hai, context yaad rakhta hai, CRM/Calendar/Payment se judta hai. 100+ bhasha, auto-train, human handoff — sab automatic.\n\nTune kab AI agent se baat ki pata bhi nahi chala? Comment bata 👇",
+ "caption": "Chatbot ≠ AI Agent. Farak samjho 60 second mein. 🧠\n\nWhatsApp pe business msg kiya? LLM samajhta hai, context yaad rakhta hai, CRM/Calendar/Payment se judta hai. 100+ bhasha, auto-train, human handoff — sab automatic.\n\nTune kab AI agent se baat ki pata bhi nahi chala? Comment bata 👇\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#KaiseTech",
   "#AIAgents",
@@ -335,5 +336,6 @@
   "e0a9909ca9",
   "f945e2a937"
  ],
- "skin": "keynote"
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

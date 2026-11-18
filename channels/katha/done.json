@@ -110,11 +110,7 @@
   "job": "1118-1635",
   "topic": "Why Shiva manifested as Bhairava to sever Brahma's fifth head — Shiva Purana, Shatarudra Samhita. Lesson: Intellectual superiority paired with ego creates falsehood that demands immediate ego-death.",
   "title": "Brahma Ka Paanchwa Sir Kyun Kata?",
-  "status": "held",
-  "review": [
-   "before render, scene 4: FIT: the text on screen says 'LAGI JO' and 'ISKA ANT DHUNDHEGA' which misses the beginning part of the voice line 'Dono mein shart lagi—jo...' in the expected manner, but the visual shows animals (boa",
-   "before render, scene 6: CUT: The title field is missing entirely, although scene 6 has no title listed in the prompt, so that's correct, but let's check other fields. No problems found.",
-   "before render, scene 8: CUT: The caption text in the second still has 'NETRA SE PRAKAT' touching or slightly close to the bottom frame edge."
-  ]
+  "status": "approved",
+  "review": []
  }
 ]

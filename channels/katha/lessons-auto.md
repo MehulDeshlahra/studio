@@ -316,3 +316,9 @@
 - scene 10: The caption 'GANGA KE VEG' does not match the intended line 'Shiva ji ne apni jataon mein Ganga ke veg ko aasaani se rok liya.'
 - scene 11: The caption 'PAR SABKA KALYAN' does not match the intended line 'Aur is tarah Ganga ji dharti par sabka kalyan karne aayin.'
 - scene 12: The caption 'SACCHI LAGAN SE' does not match the intended line 'Sroat: Bhagavata Purana. Aapke anusar, sacchi lagan se kya namumkin bhi mumkin ho jata hai?'
+
+## 1118-1635 Why Shiva manifested as Bhairava to sever Brahma's fifth head — Shiva Purana, Shatarudra Samhita. Lesson: Intellectual superiority paired with ego creates falsehood that demands immediate ego-death.
+- scene 7: The caption 'MEIN AAKAR SHIVA' does not match the intended scene text 'Unke paanchvein sir ne ghamand mein aakar Shiva ke saamne jhooth bol diya'.
+- scene 8: The caption 'NETRA SE PRAKAT' is a fragment of the intended scene text 'Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!'.
+- scene 9: The caption 'SE BRAHMA KA' is a fragment of the intended scene text 'Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya'.
+- scene 10: The caption 'AUR BRAHMA KA' is a fragment of the intended scene text 'Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya'.
