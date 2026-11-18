@@ -62,3 +62,12 @@
 
 ## review 1118-1105
 - length 59.3 s is outside 25-55 s
+
+## 1118-1202 Chouthi Manzil Ka Raaz - Part 2
+- scene 1: The text on the meter face is gibberish ('NIEGT', 'अर', 'रखे').
+- scene 7: The text on the meter face is gibberish.
+- scene 11: The text on the note is gibberish/illegible, not the name 'Mehul' or a phone number as described in the prompt.
+- scene 13: The text on the card says 'PART 3 KAL' and 'JAWAAB COMMENT KARO', which does not match the prompt's script: 'Part 3 mein dekhiye Mehul ka darr aur wo raaz. Follow karo.'
+
+## review 1118-1202
+- length 58.33 s is outside 25-55 s

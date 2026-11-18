@@ -58,8 +58,8 @@
   {
    "vo": "Dost Raghav bola, sach janna hai toh pehle basement ka meter room dekh.",
    "type": "image",
-   "prompt": "Cinematic still. 27 years old Indian man, mustard hoodie, short curly hair, whispering urgently to Mehul in a stairwell illuminated by harsh emergency fluorescent light, holding an aluminium torch.",
-   "motion": "pan",
+   "prompt": "Cinematic vertical 9:16 still. A single young Indian man in a dark hoodie standing alone in a dimly lit stairwell, holding a flashlight with a tense and serious expression. One clear subject centered, ample negative space at top and bottom for text, dramatic shadowy lighting, no other people, no text, no logos.",
+   "motion": "zoom_in",
    "title": "",
    "keywords": [
     "Raghav",
@@ -67,7 +67,8 @@
     "meter room"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Dono chupchap seedhiyan utar kar andhere basement panel tak pahunche.",
@@ -112,15 +113,16 @@
   {
    "vo": "Matlab band darwaze ke peeche koi bhari machine ya appliance chal raha tha.",
    "type": "image",
-   "prompt": "Cinematic moody still. Close-up of heavy black electrical cables vibrating with electric current, warm conduit pipe leading straight upward through concrete ceiling shaft.",
-   "motion": "tilt",
+   "prompt": "Cinematic vertical 9:16 still. A heavy locked metal basement door chained shut, with thick industrial power cables running underneath it and a faint eerie glow from the door gap. Centered subject, atmospheric dark basement corridor, ample negative space at top and bottom for text overlay, no text, no logos.",
+   "motion": "slow_push",
    "title": "HEAVY LOAD",
    "keywords": [
     "band darwaza",
     "bhari machine"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Mehul ne aage badhkar meter box ka zang laga dhakkan khola.",
@@ -165,7 +167,7 @@
   {
    "vo": "Tabhi basement ka akela bulb jhatke se bujh gaya.",
    "type": "image",
-   "prompt": "Cinematic suspense shot. Sudden blackout in the underground utility room, overhead bulb sparking with a brief blue pop and dying, leaving only Mehul's phone screen illuminating shocked faces.",
+   "prompt": "Cinematic vertical 9:16 suspense shot of a completely unlit, dark glass bulb hanging dead from a ceiling wire in a pitch-black basement. A tiny faint wisp of smoke rises from the cold switched-off filament, room plunged into sudden darkness, centered subject, ample negative space at top and bottom, photorealistic, no text.",
    "motion": "push",
    "title": "BLACKOUT",
    "keywords": [
@@ -173,7 +175,8 @@
     "andhera"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "real": null
   },
   {
    "vo": "Part 3 mein dekhiye Mehul ka darr aur wo raaz. Follow karo.",
@@ -190,7 +193,7 @@
   }
  ],
  "music_mood": "mystery",
- "caption": "Flat 402 che saal se band hai... toh basement mein meter poori speed mein kaun dauda raha hai? ⚡ Aur meter box ke andar Mehul ka personal number kisne chipkaya?\n\nPart 3 kal raat theek isi waqt.\n\nAapke hisaab se band kamre mein kaun chupa hai?",
+ "caption": "Flat 402 che saal se band hai... toh basement mein meter poori speed mein kaun dauda raha hai? ⚡ Aur meter box ke andar Mehul ka personal number kisne chipkaya?\n\nPart 3 kal raat theek isi waqt.\n\nAapke hisaab se band kamre mein kaun chupa hai?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#AageSuno",
   "#ChouthiManzilKaRaaz",
@@ -220,5 +223,6 @@
   "5a702a85dd",
   "c6ceb6aadb"
  ],
- "cliff_done": true
+ "cliff_done": true,
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

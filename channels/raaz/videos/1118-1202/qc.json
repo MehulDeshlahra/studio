@@ -1,0 +1,30 @@
+{
+ "topic": "Chouthi Manzil Ka Raaz - Part 2",
+ "title": "Band Flat 402 Ka Meter Raat Mein Kyu Dauda?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.0,
+  "true_peak": -2.5,
+  "dur": 58.33
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 1: The text on the meter face is gibberish ('NIEGT', 'अर', 'रखे').",
+   "scene 7: The text on the meter face is gibberish.",
+   "scene 11: The text on the note is gibberish/illegible, not the name 'Mehul' or a phone number as described in the prompt.",
+   "scene 13: The text on the card says 'PART 3 KAL' and 'JAWAAB COMMENT KARO', which does not match the prompt's script: 'Part 3 mein dekhiye Mehul ka darr aur wo raaz. Follow karo.'"
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9256756756756757,
+  "words": 155,
+  "problems": []
+ },
+ "ok": true
+}
