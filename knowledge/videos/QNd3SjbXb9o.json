@@ -1,0 +1,40 @@
+{
+ "hook_first_words": "SIR ki final voter list aa gayi hai",
+ "first_frame": "A man in a plaid shirt speaking to the camera, with the text \"SIR FINAL VOTER LIST\" overlaid in yellow and white.",
+ "hook_type": "bold claim",
+ "format": "talking head + screen recording",
+ "length_s": 105,
+ "cuts_estimate": 22,
+ "avg_shot_s": 4.7,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-6 s: Hook: Announces the release of the final voter list and creates urgency to check.",
+  "6-105 s: Step-by-step tutorial on navigating the ECI website to download the voter list, including a brief tip on polling booth changes and a closing CTA."
+ ],
+ "visual_techniques": [
+  "Text overlays: \"SIR FINAL VOTER LIST\" (0s), \"voters.eci.gov.in\" (10s), \"2026\" (28s), \"SIR FinalRoll - 2026\" (31s), \"Select District\" (34s), \"Select AC\" (36s), \"अपने पोलिंग बूथ का नाम सेलेक्ट करें\" (59s).",
+  "Screen recording: Shows the actual process of navigating the ECI portal (9s-105s).",
+  "Arrows: Used to guide the user on the screen (56s, 57s, 58s)."
+ ],
+ "captions": "Style: Bold, white text with yellow highlighting for emphasis, positioned in the lower-middle part of the screen, 3-5 words per chunk.",
+ "sound": "Voice: Clear, energetic, instructional tone. Music: Subtle, upbeat background track. SFX: None.",
+ "recurring_element": "The host's face appears at the beginning and end, framing the screen recording tutorial.",
+ "ending": "CTA: Asks viewers to share the video with friends and follow for more.",
+ "why": "It addresses a high-intent, time-sensitive public utility topic (voter list) and provides a clear, actionable, and easy-to-follow guide, which is highly shareable.",
+ "reusable_faceless": [
+  "Use screen recordings for step-by-step tutorials.",
+  "Add clear, bold text overlays for key information.",
+  "Use arrows to guide the viewer's attention on the screen.",
+  "Keep the tone urgent and instructional."
+ ],
+ "id": "QNd3SjbXb9o",
+ "url": "https://www.youtube.com/watch?v=QNd3SjbXb9o",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "UP Final Voter List 2026 जारी 🔥 नाम चेक करें | Voter List Download कैसे करें? #sarkaridna",
+ "views": 1000000,
+ "channel_median": 122000,
+ "ratio": 8.2,
+ "label": "winner",
+ "watched": "2026-11-18T05:41+05:30"
+}

@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "doston agar aapka voter ID card bana hua hai",
+ "first_frame": "Talking head of the presenter holding a paper document in front of a green circular logo background.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 180,
+ "cuts_estimate": 15,
+ "avg_shot_s": 12.0,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-14 s: Hook and explanation of why the form is necessary.",
+  "14-22 s: Warning about potential consequences of not filling the form.",
+  "22-155 s: Step-by-step tutorial on how to fill the form.",
+  "155-180 s: Conclusion and teaser for the next video."
+ ],
+ "visual_techniques": [
+  "Zoom-in on the form at 0:04",
+  "On-screen text overlay 'SIR-2025 ENUMERATION FORM' at 0:04",
+  "Hand-drawn arrow/highlighting on the document at 0:06",
+  "Screen recording showing the electoral roll at 0:16",
+  "Red 'X' overlay on the screen at 0:18",
+  "Close-up of the form with pen filling in details at 0:22",
+  "Highlighting specific sections in yellow at 0:41",
+  "Red box around specific form sections at 1:06"
+ ],
+ "captions": "Simple white sans-serif font, 3-5 words per chunk, centered at the bottom, no highlight color.",
+ "sound": "Clear voiceover, no background music, no sound effects.",
+ "recurring_element": "The physical SIR-2025 Enumeration Form document.",
+ "ending": "CTA to follow the channel for a future video.",
+ "why": "The video addresses a high-stakes, time-sensitive government requirement that affects a large portion of the population. By providing a clear, step-by-step tutorial on a confusing document, it offers high utility value. The direct, authoritative tone from the presenter builds trust, and the visual demonstrations make the complex process easy to follow, which is a significant improvement over standard text-based government instructions.",
+ "reusable_faceless": [
+  "Using a physical document as a prop to demonstrate form-filling.",
+  "Highlighting specific areas of a document with digital markers to guide the viewer.",
+  "Using red boxes or 'X' overlays to emphasize important information or warnings.",
+  "Providing a clear, step-by-step walkthrough of a complex process."
+ ],
+ "id": "VRnKIWK4tmo",
+ "url": "https://www.youtube.com/watch?v=VRnKIWK4tmo",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "How to fill SIR 2025 Enumeration Form Guide",
+ "views": 2200000,
+ "channel_median": 122000,
+ "ratio": 18.03,
+ "label": "winner",
+ "watched": "2026-11-18T05:41+05:30"
+}

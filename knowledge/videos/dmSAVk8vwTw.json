@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "Breaking news.",
+ "first_frame": "Split screen: Jensen Huang on stage holding a chip (top), Varun Mayya talking to the camera (bottom).",
+ "hook_type": "bold claim",
+ "format": "talking head + news/evidence",
+ "length_s": 79,
+ "cuts_estimate": 45,
+ "avg_shot_s": 1.75,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-3 s: Hook: Jensen Huang resigned.",
+  "3-13 s: Context: 33-year tenure, AI boom, comparison to Steve Jobs.",
+  "13-39 s: The Scandal: Spy plot, Chinese asset, $2B chip smuggling, affair allegations.",
+  "39-58 s: The Fallout: Apology letter, board investigation, second affair, WSJ report.",
+  "58-79 s: Current State & CTA: CFO takes over, stock drop, question to audience."
+ ],
+ "visual_techniques": [
+  "Split screen (0-79s)",
+  "B-roll of Jensen Huang (0-15s)",
+  "Screen recording of news articles (16-22s, 49-57s)",
+  "Stock images/videos of Trump, Xi Jinping, and news anchors (29-38s, 46-48s)",
+  "Zoom-in on text in articles (18-20s, 41-42s, 50-51s)",
+  "Fast-paced jump cuts to keep momentum (ongoing)"
+ ],
+ "captions": "Style: Dynamic, word-by-word highlighting, centered, yellow highlight on white text, bold font.",
+ "sound": "Voice: Fast-paced, professional, energetic. Music: Suspenseful, low-fi beat that builds tension. SFX: Subtle whooshes on transitions.",
+ "recurring_element": "Split screen layout with Varun at the bottom and news/visuals at the top.",
+ "ending": "CTA: 'So, who do you think can actually replace him?'",
+ "why": "It leverages a high-stakes, controversial 'breaking news' hook. The rapid-fire editing style keeps the viewer engaged while the visual evidence (news clippings) adds credibility to the shocking claim.",
+ "reusable_faceless": [
+  "Split-screen format with a consistent host or AI avatar at the bottom.",
+  "Using real news articles as visual anchors to build credibility.",
+  "Word-by-word captioning with active highlighting.",
+  "Fast-paced transitions between news clips and stock footage."
+ ],
+ "id": "dmSAVk8vwTw",
+ "url": "https://www.youtube.com/watch?v=dmSAVk8vwTw",
+ "channel": "VarunMayya",
+ "niche": "AI/tech news, English, India",
+ "title": "Jensen Huang just resigned as CEO of Nvidia",
+ "views": 962000,
+ "channel_median": 114000,
+ "ratio": 8.44,
+ "label": "winner",
+ "watched": "2026-11-18T05:41+05:30"
+}

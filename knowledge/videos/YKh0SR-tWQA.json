@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "Kotak Mahindra bank aaj ki date mein",
+ "first_frame": "A medium shot of a man in glasses sitting in a chair, with a Kotak Mahindra Bank logo graphic overlaid on the bottom center.",
+ "hook_type": "question",
+ "format": "talking head + graphics",
+ "length_s": 150,
+ "cuts_estimate": 25,
+ "avg_shot_s": 6.0,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-20 s: Introduction of the two account types and the core question.",
+  "20-50 s: Explaining the difference in initial funding requirements.",
+  "50-130 s: Detailed comparison of benefits (debit cards, transaction limits, cashback).",
+  "130-150 s: Final verdict and call to action."
+ ],
+ "visual_techniques": [
+  "Text overlays for key terms (e.g., '2 TYPE OF ACCOUNTS', 'Zero', 'Free')",
+  "Screen recording of the bank's website showing comparison tables",
+  "Highlighting specific cells in the comparison table with yellow boxes",
+  "Question mark graphics overlay",
+  "QR code display at the end"
+ ],
+ "captions": "Simple, white text with black outline, 3-5 words per chunk, centered at the bottom, no specific highlight colour.",
+ "sound": "Clear voice-over, no background music, no sound effects.",
+ "recurring_element": "The comparison table of the two bank accounts.",
+ "ending": "CTA to scan the QR code to open an account.",
+ "why": "The video provides a clear, side-by-side comparison of two popular products, directly addressing a common consumer pain point (which account to choose). The use of visual aids (tables) makes complex financial information easy to digest.",
+ "reusable_faceless": [
+  "Side-by-side comparison tables",
+  "Highlighting specific data points in a table to guide the viewer's eye",
+  "Clear, concise explanation of complex financial terms",
+  "Using a QR code for direct CTA"
+ ],
+ "id": "YKh0SR-tWQA",
+ "url": "https://www.youtube.com/watch?v=YKh0SR-tWQA",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "Kotak 811 Classic ya Super? ₹2000 vs ₹10,000 Zero Balance Account Sach Me Kaunsa Hai?",
+ "views": 467000,
+ "channel_median": 122000,
+ "ratio": 3.83,
+ "label": "winner",
+ "watched": "2026-11-18T05:42+05:30"
+}

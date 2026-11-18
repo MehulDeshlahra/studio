@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "SIR 2025",
+ "first_frame": "A medium shot of the host talking directly to the camera with a logo in the background.",
+ "hook_type": "bold claim",
+ "format": "talking head + screen recording",
+ "length_s": 159,
+ "cuts_estimate": 25,
+ "avg_shot_s": 6.3,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Hook and problem statement.",
+  "3-156 s: Step-by-step tutorial on how to fill the form.",
+  "156-159 s: Outro and CTA."
+ ],
+ "visual_techniques": [
+  "Text overlay of the title at 0s",
+  "Screen recording of the mobile interface throughout",
+  "Zoom-in on specific form fields at 17s, 52s, 103s",
+  "Red circle highlight on specific text at 144s",
+  "Green checkmark overlay at 5s, 224s"
+ ],
+ "captions": "None present in the video.",
+ "sound": "Voiceover by the host, no background music, clear audio.",
+ "recurring_element": "The mobile screen recording of the official government website.",
+ "ending": "CTA to comment questions and follow the channel.",
+ "why": "The video addresses a high-utility, time-sensitive government process with a clear, step-by-step tutorial. It removes the need for a third-party intermediary, which is a significant pain point for the audience. The high performance is likely due to its extreme relevance and practical value.",
+ "reusable_faceless": [
+  "Screen recording walkthroughs",
+  "Red circle/highlighting for UI elements",
+  "Green checkmark for successful task completion",
+  "Clear, step-by-step narration",
+  "Focus on government/utility procedures"
+ ],
+ "id": "sKPWMqG7x5k",
+ "url": "https://www.youtube.com/watch?v=sKPWMqG7x5k",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "How to fill out the SIR 2025 Enumeration Form online? | SIR online Apply Voters",
+ "views": 617000,
+ "channel_median": 122000,
+ "ratio": 5.06,
+ "label": "winner",
+ "watched": "2026-11-18T05:42+05:30"
+}

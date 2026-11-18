@@ -1,0 +1,41 @@
+{
+ "hook_first_words": "Technologia",
+ "first_frame": "The creator, Gaurav Chaudhary, holding a smartphone with a mechanical pop-up camera module.",
+ "hook_type": "visual surprise",
+ "format": "talking head + product demo",
+ "length_s": 12,
+ "cuts_estimate": 6,
+ "avg_shot_s": 2.0,
+ "words_per_s_estimate": 1.5,
+ "beats": [
+  "0-3 s: Creator holds up the phone, camera module pops up, he looks surprised.",
+  "3-6 s: Close-up of the camera module rotating and tracking his face.",
+  "6-12 s: Creator laughs and repeats 'Technologia' with an echo effect, showing the phone features."
+ ],
+ "visual_techniques": [
+  "Mechanical movement (pop-up camera) at 0-2s",
+  "Close-up zoom at 3s",
+  "Echo/repetition effect on the word 'Technologia' at 6-10s",
+  "Jump cuts to match the beat of the audio at 6-10s"
+ ],
+ "captions": "None",
+ "sound": "Upbeat, rhythmic electronic music, mechanical motor sound effect, creator's voice with echo/reverb effects for comedic emphasis.",
+ "recurring_element": "The word 'Technologia' repeated with increasing intensity.",
+ "ending": "Loop, the creator smiles and points at the phone, inviting the viewer to watch again.",
+ "why": "It leverages a 'wow' factor (the mechanical camera) immediately, uses high-energy sound design to make the repetition of a single word engaging, and keeps the pacing extremely fast, which is perfect for retention.",
+ "reusable_faceless": [
+  "Using mechanical/robotic product features as the primary hook",
+  "Syncing jump cuts to rhythmic audio beats",
+  "Using audio effects (echo/reverb) to turn a single word into a meme-like recurring hook"
+ ],
+ "id": "aJ7dEmaoK3Q",
+ "url": "https://www.youtube.com/watch?v=aJ7dEmaoK3Q",
+ "channel": "TechnicalGuruji",
+ "niche": "Consumer Tech (Hindi)",
+ "title": "Technologiaaaa...#HonorRobotPhone #TGFamily #Shorts 🔥 🔥 🔥",
+ "views": 2000000,
+ "channel_median": 536000,
+ "ratio": 3.73,
+ "label": "winner",
+ "watched": "2026-11-18T05:42+05:30"
+}

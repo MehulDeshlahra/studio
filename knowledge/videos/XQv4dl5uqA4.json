@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "Jensen Huang just resigned",
+ "first_frame": "A woman speaking directly to the camera, with a window and blinds in the background.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 74,
+ "cuts_estimate": 25,
+ "avg_shot_s": 2.96,
+ "words_per_s_estimate": 2.7,
+ "beats": [
+  "0-3 s: Hook: Jensen Huang resigned as CEO.",
+  "3-10 s: Context: Immediate resignation after 33 years.",
+  "10-20 s: The Scandal: Board pressure and affair rumors.",
+  "20-30 s: Evidence: Clip of him with an executive, apology letter.",
+  "30-40 s: Escalation: New report of another affair.",
+  "40-50 s: The Transition: Colette Kress interim CEO.",
+  "50-65 s: Impact: Why it matters for the AI industry and stock.",
+  "65-74 s: Ending: Elon Musk's reaction and open-ended question."
+ ],
+ "visual_techniques": [
+  "B-roll overlay (0:01, 0:05, 0:07, 0:11, 0:13, 0:16, 0:21, 0:24, 0:29, 0:39, 0:49, 0:56, 1:05)",
+  "Text overlays highlighting key points (0:01, 0:05, 0:11, 0:29, 0:39, 1:05)",
+  "Talking head framing (consistent throughout)",
+  "Zoom-ins on text/articles for readability (0:05, 0:11, 0:39, 1:05)"
+ ],
+ "captions": "Style: White text with black shadow, bottom-center, 1-3 words per chunk, no highlight colour.",
+ "sound": "Voice: Clear, professional, steady pace. Music: Low-fi, rhythmic, slightly tense. Sound effects: Subtle whooshes on cuts.",
+ "recurring_element": "The creator's face (talking head) serves as the anchor between news clips.",
+ "ending": "Open-ended question/speculation: 'Who knows?'",
+ "why": "This video outperformed because it combined a high-stakes, controversial business news hook (CEO resignation + scandal) with a clear, fast-paced delivery. The use of credible news screenshots kept the viewer engaged while the creator provided a concise summary, making complex corporate news accessible and punchy.",
+ "reusable_faceless": [
+  "Use of credible news article screenshots to build trust.",
+  "Pacing cuts to match the rhythm of the voiceover.",
+  "Highlighting specific text in articles to direct viewer attention.",
+  "Ending with a question to encourage comments."
+ ],
+ "id": "XQv4dl5uqA4",
+ "url": "https://www.youtube.com/watch?v=XQv4dl5uqA4",
+ "channel": "aevytv",
+ "niche": "tech stories, English, India",
+ "title": "Why Jensen Huang just RESIGNED from Nvidia!",
+ "views": 978000,
+ "channel_median": 250000,
+ "ratio": 3.91,
+ "label": "winner",
+ "watched": "2026-11-18T05:42+05:30"
+}

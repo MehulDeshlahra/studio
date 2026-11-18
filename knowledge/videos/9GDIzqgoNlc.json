@@ -1,0 +1,41 @@
+{
+ "hook_first_words": "Agar aap ek voter ho",
+ "first_frame": "The creator is talking directly to the camera, with a microphone in front of him.",
+ "hook_type": "question",
+ "format": "talking head + screen recording",
+ "length_s": 180,
+ "cuts_estimate": 25,
+ "avg_shot_s": 7.2,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-10 s: Hook and introduction of the topic.",
+  "10-180 s: Step-by-step tutorial on how to check the voter list."
+ ],
+ "visual_techniques": [
+  "Screen recording of the website navigation",
+  "Zoom-ins on specific buttons/fields",
+  "Highlighting specific areas with boxes",
+  "Transitioning between talking head and screen recording"
+ ],
+ "captions": "Simple, white text with black outline, positioned at the bottom, 3-5 words per chunk, no highlight colour.",
+ "sound": "Voiceover with clear audio, no background music, no sound effects.",
+ "recurring_element": "The creator's talking head and the website screen recording.",
+ "ending": "The video ends abruptly while the creator is explaining how to fill out a form.",
+ "why": "It provides a clear, step-by-step guide on a topic that is relevant to many people. The creator's direct address and the screen recording make it easy to follow.",
+ "reusable_faceless": [
+  "Screen recording with clear instructions",
+  "Zoom-ins on important elements",
+  "Highlighting key areas with boxes",
+  "Clear and concise voiceover"
+ ],
+ "id": "9GDIzqgoNlc",
+ "url": "https://www.youtube.com/watch?v=9GDIzqgoNlc",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "SIR Draft Roll 2026 | Draft New Voter List name kaise dekhen | Check Name in voter list",
+ "views": 671000,
+ "channel_median": 122000,
+ "ratio": 5.5,
+ "label": "winner",
+ "watched": "2026-11-18T05:42+05:30"
+}

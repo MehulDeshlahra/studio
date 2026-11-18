@@ -1,0 +1,99 @@
+{
+ "tech": [
+  {
+   "topic": "Prison jammers in Bengaluru have left residents without signal for nearly two years",
+   "search": "how mobile jammers block signal",
+   "fit": 9,
+   "why": "Trending on Reddit r/india about prison jammers cutting off entire neighborhoods; highly relatable tech curiosity.",
+   "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "Bank app outage causes: 10 reasons banking apps go down",
+   "search": "why bank apps crash suddenly",
+   "fit": 9,
+   "why": "Tech news regarding bank app outages; highly relevant to everyday Indian users facing sudden digital payment failures.",
+   "day": "2026-11-17",
+   "source": "trend",
+   "used": "2026-11-17"
+  },
+  {
+   "topic": "New phones, old chips: Inside the rise of recycled memory in smartphones",
+   "search": "how old chips are reused in phones",
+   "fit": 8,
+   "why": "Business Standard tech report on recycled smartphone memory chips, appealing to tech-savvy youth interested in hardware secrets.",
+   "day": "2026-11-17",
+   "source": "trend"
+  }
+ ],
+ "katha": [
+  {
+   "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
+   "search": "did ravan touch sita maa valmiki ramayana",
+   "fit": 10,
+   "why": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
+   "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
+   "search": "setting sun worship Chhath mythology story",
+   "fit": 9,
+   "why": "Ties into the festival buzz around Chhath Puja / Sun temples, connecting ancient Puranic legends of Surya Dev to current cultural interest. Source: Samba Purana, Chapter 27.",
+   "day": "2026-11-17",
+   "source": "trend",
+   "used": "2026-11-17"
+  },
+  {
+   "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
+   "search": "when lord krishna visited naraka purana",
+   "fit": 8,
+   "why": "Directly inspired by the r/hinduism trending discussion 'When Lord Krishna visited Naraka', aligning with post-festival spiritual interest. Source: Bhagavata Purana, Canto 10, Chapter 59.",
+   "day": "2026-11-17",
+   "source": "trend",
+   "used": "2026-11-17"
+  }
+ ],
+ "raaz": [
+  {
+   "topic": "Ek gaddhe mein 8,000 mendhakon ke kankal: 2000 saal puraana Roman rahasya",
+   "search": "roman ditch frog bones mystery",
+   "fit": 9,
+   "why": "Trending in science/history news: 'Archaeologists in England Discovered 8,000 Roman-Era Frog Bones'. A bizarre historical puzzle with an eerie premise perfectly suited for Hindi mystery storytelling.",
+   "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "Doctor Doom ki asli kahani: Avengers Doomsday mein kya hone wala hai?",
+   "search": "avengers doomsday story explained",
+   "fit": 9,
+   "why": "Google trend 'marvel avengers doomsday' (10,000+ searches) and comic theory reports. High-interest fantasy/comic lore for the 16-35 age group explaining how Victor Von Doom rewrites reality.",
+   "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "Brain-dead neurosurgeon ne maut ke baad kya dekha? Real near-death experience",
+   "search": "neurosurgeon near death experience",
+   "fit": 8,
+   "why": "History/science headline: 'I’m a Neurosurgeon. My Near-Death Experience Showed Me Universal Consciousness'. Stories exploring the afterlife and consciousness trigger intense curiosity in Hindi-speaking audiences.",
+   "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "400 saal puraane taale ka CT scan: Andar chhipa tha ek ajeeb rahasya",
+   "search": "mysterious 400 year old lock",
+   "fit": 8,
+   "why": "Featured in history news: 'CT Scans Reveal the Secret of a Mysterious 400-Year-Old Lock'. An intriguing bite-sized story about ancient trick-locks and hidden puzzle mechanisms.",
+   "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "England ki rani Anne Boleyn ki 500 saal puraani painting mein chhipa rahasya",
+   "search": "anne boleyn portrait secret",
+   "fit": 8,
+   "why": "National Geographic headline: 'A Famous Portrait of Anne Boleyn Hides a Strange Secret'. Combines royal betrayal, mystery, and hidden forensic discoveries under old paint layers.",
+   "day": "2026-11-17",
+   "source": "trend"
+  }
+ ]
+}

@@ -1,0 +1,479 @@
+{
+ "katha": {
+  "day": "2026-11-18",
+  "notes": [
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "hindi",
+    "first_words": "Do hazaar gyarah",
+    "first_text": "2011,",
+    "frame0": "Aerial view of a large temple complex at sunset with birds flying over it, golden lighting.",
+    "motion_0_2s": "Slow zoom in, no cuts.",
+    "sound_0_2s": "Dramatic cinematic music with a slight riser.",
+    "hook_type": "mystery",
+    "time_to_first_cut_s": 3,
+    "why_viewers_stay": "The mention of a mysterious, forbidden temple vault creates immediate intrigue and curiosity.",
+    "what_we_can_copy_without_copying": "Use a specific, high-stakes historical or legendary event as a starting point to introduce a sense of mystery.",
+    "url": "https://www.youtube.com/shorts/fk4jCvapYUY",
+    "title": "Vault 6 of Padmanabhaswamy Temple | RAAAZ #shorts",
+    "views": 366000,
+    "channel": "RAAAZ by BigBrainco"
+   },
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hinglish",
+    "first_words": "Pata hai aajkal ek",
+    "first_text": "The Dark Truth About Ravan You Don't Know",
+    "frame0": "A medium shot of a man in a light purple shirt, sitting in a studio with plants in the background, speaking into a microphone.",
+    "motion_0_2s": "No cuts, static shot, slight zoom in.",
+    "sound_0_2s": "Voice starts immediately, background music starts with a soft, steady beat.",
+    "hook_type": "myth bust",
+    "time_to_first_cut_s": 5,
+    "why_viewers_stay": "The creator challenges a popular, controversial narrative about a well-known mythological figure, promising to reveal the 'dark truth'.",
+    "what_we_can_copy_without_copying": "Start by identifying a common misconception or 'glorified' narrative and immediately promise to debunk it with primary source evidence.",
+    "url": "https://www.youtube.com/shorts/hMBDK88Lxos",
+    "title": "Ravan's Darkest Secrets Revealed in Ramayana! 🤯🚩",
+    "views": 1300000,
+    "channel": "BeerBiceps"
+   },
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hindi",
+    "first_words": "Is baar 31 october",
+    "first_text": "IS BAAR 31 OCTOBER KO 70 SAAL BAAD EK BAHUT DURLABH SAYOG BAN RAHA HAI, JO AAPKE JEEVAN MEIN BADE BADLAV LA SAKTA HAI",
+    "frame0": "A split screen showing a serene, artistic illustration of a person sitting by a river with a temple and planets in the background, and the creator speaking in a studio setting.",
+    "motion_0_2s": "No movement in the first 2 seconds, static split-screen.",
+    "sound_0_2s": "Voice starts immediately with background music.",
+    "hook_type": "shock fact",
+    "time_to_first_cut_s": 8,
+    "why_viewers_stay": "The hook promises a rare, life-changing astrological event, creating curiosity and a sense of urgency.",
+    "what_we_can_copy_without_copying": "Use a high-quality visual representation of the concept (like the planetary alignment) to immediately ground the viewer in the topic.",
+    "url": "https://www.youtube.com/shorts/if82g4od_Mc",
+    "title": "Jupiter Transit 2026: A Rare Phenomenon After 70 Years! | Akshat Gupta",
+    "views": 1200000,
+    "channel": "Akshat Gupta"
+   },
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hindi",
+    "first_words": "main aapko aadhi aadhi line bol raha hu",
+    "first_text": "main aapko aadhi aadhi line bol raha hu",
+    "frame0": "a man with a beard and glasses in an orange shirt speaking into a microphone, medium shot, warm lighting",
+    "motion_0_2s": "static shot, no cuts",
+    "sound_0_2s": "voice starts immediately",
+    "hook_type": "challenge",
+    "time_to_first_cut_s": 2.5,
+    "why_viewers_stay": "the speaker sets up an interactive challenge that engages the viewer's knowledge of mythology",
+    "what_we_can_copy_without_copying": "start with a direct, interactive challenge to the viewer to complete a pattern or sequence",
+    "url": "https://www.youtube.com/shorts/jO_y3gNHs6c",
+    "title": "My name begins with Mother ❤️ | Akshat Gupta #akshatgupta #akshatguptashorts #motherlove #shorts ...",
+    "views": 1000000,
+    "channel": "Akshat Gupta"
+   }
+  ],
+  "distil": {
+   "rules": [
+    "First spoken word is the hook keyword (date, name, or claim) — zero greetings or filler.",
+    "On-screen text ≤ 6 words, high-contrast, appears at frame 0 and mirrors the first spoken phrase.",
+    "Camera static or ultra-slow zoom only; first hard cut at ≥ 2.5 s.",
+    "Voice starts at frame 0 with background music bed already audible.",
+    "Visual is either: (a) cinematic establishing shot, (b) creator medium shot in warm studio, or (c) split-screen illustration + creator.",
+    "Hook type must be one of: myth-bust, shock-fact/urgency, interactive-challenge, mystery-tease.",
+    "First sentence ends on a cliffhanger (incomplete thought) to force retention past 3 s.",
+    "No logos, watermarks, channel names, or CTAs in first 2 s.",
+    "Aspect ratio 9:16; text placed in title-safe zone (center 80%)."
+   ],
+   "patterns": [
+    {
+     "hook_type": "myth-bust",
+     "share": "1 of 4",
+     "example": "Pata hai aajkal ek"
+    },
+    {
+     "hook_type": "shock-fact/urgency",
+     "share": "1 of 4",
+     "example": "Is baar 31 october"
+    },
+    {
+     "hook_type": "interactive-challenge",
+     "share": "1 of 4",
+     "example": "main aapko aadhi aadhi line bol raha hu"
+    },
+    {
+     "hook_type": "mystery-tease",
+     "share": "1 of 4",
+     "example": "Do hazaar gyarah"
+    }
+   ],
+   "avoid": [
+    "Greetings or self-intro (\"namaste\", \"main hoon\", \"swagat hai\").",
+    "Fast cuts, pans, or motion in the first 2 s.",
+    "Silent or black lead-in frames.",
+    "Generic retention bait (\"watch till end\", \"comment below\").",
+    "On-screen text longer than 6 words or appearing after frame 0."
+   ],
+   "summary": "Top performers open with immediate voice delivering a specific, high-stakes hook word-for-word on screen, over a static cinematic or creator shot with zero cuts for 2.5+ seconds. The first sentence is deliberately incomplete to compel the viewer past the 3-second mark."
+  }
+ },
+ "raaz": {
+  "day": "2026-11-18",
+  "notes": [
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hinglish",
+    "first_words": "Tiger Shroff pe Lawrence",
+    "first_text": "Tiger Shroff vs Lawrence Bishnoi",
+    "frame0": "A split-screen view: top shows a 3D animation of a car being surrounded by red-colored shooters, bottom shows a man speaking directly to the camera in a studio setting.",
+    "motion_0_2s": "The video starts with a static split-screen, then immediately cuts to the presenter speaking, followed by a zoom-in on the 3D animation.",
+    "sound_0_2s": "Voiceover starts immediately with a serious, news-style tone.",
+    "hook_type": "story cold open",
+    "time_to_first_cut_s": 1,
+    "why_viewers_stay": "The combination of a high-profile celebrity controversy and a dramatic 3D visual recreation creates immediate intrigue.",
+    "what_we_can_copy_without_copying": "Use a visual aid or animation to illustrate a complex or sensitive story while the presenter provides the narrative context.",
+    "url": "https://www.youtube.com/shorts/-xdD1y6JAi4",
+    "title": "Tiger Shroff vs Lawrence Bishnoi (3D) by Professor of How",
+    "views": 24000000,
+    "channel": "Professor Of How"
+   },
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hinglish",
+    "first_words": "Varanasi ki ek tang gali mein",
+    "first_text": "Death Home of India",
+    "frame0": "A split-screen view: top shows a 3D animation of a funeral procession, bottom shows a man talking to the camera in a studio setting.",
+    "motion_0_2s": "A quick cut from the animation to the speaker, then a zoom-in on the speaker's face.",
+    "sound_0_2s": "Music starts immediately with a dramatic, mysterious tone.",
+    "hook_type": "story cold open",
+    "time_to_first_cut_s": 1,
+    "why_viewers_stay": "The video presents a bizarre, counter-intuitive premise about a 'death hotel' that creates immediate curiosity and suspense.",
+    "what_we_can_copy_without_copying": "Use a strong, provocative statement as a title and immediately follow it with a high-stakes, mysterious narrative hook.",
+    "url": "https://www.youtube.com/shorts/bJVOo7caT6A",
+    "title": "💀Mukti Laabh Bhawan (3D) by Professor of How",
+    "views": 24000000,
+    "channel": "Professor Of How"
+   },
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hinglish",
+    "first_words": "The victim's mother alleged",
+    "first_text": "The victim's mother alleged the school did not help her pinpoint the perpetrators and refused to share CCTV",
+    "frame0": "A blurry, out-of-focus shot of a person in a hospital bed with hands visible, likely a medical or victim-related scene.",
+    "motion_0_2s": "The video starts with a static shot of a person in a hospital bed, then cuts to the presenter at 0:04.",
+    "sound_0_2s": "A high-pitched, distressed scream/crying sound effect starts immediately.",
+    "hook_type": "story cold open",
+    "time_to_first_cut_s": 4,
+    "why_viewers_stay": "The combination of a distressing, high-stakes opening scene and a clear, urgent promise to expose a school keeps the viewer engaged.",
+    "what_we_can_copy_without_copying": "Start with a high-emotional-impact visual or sound that immediately establishes the gravity of the situation before introducing the host.",
+    "url": "https://www.youtube.com/shorts/7UZV4Sqir2g",
+    "title": "When Kids became Devils😡#justicefornirbhay #wronged",
+    "views": 13000000,
+    "channel": "Wronged"
+   },
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hinglish",
+    "first_words": "Ayan Pathan naam ke is ladke ne",
+    "first_text": "AYAN PATHAN BRUTALLY ASSAULTED HIS GF \"POOJA\"",
+    "frame0": "A young man with a modern haircut looking directly at the camera, medium shot, bright lighting.",
+    "motion_0_2s": "Static shot of the presenter for the first 2 seconds, no cuts.",
+    "sound_0_2s": "Voiceover starts immediately with a serious, urgent tone.",
+    "hook_type": "story cold open",
+    "time_to_first_cut_s": 2,
+    "why_viewers_stay": "The shocking nature of the crime and the direct, confrontational tone of the host create immediate intrigue.",
+    "what_we_can_copy_without_copying": "Start with a high-stakes, shocking statement about a specific person to immediately grab attention.",
+    "url": "https://www.youtube.com/shorts/KnvGl8T4obw",
+    "title": "When he crossed all the limits 😡",
+    "views": 8800000,
+    "channel": "Wronged"
+   },
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hinglish",
+    "first_words": "ab main aapko batata",
+    "first_text": "",
+    "frame0": "A young man with glasses sitting in front of a microphone in a dimly lit room.",
+    "motion_0_2s": "Static shot, no cuts.",
+    "sound_0_2s": "Voice starts immediately.",
+    "hook_type": "story cold open",
+    "time_to_first_cut_s": 17,
+    "why_viewers_stay": "The creator promises to explain a controversial and mysterious public event involving a famous celebrity and a luxury brand.",
+    "what_we_can_copy_without_copying": "Start by referencing a viral, controversial clip to immediately anchor the viewer's interest in a specific, high-stakes topic.",
+    "url": "https://www.youtube.com/shorts/069z8jBIyFU",
+    "title": "For Full video click 👆🏻👆🏻👆🏻",
+    "views": 7200000,
+    "channel": "Amaan parkar"
+   },
+   {
+    "on_niche": true,
+    "faceless": false,
+    "language": "hinglish",
+    "first_words": "ye ghatna hai 3 June 2022 ki",
+    "first_text": "3 JUNE 2022",
+    "frame0": "A suburban street scene with trees, yellow text overlay in the center.",
+    "motion_0_2s": "Slow zoom in on the street, no cuts.",
+    "sound_0_2s": "Voiceover starts immediately with a slightly ominous tone.",
+    "hook_type": "story cold open",
+    "time_to_first_cut_s": 2,
+    "why_viewers_stay": "The hook presents a specific, mysterious date and a claim about a viral conspiracy involving a missing child, creating immediate curiosity.",
+    "what_we_can_copy_without_copying": "Start with a specific date and a bold, intriguing claim to immediately establish the premise of a mystery.",
+    "url": "https://www.youtube.com/shorts/yf07dWULAPU",
+    "title": "Story of Ryker Webb",
+    "views": 4300000,
+    "channel": "Gaurav katare Extra"
+   }
+  ],
+  "distil": {
+   "rules": [
+    "First audio (voiceover, SFX, or music) starts at frame 0 — zero silence.",
+    "On-screen text appears at frame 0, ≤ 5 words, high-contrast, center or top-third.",
+    "First spoken word is a proper noun (name, place, date) or 'The victim's' — no greetings, no 'hello', no 'aaj'.",
+    "First visual is either a split-screen (3D animation top + presenter bottom) OR a single high-stakes image (hospital, street, presenter close-up) — no generic b-roll.",
+    "First cut ≤ 2.0 s for videos targeting > 8 M views; ≤ 4.0 s otherwise.",
+    "Hook promises a specific, verifiable claim (celebrity conflict, crime detail, conspiracy date) within the first spoken sentence.",
+    "Presenter (if visible) makes direct eye contact, neutral-to-serious expression, no smiling.",
+    "Background audio matches tone: news-style VO for celebrity/crime, ominous music for mystery, distress SFX for victim stories.",
+    "No lower-thirds, watermarks, or channel branding in frames 0–60."
+   ],
+   "patterns": [
+    {
+     "hook_type": "Celebrity vs Gangster Conflict (split-screen 3D)",
+     "share": "2 of 6 (48M views)",
+     "example": "Tiger Shroff pe Lawrence"
+    },
+    {
+     "hook_type": "Mysterious Place Legend (split-screen 3D)",
+     "share": "2 of 6 (48M views)",
+     "example": "Varanasi ki ek tang gali mein"
+    },
+    {
+     "hook_type": "Crime/Injustice Victim POV",
+     "share": "1 of 6 (13M views)",
+     "example": "The victim's mother alleged"
+    },
+    {
+     "hook_type": "Named Perpetrator Assault",
+     "share": "1 of 6 (8.8M views)",
+     "example": "Ayan Pathan naam ke is ladke ne"
+    },
+    {
+     "hook_type": "Celebrity Luxury Brand Mystery",
+     "share": "1 of 6 (7.2M views)",
+     "example": "ab main aapko batata"
+    },
+    {
+     "hook_type": "Date-Stamped Conspiracy",
+     "share": "1 of 6 (4.3M views)",
+     "example": "ye ghatna hai 3 June 2022 ki"
+    }
+   ],
+   "avoid": [
+    "Generic greetings or channel intros ('namaste dosto', 'welcome back')",
+    "Silent or music-only starts without voice/SFX at frame 0",
+    "First cut after 4 s unless the single shot is a high-stakes visual with immediate distress audio",
+    "On-screen text longer than 5 words or appearing after frame 0",
+    "Smiling presenter, casual posture, or busy background in the cold open"
+   ],
+   "summary": "Top performers (48M combined) use a split-screen 3D animation + presenter template with a ≤1 s cut, immediate news-tone VO, and a proper-noun-first hook. All six winners open with audio at frame 0, ≤5-word text on screen, and a specific, high-stakes claim — never a greeting."
+  }
+ },
+ "tech": {
+  "day": "2026-11-18",
+  "notes": [
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "hinglish",
+    "first_words": "agar koi M416",
+    "first_text": "",
+    "frame0": "A 3D animated M416 rifle floating in a blue grid environment.",
+    "motion_0_2s": "The rifle fires a bullet, which travels across the screen; camera tracks the bullet.",
+    "sound_0_2s": "Gunshot sound effect followed by immediate voiceover.",
+    "hook_type": "question",
+    "time_to_first_cut_s": 0.5,
+    "why_viewers_stay": "The visual of a bullet in slow-motion 3D animation creates immediate curiosity about the outcome.",
+    "what_we_can_copy_without_copying": "Use high-quality 3D animations to visualize complex physical interactions that are impossible to capture with a real camera.",
+    "url": "https://www.youtube.com/shorts/6AQkMxJw9lo",
+    "title": "How Bulletproof Jacket Works || #3danimation #shorts #3d",
+    "views": 89000000,
+    "channel": "Master Mind"
+   },
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "hindi",
+    "first_words": "Agar aap ek tez dhaar",
+    "first_text": "",
+    "frame0": "A digital 3D character holding a rifle, aiming at a floating axe in a blue grid environment.",
+    "motion_0_2s": "The character fires the rifle, and the camera zooms in slightly as the bullet travels toward the axe.",
+    "sound_0_2s": "Sound of a gunshot followed by a whoosh effect.",
+    "hook_type": "myth bust",
+    "time_to_first_cut_s": 0.5,
+    "why_viewers_stay": "The visual spectacle of a bullet hitting an axe in slow motion creates immediate curiosity about the physical outcome.",
+    "what_we_can_copy_without_copying": "Use a high-quality 3D simulation to provide a visual answer to a common 'what if' question.",
+    "url": "https://www.youtube.com/shorts/SByVG9mlGvE",
+    "title": "Slicing A Bullet In Half?  #3danimationfact #facts #science",
+    "views": 63000000,
+    "channel": "Master Mind"
+   },
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "hindi",
+    "first_words": "jab engineer nadi ke beech",
+    "first_text": "",
+    "frame0": "A 3D animation of a bridge over a river, showing a line of white pillars in the water, bright blue water, green hills in the background, clear blue sky.",
+    "motion_0_2s": "The camera pans across the bridge, showing pillars in the water, no cuts.",
+    "sound_0_2s": "Voiceover starts immediately with a calm, explanatory tone.",
+    "hook_type": "story cold open",
+    "time_to_first_cut_s": 1,
+    "why_viewers_stay": "The visual animation of a bridge being constructed is visually satisfying and immediately sets up a technical problem to be solved.",
+    "what_we_can_copy_without_copying": "Use high-quality 3D animations to simplify complex engineering problems, making them accessible and engaging for a general audience.",
+    "url": "https://www.youtube.com/shorts/RrLKkW4lTog",
+    "title": "Why This Bridge Has No Pillars in the River! 🤯 3D Animation",
+    "views": 46000000,
+    "channel": "Three D Series"
+   },
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "hindi",
+    "first_words": "DPICM ek aisa bomb hai",
+    "first_text": "DPICM",
+    "frame0": "A 3D animation of a cluster munition shell flying in the air against a cloudy sky, rendered in a clean, slightly stylized aesthetic.",
+    "motion_0_2s": "The shell rotates in mid-air; one cut occurs at 0:01 as the shell explodes into sub-munitions.",
+    "sound_0_2s": "Voiceover starts immediately with a slight bass-heavy sound effect as the shell appears.",
+    "hook_type": "mystery",
+    "time_to_first_cut_s": 1,
+    "why_viewers_stay": "The high-quality, detailed 3D cross-section animation visually explains complex military technology in a way that is easy to understand.",
+    "what_we_can_copy_without_copying": "Use high-fidelity 3D cross-section animations to demystify complex mechanical processes or hardware.",
+    "url": "https://www.youtube.com/shorts/_H9lAQQMPj0",
+    "title": "How Cluster bomb works #shorts #science #space launchsystem #experiment",
+    "views": 22000000,
+    "channel": "Engineering Gf"
+   },
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "hindi",
+    "first_words": "jitne jyada truck ke rear mein axle",
+    "first_text": "",
+    "frame0": "A 3D animation of a long truck trailer driving over a speed breaker, side view, neutral grey background.",
+    "motion_0_2s": "The truck moves from left to right, constant speed, no cuts.",
+    "sound_0_2s": "Voiceover starts immediately with a calm, informative tone.",
+    "hook_type": "mystery",
+    "time_to_first_cut_s": 9,
+    "why_viewers_stay": "The visual demonstration of a mechanical problem creates a curiosity to see the solution.",
+    "what_we_can_copy_without_copying": "Start by presenting a common mechanical problem visually before explaining the engineering solution.",
+    "url": "https://www.youtube.com/shorts/8JcEXC02SPk",
+    "title": "Bell Crank Explained",
+    "views": 18000000,
+    "channel": "LifeAda"
+   },
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "english",
+    "first_words": "Is it bad to hold in your pee?",
+    "first_text": "Is it bad to hold in your pee?",
+    "frame0": "A stylized 2D animation of a bladder with yellow liquid inside, set against a purple and pink background.",
+    "motion_0_2s": "Static text overlay, then a slight downward movement of the yellow liquid.",
+    "sound_0_2s": "Voiceover starts immediately with a neutral tone.",
+    "hook_type": "question",
+    "time_to_first_cut_s": 2,
+    "why_viewers_stay": "The video addresses a common, relatable biological question with a clear, simple visual explanation.",
+    "what_we_can_copy_without_copying": "Use simple, clean 2D animations to visualize complex or taboo internal bodily processes to make them easy to understand.",
+    "url": "https://www.youtube.com/shorts/ecygGh46428",
+    "title": "Holding in pee can stretch important muscles in your bladder.  #healthtips #bladder #pee",
+    "views": 18000000,
+    "channel": "Insider Science"
+   },
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "hinglish",
+    "first_words": "pilot ko jab pata chalta hai",
+    "first_text": "",
+    "frame0": "A fighter jet flying in the sky with a missile approaching from behind, realistic 3D animation style.",
+    "motion_0_2s": "Fast-paced camera movement following the missile's trajectory, cut to the pilot's cockpit.",
+    "sound_0_2s": "Dramatic cinematic music with a sudden sound effect (whoosh) as the missile appears.",
+    "hook_type": "story cold open",
+    "time_to_first_cut_s": 1,
+    "why_viewers_stay": "The high-stakes visual of an impending missile strike creates immediate tension and curiosity about the pilot's survival mechanism.",
+    "what_we_can_copy_without_copying": "Start the video in the middle of a high-action, life-or-death scenario to immediately hook the viewer's attention before explaining the technical process.",
+    "url": "https://www.youtube.com/shorts/mX9pCNatPhs",
+    "title": "Seat Ejection System",
+    "views": 17000000,
+    "channel": "LifeAda"
+   },
+   {
+    "on_niche": true,
+    "faceless": true,
+    "language": "hindi",
+    "first_words": "iski shuruat hoti hai",
+    "first_text": "मेंढक का जन्म कैसे होता है?",
+    "frame0": "A cartoon illustration of a pond with a cycle diagram of a frog's life stages at the top, a frog on a lily pad, and a blue creature character.",
+    "motion_0_2s": "Static image with a slight zoom-in effect.",
+    "sound_0_2s": "Voiceover starts immediately with upbeat background music.",
+    "hook_type": "question",
+    "time_to_first_cut_s": 1,
+    "why_viewers_stay": "The video promises a clear, step-by-step visual explanation of a biological process using engaging animations.",
+    "what_we_can_copy_without_copying": "Use a recognizable, simple visual cycle or process diagram at the top of the screen to provide context while the video explains the steps.",
+    "url": "https://www.youtube.com/shorts/98OmJuhBGjY",
+    "title": "मेंढक का जीवन चक्र | Life Cycle Of A Frog In Hindi | Binocs Ki Duniya #shorts",
+    "views": 9600000,
+    "channel": "Binocs Ki Duniya"
+   }
+  ],
+  "distil": {
+   "rules": [
+    "First spoken word is the Hindi hook keyword (subject noun or question starter), zero greetings or filler; voiceover begins at frame 0.",
+    "On-screen text ≤ 3 words, only if it is the exact hook phrase; appears at frame 0 and disappears by first cut.",
+    "First visual is a high-fidelity 3D asset of the core subject (weapon, vehicle, structure, mechanism) in motion or about to move; no 2D/cartoon for tech topics.",
+    "First cut ≤ 1.0 s for question/myth-bust hooks; ≤ 1.5 s for story/mystery hooks; camera or object motion triggers the cut.",
+    "Audio: signature sound effect (gunshot, whoosh, engine, explosion) at frame 0, instantly followed by voiceover; no music-only intro.",
+    "Zero branding, channel name, or title card in frames 0–2 s.",
+    "Hook sentence completes within first 2 s; grammar is colloquial Hindi (Hinglish allowed), present or past tense, no conditional politeness.",
+    "Visual demonstrates the central mechanism or conflict immediately (bullet firing, bridge panning, shell rotating, missile approaching)."
+   ],
+   "patterns": [
+    {
+     "hook_type": "question",
+     "share": "3 of 8 (116.6M views)",
+     "example": "agar koi M416"
+    },
+    {
+     "hook_type": "myth bust",
+     "share": "1 of 8 (63M views)",
+     "example": "Agar aap ek tez dhaar"
+    },
+    {
+     "hook_type": "story cold open",
+     "share": "2 of 8 (63M views)",
+     "example": "jab engineer nadi ke beech"
+    },
+    {
+     "hook_type": "mystery",
+     "share": "2 of 8 (40M views)",
+     "example": "DPICM ek aisa bomb hai"
+    }
+   ],
+   "avoid": [
+    "Greeting or polite opener (namaste, hello, swagat hai, dosto).",
+    "Static title card, logo, or channel name before the hook visual.",
+    "2D/cartoon animation for core tech/military/engineering subjects.",
+    "Silence or music-only start; voiceover and SFX must hit at frame 0.",
+    "First cut later than 1.5 s on high-stakes visual hooks (weapons, vehicles, explosions)."
+   ],
+   "summary": "Top Hindi tech Shorts open with a colloquial Hindi hook word at frame 0, paired with a moving 3D hero asset and a signature SFX, then cut within 1 second. They never waste frames on greetings, branding, 2D art, or silent buildup."
+  }
+ }
+}

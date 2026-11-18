@@ -1,0 +1,758 @@
+{
+ "tech": [
+  {
+   "file": "music/lib/tech/industrial-cinematic.mp3",
+   "title": "Industrial Cinematic",
+   "mood": "driving",
+   "feel": "Driving, Suspenseful",
+   "bpm": "110",
+   "length": 244,
+   "instruments": "Percussion, Synths",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/outfoxing-the-fox.mp3",
+   "title": "Outfoxing the Fox",
+   "mood": "driving",
+   "feel": "Grooving, Driving, Action",
+   "bpm": "160",
+   "length": 175,
+   "instruments": "Synths, Percussion, Bass, Strings, Cellos, Violas, Violins",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/professor-umlaut.mp3",
+   "title": "Professor Umlaut",
+   "mood": "driving",
+   "feel": "Driving, Humorous, Suspenseful",
+   "bpm": "160",
+   "length": 212,
+   "instruments": "Guitar, Bass, Drums, Organ",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/hot-pursuit.mp3",
+   "title": "Hot Pursuit",
+   "mood": "driving",
+   "feel": "Grooving, Driving, Action",
+   "bpm": "122",
+   "length": 169,
+   "instruments": "Guitar, Percussion, Strings",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/furious-freak.mp3",
+   "title": "Furious Freak",
+   "mood": "driving",
+   "feel": "Driving, Intense, Bright",
+   "bpm": "160",
+   "length": 187,
+   "instruments": "Electric Piano, Synths, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/thief-in-the-night.mp3",
+   "title": "Thief in the Night",
+   "mood": "driving",
+   "feel": "Grooving, Relaxed",
+   "bpm": "65",
+   "length": 185,
+   "instruments": "Guitar, Bass, Drums, Organ",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/i-can-feel-it-coming.mp3",
+   "title": "I Can Feel it Coming",
+   "mood": "driving",
+   "feel": "Driving, Suspenseful, Mysterious",
+   "bpm": "94",
+   "length": 215,
+   "instruments": "Guitar, Percussion, Synth",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/disco-medusae.mp3",
+   "title": "Disco Medusae",
+   "mood": "uplifting",
+   "feel": "Bright, Grooving",
+   "bpm": "115",
+   "length": 221,
+   "instruments": "Percussion, Bass, Synths, Clavinet, Guitar",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/loopster.mp3",
+   "title": "Loopster",
+   "mood": "uplifting",
+   "feel": "Bright, Grooving, Driving",
+   "bpm": "108",
+   "length": 182,
+   "instruments": "Bass, Electric Piano, Drums",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/easy-lemon-60-second.mp3",
+   "title": "Easy Lemon (60 second)",
+   "mood": "uplifting",
+   "feel": "Bright, Calming, Relaxed",
+   "bpm": "82",
+   "length": 62,
+   "instruments": "Guitar, Bass, Drum Kit, Celesta, Marimba",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/in-your-arms.mp3",
+   "title": "In Your Arms",
+   "mood": "uplifting",
+   "feel": "Bright, Relaxed",
+   "bpm": "98",
+   "length": 169,
+   "instruments": "Trumpets, Trombones, Saxophones, Bass, Drums",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/vicious.mp3",
+   "title": "Vicious",
+   "mood": "uplifting",
+   "feel": "Bright, Bouncy, Grooving",
+   "bpm": "80",
+   "length": 225,
+   "instruments": "Drums, Bass, Synth",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/zanzibar.mp3",
+   "title": "Zanzibar",
+   "mood": "mystery",
+   "feel": "Mystical, Bouncy, Grooving",
+   "bpm": "105",
+   "length": 219,
+   "instruments": "Percussion, Marimba, Choir",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/willow-and-the-light.mp3",
+   "title": "Willow and the Light",
+   "mood": "mystery",
+   "feel": "Mysterious, Mystical",
+   "bpm": "90",
+   "length": 192,
+   "instruments": "Percussion, Harp, Flute, Voice",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/magic-forest.mp3",
+   "title": "Magic Forest",
+   "mood": "mystery",
+   "feel": "Mystical, Dark, Mysterious",
+   "bpm": null,
+   "length": 260,
+   "instruments": "Cello, Violin, Synths",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/night-vigil.mp3",
+   "title": "Night Vigil",
+   "mood": "mystery",
+   "feel": "Mystical, Somber",
+   "bpm": "54",
+   "length": 288,
+   "instruments": "Choir, Flute, Basses, Cellos",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/the-snow-queen.mp3",
+   "title": "The Snow Queen",
+   "mood": "mystery",
+   "feel": "Mysterious, Mystical",
+   "bpm": "96",
+   "length": 220,
+   "instruments": "Strings, Bassoon, Bass Clarinet, Flute, Celesta, Timpani",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/electro-cabello.mp3",
+   "title": "Electro Cabello",
+   "mood": "playful",
+   "feel": "Bouncy, Grooving",
+   "bpm": "117",
+   "length": 191,
+   "instruments": "Drums, Ukulele, Trumpet, Trombone, Tenor Sax, Synths",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/galway.mp3",
+   "title": "Galway",
+   "mood": "playful",
+   "feel": "Bouncy, Bright, Relaxed",
+   "bpm": "110",
+   "length": 220,
+   "instruments": "Fiddle, Flute, Bass, Guitar, Drums",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/teddy-bear-waltz.mp3",
+   "title": "Teddy Bear Waltz",
+   "mood": "playful",
+   "feel": "Bouncy, Bright, Relaxed",
+   "bpm": "75",
+   "length": 195,
+   "instruments": "Flute, Glockenspiel, Clarinet, Cellos, Violas, Basses",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/vivacity.mp3",
+   "title": "Vivacity",
+   "mood": "playful",
+   "feel": "Bouncy, Bright, Humorous",
+   "bpm": "142",
+   "length": 232,
+   "instruments": "Vibraphone, Bass, Organ, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/hush.mp3",
+   "title": "Hush",
+   "mood": "suspense",
+   "feel": "Eerie, Intense, Unnerving",
+   "bpm": null,
+   "length": 149,
+   "instruments": "Synths, Violins, Choir",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/children-s-theme.mp3",
+   "title": "Children's Theme",
+   "mood": "suspense",
+   "feel": "Unnerving, Eerie",
+   "bpm": null,
+   "length": 68,
+   "instruments": "Glockenspiel, Synth",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/shadowlands-1-horizon.mp3",
+   "title": "Shadowlands 1 - Horizon",
+   "mood": "suspense",
+   "feel": "Eerie, Intense, Somber",
+   "bpm": null,
+   "length": 220,
+   "instruments": "Synths",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/tech/tenebrous-brothers-carnival-mermaid.mp3",
+   "title": "Tenebrous Brothers Carnival - Mermaid",
+   "mood": "suspense",
+   "feel": "Eerie, Intense, Mysterious, Mystical, Relaxed, Suspenseful, Unnerving",
+   "bpm": null,
+   "length": 267,
+   "instruments": "Harps, Voice, Exotic Organ, Waterphone, Percussion, Glass Harmonica",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  }
+ ],
+ "katha": [
+  {
+   "file": "music/lib/katha/dentaneosuchus-hunt.mp3",
+   "title": "Dentaneosuchus Hunt",
+   "mood": "epic",
+   "feel": "Action, Driving, Grooving",
+   "bpm": "114",
+   "length": 247,
+   "instruments": "Drums, Shakers, Log Drums",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/run-amok.mp3",
+   "title": "Run Amok",
+   "mood": "epic",
+   "feel": "Action, Bouncy, Bright, Humorous",
+   "bpm": "148",
+   "length": 107,
+   "instruments": "Strings, Tuba, Trumpet, Trombones, Marimba, Clarinet, Bassoon, English Horn, Oboe, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/deep-haze.mp3",
+   "title": "Deep Haze",
+   "mood": "epic",
+   "feel": "Action, Driving, Grooving",
+   "bpm": "120",
+   "length": 122,
+   "instruments": "Percussion, Guitar, Synths",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/full-on.mp3",
+   "title": "Full On",
+   "mood": "epic",
+   "feel": "Action, Aggressive, Dark, Driving, Epic, Intense",
+   "bpm": "128",
+   "length": 156,
+   "instruments": "Cellos, French Horns, Trombones, Violins, Percussion, Basses",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/death-and-axes.mp3",
+   "title": "Death and Axes",
+   "mood": "epic",
+   "feel": "Action, Driving, Dark",
+   "bpm": "140",
+   "length": 168,
+   "instruments": "Percussion, Trumpets, French Horns, Trombones, Tuba, Cimbasso, Clarinets, Flutes, Piccolo, Oboe, Violins, Violas, Cellos, Basses, Chimes",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/urban-gauntlet.mp3",
+   "title": "Urban Gauntlet",
+   "mood": "epic",
+   "feel": "Epic, Intense",
+   "bpm": "116",
+   "length": 209,
+   "instruments": "Percussion, Synths, Strings",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/spellbound.mp3",
+   "title": "Spellbound",
+   "mood": "mystery",
+   "feel": "Mystical, Eerie, Mysterious, Calming, Dark",
+   "bpm": "70",
+   "length": 230,
+   "instruments": "Synths, Voice, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/dhaka.mp3",
+   "title": "Dhaka",
+   "mood": "mystery",
+   "feel": "Mysterious, Mystical",
+   "bpm": null,
+   "length": 248,
+   "instruments": "Sarod, Dilruba, Drone",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/colorless-aura.mp3",
+   "title": "Colorless Aura",
+   "mood": "mystery",
+   "feel": "Mysterious, Somber",
+   "bpm": "50",
+   "length": 158,
+   "instruments": "Piano",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/the-path-of-the-goblin-king.mp3",
+   "title": "The Path of the Goblin King",
+   "mood": "mystery",
+   "feel": "Mysterious, Relaxed",
+   "bpm": "89",
+   "length": 206,
+   "instruments": "Strings, Flute, Clarinet, Oboe, Celesta, Timpani",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/jalandhar.mp3",
+   "title": "Jalandhar",
+   "mood": "mystery",
+   "feel": "Mysterious, Mystical, Grooving",
+   "bpm": "81",
+   "length": 249,
+   "instruments": "Bass, Percussion, Sitar",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/suonatore-di-liuto.mp3",
+   "title": "Suonatore di Liuto",
+   "mood": "mystery",
+   "feel": "Mysterious, Relaxed",
+   "bpm": "70",
+   "length": 144,
+   "instruments": "Lute",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/lamentation.mp3",
+   "title": "Lamentation",
+   "mood": "emotional",
+   "feel": "Somber",
+   "bpm": "61",
+   "length": 198,
+   "instruments": "Harp",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/vanes.mp3",
+   "title": "Vanes",
+   "mood": "emotional",
+   "feel": "Somber, Unnerving",
+   "bpm": "85",
+   "length": 106,
+   "instruments": "Electric Piano, Percussion, Synths",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/floating-cities.mp3",
+   "title": "Floating Cities",
+   "mood": "emotional",
+   "feel": "Somber, Relaxed, Mystical, Calming",
+   "bpm": "120",
+   "length": 184,
+   "instruments": "Synths, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/dissappointment.mp3",
+   "title": "Dissappointment",
+   "mood": "emotional",
+   "feel": "Somber",
+   "bpm": "67",
+   "length": 118,
+   "instruments": "Bass Clarinet, Basses, Cellos",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/grim-league.mp3",
+   "title": "Grim League",
+   "mood": "emotional",
+   "feel": "Somber",
+   "bpm": "76",
+   "length": 160,
+   "instruments": "Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/grand-dark-waltz-trio-allegro.mp3",
+   "title": "Grand Dark Waltz Trio Allegro",
+   "mood": "calm",
+   "feel": "Relaxed, Calming, Grooving",
+   "bpm": "124",
+   "length": 195,
+   "instruments": "Piano, Drum Kit, Bass",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/daily-beetle.mp3",
+   "title": "Daily Beetle",
+   "mood": "calm",
+   "feel": "Calming, Bouncy",
+   "bpm": "100",
+   "length": 317,
+   "instruments": "Ukulele, Guitar, Marimba, Music Box, Toy Piano, Drums",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/ascending-the-vale.mp3",
+   "title": "Ascending the Vale",
+   "mood": "calm",
+   "feel": "Relaxed, Calming, Mystical",
+   "bpm": "90",
+   "length": 248,
+   "instruments": "Harp, Choir, Flute, Percussion, Anyafil Horn",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/truth-in-the-stones.mp3",
+   "title": "Truth in the Stones",
+   "mood": "calm",
+   "feel": "Calming, Grooving, Mystical",
+   "bpm": "54",
+   "length": 373,
+   "instruments": "Drums, Harp",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/arcadia.mp3",
+   "title": "Arcadia",
+   "mood": "suspense",
+   "feel": "Eerie, Epic, Mysterious, Mystical, Unnerving, Uplifting",
+   "bpm": "80",
+   "length": 98,
+   "instruments": "Choirs, Flutes, Celesta, Glockenspiel",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/nervous.mp3",
+   "title": "Nervous",
+   "mood": "suspense",
+   "feel": "Unnerving, Mysterious, Mystical",
+   "bpm": null,
+   "length": 118,
+   "instruments": "Piano",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/tenebrous-brothers-carnival-snake-lady.mp3",
+   "title": "Tenebrous Brothers Carnival - Snake Lady",
+   "mood": "suspense",
+   "feel": "Eerie, Epic, Mysterious, Mystical, Unnerving",
+   "bpm": null,
+   "length": 202,
+   "instruments": "Percussion, Duduk",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/katha/shadowlands-2-bridge.mp3",
+   "title": "Shadowlands 2 - Bridge",
+   "mood": "suspense",
+   "feel": "Eerie, Intense, Unnerving",
+   "bpm": null,
+   "length": 208,
+   "instruments": "Synths, Prepared Piano",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  }
+ ],
+ "raaz": [
+  {
+   "file": "music/lib/raaz/ghostpocalypse-2-the-call.mp3",
+   "title": "Ghostpocalypse - 2 The Call",
+   "mood": "suspense",
+   "feel": "Eerie, Intense, Unnerving",
+   "bpm": null,
+   "length": 168,
+   "instruments": "Synths, Percussion, Piano",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/supernatural-radio-a.mp3",
+   "title": "Supernatural Radio A",
+   "mood": "suspense",
+   "feel": "Eerie, Humorous, Suspenseful",
+   "bpm": null,
+   "length": 106,
+   "instruments": "Organ",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/impromptu-in-blue.mp3",
+   "title": "Impromptu in Blue",
+   "mood": "suspense",
+   "feel": "Eerie, Mysterious, Unnerving",
+   "bpm": null,
+   "length": 128,
+   "instruments": "Piano",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/giant-wyrm.mp3",
+   "title": "Giant Wyrm",
+   "mood": "suspense",
+   "feel": "Eerie, Unnerving, Dark",
+   "bpm": "80",
+   "length": 259,
+   "instruments": "Piano, Synths, Brass",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/phantom-from-space.mp3",
+   "title": "Phantom from Space",
+   "mood": "suspense",
+   "feel": "Eerie, Mysterious",
+   "bpm": "109",
+   "length": 156,
+   "instruments": "Piano, Percussion, Synth",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/lost-frontier.mp3",
+   "title": "Lost Frontier",
+   "mood": "suspense",
+   "feel": "Eerie, Mysterious, Somber, Suspenseful",
+   "bpm": null,
+   "length": 265,
+   "instruments": "Violins, Cellos, Basses, Choir, French Horn, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/shadowlands-5-antechamber.mp3",
+   "title": "Shadowlands 5 - Antechamber",
+   "mood": "suspense",
+   "feel": "Eerie, Intense, Unnerving",
+   "bpm": null,
+   "length": 178,
+   "instruments": "Synths",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/measured-paces.mp3",
+   "title": "Measured Paces",
+   "mood": "suspense",
+   "feel": "Unnerving, Mysterious, Eerie",
+   "bpm": null,
+   "length": 73,
+   "instruments": "Piano",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/severe-tire-damage.mp3",
+   "title": "Severe Tire Damage",
+   "mood": "dark",
+   "feel": "Aggressive, Driving",
+   "bpm": "74",
+   "length": 412,
+   "instruments": "Synths, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/evening-of-chaos.mp3",
+   "title": "Evening of Chaos",
+   "mood": "dark",
+   "feel": "Dark, Eerie, Mysterious, Suspenseful, Unnerving",
+   "bpm": null,
+   "length": 282,
+   "instruments": "Piano, Percussion, Synths, Strings, Brass, Glockenspiel",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/myst-on-the-moor.mp3",
+   "title": "Myst on the Moor",
+   "mood": "dark",
+   "feel": "Dark, Eerie, Mystical",
+   "bpm": "87",
+   "length": 229,
+   "instruments": "Percussion, Glass Marimba, Synths, Flutes",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/anamalie.mp3",
+   "title": "Anamalie",
+   "mood": "dark",
+   "feel": "Dark, Calming, Mysterious",
+   "bpm": "59",
+   "length": 208,
+   "instruments": "Guitar, Bass, Piano, Percussion, Clarinets, English Horn",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/secrets-of-the-schoolyard.mp3",
+   "title": "Secrets of the Schoolyard",
+   "mood": "dark",
+   "feel": "Dark, Mysterious",
+   "bpm": "100",
+   "length": 178,
+   "instruments": "Synths, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/clash-defiant.mp3",
+   "title": "Clash Defiant",
+   "mood": "dark",
+   "feel": "Aggressive, Driving, Dark, Suspenseful",
+   "bpm": "170",
+   "length": 376,
+   "instruments": "Basses, Cellos, War Horn, Brass, Percussion, Choir",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/mystic-force.mp3",
+   "title": "Mystic Force",
+   "mood": "mystery",
+   "feel": "Mystical, Eerie, Mysterious, Calming, Dark",
+   "bpm": "118",
+   "length": 224,
+   "instruments": "Gamelan, Helicon, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/eastern-thought.mp3",
+   "title": "Eastern Thought",
+   "mood": "mystery",
+   "feel": "Mystical, Relaxed",
+   "bpm": "98",
+   "length": 262,
+   "instruments": "Strings, Metals, Percussion",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/dream-catcher.mp3",
+   "title": "Dream Catcher",
+   "mood": "mystery",
+   "feel": "Mysterious, Relaxed, Grooving",
+   "bpm": "70",
+   "length": 377,
+   "instruments": "Synths, Voices",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/mystery.mp3",
+   "title": "Mystery!",
+   "mood": "mystery",
+   "feel": "Mysterious, Suspenseful",
+   "bpm": "89",
+   "length": 64,
+   "instruments": "Organs, Brass, Bells",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/sardana.mp3",
+   "title": "Sardana",
+   "mood": "mystery",
+   "feel": "Mysterious, Intense",
+   "bpm": "75",
+   "length": 192,
+   "instruments": "Guitar",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/aquarium.mp3",
+   "title": "Aquarium",
+   "mood": "mystery",
+   "feel": "Mysterious, Mystical, Bright",
+   "bpm": "130",
+   "length": 144,
+   "instruments": "Flute, Pianos, Glockenspiel, Violins, Violas, Cellos",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/rumination.mp3",
+   "title": "Rumination",
+   "mood": "emotional",
+   "feel": "Somber, Uplifting",
+   "bpm": null,
+   "length": 172,
+   "instruments": "Piano, Orchestra",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/ghost-processional.mp3",
+   "title": "Ghost Processional",
+   "mood": "emotional",
+   "feel": "Somber, Unnerving, Eerie, Mystical",
+   "bpm": null,
+   "length": 104,
+   "instruments": "Double Bass, Cello, Violin, Celesta, Bells",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/lost-time.mp3",
+   "title": "Lost Time",
+   "mood": "emotional",
+   "feel": "Somber, Dark",
+   "bpm": "55",
+   "length": 227,
+   "instruments": "Violas, Cellos, Basses",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/sad-trio.mp3",
+   "title": "Sad Trio",
+   "mood": "emotional",
+   "feel": "Somber, Dark, Calming",
+   "bpm": null,
+   "length": 252,
+   "instruments": "Piano, Cello, English Horn",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  },
+  {
+   "file": "music/lib/raaz/ghost-processional-digitally-processed.mp3",
+   "title": "Ghost Processional (digitally processed)",
+   "mood": "emotional",
+   "feel": "Somber, Unnerving, Eerie, Mystical",
+   "bpm": null,
+   "length": 106,
+   "instruments": "Double Bass, Cello, Violin, Celesta, Bells, Wind, Cymbal",
+   "credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+  }
+ ]
+}

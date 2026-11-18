@@ -1,136 +1,136 @@
 {
  "picks": [
   {
-   "title": "Researchers track whole body movement with just a smartwatch",
-   "url": "https://news.cornell.edu/stories/2026/11/researchers-track-whole-body-movement-just-smartwatch",
-   "src": "Hacker News",
-   "angle": "Indian fitness enthusiasts can soon get full-body workout tracking without expensive camera setups.",
-   "hook": "Sirf ek smartwatch se poori body track?",
-   "format": "evidence",
-   "freshness": "this week",
-   "score": 10,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "I posted in \"Who wants to be hired?\" and a recruiter sent me a RAT",
-   "url": "https://getjump.me/posts/03-huntrole-fake-take-home/",
-   "src": "Hacker News",
-   "angle": "Crucial safety warning for Indian job seekers applying on LinkedIn or niche tech boards.",
-   "hook": "Job ke badle hacker ne bheja virus!",
-   "format": "story",
-   "freshness": "this week",
-   "score": 10,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "Qwen4-Max",
-   "url": "https://qwen.ai/blog?id=qwen4-max",
-   "src": "Hacker News",
-   "angle": "A powerful new free alternative to ChatGPT for Indian students and developers.",
-   "hook": "Alibaba ka naya AI model ChatGPT se behtar?",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "SpaceX catches the Starship to end Flight 15",
-   "url": "https://www.spacex.com/launches/starship-flight-15",
-   "src": "Hacker News",
-   "angle": "Visual spectacle of the latest rocket catch that makes space travel cheaper and more accessible.",
-   "hook": "SpaceX ne hawa mein rocket pakad liya!",
-   "format": "evidence",
-   "freshness": "today",
-   "score": 9,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "How to make almost anything",
-   "url": "https://pub.cba.mit.edu/863.26/site/",
-   "src": "Hacker News",
-   "angle": "A goldmine of free MIT engineering resources for Indian students and makers.",
-   "hook": "MIT ka famous course ab sabke liye free.",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "Microsoft 365 outage leads to chlorine gas poisoning",
-   "url": "https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html",
-   "src": "Hacker News",
-   "angle": "A shocking example of how software bugs can lead to physical danger in smart buildings.",
-   "hook": "Software bug ki wajah se hotel mein gas?",
-   "format": "story",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "Apple launches new app to study how people use AI for health",
-   "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
-   "src": "TechCrunch AI",
-   "angle": "iPhone users in India can now participate in shaping the future of AI-driven healthcare.",
-   "hook": "Apple ka naya app aapki health sudharega.",
+   "title": "Google Gemini Tasks Expansion",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+   "src": "Google Blog",
+   "angle": "Indian users can now use Gemini to automate calls and purchases for free.",
+   "hook": "Ab Gemini aapke liye calls aur shopping karega!",
    "format": "tool-demo",
    "freshness": "today",
-   "score": 8,
-   "found": "2026-11-16T17:06+05:30"
+   "score": 10,
+   "found": "2026-11-18T05:39+05:30"
   },
   {
-   "title": "eDIAR: Training-Free Open-Speaker Streaming Diarization",
-   "url": "https://huggingface.co/papers/2611.18529",
-   "src": "HF papers",
-   "angle": "Perfect for Indian professionals to automatically identify who said what in long office meetings.",
-   "hook": "Meeting mein kaun kya bola, AI bataega.",
-   "format": "how-it-works",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "Gamer: A Generalist Foundation Model for Real-Time Game Agent",
-   "url": "https://huggingface.co/papers/2611.18397",
-   "src": "HF papers",
-   "angle": "The next level of gaming where AI plays alongside you with human-like logic.",
-   "hook": "Ab AI aapke liye games khelega.",
+   "title": "New Ask Maps Features",
+   "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+   "src": "Google Blog",
+   "angle": "Planning holiday travel in India gets easier with new AI-powered Maps features.",
+   "hook": "Holiday planning ab aur bhi easy ho gayi!",
    "format": "tool-demo",
    "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T17:06+05:30"
+   "score": 9,
+   "found": "2026-11-18T05:39+05:30"
   },
   {
-   "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
-   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
-   "src": "Google AI",
-   "angle": "Indian developers can now build apps that make smart, automated choices instantly.",
-   "hook": "Google ka naya AI khud faisle lega.",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "Skydio's asymmetrical F10 Lightrunner solves drone problems",
-   "url": "https://spectrum.ieee.org/skydio-f10-lightrunner-asymmetrical-drone",
-   "src": "Hacker News",
-   "angle": "New drone design that looks weird but flies much better, relevant for India's growing drone industry.",
-   "hook": "Ye drone tedha hai par kaam kamaal hai.",
-   "format": "comparison",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-16T17:06+05:30"
-  },
-  {
-   "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
-   "url": "https://openai.com/index/lvmh-media-division-partnership",
+   "title": "Introducing ChatGPT for Sales",
+   "url": "https://openai.com/index/introducing-chatgpt-for-sales",
    "src": "OpenAI",
-   "angle": "Luxury brands like Louis Vuitton are now using ChatGPT to create content and designs.",
-   "hook": "Louis Vuitton ab ChatGPT use karega.",
+   "angle": "Small business owners in India can use this to automate customer interactions.",
+   "hook": "Small business owners, ye AI sales badhayega!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "Hugging Face and OpenRouter Partnership",
+   "url": "https://huggingface.co/blog/openrouter",
+   "src": "Hugging Face Blog",
+   "angle": "Easily run open-source models without expensive hardware setups.",
+   "hook": "Ab saare top AI models ek hi jagah!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "Sam Altman Deepfake on Instagram",
+   "url": "https://www.theverge.com/news/1035957/meta-alexandr-wang-sam-altman-instagram-ai-deepfake",
+   "src": "The Verge",
+   "angle": "Even tech leaders are being impersonated; a reminder for Indian users to stay alert.",
+   "hook": "Sam Altman ka deepfake? AI scams se bacho!",
+   "format": "story",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "Minimind: Train an LLM in 2 hours",
+   "url": "https://github.com/jingyaogong/minimind",
+   "src": "GitHub Trending",
+   "angle": "Students can learn how LLMs are built by training a small one themselves.",
+   "hook": "Sirf 2 ghante mein apna khud ka AI!",
+   "format": "story",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "School Phone Bans and Test Scores",
+   "url": "https://www.nytimes.com/2026/11/17/upshot/school-phone-bans-study-scores.html",
+   "src": "New York Times",
+   "angle": "Evidence suggests banning phones in schools improves student focus and grades.",
+   "hook": "School mein phone ban hone se marks badhte?",
+   "format": "evidence",
+   "freshness": "today",
+   "score": 8,
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "Microsoft MAI Code 2",
+   "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+   "src": "Microsoft AI",
+   "angle": "New coding assistant tools for developers to speed up their workflow.",
+   "hook": "Microsoft ka naya coding AI, super fast!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "Claude Code Skill Bundle",
+   "url": "https://github.com/sponsors/elementalsouls",
+   "src": "GitHub Trending",
+   "angle": "A collection of 82 skills to supercharge your AI coding agent.",
+   "hook": "AI coding agents ke liye best tools mil!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "Alloy CSS: Web components without JS",
+   "url": "https://alloyhtml.com/example.html",
+   "src": "Hacker News",
+   "angle": "Developers can build faster, lighter websites that work even without JavaScript.",
+   "hook": "Bina JavaScript ke bhi website chalegi ab!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "Mouse Party: How a mouse works",
+   "url": "https://aboard.com/lets-have-a-mouse-party/",
+   "src": "Hacker News",
+   "angle": "A fun, interactive way to understand the hardware inside your computer mouse.",
+   "hook": "Mouse kaise kaam karta hai? Ye website dekho!",
    "format": "story",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-16T17:06+05:30"
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "title": "Jensen Huang's Nvidia Return Statement",
+   "url": "https://www.theverge.com/tech/1035420/jensen-huang-nvidia-return-as-ceo-statement",
+   "src": "The Verge",
+   "angle": "The biggest name in AI chips is making headlines regarding his potential return.",
+   "hook": "Jensen Huang phir se Nvidia CEO banenge?",
+   "format": "story",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-18T05:39+05:30"
   }
  ],
  "history": [
@@ -313,7 +313,67 @@
    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
    "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
    "found": "2026-11-16T17:06+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+   "title": "Google Gemini Tasks Expansion",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+   "title": "New Ask Maps Features",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+   "title": "Introducing ChatGPT for Sales",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://github.com/jingyaogong/minimind",
+   "title": "Minimind: Train an LLM in 2 hours",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://www.nytimes.com/2026/11/17/upshot/school-phone-bans-study-scores.html",
+   "title": "School Phone Bans and Test Scores",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://huggingface.co/blog/openrouter",
+   "title": "Hugging Face and OpenRouter Partnership",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/news/1035957/meta-alexandr-wang-sam-altman-instagram-ai-deepfake",
+   "title": "Sam Altman Deepfake on Instagram",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://alloyhtml.com/example.html",
+   "title": "Alloy CSS: Web components without JS",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+   "title": "Microsoft MAI Code 2",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://github.com/sponsors/elementalsouls",
+   "title": "Claude Code Skill Bundle",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://aboard.com/lets-have-a-mouse-party/",
+   "title": "Mouse Party: How a mouse works",
+   "found": "2026-11-18T05:39+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/tech/1035420/jensen-huang-nvidia-return-as-ceo-statement",
+   "title": "Jensen Huang's Nvidia Return Statement",
+   "found": "2026-11-18T05:39+05:30"
   }
  ],
- "updated": "2026-11-16T17:06+05:30"
+ "updated": "2026-11-18T05:39+05:30"
 }

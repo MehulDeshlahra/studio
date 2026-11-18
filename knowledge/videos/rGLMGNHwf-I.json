@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "I turned 283 of my",
+ "first_frame": "A digital library interface with books, with the creator's face in the bottom half of the frame.",
+ "hook_type": "bold claim",
+ "format": "talking head + screen recording",
+ "length_s": 98,
+ "cuts_estimate": 25,
+ "avg_shot_s": 3.9,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-5 s: Hook and introduction of the project.",
+  "5-13 s: Setup of the process and promise of the prompts.",
+  "13-23 s: Demonstration of using Wispr Flow to input the goal.",
+  "23-34 s: Explanation of the data input (PDF) and organization by topic.",
+  "34-45 s: Visualizing the design process (books, colors, background).",
+  "45-62 s: Iterating on the design (shelf, rotation, falling books feature).",
+  "62-75 s: Reflection on the 'thinking out loud' process and how Wispr Flow handles it.",
+  "75-98 s: Finalizing the project, adding the 'Surprise Me' button, and CTA."
+ ],
+ "visual_techniques": [
+  "Split screen (top: screen recording, bottom: talking head) throughout.",
+  "Text overlays on the screen recording to highlight specific actions (0:15, 0:37, 0:47, 1:05).",
+  "Zoom-ins on the screen recording to show specific UI elements (0:08, 0:31, 1:21).",
+  "Smooth transitions between screen recording and talking head (throughout)."
+ ],
+ "captions": "White text with a black background box, centered, 1-2 lines per chunk, no highlight colour.",
+ "sound": "Natural voiceover, no background music, clear audio, no sound effects.",
+ "recurring_element": "The screen recording of the digital library interface.",
+ "ending": "CTA (Link in description).",
+ "why": "The video is too long (98 seconds) for a casual tech tutorial. It lacks a strong, engaging hook beyond the initial claim, and the pacing is slow due to the lack of music or dynamic sound design. The 'thinking out loud' concept is interesting but the execution feels like a screen-recorded demo rather than a polished short-form story.",
+ "reusable_faceless": [
+  "Split-screen format to show the process while explaining.",
+  "Using AI tools to demonstrate a 'thinking out loud' workflow.",
+  "Screen recording with clear, highlighted text overlays for key steps.",
+  "Iterative design process shown through screen recording."
+ ],
+ "id": "rGLMGNHwf-I",
+ "url": "https://www.youtube.com/watch?v=rGLMGNHwf-I",
+ "channel": "aevytv",
+ "niche": "tech stories, English, India",
+ "title": "I built a digital library by thinking out loud with Wispr Flow. #ad",
+ "views": 52000,
+ "channel_median": 250000,
+ "ratio": 0.21,
+ "label": "flop",
+ "watched": "2026-11-18T05:43+05:30"
+}

@@ -1,0 +1,40 @@
+{
+ "hook_first_words": "अभी जो भारत के अंदर हो रहा है",
+ "first_frame": "A man in a dark blue shirt standing in front of a green wall with shelves.",
+ "hook_type": "bold claim",
+ "format": "talking head + b-roll",
+ "length_s": 182,
+ "cuts_estimate": 10,
+ "avg_shot_s": 18.2,
+ "words_per_s_estimate": 2.2,
+ "beats": [
+  "0-34 s: Introduction to the topic (student protests and NEET exam issue).",
+  "34-54 s: Transition to b-roll footage of Japan and news clips.",
+  "54-182 s: Commentary on the student's situation, government responsibility, and concluding thoughts."
+ ],
+ "visual_techniques": [
+  "34 s: Cut to b-roll of deer in Japan.",
+  "40 s: Cut to b-roll of a TV screen showing news.",
+  "54 s: Cut back to the talking head."
+ ],
+ "captions": "None",
+ "sound": "Voiceover by the speaker, no background music, no sound effects.",
+ "recurring_element": "The speaker's face and the background set.",
+ "ending": "The video ends abruptly mid-sentence.",
+ "why": "The video is too long for the content, lacks dynamic editing, has no captions, and the audio quality is poor. The pacing is slow, making it difficult to maintain viewer interest.",
+ "reusable_faceless": [
+  "Using B-roll to illustrate a point.",
+  "Using news clips to add credibility.",
+  "Maintaining a consistent visual style throughout the video."
+ ],
+ "id": "qpVj0SNWdyA",
+ "url": "https://www.youtube.com/watch?v=qpVj0SNWdyA",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "I stand with the students, and you? | Sarkari DNA Nasim Sir Statement #NasimAliKhan",
+ "views": 26000,
+ "channel_median": 122000,
+ "ratio": 0.21,
+ "label": "flop",
+ "watched": "2026-11-18T05:43+05:30"
+}

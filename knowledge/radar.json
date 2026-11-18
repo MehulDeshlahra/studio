@@ -1,0 +1,95 @@
+[
+ {
+  "day": "2026-11-17",
+  "t": "11:57",
+  "scanned": 309,
+  "new": 182,
+  "sources": [
+   "dev.to",
+   "github",
+   "google (gemini search)",
+   "google news",
+   "hacker news",
+   "hugging face models",
+   "hugging face spaces",
+   "product hunt",
+   "reddit"
+  ],
+  "picks": [
+   {
+    "name": "chaojifeng-video-content-creator",
+    "what": "An open-source video creation skill packed with 148 ready-to-use HTML and GSAP animation effects, storyboarding, and subtitle routines.",
+    "why": "Our studio's render engine (HyperFrames) is purely HTML + GSAP in headless Chrome. Stealing its 148 HTML/GSAP animation components directly supercharges compose_lab.py with fresh kinetic typography, HUD overlays, and transition effects without new dependencies.",
+    "free": "MIT licence, 100% open-source code on GitHub.",
+    "action": "learn_repo",
+    "how": "Inspect the repository's HTML/GSAP effects directory and adapt the top 10 kinetic text and layout transitions into compose_lab.py templates.",
+    "effort": "medium",
+    "score": 9,
+    "risk": "Some scripts and comments are in Chinese, needing quick LLM translation during extraction.",
+    "src": "github",
+    "url": "https://github.com/mileson/chaojifeng-video-content-creator",
+    "title": "mileson/chaojifeng-video-content-creator",
+    "done": "queued for the learner"
+   },
+   {
+    "name": "ViralForge",
+    "what": "An agent-native CLI and MCP toolkit that deconstructs viral short video hooks and scripts into structural DNA reports and generates hook variants.",
+    "why": "Enhances research.py and plan.py to systematically extract high-retention hook patterns and generate A/B hook variations for Kaise Tech and Puraan Ki Katha.",
+    "free": "Apache-2.0 licence, open source, bring your own API key (works with Gemini free tier).",
+    "action": "learn_repo",
+    "how": "Port the Viral DNA hook deconstruction prompt and variant generation schema into research.py and plan.py.",
+    "effort": "small",
+    "score": 8,
+    "risk": "Avoid over-complicating prompt token usage on Gemini free rate limits.",
+    "src": "github",
+    "url": "https://github.com/fendouai/ViralForge",
+    "title": "fendouai/ViralForge",
+    "done": "queued for the learner"
+   },
+   {
+    "name": "motlab",
+    "what": "A video-as-code toolkit rendering canvas scenes with WebCodecs in headless Chrome, accompanied by an interactive review viewer.",
+    "why": "Provides reference architecture for accelerated rendering via WebCodecs and a visual review viewer that can streamline preflight.py and review.py inspections.",
+    "free": "MIT licence, open source.",
+    "action": "learn_repo",
+    "how": "Study their headless Chrome WebCodecs pipeline to benchmark against current Puppeteer/FFmpeg render times on a 2-core ARM server.",
+    "effort": "medium",
+    "score": 7,
+    "risk": "WebCodecs hardware acceleration might be limited on a headless ARM server without GPU.",
+    "src": "github",
+    "url": "https://github.com/staryone/motlab",
+    "title": "staryone/motlab",
+    "done": "queued for the learner"
+   },
+   {
+    "name": "youtube-seo-optimizer",
+    "what": "A local CLI tool to audit and optimize video titles, descriptions, keyword density, and hashtags for YouTube rankings.",
+    "why": "Directly tackles items on our 'Not built yet' list (hashtag research and metadata preparation for YouTube Shorts expansion).",
+    "free": "MIT licence, completely local and open source with zero API costs.",
+    "action": "learn_repo",
+    "how": "Integrate its metadata auditing rules into publish.py to automatically format tags and SEO-optimized descriptions before posting.",
+    "effort": "small",
+    "score": 7,
+    "risk": "Algorithmic recommendations must be adapted for vertical Shorts rather than long-form search intent.",
+    "src": "github",
+    "url": "https://github.com/BankerInterface/youtube-seo-optimizer",
+    "title": "BankerInterface/youtube-seo-optimizer",
+    "done": "queued for the learner"
+   },
+   {
+    "name": "mdldm-maitian",
+    "what": "An automated multi-platform publishing hub and metrics monitor supporting YouTube, X, and other video networks.",
+    "why": "Our studio has not yet wired up the YouTube uploader in publish.py; this repo provides practical, working token management and API upload code for YouTube.",
+    "free": "MIT licence, open source, self-hostable.",
+    "action": "learn_repo",
+    "how": "Review the YouTube publishing adapter code and port the OAuth/upload routine into publish.py.",
+    "effort": "medium",
+    "score": 6,
+    "risk": "Includes many domestic Chinese platforms that are irrelevant to our workflow; extract only the YouTube module.",
+    "src": "github",
+    "url": "https://github.com/CzzzzzzJ/mdldm-maitian",
+    "title": "CzzzzzzJ/mdldm-maitian"
+   }
+  ]
+ }
+]
