@@ -4,14 +4,16 @@
   "topic": "UPI mein paisa 2 second mein kaise pahunchta hai",
   "title": "UPI mein paisa 2 second mein kaise pahunchta hai?",
   "qc_ok": false,
-  "status": "rejected"
+  "status": "rejected",
+  "pruned": "2026-11-18"
  },
  {
   "job": "ai-01",
   "topic": "ChatGPT aapke sawaal ka jawab kaise banata hai",
   "title": "ChatGPT aapke sawaal ka jawab kaise banata hai?",
   "qc_ok": false,
-  "status": "rejected"
+  "status": "rejected",
+  "pruned": "2026-11-18"
  },
  {
   "job": "lab-gpt-01",
@@ -78,7 +80,8 @@
    "owner agent: Cancel this job entirely as English editions are restricted; focus only on Hindi v2-01.",
    "before render, scene 10: READ: subtitle 'Right or Wrong?' is too dark and faint to read clearly against the dark background"
   ],
-  "mehul_rebuilt": "2026-11-18"
+  "mehul_rebuilt": "2026-11-18",
+  "pruned": "2026-11-18"
  },
  {
   "job": "1117-0729",
@@ -92,15 +95,18 @@
   "topic": "Bank app outage causes: 10 reasons banking apps go down",
   "title": "How Does Your Phone Hear 'Hey Google' When Locked?",
   "qc_ok": true,
-  "status": "removed",
-  "review": []
+  "status": "rejected",
+  "review": [],
+  "pruned": "2026-11-18"
  },
  {
   "job": "1117-0721",
   "topic": "'Hey Google' phone kaise sunta hai",
   "title": "Hey Google phone kaise sunta hai?",
   "qc_ok": true,
-  "status": "approved",
-  "review": []
+  "status": "removed",
+  "review": [],
+  "removed_why": "duplicate of 1117-0729",
+  "pruned": "2026-11-18"
  }
 ]

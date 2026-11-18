@@ -4,7 +4,8 @@
   "topic": "Haveli ka laal dibba",
   "title": "Haveli ka laal dibba: kaun hai chor? (Part 1)",
   "qc_ok": false,
-  "status": "rejected"
+  "status": "rejected",
+  "pruned": "2026-11-18"
  },
  {
   "job": "case2-p1",
@@ -18,11 +19,12 @@
   "topic": "Shaadi ka lifafa (English)",
   "title": "Five lakh vanished at a wedding: who is the thief? (Part 1)",
   "qc_ok": false,
-  "status": "removed",
+  "status": "rejected",
   "feedback": [
    "can you add a reviewer in your server which reviews before sending here. i am not free enough to point silly mistakes. send after your full review. issue in starting"
   ],
-  "review": []
+  "review": [],
+  "pruned": "2026-11-18"
  },
  {
   "job": "1118-1105",

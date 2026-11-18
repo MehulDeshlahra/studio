@@ -11,8 +11,9 @@
   "topic": "Eklavya ka angootha (Mahabharata, Adi Parva)",
   "title": "Kuber's Pride and Ganesha's Hunger",
   "qc_ok": true,
-  "status": "removed",
-  "review": []
+  "status": "rejected",
+  "review": [],
+  "pruned": "2026-11-18"
  },
  {
   "job": "1117-0145",
@@ -35,7 +36,8 @@
   "status": "removed",
   "review": [
    "visual: Severe character design inconsistency: Yamraj appears blue-skinned with multi-arms in scenes 5 and 12, but suddenly appears human-skinned with a different look in scene 10."
-  ]
+  ],
+  "pruned": "2026-11-18"
  },
  {
   "job": "1117-0655",
@@ -47,15 +49,17 @@
    "spoken instructions heard at the start: Say in English, a warm Hindi storyteller with modern pace. Respectful, clear pronunciation of Sanskrit names. Emotional ",
    "first word starts late (8.9 s): something is spoken before the script",
    "visual: Scene 13 visual lacks a subject, displaying only an empty background arch."
-  ]
+  ],
+  "pruned": "2026-11-18"
  },
  {
   "job": "1117-0655-en",
   "topic": "Ganesh ji aur Kuber ka bhoj",
   "title": "How Did Four Pandavas Fall Without a Battle?",
   "qc_ok": true,
-  "status": "removed",
-  "review": []
+  "status": "rejected",
+  "review": [],
+  "pruned": "2026-11-18"
  },
  {
   "job": "1117-1935",
@@ -70,8 +74,9 @@
   "topic": "The hidden curse of Lord Brahma: Why the setting sun is worshipped at special Sun temples.",
   "title": "When Krishna himself stormed Narakasura's fortress",
   "qc_ok": true,
-  "status": "removed",
-  "review": []
+  "status": "rejected",
+  "review": [],
+  "pruned": "2026-11-18"
  },
  {
   "job": "1118-0035",
