@@ -127,6 +127,53 @@ def _brand_guard(ch, p):
     return hit
 
 
+BRANDS = ["ChatGPT", "OpenAI", "Gemini", "Google", "YouTube", "Android", "Chrome", "Gmail", "Google Maps", "Google Pay", "WhatsApp",
+          "Instagram", "Facebook", "Meta", "Threads", "Apple", "iPhone", "iPad", "Mac", "Siri", "Alexa", "Amazon", "Flipkart", "Samsung",
+          "OnePlus", "Xiaomi", "Redmi", "Realme", "Vivo", "Oppo", "Microsoft", "Windows", "Copilot", "Claude", "Anthropic", "Netflix",
+          "Spotify", "Telegram", "Snapchat", "Twitter", "LinkedIn", "Uber", "Ola", "Rapido", "Zomato", "Swiggy", "Blinkit", "Zepto",
+          "Paytm", "PhonePe", "UPI", "BHIM", "Jio", "Airtel", "BSNL", "Tesla", "Nvidia", "Intel", "Qualcomm", "Snapdragon",
+          "MediaTek", "Bluetooth", "Wi-Fi", "USB", "Aadhaar", "DigiLocker", "IRCTC", "Starlink", "ISRO", "NASA", "SpaceX", "Hotstar",
+          "JioCinema", "Truecaller", "Canva", "Perplexity", "DeepSeek", "Grok", "Midjourney"]
+
+
+def _real_brands(ch, p):
+    """18 Nov (owner): "for the ChatGPT reel you could have added ChatGPT's logo". The tech guide once banned logos, so the
+    planner stopped asking for them. On the tech page every reel that names a brand now gets its real logo, whatever the
+    plan says: a chat scene shows the app's logo in its header, and the first object scene that names a brand (else the
+    first scene that does) gets "real" {kind logo}. Returns True when the plan changed."""
+    if ch.get("theme", {}).get("style") != "lab":
+        return False
+    import re as _re
+
+    def found(text):
+        for b in sorted(BRANDS, key=len, reverse=True):
+            if len(b) <= 2:                      # "X", "Vi": only as a whole word in capitals
+                if _re.search(rf"(?<![\w@]){_re.escape(b)}(?![\w])", text or ""):
+                    return b
+            elif _re.search(rf"(?<![\w@]){_re.escape(b)}(?![\w])", text or "", _re.I):
+                return b
+        return None
+    changed = False
+    for s in p.get("scenes", []):
+        if s.get("type") == "chat" and not s.get("logo_q"):
+            b = found(s.get("title", "")) or found(s.get("vo", ""))
+            if b:
+                s["logo_q"] = f"{b} logo"; s["title"] = s.get("title") or b; changed = True
+    if any(isinstance(s.get("real"), dict) and s["real"].get("q") for s in p.get("scenes", [])):
+        return changed
+    hits = [(i, s, found(s.get("vo", "") + " " + str(s.get("label", "")))) for i, s in enumerate(p.get("scenes", []))]
+    hits = [h for h in hits if h[2] and h[1].get("type") not in ("chat", "code", "flow", "compare", "clip")]
+    if not hits:
+        return changed
+    i, s, b = next((h for h in hits if h[1].get("type") == "object"), hits[0])
+    if s.get("type") != "object":                # a stat/title/ui scene: its words are spoken anyway; the logo takes the frame
+        s["type"] = "object"
+        s.setdefault("prompt", f"{b} official logo")
+    s["real"] = {"q": f"{b} logo", "kind": "logo", "subject": f"the official {b} logo"}
+    log("real brands: scene", i + 1, "gets the real", b, "logo")
+    return True
+
+
 def stage_assets(ch, p, job):
     _muse_awake(True)
     try:
@@ -167,6 +214,11 @@ def _stage_assets(ch, p, job):
                     lg = realmedia.fetch({"q": real["logo"], "kind": "logo", "subject": real["logo"]}, os.path.join(adir, f"s{i}rl.jpg"), lab=True)
                     if lg:
                         a["logo"] = lg
+        if s.get("logo_q") and theme.get("style") == "lab":       # chat header: the app's real logo
+            import realmedia
+            lg = realmedia.fetch({"q": s["logo_q"], "kind": "logo", "subject": s["logo_q"]}, os.path.join(adir, f"s{i}cl.jpg"), lab=False, raw=True)
+            if lg:
+                a["chatlogo"] = lg
         if not a and s.get("prompt") and s["type"] in ("image", "clip", "card", "flow", "clue", "choice", "object") and (theme.get("style") != "lab" or s["type"] in ("object", "clip")):
             prompt = s["prompt"] + (". " + look if look and look.lower()[:20] not in s["prompt"].lower() else "") + \
                 ". Vertical 9:16, no text, no letters, no logos, no watermark."
@@ -306,6 +358,11 @@ def main():
     p = load(pp)
     if _brand_guard(ch, p):
         save(pp, p)
+    try:
+        if _real_brands(ch, p):
+            save(pp, p)
+    except Exception as e:
+        log("real brands skipped", str(e)[:100])
     if ch.get("serial") and " - Part " in str(topic) and not p.get("cliff_done"):
         try:
             import extras

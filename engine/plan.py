@@ -95,6 +95,9 @@ no cartoons, no characters with eyes; the object prompts describe real hardware/
 REAL PICTURES apply here too: an 'object' scene whose line names a real brand/app/company/product/person may carry
 "real": {"q": "UPI logo", "kind": "logo" or "photo", "subject": "what it must show"} (2-5 per video). When a line names 1-2 brands/apps (e.g. "Google Pay ya PhonePe"), use an 'object' scene with "real" for it, not a clip. Real logos/photos replace the
 AI render; keep the object "prompt" as the fallback. Real faces of public figures are fine in a 'photo'.
+REAL BRANDS ARE REQUIRED (owner): a reel about ChatGPT shows the real ChatGPT logo, a reel about UPI shows the UPI and app logos,
+a reel about a phone shows the real phone. Every brand the script is about gets at least one real logo or real product photo;
+a 'chat' scene's "title" is the real app name (ChatGPT, Gemini, Claude...). Big tech news: real photos of the CEO/founder are good.
 """
 
 

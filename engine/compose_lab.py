@@ -209,7 +209,9 @@ def page(plan, timed, total, theme, assets):
             js.append(f'tl.set("#{sid}h",{{opacity:0}},{a:.3f});')
         elif kind == "chat":
             msgs = [m for m in (s.get("messages") or []) if isinstance(m, dict) and m.get("text")][:3]
-            hero = f'<div id="{sid}h" class="chat"><div class="chead"><i></i><i></i><i></i><span>{esc(s.get("title") or "assistant")}</span></div>'
+            cl = (assets.get(i) or {}).get("chatlogo")       # 18 Nov: the app's real logo in the header (engine/make.py _real_brands)
+            head_ = (f'<img class="clogo" src="assets/{os.path.basename(cl)}">' if cl else '<i></i><i></i><i></i>')
+            hero = f'<div id="{sid}h" class="chat"><div class="chead">{head_}<span>{esc(s.get("title") or "assistant")}</span></div>'
             tcur = a + 0.35
             for j, m in enumerate(msgs):
                 ai = (m.get("role") or "ai") != "user"
@@ -382,6 +384,8 @@ body{{margin:0;background:#07080b}}
 .chead{{display:flex;align-items:center;gap:12px;padding:22px 30px;border-bottom:1.5px solid #ffffff12;font-family:{MONO};font-size:26px;color:#8b93a3;letter-spacing:1px}}
 .chead i{{width:16px;height:16px;border-radius:50%;background:#ffffff22}} .chead i:first-child{{background:#ff5f57}} .chead i:nth-child(2){{background:#febc2e}} .chead i:nth-child(3){{background:#28c840}}
 .chead span{{margin-left:14px}}
+.clogo{{width:56px;height:56px;border-radius:14px;background:#fff;object-fit:contain;padding:6px;box-sizing:border-box}}
+.chead:has(.clogo) span{{font-family:{SANS};font-weight:700;font-size:34px;color:#eef1f6;letter-spacing:0}}
 .bub{{margin:26px 30px;font-size:42px;line-height:1.3;font-weight:600;display:flex;gap:18px;align-items:flex-start}}
 .bub.me{{justify-content:flex-end}} .bub.me div{{background:{acc};color:#0b0d12;border-radius:26px 26px 6px 26px;padding:18px 26px;max-width:640px}}
 .bub.ai div{{background:#1d2230;color:#eef1f6;border-radius:26px 26px 26px 6px;padding:18px 26px;max-width:680px}}

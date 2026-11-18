@@ -289,8 +289,9 @@ def video_clip(q, out_mp4, subject=None, secs=6.0):
         shutil.rmtree(work, ignore_errors=True)
 
 
-def fetch(real, out_path, lab=False):
-    """real = scene['real']; returns out_path or None."""
+def fetch(real, out_path, lab=False, raw=False):
+    """real = scene['real']; returns out_path or None. raw=True: the trimmed picture itself (an icon for a chat header),
+    not laid out on the video canvas."""
     q = (real.get("q") or "").strip()
     kind = "logo" if str(real.get("kind", "photo")).lower().startswith("logo") else "photo"
     subject = real.get("subject") or q
@@ -312,7 +313,10 @@ def fetch(real, out_path, lab=False):
         if i < 0:
             log("realmedia: none fits", repr(subject), why); return None
         src = trim_margins(cands[i]["path"], work) if kind == "logo" else cands[i]["path"]
-        layout(src, out_path, kind, lab)
+        if raw:
+            sh(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", "scale=256:256:force_original_aspect_ratio=decrease", "-frames:v", "1", "-q:v", "2", out_path], timeout=60)
+        else:
+            layout(src, out_path, kind, lab)
         if kind == "photo":
             _mark_used("u:" + cands[i]["url"])
             fp = _fingerprint(cands[i]["path"])
