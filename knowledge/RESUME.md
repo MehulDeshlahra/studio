@@ -9,7 +9,12 @@
 - FIXED 14:45: raaz serial made Parts 1-8 in a day, all held (length 58-64 s > 55): raaz length now 25-68 s, a serial makes
   no new part while 2+ parts are held; Parts 1, 2, 4 re-checked from qc -> approved 10 (raaz 1 -> 4 approved). Mastering kept the worst of 3 tries (TP +0.3):
   now best of 4 with a lower limiter ceiling (tested on 1118-1328: -14.5 LUFS, TP -2.6).
-- OWNER: turn on the tech "stage" layout? pick the first Lemo special; paste bios (Scroll House line); claim YT @scrollhouse;
+- TECH V2 LOOK (18 Nov 15:00, owner: 'stage' pilot looked the same; use the skills): theme "film": true in
+  channels/tech/channel.json (or STUDIO_LAB_FILM=1). Every scene gets a full-frame picture behind its card (make.py bg:
+  real photo/screen via 'real', else FLUX from 'bg_prompt' / label+keywords, never the spoken line), the picture moves and
+  the type stays still, a camera move per scene, 4 cause-driven seams, no pill+HUD per scene, bigger type, blur-in captions,
+  motion blur, numbers sized to one line. Pilot: Desktop\kaise-tech-OLD-vs-V2.mp4. OFF until Mehul approves.
+- OWNER: approve tech V2? pick the first Lemo special; paste bios (Scroll House line); claim YT @scrollhouse;
   brand email; optional Mistral key.
 - WATCH: first logo in a new tech video; laptop measuring the 45 queued winner Shorts; deep reader 15:30; held katha (healer).
 ## 18 Nov 09:30-10:45: focus week + new keys + Lemo-Opuscar
