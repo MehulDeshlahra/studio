@@ -181,6 +181,8 @@ def _real_brands(ch, p):
             for i, s in enumerate(p.get("scenes", []))]
     if not any(b for _, _, b in hits):
         return changed
+    if p.get("visual_done") or p.get("kiro_checked"):    # 19 Nov: decided once per video (rebuilds keep the choice)
+        return changed
     if _visual_director(ch, p, film):
         return True
     # fallback (director failed): the official logo at the brand's first mention only
@@ -346,6 +348,10 @@ def _look_prompt(ch, s, prompt, look):
 
 def _visual_director(ch, p, film):
     """One planner call: which scenes get a real logo / app screen / product photo. Writes scene["real"]. True if any."""
+    # 19 Nov: it ran again on every rebuild and undid hand fixes and repairs (finance 1118-2334). Once per video.
+    if p.get("visual_done") or p.get("kiro_checked"):
+        return False
+    p["visual_done"] = time.strftime("%Y-%m-%d %H:%M")
     try:
         import plan as planner
         rules = read(os.path.join(ROOT, "channels", ch["id"], "visual-rules.md"), 3500) or read(os.path.join(ROOT, "channels", "tech", "visual-rules.md"), 3500) or \
