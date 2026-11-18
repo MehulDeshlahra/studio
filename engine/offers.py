@@ -21,13 +21,17 @@ CHROME = sorted(glob.glob(os.path.expanduser("~/.cache/ms-playwright/chromium_he
 TAKEN = {"PART2", "PART", "AAGE", "LINK", "TECH", "PAISA", "MONEY", "KATHA", "DONE", "HI", "HELLO", "JAI", "JINENDRA"}
 
 DESIGN = """You turn a finished {lang} Reels script of the page "{name}" into a FREE GIFT the viewer gets in DM after
-commenting a keyword (and following the page). The gift must feel worth a comment: specific, practical, save-able.
-SCRIPT (the only source of facts):
+commenting a keyword (and following the page). The gift must feel worth a comment: specific, practical, save-able, and
+it gives MORE than the video did (the full steps, what to write, where to complain, what to check), like the top creators'
+"comment GUIDE" gifts.
+SCRIPT:
 {script}
+VERIFIED SOURCES the video was made from (articles / official pages; the only other source of facts):
+{sources}
 Kinds allowed on this page: {kinds}
 - "sheet": a one-page cheat sheet / checklist of THIS video: 4-7 points the viewer will want later (steps to follow,
-  documents to keep, what to say to the bank, settings to change...). Every fact and number must be in the script above:
-  no new numbers, no new rules, no names of funds/stocks/apps to buy. Short lines, Hinglish in Roman script.
+  documents to keep, what to say to the bank, settings to change...). Every fact and number must be in the script or the
+  sources above: nothing from memory, no names of funds/stocks/apps to buy. Short lines, Hinglish in Roman script.
 - "wallpaper": the video's own picture as an HD phone wallpaper (story pages only).
 - "none": when this video has nothing a viewer would really want to keep.
 A GIFT IS SOMETHING THEY WILL USE LATER: steps to claim a refund, documents to keep, what to say to the bank, the settings
@@ -44,12 +48,14 @@ Return JSON:
  "say": "<the spoken closing line, Hinglish, under 14 words, e.g. 'Ye poori checklist chahiye? Comment karo REFUND, main DM kar dunga.'>"}}"""
 
 
-CHECK = """You check a free cheat sheet before it is sent to viewers. SCRIPT of the video (the only source):
+CHECK = """You check a free cheat sheet before it is sent to viewers. SCRIPT of the video:
 {script}
+SOURCES (articles / official pages the video used; script + sources are the only allowed sources):
+{sources}
 SHEET "{gift}":
 {lines}
-1) List the line numbers that say anything the script does not state (a new fact, number, rule, deadline, website, step or
-claim). Rewording is fine; new information is not.
+1) List the line numbers that say anything neither the script nor the sources state (a fact, number, rule, deadline,
+website, step or claim). Rewording is fine; information from your own memory is not.
 2) Score 1-10 how much a typical viewer of this page would want this sheet enough to comment for it (10 = a practical tool
 they will use: steps to claim money, a checklist to follow; 3 = a recap of facts they just watched).
 Return JSON {{"unsupported": [numbers], "worth": number, "why": "<one line>"}}"""
@@ -111,9 +117,11 @@ def decide(ch, plan, job, force=False):
     reg = load(REG, {}) or {}
     taken = TAKEN | set((reg.get(ch["id"]) or {}).keys())
     script = _script(plan)
+    r = load(os.path.join(job, "research.json"), {}) or {}
+    sources = str(r.get("web") or "")[:6000] or "(none)"
     try:
         o = planner.ask(DESIGN.format(lang="Hindi" if ch.get("lang", "hi") == "hi" else "English", name=ch.get("name") or ch["id"],
-                                      script=script[:7000], kinds=", ".join(kinds), taken=", ".join(sorted(taken))), max_tokens=2500)
+                                      script=script[:6000], sources=sources, kinds=", ".join(kinds), taken=", ".join(sorted(taken))), max_tokens=2500)
     except Exception as e:
         log("offer design failed:", str(e)[:120]); return False
     if o.get("kind") == "none":
@@ -126,7 +134,7 @@ def decide(ch, plan, job, force=False):
         base = kw
         while kw in taken or len(kw) < 3:
             kw = f"{base}{n}"; n += 1
-    have = _nums(script)
+    have = _nums(script) | _nums(sources)
     items = []
     for it in o.get("items") or []:
         if not isinstance(it, dict) or not it.get("text"):
@@ -139,14 +147,14 @@ def decide(ch, plan, job, force=False):
         # 19 Nov test: a finance line said "the bank gets 30 more days for lost papers", not checked against the script.
         # A second, separate call checks every line against the script and scores the gift; weak gifts are dropped.
         try:
-            v = planner.ask(CHECK.format(script=script[:7000], gift=o.get("gift", ""),
+            v = planner.ask(CHECK.format(script=script[:6000], sources=sources, gift=o.get("gift", ""),
                                          lines="\n".join(f"{i + 1}. {x['head']}: {x['text']}" for i, x in enumerate(items))), max_tokens=1200)
             bad = {int(x) for x in (v.get("unsupported") or []) if str(x).isdigit()}
             if bad:
                 log("offer: dropped lines the script does not say:", sorted(bad))
             items = [x for i, x in enumerate(items) if i + 1 not in bad]
             score = float(v.get("worth") or 0)
-            if score < 7:
+            if score < 6:
                 log("offer: gift scored", score, "/10 (", str(v.get("why", ""))[:100], ") -> no offer on this video"); return False
         except Exception as e:
             log("offer check failed -> no offer:", str(e)[:100]); return False
