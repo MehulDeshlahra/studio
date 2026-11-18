@@ -42,7 +42,10 @@ did = []
 
 # problems that are not faults: every caller has a fallback model, or the cause was a restart
 WAIT = re.compile(r"429|503|Too Many Requests|Service Unavailable|timed out|quota|overloaded|Connection refused|"
-                  r"Temporary failure in name resolution|Connection reset|Remote end closed|EOF occurred", re.I)
+                  r"Temporary failure in name resolution|Connection reset|Remote end closed|EOF occurred|"
+                  # 18 Nov: free providers hiccup; every caller falls back to the next model (not a code fault)
+                  r"Bad Gateway|Gateway Time|HTTP Error 50[234]|tiny image|Expecting value|No results found|"
+                  r"clip failed -> still image|no page key", re.I)
 CODE_HINT = re.compile(r"Traceback|Error\b|Exception|KeyError|TypeError|AttributeError|NameError|IndexError|ValueError|"
                        r"SyntaxError|No module named|not defined|unexpected keyword|object is not|failed:", re.I)
 # code that a stage owns: a held video's problem points at these files
@@ -418,13 +421,16 @@ def heal_unknown():
     items = load(UNKNOWN, []) or []
     seen = set(S["seen_unknown"])
     for u in items:
-        k = hashlib.sha1((u.get("what", "") + u.get("detail", "")).encode()).hexdigest()[:12]
-        if k in seen:
-            continue
-        seen.add(k)
         what, detail = u.get("what", ""), u.get("detail", "")
+        # 18 Nov: keyed by the error itself; "repeated 5 times" and "repeated 7 times" were 2 items for one error
+        k = hashlib.sha1((re.sub(r"\d+", "#", what) + detail).encode()).hexdigest()[:12]
+        sk = k + ":" + str(u.get("t", ""))
+        if sk in seen:
+            continue
+        seen.add(sk)
         key = f"unk:{k}"
         it = S["items"].setdefault(key, {"first": u.get("t"), "what": what, "detail": detail[:300], "steps": []})
+        it["what"] = what
         if what.startswith("held video still failing"):
             it.update(state="merged", why="handled by the held-video ladder"); continue
         if WAIT.search(detail) and not CODE_HINT.search(detail.replace("HTTP Error", "")):
@@ -451,12 +457,19 @@ def heal_unknown():
             res = sh(f"systemctl show {m.group(1)}.service -p Result --value")[1].strip()
             if res == "success":
                 it.update(state="gone", why="the unit runs fine again"); note(f"closed: {it['what'][:80]} (the unit runs fine again)")
+    # 18 Nov: close every finished / provider-only item first; the fix loop below returns early when the server is busy,
+    # so items behind the first one stayed "open" for hours (dashboard showed a 13:54 error at 17:20)
+    for key, it in S["items"].items():
+        if not key.startswith("unk:") or it.get("state") not in ("open", "parked"):
+            continue
+        if WAIT.search(it.get("detail", "")) and not re.search(r"Traceback|KeyError|TypeError|AttributeError|NameError", it.get("detail", "")):
+            it.update(state="wait", why="free provider hiccup: every caller falls back to the next model")
+        elif not still_happening(it["detail"], 180):
+            it.update(state="gone", why="stopped by itself"); note(f"closed: {it['what'][:80]} (stopped by itself)")
     # open items: try a code fix (one per run)
     for key, it in S["items"].items():
         if not key.startswith("unk:") or it.get("state") != "open":
             continue
-        if not still_happening(it["detail"], 180):
-            it.update(state="gone", why="stopped by itself"); note(f"closed: {it['what'][:80]} (stopped by itself)"); continue
         if it.get("tried_code") == head() or S.get("code_day", {}).get(time.strftime("%Y-%m-%d"), 0) >= 6:
             continue
         if busy() or mem_mb() < 3000:              # wait for a quiet moment; do not burn this code version's try

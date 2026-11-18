@@ -292,6 +292,10 @@ def check_repeating_errors():
             continue                      # free-tier quota / overload: every caller has a fallback model (17 Nov), not a fault
         if re.search(r"muse (image|video) retry|doctor:|review .* HOLD|qc PROBLEMS", l):
             continue
+        # 18 Nov: free image/text providers hiccup (502, empty image, empty JSON); each caller falls back to the next one
+        if re.search(r"(omniroute image|gemini text|realmedia gemini|web search) fail.*(Bad Gateway|HTTP Error 50\d|tiny image|"
+                     r"Expecting value|No results found)|clip failed -> still image", l):
+            continue
         k = re.sub(r"\d+", "#", l[20:])[:90]
         seen[k] = seen.get(k, 0) + 1
     for k, n in seen.items():
