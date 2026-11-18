@@ -64,18 +64,34 @@ def commons(q, n=6):
         log("realmedia commons fail", str(e)[:80]); return []
 
 
+ALIAS = {"upi": "Unified Payments Interface", "gemini": "Google Gemini", "bard": "Google Gemini", "iphone": "iPhone",
+         "jio": "Jio", "x": "X (social network)", "twitter": "X (social network)", "meta": "Meta Platforms", "claude": "Claude (language model)",
+         "copilot": "Microsoft Copilot", "grok": "Grok (chatbot)", "bhim": "BHIM (app)", "vi": "Vodafone Idea", "ola": "Ola Cabs",
+         "maps": "Google Maps", "pay": "Google Pay", "alexa": "Amazon Alexa", "siri": "Siri", "threads": "Threads (social network)"}
+TECHY = re.compile(r"(app|software|service|platform|company|payment|bank|telecom|network|brand|website|search engine|chatbot|"
+                   r"language model|artificial intelligence|smartphone|operating system|browser|messaging|social|video|streaming|"
+                   r"e-commerce|delivery|technology|wireless|standard|identity|railway|space agency|manufacturer|corporation)", re.I)
+
+
 def official_logo(q):
     """18 Nov: Bing gave junk for "ChatGPT logo" and the judge rightly refused all of it. Wikidata keeps each brand's
     official logo file (P154, rendered to PNG by Commons) and website (P856 -> app icon). Returns [urls], best first."""
     name = re.sub(r"\b(official|logo|icon|app)\b", "", q, flags=re.I).strip() or q
+    name = ALIAS.get(name.lower(), name)
     try:
         s = json.loads(_get("https://www.wikidata.org/w/api.php?" + urllib.parse.urlencode(
-            {"action": "wbsearchentities", "search": name, "language": "en", "limit": 3, "format": "json"}), 20)[0])
+            {"action": "wbsearchentities", "search": name, "language": "en", "limit": 7, "format": "json"}), 20)[0])
+        hits = s.get("search", [])
+        # the tech / India meaning first (UPI = payments, not a university in the Philippines)
+        hits.sort(key=lambda h: 0 if TECHY.search(h.get("description", "") or "") else 1)
         out = []
-        for hit in s.get("search", [])[:3]:
+        for hit in hits[:3]:
             e = json.loads(_get(f"https://www.wikidata.org/wiki/Special:EntityData/{hit['id']}.json", 20)[0])["entities"][hit["id"]]
             cl = e.get("claims", {})
-            for c in cl.get("P154", [])[:1]:
+            logos = [c for c in cl.get("P154", []) if c.get("rank") != "deprecated"]
+            cur = [c for c in logos if "P582" not in (c.get("qualifiers") or {})]          # no end date = today's logo
+            best = [c for c in cur if c.get("rank") == "preferred"] or cur[-1:] or logos[-1:]
+            for c in best[:1]:
                 f = c["mainsnak"].get("datavalue", {}).get("value")
                 if f:
                     out.append("https://commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(f.replace(" ", "_")) + "?width=1000")
