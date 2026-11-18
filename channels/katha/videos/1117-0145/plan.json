@@ -27,7 +27,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Papa ne yagya mein sab daan kar diya... mujhe bhi",
@@ -41,7 +42,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Teen baar pucha: 'Main kise daan doge?' Papa bhadak gaye",
@@ -55,7 +57,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "'Ja, Mrityu ko daan deta hoon tujhe' — papa ne gusse mein kaha",
@@ -69,7 +72,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Nachiketa chala gaya Yamraj ke dwar... teen din bina paani",
@@ -83,7 +87,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Yamraj aaye: 'Atithi bhookha raha, maang teen var'",
@@ -97,7 +102,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Pehla var: 'Papa ka gussa shant ho, woh mujhe pehchane'",
@@ -111,7 +117,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Doosra var: 'Swarg ka agni vidya sikhao'",
@@ -125,7 +132,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "puppet"
   },
   {
    "vo": "Teesra var: 'Mrityu ke baad kya hota hai?'",
@@ -139,7 +147,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "puppet"
   },
   {
    "vo": "Yamraj ne dhan, rajya, apsara sab offer kiye... Nachiketa ne mana kar diya",
@@ -153,7 +162,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "puppet"
   },
   {
    "vo": "'Ye sab toh rehta nahi... mujhe Atma ka gyaan do'",
@@ -167,7 +177,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "puppet"
   },
   {
    "vo": "Yamraj samjhaye: 'Atma na janam leti, na marti... woh nitya hai'",
@@ -181,7 +192,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "pattachitra"
   },
   {
    "vo": "Ye gyaan milte hi Nachiketa azad ho gaya... ghar wapas",
@@ -195,7 +207,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Tum hote toh Mrityu se kya maangte? Comment karo",
@@ -209,7 +222,8 @@
    ],
    "real": null,
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   }
  ],
  "music_mood": "emotional",
@@ -260,5 +274,6 @@
   "3cec28c3e9",
   "d7b38f2237"
  ],
- "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "skin": "painting"
 }

@@ -19,7 +19,7 @@
   {
    "vo": "Greenwich se pehle, poori duniya ka samay Ujjain se chalta tha.",
    "type": "image",
-   "prompt": "Ancient Ujjain skyline at sunrise, Shipra river foreground, Mahakaleshwar temple spires glowing, giant ornate sundial (Kaal Chakra) at center casting sharp shadow, gold zodiac bands and maroon spokes, warm gold and deep maroon palette, Indian miniature-meets-epic style, 9:16",
+   "prompt": "Ancient Ujjain skyline at sunrise, Shipra river in foreground, Mahakaleshwar temple spires glowing, giant ornate sundial (Kaal Chakra) at center casting sharp shadow, warm gold and deep maroon palette, Indian miniature epic style, clear sky, no text, 9:16, room above and below for text",
    "motion": "push",
    "title": "",
    "keywords": [
@@ -27,11 +27,7 @@
     "Ujjain",
     "samay"
    ],
-   "real": {
-    "q": "Ujjain Mahakaleshwar temple sunrise aerial",
-    "kind": "photo",
-    "subject": "Mahakaleshwar temple complex at sunrise with Shipra river"
-   },
+   "real": null,
    "big": null,
    "small": null
   },
@@ -60,7 +56,8 @@
    "keywords": [
     "Shiv Puran",
     "Kotirudra Samhita"
-   ]
+   ],
+   "real": null
   },
   {
    "vo": "Avanti nagar mein Dushana naam ka rakshas tha, vedon ka dushman.",
@@ -121,7 +118,7 @@
   {
    "vo": "Phir wo wahi sthir ho gaye — dakshin mukhi Jyotirlinga ban ke.",
    "type": "image",
-   "prompt": "Mahakaleshwar Jyotirlinga in sanctum, self-manifested lingam, silver sheath, facing south, oil lamps glowing, maroon and gold drapes, soft divine light, reverent composition, painterly style, 9:16",
+   "prompt": "Mahakaleshwar Jyotirlinga in sanctum, self-manifested lingam with silver sheath, facing south, oil lamps glowing, maroon and gold drapes, soft divine light, reverent composition, painterly style, 9:16, no text, room above and below for text",
    "motion": "pull",
    "title": "",
    "keywords": [
@@ -129,27 +126,24 @@
     "dakshin mukhi",
     "Jyotirlinga"
    ],
-   "real": {
-    "q": "Mahakaleshwar Jyotirlinga sanctum interior",
-    "kind": "photo",
-    "subject": "Mahakaleshwar lingam in garbhagriha with silver sheath"
-   },
+   "real": null,
    "big": null,
    "small": null
   },
   {
    "vo": "Dakshin mukhi matlab Yama (kaal) ki disha — Mahakal uska bhi swami.",
    "type": "image",
-   "prompt": "A majestic golden Trishul of Lord Shiva radiating divine cosmic energy against a dark spiritual background, soft ethereal embers, painterly style, centered composition, vertical 9:16, room above and below for text, no text, no letters, no compass",
+   "prompt": "Majestic golden Trishul of Lord Shiva radiating divine cosmic energy against a dark spiritual background, soft ethereal embers, painterly style, centered composition, vertical 9:16, no text, room above and below for text",
    "motion": "zoom_in",
    "title": "Kaal Ke Swami",
-   "big": "DAKSHIN = KAAL",
-   "small": "MAHAKAL HAI SWAMI",
+   "big": "DAKSHIN",
+   "small": "MAHAKAL SWAMI",
    "keywords": [
     "dakshin",
     "Yama",
     "swami"
-   ]
+   ],
+   "real": null
   },
   {
    "vo": "Isliye Ujjain ka mandir samay ka kendra bana, yahan ka sundial desh ka reference tha.",

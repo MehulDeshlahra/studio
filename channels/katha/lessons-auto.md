@@ -292,3 +292,7 @@
 
 ## review 1118-0035
 - visual: Scene 2 headline says 'SKANDHA NAV' which is completely unrelated to the story of Ganga descending (which belongs to the Bhagavata Purana / Ramayana, not Skandha Purana context for this specific title).
+
+## 1118-1015 12 Jyotirlinga ki katha - Part 3: Mahakaleshwar
+- scene 4: Minor anatomical blurring and overlapping limbs on the demonic figure.
+- scene 12: Gibberish symbols and distorted text within the central circular dial.

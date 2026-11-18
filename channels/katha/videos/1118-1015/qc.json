@@ -1,0 +1,28 @@
+{
+ "topic": "12 Jyotirlinga ki katha - Part 3: Mahakaleshwar",
+ "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.5,
+  "true_peak": -3.9,
+  "dur": 49.33
+ },
+ "vision": {
+  "score": 7,
+  "ok": true,
+  "problems": [
+   "scene 4: Minor anatomical blurring and overlapping limbs on the demonic figure.",
+   "scene 12: Gibberish symbols and distorted text within the central circular dial."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9844961240310077,
+  "words": 137,
+  "problems": []
+ },
+ "ok": true
+}

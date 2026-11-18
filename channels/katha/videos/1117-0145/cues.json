@@ -1,12 +1,18 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/floating-cities.mp3",
+  "file": "music/lib/katha/grim-league.mp3",
   "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
  "sfx": [
+  {
+   "t": 0.0,
+   "file": "sfx/impact.mp3",
+   "gain_db": -15,
+   "align": "onset"
+  },
   {
    "t": 3.7,
    "file": "sfx/air-zoom.mp3",

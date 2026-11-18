@@ -1,12 +1,18 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/raaz/ghostpocalypse-2-the-call.mp3",
+  "file": "music/lib/raaz/lost-frontier.mp3",
   "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
  "sfx": [
+  {
+   "t": 0.0,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -15,
+   "align": "onset"
+  },
   {
    "t": 4.88,
    "file": "sfx/air-zoom.mp3",

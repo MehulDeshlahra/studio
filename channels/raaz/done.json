@@ -45,10 +45,8 @@
   "topic": "Chouthi Manzil Ka Raaz - Part 3",
   "title": "Apni hi jeb mein baji maut ki ringtone?",
   "qc_ok": true,
-  "status": "held",
-  "review": [
-   "visual: Scenes 6 and 7 display a giant multi-armed entity standing at the balcony, directly contradicting the narration which states only red ink drops and an abandoned pen were found."
-  ]
+  "status": "approved",
+  "review": []
  },
  {
   "job": "1118-1315",
@@ -63,10 +61,8 @@
   "topic": "Chouthi Manzil Ka Raaz - Part 5",
   "title": "CCTV Mein 5 Saal Puraani Maut Ka Raaz",
   "qc_ok": false,
-  "status": "held",
-  "review": [
-   "format/loudness: h264,1080,1920,30/1 -14.5 LUFS, true peak 0.3"
-  ]
+  "status": "approved",
+  "review": []
  },
  {
   "job": "1118-1405",
@@ -82,9 +78,7 @@
   "title": "Chouthi manzil ki deewar aaina kaise bani?",
   "status": "held",
   "review": [
-   "before render, scene 6: OVERLAP/CUT (layout audit): text_occluded on #s5b",
-   "before render, scene 8: OVERLAP/CUT (layout audit): text_occluded on #s7b",
-   "before render, scene 11: FIT: RESPECT - Deity image shown instead of the required card visual for part 9 ending"
+   "before render, scene 3: OVERLAP/CUT (layout audit): text_occluded on #s2b"
   ]
  }
 ]

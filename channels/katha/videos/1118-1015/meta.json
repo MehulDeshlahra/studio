@@ -2,8 +2,9 @@
  "channel": "katha",
  "job": "1118-1015",
  "topic": "12 Jyotirlinga ki katha - Part 3: Mahakaleshwar",
- "stage": "held",
+ "stage": "done",
  "lang": "hi",
  "prepped_at": "2026-11-18 10:42",
- "held_at": "2026-11-18 11:25"
+ "held_at": "2026-11-18 11:25",
+ "brain_judged": true
 }

@@ -1,0 +1,248 @@
+{
+ "slug": "bhairava-brahma-fifth-head",
+ "title": "Brahma Ka Paanchwa Sir Kyun Kata?",
+ "hooks": [
+  "Brahma ji ne ek jhooth bola... aur Shiva ne unka sir hi kaat diya!",
+  "Bhagwan ne jhooth bola aur sazaa mein sir kat gaya!",
+  "Ek ghamandi jhooth... aur Shiva ke Bhairava ne liya badla!"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Instant shock hook pairing the supreme creator with a lie and decapitation in conversational Hindi, driving immediate retention.",
+ "metaphor": "The Severed Ego — intellect without truth rots into pride, and only decisive truth can cut it away.",
+ "cast": {
+  "Brahma": "Four-faced creator, luminous golden aura, white beard, traditional silk robes, seated on a sacred lotus, regal yet humbled, painterly Indian miniature style, rich vermilion and gold tones, cinematic rim lighting, no text.",
+  "Vishnu": "Serene blue-skinned preserver, four-armed with conch and lotus, reclining on Shesha serpent, calm honest expression, painterly Indian epic style, deep indigo and warm gold palette, soft spiritual glow, no text.",
+  "Shiva": "Ash-smeared meditative ascetic, crescent moon in matted hair, third eye ablaze with inner fire, tiger skin mantle, commanding divine authority, painterly miniature aesthetic, warm embers and deep charcoal hues, no text.",
+  "Bhairava": "Fierce cosmic warrior aspect of Shiva, midnight-dark skin, wild untamed locks, skull garland, piercing compassionate eyes, sharp extended thumbnail on left hand, painterly Indian dramatic art, crimson and charcoal atmosphere, no text."
+ },
+ "scenes": [
+  {
+   "vo": "Brahma ji ne ek jhooth bola... aur Shiva ne unka sir hi kaat diya!",
+   "type": "image",
+   "prompt": "Cinematic vertical 9:16 frame: Brahma's upward-facing fifth head severed in a flash of divine crimson light, glowing dust particles suspended, dark hand of Bhairava visible in silhouette, painterly Indian miniature style, dramatic contrast, clean composition, no text.",
+   "motion": "push",
+   "title": "DIVINE JUSTICE",
+   "keywords": [
+    "Brahma",
+    "jhooth",
+    "Shiva",
+    "sir"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Shuruat mein Brahma aur Vishnu mein ladai chhid gayi ki sabse bada kaun hai.",
+   "type": "image",
+   "prompt": "Brahma on golden lotus and Vishnu on ocean waves facing each other in cosmic debate, celestial clouds and stars, Indian epic miniature style, warm ochre and navy blue palette, expressive gestures, uncluttered, no text.",
+   "motion": "push",
+   "title": "KAUN SHRESHTH?",
+   "keywords": [
+    "Brahma",
+    "Vishnu",
+    "ladai",
+    "shreshth"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Tabhi beech mein agni ka ek vishal Jyotirlinga prakat hua, jiska koi chhor nahi tha.",
+   "type": "image",
+   "prompt": "An infinite towering pillar of brilliant golden fire piercing through heavens and abyss, Brahma and Vishnu standing tiny in comparison, awe-struck expressions, Indian mythic art, deep crimson and radiant gold, no text.",
+   "motion": "pull",
+   "title": "AGNI STAMBH",
+   "keywords": [
+    "agni",
+    "Jyotirlinga",
+    "prakat",
+    "ant"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Dono mein shart lagi—jo iska ant dhundhega, wahi sabse bada kehlayega.",
+   "type": "image",
+   "prompt": "Cosmic split composition: a golden swan soaring upward toward starry heights, a dark wild boar diving deep into cosmic waters, glowing pillar in the center, Indian miniature painting, balanced framing, no text.",
+   "motion": "pan",
+   "title": "KHOJ KI SHART",
+   "keywords": [
+    "shart",
+    "ant",
+    "hans",
+    "varaha"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Vishnu ji pataal tak gaye, par ant na milne par unhone sach sweekar kiya.",
+   "type": "image",
+   "prompt": "Lord Vishnu standing before the radiant flame pillar with folded hands, tranquil and honest expression, accepting the infinite mystery with humility, soft golden divine lighting, Indian classical painting style, no text.",
+   "motion": "push",
+   "title": "SACH KA SAAMNA",
+   "keywords": [
+    "Vishnu",
+    "pataal",
+    "sach",
+    "sweekar"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Lekin Brahma ji ne upar jaakar Ketaki ke phool se jhoothi gawahi dilwa di.",
+   "type": "image",
+   "prompt": "Brahma holding a radiant white Ketaki flower high, an eerie supernatural glow around the bloom, celestial sky background, painterly Indian miniature art, dramatic shadows signifying deceit, no text.",
+   "motion": "tilt",
+   "title": "JHOOTHI GAWAHI",
+   "keywords": [
+    "Brahma",
+    "Ketaki",
+    "phool",
+    "gawahi"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Unke paanchvein sir ne ghamand mein aakar Shiva ke saamne jhooth bol diya.",
+   "type": "image",
+   "prompt": "Close-up of Brahma's arrogant topmost fifth head speaking pridefully, eyes arrogant, four lower heads looking troubled, divine aura flickering, warm maroon and gold miniature style, uncluttered, no text.",
+   "motion": "push",
+   "title": "AHANKAAR KI SEEMA",
+   "keywords": [
+    "paanchwa sir",
+    "ghamand",
+    "Shiva",
+    "jhooth"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!",
+   "type": "image",
+   "prompt": "Vertical dramatic shot: Shiva's third eye blazing with cosmic fire, from which fierce dark Bhairava emerges with flowing wild hair and garland of skulls, embers swirling, Indian epic artwork, high energy, no text.",
+   "motion": "push",
+   "title": "BHAIRAVA PRAKAT",
+   "keywords": [
+    "Shiva",
+    "krodh",
+    "teesra netra",
+    "Bhairava"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya.",
+   "type": "image",
+   "prompt": "Bhairava swiftly flicking his left thumbnail like a sharp blade, cleanly slicing through the arrogant fifth head, golden sparks flying, frozen dramatic moment, Indian miniature style, rich deep tones, no text.",
+   "motion": "punch",
+   "title": "EK PAL MEIN KHATAM",
+   "keywords": [
+    "Bhairava",
+    "nakhun",
+    "panchwa sir",
+    "kaat"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya.",
+   "type": "image",
+   "prompt": "The severed skull turning into a begging bowl stuck to Bhairava's palm; Brahma with four remaining heads bowing deeply in reverent humility, soft warm light of repentance, painterly Indian classical art, no text.",
+   "motion": "pull",
+   "title": "KAPALA AUR PASHCHATAP",
+   "keywords": [
+    "kapala",
+    "haath",
+    "ahankaar",
+    "toot gaya"
+   ],
+   "big": null,
+   "small": null
+  },
+  {
+   "vo": "Katha sikhati hai: gyaan kitna bhi ho, ahankaar sach ko nigal hi leta hai.",
+   "type": "card",
+   "prompt": "Minimalist spiritual art: a golden crown fracturing into dust against deep maroon velvet background, soft sacred flame below, painterly Indian philosophical style, clean and uncluttered, no text.",
+   "motion": "push",
+   "title": "ASLI SEEKH",
+   "big": "AHANKAAR KA ANT",
+   "small": "SATYA HI SUPREME HAI",
+   "keywords": [
+    "gyaan",
+    "ahankaar",
+    "sach",
+    "seekh"
+   ]
+  },
+  {
+   "vo": "Agar aapki jagah Vishnu ji hote, toh kya sach bolna aasan hota?",
+   "type": "card",
+   "prompt": "Minimalist introspective card: deep indigo background with an antique brass scales of truth motif bathed in warm divine backlight, elegant Indian aesthetic, no text.",
+   "motion": "pull",
+   "title": "AAPKI SOCH?",
+   "big": "SACH YA HAAR?",
+   "small": "COMMENT MEIN BATAO",
+   "keywords": [
+    "Vishnu",
+    "sach",
+    "aasan",
+    "comment"
+   ]
+  }
+ ],
+ "music_mood": "epic",
+ "caption": "Brahma ji ka paanchwa sir kyun kaata gaya? Jab gyaan ahankaar ban jaaye, tab satya hi dand deta hai. 🕉️\n\nSroat: Shiva Purana (Shatarudra Samhita)\n\nAapki nazar mein sabse mushkil kya hai—apni haar manna ya sach bolna? Batayein comments mein!",
+ "hashtags": [
+  "#ShivaPurana",
+  "#Mahadev",
+  "#Bhairava",
+  "#SanatanDharma",
+  "#IndianHistory",
+  "#MythologyStories"
+ ],
+ "claims": [
+  {
+   "claim": "Brahma and Vishnu argued over supremacy at the dawn of creation",
+   "basis": "Shiva Purana, Shatarudra Samhita, Chapter 8"
+  },
+  {
+   "claim": "Shiva manifested as an endless Jyotirlinga to test their ego",
+   "basis": "Shiva Purana, Vidyeshvara Samhita & Shatarudra Samhita"
+  },
+  {
+   "claim": "Vishnu accepted he couldn't find the base; Brahma falsely claimed victory using Ketaki flower",
+   "basis": "Shiva Purana, Vidyeshvara Samhita, Chapters 6-8"
+  },
+  {
+   "claim": "Bhairava emerged from Shiva's fury and severed Brahma's fifth lying head with his thumbnail",
+   "basis": "Shiva Purana, Shatarudra Samhita, Chapter 9"
+  },
+  {
+   "claim": "The severed head stuck to Bhairava's hand as Kapala to teach humility",
+   "basis": "Kurma Purana and Shiva Purana (Bhairava Charitra)"
+  }
+ ],
+ "brain_ids": [
+  "b349ca221e",
+  "d52bfa64b5",
+  "4396759d41",
+  "161339712e",
+  "1940dd5eb9",
+  "066e77dd74",
+  "1e2336282f",
+  "efef8ced81",
+  "7f620e6fdf",
+  "1e60a34718",
+  "e15cfaed29",
+  "7fa182f8ef",
+  "9db4cc694f",
+  "1e1964f463"
+ ]
+}

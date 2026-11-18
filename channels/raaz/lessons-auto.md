@@ -111,3 +111,11 @@
 - scene 11: The caption 'SEEDHIYAN UTAR RAHA' is grammatically redundant/awkward compared to the script 'wo seedhiyan utar raha hai aaj raat', though it is readable.
 - scene 15: The text 'MEHUL KI DARING' is cut off; the script intended 'Mehul ki daring chase ka naya twist!'.
 - scene 14: The image shows a balcony with a figure, but the text 'BALCONY KI TARAF' is slightly obscured by the dark environment, though readable.
+
+## 1118-1218 Chouthi Manzil Ka Raaz - Part 3
+- scene 6: background figure appears slightly distorted and lacks clear anatomical definition
+- scene 7: visual consistency of the background entity is somewhat abstract compared to previous frames
+
+## 1118-1328 Chouthi Manzil Ka Raaz - Part 5
+- scene 9: shadow shape appears slightly unnatural
+- scene 10: hand anatomy shows minor AI distortion
