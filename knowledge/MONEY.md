@@ -59,7 +59,8 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
 - [x] 19 Nov brand kit automated (engine/brand.py, daily 06:20): real IG DPs -> Facebook DP + cover set via Graph API on all 5 pages
       (proof: journal studio-job-brand "Facebook DP set"/"cover set" x5), circle-safe DP, YouTube banner, IG highlight covers in
       brand/<id>/ on the server. Not possible by API (Mehul uploads): IG DP + highlights, YouTube DP + banner.
-- [ ] Media kit page per page (GitHub Pages, auto-updated from money.json + results): audience, reach, best reels,
+- [x] 19 Nov media kit per page LIVE: https://scrollhouse.in/kit/<page>.html (auto-built daily, engine/mediakit.py); link-in-bio pages https://scrollhouse.in/go/<page>.html; internal rate card knowledge/ratecard.md fills once 3 reels have views.
+- [ ] (was) Media kit page per page (GitHub Pages, auto-updated from money.json + results): audience, reach, best reels,
       formats offered, contact. Build when each page has ~2 weeks of numbers.
 - [ ] Business contact: a dedicated email for brand inquiries (ASK MEHUL: a sign-up), shown in every bio.
 - [ ] Rate card draft from real views (rule of thumb: Rs 0.3-1 per expected view, checked against pricemyreel-type data).
