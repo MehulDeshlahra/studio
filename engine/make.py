@@ -200,7 +200,8 @@ def _quick_ask(prompt, max_tokens=800):
     planner (Gemini, which hung up to 5 min a try today) only if they fail."""
     import llm, plan as planner
     try:
-        r = llm.parse_json(llm.text(prompt, json_mode=True, max_tokens=max_tokens, fast=True))
+        r = llm.text(prompt, json_mode=True, max_tokens=max_tokens, fast=True)
+        r = llm.parse_json(r) if isinstance(r, str) else r
         if isinstance(r, dict) and r:
             return r
     except Exception as e:
