@@ -242,5 +242,127 @@
     "score": 3.75
    }
   ]
+ },
+ {
+  "t": "2026-11-19 03:05",
+  "picked": "What happens during Paryushana's Pratikraman — the Jain ritual of self‑purification (source: Agam)",
+  "ideas": [
+   {
+    "topic": "What happens during Paryushana's Pratikraman — the Jain ritual of self‑purification (source: Agam)",
+    "note": "",
+    "search": "Paryushana Pratikraman ritual Agam",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.7,
+    "score": 6.09
+   },
+   {
+    "topic": "Why Lord Parshvanatha meditated under a five‑hooded serpent — the test of fearlessness (source: Kalpasutra)",
+    "note": "",
+    "search": "Parshvanatha serpent meditation Kalpasutra",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.4,
+    "score": 6.03
+   },
+   {
+    "topic": "How King Shrenik offered his kingdom to Mahavira and learned true renunciation (source: Agam)",
+    "note": "",
+    "search": "King Shrenik Mahavira renunciation Agam",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.2,
+    "score": 5.99
+   },
+   {
+    "topic": "Acharya Kundakunda's Samayasara: the one verse that defines soul purity (source: Agam)",
+    "note": "",
+    "search": "Kundakunda Samayasara soul purity Agam",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.3,
+    "score": 5.86
+   },
+   {
+    "topic": "The monk who gave his own flesh to save a deer — the ultimate ahimsa (source: Adipurana)",
+    "note": "",
+    "search": "monk flesh deer ahimsa Adipurana",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 3.9,
+    "score": 5.73
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 9902,
+    "fresh": 8.7,
+    "score": 5.31
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 1.1,
+    "median_views": 2683,
+    "fresh": 6.7,
+    "score": 4.29
+   },
+   {
+    "topic": "The secret behind Neminatha's refusal to marry — a lesson in detachment (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Neminatha marriage renunciation Trishashti",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 124,
+    "fresh": 5.7,
+    "score": 3.94
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 577,
+    "fresh": 6.5,
+    "score": 3.75
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 678,
+    "fresh": 6.5,
+    "score": 3.75
+   }
+  ]
  }
 ]

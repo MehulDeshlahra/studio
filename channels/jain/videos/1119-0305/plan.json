@@ -1,0 +1,304 @@
+{
+ "slug": "paryushan-pratikraman-agam",
+ "title": "Paryushan mein Pratikraman kaise hota hai?",
+ "hooks": [
+  "Pratikraman ka matlab... wapas lautna",
+  "Saal mein ek baar... kai ghante ka hisaab",
+  "Cheh kadam... aur aatma saaf"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with literal meaning in first 4 words — surprise insight — and visual of footprint turning back hooks on mute.",
+ "metaphor": "White marble staircase in Jain temple — each of six avashyakas is one step; climb turns daily dust into annual purification.",
+ "cast": {
+  "shravak": "Jain householder in simple cotton kurta-pyjama, calm face, hands folded or on knees, seated or standing in temple corridor",
+  "sadhu": "Jain monk in plain white robes, holding rajoharan (soft broom), serene, barefoot on marble",
+  "tirthankara_idol": "Serene marble idol of Tirthankara in padmasana, eyes half-closed, srivatsa mark on chest, lotus emblem at base, soft saffron light"
+ },
+ "scenes": [
+  {
+   "vo": "Pratikraman ka matlab... wapas lautna.",
+   "type": "image",
+   "prompt": "First step of white marble staircase in Jain temple, soft saffron light, single footprint turning back toward step, serene painterly Indian style, gold and white marble glow, uncluttered",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "wapas lautna"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Kahan? Apne asli swabhav ki taraf.",
+   "type": "image",
+   "prompt": "Calm shravak on temple path gently turning to retrace steps, soft saffron light, ornate Jain pillars behind, painterly style",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "swabhav"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Saal bhar bhatakte hain... yeh ek soul-reset.",
+   "type": "flow",
+   "prompt": "Six marble steps ascending, each glowing faintly labeled: Samayik, Chaturvimshati, Vandana, Pratikraman, Kayotsarga, Pratyakhyana, soft gold light between steps, serene temple atmosphere",
+   "motion": "tilt",
+   "title": "",
+   "nodes": [
+    "Samayik",
+    "Chaturvimshati",
+    "Vandana",
+    "Pratikraman",
+    "Kayotsarga",
+    "Pratyakhyana"
+   ],
+   "keywords": [
+    "soul-reset"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Pehla: Samayik. 48 minute hilna nahi, sirf man sthir.",
+   "type": "image",
+   "prompt": "Shravak seated in padmasana on marble, eyes half-closed, subtle sand-timer glow of 48 minutes beside him, soft saffron light from high window, painterly calm",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "48 minute",
+    "sthir"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Doosra: 24 Tirthankaron ka gun-gaan, roshni jagate hain.",
+   "type": "image",
+   "prompt": "Row of 24 small Tirthankara idols on marble shelf with emblems, shravak reciting Logassa with folded hands, gentle gold light touching each idol, serene painterly style",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "24 Tirthankar",
+    "roshni"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Teesra: Vandana. Guru ke aage jhukna, ahankaar kam karna.",
+   "type": "image",
+   "prompt": "Shravak bowing low before sadhu standing calmly with rajoharan, marble corridor, soft saffron glow on both, respectful distance, painterly Indian style",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "guru",
+    "ahankaar"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Chautha: asli hisaab. Galtiyan yaad karke qubool karna.",
+   "type": "image",
+   "prompt": "Shravak seated, hand on heart, other turning manuscript pages listing vows (ahimsa, satya, asteya, brahmacharya, aparigraha), each vow glowing faintly as reviewed, soft temple light",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "hisaab",
+    "qubool"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Paanchva: Kayotsarg. Sharir dheela chhod dena, jaise paraya ho.",
+   "type": "image",
+   "prompt": "Shravak standing motionless in kayotsarga posture, arms loose, breath visible as soft golden particles counted 1 to 108, marble floor, saffron light from above, absolute stillness",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "sharir chhod",
+    "paraya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aakhri: Pratyakhyan. Agle saal ke liye naya sankalp.",
+   "type": "image",
+   "prompt": "Shravak with folded hands taking vow, faint golden thread rising from hands to siddhashila crescent above, sadhu witnessing with rajoharan, marble temple, serene glow",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "sankalp",
+    "vaada"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Samvatsari pe yeh kai ghante chalta hai — dopahar se shaam.",
+   "type": "image",
+   "prompt": "Grand Jain temple hall filled with shravaks and sadhuvas, afternoon light shifting to evening, all seated in rows performing Pratikraman together, ornate pillars, painterly saffron-gold atmosphere",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "kai ghante",
+    "dopahar"
+   ],
+   "real": {
+    "q": "Jain temple Samvatsari Pratikraman hall",
+    "kind": "photo",
+    "subject": "temple hall full of devotees during Samvatsari"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Yeh mechanism aatma par jami dhool poori tarah dho deta hai.",
+   "type": "card",
+   "prompt": "Marble staircase background, soft saffron gradient",
+   "motion": "push",
+   "title": "",
+   "big": "MECHANISM",
+   "small": "Aatma ki shuddhi",
+   "keywords": [
+    "dhool",
+    "dho dena"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ant mein... Micchami Dukkadam. Sabse maafi, bojh halka.",
+   "type": "image",
+   "prompt": "Close-up folded hands in pranam, words Micchami Dukkadam forming in soft gold Devanagari above hands then dissolving into light, marble floor reflection, serene",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "maafi",
+    "bojh halka"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ye ritual karma dho deta hai... agar poore dhyan se kiya.",
+   "type": "image",
+   "prompt": "Lotus blooming petal by petal in marble basin, each petal labeled with avashyaka, water turning clear, soft saffron light, painterly purification metaphor",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "karma",
+    "dhyan"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aapne kab kiya... itni gehraai se?",
+   "type": "card",
+   "prompt": "Marble staircase top step, light pouring from above, question floating",
+   "motion": "pull",
+   "title": "",
+   "big": "AAPNE KAB KIYA?",
+   "small": "Itni gehraai se",
+   "keywords": [
+    "aapne",
+    "gehraai"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Jai Jinendra.",
+   "type": "card",
+   "prompt": "Siddhashila crescent glowing soft gold against saffron sky, lotus below, serene painterly",
+   "motion": "push",
+   "title": "",
+   "big": "JAI JINENDRA",
+   "small": "",
+   "keywords": [],
+   "sub": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Pratikraman sirf maafi nahi... khud ko wapas paana hai. 🙏\n\nSamvatsari ke din cheh avashyakon se guzarte hain — Samayik se lekar Pratyakhyana tak.\n\nAapne kab kiya poora dhyan dekar?\n\n#Paryushan #Pratikraman #Samvatsari #Jainism #NavkarBhav",
+ "hashtags": [
+  "#Paryushan",
+  "#Pratikraman",
+  "#Samvatsari",
+  "#Jainism",
+  "#NavkarBhav",
+  "#MicchamiDukkadam",
+  "#Ahimsa"
+ ],
+ "claims": [
+  {
+   "claim": "Pratikraman means 'returning from violations' (Pra + atikramana)",
+   "basis": "Wikipedia: Pratikramana etymology; JainGPT: 'Pratikraman means to turn back — to return from where one has strayed'"
+  },
+  {
+   "claim": "Six avashyakas in order: Samayik, Chaturvimshati-stava, Vandana, Pratikramana, Kayotsarga, Pratyakhyana",
+   "basis": "Wikipedia: 'Pratikramana also refers to a combination of six avashyaks'; JainGPT table of six avashyakas with descriptions"
+  },
+  {
+   "claim": "Five types: Devasi (evening), Rai (dawn), Pakhi (fortnightly), Chaumasi (quarterly), Samvatsari (annual)",
+   "basis": "Wikipedia: 'There are five types of Pratikramana' with descriptions; JainGPT: 'The five kinds' with same names and frequencies"
+  },
+  {
+   "claim": "Samvatsari Pratikraman is performed on the last day of Paryushana, runs several hours afternoon to evening",
+   "basis": "Wikipedia: 'Samvatsari Pratikraman is done once per year on the last day of Paryushana mahaparv... typically beginning in the afternoon and continuing into the evening'; JainGPT: 'The annual form runs for several hours, typically beginning in the afternoon and continuing into the evening'"
+  },
+  {
+   "claim": "Ends with Micchami Dukkadam — seeking forgiveness from all living beings",
+   "basis": "Wikipedia: 'It ends with kshamapan'; namobuddy.com: 'It culminates in the universal declaration: Micchami Dukkadam — May my improper actions be forgiven.'"
+  },
+  {
+   "claim": "Samayik is classically 48 minutes of equanimity",
+   "basis": "Wikipedia: 'Later, 48 minutes after beginning a samayika, the shravaka ends the samayika'; JainGPT: 'A fixed period — classically 48 minutes — of sitting in a state of even-mindedness'"
+  }
+ ],
+ "brain_ids": [
+  "7f620e6fdf",
+  "6ce7203c71",
+  "f945e2a937",
+  "161339712e",
+  "b2fabb69c4",
+  "1e60a34718",
+  "a688e48ca2",
+  "4396759d41",
+  "fc294ac58f",
+  "1e1964f463",
+  "b69d65467f",
+  "7fa182f8ef",
+  "0755cc155a",
+  "e15cfaed29"
+ ]
+}
