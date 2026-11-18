@@ -19,6 +19,9 @@ WT = os.path.join(HOME, "studio-heal")
 ALLOWED = re.compile(r"^(engine|lib|dashboard)/[\w.-]+\.(py|js|css|html)$")
 FORBIDDEN = {"engine/publish.py", "engine/send.py", "engine/doctor.py", "engine/healer.py", "engine/healcode.py",
              "engine/selfcheck.py", "engine/units.sh", "engine/core.py", "engine/omnimap.py"}
+# 18 Nov: owner-agent tasks are vague and name files that do not exist; they may not touch the core pipeline
+TASK_FORBIDDEN = {"engine/tts.py", "engine/make.py", "engine/daily.py", "engine/align.py", "engine/plan.py", "engine/pace.py",
+                  "lib/llm.py", "lib/mix.py"}
 MAX_LINES = 150
 RULES = """You are fixing the code of Studio, a fully automatic faceless short-video engine (Python 3.12, HyperFrames HTML
 pages rendered to video). Rules: make the SMALLEST change that fixes exactly this problem; keep every other behaviour;
@@ -204,7 +207,7 @@ def fix(what, problems, files, verify=None, task=False):
         changed = [l for l in git("diff", "--name-only", f"{base}..HEAD", cwd=wt)[1].split() if l]
         if not changed:
             return {"result": "the coding agent made no change"}
-        bad = [f for f in changed if not ALLOWED.match(f) or f in FORBIDDEN]
+        bad = [f for f in changed if not ALLOWED.match(f) or f in FORBIDDEN or (task and f in TASK_FORBIDDEN)]
         if bad:
             return {"result": f"refused: it changed files it may not touch {bad}"}
         stat = git("diff", "--numstat", f"{base}..HEAD", cwd=wt)[1]
@@ -234,7 +237,7 @@ def fix(what, problems, files, verify=None, task=False):
                 return {"result": f"not merged: {why}"}
             verified = True
             log("healer: fix checked on", cid, job, "-", why[:160])
-        elif any(f in ("engine/compose.py", "engine/compose_lab.py", "engine/preflight.py", "engine/make.py") for f in changed):
+        elif task or any(f in ("engine/compose.py", "engine/compose_lab.py", "engine/preflight.py", "engine/make.py") for f in changed):
             for cid in ("katha", "tech"):
                 g = good_job(cid, "")
                 if g:
