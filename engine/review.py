@@ -94,6 +94,8 @@ Return JSON {{"score": 1-10, "serious": ["..."], "minor": ["..."]}} (serious = m
             return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
         except Exception as e:
             log("review vision fail", m, str(e)[:120])
+            if "timed out" in str(e).lower():
+                tts.mark_slow(m)
     v = qc.vision(out_jpg, plan)
     return {"score": v.get("score"), "serious": [] if v.get("ok") is not False else v.get("problems", []), "minor": []}
 

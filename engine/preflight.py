@@ -136,6 +136,8 @@ List only scenes that have problems."""
             return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
         except Exception as e:
             log("preflight vision fail", m, str(e)[:120])
+            if "timed out" in str(e).lower():
+                tts.mark_slow(m)
     try:          # 18 Nov: our Gemini keys out -> OmniRoute studio-vision (before this the check silently did not run)
         r = llm.from_parts(body["contents"][0]["parts"], max_tokens=3000)
         log("preflight vision by omniroute", llm.last_model)

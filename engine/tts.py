@@ -47,10 +47,23 @@ def _key(model=None):
 def usable(models):
     """Models that still have quota on at least one key today (the rest are skipped instead of tried and failed).
     If none is usable, the original list comes back so callers still fail the normal way."""
-    st = _kstate()["keys"]
+    full = _kstate()
+    st = full["keys"]
     ks = [k[-6:] for k in _keys_all()]
     ok = [m for m in models if any(m not in st.get(k, {}).get("out", []) and "*" not in st.get(k, {}).get("out", []) for k in ks)]
+    # 18 Nov: gemini-3.8-flash timed out / 503'd for hours (Google side); every preflight waited 180 s on it first.
+    # A model that timed out or answered 503 in the last 30 min goes to the END of the list (still tried if all else fails).
+    slow = full.get("slow", {})
+    ok = sorted(ok, key=lambda m: time.time() - slow.get(m, 0) < 1800)
     return ok or list(models)
+
+
+def mark_slow(model):
+    """A timeout or 503 on this model: callers skip it first for 30 min (see usable)."""
+    try:
+        st = _kstate(); st.setdefault("slow", {})[model] = time.time(); _ksave(st)
+    except Exception:
+        pass
 
 
 class _KeyWatch(urllib.request.BaseHandler):
@@ -73,6 +86,8 @@ class _KeyWatch(urllib.request.BaseHandler):
                 e["out"].remove(m)
         else:
             e["fail"] += 1
+            if code in (500, 503, 504):
+                st.setdefault("slow", {})[m] = time.time()
             b = body.lower()
             # 18 Nov: "quota and not minute" marked per-MINUTE limits as daily (the limit name sits past the first 600
             # characters), so all 4 keys showed TTS "out" after 3-8 calls while voices kept working, and planning

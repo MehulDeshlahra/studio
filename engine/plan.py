@@ -28,7 +28,10 @@ def ask(prompt, max_tokens=8000):
 
 
 def _gem(models, prompt, max_tokens):
+    slow_now = set()
     for m in [x for mm in models for x in (mm, mm)]:        # each model twice: malformed JSON is usually one-off
+        if m in slow_now:                                    # ...but not a second 300 s wait on a model that just hung
+            continue
         try:
             body = {"contents": [{"parts": [{"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
                     "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": max_tokens, "temperature": 0.7}}
@@ -41,6 +44,9 @@ def _gem(models, prompt, max_tokens):
             return llm.parse_json(out)
         except Exception as e:
             log("gemini text fail", m, str(e)[:120])
+            if "timed out" in str(e).lower() or "503" in str(e):     # 18 Nov: a hanging model cost 2 x 300 s per plan
+                tts.mark_slow(m)
+                slow_now.add(m)
     return None
 
 EXAMPLE = """Example of the voice we want (a past reel of ours, owner liked the voice and pacing):
