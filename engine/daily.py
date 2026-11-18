@@ -125,7 +125,17 @@ def lane_render(dry):
     # from 11:07 to 15:10 with 6 videos held. Its flag now pauses the render lane too, once, until the healer has run.
     w = os.path.join(OUT, "healer-wants-turn")
     if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600 and not urgent_pages():
-        log("render lane: the healer needs a turn to fix held videos, skip this round"); return
+        # 18 Nov: while a manual job runs the healer cannot take its turn anyway, so waiting for it only left the laptop idle
+        lap_free = False
+        if manual_busy():
+            try:
+                import laptop
+                lap_free = laptop.available()
+            except Exception:
+                lap_free = False
+        if not lap_free:
+            log("render lane: the healer needs a turn to fix held videos, skip this round"); return
+        log("render lane: the healer is waiting for a manual job anyway, so the laptop renders meanwhile")
     cid, j, m = todo[0]
     log("render lane:", cid, j)
     if dry:
