@@ -18,4 +18,5 @@ API, web); never guess numbers. Finish all 5, then send the owner a short report
    -> knowledge/brands.json + MONEY.md.
 5. SHIP: 3+ approved videos before the first slot; check every fact/number in each yourself; show the owner the
    frames before the first one posts.
+Tools that worked (Finance Fuel, 19 Nov): .tmp/fin_a.py (YouTube API + Business Discovery + hashtags + news + Google Trends RSS), fin_a2.py (Instagram twins of small YouTube channels), fin_b.py (Gemini watches top 3 reels per rival; YouTube by URL), fin_spons2.py (sponsor lines in the last 50 uploads), .tmp/fin_rivals.py (rivals.md + rivals.json). Copy and change the niche words. Reddit blocks the server (skip it). New page = schedule.manual_first 3 (owner sees the first videos).
 History: Finance Fuel 19 Nov (first run of this playbook).

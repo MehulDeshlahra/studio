@@ -117,3 +117,10 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - Page list now comes from channels/ (core.pages()); per-page tables (dm, rivals, hookstudy, site, trends, stories, musiclib, thumb) have both pages.
 - Finance = lab film look (theme.hud FINANCE.FUEL, finance brands in make.BRANDS), caption_footer 'Education only, not financial advice.' (seo.text_for, all platforms). Jain = story look, Tirthankara forms in iconography.py, looks (manuscript) OFF until a picture pilot.
 - Owner: YouTube channels for both (his sign-up), bios 'A @scrollhouse.in page', warm-up likes/comments 19-21 Nov. Business pages Getmeflat + Fibbi added to the dashboard (manual).
+
+## 19 Nov 00:00 Finance Fuel deep dive (playbook knowledge/new-page.md, run for every new page)
+- Owner: Finance Fuel is an old account: no warm-up, posts from 19 Nov (evening slot, 1/day). First 3 videos need his approval (schedule.manual_first=3).
+- Data: ~/studio-out/research/finance/{youtube,instagram,instagram2,hashtags,trending,watched,sponsors2}.json; scripts .tmp/fin_a.py, fin_a2.py, fin_b.py, fin_spons2.py.
+- Outputs: channels/finance/rivals.md (16 YT + 10 IG rivals, top 10 reels each), queue.json (20 ranked ideas, made first by make.pick_topic), bible.md + hooks.md (format), knowledge/brands.json finance (58 sponsor lines, 11 targets), MONEY.md 5a.
+- Engine: make.pick_topic reads channels/<id>/queue.json first; plan word range per page (edit.words, finance 72-118); numbers check 2 fix rounds; send.auto_approve honours schedule.manual_first.
+- Not available: Reddit (blocks the server, login wall in the browser). Instagram gives no view counts for other accounts (likes + comments used).
