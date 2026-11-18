@@ -45,6 +45,22 @@ the parts we already run (engine/clipper.py): Gemini watches the YouTube URL (no
 downloads only the chosen parts (YouTube blocks the server), faster-whisper word times, ffmpeg + libass render.
 Paid SaaS doing the same: OpusClip, Vizard, Klap, Submagic (not used: Rs 0 rule).
 
+## How the best tools do it (round 2, 19 Nov) and what we took
+| Idea | From | In our engine |
+|---|---|---|
+| Crowd signals first: YouTube "most replayed" heatmap (yt-dlp -J, 100 points), Twitch community clips, chat velocity (shift 7 s earlier), audio spikes; only the top windows are downloaded and judged | ontrailai/clipping PLAYBOOK, crestclip, yt-heatmap-clipper, AutoClipper | heatmap peaks go into the Gemini prompt; a moment near a peak gets a bonus. (New videos have no heatmap for a while.) Chat/Twitch: next |
+| Score = hook + flow + value + trend (0-99) | OpusClip help center | Gemini scores the 4 parts, we rank on the mean |
+| Hook banner from frame 1; formula who + action + twist, accurate; start 1-3 s before the action | ontrailai PLAYBOOK | prompt rules + the hook banner on the whole clip |
+| Viral median 41 s (18% shorter than average), 30-45 s best, < 60 s | OpusClip 13.5M clips | 30-45 target, 58 s hard cap on a sentence end |
+| 80% of viral clips burn captions in, 79% animate them; word-by-word with the active word highlighted | OpusClip, ontrailai | 3-word pop captions, active word yellow + 112% |
+| 8-12 hashtags, niche + generic (#fyp 2.2x median views, mixed 2.5x niche-only) | OpusClip | moment tags + page tags + fyp/viral/reels/trending, max 12 |
+| Clip edges on sentence boundaries and silences, never mid-word | ClippyMe | whisper word times; start on the hook sentence, end on a sentence end |
+| Silence / filler removal | ClippyMe (auto-editor) | only gaps that are really quiet (18 dB under speech), max 25% of the clip. A reaction's laugh or a crowbar bang is the moment: the first version cut 16 of 27 s |
+| Active-speaker 9:16 crop, camera still within each shot | ClippyMe, AutoFrame (LR-ASD) | YuNet faces at 4 fps + shot changes; one aim per shot |
+| Facecam on top, gameplay below for streams | GTA clip pages, OpusClip layouts | a face fixed near an edge in half the samples = webcam box -> stack layout |
+| Captions must not cover the mouth; sound mix graded like visuals; no other app's watermark; follow the brief exactly | Whop campaign pages (Creator Clips, ClipMasters, Everywhere Media) | caption position per layout, -14 LUFS, vision check before Telegram |
+| Analyse once, render on demand; per-clip source slices kept | ClippyMe, AutoFrame | the laptop caches the last 3 source videos |
+
 ## Our setup (engine)
 - engine/clipper.py <cid> <url> [--n 4] [--test]; dashboard "Make a video now" on Cut Capsule takes a YouTube link.
 - channels/cutcapsule/sources.json = permission list (campaigns). Unknown sources = test clips, never posted.
