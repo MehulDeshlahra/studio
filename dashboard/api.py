@@ -381,7 +381,7 @@ _cache = {"t": 0, "pages": {}}
 
 
 def meta_pages():
-    if time.time() - _cache["t"] < 1800 and _cache["pages"]:
+    if time.time() - _cache["t"] < 0 and _cache["pages"]:
         return _cache["pages"]
     try:
         ut = open(os.path.join(HOME, ".studio-meta-user.token")).read().strip()
