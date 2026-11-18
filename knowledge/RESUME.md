@@ -1,4 +1,17 @@
 # RESUME
+## 18 Nov 11:00-15:00: money plan, laptop, competitors, Scroll House (details: knowledge/MONEY.md, laptop.md, lemo.md)
+- DONE + verified: laptop render worker (3x faster, auto/fast/quiet/off toggle, 4 live renders); prep builds while the
+  laptop renders; deep repo reader (32 repos, 3 runs/day, Lemo 25/194); web article learning; GitHub token (5000/h,
+  expiry <= 366 d for the org); real brand logos (Wikidata official files; tech bible no longer bans logos); web facts in
+  research; rivals.py (leaders + climbers, 3x outliers, sponsor scan via YouTube Data API: 35 brand lines, weekly read in
+  knowledge/rivals.md); money.py (gates + ETA in STATE.md); Meta page keys cached 12 h (the #4 limit); parent brand
+  Scroll House: https://scrollhouse.in live (GitHub Pages /docs, HTTPS, daily rebuild), IG @scrollhouse.in.
+- FIXED 14:45: raaz serial made Parts 1-8 in a day, all held (length 58-64 s > 55): raaz length now 25-68 s, a serial makes
+  no new part while 2+ parts are held; Part 1 re-checked -> approved 10. Mastering kept the worst of 3 tries (TP +0.3):
+  now best of 4 with a lower limiter ceiling (tested on 1118-1328: -14.5 LUFS, TP -2.6).
+- OWNER: turn on the tech "stage" layout? pick the first Lemo special; paste bios (Scroll House line); claim YT @scrollhouse;
+  brand email; optional Mistral key.
+- WATCH: first logo in a new tech video; laptop measuring the 45 queued winner Shorts; deep reader 15:30; held katha (healer).
 ## 18 Nov 09:30-10:45: focus week + new keys + Lemo-Opuscar
 - Keys: 7 new Gemini (key file 4 -> 11; OmniRoute studio-gemini-5..11) and 2 Groq (studio-groq-1/2), each tested with a
   real call. omnimap rebuilt 10:25: studio-fast starts with groq qwen3.8-27b, long text passes on groq gpt-oss-120b.
