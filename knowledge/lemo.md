@@ -18,9 +18,13 @@ Library: github.com/lemomo-ai/lemo-opuscar, laptop copy `C:\Users\mehul\lemo-opu
 - Katha `lamp` texture and raaz `print` texture (`engine/compose.py` `_texture`, theme `"texture"` or `STUDIO_TEXTURE`).
 - Pilot runner: `~/studio-out/pilot.py <tech job>`, `~/studio-out/pilot2.py <cid> <job> <texture>`; results in
   `~/studio-out/pilot/*-result.json` + `preflight-sheet.jpg` per variant. Nothing is rendered or posted.
-- First result (tech 1117-0721): old layout 3 pre-render problems, stage 1 (both share a snapshot artefact: video clips do
-  not show in stills). The caption/UI-box overlap was gone.
-- Turn on only after Mehul approves the side-by-side.
+- Results (18 Nov, Studio's own pre-render check): tech 1117-0721 old 2 real problems (caption over the UI box, caption
+  mismatch) -> stage 0; tech 1117-0729 old 1 (flow node cut) -> stage 0, score 8 -> 9. (An "EMPTY scene 1" in all four
+  was the pilot's fault: its copy skipped the clip videos.) Side by side: Desktop\studio-tech-old-vs-stage.jpg.
+- Turn the stage layout on only after Mehul approves (theme "stage": true in channels/tech/channel.json).
+- REJECTED, do not switch on: `lamp` (katha) is invisible on the already warm golden paintings; `print` (raaz) turned the
+  cream suspect cards nearly black and the layout audit reported text_occluded (it would hold videos). Textured looks
+  need the hand-made specials, not an overlay.
 
 ## Specials (after the 20 Nov launch): hand-directed in a Kiro session with the skill, posted through Studio publish
 - Katha: Shadow Puppetry (close to India's leather puppet theatre). First candidate: Kartik Purnima / Dev Deepawali (24 Nov)
