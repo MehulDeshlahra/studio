@@ -74,8 +74,8 @@ def find_moments(ch, url, n, source=None):
             a, b = ts(m["start"]), ts(m["end"])
         except Exception:
             continue
-        if b - a < 12:
-            b = a + 30
+        if b - a < 20:             # 19 Nov test: Gemini gave 12-13 s moments; the whisper step then ends them on a sentence
+            b = a + 28
         if b - a > 62:
             b = a + 58
         if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
