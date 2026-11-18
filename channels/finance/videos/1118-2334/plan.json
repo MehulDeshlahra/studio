@@ -25,7 +25,7 @@
    "real": {
     "q": "UPI payment failed error message smartphone screen",
     "kind": "photo",
-    "subject": "A close-up of a hand holding a phone showing a generic UPI app interface with a red 'Transaction Failed' banner and a transaction ID visible."
+    "subject": "A close-up of a smartphone held in a hand showing a UPI app (like GPay or PhonePe) with a clear 'Payment Failed' or 'Transaction Failed' error notification."
    },
    "big": null,
    "small": null,
@@ -43,103 +43,67 @@
   },
   {
    "vo": "Ye RBI ka niyam hai, 20 September 2019 se. Dost ko bheja paisa agle din tak wapas aana chahiye.",
-   "type": "stat",
-   "prompt": "Simple calendar graphic: two dates highlighted – ‘T+1’ for person‑to‑person, ‘T+5’ for merchant.",
-   "motion": "punch",
-   "title": "RBI Rule",
    "keywords": [
     "RBI",
     "refund timeline"
    ],
-   "bg_prompt": "Minimalist calendar on dark background, green highlights on T+1 and T+5 boxes",
-   "real": {
-    "q": "Reserve Bank of India building exterior",
-    "kind": "photo",
-    "subject": "The official RBI headquarters building"
-   },
-   "big": "RBI",
-   "small": null,
+   "motion": "punch",
    "skin": "keynote",
-   "sub": "20 Sep 2019",
-   "label": "Rule Date",
-   "value": null,
-   "rows": [
-    {
-     "label": "Effective",
-     "value": "20 Sep"
-    }
-   ],
-   "items": null,
-   "nodes": null,
-   "points": null,
-   "end_label": null,
-   "lines": null,
-   "messages": null
+   "type": "object",
+   "label": "RBI CIRCULAR · 20 SEP 2019",
+   "prompt": "the official Reserve Bank of India logo",
+   "real": {
+    "q": "Reserve Bank of India logo",
+    "kind": "logo",
+    "subject": "the official RBI logo"
+   },
+   "big": null,
+   "small": null,
+   "title": null
   },
   {
    "vo": "Dukaan ko kiya payment fail hua, toh paanch din tak.",
-   "type": "ui",
-   "prompt": "Three nodes: YOUR BANK → NPCI SWITCH → RECIPIENT BANK. Red X on RECIPIENT BANK.",
-   "motion": "pan",
-   "title": "Refund Time",
    "keywords": [
     "payment flow",
     "failed"
    ],
-   "bg_prompt": "Abstract data highway with glowing nodes, dark green backdrop, red cross on recipient side",
-   "real": {
-    "q": "Indian local shopkeeper accepting UPI payment on phone",
-    "kind": "photo",
-    "subject": "A small business owner holding a phone to scan a QR code"
-   },
-   "big": null,
-   "small": null,
+   "motion": "pan",
    "skin": "keynote",
-   "sub": "T+5",
-   "label": "Refund",
-   "value": null,
-   "rows": null,
+   "type": "compare",
+   "title": "REFUND KAB TAK",
    "items": [
     {
      "label": "DOST KO",
-     "value": "T+1"
+     "value": "T+1",
+     "pct": 25
     },
     {
      "label": "DUKAAN KO",
-     "value": "T+5"
+     "value": "T+5",
+     "pct": 90
     }
    ],
-   "nodes": null,
-   "points": null,
-   "end_label": null,
-   "lines": null,
-   "messages": null
+   "bg_prompt": "Soft, out-of-focus ambient background, deep black-green, a blurred Indian street shop at night, warm bokeh lights, no text, no letters, no numbers, no logos, vertical 9:16",
+   "big": null,
+   "small": null,
+   "prompt": ""
   },
   {
    "vo": "Usse ek din bhi der hui, toh bank har din ₹100 khud dega. Claim nahi karna padta.",
-   "type": "stat",
-   "prompt": "Digital counter showing ‘₹100/DAY’ ticking up, green LED style on black background.",
-   "motion": "punch",
-   "title": "BANK DEGA",
    "keywords": [
     "₹100",
     "auto credit"
    ],
-   "bg_prompt": "Floating green numbers on dark background, subtle gold glow",
-   "real": {},
-   "big": "₹100",
-   "small": null,
+   "motion": "punch",
    "skin": "keynote",
-   "sub": "har din der ka",
-   "label": null,
+   "type": "stat",
    "value": "₹100",
-   "rows": null,
-   "items": null,
-   "nodes": null,
-   "points": null,
-   "end_label": null,
-   "lines": null,
-   "messages": null
+   "big": "₹100",
+   "sub": "har din der ka",
+   "bg_prompt": "Soft, out-of-focus ambient background, deep black-green, gentle gold light, a few blurred coins, no text, no letters, no numbers, no logos, vertical 9:16",
+   "small": null,
+   "title": null,
+   "prompt": ""
   },
   {
    "vo": "Sabse pehle app khol, transaction status dekho.",
@@ -153,9 +117,9 @@
    ],
    "bg_prompt": "UPI app transaction list, hand holding phone, realistic lighting",
    "real": {
-    "q": "banking app transaction history status screen",
+    "q": "UPI app transaction history failed status smartphone",
     "kind": "photo",
-    "subject": "A thumb scrolling through a banking app's 'Transaction History' list, highlighting a specific entry marked as 'Failed' or 'Pending'."
+    "subject": "A smartphone screen showing the 'Transaction History' or 'Status' page of a UPI app, highlighting a specific transaction marked as 'Failed' or 'Pending'."
    },
    "big": null,
    "small": null,
@@ -185,9 +149,9 @@
    ],
    "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: raise dispute, dispute button, upi fail hua, paisa kata? bank roz ₹100 dega?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
    "real": {
-    "q": "raise dispute button banking app interface",
+    "q": "UPI app raise dispute button interface",
     "kind": "photo",
-    "subject": "A finger pressing a prominent 'Raise Dispute' or 'Report Issue' button within a transaction detail view on a mobile phone."
+    "subject": "A smartphone screen showing the dispute resolution section of a UPI app, with the 'Raise Dispute' or 'Report Issue' button clearly visible and being tapped by a thumb."
    },
    "big": "Raise Dispute",
    "small": null,
@@ -221,9 +185,9 @@
    ],
    "bg_prompt": "Photorealistic evidence cards fanned on dark surface, soft glow",
    "real": {
-    "q": "hand holding phone taking screenshot of message",
+    "q": "person holding smartphone taking screenshot of bank SMS",
     "kind": "photo",
-    "subject": "A realistic photo of a hand holding a phone, with the screen showing a notification or SMS, while the other hand's thumb is about to press the power/volume buttons to take a screenshot."
+    "subject": "A real photo of a person holding a phone, capturing a screenshot of an SMS or banking app notification, emphasizing the act of saving proof."
    },
    "big": null,
    "small": null,
@@ -231,38 +195,24 @@
   },
   {
    "vo": "Bank ne 30 din mein theek nahi kiya? RBI ke CMS portal pe complaint karo.",
-   "type": "chart",
-   "prompt": "Vertical ladder: 1. YOUR BANK → 2. NPCI PORTAL → 3. RBI CMS, each lighting up.",
-   "motion": "tilt",
-   "title": "Escalate",
    "keywords": [
     "escalation",
     "NPCI",
     "RBI"
    ],
-   "bg_prompt": "Three-tier diagram with gold connectors on dark green background",
-   "real": {
-    "q": "RBI logo",
-    "kind": "logo",
-    "subject": "the official RBI logo"
-   },
+   "motion": "tilt",
+   "skin": "terminal",
+   "type": "flow",
+   "title": "COMPLAINT",
+   "nodes": [
+    "BANK",
+    "30 DIN",
+    "RBI CMS"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background, deep black-green, a blurred office desk with a laptop, no screens showing anything, no text, no letters, no numbers, no logos, vertical 9:16",
    "big": null,
    "small": null,
-   "skin": "terminal",
-   "sub": "30 Din",
-   "label": "Steps",
-   "value": null,
-   "rows": null,
-   "items": null,
-   "nodes": [
-    "Bank",
-    "30 Din",
-    "RBI"
-   ],
-   "points": null,
-   "end_label": null,
-   "lines": null,
-   "messages": null
+   "prompt": ""
   },
   {
    "vo": "Kabhi bhi PIN ya OTP kisi ko mat do.",

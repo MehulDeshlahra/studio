@@ -1,0 +1,296 @@
+{
+ "slug": "home-loan-papers-penalty",
+ "title": "Loan chukaya, papers nahi mile? Roz ₹5,000.",
+ "hooks": [
+  "Loan chukaya, papers abhi tak nahi mile? Roz ₹5,000 bante hain.",
+  "Bank ne property papers rok liye? Din ke ₹5,000 bante hain.",
+  "Home loan khatam, par bank papers nahi de raha? RBI ka niyam jaano."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the ₹5,000 number and the viewer's pain point in conversational Hindi — matches the 'Bank pays you' hook pattern that top rival reels use. No intro, immediate stakes.",
+ "metaphor": "A locked steel briefcase (property papers) with a digital counter ticking ₹5,000/day on its face — the bank holds the briefcase, the counter is the RBI penalty clock.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Loan chukaya, papers abhi tak nahi mile? Roz ₹5,000 bante hain.",
+   "keywords": [
+    "₹5,000",
+    "papers"
+   ],
+   "motion": "push",
+   "type": "object",
+   "label": "LOAN CLOSED",
+   "prompt": "a set of original property papers in a bank file on a dark desk, a 'loan closed' stamp, soft green light",
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "RBI ka niyam: loan band hone ke 30 din mein papers wapas karne hain.",
+   "keywords": [
+    "RBI",
+    "30 din"
+   ],
+   "motion": "punch",
+   "type": "object",
+   "label": "RBI CIRCULAR · 13 SEP 2023",
+   "prompt": "the official Reserve Bank of India logo",
+   "real": {
+    "q": "Reserve Bank of India logo",
+    "kind": "logo",
+    "subject": "the official RBI logo"
+   },
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "31ve din se bank apni jeb se ₹5,000 roz dega.",
+   "type": "stat",
+   "prompt": "Dark studio. Large gold number '₹5,000' centered. Below in white: 'PER DAY PENALTY'. Red upward arrow beside it. Small text: 'FROM DAY 31'.",
+   "motion": "punch",
+   "title": "",
+   "value": "₹5,000",
+   "sub": "PER DAY PENALTY",
+   "label": "FROM DAY 31",
+   "keywords": [
+    "₹5,000",
+    "penalty",
+    "day 31"
+   ],
+   "real": null,
+   "bg_prompt": "Dark studio, large gold ₹5,000 number with red upward arrow, 'PER DAY PENALTY' text, premium lighting",
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Home loan, car loan, property ke against loan, sab ke papers pe laagu.",
+   "keywords": [
+    "home loan",
+    "car loan",
+    "gold loan",
+    "secured"
+   ],
+   "motion": "tilt",
+   "type": "title",
+   "big": "HOME · CAR · PROPERTY",
+   "sub": "har secured loan ke papers",
+   "small": null,
+   "title": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Sarkari bank, private, NBFC, HFC — koi nahi bach sakta.",
+   "type": "object",
+   "prompt": "Dark studio. Row of 4 realistic building facades on a reflective surface: government bank (columns), private bank (glass tower), NBFC (modern), HFC (brick). Each has a small gold nameplate. Soft green-gold uplighting.",
+   "motion": "pan",
+   "title": "",
+   "label": "BANKS · NBFC · HFC",
+   "keywords": [
+    "sarkari bank",
+    "private bank",
+    "NBFC",
+    "HFC"
+   ],
+   "real": null,
+   "bg_prompt": "Dark studio, row of 4 realistic bank building facades on reflective surface: government, private, NBFC, HFC, gold nameplates, green-gold uplighting",
+   "big": null,
+   "small": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Papers kho gaye? Bank ko 30 din extra milte hain certified copy ke liye.",
+   "type": "flow",
+   "prompt": "Dark studio. Flow with 3 nodes connected by gold arrows. Node 1: 'PAPER LOST' (red alert). Node 2: '+30 DIN' (gold clock). Node 3: 'CERTIFIED COPY' (green doc). Soft green glow on active node.",
+   "motion": "push",
+   "title": "",
+   "nodes": [
+    "PAPER LOST",
+    "+30 DIN",
+    "CERTIFIED COPY"
+   ],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "paper kho gaye",
+    "certified copy",
+    "30 din extra"
+   ],
+   "real": null,
+   "bg_prompt": "Dark studio, flow diagram: paper lost alert, +30 days clock, certified copy document, gold arrows, soft green glow",
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Phir bhi delay hua to wahi ₹5,000 roz.",
+   "type": "stat",
+   "prompt": "Dark studio. Large gold '₹5,000' with red upward arrow. Below white: 'PER DAY PENALTY'. Small text: 'AFTER 60 DAYS TOTAL'.",
+   "motion": "punch",
+   "title": "",
+   "value": "₹5,000",
+   "sub": "PER DAY PENALTY",
+   "label": "AFTER 60 DAYS TOTAL",
+   "keywords": [
+    "₹5,000",
+    "penalty",
+    "60 din"
+   ],
+   "real": null,
+   "bg_prompt": "Dark studio, large gold ₹5,000 number with red upward arrow, 'PER DAY PENALTY' text, small 'AFTER 60 DAYS TOTAL' label",
+   "big": null,
+   "small": null,
+   "skin": "terminal"
+  },
+  {
+   "vo": "Pehle bank ko likh ke complaint do, 30 din intezaar karo.",
+   "type": "ui",
+   "prompt": "Phone screen mockup on dark studio surface. Shows a drafted complaint letter to bank. Green check animation on 'SENT'. Text rows: 'STEP 1: WRITE TO BANK' (green), 'WAIT 30 DAYS' (gold).",
+   "motion": "punch",
+   "title": "",
+   "rows": [
+    {
+     "label": "STEP 1",
+     "value": "WRITE TO BANK",
+     "pct": 50
+    },
+    {
+     "label": "WAIT",
+     "value": "30 DAYS",
+     "pct": 100
+    }
+   ],
+   "label": "ACTION PLAN",
+   "keywords": [
+    "complaint",
+    "bank",
+    "30 din"
+   ],
+   "real": null,
+   "bg_prompt": "Dark studio, phone screen showing drafted complaint letter to bank with 'SENT' animation, green-gold UI accents",
+   "big": null,
+   "small": null,
+   "skin": "terminal"
+  },
+  {
+   "vo": "Nahi hua to RBI CMS portal pe jao, track karo.",
+   "type": "ui",
+   "prompt": "Phone screen mockup on dark studio surface showing RBI CMS portal homepage. Green check on 'FILE COMPLAINT'. Text rows: 'STEP 2: RBI CMS PORTAL' (gold), 'TRACK STATUS' (white).",
+   "motion": "punch",
+   "title": "",
+   "rows": [
+    {
+     "label": "STEP 2",
+     "value": "RBI CMS PORTAL",
+     "pct": 50
+    },
+    {
+     "label": "TRACK",
+     "value": "STATUS",
+     "pct": 100
+    }
+   ],
+   "label": "ESCALATE",
+   "keywords": [
+    "RBI CMS",
+    "portal",
+    "track"
+   ],
+   "real": {
+    "q": "RBI CMS portal screenshot",
+    "kind": "photo",
+    "subject": "RBI Complaint Management System portal homepage"
+   },
+   "bg_prompt": "Dark studio, phone screen showing RBI CMS portal with complaint filing steps, green-gold UI accents",
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Ye haq hai tumhara — maango, paisa tumhaara hai.",
+   "keywords": [
+    "haq",
+    "₹5,000",
+    "maango"
+   ],
+   "motion": "pull",
+   "type": "title",
+   "big": "₹5,000 ROZ",
+   "sub": "ye aapka haq hai",
+   "small": null,
+   "title": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Save karo. Tumhare papers kab mile the?",
+   "keywords": [
+    "save",
+    "papers",
+    "comment"
+   ],
+   "motion": "punch",
+   "type": "title",
+   "big": "SAVE KARO",
+   "sub": "papers kab mile the?",
+   "small": null,
+   "title": null,
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Loan chukaya, papers abhi tak nahi mile? Bank ko roz ₹5,000 dene padenge 💸\nRBI ka niyam: poora loan chukane ke 30 din mein original papers wapas. Der hui toh har din ₹5,000.\nPapers kho gaye? Bank ko 30 din aur, phir wahi ₹5,000 roz.\nPehle bank ko likh ke complaint, 30 din mein jawab nahi toh cms.rbi.org.in\nSource: RBI circular, 13 Sep 2023 (laagu 1 Dec 2023)\nSave karo, kaam aayega 📌",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#rbi",
+  "#homeloan",
+  "#property"
+ ],
+ "claims": [
+  {
+   "claim": "RBI mandates return of property documents within 30 days of loan closure",
+   "basis": "RBI circular dated 1 December 2023 on 'Return of Original Movable/Immovable Property Documents'"
+  },
+  {
+   "claim": "Penalty of ₹5,000 per day applies after 30 days of delay",
+   "basis": "RBI circular dated 1 December 2023"
+  },
+  {
+   "claim": "Rule applies to all secured loans: home loan, loan against property, car loan, gold loan",
+   "basis": "RBI circular covers all REs (banks, NBFCs, HFCs, etc.) for secured loans"
+  },
+  {
+   "claim": "All regulated entities covered: scheduled commercial banks, NBFCs, HFCs, RRBs, cooperative banks, ARCs",
+   "basis": "RBI circular applicability clause"
+  },
+  {
+   "claim": "If documents lost, bank gets additional 30 days (total 60) to provide certified copies, then ₹5,000/day penalty applies",
+   "basis": "RBI circular provision for lost documents"
+  },
+  {
+   "claim": "Complaint process: first write to bank, wait 30 days, then escalate to RBI CMS portal",
+   "basis": "Standard RBI grievance redressal mechanism per RBI guidelines"
+  }
+ ],
+ "brain_ids": [
+  "4396759d41",
+  "161339712e",
+  "1e60a34718",
+  "a688e48ca2",
+  "daf4b4e11e",
+  "7fa182f8ef",
+  "0d27978044",
+  "12739745ca",
+  "9db4cc694f",
+  "1e2336282f",
+  "97e1b2fcbb",
+  "0755cc155a",
+  "6dad050e27",
+  "d52bfa64b5"
+ ],
+ "kiro_checked": "19 Nov: checked by hand against RBI 13 Sep 2023 circular (ET, Indian Express, Mint): 30 days, ₹5,000/day, lost papers +30 days, all REs; gold loan removed",
+ "visual_done": "kiro",
+ "skin": "keynote"
+}
