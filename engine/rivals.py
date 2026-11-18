@@ -45,7 +45,7 @@ def channel(handle, n=30):
         d = json.loads(_yt(["--flat-playlist", "-J", "--playlist-end", str(n), url.rstrip("/") + "/shorts"]) or "{}")
     except ValueError:
         return None
-    if not d.get("channel_id"):
+    if not isinstance(d, dict) or not d.get("channel_id"):        # "null" for a missing channel
         return None
     shorts = [{"id": e["id"], "title": e.get("title") or "", "views": e.get("view_count") or 0}
               for e in d.get("entries") or [] if e.get("id")]
