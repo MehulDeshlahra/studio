@@ -347,6 +347,8 @@ Example: balance after 12 months, Rs 45,000 at 42%/yr compounded monthly with Rs
 (articles and official circulars found for this video). Your own memory of Indian rules is often out of date: never
 mark a fact wrong from memory. "correct": true when the sources support it; false ONLY when a source clearly
 contradicts it (quote that source in "why"); null when the sources say nothing about it.
+A line starting "VERIFIED" was checked by hand against the official source: when an article disagrees with it, the
+VERIFIED line is right and the article is wrong (never mark a fact false because of such an article).
 Check WHO does what as well: a regulator (RBI, SEBI, NPCI) SETS a rule; the bank, card issuer or company PAYS or acts.
 "RBI aapko ₹100 dega" is false when the sources say the bank pays.
 SOURCES:
