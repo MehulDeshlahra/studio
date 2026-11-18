@@ -60,7 +60,7 @@ def fmt(n):
 
 def nums(p):
     """Numbers only once they exist (a row of zeros tells a brand nothing good)."""
-    if not (p["followers"] or p["views"] or p["posts"]):
+    if not (p["followers"] >= 100 or p["views"] >= 1000):      # 19 Nov: 3 followers on a brand-facing page does not help us
         return '<p class="soon">Launching 20 Nov 2026</p>'
     return (f'<div class="nums"><div><b>{fmt(p["followers"])}</b><span>followers</span></div><div><b>{fmt(p["views"])}</b>'
             f'<span>views</span></div><div><b>{p["posts"]}</b><span>reels</span></div></div>')
@@ -110,7 +110,7 @@ footer{{margin:70px 0 40px;color:#6d7586;font-size:13px}}
 <header><div class="logo"><i></i>Scroll House</div>
 <h1>Original short-video pages for <span>every audience</span>.</h1>
 <p class="lead">{esc(BRAND['line'])} Daily, original Reels and Shorts in Hindi and English: tech, mythology, fiction serials, and more genres every month.</p>
-<div class="stats"><div><b>{len(ps)}</b><span>pages</span></div>{(f'<div><b>{fmt(tf)}</b><span>followers across platforms</span></div><div><b>{fmt(tv)}</b><span>views</span></div><div><b>{tp}</b><span>reels published</span></div>') if (tf or tv or tp) else '<div><b>3</b><span>platforms each: Instagram, YouTube, Facebook</span></div><div><b>Daily</b><span>new reels on every page</span></div>'}</div>
+<div class="stats"><div><b>{len(ps)}</b><span>pages</span></div>{(f'<div><b>{fmt(tf)}</b><span>followers across platforms</span></div><div><b>{fmt(tv)}</b><span>views</span></div><div><b>{tp}</b><span>reels published</span></div>') if (tf >= 100 or tv >= 1000) else '<div><b>3</b><span>platforms each: Instagram, YouTube, Facebook</span></div><div><b>Daily</b><span>new reels on every page</span></div>'}</div>
 </header>
 <h2>Our pages</h2><div class="grid">{''.join(cards)}</div>
 <h2>Work with us</h2><div class="offer">

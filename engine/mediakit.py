@@ -20,6 +20,13 @@ FIT = {  # brand categories that sponsor each niche (MONEY.md section 2, checked
     "jain": ["Books and audio", "Pilgrim travel", "Food and wellness brands that respect Jain diet", "Devotional apps"],
     "finance": ["Banks and cards", "UPI and payment apps", "Insurance and tax apps", "Credit and savings tools"],
 }
+SAFE = {  # curated for brands. Never publish channel.json "rules": they hold internal production notes.
+    "tech": ["Facts checked against named sources", "No politics, no rumours, no leaked specs", "Real brand logos and product visuals used accurately"],
+    "katha": ["Respectful retellings; the source text is named in every reel", "Where versions differ, we say so", "No mockery, no political or sectarian angle"],
+    "raaz": ["Original fiction, clearly fiction, no real people or events", "No gore; suitable for a wide audience", "No mythology, religion or politics"],
+    "jain": ["Respectful retellings; the source is named in every reel", "Shwetambar and Digambar versions are named where they differ", "No mockery, no sect comparison"],
+    "finance": ["Education only: no stock tips, no return claims", "Every number carries its official source (RBI, NPCI, SEBI and others)", "SEBI-aware wording and a not-advice line on every post"],
+}
 FORMATS = ["Sponsored reel: your product inside an original reel", "Series sponsor: your name on every episode",
            "Story frames with your link on the day the reel goes live", "Cross-post on Instagram, Facebook and YouTube Shorts"]
 
@@ -79,7 +86,7 @@ def ratecard(ps):
 
 def kit(p, css, aud, logo):
     cid = p["id"]
-    nums = ('<p class="soon">Launching 20 Nov 2026: numbers appear here the day they exist.</p>' if not (p["followers"] or p["views"] or p["posts"])
+    nums = ('<p class="soon">New page, numbers appear here once the page has real reach.</p>' if not (p["followers"] >= 100 or p["views"] >= 1000)
             else f'<div class="nums"><div><b>{fmt(p["followers"])}</b><span>followers</span></div><div><b>{fmt(p["views"])}</b><span>views</span></div>'
                  f'<div><b>{p["posts"]}</b><span>reels</span></div></div>')
     if aud:
@@ -90,7 +97,7 @@ def kit(p, css, aud, logo):
         audhtml = (f'<p>Target audience: India, {esc(p["lang"])}-speaking, ages 16 to 35. Measured age, gender and city data '
                    f'is added here automatically once the page passes 100 followers.</p>')
     best = "".join(f'<li>{esc(b["title"][:80])} <b>{fmt(b["views"])} views</b></li>' for b in p["best"]) or "<li>Best reels appear here once they have views.</li>"
-    safe = "".join(f"<li>{esc(r)}</li>" for r in p["rules"][:6])
+    safe = "".join(f"<li>{esc(r)}</li>" for r in SAFE.get(cid, []))
     fit = "".join(f"<li>{esc(x)}</li>" for x in FIT.get(cid, []))
     fm = "".join(f"<li>{esc(x)}</li>" for x in FORMATS)
     img = f'<img src="../img/{cid}.webp" alt="{esc(p["name"])}" width="96" height="96" style="border-radius:50%;float:right;margin:0 0 12px 18px">' if logo else ""
