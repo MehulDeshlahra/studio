@@ -287,7 +287,7 @@ def page(plan, timed, total, theme, assets):
             nm = _num(v)
             # 18 Nov v2: one line always: the font fits the value in 940 px (bold glyphs ~0.62 em); "2 HOURS" wrapped at 250 px
             sty = (' style="font-size:%dpx;white-space:nowrap"' % int(min(250, 940 / (0.62 * max(3, len(v)))))) if film else ""
-            if nm and nm[2] < 10:     # 18 Nov pilot: counting 0 -> 2 read as "1 HOURS"; small numbers just land
+            if nm and (nm[2] < 10 or theme.get("phone")):   # 18 Nov: "1 HOURS"; 19 Nov: money must never show a wrong number (₹4,895)
                 nm = None
             if nm:
                 st, en, val, dec, comma = nm
