@@ -10,7 +10,7 @@ const healerLine = (j) => { const h = j.healer || {}; if (h.state === "parked") 
 const K = { green: "var(--green)", amber: "var(--amber)", red: "var(--red)", blue: "var(--blue)", violet: "var(--violet)", teal: "var(--teal)", gray: "var(--gray)" };
 const ST = {
   building: ["Building", K.blue, 1], prepped: ["Prepped", K.blue], waiting: ["Needs approval", K.violet], ready: ["Ready, not sent", K.violet],
-  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], removed: ["Removed", K.gray], paused: ["Stopped midway", K.gray], made: ["Made", K.gray],
+  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], removed: ["Removed", K.gray], paused: ["Stopped midway", K.gray], made: ["Made", K.gray], cancelled: ["Cancelled", K.gray],
 };
 const LV = { ok: K.green, warn: K.amber, bad: K.red, info: K.gray, run: K.blue, wait: K.violet };
 const P = {
@@ -148,8 +148,8 @@ const V = {
     </div>`;
   },
   runs() {
-    const F = [["all", "All"], ["active", "Building"], ["need", "Needs you"], ["held", "Held"], ["approved", "Approved"], ["posted", "Posted"], ["rejected", "Rejected"], ["removed", "Removed"]];
-    const gone = (j) => ["rejected", "removed"].includes(j.status);  // 18 Nov (owner): All hides removed/rejected
+    const F = [["all", "All"], ["active", "Building"], ["need", "Needs you"], ["held", "Held"], ["approved", "Approved"], ["posted", "Posted"], ["rejected", "Rejected"], ["removed", "Removed"], ["cancelled", "Cancelled"]];
+    const gone = (j) => ["rejected", "removed", "cancelled"].includes(j.status);  // 18 Nov (owner): All hides removed/rejected
     const ok = (j) => (runFilter === "all" ? !gone(j) : (runFilter === "active" ? j.active : runFilter === "need" ? ["waiting", "ready"].includes(j.status) : j.status === runFilter));
     const list = S.jobs.filter((j) => ok(j) && (runCh === "all" || j.cid === runCh));
     return `<div class="h1">Runs</div><div class="lead">Every video the engine has made or is making. Click a row for the full timeline, review and log.</div>
@@ -253,6 +253,12 @@ async function openJob(cid, job) {
    <div class="media"><div class="cover">${have ? `<video src="${base + vid}" poster="${d.files["cover.jpg"] ? base + "cover.jpg" : ""}" controls playsinline preload="none"></video>` : d.files["cover.jpg"] ? `<img src="${base}cover.jpg">` : `<div class="empty">No video yet</div>`}</div>
     <div><div class="kv"><span>Progress</span><span class="num">${Math.round(d.pct * 100)}%${d.active ? " · " + esc(curStep(d) || "") : ""}</span><span>Length</span><span>${d.qc.dur ? Math.round(d.qc.dur) + " s" : "—"}</span><span>Loudness</span><span>${d.qc.lufs ?? "—"} LUFS</span><span>Review</span><span>${d.review.ok === true ? `<span class="up">Passed</span>` : d.review.ok === false ? `<span class="dn">Held</span>` : "—"}${d.review.score ? ` · visual ${d.review.score}/10` : ""}</span><span>Updated</span><span>${ago(d.updated)}</span></div>
     ${["waiting", "ready", "held"].includes(d.status) ? `<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn ok" onclick="decide('${cid}','${job}','approve')">Approve</button><button class="btn no" onclick="decide('${cid}','${job}','reject')">Reject</button><button class="btn" onclick="feedback('${cid}','${job}')">Feedback</button></div>` : ""}</div></div>
+   ${["posted", "approved", "removed"].includes(d.status) ? "" : `<h4>Change this run</h4><div class="card" style="padding:12px">
+    <div class="mut" style="font-size:12.5px;margin-bottom:8px">Wrong page or topic? Stop it, or make it again on any page with the topic as written here.</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><select id="chTo">${S.channels.filter((x) => x.group === "Studio").map((x) => `<option value="${x.id}" ${x.id === cid ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select></div>
+    <textarea id="chTopic" rows="3" style="width:100%;margin-top:8px;box-sizing:border-box">${esc(d.request || d.topic || d.title || "")}</textarea>
+    <div class="mut" style="font-size:12px;margin-top:4px">Write what you want in your own words: the engine researches it and names the topic itself.${d.request ? " Topic it chose: " + esc(d.topic) : ""}</div>
+    <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">${d.active || ["paused", "prepped", "made"].includes(d.status) ? `<button class="btn no" onclick="changeRun('${cid}','${job}','stop')">${d.active ? "Stop" : "Cancel"}</button>` : ""}<button class="btn ok" onclick="changeRun('${cid}','${job}','redo')">${d.active ? "Stop and make again" : "Make again"}</button></div></div>`}
    <h4>Timeline</h4><div class="wf">${wf}</div>
    ${(rv.problems || []).length || (rv.minor || []).length ? `<h4>Review</h4><ul style="padding-left:16px">${(rv.problems || []).map((p) => `<li class="dn">${esc(p)}</li>`).join("")}${(rv.minor || []).map((p) => `<li class="mut">${esc(p)}</li>`).join("")}</ul>` : ""}
    ${d.caption ? `<h4>Caption</h4><div style="white-space:pre-wrap">${esc(d.caption)}</div>` : ""}
@@ -368,6 +374,11 @@ function feedback(cid, job) {
   setTimeout(() => $("#fb").focus(), 40);
 }
 async function sendFb(cid, job) { const note = $("#fb").value.trim(); if (!note) return; try { await post("/api/decide", { cid, job, action: "fix", note }); closeDrawer(); toast("Feedback saved"); load(); } catch (e) { toast("Failed: " + e.message); } }
+async function changeRun(cid, job, action) {
+  const to = ($("#chTo") || {}).value || cid, topic = (($("#chTopic") || {}).value || "").trim(), name = (ch(to) || {}).name || to;
+  if (!confirm(action === "stop" ? "Stop this run? It will be marked cancelled." : `Make "${topic.slice(0, 80)}" on ${name}?` + (to !== cid ? " This run will be cancelled." : ""))) return;
+  try { const r = await post("/api/change", { cid, job, action, to, topic }); toast(action === "stop" ? "Stopped" : "Started on " + name); closeDrawer(); setTimeout(load, 3000); } catch (e) { toast("Failed: " + e.message); }
+}
 async function makeNow() { try { await post("/api/make", { cid: $("#mkc").value, topic: $("#mkt").value.trim() }); toast("Started"); setTimeout(load, 3000); } catch (e) { toast("Failed: " + e.message); } }
 async function setS(b) { try { S.settings = await post("/api/settings", b); render(1); toast("Saved"); } catch (e) { toast("Failed: " + e.message); } }
 async function resetFailed() { await post("/api/reset-failed", {}); toast("Cleared"); load(); }

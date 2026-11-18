@@ -336,8 +336,8 @@ def heal_orphans():
         for jd in sorted(glob.glob(os.path.join(OUT, cid, "*"))):
             job = os.path.basename(jd)
             meta = load(os.path.join(jd, "meta.json"), None)
-            if meta is None or job in known or job.endswith("-en") or meta.get("stage") in ("done", "prepped", "held"):
-                continue
+            if meta is None or job in known or job.endswith("-en") or meta.get("stage") in ("done", "prepped", "held", "cancelled"):
+                continue                                    # 19 Nov: "cancelled" = the owner stopped it from the Run tab
             newest = max((os.path.getmtime(os.path.join(dp, f)) for dp, _, fs in os.walk(jd) for f in fs), default=0)
             if time.time() - newest < 3600:
                 continue                                    # still being built (or just stopped): not an orphan yet

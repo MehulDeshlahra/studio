@@ -35,6 +35,66 @@ def render_workers():
     return w
 
 
+SHAPE = """You are the producer of the {lang} Reels page "{name}" ({id}). The owner typed this request for a new video, in a
+hurry, mixing the subject with production wishes:
+"{raw}"
+Understand what video he wants. Return JSON:
+{{"subject": "<the real subject in plain English, 3-10 words, e.g. 'LLP vs private limited vs proprietorship in India'>",
+ "queries": ["<4 web/YouTube search queries that find the facts and the best reels on it: official rules, costs, comparisons; Hinglish or English as people search>"],
+ "wishes": "<his production wishes in one short line (style, pictures, length...), or empty>"}}"""
+
+NAME = """You name videos for the {lang} Reels page "{name}". The owner asked for: "{raw}" (his words are a brief, never the
+title). Subject: {subject}. Page topics look like this (match the style: what the viewer gets, in their words, specific):
+{examples}
+RESEARCH (real Shorts + articles):
+{research}
+Write the topic for this video from the research: specific, curious, in the page's language style, one clear angle a viewer
+would stop for. Any number, rule, date or cost in it must come from the research above; if the research has none, use no
+number. Return JSON: {{"topic": "<the topic, under 120 characters>", "hook": "<first spoken line, under 12 words>",
+"angle": "<the one idea the video proves, one line>"}}"""
+
+
+def _shape_request(ch, raw, job):
+    """19 Nov (owner: "don't copy whatever I typed and add it as title. understand the context, research, then create a topic
+    name on your own"). A typed request from the dashboard -> subject + search queries -> research -> a page-style topic.
+    Returns (topic, meta fields). The research it runs is the video's research (research.json)."""
+    qp = os.path.join(ROOT, "channels", ch["id"], "queue.json")
+    q = load(qp, []) if os.path.exists(qp) else []
+    q = q if isinstance(q, list) else (q.get("topics") or [])
+    done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or []
+    ex = [str(x.get("topic")) for x in q[:3] if isinstance(x, dict)] + [str(d.get("title")) for d in done[-3:] if d.get("title")]
+    info = {"lang": "Hindi" if ch.get("lang", "hi") == "hi" else "English", "name": ch.get("name") or ch["id"], "id": ch["id"]}
+    try:
+        s = planner.ask(SHAPE.format(raw=raw[:600], **info), max_tokens=1500)
+        subject = str(s.get("subject") or raw)[:120]
+        queries = [str(x)[:120] for x in (s.get("queries") or []) if x][:4] or [subject]
+        wishes = str(s.get("wishes") or "")[:300]
+    except Exception as e:
+        log("request shape failed:", str(e)[:120]); subject, queries, wishes = raw[:120], [raw[:120]], ""
+    log("request:", repr(raw[:120]), "-> subject", repr(subject), "queries", queries)
+    r = research.run(subject, queries, job)
+    try:
+        n = planner.ask(NAME.format(raw=raw[:600], subject=subject, examples="\n".join("- " + x for x in ex) or "-",
+                                    research=research.summary(r)[:6000], **info), max_tokens=1500)
+        topic = str(n.get("topic") or "").strip() or subject
+        hook, angle = str(n.get("hook") or "")[:200], str(n.get("angle") or "")[:300]
+    except Exception as e:
+        log("request naming failed:", str(e)[:120]); topic, hook, angle = subject, "", ""
+    log("request named:", repr(topic))
+    return topic[:160], {"request": raw[:600], "request_subject": subject, "request_wishes": wishes,
+                         "request_hook": hook, "request_angle": angle}
+
+
+def _request_note(meta):
+    """The owner's request travels to the writer as intent, next to the research (not as the title)."""
+    if not meta.get("request"):
+        return ""
+    return ("OWNER REQUEST (he typed this; follow its intent, not its words): " + meta["request"]
+            + (f"\nAngle chosen from the research: {meta['request_angle']}" if meta.get("request_angle") else "")
+            + (f"\nSuggested hook: {meta['request_hook']}" if meta.get("request_hook") else "")
+            + (f"\nHis production wishes: {meta['request_wishes']}" if meta.get("request_wishes") else "") + "\n\n")
+
+
 def pick_topic(ch):
     # 19 Nov: channels/<id>/queue.json = topics chosen by a deep dive (knowledge/new-page.md) or the owner, made first, in
     # order. A topic counts as used once any video with that topic exists in done.json (held/rejected included).
@@ -632,6 +692,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("channel"); ap.add_argument("topic", nargs="?")
     ap.add_argument("--job"); ap.add_argument("--from", dest="frm", default="")
+    ap.add_argument("--request", action="store_true", help="the topic is the owner's typed request: research it and name the topic")
     ap.add_argument("--no-send", action="store_true")
     ap.add_argument("--lang", default="", help="en = English page version (voice, captions, handle_en)")
     ap.add_argument("--until", default="", help="assets = stop after voice + images (prep lane); the render lane finishes it")
@@ -665,7 +726,11 @@ def main():
     order = ["research", "plan", "voice", "assets", "compose", "mix", "render", "qc", "send"]
     redo = set(order[order.index(a.frm):]) if a.frm in order else set()
     meta = load(os.path.join(job, "meta.json"), {})
-    topic = a.topic or meta.get("topic") or pick_topic(ch)
+    if a.request and a.topic and not meta.get("request"):
+        topic, rq = _shape_request(ch, a.topic, job)       # owner's typed request -> researched, page-style topic
+        meta.update(rq)
+    else:
+        topic = (meta.get("topic") if meta.get("request") else None) or a.topic or meta.get("topic") or pick_topic(ch)
     meta.update({"channel": ch["id"], "job": job_id, "topic": topic}); save(os.path.join(job, "meta.json"), meta)
     if ch.get("serial") and " - Part " in str(topic):
         try:
@@ -680,7 +745,7 @@ def main():
         qs = [topic, topic + " shorts", topic + " explained"]
         r = research.run(topic, qs, job)
     r = load(rp)
-    rtext = research.summary(r)
+    rtext = _request_note(meta) + research.summary(r)
     # 2 plan
     pp = os.path.join(job, "plan.json")
     if "plan" in redo or not os.path.exists(pp):

@@ -276,7 +276,8 @@ def job_state(cid, job, active=None):
                         "score": ((rv.get("checks") or {}).get("vision") or {}).get("score")}),
             "doctor_tries": meta.get("doctor_tries", 1 if meta.get("doctor_rebuilt") else 0), "doctor_code": meta.get("doctor_code"),
             "qc": {"dur": (qc.get("format") or {}).get("dur"), "lufs": (qc.get("format") or {}).get("lufs")},
-            "caption": plan.get("caption", ""), "active": bool(active), "prepped": bool(meta.get("prepped_at")) and not files.get(final), "started": int(t0) if active else None}
+            "caption": plan.get("caption", ""), "active": bool(active), "pid": (active or {}).get("pid"),
+            "topic": meta.get("topic") or plan.get("topic") or "", "stage": meta.get("stage"), "request": meta.get("request") or "", "prepped": bool(meta.get("prepped_at")) and not files.get(final), "started": int(t0) if active else None}
 
 
 def tgmap():
@@ -300,14 +301,14 @@ def jobs(running):
         if p and p.get("script") == "make.py" and p.get("cid") and p.get("job"):
             k = (p["cid"], p["job"])
             if k not in act or r["age"] < act[k]["age"]:        # the newest process is the one doing the work (a re-voice child)
-                act[k] = {"started": time.time() - r["age"], "frm": p.get("frm"), "until": p.get("until"), "age": r["age"]}
+                act[k] = {"started": time.time() - r["age"], "frm": p.get("frm"), "until": p.get("until"), "age": r["age"], "pid": r.get("pid")}
         elif p and p.get("script") == "make.py" and p.get("cid") in _pages():
             base = os.path.join(OUT, p["cid"])                    # new video without --job: its folder is the newest one made after start
             t0 = time.time() - r["age"]
             ds = [d for d in (os.listdir(base) if os.path.isdir(base) else []) if os.path.getmtime(os.path.join(base, d)) >= t0 - 30]
             if ds:
                 d = max(ds, key=lambda d: os.path.getmtime(os.path.join(base, d)))
-                act[(p["cid"], d)] = {"started": t0, "frm": None, "until": p.get("until"), "age": r["age"]}
+                act[(p["cid"], d)] = {"started": t0, "frm": None, "until": p.get("until"), "age": r["age"], "pid": r.get("pid")}
     sent = tgmap(); out = []
     for c in _pages():
         done = {d["job"]: d for d in (jload(os.path.join(ROOT, "channels", c, "done.json"), []) or [])}
@@ -322,6 +323,8 @@ def jobs(running):
             st = (d or {}).get("status")
             if s["active"]:
                 status = "building"
+            elif s.get("stage") == "cancelled" and not st:     # 19 Nov: stopped by the owner from the Run tab
+                status = "cancelled"
             elif st in ("posted",):
                 status = "posted"
             elif st in ("approved",):
@@ -780,9 +783,60 @@ def make_now(cid, topic=""):
         raise ValueError("unknown channel")
     unit = f"studio-job-dash-{int(time.time())}"
     cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M", "-p", "Nice=15", f"--working-directory={ROOT}", f"-E", f"HOME={HOME}",
-           PY, os.path.join(ROOT, "engine", "make.py"), cid] + ([topic[:160]] if topic else [])
+           PY, os.path.join(ROOT, "engine", "make.py"), cid] + ([topic[:600], "--request"] if topic else [])   # 19 Nov: researched + named, not copied
     subprocess.run(cmd, capture_output=True, timeout=20)
     return {"ok": True, "unit": unit}
+
+
+def _stop_pid(pid):
+    """Stop the build process: its own systemd unit when it has one (dashboard / manual / healer jobs), else the process
+    tree. Never the dashboard itself."""
+    unit = None
+    try:
+        m = re.search(r"/((studio|run)-[\w.@-]+\.service)", open(f"/proc/{int(pid)}/cgroup").read())
+        unit = m.group(1) if m else None
+    except Exception:
+        pass
+    if unit and unit.startswith("studio-dash"):
+        unit = None
+    if unit:
+        subprocess.run(["sudo", "systemctl", "stop", "--no-block", unit], capture_output=True, timeout=20)
+    else:
+        subprocess.run(["sudo", "pkill", "-TERM", "-P", str(int(pid))], capture_output=True, timeout=20)
+        subprocess.run(["sudo", "kill", "-TERM", str(int(pid))], capture_output=True, timeout=20)
+    return unit or f"pid {pid}"
+
+
+def change_job(cid, job, action, to="", topic=""):
+    """19 Nov (owner: "requested LLP vs Pvt Ltd but selected the wrong page... give option to do changes in run tab").
+    action "stop": stop the build and mark it cancelled (the healer then leaves it alone).
+    action "redo": stop it if it is building, then make the topic (edited or the same) again on page `to`."""
+    if cid not in _pages() or not re.fullmatch(r"[A-Za-z0-9_-]+", job or "") or not os.path.isdir(os.path.join(OUT, cid, job)):
+        raise ValueError("unknown run")
+    if action not in ("stop", "redo"):
+        raise ValueError("unknown action")
+    to = to or cid
+    if action == "redo" and to not in _pages():
+        raise ValueError("unknown page")
+    jd = os.path.join(OUT, cid, job)
+    meta = jload(os.path.join(jd, "meta.json"), {}) or {}
+    plan = jload(os.path.join(jd, "plan.json"), {}) or {}
+    topic = (topic or meta.get("request") or meta.get("topic") or plan.get("topic") or "").strip()
+    cur = next((j for j in state().get("jobs", []) if j["cid"] == cid and j["job"] == job), None)   # fresh: the right pid
+    stopped = None
+    if cur and cur.get("active") and cur.get("pid"):
+        stopped = _stop_pid(cur["pid"])
+    done = {d["job"]: d for d in (jload(os.path.join(ROOT, "channels", cid, "done.json"), []) or [])}
+    if job not in done:                    # a finished / posted video keeps its status; only an unfinished one is cancelled
+        meta.update(stage="cancelled", cancelled_at=time.strftime("%Y-%m-%d %H:%M"),
+                    cancelled_why=f"owner: remade on {to}" if action == "redo" else "owner stopped it")
+        jsave(os.path.join(jd, "meta.json"), meta)
+    out = {"ok": True, "stopped": stopped, "cancelled": job not in done}
+    if action == "redo":
+        if not topic:
+            raise ValueError("no topic to remake")
+        out["started"] = make_now(to, topic)["unit"]; out["page"] = to; out["topic"] = topic[:160]
+    return out
 
 
 class H(BaseHTTPRequestHandler):
@@ -883,6 +937,9 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, decide(body["cid"], body["job"], body["action"], body.get("note", "")[:1000]))
             if u == "/api/make":
                 return self.send(200, make_now(body["cid"], body.get("topic", "")))
+            if u == "/api/change":
+                return self.send(200, change_job(body["cid"], body["job"], body.get("action", ""), body.get("to", ""),
+                                                 str(body.get("topic", ""))[:300]))
             if u == "/api/settings":
                 st = {"auto_approve": False, "min_score": 9, **(jload(SETTINGS, {}) or {})}
                 if "auto_approve" in body:
