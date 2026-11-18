@@ -115,7 +115,7 @@ def track(page, rediscover=False):
     subs = lambda r: r["subs_hist"][-1][1] if r.get("subs_hist") else 0
     ok = {k: v for k, v in chans.items() if v.get("fit", True)}
     leaders = sorted(ok.items(), key=lambda kv: -subs(kv[1]))[:8]
-    rest = [kv for kv in ok.items() if kv[0] not in dict(leaders) and subs(kv[1]) < 2_000_000]
+    rest = [kv for kv in ok.items() if kv[0] not in dict(leaders) and 10_000 <= subs(kv[1]) < 2_000_000 and kv[1].get("median", 0) >= 20_000]
     climbers = sorted(rest, key=lambda kv: -(kv[1].get("median", 0) / max(1, subs(kv[1]))))[:6]
     for k, v in leaders:
         v["tier"] = "leader"
@@ -134,15 +134,20 @@ def _fit(page, chans):
     todo = {k: v for k, v in chans.items() if "fit" not in v}
     if not todo:
         return
-    lines = [f'{k}: "{v["name"]}" | about: {v.get("about", "")[:160]} | Shorts: ' + " / ".join(s["title"][:60] for s in (v.get("shorts") or [])[:6])
-             for k, v in todo.items()]
+    keys = list(todo)
+    lines = [f'{i + 1}. "{todo[k]["name"]}" | about: {todo[k].get("about", "")[:160]} | Shorts: '
+             + " / ".join(s["title"][:60] for s in (todo[k].get("shorts") or [])[:6]) for i, k in enumerate(keys)]
     r = planner.ask(f"Our page makes {hookstudy.NICHE.get(page, page)} for an Indian Hindi/Hinglish audience.\n"
-                    "For each YouTube channel below say if it is a DIRECT competitor: same kind of Shorts, same audience "
-                    "(Indian, Hindi/Hinglish). Big general creators, English-only, vlogs, news, finance, comedy = false.\n"
-                    + "\n".join(lines) + '\nReturn JSON {"fit": {"<channel id>": true|false}}', max_tokens=1500) or {}
-    for k, v in (r.get("fit") or {}).items():
-        if k in chans:
+                    "For each YouTube channel below say if it is a DIRECT competitor: mostly the same kind of Shorts, same "
+                    "audience (Indian, Hindi/Hinglish). Big general creators (politics, podcasts, life hacks, comedy, vlogs, "
+                    "finance, news, YouTube-growth tips, English-only) = false.\n"
+                    + "\n".join(lines) + '\nReturn JSON {"fit": [true or false for channel 1, 2, 3, ... in order]}', max_tokens=1500) or {}
+    fit = r.get("fit")
+    if isinstance(fit, list) and len(fit) == len(keys):
+        for k, v in zip(keys, fit):
             chans[k]["fit"] = bool(v)
+    else:
+        log("rivals: niche check gave no usable answer", str(r)[:120])
 
 
 def growth(rec, days=7):
