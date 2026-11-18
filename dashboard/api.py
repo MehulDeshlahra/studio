@@ -314,6 +314,8 @@ def jobs(running):
                 status = "approved"
             elif st in ("rejected",):
                 status = "rejected"
+            elif st in ("removed",):          # 18 Nov: was missing, so a removed video with a failed review showed as held
+                status = "removed"
             elif st == "held" or s["review"]["ok"] is False:
                 status = "held"
             elif s["review"]["ok"] and (c, j) in sent:

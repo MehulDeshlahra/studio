@@ -47,8 +47,39 @@ def load(path, default=None):
         return default
 
 
-def save(path, data):
+STICKY = ("removed", "posted")   # owner / publish decisions a stale copy must never undo
+
+
+def save(path, data, force=()):
+    """Atomic JSON save. channels/*/done.json is merged under a lock (18 Nov: mehul.py and make.py held the list for
+    minutes and wrote it back, turning the owner's 'removed' into 'rejected' and dropping rows added meanwhile).
+    force = jobs whose status this caller may change even if it is sticky (the owner's own actions)."""
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    if os.path.basename(path) == "done.json" and isinstance(data, list):
+        lk = None
+        try:
+            import fcntl
+            lk = open(path + ".lock", "w"); fcntl.flock(lk, fcntl.LOCK_EX)
+        except (ImportError, OSError):
+            pass
+        try:
+            cur = {d.get("job"): d for d in (load(path, []) or []) if isinstance(d, dict)}
+            mine = {d.get("job") for d in data if isinstance(d, dict)}
+            for d in data:
+                c = cur.get(d.get("job"))
+                if c and c.get("status") in STICKY and d.get("status") != c.get("status") and d.get("job") not in force:
+                    d["status"] = c["status"]
+                    for k in ("posted", "removed_why", "pruned"):
+                        if k in c:
+                            d[k] = c[k]
+            data = list(data) + [c for j, c in cur.items() if j not in mine]     # rows another process added
+            tmp = path + ".tmp"
+            json.dump(data, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            os.replace(tmp, path)
+        finally:
+            if lk:
+                lk.close()
+        return
     tmp = path + ".tmp"
     json.dump(data, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     os.replace(tmp, path)

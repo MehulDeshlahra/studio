@@ -28,7 +28,7 @@ def set_status(cid, job, status, note=None):
             d["status"] = status
             if note:
                 d.setdefault("feedback", []).append(note)
-    save(p, done)
+    save(p, done, force=(job,))          # the owner's decision may change even a sticky status
 
 
 def add_lesson(cid, text, job=None):
