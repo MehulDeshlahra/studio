@@ -197,9 +197,57 @@ def page_md(page):
         L += ["", "## Brands that pay creators in this niche (from sponsor lines)"]
         for h in bj["hits"][-12:]:
             L.append(f"- {h['channel']}: {h['line'][:150]}")
+    em = edit_metrics(page)
+    if em:
+        L += ["", "## How the winners edit (measured on the laptop from their real Shorts)", em]
     txt = "\n".join(L) + "\n"
     open(os.path.join(ROOT, "channels", page, "rivals.md"), "w", encoding="utf-8", newline="\n").write(txt)
+    _measure_todo()
     return txt
+
+
+METRICS = os.path.join(ROOT, "knowledge", "edit-metrics.json")
+
+
+def _measure_todo():
+    """The laptop's idle job list: every page's outlier Shorts not measured yet (tools/laptop_worker.py idle_work)."""
+    db = load(STORE, {}) or {}
+    have = {m["url"] for m in (load(METRICS, []) or [])}
+    todo = []
+    for page in PAGES:
+        for cid, r in (db.get(page) or {}).get("channels", {}).items():
+            for s in (r.get("outliers") or [])[:3]:
+                u = f"https://www.youtube.com/shorts/{s['id']}"
+                if u not in have:
+                    todo.append({"url": u, "page": page, "channel": r["name"], "views": s["views"], "title": s["title"][:90]})
+    os.makedirs(os.path.join(OUT, "laptop"), exist_ok=True)
+    save(os.path.join(OUT, "laptop", "measure-todo.json"), todo[:120])
+
+
+def collect_metrics():
+    """Merge the laptop's measure-*.json results into knowledge/edit-metrics.json."""
+    import glob
+    allm = load(METRICS, []) or []
+    seen = {m["url"] for m in allm}
+    for f in sorted(glob.glob(os.path.join(OUT, "laptop", "done", "measure-*.json"))):
+        try:
+            for m in json.load(open(f)):
+                if m.get("url") not in seen and not m.get("error"):
+                    allm.append(m); seen.add(m["url"])
+            os.remove(f)
+        except Exception:
+            pass
+    save(METRICS, allm[-3000:])
+    return allm
+
+
+def edit_metrics(page):
+    ms = [m for m in (load(METRICS, []) or []) if m.get("page") == page and m.get("dur")]
+    if len(ms) < 3:
+        return ""
+    med = lambda k: statistics.median([m[k] for m in ms if m.get(k) is not None]) if any(m.get(k) is not None for m in ms) else None
+    return (f"- {len(ms)} winning Shorts measured: median length {med('dur'):.0f} s, {med('cuts_per_10s'):.1f} cuts per 10 s, "
+            f"first cut at {med('first_cut') or 0:.1f} s, loudness {med('lufs') or 0:.0f} LUFS")
 
 
 WEEKLY = """You are the strategy head of a small faceless media company with three Hindi pages (Instagram, YouTube, Facebook):
@@ -255,6 +303,10 @@ def main():
     a = sys.argv[1:]
     pages = [x for x in a if x in PAGES] or list(PAGES)
     wk = "--weekly" in a or time.strftime("%a") == "Sun"
+    try:
+        collect_metrics()
+    except Exception as e:
+        log("rivals: metrics merge failed", str(e)[:120])
     for page in pages:
         try:
             pg = track(page, rediscover="--discover" in a or wk)

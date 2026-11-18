@@ -112,6 +112,68 @@ def render(jid):
         shutil.rmtree(work, ignore_errors=True)
 
 
+def measure_one(url, work):
+    """Editing numbers of one competitor Short: length, cuts (scene changes), first cut, cuts per 10 s, loudness."""
+    import re
+    f = os.path.join(work, "v.mp4")
+    r = run([sys.executable, "-m", "yt_dlp", "-q", "-f", "best[height<=720][ext=mp4]/best[height<=720]/best", "-o", f, url], timeout=240)
+    if r.returncode or not os.path.exists(f):
+        return {"url": url, "error": (r.stderr or "download failed")[-160:]}
+    d = run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], timeout=60).stdout.strip()
+    dur = float(d or 0)
+    s = run(["ffmpeg", "-hide_banner", "-i", f, "-vf", "scale=270:-2,select='gt(scene,0.32)',showinfo", "-an", "-f", "null", "-"], timeout=600).stderr
+    cuts = [float(x) for x in re.findall(r"pts_time:([\d.]+)", s)]
+    l = run(["ffmpeg", "-hide_banner", "-i", f, "-af", "ebur128", "-f", "null", "-"], timeout=300).stderr
+    lufs = re.findall(r"I:\s+(-?[\d.]+) LUFS", l)
+    os.remove(f)
+    return {"url": url, "dur": round(dur, 1), "cuts": len(cuts), "first_cut": round(cuts[0], 2) if cuts else None,
+            "cuts_per_10s": round(10 * len(cuts) / dur, 2) if dur else None, "lufs": float(lufs[-1]) if lufs else None,
+            "cut_times": [round(c, 1) for c in cuts[:40]], "t": time.strftime("%Y-%m-%d %H:%M")}
+
+
+LAST_MEASURE = [0.0]
+
+
+def idle_work():
+    """No render waiting and Mehul away (or mode fast): measure up to 4 competitor Shorts the server listed."""
+    if time.time() - LAST_MEASURE[0] < 900 or effective() != "fast" or not on_ac():
+        return
+    LAST_MEASURE[0] = time.time()
+    r = run(SSH + [f"cat {R}/measure-todo.json 2>/dev/null"], timeout=40)
+    try:
+        todo = json.loads(r.stdout or "[]")
+    except ValueError:
+        return
+    done = set()
+    p = os.path.join(HOME, "measured.json")
+    try:
+        done = {x["url"] for x in json.load(open(p))}
+    except Exception:
+        pass
+    picks = [t for t in todo if t.get("url") not in done][:4]
+    if not picks:
+        return
+    work = os.path.join(HOME, "jobs", "measure"); os.makedirs(work, exist_ok=True)
+    res = []
+    for t in picks:
+        if effective() != "fast":                       # Mehul is back: stop, the rest waits for the next idle stretch
+            break
+        try:
+            m = measure_one(t["url"], work); m.update({k: t.get(k) for k in ("page", "channel", "views", "title")}); res.append(m)
+        except Exception as e:
+            res.append({"url": t["url"], "error": str(e)[:160]})
+    if not res:
+        return
+    try:
+        old = json.load(open(p))
+    except Exception:
+        old = []
+    json.dump((old + res)[-2000:], open(p, "w"))
+    out = os.path.join(work, "m.json"); json.dump(res, open(out, "w"))
+    run(SCP + [out, f"{HOST}:{R}/done/measure-{time.strftime('%m%d%H%M%S')}.json"], timeout=120)
+    log("measured", len(res), "competitor Shorts")
+
+
 def main():
     os.makedirs(os.path.join(HOME, "jobs"), exist_ok=True)
     log("worker started, mode", wanted())
@@ -119,6 +181,11 @@ def main():
         try:
             ac = on_ac()
             jid = checkin(effective(), ac)
+            if not jid:
+                try:
+                    idle_work()
+                except Exception:
+                    log("idle work error", traceback.format_exc()[-300:])
             if jid:
                 log("job", jid, "claimed")
                 import threading                                 # keep checking in while rendering (server sees it alive)
