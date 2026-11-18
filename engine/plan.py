@@ -293,9 +293,10 @@ PLAN:
 
 
 NUMCHK = """You check the NUMBERS in this Hindi/Hinglish money-explainer script before it is published. Be exact.
-1) For EVERY number in the voice-over that is the RESULT of a calculation from the script's own scenario (interest, a
-balance after N months, totals, EMI, a percent of an amount, growth), write ONE Python arithmetic expression that computes
-it from the scenario exactly as the script states it. Use only numbers, + - * / ** ( ) and round/min/max/abs (no names).
+1) For EVERY number in the voice-over or on screen that can be worked out from other numbers in the script (interest,
+a balance after N months, totals, EMI, a percent of an amount, growth, and simple ones like "3 din late = ₹300" or
+"roz ₹50 = saal mein ₹18,250"), write ONE Python arithmetic expression that computes it from the script's own numbers
+exactly as the script states them. When in doubt, include it: a correct number costs nothing. Use only numbers, + - * / ** ( ) and round/min/max/abs (no names).
 Example: balance after 12 months, Rs 45,000 at 42%/yr compounded monthly with Rs 5,000 paid each month:
 "45000*(1+0.42/12)**12 - 5000*((1+0.42/12)**12-1)/(0.42/12)".
 2) For every RULE or market fact (a rate, a limit, 'RBI says', a tax slab), judge it ONLY against the SOURCES below
