@@ -64,7 +64,7 @@ def youtube(cid, acc, ch, d, s, h, st):
     about, long, link, _ig = texts(cid, ch)
     sisters = sorted(v["yt_id"] for k, v in st.items() if k != cid and isinstance(v, dict) and v.get("yt_id"))
     key = hashlib.sha1((h + long + link + ",".join(sisters)).encode()).hexdigest()[:10]
-    if s.get("yt") == key:
+    if s.get("yt") == key and s.get("yt_id"):
         return
     tok = publish._req("https://oauth2.googleapis.com/token", {"client_id": y["client_id"], "client_secret": y["client_secret"],
                        "refresh_token": y["refresh_token"], "grant_type": "refresh_token"})["access_token"]
