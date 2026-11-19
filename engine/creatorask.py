@@ -115,6 +115,85 @@ def send(page="cutcapsulehindi", n=DAY_MAX):
     return done
 
 
+ZACC = "7703275000000002002"            # hello@scrollhouse.in in Zoho Mail (REST API works on the free plan, 19 Nov)
+
+READ = """A creator answered our email asking permission to cut short clips (Reels/Shorts) from their YouTube videos, with
+credit and a link to the full episode. Their reply (quoted text removed):
+"{text}"
+Return JSON {{"answer": "yes" | "no" | "question" | "other", "summary": "<one short line in English>",
+ "conditions": ["<any condition they set: credit format, no editing, revenue share, only certain videos...>"]}}
+"yes" only when they clearly allow it ("go ahead", "yes you can", "sure", "haan kar lo")."""
+
+
+def _zoho():
+    import urllib.parse, urllib.request
+    k = json.load(open(os.path.expanduser("~/.studio-zoho-api.json")))
+    t = json.load(urllib.request.urlopen("https://accounts.zoho.in/oauth/v2/token", data=urllib.parse.urlencode(
+        {"refresh_token": k["refresh_token"], "client_id": k["client_id"], "client_secret": k["client_secret"],
+         "grant_type": "refresh_token"}).encode(), timeout=30))["access_token"]
+    h = {"Authorization": "Zoho-oauthtoken " + t}
+    return lambda u: json.load(urllib.request.urlopen(urllib.request.Request(u, headers=h), timeout=30))
+
+
+def replies():
+    """Read hello@ (Zoho REST API), match replies to the channels we emailed: yes -> a permitted source on the page,
+    no -> closed, question/other -> Telegram to the owner (he answers; WhatsApp numbers etc. are his to use)."""
+    import llm
+    from core import telegram
+    st = load(STORE, {}) or {}
+    rows = st.get("c") or {}
+    by_mail = {(v.get("email") or "").lower(): k for k, v in rows.items() if v.get("status") in ("sent", "replied")}
+    seen = set(st.get("seen_msgs") or [])
+    get = _zoho()
+    for x in get(f"https://mail.zoho.in/api/accounts/{ZACC}/messages/view?limit=50").get("data") or []:
+        frm = (x.get("fromAddress") or "").lower()
+        if x["messageId"] in seen or frm not in by_mail:
+            continue
+        c = get(f"https://mail.zoho.in/api/accounts/{ZACC}/folders/{x['folderId']}/messages/{x['messageId']}/content")
+        body = re.sub(r"&nbsp;", " ", re.sub(r"<[^>]+>", " ", (c.get("data") or {}).get("content") or ""))
+        body = re.split(r"\bOn (Mon|Tue|Wed|Thu|Fri|Sat|Sun),|wrote:|-----Original|From: Mehul", re.sub(r"\s+", " ", body))[0].strip()
+        try:
+            a = llm.text(READ.format(text=body[:1500]), json_mode=True, max_tokens=400, fast=True)
+        except Exception:
+            a = {"answer": "other", "summary": body[:200]}
+        k = by_mail[frm]
+        v = rows[k]
+        v.update(status="replied", reply=body[:600], reply_at=time.strftime("%Y-%m-%d %H:%M"), answer=a.get("answer"),
+                 conditions=a.get("conditions") or [])
+        if a.get("answer") == "yes":
+            add_source(k, v)
+            telegram(f"✅ {v['title']} ({v['subs']:,} subs) said YES to clipping: \"{body[:120]}\". Added as a source on "
+                     f"{v['page']}; clips start with its next uploads." + (f"\nConditions: {'; '.join(v['conditions'])}" if v["conditions"] else ""))
+        elif a.get("answer") == "no":
+            v["status"] = "declined"
+        else:
+            telegram(f"✉️ {v['title']} ({v['subs']:,} subs) replied to the clipping email: \"{body[:300]}\"\n"
+                     f"{a.get('summary') or ''}\nReply to Kiro with what to answer (or answer them yourself).")
+        seen.add(x["messageId"])
+    st["seen_msgs"] = sorted(seen)[-500:]
+    save(STORE, st)
+
+
+def add_source(ch_id, v):
+    p = os.path.join(ROOT, "channels", v["page"], "sources.json")
+    d = load(p, {}) or {}
+    d.setdefault("sources", {})
+    key = re.sub(r"[^a-z0-9]+", "-", (v.get("handle") or v["title"]).lower()).strip("-")[:30]
+    d["sources"][key] = {"platform": "creator", "title": v["title"], "channels": [v.get("handle") or ch_id], "videos": [],
+                         "match": [x for x in (v.get("handle"), ch_id) if x], "_ids": {v.get("handle") or ch_id: ch_id},
+                         "permission": f"email reply {v.get('reply_at')} from {v['email']}: \"{(v.get('reply') or '')[:200]}\"",
+                         "conditions": v.get("conditions") or [], "credit_link": True, "clips_per_video": 3, "active": True,
+                         "added": time.strftime("%Y-%m-%d %H:%M"), "added_t": time.time() - 14 * 86400}
+    try:                       # clipwatch only takes uploads of the last 3 days: start with their 3 newest long videos
+        import clipwatch
+        d["sources"][key]["videos"] = [u["url"] for u in clipwatch.uploads(ch_id)[:3]]
+    except Exception as e:
+        log("creatorask: backfill failed", str(e)[:100])
+    save(p, d)
+    os.system(f"cd {ROOT} && git add {p} && git commit -qm 'source: {key} (creator said yes)' >/dev/null 2>&1 && "
+              "git pull -q --rebase --autostash && git push -q >/dev/null 2>&1")
+
+
 def email_for(row):
     name = re.sub(r"\s*(podcast|official|show|tv|channel)\b.*$", "", row["title"] or "", flags=re.I).strip() or row["title"]
     return TEMPLATE_SUBJECT.format(channel=row["title"]), TEMPLATE.format(name=name, channel=row["title"])
@@ -126,7 +205,10 @@ if __name__ == "__main__":
         r = {"title": "Chalchitra Talks"}
         s, b = email_for(r)
         print(send_one(a[1], "[TEST] " + s, b))
+    elif a[0] == "replies":      # timer studio-creatorreplies, hourly
+        replies()
     elif a[0] == "daily":        # timer: refill the list, then the day's emails
+        replies()
         find("cutcapsulehindi")
         print(send("cutcapsulehindi"))
     elif a[0] == "send":
