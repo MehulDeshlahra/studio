@@ -658,20 +658,53 @@ def story_check(ch, plan, sources):
     r = ask(STORYCHK.format(page=ch.get("name", ch["id"]), texts=ch.get("story_texts", "the tradition's scriptures"),
                             sources=(sources or "(no sources found: judge from the scriptures only when sure)")[:12000],
                             rows=rows), max_tokens=3000) or {}
+    flagged = [c for c in r.get("claims") or [] if str(c.get("verdict", "")).lower() in ("false", "invented")]
+    if not flagged:
+        return []
+    # 19 Nov: with no sources the checker judged from memory and was itself wrong once ("Bhagavata: Satyabhama killed
+    # Narakasura"; in Bhagavata 10.59 Krishna does). A flag counts only when a SECOND, independent model agrees.
+    try:
+        conf = llm.text(STORY2.format(page=ch.get("name", ch["id"]), texts=ch.get("story_texts", "the scriptures"),
+                                      sources=(sources or "(none)")[:8000],
+                                      claims="\n".join(f"{i + 1}. scene {c.get('scene')}: {c.get('claim')}" for i, c in enumerate(flagged))),
+                        json_mode=True, max_tokens=2000) or {}
+        second = {int(x.get("n", 0)): x for x in conf.get("claims") or [] if str(x.get("n", "")).isdigit()}
+    except Exception as e:
+        log("story check: second opinion failed, keeping only source-quoted flags", str(e)[:100])
+        second = None
     out = []
-    for c in r.get("claims") or []:
-        v = str(c.get("verdict", "")).lower()
-        if v in ("false", "invented"):
-            t = f" (really: {str(c.get('truth'))[:140]})" if c.get("truth") else ""
-            out.append(f"STORY scene {c.get('scene')}: {v}: '{str(c.get('claim'))[:110]}': {str(c.get('why'))[:120]}{t}")
+    for i, c in enumerate(flagged):
+        v = str(c.get("verdict")).lower()
+        if second is None:
+            if not sources or len(sources) < 500:
+                continue                                   # no sources and no second opinion: not enough to change a story
+            x = {"verdict": v, "really": ""}
+        else:
+            x = second.get(i + 1) or {}
+            if str(x.get("verdict", "")).lower() not in ("false", "invented"):
+                log("story check: second opinion disagrees, kept:", str(c.get("claim"))[:90], "->", x.get("verdict"))
+                continue
+        t1, t2 = str(c.get("truth") or "").strip(), str(x.get("really") or "").strip()
+        t = f" (really: {t1[:140]})" if t1 and (not t2 or t2[:25].lower() in t1.lower() or t1[:25].lower() in t2.lower()) else \
+            (f" (the two checks disagree on what really happened: REMOVE this detail, do not replace it)" if t1 or t2 else "")
+        out.append(f"STORY scene {c.get('scene')}: {v}: '{str(c.get('claim'))[:110]}': {str(c.get('why'))[:120]}{t}")
     return out
+STORY2 = """A second, independent check of claims another checker flagged in a scripture-story Reel ({page}). Judge each claim
+yourself against the SOURCES and the standard account of {texts}. Be careful: popular retellings, TV serials and regional
+folk versions often differ from the scripture; name the text and chapter you rely on. If you are not sure, say "unsure".
+SOURCES:
+{sources}
+CLAIMS:
+{claims}
+Return JSON {{"claims": [{{"n": <number>, "verdict": "false|invented|ok|unsure", "text": "scripture + chapter", "really": "what it says"}}]}}"""
 def story_fix(ch, topic, plan, research_text):
     """Story check + up to 2 rewrites; a plan still wrong after them carries numbers_hold (held before any voice)."""
     src = _fact_sources(ch, topic, research_text)
     try:                                           # scripture-specific evidence on top of the topic research
         import web
         # 19 Nov: the whole scripture list in the query found nothing; a short page word ("Jain", "Purana") finds sources
-        extra = web.facts(f"{topic} {ch.get('story_query', '')}".strip(), n=3, per=3000)
+        q = " ".join(re.sub(r"[^\w\s']", " ", str(topic)).split()[:8])   # a whole-sentence topic found 0 sources
+        extra = web.facts(f"{q} {ch.get('story_query', '')}".strip(), n=3, per=3000)
         if extra:
             src = (src + "\n\n" + extra).strip()
     except Exception as e:

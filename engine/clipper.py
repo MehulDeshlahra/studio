@@ -52,10 +52,11 @@ NOTES (19 Nov, Instagram + YouTube originality rules: a clip page must ADD its o
 caption): 3 short on-screen notes in the page's voice, a witty fan watching along. One "context" note first (who /
 what show or game / why this moment matters, with a fact the clip itself does not say) and 2 "react" notes, each tied
 to the exact words it follows ("after": 3-6 words copied EXACTLY from the speech). Each note 3-8 words, says something
-the viewer is thinking (a joke, an opinion, a "wait for it", a fact), NEVER repeats or describes what is being said,
+the viewer is thinking (a joke, an opinion, a fact, about THIS moment), NEVER repeats or describes what is being said,
 never negative about the brand, show, game or person, never a lie, no emojis, no hashtags.
 The CONTEXT note must name WHO (the person / show / game by name) plus one SPECIFIC fact: a year, a number, where it
-aired, why it blew up ("Anjelah Johnson, 2007: this bit made her famous"). REACT notes are what a fan would type in
+aired, why it blew up, ONLY from the video title / description / chapters ("<name>, <special or show named in the
+description>: <a fact from it>"; never copy this pattern's words, never a year or show you were not given). REACT notes are what a fan would type in
 the comments at that exact second, about THAT exact thing (name it: "Not the free sanitizer 💀" is about the
 moment; "This part never gets old" fits any clip, so it is banned) ("Bhai ye kya hai?" on MC Stan: 13.6M views; "her teary eyes say it all": 17M).
 Good: "Cheaper than therapy, honestly" / "He did NOT see that coming" / "This scene took 9 months to film".
@@ -343,11 +344,21 @@ def exact_notes(ch, src, url, vid_id, ms, label, info=None):
     notes from them. Keeps the old notes when anything fails. The context note may only use names / numbers that the
     video facts or the transcript contain (ungrounded() checks it in code)."""
     import laptop
-    try:
-        out = laptop.job({"kind": "clip", "url": url, "id": vid_id, "pad": 4, "words_only": True, "glossary": glossary(src),
-                          **_lang_spec(ch), "clips": [{"a": m["a"], "b": m["b"]} for m in ms]}, f"{ch['id']} {label} words", wait=1800)
-    except Exception as e:
-        log("clipper: exact words failed, keeping the first notes", str(e)[:150]); return ms
+    out = None
+    for tries in range(2):
+        try:
+            out = laptop.job({"kind": "clip", "url": url, "id": vid_id, "pad": 4, "words_only": True, "glossary": glossary(src),
+                              **_lang_spec(ch), "clips": [{"a": m["a"], "b": m["b"]} for m in ms]}, f"{ch['id']} {label} words", wait=1800)
+            break
+        except Exception as e:
+            log(f"clipper: exact words failed (try {tries + 1} of 2)", str(e)[:150])
+    if out is None:
+        # 19 Nov render 8: the fallback (notes written while watching) copied the prompt's example and praised generically.
+        # Golden rule: no notes -> the clip is held as 'not original enough', never posted with weak notes
+        log("clipper: no exact words, notes dropped (clips will be held)")
+        for m in ms:
+            m["notes"] = []
+        return ms
     guide = MOMENTS.split("NOTES (19 Nov")[1].split("Return JSON")[0]
     for i, m in enumerate(ms):
         r = load(os.path.join(out, f"c{i}", "result.json"), {}) or {}
@@ -395,7 +406,10 @@ def _lang_spec(ch):
 
 VAGUE = re.compile(r"\b(iconic|legendary|famous part|best part|classic moment|the moment|pressure is real|so relatable|"
                    r"this is (it|gold)|must watch|amazing|incredible|never gets old|is unmatched|the sass|so true|"
-                   r"we all know|can'?t stop laughing|too funny)\b", re.I)
+                   r"we all know|can'?t stop laughing|too funny|"
+                   # 19 Nov render 8: generic praise that fits any clip
+                   r"(really )?does it all|(is|was) perfection|perfect(ly)? (ending|timing)|nailed it|so good|hilarious|"
+                   r"the best|peak comedy|comedy gold|pure gold|wait for it|watch till the end|made (her|him|them) famous)\b", re.I)
 
 
 def _notes(m):
