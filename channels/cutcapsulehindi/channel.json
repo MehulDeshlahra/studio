@@ -62,5 +62,7 @@
   "tagline": "Har din ke best Hindi clips",
   "brand_from_ig": false,
   "brand_from_ig_note": "IG shows Finance Fuel's name/bio by mistake (19 Nov); name change locked until ~3 Dec. Set true once fixed.",
-  "site_blurb": "The best moments from Hindi podcasts, interviews, streams and comedy, cut into short clips. Sister page of Cut Capsule."
+  "site_blurb": "The best moments from Hindi podcasts, interviews, streams and comedy, cut into short clips. Sister page of Cut Capsule.",
+  "post": false,
+  "post_note": "19 Nov HOLD (golden rule): Instagram + YouTube stop recommending accounts that mostly post others' clips without material edits (crop/captions/logo do not count). Posting resumes when the clip format adds real commentary / storyline (owner sees frames first)."
 }

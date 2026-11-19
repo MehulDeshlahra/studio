@@ -15,9 +15,31 @@
   },
   "schedule": {
     "posts_per_day": 2,
-    "post_hours_ist": [6, 22, 2, 4],
+    "post_hours_ist": [
+      6,
+      22,
+      2,
+      4
+    ],
     "post_hours_note": "priority order. 06:30 IST = 8 pm New York, 22:30 = noon NY, 02:30 = 4 pm NY, 04:30 = 6 pm NY: campaigns pay on US/global views",
-    "ramp": [["2026-11-20", 1], ["2026-11-24", 2], ["2026-12-01", 3], ["2026-12-08", 4]],
+    "ramp": [
+      [
+        "2026-11-20",
+        1
+      ],
+      [
+        "2026-11-24",
+        2
+      ],
+      [
+        "2026-12-01",
+        3
+      ],
+      [
+        "2026-12-08",
+        4
+      ]
+    ],
     "ramp_note": "19 Nov owner: more posts = more paid views. Account made 19 Nov; warming advice is ~1 Reel/day for 2 weeks. Step back if reach falls.",
     "backlog": 6,
     "manual_first": 0,
@@ -57,5 +79,7 @@
     "text_next": "Full video 👇\n{next}\n\nFollow {handle} for the best clips every day",
     "text_wait": "Follow {handle} for the best clips every day 🔔\n{profile}"
   },
-  "youtube": "@cut.capsule"
+  "youtube": "@cut.capsule",
+  "post": false,
+  "post_note": "19 Nov HOLD (golden rule): Instagram + YouTube stop recommending accounts that mostly post others' clips without material edits (crop/captions/logo do not count). Posting resumes when the clip format adds real commentary / storyline (owner sees frames first)."
 }
