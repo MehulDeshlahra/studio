@@ -111,10 +111,12 @@
   "job": "1118-0735",
   "topic": "Karna tears off his divine armor and earrings, knowing it makes him mortal — Mahabharata, Vana Parva. Lesson: Identity rooted in generosity outlives invincibility.",
   "title": "Karna ne apna kavach kyun phaada?",
-  "status": "approved",
-  "review": [],
+  "status": "held",
+  "review": [
+   "19 Nov story check: invented details (four hands in Indra's shadow; blood drops shining like pearls; fingers finding a seam); 'amartya' (immortal) is an overclaim: the kavach made Karna invulnerable, not immortal; Mahabharata Vana Parva (Kundalaharana): Indra came as a brahmin at midday after Karna's worship of Surya, Karna cut the armour off himself, and Indra gave him the Vasavi Shakti in return"
+  ],
   "mehul_rebuilt": "2026-11-18",
-  "replan_requested": "2026-11-18 22:30",
+  "replan_requested": "2026-11-19 16:18",
   "feedback": [
    "stop saying tu and all, give respect to viewers, say aap"
   ]
