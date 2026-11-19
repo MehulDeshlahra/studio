@@ -38,3 +38,19 @@
 - The on-screen page note is false: the game shown is EA Sports FC, not Football Manager, and 'Football Manager 27' is a non-existent future title.
 - The final frame contains a black screen in the bottom half of the layout.
 - checklist: weak / vague / negative page note
+
+## 1119-1606-c1 (clipper)
+- length 11.19 s
+- not original enough: 0 of 2 page notes placed (need 2+)
+- The same person is shown twice at once in two sharp copies, top and bottom (stacked split-screen format showing audience/comedian split).
+- checklist: same person shown twice
+
+## 1119-1640-c2 (clipper)
+- almost no speech (captions nearly empty)
+- not original enough: 0 of 3 page notes placed (need 2+)
+
+## 1119-1640-c3 (clipper)
+- not original enough: 1 of 3 page notes placed (need 2+)
+
+## 1119-1640-c4 (clipper)
+- not original enough: 1 of 3 page notes placed (need 2+)

@@ -485,5 +485,147 @@
    "start": 979.0,
    "layout": "stack"
   }
+ },
+ {
+  "job": "1119-1554-c1",
+  "topic": "SHE ASKS IF YOU HAVE BOYFRIEND",
+  "title": "SHE ASKS IF YOU HAVE BOYFRIEND",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=baDJ-ZIvYy0",
+   "start": 376.35,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1554-c2",
+  "topic": "THE NAIL SALON SPEEDRUN IS REAL",
+  "title": "THE NAIL SALON SPEEDRUN IS REAL",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=baDJ-ZIvYy0",
+   "start": 500.75,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1606-c1",
+  "topic": "JAPANESE PORN IS WILDLY ANNOYING",
+  "title": "JAPANESE PORN IS WILDLY ANNOYING",
+  "status": "held",
+  "review": [
+   "length 11.19 s",
+   "not original enough: 0 of 2 page notes placed (need 2+)",
+   "The same person is shown twice at once in two sharp copies, top and bottom (stacked split-screen format showing audience/comedian split).",
+   "checklist: same person shown twice"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=el84efC10oE",
+   "start": 263.99,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1119-1606-c2",
+  "topic": "JO KOY'S VIETNAMESE FAN ENCOUNTER",
+  "title": "JO KOY'S VIETNAMESE FAN ENCOUNTER",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=el84efC10oE",
+   "start": 133.63,
+   "layout": "mixed:crop+stack"
+  }
+ },
+ {
+  "job": "1119-1615-c1",
+  "topic": "THE VIETNAMESE ACCENT SECRET REVEALED",
+  "title": "THE VIETNAMESE ACCENT SECRET REVEALED",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=el84efC10oE",
+   "start": 165.81,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1119-1615-c2",
+  "topic": "KOREANS ARE THE EASIEST TO SPOT",
+  "title": "KOREANS ARE THE EASIEST TO SPOT",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=el84efC10oE",
+   "start": 35.63,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1640-c1",
+  "topic": "LAMINE YAMAL DESTROYS MY DEFENSE",
+  "title": "LAMINE YAMAL DESTROYS MY DEFENSE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=zRApVSFmc08",
+   "start": 630.85,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1119-1640-c2",
+  "topic": "I AM THE GENIUS MANAGER",
+  "title": "I AM THE GENIUS MANAGER",
+  "status": "held",
+  "review": [
+   "almost no speech (captions nearly empty)",
+   "not original enough: 0 of 3 page notes placed (need 2+)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=zRApVSFmc08",
+   "start": 867.0,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1119-1640-c3",
+  "topic": "WHY WINGERS ARE BETTER THIS YEAR",
+  "title": "WHY WINGERS ARE BETTER THIS YEAR",
+  "status": "held",
+  "review": [
+   "not original enough: 1 of 3 page notes placed (need 2+)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=zRApVSFmc08",
+   "start": 92.71,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1119-1640-c4",
+  "topic": "BARCELONA AWAY IN THE CHAMPIONS LEAGUE",
+  "title": "BARCELONA AWAY IN THE CHAMPIONS LEAGUE",
+  "status": "held",
+  "review": [
+   "not original enough: 1 of 3 page notes placed (need 2+)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=zRApVSFmc08",
+   "start": 18.81,
+   "layout": "stack"
+  }
  }
 ]

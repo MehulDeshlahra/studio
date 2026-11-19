@@ -1,279 +1,283 @@
 {
  "slug": "neminath-wedding-renunciation",
- "title": "Neminath ne apni baraat kyun wapas mod di?",
+ "title": "Baraat laut gayi... dulha ne kyun mod liya rath?",
  "hooks": [
-  "Baraat chal rahi thi, achanak rath mud gaya.",
-  "Dulha mandap se pehle hi wapas kyun chala gaya?",
-  "Ek awaaz ne rajkumar ko sanyasi bana diya."
+  "Baraat laut gayi... dulha ne kyun mod liya rath?",
+  "Ek cheekh ne badal di 22ve Tirthankara ki zindagi",
+  "Vivaah ka rath kyun gaya wapas? Karuna ka faisla"
  ],
  "hook_choice": 0,
- "hook_why": "Opens with the visual surprise of a wedding procession reversing — immediate kinetic curiosity, no setup, fits the 'raaz hook rule' (named entity + shocking action in first words).",
- "metaphor": "A golden chariot wheel slowly rotating in reverse, each spoke glowing as it turns — the moment compassion overrides duty.",
+ "hook_why": "Opens with the shocking visual of a wedding procession reversing — immediate curiosity, names the event (baraat) and the surprise (dulha turned back) in first 5 words, matches the 'confession/urgent interruption' hook pattern that wins on Shorts.",
+ "metaphor": "A single conch shell (shankha) glowing on a white marble pedestal — each scene adds a layer (wedding canopy, animal cries, open cage, mountain peak) until the conch becomes the emblem of a life turned toward liberation.",
+ "mechanism": [
+  "Baraat palace se nikli, dulha Neminath rath par sawar",
+  "Raste mein jaanwaron ki cheekhein sunai di",
+  "Sarathi ne bataya: yeh sab vivaah bhoj ke liye kaid hain",
+  "Neminath ko karuna aayi, faisla liya",
+  "Saare baade khulwa diye, har jeev azad kiya",
+  "Rath mod liya, wapas mahal ki taraf",
+  "Rajya, mahal, byah sab chhod diya",
+  "Girnar parvat pahuche, tapasya shuru ki",
+  "Kevalgyan prapt hua, moksha mila",
+  "Rajul ne bhi diksha lee, sadhvi bani"
+ ],
  "cast": {
-  "Neminath_idol": "Serene marble idol of Lord Neminath in padmasana, half-closed eyes, dark bluish complexion, conch (shankha) emblem on pedestal, soft saffron glow around, ornate Jain temple backdrop",
-  "Rajul": "Princess Rajul in traditional bridal attire, calm composed face, hands folded, standing at palace window, soft golden light",
-  "Charioteer": "Elderly charioteer in simple dhoti, holding reins, respectful posture, weathered face",
-  "Monk_Neminath": "Neminath as a Digambar monk, sky-clad, standing in kayotsarga on Mount Girnar, vines gently around feet, peaceful radiance"
+  "Neminath_idol": "serene meditating temple idol of Lord Neminath, seated padmasana on white marble, eyes half closed, dark complexion, conch (shankha) emblem on pedestal, warm golden light, Dilwara temple style architecture background",
+  "Rajul_nun": "Princess Rajul as a Jain sadhvi, plain white unstitched cotton robes, carrying soft white rajoharan (whisk broom), calm peaceful face, dark hair, standing in kayotsarga posture",
+  "Charioteer": "ancient Indian charioteer in simple cotton dhoti and angavastram, holding reins, calm face, seated on ornate wooden chariot with carved details"
  },
  "scenes": [
   {
-   "vo": "Baraat ja rahi thi, achanak rath mud gaya.",
+   "vo": "Baraat laut gayi... dulha ne kyun mod liya rath",
    "type": "clip",
-   "prompt": "Golden wedding chariot drawn by white horses moving forward on a palace road, then smoothly turning 180 degrees, dust rising gently, ornate Jain temple spires in background, serene painterly style, saffron gold light, no text, no logos",
+   "prompt": "Ornate wedding chariot with silk canopies and garlands moving forward on a stone palace road, then smoothly turning 180 degrees, wheels kicking up golden dust, warm morning light on white marble palace walls with carved Jain shikhara spires in background, serene painterly Indian style",
    "motion": "push",
-   "title": "BARAAT MUD GAYI",
+   "title": "",
    "keywords": [
     "baraat",
     "rath",
-    "mud gaya"
+    "mod liya"
    ],
-   "real": null,
    "big": null,
    "small": null,
    "sub": null,
    "label": null
   },
   {
-   "vo": "Dulha mandap ke paas tha, par rath wapas kyun ghuma?",
+   "vo": "Neminath, 22ve Tirthankara, Rajul se byah karne nikal pade",
    "type": "image",
-   "prompt": "Close up of a decorated chariot wheel stopping and starting to roll backward, festive decorations in the background blurred, focus on the mechanical reversal, golden hour light, no text, no logos",
-   "motion": "pan",
-   "title": "RATH WAPAS KYUN",
-   "keywords": [
-    "mandap",
-    "rath",
-    "wapas"
-   ],
-   "real": null,
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Rajkumar Neminath apni dulhan Rajul se milne ja rahe the.",
-   "type": "image",
-   "prompt": "Prince Neminath seated in chariot, regal yet calm, wearing prince's attire with conch emblem on crown, charioteer holding reins, palace gates ahead, soft morning light, painterly Indian style, no text, no logos",
-   "motion": "pan",
-   "title": "NEMINATH RAJUL",
+   "prompt": "serene meditating temple idol of Lord Neminath, seated padmasana on white marble, eyes half closed, dark complexion, conch (shankha) emblem on pedestal, warm golden light, Dilwara temple style architecture background",
+   "motion": "pull",
+   "title": "",
    "keywords": [
     "Neminath",
-    "Rajul",
+    "22ve Tirthankara",
     "byah"
    ],
-   "real": null,
    "big": null,
    "small": null,
    "sub": null,
    "label": null
   },
   {
-   "vo": "Tabhi raste mein dard bhari cheekhen sunai di.",
+   "vo": "Rath saja tha, baaje baj rahe, khushi ka mahol",
    "type": "image",
-   "prompt": "Chariot passing near animal enclosures, Neminath looking towards the side with a concerned expression, golden sunlight filtering through trees, compassion stirring in the air, serene painterly style, no text, no logos",
+   "prompt": "A grand ancient Indian wedding chariot made of dark wood with gold carvings, heavily decorated with white jasmine and marigold garlands, traditional musicians blurred in the background, palace street setting, 9:16, centered subject, room for text above and below, warm cinematic lighting, no people in saffron robes",
+   "motion": "pan",
+   "title": "Shahi Baraat",
+   "keywords": [
+    "rath saja",
+    "baaje",
+    "khushi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "real": null
+  },
+  {
+   "vo": "Raste mein pashu-pakshiyon ki cheekhein sunai di, baadon mein kaid the",
+   "type": "image",
+   "prompt": "Close-up of wooden enclosures and bamboo cages containing frightened deer and birds, ancient stone road background, soft morning light casting long shadows, emotional atmosphere of captivity, 9:16, centered subject, wide safe margins on all sides, no text or letters in image, painterly Indian style",
    "motion": "tilt",
-   "title": "CHEEKHEIN SUNAI",
+   "title": "Bezubaan Dard",
    "keywords": [
-    "dard",
-    "cheekhen"
+    "cheekhein",
+    "baade",
+    "kaid"
    ],
-   "real": null,
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
-   "vo": "Dekha toh sekdon be-zubaan jaanwar baade mein qaid the.",
+   "vo": "Sarathi bola: yeh sab vivaah bhoj ke liye hain",
    "type": "image",
-   "prompt": "Rows of wooden pens filled with goats, deer, and birds, looking frightened, dust in the air, shadows of the bars falling on the ground, painterly style, no text, no logos",
-   "motion": "pan",
-   "title": "JAANWAR QAID",
-   "keywords": [
-    "jaanwar",
-    "qaid"
-   ],
-   "real": null,
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Sarathi bola, 'Yeh aapke byah ke bhoj ke liye hain.'",
-   "type": "image",
-   "prompt": "Elderly charioteer in simple dhoti, holding reins, respectful posture, weathered face, pointing toward pens, explaining with folded hands, Neminath listening intently, horses calm, temple silhouette in distance, soft saffron glow, no text, no logos",
-   "motion": "pan",
-   "title": "BHOJ KE LIYE",
+   "prompt": "ancient Indian charioteer in simple cotton dhoti and angavastram, holding reins, calm face, seated on ornate wooden chariot with carved details, pointing toward the enclosures, calm explanatory gesture, warm light on his face, palace road stretching behind, painterly serene style",
+   "motion": "push",
+   "title": "",
    "keywords": [
     "sarathi",
-    "bhoj",
-    "pasu"
+    "vivaah bhoj"
    ],
-   "real": null,
    "big": null,
    "small": null,
    "sub": null,
    "label": null
   },
   {
-   "vo": "Neminath ka dil baith gaya — meri khushi ke liye itna khoon?",
+   "vo": "Karuna se bhar uthe Neminath, ek pal mein faisla liya",
    "type": "image",
-   "prompt": "Close-up of Neminath's face — eyes wide then softening into deep sorrow, a single tear of compassion, golden light touching his forehead, conch emblem glowing faintly, no text, no logos",
-   "motion": "push",
-   "title": "DIL BAITH GAYA",
-   "keywords": [
-    "dil baith gaya",
-    "khushi",
-    "khoon"
-   ],
-   "real": null,
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Unhone turant rath roka, saare jaanwar azad kar diye.",
-   "type": "clip",
-   "prompt": "Neminath raising hand, pens opening one by one, animals walking out freely — deer leaping, birds flying up, goats wandering, chariot waiting, soft wind, saffron gold light, painterly motion, no text, no logos",
+   "prompt": "Close-up of a dark-complexioned (Shyam varna) meditative face of a Jain Tirthankar, eyes half-closed in deep compassion, no clothing or robes visible, white marble temple background, warm golden light, 9:16, centered subject, room for text above and below",
    "motion": "pull",
-   "title": "SAB AZAD KIYE",
+   "title": "Maha Karuna",
    "keywords": [
-    "rath roka",
-    "azad"
+    "karuna",
+    "faisla"
    ],
-   "real": null,
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
-   "vo": "Phir wahi se rath mod liya, raj-paat dulhan sab chhod diya.",
-   "type": "image",
-   "prompt": "Chariot turning back toward palace, Neminath stepping down, leaving crown and ornaments on seat, walking barefoot toward forest path, Mount Girnar rising ahead, serene painterly style, no text, no logos",
+   "vo": "Saare baade khulwa diye, har jeev ko azad kiya",
+   "type": "clip",
+   "prompt": "Wooden enclosure doors swinging open, goats and deer stepping out into golden light, birds taking flight in slow motion, cages emptying one by one, warm morning sun rays highlighting each freed animal, serene painterly style, no violence, pure release",
    "motion": "pan",
-   "title": "SAB CHHOD DIYA",
+   "title": "",
    "keywords": [
-    "rath mod diya",
-    "raj-paat"
+    "baade khulwa diye",
+    "azad kiya"
    ],
-   "real": null,
    "big": null,
    "small": null,
    "sub": null,
    "label": null
   },
   {
-   "vo": "Rajul ne bhi saath diya, diksha le li.",
+   "vo": "Rath mod liya, mahal-rajya-byah sab chhod diya",
    "type": "image",
-   "prompt": "Princess Rajul in traditional bridal attire, calm composed face, hands folded, standing at palace window, soft golden light, then in simple white nun's robes with rajoharan, walking behind Neminath on mountain path, calm faces, golden horizon, painterly Indian style, no text, no logos",
-   "motion": "tilt",
-   "title": "RAJUL BHI CHALI",
+   "prompt": "A royal wedding chariot turning away from a magnificent white marble palace gate, heading towards misty blue mountains, dust rising from wheels, symbolic renunciation, 9:16, centered subject, room for text above and below, golden hour lighting, no figures in saffron",
+   "motion": "pull",
+   "title": "Vairagya Marg",
    "keywords": [
-    "Rajul",
-    "diksha",
-    "saath"
+    "rath mod liya",
+    "chhod diya"
    ],
-   "real": null,
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
-   "vo": "Girnar par tapasya ki, keval gyan paaya.",
+   "vo": "Girnar parvat gaye, tapasya ki, kevalgyan paaya, moksha mila",
    "type": "image",
-   "prompt": "Realistic photo of Mount Girnar Jain temples at sunrise, golden light illuminating ancient spires, pilgrims walking on stone steps, serene atmosphere, high detail, 9:16 vertical composition, space above and below for text, no text or logos",
+   "prompt": "Mount Girnar at sunrise, ancient Jain temples with pointed shikhara spires on rocky peaks, a meditating Neminath idol on a marble platform at the summit, golden light bathing the scene, lotus and conch symbols glowing, siddhashila crescent in sky, ultimate peace, no human figures, only serene divine atmosphere",
    "motion": "push",
-   "title": "KEVAL GYAN",
+   "title": "",
    "keywords": [
     "Girnar",
     "tapasya",
-    "keval gyan"
+    "kevalgyan",
+    "moksha"
    ],
-   "real": null,
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Sachchi karuna yehi hai — doosron ka dukh apna samajhna.",
-   "type": "card",
-   "prompt": "Plain white marble background with soft saffron glow, golden conch symbol centered, minimal ornate border, no text, no logos",
-   "motion": "punch",
-   "title": "",
-   "big": "KARUNA",
-   "small": "DUKH APNA SAMAJHNA",
-   "keywords": [
-    "karuna",
-    "dukh"
-   ],
-   "real": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Aap hote toh kya karte? Comment mein batayein.",
-   "type": "image",
-   "prompt": "Peaceful Jain temple courtyard at sunset, marble steps, lotus pond reflecting light, empty meditation seat with footprints, inviting viewer to reflect, serene painterly style, no text, no logos",
-   "motion": "pull",
-   "title": "AAP KYA KARTE",
-   "keywords": [
-    "aap",
-    "kya karte"
-   ],
-   "real": null,
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "type": "card",
-   "big": "WALLPAPER",
-   "sub": "Neminath HD wallpaper DM mein 📩",
-   "small": "HD Neminath",
-   "vo": "Ye HD wallpaper chahiye? Comment karo WALLPAPER, main DM kar dunga.",
-   "offer_cta": true,
-   "label": "FREE",
-   "prompt": "Clean minimal gradient background, soft warm light, plenty of negative space for text, 9:16 vertical, no logos",
-   "title": null,
+   "label": null,
    "real": null
+  },
+  {
+   "vo": "Rajul bhi diksha lee, sadhvi bani, unke marg chali",
+   "type": "image",
+   "prompt": "A Jain Sadhvi in simple white unstitched robes, holding a white rajoharan (whisk), serene and peaceful expression, standing in a quiet temple courtyard, 9:16, centered subject, wide safe margins on left and right, room for text above and below, no text or letters in image, soft divine light",
+   "motion": "pan",
+   "title": "Rajul Diksha",
+   "keywords": [
+    "Rajul",
+    "diksha",
+    "sadhvi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "real": null
+  },
+  {
+   "vo": "Yeh kahani Trishashti-shalaka-purusha-charitra mein hai, ahimsa ka shikhar",
+   "type": "card",
+   "prompt": "Elegant white marble texture background, a golden conch shell (Shankha) placed centrally, soft shadows, 9:16, centered, ample vertical space for text above and below, clean space for text",
+   "motion": "punch",
+   "title": "Pavitra Granth",
+   "big": "AHIMSA SHIKHAR",
+   "small": "Trishashti Shalaka",
+   "keywords": [
+    "Trishashti",
+    "ahimsa",
+    "shikhar"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ek cheekh ne badal di zindagi, karuna hi sachcha rajya",
+   "type": "image",
+   "prompt": "A beautiful golden lotus blooming on a white marble pedestal, a conch shell at its base, divine light rays emanating from the center, 9:16, centered subject, room for text above and below, cinematic and spiritual",
+   "motion": "pull",
+   "title": "Sachcha Rajya",
+   "keywords": [
+    "cheekh",
+    "karuna",
+    "rajya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "real": null
+  },
+  {
+   "vo": "Aap us pal hote toh kya karte? Comment mein likho, Jai Jinendra",
+   "type": "card",
+   "prompt": "Minimalist white marble background with a soft golden glow, a small lotus icon at the bottom, 9:16, centered, ample space for text",
+   "motion": "punch",
+   "title": "Jai Jinendra",
+   "big": "AAP KYA KARTE?",
+   "small": "Comment Mein Likho",
+   "keywords": [
+    "comment",
+    "Jai Jinendra"
+   ],
+   "sub": null,
+   "label": null
   }
  ],
- "music_mood": "calm",
- "caption": "Baraat chal rahi thi, achanak rath mud gaya. Ek awaaz ne badal diya itihas. 🙏\n\nSrot: Trishashti-shalaka-purusha-charitra (Hemachandra)\n\nAap hote toh kya karte? @katha",
+ "music_mood": "emotional",
+ "caption": "Baraat laut gayi... dulha ne kyun mod liya rath? 🐘\n\nEk cheekh ne badal di 22ve Tirthankara Neminath ki zindagi. Karuna itni badi ki mahal, rajya, byah... sab chhod diya.\n\nAap us pal hote toh kya karte?",
  "hashtags": [
   "#Neminath",
-  "#JainKatha",
+  "#Jainism",
   "#Ahimsa",
   "#Karuna",
-  "#NavkarBhav",
-  "#JaiJinendra"
+  "#TrishashtiShalakaPurushaCharitra",
+  "#JaiJinendra",
+  "#NavkarBhav"
  ],
  "claims": [
   {
-   "claim": "Neminath is the 22nd Tirthankara in Jain tradition.",
-   "basis": "Trishashti-shalaka-purusha-charitra by Hemachandra; Wikipedia Neminatha entry"
+   "claim": "Lord Neminath is the 22nd Tirthankara of Jainism",
+   "basis": "Trishashti-shalaka-purusha-charitra by Hemachandra; Wikipedia; Jain tradition"
   },
   {
-   "claim": "He renounced his wedding after hearing animal cries meant for the feast.",
-   "basis": "Trishashti-shalaka-purusha-charitra; inviteeq.com Neminath story; Jain tradition"
+   "claim": "Neminath was on his way to marry Princess Rajul (Rajimati) when he heard animal cries",
+   "basis": "Trishashti-shalaka-purusha-charitra; Uttaradhyayana Sutra; Kalpa Sutra; inviteeq.com; jainamjayati.com"
   },
   {
-   "claim": "He freed all animals and turned his chariot back.",
-   "basis": "Trishashti-shalaka-purusha-charitra; inviteeq.com"
+   "claim": "The animals were penned for the wedding feast",
+   "basis": "Trishashti-shalaka-purusha-charitra; inviteeq.com; jainamjayati.com"
   },
   {
-   "claim": "He attained Kevala Jnana on Mount Girnar.",
-   "basis": "Trishashti-shalaka-purusha-charitra; Jain pilgrimage tradition"
+   "claim": "Neminath freed all animals and turned his chariot back, renouncing the world",
+   "basis": "Trishashti-shalaka-purusha-charitra; all cited sources"
   },
   {
-   "claim": "Princess Rajul (Rajimati) also took diksha.",
-   "basis": "Trishashti-shalaka-purusha-charitra; Jain tradition"
+   "claim": "He went to Mount Girnar, attained kevala jnana and moksha",
+   "basis": "Trishashti-shalaka-purusha-charitra; Jain tradition; Wikipedia"
+  },
+  {
+   "claim": "Princess Rajul also took diksha and became a nun",
+   "basis": "Trishashti-shalaka-purusha-charitra; inviteeq.com; jainamjayati.com"
+  },
+  {
+   "claim": "Neminath's emblem is the conch (shankha)",
+   "basis": "Trishashti-shalaka-purusha-charitra; Wikipedia; Jain iconography"
   }
  ],
  "brain_ids": [
@@ -291,15 +295,5 @@
   "6ce7203c71",
   "4396759d41",
   "7fa182f8ef"
- ],
- "offer": {
-  "kind": "wallpaper",
-  "keyword": "WALLPAPER",
-  "gift": "Neminath HD wallpaper",
-  "title": "Neminath Karuna Wallpaper",
-  "items": [],
-  "wallpaper_scene": 8,
-  "job": "1119-1105",
-  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/jain/offer-wallpaper.jpg"
- }
+ ]
 }

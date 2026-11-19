@@ -115,5 +115,23 @@
   "first": "2026-11-19 09:07",
   "last": "2026-11-19 09:07",
   "example": "owner agent: Remove the English article 'THE' from scene 2 on-screen text and regenerate layout."
+ },
+ {
+  "sig": "before render, scene #: empty: centre of frame has no main visual in the second still",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-19 12:37",
+  "last": "2026-11-19 12:37",
+  "example": "before render, scene 13: EMPTY: centre of frame has no main visual in the second still"
+ },
+ {
+  "sig": "# nov audit: investment advice ('…') breaks the education-only rule; ratio/return numbers from ipomarket.in no",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-19 14:52",
+  "last": "2026-11-19 14:52",
+  "example": "19 Nov audit: investment advice ('core gold, satellite silver') breaks the education-only rule; ratio/return numbers from ipomarket.in not checked against a primary source; caption source (World Gold "
  }
 ]

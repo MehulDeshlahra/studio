@@ -1,104 +1,98 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/grim-league.mp3",
-  "offset": 6.0,
+  "file": "music/lib/katha/vanes.mp3",
+  "offset": 2.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
  "sfx": [
   {
-   "t": 0.0,
-   "file": "sfx/impact.mp3",
-   "gain_db": -15,
-   "align": "onset"
-  },
-  {
-   "t": 3.7,
+   "t": 3.48,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 6.94,
+   "t": 6.38,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 10.22,
+   "t": 9.7,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,
    "align": "peak"
   },
   {
-   "t": 13.7,
+   "t": 13.14,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 17.54,
+   "t": 17.02,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 20.58,
+   "t": 20.66,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,
    "align": "peak"
   },
   {
-   "t": 23.96,
+   "t": 24.18,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 26.9,
+   "t": 27.0,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 29.32,
+   "t": 29.7,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,
    "align": "peak"
   },
   {
-   "t": 34.08,
+   "t": 35.1,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 37.62,
+   "t": 38.2,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 41.815,
+   "t": 42.71,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,
    "align": "peak"
   },
   {
-   "t": 44.9,
+   "t": 45.94,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 48.781,
+   "t": 49.761,
    "file": "sfx/whoosh-cine.mp3",
    "gain_db": -16,
    "align": "peak"
   },
   {
-   "t": 48.831,
+   "t": 49.811,
    "file": "sfx/pop-light.mp3",
    "gain_db": -14,
    "align": "onset"

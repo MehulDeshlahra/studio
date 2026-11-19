@@ -2,9 +2,10 @@
  "channel": "tech",
  "job": "1118-1845",
  "topic": "AI Agents (WhatsApp automation)",
- "stage": "done",
+ "stage": "held",
  "lang": "hi",
  "prepped_at": "2026-11-18 18:59",
- "held_at": "2026-11-18 21:40",
- "brain_judged": true
+ "held_at": "2026-11-19 14:28",
+ "brain_judged": true,
+ "voice_gate": 1
 }

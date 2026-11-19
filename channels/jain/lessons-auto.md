@@ -151,3 +151,23 @@
 - visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> All scenes (onion domes and arches throughout the background).
 - visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 1, 2, 4, 5, 6, 8, 9 (monks wearing orange/saffron robes).
 - visual score 4/10
+
+## 1119-1105 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s10b
+- OVERLAP/CUT (layout audit): text_occluded on #s12b
+- FIT: RESPECT: Neminath is depicted in saffron/orange robes instead of being a dark-complexioned meditative figure without ornate royal saffron garments as specified in traditional forms.
+- FIT: RESPECT: Neminath is shown sitting on a chariot wearing orange/saffron robes, incorrect attire.
+- FIT: RESPECT: Figures in orange/saffron robes representing Neminath incorrectly.
+- FIT: RESPECT: Figure in saffron robes instead of proper Jain iconography.
+- CUT: The caption text 'LEE' at the bottom of the first still in scene 10 is awkwardly cut/isolated due to awkward phrasing split.
+- EMPTY: The centre of the frame has no main visual, just an archway and empty floor/walls in both stills.
+
+## 1119-1105 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s10b
+- CUT: Caption text 'DI' on the second still is clipped by the right edge.
+- FIT: Figures walking behind have orange/saffron robes which violates the Jain monk dress rule.
+- CUT: Caption text 'LEE' on the first still is clipped by the right edge.
+
+## 1119-1105 (pre-render check)
+- CUT: word 'DI' is physically cut off at the right edge of the frame in the second still
+- CUT: word 'DI ZINDAGI' is physically clipped at the right frame edge in the second still

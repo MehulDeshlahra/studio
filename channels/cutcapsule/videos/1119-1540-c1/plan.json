@@ -1,0 +1,71 @@
+{
+ "title": "Did he just pack an 89?",
+ "topic": "Did he just pack an 89?",
+ "caption": "The moment of truth: opening an icon pack in Football Manager 27. Did NickRTFM get lucky?\n#Ad\n@footballmanager @[creator_handle]",
+ "hashtags": [
+  "#NickRTFM",
+  "#FootballManager27",
+  "#SEGA"
+ ],
+ "lang": "en",
+ "clip": {
+  "url": "https://www.youtube.com/watch?v=7huJGEbsdks",
+  "start": 388.65,
+  "end": 406.88,
+  "layout": "stack",
+  "removed_s": 0.0,
+  "why": "A high-stakes pack opening moment with a big reveal that keeps viewers watching until the very end.",
+  "scores": {
+   "hook": 10,
+   "flow": 9,
+   "value": 9,
+   "trend": 9
+  },
+  "replayed": false,
+  "notes": [
+   {
+    "s": 0.6,
+    "e": 3.54,
+    "text": "NickRTFM posted this pack opening in 2026",
+    "kind": "context"
+   },
+   {
+    "s": 3.79,
+    "e": 7.17,
+    "text": "Bro genuinely could not believe it",
+    "kind": "react"
+   }
+  ],
+  "source": "clipping-culture-2-2",
+  "test": false,
+  "creator": "NickRTFM"
+ },
+ "seo": {
+  "ig": {
+   "caption": "The moment of truth: opening an icon pack in Football Manager 27. Did NickRTFM get lucky?\n#Ad\n@footballmanager @[creator_handle]",
+   "hashtags": [
+    "#NickRTFM",
+    "#FootballManager27",
+    "#SEGA"
+   ]
+  },
+  "fb": {
+   "caption": "The moment of truth: opening an icon pack in Football Manager 27. Did NickRTFM get lucky?\n#Ad\n@footballmanager @[creator_handle]",
+   "hashtags": [
+    "#NickRTFM",
+    "#FootballManager27",
+    "#SEGA"
+   ]
+  },
+  "yt": {
+   "title": "The moment of truth: opening an icon pack in Football Manager 27. Did NickRTFM get lucky?",
+   "description": "The moment of truth: opening an icon pack in Football Manager 27. Did NickRTFM get lucky?\n#Ad\n@footballmanager @[creator_handle]",
+   "tags": [
+    "NickRTFM",
+    "FootballManager27",
+    "SEGA"
+   ]
+  }
+ },
+ "scenes": []
+}

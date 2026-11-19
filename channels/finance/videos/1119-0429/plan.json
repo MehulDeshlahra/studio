@@ -91,16 +91,16 @@
     "subject": "World Gold Council report PDF thumbnail"
    },
    "sub": null,
-   "label": null
+   "label": null,
+   "bg_prompt": "A person in India in the middle of this money moment: Gold ya Silver? 2026 mein sahi decision kaise lein"
   },
   {
    "vo": "10 saal CAGR: gold 10.7%, silver 8.2% — par 2025 silver 149%.",
-   "type": "compare",
-   "title": "",
-   "prompt": "",
+   "type": "list",
+   "title": "CAGR vs 2025",
    "motion": "push",
    "nodes": [],
-   "big": "",
+   "big": "CAGR VS 2025",
    "small": "",
    "keywords": [
     "CAGR",
@@ -109,34 +109,40 @@
    ],
    "items": [
     {
-     "label": "Gold 10yr",
+     "label": "Gold 10y",
      "value": "10.7%",
-     "pct": 57
+     "pct": 11
     },
     {
-     "label": "Silver 10yr",
+     "label": "Silv 10y",
      "value": "8.2%",
+     "pct": 8
+    },
+    {
+     "label": "Gold '25",
+     "value": "64%",
      "pct": 43
     },
     {
-     "label": "2025 Gold",
-     "value": "64%",
-     "pct": 30
-    },
-    {
-     "label": "2025 Silver",
+     "label": "Silv '25",
      "value": "149%",
-     "pct": 70
+     "pct": 100
     }
    ],
    "bg_prompt": "Phone screen: spreadsheet app with gold vs silver returns, thumb scrolling, dim room",
    "sub": null,
-   "label": null
+   "label": null,
+   "lines": [
+    "Gold 10y: 10.7%",
+    "Silv 10y: 8.2%",
+    "Gold '25: 64%",
+    "Silv '25: 149%"
+   ]
   },
   {
    "vo": "Silver storage 10x mehenga — GST 3% dono par same.",
    "type": "bill",
-   "title": "",
+   "title": "Storage & Tax",
    "prompt": "",
    "motion": "push",
    "nodes": [],
@@ -149,21 +155,21 @@
    ],
    "rows": [
     {
-     "label": "Gold ₹1L",
-     "value": "₹500/yr"
+     "label": "Gold 1L",
+     "value": "₹500/y"
     },
     {
-     "label": "Silver ₹1L",
-     "value": "₹5000/yr"
+     "label": "Silver 1L",
+     "value": "₹5k/y"
     },
     {
-     "label": "GST",
-     "value": "3% dono par"
+     "label": "GST Tax",
+     "value": "3% same"
     }
    ],
    "total": {
     "label": "Volume",
-    "value": "10x zyada"
+    "value": "10x"
    },
    "tone": "bad",
    "bg_prompt": "Phone screen: banking app locker charges page, gold vs silver storage fees, serious face reflection",
@@ -191,8 +197,8 @@
   },
   {
    "vo": "Liquidity, storage, demand — gold har parameter pe aage.",
-   "type": "table",
-   "title": "",
+   "type": "compare",
+   "title": "Gold vs Silver",
    "prompt": "",
    "motion": "push",
    "nodes": [],
@@ -204,7 +210,7 @@
     "demand"
    ],
    "cols": [
-    "",
+    "Parameter",
     "Gold",
     "Silver"
    ],
@@ -212,7 +218,7 @@
     {
      "label": "Liquidity",
      "cells": [
-      "Excellent",
+      "Top",
       "Good"
      ]
     },
@@ -226,8 +232,8 @@
     {
      "label": "Demand",
      "cells": [
-      "Monetary 50%",
-      "Industrial 55%"
+      "Monetary",
+      "Indust"
      ]
     },
     {
@@ -241,7 +247,25 @@
    "best": 0,
    "bg_prompt": "Phone screen: notes app comparison list, checkmarks next to gold advantages, morning light",
    "sub": null,
-   "label": null
+   "label": null,
+   "items": [
+    {
+     "label": "Liquidity",
+     "value": "Gold"
+    },
+    {
+     "label": "Storage",
+     "value": "Gold Low"
+    },
+    {
+     "label": "Demand",
+     "value": "Gold 50%"
+    },
+    {
+     "label": "Hedge",
+     "value": "Gold"
+    }
+   ]
   },
   {
    "vo": "Risk profile dekh ke decide karo — core gold, satellite silver.",

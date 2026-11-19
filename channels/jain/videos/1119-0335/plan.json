@@ -95,7 +95,7 @@
   {
    "vo": "Woh saanp agle janam mein Dharanendra bana. Saat phanon wala nagraj.",
    "type": "image",
-   "prompt": "Male serpent deity Dharanendra with seven hoods, coiled on a lotus in a celestial palace. Golden aura, jeweled crown on central hood, compassionate eyes. Soft pink-gold clouds. Serene Indian miniature style, saffron gold white marble, calm, ornate details, gentle glow. 9:16 aspect ratio, centered, room above and below for text.",
+   "prompt": "Male serpent deity Dharanendra with seven hoods, coiled on a lotus in a celestial palace. Golden aura, jeweled crown on central hood, compassionate eyes. Soft pink-gold clouds. Serene Indian miniature style, saffron gold white marble, calm, ornate details, gentle glow. 9:16 aspect ratio, centered, room above and below for text, single continuous composition.",
    "motion": "pan",
    "title": "",
    "keywords": [
@@ -111,7 +111,7 @@
   {
    "vo": "Padmavati bhi saath thi. Dono ka pyaar amrit jaisa.",
    "type": "image",
-   "prompt": "Padmavati — serpent goddess with multiple hoods, coiled gracefully beside Dharanendra. Golden ornaments, compassionate expression, soft pink-gold glow. They face each other in silent bond. Serene painterly style, saffron gold white marble, calm peaceful, ornate Jain temple details.",
+   "prompt": "Serpent goddess Padmavati with multiple hoods coiled gracefully beside Dharanendra, both facing each other in a silent bond. Golden ornaments, compassionate expressions, soft pink-gold glow. Serene painterly style, saffron gold white marble, calm peaceful, ornate Jain temple details. 9:16 aspect ratio, centered, room above and below for text, single continuous composition.",
    "motion": "pull",
    "title": "PADMAVATI SAATH",
    "keywords": [
@@ -121,7 +121,8 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Samay beeta. Parshvanatha tapasya mein baith gaye.",
@@ -201,7 +202,7 @@
   {
    "vo": "Ek chhoti karuna ne hazaron janam ka karz chukaya.",
    "type": "image",
-   "prompt": "A glowing golden lotus flower floats in the center of a soft saffron gradient with subtle marble texture. The lotus emits a gentle aura, symbolizing endless compassion. Clear vertical safe zones above and below the lotus for text. Minimal, elegant, serene Indian aesthetic. 9:16 aspect ratio.",
+   "prompt": "A large glowing golden lotus flower centered in the frame, radiating gentle light against a soft saffron gradient with subtle marble texture. The lotus occupies the middle vertical space, leaving clear safe zones above and below for text. Minimal, elegant, serene Indian aesthetic. 9:16 aspect ratio.",
    "motion": "push",
    "title": "KARZ CHUKAYA",
    "big": "EK CHHOTI KARUNA",

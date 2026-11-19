@@ -10,11 +10,11 @@
   "dur": 53.43
  },
  "vision": {
-  "score": 7,
+  "score": 6,
   "ok": true,
   "problems": [
-   "Scene 10: Image clarity is lower than surrounding frames.",
-   "Scene 12: Minor AI-generated anatomical artifacts on hands."
+   "scene 7: imagery of monk reading book with strange hand anatomy on the left side, slightly unnatural pose",
+   "scene 10: real photo crowded hall clashes stylistically with the surrounding digital art aesthetic"
   ]
  },
  "voice": {

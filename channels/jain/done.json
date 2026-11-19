@@ -79,8 +79,8 @@
   "status": "held",
   "offer": "WALLPAPER",
   "review": [
-   "19 Nov audit: Mughal onion domes behind an ancient Jain prince (scenes at 21s, 35s, 41s)",
-   "scene at 41s is an empty arch behind the word KARUNA: needs a real picture"
+   "before render, scene 4: CUT: word 'DI' is physically cut off at the right edge of the frame in the second still",
+   "before render, scene 12: CUT: word 'DI ZINDAGI' is physically clipped at the right frame edge in the second still"
   ],
   "replan_requested": "2026-11-19 15:51"
  }

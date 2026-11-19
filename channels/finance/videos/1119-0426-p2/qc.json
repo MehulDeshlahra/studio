@@ -5,23 +5,24 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.7,
-  "true_peak": -2.2,
+  "lufs": -13.5,
+  "true_peak": -2.5,
   "dur": 51.7
  },
  "vision": {
-  "score": 10,
+  "score": 9,
   "ok": true,
-  "problems": []
- },
- "voice": {
-  "ok": false,
-  "method": "pauses",
-  "matched": 0.0,
-  "words": 124,
   "problems": [
-   "only 0% of the script was found in the voice"
+   "scene 3: The tax information card shows 'Prop: 30%' and 'LLP: 30%', but the script says 'Proprietorship slab pe, LLP 30% flat'. The visual representation of Proprietorship as 30% is misleading/inaccurate compared to the script's claim of 'slab pe'.",
+   "scene 5: The text 'PROPRIETORSHIP >1CR' is slightly cramped vertically, though readable."
   ]
  },
- "ok": false
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9433962264150944,
+  "words": 119,
+  "problems": []
+ },
+ "ok": true
 }

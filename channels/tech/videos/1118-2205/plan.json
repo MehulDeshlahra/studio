@@ -58,7 +58,7 @@
   },
   {
    "vo": "Ingot kaate jaate wafer-thin slices mein.",
-   "type": "stat",
+   "type": "object",
    "prompt": "thin silicon wafer sliced from ingot, iridescent rainbow sheen, held by precision tool",
    "motion": "tilt",
    "title": "Wafer Slice",
@@ -76,8 +76,8 @@
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "label": "Tool",
-   "value": "Diamond"
+   "label": "Material",
+   "value": "Silicon"
   },
   {
    "vo": "Har wafer polish hota, mirror jaisa smooth.",
@@ -134,10 +134,10 @@
   },
   {
    "vo": "Photoresist lagta, EUV light pattern bana deta.",
-   "type": "ui",
+   "type": "flow",
    "prompt": "EUV scanner exposing wafer, 13.5nm light writing circuits, camera tracks light path",
    "motion": "push",
-   "title": "EUV Machine",
+   "title": "EUV Steps",
    "keywords": [
     "Photoresist",
     "EUV",
@@ -157,13 +157,18 @@
     "Scanner",
     "Mirrors",
     "Lens"
+   ],
+   "nodes": [
+    "Photoresist",
+    "EUV Beam",
+    "Pattern"
    ]
   },
   {
    "vo": "13.5 nanometer... baal se hazaron guna patla.",
    "type": "stat",
-   "value": "13.5nm",
-   "sub": null,
+   "value": "13.5 nm",
+   "sub": "Baal se patla",
    "label": "Wavelength",
    "motion": "pull",
    "title": "EUV Light",
@@ -180,7 +185,8 @@
    },
    "big": null,
    "small": null,
-   "skin": "keynote"
+   "skin": "keynote",
+   "prompt": ""
   },
   {
    "vo": "Plasma etch unwanted hata, circuits bana deta.",

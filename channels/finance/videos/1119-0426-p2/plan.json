@@ -47,7 +47,7 @@
    "type": "compare",
    "prompt": "Split screen on deep black-green, left red card 'Unlimited Risk' with cracking house icon, right green card 'Limited Risk' with shield icon, gold divider",
    "motion": "pan",
-   "title": "",
+   "title": "Risk",
    "keywords": [
     "Unlimited",
     "Limited",
@@ -56,13 +56,13 @@
    "bg_prompt": "Mehul tapping screen, Aditya leaning in, cafe blurred, sunlight shifting",
    "items": [
     {
-     "label": "Proprietorship",
-     "value": "Unlimited — personal assets at risk",
+     "label": "Prop",
+     "value": "Unl",
      "pct": 100
     },
     {
-     "label": "LLP / Pvt Ltd",
-     "value": "Limited to contribution / shares",
+     "label": "LLP",
+     "value": "Lim",
      "pct": 0
     }
    ],
@@ -94,7 +94,7 @@
    "type": "rule",
    "prompt": "Official rule card on deep black-green, Income Tax Dept logo top left, gold border, white text lines, red stamp 'ASLI NIYAM'",
    "motion": "tilt",
-   "title": "IT Rates FY26",
+   "title": "IT Rates",
    "keywords": [
     "IT Act",
     "FY 25-26",
@@ -106,12 +106,11 @@
     "subject": "the real building"
    },
    "lines": [
-    "Prop: slab",
-    "LLP: 30%+",
-    "Pvt Ltd: 22%",
-    "FY25-26"
+    "Prop: 30%",
+    "LLP: 30%",
+    "Pvt: 22%"
    ],
-   "stamp": "ASLI NIYAM",
+   "stamp": "ASLI",
    "real": {
     "q": "Income Tax India logo",
     "kind": "logo",
@@ -136,18 +135,18 @@
     "Har saal"
    ],
    "bg_prompt": "Phone screen close-up, Mehul scrolling, chai steam rising",
-   "value": "Har saal",
-   "sub": "Pvt Ltd yearly",
+   "value": "Har",
+   "sub": "Pvt Ltd",
    "big": "PROPRIETORSHIP >1CR",
-   "small": null,
-   "label": "LLP >40L"
+   "small": "LLP >40L",
+   "label": "Pvt Ltd"
   },
   {
    "vo": "Funding chahiye? Sirf Pvt Ltd — LLP limited, Proprietorship impossible",
    "type": "compare",
    "prompt": "Three cards on deep black-green: left red 'No equity', middle yellow 'Very limited', right green 'VC ready', gold icons",
    "motion": "pan",
-   "title": "Funding",
+   "title": "Fund",
    "keywords": [
     "No equity",
     "Limited",
@@ -156,19 +155,16 @@
    "bg_prompt": "Mehul and Aditya discussing, phone between them, cafe noise",
    "items": [
     {
-     "label": "Proprietorship",
-     "value": "NoEquity",
-     "pct": 0
+     "label": "Prop",
+     "value": "No"
     },
     {
      "label": "LLP",
-     "value": "Limited",
-     "pct": 50
+     "value": "Lim"
     },
     {
-     "label": "Pvt Ltd",
-     "value": "VC ready",
-     "pct": 100
+     "label": "Pvt",
+     "value": "VC"
     }
    ],
    "big": null,
@@ -199,7 +195,7 @@
    "type": "list",
    "prompt": "Checklist card on deep black-green, three numbered lines with gold bullets, white text, subtle checkmark animation",
    "motion": "punch",
-   "title": "Decision Checklist",
+   "title": "Decide",
    "keywords": [
     "Solo",
     "Funding",
@@ -207,9 +203,9 @@
    ],
    "bg_prompt": "Mehul and Aditya clinking chai cups, phone on table showing list, both smiling",
    "lines": [
-    "Solo? → OPC/Prop",
-    "Funding? → Pvt Ltd",
-    "Low audit? → LLP (<₹40L)"
+    "Solo?",
+    "Fund?",
+    "Low?"
    ],
    "big": null,
    "small": null,
@@ -218,9 +214,9 @@
   },
   {
    "type": "title",
-   "big": "Comment GUIDE",
-   "sub": "Structure guide PDF DM mein 📩",
-   "small": "Structure guide PDF DM mein",
+   "big": "Free Guide",
+   "sub": "DM for PDF",
+   "small": "",
    "vo": "Ye structure guide chahiye? Comment GUIDE, DM bhej dunga.",
    "offer_cta": true,
    "label": "FREE",

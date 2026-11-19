@@ -333,3 +333,16 @@
 ## 1118-0735 Karna tears off his divine armor and earrings, knowing it makes him mortal — Mahabharata, Vana Parva. Lesson: Identity rooted in generosity outlives invincibility.
 - scene 6: The caption 'KE' is displayed, but the corresponding line 'Indra the chhup ke, parchhai mein char haath dikhe' is missing the visual representation of the 'four hands' or shadow aspect, making the visual disconnect from the narration.
 - scene 13: The text 'DM MEIN' is slightly cut off at the bottom edge of the frame.
+
+## 1117-0145 (pre-render check)
+- DUP: exact same caption phrase shown on both stills of the scene
+- DUP: exact same caption phrase shown on both stills of the scene
+- FIT: caption says 'AZAD' but voice says 'azad ho gaya... ghar wapas' and visual completely misses the narrative action or character return
+
+## 1117-0145 (pre-render check)
+- MISSING: big field 'Teen Baar' and small field 'Papa Bhadak Gaye'
+- MISSING: big field 'Agni Vidya' and small field 'Swarg Ka Gyan'
+- MISSING: big field 'Nachiketa' and small field 'Ghar Wapas'
+
+## 1117-0145 (pre-render check)
+- LANG: Caption 'HI' is a typo and does not match the spoken line 'Ye'

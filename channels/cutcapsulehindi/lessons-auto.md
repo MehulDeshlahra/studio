@@ -19,3 +19,7 @@
 ## 1119-1440-c3 (clipper)
 - almost no speech (captions nearly empty)
 - not original enough: 0 of 3 page notes placed (need 2+)
+
+## 1119-1555-c3 (clipper)
+- The same person is shown twice at once in the frame (top and bottom right).
+- checklist: same person shown twice

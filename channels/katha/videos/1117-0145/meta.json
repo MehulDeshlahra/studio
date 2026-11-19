@@ -2,7 +2,7 @@
  "channel": "katha",
  "job": "1117-0145",
  "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
- "stage": "done",
+ "stage": "held",
  "lang": "hi",
  "prepped_at": "2026-11-17 03:03",
  "voice_gate": 2,
@@ -11,5 +11,5 @@
  "doctor_code": "7504b60",
  "doctor_tries": 3,
  "brain_judged": true,
- "held_at": "2026-11-18 09:02"
+ "held_at": "2026-11-19 16:07"
 }

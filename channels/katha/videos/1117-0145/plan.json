@@ -16,7 +16,7 @@
  },
  "scenes": [
   {
-   "vo": "Ek 12 saal ke ladke ne Mrityu ko apna mehman bana liya",
+   "vo": "Ek chhota ladka khud Mrityu ke ghar mehmaan ban gaya",
    "type": "image",
    "prompt": "Cinematic Indian miniature, warm gold and deep maroon. Vajashrava rishi by a blazing yagya fire, offering cows. Young Nachiketa stands beside him, watching with sharp questioning eyes. Firelight illuminates faces. Ornate but uncluttered, 9:16 vertical, subject centered, headroom for captions. No text, no letters, no numbers.",
    "motion": "push",
@@ -50,14 +50,14 @@
    "type": "image",
    "prompt": "Dramatic low-key. Vajashrava half in shadow, half in firelight, angry regret. Nachiketa bows head in acceptance. Flames cast long shadows. Miniature texture, gold on maroon. No text, no letters, no numbers.",
    "motion": "tilt",
-   "title": "",
+   "title": "Teen Baar Pucha",
    "keywords": [
     "teen baar",
     "bhadak"
    ],
    "real": null,
-   "big": null,
-   "small": null,
+   "big": "Teen Baar",
+   "small": "Papa Bhadak Gaye",
    "skin": "painting"
   },
   {
@@ -76,7 +76,7 @@
    "skin": "painting"
   },
   {
-   "vo": "Nachiketa chala gaya Yamraj ke dwar... teen din bina paani",
+   "vo": "Nachiketa chala gaya Yamraj ke dwar... teen raat bina khaana",
    "type": "image",
    "prompt": "Nachiketa, a young boy, standing close to the massive dark gates of Yamraj's palace, seen from front, determined expression. Gates towering behind him, faint golden light seeping through cracks. Centered composition, vertical 9:16, space above and below for text. No text, no letters, no numbers.",
    "motion": "push",
@@ -125,14 +125,14 @@
    "type": "image",
    "prompt": "Close-up: Yamraj's burning coal eyes show surprise. Nachiketa small but unwavering. Palace vastness behind. Single diya flame between them reflecting in both eyes. Dramatic low-key, gold on maroon. No text, no letters, no numbers.",
    "motion": "push",
-   "title": "",
+   "title": "Doosra Var",
    "keywords": [
     "agni vidya",
     "doosra var"
    ],
    "real": null,
-   "big": null,
-   "small": null,
+   "big": "Agni Vidya",
+   "small": "Swarg Ka Gyan",
    "skin": "puppet"
   },
   {
@@ -198,16 +198,16 @@
   {
    "vo": "Ye gyaan milte hi Nachiketa azad ho gaya... ghar wapas",
    "type": "image",
-   "prompt": "Single diya flame in vast dark palace, flame forms subtle Om shape. Warm gold on deep maroon, minimal, powerful. Negative space above and below for big/small text. No text, no letters, no numbers in image.",
+   "prompt": "Nachiketa walking calmly towards a modest home at dawn, a single diya flame ahead forming a subtle Om shape, warm gold light on deep maroon sky, minimal composition with negative space above and below for text. No text, no letters, no numbers in image.",
    "motion": "punch",
-   "title": "",
+   "title": "Azad Ho Gaya",
    "keywords": [
     "azad",
     "ghar wapas"
    ],
    "real": null,
-   "big": null,
-   "small": null,
+   "big": "Nachiketa",
+   "small": "Ghar Wapas",
    "skin": "painting"
   },
   {
@@ -275,5 +275,6 @@
   "d7b38f2237"
  ],
  "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
- "skin": "painting"
+ "skin": "painting",
+ "story_fixed": "19 Nov: scene 1 + 5 corrected against Katha Upanishad 1.1 (Nachiketa is Yama's guest; three nights without food)"
 }
