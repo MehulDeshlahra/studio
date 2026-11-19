@@ -317,7 +317,8 @@ def video_facts(info):
     ud = str(info.get("upload_date") or "")
     out = [f"Title: {info.get('title') or '?'}", f"Channel: {info.get('channel') or info.get('uploader') or '?'}"]
     if len(ud) == 8:
-        out.append(f"Uploaded to YouTube: {ud[:4]}-{ud[4:6]}-{ud[6:]} (the show itself may be older: say 'posted {ud[:4]}', "
+        mon = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][max(0, min(11, int(ud[4:6]) - 1))]
+        out.append(f"Uploaded to YouTube: {ud[:4]}-{ud[4:6]}-{ud[6:]} = {int(ud[6:])} {mon} {ud[:4]} (the show itself may be older: say 'posted {ud[:4]}', "
                    "never 'filmed' or 'aired' in that year unless the description says so)")
     if info.get("view_count"):
         v = int(info["view_count"])
