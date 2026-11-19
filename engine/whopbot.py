@@ -34,7 +34,7 @@ Return JSON:
  "official_channel": "<the brand's official YouTube channel name if footage is its official videos, else empty>",
  "other_footage": ["<Drive / Dropbox / other links given as footage>"],
  "rules": ["<every posting rule, short: length, required sound, on-screen text, what not to show, platforms>"],
- "caption_add": "<EVERYTHING the caption must contain, in the order the brief asks: disclosure hashtag first (#Ad) if required, required @mentions, required lines word for word (e.g. a free-trial line, 'Blue in the Face, on Netflix'), link text; empty if none>",
+ "caption_add": "<LITERAL caption text, pasted as-is (never an instruction): EVERYTHING the caption must contain, in the order the brief asks: disclosure hashtag first (#Ad) if required, required @mentions, required lines word for word (e.g. a free-trial line, 'Blue in the Face, on Netflix'), link text; empty if none>",
  "footage_pages": ["<footage hosts that are not YouTube/Drive: Frame.io (f.io), MediaSilo, Dropbox, WeTransfer links>"],
  "no_music": true/false,
  "no_watermark": true/false, "min_s": <minimum clip length or null>, "max_s": <maximum or null>,
@@ -208,6 +208,20 @@ def make_source(k, v, d, st):
     # one link per footage item: "...folders/X?usp=sharing" and "...folders/X" are the same folder (transcribed twice before)
     foot = list(dict.fromkeys(re.sub(r"\?usp=\w+$", "", str(x).rstrip("/.,")) for x in foot))
     chans = [x for x in (b.get("youtube_channels") or []) if x]
+    # 19 Nov: Flash-Lite once said "can do" for Eneba, whose brief bans automated clipping. Hard rules in code, not the model:
+    brief = r.get("text") or ""
+    ban = re.search(r"(no|not allow\w*|prohibit\w*|ban\w*)[^.\n]{0,40}automat\w* (clipping|edit\w*|content)|automat\w* (clipping|edit\w*)"
+                    r"[^.\n]{0,30}(not allowed|prohibited|banned|rejected)|(must|required to) (add|include) your own (voice|face|reaction)",
+                    brief, re.I)
+    if ban:
+        b["can_do"], b["why_not"] = False, f"brief bans automated clipping ('{ban.group(0)[:80]}')"
+    cap = str(b.get("caption_add") or "")
+    if re.search(r"\(or |first hashtag|on its own line|must include|put it", cap, re.I):   # an instruction, not caption text
+        cap = " ".join(dict.fromkeys(re.findall(r"(?<![\w/])[#@][A-Za-z0-9_.]{2,30}", cap)))
+        cap = re.sub(r"#Advertisement|#Sponsored", "", cap).strip()
+    if re.search(r"#ad\b", brief, re.I) and "#ad" not in cap.lower():
+        cap = ("#Ad\n" + cap).strip()
+    b["caption_add"] = cap
     pl = " ".join(str(x).lower() for x in b.get("platforms") or [])
     if pl and not re.search(r"instagram|reels|youtube|shorts|facebook", pl):
         b["can_do"], b["why_not"] = False, f"only for {pl} (we post to Instagram, Facebook, YouTube)"
