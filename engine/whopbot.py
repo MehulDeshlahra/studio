@@ -34,7 +34,10 @@ Return JSON:
  "rules": ["<every posting rule, short: length, required sound, on-screen text, what not to show, platforms>"],
  "caption_add": "<text the caption MUST contain: tags, @mentions, #ad, link text; empty if none>",
  "no_watermark": true/false, "min_s": <minimum clip length or null>, "max_s": <maximum or null>,
- "platforms": ["instagram","youtube","tiktok","x"]}}"""
+ "platforms": ["instagram","youtube","tiktok","x"],
+ "not_paid_countries": ["<countries whose views are NOT paid, e.g. India, Pakistan, Bangladesh>"],
+ "audience_rule": "<e.g. '70%+ views from US', empty if none>"}}
+Footage given as a Google Doc / "content folder" link counts: list every link found in the doc text in other_footage."""
 
 
 def _sources():
@@ -129,7 +132,9 @@ def adopt_joined(st):
     nb = {}
     for v in camp.values():
         nb[(v.get("brand") or "").lower()] = nb.get((v.get("brand") or "").lower(), 0) + 1
+    sk = st.get("skipped") or {}
     mine = [k for k, v in camp.items() if v.get("title") and k not in have and
+            time.time() - (sk.get(k) or {}).get("t", 0) > 86400 and
             (v["title"][:40].lower() in low or k in text or
              (v.get("brand") and nb.get(v["brand"].lower()) == 1 and f"joined\n{v['brand'].lower()}\n" in low))]
     log("whopbot: joined by the owner without a source:", [camp[k]["title"] for k in mine])
@@ -152,13 +157,16 @@ def make_source(k, v, d, st):
     if r.get("error"):
         log("whopbot: brief failed", v.get("title"), r["error"][:120]); return None
     try:
-        b = llm.text(READ.format(text=(r.get("text") or "")[:12000], links=", ".join(r.get("footage") or [])[:2000]), json_mode=True,
+        b = llm.text(READ.format(text=(r.get("text") or "")[:18000], links=", ".join(r.get("footage") or [])[:2000]), json_mode=True,
                      max_tokens=1500)
     except Exception as e:
         log("whopbot: brief read failed", str(e)[:120]); return None
     foot = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (r.get("footage") or [])
             if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/|drive\.google\.com/(file|drive/folders|drive/u/\d+/folders))", str(x))]
     chans = [x for x in (b.get("youtube_channels") or []) if x]
+    pl = " ".join(str(x).lower() for x in b.get("platforms") or [])
+    if pl and not re.search(r"instagram|reels|youtube|shorts|facebook", pl):
+        b["can_do"], b["why_not"] = False, f"only for {pl} (we post to Instagram, Facebook, YouTube)"
     if not b.get("can_do") or not (foot or chans):
         st.setdefault("skipped", {})[k] = {"title": v.get("title"), "why": b.get("why_not") or "no usable footage",
                                            "other": b.get("other_footage"), "t": now}
@@ -175,6 +183,7 @@ def make_source(k, v, d, st):
                          "channels": chans, "videos": sorted(set(foot)), "match": chans + sorted(set(foot)), "rules": rules,
                          "caption_add": str(b.get("caption_add") or "")[:300], "no_watermark": bool(b.get("no_watermark")),
                          "platforms": b.get("platforms") or [], "clips_per_video": 4, "active": True,
+                         "not_paid_countries": b.get("not_paid_countries") or [], "audience_rule": b.get("audience_rule") or "",
                          "rate": (v.get("why") or [""])[0], "added": time.strftime("%Y-%m-%d %H:%M"), "added_t": now,
                          "brief": (r.get("text") or "")[:6000], "brief_shot": r.get("shot_server")}
     log("whopbot: source", key, v.get("title"), "footage", len(foot), "channels", len(chans))

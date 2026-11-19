@@ -101,11 +101,51 @@ def brief(page, url):
                 t.first.click(timeout=3000); page.wait_for_timeout(1500)
         except Exception:
             pass
+    click_text(page, [r"^show more$", r"^read more$", r"^see more$"])    # the summary hides the rest of the description
     text = page.inner_text("body")
     hrefs = page.eval_on_selector_all("a[href]", "els => els.map(e => e.href)")
-    foot = sorted({m.group(0).rstrip(".,") for m in FOOTAGE.finditer(text + "\n" + "\n".join(hrefs))})
-    tags = sorted(set(re.findall(r"(?<![\w/])[#@][A-Za-z0-9_.]{2,30}", text)))[:30]
-    return {"url": page.url, "joined_click": joined, "footage": foot, "tags": tags, "text": text[:15000], "shot": shot(page, "brief")}
+    # 19 Nov (CoD MW4): footage + the real brief sit behind "Reference materials" (Google Doc, Brief): links, buttons that
+    # open a new tab, or a dialog. Open each one, keep its URL, and read Google Docs as plain text (public export).
+    extra, docs = [], []
+    for name in (r"google doc", r"^brief$", r"content folder|footage|assets?|drive|dropbox|download"):
+        for role in ("link", "button"):
+            loc = page.get_by_role(role, name=re.compile(name, re.I))
+            for i in range(min(loc.count(), 3)):
+                el = loc.nth(i)
+                try:
+                    href = el.get_attribute("href") if role == "link" else None
+                    if href:
+                        extra.append(href); continue
+                    with page.context.expect_page(timeout=6000) as pop:
+                        el.click(timeout=4000)
+                    np = pop.value
+                    np.wait_for_load_state("domcontentloaded", timeout=30000)
+                    extra.append(np.url); np.close()
+                except Exception:
+                    try:                                     # no new tab: a dialog with the brief text opened in place
+                        page.wait_for_timeout(1500)
+                        dlg = page.get_by_role("dialog")
+                        if dlg.count():
+                            docs.append("BRIEF DIALOG:\n" + dlg.first.inner_text()[:8000])
+                            extra += dlg.first.eval_on_selector_all("a[href]", "els => els.map(e => e.href)")
+                            page.keyboard.press("Escape"); page.wait_for_timeout(800)
+                    except Exception:
+                        pass
+    for u in dict.fromkeys(hrefs + extra):
+        m = re.search(r"docs\.google\.com/document/d/([\w-]+)", u or "")
+        if not m:
+            continue
+        try:
+            r = page.context.request.get(f"https://docs.google.com/document/d/{m.group(1)}/export?format=txt", timeout=30000)
+            if r.ok:
+                docs.append(f"GOOGLE DOC {u}:\n" + r.text()[:12000])
+        except Exception:
+            pass
+    alltext = text + "\n" + "\n".join(docs)
+    foot = sorted({m.group(0).rstrip(".,") for m in FOOTAGE.finditer(alltext + "\n" + "\n".join(hrefs + extra))})
+    tags = sorted(set(re.findall(r"(?<![\w/])[#@][A-Za-z0-9_.]{2,30}", alltext)))[:30]
+    return {"url": page.url, "joined_click": joined, "footage": foot, "tags": tags, "text": alltext[:20000],
+            "ref_links": [x for x in dict.fromkeys(extra) if x][:20], "shot": shot(page, "brief")}
 
 
 def submit(page, url, post):
