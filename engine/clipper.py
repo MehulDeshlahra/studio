@@ -603,7 +603,20 @@ def make(cid, url, n=4, test=False, campaign=None):
         info = laptop.info(url, f"{cid} {base}")
     except Exception as e:
         log("clipper: no video info (", str(e)[:120], ")"); info = {}
-    ms, pk = find_moments(ch, url, n, info, src)
+    # 19 Nov render 13: no free model could watch a 65-min compilation (timeouts / empty answers). Long videos, or a
+    # failed watch, go through the transcript path (laptop whisper, moments picked from the timed text)
+    if float(info.get("duration") or 0) > 2400:
+        log("clipper:", url, f"{float(info['duration']) / 60:.0f} min: too long to watch, transcript path")
+        shutil.rmtree(sdir, ignore_errors=True)
+        return make_files(cid, url, n, test, campaign)
+    try:
+        ms, pk = find_moments(ch, url, n, info, src)
+    except RuntimeError as e:
+        if "no model watched" not in str(e):
+            raise
+        log("clipper: watching failed, transcript path:", str(e)[:120])
+        shutil.rmtree(sdir, ignore_errors=True)
+        return make_files(cid, url, n, test, campaign)
     save(os.path.join(sdir, "moments.json"), {"url": url, "info": {k: v for k, v in info.items() if k != "heatmap"}, "peaks": pk,
                                               "moments": ms, "source": src, "test": test})
     if not ms:
