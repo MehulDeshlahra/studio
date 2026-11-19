@@ -110,5 +110,7 @@
     "kinds": [
       "sheet"
     ]
-  }
+  },
+  "post": false,
+  "post_note": "19 Nov audit (golden rule): empty/weak frames + one advice/stale-fact reel. Posting resumes after fixes pass the audit."
 }
