@@ -59,7 +59,7 @@ def texts(cid, ch):
         bio = live["bio"].strip()
         link = live.get("web") or link
         # the parent brand on every platform with room for it (IG bios are full at 150 chars: there the link carries it)
-        sh = "" if "scroll house" in bio.lower() else "A Scroll House page (scrollhouse.in)"
+        sh = "" if "scroll house" in bio.lower() else "A Scroll House page · @scrollhouse.in · scrollhouse.in"
         about = (" ".join(bio.split())[:250 - len(sh) - 3] + (" · " + sh if sh else ""))
         return about, (bio + ("\n\n" + sh if sh else ""))[:1000], link, bio
     return tag[:150], long, link, ig
