@@ -64,5 +64,111 @@
    "start": 69.73,
    "layout": "vertical"
   }
+ },
+ {
+  "job": "1120-0124a-c1",
+  "topic": "SOCIAL MEDIA ADDICTS CHILDREN ON PURPOSE",
+  "title": "SOCIAL MEDIA ADDICTS CHILDREN ON PURPOSE",
+  "status": "held",
+  "review": [
+   "The hook title 'SOCIAL MEDIA ADDICTS CHILDREN ON PURPOSE' is completely false and fabricated, as the transcript discusses being a stockbroker, law school, and using tech skills to improve client exper",
+   "checklist: weak / vague / negative page note"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
+   "start": 41.89,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0124a-c2",
+  "topic": "FACEBOOK'S OWN PROVES ADDICTION",
+  "title": "FACEBOOK'S OWN PROVES ADDICTION",
+  "status": "held",
+  "review": [
+   "length 3.12 s",
+   "not edited enough: 1 framing beats (need 3+)"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
+   "start": 2667.2,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0124a-c3",
+  "topic": "AJ REVEALS GRANDFATHER'S DEATH BY FAKE DRUG",
+  "title": "AJ REVEALS GRANDFATHER'S DEATH BY FAKE DRUG",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
+   "start": 27.35,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0124a-c4",
+  "topic": "IT'S NOT YOUR FAULT, PARENTS",
+  "title": "IT'S NOT YOUR FAULT, PARENTS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
+   "start": 105.58,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0201a-c1",
+  "topic": "MOM MAKES DAUGHTER RAP AS PUNISHMENT",
+  "title": "MOM MAKES DAUGHTER RAP AS PUNISHMENT",
+  "status": "held",
+  "review": [
+   "speaker out of the crop for 23% of the time (crop did not follow him)"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 125.89,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0201b-c1",
+  "topic": "COCO ROASTS DESIREE'S BEAN PASTA DISASTER",
+  "title": "COCO ROASTS DESIREE'S BEAN PASTA DISASTER",
+  "status": "held",
+  "review": [
+   "speaker out of the crop for 11% of the time (crop did not follow him)"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 58.01,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1120-0201c-c1",
+  "topic": "MOM BREAKS DOWN: BABY LEAVING FOR COLLEGE",
+  "title": "MOM BREAKS DOWN: BABY LEAVING FOR COLLEGE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 214.6,
+   "layout": "mixed:crop+fit"
+  }
+ },
+ {
+  "job": "1120-0201d-c1",
+  "topic": "Mom Confronts Asia About Lying",
+  "title": "Mom Confronts Asia About Lying",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 48.59,
+   "layout": "mixed:crop+fit"
+  }
  }
 ]

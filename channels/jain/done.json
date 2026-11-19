@@ -4,12 +4,8 @@
   "topic": "The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)",
   "title": "Mahavira Swami ne shmashan mein raat kaise bitaayi?",
   "qc_ok": false,
-  "status": "held",
-  "review": [
-   "visual: Scene 5: The caption says 'NAACHE' and 'MAHAVIRA NE DEKHA:', but the script for this scene is 'Phir bhoot-pret naache — vikrit chehre, bhayanak aawazen.' The word 'BHOOT-PRET' is completely missing from the visible captions.",
-   "visual: Scene 9: The spoken script is 'Baahar kuch bhi ho — aag, bhoot, raakshas. Bheetar shant.' However, the onscreen captions show 'BAAHAR KUCH BHI' and 'RAAKSHAS', skipping 'aag, bhoot' entirely and failing to display the second half of the sentence ('Bheetar shant').",
-   "visual: Scene 10: The script is 'Agla baar darr aaye — tum kya karoge? Dekhoge? Ya daboge? Jai Jinendra.' The captions only show 'AGLA BAAR DARR' and 'DEKHOGE?', omitting 'tum kya karoge?', 'Ya daboge?', and the final closing."
-  ],
+  "status": "made",
+  "review": [],
   "replan_requested": "2026-11-19 15:51"
  },
  {
@@ -46,9 +42,9 @@
   "title": "Jalte lakdi mein saanp phansa tha",
   "status": "held",
   "review": [
-   "owner agent: Fix iconography: Remove all Hindu-style deity features (many arms, green skin, horns, red tilak) from Tirthankara and Naga depictions.",
-   "19 Nov audit: Dharanendra (male naga king) drawn as a many-armed female Hindu-style deity (22s)",
-   "Parshvanatha idol with green skin and horns (29s); idol with red tilak, jewellery and a cartoon snake (43s): a Tirthankara is plain, serene, natural skin tone, seven-hooded serpent canopy, no ornaments"
+   "visual: Checklist item 1: Mughal / Islamic architecture with onion domes and arched structures appears in the background of scenes 1-11, which is historically and culturally inappropriate for Jain iconography.",
+   "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1 to 11 background architecture features arched structures and domes resembling Islamic/Mughal styles rather than traditional ancient Indian or Jain temple architecture.",
+   "visual score 5/10"
   ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
@@ -57,11 +53,8 @@
   "job": "1119-0935",
   "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
-  "status": "held",
-  "review": [
-   "owner agent: Fix iconography: Bahubali must have natural skin tone, no Hindu-god jewellery, and simple, dignified appearance.",
-   "19 Nov audit: Bahubali drawn with blue skin and Hindu-god jewellery (scene 1, 49s): wrong Jain iconography"
-  ],
+  "status": "made",
+  "review": [],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
  },

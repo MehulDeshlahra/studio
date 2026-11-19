@@ -34,7 +34,8 @@
    "visual: Multiple scenes (2, 3, 4, 5, 6, 8, 11, and 12) are completely missing visual backgrounds or generated images.",
    "visual: Missing final branded end card displaying page handle @kaise.tech.",
    "visual score 3/10"
-  ]
+  ],
+  "pruned": "2026-11-20"
  },
  {
   "job": "ai-01-en",
@@ -47,7 +48,8 @@
    "visual: Most scenes (2, 3, 4, 5, 6, 8, 9, 10, and 11) lack visual generation, displaying only empty dark gradient backgrounds.",
    "visual: No dedicated branded end card is present at the end of the video despite a handle being specified.",
    "visual score 3/10"
-  ]
+  ],
+  "pruned": "2026-11-20"
  },
  {
   "job": "lab-gpt-01-en",
@@ -61,7 +63,8 @@
    "visual: Scene 11 and the final frame have garbled, illegible placeholder text bleeding underneath 'CAUGHT IT LYING?'.",
    "visual: Missing dedicated end card showing the channel handle at the end of the video.",
    "visual score 5/10"
-  ]
+  ],
+  "pruned": "2026-11-20"
  },
  {
   "job": "v2-01",

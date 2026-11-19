@@ -8,7 +8,8 @@
    "FACTS (Kiro check 18 Nov): scene 6 says paying Rs 5,000/month on Rs 50,000 at 42% grows to Rs 1,02,000 in 12 months - false (the balance falls; even with no payment it is ~Rs 76,000)",
    "FACTS: scene 5 'principal kam hi nahi hua' false; scene 8 'RBI ke hisaab se minimum due 5%' - RBI does not set it, banks do; 5% of 50,000 is 2,500 not 5,000"
   ],
-  "removed_why": "wrong maths; remade with the numbers check"
+  "removed_why": "wrong maths; remade with the numbers check",
+  "pruned": "2026-11-20"
  },
  {
   "job": "1118-2303",
@@ -65,8 +66,8 @@
   "status": "held",
   "offer": "GUIDE",
   "review": [
-   "owner agent: Fix Scene 6: Correct the text to align with the script (Pvt Ltd allows funding, others do not) and ensure no text overlaps the frame edge.",
-   "visual: Scene 6 (Funding): Text says 'Sirf Pvt Ltd LLP' which mixes up the entities and contradicts the voiceover and scene script ('Sirf Pvt Ltd — LLP limited, Proprietorship impossible')."
+   "length 54.5 s is outside 28-50 s",
+   "only 0% of the script was found in the voice"
   ],
   "mehul_rebuilt": "2026-11-19",
   "replan_requested": "2026-11-19 22:33"
