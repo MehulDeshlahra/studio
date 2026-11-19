@@ -177,7 +177,7 @@ def score(c):
     # 19 Nov: money actually paid out to clippers = the campaign approves and pays (ClippingAlpha's best signal)
     paid = float(c.get("paidOutRaw") or 0)
     if len(hist) >= 2 and hist[-1].get("paid", 0) > hist[0].get("paid", 0):
-        sc *= 1.1; why.append(f"paying now (+${hist[-1]['paid'] - hist[0]['paid']:,.0f})")
+        sc *= 1.1; why.append(f"paying now (+${hist[-1].get('paid', 0) - hist[0].get('paid', 0):,.0f})")
     elif paid > 0:
         why.append(f"${paid:,.0f} paid out so far")
     sc = min(100, sc)
