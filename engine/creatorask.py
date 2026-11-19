@@ -70,6 +70,51 @@ def find(page="cutcapsulehindi", per_query=25):
     return drafts
 
 
+SKIP_HANDLES = {"@revererecords", "@realtalkclipp", "@gyanhindifacts", "@panchtantraone", "@vermacreationtv"}   # 19 Nov:
+# a UK music label, another clip page, a facts channel, a kids-story channel, a tiny general channel: not clippable talk
+FROM = "Mehul | Scroll House <hello@scrollhouse.in>"
+DAY_MAX = 15
+
+
+def send_one(to, subject, body):
+    import smtplib, ssl
+    from email.message import EmailMessage
+    from email.utils import make_msgid, formatdate
+    pw = open(os.path.expanduser("~/.studio-zoho-mail.key")).read().strip()
+    m = EmailMessage()
+    m["From"], m["To"], m["Subject"] = FROM, to, subject
+    m["Date"], m["Message-ID"] = formatdate(localtime=True), make_msgid(domain="scrollhouse.in")
+    m["Reply-To"] = "hello@scrollhouse.in"
+    m.set_content(body)
+    with smtplib.SMTP_SSL("smtp.zoho.in", 465, context=ssl.create_default_context(), timeout=60) as s:
+        s.login("hello@scrollhouse.in", pw)
+        s.send_message(m)
+    return m["Message-ID"]
+
+
+def send(page="cutcapsulehindi", n=DAY_MAX):
+    """Owner approved the wording 19 Nov. Sends up to n drafts (biggest first), never one channel twice, DAY_MAX a day."""
+    st = load(STORE, {}) or {}
+    today = time.strftime("%Y-%m-%d")
+    sent_today = sum(1 for v in (st.get("c") or {}).values() if str(v.get("sent_at", "")).startswith(today))
+    budget = max(0, min(n, DAY_MAX - sent_today))
+    rows = sorted(((k, v) for k, v in (st.get("c") or {}).items() if v.get("status") == "draft" and v.get("page") == page
+                   and v.get("handle") not in SKIP_HANDLES and v.get("email")), key=lambda kv: -kv[1]["subs"])
+    done = []
+    for k, v in rows[:budget]:
+        subj, body = email_for(v)
+        try:
+            v["msg_id"] = send_one(v["email"], subj, body)
+            v["status"], v["sent_at"] = "sent", time.strftime("%Y-%m-%d %H:%M")
+            done.append(v["title"])
+        except Exception as e:
+            v["status"], v["error"] = "send-failed", str(e)[:200]
+        save(STORE, st)
+        time.sleep(20)                                  # spread the sends: a burst looks like spam
+    log("creatorask: sent", len(done), done)
+    return done
+
+
 def email_for(row):
     name = re.sub(r"\s*(podcast|official|show|tv|channel)\b.*$", "", row["title"] or "", flags=re.I).strip() or row["title"]
     return TEMPLATE_SUBJECT.format(channel=row["title"]), TEMPLATE.format(name=name, channel=row["title"])
@@ -77,7 +122,13 @@ def email_for(row):
 
 if __name__ == "__main__":
     a = sys.argv[1:] or ["list"]
-    if a[0] == "find":
+    if a[0] == "test":           # one sample of the real email to the given address
+        r = {"title": "Chalchitra Talks"}
+        s, b = email_for(r)
+        print(send_one(a[1], "[TEST] " + s, b))
+    elif a[0] == "send":
+        print(send(a[1] if len(a) > 1 else "cutcapsulehindi"))
+    elif a[0] == "find":
         for r in find(a[1] if len(a) > 1 else "cutcapsulehindi")[:40]:
             print(f"{r['subs']:>9,} {r['title'][:40]:40s} {r['handle']} {r['email']}")
     else:
