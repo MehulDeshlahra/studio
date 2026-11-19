@@ -247,6 +247,24 @@ def _detector(w, h):
     return d
 
 
+def _main(fs, is_cam):
+    """The performer: the biggest face that is not the webcam box and not in the bottom quarter (19 Nov render 13: in
+    stand-up wide shots the audience's heads at the bottom were counted, so the shot fell back to a blurred fill)."""
+    c = [f for f in fs if not is_cam(f)]
+    if not c:
+        return None
+    up = [f for f in c if f[1] < 0.75]
+    return max(up or c, key=lambda q: q[2])
+
+
+def _rivals(fs, is_cam):
+    """Other faces that could be a second subject: above the bottom quarter and at least 60% of the performer's size."""
+    m = _main(fs, is_cam)
+    if not m:
+        return 0
+    return sum(1 for f in fs if f is not m and not is_cam(f) and f[1] < 0.75 and f[2] >= 0.6 * m[2])
+
+
 def analyse(mp4, fps=4):
     """Faces sampled at 4 fps (640 px wide) + shot changes. Returns the layout and, per shot, where to aim."""
     import cv2, numpy as np
@@ -270,7 +288,8 @@ def analyse(mp4, fps=4):
             sm = cv2.resize(fr, (dw, dh))
             hist = cv2.calcHist([cv2.cvtColor(sm, cv2.COLOR_BGR2HSV)], [0, 1], None, [32, 32], [0, 180, 0, 256])
             cv2.normalize(hist, hist)
-            if prev is not None and cv2.compareHist(prev, hist, cv2.HISTCMP_BHATTACHARYYA) > 0.42 and t - cuts[-1] > 0.6:
+            # 19 Nov render 13: 0.42 missed a crowd -> stage cut (the stage half became a blurred fill); 0.32
+            if prev is not None and cv2.compareHist(prev, hist, cv2.HISTCMP_BHATTACHARYYA) > 0.32 and t - cuts[-1] > 0.6:
                 cuts.append(round(t, 2))
             prev = hist
             _, f = det.detect(sm)
@@ -315,21 +334,31 @@ def analyse(mp4, fps=4):
         ss = [fs for t, fs in samples if s <= t < e]
         k = max(1, len(ss))
         cam_share = sum(1 for fs in ss if any(is_cam(f) for f in fs)) / k
-        other = [max((f for f in fs if not is_cam(f)), key=lambda q: q[2]) for fs in ss if any(not is_cam(f) for f in fs)]
+        other = [_main(fs, is_cam) for fs in ss if any(not is_cam(f) for f in fs)]
+        crowd = False
         if cam and cam_share >= 0.5:
             lay, aim = "stack", None
         elif len(other) / k >= 0.6 and float(np.median([f[2] for f in other])) >= 0.16:
             lay, aim = "crop", round(float(np.median([f[0] for f in other])), 3)
         elif (len(other) / k >= 0.6 and sw >= 1280 and
-              all(len([f for f in fs if not is_cam(f)]) <= 1 for t, fs in samples if s <= t < e) and
-              float(np.std([f[0] for f in other])) < 0.12):
+              sum(1 for t, fs in samples if s <= t < e and _rivals(fs, is_cam) > 0) <= 0.2 * k and
+              float(np.std([f[0] for f in other])) < 0.25):     # 19 Nov: the crop follows a walking speaker now (was 0.12)
             # 19 Nov test (Jo Koy wide stage shot): ONE person, small in a wide HD frame, stays roughly in one place ->
             # crop on him (a 9:16 slice of a 1080p frame) instead of a tiny figure on a blurred copy of the same frame
             lay, aim = "crop", round(float(np.median([f[0] for f in other])), 3)
+        elif sw >= 1280 and sum(1 for fs in ss if len([f for f in fs if not is_cam(f)]) >= 3) >= 0.5 * k:
+            # 19 Nov benchmark: a crowd / audience-reaction shot is a plain centre crop on the winning page, not a tiny
+            # picture on a blurred copy (fill stays for shots with no people: slides, text, b-roll)
+            lay, aim, crowd = "crop", 0.5, True
         else:
             lay, aim = "fill", None
-        path = _track([(t, max((f for f in fs if not is_cam(f)), key=lambda q: q[2])[0])
-                       for t, fs in samples if s <= t < e and any(not is_cam(f) for f in fs)], s, aim, sw, sh) if lay == "crop" else []
+        if crowd:
+            path = [[round(s, 2), 0.5, 0]]              # crowd: a still centre crop, no tracking of random faces
+        elif lay == "crop":
+            path = _track([(t, _main(fs, is_cam)[0]) for t, fs in samples if s <= t < e and any(not is_cam(f) for f in fs)],
+                          s, aim, sw, sh)
+        else:
+            path = []
         # where the face sits vertically (a punch-in centres on it and never cuts the head off)
         fy = round(float(np.median([f[1] for f in other])), 3) if other else 0.38
         fh = round(float(np.median([f[2] for f in other])), 3) if other else 0.2
@@ -337,8 +366,11 @@ def analyse(mp4, fps=4):
             segs[-1]["e"] = round(e, 2)
             if segs[-1]["layout"] == "crop" and lay == "crop" and e - s >= 0.8:
                 segs[-1]["aims"] += path
+                if crowd:
+                    segs[-1].setdefault("crowd", []).append([round(s, 2), round(e, 2)])
             continue
-        segs.append({"s": round(s, 2), "e": round(e, 2), "layout": lay, "aims": path, "fy": fy, "fh": fh})
+        segs.append({"s": round(s, 2), "e": round(e, 2), "layout": lay, "aims": path, "fy": fy, "fh": fh,
+                     "crowd": [[round(s, 2), round(e, 2)]] if crowd else []})
     info["cam"] = cam
     info["segments"] = segs
     info["lost"] = subject_lost(samples, segs, is_cam, sw, sh)
@@ -351,7 +383,7 @@ def analyse(mp4, fps=4):
         fx = [f for f in fs if not is_cam(f)]
         if not g or not fx or g["layout"] == "stack":
             continue
-        f = max(fx, key=lambda q: q[2])
+        f = _main(fx, lambda q: False)
         if g["layout"] == "crop":
             # the box runs from the top of the head (a face box stops at the brow; 19 Nov a note sat on a bald head)
             top, bot = BAND + (f[1] - 1.1 * f[2]) * PIC_H, BAND + (f[1] + 0.65 * f[2]) * PIC_H
@@ -362,10 +394,10 @@ def analyse(mp4, fps=4):
     info["face_y"] = fy
     # 19 Nov render 12: during a 1.3x punch-in the window is ~23% narrower than the tracked crop and a face moving fast
     # left it (half a face on screen while 'lost' said 0). The raw face x per sample lets the zoomed window keep it in.
-    raw = [(t, max((f for f in fs if not is_cam(f)), key=lambda q: q[2])[0]) for t, fs in samples if any(not is_cam(f) for f in fs)]
+    raw = [(t, _main(fs, is_cam)[0]) for t, fs in samples if any(not is_cam(f) for f in fs)]
     info["face_x"] = [(round(t, 2), round(float(np.median([x for _, x in raw[max(0, i - 1):i + 2]])), 4))
                       for i, (t, _) in enumerate(raw)]
-    rawy = [(t, max((f for f in fs if not is_cam(f)), key=lambda q: q[2])) for t, fs in samples if any(not is_cam(f) for f in fs)]
+    rawy = [(t, _main(fs, is_cam)) for t, fs in samples if any(not is_cam(f) for f in fs)]
     info["face_yh"] = [(round(t, 2), float(np.median([f[1] for _, f in rawy[max(0, i - 1):i + 2]])),
                         float(np.median([f[2] for _, f in rawy[max(0, i - 1):i + 2]]))) for i, (t, _) in enumerate(rawy)]
     lays = {g["layout"] for g in segs}
@@ -415,12 +447,12 @@ def subject_lost(samples, segs, is_cam, sw, sh):
         if g["layout"] != "crop" or not g["aims"]:
             continue
         for t, fs in samples:
-            if g["s"] <= t < g["e"]:
+            if g["s"] <= t < g["e"] and not any(a <= t < b for a, b in g.get("crowd") or []):
                 fx = [f for f in fs if not is_cam(f)]
                 if not fx:
                     continue
                 n += 1
-                f = max(fx, key=lambda q: q[2])
+                f = _main(fx, lambda q: False)
                 if abs(f[0] - _x_at(g["aims"], t)) > hw * 0.85:
                     lost += 1
     return round(lost / n, 3) if n else 0.0
@@ -512,7 +544,8 @@ def _crop_cmds(seg, info, zp, path, fps=30):
         z = max(1.0, min(zmax, z_at(zp, t))) if zp else 1.0
         w, h = int(cw0 / z) // 2 * 2, int(sh / z) // 2 * 2
         cx = (_x_at(seg["aims"], t) if seg["aims"] else 0.5) * sw
-        fx = _face_x_at(info.get("face_x") or [], t)
+        in_crowd = any(a <= t < b for a, b in seg.get("crowd") or [])
+        fx = None if in_crowd else _face_x_at(info.get("face_x") or [], t)
         if fx is not None and z > 1.02:
             # keep the real face inside the middle 60% of the zoomed window (shift only as much as needed)
             fx *= sw
@@ -531,7 +564,7 @@ def _crop_cmds(seg, info, zp, path, fps=30):
         y = fy * sh - 0.33 * h
         y = min(y, head_top - 0.03 * h)                 # never cut the top of the head
         y = int(max(0, min(sh - h, y))) // 2 * 2
-        near = [p for p in info.get("face_yh") or [] if abs(p[0] - t) <= 0.3]
+        near = [] if in_crowd else [p for p in info.get("face_yh") or [] if abs(p[0] - t) <= 0.3]
         if near:                                         # where the face is ON SCREEN now (captions keep off it)
             _, cy, chh = min(near, key=lambda p: abs(p[0] - t))
             top_o = ((cy - 1.1 * chh) * sh - y) / h * H

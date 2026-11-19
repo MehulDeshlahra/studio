@@ -27,7 +27,9 @@ PLUG = re.compile(r"\b(subscribe|subscribed|hit the bell|notification bell|spons
 UNSAFE = re.compile(r"\b(porn\w*|sex\w*|nude\w*|naked|orgasm\w*|masturbat\w*|dick|penis|vagina|boob\w*|tits|horny|"
                     r"blow ?job|hooker|strip(per|club)|rape\w*|molest\w*|cocaine|heroin|meth|weed|stoned|suicid\w*|"
                     r"kill (yo)?ursel(f|ves)|nigg\w*|fag\w*|retard\w*|chink|gook|whore|slut|hoes?|thots?|pimp\w*|"
-                    r"bitch\w*|nsfw|explicit|xxx)\b", re.I)
+                    r"bitch\w*|nsfw|explicit|xxx|fuck\w*|f\*+k\w*|shit\w*|motherf\w*|cunt\w*|dick\w*|asshole\w*)\b", re.I)
+# (UNSAFE checks hooks / captions / notes only: swearing in the speech is fine, the on-screen title is not; 19 Nov
+#  'SHE EXPLAINS THE FUCKBOY CURSE' got through)
 VAGUE_HOOK = re.compile(r"\b(this|these|that happened|what happened|won'?t believe|wait for it|watch till|you need to see|"
                         r"the ending)\b\W*$|^(when|wait|watch)\b", re.I)
 STRONG = re.compile(r"\b(porn\w*|orgasm\w*|masturbat\w*|blow ?job|rape\w*|molest\w*|nigg\w*|fag(got)?s?|retard\w*|chink|gook|"
