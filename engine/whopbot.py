@@ -163,6 +163,8 @@ def make_source(k, v, d, st):
         log("whopbot: brief read failed", str(e)[:120]); return None
     foot = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (r.get("footage") or [])
             if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/|drive\.google\.com/(file|drive/folders|drive/u/\d+/folders))", str(x))]
+    # one link per footage item: "...folders/X?usp=sharing" and "...folders/X" are the same folder (transcribed twice before)
+    foot = list(dict.fromkeys(re.sub(r"\?usp=\w+$", "", str(x).rstrip("/.,")) for x in foot))
     chans = [x for x in (b.get("youtube_channels") or []) if x]
     pl = " ".join(str(x).lower() for x in b.get("platforms") or [])
     if pl and not re.search(r"instagram|reels|youtube|shorts|facebook", pl):
