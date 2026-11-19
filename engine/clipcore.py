@@ -12,6 +12,14 @@ import json, os, re, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONTS = os.path.join(ROOT, "assets", "fonts")
 W, H = 1080, 1920
+# 19 Nov (owner: "are you serious?"): in a full-height 9:16 crop of a wide stage shot the comedian's head sits in the top
+# 15%, exactly under the hook bar, and a 1080p source gives only a 607 px slice (soft). Crop shots now use a TITLE BAND
+# (the common clip-page layout): a dark band on top holds the logo + hook, the picture fills the 1080x1440 below it:
+# a 3:4 crop = an 810 px slice of 1080p (1.33x, sharp), wider room for a walking speaker, and no text on any head.
+BAND = 480
+PIC_H = H - BAND
+CROP_AR = W / PIC_H
+BAND_COLOR = "0x0B0B10"
 NOWIN = 0x08000000 if os.name == "nt" else 0
 GAP = 0.55            # a pause longer than this inside a clip is cut out
 KEEP_PAD = 0.12       # silence kept on each side of a cut
@@ -316,12 +324,15 @@ def analyse(mp4, fps=4):
             lay, aim = "fill", None
         path = _track([(t, max((f for f in fs if not is_cam(f)), key=lambda q: q[2])[0])
                        for t, fs in samples if s <= t < e and any(not is_cam(f) for f in fs)], s, aim, sw, sh) if lay == "crop" else []
+        # where the face sits vertically (a punch-in centres on it and never cuts the head off)
+        fy = round(float(np.median([f[1] for f in other])), 3) if other else 0.38
+        fh = round(float(np.median([f[2] for f in other])), 3) if other else 0.2
         if segs and (e - s < 0.8 or segs[-1]["layout"] == lay):
             segs[-1]["e"] = round(e, 2)
             if segs[-1]["layout"] == "crop" and lay == "crop" and e - s >= 0.8:
                 segs[-1]["aims"] += path
             continue
-        segs.append({"s": round(s, 2), "e": round(e, 2), "layout": lay, "aims": path})
+        segs.append({"s": round(s, 2), "e": round(e, 2), "layout": lay, "aims": path, "fy": fy, "fh": fh})
     info["cam"] = cam
     info["segments"] = segs
     info["lost"] = subject_lost(samples, segs, is_cam, sw, sh)
@@ -336,7 +347,8 @@ def analyse(mp4, fps=4):
             continue
         f = max(fx, key=lambda q: q[2])
         if g["layout"] == "crop":
-            top, bot = (f[1] - 0.75 * f[2]) * H, (f[1] + 0.65 * f[2]) * H
+            # the box runs from the top of the head (a face box stops at the brow; 19 Nov a note sat on a bald head)
+            top, bot = BAND + (f[1] - 1.1 * f[2]) * PIC_H, BAND + (f[1] + 0.65 * f[2]) * PIC_H
         else:
             y0 = (H - fh_out) / 2 + 40
             top, bot = y0 + (f[1] - 0.75 * f[2]) * fh_out, y0 + (f[1] + 0.65 * f[2]) * fh_out
@@ -354,7 +366,7 @@ def _track(pts, s, aim, sw, sh):
     import numpy as np
     if not pts:
         return [[round(s, 2), aim, 0]]
-    cwf = (sh * 9 / 16) / max(1, sw)
+    cwf = (sh * CROP_AR) / max(1, sw)
     xs = [p[1] for p in pts]
     sm = [float(np.median(xs[max(0, i - 2):i + 3])) for i in range(len(xs))]
     dead, vmax = 0.2 * cwf, 0.7 * cwf
@@ -383,7 +395,7 @@ def _x_at(aims, t):
 def subject_lost(samples, segs, is_cam, sw, sh):
     """19 Nov: the vision check scored a clip 10 with an empty stage on screen. Code check: share of crop-time samples
     whose speaker's face is outside the crop window (a face seen in the frame but not on screen)."""
-    hw = (sh * 9 / 16) / max(1, sw) / 2
+    hw = (sh * CROP_AR) / max(1, sw) / 2
     n = lost = 0
     for g in segs:
         if g["layout"] != "crop" or not g["aims"]:
@@ -400,9 +412,93 @@ def subject_lost(samples, segs, is_cam, sw, sh):
     return round(lost / n, 3) if n else 0.0
 
 
+# ---------------- the edit: camera rhythm (19 Nov research) ----------------
+# A static crop for the whole clip reads as a re-upload (openshorts punch_in.py); edited clips change the framing on
+# the speech's beats. Recipe from Plextrang/Claude-Video-Clipper plan.py (tested short-form engine): open on a quick
+# zoom-out snap, alternate wide <-> punched-in on sentence ends >= 2.8 s apart (a hard cut, like a 2-camera shoot),
+# always change framing on a camera cut, a slow +3% push inside each beat so the frame never sits dead, and ONE eased
+# snap zoom near the payoff. Punch <= 1.18 (openshorts: past ~15% heads get cut and upscaling shows); never zoom a slice
+# narrower than 540 source px (soft), never let the face fill more than 55% of the height.
+WIDE_Z, PUNCH_Z = [1.0, 1.03], [1.15, 1.18, 1.12]
+DRIFT, OPEN_Z, OPEN_S, SNAP_S = 0.03, 1.18, 0.3, 0.27
+
+
+def _ease_out(x):
+    x = min(1.0, max(0.0, x))
+    return 1 - (1 - x) ** 3
+
+
+def zoom_plan(Wt, dur, cuts):
+    """Beats [{a, b, z, kind: open|cut|snap}] over the clip (seconds on the final timeline)."""
+    must = sorted({round(c, 2) for c in cuts if 0.3 < c < dur - 1.0})
+    soft = [round(Wt[i + 1][0] - 0.03, 2) for i in range(len(Wt) - 1)
+            if re.search(r"[.?!]$", str(Wt[i][2])) or Wt[i + 1][0] - Wt[i][1] > 0.45]
+    bounds, last = [], 0.0
+    for c in sorted(set(must) | set(soft)):
+        if c >= dur - 1.2:
+            break
+        if c in must:
+            if c - last >= 0.5:
+                bounds.append(c); last = c
+        elif c - last >= 2.8 and all(m <= c or m - c >= 1.5 for m in must):
+            bounds.append(c); last = c
+        elif c - last > 6.0:
+            bounds.append(c); last = c
+    beats = list(zip([0.0] + bounds, bounds + [dur]))
+    plan = []
+    for i, (a, b) in enumerate(beats):
+        z = PUNCH_Z[(i // 2) % len(PUNCH_Z)] if i % 2 else WIDE_Z[(i // 2) % len(WIDE_Z)]
+        plan.append({"a": round(a, 2), "b": round(b, 2), "z": z, "kind": "open" if i == 0 else "cut"})
+    late = [p for p in plan[1:] if p["z"] > 1.05 and p["a"] >= 0.55 * dur and not any(abs(p["a"] - m) < 0.05 for m in must)]
+    if late:
+        late[0]["kind"] = "snap"                      # the payoff gets the one eased zoom (and a whoosh)
+    return plan
+
+
+def z_at(plan, t):
+    for i, p in enumerate(plan):
+        if p["a"] <= t < p["b"] or i == len(plan) - 1:
+            zb = p["z"] + DRIFT * min(1.0, (t - p["a"]) / max(0.1, p["b"] - p["a"]))
+            if p["kind"] == "open" and t - p["a"] < OPEN_S:
+                return OPEN_Z + (zb - OPEN_Z) * _ease_out((t - p["a"]) / OPEN_S)
+            if p["kind"] == "snap" and i and t - p["a"] < SNAP_S:
+                zp = plan[i - 1]["z"] + DRIFT
+                return zp + (zb - zp) * _ease_out((t - p["a"]) / SNAP_S)
+            return zb
+    return 1.0
+
+
+def _crop_cmds(seg, info, zp, path, fps=30):
+    """sendcmd file for one crop segment: per-frame crop w/h/x/y (pan from the tracker + zoom from the plan), only the
+    frames where something changes (openshorts sendcmd_lines). Times relative to the segment start."""
+    sw, sh = info["src"]
+    cw0 = min(sw, int(sh * CROP_AR)) // 2 * 2
+    zmax = min(PUNCH_Z[1] + DRIFT, cw0 / 540.0, 0.55 / max(0.05, seg.get("fh") or 0.2))
+    fy, fh = seg.get("fy") or 0.38, seg.get("fh") or 0.2
+    lines, prev = [], None
+    n = int(round((seg["e"] - seg["s"]) * fps))
+    for f in range(n + 1):
+        t = seg["s"] + f / fps
+        z = max(1.0, min(zmax, z_at(zp, t))) if zp else 1.0
+        w, h = int(cw0 / z) // 2 * 2, int(sh / z) // 2 * 2
+        cx = (_x_at(seg["aims"], t) if seg["aims"] else 0.5) * sw
+        x = int(max(0, min(sw - w, cx - w / 2))) // 2 * 2
+        head_top = (fy - 0.75 * fh) * sh
+        y = fy * sh - 0.40 * h                          # the face sits ~40% down the zoomed frame
+        y = min(y, head_top - 0.05 * h)                 # never cut the top of the head
+        y = int(max(0, min(sh - h, y))) // 2 * 2
+        box = (w, h, x, y)
+        if box != prev:
+            tt = f / fps
+            lines.append(f"{tt:.4f} crop@c w {w}, crop@c h {h}, crop@c x {x}, crop@c y {y};")
+            prev = box
+    open(path, "w").write("\n".join(lines) + "\n")
+    return cw0
+
+
 def _crop_x_expr(aims, sw, sh):
     """Crop x over time: a jump at a hard cut (glide 0), a straight pan between keyframes of one shot (glide 1)."""
-    cw = int(sh * 9 / 16) // 2 * 2
+    cw = min(sw, int(sh * CROP_AR)) // 2 * 2
     pts = [(a[0], max(0, min(sw - cw, int(a[1] * sw - cw / 2))), a[2] if len(a) > 2 else 0) for a in aims]
     expr = str(pts[-1][1])
     for (t0, x0, _), (t1, x1, g1) in reversed(list(zip(pts, pts[1:]))):
@@ -417,8 +513,11 @@ def _ts(t):
     return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
 
 
-HOOK_Y = {"stack": 700, "crop": 300, "fill": 400}     # 19 Nov frames: the stack hook sat on the reactor's eyes -> the seam
-CAP_Y = {"stack": 1560, "crop": 1450, "fill": 1450}   # captions low (off the actors' faces and mouths)
+HOOK_Y = {"stack": 700, "crop": 402, "fill": 400}     # crop: inside the title band (BAND 480), under the logo     # 19 Nov frames: the stack hook sat on the reactor's eyes -> the seam
+# 19 Nov research (ai-reels-editor-skill layout.md, the Reels safe zone shared by IG/TikTok/Shorts): nothing in the top
+# 220 px, nothing below y 1470 (username, caption, audio row). Captions at 1450/1560 ran into it; crop captions sit in
+# the chest band (Claude-Video-Clipper: ~2/3 down), the fill ones just under the picture.
+CAP_Y = {"stack": 1400, "crop": 1300, "fill": 1400}
 
 
 def place_notes(notes, Wt, dur):
@@ -480,8 +579,11 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
          "[V4+ Styles]",
          "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, "
          "StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-         "Style: Hook,Anton,84,&H00111111,&H00111111,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,1,0,3,22,0,5,80,80,0,1",
-         "Style: Cap,Montserrat Thin,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,8,4,5,60,60,0,1",
+         # 19 Nov: in the title band the hook can be bigger (it read small); wraps inside 70 px margins
+         "Style: Hook,Anton,100,&H00111111,&H00111111,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,1,0,3,22,0,5,70,70,0,1",
+         # 19 Nov research (OpenClipper "beast"/"hustle" presets, the MrBeast caption look): heavy black outline
+         # (~0.17 em) and a HARD opaque drop shadow, not a thin outline with a soft grey one
+         "Style: Cap,Montserrat Thin,84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,12,6,5,60,60,0,1",
          "Style: Brand,Montserrat Thin,40,&H50FFFFFF,&H50FFFFFF,&H70000000,&H00000000,0,0,0,0,100,100,2,0,1,3,0,5,40,40,0,1",
          # the page's own voice (notes): brand-yellow box, black bold text, smaller than the hook
          # font family inside assets/fonts/Montserrat-ExtraBold.ttf is "Montserrat Thin" (style ExtraBold): "Montserrat
@@ -495,7 +597,8 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
     if hook:
         for gi, g in enumerate(segs):
             e = dur if gi == len(segs) - 1 else g["e"]
-            L.append(f"Dialogue: 2,{_ts(g['s'])},{_ts(e)},Hook,,0,0,0,,{{\\pos({W // 2},{HOOK_Y[g['layout']]})}}{esc(hook.upper())}")
+            fs = max(72, min(100, int(100 * 34 / max(34, len(hook)))))    # one line in the band (Anton ~0.27 em/char)
+            L.append(f"Dialogue: 2,{_ts(g['s'])},{_ts(e)},Hook,,0,0,0,,{{\\pos({W // 2},{HOOK_Y[g['layout']]})\\fs{fs}}}{esc(hook.upper())}")
     for st, en, txt, kind in notes or []:
         # 19 Nov test: the layout (and so the hook) can change while a note is up: sit below the LOWEST hook in its span
         lays = {g["layout"] for g in segs if g["s"] < en and g["e"] > st} or {lay_at(st)}
@@ -504,9 +607,9 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
         # captions, whichever band covers the face less
         span = [(a, b) for t, a, b in (face_y or []) if st <= t <= en]
         if span:
-            over = lambda yy: sum(1 for a, b in span if a < yy + 95 and b > yy - 95) / len(span)
+            over = lambda yy: sum(1 for a, b in span if a < yy + 120 and b > yy - 120) / len(span)
             low = min(CAP_Y[l] for l in lays) - 230
-            if over(y) > 0.25 and over(low) < over(y):
+            if over(y) > 0.15 and over(low) < over(y):
                 y = low
         L.append(f"Dialogue: 3,{_ts(st)},{_ts(en)},Note,,0,0,0,,{{\\pos({W // 2},{y})\\fscx80\\fscy80\\t(0,120,\\fscx100\\fscy100)"
                  f"\\fad(80,120)}}{esc(txt)}")
@@ -528,7 +631,8 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
             if en - st < 0.03:
                 continue
             pop = "\\fscx86\\fscy86\\t(0,90,\\fscx100\\fscy100)" if k == 0 else ""
-            txt = " ".join((f"{{\\c{accent}\\fscx112\\fscy112}}{esc(x[2]).upper()}{{\\c&H00FFFFFF&\\fscx100\\fscy100}}" if j == k
+            # 19 Nov research (OpenClipper "beast" preset): the spoken word yellow, 1.15x and tilted 2 degrees
+            txt = " ".join((f"{{\\c{accent}\\fscx115\\fscy115\\frz2}}{esc(x[2]).upper()}{{\\c&H00FFFFFF&\\fscx100\\fscy100\\frz0}}" if j == k
                             else esc(x[2]).upper()) for j, x in enumerate(g))
             L.append(f"Dialogue: 1,{_ts(st)},{_ts(en)},Cap,,0,0,0,,{{\\pos({W // 2},{CAP_Y[lay_at(st)]}){pop}}}{txt}")
     open(path, "w", encoding="utf-8").write("\n".join(L) + "\n")
@@ -543,10 +647,15 @@ def _layout_vf(lay, info, seg, sub):
     """The filter for one layout; times inside a crop aim are relative to the segment start."""
     sw, sh = info["src"]
     tail = (("," + sub) if sub else "") + ",format=yuv420p[v]"
+    if lay == "crop" and info.get("zoom") is not None and info.get("work"):
+        p = os.path.join(info["work"], f"crop_{int(seg['s'] * 100)}.cmd")
+        cw = _crop_cmds(seg, info, info["zoom"], p)
+        return (f"[0:v]sendcmd=f='{_ff(p)}',crop@c={cw}:{sh}:0:0,scale={W}:{PIC_H}:flags=lanczos,setsar=1,"
+                f"pad={W}:{H}:0:{BAND}:color={BAND_COLOR}{tail}")
     if lay == "crop":
         aims = [[round(a[0] - seg["s"], 2)] + list(a[1:]) for a in seg["aims"]]
         cw, xe = _crop_x_expr(aims, sw, sh)
-        return f"[0:v]crop={cw}:{sh}:'{xe}':0,scale={W}:{H}:flags=lanczos{tail}"
+        return f"[0:v]crop={cw}:{sh}:'{xe}':0,scale={W}:{PIC_H}:flags=lanczos,pad={W}:{H}:0:{BAND}:color={BAND_COLOR}{tail}"
     if lay == "stack":
         fx, fy, fh = info["cam"]
         bw, bh = int(fh * sh * 3.3), int(fh * sh * 3.3 * 700 / W)
@@ -563,7 +672,8 @@ def _layout_vf(lay, info, seg, sub):
 
 
 LOGO = os.path.join(ROOT, "assets", "brand", "cutcapsule-logo.png")
-LOGO_W, LOGO_X, LOGO_Y, LOGO_A = 200, 36, 150, 0.9     # top-left: clear of the Reels header, side buttons and caption area
+# top-left, below the 220 px Reels header (19 Nov: it sat at y 150, inside it), above the hook (crop hook now at 370)
+LOGO_W, LOGO_X, LOGO_Y, LOGO_A = 130, None, 232, 0.95    # LOGO_X None = centred (the title band layout)
 
 
 def _logo_tail(pre, logo):
@@ -573,8 +683,36 @@ def _logo_tail(pre, logo):
     # 19 Nov frames: the white wordmark got lost on bright backgrounds -> a soft dark shadow under it
     return (f"[1:v]scale={LOGO_W}:-1,format=rgba,pad=iw+24:ih+24:12:12:color=black@0,split[lg0][sh0];"
             f"[lg0]colorchannelmixer=aa={LOGO_A}[lg];"
-            f"[sh0]colorchannelmixer=rr=0:gg=0:bb=0:aa=0.75,boxblur=7:2[sh];"
-            f"[{pre}][sh]overlay={LOGO_X - 10}:{LOGO_Y - 10}[p2];[p2][lg]overlay={LOGO_X - 12}:{LOGO_Y - 12},format=yuv420p[v]")
+            f"[sh0]colorchannelmixer=rr=0:gg=0:bb=0:aa=0.75,boxblur=7:2[sh];" +
+            (f"[{pre}][sh]overlay={LOGO_X - 10}:{LOGO_Y - 10}[p2];[p2][lg]overlay={LOGO_X - 12}:{LOGO_Y - 12},format=yuv420p[v]"
+             if LOGO_X is not None else
+             f"[{pre}][sh]overlay=(W-w)/2+2:{LOGO_Y - 10}[p2];[p2][lg]overlay=(W-w)/2:{LOGO_Y - 12},format=yuv420p[v]"))
+
+
+SFX = os.path.join(ROOT, "assets", "audio", "sfx")
+
+
+def _audio(info, first_idx):
+    """Extra inputs + the audio graph: the voice lightly cleaned (highpass, gentle compression: Claude-Video-Clipper
+    mix_audio), at most 2 whooshes UNDER it (the opening snap, the payoff snap; ai-reels-editor: SFX at ~0.7 of base,
+    never above the voice), then -14 LUFS. Returns (inputs, filter, label)."""
+    cues = []
+    zp = info.get("zoom") or []
+    if zp:
+        cues.append(("whoosh-cine.mp3", 0.0, 0.22))
+        snap = next((p for p in zp if p["kind"] == "snap"), None)
+        if snap:
+            cues.append(("whoosh-fast.mp3", max(0.0, snap["a"] - 0.12), 0.18))
+    cues = [c for c in cues if os.path.exists(os.path.join(SFX, c[0]))]
+    ins, chains, labels = [], ["[0:a]highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2[vo]"], ["[vo]"]
+    for k, (f, at, vol) in enumerate(cues):
+        ins += ["-i", os.path.join(SFX, f)]
+        d = int(at * 1000)
+        chains.append(f"[{first_idx + k}:a]aformat=channel_layouts=stereo,aresample=48000,volume={vol},adelay={d}|{d}[s{k}]")
+        labels.append(f"[s{k}]")
+    mix = (f"{''.join(labels)}amix=inputs={len(labels)}:normalize=0:duration=first," if len(labels) > 1 else "[vo]")
+    chains.append(f"{mix}loudnorm=I=-14:TP=-1.5:LRA=11[a]" if len(labels) > 1 else "[vo]loudnorm=I=-14:TP=-1.5:LRA=11[a]")
+    return ins, ";".join(chains), "[a]"
 
 
 def render(src, info, assf, out, logo=None):
@@ -582,13 +720,19 @@ def render(src, info, assf, out, logo=None):
     joined, then captions + loudness in one pass over the joined video so they run across the joins."""
     sub = f"ass='{_ff(assf)}':fontsdir='{_ff(FONTS)}'"
     segs = info["segments"]
+    has_audio = bool(probe(src).get("audio"))
     # 19 Nov speed: "fast" is ~2x "medium" for the same look at CRF 19 (platforms re-encode every upload anyway)
     enc = venc(True) + ["-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000"]
     li = ["-i", logo] if logo else []
     if len(segs) == 1:
         vf = _layout_vf(segs[0]["layout"], info, segs[0], sub).replace(",format=yuv420p[v]", "[pre]") + ";" + _logo_tail("pre", logo)
-        run(["ffmpeg", "-v", "error", "-y", "-i", src] + li + ["-filter_complex", vf,
-             "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11"] + enc + ["-movflags", "+faststart", out], 2400)
+        if has_audio:
+            ins, af, al = _audio(info, 1 + len(li) // 2)
+            run(["ffmpeg", "-v", "error", "-y", "-i", src] + li + ins + ["-filter_complex", vf + ";" + af,
+                 "-map", "[v]", "-map", al] + enc + ["-movflags", "+faststart", out], 2400)
+        else:
+            run(["ffmpeg", "-v", "error", "-y", "-i", src] + li + ["-filter_complex", vf, "-map", "[v]"] + enc
+                + ["-movflags", "+faststart", out], 2400)
         return out
     work = os.path.dirname(out)
     parts = [os.path.join(work, f"seg{i}.mp4") for i in range(len(segs))]
@@ -604,8 +748,14 @@ def render(src, info, assf, out, logo=None):
     open(lst, "w").write("".join(f"file '{os.path.basename(p)}'\n" for p in parts))
     joined = os.path.join(work, "joined.mp4")
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined], 600)
-    run(["ffmpeg", "-v", "error", "-y", "-i", joined] + li + ["-filter_complex", f"[0:v]{sub}[pre];" + _logo_tail("pre", logo),
-         "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11"] + enc + ["-movflags", "+faststart", out], 2400)
+    vf = f"[0:v]{sub}[pre];" + _logo_tail("pre", logo)
+    if has_audio:
+        ins, af, al = _audio(info, 1 + len(li) // 2)
+        run(["ffmpeg", "-v", "error", "-y", "-i", joined] + li + ins + ["-filter_complex", vf + ";" + af,
+             "-map", "[v]", "-map", al] + enc + ["-movflags", "+faststart", out], 2400)
+    else:
+        run(["ffmpeg", "-v", "error", "-y", "-i", joined] + li + ["-filter_complex", vf, "-map", "[v]"] + enc
+            + ["-movflags", "+faststart", out], 2400)
     for p in parts + [lst, joined]:
         os.remove(p)
     return out
@@ -630,6 +780,9 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     tight = tighten(src, ranges, os.path.join(out_dir, "tight.mp4"))
     Wt = remap(Wd, ranges)
     info = analyse(tight)
+    info["work"] = out_dir
+    # 19 Nov research: the camera rhythm (zoom_plan) on every crop shot
+    info["zoom"] = zoom_plan(Wt, info["dur"], info["cuts"]) if any(g["layout"] == "crop" for g in info["segments"]) else None
     assf = os.path.join(out_dir, "captions.ass")
     logo = LOGO if (brand and os.path.exists(LOGO)) else None      # 19 Nov: the page's real logo; text handle only without it
     placed = place_notes(notes, Wt, info["dur"])

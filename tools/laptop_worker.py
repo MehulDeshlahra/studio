@@ -379,7 +379,10 @@ def clip_job(jid, spec):
         if not os.path.exists(full):
             r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
                      # 19 Nov: without a sort yt-dlp took the AV1 stream (399); AV1 decodes slowly on this CPU -> H.264 first
-                     "-f", "bv*[height<=1080]+ba/b[height<=1080]/bv*+ba/b", "-S", "vcodec:h264,res:1080,fps:30,acodec:m4a",
+                     # 19 Nov research: a 9:16 crop of 1080p is a 607 px slice stretched to 1080 (soft, owner: "are you
+                     # serious?"); 1440p gives an 810 px slice and room for punch-ins. YouTube has no H.264 above 1080,
+                     # so VP9 (fast to decode), never AV1
+                     "-f", "bv*[height<=1440]+ba/b[height<=1440]/bv*+ba/b", "-S", "res:1440,vcodec:vp9,fps:30,acodec:m4a",
                      "--merge-output-format", "mp4", "-N", "4",
                      "-o", full, url], timeout=2400)
             if not os.path.exists(full):
