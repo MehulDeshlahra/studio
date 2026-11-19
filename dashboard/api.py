@@ -253,7 +253,7 @@ def job_state(cid, job, active=None):
     if active and active.get("until") == "assets":
         steps = steps[:6]
     cur = next((i for i, s in enumerate(steps) if not s["done"]), None)
-    n = len([s for s in steps if s['key'] not in ('research', 'plan', 'images')]); doneN = sum(1 for s in steps if s['done'] and s['key'] not in ('research', 'plan', 'images'))
+    n = len([s for s in steps if s['key'] not in ('research', 'plan', 'images')]); doneN = sum(1 for s in steps if s['done'] and s['key'] in ('render', 'audio', 'video', 'final'))
     pct = doneN / n
     eta = None
     if active and cur is not None:
