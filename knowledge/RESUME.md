@@ -191,3 +191,19 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - New pages agreed: Cut Capsule Gaming (@cutcapsule.gaming / @cutcapsulegaming) and Cut Capsule TV (@cutcapsule.tv /
   @cutcapsuletv), owner creates them later. Cut Capsule Hindi live (FB 488692857905722, IG 17841456764963031; IG shows
   Finance Fuel's name until ~3 Dec).
+
+## 19 Nov 13:30 "WhatsApp pe AI agent kaise kaam karta hai?" (tech 1118-1845) not top notch: root causes + fixes
+- Diagnosis (frames + plan + timing read in full): (1) SCRIPT = advert, not explainer: 12 lines of features ("100+ bhasha",
+  "24 ghante ka team"), the mechanism (message -> Meta -> webhook -> LLM with history -> tool call -> reply) never shown;
+  "Do billion" out of date (Meta: 3B+ monthly); spoken "Follow @KaiseTech" (wrong handle). Research read 3 vendor
+  "best tools" blogs, no technical source. (2) CAPTION SYNC: Whisper gave 13 words in 1.5 s then one word for 5.1 s; the
+  aligner trusted it ("Ek" hung over an empty box), 83 % match passed. (3) VISUALS: logo card as the hook frame, empty chat
+  bubbles, "sync cal" placeholder terminal, fireworks for "100+ bhasha". (4) REVIEWER only hunted defects (10/10).
+- Fixes: plan.explainer_gate (grades as a viewer: answers the title? steps learned, filler, unsourced numbers, jargon,
+  stiff Hinglish; rewrites + re-grades up to 2x, keeps the best; plan["explainer"] stores the grade), "mechanism" field,
+  HOW rules + scene-1-never-a-logo in the LAB prompt, clean() drops spoken follow lines; research reads 2 technical
+  "how it works" sources for every explainer page; align._implausible ignores impossible Whisper times; align.sync_problems
+  in the voice gate (re-voice) and in review (hold); review vision judges content (frame shows the line, empty cards,
+  hanging captions, how-video without mechanism); seo caption: one concrete learning, no handle/follow line.
+- False-positive check of sync_problems on all 52 existing timings: 5 flagged, all real (incl. two English edits with leaks).
+- v1 kept as plan.v1.json / research.v1.json / /tmp/wa-v1.mp4; rebuild running as studio-job-wa5.
