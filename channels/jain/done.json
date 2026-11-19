@@ -34,8 +34,11 @@
   "job": "1119-0335",
   "topic": "What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)",
   "title": "Jalte lakdi mein saanp phansa tha",
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "19 Nov audit: Dharanendra (male naga king) drawn as a many-armed female Hindu-style deity (22s)",
+   "Parshvanatha idol with green skin and horns (29s); idol with red tilak, jewellery and a cartoon snake (43s): a Tirthankara is plain, serene, natural skin tone, seven-hooded serpent canopy, no ornaments"
+  ]
  },
  {
   "job": "1119-0935",
@@ -59,8 +62,11 @@
   "topic": "Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)",
   "title": "Neminath ne apni baraat kyun wapas mod di?",
   "qc_ok": true,
-  "status": "approved",
+  "status": "held",
   "offer": "WALLPAPER",
-  "review": []
+  "review": [
+   "19 Nov audit: Mughal onion domes behind an ancient Jain prince (scenes at 21s, 35s, 41s)",
+   "scene at 41s is an empty arch behind the word KARUNA: needs a real picture"
+  ]
  }
 ]
