@@ -206,7 +206,7 @@ def info_job(jid, spec):
         shutil.rmtree(work, ignore_errors=True)
 
 
-def _fetch_any(url, dest_dir):
+def _fetch_any(url, dest_dir, max_files=6):
     """Download footage: YouTube/Twitch/Kick through yt-dlp, Google Drive files or folders through gdown, any direct
     video link. Returns [(key, path, name)] (a Drive folder gives several)."""
     import hashlib
@@ -216,7 +216,35 @@ def _fetch_any(url, dest_dir):
         tmp = os.path.join(dest_dir, "dl-" + hashlib.md5(url.encode()).hexdigest()[:10])
         os.makedirs(tmp, exist_ok=True)
         if "/folders/" in url:
-            gdown.download_folder(url, output=tmp, quiet=True, remaining_ok=True)
+            # 19 Nov: gdown 6 has no remaining_ok (the first Drive job failed). List the folder first, then fetch only the
+            # video files, at most max_files, and skip ones already in the cache (a campaign folder can be many GB).
+            files = gdown.download_folder(url, output=tmp, quiet=True, skip_download=True) or []
+            vids = [f for f in files if str(getattr(f, "path", "")).lower().endswith((".mp4", ".mov", ".mkv", ".webm", ".m4v"))
+                    and not re.search(r"no[ _-]?sound|silent|mute", str(f.path), re.I)]   # muted UGC copies: nothing to caption
+            used_p = os.path.join(dest_dir, "drive-used.json")       # next run takes the files not clipped yet
+            try:
+                used = json.load(open(used_p, encoding="utf-8"))
+            except Exception:
+                used = {}
+            vids.sort(key=lambda f: used.get(f.id, 0))
+            out = []
+            for f in vids[:max_files]:
+                used[f.id] = time.time()
+                name = os.path.basename(f.path)
+                key = "g" + hashlib.md5((url + name).encode()).hexdigest()[:12]
+                final = os.path.join(dest_dir, key + ".mp4")
+                if not os.path.exists(final):
+                    p = os.path.join(tmp, name)
+                    gdown.download(id=f.id, output=p, quiet=True)
+                    if name.lower().endswith(".mp4"):
+                        os.replace(p, final)
+                    else:
+                        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", p, "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
+                                        "-c:a", "aac", final], timeout=3600, creationflags=NOWIN)
+                out.append((key, final, name))
+            json.dump(used, open(used_p, "w", encoding="utf-8"))
+            shutil.rmtree(tmp, ignore_errors=True)
+            return out
         else:
             gdown.download(url, output=tmp + os.sep, quiet=True, fuzzy=True)
         out = []
@@ -252,7 +280,7 @@ def transcribe_job(jid, spec):
     work = os.path.join(HOME, "jobs", jid)
     shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
     try:
-        items = _fetch_any(spec["url"], CACHE)
+        items = _fetch_any(spec["url"], CACHE, int(spec.get("max_files") or 6))
         if not items:
             raise RuntimeError("nothing downloadable at " + spec["url"][:120])
         res = []
