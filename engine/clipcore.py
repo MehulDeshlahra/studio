@@ -211,31 +211,45 @@ def analyse(mp4, fps=4):
     share = len(with_face) / n
     med_h = float(np.median([f[2] for f in big])) if big else 0
     info = {"src": [sw, sh], "dur": round(dur, 2), "face_share": round(share, 2), "face_h": round(med_h, 3), "cuts": cuts}
-    # 19 Nov test (a reaction video): the face crop followed the skit's actors and cut the reactor's webcam box in half.
-    # A webcam overlay = a face that stays in one spot near an edge in most samples, whatever bigger faces come and go.
+    # 19 Nov tests (a reaction video): one layout for a whole clip failed both ways: the face crop cut the reactor's webcam
+    # box in half, and a clip that switches between the reactor full screen and webcam-over-skit needs both layouts.
+    # 1) find the webcam box: a face that stays in one spot near an edge in >= 20% of all samples;
+    # 2) decide the layout PER SHOT: webcam seen -> stack, a big face -> face crop aimed at it, else blurred fill;
+    # 3) merge neighbouring shots with the same layout; a shot under 0.8 s joins the one before (no flicker).
     cam = None
     allf = [(t, f) for t, fs in samples for f in fs]
+    best = 0
     for t0, f0 in allf:
+        if not (f0[2] < 0.35 and (f0[0] < 0.33 or f0[0] > 0.67 or f0[1] < 0.3 or f0[1] > 0.7)):
+            continue
         near = {t for t, f in allf if abs(f[0] - f0[0]) < 0.04 and abs(f[1] - f0[1]) < 0.05 and abs(f[2] - f0[2]) < 0.06}
-        if len(near) / n >= 0.5 and f0[2] < 0.35 and (f0[0] < 0.33 or f0[0] > 0.67 or f0[1] < 0.3 or f0[1] > 0.7):
+        if len(near) / n >= 0.2 and len(near) > best:
             pts = [f for t, f in allf if abs(f[0] - f0[0]) < 0.04 and abs(f[1] - f0[1]) < 0.05]
-            cam = [round(float(np.median([p[i] for p in pts])), 3) for i in range(3)]
-            break
-    if cam:
-        layout = "stack"                                     # webcam on top, the game / video below
-        info["cam"] = cam
-    elif share >= 0.6 and med_h >= 0.16:
-        layout = "crop"                                      # a talking head fills the frame
-    else:
-        layout = "fill"
-    if layout == "crop":                                     # one aim per shot (median of that shot's biggest face)
-        shots = cuts + [dur]
-        aims = []
-        for s, e in zip(shots, shots[1:]):
-            fx = [max(f, key=lambda q: q[2])[0] for t, f in samples if s <= t < e and f]
-            aims.append([round(s, 2), round(float(np.median(fx)) if fx else (aims[-1][1] if aims else 0.5), 3)])
-        info["aims"] = aims
-    info["layout"] = layout
+            cam, best = [round(float(np.median([p[i] for p in pts])), 3) for i in range(3)], len(near)
+    is_cam = lambda f: cam and abs(f[0] - cam[0]) < 0.05 and abs(f[1] - cam[1]) < 0.06
+    shots = cuts + [dur]
+    segs = []
+    for s, e in zip(shots, shots[1:]):
+        ss = [fs for t, fs in samples if s <= t < e]
+        k = max(1, len(ss))
+        cam_share = sum(1 for fs in ss if any(is_cam(f) for f in fs)) / k
+        other = [max((f for f in fs if not is_cam(f)), key=lambda q: q[2]) for fs in ss if any(not is_cam(f) for f in fs)]
+        if cam and cam_share >= 0.5:
+            lay, aim = "stack", None
+        elif len(other) / k >= 0.6 and float(np.median([f[2] for f in other])) >= 0.16:
+            lay, aim = "crop", round(float(np.median([f[0] for f in other])), 3)
+        else:
+            lay, aim = "fill", None
+        if segs and (e - s < 0.8 or segs[-1]["layout"] == lay):
+            segs[-1]["e"] = round(e, 2)
+            if segs[-1]["layout"] == "crop" and lay == "crop" and e - s >= 0.8:
+                segs[-1]["aims"].append([round(s, 2), aim])
+            continue
+        segs.append({"s": round(s, 2), "e": round(e, 2), "layout": lay, "aims": [[round(s, 2), aim]] if lay == "crop" else []})
+    info["cam"] = cam
+    info["segments"] = segs
+    lays = {g["layout"] for g in segs}
+    info["layout"] = lays.pop() if len(lays) == 1 else "mixed:" + "+".join(sorted({g["layout"] for g in segs}))
     return info
 
 
@@ -254,13 +268,16 @@ def _ts(t):
     return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
 
 
-def ass(path, hook, Wd, dur, layout, accent="&H0030D8FF&"):
-    """Hook banner (frame 1 to the end) + 3-word pop captions; the spoken word in the accent colour, a touch larger."""
+HOOK_Y = {"stack": 700, "crop": 300, "fill": 400}     # 19 Nov frames: the stack hook sat on the reactor's eyes -> the seam
+CAP_Y = {"stack": 1560, "crop": 1450, "fill": 1450}   # captions low (off the actors' faces and mouths)
+
+
+def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&"):
+    """Hook banner (frame 1 to the end) + 3-word pop captions; the spoken word in the accent colour, a touch larger.
+    Positions follow the layout on screen at that moment (segs from analyse())."""
     esc = lambda s: str(s).replace("{", "(").replace("}", ")").replace("\\", "/").replace("\n", " ")
-    # 19 Nov frames: on the stack layout the hook sat on the reactor's eyes; it goes on the seam between the two panels,
-    # captions low on the gameplay (off the actors' faces)
-    hook_y = {"stack": 700, "crop": 300}.get(layout, 400)
-    cap_y = {"stack": 1560, "crop": 1450}.get(layout, 1450)
+    segs = segs or [{"s": 0, "e": dur, "layout": "fill"}]
+    lay_at = lambda t: next((g["layout"] for g in segs if g["s"] <= t < g["e"]), segs[-1]["layout"])
     L = ["[Script Info]", "ScriptType: v4.00+", f"PlayResX: {W}", f"PlayResY: {H}", "WrapStyle: 0", "ScaledBorderAndShadow: yes", "",
          "[V4+ Styles]",
          "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, "
@@ -269,7 +286,9 @@ def ass(path, hook, Wd, dur, layout, accent="&H0030D8FF&"):
          "Style: Cap,Montserrat Thin,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,8,4,5,60,60,0,1",
          "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
     if hook:
-        L.append(f"Dialogue: 2,{_ts(0)},{_ts(dur)},Hook,,0,0,0,,{{\\pos({W // 2},{hook_y})}}{esc(hook.upper())}")
+        for gi, g in enumerate(segs):
+            e = dur if gi == len(segs) - 1 else g["e"]
+            L.append(f"Dialogue: 2,{_ts(g['s'])},{_ts(e)},Hook,,0,0,0,,{{\\pos({W // 2},{HOOK_Y[g['layout']]})}}{esc(hook.upper())}")
     groups, cur = [], []
     for w in Wd:
         cur.append(w)
@@ -286,7 +305,7 @@ def ass(path, hook, Wd, dur, layout, accent="&H0030D8FF&"):
             pop = "\\fscx86\\fscy86\\t(0,90,\\fscx100\\fscy100)" if k == 0 else ""
             txt = " ".join((f"{{\\c{accent}\\fscx112\\fscy112}}{esc(x[2]).upper()}{{\\c&H00FFFFFF&\\fscx100\\fscy100}}" if j == k
                             else esc(x[2]).upper()) for j, x in enumerate(g))
-            L.append(f"Dialogue: 1,{_ts(st)},{_ts(en)},Cap,,0,0,0,,{{\\pos({W // 2},{cap_y}){pop}}}{txt}")
+            L.append(f"Dialogue: 1,{_ts(st)},{_ts(en)},Cap,,0,0,0,,{{\\pos({W // 2},{CAP_Y[lay_at(st)]}){pop}}}{txt}")
     open(path, "w", encoding="utf-8").write("\n".join(L) + "\n")
 
 
@@ -295,31 +314,55 @@ def _ff(p):
     return p.replace("\\", "/").replace(":", "\\:").replace("'", "\\'")
 
 
-def render(src, info, assf, out):
+def _layout_vf(lay, info, seg, sub):
+    """The filter for one layout; times inside a crop aim are relative to the segment start."""
     sw, sh = info["src"]
-    lay = info["layout"]
-    sub = f"ass='{_ff(assf)}':fontsdir='{_ff(FONTS)}'"
+    tail = (("," + sub) if sub else "") + ",format=yuv420p[v]"
     if lay == "crop":
-        cw, xe = _crop_x_expr(info["aims"], sw, sh)
-        vf = f"[0:v]crop={cw}:{sh}:'{xe}':0,scale={W}:{H}:flags=lanczos,{sub},format=yuv420p[v]"
-    elif lay == "stack":
+        aims = [[round(t - seg["s"], 2), x] for t, x in seg["aims"]]
+        cw, xe = _crop_x_expr(aims, sw, sh)
+        return f"[0:v]crop={cw}:{sh}:'{xe}':0,scale={W}:{H}:flags=lanczos{tail}"
+    if lay == "stack":
         fx, fy, fh = info["cam"]
-        bw, bh = int(fh * sh * 3.3), int(fh * sh * 3.3 * 700 / W)          # ~3.3 face heights wide (head + shoulders)
+        bw, bh = int(fh * sh * 3.3), int(fh * sh * 3.3 * 700 / W)
         bw, bh = min(bw, sw) // 2 * 2, min(bh, sh) // 2 * 2
         bx = max(0, min(sw - bw, int(fx * sw - bw / 2)))
-        by = max(0, min(sh - bh, int(fy * sh - bh * 0.42)))                  # face a little above the box centre
-        gw = int(sh * W / 1220) // 2 * 2                                      # gameplay: centre, 1080x1220 shape
-        gx = (sw - min(gw, sw)) // 2
-        vf = (f"[0:v]split=2[c][g];[c]crop={bw}:{bh}:{bx}:{by},scale={W}:700:flags=lanczos[cam];"
-              f"[g]crop={min(gw, sw)}:{sh}:{gx}:0,scale={W}:1220:flags=lanczos[game];"
-              f"[cam][game]vstack,{sub},format=yuv420p[v]")
-    else:
-        vf = (f"[0:v]split=2[bg][fg];[bg]scale=270:480:force_original_aspect_ratio=increase,crop=270:480,gblur=sigma=7,"
-              f"eq=brightness=-0.18:saturation=0.85,scale={W}:{H}:flags=bilinear[bgb];[fg]scale={W}:-2:flags=lanczos[fgs];"
-              f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2+40,{sub},format=yuv420p[v]")
-    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", vf, "-map", "[v]", "-map", "0:a?",
-         "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-r", "30",
-         "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-movflags", "+faststart", out], 2400)
+        by = max(0, min(sh - bh, int(fy * sh - bh * 0.42)))
+        gw = min(int(sh * W / 1220) // 2 * 2, sw)
+        gx = (sw - gw) // 2
+        return (f"[0:v]split=2[c][g];[c]crop={bw}:{bh}:{bx}:{by},scale={W}:700:flags=lanczos[cam];"
+                f"[g]crop={gw}:{sh}:{gx}:0,scale={W}:1220:flags=lanczos[game];[cam][game]vstack{tail}")
+    return (f"[0:v]split=2[bg][fg];[bg]scale=270:480:force_original_aspect_ratio=increase,crop=270:480,gblur=sigma=7,"
+            f"eq=brightness=-0.18:saturation=0.85,scale={W}:{H}:flags=bilinear[bgb];[fg]scale={W}:-2:flags=lanczos[fgs];"
+            f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2+40{tail}")
+
+
+def render(src, info, assf, out):
+    """One segment: layout + captions in a single pass. Several layouts: each segment framed on its own (no captions),
+    joined, then captions + loudness in one pass over the joined video so they run across the joins."""
+    sub = f"ass='{_ff(assf)}':fontsdir='{_ff(FONTS)}'"
+    segs = info["segments"]
+    enc = ["-c:v", "libx264", "-preset", "medium", "-crf", "19", "-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000"]
+    if len(segs) == 1:
+        run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", _layout_vf(segs[0]["layout"], info, segs[0], sub),
+             "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11"] + enc + ["-movflags", "+faststart", out], 2400)
+        return out
+    work = os.path.dirname(out)
+    parts = []
+    for i, g in enumerate(segs):
+        p = os.path.join(work, f"seg{i}.mp4")
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{g['s']:.3f}", "-to", f"{g['e']:.3f}", "-i", src, "-filter_complex",
+             _layout_vf(g["layout"], info, g, None), "-map", "[v]", "-map", "0:a?", "-c:v", "libx264", "-preset", "veryfast",
+             "-crf", "15", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", p], 1800)
+        parts.append(p)
+    lst = os.path.join(work, "segs.txt")
+    open(lst, "w").write("".join(f"file '{os.path.basename(p)}'\n" for p in parts))
+    joined = os.path.join(work, "joined.mp4")
+    run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined], 600)
+    run(["ffmpeg", "-v", "error", "-y", "-i", joined, "-vf", sub + ",format=yuv420p", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11"]
+        + enc + ["-movflags", "+faststart", out], 2400)
+    for p in parts + [lst, joined]:
+        os.remove(p)
     return out
 
 
@@ -340,7 +383,7 @@ def make_clip(src, a, b, hook, out_dir, lang=None):
     Wt = remap(Wd, ranges)
     info = analyse(tight)
     assf = os.path.join(out_dir, "captions.ass")
-    ass(assf, hook, Wt, info["dur"], info["layout"])
+    ass(assf, hook, Wt, info["dur"], info["segments"])
     final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"))
     q = probe(final); q["lufs"] = lufs(final)
     d = max(1.0, q["dur"])
@@ -348,7 +391,8 @@ def make_clip(src, a, b, hook, out_dir, lang=None):
          os.path.join(out_dir, "sheet.jpg")], 120)
     run(["ffmpeg", "-v", "error", "-y", "-ss", "0.8", "-i", final, "-frames:v", "1", "-q:v", "2", os.path.join(out_dir, "cover.jpg")], 60)
     os.remove(tight)
-    res = {"layout": info["layout"], "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]),
+    res = {"layout": info["layout"], "segments": info["segments"],
+           "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]),
            "cut": [round(a2, 2), round(b2, 2)], "kept": ranges, "removed_s": round((b2 - a2) - sum(e - s for s, e in ranges), 2),
            "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt)}
     json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w"), ensure_ascii=False)

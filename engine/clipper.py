@@ -19,7 +19,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core import ROOT, OUT, log, load, save, channel, telegram, note_problem
 import llm
 
-GENERIC_TAGS = ["fyp", "viral", "reels", "trending"]     # OpusClip 13.5M-clip study: niche + generic tags beat niche-only 2.5x
+GENERIC_TAGS = ["fyp", "viral", "reels", "trending"]
+PLUG = re.compile(r"\b(subscribe|subscribed|hit the bell|notification bell|sponsor(ed)? by|this video is sponsored|link in (the )?"
+                  r"description|use (my )?code|discount code|merch|patreon|giveaway|smash (that )?like)\b", re.I)     # OpusClip 13.5M-clip study: niche + generic tags beat niche-only 2.5x
 
 MOMENTS = """You are the best short-form clipper in the world. Watch this whole video and pick the {n} best moments to post
 as standalone Reels / Shorts on the page "{page}" ({about}).
@@ -31,6 +33,9 @@ A great moment:
 - makes sense with zero context, has ONE clear payoff, and ends right after it.
 - 30-45 s is ideal (the viral median is about 41 s); 20 s minimum, 58 s maximum.
 - prefer reactions, quotable lines, conflict, surprises and "first time" moments over quiet stretches.
+- NEVER the intro or outro, a "like and subscribe" / channel plug, a sponsor read, "link in the description", a giveaway
+  or merch plug (19 Nov: the first pick was the intro with a Subscribe button). Don't start at 0:00 unless the very first
+  line is itself the hook.
 - moments must not overlap.
 {rules}
 HOOK TITLE (on screen from frame 1): who + action + twist, 3-7 words, in the video's language (Hinglish in Roman script
@@ -195,6 +200,9 @@ def make(cid, url, n=4, test=False, campaign=None):
             probs.append(f"loudness {q['lufs']} LUFS")
         if (res.get("words") or 0) < 12:
             probs.append("almost no speech (captions nearly empty)")
+        plug = PLUG.search(res.get("text", ""))
+        if plug:
+            probs.append(f"self-promotion inside the clip ('{plug.group(0)}'): someone else's channel plug, never post")
         v = vision(ch, jd, m["hook"], res.get("text", ""))
         probs += [str(x)[:200] for x in v.get("problems") or []]
         credit = f"🎥 Credit: {who}" + (f" ({info.get('webpage_url') or url})" if (not src or src.get("credit_link", True)) else "")
