@@ -360,6 +360,14 @@ def analyse(mp4, fps=4):
             top, bot = y0 + (f[1] - 0.75 * f[2]) * fh_out, y0 + (f[1] + 0.65 * f[2]) * fh_out
         fy.append((round(t, 2), int(top), int(bot)))
     info["face_y"] = fy
+    # 19 Nov render 12: during a 1.3x punch-in the window is ~23% narrower than the tracked crop and a face moving fast
+    # left it (half a face on screen while 'lost' said 0). The raw face x per sample lets the zoomed window keep it in.
+    raw = [(t, max((f for f in fs if not is_cam(f)), key=lambda q: q[2])[0]) for t, fs in samples if any(not is_cam(f) for f in fs)]
+    info["face_x"] = [(round(t, 2), round(float(np.median([x for _, x in raw[max(0, i - 1):i + 2]])), 4))
+                      for i, (t, _) in enumerate(raw)]
+    rawy = [(t, max((f for f in fs if not is_cam(f)), key=lambda q: q[2])) for t, fs in samples if any(not is_cam(f) for f in fs)]
+    info["face_yh"] = [(round(t, 2), float(np.median([f[1] for _, f in rawy[max(0, i - 1):i + 2]])),
+                        float(np.median([f[2] for _, f in rawy[max(0, i - 1):i + 2]]))) for i, (t, _) in enumerate(rawy)]
     lays = {g["layout"] for g in segs}
     info["layout"] = lays.pop() if len(lays) == 1 else "mixed:" + "+".join(sorted({g["layout"] for g in segs}))
     return info
@@ -476,6 +484,19 @@ def z_at(plan, t):
     return 1.0
 
 
+def _face_x_at(fx, t, gap=0.6):
+    """The face centre (0-1) at t, interpolated between samples; None when no sample is within `gap` s."""
+    if not fx:
+        return None
+    for (t0, x0), (t1, x1) in zip(fx, fx[1:]):
+        if t0 <= t <= t1:
+            if t1 - t0 > 2 * gap:
+                return x0 if t - t0 < t1 - t else x1
+            return x0 + (x1 - x0) * (t - t0) / max(0.01, t1 - t0)
+    near = min(fx, key=lambda p: abs(p[0] - t))
+    return near[1] if abs(near[0] - t) <= gap else None
+
+
 def _crop_cmds(seg, info, zp, path, fps=30):
     """sendcmd file for one crop segment: per-frame crop w/h/x/y (pan from the tracker + zoom from the plan), only the
     frames where something changes (openshorts sendcmd_lines). Times relative to the segment start."""
@@ -484,17 +505,38 @@ def _crop_cmds(seg, info, zp, path, fps=30):
     zmax = min(max(PUNCH_Z) + DRIFT, cw0 / 540.0, 0.55 / max(0.05, seg.get("fh") or 0.2))
     fy, fh = seg.get("fy") or 0.38, seg.get("fh") or 0.2
     lines, prev = [], None
+    stats = info.setdefault("zlost", [0, 0])            # [frames with a face, frames with it at/out of the window edge]
     n = int(round((seg["e"] - seg["s"]) * fps))
     for f in range(n + 1):
         t = seg["s"] + f / fps
         z = max(1.0, min(zmax, z_at(zp, t))) if zp else 1.0
         w, h = int(cw0 / z) // 2 * 2, int(sh / z) // 2 * 2
         cx = (_x_at(seg["aims"], t) if seg["aims"] else 0.5) * sw
+        fx = _face_x_at(info.get("face_x") or [], t)
+        if fx is not None and z > 1.02:
+            # keep the real face inside the middle 60% of the zoomed window (shift only as much as needed)
+            fx *= sw
+            lim = 0.30 * w
+            if fx > cx + lim:
+                cx = fx - lim
+            elif fx < cx - lim:
+                cx = fx + lim
         x = int(max(0, min(sw - w, cx - w / 2))) // 2 * 2
-        head_top = (fy - 0.75 * fh) * sh
-        y = fy * sh - 0.40 * h                          # the face sits ~40% down the zoomed frame
-        y = min(y, head_top - 0.05 * h)                 # never cut the top of the head
+        if fx is not None:
+            fpx = fx if fx > 1.5 else fx * sw
+            stats[0] += 1
+            stats[1] += not (x + 0.08 * w <= fpx <= x + 0.92 * w)    # the face centre near / past the window edge
+        head_top = (fy - 1.1 * fh) * sh                 # hair / a cap above the face box (19 Nov: a cap was cut)
+        # 19 Nov render: at 40% down a tight punch put the mid-screen caption on her mouth; at 33% the chin clears it
+        y = fy * sh - 0.33 * h
+        y = min(y, head_top - 0.03 * h)                 # never cut the top of the head
         y = int(max(0, min(sh - h, y))) // 2 * 2
+        near = [p for p in info.get("face_yh") or [] if abs(p[0] - t) <= 0.3]
+        if near:                                         # where the face is ON SCREEN now (captions keep off it)
+            _, cy, chh = min(near, key=lambda p: abs(p[0] - t))
+            top_o = ((cy - 1.1 * chh) * sh - y) / h * H
+            bot_o = ((cy + 0.65 * chh) * sh - y) / h * H
+            info.setdefault("face_out", []).append((round(t, 3), int(top_o), int(bot_o)))
         box = (w, h, x, y)
         if box != prev:
             tt = f / fps
@@ -645,6 +687,17 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
             groups.append(cur); cur = []
     if cur:
         groups.append(cur)
+    # 19 Nov render: in a tight punch-in the mid-screen caption sat on her mouth. A caption group whose time has the
+    # face (on-screen box, after zoom) over the caption line moves down to the low line (still inside the safe zone);
+    # never during the opening hook (the hook sits there)
+    gy = []
+    for gi, g in enumerate(groups):
+        lay = lay_at(g[0][0])
+        y = CAP_Y[lay]
+        span = [(a, b) for t, a, b in (face_y or []) if g[0][0] - 0.05 <= t <= g[-1][1] + 0.05]
+        if span and g[0][0] >= HOOK_SECONDS and sum(1 for a, b in span if a < y + 60 and b > y - 60) / len(span) > 0.3:
+            y = min(1340, y + 330)
+        gy.append(y)
     for gi, g in enumerate(groups):
         g_end = groups[gi + 1][0][0] if gi + 1 < len(groups) else min(dur, g[-1][1] + 0.5)
         for k, w in enumerate(g):
@@ -655,7 +708,7 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
             # 19 Nov research (OpenClipper "beast" preset): the spoken word yellow, 1.15x and tilted 2 degrees
             txt = " ".join((f"{{\\c{accent}\\fscx115\\fscy115\\frz2}}{esc(x[2]).upper()}{{\\c&H00FFFFFF&\\fscx100\\fscy100\\frz0}}" if j == k
                             else esc(x[2]).upper()) for j, x in enumerate(g))
-            L.append(f"Dialogue: 1,{_ts(st)},{_ts(en)},Cap,,0,0,0,,{{\\pos({W // 2},{CAP_Y[lay_at(st)]}){pop}}}{txt}")
+            L.append(f"Dialogue: 1,{_ts(st)},{_ts(en)},Cap,,0,0,0,,{{\\pos({W // 2},{gy[gi]}){pop}}}{txt}")
     open(path, "w", encoding="utf-8").write("\n".join(L) + "\n")
 
 
@@ -805,10 +858,15 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     info["work"] = out_dir
     # 19 Nov research: the camera rhythm (zoom_plan) on every crop shot
     info["zoom"] = zoom_plan(Wt, info["dur"], info["cuts"]) if any(g["layout"] == "crop" for g in info["segments"]) else None
+    if info["zoom"] is not None:                      # the camera first, so captions know where the face is on screen
+        for g in info["segments"]:
+            if g["layout"] == "crop":
+                _crop_cmds(g, info, info["zoom"], os.path.join(out_dir, f"crop_{int(g['s'] * 100)}.cmd"))
     assf = os.path.join(out_dir, "captions.ass")
     logo = LOGO if (brand and os.path.exists(LOGO)) else None      # 19 Nov: the page's real logo; text handle only without it
     placed = place_notes(notes, Wt, info["dur"])
-    ass(assf, hook, Wt, info["dur"], info["segments"], brand="" if logo else brand, notes=placed, face_y=info.get("face_y"))
+    ass(assf, hook, Wt, info["dur"], info["segments"], brand="" if logo else brand, notes=placed,
+        face_y=info.get("face_out") or info.get("face_y"))
     final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"), logo)
     q = probe(final); q["lufs"] = lufs(final)
     d = max(1.0, q["dur"])
@@ -818,7 +876,8 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     run(["ffmpeg", "-v", "error", "-y", "-ss", "0.8", "-i", final, "-frames:v", "1", "-q:v", "2", os.path.join(out_dir, "cover.jpg")], 60)
     os.remove(tight)
     res = {"layout": info["layout"], "segments": info["segments"],
-           "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]), "lost": info.get("lost", 0),
+           "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]),
+           "lost": max(info.get("lost", 0), round(info["zlost"][1] / info["zlost"][0], 3) if info.get("zlost") and info["zlost"][0] else 0),
            "cut": [round(a2, 2), round(b2, 2)], "kept": ranges, "removed_s": round((b2 - a2) - sum(e - s for s, e in ranges), 2),
            "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt),
            "notes": [{"s": s, "e": e, "text": t, "kind": k} for s, e, t, k in placed], "notes_asked": len(notes or []),
