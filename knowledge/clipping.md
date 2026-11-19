@@ -123,3 +123,10 @@ Paid SaaS doing the same: OpusClip, Vizard, Klap, Submagic (not used: Rs 0 rule)
   engine/indiawatch.py checks daily and pings when one appears.
 - Post capacity is now the bottleneck, not campaigns: 1 post/day in warm-up (to 27 Nov), 2/day after, while there are
   45 campaigns >= 75. More English clip accounts = more paid posts (each campaign accepts every account we connect).
+- Vyro (19 Nov 13:40, logged in, 4 accounts connected): only 9 campaigns in its whole catalog; almost all carry a
+  "location" restriction and /eligibility returns eligibleAccounts [] for an India-based clipper (no Join button).
+  The rest are TikTok-only. The API needs DPoP-bound tokens (can't be replayed outside the page), so any future use =
+  drive the page + read its responses (tools/whop.py browser). Parked: re-check weekly; never change the profile
+  country (KYC). Content Rewards is the platform that works for us.
+- Content Rewards accounts 19 Nov: @cut.capsule YT, @cutcapsule IG/FB/X, @cutcapsule.gaming IG/FB, @cutcapsule.tv IG/FB
+  all Connected (FB verified by a code Reel posted through the API).
