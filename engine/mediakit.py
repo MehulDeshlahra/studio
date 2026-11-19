@@ -119,7 +119,7 @@ def kit(p, css, aud, logo):
 <h2>What we offer</h2><ul class="best">{fm}</ul>
 <h2>Brand safety</h2><ul class="best">{safe}<li>Original content only, no reposts, no fake engagement.</li></ul>
 <h2>Book</h2><p>Rates depend on the page's real views and are shared on request.</p>
-<p><a class="btn" href="{esc('mailto:' + p['email']) if p.get('email') else 'https://instagram.com/scroll.house'}">Message Scroll House</a></p>
+<p><a class="btn" href="{esc('mailto:' + p['email']) if p.get('email') else 'https://instagram.com/scrollhouse.in'}">Message Scroll House</a></p>
 <footer>Scroll House · {DOMAIN} · updated {time.strftime('%d %b %Y')}</footer></div></body></html>"""
 
 

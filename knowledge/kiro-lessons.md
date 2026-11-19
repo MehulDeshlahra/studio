@@ -78,3 +78,7 @@ knowledge/lessons-learnt.md for the engine.
 - 19 Nov: switched brief reading to a fast model and it at once said "can do" for a brief that bans automation, and
   wrote an instruction as caption text. Rule: any yes/no that can cost money or an account (bans, required caption
   text) is a hard check in code after the model, tested against every stored real example before shipping.
+- 19 Nov: owner said "I created scrollhouse.in insta"; Business Discovery gave HTTP 400 for it and I told him it did
+  not exist and "fixed" the site to a look-alike (@scroll.house, someone else's). A 400 from Business Discovery means
+  the account is personal/new or not found, NOT that the owner is wrong. Rule: the owner's statement about his own
+  accounts is the truth; an API error is my problem to explain, never a correction of him.
