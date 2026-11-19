@@ -15,8 +15,10 @@ SCOPES = ["https://www.googleapis.com/auth/youtube", "https://www.googleapis.com
           "https://www.googleapis.com/auth/youtube.upload"]
 
 page = (sys.argv[1] if len(sys.argv) > 1 else "").strip()
-if page not in ("tech", "katha", "raaz"):
-    sys.exit("usage: python tools/yt_login.py tech|katha|raaz")
+PAGES = sorted(d for d in os.listdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "channels"))
+               if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "channels", d, "channel.json")))
+if page not in PAGES:                                   # 19 Nov: every page (was tech / katha / raaz only)
+    sys.exit("usage: python tools/yt_login.py " + "|".join(PAGES))
 flow = InstalledAppFlow.from_client_secrets_file(CLIENT, SCOPES)
 creds = flow.run_local_server(port=0, prompt="consent", access_type="offline",
                               authorization_prompt_message=f"Browser opens: choose the {page.upper()} YouTube channel, then Allow.")

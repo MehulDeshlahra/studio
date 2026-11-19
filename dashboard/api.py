@@ -39,7 +39,7 @@ CHANNELS = [  # channels on the dashboard (owner 17 Nov; Navkar Bhav, Finance Fu
     {"id": "raaz", "name": "Aage Suno", "group": "Studio", "color": "#a78bfa", "page": "1501633449691931", "ig": "aagesuno", "yt": "@aagesuno"},
     {"id": "jain", "name": "Navkar Bhav", "group": "Studio", "color": "#f2c14e", "page": "1498175213370788", "ig": "navkarbhav", "yt": None},
     {"id": "finance", "name": "Finance Fuel", "group": "Studio", "color": "#84cc16", "page": "1445486545315323", "ig": "finance.fuel", "yt": None},
-    {"id": "cutcapsule", "name": "Cut Capsule", "group": "Studio", "color": "#ffd830", "page": "1443258675911320", "ig": "cutcapsule", "yt": None},
+    {"id": "cutcapsule", "name": "Cut Capsule", "group": "Studio", "color": "#ffd830", "page": "1443258675911320", "ig": "cutcapsule", "yt": "@cut.capsule"},
     {"id": "vajra", "name": "Vajra Formwork", "group": "Business", "color": "#34d399", "page": "1296793536861294", "ig": "vajraformwork", "yt": "channel/UCLl1cgbkcTjv5188ZIeAIlQ"},
     {"id": "planstalk", "name": "Planstalk", "group": "Business", "color": "#38bdf8", "page": None, "ig": "planstalkindia", "yt": None},
     {"id": "marginmart", "name": "MarginMart", "group": "Business", "color": "#f472b6", "page": None, "ig": "marginmartofficial", "yt": None},

@@ -28,7 +28,7 @@
   "accounts": {
     "instagram": "@cutcapsule",
     "facebook_page": "Cut Capsule - Entertainment",
-    "youtube": null
+    "youtube": "@cut.capsule"
   },
   "theme": {
     "handle": "@cutcapsule",
@@ -50,5 +50,6 @@
     "cta": "",
     "text_next": "Full video 👇\n{next}\n\nRoz ke best clips ke liye follow karo {handle}",
     "text_wait": "Roz ke best clips ke liye follow karo {handle} 🔔\n{profile}"
-  }
+  },
+  "youtube": "@cut.capsule"
 }
