@@ -274,7 +274,7 @@ def find_moments(ch, url, n, info, source=None):
         top = max([x["replay"] for x in pk] or [1]) or 1
         ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200], "score": total,
                    "scores": sc, "replayed": near, "heat": round(max(hits or [0]) / top, 2), "caption": str(m.get("caption") or "")[:300],
-                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6], "notes": _notes(m)})
+                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6], "notes": _notes(m, _note_lang(ch)[1])})
     # a replayed moment gets a bonus by HOW replayed (19 Nov: a 0.91 peak lost to 0.27 ones, the flat +1 treated them alike)
     ms.sort(key=lambda m: -(m["score"] + 2.0 * m.get("heat", 0)))
     log("clipper: proposed", [(mmss(m["a"]), m["score"], m.get("heat")) for m in ms])
@@ -306,7 +306,7 @@ Write 3 notes: 1 "context" (who / which show or game by name + one specific fact
 from VIDEO FACTS or the transcript; "after": "")
 and 2 "react" notes, each placed right after DIFFERENT words: "after" = 3-6 words copied EXACTLY from the transcript
 above, in order, and the two react notes must follow different parts (one early-middle, one near the payoff).
-Each note 3-9 words, in the clip's language (Hinglish in Roman script for Hindi), no emojis, no hashtags.
+Each note 3-9 words, {lang_rule}, no emojis, no hashtags.
 Return JSON {{"notes": [{{"after": "", "text": "...", "kind": "context"}}, {{"after": "...", "text": "...", "kind": "react"}},
  {{"after": "...", "text": "...", "kind": "react"}}]}}"""
 
@@ -379,12 +379,13 @@ def exact_notes(ch, src, url, vid_id, ms, label, info=None):
             continue
         facts = video_facts(info)
         ask = NOTES_ONLY.format(page=ch.get("name", ch["id"]), about=ch.get("format", "")[:200], hook=m["hook"],
-                                why=m.get("why", ""), guide=guide + campaign_guide(src), facts=facts, text=text[:2500])
+                                why=m.get("why", ""), guide=guide + campaign_guide(src), facts=facts, text=text[:2500],
+                                lang_rule=_note_lang(ch)[0])
         known = facts + " " + text + " " + campaign_guide(src)
         try:
             for tries in range(2):
                 d = llm.text(ask, json_mode=True, max_tokens=700)
-                new = _notes({"notes": (d or {}).get("notes")})
+                new = _notes({"notes": (d or {}).get("notes")}, _note_lang(ch)[1])
                 bad = [(n["text"], w) for n in new if n.get("kind") == "context" for w in [ungrounded(n["text"], known)] if w]
                 if not bad:
                     break
@@ -424,14 +425,22 @@ VAGUE = re.compile(r"\b(iconic|legendary|famous part|best part|classic moment|th
                    r"the best|peak comedy|comedy gold|pure gold|wait for it|watch till the end|made (her|him|them) famous)\b", re.I)
 
 
-def _notes(m):
+HINGLISH = re.compile(r"\b(yeh|ye|hai|hain|kya|bhai|yaar|nahi|aagaya|aa gaya|bilkul|alag|maza|mazaa|kuch|bahut|accha|"
+                      r"matlab|sab|abhi|wala|wali|kaise|kyun|toh|dekho|bas)\b", re.I)
+def _note_lang(ch):
+    """19 Nov render 9: an English page got Hinglish notes ('Maza aagaya, bilkul relatable'). (prompt rule, is_hindi)."""
+    hindi = str((ch.get("clip") or {}).get("lang") or ch.get("lang") or "").lower().startswith("hi")
+    return ("in Hinglish (Hindi in Roman script, the way Indian fans comment)" if hindi else
+            "in plain US English (never Hindi or Hinglish words, whatever the examples show)"), hindi
+def _notes(m, hindi=False):
     """19 Nov test: 'The most famous part of the set' got through. A context note needs a real name (a capitalised word
     after the first one) or a number; a vague phrase anywhere drops the note."""
     out = []
+    english = not hindi
     for n in (m.get("notes") or [])[:4]:
         if isinstance(n, dict) and str(n.get("text") or "").strip():
             t = str(n["text"])
-            if VAGUE.search(t):
+            if VAGUE.search(t) or (english and HINGLISH.search(t)):
                 continue
             if n.get("kind") == "context" and not (re.search(r"\d", t) or re.search(r"\s[A-Z][a-z]", t)):
                 continue
@@ -471,7 +480,7 @@ def find_moments_text(ch, item, n, source=None):
         ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200],
                    "score": round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2),
                    "scores": sc, "replayed": False, "caption": str(m.get("caption") or "")[:300],
-                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6], "notes": _notes(m)})
+                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6], "notes": _notes(m, _note_lang(ch)[1])})
     ms.sort(key=lambda m: -m["score"])
     return ms[:n]
 
