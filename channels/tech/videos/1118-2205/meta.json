@@ -2,8 +2,9 @@
  "channel": "tech",
  "job": "1118-2205",
  "topic": "Semiconductor/Chip Manufacturing",
- "stage": "held",
+ "stage": "done",
  "lang": "hi",
  "prepped_at": "2026-11-18 22:24",
- "held_at": "2026-11-18 23:30"
+ "held_at": "2026-11-18 23:30",
+ "brain_judged": true
 }

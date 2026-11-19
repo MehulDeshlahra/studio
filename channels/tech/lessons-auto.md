@@ -374,3 +374,16 @@
 ## 1118-1845 AI Agents (WhatsApp automation)
 - scene 8: The caption 'Ek' seems slightly disconnected from the visual of the booking confirmation, though it is readable.
 - scene 9: The caption 'Matlab 24 ghante' is slightly cut off at the bottom edge of the frame, though still legible.
+
+## 1118-2205 Semiconductor/Chip Manufacturing
+- scene 3: The title 'Wafer Slice' is missing from the frame.
+- scene 4: The title 'Polishing' or similar is missing from the frame.
+- scene 5: The title 'Deposition' or similar is missing from the frame.
+- scene 6: The title 'EUV Machine' is present, but the visual content seems slightly mismatched with the script flow compared to scene 7.
+- scene 8: The title 'Plasma Etch' is missing from the frame.
+- scene 11: The title 'Packaging' or similar is missing from the frame.
+- scene 12: The title 'Result' or similar is missing from the frame.
+
+## review 1118-2205
+- visual: Scene 3 shows 'Diamond' as the headline while the voiceover and text describe silicon ingots and wafer slices, making the content factually incorrect.
+- visual: Scene 7 shows an abrupt, unstyled white box with 'ASML' branding that breaks the visual consistency of the tech aesthetic.

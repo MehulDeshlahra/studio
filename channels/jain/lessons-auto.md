@@ -71,3 +71,13 @@
 
 ## 1119-0335 (pre-render check)
 - EMPTY: centre of frame has no main visual in the second still
+
+## 1119-0935 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s15b
+- OVERLAP: the secondary title box overlaps with the caption or bottom elements
+
+## 1119-0935 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s15b
+
+## 1119-0935 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s15b

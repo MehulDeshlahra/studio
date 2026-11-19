@@ -24,9 +24,9 @@
    ],
    "bg_prompt": "photorealistic silicon ingot 99.99% pure, studio lighting, pure black background",
    "real": {
-    "q": "close up of smartphone back glass and camera module",
+    "q": "hand holding smartphone close-up",
     "kind": "photo",
-    "subject": "A high-quality, real photo of a modern smartphone's back, focusing on the glass and camera, held by a hand to satisfy the 'Human Touch' rule."
+    "subject": "A person holding a smartphone, showing the device's front"
    },
    "big": null,
    "small": null,
@@ -51,9 +51,9 @@
    "skin": "blueprint",
    "prompt": "",
    "real": {
-    "q": "silicon ingot crystal growth industrial process",
+    "q": "silicon ingot close-up",
     "kind": "photo",
-    "subject": "A real industrial photo of a large, cylindrical silicon ingot or the crystal pulling furnace in a semiconductor factory."
+    "subject": "Polished silicon ingot"
    }
   },
   {
@@ -69,9 +69,9 @@
    ],
    "bg_prompt": "diamond wire saw slicing silicon ingot into wafers, cleanroom, pure black background",
    "real": {
-    "q": "silicon wafer slicing machine industrial close up",
-    "kind": "photo",
-    "subject": "A real photo of a wire saw or slicing machine cutting a silicon ingot into thin wafers."
+    "q": "Slice logo",
+    "kind": "logo",
+    "subject": "the official Slice logo"
    },
    "big": null,
    "small": null,
@@ -98,9 +98,9 @@
    "skin": "blueprint",
    "prompt": "",
    "real": {
-    "q": "polished silicon wafer mirror surface reflection",
+    "q": "polished silicon wafer mirror finish",
     "kind": "photo",
-    "subject": "A close-up real photo of a polished silicon wafer showing its mirror-like, reflective surface."
+    "subject": "Polished wafer with mirror-like surface"
    }
   },
   {
@@ -125,7 +125,12 @@
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "prompt": ""
+   "prompt": "",
+   "real": {
+    "q": "chemical vapor deposition chamber semiconductor",
+    "kind": "photo",
+    "subject": "Deposition chamber with wafer inside"
+   }
   },
   {
    "vo": "Photoresist lagta, EUV light pattern bana deta.",
@@ -140,9 +145,9 @@
    ],
    "label": "Parts",
    "real": {
-    "q": "EUV lithography machine interior view",
+    "q": "EUV lithography machine",
     "kind": "photo",
-    "subject": "Close-up of EUV scanner optics with mirrors and lens"
+    "subject": "EUV lithography system with wafer"
    },
    "big": null,
    "small": null,
@@ -169,9 +174,9 @@
    ],
    "bg_prompt": "EUV beam reflecting off multilayer mirrors, high contrast on black background, schematic line art, no logos",
    "real": {
-    "q": "EUV light beam focusing through mirrors",
+    "q": "13.5 nm semiconductor chip",
     "kind": "photo",
-    "subject": "Beam of EUV light being reflected by multilayer mirrors"
+    "subject": "Chip showing 13.5 nm features"
    },
    "big": null,
    "small": null,
@@ -193,9 +198,9 @@
    "small": null,
    "skin": "blueprint",
    "real": {
-    "q": "plasma etching chamber semiconductor manufacturing",
+    "q": "plasma etching chamber semiconductor",
     "kind": "photo",
-    "subject": "A real photo of a plasma etch chamber or the glowing plasma inside a semiconductor fabrication tool."
+    "subject": "Plasma etch system with wafer"
    }
   },
   {
@@ -225,7 +230,12 @@
    "big": null,
    "small": null,
    "skin": "blueprint",
-   "prompt": ""
+   "prompt": "",
+   "real": {
+    "q": "ion implantation machine semiconductor",
+    "kind": "photo",
+    "subject": "Ion implantation system with wafer"
+   }
   },
   {
    "vo": "Ye loop chalta 100+ layers tak... 3D city banti.",
@@ -252,9 +262,9 @@
    "skin": "blueprint",
    "prompt": "",
    "real": {
-    "q": "3D NAND chip cross section microscopy",
+    "q": "3D stacked chip semiconductor",
     "kind": "photo",
-    "subject": "A real electron microscope image or macro photo of a 3D NAND stack showing the layered structure."
+    "subject": "Stacked chip layers"
    }
   },
   {
@@ -270,9 +280,9 @@
    ],
    "bg_prompt": "wafer probe test station, cleanroom, pure black background",
    "real": {
-    "q": "semiconductor wafer dicing and packaging line",
+    "q": "wafer testing equipment semiconductor",
     "kind": "photo",
-    "subject": "A real photo of a wafer being diced into individual chips or the packaging assembly line in a factory."
+    "subject": "Wafer test setup"
    },
    "big": null,
    "small": null,
@@ -291,9 +301,9 @@
    ],
    "bg_prompt": "Apple A17 Pro chip package on black velvet, studio macro, pure black background",
    "real": {
-    "q": "hand holding smartphone showing screen with many apps",
+    "q": "hand holding smartphone",
     "kind": "photo",
-    "subject": "A real photo of a hand holding a smartphone, with the screen on, showing a grid of app icons (no specific brand logo visible, just the UI grid)."
+    "subject": "Finished phone in hand"
    },
    "big": null,
    "small": null,
@@ -386,5 +396,6 @@
   "f945e2a937"
  ],
  "skin": "blueprint",
- "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "visual_done": "2026-11-19 09:22"
 }

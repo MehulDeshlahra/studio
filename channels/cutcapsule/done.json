@@ -100,5 +100,53 @@
    "start": 28.5,
    "layout": "mixed:crop+fill"
   }
+ },
+ {
+  "job": "1119-0852d-c1",
+  "topic": "WARRIOR REJECTS DESTINY TO FIGHT ANYWAY",
+  "title": "WARRIOR REJECTS DESTINY TO FIGHT ANYWAY",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/WAjz4A2Y",
+   "start": 2.3,
+   "layout": "fill"
+  }
+ },
+ {
+  "job": "1119-0940a-c1",
+  "topic": "Jo Koy Orders Get A Dog",
+  "title": "Jo Koy Orders Get A Dog",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 24.85,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1119-0953a-c1",
+  "topic": "VETERAN RISKS IT ALL FOR DODGERS",
+  "title": "VETERAN RISKS IT ALL FOR DODGERS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 99.04,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1119-0953b-c1",
+  "topic": "COMIC RECREATES FRED'S OXYGEN CORD MOMENT",
+  "title": "COMIC RECREATES FRED'S OXYGEN CORD MOMENT",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 165.65,
+   "layout": "fill"
+  }
  }
 ]

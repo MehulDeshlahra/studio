@@ -486,5 +486,127 @@
     "score": 3.75
    }
   ]
+ },
+ {
+  "t": "2026-11-19 09:35",
+  "picked": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
+  "ideas": [
+   {
+    "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Bahubali 12 year meditation vines",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.8,
+    "score": 6.11
+   },
+   {
+    "topic": "King Shrenik offered his entire kingdom for a single mango — what lesson did the mango tree teach him about attachment? (Source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "King Shrenik mango tree lesson",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.8,
+    "score": 5.76
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 9682,
+    "fresh": 7.6,
+    "score": 5.09
+   },
+   {
+    "topic": "Queen Trishala's 16 prophetic dreams that foretold Mahavira's birth — what did each symbol mean? (Source: Kalpasutra)",
+    "note": "",
+    "search": "Trishala 16 dreams Mahavira birth",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.1,
+    "median_views": 6984,
+    "fresh": 5.6,
+    "score": 4.87
+   },
+   {
+    "topic": "The slave girl Chandanbala who broke Mahavira's 400-day fast — what past-life karma made her the first to offer him food? (Source: Kalpasutra / Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Chandanbala Mahavira fast breaking",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.8,
+    "median_views": 2155,
+    "fresh": 5.8,
+    "score": 4.67
+   },
+   {
+    "topic": "Marudevi attained moksha before her own son Rishabhanatha — how did a mother become the first liberated soul of this era? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Marudevi moksha first liberated",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 183,
+    "fresh": 6.5,
+    "score": 4.45
+   },
+   {
+    "topic": "Why did the 22nd Tirthankara Neminatha renounce his own wedding after hearing animals cry for slaughter? (Source: Kalpasutra / Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Neminatha wedding renunciation story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 124,
+    "fresh": 5.8,
+    "score": 4.31
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 370,
+    "fresh": 6.7,
+    "score": 3.79
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 577,
+    "fresh": 6.5,
+    "score": 3.75
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 14,
+    "fresh": 6.5,
+    "score": 3.75
+   }
+  ]
  }
 ]

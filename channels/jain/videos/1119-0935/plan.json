@@ -1,0 +1,335 @@
+{
+ "slug": "bahubali-12-varsh-tapasya",
+ "title": "12 saal tak hile bina kyun khada raha Bahubali?",
+ "hooks": [
+  "12 saal tak hile bina kyun khada raha Bahubali?",
+  "Bel pairon pe chadhi, par woh nahi hile - kyun?",
+  "Rajya chhoda, fir bhi ek ahankaar bacha reh gaya?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct visual question about the most striking image - 12 years motionless with vines - creates immediate curiosity without setup.",
+ "metaphor": "Elephant of pride - the subtle ego that remains even after renouncing kingdom, which the sisters pointed out as the final barrier.",
+ "cast": {
+  "Bahubali": "standing kayotsarga posture, eyes half-closed, serene face, vines gently wrapped around legs, white marble texture, ornate Jain temple backdrop, soft saffron gold light",
+  "Bharata": "ancient Indian king in regal attire, crown, calm expression, no weapons, standing in palace courtyard with marble pillars",
+  "Sadhvi": "plain white cotton robes, holding rajoharan (peacock feather broom), peaceful face, gentle posture, temple marble floor",
+  "Rishabhdev": "seated padmasana idol, half-closed eyes, bull (rishabha) emblem at base, serene gold-white marble, halo of soft light, ornate temple sanctum"
+ },
+ "scenes": [
+  {
+   "vo": "12 saal tak hile bina kyun khada raha Bahubali",
+   "type": "clip",
+   "prompt": "Bahubali in kayotsarga standing meditation, vines slowly growing up legs over time-lapse, birds nesting in hair, insects crawling, soft saffron light filtering through forest canopy, serene painterly style",
+   "motion": "push",
+   "title": "12 SAAL BINA HILE",
+   "keywords": [
+    "12 saal",
+    "hile bina",
+    "Bahubali"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Woh Rishabhdev ke bete the, Bharata ke bhai",
+   "type": "image",
+   "prompt": "Rishabhdev seated padmasana idol in temple sanctum, Bahubali and Bharata standing beside as princes in ancient attire, soft gold marble light, ornate Jain temple architecture",
+   "motion": "pan",
+   "title": "RISHABHDEV KE BETE",
+   "keywords": [
+    "Rishabhdev",
+    "bete",
+    "Bharata"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Bharata Chakravarti bane, sabse jhukne ko kaha",
+   "type": "image",
+   "prompt": "Bharata seated on throne in grand palace hall, chakra-ratna floating beside him, other princes bowing, majestic but peaceful atmosphere, white marble columns",
+   "motion": "pull",
+   "title": "CHAKRAVARTI BHARATA",
+   "keywords": [
+    "Chakravarti",
+    "jhukne ko kaha"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "8 bhai monk ban gaye, par Bahubali ne mana kar diya",
+   "type": "image",
+   "prompt": "98 princes removing crowns, wearing white monk robes with rajoharan, Bahubali standing tall in royal attire, calm refusal, temple courtyard setting",
+   "motion": "tilt",
+   "title": "BAHUBALI NE MANA KIYA",
+   "keywords": [
+    "monk ban gaye",
+    "mana kar diya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Teen muqable hue: drishti, jal, malla - teeno Bahubali jeeta",
+   "type": "image",
+   "prompt": "Three small panels merging: eye-gaze contest, water wrestling, physical wrestling - Bahubali victorious in each, Bharata accepting defeat, serene painterly style",
+   "motion": "pan",
+   "title": "TEEN MUQABLE TEEN JEET",
+   "keywords": [
+    "drishti",
+    "jal",
+    "malla"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Bharata ne divya chakra chalaaya, woh Bahubali ke ghoom gaya",
+   "type": "image",
+   "prompt": "Bharata releasing chakra-ratna (divine disc), it circling harmlessly around Bahubali who stands unmoved in kayotsarga, golden light trail, peaceful resolution",
+   "motion": "push",
+   "title": "CHAKRA GHOOM GAYA",
+   "keywords": [
+    "divya chakra",
+    "ghoom gaya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Bahubali samjha: rajya ke liye ladna vyarth hai",
+   "type": "image",
+   "prompt": "Bahubali's face close-up, eyes opening with realization, crown falling away, background shifting from palace to forest, soft light of understanding",
+   "motion": "pull",
+   "title": "SAMJH AAYA",
+   "keywords": [
+    "rajya",
+    "ladna vyarth"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Woh jungle mein kayotsarga mein khade ho gaye",
+   "type": "image",
+   "prompt": "Bahubali standing in kayotsarga in dense forest, upright, motionless, vines beginning at feet, dappled saffron light through trees, serene painterly",
+   "motion": "push",
+   "title": "KAYOTSARGA SHURU",
+   "keywords": [
+    "jungle",
+    "kayotsarga"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Bel pairon pe chadhi, baalon mein panchhi, keede sharir par",
+   "type": "clip",
+   "prompt": "Time-lapse: vines climbing legs over seasons, birds building nest in matted hair, ants and beetles crawling on skin, Bahubali completely still, changing light through canopy",
+   "motion": "pan",
+   "title": "PRAKRITI APNAI",
+   "keywords": [
+    "bel",
+    "panchhi",
+    "keede"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Behnein sadhvi aayi: 'ahankaar chhodo, haathi se utro'",
+   "type": "image",
+   "prompt": "Two sadhvis in white robes with rajoharan standing before Bahubali, one gesturing upward metaphorically, compassionate expressions, forest clearing, soft golden hour",
+   "motion": "tilt",
+   "title": "BEHNEIN KI SIKHA",
+   "keywords": [
+    "sadhvi",
+    "ahankaar",
+    "haathi se utro"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Woh Bharata ke rajya se guzarna nahi chahte the, yeh bhi ahankaar tha",
+   "type": "image",
+   "prompt": "Bahubali's perspective: forest path ending at kingdom border, Bharata's palace visible in distance, subtle pride in posture, realization dawning",
+   "motion": "push",
+   "title": "CHHUPA AHANKAAR",
+   "keywords": [
+    "Bharata ke rajya",
+    "chhupa ahankaar"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ahankaar chhoda, kevala jnana prapt kiya",
+   "type": "image",
+   "prompt": "Bahubali's face transforming - pride dissolving into pure omniscience glow, half-closed eyes radiating light, vines blooming with flowers, siddhashila crescent above",
+   "motion": "pull",
+   "title": "KEVALA JNANA",
+   "keywords": [
+    "ahankaar chhoda",
+    "kevala jnana"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Asli tyag rajya ka nahi, ahankaar ka hota hai",
+   "type": "card",
+   "prompt": "Plain white marble background, soft saffron gold gradient, elegant Roman lettering for the lesson in Hinglish",
+   "motion": "punch",
+   "title": "",
+   "big": "ASLI TYAG",
+   "small": "AHANKAAR KA HOTA HAI",
+   "keywords": [
+    "asli tyag",
+    "ahankaar"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aapke andar ka kaunsa haathi abhi bhi bacha hai? Comment mein batayein",
+   "type": "image",
+   "prompt": "Gommateshwara statue at Shravanabelagola - 57 feet tall, Bahubali in kayotsarga with vines, peaceful sky, pilgrims offering prayers, serene scale",
+   "motion": "pan",
+   "title": "AAPKA HAATHI",
+   "keywords": [
+    "aapke andar",
+    "haathi",
+    "comment"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Jai Jinendra. Srot: Adipurana, Trishashti-shalaka-purusha-charitra",
+   "type": "card",
+   "prompt": "Clean white marble with gold border, Navkar Bhav logo subtle, source text in elegant Roman script",
+   "motion": "punch",
+   "title": "",
+   "big": "JAI JINENDRA",
+   "small": "SROT: ADIPURANA",
+   "keywords": [
+    "Jai Jinendra",
+    "Adipurana"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "type": "card",
+   "big": "Comment BAHUBALI",
+   "sub": "Bahubali HD wallpaper DM mein 📩",
+   "small": "Free wallpaper DM",
+   "vo": "Ye wallpaper chahiye? Comment BAHUBALI, main DM kar dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "prompt": "Bahubali movie character, epic pose, dramatic lighting, vertical 9:16, space for text",
+   "title": "Bahubali Wallpaper",
+   "motion": "slow zoom"
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "12 saal tak ek hi mudra mein khade rahe Bahubali. Par sabse bada bandhan bel nahi, ahankaar tha. 🐘➡️🧘‍♂️\n\nAsli tyag rajya chhodne mein nahi, apne andar ke 'haathi' se utarne mein hai.\n\nAapke jeevan ka kaunsa 'haathi' abhi bhi bacha hai?",
+ "hashtags": [
+  "#Bahubali",
+  "#Jainism",
+  "#Adipurana",
+  "#KevalaJnana",
+  "#Ahinsa",
+  "#NavkarBhav",
+  "#JaiJinendra"
+ ],
+ "claims": [
+  {
+   "claim": "Bahubali meditated motionless in kayotsarga for 12 years with vines growing around his legs",
+   "basis": "Adipurana (Jinasena), Trishashti-shalaka-purusha-charitra (Hemachandra), Wikipedia"
+  },
+  {
+   "claim": "Bahubali was son of Rishabhanatha (first Tirthankara) and brother of Bharata",
+   "basis": "Adipurana, Jain texts, Wikipedia"
+  },
+  {
+   "claim": "Three contests held: eye-fight, water-fight, wrestling - Bahubali won all",
+   "basis": "Adipurana, Trishashti-shalaka-purusha-charitra"
+  },
+  {
+   "claim": "Bharata used chakra-ratna which circled Bahubali harmlessly",
+   "basis": "Adipurana, Jain texts"
+  },
+  {
+   "claim": "Sisters (Brahmi and Sundari, who became nuns) told him to surrender ego - 'get down from elephant of pride'",
+   "basis": "Adipurana, Namo Buddy retelling, Jain tradition"
+  },
+  {
+   "claim": "Bahubali attained kevala jnana after renouncing subtle pride",
+   "basis": "Adipurana, Trishashti-shalaka-purusha-charitra"
+  },
+  {
+   "claim": "Gommateshwara statue at Shravanabelagola is 57 feet tall depicting this meditation",
+   "basis": "Wikipedia, Jain tradition, Archaeological records"
+  }
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "4396759d41",
+  "fc294ac58f",
+  "f945e2a937",
+  "161339712e",
+  "9db4cc694f",
+  "7fa182f8ef",
+  "1e1964f463",
+  "e15cfaed29",
+  "1e60a34718",
+  "0755cc155a",
+  "6ce7203c71"
+ ],
+ "offer": {
+  "kind": "wallpaper",
+  "keyword": "BAHUBALI",
+  "gift": "Bahubali HD wallpaper",
+  "title": "Bahubali Kayotsarga Wallpaper",
+  "items": [
+   {
+    "head": "Iconic meditation pose",
+    "text": "12-year kayotsarga with nature embracing Bahubali"
+   }
+  ],
+  "wallpaper_scene": 9,
+  "job": "1119-0935",
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/jain/offer-bahubali.jpg"
+ }
+}

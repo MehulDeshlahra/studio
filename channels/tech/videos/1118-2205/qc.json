@@ -1,0 +1,33 @@
+{
+ "topic": "Semiconductor/Chip Manufacturing",
+ "title": "Chip banta kaise hai? Ret se supercomputer tak.",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.4,
+  "true_peak": -1.6,
+  "dur": 40.93
+ },
+ "vision": {
+  "score": 8,
+  "ok": true,
+  "problems": [
+   "scene 3: The title 'Wafer Slice' is missing from the frame.",
+   "scene 4: The title 'Polishing' or similar is missing from the frame.",
+   "scene 5: The title 'Deposition' or similar is missing from the frame.",
+   "scene 6: The title 'EUV Machine' is present, but the visual content seems slightly mismatched with the script flow compared to scene 7.",
+   "scene 8: The title 'Plasma Etch' is missing from the frame.",
+   "scene 11: The title 'Packaging' or similar is missing from the frame.",
+   "scene 12: The title 'Result' or similar is missing from the frame."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9888888888888889,
+  "words": 97,
+  "problems": []
+ },
+ "ok": true
+}
