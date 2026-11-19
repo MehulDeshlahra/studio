@@ -68,9 +68,10 @@
   "topic": "Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 90+ hai, ab ye strategy kaam karegi",
   "title": "Gold ya Silver? 2026 mein sahi decision kaise lein",
   "qc_ok": true,
-  "status": "held",
+  "status": "rejected",
   "review": [
-   "19 Nov audit: investment advice ('core gold, satellite silver') breaks the education-only rule; ratio/return numbers from ipomarket.in not checked against a primary source; caption source (World Gold Council) does not match the claims' sources"
+   "19 Nov audit: investment advice ('core gold, satellite silver') breaks the education-only rule; ratio/return numbers from ipomarket.in not checked against a primary source; caption source (World Gold Council) does not match the claims' sources",
+   "rejected 19 Nov: the script itself gives investment advice; a rebuild cannot fix it. Make a new education-only gold vs silver reel from primary data (RBI/IBJA) instead."
   ]
  },
  {
