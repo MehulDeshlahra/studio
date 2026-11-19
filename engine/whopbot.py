@@ -124,8 +124,14 @@ def adopt_joined(st):
     d = _sources()
     have = {v.get("campaign_id") for v in d["sources"].values()}
     low = text.lower()
+    # each joined card reads "Joined\n<brand>\n· 6d ago\n<title>"; a brand renames its campaign sometimes (Eneba's
+    # "Eneba Clipping and UGC" shows as "BroPacks - Discover Games on Eneba"), so a brand with ONE campaign also matches
+    nb = {}
+    for v in camp.values():
+        nb[(v.get("brand") or "").lower()] = nb.get((v.get("brand") or "").lower(), 0) + 1
     mine = [k for k, v in camp.items() if v.get("title") and k not in have and
-            (v["title"][:40].lower() in low or k in text)]
+            (v["title"][:40].lower() in low or k in text or
+             (v.get("brand") and nb.get(v["brand"].lower()) == 1 and f"joined\n{v['brand'].lower()}\n" in low))]
     log("whopbot: joined by the owner without a source:", [camp[k]["title"] for k in mine])
     added = []
     for k in mine:

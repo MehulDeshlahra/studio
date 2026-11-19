@@ -71,3 +71,5 @@ knowledge/lessons-learnt.md for the engine.
 - REPEATED 19 Nov (3rd time): wrote a file and ran it in the same parallel batch. HARD RULE: fs_write is always alone in
   its batch; the run is the NEXT call. Never pipe source files through PowerShell (Get-Content | python): it mangled
   every non-ASCII character in api.py (restored from git). Edit with str_replace or a Python script that opens utf-8.
+- 19 Nov: .tmp\ship.ps1 only commits what is STAGED; a first ship said "no changes added" and pushed nothing. Always
+  `git add <files>` first, then check the output shows the server HAS the new commit.
