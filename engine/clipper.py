@@ -80,7 +80,8 @@ The on-screen hook title is "{hook}". The full transcript of the clip: "{text}"
    the main person cut out of the frame, a broken layout (a webcam box cut in half, two copies of the same person side by
    side), a watermark of another clip app, nudity, gore.
 3) CHECKLIST (19 Nov: a stand-up clip showing the SAME comedian twice, top and bottom, scored 9): answer each, yes/no:
-   a. Is the same person (same face, same shot) shown twice at once, top and bottom or side by side?
+   a. Is the same person shown twice at once in two SHARP copies, top and bottom or side by side? (A heavily BLURRED
+      enlarged copy of the frame behind the video is our intended background style: that is NOT a yes.)
    b. Is a caption word clearly misheard (nonsense next to the transcript, e.g. "CRYPTO JAIL" for "crystal gel")?
    c. Is any on-screen page note just describing what is said, vague ("iconic moment"), negative, or false?
    d. Is the picture blurry, very low resolution or pixelated for most of the clip?

@@ -301,6 +301,12 @@ def analyse(mp4, fps=4):
             lay, aim = "stack", None
         elif len(other) / k >= 0.6 and float(np.median([f[2] for f in other])) >= 0.16:
             lay, aim = "crop", round(float(np.median([f[0] for f in other])), 3)
+        elif (len(other) / k >= 0.6 and sw >= 1280 and
+              all(len([f for f in fs if not is_cam(f)]) <= 1 for t, fs in samples if s <= t < e) and
+              float(np.std([f[0] for f in other])) < 0.12):
+            # 19 Nov test (Jo Koy wide stage shot): ONE person, small in a wide HD frame, stays roughly in one place ->
+            # crop on him (a 9:16 slice of a 1080p frame) instead of a tiny figure on a blurred copy of the same frame
+            lay, aim = "crop", round(float(np.median([f[0] for f in other])), 3)
         else:
             lay, aim = "fill", None
         if segs and (e - s < 0.8 or segs[-1]["layout"] == lay):
@@ -378,7 +384,9 @@ def place_notes(notes, Wt, dur):
                 out[-1] = (ps, round(st - 0.25, 2), pt, pk)
             else:
                 continue
-        out.append((round(st, 2), round(en, 2), txt[:90], n.get("kind") or "react"))
+        if len(txt.split()) > 11 or len(txt) > 64:        # a note is a glance, never a paragraph (never cut mid-word)
+            continue
+        out.append((round(st, 2), round(en, 2), txt, n.get("kind") or "react"))
     return out
 
 
@@ -409,7 +417,9 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None):
             e = dur if gi == len(segs) - 1 else g["e"]
             L.append(f"Dialogue: 2,{_ts(g['s'])},{_ts(e)},Hook,,0,0,0,,{{\\pos({W // 2},{HOOK_Y[g['layout']]})}}{esc(hook.upper())}")
     for st, en, txt, kind in notes or []:
-        y = HOOK_Y[lay_at(st)] + (170 if hook else 0)
+        # 19 Nov test: the layout (and so the hook) can change while a note is up: sit below the LOWEST hook in its span
+        lays = {g["layout"] for g in segs if g["s"] < en and g["e"] > st} or {lay_at(st)}
+        y = max(HOOK_Y[l] for l in lays) + (170 if hook else 0)
         L.append(f"Dialogue: 3,{_ts(st)},{_ts(en)},Note,,0,0,0,,{{\\pos({W // 2},{y})\\fscx80\\fscy80\\t(0,120,\\fscx100\\fscy100)"
                  f"\\fad(80,120)}}{esc(txt)}")
     groups, cur = [], []
