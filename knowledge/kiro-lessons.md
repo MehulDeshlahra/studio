@@ -119,3 +119,4 @@ strongest, not its oldest (katha: Ujjain/Greenwich first).
   on its events against the text (plan.story_check) before its looks; "strongest first" means strongest AND true.
 - 19 Nov: the clip context note said "Ali Wong, Baby Cobra 2016" on a Jo Koy clip: the prompt had no video facts so the
   model guessed. RULE: a model may only state facts it was GIVEN; check names/numbers in code (clipper.ungrounded).
+- 19 Nov: I restarted the laptop worker because its log's last line was not 'claimed'; it had just claimed a clip job and not logged it yet, so the job sat in claimed/ and the server waited. RULE: restart only with .tmp\restart_worker.ps1 (checks the server's claimed/ folder); the worker now reloads clipcore per job, so a restart is rarely needed.
