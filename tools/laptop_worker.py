@@ -219,7 +219,9 @@ def clip_job(jid, spec):
         full = os.path.join(CACHE, vid + ".mp4")
         if not os.path.exists(full):
             r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
-                     "-f", "bv*[height<=1080][ext=mp4]+ba/b[height<=1080]/bv*+ba/b", "--merge-output-format", "mp4", "-N", "4",
+                     # 19 Nov: without a sort yt-dlp took the AV1 stream (399); AV1 decodes slowly on this CPU -> H.264 first
+                     "-f", "bv*[height<=1080]+ba/b[height<=1080]/bv*+ba/b", "-S", "vcodec:h264,res:1080,fps:30,acodec:m4a",
+                     "--merge-output-format", "mp4", "-N", "4",
                      "-o", full, url], timeout=2400)
             if not os.path.exists(full):
                 raise RuntimeError("download failed: " + (r.stderr or "")[-300:])
