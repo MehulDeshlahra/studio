@@ -126,6 +126,9 @@ if __name__ == "__main__":
         r = {"title": "Chalchitra Talks"}
         s, b = email_for(r)
         print(send_one(a[1], "[TEST] " + s, b))
+    elif a[0] == "daily":        # timer: refill the list, then the day's emails
+        find("cutcapsulehindi")
+        print(send("cutcapsulehindi"))
     elif a[0] == "send":
         print(send(a[1] if len(a) > 1 else "cutcapsulehindi"))
     elif a[0] == "find":
