@@ -372,6 +372,8 @@ def exact_notes(ch, src, url, vid_id, ms, label, info=None):
                 if tries:
                     new = [n for n in new if n.get("kind") != "context"]
             if len(new) >= 2:
+                for n in new:
+                    n["grounded"] = True              # checked against facts + transcript above
                 m["notes"] = new
         except Exception as e:
             log("clipper: notes from words failed", str(e)[:120])
@@ -520,6 +522,15 @@ def make(cid, url, n=4, test=False, campaign=None):
     brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")    # campaigns that say "no watermark"
     if ch.get("kind") == "clips":
         ms = exact_notes(ch, src, url, info.get("id"), ms, base, info)
+        # every path (also when the exact-words pass failed): a context note naming something the video facts do not hold
+        # is dropped (the react notes stay; fewer than 2 notes -> the clip is held later)
+        vf = video_facts(info) + " " + campaign_guide(src)
+        for m in ms:
+            keep = [n for n in m.get("notes") or [] if n.get("kind") != "context" or n.get("grounded")
+                    or not ungrounded(n["text"], vf + " " + m.get("why", ""))]
+            if len(keep) < len(m.get("notes") or []):
+                log("clipper: ungrounded context note dropped", [n["text"] for n in m["notes"] if n not in keep])
+            m["notes"] = keep
     out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src), **_lang_spec(ch),
                       "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {base}", wait=3600)
     made = ingest(ch, cid, url, info, src, test, ms, out, base)
