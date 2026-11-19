@@ -138,6 +138,52 @@ def _nw(S, W):
     return pairs
 
 
+def _implausible(W):
+    """19 Nov (tech 1118-1845, 'WhatsApp pe AI agent'): Whisper sometimes gives timestamps that cannot be real: a run of
+    words 0.06 s long (13 words squeezed into 1.5 s) or one word lasting 5 s. The match took those times as they were, so the
+    captions flashed past, then one word ('Ek') hung on screen for 5 s over an empty box, and the 83 % match score still passed.
+    Indexes of Whisper words whose times must not be trusted: > 1.8 s, or part of a run of >= 3 words shorter than 0.11 s
+    (plus a neighbour that is shorter than 0.16 s, it was squeezed by the same glitch)."""
+    n = len(W)
+    d = [b - a for _w, a, b in W]
+    bad = {j for j in range(n) if d[j] > 1.8}
+    j = 0
+    while j < n:
+        if d[j] < 0.11:
+            k = j
+            while k < n and d[k] < 0.11:
+                k += 1
+            if k - j >= 3:
+                bad.update(range(j, k))
+                for x in (j - 1, k):
+                    if 0 <= x < n and d[x] < 0.16:
+                        bad.add(x)
+            j = k
+        else:
+            j += 1
+    return bad
+
+
+def sync_problems(lines):
+    """Caption timing that a viewer would see as broken: too many words in too little time, a word that hangs for seconds,
+    a line that starts before the previous one ended. [] when fine. Used by make.py (voice gate) and review.py."""
+    probs, prev_end = [], 0.0
+    for k, L in enumerate(lines or []):
+        ws = L.get("words") or []
+        if not ws:
+            continue
+        dur = max(0.01, float(L["end"]) - float(L["start"]))
+        ws_ = [float(w["e"]) - float(w["s"]) for w in ws]
+        if len(ws) >= 5 and len(ws) / dur > 6.5:
+            probs.append(f"captions out of sync: line {k + 1} has {len(ws)} words in {dur:.1f} s")
+        if max(ws_) > 2.2:
+            probs.append(f"captions out of sync: a word in line {k + 1} stays {max(ws_):.1f} s")
+        if float(L["start"]) < prev_end - 0.35:
+            probs.append(f"captions out of sync: line {k + 1} starts {prev_end - float(L['start']):.1f} s before line {k} ends")
+        prev_end = max(prev_end, float(L["end"]))
+    return probs
+
+
 def words_by_line(wav, texts, lang="hi"):
     toks, line_of = [], []
     for k, t in enumerate(texts):
@@ -173,7 +219,10 @@ def words_by_line(wav, texts, lang="hi"):
     if cover < 0.5:
         raise RuntimeError(f"alignment matched only {cover:.0%} of the words")
     s = [None] * len(toks); e = [None] * len(toks)
+    bad = _implausible(W)                                # times that cannot be real are interpolated instead
     for i, j in pairs.items():
+        if j in bad:
+            continue
         s[i], e[i] = W[j][1], W[j][2]
     # interpolate unmatched words between anchors, weighted by length
     i = 0
