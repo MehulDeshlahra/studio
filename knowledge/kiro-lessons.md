@@ -86,3 +86,7 @@ knowledge/lessons-learnt.md for the engine.
 - 19 Nov (4th time): ran a ship+run in the SAME batch as the edits it needed; the run used the old units.sh. The rule
   stands: edits first (one batch), compile + ship + run in the NEXT call. Also no inline python inside ssh "..."
   (PowerShell broke it again): write .tmp/x.py, scp, run.
+- 19 Nov: a 10/10 review and an 83 % voice match hid a reel the owner called "not top notch" (WhatsApp AI agent): the
+  checks only hunted defects. Before calling a video good, look at full-size frames at 6+ moments and read the script as a
+  viewer: does it TEACH the title question, do the frames show what the line says, do captions follow the voice. The
+  engine now has the same three checks (plan.explainer_gate, review content rules, align.sync_problems).

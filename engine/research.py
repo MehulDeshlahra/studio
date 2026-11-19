@@ -105,7 +105,9 @@ def run(topic, queries, job, watch_n=3):
                     r["web"] = web.facts(q, n=3) or r.get("web") or ""
         # 19 Nov (WhatsApp AI agent reel): the 3 articles were vendor "12 best tools" lists, so the script listed features and
         # never said how it works. A HOW topic also reads 2 technical explainers (official docs, developer tutorials).
-        if re.search(r"\b(kaise|kyun|kyon|how|why|works?|kaam)\b", str(topic), re.I):
+        # every explainer page (topics like "AI Agents (WhatsApp automation)" carry no 'how' word); story pages never
+        _pg = os.path.basename(os.path.dirname(job))
+        if _pg not in ("katha", "jain", "raaz") or re.search(r"\b(kaise|kyun|kyon|how|why|works?|kaam)\b", str(topic), re.I):
             core_q = " ".join(re.sub(r"[^A-Za-z0-9 ]", " ", re.split(r"[?:(]", str(topic))[0]).split()[:6])
             tech = web.facts(f"{core_q} how it works technically step by step", n=2)
             if tech:
