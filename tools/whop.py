@@ -197,10 +197,13 @@ def main():
             ctx = browser(p, headless=False)
             page = ctx.pages[0] if ctx.pages else ctx.new_page()
             page.goto(sys.argv[2], wait_until="domcontentloaded", timeout=60000)
-            try:
-                page.wait_for_event("close", timeout=30 * 60 * 1000)
-            except Exception:
-                pass
+            for _ in range(360):            # until every tab is closed (a sign-in popup may close the first one), 30 min
+                try:
+                    if not ctx.pages:
+                        break
+                    ctx.pages[0].wait_for_timeout(5000)
+                except Exception:
+                    break
             try:
                 ctx.close()
             except Exception:

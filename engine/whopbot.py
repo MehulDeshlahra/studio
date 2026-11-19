@@ -248,6 +248,28 @@ def make_source(k, v, d, st):
     return f"{v.get('brand') or ''}: {v.get('title')} ({len(foot)} footage link(s), {len(rules)} rules)"
 
 
+def earnings(st):
+    """19 Nov: Whop's Withdraw stays disabled at $0, so the owner adds his bank on the first money. Once a day: read the
+    Content Rewards earnings, keep them in whopbot.json, and say so on Telegram when they grow (first time: add the bank)."""
+    if time.time() - st.get("earn_t", 0) < 20 * 3600:
+        return
+    r = _job("look", "https://contentrewards.com/c/earnings", wait=600)
+    t = r.get("text") or ""
+    m = re.search(r"Lifetime earned\s*\$([\d,]+\.\d\d)", t)
+    if not m:
+        return
+    st["earn_t"] = time.time()
+    now = float(m.group(1).replace(",", ""))
+    before = float(st.get("earned") or 0)
+    st["earned"] = now
+    if now > before:
+        msg = f"💵 Cut Capsule earned ${now:.2f} on Content Rewards so far (+${now - before:.2f})."
+        if before == 0:
+            msg += ("\nFIRST MONEY: open whop.com > Balances > USD > Withdraw and add your bank account (India, IFSC) "
+                    "once. After that Kiro/whopbot only reports.")
+        telegram(msg)
+
+
 def retire(st):
     camp = (load(CAMP, {}) or {}).get("c") or {}
     d = _sources()
@@ -276,6 +298,7 @@ def run():
             st["told_login"] = time.time(); save(STATE, st)
         return
     submit_all(st)
+    earnings(st)
     retire(st)
     adopt_joined(st)
     join_best(st)
