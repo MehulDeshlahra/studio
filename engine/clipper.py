@@ -21,7 +21,14 @@ import llm
 
 GENERIC_TAGS = ["fyp", "viral", "reels", "trending"]
 PLUG = re.compile(r"\b(subscribe|subscribed|hit the bell|notification bell|sponsor(ed)? by|this video is sponsored|link in (the )?"
-                  r"description|use (my )?code|discount code|merch|patreon|giveaway|smash (that )?like)\b", re.I)     # OpusClip 13.5M-clip study: niche + generic tags beat niche-only 2.5x
+                  r"description|use (my )?code|discount code|merch|patreon|giveaway|smash (that )?like)\b", re.I)
+# 19 Nov render 9 picked "JAPANESE PORN IS WILDLY ANNOYING": brand deals and clip campaigns pay for brand-safe clips only.
+# UNSAFE in a hook / caption / note -> the moment is skipped; STRONG anywhere in the spoken words -> the clip is held.
+UNSAFE = re.compile(r"\b(porn\w*|sex\w*|nude\w*|naked|orgasm\w*|masturbat\w*|dick|penis|vagina|boob\w*|tits|horny|"
+                    r"blow ?job|hooker|strip(per|club)|rape\w*|molest\w*|cocaine|heroin|meth|weed|stoned|suicid\w*|"
+                    r"kill (yo)?ursel(f|ves)|nigg\w*|fag\w*|retard\w*|chink|gook|whore|slut)\b", re.I)
+STRONG = re.compile(r"\b(porn\w*|orgasm\w*|masturbat\w*|blow ?job|rape\w*|molest\w*|nigg\w*|fag(got)?s?|retard\w*|chink|gook|"
+                    r"kill (yo)?ursel(f|ves))\b", re.I)     # OpusClip 13.5M-clip study: niche + generic tags beat niche-only 2.5x
 
 MOMENTS = """You are the best short-form clipper in the world. Watch this whole video and pick the {n} best moments to post
 as standalone Reels / Shorts on the page "{page}" ({about}).
@@ -36,6 +43,8 @@ A great moment:
   12M at 22 s, Btalk Radar 17M at 15 s); a story, a stand-up bit or an argument = 30-55 s, only if every 5 s earns its
   place. Never pad: the shortest version that keeps the setup and the payoff wins. 12 s minimum, 58 s maximum.
 - prefer reactions, quotable lines, conflict, surprises and "first time" moments over quiet stretches.
+- BRAND-SAFE ONLY (brands and campaigns pay for these): never a moment about sex, porn, drugs, slurs, self-harm or
+  graphic violence, even when it is the funniest part; mild swearing is fine
 - NEVER the intro or outro, a "like and subscribe" / channel plug, a sponsor read, "link in the description", a giveaway
   or merch plug (19 Nov: the first pick was the intro with a Subscribe button). Don't start at 0:00 unless the very first
   line is itself the hook.
@@ -255,6 +264,9 @@ def find_moments(ch, url, n, info, source=None):
             b = a + 55
         if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
             continue
+        bad = UNSAFE.search(" ".join(str(m.get(k) or "") for k in ("hook", "why", "caption")))
+        if bad:
+            log("clipper: moment skipped, not brand-safe:", str(m.get("hook"))[:60], f"('{bad.group(0)}')"); continue
         sc = m.get("score") if isinstance(m.get("score"), dict) else {"hook": m.get("score") or 5}
         total = round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2)
         hits = [x["replay"] for x in pk if x["at"] - 25 <= b and a <= x["until"] + 5]
@@ -452,6 +464,9 @@ def find_moments_text(ch, item, n, source=None):
         b = a + 15 if b - a < 12 else (a + 55 if b - a > 60 else b)
         if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
             continue
+        bad = UNSAFE.search(" ".join(str(m.get(k) or "") for k in ("hook", "why", "caption")))
+        if bad:
+            log("clipper: moment skipped, not brand-safe:", str(m.get("hook"))[:60], f"('{bad.group(0)}')"); continue
         sc = m.get("score") if isinstance(m.get("score"), dict) else {"hook": m.get("score") or 5}
         ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200],
                    "score": round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2),
@@ -589,6 +604,9 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
             probs.append("almost no speech (captions nearly empty)")
         if (res.get("lost") or 0) > 0.1:             # 19 Nov: vision scored 10 with the comedian walked out of the crop
             probs.append(f"speaker out of the crop for {res['lost']:.0%} of the time (crop did not follow him)")
+        rude = STRONG.search(res.get("text", "")) or UNSAFE.search(" ".join(n["text"] for n in res.get("notes") or []))
+        if rude:
+            probs.append(f"not brand-safe: '{rude.group(0)}' in the clip (brands and campaigns pay for brand-safe clips only)")
         plug = PLUG.search(res.get("text", ""))
         if plug:
             probs.append(f"self-promotion inside the clip ('{plug.group(0)}'): someone else's channel plug, never post")
