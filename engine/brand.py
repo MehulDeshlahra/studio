@@ -53,7 +53,16 @@ def texts(cid, ch):
     link = f"https://scrollhouse.in/go/{cid}.html"
     long = (blurb + " A Scroll House page.")[:250]
     ig = f"{tag}\nA Scroll House page".strip()[:150]
+    live = LIVE.get(cid) or {}
+    if live.get("bio"):
+        # 19 Nov (owner wrote every Instagram bio himself: "make it sync in fb, yt"): his IG bio + IG link are the source
+        bio = live["bio"].strip()
+        link = live.get("web") or link
+        return " ".join(bio.split())[:250], bio[:1000], link, bio
     return tag[:150], long, link, ig
+
+
+LIVE = {}      # cid -> {"bio", "web"}: the page's live Instagram bio and link, read in do_page
 
 
 def youtube(cid, acc, ch, d, s, h, st):
@@ -182,7 +191,9 @@ def do_page(cid, st, force):
     if not acc or not acc.get("ig_user_id") or not acc.get("page_token"):
         log("brand:", cid, "no Meta keys yet")
         return
-    info = publish._req(f"{publish.G}/{acc['ig_user_id']}?fields=username,profile_picture_url&access_token={acc['page_token']}")
+    info = publish._req(f"{publish.G}/{acc['ig_user_id']}?fields=username,profile_picture_url,biography,website&access_token={acc['page_token']}")
+    if info.get("biography"):
+        LIVE[cid] = {"bio": info["biography"], "web": info.get("website") or ""}
     url = info.get("profile_picture_url")
     if not url:
         log("brand:", cid, "no Instagram DP set yet")
