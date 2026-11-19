@@ -161,5 +161,9 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
   pop captions, @cutcapsule handle, -14 LUFS). Dashboard "Make a video now" takes a YouTube link.
 - PERMISSION GATE: only sources in channels/cutcapsule/sources.json post (campaign / creator OK). Everything else = test,
   held. First test (Foltyn Reacts "DAD DESTROYS GTA 6!"): 3 clips, vision 9/10/10, held as TEST.
-- Owner to do: join Whop Content Rewards / Vyro / CliprIndia campaigns and send the links; NVIDIA driver 621.24
-  (downloaded to Downloads, needs his UAC click) for NVENC.
+- NVIDIA driver 621.24 installed 19 Nov (NVENC: 28 s clip in 61 s). Logo watermark from the IG dp (assets/brand).
+- Money loop built 19 Nov: engine/campaigns.py (6-hourly ranking + Telegram), engine/clipwatch.py (hourly auto-clip of
+  joined sources), dashboard "Clipping campaigns" + "Add a source" (/api/source writes sources.json + starts clipwatch),
+  publish.py "submit to campaign" Telegram after each campaign post, clipper.what_worked() learning from views.
+  Untested end to end: a real joined source (needs the owner's Whop join).
+- Owner to do: join campaigns (digest sent 06:41) and add each in the dashboard; Cut Capsule YouTube channel.

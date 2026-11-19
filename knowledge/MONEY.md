@@ -105,3 +105,20 @@ Brand categories that sponsor our niches (to confirm from knowledge/brands.json)
 - Affiliate accounts (Amazon Associates, Flipkart, app referral programs) when the gates are close.
 - Approve outreach wording and rates before any brand is contacted; sign contracts; receive payments.
 - Bank/tax details inside YouTube AdSense, Meta payouts when each program opens.
+
+## Cut Capsule: paid clipping (19 Nov, built)
+How it pays: Whop Content Rewards campaigns pay per 1,000 verified views of our posts of their footage (live today: $1-3
+per 1K, caps $150-1,200 per clip, 120 campaigns, top: Jo Koy comedy special $2/1K cap $500, Eneba gaming $3/1K, Call of
+Duty DMZ $1.50/1K cap $1,200, FaZe tournament $2/1K). Whop keeps 10%. Money = many clips at 20-60K views on campaigns
+with budget left.
+The loop (all automatic except the owner's clicks):
+1. engine/campaigns.py (every 6 h): ranks every campaign (rate, cap, budget left + runway, competition, fit; no betting,
+   no other-language, no zero-rate) -> Telegram "worth joining" + dashboard Channels > Clipping campaigns.
+2. OWNER: join on Whop, then dashboard "I joined" -> paste the footage channel/video links + the brief's rules.
+3. engine/clipwatch.py (hourly): new uploads of those sources -> engine/clipper.py -> laptop clipcore (~1 min/clip on
+   NVENC) -> checks -> Telegram for approval (first 3) -> publish.py posts IG + FB (YT once connected).
+4. After each campaign post: Telegram "submit this link to <campaign>" (OWNER: paste it in Whop; views count from there).
+5. stats.py views -> clipper.what_worked() feeds the best/worst hooks back into moment picking (results-clips.md).
+- [ ] Owner: join 3-5 top campaigns (Telegram digest 19 Nov 06:41 has 17)
+- [ ] Owner: Cut Capsule YouTube channel (most campaigns also pay YouTube Shorts views; doubles reach per clip)
+- [ ] After warm-up (27 Nov): posts_per_day 2 -> 4 if the account stays healthy (more posts = more paid views)
