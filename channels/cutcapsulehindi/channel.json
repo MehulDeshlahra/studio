@@ -38,7 +38,9 @@
   },
   "theme": {
     "handle": "@cutcapsule.hindi",
-    "accent": "#ffd830"
+    "bg": "#0b0b0b",
+    "accent": "#ffd830",
+    "accent2": "#ff3b30"
   },
   "hashtags_base": [
     "#hindiclips",
