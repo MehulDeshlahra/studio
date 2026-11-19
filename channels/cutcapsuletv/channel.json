@@ -1,0 +1,99 @@
+{
+  "id": "cutcapsuletv",
+  "name": "Cut Capsule TV",
+  "kind": "clips",
+  "status": "clips",
+  "language": "English (the source video's language)",
+  "format": "TV, movie and comedy clip page: the best 20-59 s scenes from shows, films, stand-up specials and celebrity interviews, cut on the hook and the payoff, word-by-word captions",
+  "clip": {
+    "rules": [
+      "never a GTA 6 story spoiler: no ending, no cutscene compilations, no big plot reveals (Rockstar removes them)",
+      "no hate, no harassment, no sexual content, no real-life violence",
+      "the clip must make sense to someone who never saw the video"
+    ],
+    "layout": "fill"
+  },
+  "schedule": {
+    "posts_per_day": 2,
+    "post_hours_ist": [
+      6,
+      22,
+      2,
+      4
+    ],
+    "post_hours_note": "priority order. 06:30 IST = 8 pm New York, 22:30 = noon NY, 02:30 = 4 pm NY, 04:30 = 6 pm NY: campaigns pay on US/global views",
+    "ramp": [
+      [
+        "2026-11-20",
+        1
+      ],
+      [
+        "2026-11-24",
+        2
+      ],
+      [
+        "2026-12-01",
+        3
+      ],
+      [
+        "2026-12-08",
+        4
+      ]
+    ],
+    "ramp_note": "19 Nov owner: more posts = more paid views. Account made 19 Nov; warming advice is ~1 Reel/day for 2 weeks. Step back if reach falls.",
+    "backlog": 6,
+    "manual_first": 0,
+    "auto_approve": true,
+    "manual_first_note": "19 Nov owner: auto approve (same as Cut Capsule)"
+  },
+  "warmup": {
+    "post_from": "2026-11-20",
+    "one_a_day_until": "2026-11-27",
+    "note": "new account (created 19 Nov)"
+  },
+  "handle": "@cutcapsule.tv",
+  "handle_instagram": "@cutcapsule.tv",
+  "accounts": {
+    "instagram": "@cutcapsule.tv",
+    "facebook_page": "Cut Capsule TV",
+    "youtube": "not yet"
+  },
+  "theme": {
+    "handle": "@cutcapsule.tv",
+    "bg": "#0b0b0b",
+    "accent": "#ff4d6d",
+    "accent2": "#ff3b30"
+  },
+  "hashtags_base": [
+    "#tvclips",
+    "#comedyclips"
+  ],
+  "english": false,
+  "offers": {
+    "on": false
+  },
+  "dm": {
+    "keywords": [
+      "FULL",
+      "LINK"
+    ],
+    "cta": "",
+    "text_next": "Full video 👇\n{next}\n\nFollow {handle} for the best clips every day",
+    "text_wait": "Follow {handle} for the best clips every day 🔔\n{profile}"
+  },
+  "youtube": "@cut.capsule",
+  "tagline": "The best scenes from TV, movies and comedy",
+  "site_blurb": "The best scenes from TV shows, movies, stand-up and interviews, cut into short clips.",
+  "sister": "cutcapsule",
+  "route_categories": [
+    "movie-tv-show",
+    "tv-series",
+    "comedy",
+    "celebrity",
+    "documentary",
+    "reactions",
+    "movie",
+    "netflix"
+  ],
+  "audience": "US / global English: campaigns pay US and tier-1 views"
+}

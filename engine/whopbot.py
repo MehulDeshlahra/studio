@@ -45,15 +45,44 @@ Return JSON:
 Footage given as a Google Doc / "content folder" link counts: list every link found in the doc text in other_footage."""
 
 
-def _sources():
-    d = load(SRC, {}) or {}
+def en_pages():
+    """19 Nov: the English clip pages that take paid campaigns (Cut Capsule + its niche sisters). Cut Capsule Hindi is not
+    one: global campaigns do not pay Indian views; it lives on creator permissions (engine/creatorask.py)."""
+    out = []
+    for p in sorted(os.listdir(os.path.join(ROOT, "channels"))):
+        ch = load(os.path.join(ROOT, "channels", p, "channel.json"), {}) or {}
+        if ch.get("kind") == "clips" and (p == CID or ch.get("sister") == CID) and "hindi" not in p:
+            out.append(p)
+    return out or [CID]
+
+
+def route(v):
+    """The page a campaign belongs on: the first sister whose route_categories match its categories, else Cut Capsule."""
+    cats = {str(x).lower() for x in (v.get("categories") or [])} | {str(v.get("category") or "").lower()}
+    text = f"{v.get('title', '')} {v.get('description', '')}".lower()
+    for p in en_pages():
+        if p == CID:
+            continue
+        rc = (load(os.path.join(ROOT, "channels", p, "channel.json"), {}) or {}).get("route_categories") or []
+        if cats & set(rc) or any(re.search(rf"\b{re.escape(w)}\b", text) for w in rc if len(w) > 4):
+            return p
+    return CID
+
+
+def _sources(page=CID):
+    d = load(os.path.join(ROOT, "channels", page, "sources.json"), {}) or {}
     d.setdefault("sources", {})
     return d
 
 
-def _save_sources(d, msg):
-    save(SRC, d)
-    os.system(f"cd {ROOT} && git add channels/{CID}/sources.json && git commit -qm '{msg}' >/dev/null 2>&1 && "
+def all_sources():
+    """[(page, key, source)] over every English clip page."""
+    return [(p, k, s) for p in en_pages() for k, s in _sources(p)["sources"].items()]
+
+
+def _save_sources(d, msg, page=CID):
+    save(os.path.join(ROOT, "channels", page, "sources.json"), d)
+    os.system(f"cd {ROOT} && git add channels/{page}/sources.json && git commit -qm '{msg}' >/dev/null 2>&1 && "
               "git pull -q --rebase --autostash && git push -q >/dev/null 2>&1")
 
 
@@ -103,7 +132,18 @@ def logged_in():
 
 
 def submit_all(st):
-    done = load(DONE, []) or []
+    n_ok, fails = 0, []
+    for page in en_pages():
+        a, b = _submit_page(page)
+        n_ok += a; fails += b
+    if n_ok or fails:
+        telegram(f"💰 Whop: {n_ok} clip link(s) submitted." + ("\n⚠ Not submitted: " + "; ".join(fails[:4]) if fails else ""))
+    return n_ok
+
+
+def _submit_page(page):
+    path = os.path.join(ROOT, "channels", page, "done.json")
+    done = load(path, []) or []
     n_ok, fails = 0, []
     for d in done:
         s = d.get("submit") or {}
@@ -120,31 +160,38 @@ def submit_all(st):
         s["tries"] = s.get("tries", 0) + 1
         if set(s.get("ok_links") or []) >= {x for x in s.get("links") or [] if x.startswith("http")}:
             s["submitted"] = time.strftime("%Y-%m-%d %H:%M")
-    save(DONE, done)
-    if n_ok or fails:
-        telegram(f"💰 Whop: {n_ok} clip link(s) submitted." + ("\n⚠ Not submitted: " + "; ".join(fails[:4]) if fails else ""))
-    return n_ok
+    save(path, done)
+    return n_ok, [f"{page} {f}" for f in fails]
 
 
 def join_best(st):
     camp = (load(CAMP, {}) or {}).get("c") or {}
-    d = _sources()
-    active = {v.get("campaign_id") for v in d["sources"].values() if v.get("active", True) and v.get("campaign_id")}
+    ds = {p: _sources(p) for p in en_pages()}
+    active = {s.get("campaign_id") for p, k, s in all_sources() if s.get("active", True) and s.get("campaign_id")}
+    cap = MAX_ACTIVE * len(ds)                  # 19 Nov: 5 campaigns per English clip page
     tried = st.setdefault("tried", {})
     now = time.time()
     picks = sorted(((k, v) for k, v in camp.items() if now - v.get("last_seen", 0) < 86400 and v.get("score", 0) >= JOIN_MIN
                     and k not in active and now - tried.get(k, 0) > 7 * 86400), key=lambda kv: -kv[1]["score"])
-    joined = []
+    joined, changed = [], set()
+    per = {p: sum(1 for q, k, s in all_sources() if q == p and s.get("active", True) and s.get("campaign_id")) for p in ds}
     for k, v in picks:
-        if len(active) >= MAX_ACTIVE:
+        if len(active) >= cap:
             break
+        page = route(v)
+        if per.get(page, 0) >= MAX_ACTIVE:
+            page = min(per, key=per.get) if v.get("category") not in ("gaming", "streamer") else page
+            if per.get(page, 0) >= MAX_ACTIVE:
+                continue
         tried[k] = now
-        res = make_source(k, v, d, st)          # opens the campaign (joins it) + reads the brief
+        res = make_source(k, v, ds[page], st)          # opens the campaign (joins it) + reads the brief
         if not res:
             continue
-        active.add(k); joined.append(f"{v.get('score')}/100 " + res)
+        active.add(k); per[page] = per.get(page, 0) + 1; changed.add(page)
+        joined.append(f"{v.get('score')}/100 [{page}] " + res)
+    for page in changed:
+        _save_sources(ds[page], f"whopbot: joined campaign(s) for {page}", page)
     if joined:
-        _save_sources(d, f"whopbot: joined {len(joined)} campaign(s)")
         telegram("🤝 Joined on Whop and clipping now:\n• " + "\n• ".join(joined))
         os.system("sudo systemctl start --no-block studio-clipwatch.service")
     return joined
@@ -155,8 +202,8 @@ def adopt_joined(st):
     r = _job("look", "https://contentrewards.com/c/campaigns", wait=600)
     text = r.get("text") or ""
     camp = (load(CAMP, {}) or {}).get("c") or {}
-    d = _sources()
-    have = {v.get("campaign_id") for v in d["sources"].values()}
+    ds = {p: _sources(p) for p in en_pages()}
+    have = {s.get("campaign_id") for p, k, s in all_sources()}
     low = text.lower()
     # each joined card reads "Joined\n<brand>\n· 6d ago\n<title>"; a brand renames its campaign sometimes (Eneba's
     # "Eneba Clipping and UGC" shows as "BroPacks - Discover Games on Eneba"), so a brand with ONE campaign also matches
@@ -169,13 +216,15 @@ def adopt_joined(st):
             (v["title"][:40].lower() in low or k in text or
              (v.get("brand") and nb.get(v["brand"].lower()) == 1 and f"joined\n{v['brand'].lower()}\n" in low))]
     log("whopbot: joined by the owner without a source:", [camp[k]["title"] for k in mine])
-    added = []
+    added, changed = [], set()
     for k in mine:
-        res = make_source(k, camp[k], d, st)
+        page = route(camp[k])
+        res = make_source(k, camp[k], ds[page], st)
         if res:
-            added.append(res)
+            added.append(f"[{page}] {res}"); changed.add(page)
+    for page in changed:
+        _save_sources(ds[page], f"whopbot: sources for joined campaign(s) on {page}", page)
     if added:
-        _save_sources(d, f"whopbot: sources for {len(added)} joined campaign(s)")
         telegram("✂️ Clipping now for the campaigns you joined:\n• " + "\n• ".join(added))
         os.system("sudo systemctl start --no-block studio-clipwatch.service")
     return added
@@ -279,18 +328,22 @@ def earnings(st):
 
 def retire(st):
     camp = (load(CAMP, {}) or {}).get("c") or {}
-    d = _sources()
-    off = []
-    for key, s in d["sources"].items():
-        c = camp.get(s.get("campaign_id") or "")
-        if not s.get("active", True) or not s.get("campaign_id"):
-            continue
-        gone = not c or time.time() - c.get("last_seen", 0) > 2 * 86400 or (c.get("availableBudgetRaw") or 0) < 50
-        if gone:
-            s["active"] = False; s["retired"] = time.strftime("%Y-%m-%d %H:%M"); off.append(key)
-    if off:
-        _save_sources(d, f"whopbot: retired {', '.join(off)}")
-        telegram("🛑 Campaign budget finished, stopped clipping: " + ", ".join(off))
+    alloff = []
+    for page in en_pages():
+        d = _sources(page)
+        off = []
+        for key, s in d["sources"].items():
+            c = camp.get(s.get("campaign_id") or "")
+            if not s.get("active", True) or not s.get("campaign_id"):
+                continue
+            gone = not c or time.time() - c.get("last_seen", 0) > 2 * 86400 or (c.get("availableBudgetRaw") or 0) < 50
+            if gone:
+                s["active"] = False; s["retired"] = time.strftime("%Y-%m-%d %H:%M"); off.append(key)
+        if off:
+            _save_sources(d, f"whopbot: retired {', '.join(off)}", page)
+            alloff += [f"{page}/{k}" for k in off]
+    if alloff:
+        telegram("🛑 Campaign budget finished, stopped clipping: " + ", ".join(alloff))
 
 
 def run():

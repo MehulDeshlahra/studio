@@ -1,0 +1,99 @@
+{
+  "id": "cutcapsulegaming",
+  "name": "Cut Capsule Gaming",
+  "kind": "clips",
+  "status": "clips",
+  "language": "English (the source video's language)",
+  "format": "Gaming clip page: the best 20-59 s moments from official game trailers, tournaments and streamer VODs (Call of Duty, SEGA, GTA VI, Blizzard, Roblox), cut on the hook and the payoff, word-by-word captions",
+  "clip": {
+    "rules": [
+      "never a GTA 6 story spoiler: no ending, no cutscene compilations, no big plot reveals (Rockstar removes them)",
+      "no hate, no harassment, no sexual content, no real-life violence",
+      "the clip must make sense to someone who never saw the video"
+    ],
+    "layout": "fill"
+  },
+  "schedule": {
+    "posts_per_day": 2,
+    "post_hours_ist": [
+      6,
+      22,
+      2,
+      4
+    ],
+    "post_hours_note": "priority order. 06:30 IST = 8 pm New York, 22:30 = noon NY, 02:30 = 4 pm NY, 04:30 = 6 pm NY: campaigns pay on US/global views",
+    "ramp": [
+      [
+        "2026-11-20",
+        1
+      ],
+      [
+        "2026-11-24",
+        2
+      ],
+      [
+        "2026-12-01",
+        3
+      ],
+      [
+        "2026-12-08",
+        4
+      ]
+    ],
+    "ramp_note": "19 Nov owner: more posts = more paid views. Account made 19 Nov; warming advice is ~1 Reel/day for 2 weeks. Step back if reach falls.",
+    "backlog": 6,
+    "manual_first": 0,
+    "auto_approve": true,
+    "manual_first_note": "19 Nov owner: auto approve (same as Cut Capsule)"
+  },
+  "warmup": {
+    "post_from": "2026-11-20",
+    "one_a_day_until": "2026-11-27",
+    "note": "new account (created 19 Nov)"
+  },
+  "handle": "@cutcapsule.gaming",
+  "handle_instagram": "@cutcapsule.gaming",
+  "accounts": {
+    "instagram": "@cutcapsule.gaming",
+    "facebook_page": "Cut Capsule Gaming",
+    "youtube": "not yet"
+  },
+  "theme": {
+    "handle": "@cutcapsule.gaming",
+    "bg": "#0b0b0b",
+    "accent": "#00e676",
+    "accent2": "#ff3b30"
+  },
+  "hashtags_base": [
+    "#gaming",
+    "#gamingclips"
+  ],
+  "english": false,
+  "offers": {
+    "on": false
+  },
+  "dm": {
+    "keywords": [
+      "FULL",
+      "LINK"
+    ],
+    "cta": "",
+    "text_next": "Full video 👇\n{next}\n\nFollow {handle} for the best clips every day",
+    "text_wait": "Follow {handle} for the best clips every day 🔔\n{profile}"
+  },
+  "youtube": "@cut.capsule",
+  "tagline": "The best gaming moments, cut to the good part",
+  "site_blurb": "The best moments from games, trailers, tournaments and streams, cut into short clips.",
+  "sister": "cutcapsule",
+  "route_categories": [
+    "gaming",
+    "streamer",
+    "twitch",
+    "roblox",
+    "gta",
+    "minecraft",
+    "esports",
+    "fortnite"
+  ],
+  "audience": "US / global English: campaigns pay US and tier-1 views"
+}

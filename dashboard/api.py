@@ -40,6 +40,8 @@ CHANNELS = [  # channels on the dashboard (owner 17 Nov; Navkar Bhav, Finance Fu
     {"id": "jain", "name": "Navkar Bhav", "group": "Studio", "color": "#f2c14e", "page": "1498175213370788", "ig": "navkarbhav", "yt": None},
     {"id": "finance", "name": "Finance Fuel", "group": "Studio", "color": "#84cc16", "page": "1445486545315323", "ig": "finance.fuel", "yt": None},
     {"id": "cutcapsule", "name": "Cut Capsule", "group": "Studio", "color": "#ffd830", "page": "1443258675911320", "ig": "cutcapsule", "yt": "@cut.capsule"},
+    {"id": "cutcapsulegaming", "name": "Cut Capsule Gaming", "group": "Studio", "color": "#00e676", "page": "141992699275145", "ig": "cutcapsule.gaming", "yt": None},
+    {"id": "cutcapsuletv", "name": "Cut Capsule TV", "group": "Studio", "color": "#ff4d6d", "page": "873146599365439", "ig": "cutcapsule.tv", "yt": None},
     {"id": "cutcapsulehindi", "name": "Cut Capsule Hindi", "group": "Studio", "color": "#ff9933", "page": "488692857905722", "ig": "cutcapsule.hindi", "yt": None},
     {"id": "vajra", "name": "Vajra Formwork", "group": "Business", "color": "#34d399", "page": "1296793536861294", "ig": "vajraformwork", "yt": "channel/UCLl1cgbkcTjv5188ZIeAIlQ"},
     {"id": "planstalk", "name": "Planstalk", "group": "Business", "color": "#38bdf8", "page": None, "ig": "planstalkindia", "yt": None},
