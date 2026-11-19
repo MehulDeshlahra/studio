@@ -53,7 +53,9 @@ def texts(cid, ch):
     link = f"https://scrollhouse.in/go/{cid}.html"
     long = (blurb + " A Scroll House page.")[:250]
     ig = f"{tag}\nA Scroll House page".strip()[:150]
-    live = LIVE.get(cid) or {}
+    # 19 Nov: Cut Capsule Hindi's IG got Finance Fuel's name + bio by mistake (name locked 14 days): channel.json
+    # "brand_from_ig": false keeps the page's own texts until the owner fixes Instagram
+    live = (LIVE.get(cid) or {}) if ch.get("brand_from_ig", True) else {}
     if live.get("bio"):
         # 19 Nov (owner wrote every Instagram bio himself: "make it sync in fb, yt"): his IG bio + IG link are the source
         bio = live["bio"].strip()
