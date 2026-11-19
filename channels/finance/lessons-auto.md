@@ -144,3 +144,18 @@
 ## 1119-0426-p2 (pre-render check)
 - FIT: Missing the third card/column for Pvt Ltd in the visual comparison while voice and data indicate three items
 - DUP: The word 'Comment GUIDE' is unnecessarily repeated in both the main title and the caption simultaneously
+
+## 1119-0426-p2 (pre-render check)
+- READ: value text too small to read on phone
+- OVERLAP: text overlapping the green and white bars
+- READ: text on the rule card is too small
+- FIT: missing 'LLP >40L' field as specified
+- FIT: missing 'Pvt Ltd' / 'VCready' field as specified
+- READ: checklist text is too small
+
+## 1119-0426-p2 Business Ka Structure - Part 2: Ek table mein poora comparison (risk, tax, audit, kharcha, funding)
+- scene 3: The tax information card shows 'Prop: 30%' and 'LLP: 30%', but the script says 'Proprietorship slab pe, LLP 30% flat'. The visual representation of Proprietorship as 30% is misleading/inaccurate compared to the script's claim of 'slab pe'.
+- scene 5: The text 'PROPRIETORSHIP >1CR' is slightly cramped vertically, though readable.
+
+## review 1119-0426-p2
+- visual: Scene 6 (Funding): Text says 'Sirf Pvt Ltd LLP' which mixes up the entities and contradicts the voiceover and scene script ('Sirf Pvt Ltd — LLP limited, Proprietorship impossible').

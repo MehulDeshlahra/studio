@@ -387,3 +387,7 @@
 ## review 1118-2205
 - visual: Scene 3 shows 'Diamond' as the headline while the voiceover and text describe silicon ingots and wafer slices, making the content factually incorrect.
 - visual: Scene 7 shows an abrupt, unstyled white box with 'ASML' branding that breaks the visual consistency of the tech aesthetic.
+
+## 1118-2205 (pre-render check)
+- FIT: The visual shows an ASML logo/box instead of an EUV lithography machine matching the voice
+- FIT: The visual shows a plain grey box with ASML text instead of a 13.5 nm chip close-up

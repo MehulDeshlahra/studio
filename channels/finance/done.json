@@ -60,8 +60,7 @@
   "status": "held",
   "offer": "GUIDE",
   "review": [
-   "before render, scene 6: FIT: Missing the third card/column for Pvt Ltd in the visual comparison while voice and data indicate three items",
-   "before render, scene 9: DUP: The word 'Comment GUIDE' is unnecessarily repeated in both the main title and the caption simultaneously"
+   "visual: Scene 6 (Funding): Text says 'Sirf Pvt Ltd LLP' which mixes up the entities and contradicts the voiceover and scene script ('Sirf Pvt Ltd — LLP limited, Proprietorship impossible')."
   ]
  },
  {

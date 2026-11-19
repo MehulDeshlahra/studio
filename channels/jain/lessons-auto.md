@@ -127,3 +127,13 @@
 - scene 5: Minor anatomical distortions in the animals' necks and heads.
 - scene 6: The sarathi's hand and staff exhibit slight AI melting artifacts.
 - scene 8: The animal in the lower foreground has a distorted, irregular shape.
+
+## 1119-0335 (pre-render check)
+- FIT: Split image shown instead of a single continuous scene
+- FIT: Split image shown instead of a single continuous scene
+- EMPTY: The centre of the frame has no main visual, just a dark gradient and a small lotus at the bottom
+
+## 1119-0335 What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)
+- scene 6: The title for this scene is missing in the provided list, but the frame exists. The image shows a deity figure, which seems to represent the transformation, but the caption 'BANA' is incomplete compared to the intended narrative flow.
+- scene 13: The caption 'NE HAZARON JANAM' is cut off from the full sentence 'Ek chhoti karuna ne hazaron janam ka karz chukaya', and the scene lacks a clear visual representation of the 'karz chukaya' concept, showing only a lotus.
+- scene 14: The text 'TUM HOTE TOH? COMMENT MEIN LIKHO' is present, but the title is missing from the provided list.

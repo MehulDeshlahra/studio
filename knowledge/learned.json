@@ -9600,5 +9600,4190 @@
    }
   ],
   "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:31",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a complete, production-grade sketchnote-style explainer (51s) built with Canvas 2D: procedural stroke-by-stroke handwriting via glyph skeletons, seeded deterministic boil, camera choreography with pen-follow mode, bilingual diegetic subtitles, and a fully procedural audio mix (pen foley, chapter-based score, RMS ducking). It demonstrates a reproducible, code-first pipeline with font",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Glyph-skeleton stroke-by-stroke handwriting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Seeded per-element noise with global boil cycle",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural pen foley from stroke events",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Bilingual subtitle as diegetic paper slip",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Camera follow-pen mode for drawing sequences",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Chapter-based musical scoring with RMS ducking",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "CJK font subsetting via Google Fonts text= parameter",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Match-cut zoom continuity formula",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Event-driven timeline export for AV sync",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Procedural paper grain + dot grid shader",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:33",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a complete 'Spreadsheet Film' demo: a 52-second animated explainer of Simpson's Paradox rendered entirely inside a simulated spreadsheet UI. It showcases a cohesive visual metaphor where cells, formulas, conditional formatting, pivot tables, and hidden columns drive the narrative, backed by a deterministic timeline that drives canvas rendering, procedural audio mixing (voice, score,",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Spreadsheet Metaphor as Visual Framework",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Hidden Column Reveal as Narrative Climax",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Formula Bar Typing as Exposition",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Cell-Level Data Point Animation with L-Paths",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Conditional Formatting as Dynamic Visual Encoding",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Virtual Camera Over Large 2D Grid",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Event-Driven Procedural Foley Layer",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Reading-Time Audit via Exported Text Metrics",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Single-Source Timeline Generates All Timing Artifacts",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:34",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a complete 60-second spy title sequence demo (canvas 2D + procedural audio) showcasing a paper-cut aesthetic, beat-synced character animation, timeline-driven scene dispatch, and a full audio pipeline with tape-processed narration, procedural foley, and stem-based music mastering. It is exceptionally well-engineered: deterministic, modular, and rich in reusable techniques for facele",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Paper-cut aesthetic with scissor-rough edges and slit gaps",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Beat-synced character pose blending with step-cycle timing",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Tape-briefing narration chain (bandpass, wow/flutter, tanh saturation)",
+    "kind": "build",
+    "area": "voice"
+   },
+   {
+    "title": "Procedural foley synthesis for paper, metal, ambience with panning",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Diegetic paper-strip subtitles with keyhole icon",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Transition library: split, blinds, wipe, shatter, iris",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural paper-cut typography from font outlines",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic test harness with URL params for chars, frames, sheets",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Music stem ducking with silence gates and loudness targeting",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Camera follow with parallax layers and world coords",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:37",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source contains two demo projects: a 60s spy title sequence (cut-paper, 4-ink palette, beat-grid timeline) and a stained-glass film (WebGL compositor, procedural characters, material foley). Both showcase reproducible pipelines, procedural animation, and audio-visual sync techniques relevant to a faceless shorts studio.",
+  "knowledge": 3,
+  "build": 1,
+  "items": [
+   {
+    "title": "Beat-grid timeline as single source of truth",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Procedural FK character rig with pose lerp",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Paper cut-out 4-ink profile style",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Diagonal split title animation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "ASR homophone correction field in script data",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Procedural material foley generators",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Music stem ducking with envelope follower",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Voronoi quarry mosaic for procedural backgrounds",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dual-canvas Pass for layered rendering (transmittance + surface)",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Grisaille painting primitives (mail, folds, hatch, stipple)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Style frame presets with camera/lighting parameters",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:38",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source contains a complete procedural short film pipeline: original score with stem separation and cue timing, a deterministic scene renderer with beat-synced animation, light shafts, dust motes, and floor caustics, plus a reproducible build script. Quality is high — every component is code-driven, seeded for consistency, and demonstrates advanced 2D volumetric lighting and narrative sync tech",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Procedural music stems with cue sync",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Beat-synced animation at fixed BPM with stepped/smooth layers",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Seeded deterministic procedural generation",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Light shafts with volumetric dust motes in 2D",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Animated parchment banderole subtitles",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Model sheet rendering for character consistency",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Two-pass loudnorm mastering",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Comprehensive event-driven cue system",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural crack propagation and mending transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Camera keyframe choreography with interpolation",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:39",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source is a complete, production-grade demo of a 52-second stick-figure explainer film ('Six Hands Away') with a reproducible build pipeline. It demonstrates deterministic spring-driven character animation, a single-canonical-ease motion system, beat-synced audio-visual event architecture, word-level ASR-verified subtitles, and a 9-step build script — all implemented in free, open tooling (Can",
+  "knowledge": 3,
+  "build": 1,
+  "items": [
+   {
+    "title": "Single canonical ease + snap/steps/track helpers",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Beat-synced audio-visual event pipeline with sidechain mix",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Word-level timestamps with ASR verification field",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Reproducible 9-step build script (fonts → TTS → ASR → words → score → events → mix → render → mux → stills)",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Procedural figure rig with three drawing styles from one skeleton",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Spring-driven figure animation with per-joint frequency/damping for follow-through",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Fractal ring growth for network/data visualization",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "HUD text slide-up/fade with precise easing",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Frequency-specific sidechain dip (300 Hz–4 kHz) + RMS ducking for voice-over-music balance",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Globe-bending chain transition with log-space camera pull-back",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Event-driven timeline with film-second precision for audio-visual sync",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Hand-holding chain geometry with IK elbows, sag, bounce, and pulse propagation",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:41",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source contains two polished demo films (Swiss Motion poster animation and 21 Keys teardown) built with a deterministic, code-driven pipeline. They showcase tight audio-visual sync via shared event lists, procedural foley synthesis, score-driven visual grids, monotone-cubic camera interpolation, Whisper-aligned word-level subtitles with merge handling, bilingual safe-area captioning, dimension",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Score-driven visual grid",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Foley synthesis from event types",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Monotone-cubic camera interpolation with keyframe arrays",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Whisper word-timestamp alignment with merge handling",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Dimension-line grammar with extension lines and beat-synced labels",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Bilingual subtitle layout with safe-area width gate",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Single-command reproducible asset bake with manifest",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Event-driven ambience bed with probability & swell",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural gear geometry (involute + club-tooth)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Beat-matched music jump editing",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:42",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This repository contains two sophisticated procedural animation pipelines: a hardware teardown (21 Keys, Opened) that generates 3D geometry from KiCad PCB data and a sports telestrator (Freeze Frame) with homography-based pitch mapping. Both demonstrate deterministic, beat-synced timelines, automated asset extraction from open CAD sources, and rigorous quality gates (subtitle width, motion artifac",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Procedural 3D geometry from KiCad PCB data",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Beat-locked timeline with bar/beat precision",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural PCB texture baking (color/ORM/bump)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Automated CAD-to-asset pipeline with pinned sources",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Subtitle safe-width validation with real fonts",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Motion & NaN artifact detection on rendered video",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Voice cue generation with ASR duration verification",
+    "kind": "build",
+    "area": "voice"
+   },
+   {
+    "title": "Deterministic camera keyframe grammar (orbit/look)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Parametric rounded-rectangle lofting for consistent props",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Font subsetting via Google Fonts CSS API for exact glyphs",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Split-screen telestrator with homography pitch mapping",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic render with URL debug params",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:53",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source part contains the 'Sports Telestrator' and 'Text Flash Cuts' style demos, showcasing a reproducible pipeline: timeline-driven segment/VO structure, automated footage fetching with license provenance, homography for pitch-to-screen mapping, procedural beat-synced music/SFX generation, font subsetting, ASR-verified quality checks, and a single-command build script. The techniques are pro",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Automated footage provenance tracker with license evidence",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Beat-synced procedural music generation locked to timeline segments",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural SFX library with parametric synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Homography-based 2D↔3D mapping for diagram/map animations",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Bilingual subtitle cue generation with strict timing rules",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Single-command reproducible build script (build.sh pattern)",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "ASR-verified final mix quality gate",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Font subsetting for only used characters (WOFF2)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Event-driven animation timeline with named sections and beat grid",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Readability check for on-screen text (readcheck.mjs)",
+    "kind": "build",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:54",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source is a production-grade demo for a thermal-camera style short film (《冬夜，一栋楼的体温》) and a text-flash-cuts style, featuring a full deterministic pipeline: procedural 3D geometry, SDF character animation, radiometric thermal shaders, event-driven audio synthesis with foley/ducking/loudness targeting, green-screen keying with despill, font subsetting automation, and a single-command reproducibl",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Procedural Audio Synthesis with Foley, Ducking & Loudness Targeting",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Green-Screen Keying with Despill, Edge Shrink & Auto-Crop",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Automated Font Subsetting via Google Fonts CSS API & fontTools",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Reproducible Single-Command Build with Dependency Fetching",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Event-Driven Audio-Visual Sync via Shared events.json",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "SDF-Based Procedural Character with Fur Shells & Timeline Pose",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Thermal/IR Radiometric Shader Model & Iron Palette",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Parameterized Camera Choreography with Easing Library",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic Procedural Building/Environment Generation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Animated Split-Screen Transition (Thermal ↔ Visible)",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "HUD Overlay System with Data-Driven Components",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Automated Readcheck for Subtitle Timing & Legibility",
+    "kind": "build",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 09:56",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a complete thermal-camera simulation demo (Three.js/WebGL) that renders a building energy audit short with physically based temperatures, a realistic sensor pipeline, bilingual HUD overlays, and automated measurement/QA tools. It demonstrates production-grade techniques for data-driven visuals, deterministic procedural generation, and reproducible builds that are highly relevant to ",
+  "knowledge": 7,
+  "build": 1,
+  "items": [
+   {
+    "title": "Vertical color-scale legend with animated pointer",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Split-screen comparison panel with synchronized data headers",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Automated visual measurement pipeline for on-screen numbers",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Deterministic meter jitter at fixed refresh rate",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Physics-based heat-loss calculation for building energy shorts",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Sensor-realistic noise stack (temporal, column FPN, row noise, lens shading)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Tracker smoothness verification tool",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "World-anchored bilingual label with crosshair, nominal value, and stacked CN/EN",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Clip-path split-screen with interactive divider line",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural building geometry with seeded window variation and thermal physics",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "End card with bilingual title reveal and credit line",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:06",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a sophisticated procedural city and miniature-style animation pipeline using Three.js, including advanced camera choreography and procedural audio synthesis. It is highly valuable for enhancing our 3D rendering and foley capabilities.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Tilt-Shift Miniature Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Logarithmic Camera Swoop",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Shader-Based Window/Night Lighting",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Geometry Builder (GB) Pattern",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:09",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source contains two demo projects (tilt-shift miniature and transit-map) showcasing advanced procedural audio-visual pipelines: event-gated music synthesis, warp time-mapping for non-linear timelines, deterministic agent simulation, procedural SFX, tape-slowdown transitions, and a reproducible build with reading-time validation. The techniques are high-quality, well-engineered, and directly re",
+  "knowledge": 3,
+  "build": 1,
+  "items": [
+   {
+    "title": "Event-gated music density",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Warp time-mapping for non-linear timelines",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural SFX synthesis recipes",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Pre-integrated simulation clock",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Tape slowdown transition",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Reading-time validation gate",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Phasing loop variation",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Sky/lighting keyframe interpolation",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic agent simulation pattern",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Low-pass filter sweep automation",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:12",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a WebGL2/Canvas transit map animation engine with perspective camera navigation, dynamic label collision solving, and an odometer rolling-drum HUD. It also includes an end-to-end ASR validation script that audits final muxed video files for narration intelligibility.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Post-Mux Narration Intelligibility Gate",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Odometer Drum with Velocity Blur",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Match-Flare Radial Collapse Transition",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:14",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This repo part is a complete, deterministic Ukiyo-e woodblock print film demo ('Toward the Mountain') with a handscroll camera, procedural print engine (washi, misregistration, goma-zuri, bokashi, ink-take reveal, carved key lines, vermilion seals), procedural foley/music synthesis (jo-ha-kyū structure, physically modeled shamisen/shakuhachi/taiko/hyoshigi), and a parametric traveler character. It",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Woodblock Print Engine with Ink-Take Reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Handscroll Camera with Sheet Freeze & Pull-Back",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Foley Synthesis from Noise/Sines",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Jo-Ha-Kyū Procedural Score with Physically Modeled Instruments",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural Wave Claw Geometry with Sub-Claws",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Bokashi Gradation with Per-Column Edge Jitter",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Carved Key Line: Variable-Width Filled Stroke with Taper & Jitter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ink-Take Reveal with 12-Level Baren Pressure Masks",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Vertical Title Slip (Cartouche) with Series Label & Seal",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Parametric Traveler with Gait, Mino, Hat-Off, Sit/Back Modes",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Whiteout Transition: Wave Claws Burst to Paper",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Font Version Pinning via Pinned Git Commit + gstatic URLs",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:14",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source implements a complete Ukiyo-e (Japanese woodblock print) animation style with five scenes, featuring layered print simulation (key lines + color blocks), procedural nature generators, a sophisticated trochoid wave system with fractal claws, bokashi gradients, and word-level voice timing. It demonstrates high-quality deterministic procedural graphics suitable for a 'traditional art' visu",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Layered Woodblock Print Rendering Pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Bokashi Hand-Wiped Gradient Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Carve Line Work with Taper and Jitter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Four-Beat Great Wave with Fractal Claws and Foam",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic Procedural Nature Library",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Word-Level Timestamps with Pre-Roll Offset",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "Kasumi Mist Bands for Depth Separation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Print Texture Overlay (printTex)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Scene Architecture: Cached Blocks + Live Paint",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Pen Stroke Audio Cues Synced to Drawing",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:20",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a complete procedural audio pipeline for a short film 'Where the Wind Went': foley synthesis (pen, wash, wind, hat, body, ambience), a multi-stem jazz waltz score hard-coded to a cue map, a mix with beat-synced ducking and bar-level loudness checks, and a single-command build script. It demonstrates deterministic, seeded audio generation tightly synced to visual events — directly re",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Procedural Foley Synthesis with Seeded RNG",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Multi-Stem Procedural Score Locked to Cue Map",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Beat-Synced Ducking for Key Foley Events",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Single-Command Reproducible Build Script",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Bar-Level RMS Loudness Monitoring in Mix",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Event-Driven Ambience Crossfade with Silent Section",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural Wind with Frequency & Amplitude Envelopes",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Pen Stroke Sounds Driven by Stroke Data JSON",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Two-Pass Loudnorm Mastering via mux.sh",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Deterministic Sampler Rendering with Fixed Seeds",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:27",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source is a complete deterministic pen-and-wash animation engine (Urban Sketch) with a demo short 'Where the Wind Went'. It demonstrates production-grade techniques: seeded procedural ink/watercolor rendering, GPU compositing via WebGL2, 3D skeleton IK characters, color arrival fields with organic bloom, spring camera follow, and sound-cue export. Code quality is high — modular, well-commented",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Deterministic Pen-and-Wash Rendering Engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Color Arrival Field with Organic Bloom Edges",
+    "kind": "better",
+    "area": "visual"
+   },
+   {
+    "title": "GPU Compositing Shader for Paper/Ink/Color Layers",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "3D Skeleton with IK and Capsule Limb Geometry",
+    "kind": "better",
+    "area": "motion"
+   },
+   {
+    "title": "Pose Library with Phase Cycles and mixPose Blending",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Spring Camera Follow Blended with Keyframe Moves",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Bloom Clip for Color Arrival Transitions",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Paper Grain Multiply Overlay Camera-Aware",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Sound Cues Export: Stroke Times, Trajectories, Events",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Deterministic Handwriting Animation with Clipping",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Catmull-Rom Trajectory Interpolation for Motion Paths",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural Wind/Leaves/Ripples Synced to Timeline",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:28",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the lemo-opuscar repo contains two polished demo styles: a procedural urban sketch world generator (5120×2880) with multi-layer wet-in-wet washes, distance-timed stroke reveal, and deterministic texture packing; and a complete vintage collage film \"The Inverted Jenny\" with a paper-cutout animation system, step-based motion, scene transitions (oval clip, whip-pan seam, slot zoom), proc",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Procedural wet-in-wet wash backgrounds",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Distance-based stroke reveal timing",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Paper cutout sprite with double shadow & backside",
+    "kind": "better",
+    "area": "visual"
+   },
+   {
+    "title": "Step-based animation (12fps) for paper elements",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Whip pan transition with paper seam",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural foley synthesis per event type",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Narration ducking with mid-band dip",
+    "kind": "better",
+    "area": "audio"
+   },
+   {
+    "title": "Font subsetting via Google Fonts CSS API",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Readcheck: world-to-screen text bounding boxes",
+    "kind": "better",
+    "area": "review"
+   },
+   {
+    "title": "Reserve/mask for highlight preservation",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:34",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source contains two demo styles from a procedural video pipeline: 'vintage-collage' (deterministic asset baking, engraving, halftone, torn paper, bilingual subtitle slips) and 'visual-investigation' (procedural score/SFX, one-command build, timeline generation). Both showcase reproducible, code-driven visual/audio craft relevant to faceless shorts.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Rotated Halftone Photo Conversion",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Ransom Note Title Generator",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Bilingual Subtitle Slip Baking",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Data Tower with Torn Scale Break",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Stamp Color Separation Extractor",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural Score from Section Plan",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural SFX Primitives Library",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Timeline Generator from VO Durations",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Bezier Silhouette to Torn Paper Sprite",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Manifest-Driven Asset Geometry",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:36",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source is a production-grade visual investigation demo (Hindenburg disaster) built as a single deterministic Canvas 2D page driven by a central film.json timing file. It demonstrates a complete pipeline: archival footage grading, schematic diagrams, evidence convergence, bilingual subtitles with QC, waveform visualization, and a reproducible asset/footage workflow with metadata. Quality is hig",
+  "knowledge": 1,
+  "build": 5,
+  "items": [
+   {
+    "title": "Central Timing Manifest (film.json)",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Ring Callout with Progress Leader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Corroboration Badge (Red Box + Hand-Drawn Check)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Waveform Bar Synced to Playback",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Subtitle QC: Width Gate + Minimum Duration",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Converging Evidence Lines to Zone",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Dot Grid for Count Visualization",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Broken-Axis Timeline (Dual Scale)",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Post-Render ASR Check on Final Mix",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Unified Archival Grade Presets",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Footage Provenance Pipeline (SOURCES.jsonl → SOURCES.md)",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:37",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This repo part contains a complete procedural watercolor-style short film pipeline: Canvas 2D animation with parametric Australian vegetation, map data visualization, bilingual subtitles, and a full audio stack (music analysis, jump-cut editing, procedural SFX synthesis, loudnorm mastering). It also includes a Playwright-based parallel renderer and font subsetting with change detection. The code i",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Librosa music structure analysis for beat-synced editing",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural SFX synthesis library (brush, wind, birds, rain, fire)",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Parallel headless Chrome rendering with frame piping to ffmpeg",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Beat-aligned music jump cut with equal-power crossfade",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural paper texture with multi-scale noise, fibers, vignette",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Font subsetting with unicode-range change detection & git-clean guarantee",
+    "kind": "better",
+    "area": "visual"
+   },
+   {
+    "title": "Data-driven schematic map with rainfall bands, coastlines, route, fire spots",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Bilingual subtitle rendering with word-wrap, shadow, dual-font",
+    "kind": "better",
+    "area": "caption"
+   },
+   {
+    "title": "Mist/paper-wash transition revealing map from landscape",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Logarithmic rainfall gauge HUD with animated pointer & tick marks",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Single-command reproducible build (prep.sh → analyze → edit → render → mux)",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:38",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The repo contains two polished demo styles: a procedural watercolor landscape (Australia biomes) and a projection-mapped white model (Rotterdam reconstruction). Both showcase end-to-end pipelines: data-driven visuals, beat-synced timelines, procedural audio, ASR-verified TTS, reproducible builds, and automated QC. The white-model demo is especially relevant for its single-command build, musical sc",
+  "knowledge": 3,
+  "build": 0,
+  "items": [
+   {
+    "title": "Beat-synced timeline with validation gate",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Projection-mapped data shader (white model)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Reproducible single-command build script",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Procedural musical score tied to timeline sections",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural foley synthesis from event list",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Overlay system: readouts, pins, range lines, bilingual subs",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "ASR-verified TTS pipeline with Kokoro",
+    "kind": "build",
+    "area": "voice"
+   },
+   {
+    "title": "Data-driven visuals with primary-source measurements",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Handwritten annotation system with curved leaders",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural biome generation with rainfall-driven zones",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Fire front propagation with ecological regrowth delay",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Cue validation gate (audio-visual sync on beat grid)",
+    "kind": "build",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:39",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This repo part reveals a production-grade whiteboard/map explainer pipeline with rigorous QC: final-mix ASR verification, font subsetting via Google Fonts API, strict subtitle cue timing, loudness impact analysis, motion flatness detection, and a fully deterministic GIS-to-film data pipeline. The techniques are directly transferable to a faceless-shorts studio for higher reliability and visual pre",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Final-mix ASR verification",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Google Fonts CSS2 subsetting with &text=",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Subtitle cue timing rules: min 1.8s, speech+0.6s, no overlap",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Loudness impact check with momentary K-weighted meter",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Motion flatness & cut-jump detector",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Data-driven visuals: all numbers computed in prep, film only reads stats.json",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Handwriting ribbon fill with chisel angle + pressure taper",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Camera motion blur via multi-subframe rendering on whips",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Whisper word timestamps drive subtitle clause splitting (≤44 chars)",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "NOAA Meeus solar position for accurate shadow animation",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:41",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides single-line vector font definitions for animated whiteboard lettering, automated foley synthesis for marker drawing based on stroke velocity curves, and structure-tensor image-to-woodcut hatching filters.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Kinematic Marker Foley Synthesis",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Structure-Tensor Directed Hatching Filter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Single-Line Vector Glyphs for Real-Time Stroke Animation",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:42",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a complete woodcut/engraving rendering engine (hatch.js, knife.js, print.js) plus a short film \"The Bell Founder\" built on it (film.js, fx.js, hands.js, interior.js, mix.py). It demonstrates deterministic procedural illustration: region-based streamline hatching with tone-mapped stroke widths, height-field sculpting for close-ups, a WebGL print compositor with paper/ink/grain physic",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Procedural woodcut/engraving style via streamline hatching",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Height-field sculpting for deterministic close-up assets",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Event-driven procedural foley synthesis with ducking/reverb",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Progressive stroke reveal (t0/dur) for animated drawing/engraving",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Contour-aligned hatching via direction field blending",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Relief shading via inflated normals on distance field",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "WebGL print compositor for authentic ink/paper/grain look",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic seeded asset generation with memoization",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Audio-visual event timeline with absolute silences and J/L-cuts",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Procedural prop factory with parameterized geometry (bell, bellows, crucible, gifts)",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:44",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source is a complete production pipeline for a 58-second woodcut-animation short ('The Bell Founder'), featuring a single-source timeline.json that drives procedural music (numpy modal synthesis), shot definitions, transitions, and captions. It demonstrates exceptional engineering: deterministic cached hatching, stem-based audio with per-stem reverb/loudnorm, physics-based page-curl transition",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Single-source timeline JSON",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Procedural modal synthesis for SFX",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Stem-based reverb & loudnorm pipeline",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Automated cue-check (music ↔ visuals ↔ timeline)",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Whisper post-render VO verification",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Font version pinning via fetch script",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Two-pass loudnorm → CRF 28 grain-tuned encode",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Procedural page-curl/peel transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Cached local-space hatching for consistent 'carved' look",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Part-based 2D rig with pivot + cached features",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Subtitle timing rule: start -0.05s, min max(1.8s, speech+0.6s)",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:45",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the lemo-opuscar repo contains the Woodcut Print style implementation: deterministic procedural character model sheets (founder/apprentice), a full exterior world (valley, village, bell tower, snowfall, mountains, sky), and word-level voice timestamps. It demonstrates a complete code-driven film pipeline with carve/print dual-mode rendering, spatial reveal timing, facet-shaded terrain",
+  "knowledge": 0,
+  "build": 6,
+  "items": [
+   {
+    "title": "Carve/Print dual-mode rendering",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Facet-shaded terrain with peak spines",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Spatial reveal timing (rv function)",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "World-anchored particle systems with 12fps stepping",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Procedural village generation with per-building reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural pine trees with tiered snow caps",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Footprint track generation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Sky hatching with horizon glow gradient",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Negative start timestamps for pre-roll",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "Bell tower with animated belfry arch and bell",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:46",
+  "name": "lemomo-ai/lemo-opuscar",
+  "url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source is a release-management toolkit (Python + shell) for a creative-code library: it enforces asset hygiene, versions large binaries via GitHub Releases with SHA256 manifests, generates web-optimized 720p cuts, and validates per-style completeness. It is well-engineered, production-grade, and directly relevant to automated media pipelines.",
+  "knowledge": 3,
+  "build": 3,
+  "items": [
+   {
+    "title": "Asset manifest with SHA256",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Web-optimized transcode pipeline",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Pre-commit hygiene gates",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Orphan asset detection",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Catalog durability guard",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Process wording filter",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Required asset checklist per video",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Media bundle for atomic CDN sync",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:48",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This is the HyperFrames repository (part 1 of 822) — the open-source HTML-to-video rendering framework our studio already uses as its visual engine. The docs reveal 450+ catalog blocks, agent skills for video production, shader transitions, frame.md design inversion, distributed rendering, and validation tooling that directly extend our current pipeline.",
+  "knowledge": 4,
+  "build": 4,
+  "items": [
+   {
+    "title": "frame.md design inversion",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Catalog block installation via CLI",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "WebGL shader transitions package",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "HyperFrames agent skills for video patterns",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Two-gate composition validation (lint + check)",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Design templates as style-system starting points",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "AWS Lambda distributed rendering SDK",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Reverse-any-video workflow for reference analysis",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Media-use skill for systematic asset sourcing",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Frame adapter pattern for multi-runtime animation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Player component for instant preview embeds",
+    "kind": "build",
+    "area": "thumbnail"
+   },
+   {
+    "title": "Reproducible asset bake with manifest logging",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:49",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames repo part 2 reveals a mature motion-graphics framework with codified doctrines for captions, scripts, transitions, and scene choreography. Its internal skills (caption overlay, motion doctrine, cut-the-curve, oversized cursor, changelog video) are production-hardened and directly applicable to faceless Hinglish/English shorts.",
+  "knowledge": 4,
+  "build": 1,
+  "items": [
+   {
+    "title": "Drop/Rail/Embed Caption Model",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Two-Layer Script Tokens (Spoken/Display)",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Visualization Registry (Show-Don't-Tell Routing)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Cut-the-Curve Seam Catalog (5 Techniques + 2 In-Scene)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Motion Doctrine Vector Law & Current",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Seam Gate Automated Verification",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Oversized Cursor as Eye-Carrier",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Waterfall Entry & Nudge Curve (In-Scene Choreography)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Pre-Commit Quality Gates (Lefthook Pattern)",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Skills Manifest with Content Hashes",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Changelog Video Pipeline (Weekly Branded Shorts)",
+    "kind": "knowledge",
+    "area": "growth"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:52",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is part 3 of the HyperFrames repo, covering the changelog-video skill and its dependency skills (motion-doctrine, seam-craft, cut-the-curve, captions-overlay). It provides a production-grade pipeline for branded weekly videos: a two-layer script format (display vs spoken), a lexicon for TTS pronunciation, caption alignment from word timestamps, a verified transition system (seam-stamp ",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Two-layer script tokens (display vs spoken)",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "TTS lexicon with plain-text phonetics",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "Align-captions pipeline: spoken timestamps → display captions",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Caption overlay doctrine: rail-first, embed-scarce, no reserved band",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Opaque stage ground to prevent white flashes at seams",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Seam Gate: automated headless verification of transition correctness",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Cut-the-curve transition parameters (velocity-matched, partial travel)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Seam-stamp: declarative ledger → GSAP transition code",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Visualization registry: 'show don't tell' routing table",
+    "kind": "knowledge",
+    "area": "ideas"
+   },
+   {
+    "title": "Master-skeleton scaffold pattern for brand consistency",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Waterfall entry & nudge curve for in-scene motion",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:54",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo contains the motion-doctrine gateway skill, cut-the-curve transition catalog, seam-gate verifier, oversized-cursor eye-carrier, seam-craft render prerequisites, and a changelog-video pipeline with two-layer script tokens and caption alignment. It's production-grade, battle-tested code from HeyGen's launch films.",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Vector Ledger + Seam Gate",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Motion Doctrine: Vector Law & Current",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Carrier Elements & Causal Motion",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Cut-the-Curve Transition Catalog (7 variants)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Oversized Cursor Eye-Carrier",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Seam Craft: Opaque Stage Ground (White-Flash Guard)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Two-Layer Script Tokens (Display vs Spoken)",
+    "kind": "build",
+    "area": "script"
+   },
+   {
+    "title": "Caption Rail with Word-Level Karaoke Sync",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Sustained-Motion Routes (No Idle Wobble)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Stillness Before Climax & Timing Intents",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Changelog Video Pipeline (Weekly Branded Shorts)",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "Pre-Commit Hygiene Gates (Build + Lint + Typecheck)",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:54",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source contains GitHub Action workflows and CI configurations for the HyperFrames engine, focusing on performance gating, cross-platform consistency, and automated rendering validation. It is highly valuable for its sophisticated approach to deterministic video rendering and performance regression testing.",
+  "knowledge": 4,
+  "build": 4,
+  "items": [
+   {
+    "title": "BeginFrame Deterministic Rendering",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Performance Work-Count Ratcheting",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Incremental Quality Gate (Fallow)",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Flake-Gate Test Sharding",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Cross-Architecture Font Parity",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Canary Sunset Governance",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Interaction p95 Performance Gate",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Telemetry Suppression in CI",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:55",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo contains 12 GitHub Actions workflows for CI/CD, performance testing, regression testing, publishing, and maintenance. They demonstrate mature engineering practices: sharded performance benchmarks with multiple scenarios, cross-browser parity checks, bin-packed test scheduling from historical timings, immutable artifact verification, failure artifact capture, and a",
+  "knowledge": 1,
+  "build": 5,
+  "items": [
+   {
+    "title": "Sharded render performance benchmarks",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Cross-browser render parity gate",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Bin-packed render job scheduling",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Automated failure artifact bundle",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Immutable render commit pinning",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Asset integrity verification gate",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Clean baseline smoke test",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Nightly full-pipeline integration test",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Stale draft auto-archive",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Telemetry suppression in test renders",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:56",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames repo shows a mature, production-grade HTML+GSAP video framework with a catalog of reusable, parameterized 'blocks', a CLI for installation, rigorous cross-platform CI (Windows smoke tests, FFmpeg feature verification, window-probe checks), and strict documentation standards. Its block system, variable typing, and regression testing are directly applicable to our studio's HyperFrame",
+  "knowledge": 2,
+  "build": 4,
+  "items": [
+   {
+    "title": "Catalog block system with typed variables",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "CLI command to install blocks with assets",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "FFmpeg feature inventory verification in CI",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Windows headless render smoke test with canary composition",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Regression test for reused video segments (issue #574 pattern)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Window probe test to ensure headless operation",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Measured keystroke/token rhythm arrays for realistic typing",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Composition embedding via data attributes with variable values",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Variable system with types, defaults, descriptions, and portrays",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Documentation standards (AGENTS.md) for user-facing guides",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:57",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog contains six reusable composition blocks: three practical UI/data showcases (app-showcase, apple-money-count, bar-chart-race), one beat-driven transition (beat-freeze-cut), and two WebGPU shader backgrounds (aurora, blob). The showcase and data blocks are production-ready HTML+GSAP patterns with configurable variables; the beat-freeze-cut demonstrates a complet",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Bar Chart Race with Smooth Rank Transitions",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Beat-Synced Freeze-Frame & Hard-Cut Pipeline",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Kinetic Number Counter with Particle Burst",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Multi-Phone Product Showcase Layout",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic Rank Interpolation for Bar Races",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Seek-Safe Freeze Frame via GSAP .set()",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 10:59",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Three HyperFrames catalog blocks: a 12s AI creator intro with cursor-guided narrative, text fragmentation, UI simulation, and social-card CTA; a 4s responsive camcorder HUD with timeline-driven counter and blinking REC; a 4s mathematically exact dolly-zoom using CSS 3D perspective solved per frame via property setter for deterministic seeks. All are production-ready, well-documented, and directly ",
+  "knowledge": 1,
+  "build": 6,
+  "items": [
+   {
+    "title": "Deterministic frame rendering via property setter",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Responsive HUD overlay with CSS custom properties",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Oversized cursor as eye-carrier guide",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Text fragmentation/reassembly for hook reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "UI simulation pattern: typing → thinking → result card",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Burst particle system with per-particle custom paths",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Social card CTA with animated follow button",
+    "kind": "build",
+    "area": "thumbnail"
+   },
+   {
+    "title": "Variable system with validation and defaults for reusable blocks",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Mathematically exact dolly-zoom with depth layers",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Timeline-driven counter formatting (HH:MM:SS)",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Selection box expand/contract with cursor sync",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:00",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source provides two HyperFrames catalog blocks: a 3D leaf-sweep title (canopy-part-title) and a circular image carousel (carousel-circle-1). Both demonstrate production-grade deterministic animation techniques, procedural generation, and robust variable systems.",
+  "knowledge": 7,
+  "build": 1,
+  "items": [
+   {
+    "title": "Quintic Hermite handoff interpolation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "GPU warm-up before readiness gate",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Progress LUT for complex speed curves",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "AE-style cubic Bezier from keyframe data",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Path-based animation with arc-length sampling",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Depth-based scaling with perspective boost",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Per-word drift animation with configurable easing",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Converge entry animation for staggered elements",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Headline reveal via wipe uniform synced to sweep",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Variable system with portrays for content role",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Alpha-aware depth prepass for post-process DOF",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Seeded per-element breeze with independent periods",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:02",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames catalog blocks (carousel-circle-2 and carousel-circle-3) demonstrating sophisticated 6-second, 12-slot image carousels with path-based 3D motion, depth-aware scaling, fast-slow-fast progress LUTs, staggered entry, and word-level text animation. Code is production-grade, deterministic, and variable-driven — directly applicable to our HyperFrames pipeline.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Depth-Aware Path Rigging",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Progress LUT with Arrive/Cruise/Exit Phases",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Staggered Entry with Lead Time",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Word-Level Text Animation with Drift",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Semantic Variable Portrays for Asset Selection",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "CLI Block Install with Asset Manifest",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Orbit Rig for Spherical Distributions",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "AE-Style Cubic-Bezier Keyframe Parser",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:03",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames carousel blocks (circle-4, circle-5) showcasing production-ready 12-card circular galleries with depth-based scaling, AE-style easing, progress LUTs for fast-slow-fast motion, and staggered reveals. Code is clean, deterministic, and directly portable to our HTML+GSAP pipeline.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Progress LUT with Arrive/Exit Multipliers",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Depth-Based Scaling via Angle Projection",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "AE-Style Easing Curve Parser with Newton Solver",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Bezier Path with Arc-Length Parameterization",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Chained Drive for Cumulative/PingPong Loops",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Staggered Entry with Partial-Ease Tail",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Converge Entry Animation (Center-Out)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Text Word Drift with Blended Linear/Power Ease",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "End Fade by Path Percentile",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:04",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "some",
+  "summary": "This is a production-ready HyperFrames catalog block implementing a 3D Fibonacci-sphere image carousel with 24 billboarded cards, perspective scaling, progress-LUT motion curves, AE-style Bezier easing, chained drives, word-level text drift, and ring convergence. Code quality is high (1024 lines, stable badge, deterministic math).",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Fibonacci sphere golden-angle distribution",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Billboarding with perspective-boost scaling",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Progress LUT with arrive/exit boost caps",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Text drift easing: linear-power blend",
+    "kind": "build",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:05",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog block implements a sophisticated 3D Fibonacci-sphere carousel with 24 billboarded image cards, camera-aware perspective scaling, AE-style easing curves, progress LUTs for complex motion profiles, and staggered entry/exit animations. It's production-grade code demonstrating advanced 3D layout math and deterministic animation patterns directly applicable to our HyperFrames p",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Fibonacci Sphere Distribution for Even 3D Placement",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Camera-Aware Billboarding with Perspective Scale",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Progress LUT for Arrive/Cruise/Exit Motion Profiles",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "AE-Style Cubic Bezier from Keyframe Data",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Chained Drive for Cumulative/PingPong Loops",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Staggered Entry with Lead Time and Partial Ease",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Word-Level Drift Animation with Custom Ease Blend",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Converge Animation: Cards Fly from Center to Orbit",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "End Fade by Path Position for Seamless Loops",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Variable System with Portrays for Asset Selection",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Deterministic Frame Rendering via Property Setter",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Dual Text Layers with Clip-Path Split for Cards-Over Effect",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:06",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a production-ready HyperFrames catalog block implementing a 24-card 3D carousel on a Fibonacci sphere with billboarded cards, perspective scaling, and GSAP-driven animations. It's a high-quality reference that integrates multiple advanced techniques (golden-angle distribution, camera-facing rotation, progress LUTs, semantic variables) into one deterministic, variable-driven composit",
+  "knowledge": 1,
+  "build": 0,
+  "items": [
+   {
+    "title": "Fibonacci Sphere Point Distribution",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Billboarded Card Camera-Facing Rotation",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Perspective Scaling with Boost Control",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Behind-Camera Culling",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Progress LUT with Arrive/Exit Multipliers",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Variable Portrays for Semantic Asset Selection",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Converge Entry Animation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Camera Perspective Math with Zoom/Distance",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:08",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog block implements a production-ready 3D Fibonacci-sphere carousel with 24 billboarded image cards, featuring perspective scaling, staggered entry, text drift, and a full variable system. It cleanly demonstrates several animation primitives our brain already knows, but adds concrete parameter defaults and a few architectural patterns (fractional-count sphere, converge entry,",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Fibonacci Sphere with Fractional Count Interpolation",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Converge Ring Entry Animation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "End Fade for Open-Path Carousels",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Squeeze Wrapper for Independent Entry/Exit Scale",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Perspective Scaling with Boost Parameter",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Variable Portrays for Semantic Asset Selection",
+    "kind": "knowledge",
+    "area": "script"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:09",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is a HyperFrames catalog block implementing a 3D Fibonacci-sphere carousel with 24 billboarded image cards, featuring GSAP-driven animation, AE-style easing curves, progress LUTs with arrive/exit clamping, and a semantic variable system. It's a production-grade reference for 3D carousel patterns directly compatible with our HTML+GSAP render pipeline.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Fibonacci Sphere Distribution for 3D Carousels",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Progress LUT with Arrive/Exit Power Curves & BoostCap",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Chained Drive with Auto Accumulate/PingPong Detection",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Billboarded Card Yaw/Pitch to Camera Formula",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Variable 'portrays' for Semantic Asset Selection",
+    "kind": "build",
+    "area": "ideas"
+   },
+   {
+    "title": "Converge Entry Animation from Scaled Position",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "Entry Stagger with Lead Time & Partial Progress Handling",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "End Fade by Path Percentile for Open Paths",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Squeeze Wrapper for Independent Group Scale",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "AE-Style Cubic Bezier from Keyframe EaseIn/EaseOut",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Text Drift Linear-Power Blend Easing",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "BuildProgress Velocity Clamping via BoostCap",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:12",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Catalog block specifications and implementations for Path Carousels 1 and 2 from HyperFrames, moving cards along open Bezier curves. Features robust 2D-to-3D projection scaling and split-layer text occlusion.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Split-Clip Text Sandwich Occlusion",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Projected Axis Depth Scaling",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Distance-Eased Center-Symmetric Y-Tilt",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:13",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames carousel blocks (12- and 24-slot) that animate image cards along open Bézier paths with depth scaling, tangent rotation, 3D perspective, and a progress LUT for smooth arrive/exit speed curves. The code demonstrates a reusable rig architecture with chained drives, AE-style easing, semantic variable portrays, and polished entry/exit stagger patterns.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Path Carousel Rig with Depth Scaling",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Progress LUT with Arrive/Exit Curves",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Chained Drive for Cumulative/PingPong Loops",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Semantic Variable Portrays for Asset Selection",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Word Drift Easing with Linear/Power Blend",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Entry Stagger with Lead and Partial-Ease Tail",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "End Fade for Open Paths",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic Bézier Path Construction",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "AE-Style Cubic Bezier Easing Parser",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Depth-Angle Projection for Pseudo-3D Scaling",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:14",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames carousel blocks: Path Carousel 5 (24 cards on open bezier path with depth scaling/tangent rotation) and Text+Circle Carousel 1 (12 cards on closed circle path with word-by-word headline reveal, converge entry, hard cut to outro). Both showcase a reusable CarouselRig engine (path building, progress LUTs, chained drives, 3D camera) and a variable/registry system for content injection",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Reusable CarouselRig animation engine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Path carousel with depth scaling & tangent rotation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Circle carousel with converge entry animation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Word-by-word mask reveal with horizontal drift",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Progress LUT with configurable arrive/exit curves",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Chained drives for animated control parameters",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Variable registry with portrays for asset selection",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Dual text layers with card-overlap clip-path masking",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Composition embedding via data attributes",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Hard cut with scaled outro transition",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:15",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames catalog blocks (carousel-text-circle-2 and -3) that implement a polished 5-second carousel composition: 12 image cards travel a closed Bézier path with depth scaling, a headline reveals word-by-word via clip-path masking while cards thread the line, then a hard cut at 3s introduces a second line that scales from 1.4× to 1.0. The code is production-grade, parameterised, and includes",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Carousel Rig as Reusable HyperFrames Block",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Word-by-Word Mask Reveal with Dual Clip-Path Layers",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Converge Entry: Off-Screen 3× Scale → Formation with Stagger",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Two-Act Composition with Hard Cut at Fixed Time",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Progress LUT with Arrival/Exit Boost and Cap",
+    "kind": "better",
+    "area": "motion"
+   },
+   {
+    "title": "Depth-Angle Scaling for Pseudo-3D Carousel Perspective",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Ring Convergence Stagger Entry for Dynamic Intros",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:16",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames catalog blocks (carousel-text-circle-4 and -5) demonstrating a production-ready 5-second carousel template: 12 image cards on a closed Bezier path with depth-scaled 3D rotation, word-by-word mask-reveal headline, converging collapse to center, hard cut to a 1.4× scale second line. Identical codebase; only path vertices and control params differ.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Closed-path carousel rig with depth-scaled perspective",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Dual-layer mask-reveal headline (clip-path split)",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Hard cut with matched exit velocity (scale + converge)",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Progress LUT for arrive/cruise/exit speed curves",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Variable system with 'portrays' for asset auto-selection",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Converge-from-offscreen entry (ring entry)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Chained drive for cumulative rotation (pingpong/accumulate)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic render at 2× with scaler transform",
+    "kind": "knowledge",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:17",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames catalog blocks (carousel-vision-1/2) demonstrating production-ready 3D image carousels with 12 slots, path-based animation, camera perspective, depth scaling, and a variable system with semantic portrays. Code is well-structured, deterministic, and uses GSAP timelines with progress LUTs for smooth motion curves.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "3D Carousel Block for Multi-Image Showcases",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Progress LUT with Configurable Arrive/Exit Curves",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "2× Render Scaler Transform Pattern",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Path Rig with Depth-Angle Scaling & Camera-Facing Rotation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Card Inner/Outer 3D Structure with preserve-3d",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Chained Drive for Seamless Looping Animations",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Text Drift with Custom Linear/Power Ease Blend",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Variable Registry with Semantic Portrays for Asset Auto-Selection",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:18",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames carousel blocks (Vision 3 & 4) demonstrating production-ready 3D image carousels with 12 cards, path-based animation, camera-aware rotation, depth scaling, and sophisticated motion controls. Code is clean, deterministic, and uses GSAP + CSS 3D transforms with a 2× render scaler.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Path-based 3D carousel rig with camera-aware card rotation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Progress LUT with arrive/cruise/exit speed curves",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "AE-style keyframe easing with cubic Bezier Newton solver",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Converge entry animation for carousel cards",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Text word drift with blended linear/power easing",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Fibonacci sphere distribution for 3D orbit layouts",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Depth-based scaling formula with scaleDepth/scaleMin",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Variable 'portrays' for semantic asset auto-selection",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "End fade for open-path carousels",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Image fitting logic: fitBox or imageHeight",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Chained drive accumulate vs pingpong for looping keyframes",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:19",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames catalog blocks: a 3D image carousel (carousel-vision-5) with Bezier-path rig, depth scaling, and 2× render scaling; and a ChatGPT UI mockup (chatgpt-exchange) with word-by-word streaming, table assembly, scroll sync, keyboard simulation, and deterministic layout measurement. Both showcase production-grade motion patterns and variable-driven composition architecture.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Path-based 3D rig with depth scaling and tangent rotation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Image fitting logic: fitBox or imageHeight",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Beat clock (T object) for precise timeline coordination",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Word-by-word streaming with synchronized scroll",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Table assembly row-by-row with staggered word reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Caret-following scroll for long text in fixed container",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic layout measurement before animation",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Font embedding via @font-face for cross-platform deterministic rendering",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Header morph: segmented control → actions pill",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Suggestion chips cascade entry (waterfall, weight-ordered)",
+    "kind": "knowledge",
+    "area": "hook"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:29",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo is a catalog of five installable blocks (two WebGL shader transitions, a WebGPU chrome orb, a cinemagraph, and a portrait mock AI-chat UI) with full source, install commands and deterministic timeline code. The engineering quality is good (timeline-driven, seeded, DOM-measured, no rAF), but several blocks are demo scenes rather than reusable primitives, so only th",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Cinemagraph: one living region over a frozen still",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "GPU shader transitions over rendered scene frames",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Fold-anchored line-by-line text streaming",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Fonts-ready gate before any DOM measurement",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Collapse reasoning steps into a summary chip",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Gap-on-child rule for collapsing blocks",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:38",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part documents three HyperFrames code animation blocks: a WebGL 3D extruded slab with syntax highlighting, an animated line-by-line diff, and a line highlight sweep with context dimming. These techniques provide production-ready visual components directly applicable to Kaise Tech's explainer graphics.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Hybrid Unlit-Face Lit-Bevel 3D Slab",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "FOV Aspect-Bounded 3D Camera Fit",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Diff Line Collapse and Expansion",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Sweep Highlight with Context Dimming",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:40",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Two HyperFrames catalog blocks demonstrating production-ready code animation techniques: token-level morphing via Shiki-baked tokens with FLIP animation, and GPU particle assembly where code resolves from scattered points. Both use paused GSAP timelines for frame-accurate seeking, deterministic seeded randomness, and fonts-ready gates — patterns directly applicable to our lab-look tech explainers.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Token-level code morph with FLIP",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "GPU particle code assemble",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Seeded mulberry32 PRNG for deterministic particles",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Offscreen canvas → Three.js texture pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Shader particle color lerp: flight → true color",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Line-diff LCS for code state transitions",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Token key tracking across code states",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Scene crossfade between code states",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Deterministic particle origin/delay via seed attribute",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:42",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "HyperFrames catalog block implementations for code scrolling to lines, WebGL shader dissolve, and 3D slice hero typography. Demonstrates precise viewport centering for code lines, threshold dissolve progress overshooting, and seam-free tile mesh handoffs.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Target Line Center-Lock and Dim",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Static Flat Plate Handoff for Tiled Meshes",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Threshold Dissolve Progress Overshoot",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Ink-Masked Cell Flip Partitioning",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:45",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Source provides HyperFrames catalog implementations for Apple Terminal and VS Code workbench mockups with tokenized syntax typing. It demonstrates CSS token variable mapping from VS Code themes and decoupled caret motion/blink synchronization.",
+  "knowledge": 0,
+  "build": 3,
+  "items": [
+   {
+    "title": "VS Code Theme Token-to-CSS Variable Mapping",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Orthogonal Property Separation for Typing Carets",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Synchronized Active-Line and Terminal Reveal Rig",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:47",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Three HyperFrames catalog blocks demonstrate production-ready techniques for deterministic, frame-accurate animations: a token-streamed code typing effect with syntax highlighting, a WebGL cosmic orb with variable-driven shader parameters, and a cross-warp morph transition using scene capture and FBM noise. All use property-setter driven timelines for seek-safe rendering, fonts-ready gates, and ba",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Token-streamed code typing with syntax highlighting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Property-setter driven canvas/WebGL animation for frame-accurate seeks",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Scene capture to texture for shader transitions",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "FBM noise for organic warp and blend boundary",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Variable resolution with CSS custom property precedence",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Beat pulse envelope from precomputed samples",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Per-character typing with linear caret glide",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Register GSAP timeline only after full build inside fonts.ready",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Pre-baked syntax tokens for deterministic highlighting",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:48",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source part contains five HyperFrames catalog blocks: a 3D cuboid carousel with Blender-baked motion, an animated data chart with NYT-style reveals, a domain-warp shader transition, an editorial flash overlay, and an exploded isometric stack. All are production-ready, seek-safe, and demonstrate advanced WebGL/GSAP patterns relevant to our HyperFrames pipeline.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Blender-baked motion import for deterministic 3D camera/object paths",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "GPU warm-up before readiness gate for WebGL scenes",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Seek-safe render(t) pattern with clock object",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Clip-path text reveal for hook headlines",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Staggered data chart animation with live counters",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Domain-warp shader transition with fractal noise",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Editorial flash overlay with screen-blend gradient layers",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "True isometric orthographic camera for 3D diagrams",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "SVG leader lines connecting 3D objects to HTML labels",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Procedural face/glyph textures via CanvasTexture for 3D objects",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Font preconnect and @font-face with woff2 for deterministic loading",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "CSS custom properties for block theming at runtime",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:49",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog provides eight ready-to-use blocks: a 3D extruded logo with per-letter flip-up and material finishes, three WebGPU shader backgrounds (falling lines, flowing gradient, fractal noise), a white-flash shader transition for dark scenes, two flowchart variants (landscape/portrait) with animated SVG connectors, cursor simulation and typing correction, and a freeze-fr",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Extruded 3D Logo with Per-Letter Flip-Up",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Animated Decision Flowchart with Cursor Micro-Interactions",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Freeze-Frame Scrapbook Dressing (Paper, Tape, Flash)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "White-Flash Crossfade Transition for Dark Backgrounds",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Per-Letter Staggered Flip-Up with EaseOutBack",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "SVG Connector Drawing via Stroke-Dashoffset",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Simulated Cursor Interaction as Narrative Device",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Typing Correction Animation with Squiggle Underline",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:50",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source shows Haygen's HyperFrames block catalog: reusable, variable-driven WebGPU/Three.js compositions (ice breakup, glass refraction, infinite tunnel, procedural shaders) installed via CLI. It demonstrates production-grade patterns for deterministic rendering, procedural 3D, and performance scaling that directly address our gaps in 3D scenes, seek-safe preflight, and shader-based backgrounds",
+  "knowledge": 3,
+  "build": 2,
+  "items": [
+   {
+    "title": "Seek-safe rendering via property setter",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Hash-based deterministic procedural content",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "WebGPU shader blocks for procedural backgrounds",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Three.js integration for 3D hero blocks",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Performance profiles with upscaler and render scale",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Off-screen asset decode well for texture loading",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Studio lighting via PMREM for consistent 3D look",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Block catalog with CLI install and variable schema",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "CSS custom properties for runtime theming",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Segment recycling tied to fog distance for seamless loops",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Canvas texture headlines for 3D refraction",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic frame rendering via property setter (engine level)",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:51",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog part showcases six production-ready blocks: a Voronoi-based glass shard title (Three.js + HDR), two WebGL shader transitions (glitch, gravitational lens), two WebGPU shader backgrounds (godrays, goo), and a gooey metaball split with directional motion blur via sub-frame trajectory sampling. Code quality is high — deterministic, seek-safe, guarded against double-evaluation,",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Voronoi text shatter into glass shards",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Directional motion blur via sub-frame trajectory sampling",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "SVG gooey metaball filter (blur + alpha threshold)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "HDR environment + matcap for glass material",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Guarded script evaluation + hf-seek sync + bfcache cleanup",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Scene-to-texture capture for shader transitions",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "WebGPU shader blocks via data-requires-webgpu",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic blade path geometry for gooey split",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Custom eases for staggered choreography",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Seeded Poisson-disc + Voronoi for text shattering",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Master progress timeline (tin/tout) for seek-safe animation",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Flat dark background for glass/HUD blocks",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:53",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog provides 10 ready-to-use visual blocks: a WebGL halftone-field background, three WebGPU shader orbs, a vertical promo card, and five hand-drawn (hw) components (frame, path-text, pipeline, scribble-transition, speech-bubble). The hw family shares a lightweight boil/wobble runtime and a clear pattern for keeping media in the host composition — directly relevant ",
+  "knowledge": 4,
+  "build": 2,
+  "items": [
+   {
+    "title": "Halftone-field lab background",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Reusable hwBoil wobble system",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Handwritten text-on-path with per-char reveal",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Hand-drawn flowchart pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Scribble overlay transition with solid backstop",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Speech bubble with positionable tail",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Media-in-host-root rule for sub-compositions",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Property-setter driven canvas render loop",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Gamma-crush halftone look for dark lab aesthetic",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Per-character stagger capped by duration budget",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Hard-kill root at last visual frame, not at duration",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Hand-drawn frame with corner doodles and caption",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:54",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog showcases six polished, production-ready blocks: two handwritten title variants (scalar highlight sweep and true glyph write-on with curvature-adaptive pen velocity), an Instagram follow overlay, a complex iOS 26 liquid-glass 3D device mockup using HTML-in-Canvas capture, and two minimal WebGPU shader backgrounds. The code is clean, deterministic, and demonstra",
+  "knowledge": 5,
+  "build": 1,
+  "items": [
+   {
+    "title": "Curvature-adaptive pen velocity ease (hwPenEase)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Baked per-glyph centerline strokes for true write-on",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Single-dispatcher onUpdate pattern (hwOnUpdate)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Pose-based parameterization (boilPose, writeOnPose)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Seeded squiggle underline matched to text width",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Custom cubic-bezier ease factory (cbz)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Fallback glyph handling for missing baked characters",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Liquid glass notification card (CSS + Canvas shader)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Planar UV correction for GLTF screen mapping",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "HTML-in-Canvas capture via drawElementImage",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:55",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the hyperframes catalog showcases 10 production-ready blocks: a WebGL shader transition (light-leak), two HTML-in-Canvas liquid-glass compositions (notifications, widgets), a WebGPU chrome sphere, a logo outro, a Lottie+GSAP character walk, and four broadcast lower-third variants. All use GSAP timelines, deterministic rendering patterns, and variable-driven customization. Quality is h",
+  "knowledge": 4,
+  "build": 1,
+  "items": [
+   {
+    "title": "Shader transition with texture capture",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "HTML-in-Canvas glass morphism pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Lottie + GSAP hybrid character acting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Aurora simplex noise shader",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Variable-driven block customization",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Clip-path wipe entrances for UI panels",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Piece-by-piece logo assembly",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Broadcast lower-third patterns",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Glass panel animation performance pattern",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "WebGPU shader blocks",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:56",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides 9 production-ready HyperFrames lower-third blocks and a macOS notification overlay, each a self-contained HTML+GSAP composition with entrance/exit animations, variable systems, and catalog metadata. The neon-border block stands out with procedural SVG glow layers, analytic perimeter math, and a rich variable API; the others demonstrate clean clip-path wipes, overshoot eases, a",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Lower-third style taxonomy by footage brightness",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Clip-path inset wipe for text reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural SVG neon glow with analytic perimeter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Variable-driven composition via data-composition-variables",
+    "kind": "better",
+    "area": "visual"
+   },
+   {
+    "title": "Kicker/eyebrow tag for instant context",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Opposing clip-path wipes for stacked dual metrics",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Vertical accent bar scaleY draw",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Back.out overshoot for high-energy entrance",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Text-shadow for footage legibility",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "macOS notification banner as social-proof overlay",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:57",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog part showcases three production-ready blocks: a cinematic 3D MacBook composition with live HTML-in-Canvas capture, glassmorphism UI primitives, and procedural WebGPU shader backgrounds. The MacBook block demonstrates a complete pipeline — live HTML animation driven by a shared state object, captured via drawElementImage to textures, mapped onto GLTF screens with planar UV ",
+  "knowledge": 0,
+  "build": 3,
+  "items": [
+   {
+    "title": "WebGPU shader background blocks",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Glassmorphism UI drawing primitives",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural environment map generation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Cinematic 3D device orbit with breathing motion",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "HTML-in-Canvas live animation pipeline",
+    "kind": "better",
+    "area": "visual"
+   },
+   {
+    "title": "Planar UV correction for GLTF screens",
+    "kind": "better",
+    "area": "visual"
+   },
+   {
+    "title": "Shared animation state object",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Composition capability metadata",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Shader backdrop atmosphere layer",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Asset bundling with CLI install",
+    "kind": "better",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 11:58",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames catalog blocks are production-grade, frame-accurate HTML+GSAP compositions with deterministic timelines, semantic variable systems, and measurement-calibrated styles. They demonstrate a mature component model directly applicable to our lab-look shorts.",
+  "knowledge": 4,
+  "build": 4,
+  "items": [
+   {
+    "title": "Scalar-driven word-sweep karaoke",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Message-thread chat story template",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Minimal line graph with draw-on, dot pop, riding value labels",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Text clone wall transition with difference-blend inversion",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Artifact-closed-loop calibration comments",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic typing via pre-baked frame swap",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Semantic variable `portrays` for asset auto-selection",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Layout audit attributes for overflow/overlap/occlusion",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Procedural soft-blob gradient background with animatable card mask",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Fractional-second GSAP timestamps imply beat-grid authoring",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
  }
 ]

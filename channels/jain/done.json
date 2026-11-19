@@ -30,23 +30,21 @@
   "job": "1119-0335",
   "topic": "What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)",
   "title": "Jalte lakdi mein saanp phansa tha",
-  "status": "held",
-  "review": [
-   "before render, scene 13: EMPTY: centre of frame has no main visual in the second still"
-  ]
+  "status": "approved",
+  "review": []
  },
  {
   "job": "1119-0935",
   "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
-  "status": "made",
+  "status": "approved",
   "review": []
  },
  {
   "job": "1119-1015",
   "topic": "Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)",
   "title": "Mahavira ne 12 saal bhookha reh kar kheer kyun khayi?",
-  "status": "made",
+  "status": "approved",
   "review": []
  },
  {
@@ -54,7 +52,7 @@
   "topic": "Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)",
   "title": "Neminath ne apni baraat kyun wapas mod di?",
   "qc_ok": true,
-  "status": "made",
+  "status": "approved",
   "offer": "WALLPAPER",
   "review": []
  }
