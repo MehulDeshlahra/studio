@@ -74,3 +74,9 @@ Paid SaaS doing the same: OpusClip, Vizard, Klap, Submagic (not used: Rs 0 rule)
 - So Cut Capsule must grow a US/UK/global audience, not an Indian one: English captions and hooks, post at US evening
   time, US-relevant topics. Every source entry keeps "not_paid_countries" and "audience_rule" (engine/whopbot.py).
 - publish.py posts a campaign clip only to the platforms its source allows (Jo Koy: IG only).
+- Footage hosts seen: Google Drive folders (gdown list + download, Jo Koy 13 files, Daise 235 incl. photos and muted
+  copies), Frame.io share pages (SEGA: 4 trailers; tools/grab.py saves each asset's HLS master at 1080p with audio),
+  MediaSilo (CoD: link dead, "could not be found" -> official YouTube upload is the fallback).
+- Eneba BroPacks bans automated clipping (needs own reaction/voice-over): skipped. Most briefs ban AI voice-overs and
+  added music (CoD), want #Ad as the first hashtag on its own line and at most 3 more hashtags: clipper.py does that
+  for every campaign source.

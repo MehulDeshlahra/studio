@@ -117,8 +117,12 @@ The loop (all automatic except the owner's clicks):
 2. OWNER: join on Whop, then dashboard "I joined" -> paste the footage channel/video links + the brief's rules.
 3. engine/clipwatch.py (hourly): new uploads of those sources -> engine/clipper.py -> laptop clipcore (~1 min/clip on
    NVENC) -> checks -> Telegram for approval (first 3) -> publish.py posts IG + FB (YT once connected).
-4. After each campaign post: Telegram "submit this link to <campaign>" (OWNER: paste it in Whop; views count from there).
+4. After each campaign post: engine/whopbot.py submits the post links on Content Rewards itself (tools/whop.py submit,
+   owner's saved login on the laptop). Untested until the first campaign clip posts (20 Nov 06:30 IST at the earliest).
 5. stats.py views -> clipper.what_worked() feeds the best/worst hooks back into moment picking (results-clips.md).
-- [ ] Owner: join 3-5 top campaigns (Telegram digest 19 Nov 06:41 has 17)
-- [ ] Owner: Cut Capsule YouTube channel (most campaigns also pay YouTube Shorts views; doubles reach per clip)
+- [x] Owner: join 3-5 top campaigns (19 Nov: owner joined Jo Koy, Daise, SEGA, CoD MW4, Eneba; whopbot adopts them and
+      joins more itself up to 5 active)
+- [x] Cut Capsule YouTube channel (19 Nov: @cut.capsule connected, ~/.studio-accounts/cutcapsule.json yt)
+- [x] Post at US hours (19 Nov: 06:30 + 22:30 IST, studio-post-us): campaigns do not pay India views; SEGA wants 50% US
+      audience, Jo Koy 70%.
 - [ ] After warm-up (27 Nov): posts_per_day 2 -> 4 if the account stays healthy (more posts = more paid views)
