@@ -1,4 +1,32 @@
 {
  "_how": "Clips are posted ONLY from sources listed here (a joined Indian clipping campaign: ClipConnect, Dashrize, INDclipping, Klipp.in, Vyuzz; or a creator who allows clipping in writing). Anything else is made as a test and never posted.",
- "sources": {}
+ "sources": {
+  "tarunsharmashow": {
+   "platform": "creator",
+   "title": "Tarun Sharma Show",
+   "channels": [
+    "@tarunsharmashow"
+   ],
+   "videos": [
+    "https://www.youtube.com/watch?v=B_DpiJ0SY0k",
+    "https://www.youtube.com/watch?v=wPB05nNhvCo"
+   ],
+   "match": [
+    "@tarunsharmashow",
+    "UCew-pajn__JQuaiT9RUO_ow"
+   ],
+   "_ids": {
+    "@tarunsharmashow": "UCew-pajn__JQuaiT9RUO_ow"
+   },
+   "permission": "email reply 2026-11-19 12:57 from tarunsharmateam@artificiluxvn.com: \"Go Ahead -- Sent with Hostinger Mail\"",
+   "conditions": [
+    "credit and a link to the full episode"
+   ],
+   "credit_link": true,
+   "clips_per_video": 3,
+   "active": true,
+   "added": "2026-11-19 12:57",
+   "added_t": 1793863647.0561016
+  }
+ }
 }
