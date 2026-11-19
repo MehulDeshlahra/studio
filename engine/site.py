@@ -17,15 +17,18 @@ def _email():
         return ""
 
 
-BRAND = {"name": "Scroll House", "ig": "scrollhouse.in", "yt": "scrollhouse",   # owner's account (19 Nov: @scroll.house is NOT ours) "email": _email(),
+BRAND = {"name": "Scroll House", "ig": "scrollhouse.in", "yt": "scrollhouse", "email": _email(),
          "line": "A network of original short-video pages. Every genre, every audience, one booking."}
-YT = {"tech": "kaise.tech.official", "katha": "puraankikatha", "raaz": "aagesuno"}   # verified 18 Nov (publish launch check)
-LIVE = ("pilot", "active", "live", "live (warm-up)")
+YT = {"tech": "kaise.tech.official", "katha": "puraankikatha", "raaz": "aagesuno",   # verified 18 Nov (publish launch check)
+      "cutcapsule": "cut.capsule", "jain": "navkarbhav"}                                 # verified 19 Nov (yt_who)
+LIVE = ("pilot", "active", "live", "live (warm-up)", "clips")   # 19 Nov: Cut Capsule (status clips) had no /go page
 GENRE = {"tech": "Tech explainers", "katha": "Mythology", "raaz": "Fiction serials",
     "jain": "Jain stories",
     "finance": "Money explainers",
+    "cutcapsule": "Entertainment clips",
 }
 BLURB = {   # what a viewer or a brand reads (channel.json "site_blurb" wins when set)
+    "cutcapsule": "The best moments from games, streams and shows, cut into short clips: gaming, streaming, entertainment.",
     "tech": "How everyday tech really works, in under a minute: phones, apps, AI, the internet. Clear visuals, real brands, no jargon.",
     "katha": "Stories from the Puranas and the epics, told the way grandparents tell them, with the source named in every reel.",
     "raaz": "Original mystery and drama serials, one part a day, every part ending on a cliffhanger. The audience comes back daily.",
