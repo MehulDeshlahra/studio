@@ -50,8 +50,8 @@
       "LINK"
     ],
     "cta": "",
-    "text_next": "Full video 👇\n{next}\n\nRoz ke best clips ke liye follow karo {handle}",
-    "text_wait": "Roz ke best clips ke liye follow karo {handle} 🔔\n{profile}"
+    "text_next": "Full video 👇\n{next}\n\nFollow {handle} for the best clips every day",
+    "text_wait": "Follow {handle} for the best clips every day 🔔\n{profile}"
   },
   "youtube": "@cut.capsule"
 }
