@@ -110,7 +110,7 @@ def words(mp4, lang=None, prompt=""):
             try:
                 m = WhisperModel(args[0], device=args[1], compute_type=args[2])
                 list(m.transcribe(np.zeros(16000, dtype="float32"))[0])          # fails here when cuDNN is missing
-                _MODEL[0] = m; break
+                _MODEL[0] = m; ASR[0] = f"{args[0]}/{args[1]}"; break
             except Exception:
                 continue
     # with a script sample (Hindi page) each 30 s window must see the text before it, or the 2nd window drifts back to
@@ -543,7 +543,8 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
            "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]),
            "cut": [round(a2, 2), round(b2, 2)], "kept": ranges, "removed_s": round((b2 - a2) - sum(e - s for s, e in ranges), 2),
            "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt),
-           "notes": [{"s": s, "e": e, "text": t, "kind": k} for s, e, t, k in placed], "notes_asked": len(notes or [])}
+           "notes": [{"s": s, "e": e, "text": t, "kind": k} for s, e, t, k in placed], "notes_asked": len(notes or []),
+           "asr": ASR[0]}
     json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w"), ensure_ascii=False)
     return res
 

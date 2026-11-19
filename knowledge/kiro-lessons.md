@@ -110,3 +110,6 @@ Fix: every page has channel.json "visual_checks", a must-answer checklist the re
 serious and caps the score at 5 (tested: the same 3 reels went 9-10 -> 4). Positive iconography text was not enough
 for the image model: write the NEVER list too (iconography.JAIN_NEVER). Order matters: a page's first posts are its
 strongest, not its oldest (katha: Ujjain/Greenwich first).
+- 19 Nov: "whisper on the GPU" (said on 18-19 Nov) was never true in the worker: cublas64_12.dll failed to load (a half-done
+  pip uninstall left nvidia/cublas/bin renamed to '~in') and clipcore silently fell back to the small CPU model. RULE: a
+  fallback must LOG which path ran; verify a speed/quality claim in the real process (worker), not in a test shell.
