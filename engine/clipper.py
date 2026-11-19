@@ -27,6 +27,8 @@ PLUG = re.compile(r"\b(subscribe|subscribed|hit the bell|notification bell|spons
 UNSAFE = re.compile(r"\b(porn\w*|sex\w*|nude\w*|naked|orgasm\w*|masturbat\w*|dick|penis|vagina|boob\w*|tits|horny|"
                     r"blow ?job|hooker|strip(per|club)|rape\w*|molest\w*|cocaine|heroin|meth|weed|stoned|suicid\w*|"
                     r"kill (yo)?ursel(f|ves)|nigg\w*|fag\w*|retard\w*|chink|gook|whore|slut)\b", re.I)
+VAGUE_HOOK = re.compile(r"\b(this|these|that happened|what happened|won'?t believe|wait for it|watch till|you need to see|"
+                        r"the ending)\b\W*$|^(when|wait|watch)\b", re.I)
 STRONG = re.compile(r"\b(porn\w*|orgasm\w*|masturbat\w*|blow ?job|rape\w*|molest\w*|nigg\w*|fag(got)?s?|retard\w*|chink|gook|"
                     r"kill (yo)?ursel(f|ves))\b", re.I)     # OpusClip 13.5M-clip study: niche + generic tags beat niche-only 2.5x
 
@@ -53,6 +55,9 @@ A great moment:
 HOOK TITLE (on screen from frame 1): who + action + twist, 3-7 words, in the video's language (Hinglish in Roman script
 for Hindi), e.g. "DAD SMASHES SON'S CONSOLE, THEN REGRETS IT". It must be TRUE to what happens: no fake claims.
 Write it the way a real fan would say it out loud: natural, grammatical, instantly clear, with curiosity or emotion.
+SAY WHAT THE CLIP IS ABOUT (19 Nov benchmark: "JO KOY'S HILARIOUS TEACHERS MEETING" on a 9.8M-view clip page; ours
+"MOM CATCHES SON DOING THIS" hid it): name the person and the concrete situation; never "THIS", "WHAT HAPPENED",
+"YOU WON'T BELIEVE", "WAIT FOR IT" or any title that could fit a different clip.
 Use real names spelled exactly as given. Never word salad (19 Nov rejects: "REBEL DENIES FALSE EQUALITY CLAIMS DREAM
 POWER", "JO KOY ORDERS GET A DOG"; better: "SHE SAYS DREAMS CAN BEAT THE KING", "JO KOY'S CURE FOR THERAPY: GET A DOG").
 CAPTION: the context the clip leaves out, naming the show / game / product and the person. Do NOT repeat required
@@ -267,6 +272,9 @@ def find_moments(ch, url, n, info, source=None):
         bad = UNSAFE.search(" ".join(str(m.get(k) or "") for k in ("hook", "why", "caption")))
         if bad:
             log("clipper: moment skipped, not brand-safe:", str(m.get("hook"))[:60], f"('{bad.group(0)}')"); continue
+        if VAGUE_HOOK.search(str(m.get("hook") or "")):
+            log("clipper: vague hook, moment ranked lower:", m.get("hook"))
+            m["score"] = {"hook": 3} if not isinstance(m.get("score"), dict) else {**m["score"], "hook": 3}
         sc = m.get("score") if isinstance(m.get("score"), dict) else {"hook": m.get("score") or 5}
         total = round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2)
         hits = [x["replay"] for x in pk if x["at"] - 25 <= b and a <= x["until"] + 5]
@@ -511,6 +519,9 @@ def find_moments_text(ch, item, n, source=None):
         bad = UNSAFE.search(" ".join(str(m.get(k) or "") for k in ("hook", "why", "caption")))
         if bad:
             log("clipper: moment skipped, not brand-safe:", str(m.get("hook"))[:60], f"('{bad.group(0)}')"); continue
+        if VAGUE_HOOK.search(str(m.get("hook") or "")):
+            log("clipper: vague hook, moment ranked lower:", m.get("hook"))
+            m["score"] = {"hook": 3} if not isinstance(m.get("score"), dict) else {**m["score"], "hook": 3}
         sc = m.get("score") if isinstance(m.get("score"), dict) else {"hook": m.get("score") or 5}
         ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200],
                    "score": round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2),
