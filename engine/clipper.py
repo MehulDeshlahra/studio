@@ -193,10 +193,22 @@ def make(cid, url, n=4, test=False, campaign=None):
     log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
     out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4,
                       "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"]} for m in ms]}, f"{cid} {base}", wait=3600)
+    made = ingest(ch, cid, url, info, src, test, ms, out, base)
+    shutil.rmtree(os.path.dirname(out), ignore_errors=True)
+    if test and made:
+        telegram(f"✂️ {cid} TEST clips from {url} (not for posting, no permission entry): "
+                 + ", ".join(f"{j} ({lay}, {sc}/10)" for j, _, _, lay, sc in made))
+    return made
+
+
+def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
+    """Turn what the laptop sent back (out/c0, c1 ...) into jobs: checks, plan, review, done.json, Telegram."""
     done_p = os.path.join(ROOT, "channels", cid, "done.json")
     made = []
     who = info.get("channel") or info.get("uploader") or ""
     for i, m in enumerate(ms):
+        if only is not None and i not in only:
+            continue
         cd = os.path.join(out, f"c{i}")
         res = load(os.path.join(cd, "result.json"), {}) or {}
         if res.get("error") or not os.path.exists(os.path.join(cd, "final.mp4")):
@@ -259,10 +271,6 @@ def make(cid, url, n=4, test=False, campaign=None):
         if rv["ok"]:
             import send
             send.send(cid, jid)
-    shutil.rmtree(os.path.dirname(out), ignore_errors=True)
-    if test and made:
-        telegram(f"✂️ {cid} TEST clips from {url} (not for posting, no permission entry): "
-                 + ", ".join(f"{j} ({lay}, {sc}/10)" for j, _, _, lay, sc in made))
     return made
 
 
