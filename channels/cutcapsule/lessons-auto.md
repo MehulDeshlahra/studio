@@ -54,3 +54,6 @@
 
 ## 1119-1640-c4 (clipper)
 - not original enough: 1 of 3 page notes placed (need 2+)
+
+## 1119-1724-c2 (clipper)
+- speaker out of the crop for 10% of the time (crop did not follow him)

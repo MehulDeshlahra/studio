@@ -627,5 +627,62 @@
    "start": 18.81,
    "layout": "stack"
   }
+ },
+ {
+  "job": "1119-1724-c1",
+  "topic": "MOM CATCHES SON DOING THIS",
+  "title": "MOM CATCHES SON DOING THIS",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=J9k0x1JsQ-U",
+   "start": 576.07,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1724-c2",
+  "topic": "VIETNAMESE ACCENTS HAVE A TWIST",
+  "title": "VIETNAMESE ACCENTS HAVE A TWIST",
+  "status": "held",
+  "review": [
+   "speaker out of the crop for 10% of the time (crop did not follow him)",
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=J9k0x1JsQ-U",
+   "start": 193.55,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1119-1733-c1",
+  "topic": "GEN Z KIDS KNOW EVERYTHING AND NOTHING",
+  "title": "GEN Z KIDS KNOW EVERYTHING AND NOTHING",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=AB7Q0XP6i9o",
+   "start": 153.83,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1733-c2",
+  "topic": "MOM REVEALS HER PAST AS A HOE",
+  "title": "MOM REVEALS HER PAST AS A HOE",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=AB7Q0XP6i9o",
+   "start": 17.75,
+   "layout": "crop"
+  }
  }
 ]

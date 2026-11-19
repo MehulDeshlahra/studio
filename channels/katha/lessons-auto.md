@@ -346,3 +346,27 @@
 
 ## 1117-0145 (pre-render check)
 - LANG: Caption 'HI' is a typo and does not match the spoken line 'Ye'
+
+## When Lord Krishna visited Narakasura's kingdom: The true Pur (story check)
+- STORY scene 7: false: 'Krishna cut off Mura's head with one arrow.': Bhagavata Purana 10.59.11 states Krishna used his Sudarshana Chakra to cut off Mura's five heads, not an arrow. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1117-1935 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s12b
+- OVERLAP/CUT (layout audit): text_occluded on #s13b
+
+## 1117-1935 When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.
+- scene 11: The text 'SROT' appears to be a typo or placeholder for 'SLOK' or 'SOURCE', which is slightly confusing in this context.
+- scene 12: The caption 'KO TOH KRISHNA' is slightly misaligned with the intended script line 'Andar ke Narakasur ko toh Krishna hi maar sakte hain', though it is readable.
+- only 59% of the script was found in the voice
+
+## review 1117-1935
+- only 59% of the script was found in the voice
+
+## 1117-1935 (pre-render check)
+- CUT: caption text 'AAYA' is partially cut off at the left frame edge in the first still
+
+## 1117-1935 When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.
+- scene 5: Image mismatch. The frame shows a demon on a throne, but the title says 'MOUNTING GARUDA' and the line describes Krishna and Satyabhama on Garuda.
+- scene 11: Misspelling. 'SROT' is used instead of 'SHROT' (Source).
+- scene 1, 6, 7, 11, 13, 14: The titles specified in the prompt are missing from these frames.
+- scene 13: The background silhouettes of the figures look distorted and 'melted', typical of AI errors.
