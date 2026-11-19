@@ -387,7 +387,8 @@ def make_clip(src, a, b, hook, out_dir, lang=None):
     final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"))
     q = probe(final); q["lufs"] = lufs(final)
     d = max(1.0, q["dur"])
-    run(["ffmpeg", "-v", "error", "-y", "-i", final, "-vf", f"fps={6 / d},scale=270:480,tile=6x1", "-frames:v", "1",
+    # 19 Nov: at 270x480 the checker called readable captions "unreadable"; 6 frames at 450x800 (2700x800)
+    run(["ffmpeg", "-v", "error", "-y", "-i", final, "-vf", f"fps={6 / d},scale=450:800,tile=6x1", "-frames:v", "1", "-q:v", "3",
          os.path.join(out_dir, "sheet.jpg")], 120)
     run(["ffmpeg", "-v", "error", "-y", "-ss", "0.8", "-i", final, "-frames:v", "1", "-q:v", "2", os.path.join(out_dir, "cover.jpg")], 60)
     os.remove(tight)

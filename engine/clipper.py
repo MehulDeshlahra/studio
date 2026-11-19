@@ -47,12 +47,33 @@ Return JSON:
    "caption": "<Instagram caption: one or two short lines that add the context the clip leaves out, no hashtags>",
    "tags": ["<4-6 specific hashtags without # (people, game, topic)>"]}}]}}"""
 
-CHECK = """You check a finished vertical clip before it is posted on the clip page "{page}". The image is 6 frames across the
-clip, left to right. The on-screen hook title is "{hook}". What is said in the clip: "{text}"
-Score 1-10 how good and postable it is, and list real problems only, e.g.: the hook title is misleading or not what happens,
-captions cover a face or the mouth, captions unreadable, a black or frozen frame, the main person cut out of the frame, the
-layout is broken (a webcam box cut in half, two copies of the same person), a watermark of another clip app, nudity, gore.
-Return JSON {{"score": <1-10>, "problems": ["..."], "minor": ["..."]}}"""
+CHECK = """You check a finished vertical clip before it is posted on the clip page "{page}". The image is 6 frames sampled
+across the clip, left to right (shrunk: judge the layout, not the font size).
+The on-screen hook title is "{hook}". The full transcript of the clip: "{text}"
+1) Is the hook TRUE to the transcript and the frames? (A short, punchy title is fine; only flag it if it claims something
+   that does not happen.)
+2) Look at the frames for real, clearly visible problems only: captions covering a face or mouth, a black or frozen frame,
+   the main person cut out of the frame, a broken layout (a webcam box cut in half, two copies of the same person side by
+   side), a watermark of another clip app, nudity, gore.
+Do not list guesses. Return JSON {{"score": <1-10 how good and postable>, "problems": ["<only clear, serious problems>"],
+"minor": ["<small notes>"]}}"""
+
+
+def vision_check(prompt, img):
+    """Gemini on our own keys first (the same as review.py), the OmniRoute vision combo second."""
+    import base64, urllib.request, tts
+    body = {"contents": [{"parts": [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(img).decode()}},
+                                    {"text": prompt + "\n\nReturn ONLY valid JSON."}]}],
+            "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1, "maxOutputTokens": 1500}}
+    for m in tts.usable(["gemini-3.8-flash", "gemini-3-flash-preview", "gemini-3.5-flash-lite"]):
+        try:
+            r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
+                                       data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
+            d = json.load(urllib.request.urlopen(r, timeout=120))
+            return llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"])
+        except Exception as e:
+            log("clipper: vision", m, "failed", str(e)[:100])
+    return llm.vision(prompt, img)
 
 
 def ts(x):
@@ -140,7 +161,7 @@ def vision(ch, jd, hook, text):
     try:
         import base64
         img = open(os.path.join(jd, "sheet.jpg"), "rb").read()
-        return llm.vision(CHECK.format(page=ch.get("name", ch["id"]), hook=hook, text=text[:1500]), img)
+        return vision_check(CHECK.format(page=ch.get("name", ch["id"]), hook=hook, text=text[:2500]), img)
     except Exception as e:
         log("clipper: vision check failed", str(e)[:120])
         return {"score": None, "problems": [], "minor": ["vision check unavailable"]}
