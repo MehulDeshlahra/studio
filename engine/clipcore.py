@@ -342,15 +342,32 @@ def _layout_vf(lay, info, seg, sub):
             f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2+40{tail}")
 
 
-def render(src, info, assf, out):
+LOGO = os.path.join(ROOT, "assets", "brand", "cutcapsule-logo.png")
+LOGO_W, LOGO_X, LOGO_Y, LOGO_A = 200, 36, 150, 0.9     # top-left: clear of the Reels header, side buttons and caption area
+
+
+def _logo_tail(pre, logo):
+    """Filter text that puts the logo (input 1) over [pre] and outputs [v]."""
+    if not logo:
+        return f"[{pre}]format=yuv420p[v]"
+    # 19 Nov frames: the white wordmark got lost on bright backgrounds -> a soft dark shadow under it
+    return (f"[1:v]scale={LOGO_W}:-1,format=rgba,pad=iw+24:ih+24:12:12:color=black@0,split[lg0][sh0];"
+            f"[lg0]colorchannelmixer=aa={LOGO_A}[lg];"
+            f"[sh0]colorchannelmixer=rr=0:gg=0:bb=0:aa=0.75,boxblur=7:2[sh];"
+            f"[{pre}][sh]overlay={LOGO_X - 10}:{LOGO_Y - 10}[p2];[p2][lg]overlay={LOGO_X - 12}:{LOGO_Y - 12},format=yuv420p[v]")
+
+
+def render(src, info, assf, out, logo=None):
     """One segment: layout + captions in a single pass. Several layouts: each segment framed on its own (no captions),
     joined, then captions + loudness in one pass over the joined video so they run across the joins."""
     sub = f"ass='{_ff(assf)}':fontsdir='{_ff(FONTS)}'"
     segs = info["segments"]
     # 19 Nov speed: "fast" is ~2x "medium" for the same look at CRF 19 (platforms re-encode every upload anyway)
     enc = ["-c:v", "libx264", "-preset", "fast", "-crf", "19", "-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000"]
+    li = ["-i", logo] if logo else []
     if len(segs) == 1:
-        run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", _layout_vf(segs[0]["layout"], info, segs[0], sub),
+        vf = _layout_vf(segs[0]["layout"], info, segs[0], sub).replace(",format=yuv420p[v]", "[pre]") + ";" + _logo_tail("pre", logo)
+        run(["ffmpeg", "-v", "error", "-y", "-i", src] + li + ["-filter_complex", vf,
              "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11"] + enc + ["-movflags", "+faststart", out], 2400)
         return out
     work = os.path.dirname(out)
@@ -367,8 +384,8 @@ def render(src, info, assf, out):
     open(lst, "w").write("".join(f"file '{os.path.basename(p)}'\n" for p in parts))
     joined = os.path.join(work, "joined.mp4")
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined], 600)
-    run(["ffmpeg", "-v", "error", "-y", "-i", joined, "-vf", sub + ",format=yuv420p", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11"]
-        + enc + ["-movflags", "+faststart", out], 2400)
+    run(["ffmpeg", "-v", "error", "-y", "-i", joined] + li + ["-filter_complex", f"[0:v]{sub}[pre];" + _logo_tail("pre", logo),
+         "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11"] + enc + ["-movflags", "+faststart", out], 2400)
     for p in parts + [lst, joined]:
         os.remove(p)
     return out
@@ -391,8 +408,9 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand=""):
     Wt = remap(Wd, ranges)
     info = analyse(tight)
     assf = os.path.join(out_dir, "captions.ass")
-    ass(assf, hook, Wt, info["dur"], info["segments"], brand=brand)
-    final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"))
+    logo = LOGO if (brand and os.path.exists(LOGO)) else None      # 19 Nov: the page's real logo; text handle only without it
+    ass(assf, hook, Wt, info["dur"], info["segments"], brand="" if logo else brand)
+    final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"), logo)
     q = probe(final); q["lufs"] = lufs(final)
     d = max(1.0, q["dur"])
     # 19 Nov: at 270x480 the checker called readable captions "unreadable"; 6 frames at 450x800 (2700x800)

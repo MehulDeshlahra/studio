@@ -153,3 +153,13 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - make._phone_bg: bg_real via realmedia (s{i}pr.jpg) else Muse/omni/cloudflare/pollinations still (s{i}pb*), with PHONE_BG_SAFE suffix; scene 0 also tries a Muse clip (s0pv.mp4) -> a["bgvid"].
 - compose_lab: phone scene with bgvid = top-level <video class="vid pbg">, scene "over", still takes over if the clip ends early. phone_scenes.css: picture brightness .78, blur 2px, dark band only behind captions.
 - Tested on 5 real FLUX pictures + frames: first prompt left fake signboard text (SAPPRCT, TADLET) -> "no signboards/posters/writing on vehicles" fixed it (0 of 5 readable); first shade (brightness .5) hid the pictures -> lightened.
+## 19 Nov 06:00 Cut Capsule (@cutcapsule, clip page, FB page 1443258675911320)
+- channels/cutcapsule (kind "clips": the daily script lanes and the healer skip it), ~/.studio-accounts/cutcapsule.json,
+  dashboard CHANNELS entry, hookstudy niche/queries/hashtags. Research: knowledge/clipping.md; format: bible.md.
+- Engine: engine/clipper.py (server: info + Gemini moments + checks + jobs) -> laptop worker "info"/"clip" jobs ->
+  engine/clipcore.py (download once, whisper GPU, sentence cuts, quiet-gap trim, per-shot layout stack/crop/fill,
+  pop captions, @cutcapsule handle, -14 LUFS). Dashboard "Make a video now" takes a YouTube link.
+- PERMISSION GATE: only sources in channels/cutcapsule/sources.json post (campaign / creator OK). Everything else = test,
+  held. First test (Foltyn Reacts "DAD DESTROYS GTA 6!"): 3 clips, vision 9/10/10, held as TEST.
+- Owner to do: join Whop Content Rewards / Vyro / CliprIndia campaigns and send the links; NVIDIA driver 621.24
+  (downloaded to Downloads, needs his UAC click) for NVENC.
