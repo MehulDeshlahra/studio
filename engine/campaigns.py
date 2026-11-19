@@ -176,6 +176,11 @@ def score(c):
         return 0, ["needs another language (French/Arabic/...)"]
     if rate <= 0:
         return 0, ["no pay per view (flat / influencer deal)"]
+    # 19 Nov (golden rule + Instagram/YouTube originality): posting a brand's finished video as-is ("reposting",
+    # "repost", "post our edits") makes the page an aggregator and costs it recommendations on every post
+    if re.search(r"\brepost(ing)?\b|post (our|the) (edits|videos) as is|ready[- ]made (edits|videos)", text, re.I) and \
+            not re.search(r"clip(ping)?\b", c.get("title") or "", re.I):
+        return 0, ["reposting campaign (unoriginal: hurts the page's reach)"]
     is_clip = "clipping" in (c.get("types") or []) or "clip" in text.lower()
     s_rate = min(1.0, rate / 2.0)                                 # $2/1K = full marks
     s_cap = 1.0 if not cap else min(1.0, cap / 100.0)             # a $35 cap limits what a hit can earn
