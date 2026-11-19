@@ -42,10 +42,17 @@ FORMS = {
                  "complexion, calm face"),
     "Bahubali": (r"bahubali|gommateshwara|gomateshwara", "a tall standing figure in kayotsarga meditation, creepers growing up "
                  "the arms and legs, anthills at the feet, perfectly calm (like the Shravanabelagola statue)"),
+    # 19 Nov audit: the image model still drew Bahubali with blue skin and Hindu-god jewellery (its default "divine" look)
+}
+JAIN_NEVER = ("natural warm human skin tone (never blue, grey or green skin), no crown, no jewellery, no weapons, no third eye, "
+              "no Hindu-god ornaments: a Jain ascetic or Tirthankara is plain and serene")
+for _k in ("Mahavir Swami", "Rishabhdev", "Parshvanath", "Bahubali"):
+    FORMS[_k] = (FORMS[_k][0], FORMS[_k][1] + "; " + JAIN_NEVER)
+FORMS.update({
     "Jain monk": (r"\bmuni\b|sadhvi|jain monk|acharya|maharaj saheb|digambar|shwetambar|svetambar",
                   "Jain monk or nun in plain white robes with a rajoharan (soft whisk broom) and a mouth cloth (muhpatti), "
                   "calm and simple, no jewellery"),
-}
+})
 # 18 Nov: the checkers held Kartikeya for "five faces instead of six" twice; in a turned head some faces are hidden.
 NO_COUNT = (" Never count faces, heads or arms (in a painting at an angle some are hidden): report a deity only for a clearly "
             "wrong form (wrong gender, an animal head that does not belong, missing the defining weapon or mount) or a lack of dignity.")
