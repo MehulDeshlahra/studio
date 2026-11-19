@@ -101,5 +101,9 @@
     "kinds": [
       "sheet"
     ]
-  }
+  },
+  "visual_checks": [
+    "Does a frame show a wrong or fake logo for the brand it names?",
+    "Is any frame a near-empty box, card or placeholder block where the line explains something?"
+  ]
 }

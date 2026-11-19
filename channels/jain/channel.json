@@ -94,5 +94,13 @@
       "wallpaper",
       "sheet"
     ]
-  }
+  },
+  "visual_checks": [
+    "Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings?",
+    "Is a Tirthankara, Bahubali or Jain idol shown with blue, green or grey skin, a crown, jewellery, a tilak, horns or a third eye?",
+    "Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)?",
+    "Does any figure look like a Hindu god or goddess (many arms, Hindu ornaments) where the story is about a Jain figure?",
+    "Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)?",
+    "Is any frame an empty arch, wall or background with no subject behind a big word?"
+  ]
 }

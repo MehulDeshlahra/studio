@@ -87,5 +87,11 @@
       "wallpaper",
       "sheet"
     ]
-  }
+  },
+  "visual_checks": [
+    "Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong number of heads where it matters, wrong mount or weapon, wrong gender)?",
+    "Does the same character change face, age or clothes between scenes?",
+    "Is there any modern object, modern building or Mughal / Islamic architecture in an ancient Puranic story?",
+    "Is any figure dressed immodestly or shown without dignity?"
+  ]
 }

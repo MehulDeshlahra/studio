@@ -44,7 +44,7 @@ def _starts_like(heard, line, n=5):
     return best, h
 
 
-def vision_review(mp4, plan, timing, out_jpg, lang, handle):
+def vision_review(mp4, plan, timing, out_jpg, lang, handle, checks=None):
     times = []
     for L in timing:
         a, b = L["start"], L["end"]
@@ -90,6 +90,13 @@ Report ONLY real, visible problems a viewer would notice:
 - a god, goddess or sacred figure shown wrongly or disrespectfully (wrong gender or form, revealing clothes, mocking), or a
   split / collage picture where one scene was meant (18 Nov: a generated Kartikeya came out as a woman)
 Return JSON {{"score": 1-10, "serious": ["..."], "minor": ["..."]}} (serious = must fix before posting)."""
+    if checks:
+        # 19 Nov audit: 6 of 6 Navkar Bhav reels scored 9-10 here with Mughal domes, blue/green-skinned Tirthankaras and
+        # saffron-robed Jain monks: the page's own must-answer checklist; any "yes" is serious
+        prompt += ("\nPAGE CHECKLIST: look at EVERY frame and answer each question honestly (a frame that shows it = yes):\n"
+                   + "\n".join(f"{i + 1}. {q}" for i, q in enumerate(checks))
+                   + '\nAdd to the JSON: "checklist": [{"q": <number>, "yes": true/false, "where": "<scene / frame if yes>"}]. '
+                     "Every yes is a serious problem: list it in serious too.")
     b64 = base64.b64encode(open(out_jpg, "rb").read()).decode()
     body = {"contents": [{"parts": [{"text": prompt}, {"inline_data": {"mime_type": "image/jpeg", "data": b64}}]}],
             "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2}}
@@ -100,7 +107,18 @@ Return JSON {{"score": 1-10, "serious": ["..."], "minor": ["..."]}} (serious = m
                                        data=json.dumps(body).encode(),
                                        headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
             d = json.load(urllib.request.urlopen(r, timeout=180))
-            return llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
+            res = llm.parse_json("".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"]))
+            if checks and isinstance(res, dict):
+                hits = [c for c in res.get("checklist") or [] if isinstance(c, dict) and c.get("yes")]
+                for c in hits:
+                    try:
+                        q = checks[int(c.get("q")) - 1]
+                    except Exception:
+                        q = str(c.get("q"))
+                    res.setdefault("serious", []).append(f"checklist: {q} -> {c.get('where') or 'yes'}")
+                if hits:
+                    res["score"] = min(int(res.get("score") or 10), 5)
+            return res
         except Exception as e:
             log("review vision fail", m, str(e)[:120])
             if "timed out" in str(e).lower():
@@ -190,7 +208,8 @@ def review(cid, job):
     except Exception as e:
         log("review blank check failed", str(e)[:120])
     # 7 vision
-    v = vision_review(mp4, plan, tj.get("lines", []), os.path.join(jd, "review-sheet.jpg"), lang, ch.get("handle", ""))
+    v = vision_review(mp4, plan, tj.get("lines", []), os.path.join(jd, "review-sheet.jpg"), lang, ch.get("handle", ""),
+                      checks=ch.get("visual_checks") or [])
     checks["vision"] = v
     probs += [f"visual: {x}" for x in (v.get("serious") or [])]
     if (v.get("score") or 0) < 6:

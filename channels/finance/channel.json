@@ -110,5 +110,9 @@
     "kinds": [
       "sheet"
     ]
-  }
+  },
+  "visual_checks": [
+    "Is any number, date or rule on screen different from the voice-over?",
+    "Does any frame give a buy / sell / invest recommendation (advice) instead of education?"
+  ]
 }
