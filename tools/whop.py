@@ -193,6 +193,19 @@ def main():
             except Exception:
                 pass
             print(json.dumps({"ok": ok})); return
+        if cmd == "open":          # 19 Nov: open a page for the owner in the saved login; stays until he closes it (30 min)
+            ctx = browser(p, headless=False)
+            page = ctx.pages[0] if ctx.pages else ctx.new_page()
+            page.goto(sys.argv[2], wait_until="domcontentloaded", timeout=60000)
+            try:
+                page.wait_for_event("close", timeout=30 * 60 * 1000)
+            except Exception:
+                pass
+            try:
+                ctx.close()
+            except Exception:
+                pass
+            print(json.dumps({"ok": True})); return
         ctx = browser(p)
         page = ctx.new_page()
         try:
