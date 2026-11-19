@@ -392,7 +392,7 @@ def clip_job(jid, spec):
                              + clipcore.venc(False) + ["-c:a", "aac", "-b:a", "192k", win], 900)
                 res = clipcore.make_clip(win, float(c["a"]) - s0, float(c["b"]) - s0, c.get("hook", ""), cd, spec.get("lang"),
                                          brand=spec.get("brand") or "", glossary=spec.get("glossary") or [],
-                                         notes=c.get("notes") or [])
+                                         notes=c.get("notes") or [], wprompt=spec.get("wprompt") or "")
                 res["offset"] = s0
                 json.dump(res, open(os.path.join(cd, "result.json"), "w"), ensure_ascii=False)
                 done += 1

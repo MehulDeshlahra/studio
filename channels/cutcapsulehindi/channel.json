@@ -17,7 +17,9 @@
       "never astrology predictions, tantra / totke / 'paisa attract' remedies, vastu fixes, miracle cures or health claims presented as fact (low-trust, brand-unsafe, misleading): pick a real story, a funny moment, a sharp opinion or an experience the guest lived"
     ],
     "layout": "fill",
-    "hook_lang": "Hinglish in Latin script (the way Indian Reels write it)"
+    "hook_lang": "Hinglish in Latin script (the way Indian Reels write it)",
+    "lang": "hi",
+    "whisper_prompt": "Haan bhai, toh aaj hum baat karenge ki zindagi mein sabse zaroori kya hai. Dekho, maine bahut logon se suna hai, par sach yeh hai ki mehnat aur bharosa hi kaam aata hai. Aapko kya lagta hai?"
   },
   "schedule": {
     "posts_per_day": 2,

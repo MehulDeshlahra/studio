@@ -275,6 +275,17 @@ Return JSON {{"moments": [{{"start": <seconds where the hook line begins>, "end"
            {{"after": "<3-6 words copied exactly from the transcript>", "text": "<react note>", "kind": "react"}}]}}]}}"""
 
 
+def _lang_spec(ch):
+    """Clip job language: a Hindi page transcribes in Hindi and writes Roman Hinglish (channel.json clip.whisper_prompt)."""
+    c = ch.get("clip") or {}
+    out = {}
+    if c.get("lang"):
+        out["lang"] = c["lang"]
+    if c.get("whisper_prompt"):
+        out["wprompt"] = c["whisper_prompt"]
+    return out
+
+
 VAGUE = re.compile(r"\b(iconic|legendary|famous part|best part|classic moment|the moment|pressure is real|so relatable|"
                    r"this is (it|gold)|must watch|amazing|incredible)\b", re.I)
 
@@ -352,7 +363,7 @@ def make_files(cid, url, n=4, test=False, campaign=None):
         save(os.path.join(OUT, cid, "sources", b2, "moments.json"), {"url": url, "file": it.get("name"), "moments": ms, "source": src, "test": test})
         log("clipper (files): moments", it.get("name"), [(round(m["a"]), round(m["b"]), m["hook"], m["score"]) for m in ms])
         brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")
-        out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 4, "brand": brand, "glossary": glossary(src),
+        out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 4, "brand": brand, "glossary": glossary(src), **_lang_spec(ch),
                           "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {b2}", wait=3600)
         info = {"title": it.get("name"), "channel": (src or {}).get("title") or "", "webpage_url": url}
         made += ingest(ch, cid, url, info, src, test, ms, out, b2)
@@ -401,7 +412,7 @@ def make(cid, url, n=4, test=False, campaign=None):
     log("clipper: replay peaks", [(mmss(p["at"]), p["replay"]) for p in pk])
     log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
     brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")    # campaigns that say "no watermark"
-    out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src),
+    out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src), **_lang_spec(ch),
                       "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {base}", wait=3600)
     made = ingest(ch, cid, url, info, src, test, ms, out, base)
     shutil.rmtree(os.path.dirname(out), ignore_errors=True)

@@ -76,8 +76,26 @@ def fix_names(Wd, glossary):
     return out
 
 
+def _cuda_dlls():
+    """19 Nov: the GPU whisper never loaded (cublas64_12.dll not found: a half-done pip uninstall had renamed nvidia/cublas/bin
+    to '~in') and every clip silently used the small CPU model (misheard 'crystal gel' as 'crypto jail', garbled Hindi).
+    Make the pip-installed NVIDIA runtime folders visible to CTranslate2 on Windows."""
+    if os.name != "nt":
+        return
+    import glob, site
+    for sp in site.getsitepackages() + [site.getusersitepackages()]:
+        for d in glob.glob(os.path.join(sp, "nvidia", "*", "bin")) + [os.path.join(sp, "ctranslate2")]:
+            if os.path.isdir(d):
+                try:
+                    os.add_dll_directory(d)
+                except Exception:
+                    pass
+                os.environ["PATH"] = d + os.pathsep + os.environ.get("PATH", "")
+
+
 def words(mp4, lang=None, prompt=""):
     """[(start, end, word)] + language. GPU (medium) when CUDA works, else CPU (small, int8). prompt = names to spell."""
+    _cuda_dlls()
     import numpy as np
     from faster_whisper import WhisperModel
     wav = mp4 + ".wav"
@@ -95,8 +113,10 @@ def words(mp4, lang=None, prompt=""):
                 _MODEL[0] = m; break
             except Exception:
                 continue
+    # with a script sample (Hindi page) each 30 s window must see the text before it, or the 2nd window drifts back to
+    # Devanagari (19 Nov test: 82 words, the first ~30 s Roman, the rest Devanagari)
     segs, info = _MODEL[0].transcribe(a, language=lang, word_timestamps=True, beam_size=5, vad_filter=True,
-                                      condition_on_previous_text=False, initial_prompt=(prompt or None) and prompt[:400])
+                                      condition_on_previous_text=bool(prompt), initial_prompt=(prompt or None) and prompt[:400])
     return [(float(w.start), float(w.end), w.word.strip()) for s in segs for w in (s.words or []) if w.word.strip()], info.language
 
 
@@ -495,10 +515,12 @@ def lufs(f):
     return float(m[-1]) if m else None
 
 
-def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, notes=None):
-    """src = a downloaded window of the video; a, b = the asked moment inside it (seconds in src)."""
+def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, notes=None, wprompt=""):
+    """src = a downloaded window of the video; a, b = the asked moment inside it (seconds in src).
+    wprompt: a sample in the wanted script (19 Nov Hindi page: whisper wrote garbled Devanagari; a Roman Hinglish sample
+    as initial_prompt makes it write Latin, which our captions and the note anchors need)."""
     os.makedirs(out_dir, exist_ok=True)
-    Wd, lang = words(src, lang, ", ".join(glossary or []))
+    Wd, lang = words(src, lang, " ".join(x for x in (wprompt, ", ".join(glossary or [])) if x))
     Wd = fix_names(Wd, glossary)
     a2, b2 = trim(Wd, a, b)
     ranges = keep_ranges(Wd, a2, b2, loudness(src))
