@@ -1,0 +1,71 @@
+{
+ "title": "These SBCs actually look fun",
+ "topic": "These SBCs actually look fun",
+ "caption": "NickRTFM reviews the new Black Friday SBC cards in Football Manager 27, highlighting the ones he's most excited to complete.\n#Ad\n@footballmanager @[creator_handle]",
+ "hashtags": [
+  "#FootballManager27",
+  "#NickRTFM",
+  "#SBC"
+ ],
+ "lang": "en",
+ "clip": {
+  "url": "https://www.youtube.com/watch?v=XJSdMpANjDU",
+  "start": 193.07,
+  "end": 207.06,
+  "layout": "stack",
+  "removed_s": 0.0,
+  "why": "NickRTFM highlights the new Black Friday SBC cards, showing excitement for the new content.",
+  "scores": {
+   "hook": 7,
+   "flow": 8,
+   "value": 9,
+   "trend": 8
+  },
+  "replayed": false,
+  "notes": [
+   {
+    "s": 8.83,
+    "e": 11.55,
+    "text": "Finally some good content",
+    "kind": "react"
+   },
+   {
+    "s": 12.31,
+    "e": 13.83,
+    "text": "My coins are ready",
+    "kind": "react"
+   }
+  ],
+  "source": "clipping-culture-2-2",
+  "test": false,
+  "creator": "NickRTFM"
+ },
+ "seo": {
+  "ig": {
+   "caption": "NickRTFM reviews the new Black Friday SBC cards in Football Manager 27, highlighting the ones he's most excited to complete.\n#Ad\n@footballmanager @[creator_handle]",
+   "hashtags": [
+    "#FootballManager27",
+    "#NickRTFM",
+    "#SBC"
+   ]
+  },
+  "fb": {
+   "caption": "NickRTFM reviews the new Black Friday SBC cards in Football Manager 27, highlighting the ones he's most excited to complete.\n#Ad\n@footballmanager @[creator_handle]",
+   "hashtags": [
+    "#FootballManager27",
+    "#NickRTFM",
+    "#SBC"
+   ]
+  },
+  "yt": {
+   "title": "These SBCs actually look fun",
+   "description": "NickRTFM reviews the new Black Friday SBC cards in Football Manager 27, highlighting the ones he's most excited to complete.\n#Ad\n@footballmanager @[creator_handle]",
+   "tags": [
+    "FootballManager27",
+    "NickRTFM",
+    "SBC"
+   ]
+  }
+ },
+ "scenes": []
+}

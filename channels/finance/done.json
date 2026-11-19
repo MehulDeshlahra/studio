@@ -79,8 +79,9 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "owner agent: Fix Scene 3: Adjust the bottom card padding to prevent text cut-off at the frame edge.",
-   "before render, scene 3: CUT: bottom card text slightly overlapping or cut off near the frame edge"
+   "visual: Scene 7 frame 2 and Scene 9 say 'invest karein' and ask 'Kya kharidoge? Comment' which violates educational boundaries by pushing direct investment/buying advice.",
+   "visual: checklist: Does any frame give a buy / sell / invest recommendation (advice) instead of education? -> Scene 7 and Scene 9 ('app se kharid lo', 'Kya kharidoge?')",
+   "visual score 5/10"
   ],
   "mehul_rebuilt": "2026-11-19",
   "replan_requested": "2026-11-19 22:33"

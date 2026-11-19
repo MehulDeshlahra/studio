@@ -892,5 +892,55 @@
    "start": 92.29,
    "layout": "mixed:crop+stack"
   }
+ },
+ {
+  "job": "1120-0341-c1",
+  "topic": "Is the gameplay in FM27 over?",
+  "title": "Is the gameplay in FM27 over?",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=XJSdMpANjDU",
+   "start": 67.01,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1120-0341-c2",
+  "topic": "Dunga SBC: Is it worth it?",
+  "title": "Dunga SBC: Is it worth it?",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=XJSdMpANjDU",
+   "start": 22.63,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0341-c3",
+  "topic": "These SBCs actually look fun",
+  "title": "These SBCs actually look fun",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=XJSdMpANjDU",
+   "start": 193.07,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1120-0341-c4",
+  "topic": "Why Rumen is getting a boost",
+  "title": "Why Rumen is getting a boost",
+  "status": "held",
+  "review": [
+   "almost no speech (captions nearly empty)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=XJSdMpANjDU",
+   "start": 512.0,
+   "layout": "stack"
+  }
  }
 ]

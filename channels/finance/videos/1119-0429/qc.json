@@ -1,25 +1,28 @@
 {
  "topic": "Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 90+ hai, ab ye strategy kaam karegi",
- "title": "Gold ya Silver? 2026 mein sahi decision kaise lein",
+ "title": "Gold ya Silver? 2026 mein kahan invest karein?",
  "format": {
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.7,
-  "true_peak": -3.2,
-  "dur": 43.3
+  "lufs": -13.6,
+  "true_peak": -2.2,
+  "dur": 33.73
  },
  "vision": {
-  "score": 10,
-  "ok": true,
-  "problems": []
+  "score": 8,
+  "ok": false,
+  "problems": [
+   "scene 4: The person's face and hands show AI artifacts, and the tools they are holding appear as melted shapes.",
+   "scene 9: There is a spelling error in the image text; 'Portfollio' should be 'Portfolio'."
+  ]
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.95,
-  "words": 94,
+  "matched": 0.9705882352941176,
+  "words": 77,
   "problems": []
  },
- "ok": true
+ "ok": false
 }

@@ -191,3 +191,22 @@
 ## review 1119-0426-p2
 - length 54.5 s is outside 28-50 s
 - only 0% of the script was found in the voice
+
+## Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 9 (numbers check)
+- NUMBERS: scene 6: '5-10% portfolio allocate karo.' is not in the sources: remove it or say only what the sources say
+
+## Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 9 (numbers check)
+- NUMBERS: scene 7: '5-10% portfolio allocate karo.' is not in the sources: remove it or say only what the sources say
+
+## 1119-0429 (pre-render check)
+- FIT: scene 8 voice says 'Aditya ne decide kiya — silver ETF lega' but caption shows 'silver' at the bottom which does not match the voice or script
+- OVERLAP: bottom caption text overlaps with the background watermark or ghost text near the bottom
+
+## 1119-0429 Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 90+ hai, ab ye strategy kaam karegi
+- scene 4: The person's face and hands show AI artifacts, and the tools they are holding appear as melted shapes.
+- scene 9: There is a spelling error in the image text; 'Portfollio' should be 'Portfolio'.
+
+## review 1119-0429
+- visual: Scene 7 frame 2 and Scene 9 say 'invest karein' and ask 'Kya kharidoge? Comment' which violates educational boundaries by pushing direct investment/buying advice.
+- visual: checklist: Does any frame give a buy / sell / invest recommendation (advice) instead of education? -> Scene 7 and Scene 9 ('app se kharid lo', 'Kya kharidoge?')
+- visual score 5/10

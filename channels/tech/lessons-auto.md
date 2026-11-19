@@ -418,3 +418,28 @@
 ## 1118-1845 AI Agents (WhatsApp automation)
 - scene 6: The label 'BACKEND' is slightly obscured/cut off by the top border of the UI box, though readable.
 - scene 10: The caption 'Razorpay ka Agent Studio har mahine' is slightly cut off at the bottom edge of the frame.
+
+## 1118-2205 Semiconductor/Chip Manufacturing
+- scene 6: The caption 'ye' seems to be a fragment of the full sentence 'ye floor-by-floor baar-baar hota hai' but visually it looks a bit disconnected from the preceding scene's flow, though acceptable.
+- scene 8: The caption 'se tiny' is grammatically incomplete in the frame, though the prompt allows for partial captions, this one feels particularly disjointed compared to others.
+- only 0% of the script was found in the voice
+
+## review 1118-2205
+- only 0% of the script was found in the voice
+- visual: Scene 12 shows '10-13' in the start frame while the line states '11 se 13 weeks', resulting in a number mismatch on screen.
+
+## 1118-2205 Semiconductor/Chip Manufacturing
+- scene 1: The visual does not match the script. The script says 'Rait se chip' (sand to chip), but the image shows two metallic ingots/cylinders, not sand or a processor.
+- scene 2: The label says 'ENVIRONMENT' and shows a generic machine, but the script describes a 'Clean Room' environment. The visual representation is confusing/incorrect.
+- scene 3: The label says 'PURIFICATION' and shows a machine, but the script describes the 'Silicon Ingot' itself. The visual is a machine, not the ingot.
+- scene 4: The label says 'SLICING' and shows a blank space/nothing, missing the 'Wafer Slice' visual entirely.
+- scene 8: The text 'TRANSISTORS of switches per chip' is grammatically awkward and confusing compared to the script.
+- scene 9: The label says 'METALLIZATION' but the script describes 'Wiring'. While technically related, the visual is a generic chip layout, not specifically focusing on copper wiring as described.
+- scene 10: The UI shows 'WAFER FAB' as 'DONE' and 'ASSEMBLY' as 'NEXT', which contradicts the script's focus on 'Dicing'.
+- scene 11: The label says 'PACKAGING' but the visual shows a wafer being diced/processed, not the final packaging of a chip.
+- scene 13: The visual shows a phone, but the text 'NEXT?' is floating awkwardly, and the caption 'chalta' is disconnected from the context of the final question.
+
+## review 1118-2205
+- only 73% of the script was found in the voice
+- captions out of sync: line 5 has 10 words in 0.8 s
+- visual: Scene 12 shows '10-13' in the first frame while the spoken line and second frame say '11-13' weeks, creating a mismatch in the stat displayed.

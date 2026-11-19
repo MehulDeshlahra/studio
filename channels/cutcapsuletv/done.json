@@ -170,5 +170,53 @@
    "start": 48.59,
    "layout": "mixed:crop+fit"
   }
+ },
+ {
+  "job": "1120-0311a-c1",
+  "topic": "THEY CALL US USERS FOR A REASON",
+  "title": "THEY CALL US USERS FOR A REASON",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=6uSskUaDL90",
+   "start": 1493.15,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0311a-c2",
+  "topic": "STOP BLAMING YOURSELF FOR THEIR ADDICTION",
+  "title": "STOP BLAMING YOURSELF FOR THEIR ADDICTION",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=6uSskUaDL90",
+   "start": 964.91,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0311a-c3",
+  "topic": "THEY KNEW IT WAS CAUSING HARM",
+  "title": "THEY KNEW IT WAS CAUSING HARM",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=6uSskUaDL90",
+   "start": 2667.19,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0311a-c4",
+  "topic": "THEY DESIGNED IT TO BE ADDICTIVE",
+  "title": "THEY DESIGNED IT TO BE ADDICTIVE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=6uSskUaDL90",
+   "start": 444.97,
+   "layout": "crop"
+  }
  }
 ]

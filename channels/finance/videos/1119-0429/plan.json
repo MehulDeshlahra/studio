@@ -1,345 +1,215 @@
 {
  "slug": "gold-silver-ratio-2026",
- "title": "Gold ya Silver? 2026 mein sahi decision kaise lein",
+ "title": "Gold ya Silver? 2026 mein kahan invest karein?",
  "hooks": [
-  "Gold ya Silver? Ratio 90+ — ab kya karein?",
-  "Bhai 90+ ratio ka matlab? Silver undervalued hai.",
-  "Silver 149% upar, gold 64% — par ratio bolta kuch aur hai."
+  "Gold ya Silver? 2026 mein kahan invest karein? Ratio dekho.",
+  "Gold-Silver ratio 80 upar — silver ka chance.",
+  "Ratio 80+? Ab silver kharidne ka time."
  ],
  "hook_choice": 0,
- "hook_why": "Opens with decision dilemma + shocking 90+ ratio in first 5 words. No intro, pure curiosity.",
- "metaphor": "Phone screen shows a balance scale: gold coin vs silver bar, ratio needle crosses 90 — visual rebalancing signal.",
+ "hook_why": "Opens with the core question for November 2026, references the ratio threshold (80+) that signals silver opportunity, matches the 'crazy hook' request with a direct call to action.",
+ "metaphor": "A balance scale: gold heavy on one side; when ratio crosses 80 the scale tips, signalling silver's turn to rise.",
+ "mechanism": [
+  "Check current gold-silver ratio",
+  "If ratio above 80, silver historically undervalued",
+  "Compare volatility: silver ~2x gold",
+  "Match allocation to risk tolerance (5-10%)",
+  "Choose instrument: Gold → SGB/ETF, Silver → ETF/physical",
+  "Execute purchase via broker/app",
+  "Review quarterly"
+ ],
  "cast": {
-  "Aditya": "Young Indian male, 26, casual kurta, slightly messy hair, holds phone with one hand, expressive eyebrows — the friend who asks money questions at chai tapri."
+  "Aditya": "Young Indian male, mid-20s, casual kurta, slightly worried expression, holds phone in left hand"
  },
  "scenes": [
   {
-   "vo": "Gold ya Silver? Ratio 90+ — ab kya karein?",
+   "vo": "Gold ya Silver? 2026 mein kahan invest karein? Ratio dekho.",
    "type": "wa",
    "title": "",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "",
-   "small": "",
-   "keywords": [
-    "Gold",
-    "Silver",
-    "90+"
-   ],
    "messages": [
     {
      "from": "Aditya",
-     "text": "Bhai gold lein ya silver? 🤔"
+     "text": "Bhai gold ya silver? 2026 mein kya kharidein? 🤔"
     },
     {
      "from": "me",
-     "text": "Ratio 90+ dekh pehle 📉"
+     "text": "Ratio dekh, 80+ pe silver historically undervalued."
     }
    ],
-   "bg_prompt": "Phone screen close-up: WhatsApp chat open, two message bubbles visible, thumb hovering, blurred chai stall background",
+   "motion": "push",
+   "keywords": [
+    "gold",
+    "silver",
+    "ratio"
+   ],
+   "bg_prompt": "A young man sitting on a sofa in a modest Indian living room at evening, phone screen glowing on his face, a steel water bottle on the side table",
+   "big": null,
+   "small": null,
    "sub": null,
    "label": null
   },
   {
-   "vo": "Ratio 90+ matlab silver undervalued — itihaas proof hai.",
+   "vo": "Gold-Silver ratio 80 upar? Silver historically undervalued.",
    "type": "stat",
+   "value": ">80",
+   "sub": "Silver undervalued threshold · ipomarket.in",
+   "motion": "punch",
    "title": "",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "90+",
-   "small": "Ratio = Undervalued",
    "keywords": [
-    "90+",
-    "undervalued",
-    "itihaas"
+    "80",
+    "ratio"
    ],
-   "value": "90+",
-   "sub": "Gold-Silver Ratio",
-   "bg_prompt": "Phone screen: financial news app showing gold-silver ratio chart at 90+, morning light on table",
+   "bg_prompt": "Close-up of a financial newspaper page on a wooden desk, rupee notes tucked under the corner, soft window light",
+   "big": null,
+   "small": null,
    "label": null
   },
   {
-   "vo": "50 saal ka average 65 — 80 upar gaya to silver nikla aage.",
+   "vo": "50 saal ka average 65, 2020 mein 124 tha.",
    "type": "rule",
-   "title": "",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "Avg 65",
-   "small": "80+ = Silver lead",
-   "keywords": [
-    "average 65",
-    "80 upar",
-    "silver lead"
-   ],
+   "title": "Historical Data · ipomarket.in",
+   "sub": "50-yr avg 65 · 2020 peak 124",
    "lines": [
-    "50 yr avg ~65",
-    "2020 peak 124",
-    "90+ pe silver catch-up"
+    "Ratio >80 = silver undervalued",
+    "Ratio <50 = gold outperforms"
    ],
-   "stamp": "World Gold Council · 2024",
+   "stamp": "ASLI DATA",
+   "motion": "tilt",
+   "keywords": [
+    "80",
+    "undervalued"
+   ],
    "real": {
-    "q": "World Gold Council logo",
+    "q": "ipomarket.in logo",
     "kind": "logo",
-    "subject": "World Gold Council official logo"
+    "subject": "ipomarket.in website logo"
    },
-   "bg_real": {
-    "q": "World Gold Council report cover",
-    "kind": "photo",
-    "subject": "World Gold Council report PDF thumbnail"
-   },
-   "sub": null,
-   "label": null,
-   "bg_prompt": "A person in India in the middle of this money moment: Gold ya Silver? 2026 mein sahi decision kaise lein"
-  },
-  {
-   "vo": "10 saal CAGR: gold 10.7%, silver 8.2% — par 2025 silver 149%.",
-   "type": "list",
-   "title": "CAGR vs 2025",
-   "motion": "push",
-   "nodes": [],
-   "big": "CAGR VS 2025",
-   "small": "",
-   "keywords": [
-    "CAGR",
-    "2025",
-    "149%"
-   ],
-   "items": [
-    {
-     "label": "Gold 10y",
-     "value": "10.7%",
-     "pct": 11
-    },
-    {
-     "label": "Silv 10y",
-     "value": "8.2%",
-     "pct": 8
-    },
-    {
-     "label": "Gold '25",
-     "value": "64%",
-     "pct": 43
-    },
-    {
-     "label": "Silv '25",
-     "value": "149%",
-     "pct": 100
-    }
-   ],
-   "bg_prompt": "Phone screen: spreadsheet app with gold vs silver returns, thumb scrolling, dim room",
-   "sub": null,
-   "label": null,
-   "lines": [
-    "Gold 10y: 10.7%",
-    "Silv 10y: 8.2%",
-    "Gold '25: 64%",
-    "Silv '25: 149%"
-   ]
-  },
-  {
-   "vo": "Silver storage 10x mehenga — GST 3% dono par same.",
-   "type": "bill",
-   "title": "Storage & Tax",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "10x",
-   "small": "Storage diff",
-   "keywords": [
-    "storage",
-    "10x",
-    "GST 3%"
-   ],
-   "rows": [
-    {
-     "label": "Gold 1L",
-     "value": "₹500/y"
-    },
-    {
-     "label": "Silver 1L",
-     "value": "₹5k/y"
-    },
-    {
-     "label": "GST Tax",
-     "value": "3% same"
-    }
-   ],
-   "total": {
-    "label": "Volume",
-    "value": "10x"
-   },
-   "tone": "bad",
-   "bg_prompt": "Phone screen: banking app locker charges page, gold vs silver storage fees, serious face reflection",
-   "sub": null,
+   "bg_prompt": "A trader's desk in Mumbai with multiple monitors showing charts, a chai cup steaming beside a keyboard",
+   "big": null,
+   "small": null,
    "label": null
   },
   {
-   "vo": "Silver volatility gold se 1.5-2x — din mein 3-5% hilta.",
-   "type": "stat",
-   "title": "",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "1.5-2x",
-   "small": "Volatility",
-   "keywords": [
-    "volatility",
-    "1.5-2x",
-    "3-5%"
-   ],
-   "value": "1.5-2x",
-   "sub": "Gold ke mukaable",
-   "bg_prompt": "Phone screen: trading app candlestick chart flashing red/green, coffee cup beside, night",
-   "label": null
-  },
-  {
-   "vo": "Liquidity, storage, demand — gold har parameter pe aage.",
+   "vo": "Gold stable, silver volatile — industrial demand 55% silver mein.",
    "type": "compare",
-   "title": "Gold vs Silver",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "",
-   "small": "",
-   "keywords": [
-    "liquidity",
-    "storage",
-    "demand"
-   ],
-   "cols": [
-    "Parameter",
-    "Gold",
-    "Silver"
-   ],
-   "rows": [
-    {
-     "label": "Liquidity",
-     "cells": [
-      "Top",
-      "Good"
-     ]
-    },
-    {
-     "label": "Storage",
-     "cells": [
-      "Low",
-      "High 10x"
-     ]
-    },
-    {
-     "label": "Demand",
-     "cells": [
-      "Monetary",
-      "Indust"
-     ]
-    },
-    {
-     "label": "Crisis hedge",
-     "cells": [
-      "Strong",
-      "Moderate"
-     ]
-    }
-   ],
-   "best": 0,
-   "bg_prompt": "Phone screen: notes app comparison list, checkmarks next to gold advantages, morning light",
-   "sub": null,
-   "label": null,
    "items": [
     {
-     "label": "Liquidity",
-     "value": "Gold"
+     "label": "Gold",
+     "value": "Vol 15-20% · Industrial 10%",
+     "pct": 60
     },
     {
-     "label": "Storage",
-     "value": "Gold Low"
-    },
-    {
-     "label": "Demand",
-     "value": "Gold 50%"
-    },
-    {
-     "label": "Hedge",
-     "value": "Gold"
+     "label": "Silver",
+     "value": "Vol 25-35% · Industrial 55%",
+     "pct": 40
     }
-   ]
-  },
-  {
-   "vo": "Risk profile dekh ke decide karo — core gold, satellite silver.",
-   "type": "list",
+   ],
+   "motion": "pan",
    "title": "",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "",
-   "small": "",
    "keywords": [
-    "risk profile",
-    "core",
-    "satellite"
+    "volatile",
+    "industrial"
    ],
-   "lines": [
-    "Safe chahiye? Gold core",
-    "High beta? Silver satellite",
-    "Ratio 90+? Silver thoda badhao",
-    "Ratio 50 neeche? Gold wapas badhao"
-   ],
-   "bg_prompt": "Phone screen: portfolio app with core-satellite allocation sliders, thumb adjusting, cafe background",
+   "bg_prompt": "A jewellery workshop in Zaveri Bazaar, artisan polishing a gold chain, silver bars stacked in a tray nearby",
+   "big": null,
+   "small": null,
    "sub": null,
    "label": null
   },
   {
-   "vo": "Dono mein baanto — balance banao, ratio track karte raho.",
-   "type": "title",
+   "vo": "Ratio 80 upar? Silver undervalued historically.",
+   "type": "stat",
+   "value": ">80",
+   "sub": "Silver undervalued signal",
+   "motion": "punch",
    "title": "",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "BAANT DO",
-   "small": "Ratio track karo",
    "keywords": [
-    "baanto",
-    "balance",
-    "track"
+    "80",
+    "signal"
    ],
-   "sub": "Ratio track karo",
-   "bg_prompt": "Phone screen: portfolio app showing gold 70% / silver 30% allocation, save button highlighted",
+   "bg_prompt": "A stock market ticker board in a broker's office, red and green numbers scrolling, reflection in glass",
+   "big": null,
+   "small": null,
    "label": null
   },
   {
-   "vo": "Save karo. Apna ratio check kar ke comment mein likh.",
-   "type": "wa",
+   "vo": "Risk kam chahiye? Gold options. Risk le sakte? Silver ETF.",
+   "type": "list",
    "title": "",
-   "prompt": "",
-   "motion": "push",
-   "nodes": [],
-   "big": "",
-   "small": "",
+   "lines": [
+    "Low risk → Gold (SGB/ETF)",
+    "Higher risk → Silver ETF"
+   ],
+   "motion": "pan",
    "keywords": [
-    "Save karo",
-    "ratio",
+    "SGB",
+    "ETF",
+    "allocate"
+   ],
+   "bg_prompt": "A young couple at a kitchen table in Bangalore, laptop between them, mutual fund statements spread out, filter coffee cups",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Apne risk profile ke hisaab se invest karein, app se kharid lo.",
+   "type": "title",
+   "big": "Aaj hi decide karo",
+   "sub": "Ratio >80 = silver opportunity",
+   "motion": "punch",
+   "keywords": [
+    "allocate",
+    "app"
+   ],
+   "bg_prompt": "A hand tapping 'Buy' on a mutual fund app in a moving auto-rickshaw, city lights blurring outside",
+   "title": "",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Aditya ne decide kiya — silver ETF lega.",
+   "type": "wa",
+   "title": "Aditya",
+   "messages": [
+    {
+     "from": "Aditya",
+     "text": "Silver ETF sahi hai."
+    },
+    {
+     "from": "me",
+     "text": "Quarterly review kar."
+    }
+   ],
+   "motion": "pull",
+   "keywords": [
+    "ETF",
+    "review"
+   ],
+   "bg_prompt": "Same living room, Aditya now smiling, typing on phone, the steel water bottle half-empty",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Save karo, kaam aayega. Tum kya kharidoge?",
+   "type": "title",
+   "big": "Save karo",
+   "sub": "Kya kharidoge? Comment.",
+   "motion": "tilt",
+   "keywords": [
+    "Save",
     "comment"
    ],
-   "messages": [
-    {
-     "from": "me",
-     "text": "Save karo, kaam aayega 📌"
-    },
-    {
-     "from": "Aditya",
-     "text": "Mera 85 pe hai, silver badha raha 📈"
-    }
-   ],
-   "bg_prompt": "Phone screen: WhatsApp chat, save icon pressed, two friends walking at sunset, sea link far back",
-   "sub": null,
+   "bg_prompt": "A notebook on a desk with 'Portfolio Review' written on top, a pen resting on it, soft lamp light",
+   "title": "",
+   "small": null,
    "label": null
   }
  ],
- "music_mood": "calm",
- "caption": "Gold ya Silver? Ratio 90+ — ab kya karein?\n\nGold-Silver ratio 90+ hai — itihaas ke hisaab se silver undervalued. Apna risk profile dekh ke core-satellite approach se baanto.\n\nSource: World Gold Council data, RBI annual prices FY2015-25\nSave karo, kaam aayega 📌\nApna ratio check kar ke comment mein likh.\n\n#personalfinance #financeinhindi #moneytips #gold #silver #investing #portfolio",
+ "music_mood": "driving",
+ "caption": "Gold ya Silver? 2026 mein kahan invest karein? Ratio dekho.\n\nRatio >80 historically means silver undervalued. Check volatility, allocate 5-10%, use SGB/ETF for gold.\n\nSource: ipomarket.in historical data, World Gold Council 2025-26\nSave karo, kaam aayega 📌\nDM for collabs\n#personalfinance #financeinhindi #moneytips #gold #silver #investing #ratios",
  "hashtags": [
   "#personalfinance",
   "#financeinhindi",
@@ -347,65 +217,99 @@
   "#gold",
   "#silver",
   "#investing",
-  "#portfolio"
+  "#ratios"
  ],
  "claims": [
   {
-   "claim": "Gold-Silver ratio currently 90+",
-   "basis": "ipomarket.in source states 2025 typical range 75-95, ratio above 80 indicates silver undervalued"
+   "claim": "Gold-Silver ratio 2025 typical range 75-95; ratio above 80 indicates silver undervalued",
+   "basis": "ipomarket.in Gold vs Silver Investment 2026 article states 2025 typical range 75-95; ratio above 80 indicates silver undervalued"
   },
   {
-   "claim": "50-year average ratio ~65",
-   "basis": "ipomarket.in historical context table"
+   "claim": "50-year average gold-silver ratio is ~65",
+   "basis": "ipomarket.in historical context: 50-year average ~65"
   },
   {
-   "claim": "2020 COVID peak ratio 124",
-   "basis": "ipomarket.in historical context"
+   "claim": "2020 COVID peak ratio reached 124",
+   "basis": "ipomarket.in historical context: 2020 COVID peak 124"
   },
   {
-   "claim": "Gold 10-year CAGR ~10.7%, Silver ~8.2% (INR)",
-   "basis": "adityabirlacapital.com table FY2015-25"
+   "claim": "When ratio >80, silver historically undervalued and catches up",
+   "basis": "ipomarket.in practical use: If ratio is 90+, consider rotating some gold allocation to silver"
   },
   {
-   "claim": "2025 calendar year: Gold +64%, Silver +149%",
-   "basis": "adityabirlacapital.com and ipomarket.in both confirm silver's exceptional 2025"
-  },
-  {
-   "claim": "Silver volatility 1.5-2x gold",
-   "basis": "ipomarket.in volatility section"
-  },
-  {
-   "claim": "Silver storage 10x volume per rupee vs gold",
+   "claim": "Gold 10-year CAGR ~13-15%, Silver ~10-12%",
    "basis": "ipomarket.in side-by-side comparison table"
   },
   {
-   "claim": "GST 3% on both physical gold and silver",
-   "basis": "ipomarket.in comparison table"
+   "claim": "Gold volatility 15-20%, Silver volatility 25-35%",
+   "basis": "ipomarket.in side-by-side comparison table"
   },
   {
-   "claim": "LTCG tax 12.5% no indexation for both",
-   "basis": "ipomarket.in comparison table"
+   "claim": "Silver industrial demand share ~55%, Gold ~10%",
+   "basis": "ipomarket.in side-by-side comparison table"
   },
   {
-   "claim": "Silver industrial demand ~55%, Gold monetary ~50%",
-   "basis": "ipomarket.in demand share breakdown"
+   "claim": "Silver storage cost 10x higher per rupee value",
+   "basis": "ipomarket.in side-by-side comparison table"
+  },
+  {
+   "claim": "Sovereign Gold Bonds offer 2.5% interest and tax-free maturity",
+   "basis": "gfolio.in: SGBs offer additional 2.5% per annum interest on top of gold price appreciation, tax-free on maturity (8-year hold)"
+  },
+  {
+   "claim": "Central banks added record tonnage in 2025-26",
+   "basis": "gfolio.in: World Gold Council reports central banks added record tonnage in 2025-26"
+  },
+  {
+   "claim": "Silver supply deficit since 2021 widening through 2026-27",
+   "basis": "gfolio.in: Silver Institute reports persistent supply deficit since 2021, expected to widen through 2026-27"
+  },
+  {
+   "claim": "Goldman Sachs and Citibank project silver $40-45/oz for 2026",
+   "basis": "gfolio.in: Analysts at Goldman Sachs and Citibank project international silver in $40-45/oz range for 2026"
   }
  ],
+ "fresh_fixed": [
+  "scene 1: The script implies the ratio is currently 90+; while the source ipomarket.in says the 2025 range was 75-95, it does not confirm the ratio is currently 90+ in November 2026. The script treats this as a current fact without a source confirmation for the specific date of Nov 2026.",
+  "scene 2: The script states the Gold-Silver ratio is 90+ in Nov 2026; the provided source ipomarket.in discusses the ratio as a metric but does not provide the real-time value for November 2026.",
+  "scene 6: The script mentions 'Gold SGB' (Sovereign Gold Bonds); the source ipomarket.in lists SGB as an investment vehicle but does not confirm if new tranches are currently active or available for purchase in Nov 2026, as SGB issuance is intermittent."
+ ],
+ "explainer": {
+  "score": 8,
+  "ok": false,
+  "steps_learned": [
+   "Check the Gold-Silver ratio to decide where to invest.",
+   "If the ratio is above 80, silver is historically undervalued compared to gold.",
+   "Understand that gold is stable while silver is volatile due to higher industrial demand (55%).",
+   "Choose gold options for lower risk and silver ETFs if you can handle higher risk.",
+   "Allocate 5-10% of your portfolio to these metals."
+  ],
+  "missing_steps": [
+   "How to actually check the current Gold-Silver ratio (where to find the live number).",
+   "The difference between buying physical metal vs. ETFs (storage costs, liquidity, and tax implications mentioned in sources).",
+   "Why the ratio matters (e.g., the concept of 'catching up' or mean reversion)."
+  ],
+  "unsourced": [
+   "The script claims '50 saal ka average 65' (Source says 50-year average is ~65, so this is accurate).",
+   "The script claims '2020 mein 124 tha' (Source says 2020 COVID peak was 124, so this is accurate).",
+   "The script claims 'industrial demand 55% silver mein' (Source says 55%, so this is accurate)."
+  ]
+ },
  "phone_bg": true,
  "brain_ids": [
   "b2fabb69c4",
   "1e1964f463",
-  "f945e2a937",
   "7f620e6fdf",
+  "b69d65467f",
   "fc294ac58f",
+  "f945e2a937",
   "4396759d41",
   "6ce7203c71",
   "161339712e",
-  "b69d65467f",
-  "1e60a34718",
-  "12739745ca",
-  "7fa182f8ef",
   "0755cc155a",
-  "a688e48ca2"
+  "1e60a34718",
+  "e15cfaed29",
+  "9db4cc694f",
+  "7fa182f8ef"
  ]
 }

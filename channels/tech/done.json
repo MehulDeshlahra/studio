@@ -127,9 +127,9 @@
   "title": "Chip banta kaise hai? Ret se supercomputer tak.",
   "status": "held",
   "review": [
-   "owner agent: Fix Scene 3: Change 'Diamond' label to 'Silicon Ingot'. Fix Scene 7: Remove the unstyled white box and replace it with an actual photo of an ASML EUV machine.",
-   "visual: Scene 3 shows 'Diamond' as the headline while the voiceover and text describe silicon ingots and wafer slices, making the content factually incorrect.",
-   "visual: Scene 7 shows an abrupt, unstyled white box with 'ASML' branding that breaks the visual consistency of the tech aesthetic."
+   "only 73% of the script was found in the voice",
+   "captions out of sync: line 5 has 10 words in 0.8 s",
+   "visual: Scene 12 shows '10-13' in the first frame while the spoken line and second frame say '11-13' weeks, creating a mismatch in the stat displayed."
   ],
   "mehul_rebuilt": "2026-11-19",
   "replan_requested": "2026-11-19 22:46"

@@ -1,33 +1,35 @@
 {
  "topic": "Semiconductor/Chip Manufacturing",
- "title": "Chip banta kaise hai? Ret se supercomputer tak.",
+ "title": "Rait se processor kaise banta hai?",
  "format": {
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -14.4,
-  "true_peak": -1.6,
-  "dur": 40.93
+  "lufs": -13.5,
+  "true_peak": -2.1,
+  "dur": 48.5
  },
  "vision": {
-  "score": 8,
-  "ok": true,
+  "score": 6,
+  "ok": false,
   "problems": [
-   "scene 3: The title 'Wafer Slice' is missing from the frame.",
-   "scene 4: The title 'Polishing' or similar is missing from the frame.",
-   "scene 5: The title 'Deposition' or similar is missing from the frame.",
-   "scene 6: The title 'EUV Machine' is present, but the visual content seems slightly mismatched with the script flow compared to scene 7.",
-   "scene 8: The title 'Plasma Etch' is missing from the frame.",
-   "scene 11: The title 'Packaging' or similar is missing from the frame.",
-   "scene 12: The title 'Result' or similar is missing from the frame."
+   "scene 1: The visual does not match the script. The script says 'Rait se chip' (sand to chip), but the image shows two metallic ingots/cylinders, not sand or a processor.",
+   "scene 2: The label says 'ENVIRONMENT' and shows a generic machine, but the script describes a 'Clean Room' environment. The visual representation is confusing/incorrect.",
+   "scene 3: The label says 'PURIFICATION' and shows a machine, but the script describes the 'Silicon Ingot' itself. The visual is a machine, not the ingot.",
+   "scene 4: The label says 'SLICING' and shows a blank space/nothing, missing the 'Wafer Slice' visual entirely.",
+   "scene 8: The text 'TRANSISTORS of switches per chip' is grammatically awkward and confusing compared to the script.",
+   "scene 9: The label says 'METALLIZATION' but the script describes 'Wiring'. While technically related, the visual is a generic chip layout, not specifically focusing on copper wiring as described.",
+   "scene 10: The UI shows 'WAFER FAB' as 'DONE' and 'ASSEMBLY' as 'NEXT', which contradicts the script's focus on 'Dicing'.",
+   "scene 11: The label says 'PACKAGING' but the visual shows a wafer being diced/processed, not the final packaging of a chip.",
+   "scene 13: The visual shows a phone, but the text 'NEXT?' is floating awkwardly, and the caption 'chalta' is disconnected from the context of the final question."
   ]
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.9888888888888889,
-  "words": 97,
+  "matched": 0.7293233082706767,
+  "words": 146,
   "problems": []
  },
- "ok": true
+ "ok": false
 }

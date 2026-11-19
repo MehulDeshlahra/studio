@@ -1,0 +1,71 @@
+{
+ "title": "Is the gameplay in FM27 over?",
+ "topic": "Is the gameplay in FM27 over?",
+ "caption": "NickRTFM discusses the current state of Football Manager 27, questioning if the gameplay team has lost its touch.\n#Ad\n@footballmanager @[creator_handle]",
+ "hashtags": [
+  "#FootballManager27",
+  "#NickRTFM",
+  "#Gaming"
+ ],
+ "lang": "en",
+ "clip": {
+  "url": "https://www.youtube.com/watch?v=XJSdMpANjDU",
+  "start": 67.01,
+  "end": 83.38,
+  "layout": "stack",
+  "removed_s": 0.0,
+  "why": "NickRTFM makes a bold claim about the state of the game's mechanics.",
+  "scores": {
+   "hook": 9,
+   "flow": 8,
+   "value": 9,
+   "trend": 8
+  },
+  "replayed": false,
+  "notes": [
+   {
+    "s": 6.51,
+    "e": 9.56,
+    "text": "That is a bold take",
+    "kind": "react"
+   },
+   {
+    "s": 11.15,
+    "e": 14.86,
+    "text": "The devs have their work cut out",
+    "kind": "react"
+   }
+  ],
+  "source": "clipping-culture-2-2",
+  "test": false,
+  "creator": "NickRTFM"
+ },
+ "seo": {
+  "ig": {
+   "caption": "NickRTFM discusses the current state of Football Manager 27, questioning if the gameplay team has lost its touch.\n#Ad\n@footballmanager @[creator_handle]",
+   "hashtags": [
+    "#FootballManager27",
+    "#NickRTFM",
+    "#Gaming"
+   ]
+  },
+  "fb": {
+   "caption": "NickRTFM discusses the current state of Football Manager 27, questioning if the gameplay team has lost its touch.\n#Ad\n@footballmanager @[creator_handle]",
+   "hashtags": [
+    "#FootballManager27",
+    "#NickRTFM",
+    "#Gaming"
+   ]
+  },
+  "yt": {
+   "title": "Is the gameplay in FM27 over?",
+   "description": "NickRTFM discusses the current state of Football Manager 27, questioning if the gameplay team has lost its touch.\n#Ad\n@footballmanager @[creator_handle]",
+   "tags": [
+    "FootballManager27",
+    "NickRTFM",
+    "Gaming"
+   ]
+  }
+ },
+ "scenes": []
+}

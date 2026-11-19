@@ -65,3 +65,6 @@
 ## 1119-1940-c4 (clipper)
 - length 7.7 s
 - not edited enough: 2 framing beats (need 3+)
+
+## 1120-0341-c4 (clipper)
+- almost no speech (captions nearly empty)
