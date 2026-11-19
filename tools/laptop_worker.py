@@ -344,7 +344,13 @@ def transcribe_job(jid, spec):
 def clip_job(jid, spec):
     """Download the video once (cached by id), then build every asked clip with engine/clipcore.py on this machine."""
     sys.path.insert(0, os.path.join(REPO, "engine"))
-    import clipcore
+    import clipcore, importlib
+    # 19 Nov: the worker kept the clipcore it started with, so a shipped clip fix only ran after a manual restart
+    # (render 8 ran old code while the worker was busy). Reload it per job: always today's code.
+    try:
+        clipcore = importlib.reload(clipcore)
+    except Exception as e:
+        log("clipcore reload failed, using the loaded one:", str(e)[:120])
     work = os.path.join(HOME, "jobs", jid)
     shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
     os.makedirs(CACHE, exist_ok=True)
