@@ -113,12 +113,8 @@
   "job": "1118-1845",
   "topic": "AI Agents (WhatsApp automation)",
   "title": "Chatbot aur AI Agent mein farak kya hai?",
-  "status": "held",
-  "review": [
-   "owner agent: Fix text artifact 'ttying.lia' overlapping scene 8 bottom third, and correct the stat value from '98+' to '100+' in scene 9.",
-   "before render, scene 8: FIT: text artifact 'ttying.lia' overlapping the bottom third",
-   "before render, scene 9: FIT: value shows '98+' in the first still instead of '100+'"
-  ],
+  "status": "made",
+  "review": [],
   "mehul_rebuilt": "2026-11-18",
   "replan_requested": "2026-11-18 22:37"
  },

@@ -140,3 +140,7 @@
 
 ## 1119-0426-p2 (pre-render check)
 - CUT: The rule card UI box is clipped at the top edge of the frame
+
+## 1119-0426-p2 (pre-render check)
+- FIT: Missing the third card/column for Pvt Ltd in the visual comparison while voice and data indicate three items
+- DUP: The word 'Comment GUIDE' is unnecessarily repeated in both the main title and the caption simultaneously

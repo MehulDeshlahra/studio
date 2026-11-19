@@ -97,5 +97,14 @@
   "first": "2026-11-19 03:37",
   "last": "2026-11-19 03:37",
   "example": "before render, scene 2: FIT: Indra is depicted incorrectly (missing crown, vajra, and riding a normal elephant rather than the white elephant Airavata)"
+ },
+ {
+  "sig": "owner agent: fix text artifact '…' overlapping scene # bottom third, and correct the stat value from '…' to '…",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-19 08:37",
+  "last": "2026-11-19 08:37",
+  "example": "owner agent: Fix text artifact 'ttying.lia' overlapping scene 8 bottom third, and correct the stat value from '98+' to '100+' in scene 9."
  }
 ]

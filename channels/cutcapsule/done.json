@@ -40,5 +40,41 @@
    "start": 382.15,
    "layout": "stack"
   }
+ },
+ {
+  "job": "1119-0805-c1",
+  "topic": "INTENSE FIRE FIGHT IN THE DARK",
+  "title": "INTENSE FIRE FIGHT IN THE DARK",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=bIqyYMTN0aA",
+   "start": 43.65,
+   "layout": "fill"
+  }
+ },
+ {
+  "job": "1119-0805-c2",
+  "topic": "SOLDIERS INFILTRATE A MYSTERIOUS BASE",
+  "title": "SOLDIERS INFILTRATE A MYSTERIOUS BASE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=bIqyYMTN0aA",
+   "start": 7.39,
+   "layout": "fill"
+  }
+ },
+ {
+  "job": "1119-0840a-c1",
+  "topic": "Jo Koy Reveals Blue in the Face Meaning",
+  "title": "Jo Koy Reveals Blue in the Face Meaning",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 499.23,
+   "layout": "mixed:fill+stack"
+  }
  }
 ]

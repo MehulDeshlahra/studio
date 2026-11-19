@@ -322,3 +322,10 @@
 - scene 8: The caption 'NETRA SE PRAKAT' is a fragment of the intended scene text 'Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!'.
 - scene 9: The caption 'SE BRAHMA KA' is a fragment of the intended scene text 'Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya'.
 - scene 10: The caption 'AUR BRAHMA KA' is a fragment of the intended scene text 'Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya'.
+
+## 1118-0735 (pre-render check)
+- CUT: text 'KE' is split awkwardly across the frames
+
+## 1118-0735 (pre-render check)
+- CUT: Caption text 'KE' on the second still is awkwardly cut off or incomplete due to box formatting limits
+- OVERLAP: Title 'MAUT KA NISHCHAY' at the top overlaps slightly with the page tag area

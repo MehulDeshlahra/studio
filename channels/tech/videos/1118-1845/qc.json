@@ -1,0 +1,28 @@
+{
+ "topic": "AI Agents (WhatsApp automation)",
+ "title": "WhatsApp pe AI agent kaise kaam karta hai?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.4,
+  "true_peak": -1.5,
+  "dur": 46.03
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 8: The caption 'Ek' seems slightly disconnected from the visual of the booking confirmation, though it is readable.",
+   "scene 9: The caption 'Matlab 24 ghante' is slightly cut off at the bottom edge of the frame, though still legible."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8316831683168316,
+  "words": 116,
+  "problems": []
+ },
+ "ok": true
+}

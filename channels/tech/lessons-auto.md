@@ -359,3 +359,18 @@
 
 ## 1119-0551 (pre-render check)
 - OVERLAP: stat value overlaps with the sub-text background glitch
+
+## 1118-1845 (pre-render check)
+- FIT: Visual does not match the required real photo of busy Indian street people using smartphones.
+- FIT: Visual does not match the required real photo of a WhatsApp chat screen showing AI assistant reply.
+- EMPTY: The center of the frame has no main visual, only a dark gradient.
+- OVERLAP: The text 'ttying.lia' is overlapping the flow chart nodes.
+- FIT: Visual does not match the required real photo of a happy user receiving a notification.
+
+## 1118-1845 (pre-render check)
+- FIT: scene 5 shows a collage/split image containing multiple visual elements instead of a single coherent comparison graphic
+- FIT: scene 7 title says Calendar, but the voice says Calendar check karta hai, CRM update karta hai, payment bhi le leta hai, making the single-word title too simplistic for the operations shown
+
+## 1118-1845 AI Agents (WhatsApp automation)
+- scene 8: The caption 'Ek' seems slightly disconnected from the visual of the booking confirmation, though it is readable.
+- scene 9: The caption 'Matlab 24 ghante' is slightly cut off at the bottom edge of the frame, though still legible.

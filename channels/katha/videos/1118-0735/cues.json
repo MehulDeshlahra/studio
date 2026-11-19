@@ -1,80 +1,104 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/urban-gauntlet.mp3",
+  "file": "music/lib/katha/lamentation.mp3",
   "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
  "sfx": [
   {
-   "t": 5.4,
+   "t": 5.18,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 10.26,
+   "t": 8.58,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 13.64,
+   "t": 11.22,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,
    "align": "peak"
   },
   {
-   "t": 18.68,
+   "t": 14.76,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 23.94,
+   "t": 18.5,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 28.37,
-   "file": "sfx/pop-light.mp3",
-   "gain_db": -17,
-   "align": "onset"
-  },
-  {
-   "t": 28.32,
+   "t": 22.36,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,
    "align": "peak"
   },
   {
-   "t": 33.32,
+   "t": 26.72,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 29.8,
+   "file": "sfx/sweep-small.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 33.72,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -18,
+   "align": "peak"
+  },
+  {
+   "t": 37.22,
+   "file": "sfx/air-zoom.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 40.9,
    "file": "sfx/impact.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 33.3,
-   "file": "sfx/air-zoom.mp3",
-   "gain_db": -18,
-   "align": "onset"
-  },
-  {
-   "t": 38.6,
+   "t": 40.88,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,
    "align": "onset"
   },
   {
-   "t": 43.601,
+   "t": 44.86,
+   "file": "sfx/impact.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 44.84,
+   "file": "sfx/whoosh-fast.mp3",
+   "gain_db": -18,
+   "align": "peak"
+  },
+  {
+   "t": 49.431,
    "file": "sfx/whoosh-cine.mp3",
    "gain_db": -16,
    "align": "peak"
   },
   {
-   "t": 43.651,
+   "t": 49.481,
    "file": "sfx/pop-light.mp3",
    "gain_db": -14,
    "align": "onset"
