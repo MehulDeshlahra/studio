@@ -69,7 +69,43 @@ def instagram(acc, mp4, caption):
             raise RuntimeError("IG processing error: " + str(st))
         time.sleep(10)
     p = _req(f"{G}/{uid}/media_publish", {"creation_id": cid, "access_token": tok})
+    try:                                    # 19 Nov: read the live caption back; hashtags / CTA lost -> alert at once
+        live = _req(f"{G}/{p['id']}?fields=caption&access_token={tok}").get("caption") or ""
+        if len(live.strip()) < 0.9 * len(caption.strip()):
+            telegram(f"⚠️ IG caption shorter than sent ({len(live)} vs {len(caption)} chars) on {p['id']}")
+    except Exception:
+        pass
     return p["id"]
+
+
+def repost(cid, job_id, platforms=("ig",)):
+    """Post one already-made video again on the given platforms with the SAME caption builder the timer uses (19 Nov:
+    a hand-written retry used the bare plan caption and the IG post went out without hashtags, CTA and disclaimer).
+    python engine/publish.py --repost <page> <job> ig[,fb,yt]"""
+    import seo
+    acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
+    job = os.path.join(OUT, cid, job_id)
+    plan = load(os.path.join(job, "plan.json"), {})
+    mp4 = os.path.join(job, "post.mp4") if os.path.exists(os.path.join(job, "post.mp4")) else os.path.join(job, f"{cid}-{job_id}.mp4")
+    mc = plan.get("music_credit")
+    out = {}
+    for name in platforms:
+        if name == "ig":
+            out["ig"] = instagram(acc, mp4, seo.text_for(plan, "ig", mc, cid=cid))
+        elif name == "fb":
+            out["fb"] = facebook(acc, mp4, seo.text_for(plan, "fb", mc, cid=cid))
+        elif name == "yt":
+            y = seo.text_for(plan, "yt", mc, cid=cid)
+            out["yt"] = youtube(acc, mp4, y["title"], y["description"], y.get("tags"), None)
+    done = load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
+    for v in done:
+        if v["job"] == job_id:
+            v.setdefault("posted", {}).update(out)
+            for k in out:
+                v["posted"].pop(k + "_error", None)
+    save(os.path.join(ROOT, "channels", cid, "done.json"), done)
+    log("repost", cid, job_id, out)
+    return out
 
 
 def instagram_resumable(acc, mp4, caption):
@@ -376,6 +412,10 @@ def post_one(cid, dry=False):
 
 
 if __name__ == "__main__":
+    if "--repost" in sys.argv:
+        a = [x for x in sys.argv[1:] if not x.startswith("--")]
+        print(repost(a[0], a[1], tuple((a[2] if len(a) > 2 else "ig").split(","))))
+        sys.exit()
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     for cid in args or [c for c in os.listdir(os.path.join(ROOT, "channels")) if os.path.isdir(os.path.join(ROOT, "channels", c))]:
         post_one(cid, "--dry" in sys.argv)
