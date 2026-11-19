@@ -55,6 +55,7 @@ def probe(f):
 
 # ---------------- words ----------------
 _MODEL = [None]
+ASR = [""]                # which whisper actually ran (19 Nov: a silent CPU fallback hid for 2 days)
 
 
 def fix_names(Wd, glossary):
