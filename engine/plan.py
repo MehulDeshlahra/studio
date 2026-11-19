@@ -634,7 +634,9 @@ def numbers_check(plan, sources="", strict=False):
 STORYCHK = """You check a short scripture-story Reel ({page}) against its SOURCES before it is published. Devotees know these
 stories well: one wrong event loses their trust for ever.
 List EVERY story claim in the voice-over and on-screen text: who did what, to whom, where, when, how long, in what
-order, what caused what, who gave what (a meal, a boon, a curse), numbers (years, days, heads, arms).
+order, what caused what, who gave what (a meal, a boon, a curse), numbers (years, days, heads, arms), AND every claim
+about history, science, places or today ("the whole world kept time by Ujjain before Greenwich" is false: Ujjain was
+the prime meridian of Indian astronomy only). Overclaims ("whole world", "first ever", "only") are false unless sourced.
 Judge each claim:
 - "false": a SOURCE contradicts it (quote the source in "why"), OR it contradicts the standard account of the
   tradition's own scriptures ({texts}) and you are sure (name the text and say what it really says). Mixing in another
