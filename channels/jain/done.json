@@ -15,8 +15,12 @@
   "job": "1119-0215",
   "topic": "Why King Megharath Cut His Own Flesh to Save a Pigeon (Source: Adipurana)",
   "title": "Raja ne apna maans kaise kaata kabutar bachane?",
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "19 Nov audit: Mughal / Taj Mahal-like domes behind an ancient Jain king (scenes 2, 3, 4)",
+   "King Megharath changes face: white-bearded king in scene 1, shaven monk in scenes 6 and 11",
+   "scene 6 voice-over is garbled ('Raja ne mithai maansi sab mana kar diya'): he offered other food/meat, the hawk refused"
+  ]
  },
  {
   "job": "1119-0305",
@@ -37,8 +41,11 @@
   "job": "1119-0935",
   "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "19 Nov audit: Bahubali drawn with blue skin and Hindu-god jewellery (scene 1, 49s): wrong Jain iconography",
+   "ends with a 'comment BAHUBALI for the wallpaper' promise the page does not fulfil: remove the last scene"
+  ]
  },
  {
   "job": "1119-1015",
