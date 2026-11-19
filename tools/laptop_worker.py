@@ -583,10 +583,17 @@ def idle_work():
 def main():
     os.makedirs(os.path.join(HOME, "jobs"), exist_ok=True)
     log("worker started, mode", wanted())
+    me = os.path.abspath(__file__)
+    born = os.path.getmtime(me)
     while True:
         try:
             ac = on_ac()
             jid = checkin(effective(), ac)
+            if not jid and os.path.getmtime(me) != born:
+                # 19 Nov: a shipped worker fix waited for a manual restart (the worker was busy each time). Idle + its own
+                # file changed -> restart into the new code (the same process command line)
+                log("worker code changed, restarting into the new version")
+                os.execv(sys.executable, [sys.executable, me] + sys.argv[1:])
             if not jid:
                 try:
                     idle_work()
