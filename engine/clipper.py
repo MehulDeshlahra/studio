@@ -394,6 +394,7 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
         credit = f"🎥 Credit: {who}" + (f" ({info.get('webpage_url') or url})" if (not src or src.get("credit_link", True)) else "")
         tags = list(dict.fromkeys([t for t in m["tags"] if t] + [t.lstrip("#") for t in (ch.get("hashtags_base") or [])]
                                   + GENERIC_TAGS))[:12]
+        yt_title = m["hook"]
         if (src or {}).get("campaign_id"):
             # 19 Nov campaign briefs (CoD, SEGA): the disclosure (#Ad) must be the FIRST hashtag, on its own line right after
             # the caption, and at most 3 more hashtags. So: no hashtags inside the caption text, required lines next,
@@ -409,6 +410,7 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
                 body = re.sub(r"\s*" + re.escape(tag) + r"\b", "", body, flags=re.I).strip()
             body = re.sub(r"\s{2,}", " ", body).strip(" ,")
             caption = "\n".join(x for x in [body, src.get("caption_add") or ""] if x)
+            yt_title = body if 12 <= len(body) <= 95 else m["hook"]       # the caption sentence reads better on YouTube
             tags = [t for t in tags if t.lower() not in ("ad", "advertisement", "sponsored")][:3]
         else:
             caption = "\n\n".join(x for x in [m["caption"], (src or {}).get("caption_add") or "", credit] if x)
@@ -419,7 +421,7 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
                          "source": (src or {}).get("key"), "test": test, "creator": who},
                 "seo": {"ig": {"caption": caption, "hashtags": ["#" + t for t in tags]},
                         "fb": {"caption": caption, "hashtags": ["#" + t for t in tags]},
-                        "yt": {"title": m["hook"][:90], "description": caption, "tags": tags}},
+                        "yt": {"title": yt_title[:90], "description": caption, "tags": tags}},
                 "scenes": []}
         save(os.path.join(jd, "plan.json"), plan)
         save(os.path.join(jd, "qc.json"), {"format": q, "ok": not probs})
