@@ -207,3 +207,4 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
   hanging captions, how-video without mechanism); seo caption: one concrete learning, no handle/follow line.
 - False-positive check of sync_problems on all 52 existing timings: 5 flagged, all real (incl. two English edits with leaks).
 - v1 kept as plan.v1.json / research.v1.json / /tmp/wa-v1.mp4; rebuild running as studio-job-wa5.- 19 Nov: the 37 duplicate FB 'updated profile picture / cover photo' posts (before the brand.py fix at 13:52) stay: Facebook's API cannot delete them and the owner said 'leave'. Do not raise it again.
+- 19 Nov 21:10: owner approved the new clip format ('looking great' on the Telegram draft: cvc engine + face-following crop, 38 s stand-up bit). Cut Capsule posting ON; gaming / tv / hindi stay off until each has its own test (webcam stack layout, Hinglish captions). Old-format approved clips superseded.

@@ -938,7 +938,16 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     a2, b2 = trim(Wd, a, b)
     ranges = keep_ranges(Wd, a2, b2, loudness(src))
     if ENGINE == "cvc":
-        return _make_cvc(src, Wd, a2, b2, ranges, hook, out_dir, lang, brand, notes)
+        # 19 Nov: cvc has crop / fit only. A streamer's webcam box over gameplay needs our stack layout (cam on top,
+        # game below), so those clips keep the own engine; everything else uses cvc
+        try:
+            cam = analyse(src).get("cam")
+        except Exception:
+            cam = None
+        if not cam:
+            return _make_cvc(src, Wd, a2, b2, ranges, hook, out_dir, lang, brand, notes)
+        log_ = "clipcore: webcam box found, own engine (stack layout)"
+        print(log_)
     tight = tighten(src, ranges, os.path.join(out_dir, "tight.mp4"))
     Wt = remap(Wd, ranges)
     info = analyse(tight)

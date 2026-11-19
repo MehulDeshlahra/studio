@@ -80,6 +80,7 @@
     "text_wait": "Follow {handle} for the best clips every day 🔔\n{profile}"
   },
   "youtube": "@cut.capsule",
-  "post": false,
+  "post": true,
+  "post_note": "19 Nov: owner OK on the new clip format (Telegram draft, 'looking great'); gaming / tv / hindi stay off until each is tested",
   "post_note": "19 Nov HOLD (golden rule): Instagram + YouTube stop recommending accounts that mostly post others' clips without material edits (crop/captions/logo do not count). Posting resumes when the clip format adds real commentary / storyline (owner sees frames first)."
 }
