@@ -198,6 +198,37 @@ def add_source(ch_id, v):
               "git pull -q --rebase --autostash && git push -q >/dev/null 2>&1")
 
 
+def share_clip(page, src_key, mp4, links):
+    """19 Nov (Bhakti Prabha: 'plz share shorts with us so we can post it on our instagram'): after a clip from a
+    share_back source posts, email the creator the clip (attached, re-encoded under 18 MB when needed) + our post links."""
+    import smtplib, ssl, subprocess, tempfile
+    from email.message import EmailMessage
+    src = ((load(os.path.join(ROOT, "channels", page, "sources.json"), {}) or {}).get("sources") or {}).get(src_key) or {}
+    if not src.get("share_back"):
+        return False
+    st = load(STORE, {}) or {}
+    row = next((v for k, v in (st.get("c") or {}).items() if v.get("handle") in (src.get("channels") or []) or k in (src.get("match") or [])), None)
+    if not row or not row.get("email"):
+        log("creatorask: share_back without an email", src_key); return False
+    f = mp4
+    if os.path.getsize(f) > 18_000_000:
+        f = os.path.join(tempfile.gettempdir(), f"share-{src_key}.mp4")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-c:v", "libx264", "-crf", "28", "-preset", "veryfast",
+                        "-vf", "scale=720:-2", "-c:a", "aac", "-b:a", "128k", f], timeout=600)
+    m = EmailMessage()
+    m["From"], m["To"] = FROM, row["email"]
+    m["Subject"] = f"Your clip is live: {src.get('title')}"
+    m.set_content(f"Namaste,\n\nAs promised, here is the clip we made from your podcast (attached, ready to post on your "
+                  f"Instagram / Shorts). It credits you and links your full episode.\n\nOur posts:\n" + "\n".join(links)
+                  + "\n\nIf you want any change, or want a clip taken down, just reply.\n\nMehul\nCut Capsule Hindi · Scroll House")
+    m.add_attachment(open(f, "rb").read(), maintype="video", subtype="mp4", filename=f"{src_key}-clip.mp4")
+    pw = open(os.path.expanduser("~/.studio-zoho-mail.key")).read().strip()
+    with smtplib.SMTP_SSL("smtp.zoho.in", 465, context=ssl.create_default_context(), timeout=120) as s:
+        s.login("hello@scrollhouse.in", pw); s.send_message(m)
+    log("creatorask: shared clip with", row["email"], src_key)
+    return True
+
+
 def email_for(row):
     name = re.sub(r"\s*(podcast|official|show|tv|channel)\b.*$", "", row["title"] or "", flags=re.I).strip() or row["title"]
     return TEMPLATE_SUBJECT.format(channel=row["title"]), TEMPLATE.format(name=name, channel=row["title"])

@@ -292,9 +292,16 @@ def post_one(cid, dry=False):
                 links.append(pl or f"Instagram media {res['ig']}")
             if res.get("yt"):
                 links.append(f"https://youtube.com/shorts/{res['yt']}")
-            nxt["submit"] = {"campaign": s.get("campaign_url"), "links": links, "at": time.strftime("%Y-%m-%d %H:%M")}
-            save(p, done)
-            os.system("sudo systemctl start --no-block studio-whopbot.service")   # engine/whopbot.py submits it on Whop now
+            if s.get("share_back"):                    # 19 Nov: creators who asked for their clips get them by email
+                try:
+                    import creatorask
+                    creatorask.share_clip(cid, src_key, mp4, links)
+                except Exception as e:
+                    log("share_back failed", src_key, str(e)[:150])
+            if s.get("campaign_url"):
+                nxt["submit"] = {"campaign": s.get("campaign_url"), "links": links, "at": time.strftime("%Y-%m-%d %H:%M")}
+                save(p, done)
+                os.system("sudo systemctl start --no-block studio-whopbot.service")   # engine/whopbot.py submits it on Whop now
             log("campaign clip posted, whopbot submits:", s.get("campaign_url") or src_key, links)
         except Exception as e:
             log("campaign submit note failed", str(e)[:120])
