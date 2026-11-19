@@ -56,11 +56,17 @@ def _patch_crop(x_at, holder):
         cw = R.crop_width(w, h)
         t0 = holder["start"] + shot["a"]
         n = max(1, int((shot["b"] - shot["a"]) / 0.5))
-        pts = []
+        raw = []
         for k in range(n + 1):
             tt = min(shot["b"] - shot["a"], k * 0.5)
-            x = x_at(t0 + tt, t0, holder["start"] + shot["b"])
-            pts.append((round(tt, 2), shot["x0"] if x is None else int(min(max(x * w - cw / 2, 0), w - cw)) // 2 * 2))
+            raw.append((round(tt, 2), x_at(t0 + tt, t0, holder["start"] + shot["b"])))
+        # 19 Nov frames: a moment with no face sample fell back to cvc's static x and cut the face at the edge; carry the
+        # nearest known face position instead (forward, then backward); a shot with no face at all keeps cvc's x
+        known = [x for _, x in raw if x is not None]
+        pts, last = [], (known[0] if known else None)
+        for tt, x in raw:
+            last = x if x is not None else last
+            pts.append((tt, shot["x0"] if last is None else int(min(max(last * w - cw / 2, 0), w - cw)) // 2 * 2))
         if len({p[1] for p in pts}) <= 1:
             return orig_sf(inp, {**shot, "x0": pts[0][1]}, w, h, label, fps)
         expr = str(pts[-1][1])
