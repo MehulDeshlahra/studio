@@ -286,6 +286,11 @@ def analyse(mp4, fps=4):
         if not (f0[2] < 0.35 and (f0[0] < 0.33 or f0[0] > 0.67)):
             continue
         near = {t for t, f in allf if abs(f[0] - f0[0]) < 0.04 and abs(f[1] - f0[1]) < 0.05 and abs(f[2] - f0[2]) < 0.06}
+        # 19 Nov render 9 (stand-up): an audience member's face in ONE crowd shot was taken for a webcam box. A webcam
+        # overlay stays put while the content under it cuts: it must show in 2+ shots (or half the clip with no cuts)
+        in_shots = {sum(1 for c in cuts if c <= t) for t in near}
+        if not (len(in_shots) >= 2 or (len(cuts) <= 1 and len(near) / n >= 0.5)):
+            continue
         if len(near) / n >= 0.2 and len(near) > best:
             pts = [f for t, f in allf if abs(f[0] - f0[0]) < 0.04 and abs(f[1] - f0[1]) < 0.05]
             cam, best = [round(float(np.median([p[i] for p in pts])), 3) for i in range(3)], len(near)
