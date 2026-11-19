@@ -6,17 +6,23 @@
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
   "lufs": -13.4,
-  "true_peak": -3.2,
+  "true_peak": -3.1,
   "dur": 54.93
  },
  "vision": {
   "score": 8,
-  "ok": true,
+  "ok": false,
   "problems": [
-   "scene 7: The caption 'MEIN AAKAR SHIVA' does not match the intended scene text 'Unke paanchvein sir ne ghamand mein aakar Shiva ke saamne jhooth bol diya'.",
-   "scene 8: The caption 'NETRA SE PRAKAT' is a fragment of the intended scene text 'Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!'.",
-   "scene 9: The caption 'SE BRAHMA KA' is a fragment of the intended scene text 'Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya'.",
-   "scene 10: The caption 'AUR BRAHMA KA' is a fragment of the intended scene text 'Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya'."
+   "scene 1: The caption 'AUR SHIVA NE UNKA' does not match the intended script line 'Brahma ji ne ek jhooth bola... aur Shiva ne unka sir hi kaat diya!'.",
+   "scene 2: The caption 'AUR VISHNU MEIN LADAI' does not match the intended script line 'Shuruat mein Brahma aur Vishnu mein ladai chhid gayi ki sabse bada kaun hai.'.",
+   "scene 3: The caption 'JYOTIRLINGA' does not match the intended script line 'Tabhi beech mein agni ka ek vishal Jyotirlinga prakat hua, jiska koi chhor nahi tha.'.",
+   "scene 4: The caption 'ANT DHUNDHEGA' does not match the intended script line 'Dono mein shart lagi—jo iska ant dhundhega, wahi sabse bada kehlayega.'.",
+   "scene 5: The caption 'PAR ANT NA MILNE' does not match the intended script line 'Vishnu ji pataal tak gaye, par ant na milne par unhone sach sweekar kiya.'.",
+   "scene 6: The caption 'KETAKI KE PHOOL' does not match the intended script line 'Lekin Brahma ji ne upar jaakar Ketaki ke phool se jhoothi gawahi dilwa di.'.",
+   "scene 7: The caption 'MEIN AAKAR SHIVA' does not match the intended script line 'Unke paanchvein sir ne ghamand mein aakar Shiva ke saamne jhooth bol diya.'.",
+   "scene 8: The caption 'NETRA SE PRAKAT' does not match the intended script line 'Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!'.",
+   "scene 9: The caption 'SE BRAHMA KA WO' does not match the intended script line 'Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya.'.",
+   "scene 10: The caption 'AUR BRAHMA KA SAARA' does not match the intended script line 'Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya.'."
   ]
  },
  "voice": {
@@ -26,5 +32,5 @@
   "words": 161,
   "problems": []
  },
- "ok": true
+ "ok": false
 }

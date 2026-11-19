@@ -57,3 +57,11 @@
 
 ## 1119-1724-c2 (clipper)
 - speaker out of the crop for 10% of the time (crop did not follow him)
+
+## 1119-1758a-c1 (clipper)
+- The video layout is broken by stacking a blurred duplicate version of the video above the main visible clip, creating a split/double display.
+- checklist: same person shown twice
+
+## 1119-1940-c4 (clipper)
+- length 7.7 s
+- not edited enough: 2 framing beats (need 3+)

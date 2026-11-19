@@ -1,245 +1,326 @@
 {
  "slug": "mahakaleshwar-katha-3",
- "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
+ "title": "Mahakaleshwar: Ekmatra Dakshin Mukhi Jyotirlinga ki Katha",
  "hooks": [
-  "Greenwich se pehle, poori duniya ka samay Ujjain se chalta tha.",
-  "Mahakal ka ek roop jo kaal ko bhi bandhe rakhta hai.",
-  "Dakshin mukhi kyun hai Mahakal? Raaz hai Shiv Puran mein."
+  "Ek Jyotirlinga jo dakshin mukhi hai kyun",
+  "Mahakal ne kaise kaal ko jeeta"
  ],
  "hook_choice": 0,
- "hook_why": "Shock-fact hook with named entities (Greenwich, Ujjain) and specific claim about world time reference — creates immediate curiosity loop; matches high-retention pattern of 'unknown history fact' openings in Indian shorts.",
- "metaphor": "Kaal Chakra — an ancient cosmic wheel of time with Mahakal at its center, controlling the flow of past, present, future; rendered in painterly Indian miniature style with gold zodiac bands and maroon spokes",
+ "hook_why": "Unique feature hook: only south-facing Jyotirlinga creates curiosity; competitor with 151 views used similar angle.",
+ "metaphor": "Ujjain as the prime meridian of ancient time — Mahakaleshwar is the fixed axis around which time itself rotates",
+ "mechanism": [
+  "Samay ka chakra Mahakal ke haath mein ghunta hai",
+  "Dakshin mukhi lingam kaal ki disha dikhata hai",
+  "Bhakti se kaal bhi ruk jata hai",
+  "Yeh katha humein shraddha ka mahatva samjhati hai"
+ ],
  "cast": {
-  "Mahakal": "Serene four-armed form, ash-smeared blue skin, crescent moon on matted locks, third eye closed in calm, tiger skin draped, trident and damru in upper hands, lower hands in abhaya and varada mudra, facing south, soft golden divine light, warm gold and deep maroon palette, Indian miniature-meets-epic style",
-  "Dushana": "Dark-skinned asura, muscular, multiple arms wielding swords and maces, fierce red eyes, crown of skulls, menacing posture, rendered in same painterly style but with shadowed tones",
-  "Raja Chandrasena": "Royal attire in deep red and gold, crown with pearl strings, folded hands in devotion, calm peaceful face, seated on throne in temple courtyard",
-  "Avanti Nagar": "Ancient temple city on Shipra river banks, golden spires, stone ghats, banyan trees, soft morning mist, warm cinematic lighting"
+  "Mahakaleshwar": "Lord Shiva as Mahakala, four-armed, calm compassionate face, matted hair with crescent moon and Ganga, rudraksha ornaments, tiger skin lower garment, serpent Vasuki around neck, trident and damru in upper hands, lower right in abhaya mudra, lower left in varada mudra, golden skin glowing with soft divine light, seated on lotus, warm gold and deep maroon miniature style",
+  "Raja Chandrasena": "King in traditional royal attire, silk dhoti and angavastram in deep red and gold, jeweled crown, calm devoted expression, hands folded in prayer, seated on ornate throne cushion, warm cinematic lighting",
+  "Dushana": "Asura with muscular dark blue-grey skin, fierce but dignified features, ornate armor, multiple arms holding weapons, flaming hair, intense eyes, not grotesque — traditional Puranic depiction, dramatic low-key lighting"
  },
  "scenes": [
   {
-   "vo": "Greenwich se pehle, poori duniya ka samay Ujjain se chalta tha.",
+   "vo": "Pracheen Ujjain Avantika ke naam se jana jata tha",
    "type": "image",
-   "prompt": "Ancient Ujjain skyline at sunrise, Shipra river in foreground, Mahakaleshwar temple spires glowing, giant ornate sundial (Kaal Chakra) at center casting sharp shadow, warm gold and deep maroon palette, Indian miniature epic style, clear sky, no text, 9:16, room above and below for text",
+   "prompt": "Ancient Ujjain skyline at golden hour, Vedic observatory instruments (yantra) in foreground, sun casting long shadows, warm gold and deep maroon palette, painterly Indian miniature style, soft divine light, ornate but uncluttered, 9:16 vertical composition, subject centered with room above for text",
    "motion": "push",
-   "title": "",
+   "title": "PRACHEEN UJJAIN",
    "keywords": [
-    "Greenwich",
     "Ujjain",
-    "samay"
+    "Avantika",
+    "pracheen"
    ],
-   "real": null,
+   "real": {
+    "q": "Ujjain Vedic observatory ancient",
+    "kind": "photo",
+    "subject": "Ancient astronomical instruments at Ujjain"
+   },
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Pata hai kyun? Kyunki yahan Mahakal ka ek roop hai jo kaal ko bandhe rakhta hai.",
+   "vo": "Yahan Mahakal khud hi kaal ke swami bane",
    "type": "image",
-   "prompt": "Close-up Mahakal face profile, serene, third eye faintly glowing, crescent moon on matted locks, ash smears, soft golden light from left, deep maroon background with subtle gold Kaal Chakra motif behind, dakshin mukhi lingam silhouette in background, painterly Indian miniature style, 9:16",
-   "motion": "pull",
+   "prompt": "Mahakaleshwar temple spire rising against dawn sky, golden light bathing the shikhara, Nandi facing sanctum, warm gold maroon miniature style, divine atmosphere, soft light, 9:16 vertical",
+   "motion": "push",
    "title": "",
    "keywords": [
     "Mahakal",
     "kaal",
-    "bandhan"
+    "swami"
    ],
+   "real": {
+    "q": "Mahakaleshwar temple Ujjain sunrise",
+    "kind": "photo",
+    "subject": "Mahakaleshwar Jyotirlinga temple at dawn"
+   },
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Ye kahani Shiv Puran ke Kotirudra Samhita mein hai.",
+   "vo": "Rakshas Dushan ne Avanti nagari mein aatank machaya",
    "type": "image",
-   "prompt": "Glowing ancient sacred Vedic scripture scroll resting on an ornate carved temple altar, warm oil lamp glow, mystical smoke, painterly style, centered composition, vertical 9:16, room above and below for text, no text, no script, no letters",
-   "motion": "zoom_in",
-   "title": "Kotirudra Samhita",
-   "big": "KOTIRUDRA",
-   "small": "Shiv Puran Katha",
+   "prompt": "Demon Dushana towering over ancient Avanti city, dark storm clouds, citizens fleeing, dramatic low-key lighting with fire glow, deep maroon and gold, Indian miniature epic style, 9:16 vertical",
+   "motion": "push",
+   "title": "DUSHAN KA AATANK",
    "keywords": [
-    "Shiv Puran",
-    "Kotirudra Samhita"
-   ],
-   "real": null
-  },
-  {
-   "vo": "Avanti nagar mein Dushana naam ka rakshas tha, vedon ka dushman.",
-   "type": "image",
-   "prompt": "Dushana standing on Avanti palace steps, dark menacing form, multiple arms with weapons, red eyes, skull crown, terrified citizens fleeing, golden temple spires behind, dramatic low-key lighting with maroon shadows, painterly epic style, 9:16",
-   "motion": "pan",
-   "title": "",
-   "keywords": [
+    "Dushan",
     "Avanti",
-    "Dushana",
-    "rakshas"
+    "aatank"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Raja Chandrasena Shiv bhakt the, wo dar ke Shiv ko pukare.",
+   "vo": "Raja Chandrasen Shiv bhakti mein hi lage rahe",
    "type": "image",
-   "prompt": "Raja Chandrasena on throne in temple courtyard, folded hands, eyes closed in prayer, golden light on face, courtiers anxious behind, soft divine glow, painterly miniature style, 9:16",
+   "prompt": "King Chandrasena seated in palace temple, hands folded before Shiva lingam, oil lamps glowing, peaceful despite chaos outside, warm cinematic light, gold maroon miniature, 9:16 vertical",
    "motion": "push",
    "title": "",
    "keywords": [
-    "Chandrasena",
-    "bhakt",
-    "pukar"
+    "Chandrasen",
+    "bhakti",
+    "Shiv"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Shiv ne suni, zameen phad ke Mahakal roop mein nikle.",
-   "type": "clip",
-   "prompt": "Ground cracking open with golden light erupting, slow motion, particles of gold dust rising, Mahakal silhouette emerging from fissure, warm gold and deep maroon, cinematic, 9:16",
-   "motion": "tilt",
-   "title": "",
-   "keywords": [
-    "Shiv",
-    "zameen",
-    "Mahakal"
-   ],
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Ek trishul se Dushana bhasm ho gaya.",
+   "vo": "Dushan ne bhakton ko maarna shuru kiya tab",
    "type": "image",
-   "prompt": "Lord Shiva Mahakal raising a radiant glowing golden trishul, demon turning into swirling fiery embers and smoke, dramatic divine light piercing dark clouds, painterly epic style, centered subject, vertical 9:16, generous room above and below, no text, no letters, no logos",
-   "motion": "punch",
+   "prompt": "Dushana raising weapon toward devotees, Shiva's subtle intervention hinted by sudden divine light beam, dramatic contrast, miniature style, 9:16 vertical",
+   "motion": "push",
+   "title": "BHAKTON PAR WAR",
+   "keywords": [
+    "Dushan",
+    "bhakt",
+    "maarna"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Chandrasen ne Shiv se raksha maangi aur pukara",
+   "type": "image",
+   "prompt": "King Chandrasena in intense prayer, tears of devotion, lingam glowing softly, warm gold light enveloping him, deep maroon background, miniature epic, 9:16 vertical",
+   "motion": "push",
    "title": "",
    "keywords": [
-    "trishul",
-    "Dushana",
+    "Chandrasen",
+    "raksha",
+    "Shiv"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Shiv Mahakal roop mein prakat hue us samay",
+   "type": "clip",
+   "prompt": "Lord Shiva manifesting as Mahakala from the lingam — golden light expanding, four-armed form emerging slowly, trident and damru appearing, crescent moon glowing, divine aura spreading, warm gold maroon painterly style, 10 second smooth animation, 9:16 vertical",
+   "motion": "push",
+   "title": "MAHAKAL PRAKAT",
+   "keywords": [
+    "Mahakal",
+    "prakat",
+    "roop"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Ek hunkar se Dushan bhasm ho gaya turant",
+   "type": "image",
+   "prompt": "Dushana turning to ash from Mahakala's mere breath/hum, ash particles floating in golden light, Shiva's calm face unchanged, dramatic but dignified, miniature style, 9:16 vertical",
+   "motion": "push",
+   "title": "EK HUNKAR",
+   "keywords": [
+    "hunkar",
+    "Dushan",
     "bhasm"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Phir wo wahi sthir ho gaye — dakshin mukhi Jyotirlinga ban ke.",
+   "vo": "Jyotirlinga swayambhu bana dakshin mukhi hi",
    "type": "image",
-   "prompt": "Mahakaleshwar Jyotirlinga in sanctum, self-manifested lingam with silver sheath, facing south, oil lamps glowing, maroon and gold drapes, soft divine light, reverent composition, painterly style, 9:16, no text, room above and below for text",
-   "motion": "pull",
-   "title": "",
+   "prompt": "Mahakaleshwar lingam self-manifested, facing south (right side of frame), subtle arrow indicating dakshin direction, golden glow, warm maroon gold palette, miniature epic, 9:16 vertical",
+   "motion": "push",
+   "title": "DAKSHIN MUKHI",
    "keywords": [
-    "sthir",
-    "dakshin mukhi",
-    "Jyotirlinga"
-   ],
-   "real": null,
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Dakshin mukhi matlab Yama (kaal) ki disha — Mahakal uska bhi swami.",
-   "type": "image",
-   "prompt": "Majestic golden Trishul of Lord Shiva radiating divine cosmic energy against a dark spiritual background, soft ethereal embers, painterly style, centered composition, vertical 9:16, no text, room above and below for text",
-   "motion": "zoom_in",
-   "title": "Kaal Ke Swami",
-   "big": "DAKSHIN",
-   "small": "MAHAKAL SWAMI",
-   "keywords": [
+    "swayambhu",
     "dakshin",
-    "Yama",
-    "swami"
-   ],
-   "real": null
-  },
-  {
-   "vo": "Isliye Ujjain ka mandir samay ka kendra bana, yahan ka sundial desh ka reference tha.",
-   "type": "image",
-   "prompt": "Giant stone sundial (Kaal Chakra) at Mahakaleshwar temple courtyard, astronomers in ancient attire noting shadow position, golden morning light, maroon temple architecture, painterly style, 9:16",
-   "motion": "push",
-   "title": "",
-   "keywords": [
-    "sundial",
-    "reference",
-    "samay"
+    "mukhi"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Aaj bhi har subah bhasma aarti hoti hai — kaal ki puja.",
-   "type": "clip",
-   "prompt": "Bhasma Aarti at dawn: priests offering sacred ash, flames rising, bells ringing, devotees in silhouette, golden light through smoke, slow cinematic, 9:16",
+   "vo": "Yeh ekmatra dakshin mukhi Jyotirlinga hai aaj",
+   "type": "card",
+   "prompt": "Dark maroon textured background with subtle gold ornamental border, soft divine light vignette, 9:16 vertical",
    "motion": "push",
    "title": "",
+   "big": "DAKSHIN MUKHI",
+   "small": "EKMATRA JYOTIRLINGA",
    "keywords": [
-    "bhasma aarti",
+    "ekmatra",
+    "dakshin mukhi"
+   ],
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Mahakal kaal ko bhi niyantrit karte hain hamesha",
+   "type": "image",
+   "prompt": "Mahakaleshwar with cosmic time wheel (kalachakra) behind him, zodiac signs moving slowly, he remains still as controller, warm gold deep maroon, divine miniature, 9:16 vertical",
+   "motion": "push",
+   "title": "KAAL KE NIYANTRAK",
+   "keywords": [
+    "Mahakal",
     "kaal",
-    "puja"
+    "niyantrit"
    ],
-   "real": {
-    "q": "Mahakaleshwar Bhasma Aarti morning",
-    "kind": "clip",
-    "subject": "Bhasma Aarti ceremony at Mahakaleshwar temple dawn"
-   },
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Tumhe pata tha Ujjain Greenwich se pehle time ka center tha? Comment mein batao.",
+   "vo": "Samay badalta hai lekin Mahakal nahi badalte",
    "type": "image",
-   "prompt": "Kaal Chakra wheel spinning slowly, Mahakal silhouette at center, gold and maroon, infinite depth, soft divine glow, painterly epic, 9:16",
-   "motion": "pull",
+   "prompt": "Mahakaleshwar temple through time — day to night to seasons changing in seamless blend, lingam eternal unchanged, warm cinematic gold maroon, painterly epic, 9:16 vertical",
+   "motion": "push",
    "title": "",
    "keywords": [
-    "Ujjain",
-    "Greenwich",
-    "time"
+    "samay",
+    "Mahakal",
+    "badalte"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Shraddha ho toh kaal bhi jhukta hai aap kya maante hain bataiye",
+   "type": "card",
+   "prompt": "Deep maroon background with gold ornamental corners, soft divine light center glow, 9:16 vertical",
+   "motion": "push",
+   "title": "",
+   "big": "SHRADDHA",
+   "small": "KAAL BHI JHUKTA HAI",
+   "keywords": [
+    "shraddha",
+    "kaal",
+    "jhukta"
+   ],
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "type": "card",
+   "big": "MAHAKAL",
+   "sub": "Mahakal HD wallpaper DM mein 📩",
+   "small": "Comment MAHAKAL",
+   "vo": "Ye Mahakal wallpaper chahiye? Comment karo MAHAKAL, main DM kar dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "prompt": "a gift box with soft warm light, simple background",
+   "title": "Mahakal Wallpaper",
+   "skin": "painting"
   }
  ],
  "music_mood": "epic",
- "caption": "Greenwich se pehle poori duniya ka samay Ujjain se chalta tha. 🕉️ Mahakaleshwar ki katha jo kaal ko bhi bandhe rakhti hai — Shiv Puran ke Kotirudra Samhita se.\n\nTumhe pata tha? Comment mein batao.\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "caption": "Mahakaleshwar ki yeh katha suniye. Shraddha ho toh kaal bhi jhukta hai — aap kya maante hain?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#Mahakaleshwar",
   "#Jyotirlinga",
-  "#ShivPuran",
   "#Ujjain",
-  "#Kaal",
+  "#ShivKatha",
   "#PuraanKiKatha"
  ],
  "claims": [
   {
-   "claim": "Ujjain (75.78°E) was the prime meridian for Hindu astronomical calculations before Greenwich",
-   "basis": "Surya Siddhanta and Indian astronomical tradition; Ujjain used as reference meridian for Hindu calendars and timekeeping"
+   "claim": "Mahakaleshwar is the only south-facing (dakshinamukhi) Jyotirlinga among the 12",
+   "basis": "Shiva Purana, Kotirudra Samhita; temple tradition and architectural alignment confirm south-facing sanctum"
   },
   {
-   "claim": "Mahakaleshwar is a dakshin mukhi (south-facing) Jyotirlinga",
-   "basis": "Shiva Purana, Kotirudra Samhita, Chapters 14-18; temple tradition and pilgrimage texts"
+   "claim": "Demon Dushana terrorized Avanti (Ujjain) and was destroyed by Shiva manifesting as Mahakala",
+   "basis": "Shiva Purana, Kotirudra Samhita, chapters 12-14 (Mahakaleshwar mahatmya)"
   },
   {
-   "claim": "Dushana demon terrorized Avanti and was destroyed by Shiva as Mahakal",
-   "basis": "Shiva Purana, Kotirudra Samhita, Chapters 14-18"
+   "claim": "King Chandrasena was a devotee whose prayer brought Shiva's manifestation",
+   "basis": "Shiva Purana, Kotirudra Samhita, Mahakaleshwar origin narrative"
   },
   {
-   "claim": "Bhasma Aarti is performed daily at dawn at Mahakaleshwar",
-   "basis": "Living temple tradition since centuries; documented in temple records and pilgrim accounts"
-  },
-  {
-   "claim": "King Chandrasena was a devotee of Shiva in Avanti",
-   "basis": "Shiva Purana, Kotirudra Samhita, Chapter 16"
+   "claim": "The lingam is swayambhu (self-manifested)",
+   "basis": "Shiva Purana and temple sthala purana; consistent across textual sources"
   }
  ],
  "brain_ids": [
-  "9db4cc694f",
-  "97e1b2fcbb",
-  "13a94bf865",
+  "fc294ac58f",
   "e15cfaed29",
-  "038dd5be5a",
-  "0adc696a75",
-  "a688e48ca2",
-  "82055e32f5",
-  "ef573ce014",
-  "7a67022fb6",
-  "1ad22ef225",
-  "d7b38f2237",
-  "3cec28c3e9",
-  "4204a43442"
+  "b69d65467f",
+  "b2fabb69c4",
+  "9db4cc694f",
+  "f945e2a937",
+  "0755cc155a",
+  "1e1964f463",
+  "6ce7203c71",
+  "7f620e6fdf",
+  "7fa182f8ef",
+  "161339712e",
+  "4396759d41",
+  "b349ca221e"
  ],
+ "offer": {
+  "kind": "wallpaper",
+  "keyword": "MAHAKAL",
+  "gift": "Mahakal HD wallpaper",
+  "title": "Mahakal Manifestation Wallpaper",
+  "items": [
+   {
+    "head": "Divine Moment",
+    "text": "Mahakal roop prakat hote hue"
+   }
+  ],
+  "wallpaper_scene": 7,
+  "job": "1118-1015",
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/katha/offer-mahakal.jpg"
+ },
+ "skin": "painting",
  "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

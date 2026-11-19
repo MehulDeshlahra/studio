@@ -1,25 +1,30 @@
 {
  "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
- "title": "Jab Krishna khud pahunche Narakasura ke durg",
+ "title": "Krishna ne Narakasura ka ant kaise kiya?",
  "format": {
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.6,
-  "true_peak": -2.7,
-  "dur": 47.77
+  "lufs": -14.4,
+  "true_peak": -2.3,
+  "dur": 45.1
  },
  "vision": {
-  "score": 10,
-  "ok": true,
-  "problems": []
+  "score": 5,
+  "ok": false,
+  "problems": [
+   "scene 5: Image mismatch. The frame shows a demon on a throne, but the title says 'MOUNTING GARUDA' and the line describes Krishna and Satyabhama on Garuda.",
+   "scene 11: Misspelling. 'SROT' is used instead of 'SHROT' (Source).",
+   "scene 1, 6, 7, 11, 13, 14: The titles specified in the prompt are missing from these frames.",
+   "scene 13: The background silhouettes of the figures look distorted and 'melted', typical of AI errors."
+  ]
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.9661016949152542,
-  "words": 124,
+  "matched": 0.8918918918918919,
+  "words": 122,
   "problems": []
  },
- "ok": true
+ "ok": false
 }

@@ -1,8 +1,8 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/vanes.mp3",
-  "offset": 2.0,
+  "file": "music/lib/katha/floating-cities.mp3",
+  "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
@@ -10,6 +10,12 @@
   {
    "t": 3.48,
    "file": "sfx/air-zoom.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 6.4,
+   "file": "sfx/impact.mp3",
    "gain_db": -18,
    "align": "onset"
   },
@@ -44,6 +50,12 @@
    "align": "peak"
   },
   {
+   "t": 24.2,
+   "file": "sfx/impact.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
    "t": 24.18,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
@@ -70,6 +82,12 @@
   {
    "t": 38.2,
    "file": "sfx/sweep-small.mp3",
+   "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 42.73,
+   "file": "sfx/impact.mp3",
    "gain_db": -18,
    "align": "onset"
   },

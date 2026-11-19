@@ -1,0 +1,29 @@
+{
+ "topic": "Micchami Dukkadam isn't just 'sorry' — the threefold forgiveness formula Jains use every Paryushan (source: Agam)",
+ "title": "Micchami Dukkadam sirf sorry nahi — teeno fold ka formula kya hai",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.9,
+  "true_peak": -1.5,
+  "dur": 45.67
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 6: The caption 'KE LIYE NAHI CHEENTI' does not match the intended script line 'Yeh sirf insanon ke liye nahi — cheenti, patte, hawa ke kan tak pahuncha hai'. It seems to be missing the beginning of the sentence.",
+   "scene 7: The caption 'HAIN' does not match the intended script line 'Pratikraman mein yeh teen baar doharate hain, Paryushan ke aakhri din Samvatsari ko'. It appears to be a fragment of the end of the sentence rather than a coherent summary.",
+   "scene 9: The caption 'JATA HAI' does not match the intended script line 'Samvatsari ke din yeh formula bola jata hai, naya saal shuru hota hai'. It is a fragment of the sentence."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9010989010989011,
+  "words": 100,
+  "problems": []
+ },
+ "ok": true
+}

@@ -133,5 +133,23 @@
   "first": "2026-11-19 14:52",
   "last": "2026-11-19 14:52",
   "example": "19 Nov audit: investment advice ('core gold, satellite silver') breaks the education-only rule; ratio/return numbers from ipomarket.in not checked against a primary source; caption source (World Gold "
+ },
+ {
+  "sig": "# nov story check (# independent checks agree): scene # '…' is false: bhagavata #.# has him go to pragjyotisha",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-19 17:52",
+  "last": "2026-11-19 17:52",
+  "example": "19 Nov story check (2 independent checks agree): scene 3 'Krishna came alone' is false: Bhagavata 10.59 has him go to Pragjyotishapura with Satyabhama on Garuda; scene 4 mantra-sealed walls and stones"
+ },
+ {
+  "sig": "# nov audit: the story is about brahma'…'s act, four after",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-19 20:22",
+  "last": "2026-11-19 20:22",
+  "example": "19 Nov audit: the story is about Brahma's FIFTH head, but Brahma is drawn with one head in every scene (8s, 22s, 28s): show Brahma with five heads before Bhairava's act, four after"
  }
 ]

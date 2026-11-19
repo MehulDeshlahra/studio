@@ -171,3 +171,11 @@
 ## 1119-1105 (pre-render check)
 - CUT: word 'DI' is physically cut off at the right edge of the frame in the second still
 - CUT: word 'DI ZINDAGI' is physically clipped at the right frame edge in the second still
+
+## Micchami Dukkadam isn't just 'sorry' — the threefold forgive (story check)
+- STORY scene 9: invented: 'Yeh formula karma reset karta hai, naya saal shuru hota hai': Sources mention it's about renewal and resetting social/spiritual karmas but don't use the exact term 'karma reset' (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1119-1915 Micchami Dukkadam isn't just 'sorry' — the threefold forgiveness formula Jains use every Paryushan (source: Agam)
+- scene 6: The caption 'KE LIYE NAHI CHEENTI' does not match the intended script line 'Yeh sirf insanon ke liye nahi — cheenti, patte, hawa ke kan tak pahuncha hai'. It seems to be missing the beginning of the sentence.
+- scene 7: The caption 'HAIN' does not match the intended script line 'Pratikraman mein yeh teen baar doharate hain, Paryushan ke aakhri din Samvatsari ko'. It appears to be a fragment of the end of the sentence rather than a coherent summary.
+- scene 9: The caption 'JATA HAI' does not match the intended script line 'Samvatsari ke din yeh formula bola jata hai, naya saal shuru hota hai'. It is a fragment of the sentence.

@@ -99,5 +99,21 @@
    "start": 33.53,
    "layout": "stack"
   }
+ },
+ {
+  "job": "1119-1757-c3",
+  "topic": "MET MY DAD AFTER DEATH",
+  "title": "MET MY DAD AFTER DEATH",
+  "status": "held",
+  "review": [
+   "Captions contain severe mishearings and gibberish (e.g., 'BYHERYUNG AUR VERY' instead of coherent speech from transcript), rendering the subtitles mostly nonsensical.",
+   "A heavy orange/red filter covers frame 3 completely, disrupting continuity.",
+   "checklist: misheard caption"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=V1cE3z0yS0Q",
+   "start": 107.59,
+   "layout": "crop"
+  }
  }
 ]

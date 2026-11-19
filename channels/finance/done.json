@@ -23,8 +23,13 @@
   "job": "1118-2334",
   "topic": "UPI payment fail, paisa kat gaya? Bank aapko har din ₹100 dega (RBI circular 20 Sep 2019)",
   "title": "UPI fail hua, paisa kata? Bank roz ₹100 dega?",
-  "status": "approved",
-  "review": []
+  "status": "posted",
+  "review": [],
+  "posted": {
+   "at": "2026-11-19 20:01",
+   "fb": "2395238091289672",
+   "ig": "18158574361514282"
+  }
  },
  {
   "job": "1119-0005",

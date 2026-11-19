@@ -265,5 +265,48 @@
  ],
  "skin": "keynote",
  "kiro_checked": "19 Nov: facts checked by hand against RBI/2019-20/67 (Mint, ET); bank pays, not RBI; ₹100/day after T+1 / T+5 | phone look 19 Nov",
- "visual_done": "kiro phone"
+ "visual_done": "kiro phone",
+ "seo": {
+  "ig": {
+   "caption": "UPI fail hua? Bank roz ₹100 dega. Sikhiye: failed transaction pe 'Raise Dispute' kaise dabana hai. Us dost ko bhejo jiska paisa aksar UPI mein atakta hai. Save karo, agle baar aise situation se bach jaoge?",
+   "hashtags": [
+    "#UPI",
+    "#Banking",
+    "#RBI",
+    "#UPIFail",
+    "#DigitalPayments"
+   ]
+  },
+  "fb": {
+   "caption": "UPI fail hua? Bank roz ₹100 dega. Sikhiye: failed transaction pe 'Raise Dispute' kaise dabana hai. Us dost ko bhejo jiska paisa aksar UPI mein atakta hai. Save karo, agle baar aise situation se bach jaoge?",
+   "hashtags": [
+    "#UPI",
+    "#Banking"
+   ]
+  },
+  "yt": {
+   "title": "UPI Fail Paisa Kata? Bank Dega Roz ₹100 RBI Rule",
+   "description": "UPI transaction fail hua aur paisa kat gaya? RBI rule ke hisaab se bank har din ₹100 dega. 30 din mein resolve na ho toh CMS portal pe complaint karo.\n\nUPI fail compensation RBI rule 2019\nBank dispute process Raise Dispute\nDigital payment safety tips India",
+   "tags": [
+    "UPI failed transaction",
+    "RBI compensation rule",
+    "bank dispute process",
+    "digital payment India",
+    "UPI money refund",
+    "Raise Dispute UPI",
+    "CMS portal complaint",
+    "finance education Hindi",
+    "UPI safety tips",
+    "banking rules 2026",
+    "failed payment refund",
+    "RBI guidelines UPI"
+   ],
+   "hashtags": [
+    "#UPI",
+    "#RBI",
+    "#Banking"
+   ]
+  },
+  "comment_q": "Kitne din mein paisa wapas aaya?"
+ }
 }

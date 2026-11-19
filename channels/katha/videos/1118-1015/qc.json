@@ -1,27 +1,34 @@
 {
  "topic": "12 Jyotirlinga ki katha - Part 3: Mahakaleshwar",
- "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
+ "title": "Mahakaleshwar: Ekmatra Dakshin Mukhi Jyotirlinga ki Katha",
  "format": {
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -14.5,
-  "true_peak": -3.9,
-  "dur": 49.33
+  "lufs": -14.2,
+  "true_peak": -2.1,
+  "dur": 44.73
  },
  "vision": {
-  "score": 7,
+  "score": 9,
   "ok": true,
   "problems": [
-   "scene 4: Minor anatomical blurring and overlapping limbs on the demonic figure.",
-   "scene 12: Gibberish symbols and distorted text within the central circular dial."
+   "scene 1: The caption 'AVANTIKA KE NAAM' does not match the provided script line 'Pracheen Ujjain Avantika ke naam se jana jata tha'.",
+   "scene 3: The caption 'RAKSHAS DUSHAN NE AVANTI' is slightly different from the script line 'Rakshas Dushan ne Avanti nagari mein aatank machaya'.",
+   "scene 4: The caption 'SHIV BHAKTI MEIN HI' does not match the script line 'Raja Chandrasen Shiv bhakti mein hi lage rahe'.",
+   "scene 5: The caption 'KO MAARNA SHURU' is only a fragment of the script line 'Dushan ne bhakton ko maarna shuru kiya tab'.",
+   "scene 6: The caption 'NE SHIV SE RAKSHA' is only a fragment of the script line 'Chandrasen ne Shiv se raksha maangi aur pukara'.",
+   "scene 7: The caption 'SHIV MAHAKAL ROOP' is a fragment of the script line 'Shiv Mahakal roop mein prakat hue us samay'.",
+   "scene 8: The caption 'EK HUNKAR SE DUSHAN' is a fragment of the script line 'Ek hunkar se Dushan bhasm ho gaya turant'.",
+   "scene 9: The caption 'JYOTIRLINGA SWAYAMBHU' is a fragment of the script line 'Jyotirlinga swayambhu bana dakshin mukhi hi'.",
+   "scene 12: The caption 'LEKIN MAHAKAL NAHI BADALTE' matches the script line, but the image is a generic circular design rather than a narrative scene consistent with the previous visual style."
   ]
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.9844961240310077,
-  "words": 137,
+  "matched": 0.9714285714285714,
+  "words": 116,
   "problems": []
  },
  "ok": true

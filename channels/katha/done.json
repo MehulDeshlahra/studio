@@ -5,10 +5,9 @@
   "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
   "status": "held",
   "review": [
-   "19 Nov story check: scene 1 'poori duniya ka samay Ujjain se chalta tha' is false: Ujjain was the prime meridian of Indian astronomy (Surya Siddhanta), not of the world; say that exactly",
-   "19 Nov story check: scenes 4-5 mix two Shiva Purana stories: Dushana attacked the Brahmin Vedapriya's sons in Avanti (Kotirudra Samhita 16); King Chandrasena and the boy Shrikar are a different episode (ch. 17)",
-   "19 Nov story check: scene 7 'ek trishul se' is false: Shiva burned Dushana to ash with a hunkara (a roar), no weapon",
-   "19 Nov story check: scene 10 'sundial desh ka reference' is unsourced: remove or source it (Jantar Mantar Ujjain was built c.1725)"
+   "visual: Scene 10 shows Islamic/Mughal style dome architecture (minarets and bulbous domes) which is historically inaccurate for an ancient Puranic story set in Avantika.",
+   "visual: checklist: Is there any modern object, modern building or Mughal / Islamic architecture in an ancient Puranic story? -> scene 10",
+   "visual score 5/10"
   ],
   "replan_requested": "2026-11-19 15:46"
  },
@@ -19,7 +18,7 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "before render, scene 13: LANG: Caption 'HI' is a typo and does not match the spoken line 'Ye'"
+   "before render, scene 14: OVERLAP: caption text overlaps the foreground elements and is hard to read"
   ],
   "mehul_rebuilt": "2026-11-18",
   "replan_requested": "2026-11-18 05:54"
@@ -78,7 +77,7 @@
   "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
   "title": "Jab Krishna khud pahunche Narakasura ke durg",
   "qc_ok": true,
-  "status": "made",
+  "status": "approved",
   "review": [],
   "replan_requested": "2026-11-19 16:09"
  },
@@ -123,9 +122,7 @@
   "job": "1118-1635",
   "topic": "Why Shiva manifested as Bhairava to sever Brahma's fifth head — Shiva Purana, Shatarudra Samhita. Lesson: Intellectual superiority paired with ego creates falsehood that demands immediate ego-death.",
   "title": "Brahma Ka Paanchwa Sir Kyun Kata?",
-  "status": "held",
-  "review": [
-   "19 Nov audit: the story is about Brahma's FIFTH head, but Brahma is drawn with one head in every scene (8s, 22s, 28s): show Brahma with five heads before Bhairava's act, four after"
-  ]
+  "status": "made",
+  "review": []
  }
 ]

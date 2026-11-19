@@ -684,5 +684,90 @@
    "start": 17.75,
    "layout": "crop"
   }
+ },
+ {
+  "job": "1119-1758a-c1",
+  "topic": "SHE EXPLAINS THE FUCKBOY CURSE",
+  "title": "SHE EXPLAINS THE FUCKBOY CURSE",
+  "status": "held",
+  "review": [
+   "The video layout is broken by stacking a blurred duplicate version of the video above the main visible clip, creating a split/double display.",
+   "checklist: same person shown twice",
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=B81I5d8m6RI",
+   "start": 1055.77,
+   "layout": "fill"
+  }
+ },
+ {
+  "job": "1119-1758a-c2",
+  "topic": "HE HID A DIAMOND IN THE FRIDGE",
+  "title": "HE HID A DIAMOND IN THE FRIDGE",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=B81I5d8m6RI",
+   "start": 3834.01,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1119-1853-c1",
+  "topic": "DAUGHTER'S CARD IS ACTING FUNNY",
+  "title": "DAUGHTER'S CARD IS ACTING FUNNY",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=AB7Q0XP6i9o",
+   "start": 392.53,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1853-c2",
+  "topic": "DAUGHTER'S JOB INTERVIEW TRIGGERS MOM",
+  "title": "DAUGHTER'S JOB INTERVIEW TRIGGERS MOM",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=AB7Q0XP6i9o",
+   "start": 177.19,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1940-c3",
+  "topic": "Why 80% of players play LBC",
+  "title": "Why 80% of players play LBC",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=yUME5U4OQ0A",
+   "start": 123.87,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1940-c4",
+  "topic": "The comeback is officially ON!",
+  "title": "The comeback is officially ON!",
+  "status": "held",
+  "review": [
+   "length 7.7 s",
+   "not edited enough: 2 framing beats (need 3+)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=yUME5U4OQ0A",
+   "start": 732.0,
+   "layout": "crop"
+  }
  }
 ]

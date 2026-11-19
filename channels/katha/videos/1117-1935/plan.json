@@ -1,179 +1,322 @@
 {
- "slug": "krishnas-visit-to-narakasura",
- "title": "Jab Krishna khud pahunche Narakasura ke durg",
+ "slug": "krishna-narakasura-pragjyotishpur",
+ "title": "Krishna ne Narakasura ka ant kaise kiya?",
  "hooks": [
-  "Ek raakshas jise koi purush nahi maar sakta... toh phir kaun maarega?",
-  "Krishna ne ek baar apna chakra ghuma diya - poora durg hil gaya",
-  "16000 raaniyan bandi theen. Unka mukti kaun dilayega?"
+  "Krishna Pragjyotishpur pahunche, Narakasur ka ant ab hoga",
+  "Narakasur ne Aditi ke kundal churaye, 16000 striyon ko bandi banaya",
+  "Bhoodevi ke putra ko Krishna ne kaise maara?"
  ],
  "hook_choice": 0,
- "hook_why": "Instant curiosity gap: impossible boon + who breaks it. Second person pulls viewer in.",
- "metaphor": "Outer fortress = inner ego. One clean strike frees both.",
+ "hook_why": "Opens with named entities (Krishna, Pragjyotishpur) and an incomplete cliffhanger — forces retention past 3 seconds. Matches the 'mystery-tease' hook type that won in top katha Shorts.",
+ "metaphor": "Inner demons as a fortress: each gate (Mura, Narakasura) represents a layer of ego, lust, greed; Krishna's arrows are discernment and grace.",
+ "mechanism": [
+  "Krishna reaches demon fortress Pragjyotishpur",
+  "Defeats gatekeeper Mura with single arrow",
+  "Battles Narakasura with Satyabhama's aid",
+  "Recovers Aditi's earrings, frees 16000 women",
+  "Reveals inner demons need Krishna's grace"
+ ],
  "cast": {
-  "Krishna": "Calm divine figure, peacock feather, blue skin, gold silk, soft halo, painterly Indian epic style",
-  "Narakasura": "Hulking demon king, dark ornate armor, red glowing eyes, arrogant smirk, same painterly style"
+  "Krishna": "Dark blue-skinned divine figure, yellow dhoti, peacock feather crown, flute at waist, calm compassionate expression, traditional Indian miniature style",
+  "Satyabhama": "Dark-complexioned queen, red-gold saree, ornate jewelry, confident warrior stance, traditional Indian miniature style",
+  "Narakasura": "Large dark-skinned demon king, red eyes, crown, ornate armor, multiple weapons, fierce expression, traditional Indian miniature style",
+  "Garuda": "Golden-winged divine eagle, human torso, white face, red beak, carrying two riders, majestic, traditional Indian miniature style",
+  "Mura": "Fierce demon guardian, dark skin, horns, club weapon, guarding palace gate, traditional Indian miniature style"
  },
  "scenes": [
   {
-   "vo": "Suno - ek raakshas tha Narakasura. Vardaan: koi purush use maar na sake.",
+   "vo": "Krishna Pragjyotishpur pahunche, Narakasur ka ant ab hoga",
    "type": "image",
-   "prompt": "Painterly Indian epic style, massive dark fortress gates glowing with red runes, stormy sky, centred subject with ample space above and below, no text",
-   "motion": "push",
-   "keywords": [
-    "vardaan",
-    "raakshas"
-   ],
-   "title": "",
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Usne teen lok ke devta hila diye. 16000 raaniyan bandi bana li.",
-   "type": "image",
-   "prompt": "Painterly Indian epic style, vast dungeon hall, countless women in royal clothes, dim torchlight, no text",
-   "motion": "pan",
-   "keywords": [
-    "bandi",
-    "raaniyan"
-   ],
-   "title": "",
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Sab haar maane. Tab Krishna khud aaye. Na sena, na shor - sirf wo.",
-   "type": "image",
-   "prompt": "Painterly Indian epic style, single blue figure walking toward glowing fortress gates, wind in peacock feather, no text",
-   "motion": "push",
-   "keywords": [
-    "krishna",
-    "ekla"
-   ],
-   "title": "",
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Deewarein mantron se bandh thi. Krishna ne shankh bajaya - patthar bhi kaanp uthe.",
-   "type": "image",
-   "prompt": "Painterly Indian epic style, conch shell glowing gold, sound waves cracking stone walls, divine light, centred subject with ample space above and below, no text",
-   "motion": "punch",
-   "keywords": [
-    "shankh",
-    "deewarein"
-   ],
-   "title": "",
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Narakasura hansa: 'Vardaan yaad hai na? Koi purush nahi maar sakta.'",
-   "type": "image",
-   "prompt": "Painterly Indian epic style, single demon king laughing arrogantly, centred in frame, seated on dark obsidian throne, faint red aura around him, vertical 9:16 composition with large clear empty space above and below the subject for text, no text, no letters, no logos",
+   "prompt": "Painterly cinematic Indian miniature: Krishna (Dark blue-skinned divine figure, yellow dhoti, peacock feather crown, flute at waist, calm compassionate expression, traditional Indian miniature style) and Satyabhama (Dark-complexioned queen, red-gold saree, ornate jewelry, confident warrior stance, traditional Indian miniature style) on Garuda (Golden-winged divine eagle, human torso, white face, red beak, carrying two riders, majestic, traditional Indian miniature style) descending toward grand fortified city at golden hour, warm gold and deep maroon palette, soft divine light, ornate but uncluttered, 9:16 vertical, subject centered with room for text above and below",
    "motion": "pull",
+   "title": "Krishna reaches Pragjyotishpur",
    "keywords": [
-    "hansi",
+    "Krishna",
+    "Pragjyotishpur",
+    "Narakasur"
+   ],
+   "real": {
+    "q": "Kamakhya Temple Guwahati aerial view",
+    "kind": "photo",
+    "subject": "Ancient temple complex on Nilachal Hill, associated with Narakasura legend"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Narakasur ne Aditi ke kundal chura liye the",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Narakasura (Large dark-skinned demon king, red eyes, crown, ornate armor, multiple weapons, fierce expression, traditional Indian miniature style) on throne in dark palace hall, holding glowing earrings, shadowy attendants, warm gold and deep maroon, soft dramatic lighting, ornate but uncluttered, 9:16 vertical",
+   "motion": "push",
+   "title": "Aditi's stolen earrings",
+   "keywords": [
+    "Narakasur",
+    "Aditi",
+    "kundal"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Usne 16000 raaniyon ko bandi bana rakha tha",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Vast palace courtyard with rows of distressed women in colorful sarees, high walls, guarded gates, warm gold and deep maroon, soft divine light, ornate but uncluttered, 9:16 vertical",
+   "motion": "pan",
+   "title": "16000 queens captive",
+   "keywords": [
+    "16000",
+    "raaniyan",
+    "bandi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Wo Bhoodevi ka putra tha, vardaan se atibalwan",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Bhoodevi (Earth Goddess) blessing young Narakasura (Large dark-skinned demon king, red eyes, crown, ornate armor, multiple weapons, fierce expression, traditional Indian miniature style), golden light from her hands, warm gold and deep maroon, soft divine light, ornate but uncluttered, 9:16 vertical",
+   "motion": "tilt",
+   "title": "Bhoodevi's boon",
+   "keywords": [
+    "Bhoodevi",
+    "putra",
     "vardaan"
    ],
-   "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Krishna muskuraye. Ungli pe Sudarshan Chakra ghumaya - surya jaisi roshni.",
-   "type": "image",
-   "prompt": "Painterly Indian epic style, one spinning golden discus balanced on a single fingertip, centred in frame, blinding warm light rays cutting through darkness, vertical 9:16 composition with generous empty space above and below the subject for text, no text, no letters, no logos",
-   "motion": "push",
+   "vo": "Krishna Satyabhama sang Garud pe sawar ho gaye",
+   "type": "clip",
+   "prompt": "Painterly cinematic Indian miniature animation: Krishna (Dark blue-skinned divine figure, yellow dhoti, peacock feather crown, flute at waist, calm compassionate expression, traditional Indian miniature style) and Satyabhama (Dark-complexioned queen, red-gold saree, ornate jewelry, confident warrior stance, traditional Indian miniature style) mounting Garuda (Golden-winged divine eagle, human torso, white face, red beak, carrying two riders, majestic, traditional Indian miniature style), wings unfolding with golden light, rising into sky, warm gold and deep maroon, soft divine light, ornate but uncluttered, 9:16 vertical, smooth 10-second loop",
+   "motion": "pull",
+   "title": "Mounting Garuda",
    "keywords": [
-    "chakra",
-    "roshni"
+    "Krishna",
+    "Satyabhama",
+    "Garud"
    ],
-   "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
   },
   {
-   "vo": "Ek vaar. Mantra-raksha toot gayi jaise makkhan. Vardaan fail - kyunki Krishna purush nahi, Bhagwan the.",
+   "vo": "Pragjyotishpur ke dwar pe Mura naam ka rakshas tha",
    "type": "image",
-   "prompt": "Painterly Indian epic style, golden disc slicing through red shield, demon armor cracking, light winning, no text",
+   "prompt": "Painterly cinematic Indian miniature: Massive palace gate guarded by Mura (Fierce demon guardian, dark skin, horns, club weapon, guarding palace gate, traditional Indian miniature style), Krishna (Dark blue-skinned divine figure, yellow dhoti, peacock feather crown, flute at waist, calm compassionate expression, traditional Indian miniature style) and Satyabhama (Dark-complexioned queen, red-gold saree, ornate jewelry, confident warrior stance, traditional Indian miniature style) on Garuda (Golden-winged divine eagle, human torso, white face, red beak, carrying two riders, majestic, traditional Indian miniature style) approaching, warm gold and deep maroon, soft dramatic lighting, ornate but uncluttered, 9:16 vertical",
+   "motion": "push",
+   "title": "Gatekeeper Mura",
+   "keywords": [
+    "Pragjyotishpur",
+    "Mura",
+    "rakshas"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Krishna ne Mura ko hara diya",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Krishna (Dark blue-skinned divine figure, yellow dhoti, peacock feather crown, flute at waist, calm compassionate expression, traditional Indian miniature style) standing victorious, Mura (Fierce demon guardian, dark skin, horns, club weapon, guarding palace gate, traditional Indian miniature style) fallen at his feet, golden light, warm gold and deep maroon, soft divine light, ornate but uncluttered, 9:16 vertical",
    "motion": "punch",
+   "title": "Mura defeated",
    "keywords": [
-    "vaad",
-    "tod"
+    "Krishna",
+    "Mura"
    ],
-   "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "puppet"
   },
   {
-   "vo": "Narakasura gira. Saare taale toote. Raaniayan mukti - samman se ghar bheji gayi.",
+   "vo": "Narakasur bahar aaya, Krishna se yuddh chhed diya",
    "type": "image",
-   "prompt": "Painterly Indian epic style, palace gates opening, women walking out in morning light, Krishna blessing, no text",
+   "prompt": "Painterly cinematic Indian miniature: Narakasura (large dark-skinned demon king, red eyes, crown, ornate armor, multiple weapons, fierce expression) emerging from palace on chariot, weapons raised, Krishna (dark blue-skinned divine figure, yellow dhoti, peacock feather crown, flute at waist, calm compassionate expression) on Garuda (golden-winged divine eagle, human torso, white face, red beak, carrying two riders, majestic) facing him, cosmic scale, warm gold and deep maroon, soft divine light, ornate but uncluttered, 9:16 vertical, no text, no letters, no captions",
    "motion": "pan",
+   "title": "Great battle begins",
    "keywords": [
-    "mukti",
-    "samman"
+    "Narakasur",
+    "yuddh",
+    "Krishna"
    ],
-   "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "puppet",
+   "real": null
   },
   {
-   "vo": "Yeh kahani Bhagavata Purana mein hai. Par asli sawal ab: tere andar bhi koi durg hai?",
+   "vo": "Krishna ne uska vadh kiya, Satyabhama ne saath diya",
    "type": "image",
-   "prompt": "Painterly Indian epic style, quiet temple courtyard at twilight, diyas flickering, one empty throne, centred subject with ample space above and below, no text",
-   "motion": "tilt",
+   "prompt": "Painterly cinematic Indian miniature: Krishna's discus (Sudarshana Chakra) striking Narakasura (Large dark-skinned demon king, red eyes, crown, ornate armor, multiple weapons, fierce expression, traditional Indian miniature style), Satyabhama (Dark-complexioned queen, red-gold saree, ornate jewelry, confident warrior stance, traditional Indian miniature style) shooting arrows beside him, divine victory moment, warm gold and deep maroon, soft divine light, ornate but uncluttered, 9:16 vertical",
+   "motion": "punch",
+   "title": "Narakasura slain",
    "keywords": [
-    "bhitar",
-    "durg"
+    "Krishna",
+    "vadh",
+    "Satyabhama"
    ],
-   "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "puppet"
   },
   {
-   "vo": "Ahankar ka wo durg todo. Kal nayi kahani. Follow @puraankikatha.",
-   "type": "card",
-   "prompt": "Painterly Indian epic style, golden lotus on dark water, single ripple, soft glow, vertical 9:16 composition, generous empty space at top and bottom for text, no text",
-   "motion": "push",
-   "big": "Follow",
-   "small": "Nayi Kahani",
+   "vo": "Aditi ke kundal wapas mile, 16000 striyan azad hui",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Aditi receiving her earrings back, 16000 women walking free with joy, Krishna (Dark blue-skinned divine figure, yellow dhoti, peacock feather crown, flute at waist, calm compassionate expression, traditional Indian miniature style) blessing them, warm gold and deep maroon, soft divine light, ornate but uncluttered, 9:16 vertical",
+   "motion": "pull",
+   "title": "Freedom restored",
    "keywords": [
-    "todo",
-    "follow"
+    "kundal",
+    "16000",
+    "azad"
    ],
-   "title": "@puraankikatha"
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Yeh katha Bhagavata Purana ke 10ve skandh mein hai",
+   "type": "card",
+   "prompt": "Painterly cinematic Indian miniature background: Ancient palm-leaf manuscript texture, soft golden light, warm gold and deep maroon, ornate but uncluttered, 9:16 vertical",
+   "motion": "push",
+   "big": "SROT",
+   "small": "Bhagavata Purana 10.59",
+   "keywords": [
+    "Bhagavata",
+    "Purana",
+    "dasham skandha"
+   ],
+   "title": "",
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Andar ke Narakasur ko toh Krishna hi maar sakte hain",
+   "type": "image",
+   "prompt": "Painterly cinematic Indian miniature: Silhouette of meditating figure, inner demon form dissolving as Krishna's (Dark blue-skinned divine figure, yellow dhoti, peacock feather crown, flute at waist, calm compassionate expression, traditional Indian miniature style) flute light enters, warm gold and deep maroon, soft divine light, ornate but uncluttered, 9:16 vertical",
+   "motion": "push",
+   "title": "Inner battle",
+   "keywords": [
+    "andar",
+    "Narakasur",
+    "Krishna"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Aapke andar ka Narakasur kaun hai — krodh, lobh, ya ahankaar?",
+   "type": "image",
+   "prompt": "Indian miniature style illustration of a meditative figure looking inward, with three shadowy silhouettes representing anger, greed, and ego emerging from the heart, soft golden divine light, ornate border, 9:16 vertical, space top and bottom for text",
+   "motion": "push",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "andar",
+    "Narakasur",
+    "kaun"
+   ],
+   "title": "Andar Ka Narakasur",
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "type": "image",
+   "big": "",
+   "sub": "Krishna Garud HD wallpaper DM mein 📩",
+   "small": "",
+   "vo": "Ye divine Krishna wallpaper chahiye? Comment karein KRISHNA, main DM kar dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "prompt": "Elegant vertical 9:16 artwork of Lord Krishna riding Garuda, radiant divine light, subtle glow, minimal background, space top and bottom for overlay text, suitable for wallpaper",
+   "title": "Krishna Garud Wallpaper",
+   "skin": "painting"
   }
  ],
  "music_mood": "epic",
- "caption": "Jab Krishna ne Narakasura ko maara, toh sirf raakshas nahi mara - ahankar ka durg toota. Bhagavata Purana, Dasham Skandh. Tere andar ka durg kab tootega? #puraankikatha #krishna #narakasura #ahankar #@puraankikatha Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "caption": "Krishna Pragjyotishpur pahunche, Narakasur ka ant ab hoga.\nBhagavata Purana ki yeh katha batati hai ki bahari rakshas hi nahi, andar ke Narakasur ko bhi Krishna hi maarte hain.\nAapke andar ka Narakasur kaun hai — krodh, lobh, ya ahankaar?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
-  "#puraankikatha",
-  "#krishna",
-  "#narakasura",
-  "#ahankar"
+  "#PuraanKiKatha",
+  "#Krishna",
+  "#Narakasura",
+  "#BhagavataPurana",
+  "#Mythology",
+  "#Katha"
  ],
  "claims": [
   {
-   "claim": "Krishna defeated Narakasura and freed captive women.",
-   "basis": "Bhagavata Purana, Skandha 10"
+   "claim": "Narakasura (Bhaumasura) was the king of Pragjyotishapura and son of Bhoodevi",
+   "basis": "Bhagavata Purana 10.59, Vishnu Purana, Mahabharata"
+  },
+  {
+   "claim": "Narakasura stole Aditi's earrings and kidnapped 16,000 women",
+   "basis": "Bhagavata Purana 10.59.1-5"
+  },
+  {
+   "claim": "Krishna, accompanied by Satyabhama, defeated Narakasura and Mura",
+   "basis": "Bhagavata Purana 10.59.20-40"
+  },
+  {
+   "claim": "The story appears in Bhagavata Purana 10th Canto, Chapter 59",
+   "basis": "Critical edition of Bhagavata Purana (Skandha 10, Adhyaya 59)"
   }
  ],
  "brain_ids": [
-  "656474d688",
-  "121c1c5529",
-  "9b12cd9138",
-  "82055e32f5",
-  "ef573ce014",
-  "4204a43442",
-  "1ad22ef225",
-  "d7b38f2237",
-  "3cec28c3e9",
-  "7a67022fb6",
-  "d4d8a0da8f",
-  "84c1e843ba",
-  "1662db247e",
-  "6a0ed93ee3"
+  "e15cfaed29",
+  "b69d65467f",
+  "fc294ac58f",
+  "161339712e",
+  "9db4cc694f",
+  "7f620e6fdf",
+  "b2fabb69c4",
+  "0755cc155a",
+  "7fa182f8ef",
+  "6ce7203c71",
+  "1e1964f463",
+  "f945e2a937",
+  "a688e48ca2",
+  "b349ca221e"
  ],
+ "offer": {
+  "kind": "wallpaper",
+  "keyword": "KRISHNA",
+  "gift": "Krishna Garud HD wallpaper",
+  "title": "Krishna Satyabhama Wallpaper",
+  "items": [],
+  "wallpaper_scene": 5,
+  "job": "1117-1935",
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/katha/offer-krishna.jpg"
+ },
+ "skin": "painting",
  "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

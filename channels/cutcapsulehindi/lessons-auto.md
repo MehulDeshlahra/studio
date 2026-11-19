@@ -23,3 +23,8 @@
 ## 1119-1555-c3 (clipper)
 - The same person is shown twice at once in the frame (top and bottom right).
 - checklist: same person shown twice
+
+## 1119-1757-c3 (clipper)
+- Captions contain severe mishearings and gibberish (e.g., 'BYHERYUNG AUR VERY' instead of coherent speech from transcript), rendering the subtitles mostly nonsensical.
+- A heavy orange/red filter covers frame 3 completely, disrupting continuity.
+- checklist: misheard caption

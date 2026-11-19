@@ -219,5 +219,49 @@
    "basis": "Softmax distribution over token logits used in standard LLM inference."
   }
  ],
- "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "seo": {
+  "ig": {
+   "caption": "ChatGPT insaan jaise sochta nahi, phir bhi itne smart jawab kaise deta hai? 🤯\nYe video batata hai: ChatGPT sawaal ko tokens mein tod kar agla shabd predict karta hai.\nKabhi aapko ChatGPT ka ajeeb jawab mila?\nUs dost ko bhejo jo ChatGPT se baatein karta rehta hai",
+   "hashtags": [
+    "#tech",
+    "#chatgpt",
+    "#ai",
+    "#hinglish",
+    "#techfacts"
+   ]
+  },
+  "fb": {
+   "caption": "ChatGPT insaan jaise sochta nahi, phir bhi itne smart jawab kaise deta hai? 🤯\nYe video batata hai: ChatGPT sawaal ko tokens mein tod kar agla shabd predict karta hai.\nKabhi aapko ChatGPT ka ajeeb jawab mila?\nUs dost ko bhejo jo ChatGPT se baatein karta rehta hai",
+   "hashtags": [
+    "#tech",
+    "#chatgpt",
+    "#ai"
+   ]
+  },
+  "yt": {
+   "title": "ChatGPT Jawab Kaise Banata Hai? Token Prediction Explained",
+   "description": "ChatGPT samajhta nahi, bas next word predict karta hai.\nTokens mein tod kar probability calculate hoti hai.\nMicrosecond mein cycle ghoomti hai live typing jaisa.\nchatgpt working token prediction ai explained how chatgpt works hindi tech facts",
+   "tags": [
+    "chatgpt working",
+    "token prediction",
+    "how chatgpt works",
+    "ai explained",
+    "chatgpt hindi",
+    "tech facts hindi",
+    "llm explained",
+    "next word prediction",
+    "ai technology",
+    "hinglish tech",
+    "kaise tech",
+    "chatgpt mechanism"
+   ],
+   "hashtags": [
+    "#chatgpt",
+    "#ai",
+    "#techfacts"
+   ]
+  },
+  "comment_q": "Kabhi ChatGPT ne galat jawab diya? Haan/Naa"
+ }
 }

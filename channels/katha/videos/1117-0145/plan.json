@@ -33,9 +33,9 @@
   {
    "vo": "Papa ne yagya mein sab daan kar diya... mujhe bhi",
    "type": "image",
-   "prompt": "Same painterly style. Medium close-up: Nachiketa folds hands, calm but firm. Vajashrava looks troubled, firelight dancing on his face. Other rishis blurred in background. Warm gold light, deep maroon shadows. No text, no letters, no numbers.",
+   "prompt": "Painterly medium close-up: Vajashrava stands before the sacrificial fire, hands extended offering all possessions, and gently places his son Nachiketa into the flames as part of the daan. Firelight dances on both faces, other rishis blurred in background. Warm gold light, deep maroon shadows. No text, no letters, no numbers.",
    "motion": "pull",
-   "title": "",
+   "title": "Papa Ne Daan Kiya",
    "keywords": [
     "daan",
     "beta"
@@ -47,7 +47,7 @@
   },
   {
    "vo": "Teen baar pucha: 'Main kise daan doge?' Papa bhadak gaye",
-   "type": "image",
+   "type": "card",
    "prompt": "Dramatic low-key. Vajashrava half in shadow, half in firelight, angry regret. Nachiketa bows head in acceptance. Flames cast long shadows. Miniature texture, gold on maroon. No text, no letters, no numbers.",
    "motion": "tilt",
    "title": "Teen Baar Pucha",
@@ -122,7 +122,7 @@
   },
   {
    "vo": "Doosra var: 'Swarg ka agni vidya sikhao'",
-   "type": "image",
+   "type": "card",
    "prompt": "Close-up: Yamraj's burning coal eyes show surprise. Nachiketa small but unwavering. Palace vastness behind. Single diya flame between them reflecting in both eyes. Dramatic low-key, gold on maroon. No text, no letters, no numbers.",
    "motion": "push",
    "title": "Doosra Var",
@@ -197,7 +197,7 @@
   },
   {
    "vo": "Ye gyaan milte hi Nachiketa azad ho gaya... ghar wapas",
-   "type": "image",
+   "type": "card",
    "prompt": "Nachiketa walking calmly towards a modest home at dawn, a single diya flame ahead forming a subtle Om shape, warm gold light on deep maroon sky, minimal composition with negative space above and below for text. No text, no letters, no numbers in image.",
    "motion": "punch",
    "title": "Azad Ho Gaya",

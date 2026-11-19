@@ -852,5 +852,127 @@
     "score": 3.75
    }
   ]
+ },
+ {
+  "t": "2026-11-19 19:16",
+  "picked": "Micchami Dukkadam isn't just 'sorry' — the threefold forgiveness formula Jains use every Paryushan (source: Agam)",
+  "ideas": [
+   {
+    "topic": "Micchami Dukkadam isn't just 'sorry' — the threefold forgiveness formula Jains use every Paryushan (source: Agam)",
+    "note": "",
+    "search": "Micchami Dukkadam meaning Paryushan",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.8,
+    "median_views": 34103,
+    "fresh": 6.5,
+    "score": 6.16
+   },
+   {
+    "topic": "Why Jains don't eat potatoes, onions, or garlic — the microscopic life inside root vegetables (source: Acharanga Sutra / Agam)",
+    "note": "",
+    "search": "Jain root vegetables ahimsa",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.9,
+    "score": 6.13
+   },
+   {
+    "topic": "King Shrenik's mango grove — why the wealthiest king couldn't renounce one orchard (source: Kalpasutra / Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "King Shrenik mango grove renunciation",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.8,
+    "score": 5.56
+   },
+   {
+    "topic": "The 14 dreams Queen Trishala saw before Mahavira's birth — and what each one predicted (source: Kalpasutra)",
+    "note": "",
+    "search": "Trishala 14 dreams Mahavira",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.6,
+    "score": 5.52
+   },
+   {
+    "topic": "How a thief named Rohineya became a monk in one night — the power of a single vow (source: Uttaradhyayana Sutra)",
+    "note": "",
+    "search": "Rohineya thief Jain monk story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1643,
+    "fresh": 5.6,
+    "score": 4.5
+   },
+   {
+    "topic": "Why Mallinatha is the only female Tirthankara — the Shwetambar-Digambar difference explained (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Mallinatha female Tirthankara Jain",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.9,
+    "median_views": 2217,
+    "fresh": 5.2,
+    "score": 4.25
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1528,
+    "fresh": 6.7,
+    "score": 4.01
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 477,
+    "fresh": 7.6,
+    "score": 3.97
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 578,
+    "fresh": 6.5,
+    "score": 3.75
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 678,
+    "fresh": 6.0,
+    "score": 3.65
+   }
+  ]
  }
 ]

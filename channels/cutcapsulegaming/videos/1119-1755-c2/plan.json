@@ -1,0 +1,65 @@
+{
+ "title": "NIC VANS HAS A SPECIAL LIST",
+ "topic": "NIC VANS HAS A SPECIAL LIST",
+ "caption": "Saint Nick is not done delivering gifts. Nic Vans is making sure everyone gets a Kitsch surprise.\nInstagram and YouTube: @mykitsch. TikTok: @kitsch.",
+ "hashtags": [
+  "#NicVans",
+  "#Kitsch",
+  "#HolidayGifts"
+ ],
+ "lang": "en",
+ "clip": {
+  "url": "https://www.youtube.com/watch?v=hAhiN-SCtL8",
+  "start": 28.0,
+  "end": 43.0,
+  "layout": "fill",
+  "removed_s": 0.0,
+  "why": "The playful, slightly mysterious ending keeps viewers engaged and makes them wonder who is next on his list.",
+  "scores": {
+   "hook": 8,
+   "flow": 8,
+   "value": 7,
+   "trend": 8
+  },
+  "replayed": false,
+  "notes": [
+   {
+    "s": 4.18,
+    "e": 6.57,
+    "text": "Adding myself to that list",
+    "kind": "react"
+   }
+  ],
+  "source": "clip-farm",
+  "test": false,
+  "creator": "Money Clips"
+ },
+ "seo": {
+  "ig": {
+   "caption": "Saint Nick is not done delivering gifts. Nic Vans is making sure everyone gets a Kitsch surprise.\nInstagram and YouTube: @mykitsch. TikTok: @kitsch.",
+   "hashtags": [
+    "#NicVans",
+    "#Kitsch",
+    "#HolidayGifts"
+   ]
+  },
+  "fb": {
+   "caption": "Saint Nick is not done delivering gifts. Nic Vans is making sure everyone gets a Kitsch surprise.\nInstagram and YouTube: @mykitsch. TikTok: @kitsch.",
+   "hashtags": [
+    "#NicVans",
+    "#Kitsch",
+    "#HolidayGifts"
+   ]
+  },
+  "yt": {
+   "title": "NIC VANS HAS A SPECIAL LIST",
+   "description": "Saint Nick is not done delivering gifts. Nic Vans is making sure everyone gets a Kitsch surprise.\nInstagram and YouTube: @mykitsch. TikTok: @kitsch.",
+   "tags": [
+    "NicVans",
+    "Kitsch",
+    "HolidayGifts"
+   ]
+  }
+ },
+ "scenes": []
+}

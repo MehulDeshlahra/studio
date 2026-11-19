@@ -1,0 +1,239 @@
+{
+ "slug": "micchami-threefold-forgiveness",
+ "title": "Micchami Dukkadam sirf sorry nahi — teeno fold ka formula kya hai",
+ "hooks": [
+  "Micchami Dukkadam sirf sorry nahi hai",
+  "Tino fold kholte hain Paryushan ka asli raaz",
+  "Ek shloka mein chhupa hai poora karma reset"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with a direct contrarian statement that challenges the common misconception in the first 4 words. No setup, no greeting — immediate curiosity spike.",
+ "metaphor": "Three lotus petals opening one by one on a white marble step, each glowing with warm golden light — each petal represents one fold of the forgiveness formula, blooming in sequence.",
+ "mechanism": [
+  "Speaker utters first fold: Khamemi Savve Jiva — I forgive all living beings",
+  "Speaker utters second fold: Savve Jiva Khamantu Me — May all living beings forgive me",
+  "Speaker utters third fold: Mitti Me Savva Bhuyesu Veram Majjham Na Kenai — Friendship with all, enmity with none",
+  "Recited during Samvatsari Pratikramana as prescribed in Agam (Airyapathiki Sutra, Yoga sastra verse 3.124)",
+  "Extends beyond humans to every jiva — ants, plants, unseen beings — resetting karmic ledger for the new year"
+ ],
+ "cast": {
+  "narrator_monk": "A calm Jain monk in plain white unstitched cotton robes, carrying a soft white rajoharan (whisk broom), serene face, seated in a marble temple corridor with carved pillars and shikhara spires visible behind. Same appearance in every scene."
+ },
+ "scenes": [
+  {
+   "vo": "Micchami Dukkadam sirf sorry nahi hai",
+   "type": "image",
+   "prompt": "Close-up of a white marble temple step. A single closed lotus bud rests on it, bathed in warm golden morning light. Carved sandstone pillars and a tall shikhara spire rise softly in the blurred background. Serene painterly Indian style, calm and peaceful.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Micchami Dukkadam",
+    "sorry nahi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Yeh teen fold ka ek formula hai",
+   "type": "image",
+   "prompt": "The lotus bud begins to open — first petal unfurls slowly, glowing with soft golden light. Marble floor reflects the glow. Ancient Jain temple architecture surrounds: finely carved pillars, stepped stone roof. Warm cinematic lighting.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "teen fold",
+    "formula"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Pehla: Khamemi Savve Jiva — main sabko maaf karta hoon",
+   "type": "image",
+   "prompt": "First lotus petal fully open, radiant gold. A calm Jain monk in plain white unstitched cotton robes, carrying a soft white rajoharan (whisk broom), serene face, seated in a marble temple corridor with carved pillars and shikhara spires visible behind. Golden hour light on white stone.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Khamemi Savve Jiva",
+    "maaf karta hoon"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Dusra: Savve Jiva Khamantu Me — sab mujhe maaf karein",
+   "type": "image",
+   "prompt": "Second lotus petal opens, light deepens. A calm Jain monk in plain white unstitched cotton robes, carrying a soft white rajoharan (whisk broom), serene face, seated in a marble temple corridor with carved pillars and shikhara spires visible behind. Hands folded in pratikramana mudra. Warm golden glow throughout.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Savve Jiva Khamantu Me",
+    "maaf karein"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Teesra: Mitti Me Savva Bhuyesu — dosti sabse, dushmani kisi se nahi",
+   "type": "image",
+   "prompt": "Third lotus petal opens — the bloom complete, all three petals glowing. A calm Jain monk in plain white unstitched cotton robes, carrying a soft white rajoharan (whisk broom), serene face, seated in a marble temple corridor with carved pillars and shikhara spires visible behind. Stands with palms joined, facing a simple siddhashila crescent symbol carved in marble. Dilwara-style carved ceiling above. Serene, uncluttered.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Mitti Me Savva Bhuyesu",
+    "dushmani kisi se nahi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Yeh sirf insanon ke liye nahi — cheenti, patte, hawa ke kan tak pahuncha hai",
+   "type": "image",
+   "prompt": "Wide view: the blooming lotus on marble steps. Tiny ants crawl near the base, a fallen leaf rests beside it, a feather drifts in the air. All illuminated by the same golden light. Jain temple lane of mud and stone houses in soft focus behind. Extreme close-up: an ant's delicate step on marble, a leaf's vein pattern, a dust mote dancing in a shaft of golden light. The three lotus petals reflected in a nearby water bowl. Painterly, reverent, microscopic detail.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "sab jeev",
+    "cheenti patte"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Pratikraman mein yeh teen baar doharate hain, Paryushan ke aakhri din Samvatsari ko",
+   "type": "image",
+   "prompt": "A calm Jain monk in plain white unstitched cotton robes, carrying a soft white rajoharan (whisk broom), serene face, seated in a marble temple corridor with carved pillars and shikhara spires visible behind. Reciting from a palm-leaf manuscript. Three lotus blooms carved into the marble pillar beside him — one for each fold. Warm candlelight flickers. Ancient Dilwara style. Temple courtyard at dawn: devotees in simple white sit in rows facing the sanctum. A Tirthankara idol in padmasana, eyes half-closed, emblem on pedestal, fully clothed in traditional Svetambara attire. Shikhara spires catch first light. Calm, spacious.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Pratikraman",
+    "Samvatsari"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Digambar parampara mein isey Kshamavani kehte hain",
+   "type": "image",
+   "prompt": "A Digambar monk (sky-clad, as per tradition) stands in a rock-cut cave temple, head bowed. The three lotus petals appear as subtle carvings on the stone lintel. Respectful, serene, no sectarian contrast — just the shared formula.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Digambar",
+    "Kshamavani"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Samvatsari ke din yeh formula bola jata hai, naya saal shuru hota hai",
+   "type": "image",
+   "prompt": "The three-petaled lotus now floats above a calm water bowl on marble. Each petal drops a golden ripple — one, two, three — spreading outward. The ripples clear the water's surface. New beginning. Warm golden light.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "karma reset",
+    "naya saal"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aap kaunsi fold sabse mushkil maante hain",
+   "type": "card",
+   "prompt": "White marble background with the three lotus petals arranged in a triangle. Clean, uncluttered, space for text overlay.",
+   "motion": "push",
+   "title": "",
+   "big": "AAP KAUN SI",
+   "small": "FOLD MUSHKIL",
+   "keywords": [
+    "kaunsi fold",
+    "mushkil"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Jai Jinendra. Srot: Agam",
+   "type": "card",
+   "prompt": "Simple white marble frame. A single lotus blooms at center. The Navkar Bhav handle appears below in elegant gold Roman letters: @navkarbhav. Warm glow, peaceful.",
+   "motion": "push",
+   "title": "",
+   "big": "JAI JINENDRA",
+   "small": "SROT: AGAM",
+   "keywords": [
+    "Jai Jinendra",
+    "Agam"
+   ],
+   "sub": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Micchami Dukkadam sirf 'sorry' nahi — yeh teeno fold ka ek purana formula hai jo Agam mein likha hai. Pehle main sabko maaf karta hoon, phir sabse maaf maangta hoon, aur aakhir mein dosti sabse, dushmani kisi se nahi. Ye sirf insanon tak nahi, cheenti-patte tak pahuncha hai. Paryushan ke aakhri din Samvatsari (Digambar mein Kshamavani) yehi teen baar doharaya jata hai. Karma reset. Naya saal shuru.\n\nAap kaunsi fold sabse mushkil maante hain?\n\n#MicchamiDukkadam #Paryushan #Jainism #Forgiveness #Agam #Samvatsari #Kshamavani #NavkarBhav",
+ "hashtags": [
+  "#MicchamiDukkadam",
+  "#Paryushan",
+  "#Jainism",
+  "#Forgiveness",
+  "#Agam",
+  "#Samvatsari",
+  "#Kshamavani",
+  "#NavkarBhav"
+ ],
+ "claims": [
+  {
+   "claim": "Micchami Dukkadam is a Prakrit phrase meaning 'may my bad deeds be fruitless' used in Jain Pratikramana ritual",
+   "basis": "Wikipedia: Michchhāmi Dukkaḍaṃ is an ancient Indian Prakrit language phrase found in historic Jain texts, used in Pratikramana ritual every nine days and on Samvatsari"
+  },
+  {
+   "claim": "The threefold forgiveness formula consists of: Khamemi Savve Jiva (I forgive all living beings), Savve Jiva Khamantu Me (May all living beings forgive me), Mitti Me Savva Bhuyesu Veram Majjham Na Kenai (Friendship with all, enmity with none)",
+   "basis": "thejainreligion.in: The forgiveness prayer includes these three lines in Prakrit with Hindi translation"
+  },
+  {
+   "claim": "The formula is recited during Samvatsari Pratikramana on the last day of Paryushan (Svetambara) and Kshamavani (Digambara)",
+   "basis": "Wikipedia: Used on the last day of Paryushana called Samvatsari in Svetambara tradition, and Kshamavani in Digambara tradition"
+  },
+  {
+   "claim": "The phrase appears in the Airyapathiki Sutra and Yoga sastra (Hemachandra's Yogasastra verse 3.124)",
+   "basis": "Wikipedia: Found in Airyapathiki Sutra, verses 3.124 and 3.130 of the Yoga sastra; Hemachandra gave symbolic etymological basis in Yogasastra verse 3.124"
+  },
+  {
+   "claim": "The forgiveness extends to all living beings (jiva) including unseen beings like ants, plants, microorganisms",
+   "basis": "pandasbox.in: 'All living beings. Not just Mum. Not just Dad. Not just the friend you fought with yesterday. Everyone.' Includes ants, flowers, unseen beings hurt unknowingly"
+  }
+ ],
+ "brain_ids": [
+  "7f620e6fdf",
+  "b2fabb69c4",
+  "e15cfaed29",
+  "a688e48ca2",
+  "b69d65467f",
+  "fc294ac58f",
+  "f945e2a937",
+  "4396759d41",
+  "0755cc155a",
+  "9db4cc694f",
+  "6ce7203c71",
+  "161339712e",
+  "1e1964f463",
+  "7fa182f8ef"
+ ]
+}

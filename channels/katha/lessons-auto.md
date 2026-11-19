@@ -370,3 +370,55 @@
 - scene 11: Misspelling. 'SROT' is used instead of 'SHROT' (Source).
 - scene 1, 6, 7, 11, 13, 14: The titles specified in the prompt are missing from these frames.
 - scene 13: The background silhouettes of the figures look distorted and 'melted', typical of AI errors.
+
+## 12 Jyotirlinga ki katha - Part 3: Mahakaleshwar (story check)
+- STORY scene 1: false: 'Greenwich se pehle samay Ujjain se hi napa jata tha': Source video 3 hook repeats this overclaim: 'vishwa ka samay Ujjaini se napa jata tha'. Historically, Ujjain was the pri (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1118-1015 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s13b
+
+## 1118-1015 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s13b
+
+## 1118-1015 12 Jyotirlinga ki katha - Part 3: Mahakaleshwar
+- scene 1: The caption 'AVANTIKA KE NAAM' does not match the provided script line 'Pracheen Ujjain Avantika ke naam se jana jata tha'.
+- scene 3: The caption 'RAKSHAS DUSHAN NE AVANTI' is slightly different from the script line 'Rakshas Dushan ne Avanti nagari mein aatank machaya'.
+- scene 4: The caption 'SHIV BHAKTI MEIN HI' does not match the script line 'Raja Chandrasen Shiv bhakti mein hi lage rahe'.
+- scene 5: The caption 'KO MAARNA SHURU' is only a fragment of the script line 'Dushan ne bhakton ko maarna shuru kiya tab'.
+- scene 6: The caption 'NE SHIV SE RAKSHA' is only a fragment of the script line 'Chandrasen ne Shiv se raksha maangi aur pukara'.
+- scene 7: The caption 'SHIV MAHAKAL ROOP' is a fragment of the script line 'Shiv Mahakal roop mein prakat hue us samay'.
+- scene 8: The caption 'EK HUNKAR SE DUSHAN' is a fragment of the script line 'Ek hunkar se Dushan bhasm ho gaya turant'.
+- scene 9: The caption 'JYOTIRLINGA SWAYAMBHU' is a fragment of the script line 'Jyotirlinga swayambhu bana dakshin mukhi hi'.
+- scene 12: The caption 'LEKIN MAHAKAL NAHI BADALTE' matches the script line, but the image is a generic circular design rather than a narrative scene consistent with the previous visual style.
+
+## review 1118-1015
+- visual: Scene 10 shows Islamic/Mughal style dome architecture (minarets and bulbous domes) which is historically inaccurate for an ancient Puranic story set in Avantika.
+- visual: checklist: Is there any modern object, modern building or Mughal / Islamic architecture in an ancient Puranic story? -> scene 10
+- visual score 5/10
+
+## 1117-0145 (pre-render check)
+- FIT: The caption says 'Mein sab daan' but the voice says 'Papa ne yagya mein sab daan kar diya... mujhe bhi', missing the subject 'Papa'.
+- FIT: Missing the requested on-screen fields {'big': 'Teen Baar', 'small': 'Papa Bhadak Gaye'}.
+- FIT: Missing the requested on-screen fields {'big': 'Agni Vidya', 'small': 'Swarg Ka Gyan'}.
+- FIT: Missing the requested on-screen fields {'big': 'Nachiketa', 'small': 'Ghar Wapas'}.
+
+## 1117-0145 (pre-render check)
+- FIT: voice says 'Papa ne yagya mein sab daan kar diya... mujhe bhi', but the image shows the father standing near the yagya alone instead of offering everything including the boy
+- FIT: missing required on-screen fields 'Teen Baar' and 'Papa Bhadak Gaye'
+- FIT: missing required on-screen fields 'Agni Vidya' and 'Swarg Ka Gyan'
+- FIT: missing required on-screen fields 'Nachiketa' and 'Ghar Wapas'
+
+## 1117-0145 (pre-render check)
+- OVERLAP: caption text overlaps the foreground elements and is hard to read
+
+## 1118-1635 Why Shiva manifested as Bhairava to sever Brahma's fifth head — Shiva Purana, Shatarudra Samhita. Lesson: Intellectual superiority paired with ego creates falsehood that demands immediate ego-death.
+- scene 1: The caption 'AUR SHIVA NE UNKA' does not match the intended script line 'Brahma ji ne ek jhooth bola... aur Shiva ne unka sir hi kaat diya!'.
+- scene 2: The caption 'AUR VISHNU MEIN LADAI' does not match the intended script line 'Shuruat mein Brahma aur Vishnu mein ladai chhid gayi ki sabse bada kaun hai.'.
+- scene 3: The caption 'JYOTIRLINGA' does not match the intended script line 'Tabhi beech mein agni ka ek vishal Jyotirlinga prakat hua, jiska koi chhor nahi tha.'.
+- scene 4: The caption 'ANT DHUNDHEGA' does not match the intended script line 'Dono mein shart lagi—jo iska ant dhundhega, wahi sabse bada kehlayega.'.
+- scene 5: The caption 'PAR ANT NA MILNE' does not match the intended script line 'Vishnu ji pataal tak gaye, par ant na milne par unhone sach sweekar kiya.'.
+- scene 6: The caption 'KETAKI KE PHOOL' does not match the intended script line 'Lekin Brahma ji ne upar jaakar Ketaki ke phool se jhoothi gawahi dilwa di.'.
+- scene 7: The caption 'MEIN AAKAR SHIVA' does not match the intended script line 'Unke paanchvein sir ne ghamand mein aakar Shiva ke saamne jhooth bol diya.'.
+- scene 8: The caption 'NETRA SE PRAKAT' does not match the intended script line 'Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!'.
+- scene 9: The caption 'SE BRAHMA KA WO' does not match the intended script line 'Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya.'.
+- scene 10: The caption 'AUR BRAHMA KA SAARA' does not match the intended script line 'Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya.'.
