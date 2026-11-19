@@ -80,3 +80,34 @@ Paid SaaS doing the same: OpusClip, Vizard, Klap, Submagic (not used: Rs 0 rule)
 - Eneba BroPacks bans automated clipping (needs own reaction/voice-over): skipped. Most briefs ban AI voice-overs and
   added music (CoD), want #Ad as the first hashtag on its own line and at most 3 more hashtags: clipper.py does that
   for every campaign source.
+
+## Market map + strategy (19 Nov, from all 120 live Content Rewards campaigns + web research)
+- Content Rewards money by category (budget left): entertainment $284K (31), business $155K (8, mostly Boxabl $0.50-1),
+  personal-brand $58K (19), gaming $50K (11) + streamer $29K (8) + twitch/roblox $14K, technology $42K (7),
+  music $19K (18 small sound campaigns), comedy $1K (2), anime 0, Hindi/India 0. Median rate $1/1K, max $6.
+- Types: clipping 111, ugc-faceless 14, reposting 11, sound 10, ugc-with-face 10, slideshows 10, logo 4.
+- Platforms: TikTok 118 (banned in India: we skip it), Instagram 106, YouTube 75, X 20, Facebook 10.
+- Our watcher read page 1 only (120); the listing has a nextCursor: there are more pages. TODO: read every page.
+- India views are not paid on most global campaigns (CoD, SEGA list India/Pakistan/Bangladesh as unpaid; several need
+  50-70% US). India-first platforms pay India views in rupees: ClipConnect (Rs 10-100/1K, 10% fee each side, UPI from
+  Rs 500), Dashrize (weekly UPI, IG/YT/FB/X), INDclipping (Rs 30-100/1K), Klipp.in (18K clippers), Vyuzz (city-level
+  campaigns, UPI), Halchal app (regional languages). Global others: Vyro (MrBeast-backed, TikTok/Reels/Shorts/X,
+  $1K+ campaigns), Clipping.net (up to $3), Promote.fun ($0.20-2.25), ClipAffiliates, Ssemble (must edit in their app).
+- Decision basis: one page = one audience. Cut Capsule = English, US/global. Hindi clips (Indian platforms) need a
+  separate Hindi page, never mixed (the US share is a payout rule; a mixed audience fails it).
+- Never: betting/1win/casino, TikTok via VPN, AI voice-over where banned, music where banned, footage outside the
+  official folder, reposting without a campaign, fake views/engagement, deleting a submitted post before 30 days.
+- clippingalpha.com (19 Nov 04:02 UTC): 974 live campaigns on 6 clipping platforms, $2.4M left (631 clipping, 143 UGC,
+  39 logo, 161 music); CPM: 337 at $1-1.99, 130 at $2-2.99, 55 at $3+. We read 120 of them. It ranks campaigns and
+  shows "$ paid in the last 24 h": use it as the cross-platform campaign source (public pages).
+- Betting/casino (owner asked "why not", 19 Nov research): India's Promotion and Regulation of Online Gaming Act 2025,
+  in force with its Rules from 1 May 2026, makes ADVERTISING online money games a crime: up to 2 years and/or Rs 50 lakh
+  (PIB). The owner lives in India, so posting 1win/Stake clips is personal criminal risk, whatever country views come
+  from. Instagram/Facebook also restrict gambling promotion. Abroad people do it (Stake $10 CPM; UK OSINT report found
+  44 clipper/tipster accounts pushing unregulated sites). Rule stays: never.
+- TikTok from India (19 Nov): banned since 2020 (IT Act 69A blocking of the app). A VPN alone fails in 2026: TikTok reads
+  the SIM country code, device region and datacenter-IP lists; reports of 0 views / views stuck in the home country.
+  What works for others: a real foreign SIM + residential IP + phone set to that region (paid). Posting automation:
+  the official Content Posting API makes unaudited apps post PRIVATE only; other GitHub uploaders use browser
+  automation (against TikTok's terms). Our server is in Mumbai (Oracle AS31898, IN). Parked: costs money, low
+  reliability, account risk. Re-check if the owner has someone abroad or the ban changes.
