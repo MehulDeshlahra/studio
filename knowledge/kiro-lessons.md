@@ -64,3 +64,7 @@ knowledge/lessons-learnt.md for the engine.
 - No inline python inside `ssh "..."` from PowerShell, ever (broke 3 times on 19 Nov): write .tmp/x.py, scp, run.
 - A new tool step gets tested on the real server right away: faster-whisper with a file path fails here (PyAV), pass an
   array like align.py; a full-frame gblur on 1080p crawls on the shared CPU (blur a small copy).
+- A vision check on tiny frames gives false fails (270x480: "captions unreadable", 4/10 on a 9/10 clip). Check sheets at
+  >= 450x800 and judge text claims (the hook) against the transcript, not pixels.
+- The laptop worker imports engine code once: after changing clipcore.py, restart the worker before testing (a run used
+  the old code for clips 2-3).
