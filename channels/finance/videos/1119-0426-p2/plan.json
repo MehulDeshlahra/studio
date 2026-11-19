@@ -94,7 +94,7 @@
    "type": "rule",
    "prompt": "Official rule card on deep black-green, Income Tax Dept logo top left, gold border, white text lines, red stamp 'ASLI NIYAM'",
    "motion": "tilt",
-   "title": "",
+   "title": "IT Rates FY26",
    "keywords": [
     "IT Act",
     "FY 25-26",
@@ -120,14 +120,16 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "bg_prompt": "A person in India in the middle of this money moment: Proprietorship vs LLP vs Pvt Ltd - kaun winner?",
+   "logo_position": "top left"
   },
   {
    "vo": "Audit: Proprietorship >1Cr pe, LLP >40L turnover, Pvt Ltd har saal",
    "type": "title",
    "prompt": "Three stat cards on deep black-green, gold numbers '>₹1Cr', '>₹40L', 'Har saal', white labels 'Proprietorship', 'LLP', 'Pvt Ltd'",
    "motion": "punch",
-   "title": "",
+   "title": "Audit",
    "keywords": [
     ">1Cr",
     ">40L",
@@ -135,17 +137,17 @@
    ],
    "bg_prompt": "Phone screen close-up, Mehul scrolling, chai steam rising",
    "value": "Har saal",
-   "sub": "Pvt Ltd mandatory audit",
-   "big": "AUDIT: PROPRIETORSHIP >1CR",
+   "sub": "Pvt Ltd yearly",
+   "big": "PROPRIETORSHIP >1CR",
    "small": null,
-   "label": null
+   "label": "LLP >40L"
   },
   {
    "vo": "Funding chahiye? Sirf Pvt Ltd — LLP limited, Proprietorship impossible",
    "type": "compare",
    "prompt": "Three cards on deep black-green: left red 'No equity', middle yellow 'Very limited', right green 'VC ready', gold icons",
    "motion": "pan",
-   "title": "Funding Options",
+   "title": "Funding",
    "keywords": [
     "No equity",
     "Limited",

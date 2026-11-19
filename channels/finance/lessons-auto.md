@@ -132,3 +132,11 @@
 ## 1119-0426-p1 Business Ka Structure - Part 1: Proprietorship, Partnership, LLP, OPC, Pvt Ltd kya hain (aasan bhasha mein)
 - scene 6: text 'personal assets at risk' is ambiguous compared to script 'safe'
 - scene 10: visual elements appear slightly crowded
+
+## 1119-0426-p2 (pre-render check)
+- FIT: The visual is missing the required real logo of 'Income Tax Department' as specified in the prompt.
+- FIT: The on-screen text fails to mention the LLP >40L turnover audit requirement specified in the voiceover.
+- FIT: The comparison chart is missing the 'Pvt Ltd' column entirely, which is required by the voiceover and prompt fields.
+
+## 1119-0426-p2 (pre-render check)
+- CUT: The rule card UI box is clipped at the top edge of the frame

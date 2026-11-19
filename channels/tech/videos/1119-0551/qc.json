@@ -1,0 +1,25 @@
+{
+ "topic": "GTA 6 aaj launch: 17 crore pre-orders, ₹ price, 212 GB?",
+ "title": "GTA 6 aaj launch: 1.7 crore pre-orders, price, 212 GB?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.7,
+  "true_peak": -2.4,
+  "dur": 50.3
+ },
+ "vision": {
+  "score": 10,
+  "ok": true,
+  "problems": []
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8411214953271028,
+  "words": 117,
+  "problems": []
+ },
+ "ok": true
+}
