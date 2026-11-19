@@ -219,8 +219,16 @@ def _fetch_any(url, dest_dir, max_files=6):
             # 19 Nov: gdown 6 has no remaining_ok (the first Drive job failed). List the folder first, then fetch only the
             # video files, at most max_files, and skip ones already in the cache (a campaign folder can be many GB).
             files = gdown.download_folder(url, output=tmp, quiet=True, skip_download=True) or []
-            vids = [f for f in files if str(getattr(f, "path", "")).lower().endswith((".mp4", ".mov", ".mkv", ".webm", ".m4v"))
+            # 19 Nov (Laud Have Mercy): Drive files named "Episode 1" with NO extension were all skipped -> "nothing
+            # downloadable". A file with no extension is fetched and kept only if ffprobe finds a video stream in it.
+            VEXT = (".mp4", ".mov", ".mkv", ".webm", ".m4v")
+            def _is_vid(f):
+                p = str(getattr(f, "path", "")).lower()
+                return p.endswith(VEXT) or not re.search(r"\.[a-z0-9]{2,4}$", p)
+            vids = [f for f in files if _is_vid(f)
                     and not re.search(r"no[ _-]?sound|silent|mute", str(f.path), re.I)]   # muted UGC copies: nothing to caption
+            # teasers repeat the episodes: full episodes first
+            vids.sort(key=lambda f: bool(re.search(r"teaser|trailer|promo", str(f.path), re.I)))
             used_p = os.path.join(dest_dir, "drive-used.json")       # next run takes the files not clipped yet
             try:
                 used = json.load(open(used_p, encoding="utf-8"))
@@ -228,7 +236,8 @@ def _fetch_any(url, dest_dir, max_files=6):
                 used = {}
             # unused first; among them names that say they carry sound/voice (Daise: "_SOUND.mov" next to "_NO SOUND.mov",
             # and camera files "IMG_8923.mov" without any audio track)
-            vids.sort(key=lambda f: (used.get(f.id, 0), not re.search(r"sound|voice|talk|interview|audio", str(f.path), re.I)))
+            vids.sort(key=lambda f: (used.get(f.id, 0), bool(re.search(r"teaser|trailer|promo", str(f.path), re.I)),
+                                     not re.search(r"sound|voice|talk|interview|audio", str(f.path), re.I)))
             out = []
             mp = os.path.join(dest_dir, "drive-map.json")
             try:
@@ -250,16 +259,25 @@ def _fetch_any(url, dest_dir, max_files=6):
                     else:
                         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", p, "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
                                         "-c:a", "aac", final], timeout=3600, creationflags=NOWIN)
+                    if os.path.exists(p):
+                        os.remove(p)
+                if not os.path.exists(final) or os.path.getsize(final) < 50000:
+                    log("drive: not a usable video, skipped", name); continue      # a doc / image without an extension
                 out.append((key, final, name))
             json.dump(used, open(used_p, "w", encoding="utf-8"))
             shutil.rmtree(tmp, ignore_errors=True)
             return out
         else:
-            gdown.download(url, output=tmp + os.sep, quiet=True, fuzzy=True)
+            # 19 Nov: gdown 6.5 has no fuzzy=; give it the file id from the share link
+            m = re.search(r"/d/([\w-]{20,})|[?&]id=([\w-]{20,})", url)
+            if m:
+                gdown.download(id=m.group(1) or m.group(2), output=tmp + os.sep, quiet=True)
+            else:
+                gdown.download(url, output=tmp + os.sep, quiet=True)
         out = []
         for dp, _, fs in os.walk(tmp):
             for f in sorted(fs):
-                if f.lower().endswith((".mp4", ".mov", ".mkv", ".webm", ".m4v")):
+                if f.lower().endswith((".mp4", ".mov", ".mkv", ".webm", ".m4v")) or not re.search(r"\.[A-Za-z0-9]{2,4}$", f):
                     p = os.path.join(dp, f)
                     key = "g" + hashlib.md5((url + f).encode()).hexdigest()[:12]
                     final = os.path.join(dest_dir, key + ".mp4")
@@ -432,7 +450,7 @@ def clip_job(jid, spec):
                     Wd = clipcore.fix_names(Wd, spec.get("glossary") or [])
                     a2, b2 = clipcore.trim(Wd, float(c["a"]) - s0, float(c["b"]) - s0)
                     json.dump({"words": [w for w in Wd if a2 - 0.05 <= w[0] <= b2], "lang": lang, "asr": clipcore.ASR[0]},
-                              open(os.path.join(cd, "result.json"), "w"), ensure_ascii=False)
+                              open(os.path.join(cd, "result.json"), "w", encoding="utf-8"), ensure_ascii=False)
                     done += 1
                 except Exception as e:
                     json.dump({"error": str(e)[:600]}, open(os.path.join(cd, "result.json"), "w"))
@@ -448,7 +466,7 @@ def clip_job(jid, spec):
                                          brand=spec.get("brand") or "", glossary=spec.get("glossary") or [],
                                          notes=c.get("notes") or [], wprompt=spec.get("wprompt") or "")
                 res["offset"] = s0
-                json.dump(res, open(os.path.join(cd, "result.json"), "w"), ensure_ascii=False)
+                json.dump(res, open(os.path.join(cd, "result.json"), "w", encoding="utf-8"), ensure_ascii=False)
                 done += 1
             except Exception as e:
                 json.dump({"error": str(e)[:600]}, open(os.path.join(cd, "result.json"), "w"))

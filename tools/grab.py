@@ -32,16 +32,36 @@ def find_streams(url, max_assets=8):
         page.on("response", on_resp)
         page.goto(url, wait_until="domcontentloaded", timeout=90000)
         page.wait_for_timeout(8000)
-        # Frame.io / review pages list assets by file name: open each one so its player loads the stream
-        names = page.get_by_text(re.compile(r"\.(mp4|mov|mxf|m4v|webm)$", re.I))
-        for i in range(min(names.count(), max_assets)):
-            try:
-                before = page.url
-                names.nth(i).click(timeout=4000); page.wait_for_timeout(7000)
-                if page.url != before:
-                    page.go_back(timeout=20000); page.wait_for_timeout(4000)
-            except Exception:
-                continue
+
+        def open_assets(limit):
+            # Frame.io / review pages list assets by file name: open each one so its player loads the stream
+            names = page.get_by_text(re.compile(r"\.(mp4|mov|mxf|m4v|webm)$", re.I))
+            n = 0
+            for i in range(min(names.count(), limit)):
+                try:
+                    before = page.url
+                    names.nth(i).click(timeout=4000); page.wait_for_timeout(7000); n += 1
+                    if page.url != before:
+                        page.go_back(timeout=20000); page.wait_for_timeout(4000)
+                except Exception:
+                    continue
+            return n
+        opened = open_assets(max_assets)
+        if not opened:
+            # 19 Nov (RZA campaign on Frame.io): the share page held only FOLDERS ("4 Folders, 9.4 GB"), so nothing was
+            # found. Open the folders (cards that say "N Items") one level down and take their assets.
+            root = page.url
+            cards = page.get_by_text(re.compile(r"^\d+\s+Items?$", re.I))
+            for i in range(min(cards.count(), 4)):
+                if opened >= max_assets:
+                    break
+                try:
+                    page.goto(root, wait_until="domcontentloaded", timeout=90000); page.wait_for_timeout(5000)
+                    page.get_by_text(re.compile(r"^\d+\s+Items?$", re.I)).nth(i).dblclick(timeout=5000)
+                    page.wait_for_timeout(7000)
+                    opened += open_assets(max(1, (max_assets - opened) // 2 or 1))
+                except Exception:
+                    continue
         # click play buttons and asset thumbnails so each video starts loading
         sels = ["button[aria-label*=play i]", "[data-testid*=play i]", "video", "[class*=thumbnail] img", "[class*=asset] img",
                 "[class*=Thumbnail]", "[class*=card] img"]

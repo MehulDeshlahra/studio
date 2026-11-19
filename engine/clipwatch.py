@@ -114,8 +114,12 @@ def run(only=None):
                 st["done"].pop(f"{cid}:{url}", None); save(STATE, st)     # try again next hour
                 n = st.setdefault("fails", {}).get(url, 0) + 1
                 st["fails"][url] = n
-                if n in (1, 3):                                            # no Telegram spam every hour
-                    telegram(f"⚠ Cut Capsule auto-clip failed for {url} (try {n}): {str(e)[:200]}")
+                # 19 Nov (owner: "i keep getting error messages in telegram"): ~30 alerts a day, most fixed by the next
+                # hourly retry or by a code fix. Tell him once per link, only after 3 failed tries in a row, and only
+                # when he can do something; the healer handles code errors
+                if n == 3:
+                    telegram(f"⚠ Cut Capsule: footage for '{key}' failed 3 times ({str(e)[:160]}). Studio keeps trying "
+                             "daily; nothing to do unless the campaign link itself is wrong.")
     save(STATE, st)
 
 

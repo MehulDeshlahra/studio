@@ -924,7 +924,7 @@ def _make_cvc(src, Wd, a2, b2, ranges, hook, out_dir, lang, brand, notes):
            "cut": [round(a2, 2), round(b2, 2)], "kept": meta["parts"], "removed_s": 0, "lang": lang, "words": len(Wt),
            "format": q, "text": " ".join(w[2] for w in Wt), "notes": [], "notes_asked": len(notes or []), "asr": ASR[0],
            "beats": len(plan.get("transitions") or []), "notes_on_screen": False}
-    json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w"), ensure_ascii=False)
+    json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w", encoding="utf-8"), ensure_ascii=False)
     return res
 
 
@@ -978,7 +978,7 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
            "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt),
            "notes": [{"s": s, "e": e, "text": t, "kind": k} for s, e, t, k in placed], "notes_asked": len(notes or []),
            "asr": ASR[0], "beats": len(info.get("zoom") or []), "notes_on_screen": NOTES_ON_SCREEN}
-    json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w"), ensure_ascii=False)
+    json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w", encoding="utf-8"), ensure_ascii=False)
     return res
 
 
