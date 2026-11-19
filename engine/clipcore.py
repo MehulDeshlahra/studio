@@ -153,8 +153,8 @@ def tighten(src, ranges, out):
         parts.append(f"[v{i}][a{i}]")
     fc.append("".join(parts) + f"concat=n={len(ranges)}:v=1:a=1[v][a]")
     run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]",
-         "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-r", "30", "-c:a", "aac", "-b:a", "192k", out], 1800)
-    return out
+         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "14", "-r", "30", "-c:a", "aac", "-b:a", "192k", out], 1800)
+    return out                                       # 19 Nov speed: an intermediate file only needs to be fast + clean
 
 
 # ---------------- faces + layout ----------------
@@ -272,7 +272,7 @@ HOOK_Y = {"stack": 700, "crop": 300, "fill": 400}     # 19 Nov frames: the stack
 CAP_Y = {"stack": 1560, "crop": 1450, "fill": 1450}   # captions low (off the actors' faces and mouths)
 
 
-def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&"):
+def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand=""):
     """Hook banner (frame 1 to the end) + 3-word pop captions; the spoken word in the accent colour, a touch larger.
     Positions follow the layout on screen at that moment (segs from analyse())."""
     esc = lambda s: str(s).replace("{", "(").replace("}", ")").replace("\\", "/").replace("\n", " ")
@@ -284,7 +284,12 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&"):
          "StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
          "Style: Hook,Anton,84,&H00111111,&H00111111,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,1,0,3,22,0,5,80,80,0,1",
          "Style: Cap,Montserrat Thin,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,8,4,5,60,60,0,1",
+         "Style: Brand,Montserrat Thin,40,&H50FFFFFF,&H50FFFFFF,&H70000000,&H00000000,0,0,0,0,100,100,2,0,1,3,0,5,40,40,0,1",
          "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
+    if brand:
+        # 19 Nov (owner: "did you add our branding?"): a small, see-through handle the whole clip, under the captions and
+        # out of the safe area for the Reels buttons. Campaigns that forbid watermarks turn it off (sources.json).
+        L.append(f"Dialogue: 0,{_ts(0)},{_ts(dur)},Brand,,0,0,0,,{{\\pos({W // 2},1640)}}{esc(brand)}")
     if hook:
         for gi, g in enumerate(segs):
             e = dur if gi == len(segs) - 1 else g["e"]
@@ -342,19 +347,22 @@ def render(src, info, assf, out):
     joined, then captions + loudness in one pass over the joined video so they run across the joins."""
     sub = f"ass='{_ff(assf)}':fontsdir='{_ff(FONTS)}'"
     segs = info["segments"]
-    enc = ["-c:v", "libx264", "-preset", "medium", "-crf", "19", "-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000"]
+    # 19 Nov speed: "fast" is ~2x "medium" for the same look at CRF 19 (platforms re-encode every upload anyway)
+    enc = ["-c:v", "libx264", "-preset", "fast", "-crf", "19", "-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000"]
     if len(segs) == 1:
         run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", _layout_vf(segs[0]["layout"], info, segs[0], sub),
              "-map", "[v]", "-map", "0:a?", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11"] + enc + ["-movflags", "+faststart", out], 2400)
         return out
     work = os.path.dirname(out)
-    parts = []
-    for i, g in enumerate(segs):
-        p = os.path.join(work, f"seg{i}.mp4")
+    parts = [os.path.join(work, f"seg{i}.mp4") for i in range(len(segs))]
+    from concurrent.futures import ThreadPoolExecutor             # 19 Nov speed: segments framed in parallel
+    def one(i):
+        g = segs[i]
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{g['s']:.3f}", "-to", f"{g['e']:.3f}", "-i", src, "-filter_complex",
-             _layout_vf(g["layout"], info, g, None), "-map", "[v]", "-map", "0:a?", "-c:v", "libx264", "-preset", "veryfast",
-             "-crf", "15", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", p], 1800)
-        parts.append(p)
+             _layout_vf(g["layout"], info, g, None), "-map", "[v]", "-map", "0:a?", "-c:v", "libx264", "-preset", "ultrafast",
+             "-crf", "14", "-threads", "3", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", parts[i]], 1800)
+    with ThreadPoolExecutor(3) as ex:
+        list(ex.map(one, range(len(segs))))
     lst = os.path.join(work, "segs.txt")
     open(lst, "w").write("".join(f"file '{os.path.basename(p)}'\n" for p in parts))
     joined = os.path.join(work, "joined.mp4")
@@ -373,7 +381,7 @@ def lufs(f):
     return float(m[-1]) if m else None
 
 
-def make_clip(src, a, b, hook, out_dir, lang=None):
+def make_clip(src, a, b, hook, out_dir, lang=None, brand=""):
     """src = a downloaded window of the video; a, b = the asked moment inside it (seconds in src)."""
     os.makedirs(out_dir, exist_ok=True)
     Wd, lang = words(src, lang)
@@ -383,7 +391,7 @@ def make_clip(src, a, b, hook, out_dir, lang=None):
     Wt = remap(Wd, ranges)
     info = analyse(tight)
     assf = os.path.join(out_dir, "captions.ass")
-    ass(assf, hook, Wt, info["dur"], info["segments"])
+    ass(assf, hook, Wt, info["dur"], info["segments"], brand=brand)
     final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"))
     q = probe(final); q["lufs"] = lufs(final)
     d = max(1.0, q["dur"])

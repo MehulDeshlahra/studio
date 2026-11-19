@@ -191,7 +191,8 @@ def make(cid, url, n=4, test=False, campaign=None):
         raise RuntimeError("no moments found")
     log("clipper: replay peaks", [(mmss(p["at"]), p["replay"]) for p in pk])
     log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
-    out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4,
+    brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")    # campaigns that say "no watermark"
+    out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand,
                       "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"]} for m in ms]}, f"{cid} {base}", wait=3600)
     made = ingest(ch, cid, url, info, src, test, ms, out, base)
     shutil.rmtree(os.path.dirname(out), ignore_errors=True)
