@@ -16,8 +16,8 @@ def _get(url):
 
 
 def vyuzz():
-    t = _get("https://vyuzz.com/")
-    m = re.search(r"(\d+)\s+campaigns? live now", t)
+    t = re.sub(r"<[^>]+>", " ", _get("https://vyuzz.com/"))
+    m = re.search(r"(\d+)\s+campaigns?\s+live\s+now", t)
     return {"live": int(m.group(1)) if m else None, "note": "public home page counter"}
 
 

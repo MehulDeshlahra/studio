@@ -13,11 +13,42 @@ PROFILE = r"C:\Users\mehul\studio-render\whop-profile"
 SHOTS = r"C:\Users\mehul\studio-render\whop-shots"
 
 
+COOKIES = os.path.join(os.path.dirname(PROFILE), "whop-cookies.json")
+
+
 def browser(p, headless=True):
+    """The saved profile. 19 Nov: (1) Vyro / ClipConnect keep the login in SESSION cookies, which Chromium drops on close:
+    every cookie is saved on close (save_cookies) and put back here. (2) Only one window can use the profile: wait for
+    it (up to 10 min) instead of failing."""
     os.makedirs(PROFILE, exist_ok=True)
-    return p.chromium.launch_persistent_context(PROFILE, headless=headless, viewport={"width": 1280, "height": 900},
-                                                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                                                           "(KHTML, like Gecko) Chrome/131 Safari/537.36")
+    for i in range(120):
+        try:
+            ctx = p.chromium.launch_persistent_context(PROFILE, headless=headless, viewport={"width": 1280, "height": 900},
+                                                       user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                                                                  "(KHTML, like Gecko) Chrome/131 Safari/537.36")
+            break
+        except Exception as e:
+            if "already in use" not in str(e) and "existing browser session" not in str(e) or i == 119:
+                raise
+            time.sleep(5)
+    try:
+        have = {(c["name"], c["domain"], c["path"]) for c in ctx.cookies()}
+        saved = json.load(open(COOKIES, encoding="utf-8"))
+        add = [c for c in saved if (c["name"], c["domain"], c["path"]) not in have
+               and (c.get("expires", -1) in (-1, None) or c["expires"] > time.time())]
+        if add:
+            ctx.add_cookies(add)
+    except Exception:
+        pass
+    return ctx
+
+
+def save_cookies(ctx):
+    try:
+        json.dump(ctx.cookies(), open(COOKIES + ".part", "w", encoding="utf-8"))
+        os.replace(COOKIES + ".part", COOKIES)
+    except Exception:
+        pass
 
 
 def shot(page, name):
@@ -188,6 +219,7 @@ def main():
                             ok = True; page.wait_for_timeout(3000); break
                 except Exception:
                     break                                # the owner closed the window
+            save_cookies(ctx)
             try:
                 ctx.close()
             except Exception:
@@ -197,13 +229,16 @@ def main():
             ctx = browser(p, headless=False)
             page = ctx.pages[0] if ctx.pages else ctx.new_page()
             page.goto(sys.argv[2], wait_until="domcontentloaded", timeout=60000)
-            for _ in range(360):            # until every tab is closed (a sign-in popup may close the first one), 30 min
+            for i in range(360):            # until every tab is closed (a sign-in popup may close the first one), 30 min
                 try:
                     if not ctx.pages:
                         break
                     ctx.pages[0].wait_for_timeout(5000)
+                    if i % 4 == 0:
+                        save_cookies(ctx)    # the owner may close the whole window at any time
                 except Exception:
                     break
+            save_cookies(ctx)
             try:
                 ctx.close()
             except Exception:
@@ -226,6 +261,7 @@ def main():
                 out = {"error": "unknown command"}
         except Exception as e:
             out = {"error": str(e)[:500], "shot": shot(page, "error")}
+        save_cookies(ctx)
         ctx.close()
     if os.environ.get("WHOP_OUT"):                       # a file path: written as utf-8 (PowerShell '>' writes UTF-16)
         json.dump(out, open(os.environ["WHOP_OUT"], "w", encoding="utf-8"), ensure_ascii=False)
