@@ -221,11 +221,21 @@ def adopt_joined(st):
     for v in camp.values():
         nb[(v.get("brand") or "").lower()] = nb.get((v.get("brand") or "").lower(), 0) + 1
     sk = st.get("skipped") or {}
+    # 19 Nov: a campaign titled just "Clipping Campaign" matched generic page text, so the bot JOINED it and logged
+    # "joined by the owner" (owner: "i didnt join any thing manually"). A match now needs a Joined card: the brand line
+    # right after "Joined", or the full title as its own line; a generic title only matches through its brand.
+    lines = [x.strip().lower() for x in text.split("\n")]
+    joined_brands = {lines[i + 1] for i, x in enumerate(lines[:-1]) if x == "joined"}
+    generic = lambda t: bool(re.fullmatch(r"(the )?(clipping|clip|ugc|creator|content|brand)( and ugc)?( campaign| program| rewards)?s?",
+                                          t.strip().lower()))
+    def is_joined(k, v):
+        b, t = (v.get("brand") or "").lower(), v["title"].strip().lower()
+        if b and b in joined_brands and (nb.get(b) == 1 or (not generic(t) and t in lines)):
+            return True
+        return k in text or (not generic(t) and len(t) >= 12 and t in lines and b in joined_brands)
     mine = [k for k, v in camp.items() if v.get("title") and k not in have and
-            time.time() - (sk.get(k) or {}).get("t", 0) > 7 * 86400 and
-            (v["title"][:40].lower() in low or k in text or
-             (v.get("brand") and nb.get(v["brand"].lower()) == 1 and f"joined\n{v['brand'].lower()}\n" in low))]
-    log("whopbot: joined by the owner without a source:", [camp[k]["title"] for k in mine])
+            time.time() - (sk.get(k) or {}).get("t", 0) > 7 * 86400 and is_joined(k, v)]
+    log("whopbot: campaigns joined on the account (Joined cards) without a source:", [camp[k]["title"] for k in mine])
     added, changed = [], set()
     for k in mine:
         page = route(camp[k])
@@ -235,7 +245,7 @@ def adopt_joined(st):
     for page in changed:
         _save_sources(ds[page], f"whopbot: sources for joined campaign(s) on {page}", page)
     if added:
-        telegram("✂️ Clipping now for the campaigns you joined:\n• " + "\n• ".join(added))
+        telegram("✂️ Clipping now for campaigns joined on the account (not by the bot's picker):\n• " + "\n• ".join(added))
         os.system("sudo systemctl start --no-block studio-clipwatch.service")
     return added
 
