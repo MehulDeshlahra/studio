@@ -321,7 +321,7 @@ def jobs(running):
             if not os.path.isdir(os.path.join(base, j)):
                 continue
             s = job_state(c, j, act.get((c, j)))
-            if not s.get("title") and not s.get("active"):
+            if not s.get("title") and not s.get("active") and not s.get("job"):
                 continue
             d = done.get(j)
             st = (d or {}).get("status")
