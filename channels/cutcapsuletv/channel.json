@@ -95,5 +95,32 @@
     "movie",
     "netflix"
   ],
-  "audience": "US / global English: campaigns pay US and tier-1 views"
+  "audience": "US / global English: campaigns pay US and tier-1 views",
+  "route_words": [
+    "netflix",
+    "comedy",
+    "comedian",
+    "stand-up",
+    "standup",
+    "special",
+    "scrubs",
+    "season",
+    "episode",
+    "series",
+    "movie",
+    "film",
+    "drama",
+    "sitcom",
+    "show clips",
+    "movietone",
+    "hbo",
+    "hulu",
+    "disney",
+    "prime video",
+    "trailer",
+    "celebrity",
+    "interview",
+    "jo koy",
+    "all's fair"
+  ]
 }

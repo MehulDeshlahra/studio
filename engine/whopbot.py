@@ -63,10 +63,20 @@ def route(v):
     for p in en_pages():
         if p == CID:
             continue
-        rc = (load(os.path.join(ROOT, "channels", p, "channel.json"), {}) or {}).get("route_categories") or []
-        if cats & set(rc) or any(re.search(rf"\b{re.escape(w)}\b", text) for w in rc if len(w) > 4):
+        ch = load(os.path.join(ROOT, "channels", p, "channel.json"), {}) or {}
+        rc = ch.get("route_categories") or []
+        if cats & set(rc):
             return p
-    return CID
+    # most campaigns say only "entertainment": the title + description decide (first page with the most keyword hits)
+    best, hits = CID, 0
+    for p in en_pages():
+        if p == CID:
+            continue
+        ws = (load(os.path.join(ROOT, "channels", p, "channel.json"), {}) or {}).get("route_words") or []
+        n = sum(1 for w in ws if re.search(rf"\b{re.escape(w)}\b", text))
+        if n > hits:
+            best, hits = p, n
+    return best
 
 
 def _sources(page=CID):
