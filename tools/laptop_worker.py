@@ -230,10 +230,17 @@ def _fetch_any(url, dest_dir, max_files=6):
             # and camera files "IMG_8923.mov" without any audio track)
             vids.sort(key=lambda f: (used.get(f.id, 0), not re.search(r"sound|voice|talk|interview|audio", str(f.path), re.I)))
             out = []
+            mp = os.path.join(dest_dir, "drive-map.json")
+            try:
+                dmap = json.load(open(mp, encoding="utf-8"))
+            except Exception:
+                dmap = {}
             for f in vids[:max_files]:
                 used[f.id] = time.time()
                 name = os.path.basename(f.path)
                 key = "g" + hashlib.md5((url + name).encode()).hexdigest()[:12]
+                dmap[key] = {"id": f.id, "name": name}
+                json.dump(dmap, open(mp, "w", encoding="utf-8"))
                 final = os.path.join(dest_dir, key + ".mp4")
                 if not os.path.exists(final):
                     p = os.path.join(tmp, name)
@@ -345,6 +352,24 @@ def clip_job(jid, spec):
         url = spec["url"]
         vid = spec.get("id") or re.sub(r"\W", "", url)[-24:]
         full = os.path.join(CACHE, vid + ".mp4")
+        dmap = {}
+        try:
+            dmap = json.load(open(os.path.join(CACHE, "drive-map.json"), encoding="utf-8"))
+        except Exception:
+            pass
+        if not os.path.exists(full) and vid in dmap:
+            # 19 Nov: a Drive file pushed out of the cache made the clip job hand the FOLDER link to yt-dlp
+            import gdown
+            p = full + ".part" + os.path.splitext(dmap[vid].get("name") or ".mp4")[1]
+            gdown.download(id=dmap[vid]["id"], output=p, quiet=True)
+            if p.lower().endswith(".mp4"):
+                os.replace(p, full)
+            else:
+                clipcore.run(["ffmpeg", "-v", "error", "-y", "-i", p, "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
+                              "-c:a", "aac", full], 3600)
+                os.remove(p)
+        if not os.path.exists(full) and re.match(r"^[gf][0-9a-f]{12}$", vid):
+            raise RuntimeError(f"cached footage {vid} is gone and its source is unknown: re-run the transcribe job")
         if not os.path.exists(full):
             r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
                      # 19 Nov: without a sort yt-dlp took the AV1 stream (399); AV1 decodes slowly on this CPU -> H.264 first
@@ -354,7 +379,7 @@ def clip_job(jid, spec):
             if not os.path.exists(full):
                 raise RuntimeError("download failed: " + (r.stderr or "")[-300:])
         olds = [os.path.join(CACHE, f) for f in os.listdir(CACHE) if f.endswith(".mp4") and f != vid + ".mp4"]
-        for old in sorted(olds, key=os.path.getmtime)[:-10]:
+        for old in sorted(olds, key=os.path.getmtime)[:-16]:   # 22 GB free on C: (19 Nov)
             os.remove(old)                                    # keep the last 10 sources (a Drive folder has several)
         os.utime(full)
         pad, done = float(spec.get("pad", 4)), 0

@@ -215,6 +215,11 @@ def make_source(k, v, d, st):
                     brief, re.I)
     if ban:
         b["can_do"], b["why_not"] = False, f"brief bans automated clipping ('{ban.group(0)[:80]}')"
+    # 19 Nov (FaZe): "Apply" campaigns are not joined by a click: a form with screening questions (best clip + its
+    # views) and a human decision. Until we have proven clips, they wait; whopbot.apply_later lists them for later.
+    if re.search(r"\nSubmit application\n|\nApply to ", brief) and "\nJoined\n" not in brief:
+        st.setdefault("apply_later", {})[k] = {"title": v.get("title"), "url": v["url"], "t": now}
+        b["can_do"], b["why_not"] = False, "needs an application (screening questions); retry once we have clips with views"
     cap = str(b.get("caption_add") or "")
     if re.search(r"\(or |first hashtag|on its own line|must include|put it", cap, re.I):   # an instruction, not caption text
         cap = " ".join(dict.fromkeys(re.findall(r"(?<![\w/])[#@][A-Za-z0-9_.]{2,30}", cap)))
