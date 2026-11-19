@@ -260,7 +260,9 @@ def analyse(mp4, fps=4):
     allf = [(t, f) for t, fs in samples for f in fs]
     best = 0
     for t0, f0 in allf:
-        if not (f0[2] < 0.35 and (f0[0] < 0.33 or f0[0] > 0.67 or f0[1] < 0.3 or f0[1] > 0.7)):
+        # 19 Nov test (stand-up on a fixed stage camera): a static face high in the CENTRE was taken for a webcam box and
+        # the comedian was shown twice. A webcam overlay sits beside the content, i.e. horizontally off-centre (a corner).
+        if not (f0[2] < 0.35 and (f0[0] < 0.33 or f0[0] > 0.67)):
             continue
         near = {t for t, f in allf if abs(f[0] - f0[0]) < 0.04 and abs(f[1] - f0[1]) < 0.05 and abs(f[2] - f0[2]) < 0.06}
         if len(near) / n >= 0.2 and len(near) > best:
@@ -328,13 +330,22 @@ def place_notes(notes, Wt, dur):
         anchor = norm(n.get("after") or "")
         st = None
         if anchor:
+            # 19 Nov test: the moment-picker quotes the speech a little differently from whisper (word order, spelling):
+            # best window of k+2 words where most anchor words appear (exact or near-spelled), at least 60% and 2 words
+            import difflib
             seq = [x for _, x in flat]
             k = len(anchor)
-            for j in range(0, max(0, len(seq) - k) + 1):
-                hit = sum(1 for a, b in zip(anchor, seq[j:j + k]) if a == b)
-                if k and hit >= max(1, int(0.75 * k + 0.5)):
-                    st = Wt[flat[min(len(flat) - 1, j + k - 1)][0]][1]      # right after the anchor's last word
-                    break
+            near = lambda a, b: a == b or (len(a) > 3 and difflib.SequenceMatcher(None, a, b).ratio() >= 0.8)
+            best, best_j = 0, None
+            for j in range(0, max(1, len(seq) - k + 1)):
+                win = seq[j:j + k + 2]
+                hit = sum(1 for a in anchor if any(near(a, b) for b in win))
+                if hit > best:
+                    best, best_j = hit, j
+            if best_j is not None and best >= max(2 if k >= 2 else 1, int(0.6 * k + 0.5)):
+                win = seq[best_j:best_j + k + 2]
+                last = max(i for i, b in enumerate(win) if any(near(a, b) for a in anchor))
+                st = Wt[flat[min(len(flat) - 1, best_j + last)][0]][1]          # right after the last matching word
         elif n.get("kind") == "context":
             st = 0.6
         if st is None or st > dur - 1.2:
@@ -364,7 +375,9 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None):
          "Style: Cap,Montserrat Thin,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,8,4,5,60,60,0,1",
          "Style: Brand,Montserrat Thin,40,&H50FFFFFF,&H50FFFFFF,&H70000000,&H00000000,0,0,0,0,100,100,2,0,1,3,0,5,40,40,0,1",
          # the page's own voice (notes): brand-yellow box, black bold text, smaller than the hook
-         "Style: Note,Montserrat ExtraBold,50,&H00111111,&H00111111,&H0030D8FF,&H0030D8FF,0,0,0,0,100,100,0,0,3,16,0,5,90,90,0,1",
+         # font family inside assets/fonts/Montserrat-ExtraBold.ttf is "Montserrat Thin" (style ExtraBold): "Montserrat
+         # ExtraBold" matched nothing and fell back to a thin system font (19 Nov test frames)
+         "Style: Note,Montserrat Thin,60,&H00111111,&H00111111,&H0030D8FF,&H0030D8FF,0,0,0,0,100,100,0,0,3,20,0,5,80,80,0,1",
          "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
     if brand:
         # 19 Nov (owner: "did you add our branding?"): a small, see-through handle the whole clip, under the captions and
@@ -375,7 +388,7 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None):
             e = dur if gi == len(segs) - 1 else g["e"]
             L.append(f"Dialogue: 2,{_ts(g['s'])},{_ts(e)},Hook,,0,0,0,,{{\\pos({W // 2},{HOOK_Y[g['layout']]})}}{esc(hook.upper())}")
     for st, en, txt, kind in notes or []:
-        y = HOOK_Y[lay_at(st)] + (150 if hook else 0)
+        y = HOOK_Y[lay_at(st)] + (170 if hook else 0)
         L.append(f"Dialogue: 3,{_ts(st)},{_ts(en)},Note,,0,0,0,,{{\\pos({W // 2},{y})\\fscx80\\fscy80\\t(0,120,\\fscx100\\fscy100)"
                  f"\\fad(80,120)}}{esc(txt)}")
     groups, cur = [], []

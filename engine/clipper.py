@@ -54,8 +54,12 @@ what show or game / why this moment matters, with a fact the clip itself does no
 to the exact words it follows ("after": 3-6 words copied EXACTLY from the speech). Each note 3-8 words, says something
 the viewer is thinking (a joke, an opinion, a "wait for it", a fact), NEVER repeats or describes what is being said,
 never negative about the brand, show, game or person, never a lie, no emojis, no hashtags.
+The CONTEXT note must name WHO (the person / show / game by name) plus one SPECIFIC fact: a year, a number, where it
+aired, why it blew up ("Anjelah Johnson, 2007: this bit made her famous"). REACT notes are what a fan would type in
+the comments at that exact second ("Bhai ye kya hai?" on MC Stan: 13.6M views; "her teary eyes say it all": 17M).
 Good: "Cheaper than therapy, honestly" / "He did NOT see that coming" / "This scene took 9 months to film".
-Bad: "Jo Koy talks about dogs" (describes) / "LOL" (empty) / "Worst show ever" (negative).
+Bad: "Jo Koy talks about dogs" (describes) / "LOL" (empty) / "Worst show ever" (negative) / "The most famous part of
+the set", "The pressure is real", "Iconic moment" (vague: says nothing a fan would say).
 Return JSON:
 {{"moments": [{{"start": "<MM:SS where the hook begins>", "end": "<MM:SS where the payoff ends>", "hook": "<hook title>",
    "why": "<why people will watch to the end, one line>",
@@ -255,10 +259,21 @@ Return JSON {{"moments": [{{"start": <seconds where the hook line begins>, "end"
            {{"after": "<3-6 words copied exactly from the transcript>", "text": "<react note>", "kind": "react"}}]}}]}}"""
 
 
+VAGUE = re.compile(r"\b(iconic|legendary|famous part|best part|classic moment|the moment|pressure is real|so relatable|"
+                   r"this is (it|gold)|must watch|amazing|incredible)\b", re.I)
+
+
 def _notes(m):
+    """19 Nov test: 'The most famous part of the set' got through. A context note needs a real name (a capitalised word
+    after the first one) or a number; a vague phrase anywhere drops the note."""
     out = []
     for n in (m.get("notes") or [])[:4]:
         if isinstance(n, dict) and str(n.get("text") or "").strip():
+            t = str(n["text"])
+            if VAGUE.search(t):
+                continue
+            if n.get("kind") == "context" and not (re.search(r"\d", t) or re.search(r"\s[A-Z][a-z]", t)):
+                continue
             out.append({"after": str(n.get("after") or "")[:80], "text": re.sub(r"[#\U0001F000-\U0001FFFF]", "", str(n["text"])).strip()[:80],
                         "kind": "context" if n.get("kind") == "context" else "react"})
     return out
