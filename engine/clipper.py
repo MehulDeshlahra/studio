@@ -256,11 +256,15 @@ def find_moments(ch, url, n, info, source=None):
             continue
         sc = m.get("score") if isinstance(m.get("score"), dict) else {"hook": m.get("score") or 5}
         total = round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2)
-        near = any(x["at"] - 25 <= b and a <= x["until"] + 5 for x in pk)
+        hits = [x["replay"] for x in pk if x["at"] - 25 <= b and a <= x["until"] + 5]
+        near = bool(hits)
+        top = max([x["replay"] for x in pk] or [1]) or 1
         ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200], "score": total,
-                   "scores": sc, "replayed": near, "caption": str(m.get("caption") or "")[:300],
+                   "scores": sc, "replayed": near, "heat": round(max(hits or [0]) / top, 2), "caption": str(m.get("caption") or "")[:300],
                    "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6], "notes": _notes(m)})
-    ms.sort(key=lambda m: -(m["score"] + (1.0 if m["replayed"] else 0)))     # a replayed moment gets a bonus
+    # a replayed moment gets a bonus by HOW replayed (19 Nov: a 0.91 peak lost to 0.27 ones, the flat +1 treated them alike)
+    ms.sort(key=lambda m: -(m["score"] + 2.0 * m.get("heat", 0)))
+    log("clipper: proposed", [(mmss(m["a"]), m["score"], m.get("heat")) for m in ms])
     return ms[:n], pk
 
 
