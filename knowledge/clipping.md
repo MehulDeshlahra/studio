@@ -130,3 +130,22 @@ Paid SaaS doing the same: OpusClip, Vizard, Klap, Submagic (not used: Rs 0 rule)
   country (KYC). Content Rewards is the platform that works for us.
 - Content Rewards accounts 19 Nov: @cut.capsule YT, @cutcapsule IG/FB/X, @cutcapsule.gaming IG/FB, @cutcapsule.tv IG/FB
   all Connected (FB verified by a code Reel posted through the API).
+
+## What winning clip pages add (19 Nov study: top YouTube clip Shorts of the last 30 days, Gemini watched each)
+Data: 149 Shorts found in 10 niche searches; 16 watched; clip pages among them, views in 30 days:
+- Btalk Radar 17.3M, 15 s: STORY told by its own overlays ("Rashmika was waiting for Vijay to offer the bottle...",
+  then "her teary eyes says it all"), red circle on the person, zoom, sad music. The page invents the narrative.
+- Abuzar Core 13.6M, 19 s (MC Stan, India's Got Latent): hook "MC Stan ne show pe kya nikal diya?" + a REACTION overlay
+  "Bhai ye kya hai?" for the rest. Single moment, loops.
+- Kohsa Edit 12.1M, 22 s: one framing line "SAMAY WAS RICH", a reaction cut to the judges, sticker, remix song.
+- theRawTRex 9.2M, 18 s (CoD MW4): split screen "IN GAME" vs "IN REAL", a comparison the original never had.
+- Stunt Master 22.8M, 15 s: GTA 6 "30fps vs 60fps" labels over gameplay: the debate is the hook.
+- stand-up pages: 75-178 s single bits with split screen comedian / audience reactions also win (long is fine there).
+Rules we took (engine/clipper.py + clipcore.py, shipped 19 Nov):
+1. Our own text layer on every clip ("notes": 1 context + 2 reactions tied to the exact spoken words), held if fewer
+   than 2 land (originality: Instagram/YouTube stop recommending re-uploads without material edits).
+2. Length by type: reaction / one moment 15-25 s ending on the payoff (loops); stories / stand-up 30-55 s.
+3. Hook text stays on screen for the whole clip (all winners keep the framing line up).
+Next ideas (not built yet): comparison formats for gaming (game vs real, old vs new), a reaction cut-in when the
+footage has audience/judge shots, a punch-in zoom on the payoff word, brand-allowed music only.
+Brand safety: no astrology / tantra / remedy clips (Tarun Sharma Show paused 19 Nov); reposting campaigns score 0.
