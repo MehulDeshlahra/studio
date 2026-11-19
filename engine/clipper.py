@@ -605,7 +605,12 @@ def make(cid, url, n=4, test=False, campaign=None):
     log("clipper: replay peaks", [(mmss(p["at"]), p["replay"]) for p in pk])
     log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
     brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")    # campaigns that say "no watermark"
-    if ch.get("kind") == "clips":
+    try:
+        import clipcore as _cc
+        on_screen = getattr(_cc, "NOTES_ON_SCREEN", True)
+    except Exception:
+        on_screen = True
+    if ch.get("kind") == "clips" and on_screen:      # 19 Nov: notes are off screen (benchmark) -> no notes pass
         ms = exact_notes(ch, src, url, info.get("id"), ms, base, info)
         # every path (also when the exact-words pass failed): a context note naming something the video facts do not hold
         # is dropped (the react notes stay; fewer than 2 notes -> the clip is held later)
