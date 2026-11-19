@@ -164,7 +164,7 @@ def adopt_joined(st):
         nb[(v.get("brand") or "").lower()] = nb.get((v.get("brand") or "").lower(), 0) + 1
     sk = st.get("skipped") or {}
     mine = [k for k, v in camp.items() if v.get("title") and k not in have and
-            time.time() - (sk.get(k) or {}).get("t", 0) > 86400 and
+            time.time() - (sk.get(k) or {}).get("t", 0) > 7 * 86400 and
             (v["title"][:40].lower() in low or k in text or
              (v.get("brand") and nb.get(v["brand"].lower()) == 1 and f"joined\n{v['brand'].lower()}\n" in low))]
     log("whopbot: joined by the owner without a source:", [camp[k]["title"] for k in mine])
