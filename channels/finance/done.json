@@ -65,8 +65,11 @@
   "status": "held",
   "offer": "GUIDE",
   "review": [
+   "owner agent: Fix Scene 6: Correct the text to align with the script (Pvt Ltd allows funding, others do not) and ensure no text overlaps the frame edge.",
    "visual: Scene 6 (Funding): Text says 'Sirf Pvt Ltd LLP' which mixes up the entities and contradicts the voiceover and scene script ('Sirf Pvt Ltd — LLP limited, Proprietorship impossible')."
-  ]
+  ],
+  "mehul_rebuilt": "2026-11-19",
+  "replan_requested": "2026-11-19 22:33"
  },
  {
   "job": "1119-0429",
@@ -75,8 +78,11 @@
   "qc_ok": true,
   "status": "held",
   "review": [
+   "owner agent: Fix Scene 3: Adjust the bottom card padding to prevent text cut-off at the frame edge.",
    "before render, scene 3: CUT: bottom card text slightly overlapping or cut off near the frame edge"
-  ]
+  ],
+  "mehul_rebuilt": "2026-11-19",
+  "replan_requested": "2026-11-19 22:33"
  },
  {
   "job": "1119-0426-p1",

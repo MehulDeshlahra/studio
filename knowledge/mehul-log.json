@@ -73,5 +73,67 @@
    "code task (the healer works on it): engine/align.py: Fix the voice-to-script alignment bug that causes partial audio mapping errors and English accent slips in Hindi text-to-speech."
   ],
   "dry": false
+ },
+ {
+  "t": "2026-11-19 22:33",
+  "page": "finance",
+  "score": 6,
+  "verdict": "The content depth is improving with the multi-part structure, but the recurring visual alignment and text-overlap issues in the layout engine are unacceptable for a professional page.",
+  "did": [
+   "asked the healer to re-plan 1119-0426-p2: Fix Scene 6: Correct the text to align with the script (Pvt Ltd allows funding, ",
+   "asked the healer to re-plan 1119-0429: Fix Scene 3: Adjust the bottom card padding to prevent text cut-off at the frame",
+   "code task (the healer works on it): engine/compose.py: Implement a 5% safety margin buffer on all sides for text rendering to prevent any future overlapping or cut-off issues.",
+   "rule: For all complex comparisons (e.g., tax structures, investment assets), the second part must include a clear, readable table or side-by-side comparison frame to ensure the viewer can digest the data."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-19 22:36",
+  "page": "jain",
+  "score": 3,
+  "verdict": "The visual generation for Navkar Bhav is consistently failing to respect Jain iconography, defaulting to generic Hindu tropes which is unacceptable for this page.",
+  "did": [
+   "asked the healer to re-plan 1119-0935: Fix iconography: Bahubali must have natural skin tone, no Hindu-god jewellery, a",
+   "asked the healer to re-plan 1119-0305: Fix iconography: Monks must wear plain white robes; remove Mughal/Islamic onion ",
+   "asked the healer to re-plan 1119-0335: Fix iconography: Remove all Hindu-style deity features (many arms, green skin, h",
+   "code task (the healer works on it): Update engine/muse.py: Add a strict negative prompt for Jain content: 'no blue skin, no crowns, no saffron robes, no domes, no Hindu jewellery, no tilak, white robes only for monks, simple aesthetic, no multi-armed deities'."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-19 22:38",
+  "page": "katha",
+  "score": 7,
+  "verdict": "The inclusion of real temple photos for Mallikarjun is a massive win for authenticity, but architectural hallucinations in the Ujjain video and text-fit errors on the Karna story show we are still letting 'AI slop' slip through the cracks.",
+  "did": [
+   "rule: When generating ancient Indian cities or temples, prompts must explicitly exclude minarets, bulbous domes, and Islamic architectural elements; use only stone-carved shikharas and mandapas.",
+   "code task (the healer works on it): Update engine/preflight.py to perform a keyword scan on the first 5 seconds of generated audio to detect and block prompt-leakage (e.g., 'Say in Hindi', 'Warm storyteller').",
+   "rule: Remove all pure English top-corner labels like 'DIVINE JUSTICE'; use Hinglish or context-specific Hindi keywords that match the page's aesthetic."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-19 22:42",
+  "page": "raaz",
+  "score": 6,
+  "verdict": "Visuals are sharp, but the end-card compliance is poor and the use of my name in scripts is a direct violation of the rules.",
+  "did": [
+   "rule: Every video must end with the exact text 'Kal ek nayi kahani. Follow karo.' on the final frame; no 'Comments mein batao', 'Part X mein', or other custom CTAs are allowed.",
+   "code task (the healer works on it): engine/plan.py: Implement a character name validator that cross-references the script against a blocklist of owner/staff names to prevent them from appearing in fiction."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-19 22:46",
+  "page": "tech",
+  "score": 6,
+  "verdict": "Technical quality is stabilizing, but factual errors in the chip video and speculative content in the GTA 6 script show that our pre-flight research and visual verification are still failing.",
+  "did": [
+   "asked the healer to re-plan 1118-2205: Fix Scene 3: Change 'Diamond' label to 'Silicon Ingot'. Fix Scene 7: Remove the ",
+   "rule: Every technical graphic must be cross-referenced with the script's specific terminology before render; no generic placeholders or unstyled boxes allowed.",
+   "code task (the healer works on it): Update engine/review.py to include a visual check for 'unformatted white boxes' or 'placeholder text'—if detected, trigger an automatic hold.",
+   "setting schedule.posts_per_day: 2 -> 1 (Focus on fixing the factual and visual quality of the chip video before increasi)"
+  ],
+  "dry": false
  }
 ]

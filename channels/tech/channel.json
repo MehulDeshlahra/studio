@@ -1,109 +1,109 @@
 {
-  "id": "tech",
-  "name": "Kaise Tech",
-  "status": "pilot",
-  "language": "Hinglish (Roman script captions)",
-  "format": "One curiosity question ('X kaise kaam karta hai?'), one visual metaphor, 30-60 s, speech from frame 0",
-  "voice": {
-    "engine": "gemini-3.8-flash-tts",
-    "voice": "Charon",
-    "style": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end; speak slightly slower than a normal fast reel, with clear pauses between sentences",
-    "one_request_per_reel": true,
-    "style_en": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end; speak slightly slower than a normal fast reel, with clear pauses between sentences"
-  },
-  "visuals": {
-    "primary": "muse",
-    "fallback": [
-      "pollinations/flux",
-      "hf-ltx",
-      "kaggle-wan2.2"
-    ],
-    "look": "photorealistic premium studio product render on pure black",
-    "cast": "no characters: real objects, numbers, UI, charts, flows"
-  },
-  "edit": {
-    "size": "1080x1920",
-    "fps": 30,
-    "lufs": -14,
-    "true_peak": -1.5,
-    "captions": "3-word chunks, spoken word lit, keywords yellow",
-    "text_band_px": [
-      168,
-      1330
-    ],
-    "max_s_per_visual_idea": 8,
-    "wps": 2.5,
-    "length_s": [
-      25,
-      65
-    ]
-  },
-  "rules": [
-    "no on-screen AI label",
-    "every fact sourced in sources.json",
-    "no guessed specs/prices/numbers",
-    "research before every video (knowledge/PREFLIGHT.md)",
-    "news: verify with 2+ trusted sources before making anything; never invent or assume an event"
+ "id": "tech",
+ "name": "Kaise Tech",
+ "status": "pilot",
+ "language": "Hinglish (Roman script captions)",
+ "format": "One curiosity question ('X kaise kaam karta hai?'), one visual metaphor, 30-60 s, speech from frame 0",
+ "voice": {
+  "engine": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end; speak slightly slower than a normal fast reel, with clear pauses between sentences",
+  "one_request_per_reel": true,
+  "style_en": "curious, warm, energetic young Indian tech explainer talking to a friend; surprise at the reveal, playful at the end; speak slightly slower than a normal fast reel, with clear pauses between sentences"
+ },
+ "visuals": {
+  "primary": "muse",
+  "fallback": [
+   "pollinations/flux",
+   "hf-ltx",
+   "kaggle-wan2.2"
   ],
-  "schedule": {
-    "posts_per_day": 2,
-    "approve_first": 10,
-    "backlog": 10
-  },
-  "accounts": {
-    "instagram": null,
-    "facebook_page": null,
-    "youtube": null
-  },
-  "topics_backlog": [
-    "UPI paisa 2 second mein kaise pahunchta hai",
-    "WiFi deewar ke paar kaise jaata hai",
-    "Phone garam kyun hota hai",
-    "Fingerprint unlock kaise kaam karta hai",
-    "'Hey Google' phone kaise sunta hai",
-    "Fast charging phone ko kharab karti hai kya",
-    "GPS ko kaise pata ki aap kahan ho",
-    "OTP kaise banta hai"
+  "look": "photorealistic premium studio product render on pure black",
+  "cast": "no characters: real objects, numbers, UI, charts, flows"
+ },
+ "edit": {
+  "size": "1080x1920",
+  "fps": 30,
+  "lufs": -14,
+  "true_peak": -1.5,
+  "captions": "3-word chunks, spoken word lit, keywords yellow",
+  "text_band_px": [
+   168,
+   1330
   ],
-  "theme": {
-    "bg": "#050b1a",
-    "accent": "#f5c542",
-    "accent2": "#46d1ff",
-    "font": "Archivo Black",
-    "music": "music/deep-urban.mp3",
-    "music_offset": 8,
-    "style": "lab",
-    "film": true
-  },
-  "handle_instagram": "@kaise.tech",
-  "handle_youtube": "@kaise.tech.official",
-  "handle_en": "",
-  "pillars": [
-    "Kaise kaam karta hai: everyday tech explained with one visual idea (UPI, WiFi, GPS, battery)",
-    "AI kaise: how AI tools work and how to use them (ChatGPT, Gemini, image/video AI) with real screen captures",
-    "AI ka naya: new AI launches explained in 30-45 s, why it matters for you (sourced)",
-    "Tech raaz: myths and hidden features (fast charging, airplane mode, incognito)",
-    "Free tool of the day: one free AI/GitHub tool that replaces a paid one (real demo)",
-    "Tech news, samjho: big tech/AI news (CEO changes, launches, bans, AI rules) explained in 30-45 s; only verified facts from 2+ trusted sources named on screen; real official visuals, no AI fakes of real people; neutral tone, no speculation; no politics/general news"
-  ],
-  "handle": "@kaise.tech",
-  "locked": "2026-11-16",
-  "english": false,
-  "warmup": {
-    "post_from": "2026-11-20",
-    "one_a_day_until": "2026-11-27",
-    "note": "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
-  },
-  "youtube": "@kaise.tech.official",
-  "offers": {
-    "on": true,
-    "every": 4,
-    "kinds": [
-      "sheet"
-    ]
-  },
-  "visual_checks": [
-    "Does a frame show a wrong or fake logo for the brand it names?",
-    "Is any frame a near-empty box, card or placeholder block where the line explains something?"
+  "max_s_per_visual_idea": 8,
+  "wps": 2.5,
+  "length_s": [
+   25,
+   65
   ]
+ },
+ "rules": [
+  "no on-screen AI label",
+  "every fact sourced in sources.json",
+  "no guessed specs/prices/numbers",
+  "research before every video (knowledge/PREFLIGHT.md)",
+  "news: verify with 2+ trusted sources before making anything; never invent or assume an event"
+ ],
+ "schedule": {
+  "posts_per_day": 1,
+  "approve_first": 10,
+  "backlog": 10
+ },
+ "accounts": {
+  "instagram": null,
+  "facebook_page": null,
+  "youtube": null
+ },
+ "topics_backlog": [
+  "UPI paisa 2 second mein kaise pahunchta hai",
+  "WiFi deewar ke paar kaise jaata hai",
+  "Phone garam kyun hota hai",
+  "Fingerprint unlock kaise kaam karta hai",
+  "'Hey Google' phone kaise sunta hai",
+  "Fast charging phone ko kharab karti hai kya",
+  "GPS ko kaise pata ki aap kahan ho",
+  "OTP kaise banta hai"
+ ],
+ "theme": {
+  "bg": "#050b1a",
+  "accent": "#f5c542",
+  "accent2": "#46d1ff",
+  "font": "Archivo Black",
+  "music": "music/deep-urban.mp3",
+  "music_offset": 8,
+  "style": "lab",
+  "film": true
+ },
+ "handle_instagram": "@kaise.tech",
+ "handle_youtube": "@kaise.tech.official",
+ "handle_en": "",
+ "pillars": [
+  "Kaise kaam karta hai: everyday tech explained with one visual idea (UPI, WiFi, GPS, battery)",
+  "AI kaise: how AI tools work and how to use them (ChatGPT, Gemini, image/video AI) with real screen captures",
+  "AI ka naya: new AI launches explained in 30-45 s, why it matters for you (sourced)",
+  "Tech raaz: myths and hidden features (fast charging, airplane mode, incognito)",
+  "Free tool of the day: one free AI/GitHub tool that replaces a paid one (real demo)",
+  "Tech news, samjho: big tech/AI news (CEO changes, launches, bans, AI rules) explained in 30-45 s; only verified facts from 2+ trusted sources named on screen; real official visuals, no AI fakes of real people; neutral tone, no speculation; no politics/general news"
+ ],
+ "handle": "@kaise.tech",
+ "locked": "2026-11-16",
+ "english": false,
+ "warmup": {
+  "post_from": "2026-11-20",
+  "one_a_day_until": "2026-11-27",
+  "note": "new accounts: profile + manual engagement 17-19 Nov, 1 reel/day (20:00) 20-26 Nov, then 2/day"
+ },
+ "youtube": "@kaise.tech.official",
+ "offers": {
+  "on": true,
+  "every": 4,
+  "kinds": [
+   "sheet"
+  ]
+ },
+ "visual_checks": [
+  "Does a frame show a wrong or fake logo for the brand it names?",
+  "Is any frame a near-empty box, card or placeholder block where the line explains something?"
+ ]
 }

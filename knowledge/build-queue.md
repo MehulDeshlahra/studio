@@ -3297,3 +3297,8 @@
 - [x] 19-Nov 19 Nov 18:00 whopbot bug fixed: a generic campaign title ('Clipping Campaign') matched page text, the bot joined Laud Have Mercy itself and logged 'joined by the owner'; now only real Joined cards count
 - [x] 19-Nov 19 Nov 18:00 clipper: videos over 40 min or a failed watch use the transcript path (render 13: no model could watch a 65-min set)
 - [x] 19-Nov 19 Nov 21:45 footage fixes: Hindi clip results utf-8 (every cutcapsulehindi clip failed on charmap), Drive files without extension (Laud Have Mercy), gdown 6.5 id= not fuzzy, Frame.io folders opened (RZA: 2 files grabbed in test); clipwatch Telegram only after 3 fails per link
+- [ ] [mehul] 19 Nov finance: engine/compose.py: Implement a 5% safety margin buffer on all sides for text rendering to prevent any future overlapping or cut-off issues.
+- [ ] [mehul] 19 Nov jain: Update engine/muse.py: Add a strict negative prompt for Jain content: 'no blue skin, no crowns, no saffron robes, no domes, no Hindu jewellery, no tilak, white robes only for monks, simple aesthetic, no multi-armed deities'.
+- [ ] [mehul] 19 Nov katha: Update engine/preflight.py to perform a keyword scan on the first 5 seconds of generated audio to detect and block prompt-leakage (e.g., 'Say in Hindi', 'Warm storyteller').
+- [ ] [mehul] 19 Nov raaz: engine/plan.py: Implement a character name validator that cross-references the script against a blocklist of owner/staff names to prevent them from appearing in fiction.
+- [ ] [mehul] 19 Nov tech: Update engine/review.py to include a visual check for 'unformatted white boxes' or 'placeholder text'—if detected, trigger an automatic hold.

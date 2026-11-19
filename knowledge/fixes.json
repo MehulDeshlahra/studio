@@ -151,5 +151,14 @@
   "first": "2026-11-19 20:22",
   "last": "2026-11-19 20:22",
   "example": "19 Nov audit: the story is about Brahma's FIFTH head, but Brahma is drawn with one head in every scene (8s, 22s, 28s): show Brahma with five heads before Bhairava's act, four after"
+ },
+ {
+  "sig": "before render, scene #: cut: text in the ui rows box on the right is cut off at the bottom",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-19 21:52",
+  "last": "2026-11-19 21:52",
+  "example": "before render, scene 6: CUT: text in the ui rows box on the right is cut off at the bottom"
  }
 ]

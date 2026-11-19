@@ -974,5 +974,127 @@
     "score": 3.65
    }
   ]
+ },
+ {
+  "t": "2026-11-19 22:25",
+  "picked": "What lives inside a potato that makes Jains refuse all root vegetables? The microscopic ahimsa science. (source: Acharanga Sutra / Agam)",
+  "ideas": [
+   {
+    "topic": "What lives inside a potato that makes Jains refuse all root vegetables? The microscopic ahimsa science. (source: Acharanga Sutra / Agam)",
+    "note": "",
+    "search": "why Jains don't eat root vegetables ahimsa",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 7.0,
+    "median_views": 638524,
+    "fresh": 5.6,
+    "score": 7.42
+   },
+   {
+    "topic": "Why did the first Tirthankara Rishabhanatha fast for 400 days — and who finally offered the perfect alms? (source: Adipurana / Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Rishabhanatha first alms 400 days fast",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.0,
+    "score": 5.75
+   },
+   {
+    "topic": "Why did monk Aimutta carry a goat on his shoulders for miles — and what past-life debt did it repay? (source: Uttaradhyayana Sutra)",
+    "note": "",
+    "search": "Aimutta Muni goat past life story",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 5.62
+   },
+   {
+    "topic": "Why did a poor layman's single grain of rice outweigh a king's golden offering in the celestial scales? (source: Trishashti-shalaka-purusha-charitra / Agam)",
+    "note": "",
+    "search": "Punyashravak single grain rice offering",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.8,
+    "score": 5.56
+   },
+   {
+    "topic": "Why did Mahavira accept food only from Chandanbala — a shackled, enslaved princess — after a 6-month fast? (source: Kalpasutra)",
+    "note": "",
+    "search": "Chandanbala Mahavira fast breaking alms",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 1.5,
+    "median_views": 3838,
+    "fresh": 5.1,
+    "score": 4.85
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1530,
+    "fresh": 6.7,
+    "score": 4.01
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 477,
+    "fresh": 7.6,
+    "score": 3.97
+   },
+   {
+    "topic": "How did King Samprati — Ashoka's forgotten grandson — build 125,000 Jain temples in just 3 years? (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "King Samprati Jain temples Ashoka grandson",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 738,
+    "fresh": 4.8,
+    "score": 3.76
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 578,
+    "fresh": 6.5,
+    "score": 3.75
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 678,
+    "fresh": 6.0,
+    "score": 3.65
+   }
+  ]
  }
 ]

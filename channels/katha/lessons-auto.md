@@ -422,3 +422,19 @@
 - scene 8: The caption 'NETRA SE PRAKAT' does not match the intended script line 'Shiva krodhit huye aur unke teesre netra se prakat huye Bhairava!'.
 - scene 9: The caption 'SE BRAHMA KA WO' does not match the intended script line 'Bhairava ne bas apne baayein nakhun se Brahma ka wo paanchwa sir kaat diya.'.
 - scene 10: The caption 'AUR BRAHMA KA SAARA' does not match the intended script line 'Wo sir Bhairava ke haath se chipak gaya, aur Brahma ka saara ahankaar toot gaya.'.
+
+## Karna tears off his divine armor and earrings, knowing it ma (story check)
+- STORY scene 1: invented: 'Karna tore off his 'amrit kavach' (nectar/immortal armor)': Sources call it 'kavach and kundala — divine breastplate and earrings' or 'divine armor', not 'amrit kavach'. The term ' (really: Karna was born with divine armor (kavacha) and earrings (kundala) fused to his body,
+- STORY scene 2: invented: 'The earrings (kundal) were the 'root of amrit/nectar'': No source describes the earrings as 'amrit ke mool' (root of nectar/immortality). They are part of the divine set that g (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 7: false: 'His immortality (amritva) was lost; death now came into his hands': Sources say the armor made him 'unkillable in ordinary combat' and 'could not be killed in battle'; losing it made him ' (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 10: false: 'Immortality went away, glory of charity remained': Repeats the 'amritva/immortality' mischaracterization from scene 7; the armor gave battle-invulnerability, not immortali (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1118-0735 (pre-render check)
+- CUT: title text 'INDRA KA CHHADMA' is partially clipped at the edges by the box boundary
+- FIT: big text displays 'DAAN' instead of 'MAHABHARATA' or context from the line, mismatching the voice 'Aap hote toh kya karte?'
+
+## 1118-0735 (pre-render check)
+- FIT: the big text says 'DAAN' instead of 'AMARTYA YA DAAN' in the first still
+
+## 1118-0735 (pre-render check)
+- FIT: big text says DAAN instead of AMARTYA YA DAAN in the first still

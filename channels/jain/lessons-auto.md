@@ -192,3 +192,6 @@
 ## 1119-0215 (pre-render check)
 - FIT: Caption says 'se aaya' and 'raja ki godi' but the visual shows only the pigeon flying in the courtyard with no king or lap visible yet
 - DUP: Both stills show identical caption text 'KASAI SE MAANS' instead of progressing through the line
+
+## What lives inside a potato that makes Jains refuse all root  (story check)
+- STORY scene 1: false: 'Ek aloo mein hazaron chhote jeev rehte hain': Jain scripture defines potatoes as anantkay, containing 'infinite' (anant) souls, not just 'thousands'. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)

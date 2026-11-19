@@ -124,9 +124,12 @@
   "title": "Chip banta kaise hai? Ret se supercomputer tak.",
   "status": "held",
   "review": [
+   "owner agent: Fix Scene 3: Change 'Diamond' label to 'Silicon Ingot'. Fix Scene 7: Remove the unstyled white box and replace it with an actual photo of an ASML EUV machine.",
    "visual: Scene 3 shows 'Diamond' as the headline while the voiceover and text describe silicon ingots and wafer slices, making the content factually incorrect.",
    "visual: Scene 7 shows an abrupt, unstyled white box with 'ASML' branding that breaks the visual consistency of the tech aesthetic."
-  ]
+  ],
+  "mehul_rebuilt": "2026-11-19",
+  "replan_requested": "2026-11-19 22:46"
  },
  {
   "job": "1119-0551",

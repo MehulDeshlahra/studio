@@ -30,13 +30,15 @@
   "qc_ok": true,
   "status": "held",
   "review": [
+   "owner agent: Fix iconography: Monks must wear plain white robes; remove Mughal/Islamic onion domes and replace with ancient Indian or simple stone architecture.",
    "visual: Jain monks are depicted wearing saffron/orange/red robes instead of plain white (seen in multiple scenes including Scene 1, 2, 4, 5, 6, 8, 9, etc.).",
    "visual: Mughal/Islamic architecture with prominent onion domes and arches is used throughout the video for a Jain-themed spiritual reel.",
    "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> All scenes (onion domes and arches throughout the background).",
    "visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 1, 2, 4, 5, 6, 8, 9 (monks wearing orange/saffron robes).",
    "visual score 4/10"
   ],
-  "replan_requested": "2026-11-19 15:51"
+  "replan_requested": "2026-11-19 22:36",
+  "mehul_rebuilt": "2026-11-19"
  },
  {
   "job": "1119-0335",
@@ -44,10 +46,12 @@
   "title": "Jalte lakdi mein saanp phansa tha",
   "status": "held",
   "review": [
+   "owner agent: Fix iconography: Remove all Hindu-style deity features (many arms, green skin, horns, red tilak) from Tirthankara and Naga depictions.",
    "19 Nov audit: Dharanendra (male naga king) drawn as a many-armed female Hindu-style deity (22s)",
    "Parshvanatha idol with green skin and horns (29s); idol with red tilak, jewellery and a cartoon snake (43s): a Tirthankara is plain, serene, natural skin tone, seven-hooded serpent canopy, no ornaments"
   ],
-  "replan_requested": "2026-11-19 15:51"
+  "replan_requested": "2026-11-19 22:36",
+  "mehul_rebuilt": "2026-11-19"
  },
  {
   "job": "1119-0935",
@@ -55,9 +59,11 @@
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
   "status": "held",
   "review": [
+   "owner agent: Fix iconography: Bahubali must have natural skin tone, no Hindu-god jewellery, and simple, dignified appearance.",
    "19 Nov audit: Bahubali drawn with blue skin and Hindu-god jewellery (scene 1, 49s): wrong Jain iconography"
   ],
-  "replan_requested": "2026-11-19 15:51"
+  "replan_requested": "2026-11-19 22:36",
+  "mehul_rebuilt": "2026-11-19"
  },
  {
   "job": "1119-1015",
