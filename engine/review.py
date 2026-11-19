@@ -78,6 +78,15 @@ Report ONLY real, visible problems a viewer would notice:
 - garbled or fake letters inside the generated images, watermarks
 - broken anatomy (extra fingers, melted faces), ugly artefacts, a frame that doesn't fit its line
 - wrong language on screen, missing end card when a handle is given
+- 19 Nov (owner: the WhatsApp AI agent reel got 10/10 here and was "not top notch"): judge the CONTENT too, as a top
+  creator would before posting:
+  * a frame that does not SHOW what its line says (line about a calendar check, frame shows a blank terminal; line about
+    languages, frame shows fireworks) = serious when it happens in 2+ scenes
+  * an empty or near-empty UI card, chat bubble or box (a panel with no text, a bubble with a grey bar, a big empty caption
+    box with one word) = serious
+  * a caption that shows a single word for a long stretch, or words that clearly lag or run ahead of the scene = serious
+  * a "how it works" video whose frames never show the mechanism (only logos, icons and feature words) = serious
+  * the same picture or layout repeated across 3+ scenes = minor
 - a god, goddess or sacred figure shown wrongly or disrespectfully (wrong gender or form, revealing clothes, mocking), or a
   split / collage picture where one scene was meant (18 Nov: a generated Kartikeya came out as a woman)
 Return JSON {{"score": 1-10, "serious": ["..."], "minor": ["..."]}} (serious = must fix before posting)."""
@@ -155,6 +164,11 @@ def review(cid, job):
     checks["alignment"] = cover
     if cover < 0.8:
         probs.append(f"only {cover:.0%} of the script was found in the voice")
+    try:                                    # 19 Nov: 83 % matched but the captions were visibly out of sync (WhatsApp reel)
+        import align
+        probs += align.sync_problems(tj.get("lines") or [])[:2]
+    except Exception as e:
+        log("review: sync check skipped", str(e)[:100])
     # 6b blank stretch (17 Nov: a clip ended early and left ~1 s of empty frame; the 2-frames-per-scene sheet missed it):
     #    every 0.25 s, look at the picture area above the captions; nearly flat for 0.75 s+ = blank
     try:

@@ -60,6 +60,7 @@ SCHEMA = """{
  "title": "the curiosity question as the viewer would ask it",
  "hooks": ["hook option 1", "hook option 2", "hook option 3"], "hook_choice": 0, "hook_why": "why this one",
  "metaphor": "the ONE visual idea that explains the topic",
+ "mechanism": ["for HOW/WHY topics: the 3-6 real steps of how it works, in order, from the research sources (e.g. 'message hits Meta's servers', 'webhook sends it to the business server', 'LLM reads it with the chat history', 'LLM picks a tool: calendar', 'server runs the tool', 'reply goes back'); empty for stories"],
  "cast": {"<name>": "fixed visual description reused verbatim in every prompt that shows this character"},
  "scenes": [
   {"vo": "spoken line (Roman script)", "type": "image|clip|flow|card",
@@ -260,6 +261,13 @@ REQUIREMENTS
 - One new piece of information per scene. The same visual idea never repeats. Max 8 s per idea.
 - Explain the mechanism simply with the ONE metaphor, in order, so a 14-year-old understands.
 - The last scene: a short payoff + a question the viewer answers in comments.
+- HOW/WHY topics (19 Nov, owner: the WhatsApp AI agent reel listed features like an advert and never showed how it works):
+  fill "mechanism" first from the RESEARCH sources, then the middle of the script walks those steps IN ORDER, one scene per
+  step, each with a visual that shows that exact step (the message travelling, the step lighting up in a flow, the tool
+  being called). The viewer must be able to retell the steps afterwards. Feature lists, benefits and hype ("24 ghante ka
+  team", "business khush") are at most ONE line, after the mechanism.
+- Never speak "Follow @handle" or "follow for more": the end card shows the handle. No numbers or counts unless the
+  research sources state them (if a source says 3 billion, never write 2 billion from memory).
 {EXAMPLE}
 - On-screen titles are for the VIEWER (e.g. "BALANCE CHECK", "2 SECOND MEIN"), never production labels
   like "ask audience", "hook", "outro". Leave most titles empty; use 3-5 titles per video.
@@ -323,6 +331,10 @@ PLAN:
         plan = fresh_fix(plan, research_text)
     except Exception as e:
         log("freshness check skipped:", str(e)[:120])
+    try:
+        plan = explainer_gate(ch, topic, plan, research_text, W0, W1)
+    except Exception as e:
+        log("explainer gate skipped:", str(e)[:120])
     if ch.get("numbers_check"):                    # 18 Nov (finance 1118-2228 said Rs 50k -> Rs 1,02,000 with Rs 5k/month paid)
         for rnd in range(3):                       # 19 Nov: 2 fix rounds (one was not enough for unsourced claims)
             probs = numbers_check(plan, _fact_sources(ch, topic, research_text), strict=bool(ch.get("facts_strict")))
@@ -728,6 +740,56 @@ def lab_fix(plan, phone=False):
     return plan
 
 
+CTA_RX = re.compile(r"^\s*(follow|subscribe)\b[^.?!]*(@\w|for more)[^.?!]*[.!]?\s*$", re.I)   # a whole line that is only a follow ask
+HOWWHY_RX = re.compile(r"\b(kaise|kyun|kyon|kya hota|how|why|samjho|explained|matlab kya)\b", re.I)
+
+
+def explainer_gate(ch, topic, plan, research_text, W0, W1):
+    """19 Nov (owner: the WhatsApp AI agent reel 'is not top notch', the reviewer gave it 10/10). The editor pass fixes form
+    (hook, line length); nothing checked that a 'kaise kaam karta hai' reel actually EXPLAINS. This gate grades the script
+    as a viewer would and rewrites it once when it fails: does it answer the title question, which real steps does the viewer
+    learn, which lines are filler or advert, which numbers have no source. Story pages are skipped."""
+    title = f"{plan.get('title', '')} {topic}"
+    if (ch.get("serial") or ch.get("id") in ("katha", "jain", "raaz")) or not HOWWHY_RX.search(title):
+        return plan
+    lines = "\n".join(f"{i + 1}. {s.get('vo', '')}" for i, s in enumerate(plan.get("scenes", [])))
+    g = ask(f"""You are a viewer who knows nothing about "{plan.get('title') or topic}". Read this 45 s reel script (Hinglish).
+SCRIPT:
+{lines}
+SOURCES (what is true):
+{str(research_text)[:5000]}
+Answer as JSON: {{"answers_title": true/false (after watching, can you explain HOW it works, not just WHAT it does?),
+"steps_learned": ["each concrete step of the mechanism the script actually explains, in order"],
+"missing_steps": ["the important steps a 14-year-old would still not understand, from the sources"],
+"filler": [line numbers that add no new information: hype, benefits list, repeated idea, 'follow' lines],
+"unsourced": ["numbers or claims not in the sources or out of date"], "score": 1-10}}""", max_tokens=1500) or {}
+    steps = g.get("steps_learned") or []
+    ok = g.get("answers_title") and len(steps) >= 3 and not g.get("unsourced") and len(g.get("filler") or []) <= 1 and (g.get("score") or 0) >= 8
+    log("explainer gate:", "pass" if ok else "fail", "score", g.get("score"), "steps", len(steps), "filler", g.get("filler"), "unsourced", (g.get("unsourced") or [])[:3])
+    if ok:
+        return plan
+    fixed = ask(f"""Rewrite this reel plan so it truly EXPLAINS "{plan.get('title') or topic}". A test viewer said:
+- steps they learned: {json.dumps(steps, ensure_ascii=False)}
+- steps still missing: {json.dumps(g.get('missing_steps') or [], ensure_ascii=False)}
+- filler lines (cut or replace with a mechanism step): {g.get('filler')}
+- numbers/claims with no source or out of date (fix from the SOURCES or remove): {json.dumps(g.get('unsourced') or [], ensure_ascii=False)}
+Rules: keep the hook idea and the JSON shape; fill "mechanism" with 3-6 real steps from the sources and walk them in order,
+one scene per step, each scene's visual showing that step (a flow node lighting up, the message moving, the tool card);
+at most one benefits line; no spoken 'follow' line; end with a payoff + an easy comment question; {W0}-{W1} words total;
+same channel look and scene types.
+SOURCES:
+{str(research_text)[:5000]}
+PLAN:
+{json.dumps(plan, ensure_ascii=False)}""")
+    sc = (fixed or {}).get("scenes") or []
+    words = sum(len(s.get("vo", "").split()) for s in sc)
+    if len(sc) >= 6 and W0 - 10 <= words <= W1 + 15:
+        log("explainer gate: plan rewritten,", len(sc), "scenes,", words, "words")
+        return fixed
+    log("explainer gate: rewrite unusable, keeping the plan")
+    return plan
+
+
 def clean(plan):
     clips = 0
     for s in plan["scenes"]:
@@ -749,5 +811,9 @@ def clean(plan):
         for k in ("title", "big", "small", "sub", "label"):
             if s.get(k):
                 s[k] = _no_article(s[k])
+    # 19 Nov: the planner wrote "Follow @KaiseTech for more" (wrong handle, real one is @kaise.tech) as a spoken last scene
+    # on top of the end card. A CTA scene goes; the end card already shows the page's own handle.
+    if len(plan["scenes"]) > 6:
+        plan["scenes"] = [s for s in plan["scenes"] if not CTA_RX.search(s.get("vo", ""))]
     plan["scenes"] = [s for s in plan["scenes"] if s["vo"]]
     return plan

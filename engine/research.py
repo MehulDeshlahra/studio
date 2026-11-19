@@ -103,6 +103,14 @@ def run(topic, queries, job, watch_n=3):
             for q in [short] + list(queries[1:3]):
                 if q and len(r.get("web") or "") < 500:
                     r["web"] = web.facts(q, n=3) or r.get("web") or ""
+        # 19 Nov (WhatsApp AI agent reel): the 3 articles were vendor "12 best tools" lists, so the script listed features and
+        # never said how it works. A HOW topic also reads 2 technical explainers (official docs, developer tutorials).
+        if re.search(r"\b(kaise|kyun|kyon|how|why|works?|kaam)\b", str(topic), re.I):
+            core_q = " ".join(re.sub(r"[^A-Za-z0-9 ]", " ", re.split(r"[?:(]", str(topic))[0]).split()[:6])
+            tech = web.facts(f"{core_q} how it works technically step by step", n=2)
+            if tech:
+                r["web"] = "HOW IT WORKS (technical sources; the script explains these steps):\n" + tech + "\n\n" + (r.get("web") or "")
+                log("research how-it-works:", len(tech), "chars")
         try:
             news = latest(topic, queries)
             if news:
@@ -125,5 +133,5 @@ def summary(r):
                      f"metaphor {w.get('visual_metaphor')}; works because {w.get('why_it_works')}; weak: {w.get('weak_points')}")
     if r.get("web"):
         lines.append("\nWEB SOURCES (use these for facts; every claim must agree with them; prefer their concrete details "
-                     "and numbers over generic lines):\n" + r["web"][:9000])
+                     "and numbers over generic lines):\n" + r["web"][:12000])
     return "\n".join(lines)
