@@ -28,3 +28,16 @@ Updated 2026-11-19 03:57 from 636 recorded problems on 5 pages.
 - ALWAYS ensure the script matches the spoken lines; no missing or extra parts (seen 26 times: katha, tech)
 - ALWAYS review the video for visual quality and consistency; no missing or low-quality visuals (seen 18 times: katha, raaz, tech)
 - ALWAYS ensure the video length is within the allowed range (25-55 seconds); no too short or too long videos (seen 3 times: raaz, tech)
+
+## GOLDEN RULE (19 Nov, owner, after a low-effort Finance Fuel Story went live)
+OUR CONTENT SHOULD NEVER BE LOW EFFORT. Money comes after hard work. Before doing anything: research what the best do
+and what NOT to do, think it through, ask "is this good?" and if it is only good, discard it and make it better. Ship
+only the best of the best. Every format, feature and post has research behind it (written down) and its real output
+is looked at before it goes live.
+
+## 19 Nov: the Stories that went live (Finance Fuel "myth", 2 frames)
+Plain text on black, no brand or picture, "DM karo" instead of a sticker, the answer frame posted together with the
+question (no suspense), and the answer did not answer the question (asked "send unknown money back?", answered "PIN is
+never needed to receive"). Rules: a question and its answer are checked against each other; a reveal is never posted
+in the same minute as the question; no format ships without a researched design and frames checked by eye. The API
+cannot add poll / quiz / link stickers, so automated "quiz" Stories can never be interactive.

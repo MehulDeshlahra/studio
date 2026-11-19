@@ -93,3 +93,10 @@ knowledge/lessons-learnt.md for the engine.
   page had public profile/cover "updated" posts plus verification Reels. RULE: before saying what is or is not posted,
   read the LIVE accounts (IG media + stories, FB posts/reels/stories via the Graph API: .tmp/live_check.py,
   .tmp/fb_posts.py). Never infer the live state from our own files.
+
+## 19 Nov: the Stories that went live (Finance Fuel "myth", 2 frames)
+Plain text on black, no brand or picture, "DM karo" instead of a sticker, the answer frame posted together with the
+question (no suspense), and the answer did not answer the question (asked "send unknown money back?", answered "PIN is
+never needed to receive"). Rules: a question and its answer are checked against each other; a reveal is never posted
+in the same minute as the question; no format ships without a researched design and frames checked by eye. The API
+cannot add poll / quiz / link stickers, so automated "quiz" Stories can never be interactive.

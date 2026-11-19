@@ -46,3 +46,9 @@ Built 17 Nov from everything Mehul said while building Studio. Add a line whenev
 - 19 Nov: Finance Fuel's "Insights by Certified CAs" is TRUE: his sister-in-law is a CA. Keep the claim; finance scripts
   can be reviewed by her for anything tax/regulatory before posting if a brand deal needs it.
 - 19 Nov: parent brand Scroll House (@scrollhouse.in IG + FB page 1496866050169783) linked from every page's FB/YT text.
+
+## GOLDEN RULE (19 Nov, owner, after a low-effort Finance Fuel Story went live)
+OUR CONTENT SHOULD NEVER BE LOW EFFORT. Money comes after hard work. Before doing anything: research what the best do
+and what NOT to do, think it through, ask "is this good?" and if it is only good, discard it and make it better. Ship
+only the best of the best. Every format, feature and post has research behind it (written down) and its real output
+is looked at before it goes live.
