@@ -354,7 +354,15 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
         credit = f"🎥 Credit: {who}" + (f" ({info.get('webpage_url') or url})" if (not src or src.get("credit_link", True)) else "")
         tags = list(dict.fromkeys([t for t in m["tags"] if t] + [t.lstrip("#") for t in (ch.get("hashtags_base") or [])]
                                   + GENERIC_TAGS))[:12]
-        caption = "\n\n".join(x for x in [m["caption"], (src or {}).get("caption_add") or "", credit] if x)
+        if (src or {}).get("campaign_id"):
+            # 19 Nov campaign briefs (CoD, SEGA): the disclosure (#Ad) must be the FIRST hashtag, on its own line right after
+            # the caption, and at most 3 more hashtags. So: no hashtags inside the caption text, required lines next,
+            # 3 topic tags, and no credit line (official footage, given to us to post).
+            body = re.sub(r"\s*#\w+", "", m["caption"]).strip()
+            caption = "\n".join(x for x in [body, src.get("caption_add") or ""] if x)
+            tags = [t for t in tags if t.lower() not in ("ad", "advertisement", "sponsored")][:3]
+        else:
+            caption = "\n\n".join(x for x in [m["caption"], (src or {}).get("caption_add") or "", credit] if x)
         start = round(res.get("offset", 0) + res["cut"][0], 2)
         plan = {"title": m["hook"], "topic": m["hook"], "caption": caption, "hashtags": ["#" + t for t in tags], "lang": res.get("lang", ""),
                 "clip": {"url": url, "start": start, "end": round(res.get("offset", 0) + res["cut"][1], 2), "layout": res.get("layout"),

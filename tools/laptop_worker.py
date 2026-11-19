@@ -263,6 +263,27 @@ def _fetch_any(url, dest_dir, max_files=6):
                     out.append((key, final, f))
         shutil.rmtree(tmp, ignore_errors=True)
         return out
+    if re.search(r"(^|//|\.)(f\.io|frame\.io|mediasilo\.com|wetransfer\.com|we\.tl)/", url):
+        # 19 Nov: campaign content folders on review sites (SEGA on Frame.io): tools/grab.py plays each asset in a headless
+        # browser and saves its best stream. Cached per (link, asset number): the next run reuses the files.
+        cached = [(f"f{hashlib.md5((url + str(i)).encode()).hexdigest()[:12]}", i) for i in range(max_files)]
+        have = [(k, os.path.join(dest_dir, k + ".mp4"), f"asset {i + 1}") for k, i in cached if os.path.exists(os.path.join(dest_dir, k + ".mp4"))]
+        if have:
+            return have
+        tmp = os.path.join(dest_dir, "grab-" + hashlib.md5(url.encode()).hexdigest()[:10])
+        r = subprocess.run([sys.executable.replace("pythonw.exe", "python.exe"), os.path.join(os.path.dirname(os.path.abspath(__file__)), "grab.py"),
+                            url, tmp, str(max_files)], capture_output=True, text=True, timeout=7200, creationflags=NOWIN)
+        try:
+            files = json.loads((r.stdout or "").strip().splitlines()[-1]).get("files") or []
+        except Exception:
+            raise RuntimeError("grab failed: " + (r.stderr or r.stdout or "")[-300:])
+        out = []
+        for i, (name, p) in enumerate(files):
+            k = cached[i][0]
+            os.replace(p, os.path.join(dest_dir, k + ".mp4"))
+            out.append((k, os.path.join(dest_dir, k + ".mp4"), f"asset {i + 1}"))
+        shutil.rmtree(tmp, ignore_errors=True)
+        return out
     key = "y" + hashlib.md5(url.encode()).hexdigest()[:12]
     final = os.path.join(dest_dir, key + ".mp4")
     if not os.path.exists(final):
@@ -284,8 +305,12 @@ def transcribe_job(jid, spec):
         if not items:
             raise RuntimeError("nothing downloadable at " + spec["url"][:120])
         res = []
+        skipped = []
         for key, path, name in items[: int(spec.get("max_files") or 6)]:
-            W, lang = clipcore.words(path, spec.get("lang"))
+            try:                       # 19 Nov (Daise): one file without an audio track failed the whole folder
+                W, lang = clipcore.words(path, spec.get("lang"))
+            except Exception as e:
+                skipped.append(f"{name}: {str(e)[:80]}"); log("transcribe skip", name, str(e)[:120]); continue
             lines, cur = [], []
             for w in W:                                         # ~sentence lines with a start time each
                 cur.append(w)
@@ -294,7 +319,9 @@ def transcribe_job(jid, spec):
             if cur:
                 lines.append([round(cur[0][0], 1), " ".join(x[2] for x in cur)])
             res.append({"id": key, "name": name, "dur": round(W[-1][1], 1) if W else 0, "lang": lang, "lines": lines})
-        json.dump({"items": res}, open(os.path.join(work, "transcript.json"), "w", encoding="utf-8"), ensure_ascii=False)
+        if not res:
+            raise RuntimeError("no file with speech: " + "; ".join(skipped)[:600])
+        json.dump({"items": res, "skipped": skipped}, open(os.path.join(work, "transcript.json"), "w", encoding="utf-8"), ensure_ascii=False)
         _send_back(jid, work)
         log("transcribed", jid, len(res), "file(s) of", spec["url"][:80])
     except Exception as e:

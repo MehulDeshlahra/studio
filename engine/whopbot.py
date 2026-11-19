@@ -30,11 +30,13 @@ Return JSON:
 {{"can_do": true/false, "why_not": "<if false: what we cannot do (needs face cam / original video / not on YouTube / UGC talking to camera / app demo...)>",
  "youtube_channels": ["<@handle or channel URL of the footage creator, only if the brief says to clip that channel>"],
  "youtube_videos": ["<YouTube video / live URLs given as footage>"],
- "youtube_search": ["<when the brief NAMES official videos without a link (e.g. 'the Heismay Character Trailer'), a YouTube search for each: game/brand + video name>"],
+ "youtube_search": ["<ALWAYS, when the footage is official brand/studio videos: a YouTube search for each named video (game/brand + video name, e.g. 'Metaphor ReFantazio Heismay Trailer'); used only if the footage links fail>"],
  "official_channel": "<the brand's official YouTube channel name if footage is its official videos, else empty>",
  "other_footage": ["<Drive / Dropbox / other links given as footage>"],
  "rules": ["<every posting rule, short: length, required sound, on-screen text, what not to show, platforms>"],
- "caption_add": "<text the caption MUST contain: tags, @mentions, #ad, link text; empty if none>",
+ "caption_add": "<EVERYTHING the caption must contain, in the order the brief asks: disclosure hashtag first (#Ad) if required, required @mentions, required lines word for word (e.g. a free-trial line, 'Blue in the Face, on Netflix'), link text; empty if none>",
+ "footage_pages": ["<footage hosts that are not YouTube/Drive: Frame.io (f.io), MediaSilo, Dropbox, WeTransfer links>"],
+ "no_music": true/false,
  "no_watermark": true/false, "min_s": <minimum clip length or null>, "max_s": <maximum or null>,
  "platforms": ["instagram","youtube","tiktok","x"],
  "not_paid_countries": ["<countries whose views are NOT paid, e.g. India, Pakistan, Bangladesh>"],
@@ -185,10 +187,13 @@ def make_source(k, v, d, st):
                      max_tokens=1500)
     except Exception as e:
         log("whopbot: brief read failed", str(e)[:120]); return None
-    foot = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (r.get("footage") or [])
-            if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/|drive\.google\.com/(file|drive/folders|drive/u/\d+/folders))", str(x))]
+    foot = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (b.get("footage_pages") or [])
+            + (r.get("footage") or [])
+            if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/|drive\.google\.com/(file|drive/folders|drive/u/\d+/folders)"
+                         r"|(^|//|\.)(f\.io|frame\.io|wetransfer\.com|we\.tl)/)", str(x))]
     # 19 Nov (SEGA): footage named but not linked ("use the Launch Trailer"): find each on YouTube, preferring the brand's channel
-    for q in (b.get("youtube_search") or [])[:4]:
+    # (also when the only footage link is dead: CoD's MediaSilo folder says "This link could not be found")
+    for q in ([] if foot else (b.get("youtube_search") or []))[:4]:
         u = _yt_find(str(q), str(b.get("official_channel") or ""))
         if u:
             foot.append(u); log("whopbot: found footage on YouTube", q, "->", u)
