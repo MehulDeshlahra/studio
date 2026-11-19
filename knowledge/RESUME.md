@@ -181,3 +181,13 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
   Settings > Accounts: @cut.capsule YouTube, @cutcapsule Instagram + X connected, Facebook "Verify" pending; Profile >
   "Whop: Connect" not done (payouts). Sources live: Jo Koy (Drive), Daise (Drive), CoD (official YouTube trailer,
   MediaSilo link dead), SEGA (Frame.io). Eneba off (bans automation). clipwatch now clips up to 3 campaigns per run.
+- 19 Nov 11:55: hello@scrollhouse.in live on Zoho Mail free (MX mx/mx2/mx3.zoho.in, SPF include:zoho.in, DKIM selector
+  zmail published; DMARC p=quarantine was already there). Robot sends via smtp.zoho.in:465 with an app password in
+  ~/.studio-zoho-mail.key (free plan: no IMAP, so replies are read by the owner in the Zoho app for now). Test to the
+  owner's Gmail landed in the Inbox. engine/creatorask.py: finds Hindi podcast channels with a business email (YouTube
+  API), sends the owner-approved permission email, 15/day (timer studio-creatorask 11:30). First batch sent 19 Nov.
+- Posting ramp (owner "why 1 a day?"): the limit was our warm-up setting (IG API allows 50/24 h, YT 100 uploads/day).
+  Cut Capsule: 1/day 20-23 Nov, 2 from 24 Nov, 3 from 1 Dec, 4 from 8 Dec, US hours 06:30/22:30/02:30/04:30 IST.
+- New pages agreed: Cut Capsule Gaming (@cutcapsule.gaming / @cutcapsulegaming) and Cut Capsule TV (@cutcapsule.tv /
+  @cutcapsuletv), owner creates them later. Cut Capsule Hindi live (FB 488692857905722, IG 17841456764963031; IG shows
+  Finance Fuel's name until ~3 Dec).

@@ -83,3 +83,6 @@ knowledge/lessons-learnt.md for the engine.
   close): whop.py saves all cookies on close and restores them. Before opening a window for the owner, no robot job runs.
 - 19 Nov: auto-approved campaign clips went out with word-salad hooks and a misheard name; look at a frame sheet + the
   final post captions (seo.text_for) of the first clips of every new source before the first slot.
+- 19 Nov (4th time): ran a ship+run in the SAME batch as the edits it needed; the run used the old units.sh. The rule
+  stands: edits first (one batch), compile + ship + run in the NEXT call. Also no inline python inside ssh "..."
+  (PowerShell broke it again): write .tmp/x.py, scp, run.
