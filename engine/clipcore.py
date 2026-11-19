@@ -57,8 +57,27 @@ def probe(f):
 _MODEL = [None]
 
 
-def words(mp4, lang=None):
-    """[(start, end, word)] + language. GPU (medium) when CUDA works, else CPU (small, int8)."""
+def fix_names(Wd, glossary):
+    """19 Nov (SEGA "I AM HEISMAN" for Heismay): snap a misheard word onto a glossary name when it is close (same first
+    letter, similarity >= 0.75). Briefs ask for true, correctly named captions."""
+    import difflib
+    names = [g for g in dict.fromkeys(glossary or []) if len(g) >= 4 and " " not in g]
+    if not names:
+        return Wd
+    out = []
+    for s, e, w in Wd:
+        core = re.sub(r"\W", "", w)
+        tail = w[len(w.rstrip(".,!?;:")):]
+        best = max(names, key=lambda n: difflib.SequenceMatcher(None, core.lower(), n.lower()).ratio()) if core else None
+        if (best and core.lower() != best.lower() and core[:1].lower() == best[:1].lower() and len(core) >= 4
+                and difflib.SequenceMatcher(None, core.lower(), best.lower()).ratio() >= 0.75):
+            w = best + tail
+        out.append((s, e, w))
+    return out
+
+
+def words(mp4, lang=None, prompt=""):
+    """[(start, end, word)] + language. GPU (medium) when CUDA works, else CPU (small, int8). prompt = names to spell."""
     import numpy as np
     from faster_whisper import WhisperModel
     wav = mp4 + ".wav"
@@ -77,7 +96,7 @@ def words(mp4, lang=None):
             except Exception:
                 continue
     segs, info = _MODEL[0].transcribe(a, language=lang, word_timestamps=True, beam_size=5, vad_filter=True,
-                                      condition_on_previous_text=False)
+                                      condition_on_previous_text=False, initial_prompt=(prompt or None) and prompt[:400])
     return [(float(w.start), float(w.end), w.word.strip()) for s in segs for w in (s.words or []) if w.word.strip()], info.language
 
 
@@ -419,10 +438,11 @@ def lufs(f):
     return float(m[-1]) if m else None
 
 
-def make_clip(src, a, b, hook, out_dir, lang=None, brand=""):
+def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None):
     """src = a downloaded window of the video; a, b = the asked moment inside it (seconds in src)."""
     os.makedirs(out_dir, exist_ok=True)
-    Wd, lang = words(src, lang)
+    Wd, lang = words(src, lang, ", ".join(glossary or []))
+    Wd = fix_names(Wd, glossary)
     a2, b2 = trim(Wd, a, b)
     ranges = keep_ranges(Wd, a2, b2, loudness(src))
     tight = tighten(src, ranges, os.path.join(out_dir, "tight.mp4"))

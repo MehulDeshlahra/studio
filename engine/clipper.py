@@ -40,6 +40,11 @@ A great moment:
 {rules}
 HOOK TITLE (on screen from frame 1): who + action + twist, 3-7 words, in the video's language (Hinglish in Roman script
 for Hindi), e.g. "DAD SMASHES SON'S CONSOLE, THEN REGRETS IT". It must be TRUE to what happens: no fake claims.
+Write it the way a real fan would say it out loud: natural, grammatical, instantly clear, with curiosity or emotion.
+Use real names spelled exactly as given. Never word salad (19 Nov rejects: "REBEL DENIES FALSE EQUALITY CLAIMS DREAM
+POWER", "JO KOY ORDERS GET A DOG"; better: "SHE SAYS DREAMS CAN BEAT THE KING", "JO KOY'S CURE FOR THERAPY: GET A DOG").
+CAPTION: the context the clip leaves out, naming the show / game / product and the person. Do NOT repeat required
+campaign lines or tags (they are added after it).
 Return JSON:
 {{"moments": [{{"start": "<MM:SS where the hook begins>", "end": "<MM:SS where the payoff ends>", "hook": "<hook title>",
    "why": "<why people will watch to the end, one line>",
@@ -151,10 +156,44 @@ def mmss(s):
     return f"{s // 3600}:{s % 3600 // 60:02d}:{s % 60:02d}" if s >= 3600 else f"{s // 60}:{s % 60:02d}"
 
 
+_COMMON = set("""the and for with this that from your you our are was were will have has not but all any can new one out
+post posts clip clips caption captions video videos must only use used never every each more most best top show shows
+official trailer trailers content folder brief rules campaign campaigns views view budget platform tiktok instagram
+youtube shorts reels facebook twitter keep make made add like follow watch link links free trial season launch date
+english example examples note genuine true write what when where how why who which they them their there then than
+read full minimum maximum length seconds audience requirement required allowed background music voice voices""".split())
+
+
+def glossary(src):
+    """Names to spell right in subtitles and captions: the source's "names" (whopbot reads them from the brief) plus
+    capitalised words of the title + brief that never appear in lower case there (so they are names, not words)."""
+    if not src:
+        return []
+    names = [str(x) for x in src.get("names") or []]
+    text = (src.get("title") or "") + "\n" + (src.get("brief") or "")[:6000]
+    low = set(re.findall(r"\b[a-z][a-z']{3,}\b", text))
+    for w in re.findall(r"\b[A-Z][a-zA-Z']{3,}\b", text):
+        if w.lower() not in low and w.lower() not in _COMMON and not w.isupper():
+            names.append(w)
+    return list(dict.fromkeys(names))[:40]
+
+
+def campaign_guide(src):
+    if not src:
+        return ""
+    b = src.get("brief") or ""
+    i = b.find("Back\n")
+    names = glossary(src)
+    return (f"\nCAMPAIGN: {src.get('title')}. Use only facts from it; the caption names the show / game / product."
+            + (f"\nNAMES (spell exactly): {', '.join(names)}" if names else "")
+            + (f"\nBRIEF (excerpt):\n{b[max(0, i):max(0, i) + 1800]}" if b else "") + "\n")
+
+
 def find_moments(ch, url, n, info, source=None):
     rules = ""
     if source:
-        rules = "CAMPAIGN RULES (every clip must follow them):\n- " + "\n- ".join(source.get("rules") or []) + "\n"
+        rules = (campaign_guide(source) + "CAMPAIGN RULES (every clip must follow them):\n- "
+                 + "\n- ".join(source.get("rules") or []) + "\n")
     rules += "- " + "\n- ".join((ch.get("clip") or {}).get("rules") or [])
     learned = what_worked(ch["id"])
     if learned:
@@ -204,7 +243,8 @@ def find_moments_text(ch, item, n, source=None):
     guide = MOMENTS.split("A great moment:")[1].split("Return JSON")[0]
     rules = ""
     if source:
-        rules = "CAMPAIGN RULES (every clip must follow them):\n- " + "\n- ".join(source.get("rules") or []) + "\n"
+        rules = (campaign_guide(source) + "CAMPAIGN RULES (every clip must follow them):\n- "
+                 + "\n- ".join(source.get("rules") or []) + "\n")
     rules += "- " + "\n- ".join((ch.get("clip") or {}).get("rules") or [])
     learned = what_worked(ch["id"])
     guide = guide.replace("{rules}", rules + (("\nWHAT WORKED ON OUR PAGE:\n" + learned) if learned else ""))
@@ -255,7 +295,7 @@ def make_files(cid, url, n=4, test=False, campaign=None):
         save(os.path.join(OUT, cid, "sources", b2, "moments.json"), {"url": url, "file": it.get("name"), "moments": ms, "source": src, "test": test})
         log("clipper (files): moments", it.get("name"), [(round(m["a"]), round(m["b"]), m["hook"], m["score"]) for m in ms])
         brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")
-        out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 4, "brand": brand,
+        out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 4, "brand": brand, "glossary": glossary(src),
                           "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"]} for m in ms]}, f"{cid} {b2}", wait=3600)
         info = {"title": it.get("name"), "channel": (src or {}).get("title") or "", "webpage_url": url}
         made += ingest(ch, cid, url, info, src, test, ms, out, b2)
@@ -304,7 +344,7 @@ def make(cid, url, n=4, test=False, campaign=None):
     log("clipper: replay peaks", [(mmss(p["at"]), p["replay"]) for p in pk])
     log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
     brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")    # campaigns that say "no watermark"
-    out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand,
+    out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src),
                       "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"]} for m in ms]}, f"{cid} {base}", wait=3600)
     made = ingest(ch, cid, url, info, src, test, ms, out, base)
     shutil.rmtree(os.path.dirname(out), ignore_errors=True)
@@ -359,6 +399,15 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
             # the caption, and at most 3 more hashtags. So: no hashtags inside the caption text, required lines next,
             # 3 topic tags, and no credit line (official footage, given to us to post).
             body = re.sub(r"\s*#\w+", "", m["caption"]).strip()
+            # 19 Nov: the model wrote the required line ("Blue in the Face, on Netflix", "@callofduty") into the body and
+            # caption_add added it again: drop every required line / tag from the body before appending them once
+            for req in re.split(r"\n+", src.get("caption_add") or ""):
+                req = req.strip()
+                if req and not req.startswith("#"):
+                    body = re.sub(r"\s*" + re.escape(req.rstrip(".")) + r"\.?", "", body, flags=re.I).strip()
+            for tag in re.findall(r"@[\w.]+", src.get("caption_add") or ""):
+                body = re.sub(r"\s*" + re.escape(tag) + r"\b", "", body, flags=re.I).strip()
+            body = re.sub(r"\s{2,}", " ", body).strip(" ,")
             caption = "\n".join(x for x in [body, src.get("caption_add") or ""] if x)
             tags = [t for t in tags if t.lower() not in ("ad", "advertisement", "sponsored")][:3]
         else:

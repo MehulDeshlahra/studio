@@ -37,6 +37,7 @@ Return JSON:
  "caption_add": "<LITERAL caption text, pasted as-is (never an instruction): EVERYTHING the caption must contain, in the order the brief asks: disclosure hashtag first (#Ad) if required, required @mentions, required lines word for word (e.g. a free-trial line, 'Blue in the Face, on Netflix'), link text; empty if none>",
  "footage_pages": ["<footage hosts that are not YouTube/Drive: Frame.io (f.io), MediaSilo, Dropbox, WeTransfer links>"],
  "no_music": true/false,
+ "names": ["<every proper name in the brief to spell exactly: people, characters, the game / show / product, places>"],
  "no_watermark": true/false, "min_s": <minimum clip length or null>, "max_s": <maximum or null>,
  "platforms": ["instagram","youtube","tiktok","x"],
  "not_paid_countries": ["<countries whose views are NOT paid, e.g. India, Pakistan, Bangladesh>"],
@@ -247,6 +248,7 @@ def make_source(k, v, d, st):
                          "caption_add": str(b.get("caption_add") or "")[:300], "no_watermark": bool(b.get("no_watermark")),
                          "platforms": b.get("platforms") or [], "clips_per_video": 4, "active": True,
                          "not_paid_countries": b.get("not_paid_countries") or [], "audience_rule": b.get("audience_rule") or "",
+                         "names": [str(x)[:40] for x in (b.get("names") or [])][:30],
                          "rate": (v.get("why") or [""])[0], "added": time.strftime("%Y-%m-%d %H:%M"), "added_t": now,
                          "brief": (r.get("text") or "")[:6000], "brief_shot": r.get("shot_server")}
     log("whopbot: source", key, v.get("title"), "footage", len(foot), "channels", len(chans))
