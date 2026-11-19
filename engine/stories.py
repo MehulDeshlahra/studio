@@ -252,6 +252,11 @@ def one(cid, ch, st):
 
 
 def run(pages=None):
+    # 19 Nov GOLDEN RULE (owner: "so bad story, never low effort"): Stories are OFF until rebuilt to the best-of-the-best
+    # bar (researched format, frames checked by eye). Only knowledge/stories-approved.flag (written after the owner OKs
+    # the new design) turns them back on. The doctor re-enables timers, so the switch lives here, not in systemd.
+    if not DRY and not os.path.exists(os.path.join(ROOT, "knowledge", "stories-approved.flag")):
+        log("stories: OFF (golden rule 19 Nov): waiting for the rebuilt design + owner OK"); return {}
     st = load(STATE, {}) or {}
     out = {}
     for cid, ch in _pages():

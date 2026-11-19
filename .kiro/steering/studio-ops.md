@@ -1,5 +1,13 @@
 # Studio operations notes (always read)
 
+## GOLDEN RULE (owner 19 Nov, after a low-effort Finance Fuel Story went live): NEVER LOW EFFORT
+- Every piece of content and every feature must be the BEST OF THE BEST. Money comes after hard work, not shortcuts.
+- Before building or posting anything: research first (what the top pages do, what works, what NOT to do), write the
+  findings down, then build. No research = do not ship.
+- Then judge it hard: "is this good?" If it is only good, discard it and make it better. Ship only what beats the best
+  page in that niche. Look at the real output (frames, the live post) before it goes out; never trust that it rendered.
+- A format that has not passed this bar stays OFF (Stories were paused 19 Nov until rebuilt to this standard).
+
 ## What this is
 Free, 24x7, self-running faceless Reels/Shorts engine on the Oracle server for 3 pages. Owner: Mehul.
 - Kaise Tech (tech, @kaise.tech; YouTube @kaise.tech.official): how things work, dark "lab" look, real logos.
