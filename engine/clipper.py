@@ -280,9 +280,13 @@ Return JSON {{"moments": [{{"start": <seconds where the hook line begins>, "end"
 NOTES_ONLY = """You write the on-screen notes for ONE clip on the clip page "{page}" ({about}).
 CLIP hook title: "{hook}". Why it works: {why}
 {guide}
+VIDEO FACTS (the ONLY facts you may state; never a name, show, special, year or number from memory: 19 Nov a model
+wrote "Ali Wong, Baby Cobra 2016" on a Jo Koy clip):
+{facts}
 EXACT TRANSCRIPT of the clip (what is said, in order):
 "{text}"
-Write 3 notes: 1 "context" (who / which show or game by name + one specific fact the clip does not say; "after": "")
+Write 3 notes: 1 "context" (who / which show or game by name + one specific fact the clip does not say, both taken
+from VIDEO FACTS or the transcript; "after": "")
 and 2 "react" notes, each placed right after DIFFERENT words: "after" = 3-6 words copied EXACTLY from the transcript
 above, in order, and the two react notes must follow different parts (one early-middle, one near the payoff).
 Each note 3-9 words, in the clip's language (Hinglish in Roman script for Hindi), no emojis, no hashtags.
@@ -290,10 +294,50 @@ Return JSON {{"notes": [{{"after": "", "text": "...", "kind": "context"}}, {{"af
  {{"after": "...", "text": "...", "kind": "react"}}]}}"""
 
 
-def exact_notes(ch, src, url, vid_id, ms, label):
+def video_facts(info):
+    """What a context note may say: the video's own title, channel, upload date, chapters and description."""
+    info = info or {}
+    ud = str(info.get("upload_date") or "")
+    out = [f"Title: {info.get('title') or '?'}", f"Channel: {info.get('channel') or info.get('uploader') or '?'}"]
+    if len(ud) == 8:
+        out.append(f"Uploaded to YouTube: {ud[:4]}-{ud[4:6]}-{ud[6:]} (the show itself may be older: say 'posted {ud[:4]}', "
+                   "never 'filmed' or 'aired' in that year unless the description says so)")
+    if info.get("view_count"):
+        v = int(info["view_count"])
+        out.append(f"YouTube views: {v:,} ({v / 1e6:.1f}M)" if v >= 1e6 else f"YouTube views: {v:,} ({v / 1e3:.0f}K)")
+    chap = "; ".join(str(c.get("title", "")) for c in (info.get("chapters") or [])[:12])
+    if chap:
+        out.append("Chapters: " + chap)
+    desc = re.sub(r"https?://\S+", "", str(info.get("description") or ""))
+    desc = re.sub(r"\n{2,}", "\n", desc).strip()[:900]
+    if desc:
+        out.append("Description: " + desc)
+    return "\n".join(out)
+COMMON = set("""a an the this that these those his her he she him they them their its it i me my we our you your who what
+when where why how and or but so if then than not no yes is are was were be been being has have had do does did will
+would can could should just only even still also very too more most less least all any every some each one two three
+first last next new old big little wait watch look see when bro bhai yaar ye wo kya hai mom dad mother father brother
+sister wife husband son daughter friend kid kids family home school lunch man woman guy girl boy people crowd audience
+nobody everyone somebody best worst funny classic legend legendary story bit joke set special show clip moment part
+real true honestly literally actually never always nothing everything here there now today ok okay oh""".split())
+def ungrounded(note, known):
+    """The first name or number in a context note that the video facts / transcript never mention ('' = grounded)."""
+    k = known.lower()
+    for w in re.findall(r"\d[\d,.]*|[A-Z][\w'’&.-]+", note):
+        lw = w.lower().strip("'’.,-")
+        if not lw or lw in COMMON or lw.rstrip("s") in COMMON:
+            continue
+        if re.fullmatch(r"\d[\d,.]*", lw):
+            if lw.replace(",", "") not in k.replace(",", ""):
+                return w
+        elif lw.rstrip("'’s") not in k and lw not in k:
+            return w
+    return ""
+def exact_notes(ch, src, url, vid_id, ms, label, info=None):
     """19 Nov: on the YouTube path the moment-picker WATCHES the video and cannot quote the speech exactly (3 notes on
     the same anchor, 1 of 3 placed). Ask the laptop for the exact words of each moment (no render), then write the
-    notes from them. Keeps the old notes when anything fails."""
+    notes from them. Keeps the old notes when anything fails. The context note may only use names / numbers that the
+    video facts or the transcript contain (ungrounded() checks it in code)."""
     import laptop
     try:
         out = laptop.job({"kind": "clip", "url": url, "id": vid_id, "pad": 4, "words_only": True, "glossary": glossary(src),
@@ -306,11 +350,23 @@ def exact_notes(ch, src, url, vid_id, ms, label):
         text = " ".join(w[2] for w in r.get("words") or [])
         if len(text.split()) < 8:
             continue
+        facts = video_facts(info)
+        ask = NOTES_ONLY.format(page=ch.get("name", ch["id"]), about=ch.get("format", "")[:200], hook=m["hook"],
+                                why=m.get("why", ""), guide=guide + campaign_guide(src), facts=facts, text=text[:2500])
+        known = facts + " " + text + " " + campaign_guide(src)
         try:
-            d = llm.text(NOTES_ONLY.format(page=ch.get("name", ch["id"]), about=ch.get("format", "")[:200], hook=m["hook"],
-                                           why=m.get("why", ""), guide=guide + campaign_guide(src), text=text[:2500]),
-                         json_mode=True, max_tokens=700)
-            new = _notes({"notes": (d or {}).get("notes")})
+            for tries in range(2):
+                d = llm.text(ask, json_mode=True, max_tokens=700)
+                new = _notes({"notes": (d or {}).get("notes")})
+                bad = [(n["text"], w) for n in new if n.get("kind") == "context" for w in [ungrounded(n["text"], known)] if w]
+                if not bad:
+                    break
+                log("clipper: context note not in the video facts, asking again" if not tries else
+                    "clipper: context note still not in the video facts, dropped", bad)
+                ask += (f"\nYOUR LAST CONTEXT NOTE \"{bad[0][0]}\" used {bad[0][1]}, which is NOT in VIDEO FACTS or the "
+                        "transcript. Use only names and numbers that appear there.")
+                if tries:
+                    new = [n for n in new if n.get("kind") != "context"]
             if len(new) >= 2:
                 m["notes"] = new
         except Exception as e:
@@ -459,7 +515,7 @@ def make(cid, url, n=4, test=False, campaign=None):
     log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
     brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")    # campaigns that say "no watermark"
     if ch.get("kind") == "clips":
-        ms = exact_notes(ch, src, url, info.get("id"), ms, base)
+        ms = exact_notes(ch, src, url, info.get("id"), ms, base, info)
     out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src), **_lang_spec(ch),
                       "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {base}", wait=3600)
     made = ingest(ch, cid, url, info, src, test, ms, out, base)
