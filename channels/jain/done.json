@@ -9,7 +9,8 @@
    "visual: Scene 5: The caption says 'NAACHE' and 'MAHAVIRA NE DEKHA:', but the script for this scene is 'Phir bhoot-pret naache — vikrit chehre, bhayanak aawazen.' The word 'BHOOT-PRET' is completely missing from the visible captions.",
    "visual: Scene 9: The spoken script is 'Baahar kuch bhi ho — aag, bhoot, raakshas. Bheetar shant.' However, the onscreen captions show 'BAAHAR KUCH BHI' and 'RAAKSHAS', skipping 'aag, bhoot' entirely and failing to display the second half of the sentence ('Bheetar shant').",
    "visual: Scene 10: The script is 'Agla baar darr aaye — tum kya karoge? Dekhoge? Ya daboge? Jai Jinendra.' The captions only show 'AGLA BAAR DARR' and 'DEKHOGE?', omitting 'tum kya karoge?', 'Ya daboge?', and the final closing."
-  ]
+  ],
+  "replan_requested": "2026-11-19 15:51"
  },
  {
   "job": "1119-0215",
@@ -20,7 +21,8 @@
    "19 Nov audit: Mughal / Taj Mahal-like domes behind an ancient Jain king (scenes 2, 3, 4)",
    "King Megharath changes face: white-bearded king in scene 1, shaven monk in scenes 6 and 11",
    "scene 6 voice-over is garbled ('Raja ne mithai maansi sab mana kar diya'): he offered other food/meat, the hawk refused"
-  ]
+  ],
+  "replan_requested": "2026-11-19 15:51"
  },
  {
   "job": "1119-0305",
@@ -29,9 +31,13 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "19 Nov audit: Jain monks drawn in saffron / orange robes (21s, 28s): Jain monks wear plain white (Shwetambar) with rajoharan and muhpatti; saffron reads Hindu/Buddhist",
-   "idols in red-orange at 14s look Buddhist: Tirthankara idols are white marble or gold, seated padmasana"
-  ]
+   "visual: Jain monks are depicted wearing saffron/orange/red robes instead of plain white (seen in multiple scenes including Scene 1, 2, 4, 5, 6, 8, 9, etc.).",
+   "visual: Mughal/Islamic architecture with prominent onion domes and arches is used throughout the video for a Jain-themed spiritual reel.",
+   "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> All scenes (onion domes and arches throughout the background).",
+   "visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 1, 2, 4, 5, 6, 8, 9 (monks wearing orange/saffron robes).",
+   "visual score 4/10"
+  ],
+  "replan_requested": "2026-11-19 15:51"
  },
  {
   "job": "1119-0335",
@@ -41,7 +47,8 @@
   "review": [
    "19 Nov audit: Dharanendra (male naga king) drawn as a many-armed female Hindu-style deity (22s)",
    "Parshvanatha idol with green skin and horns (29s); idol with red tilak, jewellery and a cartoon snake (43s): a Tirthankara is plain, serene, natural skin tone, seven-hooded serpent canopy, no ornaments"
-  ]
+  ],
+  "replan_requested": "2026-11-19 15:51"
  },
  {
   "job": "1119-0935",
@@ -50,7 +57,8 @@
   "status": "held",
   "review": [
    "19 Nov audit: Bahubali drawn with blue skin and Hindu-god jewellery (scene 1, 49s): wrong Jain iconography"
-  ]
+  ],
+  "replan_requested": "2026-11-19 15:51"
  },
  {
   "job": "1119-1015",
@@ -73,6 +81,7 @@
   "review": [
    "19 Nov audit: Mughal onion domes behind an ancient Jain prince (scenes at 21s, 35s, 41s)",
    "scene at 41s is an empty arch behind the word KARUNA: needs a real picture"
-  ]
+  ],
+  "replan_requested": "2026-11-19 15:51"
  }
 ]
