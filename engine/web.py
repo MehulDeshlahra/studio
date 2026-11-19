@@ -15,14 +15,18 @@ SKIP = re.compile(r"(linkedin\.com|facebook\.com|instagram\.com|tiktok\.com|pint
 
 def search(q, n=8, region="in-en"):
     from ddgs import DDGS
-    for reg in (region, "wt-wt"):                      # the India region sometimes answers "No results found"
+    # the India region sometimes answers "No results found". 19 Nov: "wt-wt" made ddgs's Wikipedia backend call
+    # wt.wikipedia.org (DNS error), so the fallback is us-en; a long, sentence-like query then gets a 5-word retry
+    short = " ".join(q.split()[:5])
+    tries = [(q, region), (q, "us-en")] + ([(short, "us-en")] if short != q else [])
+    for qq, reg in tries:
         try:
             got = [{"title": r.get("title", ""), "url": r.get("href", ""), "snippet": r.get("body", "")}
-                   for r in DDGS().text(q, region=reg, max_results=n) or []]
+                   for r in DDGS().text(qq, region=reg, max_results=n) or []]
             if got:
                 return got
         except Exception as e:
-            log("web search fail", reg, q[:60], str(e)[:100])
+            log("web search fail", reg, qq[:60], str(e)[:100])
     return []
 
 
