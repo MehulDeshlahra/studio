@@ -27,8 +27,11 @@
   "topic": "What happens during Paryushana's Pratikraman — the Jain ritual of self‑purification (source: Agam)",
   "title": "Paryushan mein Pratikraman kaise hota hai?",
   "qc_ok": true,
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "19 Nov audit: Jain monks drawn in saffron / orange robes (21s, 28s): Jain monks wear plain white (Shwetambar) with rajoharan and muhpatti; saffron reads Hindu/Buddhist",
+   "idols in red-orange at 14s look Buddhist: Tirthankara idols are white marble or gold, seated padmasana"
+  ]
  },
  {
   "job": "1119-0335",
@@ -46,16 +49,18 @@
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
   "status": "held",
   "review": [
-   "19 Nov audit: Bahubali drawn with blue skin and Hindu-god jewellery (scene 1, 49s): wrong Jain iconography",
-   "ends with a 'comment BAHUBALI for the wallpaper' promise the page does not fulfil: remove the last scene"
+   "19 Nov audit: Bahubali drawn with blue skin and Hindu-god jewellery (scene 1, 49s): wrong Jain iconography"
   ]
  },
  {
   "job": "1119-1015",
   "topic": "Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)",
   "title": "Mahavira ne 12 saal bhookha reh kar kheer kyun khayi?",
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "19 Nov audit: story check needed: Mahavira's famous first meal after the long fast is Chandanbala offering urad (bakula); 'a seth brought kheer' must be confirmed in Kalpasutra / Trishashti-shalaka before posting",
+   "idol with a necklace at 17s; saffron-robed figure at 39s (Jain ascetic = white or Digambar)"
+  ]
  },
  {
   "job": "1119-1105",
