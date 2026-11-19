@@ -56,7 +56,8 @@ the viewer is thinking (a joke, an opinion, a "wait for it", a fact), NEVER repe
 never negative about the brand, show, game or person, never a lie, no emojis, no hashtags.
 The CONTEXT note must name WHO (the person / show / game by name) plus one SPECIFIC fact: a year, a number, where it
 aired, why it blew up ("Anjelah Johnson, 2007: this bit made her famous"). REACT notes are what a fan would type in
-the comments at that exact second ("Bhai ye kya hai?" on MC Stan: 13.6M views; "her teary eyes say it all": 17M).
+the comments at that exact second, about THAT exact thing (name it: "Not the free sanitizer 💀" is about the
+moment; "This part never gets old" fits any clip, so it is banned) ("Bhai ye kya hai?" on MC Stan: 13.6M views; "her teary eyes say it all": 17M).
 Good: "Cheaper than therapy, honestly" / "He did NOT see that coming" / "This scene took 9 months to film".
 Bad: "Jo Koy talks about dogs" (describes) / "LOL" (empty) / "Worst show ever" (negative) / "The most famous part of
 the set", "The pressure is real", "Iconic moment" (vague: says nothing a fan would say).
@@ -287,7 +288,8 @@ def _lang_spec(ch):
 
 
 VAGUE = re.compile(r"\b(iconic|legendary|famous part|best part|classic moment|the moment|pressure is real|so relatable|"
-                   r"this is (it|gold)|must watch|amazing|incredible)\b", re.I)
+                   r"this is (it|gold)|must watch|amazing|incredible|never gets old|is unmatched|the sass|so true|"
+                   r"we all know|can'?t stop laughing|too funny)\b", re.I)
 
 
 def _notes(m):

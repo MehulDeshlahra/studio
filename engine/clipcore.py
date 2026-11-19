@@ -398,7 +398,7 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None):
          # the page's own voice (notes): brand-yellow box, black bold text, smaller than the hook
          # font family inside assets/fonts/Montserrat-ExtraBold.ttf is "Montserrat Thin" (style ExtraBold): "Montserrat
          # ExtraBold" matched nothing and fell back to a thin system font (19 Nov test frames)
-         "Style: Note,Montserrat Thin,60,&H00111111,&H00111111,&H0030D8FF,&H0030D8FF,0,0,0,0,100,100,0,0,3,20,0,5,80,80,0,1",
+         "Style: Note,Montserrat Thin,60,&H00111111,&H00111111,&H0030D8FF,&H0030D8FF,-1,0,0,0,100,100,0,0,3,20,0,5,80,80,0,1",
          "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
     if brand:
         # 19 Nov (owner: "did you add our branding?"): a small, see-through handle the whole clip, under the captions and
