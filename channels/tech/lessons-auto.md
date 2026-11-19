@@ -391,3 +391,14 @@
 ## 1118-2205 (pre-render check)
 - FIT: The visual shows an ASML logo/box instead of an EUV lithography machine matching the voice
 - FIT: The visual shows a plain grey box with ASML text instead of a 13.5 nm chip close-up
+
+## 1118-1845 (pre-render check)
+- FIT: Scene 8 voice is about payment gateway callback, but the visual incorrectly shows a flow diagram in one still and a booking confirmation chat in the other, mismatching the required objects.
+
+## 1118-1845 (pre-render check)
+- CUT: chat text box is truncated at the bottom
+- CUT: bottom title text is abruptly clipped by the caption container
+- EMPTY: centre of frame lacks the specified phone screen UPI integration graphic
+
+## 1118-1845 (pre-render check)
+- CUT: text in the ui rows box on the right is cut off at the bottom

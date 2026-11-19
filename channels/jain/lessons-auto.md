@@ -137,3 +137,17 @@
 - scene 6: The title for this scene is missing in the provided list, but the frame exists. The image shows a deity figure, which seems to represent the transformation, but the caption 'BANA' is incomplete compared to the intended narrative flow.
 - scene 13: The caption 'NE HAZARON JANAM' is cut off from the full sentence 'Ek chhoti karuna ne hazaron janam ka karz chukaya', and the scene lacks a clear visual representation of the 'karz chukaya' concept, showing only a lotus.
 - scene 14: The text 'TUM HOTE TOH? COMMENT MEIN LIKHO' is present, but the title is missing from the provided list.
+
+## 1119-0305 (pre-render check)
+- EMPTY: the right still has no main visual and is pitch black at the bottom
+
+## 1119-0305 What happens during Paryushana's Pratikraman — the Jain ritual of self‑purification (source: Agam)
+- scene 7: imagery of monk reading book with strange hand anatomy on the left side, slightly unnatural pose
+- scene 10: real photo crowded hall clashes stylistically with the surrounding digital art aesthetic
+
+## review 1119-0305
+- visual: Jain monks are depicted wearing saffron/orange/red robes instead of plain white (seen in multiple scenes including Scene 1, 2, 4, 5, 6, 8, 9, etc.).
+- visual: Mughal/Islamic architecture with prominent onion domes and arches is used throughout the video for a Jain-themed spiritual reel.
+- visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> All scenes (onion domes and arches throughout the background).
+- visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 1, 2, 4, 5, 6, 8, 9 (monks wearing orange/saffron robes).
+- visual score 4/10

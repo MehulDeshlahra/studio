@@ -13785,5 +13785,216 @@
    }
   ],
   "skip": ""
+ },
+ {
+  "t": "2026-11-19 15:37",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This catalog batch covers modular HyperFrames blocks including an asymmetric media grid, a count-up stat card, a specs checklist, a WebGPU nebula shader, and a kinetic map callout block. The kinetic map callout and asymmetric media layout provide practical visual templates for our tech and story explainers.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Map Target Callout with Dual Scribbles and Threat Wash",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Asymmetric 1+2 Media Grid with Mask-Contained Ken Burns",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 15:38",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part showcases HyperFrames UI showcase blocks: Notes Reveal (typewriter in Notes app into a card), Notification Cascade (stacking phone alert banners), NYC-Paris Flight (Apple-style realistic map route), and an Obsidian WebGPU shader. It contains practical techniques for layout-safe font scaling, CSS motion-path following, and dynamic decoration positioning.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Layout-Offset Integer Font Fitting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Runtime Split-Span Decoration Anchoring",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "CSS Motion Path Route Traversal (offset-path)",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Stacked Push-Up Notification Cascade",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 15:39",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides full implementations for several visual HyperFrames blocks, including a physical-optics rack focus shader, an oscilloscope trace with closed-form phosphor persistence and beam-velocity brightness, and a multi-layer CSS light leak transition. These blocks provide production-ready math and rendering patterns for studio-quality 2D/3D visual effects.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Dioptre-Interpolated Rack Focus with Aperture Bokeh",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Beam-Velocity Phosphor Trace Simulation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Multi-Layer CSS Organic Light Leak Transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Baked Radial Contact Shadow for Real-Time 3D Props",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 15:40",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "HyperFrames catalog blocks covering shader transitions (ridged burn, ripple waves, SDF iris) and vertical mock-UI templates (share-sheet carousel, Slack notification lockscreen). It provides concrete formulas for iOS stack peek-squash transforms and escalating notification pacing.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Accelerating Notification Pacing with Dramatic Comma",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Top-Anchored Peek-Squash Stack Animation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Diegetic Clock Progression for Mounting Urgency",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 15:42",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "HyperFrames block documentation and implementations for atmospheric particle overlays (snow, starfield), 3D procedural spiral galaxy, WebGPU backgrounds, D3 geographic choropleth maps, and a mechanical split-flap board. The particle masking, split-flap flap physics, and data-sorted map reveals offer immediately reusable animation patterns.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "Radial Center-Clearance Mask for Ambient Overlays",
+    "kind": "visual",
+    "area": "visual"
+   },
+   {
+    "title": "Split-Flap Cascade with Quadratic Fall Physics",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Value-Sorted Choropleth Stagger with Outlier Pulse",
+    "kind": "motion",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 15:45",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part catalogs HyperFrames transition and overlay blocks, including WebGL shader transitions (swirl vortex, thermal distortion), WebGPU shaders, social follow cards, and CSS/Canvas transitions (blur, blinds, 3D flip, and procedural page burn). It provides clean, standalone GSAP/Canvas code recipes for high-impact scene transitions.",
+  "knowledge": 0,
+  "build": 0,
+  "items": [
+   {
+    "title": "Procedural Page Burn Transition with Ember Particles",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "FBM Thermal Shimmer Transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Directional Blur with Motion Skew Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Multi-Strip Blinds Stagger Wipe",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 15:53",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides full HTML and GSAP code for seven modular transition catalog blocks: dissolve, distortion, grid, light, mechanical, push, and radial transitions. Each transition features concrete easing curves, timing parameters, and CSS/SVG clip-path setups for scene switching.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Euclidean Center-Sorted Grid Tile Wipe",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Screen-Blend Chromatic Aberration Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Overexposure Flash-Burn Scene Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Multi-Phase Polygon Clock Wipe",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
  }
 ]

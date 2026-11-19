@@ -159,3 +159,14 @@
 
 ## review 1119-0426-p2
 - visual: Scene 6 (Funding): Text says 'Sirf Pvt Ltd LLP' which mixes up the entities and contradicts the voiceover and scene script ('Sirf Pvt Ltd — LLP limited, Proprietorship impossible').
+
+## 1119-0429 (pre-render check)
+- FIT: missing 2025 data bars in the comparison visual
+- READ: total row text is partially cut off at the bottom of the bill card
+- FIT: table rows are incomplete compared to the voiceover mentioning demand breakdown
+
+## 1119-0429 (pre-render check)
+- FIT: Table column headers and content alignment are scrambled or poorly rendered compared to expected compare fields.
+
+## 1119-0429 (pre-render check)
+- CUT: bottom card text slightly overlapping or cut off near the frame edge

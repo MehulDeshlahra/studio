@@ -371,5 +371,119 @@
    "start": 309.29,
    "layout": "crop"
   }
+ },
+ {
+  "job": "1119-1532-c1",
+  "topic": "MANGO: THE MYSTERY LUNCHBOX TRADING CARD",
+  "title": "MANGO: THE MYSTERY LUNCHBOX TRADING CARD",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=cL1ubPO823Y",
+   "start": 309.29,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1532-c2",
+  "topic": "JO KOY'S LUNCHBOX DISASTER, THEN PAIN",
+  "title": "JO KOY'S LUNCHBOX DISASTER, THEN PAIN",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=cL1ubPO823Y",
+   "start": 63.33,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1545-c1",
+  "topic": "JO KOY'S MOM'S LUNCHBOX INTERROGATION",
+  "title": "JO KOY'S MOM'S LUNCHBOX INTERROGATION",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=cL1ubPO823Y",
+   "start": 63.55,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1545-c2",
+  "topic": "MOM'S HILARIOUS LUNCHBOX DISCIPLINE",
+  "title": "MOM'S HILARIOUS LUNCHBOX DISCIPLINE",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=cL1ubPO823Y",
+   "start": 130.58,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1540-c1",
+  "topic": "Did he just pack an 89?",
+  "title": "Did he just pack an 89?",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=7huJGEbsdks",
+   "start": 388.65,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1119-1540-c2",
+  "topic": "How to save time in FM27",
+  "title": "How to save time in FM27",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=7huJGEbsdks",
+   "start": 250.17,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1119-1540-c3",
+  "topic": "Can 5 gold players get walkouts?",
+  "title": "Can 5 gold players get walkouts?",
+  "status": "held",
+  "review": [
+   "almost no speech (captions nearly empty)",
+   "not original enough: 1 of 3 page notes placed (need 2+)",
+   "The on-screen page note is false: it identifies the game as 'Football Manager 27', but the gameplay shown is clearly EA Sports FC (formerly FIFA).",
+   "checklist: weak / vague / negative page note"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=7huJGEbsdks",
+   "start": 71.0,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1119-1540-c4",
+  "topic": "The ultimate icon pack disappointment",
+  "title": "The ultimate icon pack disappointment",
+  "status": "held",
+  "review": [
+   "loudness -17.2 LUFS",
+   "almost no speech (captions nearly empty)",
+   "not original enough: 1 of 3 page notes placed (need 2+)",
+   "The on-screen page note is false: the game shown is EA Sports FC, not Football Manager, and 'Football Manager 27' is a non-existent future title."
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=7huJGEbsdks",
+   "start": 979.0,
+   "layout": "stack"
+  }
  }
 ]
