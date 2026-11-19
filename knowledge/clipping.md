@@ -65,3 +65,12 @@ Paid SaaS doing the same: OpusClip, Vizard, Klap, Submagic (not used: Rs 0 rule)
 - engine/clipper.py <cid> <url> [--n 4] [--test]; dashboard "Make a video now" on Cut Capsule takes a YouTube link.
 - channels/cutcapsule/sources.json = permission list (campaigns). Unknown sources = test clips, never posted.
 - tools/laptop_worker.py: "fetch" job kind (yt-dlp --download-sections); engine/laptop.fetch() on the server.
+
+## Where the money is paid: viewer country (19 Nov, read from the joined briefs)
+- CoD MW4 DMZ (Clipping Culture): views from India, Pakistan, Bangladesh are NOT PAID; other countries $2/1K (TikTok),
+  $1.50/1K Instagram; caption must have #Ad/#Advertisement/#Sponsored and @callofduty. Footage is in a Google Doc under
+  "Reference materials" (tools/whop.py brief now opens those).
+- Jo Koy (Eclipse): Instagram Reels only, 70%+ of views from the US, caption names "Blue in the Face, on Netflix".
+- So Cut Capsule must grow a US/UK/global audience, not an Indian one: English captions and hooks, post at US evening
+  time, US-relevant topics. Every source entry keeps "not_paid_countries" and "audience_rule" (engine/whopbot.py).
+- publish.py posts a campaign clip only to the platforms its source allows (Jo Koy: IG only).

@@ -73,3 +73,5 @@ knowledge/lessons-learnt.md for the engine.
   every non-ASCII character in api.py (restored from git). Edit with str_replace or a Python script that opens utf-8.
 - 19 Nov: .tmp\ship.ps1 only commits what is STAGED; a first ship said "no changes added" and pushed nothing. Always
   `git add <files>` first, then check the output shows the server HAS the new commit.
+- 19 Nov: `systemctl is-active -q` is FALSE for a running oneshot unit ("activating"); a script took a running whopbot
+  as finished and edited files under it. Test `systemctl show -p ActiveState --value` for active|activating.

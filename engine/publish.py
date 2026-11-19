@@ -182,7 +182,16 @@ def post_one(cid, dry=False):
     day = time.strftime("%Y-%m-%d")
     if w.get("post_from") and day < w["post_from"]:
         log("publish", cid, "warm-up: no posts before", w["post_from"]); return
-    if w.get("one_a_day_until") and day < w["one_a_day_until"] and int(time.strftime("%H")) < 17:
+    # 19 Nov: a page can post at its own hours (IST, the server clock): Cut Capsule earns only on US/global views, so it
+    # posts at US evening (06:30 IST = 8 pm New York) from its own timer (studio-post-us) instead of 13:00/20:00.
+    hours = [int(h) for h in (ch.get("schedule") or {}).get("post_hours_ist") or []]
+    if hours:
+        hr = int(time.strftime("%H"))
+        if hr not in hours:
+            log("publish", cid, "not this page's posting hour", hours); return
+        if w.get("one_a_day_until") and day < w["one_a_day_until"] and hr != hours[0]:
+            log("publish", cid, "warm-up: only the first slot until", w["one_a_day_until"]); return
+    elif w.get("one_a_day_until") and day < w["one_a_day_until"] and int(time.strftime("%H")) < 17:
         log("publish", cid, "warm-up: only the evening slot until", w["one_a_day_until"]); return
     p = os.path.join(ROOT, "channels", cid, "done.json")
     done = load(p, [])
@@ -192,7 +201,7 @@ def post_one(cid, dry=False):
     today_n = sum(1 for d in done if str((d.get("posted") or {}).get("at", "")).startswith(day))
     if today_n >= ppd:
         log("publish", cid, f"already posted {today_n} today (posts_per_day {ppd})"); return
-    if ppd == 1 and int(time.strftime("%H")) < 17:
+    if ppd == 1 and not hours and int(time.strftime("%H")) < 17:
         log("publish", cid, "one post a day: the evening slot"); return
     acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     # 17 Nov: English editions (-en) only go out once the page has an English account (handle_en); the English page is parked

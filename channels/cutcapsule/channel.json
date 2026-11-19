@@ -15,6 +15,8 @@
   },
   "schedule": {
     "posts_per_day": 2,
+    "post_hours_ist": [6, 22],
+    "post_hours_note": "06:30 IST = 8 pm New York, 22:30 IST = noon New York: campaigns pay on US/global views, not India",
     "backlog": 6,
     "manual_first": 3
   },
