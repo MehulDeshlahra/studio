@@ -657,10 +657,15 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
         # 19 Nov golden rule + originality (Instagram/YouTube stop recommending re-uploads without material edits):
         # every clip must carry at least 2 of our own notes, actually placed on screen
         placed = res.get("notes") or []
-        if (ch.get("kind") == "clips") and len(placed) < 2:
+        if (ch.get("kind") == "clips") and res.get("notes_on_screen") is False:
+            # 19 Nov benchmark: the winning pages add an EDIT (reframing on the beats), not note boxes
+            if str(res.get("layout", "")).startswith(("crop", "mixed")) and (res.get("beats") or 0) < 3:
+                probs.append(f"not edited enough: {res.get('beats') or 0} framing beats (need 3+)")
+        elif (ch.get("kind") == "clips") and len(placed) < 2:
             probs.append(f"not original enough: {len(placed)} of {res.get('notes_asked', 0)} page notes placed (need 2+)")
         v = vision(ch, jd, m["hook"], res.get("text", "") + ("\nPAGE NOTES SHOWN ON SCREEN (must be true to the clip, "
-                   "never negative, never just repeating the speech): " + " | ".join(n["text"] for n in placed) if placed else ""))
+                   "never negative, never just repeating the speech): " + " | ".join(n["text"] for n in placed)
+                   if placed and res.get("notes_on_screen", True) else ""))
         probs += [str(x)[:200] for x in v.get("problems") or []]
         credit = f"🎥 Credit: {who}" + (f" ({info.get('webpage_url') or url})" if (not src or src.get("credit_link", True)) else "")
         tags = list(dict.fromkeys([t for t in m["tags"] if t] + [t.lstrip("#") for t in (ch.get("hashtags_base") or [])]

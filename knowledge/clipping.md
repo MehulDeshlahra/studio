@@ -149,3 +149,17 @@ Rules we took (engine/clipper.py + clipcore.py, shipped 19 Nov):
 Next ideas (not built yet): comparison formats for gaming (game vs real, old vs new), a reaction cut-in when the
 footage has audience/judge shots, a punch-in zoom on the payoff word, brand-allowed music only.
 Brand safety: no astrology / tantra / remedy clips (Tarun Sharma Show paused 19 Nov); reposting campaigns score 0.
+
+## 19 Nov: the clip standard (benchmarked frame by frame, not guessed)
+Benchmarks: Short Form Comedy "Jo Koy Is Owed MONEY..." (eh2ZNY4gas0, 9.8M views, a clip page), Don't Tell Comedy
+(F1C9fcldEkU, 25M, official). Repos read: Plextrang/Claude-Video-Clipper (zoom rhythm, captions, mix), openshorts
+(punch_in.py: tuned 3/min, max ~1.12-1.15 on 1080p), OpenClipper (AutoFlip camera, caption presets 'beast'), ai-reels-editor-skill
+(Reels safe zone: top 220 / below 1470 / right 100 from 1155).
+- Clean full 9:16 frame. NO permanent hook bar, NO note boxes, no title band (the winners have none; ours read as a template).
+- Hook: big caption-style line mid-screen for the opening ~3 s only, last words in the accent colour.
+- Captions mid-screen (~52% down), heavy outline + hard shadow, spoken word yellow 1.15x.
+- Camera: open on a quick zoom-out snap, wide <-> punched-in on sentence ends >= 2.8 s apart, a change on every camera
+  cut, slow push, one snap at the payoff; whooshes under the voice. Punch strength limited by source resolution
+  (slice >= 540 px): download 1440p (VP9), prefer high-res sources; 1080p sources cap the punch at ~1.12.
+- Crop follows the speaker (dead zone, pan limit); a webcam box must persist over 2+ shots; brand-safe moments only.
+- Small logo top-left, below the 220 px header.

@@ -16,10 +16,16 @@ W, H = 1080, 1920
 # 15%, exactly under the hook bar, and a 1080p source gives only a 607 px slice (soft). Crop shots now use a TITLE BAND
 # (the common clip-page layout): a dark band on top holds the logo + hook, the picture fills the 1080x1440 below it:
 # a 3:4 crop = an 810 px slice of 1080p (1.33x, sharp), wider room for a walking speaker, and no text on any head.
-BAND = 480
+# 19 Nov benchmark (same day, frame by frame vs Short Form Comedy 9.8M views on a Jo Koy clip, Don't Tell Comedy 25M):
+# the winners use NO band, no boxes and no permanent hook bar: a clean full 9:16 frame, the hook big in the centre for
+# the first seconds only, mid-screen captions and hard reframing on the beats. BAND = 0 turns the band off (kept for
+# formats that need one).
+BAND = 0
 PIC_H = H - BAND
 CROP_AR = W / PIC_H
 BAND_COLOR = "0x0B0B10"
+NOTES_ON_SCREEN = False      # the benchmark pages carry no note boxes; the edit itself is the added work
+HOOK_SECONDS = 3.0           # Short Form Comedy: the hook sits mid-screen for the opening line only
 NOWIN = 0x08000000 if os.name == "nt" else 0
 GAP = 0.55            # a pause longer than this inside a clip is cut out
 KEEP_PAD = 0.12       # silence kept on each side of a cut
@@ -419,7 +425,9 @@ def subject_lost(samples, segs, is_cam, sw, sh):
 # always change framing on a camera cut, a slow +3% push inside each beat so the frame never sits dead, and ONE eased
 # snap zoom near the payoff. Punch <= 1.18 (openshorts: past ~15% heads get cut and upscaling shows); never zoom a slice
 # narrower than 540 source px (soft), never let the face fill more than 55% of the height.
-WIDE_Z, PUNCH_Z = [1.0, 1.03], [1.15, 1.18, 1.12]
+# 19 Nov benchmark: the winning clip page punches much harder (wide stage -> face close-up); the resolution guard below
+# keeps a 1080p source near 1.12 and lets a 1440p/4K source go up to 1.35
+WIDE_Z, PUNCH_Z = [1.0, 1.03], [1.28, 1.35, 1.22]
 DRIFT, OPEN_Z, OPEN_S, SNAP_S = 0.03, 1.18, 0.3, 0.27
 
 
@@ -473,7 +481,7 @@ def _crop_cmds(seg, info, zp, path, fps=30):
     frames where something changes (openshorts sendcmd_lines). Times relative to the segment start."""
     sw, sh = info["src"]
     cw0 = min(sw, int(sh * CROP_AR)) // 2 * 2
-    zmax = min(PUNCH_Z[1] + DRIFT, cw0 / 540.0, 0.55 / max(0.05, seg.get("fh") or 0.2))
+    zmax = min(max(PUNCH_Z) + DRIFT, cw0 / 540.0, 0.55 / max(0.05, seg.get("fh") or 0.2))
     fy, fh = seg.get("fy") or 0.38, seg.get("fh") or 0.2
     lines, prev = [], None
     n = int(round((seg["e"] - seg["s"]) * fps))
@@ -517,7 +525,9 @@ HOOK_Y = {"stack": 700, "crop": 402, "fill": 400}     # crop: inside the title b
 # 19 Nov research (ai-reels-editor-skill layout.md, the Reels safe zone shared by IG/TikTok/Shorts): nothing in the top
 # 220 px, nothing below y 1470 (username, caption, audio row). Captions at 1450/1560 ran into it; crop captions sit in
 # the chest band (Claude-Video-Clipper: ~2/3 down), the fill ones just under the picture.
-CAP_Y = {"stack": 1400, "crop": 1300, "fill": 1400}
+# 19 Nov benchmark: Short Form Comedy and Don't Tell Comedy put captions mid-screen (~52% down): on the chest in a
+# close-up, by the mic in a wide shot
+CAP_Y = {"stack": 1400, "crop": 1000, "fill": 1400}
 
 
 def place_notes(notes, Wt, dur):
@@ -580,6 +590,7 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
          "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, "
          "StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
          # 19 Nov: in the title band the hook can be bigger (it read small); wraps inside 70 px margins
+         "Style: HookT,Montserrat Thin,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,13,7,5,90,90,0,1",
          "Style: Hook,Anton,100,&H00111111,&H00111111,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,1,0,3,22,0,5,70,70,0,1",
          # 19 Nov research (OpenClipper "beast"/"hustle" presets, the MrBeast caption look): heavy black outline
          # (~0.17 em) and a HARD opaque drop shadow, not a thin outline with a soft grey one
@@ -594,12 +605,22 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
         # 19 Nov (owner: "did you add our branding?"): a small, see-through handle the whole clip, under the captions and
         # out of the safe area for the Reels buttons. Campaigns that forbid watermarks turn it off (sources.json).
         L.append(f"Dialogue: 0,{_ts(0)},{_ts(dur)},Brand,,0,0,0,,{{\\pos({W // 2},1640)}}{esc(brand)}")
-    if hook:
+    if hook and not BAND:
+        # 19 Nov benchmark (Short Form Comedy, 9.8M): the hook is a big caption-style line in the middle for the opening
+        # seconds, its last words in the accent colour, then the clean frame; no permanent bar
+        hw = esc(hook.upper()).split()
+        k = max(1, len(hw) - 2)
+        txt = " ".join(hw[:k]) + " {\\c" + accent + "}" + " ".join(hw[k:])
+        en = min(dur, HOOK_SECONDS)
+        y = CAP_Y[lay_at(0.1)] + 250                 # two lines under the captions with a clear gap (19 Nov frames)
+        L.append(f"Dialogue: 2,{_ts(0)},{_ts(en)},HookT,,0,0,0,,{{\\pos({W // 2},{y})\\fscx70\\fscy70"
+                 f"\\t(0,140,\\fscx100\\fscy100)\\fad(0,160)}}{txt}")
+    elif hook:
         for gi, g in enumerate(segs):
             e = dur if gi == len(segs) - 1 else g["e"]
             fs = max(72, min(100, int(100 * 34 / max(34, len(hook)))))    # one line in the band (Anton ~0.27 em/char)
             L.append(f"Dialogue: 2,{_ts(g['s'])},{_ts(e)},Hook,,0,0,0,,{{\\pos({W // 2},{HOOK_Y[g['layout']]})\\fs{fs}}}{esc(hook.upper())}")
-    for st, en, txt, kind in notes or []:
+    for st, en, txt, kind in (notes if NOTES_ON_SCREEN else []) or []:
         # 19 Nov test: the layout (and so the hook) can change while a note is up: sit below the LOWEST hook in its span
         lays = {g["layout"] for g in segs if g["s"] < en and g["e"] > st} or {lay_at(st)}
         y = max(HOOK_Y[l] for l in lays) + (170 if hook else 0)
@@ -650,12 +671,13 @@ def _layout_vf(lay, info, seg, sub):
     if lay == "crop" and info.get("zoom") is not None and info.get("work"):
         p = os.path.join(info["work"], f"crop_{int(seg['s'] * 100)}.cmd")
         cw = _crop_cmds(seg, info, info["zoom"], p)
-        return (f"[0:v]sendcmd=f='{_ff(p)}',crop@c={cw}:{sh}:0:0,scale={W}:{PIC_H}:flags=lanczos,setsar=1,"
-                f"pad={W}:{H}:0:{BAND}:color={BAND_COLOR}{tail}")
+        pad = f",pad={W}:{H}:0:{BAND}:color={BAND_COLOR}" if BAND else ""
+        return (f"[0:v]sendcmd=f='{_ff(p)}',crop@c={cw}:{sh}:0:0,scale={W}:{PIC_H}:flags=lanczos,setsar=1{pad}{tail}")
     if lay == "crop":
         aims = [[round(a[0] - seg["s"], 2)] + list(a[1:]) for a in seg["aims"]]
         cw, xe = _crop_x_expr(aims, sw, sh)
-        return f"[0:v]crop={cw}:{sh}:'{xe}':0,scale={W}:{PIC_H}:flags=lanczos,pad={W}:{H}:0:{BAND}:color={BAND_COLOR}{tail}"
+        pad = f",pad={W}:{H}:0:{BAND}:color={BAND_COLOR}" if BAND else ""
+        return f"[0:v]crop={cw}:{sh}:'{xe}':0,scale={W}:{PIC_H}:flags=lanczos{pad}{tail}"
     if lay == "stack":
         fx, fy, fh = info["cam"]
         bw, bh = int(fh * sh * 3.3), int(fh * sh * 3.3 * 700 / W)
@@ -673,7 +695,7 @@ def _layout_vf(lay, info, seg, sub):
 
 LOGO = os.path.join(ROOT, "assets", "brand", "cutcapsule-logo.png")
 # top-left, below the 220 px Reels header (19 Nov: it sat at y 150, inside it), above the hook (crop hook now at 370)
-LOGO_W, LOGO_X, LOGO_Y, LOGO_A = 130, None, 232, 0.95    # LOGO_X None = centred (the title band layout)
+LOGO_W, LOGO_X, LOGO_Y, LOGO_A = 140, 40, 236, 0.92     # small, top-left (Don't Tell Comedy); None = centred (band)
 
 
 def _logo_tail(pre, logo):
@@ -800,7 +822,7 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
            "cut": [round(a2, 2), round(b2, 2)], "kept": ranges, "removed_s": round((b2 - a2) - sum(e - s for s, e in ranges), 2),
            "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt),
            "notes": [{"s": s, "e": e, "text": t, "kind": k} for s, e, t, k in placed], "notes_asked": len(notes or []),
-           "asr": ASR[0]}
+           "asr": ASR[0], "beats": len(info.get("zoom") or []), "notes_on_screen": NOTES_ON_SCREEN}
     json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w"), ensure_ascii=False)
     return res
 
