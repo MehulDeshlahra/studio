@@ -6,7 +6,9 @@
   "qc_ok": false,
   "status": "held",
   "review": [
-   "visual: Scene 7 card shows overlapping text where 'SAMATA' is printed directly on top of another 'SAMATA' causing severe visual clutter and readability issues."
+   "visual: Scene 5: The caption says 'NAACHE' and 'MAHAVIRA NE DEKHA:', but the script for this scene is 'Phir bhoot-pret naache — vikrit chehre, bhayanak aawazen.' The word 'BHOOT-PRET' is completely missing from the visible captions.",
+   "visual: Scene 9: The spoken script is 'Baahar kuch bhi ho — aag, bhoot, raakshas. Bheetar shant.' However, the onscreen captions show 'BAAHAR KUCH BHI' and 'RAAKSHAS', skipping 'aag, bhoot' entirely and failing to display the second half of the sentence ('Bheetar shant').",
+   "visual: Scene 10: The script is 'Agla baar darr aaye — tum kya karoge? Dekhoge? Ya daboge? Jai Jinendra.' The captions only show 'AGLA BAAR DARR' and 'DEKHOGE?', omitting 'tum kya karoge?', 'Ya daboge?', and the final closing."
   ]
  },
  {
@@ -37,18 +39,23 @@
   "job": "1119-0935",
   "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
-  "status": "held",
-  "review": [
-   "before render, scene 16: OVERLAP/CUT (layout audit): text_occluded on #s15b"
-  ]
+  "status": "made",
+  "review": []
  },
  {
   "job": "1119-1015",
   "topic": "Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)",
   "title": "Mahavira ne 12 saal bhookha reh kar kheer kyun khayi?",
-  "status": "held",
-  "review": [
-   "before render, scene 12: OVERLAP/CUT (layout audit): text_occluded on #s11b"
-  ]
+  "status": "made",
+  "review": []
+ },
+ {
+  "job": "1119-1105",
+  "topic": "Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)",
+  "title": "Neminath ne apni baraat kyun wapas mod di?",
+  "qc_ok": true,
+  "status": "made",
+  "offer": "WALLPAPER",
+  "review": []
  }
 ]

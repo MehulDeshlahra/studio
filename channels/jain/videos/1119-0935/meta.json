@@ -2,8 +2,9 @@
  "channel": "jain",
  "job": "1119-0935",
  "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
- "stage": "held",
+ "stage": "done",
  "lang": "hi",
  "prepped_at": "2026-11-19 09:59",
- "held_at": "2026-11-19 10:14"
+ "held_at": "2026-11-19 10:14",
+ "brain_judged": true
 }

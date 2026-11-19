@@ -1,0 +1,29 @@
+{
+ "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
+ "title": "12 saal tak hile bina kyun khada raha Bahubali?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.2,
+  "true_peak": -3.3,
+  "dur": 64.03
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 5: The caption 'JAL' appears, but the scene description mentions 'Teen muqable: drishti, jal, malla'. The image shows the meditation/competition context, but the caption is just one word, which is fine per instructions, but it's a bit disconnected from the full context of the three competitions.",
+   "scene 11: The caption 'NAHI CHAHTE THE' is a bit vague compared to the intended line 'Woh Bharata ke rajya se guzarna nahi chahte the, yeh bhi ahankaar tha'. While it fits the visual, it loses the nuance of the specific line.",
+   "scene 14: The caption 'BHI BACHA HAI?' is a bit disjointed from the intended line 'Aapke andar ka kaunsa haathi abhi bhi bacha hai?'. It's understandable, but slightly awkward phrasing."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9242424242424242,
+  "words": 142,
+  "problems": []
+ },
+ "ok": true
+}

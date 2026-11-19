@@ -75,9 +75,9 @@
   "sig": "before render, scene #: overlap/cut (layout audit): text_occluded on #s",
   "fix": "simplify",
   "detail": "",
-  "n": 1,
+  "n": 3,
   "first": "2026-11-18 19:52",
-  "last": "2026-11-18 19:52",
+  "last": "2026-11-19 11:07",
   "example": "before render, scene 3: OVERLAP/CUT (layout audit): text_occluded on #s2b"
  },
  {

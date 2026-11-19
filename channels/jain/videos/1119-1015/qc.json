@@ -1,0 +1,29 @@
+{
+ "topic": "Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)",
+ "title": "Mahavira ne 12 saal bhookha reh kar kheer kyun khayi?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.1,
+  "true_peak": -3.2,
+  "dur": 44.03
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 3: The caption 'KARM KI PARAT' does not match the intended line 'Har saal ek karm ki parat dhalti gayi', which is a minor mismatch in the flow.",
+   "scene 8: The caption 'TAB ASLI KHAZANA' does not match the intended line 'Sab chhod diya tab asli khazana mila', though it is a summary.",
+   "scene 12: The caption 'COMMENT KARO SCREEN' does not match the intended line 'Ye HD wallpaper chahiye? Comment karo SCREEN', which is a minor mismatch."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9405940594059405,
+  "words": 110,
+  "problems": []
+ },
+ "ok": true
+}

@@ -2,8 +2,9 @@
  "channel": "jain",
  "job": "1119-1015",
  "topic": "Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)",
- "stage": "held",
+ "stage": "done",
  "lang": "hi",
  "prepped_at": "2026-11-19 10:24",
- "held_at": "2026-11-19 10:44"
+ "held_at": "2026-11-19 10:44",
+ "brain_judged": true
 }

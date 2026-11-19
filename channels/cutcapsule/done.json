@@ -150,5 +150,77 @@
    "start": 165.65,
    "layout": "fill"
   }
+ },
+ {
+  "job": "1119-1040a-c1",
+  "topic": "MOM CONFRONTS MCDONALD'S, DRIVE-THRU GUY ROASTS",
+  "title": "MOM CONFRONTS MCDONALD'S, DRIVE-THRU GUY ROASTS",
+  "status": "made",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 269.31,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1119-1040b-c1",
+  "topic": "JO KOY SAYS GET A DOG NOT THERAPY",
+  "title": "JO KOY SAYS GET A DOG NOT THERAPY",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 24.53,
+   "layout": "mixed:fill+stack"
+  }
+ },
+ {
+  "job": "1119-1040c-c1",
+  "topic": "Jo Koy slams Gucci dogs",
+  "title": "Jo Koy slams Gucci dogs",
+  "status": "made",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 1.15,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1119-1040d-c1",
+  "topic": "KINGSTON WEARS JOCKEY SADDLE CHASES COYOTES",
+  "title": "KINGSTON WEARS JOCKEY SADDLE CHASES COYOTES",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 111.45,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1119-1040e-c1",
+  "topic": "FRED HARRISON ASKS SHIT IN SNOW",
+  "title": "FRED HARRISON ASKS SHIT IN SNOW",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 88.09,
+   "layout": "mixed:crop+stack"
+  }
+ },
+ {
+  "job": "1119-1040f-c1",
+  "topic": "FRED: MAMA'S HOUSE HARDER THAN WAR",
+  "title": "FRED: MAMA'S HOUSE HARDER THAN WAR",
+  "status": "made",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 162.54,
+   "layout": "mixed:fill+stack"
+  }
  }
 ]

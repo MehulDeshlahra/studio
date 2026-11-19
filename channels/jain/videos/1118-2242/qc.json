@@ -10,11 +10,13 @@
   "dur": 59.63
  },
  "vision": {
-  "score": 6,
+  "score": 8,
   "ok": true,
   "problems": [
-   "Scene 6: Minor AI artifacts on the giant figure's extra heads.",
-   "Scene 8: Slight anatomical distortion in the bowing figure's hands."
+   "scene 4: The caption 'MAHAVIRA NE DEKHA:' is redundant as it appears in scene 5 as well, and the visual shows fire but the text is slightly repetitive.",
+   "scene 5: The caption 'MAHAVIRA NE DEKHA:' is identical to scene 4's caption, which might be confusing for the viewer given the different visual content (ghosts vs fire).",
+   "scene 6: The visual is quite abstract and the 'blind saffron aura' label is somewhat disconnected from the actual visual representation of the Yaksha.",
+   "scene 9: The visual of the person meditating in the archway is visually disconnected from the 'Raakshas' text label below it."
   ]
  },
  "voice": {

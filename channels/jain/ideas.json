@@ -730,5 +730,127 @@
     "score": 3.65
    }
   ]
+ },
+ {
+  "t": "2026-11-19 11:09",
+  "picked": "Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)",
+  "ideas": [
+   {
+    "topic": "Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "neminath rajul wedding story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.2,
+    "score": 6.34
+   },
+   {
+    "topic": "Why Prince Gajsukumal felt pure compassion even as burning embers were tied to his shaved head during meditation (source: Antakriddhasha Sutra / Agam)",
+    "note": "",
+    "search": "gajsukumal burning embers jain",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.6,
+    "score": 6.07
+   },
+   {
+    "topic": "Why a tiny frog carrying a lotus petal to Mahavira's samavasarana attained instant heavenly rebirth after being trampled (source: Trishashti-shalaka-purusha-charitra / Agam)",
+    "note": "",
+    "search": "frog devotion mahavira story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.9,
+    "median_views": 14913,
+    "fresh": 5.8,
+    "score": 5.62
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.0,
+    "score": 5.45
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 9902,
+    "fresh": 7.6,
+    "score": 5.09
+   },
+   {
+    "topic": "Why Mahavira Swami fasted for over five months until an enslaved princess offered dry lentils with tears in her eyes (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "chandanbala mahavira swami story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 63,
+    "fresh": 5.1,
+    "score": 4.52
+   },
+   {
+    "topic": "How the royal monk Prasannachandra swung from the verge of the 7th hell to Kevala Jnana in minutes just by watching his thoughts (source: Sthananga Sutra / Agam)",
+    "note": "",
+    "search": "prasannachandra muni story jain",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 528,
+    "fresh": 6.6,
+    "score": 4.47
+   },
+   {
+    "topic": "Why monk Metarya chose to let his skull be crushed by an iron band rather than expose a bird that swallowed gems (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "metarya muni jain story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 145,
+    "fresh": 5.5,
+    "score": 4.25
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.4,
+    "median_views": 1466,
+    "fresh": 6.7,
+    "score": 3.97
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 577,
+    "fresh": 6.5,
+    "score": 3.75
+   }
+  ]
  }
 ]

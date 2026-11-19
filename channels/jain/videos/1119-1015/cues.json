@@ -98,12 +98,6 @@
    "align": "onset"
   },
   {
-   "t": 37.84,
-   "file": "sfx/impact.mp3",
-   "gain_db": -18,
-   "align": "onset"
-  },
-  {
    "t": 37.82,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,

@@ -191,15 +191,16 @@
    "label": null
   },
   {
-   "type": "card",
-   "big": "Comment SCREEN",
+   "type": "image",
+   "big": "",
    "sub": "Mahavira Keval Gyan wallpaper DM mein 📩",
-   "small": "Mahavira Keval Gyan DM",
+   "small": "",
    "vo": "Ye HD wallpaper chahiye? Comment karo SCREEN, main DM kar dunga.",
    "offer_cta": true,
    "label": "FREE",
-   "prompt": "a gift box with soft warm light, simple background",
-   "title": null
+   "prompt": "A centered smartphone displaying a serene Mahavira Keval Gyan wallpaper, soft warm light, simple gradient background, 9:16 vertical composition, space at top and bottom for overlay text",
+   "title": null,
+   "motion": "slow zoom"
   }
  ],
  "music_mood": "calm",

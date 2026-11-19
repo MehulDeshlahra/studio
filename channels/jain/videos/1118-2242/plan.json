@@ -101,7 +101,7 @@
   {
    "vo": "Yahi toh hai samata — darr aaya, par usne usse 'dekha' bas. Reaction nahi diya.",
    "type": "card",
-   "prompt": "White marble card, carved lace border. Saffron-gold Devanagari-style Montserrat 900: 'SAMATA' (big), 'darr aaya, dekha bas' (small). Subtle two-step screen-print glow. Single lotus icon below. Uncluttered, calm. Text zone: center only.",
+   "prompt": "A serene white marble texture with subtle carved lace border, a single lotus flower in saffron-gold at bottom center, soft glow, minimal and calm, plenty of negative space in center for text overlay. No text, no letters, no logos.",
    "motion": "punch",
    "title": "",
    "big": "SAMATA",
@@ -110,7 +110,8 @@
     "samata",
     "darr",
     "reaction nahi"
-   ]
+   ],
+   "real": null
   },
   {
    "vo": "Yaksha ka ghamand toota. Sir jhukaya, pranaam kiya — 'tum jeete.'",

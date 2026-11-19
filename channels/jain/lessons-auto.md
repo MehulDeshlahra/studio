@@ -93,3 +93,37 @@
 
 ## 1119-1015 (pre-render check)
 - OVERLAP/CUT (layout audit): text_occluded on #s11b
+
+## 1119-0935 Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)
+- scene 5: The caption 'JAL' appears, but the scene description mentions 'Teen muqable: drishti, jal, malla'. The image shows the meditation/competition context, but the caption is just one word, which is fine per instructions, but it's a bit disconnected from the full context of the three competitions.
+- scene 11: The caption 'NAHI CHAHTE THE' is a bit vague compared to the intended line 'Woh Bharata ke rajya se guzarna nahi chahte the, yeh bhi ahankaar tha'. While it fits the visual, it loses the nuance of the specific line.
+- scene 14: The caption 'BHI BACHA HAI?' is a bit disjointed from the intended line 'Aapke andar ka kaunsa haathi abhi bhi bacha hai?'. It's understandable, but slightly awkward phrasing.
+
+## 1119-1015 Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)
+- scene 3: The caption 'KARM KI PARAT' does not match the intended line 'Har saal ek karm ki parat dhalti gayi', which is a minor mismatch in the flow.
+- scene 8: The caption 'TAB ASLI KHAZANA' does not match the intended line 'Sab chhod diya tab asli khazana mila', though it is a summary.
+- scene 12: The caption 'COMMENT KARO SCREEN' does not match the intended line 'Ye HD wallpaper chahiye? Comment karo SCREEN', which is a minor mismatch.
+
+## 1118-2242 (pre-render check)
+- OVERLAP: caption text and subtext overlap the background text watermark
+
+## 1119-1105 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s13b
+- FIT: missing required 'FREE' label pill
+- FIT: required real photo of Mount Girnar Jain temple sunrise is missing, shown as an AI illustration instead
+
+## 1118-2242 The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)
+- scene 4: The caption 'MAHAVIRA NE DEKHA:' is redundant as it appears in scene 5 as well, and the visual shows fire but the text is slightly repetitive.
+- scene 5: The caption 'MAHAVIRA NE DEKHA:' is identical to scene 4's caption, which might be confusing for the viewer given the different visual content (ghosts vs fire).
+- scene 6: The visual is quite abstract and the 'blind saffron aura' label is somewhat disconnected from the actual visual representation of the Yaksha.
+- scene 9: The visual of the person meditating in the archway is visually disconnected from the 'Raakshas' text label below it.
+
+## review 1118-2242
+- visual: Scene 5: The caption says 'NAACHE' and 'MAHAVIRA NE DEKHA:', but the script for this scene is 'Phir bhoot-pret naache — vikrit chehre, bhayanak aawazen.' The word 'BHOOT-PRET' is completely missing from the visible captions.
+- visual: Scene 9: The spoken script is 'Baahar kuch bhi ho — aag, bhoot, raakshas. Bheetar shant.' However, the onscreen captions show 'BAAHAR KUCH BHI' and 'RAAKSHAS', skipping 'aag, bhoot' entirely and failing to display the second half of the sentence ('Bheetar shant').
+- visual: Scene 10: The script is 'Agla baar darr aaye — tum kya karoge? Dekhoge? Ya daboge? Jai Jinendra.' The captions only show 'AGLA BAAR DARR' and 'DEKHOGE?', omitting 'tum kya karoge?', 'Ya daboge?', and the final closing.
+
+## 1119-1105 Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)
+- scene 5: Minor anatomical distortions in the animals' necks and heads.
+- scene 6: The sarathi's hand and staff exhibit slight AI melting artifacts.
+- scene 8: The animal in the lower foreground has a distorted, irregular shape.
