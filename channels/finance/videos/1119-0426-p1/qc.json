@@ -1,0 +1,28 @@
+{
+ "topic": "Business Ka Structure - Part 1: Proprietorship, Partnership, LLP, OPC, Pvt Ltd kya hain (aasan bhasha mein)",
+ "title": "Business ka structure kaun sa chunna chahiye?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.6,
+  "true_peak": -2.3,
+  "dur": 48.13
+ },
+ "vision": {
+  "score": 7,
+  "ok": true,
+  "problems": [
+   "scene 6: text 'personal assets at risk' is ambiguous compared to script 'safe'",
+   "scene 10: visual elements appear slightly crowded"
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8514851485148515,
+  "words": 118,
+  "problems": []
+ },
+ "ok": true
+}

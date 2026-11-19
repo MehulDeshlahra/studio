@@ -348,3 +348,14 @@
 - visual: scene 10: The text overlay 'Beech mein kisi app ne chua tak nahi' is overlapping and unreadable due to a glitch/duplicate layering.
 - visual: scene 11: The text overlay 'Comment mein sach batao!' is badly garbled and overlapping with 'Comment mein sach batao!' and 'paise'.
 - visual: scene 11: The final frame is a mess of overlapping text layers, making it look amateur and broken.
+
+## 1119-0510 (pre-render check)
+- EMPTY: the centre of the frame has no main visual
+- FIT: cartoon cat character does not match the technical game comparison context
+
+## 1119-0551 (pre-render check)
+- EMPTY: the centre of the frame has no main visual in the middle still
+- OVERLAP: large title text colliding with background game UI/store elements
+
+## 1119-0551 (pre-render check)
+- OVERLAP: stat value overlaps with the sub-text background glitch

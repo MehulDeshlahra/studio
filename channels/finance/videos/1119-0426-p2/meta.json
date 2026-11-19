@@ -6,5 +6,6 @@
  "request_wishes": "clear difference; tables; phone look",
  "replaces": "1119-0351",
  "brain_judged": true,
- "voice_retry": 1
+ "voice_retry": 1,
+ "stage": "done"
 }

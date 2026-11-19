@@ -1,0 +1,297 @@
+{
+ "slug": "gta6-india-launch-5999",
+ "title": "GTA 6 aaj se India mein launch: ₹5,999 mein kya naya?",
+ "hooks": [
+  "Launch hua GTA 6 India mein aaj raat 12 baje",
+  "13 saal baad GTA 6 aaya ₹5,999 mein",
+  "Abhi khelo, GTA 6 India mein live hai"
+ ],
+ "hook_choice": 0,
+ "hook_why": "First word 'Launch' is a high-stakes verb, matches top Shorts' 'Urgent Interruption' hook style, and the 12 AM IST timing creates immediate urgency for Indian viewers.",
+ "metaphor": "Canopy Peel: a horizontal plane descends through a PS5/Xbox console, peeling layers to reveal GTA 6 case, then Lucia/Jason artwork, then Vice City map — each layer on the beat with a histogram tracking depth.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Launch hua GTA 6 India mein aaj raat 12 baje, abhi khelo",
+   "type": "clip",
+   "prompt": "A PlayStation 5 console and Xbox Series X side by side on pure black, a GTA 6 physical game case slides in between them, neon Vice City glow reflects on surfaces, cinematic product shot",
+   "motion": "punch",
+   "title": "LAUNCH TIME",
+   "keywords": [
+    "Launch",
+    "GTA 6",
+    "12 baje"
+   ],
+   "real": {
+    "q": "PlayStation 5 console Xbox Series X side by side",
+    "kind": "photo",
+    "subject": "PS5 and Xbox consoles real photo"
+   },
+   "bg_prompt": "PlayStation 5 and Xbox Series X consoles on pure black studio background, premium product lighting",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Price hai ₹5,999 se start PS5 aur Xbox par, koi hidden charge nahi",
+   "type": "stat",
+   "value": "₹5,999",
+   "sub": "STARTING PRICE",
+   "label": "INDIA PRICE",
+   "keywords": [
+    "₹5,999",
+    "PS5",
+    "Xbox"
+   ],
+   "real": {
+    "q": "GTA 6 game case cover art",
+    "kind": "photo",
+    "subject": "GTA 6 official cover art"
+   },
+   "bg_prompt": "GTA 6 physical game case standing upright on pure black, premium studio lighting, neon pink/blue accent glow",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Do naye heroes: Lucia Caminos aur Jason Duval, dono apni kahani lekar aaye",
+   "type": "object",
+   "prompt": "Two character busts — Lucia and Jason — as high-fidelity 3D collectible figures on pure black, detailed facial features, modern criminal aesthetic, studio lighting",
+   "label": "PROTAGONISTS",
+   "keywords": [
+    "Lucia",
+    "Jason",
+    "heroes"
+   ],
+   "real": {
+    "q": "GTA 6 Lucia Caminos Jason Duval official artwork",
+    "kind": "photo",
+    "subject": "Official GTA 6 protagonist artwork"
+   },
+   "bg_prompt": "Two detailed 3D character busts on pure black background, premium collectible figure style, dramatic rim lighting",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Vice City wapas aaya Leonida state mein, naye beaches aur highways bhi",
+   "type": "flow",
+   "nodes": [
+    "LEONIDA",
+    "VICE CITY",
+    "MAP EXPANDED"
+   ],
+   "label": "SETTING",
+   "keywords": [
+    "Vice City",
+    "Leonida",
+    "map"
+   ],
+   "real": {
+    "q": "GTA 6 Vice City map artwork",
+    "kind": "photo",
+    "subject": "Official GTA 6 map artwork"
+   },
+   "bg_prompt": "Stylized map of fictional Leonida state with Vice City highlighted, neon contour lines on pure black, holographic HUD aesthetic",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Kya naya? Switch karo dono characters beech gameplay, bina loading ke",
+   "type": "ui",
+   "title": "CHARACTER SWITCH",
+   "rows": [
+    {
+     "label": "Lucia",
+     "value": "PLAYABLE",
+     "pct": 50
+    },
+    {
+     "label": "Jason",
+     "value": "PLAYABLE",
+     "pct": 50
+    },
+    {
+     "label": "Switch",
+     "value": "INSTANT",
+     "pct": 100
+    }
+   ],
+   "label": "MECHANIC",
+   "keywords": [
+    "Switch",
+    "characters",
+    "gameplay"
+   ],
+   "bg_prompt": "Split-screen UI showing Lucia and Jason perspectives merging, transition effect, pure black background with neon UI elements",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Weight gain, criminal profile, naye activities bhi, har choice ka asar dikhta hai",
+   "type": "compare",
+   "items": [
+    {
+     "label": "GTA 5",
+     "value": "LIMITED",
+     "pct": 30
+    },
+    {
+     "label": "GTA 6",
+     "value": "DEEP SYSTEMS",
+     "pct": 90
+    }
+   ],
+   "label": "FEATURES",
+   "keywords": [
+    "Weight gain",
+    "Criminal profile",
+    "Activities"
+   ],
+   "bg_prompt": "Side-by-side comparison cards on pure black, GTA 5 icon vs GTA 6 icon, feature bars filling up with neon gradients",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "RAGE engine chal raha 212 GB download chahiye, SSD pe fast load hoga",
+   "type": "stat",
+   "value": "212 GB",
+   "sub": "DOWNLOAD SIZE",
+   "label": "TECH SPECS",
+   "keywords": [
+    "RAGE engine",
+    "212 GB",
+    "download"
+   ],
+   "bg_prompt": "SSD drive with progress bar at 212 GB, technical readout overlay, pure black studio shot, cold blue lighting",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "13 saal ka intezaar khatam hua aaj, fans ka sapna poora hua",
+   "type": "title",
+   "big": "13 SAAL BAAD",
+   "sub": "GTA 5 THA 2013 MEIN",
+   "label": "TIMELINE",
+   "keywords": [
+    "13 saal",
+    "intezaar",
+    "khatam"
+   ],
+   "bg_prompt": "Calendar pages flipping from 2013 to 2026, final page shows GTA 6 logo, dramatic lighting on pure black",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Kaunsa console le rahe ho PS5 ya Xbox? Comment mein batao, hum bhi jaanna chahte hain",
+   "type": "object",
+   "big": "PS5 YA XBOX?",
+   "small": "COMMENT MEIN BATAO",
+   "label": "CTA",
+   "keywords": [
+    "PS5",
+    "Xbox",
+    "comment"
+   ],
+   "real": {
+    "q": "PlayStation logo Xbox logo side by side",
+    "kind": "logo",
+    "subject": "Official PlayStation and Xbox logos"
+   },
+   "bg_prompt": "PlayStation and Xbox logos floating on pure black, subtle particle glow, premium end-card aesthetic",
+   "prompt": "Official PlayStation and Xbox logos",
+   "motion": "push",
+   "title": "",
+   "sub": null,
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "GTA 6 finally dropped in India at ₹5,999! 🎮 13 saal ka intezaar khatam. Lucia-Jason ki Vice City kaisi lagi?\n\nPS5 ya Xbox — kaunsa console pe khel rahe ho? Comment mein batao! 👇\n\n#GTA6 #GTA6India #GamingNews #PS5 #XboxSeriesX #ViceCity #RockstarGames",
+ "hashtags": [
+  "#GTA6",
+  "#GTA6India",
+  "#GamingNews",
+  "#PS5",
+  "#XboxSeriesX",
+  "#ViceCity",
+  "#RockstarGames"
+ ],
+ "claims": [
+  {
+   "claim": "GTA 6 launched in India on November 19, 2026 at 12:00 AM IST",
+   "basis": "thedailyjagran.com 2026-11-18, Oneindia 2026-11-17, Moneycontrol 2026-11-14"
+  },
+  {
+   "claim": "Price starts at ₹5,999 on PlayStation 5 and Xbox Series X|S",
+   "basis": "Moneycontrol 2026-11-14, thedailyjagran.com 2026-11-18"
+  },
+  {
+   "claim": "Protagonists are Lucia Caminos and Jason Duval",
+   "basis": "Wikipedia Grand Theft Auto VI, thedailyjagran.com 2026-11-18"
+  },
+  {
+   "claim": "Set in fictional Leonida (Florida) with Vice City (Miami)",
+   "basis": "Wikipedia Grand Theft Auto VI, thedailyjagran.com 2026-11-18"
+  },
+  {
+   "claim": "Character switching between Lucia and Jason during gameplay",
+   "basis": "Wikipedia Grand Theft Auto VI"
+  },
+  {
+   "claim": "Features weight gain, criminal profile system, new activities",
+   "basis": "Wikipedia Grand Theft Auto VI Gameplay section"
+  },
+  {
+   "claim": "Runs on RAGE engine, 212 GB download size",
+   "basis": "Digit on MSN 2026-11-18, Rock Paper Shotgun 2026-11-17"
+  },
+  {
+   "claim": "13-year gap since GTA 5 (2013)",
+   "basis": "Wikipedia Grand Theft Auto VI, thedailyjagran.com 2026-11-18"
+  }
+ ],
+ "fresh_fixed": [
+  "scene 1: 'Launch hua GTA 6 India mein aaj raat 12 baje, abhi download shuru karo' implies it is about to launch or just launched, but the script also says 'abhi download shuru karo' (start downloading now) when the game is already live/playable as of 12:00 AM IST on Nov 19, 2026. The script is mostly accurate, but 'abhi download shuru karo' is slightly misleading as the game is already available for play."
+ ],
+ "brain_ids": [
+  "f945e2a937",
+  "4396759d41",
+  "fc294ac58f",
+  "1e1964f463",
+  "7f620e6fdf",
+  "b2fabb69c4",
+  "6ce7203c71",
+  "7fa182f8ef",
+  "1e60a34718",
+  "161339712e",
+  "b69d65467f",
+  "9db4cc694f",
+  "e15cfaed29",
+  "a688e48ca2"
+ ],
+ "skin": "keynote"
+}

@@ -1,1 +1,44 @@
-[]
+[
+ {
+  "job": "1119-0536-c1",
+  "topic": "DAD DESTROYS SON'S XBOX",
+  "title": "DAD DESTROYS SON'S XBOX",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=CKZKZQNq1DU",
+   "start": 84.91,
+   "layout": "mixed:crop+stack"
+  }
+ },
+ {
+  "job": "1119-0536-c2",
+  "topic": "DAD AND SON NERF WAR",
+  "title": "DAD AND SON NERF WAR",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=CKZKZQNq1DU",
+   "start": 313.91,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1119-0536-c3",
+  "topic": "SON HITS DAD WITH SPATULA",
+  "title": "SON HITS DAD WITH SPATULA",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=CKZKZQNq1DU",
+   "start": 382.15,
+   "layout": "stack"
+  }
+ }
+]

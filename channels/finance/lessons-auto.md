@@ -122,3 +122,13 @@
 
 ## 1119-0426-p2 (pre-render check)
 - FIT: chat UI shown while voice introduces proprietorship, LLP, Pvt Ltd comparison
+
+## 1119-0426-p2 Business Ka Structure - Part 2: Ek table mein poora comparison (risk, tax, audit, kharcha, funding)
+- only 0% of the script was found in the voice
+
+## review 1119-0426-p2
+- only 0% of the script was found in the voice
+
+## 1119-0426-p1 Business Ka Structure - Part 1: Proprietorship, Partnership, LLP, OPC, Pvt Ltd kya hain (aasan bhasha mein)
+- scene 6: text 'personal assets at risk' is ambiguous compared to script 'safe'
+- scene 10: visual elements appear slightly crowded

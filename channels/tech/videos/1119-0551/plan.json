@@ -1,0 +1,323 @@
+{
+ "slug": "gta6-launch-19nov",
+ "title": "GTA 6 aaj launch: 1.7 crore pre-orders, price, 212 GB?",
+ "hooks": [
+  "1.7 crore pre-orders, GTA 6 aaj raat launch",
+  "Sabse bada entertainment launch aaj raat 12 baje",
+  "212 GB ka game, ₹8000 se shuru, kya khareedoge?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the staggering pre-order number (1.7 crore) and immediate launch timing — the two highest-stakes facts that trigger instant curiosity. Matches the 'Urgent Interruption' hook pattern that wins on Shorts.",
+ "metaphor": "A digital highway where pre-order cars (1.7 crore) rush toward a launch toll gate at midnight, each car carrying a $80/$100 ticket and a 212 GB cargo — visualizes volume, price tiers, and file size in one moving metaphor.",
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "1.7 crore pre-orders, GTA 6 aaj raat launch",
+   "type": "title",
+   "prompt": "Cinematic 9:16 shot: Rockstar Games logo gleams on dark studio, then GTA 6 key art sweeps in — neon Vice City skyline, dual protagonists back-to-back. Particle trail forms a highway rushing toward a glowing midnight gate.",
+   "motion": "push",
+   "title": "1.7 CRORE PRE-ORDERS",
+   "keywords": [
+    "1.7 crore",
+    "launch"
+   ],
+   "real": {
+    "q": "Rockstar Games logo GTA 6 key art",
+    "kind": "photo",
+    "subject": "Rockstar Games logo and official GTA 6 key art"
+   },
+   "bg_prompt": "Rockstar Games logo and GTA 6 key art on dark studio background, premium photoreal render",
+   "big": "1.7 CRORE PRE-ORDERS",
+   "small": null,
+   "sub": "GTA 6 LAUNCH TONIGHT",
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Sensor Tower ke hisaab se 1.7 crore copies bik chuke hain",
+   "type": "stat",
+   "value": "1.7 Cr",
+   "sub": "pre-orders",
+   "label": "PRE-ORDERS",
+   "title": "SENSOR TOWER 1.7CR",
+   "keywords": [
+    "1.7 crore",
+    "Sensor Tower"
+   ],
+   "bg_prompt": "Digital counter rolling to 17,000,000 on dark holographic display, premium studio lighting",
+   "motion": "push",
+   "big": "1.7 Cr",
+   "small": "pre-orders",
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "1.65 billion dollar ka revenue, entertainment history ka sabse bada launch",
+   "type": "stat",
+   "value": "$1.65B",
+   "sub": "pre-order revenue",
+   "label": "REVENUE",
+   "title": "1.65 BILLION $ REVENUE",
+   "keywords": [
+    "$1.65 billion",
+    "record"
+   ],
+   "bg_prompt": "Gold bars stacking into a vault on dark background, each bar labeled with dollar values, cinematic lighting",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Do edition: Standard 80 dollar, Ultimate 100 dollar — India price store pe dekho",
+   "type": "compare",
+   "items": [
+    {
+     "label": "STANDARD",
+     "value": "$80",
+     "pct": 100
+    },
+    {
+     "label": "ULTIMATE",
+     "value": "$100",
+     "pct": 125
+    }
+   ],
+   "label": "EDITIONS",
+   "title": "STANDARD 80$ | ULTIMATE",
+   "keywords": [
+    "$80",
+    "$100",
+    "editions"
+   ],
+   "bg_prompt": "Two premium game cases side by side on dark velvet — Standard matte black, Ultimate metallic gold with bonus content icons floating above",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "File size 212 GB — aapke SSD ka bada test",
+   "type": "stat",
+   "value": "212 GB",
+   "sub": "install size",
+   "label": "DOWNLOAD SIZE",
+   "title": "212 GB INSTALL",
+   "keywords": [
+    "212 GB",
+    "SSD"
+   ],
+   "bg_prompt": "NVMe SSD drive on dark studio, a massive 212 GB data block sliding into it with particle effects, premium product render",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Sirf PS5 aur Xbox Series X pe milega, PC baad mein aayega",
+   "type": "object",
+   "prompt": "PlayStation 5 console and Xbox Series X console placed symmetrically on dark studio surface, subtle rim lighting, premium product photography",
+   "label": "PLATFORMS",
+   "title": "PS5 XBOX ONLY",
+   "keywords": [
+    "PS5",
+    "Xbox Series X"
+   ],
+   "real": {
+    "q": "PlayStation 5 console Xbox Series X console",
+    "kind": "photo",
+    "subject": "Real PS5 and Xbox Series X consoles"
+   },
+   "bg_prompt": "PS5 and Xbox Series X consoles on dark studio background, premium photoreal product render",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Pre-load shuru, 19 November raat 12 baje IST se khel sakte ho",
+   "type": "flow",
+   "nodes": [
+    "PRE-LOAD",
+    "19 NOV",
+    "12 AM IST",
+    "PLAY"
+   ],
+   "label": "LAUNCH FLOW",
+   "title": "PRE-LOAD → 19 NOV",
+   "keywords": [
+    "pre-load",
+    "12 AM IST"
+   ],
+   "bg_prompt": "Digital timeline on holographic panel: pre-load arrow → calendar 19 Nov → clock 00:00 IST → play button glowing, dark studio",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Vice City wapas, par ab Leonida state — Florida jaisa bada map",
+   "type": "object",
+   "prompt": "Open world map concept: neon Vice City skyline expanding into vast Leonida state — beaches, swamps, highways, cities — rendered as a 3D topographic model on dark background",
+   "label": "MAP",
+   "title": "LEONIDA STATE MAP",
+   "keywords": [
+    "Vice City",
+    "Leonida"
+   ],
+   "bg_prompt": "3D topographic map of Leonida state with Vice City glowing neon, expanding into Florida-inspired terrain, dark background",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Do hero Jason-Lucia, andar jaane wale buildings, dynamic mausam",
+   "type": "ui",
+   "rows": [
+    {
+     "label": "DUAL PROTAGONISTS",
+     "value": "Jason & Lucia",
+     "pct": 100
+    },
+    {
+     "label": "ENTERABLE BUILDINGS",
+     "value": "Hundreds",
+     "pct": 90
+    },
+    {
+     "label": "DYNAMIC WEATHER",
+     "value": "Hurricanes + rain",
+     "pct": 95
+    }
+   ],
+   "label": "FEATURES",
+   "title": "JASON LUCIA | BUILDINGS",
+   "keywords": [
+    "Jason",
+    "Lucia",
+    "enterable",
+    "weather"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: features, jason lucia | buildings, jason lucia enterable weather, gta 6 aaj launch: 1.7 crore pre-orders, price, 212 gb?. Style: glowing cyan wireframe hologram made of thin light lines floating above a round projector pad, near-black stage, faint dot grid, depth fog, no solid surfaces, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram",
+   "prompt": ""
+  },
+  {
+   "vo": "PC version confirmed par date abhi nahi — console pehle",
+   "type": "title",
+   "big": "PC BAAD MEIN",
+   "sub": null,
+   "title": "PC BAAD MEIN",
+   "keywords": [
+    "PC",
+    "later"
+   ],
+   "bg_prompt": "Gaming PC with Rockstar Games launcher on screen showing 'Coming Soon' badge, dark studio",
+   "motion": "push",
+   "small": null,
+   "label": "PC VERSION",
+   "skin": "hologram",
+   "prompt": "",
+   "value": "LATER"
+  },
+  {
+   "vo": "Sabse bada launch aaj raat — tum kaun sa edition loge? Comment karo",
+   "type": "title",
+   "prompt": "GTA 6 logo on dark background, neon pink/blue glow, comment icon pulsing at bottom",
+   "big": "COMMENT KARO",
+   "small": "STANDARD YA ULTIMATE?",
+   "label": "PAYOFF",
+   "title": "COMMENT KARO: STANDARD YA",
+   "keywords": [
+    "Standard",
+    "Ultimate"
+   ],
+   "bg_prompt": "GTA 6 logo neon glow on dark background, comment icon pulsing, premium dark studio",
+   "motion": "push",
+   "sub": null,
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "1.7 crore pre-orders, $1.65B revenue, 212 GB install. GTA 6 drops tonight 12 AM IST. 🎮\n\nStandard $80 vs Ultimate $100 — India price store pe check karo. PC baad mein aayega.\n\nTum kaun sa edition khareed rahe ho? Comment mein batao 👇\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#GTA6",
+  "#GTA6Launch",
+  "#RockstarGames",
+  "#GamingNews",
+  "#KaiseTech"
+ ],
+ "claims": [
+  {
+   "claim": "GTA 6 has 17.07 million pre-orders per Sensor Tower estimates",
+   "basis": "Mint article 2026-11-18: 'Sensor Tower on Wednesday, Grand Theft Auto VI (GTA VI) has sold approximately 17.07 million units through pre-orders'"
+  },
+  {
+   "claim": "Pre-order revenue estimated at $1.65 billion",
+   "basis": "Mint article 2026-11-18: 'pre-orders reportedly generating an estimated $1.65 billion in revenue ahead of its November 19 release'"
+  },
+  {
+   "claim": "Standard Edition priced at $80, Ultimate Edition at $100",
+   "basis": "Mint article 2026-11-18: 'The Standard Edition is priced at $80, while the Ultimate Edition costs $100'"
+  },
+  {
+   "claim": "File size is 212 GB",
+   "basis": "Oneindia 2026-11-17: 'GTA 6 launches in India on November 19, 2026, at midnight IST. Check its PS5 and Xbox release, pre-download details, 212 GB'"
+  },
+  {
+   "claim": "Launch date November 19, 2026 on PS5 and Xbox Series X|S",
+   "basis": "Mint 2026-11-18: 'GTA 6 will launch on November 19 for PlayStation 5 and Xbox Series X|S' and Wikipedia: 'Release 19 November 2026'"
+  },
+  {
+   "claim": "India launch time 12 AM IST midnight",
+   "basis": "Jagran Josh 2026-11-18: 'Check the November 19 release date, 12 AM IST launch time'"
+  },
+  {
+   "claim": "PC version coming later",
+   "basis": "Mint 2026-11-18: 'A PC version is expected at a later date' and Wikipedia: 'Platforms PlayStation 5, Xbox Series X/S'"
+  },
+  {
+   "claim": "Setting is Vice City in Leonida state (Florida-inspired)",
+   "basis": "Wikipedia: 'Set within the fictional US state of Leonida, based on Florida, and in the fictional city of Vice City, based on Miami'"
+  },
+  {
+   "claim": "Dual protagonists Jason Duval and Lucia Caminos",
+   "basis": "Wikipedia: 'the story follows the criminal duo of Jason Duval and Lucia Caminos'"
+  },
+  {
+   "claim": "Dynamic weather system with hurricanes",
+   "basis": "Mashable India 2026-11-17: 'GTA 6 will feature a redesigned dynamic weather system, with Rockstar Games sharing new details and Vice City screenshots through The Weather Channel'"
+  }
+ ],
+ "brain_ids": [
+  "4396759d41",
+  "f945e2a937",
+  "1e1964f463",
+  "fc294ac58f",
+  "b2fabb69c4",
+  "6ce7203c71",
+  "7f620e6fdf",
+  "7fa182f8ef",
+  "1e60a34718",
+  "b69d65467f",
+  "161339712e",
+  "9db4cc694f",
+  "a688e48ca2",
+  "6055c69660"
+ ],
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}

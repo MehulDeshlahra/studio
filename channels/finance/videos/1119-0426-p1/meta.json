@@ -4,5 +4,7 @@
  "topic": "Business Ka Structure - Part 1: Proprietorship, Partnership, LLP, OPC, Pvt Ltd kya hain (aasan bhasha mein)",
  "request": "Owner feedback on the first version: 'still confused about the difference; make 2 parts so it is clearly distinguishable; in part 2 a table comparing each'. The first version showed only headings, the comparison never appeared on screen. PART 1 of 2: explain what EACH structure is, one at a time, in plain words: who owns it, whose money is at risk if the business fails, and who it suits. One friend per structure (a small shop owner, two friends starting together, a freelancer, a startup raising money). Use 'list' cards per structure, no tax table yet. End: 'Part 2 mein sab ek table mein compare karenge, follow karo'.",
  "request_wishes": "clear difference; tables; phone look",
- "replaces": "1119-0351"
+ "replaces": "1119-0351",
+ "brain_judged": true,
+ "stage": "done"
 }

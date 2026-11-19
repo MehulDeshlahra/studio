@@ -57,8 +57,11 @@
   "topic": "Business Ka Structure - Part 2: Ek table mein poora comparison (risk, tax, audit, kharcha, funding)",
   "title": "Proprietorship vs LLP vs Pvt Ltd - kaun winner?",
   "qc_ok": false,
-  "status": "made",
-  "offer": "GUIDE"
+  "status": "held",
+  "offer": "GUIDE",
+  "review": [
+   "only 0% of the script was found in the voice"
+  ]
  },
  {
   "job": "1119-0429",
@@ -66,6 +69,14 @@
   "title": "Gold ya Silver? 2026 mein sahi decision kaise lein",
   "qc_ok": true,
   "status": "approved",
+  "review": []
+ },
+ {
+  "job": "1119-0426-p1",
+  "topic": "Business Ka Structure - Part 1: Proprietorship, Partnership, LLP, OPC, Pvt Ltd kya hain (aasan bhasha mein)",
+  "title": "Business ka structure kaun sa chunna chahiye?",
+  "qc_ok": true,
+  "status": "made",
   "review": []
  }
 ]

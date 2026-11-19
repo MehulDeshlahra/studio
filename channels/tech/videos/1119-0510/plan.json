@@ -13,11 +13,11 @@
  "scenes": [
   {
    "vo": "PS5 Pro pe bhi 60 FPS nahi mila?",
-   "type": "clip",
+   "type": "title",
    "prompt": "A PlayStation 5 Pro console glowing on a pure black studio pedestal, subtle camera push-in, faint blue light pulse from the front vent",
    "motion": "push",
    "title": "PS5 PRO",
-   "big": "",
+   "big": "PS5 Pro",
    "small": "",
    "keywords": [
     "PS5 Pro",
@@ -28,9 +28,9 @@
     "kind": "photo",
     "subject": "real PS5 Pro hardware"
    },
-   "bg_prompt": "PlayStation 5 Pro console on black studio pedestal, dramatic rim lighting, photorealistic",
-   "sub": null,
-   "label": null,
+   "bg_prompt": "",
+   "sub": "60 FPS missing",
+   "label": "",
    "skin": "keynote"
   },
   {
@@ -71,7 +71,8 @@
    "real": null,
    "bg_prompt": "Clean 30 FPS counter overlay on dark game capture, photoreal UI element on black",
    "motion": "push",
-   "skin": "hologram"
+   "skin": "hologram",
+   "prompt": ""
   },
   {
    "vo": "Par kyun? Saari power simulation mein chali gayi",
@@ -100,7 +101,8 @@
    "bg_prompt": "Abstract power budget visualization: glowing bar split into simulation vs frame rate, dark studio render",
    "motion": "push",
    "sub": null,
-   "skin": "blueprint"
+   "skin": "blueprint",
+   "prompt": ""
   },
   {
    "vo": "CPU ka budget bhi poora bhara",
@@ -172,7 +174,8 @@
    "real": null,
    "bg_prompt": "Clean 30 FPS counter with lock icon on dark game capture, photoreal UI",
    "motion": "push",
-   "skin": "hologram"
+   "skin": "hologram",
+   "prompt": ""
   },
   {
    "vo": "Har NPC ke baal ka physics alag calculate hota hai",
@@ -231,7 +234,8 @@
    "bg_prompt": "Top-down city simulation map with active agents, dark theme, neon data lines, studio render",
    "motion": "push",
    "sub": null,
-   "skin": "hologram"
+   "skin": "hologram",
+   "prompt": ""
   },
   {
    "vo": "Base PS5 pe stutters, Pro pe stable 30",
@@ -268,10 +272,10 @@
   },
   {
    "vo": "60 FPS mode matlab: graphics kam karna padta",
-   "type": "title",
+   "type": "compare",
    "big": "TRADE-OFF",
    "sub": "60 FPS = kam detail",
-   "label": "",
+   "label": "FPS",
    "title_text": "",
    "big_text": "",
    "small_text": "",
@@ -284,7 +288,12 @@
    "motion": "push",
    "title": "",
    "small": null,
-   "skin": "keynote"
+   "skin": "keynote",
+   "prompt": "",
+   "items": [
+    "30 FPS",
+    "60 FPS"
+   ]
   },
   {
    "vo": "Rockstar ne choose kiya: detail over frames",
@@ -332,7 +341,7 @@
   }
  ],
  "music_mood": "dark",
- "caption": "PS5 Pro leke bhi 30 FPS? 😤 Digital Foundry ne bata diya asli kaaran: har baal, har ray, har NPC ka physics... power khatam ho gayi. Rockstar ne detail choose kiya, frames nahi.\n\nAaj launch hai — tum kya karoge? 30 FPS pe kheloge ya wait karoge?",
+ "caption": "PS5 Pro leke bhi 30 FPS? 😤 Digital Foundry ne bata diya asli kaaran: har baal, har ray, har NPC ka physics... power khatam ho gayi. Rockstar ne detail choose kiya, frames nahi.\n\nAaj launch hai — tum kya karoge? 30 FPS pe kheloge ya wait karoge?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#GTA6",
   "#PS5Pro",
@@ -398,5 +407,6 @@
   "9db4cc694f",
   "c29ee6cacb"
  ],
- "skin": "keynote"
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
