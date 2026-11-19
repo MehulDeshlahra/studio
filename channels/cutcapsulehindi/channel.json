@@ -1,0 +1,62 @@
+{
+  "id": "cutcapsulehindi",
+  "name": "Cut Capsule Hindi",
+  "kind": "clips",
+  "status": "clips",
+  "language": "Hindi / Hinglish (the source video's language; captions in it)",
+  "audience": "India. Paid by Indian clipping platforms (ClipConnect, Dashrize, INDclipping, Klipp.in, Vyuzz) in rupees. Never the US campaigns: those are Cut Capsule's.",
+  "format": "Hindi entertainment clip page, sister of Cut Capsule: the best 20-59 s moments from Hindi podcasts, interviews, streams, comedy and film promos; same clip engine, same look, Hinglish hook titles",
+  "sister": "cutcapsule",
+  "clip": {
+    "rules": [
+      "Hindi or Hinglish sources only; an English source belongs to Cut Capsule",
+      "never the same clip on Cut Capsule and Cut Capsule Hindi",
+      "no hate, no harassment, no sexual content, no real-life violence, no politics that targets a community",
+      "never betting, casino or real-money games (India Online Gaming Act 2025)",
+      "the clip must make sense to someone who never saw the video"
+    ],
+    "layout": "fill",
+    "hook_lang": "Hinglish in Latin script (the way Indian Reels write it)"
+  },
+  "schedule": {
+    "posts_per_day": 2,
+    "backlog": 6,
+    "manual_first": 3,
+    "auto_approve": false
+  },
+  "warmup": {
+    "post_from": "2026-11-21",
+    "one_a_day_until": "2026-11-28",
+    "note": "new account (created 19 Nov): standard warm-up"
+  },
+  "handle": "@cutcapsule.hindi",
+  "handle_instagram": "@cutcapsule.hindi",
+  "accounts": {
+    "instagram": "@cutcapsule.hindi",
+    "facebook_page": "Cut Capsule Hindi",
+    "youtube": "not yet (owner parked it 19 Nov; handle @cutcapsulehindi is free)"
+  },
+  "theme": {
+    "handle": "@cutcapsule.hindi",
+    "accent": "#ffd830"
+  },
+  "hashtags_base": [
+    "#hindiclips",
+    "#viralclips"
+  ],
+  "english": false,
+  "offers": {
+    "on": false
+  },
+  "dm": {
+    "keywords": [
+      "FULL",
+      "LINK"
+    ],
+    "cta": "",
+    "text_next": "Poora video 👇\n{next}\n\nRoz ke best clips ke liye follow karo {handle}",
+    "text_wait": "Roz ke best clips ke liye follow karo {handle} 🔔\n{profile}"
+  },
+  "tagline": "Har din ke best Hindi clips",
+  "site_blurb": "The best moments from Hindi podcasts, interviews, streams and comedy, cut into short clips. Sister page of Cut Capsule."
+}

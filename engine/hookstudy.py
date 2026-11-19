@@ -25,6 +25,8 @@ QUERIES = {
     "finance": ["personal finance hindi shorts", "paisa kaise bachaye shorts", "sip kya hai shorts", "credit score hindi shorts", "income tax hindi shorts", "money tips hindi shorts"],
     "cutcapsule": ["gta 6 funny moments shorts", "gta 6 streamer reaction shorts", "podcast clips viral shorts", "hindi podcast clips shorts",
                    "streamer funny moments shorts", "interview viral moment shorts"],
+    "cutcapsulehindi": ["hindi podcast clips shorts", "hindi interview viral clip shorts", "hindi comedy clips shorts",
+                        "indian streamer funny moments shorts", "bollywood interview clip shorts", "hindi motivational podcast clip shorts"],
 }
 
 NICHE = {"tech": "an explainer or fact video about technology, science or how everyday things work (phones, internet, apps, AI, gadgets, machines)",
@@ -33,6 +35,7 @@ NICHE = {"tech": "an explainer or fact video about technology, science or how ev
     "jain": "a Jain dharma story or explanation told in Hindi (Tirthankaras, Mahavir Swami, Jain saints and kings, Jain festivals, ahimsa, Jain philosophy)",
     "finance": "a personal-finance or money explainer for Indians (saving, investing basics, loans, credit cards, tax, UPI, banking, scams); not stock tips or get-rich schemes",
     "cutcapsule": "a clip cut from a longer video: a podcast, interview, livestream or gameplay stream (GTA 6 and other games), usually a reaction, a funny or shocking moment, or a quotable line, with captions",
+    "cutcapsulehindi": "a clip in Hindi or Hinglish cut from a longer video: an Indian podcast, interview, comedy show, livestream or film promo, usually a funny, shocking or quotable moment, with captions",
 }
 
 HOOK_PROMPT = """You study short-video hooks. Watch ONLY the first 3 seconds of this Short very carefully, then the rest once.
@@ -144,6 +147,7 @@ HASHTAGS = {   # 18 Nov (owner: "you only see top creators; search hashtags for 
     "jain": ["jainism", "jaindharma", "mahavirswami", "navkarmantra", "jainstories", "paryushan", "jaintemple", "jainstatus"],
     "finance": ["personalfinance", "financetips", "moneytips", "sipinvestment", "mutualfunds", "financeinhindi", "creditscore", "incometax", "savingmoney"],
     "cutcapsule": ["gta6", "gtavi", "gta6clips", "podcastclips", "streamerclips", "twitchclips", "funnymoments", "viralclips"],
+    "cutcapsulehindi": ["hindipodcast", "podcastclips", "hindiclips", "desicomedy", "indianpodcast", "viralclips", "hindimemes"],
 }
 HT_STATE = os.path.join(os.path.expanduser("~/studio-out"), "ig-hashtags.json")
 

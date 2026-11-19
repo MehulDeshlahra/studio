@@ -26,6 +26,7 @@ GENRE = {"tech": "Tech explainers", "katha": "Mythology", "raaz": "Fiction seria
     "jain": "Jain stories",
     "finance": "Money explainers",
     "cutcapsule": "Entertainment clips",
+    "cutcapsulehindi": "Hindi entertainment clips",
 }
 BLURB = {   # what a viewer or a brand reads (channel.json "site_blurb" wins when set)
     "cutcapsule": "The best moments from games, streams and shows, cut into short clips: gaming, streaming, entertainment.",
