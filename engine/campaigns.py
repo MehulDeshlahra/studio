@@ -23,7 +23,9 @@ FIT = {"gaming": 1.0, "entertainment": 1.0, "streaming": 1.0, "podcast": 0.95, "
        "lifestyle": 0.7, "education": 0.7, "business": 0.65, "finance": 0.6, "technology": 0.5, "crypto": 0.3, "betting": 0.0,
        "gambling": 0.0, "adult": 0.0}
 BAD = re.compile(r"(casino|gambl|betting|\bbet\b|bet365|1win|1xbet|melbet|parimatch|stake\.com|\bstake\b|roobet|rollbit|"
-                 r"onlyfans|nsfw|crypto pump|forex signal|sportsbook)", re.I)
+                 r"onlyfans|nsfw|crypto pump|forex signal|sportsbook|candy\.?ai|ai girlfriend|ai companion|\bspicy\b|"
+                 r"\b18\+ chat|adult chat|sugar daddy|poker|slot machine|roulette|blackjack|lottery|fantasy (sports|cricket) cash|"
+                 r"rummy|teen patti|aviator game)", re.I)
 # Cut Capsule speaks English / Hinglish: campaigns that require another language get no score
 LANG = re.compile(r"(french|fran[cç]ais|arabic|عربي|espa[nñ]ol|spanish|portugu|brasil|deutsch|german|italian|italiano|"
                   r"turkish|t[uü]rk|japanese|korean|russian|polski|polish|vietnam|indonesia)", re.I)
@@ -99,8 +101,12 @@ def listing_api(max_pages=120):
                 "ratePer1kLabel": f"${lo:.2f}" + (f"-{hi:.2f}" if hi > lo else ""),
                 "organizationProfileHandle": r.get("organizationProfileHandle"),
                 "launchedAtMs": r.get("launchDate"),
-                "payout": [{"platform": p.get("platform"), "rate_cents": p.get("rateCents"), "max_cents": p.get("maxPayoutCents"),
-                            "min_cents": p.get("minPayoutCents")} for p in r.get("payouts") or [] if isinstance(p, dict)],
+                # country-priced campaigns (geoPriced, SEGA) leave the per-platform rate empty: use the campaign's top rate
+                "payout": [{"platform": p.get("platform"), "rate_cents": p.get("rateCents") or r.get("cpmMaxRateCents") or r.get("primaryPayoutCents"),
+                            "max_cents": p.get("maxPayoutCents"), "min_cents": p.get("minPayoutCents")}
+                           for p in r.get("payouts") or [] if isinstance(p, dict)]
+                          or [{"platform": pl, "rate_cents": r.get("cpmMaxRateCents") or r.get("primaryPayoutCents"), "max_cents": None,
+                               "min_cents": None} for pl in r.get("platforms") or []],
                 "detail_at": time.time(),
             })
         cur = (d.get("pagination") or {}).get("nextCursor")
