@@ -17,7 +17,7 @@ def _email():
         return ""
 
 
-BRAND = {"name": "Scroll House", "ig": "scrollhouse.in", "yt": "scrollhouse", "email": _email(),
+BRAND = {"name": "Scroll House", "ig": "scroll.house", "yt": "scrollhouse",   # 19 Nov: owner made @scroll.house "email": _email(),
          "line": "A network of original short-video pages. Every genre, every audience, one booking."}
 YT = {"tech": "kaise.tech.official", "katha": "puraankikatha", "raaz": "aagesuno"}   # verified 18 Nov (publish launch check)
 LIVE = ("pilot", "active", "live", "live (warm-up)")

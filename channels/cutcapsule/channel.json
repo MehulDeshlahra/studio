@@ -36,8 +36,11 @@
   },
   "theme": {
     "handle": "@cutcapsule",
-    "accent": "#ffd830"
+    "bg": "#000000",
+    "accent": "#ffd830",
+    "accent2": "#ff3b3b"
   },
+  "tagline": "Curated moments from across the internet",
   "hashtags_base": [
     "#clips",
     "#viralclips"
