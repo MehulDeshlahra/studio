@@ -31,7 +31,10 @@ A great moment:
 - hooks in its FIRST 2 SECONDS: a bold claim, a shocking line, a laugh, a fight, a reveal, a question. Start 1-3 s before
   the action, never on dead air or an intro.
 - makes sense with zero context, has ONE clear payoff, and ends right after it.
-- 30-45 s is ideal (the viral median is about 41 s); 20 s minimum, 58 s maximum.
+- LENGTH BY TYPE (19 Nov study of the top clip Shorts of the last 30 days, knowledge/clipping.md): a reaction, a shock
+  or one funny moment = 15-25 s, ending ON the payoff so the loop restarts cleanly (MC Stan 13.6M at 19 s, Kohsa Edit
+  12M at 22 s, Btalk Radar 17M at 15 s); a story, a stand-up bit or an argument = 30-55 s, only if every 5 s earns its
+  place. Never pad: the shortest version that keeps the setup and the payoff wins. 12 s minimum, 58 s maximum.
 - prefer reactions, quotable lines, conflict, surprises and "first time" moments over quiet stretches.
 - NEVER the intro or outro, a "like and subscribe" / channel plug, a sponsor read, "link in the description", a giveaway
   or merch plug (19 Nov: the first pick was the intro with a Subscribe button). Don't start at 0:00 unless the very first
@@ -223,8 +226,8 @@ def find_moments(ch, url, n, info, source=None):
             a, b = ts(m["start"]), ts(m["end"])
         except Exception:
             continue
-        if b - a < 20:
-            b = a + 32
+        if b - a < 12:                    # 19 Nov: was "< 20 -> 32 s", which stretched every short reaction moment
+            b = a + 15
         if b - a > 60:
             b = a + 55
         if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
@@ -282,7 +285,7 @@ def find_moments_text(ch, item, n, source=None):
             a, b = float(m["start"]), float(m["end"])
         except Exception:
             continue
-        b = a + 32 if b - a < 20 else (a + 55 if b - a > 60 else b)
+        b = a + 15 if b - a < 12 else (a + 55 if b - a > 60 else b)
         if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
             continue
         sc = m.get("score") if isinstance(m.get("score"), dict) else {"hook": m.get("score") or 5}
