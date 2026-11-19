@@ -43,3 +43,6 @@ Built 17 Nov from everything Mehul said while building Studio. Add a line whenev
 - 18 Nov: stop being defensive about copyright/licences. Real logos, app screens, product photos and public-figure photos are normal on IG/YT/FB: use them (ChatGPT reel = ChatGPT logo). Read every repo 100%, not a sample. Set up the scrapers/crawlers that help; ask Mehul for anything needed.
 - 19 Nov: auto-approve ONLY on Cut Capsule (clips). Story/explainer pages (tech, katha, raaz, jain, finance) stay on his
   own Telegram approval. Payout bank on Whop: he adds it later (whopbot reminds on the first money).
+- 19 Nov: Finance Fuel's "Insights by Certified CAs" is TRUE: his sister-in-law is a CA. Keep the claim; finance scripts
+  can be reviewed by her for anything tax/regulatory before posting if a brand deal needs it.
+- 19 Nov: parent brand Scroll House (@scrollhouse.in IG + FB page 1496866050169783) linked from every page's FB/YT text.

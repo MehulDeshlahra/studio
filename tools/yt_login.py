@@ -20,8 +20,9 @@ PAGES = sorted(d for d in os.listdir(os.path.join(os.path.dirname(os.path.abspat
 if page not in PAGES:                                   # 19 Nov: every page (was tech / katha / raaz only)
     sys.exit("usage: python tools/yt_login.py " + "|".join(PAGES))
 flow = InstalledAppFlow.from_client_secrets_file(CLIENT, SCOPES)
-creds = flow.run_local_server(port=0, prompt="consent", access_type="offline",
-                              authorization_prompt_message=f"Browser opens: choose the {page.upper()} YouTube channel, then Allow.")
+# 19 Nov: the owner opens the link himself (Edge): print it and do not launch the default browser
+creds = flow.run_local_server(port=0, prompt="consent", access_type="offline", open_browser="--open" in sys.argv,
+                              authorization_prompt_message=f"Open this link, choose the {page.upper()} YouTube channel, then Allow:\n{{url}}")
 if not creds.refresh_token:
     sys.exit("No refresh token came back. Run again and press Allow on every screen.")
 c = json.load(open(CLIENT))["installed"]
