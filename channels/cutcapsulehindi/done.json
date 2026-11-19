@@ -1,1 +1,88 @@
-[]
+[
+ {
+  "job": "1119-1340-c2",
+  "topic": "PITRU DOSH KYA HOTA HAI?",
+  "title": "PITRU DOSH KYA HOTA HAI?",
+  "status": "held",
+  "review": [
+   "almost no speech (captions nearly empty)",
+   "Broken layout in the bottom row of frames where the person is cut in half and duplicated on the left and right sides of the frame.",
+   "The main person is cut out of the frame/partially visible in the bottom row layout."
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=E_n5yk9sxqs",
+   "start": 480.0,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1119-1340-c3",
+  "topic": "KYA SAPNO MEIN AATMA AATI HAI?",
+  "title": "KYA SAPNO MEIN AATMA AATI HAI?",
+  "status": "held",
+  "review": [
+   "almost no speech (captions nearly empty)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=E_n5yk9sxqs",
+   "start": 73.0,
+   "layout": "mixed:fill+stack"
+  }
+ },
+ {
+  "job": "1119-1348-c3",
+  "topic": "JAGANNATH PURI MEIN VIP DARSHAN MIRACLE",
+  "title": "JAGANNATH PURI MEIN VIP DARSHAN MIRACLE",
+  "status": "held",
+  "review": [
+   "almost no speech (captions nearly empty)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=B_DpiJ0SY0k",
+   "start": 7.0,
+   "layout": "mixed:crop+fill+stack"
+  }
+ },
+ {
+  "job": "1119-1440-c1",
+  "topic": "PAISA ATTRACT KARNE KA TANTRA",
+  "title": "PAISA ATTRACT KARNE KA TANTRA",
+  "status": "held",
+  "review": [
+   "astrology / remedy content: brand-unsafe (source paused 19 Nov)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=wPB05nNhvCo",
+   "start": 2022.51,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1440-c2",
+  "topic": "DIVORCE CASES BADHNE WALE HAIN",
+  "title": "DIVORCE CASES BADHNE WALE HAIN",
+  "status": "held",
+  "review": [
+   "astrology / remedy content: brand-unsafe (source paused 19 Nov)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=wPB05nNhvCo",
+   "start": 308.13,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-1440-c3",
+  "topic": "JOB JANE KA DARR? YE KAREIN",
+  "title": "JOB JANE KA DARR? YE KAREIN",
+  "status": "held",
+  "review": [
+   "astrology / remedy content: brand-unsafe (source paused 19 Nov)"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=wPB05nNhvCo",
+   "start": 183.0,
+   "layout": "mixed:crop+stack"
+  }
+ }
+]
