@@ -113,7 +113,8 @@ def join_best(st):
                          max_tokens=1500)
         except Exception as e:
             log("whopbot: brief read failed", str(e)[:120]); continue
-        yt = [x for x in (b.get("youtube_videos") or []) + (r.get("footage") or []) if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/)", str(x))]
+        yt = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (r.get("footage") or [])
+              if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/|drive\.google\.com/(file|drive/folders|drive/u/\d+/folders))", str(x))]
         chans = [x for x in (b.get("youtube_channels") or []) if x]
         if not b.get("can_do") or not (yt or chans):
             st.setdefault("skipped", {})[k] = {"title": v.get("title"), "why": b.get("why_not") or "no YouTube footage",

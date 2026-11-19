@@ -37,6 +37,32 @@ def logged_in(page):
     return not re.search(r'>\s*(log in|sign in|sign up)\s*<', html) or "/logout" in html or "my whops" in html
 
 
+def cr_signed_in(page):
+    """contentrewards.com (the campaign site) keeps its own session: signed in = no 'Sign in' link in its header."""
+    page.goto("https://contentrewards.com/c/discover", wait_until="domcontentloaded", timeout=60000)
+    page.wait_for_timeout(4000)
+    return not re.search(r"\bSign in\b", page.inner_text("body")[:3000])
+
+
+def cr_login(page):
+    """Sign in to contentrewards.com with the saved Whop session (Whop OAuth: no password once whop.com is logged in)."""
+    if cr_signed_in(page):
+        return {"ok": True, "already": True}
+    steps = []
+    for name in (r"^sign in$", r"continue with whop|sign in with whop|log ?in with whop", r"^(continue|authorize|allow|approve)$"):
+        loc = page.get_by_role("link", name=re.compile(name, re.I))
+        if not loc.count():
+            loc = page.get_by_role("button", name=re.compile(name, re.I))
+        if loc.count():
+            try:
+                loc.first.click(timeout=8000); page.wait_for_timeout(6000); steps.append(name)
+            except Exception as e:
+                steps.append(f"{name}: {str(e)[:60]}")
+    ok = cr_signed_in(page)
+    return {"ok": ok, "steps": steps, "url": page.url, "shot": shot(page, "crlogin"),
+            "text": page.inner_text("body")[:1500] if not ok else ""}
+
+
 def look(page, url):
     page.goto(url, wait_until="domcontentloaded", timeout=60000)
     page.wait_for_timeout(5000)
@@ -109,16 +135,16 @@ def main():
         if cmd == "login":
             ctx = browser(p, headless=False)
             page = ctx.pages[0] if ctx.pages else ctx.new_page()
-            page.goto("https://whop.com/login/", wait_until="domcontentloaded")
-            print("Log in to Whop in this window. It closes by itself once you are logged in (15 min max).", flush=True)
+            # 19 Nov: the campaigns live on contentrewards.com, which has its OWN login (email code or Google), not whop.com's
+            page.goto("https://contentrewards.com/login?role=creator&next=%2Fc%2Fdiscover", wait_until="domcontentloaded")
+            print("Sign in to Content Rewards in this window (email code or Google). It closes by itself (15 min max).", flush=True)
             ok = False
-            for _ in range(180):                         # 19 Nov: /login redirected at once, so the URL alone proved nothing
+            for _ in range(180):
                 try:
                     page.wait_for_timeout(5000)
-                    names = {c["name"].lower() for c in ctx.cookies("https://whop.com")}
-                    if any(("token" in n or "session" in n) and "csrf" not in n for n in names) and "/login" not in page.url:
-                        txt = page.inner_text("body")[:4000]
-                        if not re.search(r"\bSign in\b|\bLog in\b", txt):
+                    if "/login" not in page.url and "contentrewards.com" in page.url:
+                        txt = page.inner_text("body")[:3000]
+                        if not re.search(r"\bSign in\b", txt):
                             ok = True; page.wait_for_timeout(3000); break
                 except Exception:
                     break                                # the owner closed the window
@@ -131,7 +157,9 @@ def main():
         page = ctx.new_page()
         try:
             if cmd == "check":
-                out = {"logged_in": logged_in(page)}
+                out = {"logged_in": logged_in(page) and cr_signed_in(page)}
+            elif cmd == "crlogin":
+                out = cr_login(page)
             elif cmd == "look":
                 out = look(page, sys.argv[2])
             elif cmd == "brief":

@@ -189,6 +189,84 @@ def find_moments(ch, url, n, info, source=None):
     return ms[:n], pk
 
 
+MOMENTS_TEXT = """You are the best short-form clipper in the world. Below is the timed transcript of "{title}" (each line starts
+with its time in seconds). Pick the {n} best moments to post as standalone Reels / Shorts on the page "{page}" ({about}).
+{guide}
+TRANSCRIPT:
+{lines}
+Return JSON {{"moments": [{{"start": <seconds where the hook line begins>, "end": <seconds where the payoff ends>, "hook": "<hook title>",
+ "why": "<one line>", "score": {{"hook": <1-10>, "flow": <1-10>, "value": <1-10>, "trend": <1-10>}},
+ "caption": "<one or two short lines adding the missing context, no hashtags>", "tags": ["<4-6 hashtags without #>"]}}]}}"""
+
+
+def find_moments_text(ch, item, n, source=None):
+    """19 Nov: moments from a whisper transcript (Drive / non-YouTube footage Gemini cannot watch by URL)."""
+    guide = MOMENTS.split("A great moment:")[1].split("Return JSON")[0]
+    rules = ""
+    if source:
+        rules = "CAMPAIGN RULES (every clip must follow them):\n- " + "\n- ".join(source.get("rules") or []) + "\n"
+    rules += "- " + "\n- ".join((ch.get("clip") or {}).get("rules") or [])
+    learned = what_worked(ch["id"])
+    guide = guide.replace("{rules}", rules + (("\nWHAT WORKED ON OUR PAGE:\n" + learned) if learned else ""))
+    lines = "\n".join(f"{t} {s}" for t, s in item.get("lines") or [])
+    if len(lines) > 60000:                              # very long footage: the model reads the first ~60K characters
+        lines = lines[:60000]
+    d = llm.text(MOMENTS_TEXT.format(title=item.get("name", "video"), n=n + 2, page=ch.get("name", ch["id"]), about=ch.get("format", ""),
+                                     guide=guide, lines=lines), json_mode=True, max_tokens=5000)
+    ms = []
+    for m in d.get("moments") or []:
+        try:
+            a, b = float(m["start"]), float(m["end"])
+        except Exception:
+            continue
+        b = a + 32 if b - a < 20 else (a + 55 if b - a > 60 else b)
+        if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
+            continue
+        sc = m.get("score") if isinstance(m.get("score"), dict) else {"hook": m.get("score") or 5}
+        ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200],
+                   "score": round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2),
+                   "scores": sc, "replayed": False, "caption": str(m.get("caption") or "")[:300],
+                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6]})
+    ms.sort(key=lambda m: -m["score"])
+    return ms[:n]
+
+
+def make_files(cid, url, n=4, test=False, campaign=None):
+    """Non-YouTube footage (a Drive file or folder): transcribe on the laptop, pick moments from the text, clip each file."""
+    import laptop
+    ch = channel(cid)
+    src = permitted(cid, url, campaign)
+    test = test or not src
+    base = time.strftime("%m%d-%H%M")
+    log("clipper (files):", cid, url, "test" if test else f"source {src['key']}")
+    d = laptop.job({"kind": "transcribe", "url": url, "max_files": 6}, f"{cid} {base} transcribe", wait=7200)
+    items = (load(os.path.join(d, "transcript.json"), {}) or {}).get("items") or []
+    shutil.rmtree(os.path.dirname(d), ignore_errors=True)
+    made = []
+    per = max(1, n // max(1, len(items))) if len(items) > 1 else n
+    for k, it in enumerate(items):
+        if len(it.get("lines") or []) < 5:
+            log("clipper (files): almost no speech in", it.get("name")); continue
+        ms = find_moments_text(ch, it, per, src)
+        if not ms:
+            continue
+        b2 = f"{base}{chr(97 + k)}"
+        os.makedirs(os.path.join(OUT, cid, "sources", b2), exist_ok=True)
+        save(os.path.join(OUT, cid, "sources", b2, "moments.json"), {"url": url, "file": it.get("name"), "moments": ms, "source": src, "test": test})
+        log("clipper (files): moments", it.get("name"), [(round(m["a"]), round(m["b"]), m["hook"], m["score"]) for m in ms])
+        brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")
+        out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 4, "brand": brand,
+                          "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"]} for m in ms]}, f"{cid} {b2}", wait=3600)
+        info = {"title": it.get("name"), "channel": (src or {}).get("title") or "", "webpage_url": url}
+        made += ingest(ch, cid, url, info, src, test, ms, out, b2)
+        shutil.rmtree(os.path.dirname(out), ignore_errors=True)
+    return made
+
+
+def is_youtube(url):
+    return bool(re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/)", url or ""))
+
+
 def vision(ch, jd, hook, text):
     try:
         import base64
@@ -203,6 +281,8 @@ def make(cid, url, n=4, test=False, campaign=None):
     ch = channel(cid)
     if not ch:
         raise SystemExit(f"no page {cid}")
+    if not is_youtube(url):                       # Drive / other footage: transcript path
+        return make_files(cid, url, n, test, campaign)
     src = permitted(cid, url, campaign)
     if not src and not test:
         log(f"{cid}: {url} is not in channels/{cid}/sources.json (no campaign / creator permission): TEST only, never posted")

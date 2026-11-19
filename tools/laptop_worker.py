@@ -206,6 +206,77 @@ def info_job(jid, spec):
         shutil.rmtree(work, ignore_errors=True)
 
 
+def _fetch_any(url, dest_dir):
+    """Download footage: YouTube/Twitch/Kick through yt-dlp, Google Drive files or folders through gdown, any direct
+    video link. Returns [(key, path, name)] (a Drive folder gives several)."""
+    import hashlib
+    os.makedirs(dest_dir, exist_ok=True)
+    if "drive.google.com" in url or "docs.google.com" in url:
+        import gdown
+        tmp = os.path.join(dest_dir, "dl-" + hashlib.md5(url.encode()).hexdigest()[:10])
+        os.makedirs(tmp, exist_ok=True)
+        if "/folders/" in url:
+            gdown.download_folder(url, output=tmp, quiet=True, remaining_ok=True)
+        else:
+            gdown.download(url, output=tmp + os.sep, quiet=True, fuzzy=True)
+        out = []
+        for dp, _, fs in os.walk(tmp):
+            for f in sorted(fs):
+                if f.lower().endswith((".mp4", ".mov", ".mkv", ".webm", ".m4v")):
+                    p = os.path.join(dp, f)
+                    key = "g" + hashlib.md5((url + f).encode()).hexdigest()[:12]
+                    final = os.path.join(dest_dir, key + ".mp4")
+                    if not os.path.exists(final):
+                        if f.lower().endswith(".mp4"):
+                            os.replace(p, final)
+                        else:
+                            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", p, "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
+                                            "-c:a", "aac", final], timeout=3600, creationflags=NOWIN)
+                    out.append((key, final, f))
+        shutil.rmtree(tmp, ignore_errors=True)
+        return out
+    key = "y" + hashlib.md5(url.encode()).hexdigest()[:12]
+    final = os.path.join(dest_dir, key + ".mp4")
+    if not os.path.exists(final):
+        run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
+             "-f", "bv*[height<=1080]+ba/b[height<=1080]/bv*+ba/b", "-S", "vcodec:h264,res:1080,fps:30,acodec:m4a",
+             "--merge-output-format", "mp4", "-N", "4", "-o", final, url], timeout=3600)
+    return [(key, final, os.path.basename(url))] if os.path.exists(final) else []
+
+
+def transcribe_job(jid, spec):
+    """19 Nov: footage Gemini cannot watch by URL (Drive files, Twitch/Kick VODs): download + whisper the whole thing; the
+    server picks the moments from the timed transcript, then a clip job cuts them from the same cached file."""
+    sys.path.insert(0, os.path.join(REPO, "engine"))
+    import clipcore
+    work = os.path.join(HOME, "jobs", jid)
+    shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
+    try:
+        items = _fetch_any(spec["url"], CACHE)
+        if not items:
+            raise RuntimeError("nothing downloadable at " + spec["url"][:120])
+        res = []
+        for key, path, name in items[: int(spec.get("max_files") or 6)]:
+            W, lang = clipcore.words(path, spec.get("lang"))
+            lines, cur = [], []
+            for w in W:                                         # ~sentence lines with a start time each
+                cur.append(w)
+                if re.search(r"[.!?]$", w[2]) or len(cur) >= 25:
+                    lines.append([round(cur[0][0], 1), " ".join(x[2] for x in cur)]); cur = []
+            if cur:
+                lines.append([round(cur[0][0], 1), " ".join(x[2] for x in cur)])
+            res.append({"id": key, "name": name, "dur": round(W[-1][1], 1) if W else 0, "lang": lang, "lines": lines})
+        json.dump({"items": res}, open(os.path.join(work, "transcript.json"), "w", encoding="utf-8"), ensure_ascii=False)
+        _send_back(jid, work)
+        log("transcribed", jid, len(res), "file(s) of", spec["url"][:80])
+    except Exception as e:
+        log("transcribe", jid, "failed:", str(e)[:300])
+        msg = str(e)[:1500].replace("'", " ")
+        run(SSH + [f"echo '{msg}' > {R}/done/{jid}.err"], timeout=40)
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
 def clip_job(jid, spec):
     """Download the video once (cached by id), then build every asked clip with engine/clipcore.py on this machine."""
     sys.path.insert(0, os.path.join(REPO, "engine"))
@@ -225,8 +296,10 @@ def clip_job(jid, spec):
                      "-o", full, url], timeout=2400)
             if not os.path.exists(full):
                 raise RuntimeError("download failed: " + (r.stderr or "")[-300:])
-        for old in sorted((os.path.join(CACHE, f) for f in os.listdir(CACHE)), key=os.path.getmtime)[:-3]:
-            os.remove(old)                                    # keep the last 3 sources
+        olds = [os.path.join(CACHE, f) for f in os.listdir(CACHE) if f.endswith(".mp4") and f != vid + ".mp4"]
+        for old in sorted(olds, key=os.path.getmtime)[:-10]:
+            os.remove(old)                                    # keep the last 10 sources (a Drive folder has several)
+        os.utime(full)
         pad, done = float(spec.get("pad", 4)), 0
         for i, c in enumerate(spec.get("clips") or []):
             cd = os.path.join(work, f"c{i}"); os.makedirs(cd)
@@ -377,7 +450,7 @@ def main():
                 th = threading.Thread(target=beat, daemon=True); th.start()
                 try:
                     spec = job_spec(jid)
-                    {"fetch": fetch, "info": info_job, "clip": clip_job, "whop": whop_job}.get(spec.get("kind"), lambda j, s: render(j))(jid, spec)
+                    {"fetch": fetch, "info": info_job, "clip": clip_job, "whop": whop_job, "transcribe": transcribe_job}.get(spec.get("kind"), lambda j, s: render(j))(jid, spec)
                 finally:
                     stop.set()
                 continue
