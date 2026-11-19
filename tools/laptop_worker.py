@@ -233,8 +233,8 @@ def clip_job(jid, spec):
             s0 = max(0.0, float(c["a"]) - pad)
             win = os.path.join(cd, "window.mp4")
             try:
-                clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full,
-                              "-c:v", "libx264", "-preset", "ultrafast", "-crf", "14", "-c:a", "aac", "-b:a", "192k", win], 900)
+                clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full]
+                             + clipcore.venc(False) + ["-c:a", "aac", "-b:a", "192k", win], 900)
                 res = clipcore.make_clip(win, float(c["a"]) - s0, float(c["b"]) - s0, c.get("hook", ""), cd, spec.get("lang"),
                                          brand=spec.get("brand") or "")
                 res["offset"] = s0

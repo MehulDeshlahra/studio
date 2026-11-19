@@ -24,5 +24,8 @@ What it is: an entertainment clipping page. The engine (engine/clipper.py) takes
 - 3-word pop captions (Montserrat ExtraBold), spoken word yellow + 112%, low on the frame (off faces and mouths).
 - Start on the hook sentence, end on a sentence end; 30-45 s target, 58 s cap; only really quiet gaps cut (max 25%).
 - Never intros, outros, channel plugs or sponsor reads (prompt + transcript check). -14 LUFS. 8-12 hashtags.
-- Speed: ~2 min per clip on the laptop CPU. The NVIDIA driver is too old for NVENC (needs 610+); a driver update would
-  move encoding to the GPU (owner's choice, not needed).
+- Branding: the Cut Capsule logo (assets/brand/cutcapsule-logo.png, from the Instagram dp) top-left with a soft shadow,
+  every clip; "no_watermark": true on a sources.json entry turns it off for campaigns that forbid watermarks.
+  No end card: clip pages lose viewers on an outro; the loop back to the hook keeps watch time.
+- Speed (19 Nov, 28 s clip on the laptop): 157 s first version -> 95 s (CPU speedups) -> 61 s after the NVIDIA driver
+  621.24 (NVENC GPU encoding; whisper also on the GPU). Falls back to the CPU encoder by itself if NVENC fails.

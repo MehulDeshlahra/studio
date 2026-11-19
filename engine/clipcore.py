@@ -17,6 +17,27 @@ GAP = 0.55            # a pause longer than this inside a clip is cut out
 KEEP_PAD = 0.12       # silence kept on each side of a cut
 
 
+_NV = [None]
+
+
+def nvenc():
+    """True when the GPU H.264 encoder works here (19 Nov: needs NVIDIA driver 610+; tested once per process)."""
+    if _NV[0] is None:
+        r = subprocess.run(["ffmpeg", "-v", "error", "-f", "lavfi", "-i", "color=black:s=1080x1920:d=0.5", "-c:v", "h264_nvenc",
+                            "-f", "null", "-"], capture_output=True, text=True, timeout=60, creationflags=NOWIN)
+        _NV[0] = r.returncode == 0
+    return _NV[0]
+
+
+def venc(final):
+    """Video encoder args: final = the posted file (quality), else an intermediate (speed)."""
+    if nvenc():
+        return (["-c:v", "h264_nvenc", "-preset", "p5", "-tune", "hq", "-rc", "vbr", "-cq", "21", "-b:v", "0", "-maxrate", "16M",
+                 "-bufsize", "32M", "-profile:v", "high", "-pix_fmt", "yuv420p"] if final else
+                ["-c:v", "h264_nvenc", "-preset", "p2", "-rc", "constqp", "-qp", "16"])
+    return (["-c:v", "libx264", "-preset", "fast", "-crf", "19"] if final else ["-c:v", "libx264", "-preset", "ultrafast", "-crf", "14"])
+
+
 def run(cmd, timeout=1800):
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, creationflags=NOWIN)
     if r.returncode:
@@ -153,7 +174,7 @@ def tighten(src, ranges, out):
         parts.append(f"[v{i}][a{i}]")
     fc.append("".join(parts) + f"concat=n={len(ranges)}:v=1:a=1[v][a]")
     run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[a]",
-         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "14", "-r", "30", "-c:a", "aac", "-b:a", "192k", out], 1800)
+         ] + venc(False) + ["-r", "30", "-c:a", "aac", "-b:a", "192k", out], 1800)
     return out                                       # 19 Nov speed: an intermediate file only needs to be fast + clean
 
 
@@ -363,7 +384,7 @@ def render(src, info, assf, out, logo=None):
     sub = f"ass='{_ff(assf)}':fontsdir='{_ff(FONTS)}'"
     segs = info["segments"]
     # 19 Nov speed: "fast" is ~2x "medium" for the same look at CRF 19 (platforms re-encode every upload anyway)
-    enc = ["-c:v", "libx264", "-preset", "fast", "-crf", "19", "-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000"]
+    enc = venc(True) + ["-r", "30", "-c:a", "aac", "-b:a", "160k", "-ar", "48000"]
     li = ["-i", logo] if logo else []
     if len(segs) == 1:
         vf = _layout_vf(segs[0]["layout"], info, segs[0], sub).replace(",format=yuv420p[v]", "[pre]") + ";" + _logo_tail("pre", logo)
@@ -376,9 +397,9 @@ def render(src, info, assf, out, logo=None):
     def one(i):
         g = segs[i]
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{g['s']:.3f}", "-to", f"{g['e']:.3f}", "-i", src, "-filter_complex",
-             _layout_vf(g["layout"], info, g, None), "-map", "[v]", "-map", "0:a?", "-c:v", "libx264", "-preset", "ultrafast",
-             "-crf", "14", "-threads", "3", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", parts[i]], 1800)
-    with ThreadPoolExecutor(3) as ex:
+             _layout_vf(g["layout"], info, g, None), "-map", "[v]", "-map", "0:a?"] + venc(False)
+            + ["-threads", "3", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", parts[i]], 1800)
+    with ThreadPoolExecutor(2 if nvenc() else 3) as ex:   # a GTX 1650 runs 2-3 NVENC sessions at once
         list(ex.map(one, range(len(segs))))
     lst = os.path.join(work, "segs.txt")
     open(lst, "w").write("".join(f"file '{os.path.basename(p)}'\n" for p in parts))
