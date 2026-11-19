@@ -41,3 +41,13 @@ question (no suspense), and the answer did not answer the question (asked "send 
 never needed to receive"). Rules: a question and its answer are checked against each other; a reveal is never posted
 in the same minute as the question; no format ships without a researched design and frames checked by eye. The API
 cannot add poll / quiz / link stickers, so automated "quiz" Stories can never be interactive.
+
+## 19 Nov audit (golden rule): a 9-10 vision score meant nothing
+Frame-by-frame audit of everything queued: 8 of 30 approved reels were not postable although the final review gave
+them 9-10/10: all 6 Navkar Bhav (Mughal onion domes, blue/green-skinned Tirthankara and Bahubali, saffron-robed Jain
+monks, a female Hindu-style Dharanendra, a king who changes face, one story needing a source check), Puraan Ki Katha
+"Brahma's fifth head" with a one-headed Brahma, Finance Fuel gold/silver (investment advice, unsourced numbers).
+Fix: every page has channel.json "visual_checks", a must-answer checklist the reviewer answers per frame; any yes is
+serious and caps the score at 5 (tested: the same 3 reels went 9-10 -> 4). Positive iconography text was not enough
+for the image model: write the NEVER list too (iconography.JAIN_NEVER). Order matters: a page's first posts are its
+strongest, not its oldest (katha: Ujjain/Greenwich first).
