@@ -1,4 +1,256 @@
 {
  "_how": "Filled by engine/whopbot.py: campaigns whose category fits this page (channel.json route_categories).",
- "sources": {}
+ "sources": {
+  "reach": {
+   "platform": "whop",
+   "campaign_url": "https://contentrewards.com/c/campaigns/cc01471a-0dd5-471d-95b7-90955b037974",
+   "campaign_id": "cc01471a-0dd5-471d-95b7-90955b037974",
+   "title": "$20,000+ Social Media Justice Clipping Campaign",
+   "channels": [],
+   "videos": [
+    "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
+    "https://www.youtube.com/watch?v=6uSskUaDL90"
+   ],
+   "match": [
+    "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
+    "https://www.youtube.com/watch?v=6uSskUaDL90"
+   ],
+   "rules": [
+    "Content must convey the message of social media addiction",
+    "Source footage from AJ’s Mindful Podcast video",
+    "Supporting footage (movies, YouTube, etc.) is allowed",
+    "Must use hashtag #SocialMediaJustice",
+    "Add link in bio: https://socialmediajusticereview.com/",
+    "US creators must fill out the linked form"
+   ],
+   "caption_add": "#SocialMediaJustice",
+   "no_watermark": false,
+   "platforms": [
+    "instagram",
+    "youtube",
+    "tiktok"
+   ],
+   "clips_per_video": 4,
+   "active": true,
+   "not_paid_countries": [],
+   "audience_rule": "",
+   "names": [
+    "AJ",
+    "Social Media Justice",
+    "Mindful Podcast"
+   ],
+   "rate": "$2.00/1K",
+   "added": "2026-11-19 15:53",
+   "added_t": 1795083751.8609178,
+   "brief": "Skip to content\nDiscover\nHome\nCampaigns\nDiscover\nMy work\nAnalytics\nSubmissions\nDrafts\nEarnings\nAccount\nSettings\nSupport\n\nLink your Discord\n\nGet campaign alerts and payout pings in Discord.\n\nConnect Discord\n\nBack\nmehuldeshlahra\nReach\n$20,000+ Social Media Justice Clipping Campaign\n\nGet paid to clip/convey the message of social media addiction, sourced from AJ’s Social Media Justice video. Supporting footage (movies, YouTube and similar) is allowed. https://www.youtube.com/watch?v=6uSskUaDL90 https://socialmediajusticereview.com/\n\nShow less\nJoined\nLaunched 1 week ago\nPodcasts\n11\nCPM\nSubmit clip\nTikTok\n\nPer 1K views\n\n$2.00\n\nMin payout\n\n$10.00\n\nMax payout\n\n$750.00\n\nInstagram\n\nPer 1K views\n\n$2.00\n\nMin payout\n\n$10.00\n\nMax payout\n\n$750.00\n\nYouTube\n\nPer 1K views\n\n$2.00\n\nMin payout\n\n$10.00\n\nMax payout\n\n$750.00\n\nBudget\n$1,504 / $20,833\n\n$19,329 still up for grabs, plenty of room to join.\n\nReference materials\nLink for bio/US creators to fill out\nRules & Requirements\nFootage (YouTube)\nFootage (Google Drive)\nBrief\n\nContent must clearly convey the message of social media addiction, sourced from AJ’s Mindful Podcast video. Supporting footage (movies, YouTube and similar) is allowed.\n\nAny creators residing in the US, we encourage you to fill out the form linked below so you also qualify.\n\nAny account niche is welcome. If you can reach people who struggle with social media addiction, you can clip.\n\nYour captions must use the hashtag: #SocialMediaJustice\n\nContent requirements\n\nAdd link in bio\nhttps://socialmediajusticereview.com/\nCopy link\n\nTop clippers\nRank\n1 / 11\nRehman\n$750\nRank\n2 / 11\nZeke\n$215.80\nRank\n3 / 11\nSamuel Elias\n$103.65\n\n725.4K\nviews\n\nViews across every approved clip, running total by day.\n\nViews\nApproved clips\nOct 20\nOct 28\nNov 5\nNov 13\nNov 19\nMore from \nReach\n85 campaigns launched\nView profile\nChat\nContent Rewards Support\nAsk us anything\nNo chats yet\n\nAgencies you work with can message you here.\n",
+   "brief_shot": "/home/ubuntu/studio-out/cutcapsule/whop-shots/1119-155259-brief.png"
+  },
+  "clip-influence": {
+   "platform": "whop",
+   "campaign_url": "https://contentrewards.com/c/campaigns/f37af915-7bd4-42ba-a524-835003d94866",
+   "campaign_id": "f37af915-7bd4-42ba-a524-835003d94866",
+   "title": "Millie Moon Clipping (Natural + Theme Pages)",
+   "channels": [],
+   "videos": [
+    "https://drive.google.com/drive/folders/1vG2vcL-TblA43sX8zETq_4x_kQIUt9NO"
+   ],
+   "match": [
+    "https://drive.google.com/drive/folders/1vG2vcL-TblA43sX8zETq_4x_kQIUt9NO"
+   ],
+   "rules": [
+    "Vertical 9:16 format only",
+    "No AI watermarks or AI-generated slop",
+    "No health, performance, or review claims (e.g., no 'softest', 'hypoallergenic', 'no leaks')",
+    "Must use #milliemoon",
+    "Must tag @mymilliemoon in caption",
+    "Must include a CTA in caption",
+    "30% US audience required",
+    "No negative content",
+    "Keep text overlays minimal",
+    "End on full cake with owl plushie in frame",
+    "No original filming; use supplied asset pack"
+   ],
+   "caption_add": "@mymilliemoon #milliemoon [Insert CTA: e.g., 'Save this', 'Send this to the friend who's having a baby', or 'Gift guide for the mom-to-be']",
+   "no_watermark": true,
+   "platforms": [
+    "instagram",
+    "tiktok"
+   ],
+   "clips_per_video": 4,
+   "active": true,
+   "not_paid_countries": [
+    "India",
+    "Pakistan",
+    "Bangladesh"
+   ],
+   "audience_rule": "30% Tier 1: US",
+   "names": [
+    "Millie Moon",
+    "Millie Moon Luxury Diaper Cake"
+   ],
+   "rate": "$3.00/1K",
+   "added": "2026-11-19 15:54",
+   "added_t": 1795083855.2370806,
+   "brief": "Skip to content\nDiscover\nHome\nCampaigns\nDiscover\nMy work\nAnalytics\nSubmissions\nDrafts\nEarnings\nAccount\nSettings\nSupport\n\nLink your Discord\n\nGet campaign alerts and payout pings in Discord.\n\nConnect Discord\n\nBack\nmehuldeshlahra\nClip Influence\nMillie Moon Clipping (Natural + Theme Pages)\n\nGet paid $3/thousand views to clip for the Diaper Brand Millie Moon. Millie Moon is in a variety of stores, it is a diaper brand. Create Viral clips and drive awareness to the Millie Moon brand.\n\nShow less\nJoined\nLaunched 1 month ago\nEntertainment\n5\nCPM\nSubmit clip\nInstagram\n\nPer 1K views\n\n$3.00\n\nMin payout\n\n$3.00\n\nMax payout\n\n$300.00\n\nTikTok\n\nPer 1K views\n\n$3.00\n\nMin payout\n\n$3.00\n\nMax payout\n\n$300.00\n\nBudget\n$574 / $5,000\n\n$4,426 still up for grabs, plenty of room to join.\n\nReference materials\nMillie Moon Guidelines\nMillie Moon Clip Examples\nMillie Moon ALL CONTENT\nBrief\n\nAudience location must be 30% Tier 1: US\n\nContent MUST be about Millie Moon.\n\nNo Botting!\n\nVideos must be original and not stolen from other clippers.\n\nNO USING Watermark AI softwares like Opus Clip, etc\n\nCheck the Google Doc for all Campaign Requirements!\n\nCreator requirements\n\nGet paid $3/thousand views to clip for the diaper brand Millie Moon. The campaign involves Clipping, UGC, and repurposing. Create viral clips to bring awareness to the Millie Moon brand.\n\nTop clippers\nRank\n1 / 5\npubertyhits\n$405.08\nRank\n2 / 5\nCreator\n$109.34\nRank\n3 / 5\nchikehitsgreen\n$8.27\n\n184.3K\nviews\n\nViews across every approved clip, running total by day.\n\nViews\nApproved clips\nOct 20\nOct 28\nNov 5\nNov 13\nNov 19\nMore from \nClip Influence\n30 campaigns launched\nView profile\nChat\nContent Rewards Support\nAsk us anything\nNo chats yet\n\nAgencies you work with can message you here.\nGOOGLE DOC https://docs.google.com/document/d/1gcIcbMUqYxqybN7zlm7REchA-LwDtzwJCKF9EZ74so4/edit?usp=sharing:\n﻿Millie Moon Clipping\r\nClip Influence Campaign Guidelines\r\n  \r\n  \r\n\r\nPlease make sure to follow the full list of clipping instructions. Any attempts at malicious clipping or other harmful behavior may result in immediate removal from the campaign and a permanent ban. If you have any questions or need further support, feel free to ask in the chat or DM an admin in the support chat.\r\nPayout Structure:\r\nCPM: $2 Per 1,000 views\r\nMinimum payout: 1,000 views\r\nMaximum Payout: $300\r\nTikTok and Instagram ONLY — Grown Theme Pages & New Niche Related Theme Page Accounts ONLY (no Dedicated/Branded Pages for this campaign)\r\n* Campaign goal: Drive awareness of the Millie Moon brand — especially the Luxury Diaper Cake — and increase positive brand sentiment online. Fill the feed with calm, happy, giftable Millie Moon moments, so people who scroll or search \"Millie Moon\" see positive content made with care. The diaper cake leads because it's a gift: visual, emotional, and shareable — and it works without a single product claim.\r\n* Hashtags you MUST use: #milliemoon\r\n* Other recommended hashtags: #milliemoondiapers #milliemoonbabyshower #diapercake #diapercakes #babyshowergift #babyshowergifts #babyshowerideas #babyshower #newbabygift #giftideas\r\n* Keywords to weave into captions / on-screen text: Millie Moon, Millie Moon Diapers, Millie Moon Diaper Cake, Luxury Diaper Cake, Diaper Cake, Baby Shower Gift, New Baby Gift, Gift for Mom-to-be, Owl Plushie\r\n* Minimum engagement: 0.20% engagement or higher is always required for approval, regardless of any campaign-specific figure above.\r\n* Keep it calm, warm, and positive. No negative content whatsoever — do not make Millie Moon look bad. Full no-go rules are listed further down this doc — please read them before filming.\r\n* Show it as a GIFT, not as a diaper review.\r\n\r\n\r\nCampaign Facts (keep these accurate)\r\n* The product is the Millie Moon Luxury Diaper Cake: a 3-tier cake of 50 Size 1 diapers, with wipes, an owl plushie, and 3 Millie Moon storybooks, in a gift box.\r\n\r\n\r\n* It's a gift for baby showers, new arrivals, and the holidays. Show it as a gift, not as a diaper review.\r\nNo-Go Claims\r\n* Don't make product performance or health claims — e.g. \"softest\", \"gentle\", \"good for sensitive skin\", \"dermatologist tested\", \"no leaks\", \"safe\", \"non-toxic\", \"hypoallergenic\" — and no stats, awards, star ratings, or review counts.\r\n* Don't mention skin, rash, irritation, ingredients, testing, recalls, or any news about the brand.\r\nTHEME PAGES\r\nIf you want to participate with a Grown Theme Page, it can only be in the following niches:\r\n* Baby shower / New baby gift / Gift guide pages / Mom / Parenting / Pregnancy / Newborn pages / Soft luxury / Aesthetic / Lifestyle pages\r\n* UGC Creators can participate if they showcase and talk about the product as a gift\r\n* Content standard: Theme Pages may NEVER post gore, pornographic/OF (OnlyFans-style) content, or violent content — on the page used for this campaign or anywhere else on that page.\r\n* Must tag: @mymilliemoon on TikTok / @mymilliemoon on Instagram \r\n* Must use a CTA that fits the gifting angle — e.g. \"Save this\", \"Send this to the friend who's having a baby\", \"Gift guide for the mom-to-be.\"\r\n* All content must feature the Millie Moon Luxury Diaper Cake clearly and prominently — no vague or unrelated content.\r\n\r\n\r\nNew Niche Related Theme Page Accounts\r\nYou can make a new niche related theme page account for this campaign under these very specific conditions, please read the whole google doc, and watch the loom guide videos: New Theme Page for Rascals & Millie Moon\r\n\r\n\r\nImportant Notes\r\n* The Luxury Diaper Cake is the lead product, positioned as a baby shower, new baby, and holiday gift.\r\nWhere to Send Traffic - By tagging in the description of your video\r\n* TikTok: https://www.tiktok.com/@mymilliemoon\r\n* Instagram: https://www.instagram.com/mymilliemoon/\r\nPublishing Guidelines\r\n* Get your content/clips from the campaign asset pack (your admin will share access), or use the supplied stills only for carousels and scroll-throughs.\r\n* DO NOT create AI slop videos, you will rejected!\r\n\r\n\r\n* If sourcing a clip from o",
+   "brief_shot": "/home/ubuntu/studio-out/cutcapsule/whop-shots/1119-155439-brief.png"
+  },
+  "clip-influence-2": {
+   "platform": "whop",
+   "campaign_url": "https://contentrewards.com/c/campaigns/d64ae266-62a8-457e-b210-3ca465d59d3c",
+   "campaign_id": "d64ae266-62a8-457e-b210-3ca465d59d3c",
+   "title": "Booty Shaking Capybara Clipping",
+   "channels": [],
+   "videos": [
+    "https://drive.google.com/drive/folders/1OKVyljW0bzydqhh1MKu3OxFoxL61hH1C"
+   ],
+   "match": [
+    "https://drive.google.com/drive/folders/1OKVyljW0bzydqhh1MKu3OxFoxL61hH1C"
+   ],
+   "rules": [
+    "No face cam or voice-over required (UGC permitted)",
+    "Must be original/modified, no stolen clips",
+    "NO using watermark AI software (e.g., Opus Clip)",
+    "Audience must be 30% UK, France, or Germany",
+    "Content split: 50% UK, 25% Germany, 25% France",
+    "Must tag @zurutoys (TikTok) / @zuru.toys (Instagram) in every post",
+    "Must include CTA (e.g., 'pre-order now at Smyths!')",
+    "Must use hashtags #bootyshakingcapybara #petsalive",
+    "Clean/kid-friendly audio only",
+    "No negative content; adhere to Kids Brand Safety rules",
+    "Minimum 0.20% engagement required for approval",
+    "No botting or fake views"
+   ],
+   "caption_add": "The Booty Shaking Capybara is finally here! 💃 Pre-order now at Smyths! @zurutoys #bootyshakingcapybara #petsalive",
+   "no_watermark": true,
+   "platforms": [
+    "tiktok",
+    "instagram"
+   ],
+   "clips_per_video": 4,
+   "active": true,
+   "not_paid_countries": [
+    "India",
+    "USA",
+    "Canada",
+    "Australia",
+    "Brazil",
+    "Any country other than UK, France, and Germany"
+   ],
+   "audience_rule": "Audience location must be 30% UK, France, or Germany; content split 50% UK, 25% Germany, 25% France",
+   "names": [
+    "Booty Shaking Capybara",
+    "Pets Alive",
+    "ZURU",
+    "Smyths",
+    "The Entertainer"
+   ],
+   "rate": "$2.00/1K",
+   "added": "2026-11-19 15:55",
+   "added_t": 1795083886.7280605,
+   "brief": "Skip to content\nDiscover\nHome\nCampaigns\nDiscover\nMy work\nAnalytics\nSubmissions\nDrafts\nEarnings\nAccount\nSettings\nSupport\n\nLink your Discord\n\nGet campaign alerts and payout pings in Discord.\n\nConnect Discord\n\nBack\nmehuldeshlahra\nClip Influence\nBooty Shaking Capybara Clipping\n\nGet paid $2/thousand views to clip for the Booty Shaking Capybara Clipping. Create viral videos of the Booty Shaking Capybara and get paid! The Booty Shaking Capybara is a Toy from Pets Alive.\n\nShow less\nJoined\nLaunched 3 weeks ago\nEntertainment\n14\nCPM\nSubmit clip\nTikTok\n\nPer 1K views\n\n$2.00\n\nMin payout\n\n$2.00\n\nMax payout\n\n$300.00\n\nInstagram\n\nPer 1K views\n\n$2.00\n\nMin payout\n\n$2.00\n\nMax payout\n\n$300.00\n\nBudget\n$1,791 / $5,000\n\n$3,209 still up for grabs, plenty of room to join.\n\nReference materials\nBooty Shaking Capybara Guidelines - MUST Read\nBooty Shaking Capybara Examples - MUST See\nALL CONTENT\nBrief\n\nAudience location must be 30% UK, France, or Germany\n\nContent MUST be about the Booty Shaking Capybara\n\nNo Botting!\n\nVideos must be original and not stolen from other clippers.\n\nNO USING Watermark AI softwares like Opus Clip, etc\n\nCheck the Google Doc for all Campaign Requirements!\n\nCreator requirements\n\nLooking for UK, France, and Germany Audience clippers. Create viral clips for the Booty Shaking Capybara by Pets Alive and get paid per thousand views. Clipping, repurposing, Face UGC, and faceless UGC all apply.\n\nTop clippers\nRank\n1 / 14\nCreator\n$432.36\nRank\n2 / 14\nlibrongyms\n$300\nRank\n3 / 14\nCreator\n$298.68\n\n874.6K\nviews\n\nViews across every approved clip, running total by day.\n\nViews\nApproved clips\nOct 20\nOct 28\nNov 5\nNov 13\nNov 19\nMore from \nClip Influence\n30 campaigns launched\nView profile\nChat\nContent Rewards Support\nAsk us anything\nNo chats yet\n\nAgencies you work with can message you here.\nGOOGLE DOC https://docs.google.com/document/d/1W6xzFqCl4wkeXKgxmKBhDJe6_p-r9g_0BOQ4IA-5i10/edit?usp=sharing:\n﻿Pets Alive: Booty Shaking Capybara Clipping\r\nClip Influence Campaign Guidelines\r\n  \r\n  \r\n\r\nPlease make sure to follow the full list of clipping instructions. Any attempts at malicious clipping or other harmful behavior may result in immediate removal from the campaign and a permanent ban. If you have any questions or need further support, feel free to ask in the chat or DM an admin in the support chat.\r\nTikTok and Instagram ONLY — Dedicated Pages, Grown Theme Pages, and UGC Creators ONLY\r\n* Campaign goal: Drive awareness of the Pets Alive Booty Shakin' Capybara and push in-store landing dates and conversions at Smyths (UK, France, Germany) and The Entertainer (UK) across the UK, France, and Germany. Build broad, organic-feeling reach that gets the toy in front of new audiences in each market ahead of and during the pre-order window and the in-store date (26 October) — building buzz and urgency to pre-order, not just awareness for its own sake.\r\n* Hashtags you MUST use: #bootyshakingcapybara #petsalive\r\n* Other recommended hashtags / keywords: Capybara, Interactive Toy, Screen free toy, Kids gift ideas, Parenting hacks\r\n* Minimum engagement: 0.20% engagement or higher is always required for approval, regardless of any campaign-specific figure above.\r\n* Markets & content split: UK, France, and Germany only — 50% UK, 25% Germany, 25% France. Content should be optimised for local relevance in each market (e.g. local-language captions/on-screen text and the local retailer).\r\n* Key dates: Pre-order window now open; in-store date is 26 October.\r\n* No negative content whatsoever — do not make Pets Alive look bad. This is a KIDS brand — see the Kids Brand Safety rules below.\r\n\r\n\r\nKids Brand Safety Rules\r\nPets Alive is a kids brand. These rules apply to every clip:\r\n* No songs with bad language — use only clean / kid-friendly audio.\r\n* Content must NOT direct bad intention at any child featured in the content. Keep every clip warm, fun, and wholesome.\r\n* Pranks must be light-hearted and harmless — the fun is the toy's silly dancing, never at a child's expense.\r\n\r\n\r\nImportant Notes\r\n* In-store date is 26 October; the pre-order window is live ahead of it.\r\n* Retailers: tell viewers that they can get the Booty Shaking Capybara in the following retailers: Smyths Toys (UK, France, Germany) and The Entertainer (UK).\r\n\r\n\r\nTHEME PAGES\r\nIf you want to participate with a Grown Theme Page, it can only be in the following niches:\r\n* Toy / Interactive toy / Unboxing pages / Parenting / Mum & family / Kids gift idea pages / Trend / Dance / Meme / Entertainment pages\r\n* UK & EU UGC Creators (also allowed)\r\n* Content standard: Theme Pages may NEVER post gore, pornographic/OF (OnlyFans-style) content, or violent content — on the page used for this campaign or anywhere else on that page.\r\n* Must tag: TikTok @zurutoys / Instagram @zuru.toys in every post description on the corresponding platform\r\n* Must use a CTA driving viewers to pre-order / find it in store — e.g. \"pre-order now at Smyths!\", \"in store 26th October!\", \"link in bio!\" (UK: Smyths or The Entertainer; France & Germany: Smyths).\r\n* All content must feature the Booty Shakin' Capybara clearly and prominently — no vague or unrelated content.\r\nDEDICATED PAGES\r\nPage setup\r\n* Username: Include a variation of \"Pets Alive\" or \"Capybara\" (e.g. @PetsAliveFinds or @CapybaraLover)\r\n* Bio: Must tag the official account and include a CTA driving people to pre-order / buy at Smyths (or The Entertainer in the UK).\r\n* Must tag: TikTok @zurutoys / Instagram @zuru.toys in every post description on the corresponding platform\r\n* Profile picture: Screenshot and re-use an existing official Pets Alive / Booty Shakin' Capybara image — find it on Instagram, TikTok, or Google, and make sure it's clearly visible on your page.\r\n* Link in bio: Link to the official page (tiktok.com/@zurutoys or instagram.com/zuru.toys)\r\n* TikTok doesn't allow bio links under 1,000 followers — that's fine, just tag the official account and add a CTA; add the link once you hit 1,000 followers.\r\nExample bio\r\nThe best Booty Shakin' Capy",
+   "brief_shot": "/home/ubuntu/studio-out/cutcapsule/whop-shots/1119-155522-brief.png"
+  },
+  "clipping-culture": {
+   "platform": "whop",
+   "campaign_url": "https://contentrewards.com/c/campaigns/eb28f557-df7b-4245-8603-01380c4d84cc",
+   "campaign_id": "eb28f557-df7b-4245-8603-01380c4d84cc",
+   "title": "Wa-Chaa x The RZA - Grandmaster Collection Clip",
+   "channels": [],
+   "videos": [
+    "https://f.io/LGgDvyP3"
+   ],
+   "match": [
+    "https://f.io/LGgDvyP3"
+   ],
+   "rules": [
+    "Use only footage from the official content folder",
+    "No face cam or voice-over",
+    "No AI voices or AI narration",
+    "English content only",
+    "Must tag @wachaaworldwide (TikTok/Instagram) or @WACHAAWorldwide (YouTube)",
+    "Do not claim RZA wrote the track or call it an RZA song",
+    "Background music allowed if original audio is clearly audible",
+    "Post must stay live for 30 days minimum",
+    "Likes must be visible",
+    "No bait posting or spam",
+    "High-quality content only"
+   ],
+   "caption_add": "@wachaaworldwide @WACHAAWorldwide",
+   "no_watermark": true,
+   "platforms": [
+    "instagram",
+    "youtube",
+    "tiktok"
+   ],
+   "clips_per_video": 4,
+   "active": true,
+   "not_paid_countries": [
+    "India",
+    "Pakistan",
+    "Bangladesh"
+   ],
+   "audience_rule": "Page audience should be mostly Tier 1-2 countries (30%+ Tier 3 may be removed)",
+   "names": [
+    "Wa-Chaa",
+    "The RZA",
+    "Grandmaster Collection"
+   ],
+   "rate": "$2.00/1K",
+   "added": "2026-11-19 15:58",
+   "added_t": 1795083969.792747,
+   "brief": "Skip to content\nDiscover\nHome\nCampaigns\nDiscover\nMy work\nAnalytics\nSubmissions\nDrafts\nEarnings\nAccount\nSettings\nSupport\n\nLink your Discord\n\nGet campaign alerts and payout pings in Discord.\n\nConnect Discord\n\nBack\nmehuldeshlahra\nClipping Culture\nWa-Chaa x The RZA - Grandmaster Collection Clip\n\nDownload videos from the official Wa-Chaa content folder. Clip the best moments and post them to your page. Post on TikTok, Instagram Reels, or YouTube Shorts. There is no set format. Use your own style and angle. Use only footage from the official content folder.\n\nShow less\nJoined\nLaunched 1 week ago\nEntertainment\n200\nCPM\nSubmit clip\nTikTok\n\nPer 1K views\n\nUp to\n$2.00\n\nMin payout\n\n$2.00\n\nMax payout\n\n$600.00\n\nInstagram\n\nPer 1K views\n\n$1.50\n\nMin payout\n\n$1.50\n\nMax payout\n\n$600.00\n\nYouTube\n\nPer 1K views\n\nUp to\n$2.00\n\nMin payout\n\n$2.00\n\nMax payout\n\n$600.00\n\nPay by viewer country\nTikTok\nYouTube\nPak, Ind, Ban\nIndia, Pakistan, Bangladesh\nNot paid\nOther countries\n$2.00/1K\nNo country data\nNot paid\nBudget\n$2,342 / $10,500\n\n$8,158 still up for grabs, plenty of room to join.\n\nReference materials\nGoogle Doc\nBrief\n\nCaption must mention @wachaaworldwide on TikTok and Instagram\n\nCaption must mention @WACHAAWorldwide on YouTube\n\nNo explicit content\n\nTop clippers\nRank\n1 / 200\nHermawan\n$274.52\nRank\n2 / 200\nMohd Abrar Nasim\n$105.17\nRank\n3 / 200\nD Rfffff\n$95.50\n\n1.5M\nviews\n\nViews across every approved clip, running total by day.\n\nViews\nApproved clips\nOct 20\nOct 28\nNov 5\nNov 13\nNov 19\nMore from \nClipping Culture\n237 campaigns launched\nView profile\nChat\nContent Rewards Support\nAsk us anything\nNo chats yet\n\nAgencies you work with can message you here.\nGOOGLE DOC https://docs.google.com/document/d/1Ulb732fRdYIozkFcN4UtTKWDuQxyo5sNc8WL8XiUmSk/edit?usp=sharing:\n﻿Wa-Chaa x The RZA - Grandmaster Collection Clipping\r\nTikTok, Instagram Reels, YouTube Shorts\r\nLaunch date: November 10, 2026\r\n✔  You do not need a dedicated page for this campaign. You can post on any page.\r\n WHAT TO DO\r\nDownload videos from the official Wa-Chaa content folder.\r\nClip the best moments and post them to your page.\r\nPost on TikTok, Instagram Reels, or YouTube Shorts.\r\nThere is no set format. Use your own style and angle.\r\nUse only footage from the official content folder.\r\nContent Folder: https://f.io/LGgDvyP3 \r\n\t CAPTION GUIDELINES (REQUIRED)\r\nMUST INCLUDE\r\n✔  Tag the Wa-Chaa account in your caption.\r\n* TikTok: @wachaaworldwide\r\n* Instagram: @wachaaworldwide\r\n* YouTube Shorts: @WACHAAWorldwide\r\n\tYOUR CHOICE\r\nEverything else is up to you. Write your own caption around the tag.\r\nEXAMPLES\r\n* Snack with a soundtrack. The RZA introduces the Grandmaster Collection 🥜🔥@wachaaworldwide\r\n* spicy peanuts and a tiny vinyl you gotta hear @wachaaworldwide\r\n* RZA recorded a kung fu intro on this one @wachaaworldwide\r\n* the @wachaaworldwide Grandmaster Collection is a limited run\r\n* this track is a banger and so are the nuts @wachaaworldwide\r\n* i like a soundtrack with my snack @wachaaworldwide\r\n* yo, The RZA recorded the intro for this one and it’s wild @wachaaworldwide\r\n* the @wachaaworldwide Grandmaster Collection is a limited run, if you're going to get it you better get on it\r\nKeep it genuine. Write what a real fan would say.\r\nKeep it true. No made-up facts, stats, or dates.\r\nWrite your own. Do not copy other clippers' captions.\r\n The RZA ACCURACY (REQUIRED)\r\nThis applies to captions, on-screen text, and titles.\r\n❌  Do not say The RZA wrote the track.\r\n❌  Do not call it a RZA track or RZA song.\r\n✔  OK to say: The RZA recorded the intro.\r\n✔  OK to say: The RZA collaborated with WA-CHAA! on this track\r\nRZA did not write this track. It is not an RZA song.\r\nHe collaborated on a  recording of the introduction. Posts that say otherwise are rejected.\r\n\t EDITING GUIDELINES\r\nBackground music: ALLOWED. Keep the original audio clearly audible. Music must not drown it out.\r\nNo AI voices. No AI voiceovers, AI narration, or AI-cloned voices.\r\nAdd your own on-screen text, hooks, and titles.\r\n REQUIREMENTS\r\nPOST SPECS\r\n✔  High-quality posts only. No blurry or low-effort content.\r\n✔  English content only\r\n✔  Post must stay live for 30 days minimum\r\nPERFORMANCE\r\n✔  Minimum 0.50% engagement rate (1,000 views = at least 5 likes)\r\n✔  Likes must be visible. Hidden likes = automatic rejection.\r\n✔  Page audience should be mostly Tier 1-2 countries (30%+ Tier 3 may be removed)\r\n✔  By participating you agree to make your post FTC compliant\r\n NOT ALLOWED\r\nCONTENT\r\n❌  Footage not from the official content folder\r\n❌  Saying RZA wrote the track\r\n❌  Calling it an RZA track or song\r\n❌  Captions without the Wa-Chaa tag\r\n❌  Low-quality or lazy uploads\r\n❌  NSFW, violent, or controversial content\r\n❌  Racist, homophobic, or sexual content = instant ban\r\n❌  Reposting another creator's video as your own\r\n❌  Exaggerated hooks, rage bait, or hate bait\r\n❌  False or made-up claims, stats, or dates\r\n❌  Mislabeling the content\r\n❌  Music that drowns out the original audio\r\n❌  AI voiceovers or AI-generated voices\r\nENGAGEMENT FRAUD\r\n❌  Bait posting: unrelated viral content to farm views\r\n❌  Spam posting: the same video on multiple accounts\r\n❌  Story boosting: story views do not count\r\n❌  Paid promotion or ads of any kind = permanent ban\r\n❌  Posting the same video more than 5 times\r\nPOST VIOLATIONS\r\n❌  Removing the post before 30 days\r\n❌  Hidden likes\r\nQuestions? Contact the Clipping Culture team, not Wa-Chaa. We manage this campaign and are here to help.",
+   "brief_shot": "/home/ubuntu/studio-out/cutcapsule/whop-shots/1119-155805-brief.png"
+  },
+  "clip-influence-2-2": {
+   "platform": "whop",
+   "campaign_url": "https://contentrewards.com/c/campaigns/6d11ea9e-b814-494a-a135-30dcbcc39645",
+   "campaign_id": "6d11ea9e-b814-494a-a135-30dcbcc39645",
+   "title": "Mini Brands — Ulta Beauty Clipping",
+   "channels": [],
+   "videos": [
+    "https://drive.google.com/drive/folders/1fIXuLYXZPKje-90fpM5X45S_5rwDNXK_"
+   ],
+   "match": [
+    "https://drive.google.com/drive/folders/1fIXuLYXZPKje-90fpM5X45S_5rwDNXK_"
+   ],
+   "rules": [
+    "Use Series 2 content only (posted after 3 October 2026)",
+    "No watermark AI software (e.g. Opus Clip)",
+    "Tag @mini_brands_official (IG) or @minibrands (TikTok) in every post",
+    "Include CTA to Ulta (e.g. 'only at Ulta!', 'link in bio!')",
+    "Must mention 'Mini Brands Ulta Beauty Series 2' in description",
+    "Use hashtag #minibrands",
+    "Minimum 0.20% engagement rate",
+    "No negative content, no phonk music, no gore/porn",
+    "30% Tier 1 audience (US, CA, UK) required",
+    "No botting or stolen content"
+   ],
+   "caption_add": "Mini Brands Ulta Beauty Series 2! Only at Ulta! Go hunt for yours at Ulta! Link in bio! #minibrands @minibrands",
+   "no_watermark": true,
+   "platforms": [
+    "instagram",
+    "tiktok"
+   ],
+   "clips_per_video": 4,
+   "active": true,
+   "not_paid_countries": [
+    "India",
+    "Pakistan",
+    "Bangladesh",
+    "Non-Tier 1 countries"
+   ],
+   "audience_rule": "30% Tier 1: US, CA, and UK",
+   "names": [
+    "Mini Brands",
+    "Ulta Beauty",
+    "Series 2",
+    "ZURU"
+   ],
+   "rate": "$1.75/1K",
+   "added": "2026-11-19 15:58",
+   "added_t": 1795084094.3536649,
+   "brief": "Skip to content\nDiscover\nHome\nCampaigns\nDiscover\nMy work\nAnalytics\nSubmissions\nDrafts\nEarnings\nAccount\nSettings\nSupport\n\nLink your Discord\n\nGet campaign alerts and payout pings in Discord.\n\nConnect Discord\n\nBack\nmehuldeshlahra\nClip Influence\nMini Brands — Ulta Beauty Clipping\n\nGet paid $2/thousand views to clip for the Mini Brands — Ulta Beauty. Goal is to bring awareness to the Mini Brands x Ulta Series 2 Launch. Create viral clips and get paid!\n\nShow less\nJoined\nLaunched 4 weeks ago\nEntertainment\n60\nCPM\nSubmit clip\nInstagram\n\nPer 1K views\n\n$1.75\n\nMin payout\n\n$1.75\n\nMax payout\n\n$300.00\n\nTikTok\n\nPer 1K views\n\n$1.50\n\nMin payout\n\n$1.50\n\nMax payout\n\n$300.00\n\nBudget\n$3,834 / $10,000\n\n$6,166 still up for grabs, plenty of room to join.\n\nReference materials\nALL CONTENT\nMini Brands Ulta Beauty S2 Guidelines - Must Read\nMini Brands Ulta Beauty S2 Clip Examples\nBrief\n\nAudience location must be 30% Tier 1: US, CA, and UK.\n\nNo Botting!\n\nVideos must be original and not stolen from other clippers.\n\nNO USING Watermark AI softwares like Opus Clip, etc\n\nCheck the Google Doc for all Campaign Requirements!\n\nCreator requirements\n\nCreate viral clips for Mini Brands — Ulta Beauty Clipping and get paid $2/thousand views. Clipping, UGC, Faceless UGC and Repurposing are all allowed. Goal is to drive awareness of the Mini Brands x Ulta Series 2 Launch.\n\nTop clippers\nRank\n1 / 60\nbeliever\n$320.60\nRank\n2 / 60\nTheo\n$260.71\nRank\n3 / 60\nRoselle\n$257.62\n\n1.8M\nviews\n\nViews across every approved clip, running total by day.\n\nViews\nApproved clips\nOct 20\nOct 28\nNov 5\nNov 13\nNov 19\nMore from \nClip Influence\n30 campaigns launched\nView profile\nChat\nContent Rewards Support\nAsk us anything\nNo chats yet\n\nAgencies you work with can message you here.\nGOOGLE DOC https://docs.google.com/document/d/1MSAYC-3FDiPvL3E92uW58lvqiSx8dUO2m59NklG6Pys/edit?usp=sharing:\n﻿Mini Brands x Ulta Beauty Clipping\r\nClip Influence Campaign Guidelines\r\n  \r\n\r\nPlease make sure to follow the full list of clipping instructions. Any attempts at malicious clipping or other harmful behavior may result in immediate removal from the campaign and a permanent ban. If you have any questions or need further support, feel free to ask in the chat or DM an admin in the support chat.\r\nTikTok and Instagram ONLY — Dedicated Pages, Grown Theme Pages, Toy Theme Pages, and UGC Creators ONLY\r\n* Campaign goal: Drive awareness of the Mini Brands x Ulta Beauty Series 2 launch — the Series 2 product, the full collection, and the hunt-and-chase mechanics.\r\n* Hashtags you MUST use: #minibrands\r\n* MUST say in the description that this is the “Mini Brands Ulta Beauty Series 2”\r\n* Other recommended hashtags / keywords: Work these keywords naturally into captions and on-screen text: Mini Brands Ulta Beauty, Miniature, Pretend Play, Mini Beauty Products, Travel sized products\r\n* Minimum engagement: 0.20% engagement or higher is always required for approval, regardless of any campaign-specific figure above.\r\n* Series 2 ONLY: use Series 2 content, not Series 1. There are a lot of Series 1 UGC out there — only use UGC that was posted AFTER 3 October.\r\n* Only at Ulta: Series 2 launched 7 October at all Ulta stores + online, ONLY AT ULTA. Never suggest it's available anywhere else.\r\n* No negative content whatsoever — do not make Mini Brands look bad. No inappropriate/disgusting references whatsoever, and no phonk music.\r\nTHEME PAGES\r\nIf you want to participate with a Grown Theme Page, it can only be in the following niches:\r\n* Theme Pages must have 25k+ followers or more to participate\r\n* Mini Brands / miniature collector pages / Beauty / Skincare / Haul pages / Toys / Unboxing / ASMR pages\r\n* UGC Creators (also allowed)\r\n* Content standard: Theme Pages may NEVER post gore, pornographic/OF (OnlyFans-style) content, or violent content — on the page used for this campaign or anywhere else on that page.\r\n* Must tag: Must tag @mini_brands_official (Instagram) / @minibrands (TikTok) — tag the official account in every post on the corresponding platform.\r\n* Must use a CTA pointing viewers to Ulta — e.g. \"only at Ulta!\", \"go hunt for yours at Ulta!\", \"link in bio!\"\r\n* All content must feature the Mini Brands x Ulta Beauty Series 2 minis clearly and prominently — no vague or unrelated content.\r\nDEDICATED PAGES\r\nPage setup\r\n* Username: Include a variation of \"Mini Brands\" (e.g. @MiniBrandsUltaFinds or @MiniBrandsLover)\r\n* Bio: Must tag @mini_brands_official (Instagram) / @minibrands (TikTok) and include a CTA driving people to Ulta.\r\n* Profile picture: Screenshot and re-use an existing official Mini Brands x Ulta image — find it on Instagram, TikTok, or Google, and make sure it's clearly visible on your page.\r\n* Link in bio: Add the Ulta product listing: https://www.ulta.com/p/mini-brands-ulta-beauty-capsule-series-2-pimprod2062724?sku=2661145. \r\n* TikTok doesn't allow bio links under 1,000 followers — that's fine, just tag @minibrands and add a CTA; add the link once you hit 1,000 followers.\r\nViral Toy/Unboxing Pages\r\n\r\nIf you would like to participate in all ZURU toy campaigns by using 1 account. Read the google doc below! (MUST have 150 followers or more to rebrand your page as a Toy/Unboxing Themed Account to post for all toy campaigns)\r\nDoc: Viral BlindBox Unboxing Account SOP\r\n\r\n\r\nExample bio\r\nThe best Mini Brands x Ulta Series 2 finds!\r\nOnly at Ulta -->\r\nLink above\r\n________________\r\n\r\n\r\nPriority Content Angles\r\n1. The tiny details\r\nClose-ups of how real these minis are. Some have working mechanics like pumps, twist-ups, and opening lids, and some have scent. Get the macro shots, the \"wait, it actually works?!\" moments, and the sniff tests.\r\n2. Mini vs. full-size (the hero format)\r\nShow a mini next to its real full-size Ulta product — e.g. a full-size Touchland next to the Mini Brands version. The side-by-side scale reveal is the hero format.\r\n3. Series 2 is a level up\r\nShow how Series 2 is even more detailed and realistic than Series 1. Put them side by side where possible.\r\n4. Hunt and chase\r\nU",
+   "brief_shot": "/home/ubuntu/studio-out/cutcapsule/whop-shots/1119-155838-brief.png"
+  }
+ }
 }
