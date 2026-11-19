@@ -24,17 +24,36 @@ def _split_dashes(words):
     return out
 
 
+# 19 Nov audit (katha "MAANG TEEN VAR'"): a group must not END on a word that binds to the next one (postpositions,
+# conjunctions, articles) or inside an open quote; such a group may grow to 4 words / 18 letters to finish the phrase.
+GLUE = set("""ke ki ka ko se ne mein me par pe tak aur ya lekin kyunki jo jab toh to bhi hi na nahi kya kaise
+ ek yeh ye woh wo is us in un apna apni apne mera meri tera teri hamara
+ the a an of to in on at for and or but with from by as is are was were my your his her our their this that""".split())
+
+
 def chunks(words, keys=None):
-    """Caption groups: max 3 words / 14 letters, break at punctuation or a pause >= 0.15 s, never a lone last word."""
+    """Caption groups: 3 words / 14 letters normally, break at punctuation or a pause >= 0.15 s, never a lone last word,
+    never ending on a joining word or an open quote (then up to 4 words / 18 letters)."""
     words = _split_dashes(words)
     out, cur = [], []
+    quote = False
     for i, w in enumerate(words):
         cur.append(w)
+        t = w["w"]
+        quote ^= (t.count("'") + t.count('"') + t.count("‘") + t.count("’")) % 2 == 1
         left = len(words) - i - 1
         nxt = words[i + 1] if left else None
         letters = sum(len(x["w"]) for x in cur)
-        brk = (len(cur) >= 3 or letters >= 14 or w["w"].endswith((",", ".", "?", "!", "..."))
-               or (nxt and nxt["s"] - w["e"] >= 0.15))
+        core = re.sub(r"[^\w]", "", t.lower())
+        sentence_end = t.endswith((",", ".", "?", "!", "..."))
+        brk = (len(cur) >= 3 or letters >= 14 or sentence_end or (nxt and nxt["s"] - w["e"] >= 0.15))
+        if brk and not sentence_end and (core in GLUE or quote) and len(cur) < 4 and letters < 18 and left > 0:
+            brk = False                                  # finish the phrase first
+        if len(cur) >= 4 or letters >= 18:
+            brk = True
+        if left == 1 and len(cur) >= 4:              # would become 5+ words with the last one: hand one word over
+            out.append(cur[:-1]); cur = [cur[-1]]
+            continue
         if left == 0 or (brk and left != 1):
             out.append(cur); cur = []
     if cur:
