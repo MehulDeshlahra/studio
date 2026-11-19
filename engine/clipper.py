@@ -270,11 +270,16 @@ def find_moments(ch, url, n, info, source=None):
             b = a + 15
         if b - a > 60:
             b = a + 55
-        if str(m.get("type", "")).lower() == "story" and b - a < 28:
+        # 19 Nov: the model never filled "type", so stand-up bits stayed 17-20 s (benchmark ~60 s). On a stand-up /
+        # comedy source a moment is a bit (story) unless the model says "reaction"
+        standup = bool(re.search(r"stand[ -]?up|comedy|comedian|special|netflix is a joke|don'?t tell",
+                                 f"{(info or {}).get('title', '')} {(info or {}).get('channel', '')}", re.I))
+        mtype = str(m.get("type") or ("story" if standup else "")).lower()
+        if mtype == "story" and b - a < 28:
             # 19 Nov benchmark: the winning stand-up clips run ~60 s; ours were 17 s and lost the setup. A story gets
-            # 30+ s (the cutter snaps the end to a sentence)
-            log("clipper: story moment too short, extended", mmss(a), round(b - a, 1), "->", 32)
-            b = a + 32
+            # 30+ s; the start moves back to take the setup too (the cutter snaps both ends to sentences)
+            log("clipper: story moment too short, extended", mmss(a), round(b - a, 1), "->", 38)
+            a = max(0.0, a - 3); b = a + 38
         if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
             continue
         bad = UNSAFE.search(" ".join(str(m.get(k) or "") for k in ("hook", "why", "caption")))
@@ -288,7 +293,7 @@ def find_moments(ch, url, n, info, source=None):
         hits = [x["replay"] for x in pk if x["at"] - 25 <= b and a <= x["until"] + 5]
         near = bool(hits)
         top = max([x["replay"] for x in pk] or [1]) or 1
-        ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200], "score": total,
+        ms.append({"a": a, "b": b, "type": mtype, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200], "score": total,
                    "scores": sc, "replayed": near, "heat": round(max(hits or [0]) / top, 2), "caption": str(m.get("caption") or "")[:300],
                    "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6], "notes": _notes(m, _note_lang(ch)[1])})
     # a replayed moment gets a bonus by HOW replayed (19 Nov: a 0.91 peak lost to 0.27 ones, the flat +1 treated them alike)
