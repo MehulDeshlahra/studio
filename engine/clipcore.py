@@ -309,25 +309,83 @@ def analyse(mp4, fps=4):
             lay, aim = "crop", round(float(np.median([f[0] for f in other])), 3)
         else:
             lay, aim = "fill", None
+        path = _track([(t, max((f for f in fs if not is_cam(f)), key=lambda q: q[2])[0])
+                       for t, fs in samples if s <= t < e and any(not is_cam(f) for f in fs)], s, aim, sw, sh) if lay == "crop" else []
         if segs and (e - s < 0.8 or segs[-1]["layout"] == lay):
             segs[-1]["e"] = round(e, 2)
             if segs[-1]["layout"] == "crop" and lay == "crop" and e - s >= 0.8:
-                segs[-1]["aims"].append([round(s, 2), aim])
+                segs[-1]["aims"] += path
             continue
-        segs.append({"s": round(s, 2), "e": round(e, 2), "layout": lay, "aims": [[round(s, 2), aim]] if lay == "crop" else []})
+        segs.append({"s": round(s, 2), "e": round(e, 2), "layout": lay, "aims": path})
     info["cam"] = cam
     info["segments"] = segs
+    info["lost"] = subject_lost(samples, segs, is_cam, sw, sh)
     lays = {g["layout"] for g in segs}
     info["layout"] = lays.pop() if len(lays) == 1 else "mixed:" + "+".join(sorted({g["layout"] for g in segs}))
     return info
 
 
+def _track(pts, s, aim, sw, sh):
+    """19 Nov frames (Jo Koy walking the stage): one fixed aim per shot lost him (empty stage at 13 s). Follow him like a
+    camera operator: smooth the face path, keep him inside the middle 40% of the crop (no pan while he stays there),
+    pan at most 0.7 crop widths a second, keyframes >= 0.5 s apart. Returns [[t, x, glide]]; glide 0 = a hard cut."""
+    import numpy as np
+    if not pts:
+        return [[round(s, 2), aim, 0]]
+    cwf = (sh * 9 / 16) / max(1, sw)
+    xs = [p[1] for p in pts]
+    sm = [float(np.median(xs[max(0, i - 2):i + 3])) for i in range(len(xs))]
+    dead, vmax = 0.2 * cwf, 0.7 * cwf
+    cam, out, last_t = sm[0], [[round(s, 2), round(sm[0], 4), 0]], s
+    prev_t = pts[0][0]
+    for (t, _), x in zip(pts, sm):
+        step = vmax * max(0.0, t - prev_t)
+        prev_t = t
+        want = x - dead if x > cam + dead else x + dead if x < cam - dead else cam
+        cam += max(-step, min(step, want - cam))
+        if t - last_t >= 0.5 and abs(cam - out[-1][1]) > 0.004:
+            out.append([round(t, 2), round(cam, 4), 1]); last_t = t
+    return out[:80]
+
+
+def _x_at(aims, t):
+    """Crop centre (0-1) at time t, the same path _crop_x_expr gives ffmpeg."""
+    x = aims[0][1]
+    for (t0, x0, *_), (t1, x1, *g) in zip(aims, aims[1:]):
+        if t < t1:
+            return x0 + (x1 - x0) * (t - t0) / max(0.01, t1 - t0) if (g and g[0]) else x0
+        x = x1
+    return x
+
+
+def subject_lost(samples, segs, is_cam, sw, sh):
+    """19 Nov: the vision check scored a clip 10 with an empty stage on screen. Code check: share of crop-time samples
+    whose speaker's face is outside the crop window (a face seen in the frame but not on screen)."""
+    hw = (sh * 9 / 16) / max(1, sw) / 2
+    n = lost = 0
+    for g in segs:
+        if g["layout"] != "crop" or not g["aims"]:
+            continue
+        for t, fs in samples:
+            if g["s"] <= t < g["e"]:
+                fx = [f for f in fs if not is_cam(f)]
+                if not fx:
+                    continue
+                n += 1
+                f = max(fx, key=lambda q: q[2])
+                if abs(f[0] - _x_at(g["aims"], t)) > hw * 0.85:
+                    lost += 1
+    return round(lost / n, 3) if n else 0.0
+
+
 def _crop_x_expr(aims, sw, sh):
+    """Crop x over time: a jump at a hard cut (glide 0), a straight pan between keyframes of one shot (glide 1)."""
     cw = int(sh * 9 / 16) // 2 * 2
-    xs = [max(0, min(sw - cw, int(a * sw - cw / 2))) for _, a in aims]
-    expr = str(xs[-1])
-    for (t, _), x in reversed(list(zip(aims[1:], xs[:-1]))):
-        expr = f"if(lt(t,{t}),{x},{expr})"
+    pts = [(a[0], max(0, min(sw - cw, int(a[1] * sw - cw / 2))), a[2] if len(a) > 2 else 0) for a in aims]
+    expr = str(pts[-1][1])
+    for (t0, x0, _), (t1, x1, g1) in reversed(list(zip(pts, pts[1:]))):
+        piece = f"({x0}+({x1 - x0})*(t-{t0})/{max(0.01, round(t1 - t0, 3))})" if g1 and x1 != x0 else str(x0)
+        expr = f"if(lt(t,{t1}),{piece},{expr})"
     return cw, expr
 
 
@@ -456,7 +514,7 @@ def _layout_vf(lay, info, seg, sub):
     sw, sh = info["src"]
     tail = (("," + sub) if sub else "") + ",format=yuv420p[v]"
     if lay == "crop":
-        aims = [[round(t - seg["s"], 2), x] for t, x in seg["aims"]]
+        aims = [[round(a[0] - seg["s"], 2)] + list(a[1:]) for a in seg["aims"]]
         cw, xe = _crop_x_expr(aims, sw, sh)
         return f"[0:v]crop={cw}:{sh}:'{xe}':0,scale={W}:{H}:flags=lanczos{tail}"
     if lay == "stack":
@@ -555,7 +613,7 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     run(["ffmpeg", "-v", "error", "-y", "-ss", "0.8", "-i", final, "-frames:v", "1", "-q:v", "2", os.path.join(out_dir, "cover.jpg")], 60)
     os.remove(tight)
     res = {"layout": info["layout"], "segments": info["segments"],
-           "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]),
+           "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]), "lost": info.get("lost", 0),
            "cut": [round(a2, 2), round(b2, 2)], "kept": ranges, "removed_s": round((b2 - a2) - sum(e - s for s, e in ranges), 2),
            "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt),
            "notes": [{"s": s, "e": e, "text": t, "kind": k} for s, e, t, k in placed], "notes_asked": len(notes or []),

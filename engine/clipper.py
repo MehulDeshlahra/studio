@@ -558,6 +558,8 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
             probs.append(f"loudness {q['lufs']} LUFS")
         if (res.get("words") or 0) < 12:
             probs.append("almost no speech (captions nearly empty)")
+        if (res.get("lost") or 0) > 0.1:             # 19 Nov: vision scored 10 with the comedian walked out of the crop
+            probs.append(f"speaker out of the crop for {res['lost']:.0%} of the time (crop did not follow him)")
         plug = PLUG.search(res.get("text", ""))
         if plug:
             probs.append(f"self-promotion inside the clip ('{plug.group(0)}'): someone else's channel plug, never post")
