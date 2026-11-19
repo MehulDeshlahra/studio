@@ -106,5 +106,14 @@
   "first": "2026-11-19 08:37",
   "last": "2026-11-19 08:37",
   "example": "owner agent: Fix text artifact 'ttying.lia' overlapping scene 8 bottom third, and correct the stat value from '98+' to '100+' in scene 9."
+ },
+ {
+  "sig": "owner agent: remove the english article '…' from scene # on-screen text and regenerate layout.",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-19 09:07",
+  "last": "2026-11-19 09:07",
+  "example": "owner agent: Remove the English article 'THE' from scene 2 on-screen text and regenerate layout."
  }
 ]

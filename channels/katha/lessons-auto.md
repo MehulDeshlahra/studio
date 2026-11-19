@@ -329,3 +329,7 @@
 ## 1118-0735 (pre-render check)
 - CUT: Caption text 'KE' on the second still is awkwardly cut off or incomplete due to box formatting limits
 - OVERLAP: Title 'MAUT KA NISHCHAY' at the top overlaps slightly with the page tag area
+
+## 1118-0735 Karna tears off his divine armor and earrings, knowing it makes him mortal — Mahabharata, Vana Parva. Lesson: Identity rooted in generosity outlives invincibility.
+- scene 6: The caption 'KE' is displayed, but the corresponding line 'Indra the chhup ke, parchhai mein char haath dikhe' is missing the visual representation of the 'four hands' or shadow aspect, making the visual disconnect from the narration.
+- scene 13: The text 'DM MEIN' is slightly cut off at the bottom edge of the frame.

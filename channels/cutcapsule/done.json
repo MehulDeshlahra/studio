@@ -76,5 +76,29 @@
    "start": 499.23,
    "layout": "mixed:fill+stack"
   }
+ },
+ {
+  "job": "1119-0852a-c1",
+  "topic": "Rebel Denies False Equality Claims Dream Power",
+  "title": "Rebel Denies False Equality Claims Dream Power",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/WAjz4A2Y",
+   "start": 55.13,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1119-0852b-c1",
+  "topic": "HERO CHALLENGES KING AND REGRETS IT",
+  "title": "HERO CHALLENGES KING AND REGRETS IT",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/WAjz4A2Y",
+   "start": 28.5,
+   "layout": "mixed:crop+fill"
+  }
  }
 ]
