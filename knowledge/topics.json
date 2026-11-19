@@ -1,125 +1,136 @@
 {
  "picks": [
   {
-   "title": "The Gemini app is now available on lower-memory Android devices",
-   "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
-   "src": "Google AI Blog",
-   "angle": "2GB/3GB RAM wale phones pe bhi Gemini ab kaam karega",
-   "hook": "Kam RAM wale phone pe bhi Gemini chalega ab",
-   "format": "evidence",
-   "freshness": "this week",
+   "title": "The Cambridge Dictionary has named ‘human’ as the Word of the Year 2026",
+   "url": "https://www.cam.ac.uk/news/cambridge-dictionary-reveals-word-of-the-year-2026",
+   "src": "Cambridge University",
+   "angle": "In the peak AI era of 2026, the most searched and discussed word is what makes us 'human'.",
+   "hook": "2026 ka word of the year 'Human' kyun hai?",
+   "format": "story",
+   "freshness": "today",
    "score": 10,
-   "found": "2026-11-19T05:13+05:30"
+   "found": "2026-11-19T17:01+05:30"
   },
   {
-   "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
-   "url": "https://huggingface.co/blog/rumble-2-flash",
-   "src": "Hugging Face Blog",
-   "angle": "0.5B ka speech model jo 40+ bhashayein samjhta hai — phone pe offline chalega",
-   "hook": "Rumble-2-Flash: chhota model, 40+ bhashayein",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 10,
-   "found": "2026-11-19T05:13+05:30"
-  },
-  {
-   "title": "Introducing Gemini 4 Neon",
-   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
-   "src": "Google AI Blog",
-   "angle": "Google ka naya lightweight model jo budget phones pe bhi tez chalega",
-   "hook": "Gemini 4 Neon aagaya — chhota par powerful",
+   "title": "SSD prices will start going down the second half of next year",
+   "url": "https://www.drivevault.io/blog/when-will-hard-drive-prices-come-down.html",
+   "src": "DriveVault",
+   "angle": "Indian users planning PC upgrades should wait as storage prices are predicted to drop soon.",
+   "hook": "Naya SSD lene waale ho? Thoda ruk jao!",
    "format": "evidence",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-19T05:13+05:30"
+   "found": "2026-11-19T17:01+05:30"
   },
   {
-   "title": "Genie 4 is now available",
-   "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
-   "src": "Google DeepMind Blog",
-   "angle": "Text-to-game AI ab public hai — bina code ke games banao",
-   "hook": "Genie 4 se ab koi bhi game bana sakta hai",
+   "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
+   "url": "https://techcrunch.com/2026/11/18/satya-nadella-predicts-ai-agents-will-reshuffle-the-economics-of-the-web/",
+   "src": "TechCrunch",
+   "angle": "Microsoft's CEO says AI agents will change how small businesses and websites make money.",
+   "hook": "Internet ka pura system badalne wala hai!",
+   "format": "story",
+   "freshness": "today",
+   "score": 9,
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "title": "PaperOrchestra: A multi-agent framework for automated AI research paper writing",
+   "url": "https://github.com/google-research/paper-orchestra",
+   "src": "Google Research",
+   "angle": "Students can now see how Google uses multiple AI agents to research and write full papers.",
+   "hook": "Ab AI khud research papers likh kar dega!",
    "format": "tool-demo",
+   "freshness": "today",
+   "score": 9,
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "title": "Cursor plugins: Official specification and plugins released",
+   "url": "https://github.com/cursor/plugins",
+   "src": "GitHub",
+   "angle": "The world's most popular AI code editor just opened up for custom plugins, huge for Indian devs.",
+   "hook": "Cursor AI editor ab aur bhi powerful ho gaya!",
+   "format": "tool-demo",
+   "freshness": "today",
+   "score": 9,
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "title": "Will Wright’s next game uses AI to map your memories",
+   "url": "https://www.theverge.com/games/1036140/will-wright-mymems-ai-game-interview",
+   "src": "The Verge",
+   "angle": "The creator of The Sims is back with an AI game that builds levels based on your personal life.",
+   "hook": "Aapki yaadon se game banayega ye naya AI!",
+   "format": "story",
+   "freshness": "today",
+   "score": 9,
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "title": "Distributed, high-performance blob storage on SQLite",
+   "url": "https://zerodha.tech/blog/high-performance-distributed-blob-storage/",
+   "src": "Zerodha Tech",
+   "angle": "India's biggest broker is sharing how they build massive tech infra using simple tools like SQLite.",
+   "hook": "Zerodha ne storage ke liye apna jugad bana liya!",
+   "format": "how-it-works",
    "freshness": "this week",
    "score": 8,
-   "found": "2026-11-19T05:13+05:30"
+   "found": "2026-11-19T17:01+05:30"
   },
   {
-   "title": "Seven new models at scalable price-performance",
-   "url": "https://microsoft.ai/news/microsoft-ignite-2026/",
-   "src": "Microsoft AI",
-   "angle": "Microsoft Ignite mein 7 naye models — saste aur tez, Indian startups ke liye achha",
-   "hook": "Microsoft ne 7 naye models dikhaye Ignite pe",
+   "title": "Disney’s new Star Wars animatronics interact with guests using AI",
+   "url": "https://www.theverge.com/tech/1036729/disney-star-wars-anzellans-animatronic-amazon-aws-cloud-ai",
+   "src": "The Verge",
+   "angle": "Disney is using real-time cloud AI to make theme park robots actually talk and respond to you.",
+   "hook": "Disney ke robots ab aapse baatein karenge!",
    "format": "evidence",
-   "freshness": "this week",
+   "freshness": "today",
    "score": 8,
-   "found": "2026-11-19T05:13+05:30"
+   "found": "2026-11-19T17:01+05:30"
   },
   {
-   "title": "Cuttlefish on Mac: Android's Virtual Device Framework on Apple Silicon",
-   "url": "https://engineering.fb.com/2026/11/13/android/cuttlefish-on-mac/",
-   "src": "Meta Engineering",
-   "angle": "Mac pe Android emulator bina ARM translation ke — Indian devs ke liye bada time-saver",
-   "hook": "Mac pe ab Cuttlefish se Android tez chalega",
+   "title": "The nation’s largest school districts consider ditching Google Search",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
+   "src": "The Verge",
+   "angle": "Education is shifting as schools move from traditional search to direct AI answers.",
+   "hook": "Google Search ka zamana khatam ho raha hai?",
+   "format": "story",
+   "freshness": "today",
+   "score": 8,
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "title": "Nvidia’s rise, visualized",
+   "url": "https://www.theverge.com/tech/1035924/nvidia-visualized-revenue-profit-earnings-after-huang",
+   "src": "The Verge",
+   "angle": "A visual look at how the chip giant took over the world economy in just 2 years.",
+   "hook": "Nvidia kaise bani duniya ki sabse badi company?",
+   "format": "evidence",
+   "freshness": "today",
+   "score": 8,
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "title": "Do not buy RAM, compress",
+   "url": "https://curiousbits.nl/blog/do-not-buy-ram-compress/",
+   "src": "CuriousBits",
+   "angle": "A technical trick to get more speed out of old laptops or phones without spending money.",
+   "hook": "Phone slow hai? RAM mat kharido, compress karo!",
    "format": "how-it-works",
    "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-19T05:13+05:30"
-  },
-  {
-   "title": "appwrite/appwrite: The open-source cloud for agents & devs",
-   "url": "https://github.com/appwrite/appwrite",
-   "src": "GitHub Trending",
-   "angle": "Open-source backend platform — auth, DB, functions sab free, Indian builders ke liye",
-   "hook": "Appwrite: apna backend cloud bina paise ke",
-   "format": "how-it-works",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-19T05:13+05:30"
-  },
-  {
-   "title": "openvinotoolkit/openvino: Open source toolkit for optimizing and deploying AI inference",
-   "url": "https://github.com/openvinotoolkit/openvino",
-   "src": "GitHub Trending",
-   "angle": "AI models ko edge devices pe optimize karne ka best tool — Indian edge AI projects ke liye",
-   "hook": "OpenVINO se AI models phone pe tez chalao",
-   "format": "how-it-works",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-19T05:13+05:30"
-  },
-  {
-   "title": "ExitPath – Open-source ways out of Slack, Notion and Microsoft 365",
-   "url": "https://exitpath-ruddy.vercel.app/",
-   "src": "Hacker News (Show HN)",
-   "angle": "Vendor lock-in se bachne ke open-source tools — students aur freelancers ke liye useful",
-   "hook": "ExitPath se Slack/Notion se data nikaalo easily",
-   "format": "tool-demo",
-   "freshness": "this week",
    "score": 7,
-   "found": "2026-11-19T05:13+05:30"
+   "found": "2026-11-19T17:01+05:30"
   },
   {
-   "title": "Search Browser – Minimalist WebKit browser with Chrome extension support",
-   "url": "https://searchbrowser.app/",
-   "src": "Hacker News (Show HN)",
-   "angle": "Lightweight browser jo Chrome extensions support karta hai — purane phones ke liye best",
-   "hook": "Search Browser: halka, Chrome extensions ke saath",
-   "format": "tool-demo",
-   "freshness": "this week",
+   "title": "Movie2Game-Bench: Holistic Evaluation of Film-to-Game Adaptation",
+   "url": "https://huggingface.co/papers/2611.24669",
+   "src": "Hugging Face",
+   "angle": "New AI research shows how we can soon turn any movie scene into a playable video game.",
+   "hook": "Apni favorite movie ko game mein badlo!",
+   "format": "comparison",
+   "freshness": "today",
    "score": 7,
-   "found": "2026-11-19T05:13+05:30"
-  },
-  {
-   "title": "HKUDS/CLI-Anything: Making ALL Software Agent-Native",
-   "url": "https://github.com/HKUDS/CLI-Anything",
-   "src": "GitHub Trending",
-   "angle": "Koi bhi CLI tool ko AI agent bana do — automation ke liye powerful",
-   "hook": "CLI-Anything se koi bhi tool agent banao",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-19T05:13+05:30"
+   "found": "2026-11-19T17:01+05:30"
   }
  ],
  "history": [
@@ -477,7 +488,67 @@
    "url": "https://github.com/HKUDS/CLI-Anything",
    "title": "HKUDS/CLI-Anything: Making ALL Software Agent-Native",
    "found": "2026-11-19T05:13+05:30"
+  },
+  {
+   "url": "https://www.cam.ac.uk/news/cambridge-dictionary-reveals-word-of-the-year-2026",
+   "title": "The Cambridge Dictionary has named ‘human’ as the Word of the Year 2026",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://www.drivevault.io/blog/when-will-hard-drive-prices-come-down.html",
+   "title": "SSD prices will start going down the second half of next year",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://zerodha.tech/blog/high-performance-distributed-blob-storage/",
+   "title": "Distributed, high-performance blob storage on SQLite",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/18/satya-nadella-predicts-ai-agents-will-reshuffle-the-economics-of-the-web/",
+   "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://github.com/google-research/paper-orchestra",
+   "title": "PaperOrchestra: A multi-agent framework for automated AI research paper writing",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/tech/1036729/disney-star-wars-anzellans-animatronic-amazon-aws-cloud-ai",
+   "title": "Disney’s new Star Wars animatronics interact with guests using AI",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://github.com/cursor/plugins",
+   "title": "Cursor plugins: Official specification and plugins released",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://curiousbits.nl/blog/do-not-buy-ram-compress/",
+   "title": "Do not buy RAM, compress",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
+   "title": "The nation’s largest school districts consider ditching Google Search",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.24669",
+   "title": "Movie2Game-Bench: Holistic Evaluation of Film-to-Game Adaptation",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/tech/1035924/nvidia-visualized-revenue-profit-earnings-after-huang",
+   "title": "Nvidia’s rise, visualized",
+   "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/games/1036140/will-wright-mymems-ai-game-interview",
+   "title": "Will Wright’s next game uses AI to map your memories",
+   "found": "2026-11-19T17:01+05:30"
   }
  ],
- "updated": "2026-11-19T05:13+05:30"
+ "updated": "2026-11-19T17:01+05:30"
 }

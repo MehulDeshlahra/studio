@@ -1,759 +1,5 @@
 [
  {
-  "t": "2026-11-17 10:42",
-  "name": "lowfatgeek/motion-graphics-skill",
-  "url": "https://github.com/lowfatgeek/motion-graphics-skill",
-  "license": "MIT",
-  "verdict": "useful",
-  "summary": "Motion Bang Bang is an MIT-licensed agent skill and design framework for building cinematic, anti-slide motion graphics using HTML, CSS, and GSAP. It provides high-value recipes including automated GSAP SFX mining, deterministic render contracts, and Vox-style editorial collage components that integrate directly with HyperFrames.",
-  "knowledge": 2,
-  "build": 3,
-  "items": [
-   {
-    "title": "Timeline-Mined SFX Cue Generation",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Staggered Caption Word-Clicks",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Mechanical Anti-Slide Preflight Audit",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Vox-Style Editorial Collage Design System",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Shot-Scale Jump Contrast Rule",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "SVG Joint Proxy Transform Wrapper",
-    "kind": "build",
-    "area": "motion"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-17 10:47",
-  "name": "0xS4N4TG/kinetograph-foundation-motion",
-  "url": "https://github.com/0xS4N4TG/kinetograph-foundation-motion",
-  "license": "NOASSERTION",
-  "verdict": "useful",
-  "summary": "Kinetograph Foundation Motion is an animation reference for coding agents translating Disney's twelve principles and modern UI motion design (Kowalski, Krehel, Tompkins) into programmatic motion graphics and automated audits. It provides high-value timing heuristics, camera/easing rules, and anti-slop filters directly applicable to our HTML+GSAP render pipeline.",
-  "knowledge": 1,
-  "build": 4,
-  "items": [
-   {
-    "title": "Text Reading Hold Duration Formula",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Materializing Blur-Translate Enter Preset",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Subtler Asymmetric Exit Rule",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Ease-In Cut-On-Beat Scene Transition",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Deterministic Sub-1% Handheld Drift",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Two-Effect Composite Restraint Audit",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Non-Zero Scale Inception Guard",
-    "kind": "build",
-    "area": "motion"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-17 10:47",
-  "name": "2boysfromtown/2bft-playbook",
-  "url": "https://github.com/2boysfromtown/2bft-playbook",
-  "license": "none",
-  "verdict": "skip",
-  "summary": "This document is a business playbook, agency rate card, and earnings breakdown for an AI creative studio based in Tamil Nadu. It provides no concrete video editing specifications, motion parameters, or pipeline automation code.",
-  "knowledge": 0,
-  "build": 0,
-  "items": [],
-  "skip": "The repository is purely a portfolio showcase, rate card, and commercial revenue breakdown with no actionable technical rules, prompt systems, or editing engineering details for our pipeline."
- },
- {
-  "t": "2026-11-17 11:13",
-  "name": "2boysfromtown/2bft-video-editor",
-  "url": "https://github.com/2boysfromtown/2bft-video-editor",
-  "license": "MIT",
-  "verdict": "useful",
-  "summary": "2BFT Video Editor is an open-source suite of automated video editing tools featuring face-tracked reframing, stem separation, audio energy mapping, and rigorous pre-delivery QC. It provides high-value operational recipes for beat alignment, trending audio workflows, energy-driven camera effects, and Hinglish subtitle timing.",
-  "knowledge": 1,
-  "build": 2,
-  "items": [
-   {
-    "title": "India Shorts Trend Audio Scraper & Dual Master Export",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Drum-Stem Transient Beat-Grid Snapping",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Voice Energy Shake with Hard Budget Guardrails",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Multi-Check Pre-Delivery QA Matrix",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Windowed Latin Prompting for Hinglish Word Alignment",
-    "kind": "knowledge",
-    "area": "caption"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-17 11:15",
-  "name": "2boysfromtown/hyperframes-motion",
-  "url": "https://github.com/2boysfromtown/hyperframes-motion",
-  "license": "MIT",
-  "verdict": "useful",
-  "summary": "This repository provides zero-dependency After Effects-style motion graphics templates and CSS/GSAP animation primitives specifically designed for vertical 1080x1920 video. It is highly practical and directly compatible with our existing HyperFrames HTML-to-MP4 rendering pipeline.",
-  "knowledge": 0,
-  "build": 3,
-  "items": [
-   {
-    "title": "CSS 3D Perspective Rig for Prop and Panel Staging",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Scramble-Decode Headline Text Generator",
-    "kind": "build",
-    "area": "hook"
-   },
-   {
-    "title": "Dual-Layer CSS Chromatic Glitch Impact",
-    "kind": "build",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-17 12:35",
-  "name": "alchaincyf/huashu-art-motion",
-  "url": "https://github.com/alchaincyf/huashu-art-motion",
-  "license": "MIT",
-  "verdict": "useful",
-  "summary": "An open-source code-driven motion graphics engine containing 36 procedural art styles, 9 explainer grammars, and rigorous preflight/post-render quality gates. It offers exceptional battle-tested rules for camera punctuation, script-to-screen factual validation, and automated anti-slideshow post-render checks.",
-  "knowledge": 0,
-  "build": 1,
-  "items": [
-   {
-    "title": "Dual-Metric Anti-PPT and AI-Slop Render Gate",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Camera Punctuation Density and Directional Alternation",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Script-to-Screen Numerical Parity Preflight",
-    "kind": "build",
-    "area": "script"
-   },
-   {
-    "title": "Subzone Graphic Intrusion Gate",
-    "kind": "build",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-17 12:37",
-  "name": "bestagentkits/motion-video-skill",
-  "url": "https://github.com/bestagentkits/motion-video-skill",
-  "license": "MIT",
-  "verdict": "useful",
-  "summary": "This repository provides a production-grade Agent Skill and Python/Node pipeline for authoring beat-synced motion graphics in HyperFrames using GSAP and AI audio. It is exceptionally relevant as our studio already uses HyperFrames and GSAP, offering concrete solutions for beat grid fitting, stem mix verification, and rendering pitfalls.",
-  "knowledge": 3,
-  "build": 2,
-  "items": [
-   {
-    "title": "Dual-Band Beat-Grid and Kick Energy Fitter",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Speech-to-Music Stem Mix Balance Verification",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Lossless Master Audio Remux Post-HyperFrames",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Bar-Spliced Pre-Drop Silent Stops",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Bake Complex CSS Gradients and Noise into PNG Tiles",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "GSAP On-Twos Stepped Easing Quantizer",
-    "kind": "knowledge",
-    "area": "motion"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-17 13:35",
-  "name": "calesthio/generative-media-skills",
-  "url": "https://github.com/calesthio/generative-media-skills",
-  "license": "MIT",
-  "verdict": "useful",
-  "summary": "This repository is a comprehensive library of 150+ research-backed 'skills' and evaluation rubrics for AI-driven media production. It is an exceptional resource for standardizing how AI agents handle complex cinematography, 3D assets, and technical API constraints.",
-  "knowledge": 5,
-  "build": 5,
-  "items": [
-   {
-    "title": "LLM Reasoning Evaluation (EVAL.md Pattern)",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "D3.js Animated Data Visualization",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Lottie Vector Animation Integration",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Non-Semantic Audio-Reactive Mapping",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Three.js Deterministic 3D Props",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Volatile Fact Verification Dating",
-    "kind": "knowledge",
-    "area": "ops"
-   },
-   {
-    "title": "2D Rig Viseme Inventory Rule",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Automated Screen Demo Capture",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Precise Video Description (5-Aspect Rule)",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Instruction-Guided TTS Performance",
-    "kind": "knowledge",
-    "area": "voice"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-17 13:41",
-  "name": "devton/motion-director",
-  "url": "https://github.com/devton/motion-director",
-  "license": "none",
-  "verdict": "useful",
-  "summary": "This source is a comprehensive HyperFrames orchestration framework for high-end automated motion design. It is an exceptional engineering reference for achieving frame-perfect audio-visual synchronization using a shared timing 'spine' and procedural audio.",
-  "knowledge": 2,
-  "build": 6,
-  "items": [
-   {
-    "title": "Shared Timing Spine (layout.js)",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "120 BPM Structural Grid",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Spine-Driven Procedural Scoring",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "CSS 3D Head-on Stage",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Mathematical Character Rigging",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Dual-Side Transition Snapshots",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "LLMS.txt Verbatim Extraction",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "FLIP Object Continuity",
-    "kind": "knowledge",
-    "area": "motion"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-17 13:47",
-  "name": "feitangyuan/onetake",
-  "url": "https://github.com/feitangyuan/onetake",
-  "license": "NOASSERTION",
-  "verdict": "useful",
-  "summary": "Onetake is a high-end motion engine that prioritizes 'continuity' over cuts, ensuring every scene grows out of the previous one. It uses HTML/JS/3D replicas and an automated 'oracle' to measure rhythm and element carry-over.",
-  "knowledge": 3,
-  "build": 7,
-  "items": [
-   {
-    "title": "Continuity Carry Oracle",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Reference Energy Mapping",
-    "kind": "knowledge",
-    "area": "research"
-   },
-   {
-    "title": "UI Replica System",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Shutter-Based Motion Blur",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Event-Driven SFX Scoring",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Rhythm Variance Rule",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Screen-Space Camera Rig",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Language Time-Warping",
-    "kind": "build",
-    "area": "growth"
-   },
-   {
-    "title": "3D Prop Integration",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Camera Air & Depth SFX",
-    "kind": "knowledge",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:35",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "Lemo-Opuscar is a code-driven procedural video generation framework offering 99 distinct visual styles rendered frame-by-frame via Canvas/WebGL and browser automation. This introductory README outlines the system architecture, style customization workflows, and category taxonomy.",
-  "knowledge": 1,
-  "build": 0,
-  "items": [
-   {
-    "title": "Three-Tier Style Variation Constraint Hierarchy",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Side-by-Side Style Frame Gate",
-    "kind": "build",
-    "area": "review"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:37",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This repository provides an agent-driven film production framework containing strict directorial guidelines, style specifications, and technical standards for automated animation. It offers actionable rules on narrative structure, transition audio design, staging scale, and frame-level transition auditing.",
-  "knowledge": 1,
-  "build": 1,
-  "items": [
-   {
-    "title": "Narrative Arc Echo Rule (Setup-Turn-Echo)",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Cross-Scene J-Cut and L-Cut Sound Transitions",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "0.2-Second Transition Strip Preflight Audit",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Hero Subject 1/3 Vertical Frame Height Rule",
-    "kind": "knowledge",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:37",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source provides the technical architecture, custom style derivation workflow, and code-based rendering pipeline for Lemo-Opuscar. It details headless browser video capture, TTS/ASR verification, audio synthesis, and dynamic asset management.",
-  "knowledge": 2,
-  "build": 2,
-  "items": [
-   {
-    "title": "FFmpeg Post-Render Grain Injection",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Small-Speaker Harmonic Bass Mastering",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Spelled-Out TTS with Digitized Captions",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Google Fonts Query-Text Dynamic Subsetting",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Stepped Animation Camera Decoupling Rule",
-    "kind": "knowledge",
-    "area": "motion"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:38",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "some",
-  "summary": "This source contains open-source license texts and the core CLI architecture documentation for the lemo-opuscar engine. It provides concrete engineering techniques for resilient headless WebGL rendering and audio true-peak compliance under lossy compression.",
-  "knowledge": 0,
-  "build": 2,
-  "items": [
-   {
-    "title": "AAC Inter-Sample Peak Stepback Loop",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Headless SwiftShader ANGLE Fallback",
-    "kind": "build",
-    "area": "ops"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:38",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source provides a sophisticated Python-based audio synthesis and sampling engine capable of generating original musical scores using real-instrument samples and physical modeling. It includes specialized logic for realistic string slides, velocity-sensitive layering, and automated asset fetching.",
-  "knowledge": 3,
-  "build": 4,
-  "items": [
-   {
-    "title": "Procedural Instrument Scoring Engine",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Style-Specific Instrument Palettes",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Cross-Faded Long-Note Extension",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Authentic String Slide Modeling (Yin-Nao)",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Just-In-Time Audio Asset Fetcher",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Automated Music Credit Attribution",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Velocity-Based Timbre Darkening",
-    "kind": "knowledge",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:39",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source provides a modular production engine for procedural sound generation, WebGL/CRT post-processing shaders, headless browser rendering orchestration, and ASR audio verification. It offers immediately useful implementations for synthesizing SFX mathematically and hardening automated headless video rendering.",
-  "knowledge": 0,
-  "build": 4,
-  "items": [
-   {
-    "title": "NumPy Procedural Foley & UI SFX Synthesis",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Capture-Phase WebGL Context Loss Sentinel",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Boundary-Padded Whisper ASR Verification",
-    "kind": "build",
-    "area": "voice"
-   },
-   {
-    "title": "NTSC Horizontal Chroma-Bleed Shader Pass",
-    "kind": "build",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:42",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source contains a robust TTS pipeline featuring offline Kokoro and online Edge-TTS with advanced silence trimming and caching logic. It also includes a manifest of over 50 distinct visual styles and a checksum-based dependency management system.",
-  "knowledge": 4,
-  "build": 3,
-  "items": [
-   {
-    "title": "Dynamic Silence Trimming Thresholds",
-    "kind": "knowledge",
-    "area": "voice"
-   },
-   {
-    "title": "Kokoro Offline TTS Integration",
-    "kind": "build",
-    "area": "voice"
-   },
-   {
-    "title": "SHA1 Param-Based Audio Caching",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Audio Plausibility Gate",
-    "kind": "knowledge",
-    "area": "review"
-   },
-   {
-    "title": "Dependency Checksum Sentinel",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Themed Style Expansion",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Hinglish Phoneme Guard",
-    "kind": "knowledge",
-    "area": "voice"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:43",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "Source contains build scripts and a comprehensive design system for a visual showcase site, featuring Playwright-based asset rendering, WebP compression workflows, and strict typographic/layout rules. Key engineering takeaways include adaptive background luminance testing for scrim opacity and CSS transform isolation to avoid breaking fixed coordinates.",
-  "knowledge": 1,
-  "build": 1,
-  "items": [
-   {
-    "title": "95th-Percentile Scrim Stepper Gate",
-    "kind": "build",
-    "area": "preflight"
-   },
-   {
-    "title": "Fixed-Coordinate Parent Transform Prohibition",
-    "kind": "knowledge",
-    "area": "motion"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:44",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This part contains the OPUSCAR 98 styleboard catalog detailing 99 distinct visual storytelling modes and automated site preflight verification scripts. The verification logic introduces automated WCAG relative luminance contrast audits, placeholder leakage scanning, and specialized visual explainer archetypes.",
-  "knowledge": 2,
-  "build": 1,
-  "items": [
-   {
-    "title": "Unrendered Template Placeholder Sentinel",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Programmatic CSS Relative Luminance Contrast Gate",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Telestrator Freeze-Draw Breakdown Pattern",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Color-Coded Subsystem Flow Isolation",
-    "kind": "knowledge",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-18 11:45",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source contains media generation, build tooling, and QA logic from Lemo-Opuscar, including automated video still selection, contrast checks, and a large visual style taxonomy. It features practical algorithms for detecting bad video stills (flash, black, mid-cut blur) and mathematical formulas for procedural grain tile synthesis.",
-  "knowledge": 0,
-  "build": 2,
-  "items": [
-   {
-    "title": "Clean Still Frame Heuristic Auditor",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Seamless Procedural Grain Tile Generator",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Headless Fonttools Character Whitelist Subsetter",
-    "kind": "build",
-    "area": "ops"
-   }
-  ],
-  "skip": ""
- },
- {
   "t": "2026-11-18 11:45",
   "name": "lemomo-ai/lemo-opuscar",
   "url": "https://github.com/lemomo-ai/lemo-opuscar",
@@ -13992,6 +13238,3535 @@
    {
     "title": "Multi-Phase Polygon Clock Wipe",
     "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 15:59",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog section provides four production-ready blocks: two scale-based scene transitions, a sophisticated 3D UI reveal with CSS 3D transforms and SVG stroke animation, and two D3.js-powered US map visualizations (bubble map with proportional markers/callouts and flow map with animated arcs and traveling dots). All are self-contained HTML+GSAP compositions using free CDN dependenci",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Zoom Through / Zoom Out Scale Transitions",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "CSS 3D UI Panel Reveal with Perspective",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Proportional Bubble Map with Leader-Line Callouts",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Flow Map with Animated Arcs and Traveling Dots",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "SVG Stroke-Draw Logo Reveal Pattern",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Staggered Reveal Choreography for Data Layers",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:00",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Four HyperFrames catalog blocks: two US map visualizations (hex grid and choropleth), an anamorphic lens flare VFX, and a 3D device showcase with HTML-in-Canvas. All are production-ready, deterministic, and demonstrate advanced GSAP/Canvas/Three.js patterns directly applicable to our HyperFrames pipeline.",
+  "knowledge": 4,
+  "build": 1,
+  "items": [
+   {
+    "title": "Hex grid map with equal-weight tiles",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Center-outward stagger by distance-from-centroid",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Auto light/dark label text by background luminance",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Closed-form analytic convolution replaces 80-tap shader loop",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Property-setter driven canvas render for seek compatibility",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Quarter-resolution buffer + bilinear upscale for soft glows",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic seeded emitter field with closed-form position",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Gain swell envelope for organic intensity over clip",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Top-N highlight pulse pattern for outlier emphasis",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Cubic Bezier via Newton-Raphson for custom GSAP eases",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:01",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Three HyperFrames VFX blocks demonstrating HTML-in-Canvas → WebGL texture pipeline: liquid-background (vertex-displacement wave simulation with panel crossfade), liquid-glass (Voronoi-fracture glass shards with PBR materials, chromatic aberration edges, bloom+grain post-process), and magnetic (Gaussian warp + chromatic aberration shader on live DOM). All use GSAP-driven shader uniforms for determi",
+  "knowledge": 1,
+  "build": 5,
+  "items": [
+   {
+    "title": "HTML-panel-to-WebGL-texture VFX pipeline",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Multi-wave vertex displacement with matching UV distortion",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Voronoi-fracture glass shards with PBR materials",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Procedural environment map + ACES tone-mapping for PBR",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Post-process composer: UnrealBloom + seeded grain shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Chromatic aberration edge highlights (cyan/pink offset)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "GSAP-driven shader uniform timeline (not just DOM)",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Simulated pointer choreography for deterministic parallax",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Gaussian warp + chromatic aberration shader on live HTML",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "SVG-foreignObject fallback for HTML→texture capture",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:02",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Four HyperFrames VFX catalog blocks (Portal, Shatter, Text Cursor, Voronoi) demonstrating advanced HTML-in-Canvas + WebGL/WebGPU shader techniques: portal transitions with chromatic aberration, Voronoi-based glass shatter with deterministic physics, dramatic text-cursor reveal with ray-marched logo lighting, and a stable WebGPU Voronoi background. All are installable via CLI and composable in Hype",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Voronoi WebGPU background block",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Portal transition block",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Glass shatter transition block",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Text cursor dramatic reveal block",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "HTML-in-Canvas texture capture for shader post-processing",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic physics via reset-and-simulate pattern",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Shader-based chromatic aberration and radial distortion",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Graceful degradation overlay for experimental APIs",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:04",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog showcases six polished, production-ready blocks: a 7s Apple-style phone app-install spot, two WebGPU shader backgrounds (water, waveform), a data-driven leaderboard where avatar speed encodes merge count, a variable-font weight/slant wave animation with a robust font-loading probe, and a WebGL whip-pan transition with 10-sample motion blur. All are deterministi",
+  "knowledge": 4,
+  "build": 2,
+  "items": [
+   {
+    "title": "Data-driven bounce speed mapping",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Variable-font weight/slant wave",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "Deterministic render-on-seek driver pattern",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Font-loading probe via ink rasterization",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Phone UI mockup animation pattern",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Shader whip-pan transition with motion blur",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Fit text at heaviest weight to prevent overflow",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Timed SFX track via audio element with data attributes",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Responsive font sizing from container height",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Breathing ambient lines via yoyo repeat",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:05",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source part contains five HyperFrames catalog blocks: a sophisticated 3D wireframe portal title with phrase swap, a data-driven world choropleth map, a WebGPU Worley noise background, an animated X/Twitter post card, and a YouTube comment card overlay. The code is production-grade, deterministic, and showcases advanced techniques in 3D typography, shader post-processing, data visualization, a",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Phrase-swap title with auto-layout",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic 3D letter extrusion with glyph cleanup",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Modular post-processing shader chain",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "WebGPU Worley noise background shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "World choropleth with stagger reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Social proof overlay components (X post, YT comment)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Swap-concentrated easing function",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "State-proxy driven animation pattern",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Camera push-through transition with exit FX",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:06",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog provides 9 production-ready blocks and components: scanline board background, logo intro, lower third, chromatic fringe title, vertical media filler, agent cursor, animated bar chart, arc motion path, and ASCII render pass. All are deterministic, seek-safe GSAP timelines with CSS-variable theming and variable-driven configuration — exactly the primitives our la",
+  "knowledge": 1,
+  "build": 7,
+  "items": [
+   {
+    "title": "Chromatic fringe title with blur-focus entrance",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Scanline board background (paper + CRT texture)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Agent cursor component for AI-agent demos",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "ASCII render pass with coarse-to-fine resolve",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Vertical media filler for 9:16→16:9 with three fill modes",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Animated bar chart component with CSS-variable growth",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Arc motion path primitive with GSAP MotionPathPlugin",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Seeded sine distortion for deterministic background lines",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Blur-focus entrance with prism fringe settle pattern",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Perspective bow (CRT curvature) via CSS transform",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Logo intro with kicker swap and accent arrow chip",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "YouTube lower third with subscribe button press animation",
+    "kind": "build",
+    "area": "growth"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:07",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides seven production-ready HyperFrames video primitives (ASCII trail reveal, aurora drift, avatar cloud, avatar group hover, badge pop, beat accent, beat pulse background) that are deterministic, variable-driven, and designed for mountable sub-compositions. Each component follows strict conventions: fixed IN/OUT envelopes with elastic HOLD, CSS custom properties for theming, GSAP ",
+  "knowledge": 0,
+  "build": 4,
+  "items": [
+   {
+    "title": "Deterministic beat-sting primitive with sync event",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Authored S-curve ASCII grid reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Loopable three-blob aurora background",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic avatar cloud with SVG link drawing",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Explicit beat-grid background pulse",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Surface-aware notification badge micro-interaction",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:07",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a collection of high-quality HyperFrames components including orchestration timelines, comparison wipes, and advanced text reveal primitives. These are highly compatible with our existing HTML+GSAP 'lab' look and offer professional device chrome for tech explainers.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Visible Orchestration Spine",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Slot-Based Before/After Wipe",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Word-Level Blur Reveal",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic Letter Splitter",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Token-Native Device Chrome",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Elastic Hold Pacing",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "3D Camera Rig Depth Stack",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:07",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides advanced camera and typography primitives for HyperFrames, including a sophisticated procedural camera shake system and narrative-driven caption styles. It is high-quality, offering deterministic, seek-safe implementations that fit perfectly into our existing HTML+GSAP pipeline.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Procedural Camera Shake with Overscan Solver",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Geometric Camera-Follow Typography",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Causal Camera Scan Gate",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Per-Pixel Auto-Inverting Captions",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Editorial Emphasis Typography Pair",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Seek-Safe Property Setter Driver",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:08",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Nine HyperFrames caption components showcasing distinct animated text styles: emoji-pop, glitch-rgb, gradient-fill, highlight, kinetic-slam, matrix-decode, neon-accent, neon-glow, and parallax-layers. Each is a self-contained HTML+GSAP module with deterministic timing, font fitting, and keyword-aware styling — production-ready patterns for short-form caption variety.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Keyword-triggered emoji insertion",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Per-word gradient fill animation",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "RGB glitch with aftershock pulses",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Matrix decode scramble reveal",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Neon accent wiggle drift",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Parallax depth layers (behind/front)",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Deterministic font-size fitting with safety margin",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Group timing from pause thresholds, not fixed counts",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "TikTok-style highlight sweep per word",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Kinetic slam single-word full-screen",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Component install via CLI with content hashing",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:09",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source contains seven high-quality GSAP-based UI and caption components including particle bursts, texture-masked text, and card-resize primitives. It is excellent for upgrading our 'lab' look and adding high-impact motion to tech explainers.",
+  "knowledge": 1,
+  "build": 5,
+  "items": [
+   {
+    "title": "Keyword-Triggered Particle Burst",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Pill-Container Karaoke Captions",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Texture-Masked Typography",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Weight-Shift Narrative Emphasis",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Card Expansion Primitive",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Caret-Swap Text Replacement",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Char Slam Reassembly",
+    "kind": "build",
+    "area": "hook"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:09",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides high-fidelity HyperFrames components for data visualization, iMessage-style chat threads, and high-energy transitions. It offers robust patterns for deterministic number rolling and mount-time layout measurement for complex scrolling scenes.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Chart Story Primitive",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Prefix-Driven Chat Thread Scene",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Directional Chromatic Aberration Wipe",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic Dash Offset Pattern",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Safe Muted Contrast Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:10",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames catalog components showcase production-grade, deterministic motion primitives for terminal typing, headline wipes, comparison splits, progress rings, and feature constellations. Each component is a self-contained, variable-driven sub-composition with fixed IN/OUT, elastic HOLD, and zero reliance on Math.random — ideal for our render pipeline.",
+  "knowledge": 3,
+  "build": 2,
+  "items": [
+   {
+    "title": "Typed-prompt law: build chars-at-time table once",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Seeded human typing cadence via LCG",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Proportional schedule compression, never timeScale",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Cue overrides for output lines",
+    "kind": "build",
+    "area": "script"
+   },
+   {
+    "title": "Colorama wipe: canvas headline reveal with LUT color mapping",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "SFX event dispatch at sync points",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "CSS @property for conic progress ring with synced count",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Real SVG path length for connector draw animation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Integer-cycle caret blink with phase pin",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic canvas noise via hash + frame counter",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Elastic hold with subtle drift, never timeScale",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Comparison split with persistent divider and clip-path wipe",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:11",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog provides five polished, deterministic motion primitives: a token-native count-up counter with tabular numerals and optical affix alignment; two CTA end-card variants (minimal per-word landing + capsule pop, and a three-part lockup with microcopy); a marker-pen annotation cursor that draws variable-width strokes (loop, underline, arrow) synced to pen speed; and ",
+  "knowledge": 0,
+  "build": 3,
+  "items": [
+   {
+    "title": "Deterministic count-up with tabular numerals & optical affix trim",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Per-word action-line landing + character-count font fitting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Three-part CTA lockup with subtle hold drift",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Hand-drawn annotation cursor with speed-based stroke width",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Context-menu cursor choreography for UI demos",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:12",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Three HyperFrames cursor motion-primitive components: drag-drop (kanban card lift/carry/drop), glyph-trail (tutorial cursor with distance-spaced dotted trail and numbered step markers), and marquee-select (selection rectangle with frame-accurate tile highlighting). All are production-ready, deterministic, variable-driven sub-compositions using GSAP timelines with per-frame render functions.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Quadratic bezier arc with bend parameter for natural motion paths",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Distance-spaced trail dots via cumulative length sampling",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Frame-accurate hit detection via high-FPS pre-walk",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Lockstep cursor-element coupling via transform-origin at grip point",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Marquee rectangle with independent 1px edge scaling",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Per-step trail fade handoff (next move starts → previous trail fades)",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Cursor press micro-animation with sine micro-movement",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Gap closure animation for dynamic lists",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Cursor as narrative actor: three archetypes for faceless shorts",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Mountable sub-composition contract with variable defaults",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:12",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Four production-ready HyperFrames components: a text-selection cursor with toolbar, a screen-recording auto-zoom camera that springs to clicks, a theatrical curtain-reveal transition with slotted stage content, and a velocity-matched directional hard cut (power4.in/out) with whip-cut SFX event. All are deterministic, variable-driven, mountable sub-compositions that fit our HTML+GSAP pipeline and l",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Text-select cursor primitive for UI demos",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Auto-zoom cursor camera for screen recordings",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Curtain-reveal transition with content slot",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Velocity-matched directional hard cut (Cut the Curve)",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Deterministic mount contract pattern for reusable blocks",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:13",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source provides six HyperFrames catalog components (dart-cursor, decline-chart, device-frame-stage, directional-wipe, drift-hold, dynamic-grid) as mountable, variable-driven motion primitives with GSAP timelines. They are production-ready, well-documented, and directly fill gaps in our lab-look toolkit for UI demos, data storytelling, transitions, and ambient motion.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Dart Cursor motion primitive",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Decline Chart with ambient darkening",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Device Frame Stage prop",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Directional Wipe transition",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Drift Hold ambient camera",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Dynamic Grid animated background",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:14",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Four HyperFrames motion primitives: echo-smear (velocity-adaptive streak), echo-trail (onion-skin ghosts), extended-keyframe (creep-tail arrival with shutter blur), and facet-morph (low-poly morph with per-facet lighting). All are deterministic, pure-function-of-time, production-ready components with authored parameters and sequencing rules.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Velocity-adaptive echo smear",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Onion-skin ghost trail with opacity decay",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Extended keyframe ease with creep tail",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Filter-based shutter motion blur (feOffset)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Sequencing rule: next arrival at 60% of move duration",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Low-poly facet morph with per-facet lighting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic vertex interpolation via pure time functions",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Fixed-seed LCG for procedural wobble phases",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Token color resolution to concrete RGB at mount",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Adaptive echo count with edgeSpacing for smooth rotation",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:15",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides high-end HyperFrames motion primitives including a cinematic 'filmed screen' shader effect and several focus-driven UI components. It is exceptionally high quality, offering production-ready GSAP timelines and WebGL shaders for professional-grade automated video.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Filmed Screen Shader",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Focus Rack Transition",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Specular Gloss Sweep",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Mobile Gesture Tap",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Fade Through Wash",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Focus Blur Resolve",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Elastic Schedule Compression",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:15",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a collection of high-quality HyperFrames UI components and motion primitives, including shader-based color grading reveals, procedural backgrounds, and advanced transitions. It is highly relevant for upgrading the 'lab' look of our tech explainers with professional-grade visual effects.",
+  "knowledge": 0,
+  "build": 5,
+  "items": [
+   {
+    "title": "Grade Split Reveal Slider",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ambient Grain Field",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "SVG Turbulence Grain Overlay",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Staggered Icon Card Assembly",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Halftone Dot Dissolve",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Impact Headline Slam",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "Grid Pixelate Wipe",
+    "kind": "build",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:15",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a suite of 'hand-drawn' (hw) animation components and helpers, including a deterministic jitter system (boil), a curvature-aware drawing ease, and volume-preserving impact physics. It is high-quality, production-ready code for adding organic, annotated layers to automated videos.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Curvature-Adaptive Pen Ease (hwPenEase)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "SVG Stroke Texture Matrix",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Volume-Preserving Impact Squash (hwImpactSquash)",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic Quantized Jitter (Boil)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Travel-Aligned Arrival Stretch",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Wobbled Path Generators (Rect/Ellipse)",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:17",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog part showcases seven polished, deterministic motion primitives: handwritten callouts with volume-preserving squash, ink-bleed reveals via canvas gooey filter, icon morph/swap transitions, inline highlights, and input feedback. All use closed-form math, seeded randomness, and CSS-variable-driven timelines — ideal for our lab-look shorts and reliable pipeline.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Volume-preserving contact squash on label pop",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Stroke matrix: plain/soft/sharp/spray for handwritten lines",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Draw-on across stroke matrix via mask clones",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ink-bleed reveal: deterministic canvas gooey filter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Closed-form blob animation (no physics state)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Static seeded paper grain via feTurbulence",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Slot pattern for custom mark content",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Icon swap via CSS custom properties",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Inline marker highlight via CSS scale variable",
+    "kind": "build",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:17",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a collection of advanced HyperFrames motion primitives including cinematic transitions, kinetic typography, and dynamic lighting effects. It is an excellent resource for upgrading the 'lab look' of our tech explainers with professional-grade, deterministic animations.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Iris Reveal with Desaturation Register",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Kinetic Centered Word-Push Build",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Non-Reflowing Kinetic Word Swap",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic Light Sweep Re-shading",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Staggered Keyframe Card Stack",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Staggered Line-by-Line Blur Entry",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:18",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a collection of high-polish typography and UI motion primitives including masked line swaps, orbiting data clusters, and magnetic cursor interactions. These components use deterministic GSAP timelines and CSS container queries to ensure professional, repeatable motion across different aspect ratios.",
+  "knowledge": 0,
+  "build": 5,
+  "items": [
+   {
+    "title": "Masked Line Swap",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Locked Nucleus Orbit",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Magnetic Cursor Interaction",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Impact Logo Sting",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Staggered Social Proof Wall",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic Letter Cascade",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Characters-Aware Font Fitting",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Wide-Tracked URL Breathe",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:19",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog provides nine polished, deterministic motion primitives (marker checklist, marker highlight, match cut, matrix decode, menu morph, mesh gradient, micro transitions, background emphasis type, hairline arc gauge). Each ships as a self-contained HTML+GSAP component with typed variables, default fonts, and a paused timeline — ready to drop into our HyperFrames pipe",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Marker Highlight emphasis primitive",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Marker Checklist Card component",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Matrix Decode scramble-to-text",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "Mesh Gradient Background",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Hairline Arc Gauge (stat counter)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Background Emphasis Type texture",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Micro Transitions UI pack",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:19",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides advanced motion primitives and a professional-grade motion blur system for HyperFrames. It is an excellent technical resource for achieving After Effects-level visual quality within an automated HTML/GSAP render pipeline.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "AE-Style Shutter Motion Blur",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Gooey SVG Text Morph",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "FLIP-based Shared Element Morph",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Silhouette Reshape Transition",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:21",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source part documents five HyperFrames motion primitives (multi-device-splay, multiplayer-cursors, native-notification-pop, notes-typing, notification-pileup) as mountable sub-compositions with variable systems, deterministic GSAP timelines, and sound-cue events. The components showcase production-grade patterns: closed-form spring physics, measured human keystroke rhythms, accelerating arriv",
+  "knowledge": 4,
+  "build": 0,
+  "items": [
+   {
+    "title": "Mountable sub-composition architecture",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Variable system with validation, enums, ranges, and defaults",
+    "kind": "better",
+    "area": "ops"
+   },
+   {
+    "title": "Closed-form spring envelope for deterministic seeks",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Measured human keystroke rhythm for typing",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Accelerating arrival cadence with decay and floor gap",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Finite drift legs that exactly fill elastic HOLD",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Token-derived color variations via oklch color-mix",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Single-owner transform pattern (Wave K L1)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "hf:sfx CustomEvent for frame-accurate sound cues",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Fonts-ready gate before DOM measurement",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Backdrop-filter blur with opaque color-mix fallback",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:22",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog provides six polished, deterministic motion primitives (notification stack, number pop-in, number wheel, offset-path traveler, ordered dither pass, outline draw) built as self-contained HTML+GSAP components with variable-driven customization. Each follows strict mount contracts, seek-safe timelines, and elastic-hold envelopes, making them drop-in candidates for",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Notification Stack primitive",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Number Pop-In entrance",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Number Wheel rolling counter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Offset Path Traveler",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ordered Dither Pass transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Outline Draw proof callout",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:23",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides six mountable HyperFrames motion primitives (Oversized Cursor, Overwhelm Surround, Page Slide, Pan Stations, Panel Reveal, Paper Collage Reveal) each as a self-contained HTML+GSAP component with declared variables, deterministic timelines, and a sub-composition mount contract. They are production-ready, well-documented, and directly compatible with our HyperFrames pipeline.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Oversized Cursor Interaction Primitive",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Overwhelm Surround Agitation Effect",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Pan Stations Camera Move",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Paper Collage Reveal Transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Page Slide Transition Pattern",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Panel Reveal with Height Expansion",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:25",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog part showcases seven polished motion primitives: a device-dive transition, parallax zoom/unzoom grid transitions, two deterministic particle systems (image reveal and text dissolve), a physics-based pendulum swing, and a per-word crossfade. All use fixed IN/OUT/HOLD envelopes, CSS custom properties driven by GSAP, and deterministic patterns (LCG seeds, precomputed tables, ",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Deterministic particle field with LCG seed",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Parallax device dive transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Parallax zoom/unzoom grid transitions",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Pendulum swing entrance with damped oscillation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Per-word crossfade with blur and drift",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Slot pattern for dynamic content injection",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Fixed IN/OUT/HOLD envelope with elastic hold only",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Canvas determinism law: precompute table, pure repaint",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:25",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog part documents six polished motion primitives (Per Word Rise, Perspective Marquee, Physical Exit, Press Ripple, Pull Back Reveal, Pull to Refresh) with production-ready GSAP timelines, variable systems, and deterministic envelopes. Each component demonstrates advanced easing, physics-based motion, and reusable math primitives that directly elevate short-form video quality.",
+  "knowledge": 1,
+  "build": 0,
+  "items": [
+   {
+    "title": "Overshoot-free word settle easing (landEase)",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Camera pull-back reveal with whip + drift settle",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Nonlinear rubber-band resistance formula",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Physics-based card exits (toss/drop/slide)",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Cursor press ripple with dual click rings",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "3D perspective marquee with seamless dual-loop",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:26",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source part documents five HyperFrames motion-primitive components (Push In, Radial Surround, RGB Glitch Text, Rubber Band Bumper, Scan Band, Scramble Reveal) with full HTML/JS implementations. Each follows a rigorous deterministic pattern: variable system with typed roles, fixed IN/HOLD/OUT envelope (never time-scaled), precomputed geometry/tables for seek safety, CSS custom-property theming",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Variable role taxonomy",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Standardized IN/HOLD/OUT envelope",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic precomputed frame tables",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "CSS token mapping for enum variables",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Slot pattern for component customization",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Container-query units for responsive sizing",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Variable validation with fallback helper",
+    "kind": "build",
+    "area": "script"
+   },
+   {
+    "title": "Timeline integration recipe in comments",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Baked position geometry for seek safety",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Component mount contract standardization",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Per-character stagger capped by duration budget",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Vignette edge dim for focus",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:27",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides three production-ready HyperFrames components: a horizontal screen carousel, a vertical cinematic parallax scroller, and a loopable social feed. It introduces advanced motion laws for velocity-matched transitions and deterministic camera-servo patterns for complex multi-layer scenes.",
+  "knowledge": 2,
+  "build": 2,
+  "items": [
+   {
+    "title": "Velocity-Throw-Snap Motion Law",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Camera-Servo Parallax Law",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Integer-Cycle Micro-Drift",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Seek-Safe Transform Pattern",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Doomscroll Flick Rhythm",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Skeleton Post Cycle",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:27",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog part contains seven motion-primitive components: a deterministic segmentation-mask flood with HUD flicker, a seek-safe separator, a static settings toggle flow, two shared-axis typography transitions (Y and Z), a reference-sampled spring bottom sheet, and a CSS gradient shimmer sweep. The segmentation flood and spring sheet are production-grade, deterministic primitives; t",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Segmentation Flood primitive",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Frame-sampled spring motion table",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Shared-axis Y/Z word transitions",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Shimmer sweep highlight",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Seek-safe progress reveal via CSS custom property",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Component variable schema with defaults and validation",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:28",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog contains six production-ready motion primitives: an integrated shutter-blur text slam, a slit-scan time-smear reveal, a slot-machine character counter, a measured social-proof end-card, a skeleton-loader cross-fade, and a signup UI flow. The shutter-slam and slit-scan-reveal stand out for their deterministic, seek-safe rendering, measured easing choices, and no",
+  "knowledge": 3,
+  "build": 2,
+  "items": [
+   {
+    "title": "Integrated shutter motion blur primitive",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic slit-scan time-smear transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "CSS custom-property driven slot-machine counter",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Measured stagger timings for social-proof end-card",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Power2.inOut measured superior to fitted bezier for blurred motion",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Skeleton-loader pulse-then-crossfade transition pattern",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Proxy-based timeline registration trap for deterministic mount",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Beat amplitudes as container fractions for responsive slam",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic canvas repaint pattern with seeded jitter",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:29",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a collection of high-fidelity HyperFrames motion primitives and components, including 3D comparison layouts and physics-based card stacks. It is excellent for upgrading our 'lab' aesthetic with interruptible springs and deterministic granular effects.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Interruptible Spring (L1 Law) Redirect",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "3D Book-Open Split Tilt",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic Granular Blob",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Spring-Pop Overshoot Rule",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Scripted Spotlight Mesh",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Soft Blur-In Reveal",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Phase-Opposed Idle Float",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:29",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a library of HyperFrames components for UI grids, typography, and data visualization. It is highly useful for refining the 'lab look' of tech explainers with deterministic, seek-safe motion patterns.",
+  "knowledge": 0,
+  "build": 4,
+  "items": [
+   {
+    "title": "Stagger Cascade Grid",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Fractional Star Rating Fill",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "State Chip Rail Machine",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic Snap Machine Pattern",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Sticky Mock Swap",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Shallow Arc Caption Entrances",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Staggered Word-Fade Primitive",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Elastic Hold Envelope",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:30",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames catalog part showcases five polished, deterministic motion primitives: stitched thread text, stop-motion cadence law, AI-streaming text rhythm, strikethrough replace, and a store-badge lockup. Each component is seek-safe, variable-driven, and designed for direct composition embedding — ideal reference for a faceless-short pipeline that values craft detail and deterministic renderi",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Stepped-time quantization law",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Double-dash attribute-driven stroke reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "AI-stream burst rhythm (GAPS table)",
+    "kind": "knowledge",
+    "area": "hook"
+   },
+   {
+    "title": "Seeded 2-frame boil jitter",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Strikethrough replace with origin control",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Thread-tail overshoot & needle-hole dots",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:31",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a collection of high-quality UI and motion primitives for the HyperFrames engine, including gesture simulations and deterministic data readouts. It is highly relevant for upgrading the 'lab' look and product demo capabilities of our studio.",
+  "knowledge": 0,
+  "build": 7,
+  "items": [
+   {
+    "title": "Success Check Primitive",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "SVG Mask Reveal",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "SVG Stroke Trace with Closed Fill",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Swipe Rail Gesture Simulation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Telemetry HUD",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic Value Ticking (Typed-Prompt Law)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Tabs Slide Indicator",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Terminal Simulator Chrome",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:32",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames catalog provides six polished, deterministic text/UI primitives: two testimonial cards (simple and advanced), a text match-cut transition, a specular shimmer, a word stagger with shimmer, and a text state swap. All use fixed IN/OUT with elastic HOLD, variable-driven content, GSAP timelines, and container-query units — directly compatible with our HyperFrames pipeline.",
+  "knowledge": 3,
+  "build": 0,
+  "items": [
+   {
+    "title": "Per-line soft-mask quote reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Emphasis substring with hand-drawn underline",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Text match-cut transition",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Word stagger with blur rise + shimmer sweep",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "Text state swap for UI demos",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Reading-pace timing discipline",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Avatar slot pattern (initials fallback, image replaceable)",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Elastic hold envelope standard",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Specular gradient shimmer sweep",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Deterministic font-size fit via 1/sqrt(chars)",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:34",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source part documents five HyperFrames catalog components: texture-masked text with 66 PBR luminance masks, a Three.js orbit primitive driven by paused GSAP timeline, a slot-machine ticker that promotes to headline, a 3D tilt card with depth parallax, and a calm title card with fixed IN/OUT envelope. All are production-ready, variable-driven, and designed for deterministic rendering.",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Texture Mask Text Library",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Three.js Deterministic Primitive Pattern",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Ticker Takeover Component",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "Tilt Card with Depth Parallax",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Fixed IN/OUT Envelope with Elastic HOLD",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Drop Shadow Follows Masked Text Contour",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Animated Mask Position for Living Textures",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Component Install CLI with Asset Bundling",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Variable-Driven Component Contract",
+    "kind": "knowledge",
+    "area": "script"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:35",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Six HyperFrames component primitives (titlecard, toggle, letter cascade, paper rip, touch gesture, tracing beam) showcase a mature sub-composition system with deterministic timing, variable contracts, slot-based content, and procedural geometry. The patterns are production-grade and directly applicable to our HyperFrames pipeline.",
+  "knowledge": 2,
+  "build": 4,
+  "items": [
+   {
+    "title": "Sub-composition mount contract with variable inheritance",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Deterministic envelope: fixed IN/OUT, elastic HOLD only, no timeScale",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "hf:sfx CustomEvent for decoupled sound cues at fixed timeline offsets",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Slot pattern for dynamic content injection (from/to layers)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Closed-form deterministic procedural geometry via seeded LCG",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Character-count text fitting with conservative advance estimate",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Frame-quantized timing helper for 60fps precision",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "CSS custom property driven per-character stagger animation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "True hold (dead still) as intentional design, not blank stretch",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "UI prop reference primitive with physicality (overshoot, crossfade, press)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Paper tear transition with fibrous edge, core band, and lift shadow",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Touch gesture actor with tap/swipe, polarity, and target contract",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:36",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides six battle-tested HyperFrames motion primitives for text and typography: Tracking In (letter-spacing reveal), Trust Strip (monochrome social-proof row), Type Match Cut (headline-split transition), Typed Prompt (deterministic human-cadence typing with optional correction), Typewriter (character-by-character reveal), and Typing Indicator (three-dot chat bubble). Each component u",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Typed Prompt with Human Cadence & Correction",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Trust Strip for Social Proof",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Type Match Cut Transition",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic Caret Blink via Integer Sine Cycles",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Elastic Hold Timing Model (No timeScale)",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Tracking In Heading Reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Typing Indicator Chat Bubble",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Variable System with Enum Validation & Contract Tokens",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:37",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Four HyperFrames catalog components demonstrating deterministic, variable-driven video primitives: UI Focus Zoom (camera-servo zoom/pan with slot content), Variable Axis Type (single-axis variable-font morph), Variable Font Flex (per-character weight/width flex with optical compensation), and Vector Editor Rig (design-tool chrome with live path drawing). All use seek-safe patterns, fixed IN/OUT wi",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Camera-servo zoom/pan law",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Variable-font axis morph with font-ready gate",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Per-character variable flex with optical compensation",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Slot-based component content injection",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Decoupled sound cues via hf:sfx CustomEvent",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Complete axis list for stable font interpolation",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Integer-cycle micro-drift for dead-still holds",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Design-tool app chrome primitive",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:38",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides five production-ready HyperFrames motion primitives (Velocity Throw Snap, Vignette, Vox Annotate, Whip Pan Cut, Whiteboard Ink) that are deterministic, seek-safe, and variable-driven. Each component demonstrates advanced GSAP/CSS patterns — velocity-matched transitions, stroke-dashoffset reveals, directional motion blur, slot-based customization, and hf:sfx event sync — direct",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Vox-style keyword annotation with connector callout",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Velocity-matched whip pan transition with directional blur",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Five-shot rail with physics throw and snap settle",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Stroke-by-stroke SVG whiteboard draw with pen nib follower",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Pure-CSS animatable vignette via radial-gradient custom properties",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic seek-safe animation patterns across primitives",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Slot pattern for caller content injection in reusable blocks",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "hf:sfx CustomEvent for decoupled sound-cue sync at exact timeline offsets",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Structured variable system with enums, defaults, validation, and token mapping",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Elastic hold with subtle breathing animation for dead-still segments",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:39",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo documents 6 production-ready catalog components (wordmark tile reveal, camera punch-in helpers, annotation circle+countdown, feathered spotlight, on-screen display effect, zoom-through transition) plus core concept docs on compositions, data attributes, determinism, and frame adapters. The components are self-contained, variable-driven, mountable sub-compositions ",
+  "knowledge": 0,
+  "build": 4,
+  "items": [
+   {
+    "title": "Wordmark Tiles Reveal",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Camera Punch-In Helpers",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Feathered Spotlight",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "On-Screen Display Effect",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Zoom Through Transition",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Pointer Circle + Countdown",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Mountable Sub-Composition Pattern",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "CSS Variable Animation via GSAP",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Deterministic Seeded Noise",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Spatial Wave Stagger Algorithm",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "GSAP Helper Function Library",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Edge-Defocus Pulse for 3D Camera Moves",
+    "kind": "build",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:40",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is the HyperFrames documentation covering variables, catalog system, canary rollouts, deployment paths (AWS Lambda, GCP Cloud Run, Cloud), CLI workflows, and contribution processes. It's high-quality, production-ready documentation from a mature open-source video rendering framework.",
+  "knowledge": 3,
+  "build": 7,
+  "items": [
+   {
+    "title": "Composition Variables with Types, Defaults, and Portrays",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Batch Rendering from JSONL with Variable Overrides",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Canary Rollout System with Sunset Enforcement",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Catalog Registry with Params, Dependencies, and CDN Assets",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Semantic Catalog Search with On-Device Embeddings",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Content-Addressed Project Uploads (Sites) for Reuse",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "CLI Local Testing Workflow (Link, Direct Call, npm Pack)",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Reviewed Changelog Process with Draft Regeneration",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Release Channels: Stable on main, Prerelease on next/alpha",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Template Migration Pattern: Remotion inputProps → HyperFrames Variables",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:42",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo contains developer documentation covering CLI automation (harness tool context, check command with finding frames and component inspection), 4K rendering, project templates, most-installed blocks, sharing editable projects, and caption/recut patterns. It's high-quality reference material for integrating HyperFrames deeper into an automated pipeline.",
+  "knowledge": 2,
+  "build": 4,
+  "items": [
+   {
+    "title": "HyperFrames CLI check with findingFrames + inspect for automated visual QA",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "4K supersampling via --resolution 4k flag",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Adopt most-installed blocks as reusable compose_lab components",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Project templates for new series scaffolding",
+    "kind": "knowledge",
+    "area": "ideas"
+   },
+   {
+    "title": "Share editable project files with Telegram approvals",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "Caption rail + climax embed pattern for designed overlays",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Events NDJSON for pipeline observability and artifact tracking",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Project lock to prevent concurrent browser renders",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Component inspector snippets for debugging animation issues",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:44",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames guides provide a production-grade framework for deterministic, HTML+GSAP video compositions with strict structural rules, animation patterns, and transition philosophy. They are highly relevant to our HyperFrames-based studio and reveal critical bugs and best practices we can adopt immediately.",
+  "knowledge": 2,
+  "build": 1,
+  "items": [
+   {
+    "title": "95% hard cuts, only 2–3 shader transitions at key moments",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Mid-scene activity patterns catalog (counter, SVG draw, character stagger, breathing float, bar-chart fill)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Scene duration budgets by word count (hard ceiling 5s)",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Critical HyperFrames bugs: non-anchor scenes need autoAlpha toggles; first shader anchor needs explicit opacity:1",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Determinism rules: no Math.random, Date.now, setInterval, repeat:-1 without finite root duration",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Font anti-monoculture: banned fonts, dramatic weight contrast (300 vs 900), min sizes 60px/20px/16px",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Explainer rule: one idea per scene, big typography, diagrams over stock footage",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Counter animation pattern with onUpdate for formatted numbers",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Self-review checklist: structural validity, brand accuracy, animation baseline",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Shader transition energy matching and timing formula",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:44",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is the comprehensive technical documentation for HyperFrames, covering advanced rendering (HDR, motion blur), design-to-code workflows (Figma), and deterministic animation patterns. It is a high-quality engineering guide that provides the exact implementation details for features our studio currently lacks.",
+  "knowledge": 1,
+  "build": 5,
+  "items": [
+   {
+    "title": "Beat-Grid Analysis Pipeline",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Shutter-Based Motion Blur",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "HTML-in-Canvas Texture Mapping",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "HDR 10-bit Render Path",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Non-Destructive Media Treatments",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Figma-to-Code Asset Bridge",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Deterministic Frame Source Registry",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Open-Weight Model Alternatives",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Per-Word Media Effects",
+    "kind": "build",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:45",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames repository provides a mature, production-grade framework for deterministic HTML+GSAP video rendering with advanced features like path-traced 3D, per-pixel VFX chains, HDR/4K output, and agent-assisted authoring. Its tooling (lint/check/render), performance methodology, and automation patterns (PR-to-video, product launch) are directly applicable to a faceless-shorts pipeline.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "Path-traced 3D for lab-look hero shots",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Per-pixel VFX chain (data-vfx-chain)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Formal lint/check/render pipeline",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Performance profiling with Chrome DevTools",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "PR-to-video automation for Kaise Tech",
+    "kind": "knowledge",
+    "area": "ideas"
+   },
+   {
+    "title": "Product launch video from live site",
+    "kind": "knowledge",
+    "area": "ideas"
+   },
+   {
+    "title": "Local background removal (free, no API)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "HDR 10-bit and 4K supersampling render flags",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Transparent overlay rendering (WebM/MOV)",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Batch rendering with variable overrides for A/B testing",
+    "kind": "build",
+    "area": "growth"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:45",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is the comprehensive documentation for the HyperFrames ecosystem, covering audio mixing, agent-driven editing via WebMCP, and low-level rendering packages. It provides critical engineering fixes for common HTML video pitfalls and performance optimization flags.",
+  "knowledge": 4,
+  "build": 4,
+  "items": [
+   {
+    "title": "Voiceover Carve (Ducking)",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Video Wrapper Animation Rule",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Render Wait Optimization (data-no-timeline)",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Timed Visibility (class='clip')",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Standalone Linter Integration",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "WebMCP Agent Tools",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Native Audio Looping",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Output Dimension Guard",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Network Restriction Security",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Reference Background Detection",
+    "kind": "build",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:45",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides the technical documentation for the HyperFrames SDK, shader-based transition library, and advanced 'cinematography contract' prompting. It is an excellent resource for upgrading our studio's automated editing from simple cuts to continuous, professional-grade motion.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "GPU Shader Transition Library",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Cinematography Contract: Dwell and Sweep",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Automatic HEVC Media Proxying",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Code-Diff Animation Block",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Kinetic Slam Captions",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "SDK Headless Editing Layer",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Persistent Timeline 'Wire'",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Local GSAP Mirroring",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Region Arrival vs. Hard Cuts",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Beat-Grid Driven Rhythm",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:46",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames prompting docs are a mature, production-grade design system for deterministic, code-driven video. They codify a fixed grading pipeline, data-driven chart/map blocks, a variable/templating system, storyboard planning discipline, and precise editing verbs mapped to data attributes — all validated by rendered examples.",
+  "knowledge": 3,
+  "build": 0,
+  "items": [
+   {
+    "title": "Fixed color-grading pipeline order",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Matte separation for subject/background grading",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Two-ink press look for archival/mythology style",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Analogue degradation as three distinct recipes",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "High-fidelity spec writing for visual planning",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Generated artwork hybrid workflow",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Data-driven map blocks (choropleth, bubble, flow)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Storyboard planning with arc, direction block, per-frame jobs",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Density contract for frame composition",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Editing verbs mapped to data attributes",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Shader transitions for scene handoffs",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Batch rendering with variable overrides from JSONL",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:47",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames docs are a comprehensive, production-grade reference for prompt-driven video generation covering audio mixing, motion design, prompt engineering, and technical implementation. They're excellent — specific, opinionated, and full of executable techniques with concrete parameters.",
+  "knowledge": 1,
+  "build": 3,
+  "items": [
+   {
+    "title": "VO-paced visual reveals",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Spectral carve for music under narration",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Audio groups for narration clips",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Absolute-target iteration protocol",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Named transition catalog with energy tiers",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Ease vocabulary mapping",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Background removal: human-only model caveat",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "HEVC/H.265 automatic proxy pipeline",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Color groups for multi-clip grading consistency",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Strong prompt skeleton for plan.py",
+    "kind": "knowledge",
+    "area": "script"
+   },
+   {
+    "title": "Master bus truepeak limiter for delivery compliance",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Distill converged specs for recurring series",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:49",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames reference docs reveal a mature HTML+GSAP composition schema with strict lint rules, per-clip speed ramps, color grading, audio automation, and an override-mode pattern for templating. The lint suite alone covers deterministic animation, media integrity, caption safety, and project-level asset validation — all directly applicable to a faceless-shorts pipeline.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Speed ramps for beat-synced cuts",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Per-clip color grading with presets",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Audio automation lanes & clip fades",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Caption hard-kill exit pattern",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "HyperFrames lint in preflight gate",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Embedded override mode for series templates",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Nested composition variable passing",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Project-level asset validation in doctor",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Deterministic animation lint rules",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Media treatment capabilities query",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Linked clips for grouped timing",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Caption overflow prevention rules",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:50",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames SDK docs reveal a mature, typed editing layer for HTML+GSAP compositions with query APIs, atomic batch mutations, elastic holds, keyframe helpers, patch-based undo/redo, and pluggable persistence/preview adapters. It's high-quality reference material directly applicable to a HyperFrames-based render pipeline.",
+  "knowledge": 2,
+  "build": 8,
+  "items": [
+   {
+    "title": "Structured element queries",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Atomic batch edits",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Elastic hold API",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "GSAP tween CRUD via SDK",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Keyframe animation helpers",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Patch-based undo with origin guard",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Filesystem persistence with versioning",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Scoped IDs for nested compositions",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Dry-run validation with can()",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Headless adapter for CI renders",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Element handles for curried mutations",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Timing API with live GSAP labels",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:51",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source part documents HyperFrames SDK types, utilities, and Studio app features (brand kits, agent connections, editing workflows, export, reference video, sharing, AI clips, workspace). It reveals a mature, production-grade system with strong template override patterns, variable system, and agent-assisted editing — highly relevant to our HyperFrames-based pipeline.",
+  "knowledge": 3,
+  "build": 1,
+  "items": [
+   {
+    "title": "OverrideSet sparse template overrides",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Brand kit structure with roles and rules",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "ElasticHold for freeze/loop windows",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "91 caption styles library with word-level editing",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Variable preview overrides without changing defaults",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "PersistQueue with last-write-wins coalescing",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "FindQuery for programmatic element selection",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "CompositionVariable with FontValue/ImageValue objects",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "PatchEvent with inverse patches for rollback",
+    "kind": "build",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:52",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo documents the browser editor's audio mixing, canvas editing, timeline, export, and workflow systems. It's high-quality, production-ready documentation with concrete techniques for audio carving, grouping, automation, voice presets, gesture recording, agent integration, and reference-based workflows.",
+  "knowledge": 2,
+  "build": 0,
+  "items": [
+   {
+    "title": "Spectral carving for music under narration",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Group narration clips into a single bus",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Automation lanes for time-varying parameters",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Voice correction preset library",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "One-knob dynamics controls with level-matching",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "Even Out Levels for drifting narration",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "Gesture recording for animation authoring",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Agent-assisted element editing via clipboard prompt",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Reference video workflow for style transfer",
+    "kind": "knowledge",
+    "area": "growth"
+   },
+   {
+    "title": "Project-level lint and check gates",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Render queue with progress and cancellation",
+    "kind": "knowledge",
+    "area": "edit"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:53",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo contains the documentation site's design system (custom.css), a dynamic docs-menu label script, and the full Mintlify config (docs.json) defining navigation, catalog structure, and redirects. The CSS is a production-grade tokenized theme with dark/light modes, video player components, texture-mask typography, and catalog showcase layouts — directly relevant to our",
+  "knowledge": 5,
+  "build": 3,
+  "items": [
+   {
+    "title": "Tokenized design system with OKLCH palette",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Texture-mask typography for caption styles",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Video player component with scrub preview & hero play",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Catalog showcase layouts: film rows, remix shelves, versus grids",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Dynamic docs menu labeling via MutationObserver",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Structured catalog taxonomy with tags and nested groups",
+    "kind": "knowledge",
+    "area": "growth"
+   },
+   {
+    "title": "CSS-only animated background patterns for lab blocks",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Portrait video constraint pattern for 9:16 shorts",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Focus-visible rings using brand accent for accessibility",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Redirect map for legacy URL permanence",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Code block copy button with 44px touch target and plate hover",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Semantic variable portrays for asset auto-selection",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:53",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "Three HyperFrames catalog blocks showcase production-ready motion primitives: a mock AI chat reveal (9:16), an AI answer rank re-rank (1:1), and a three-phone app showcase (16:9). Each uses composition variables with portrays, measured timing arrays from reference footage, GSAP timelines with deterministic frame logic, and CSS custom-property theming. Code quality is high — ready to adapt for our ",
+  "knowledge": 0,
+  "build": 1,
+  "items": [
+   {
+    "title": "Mock AI Chat Reveal Block (9:16)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ranked List Re-Rank Animation (1:1)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Measured Timing Arrays for Realistic Typing/Streaming",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "End Card Brand Lockup Template",
+    "kind": "build",
+    "area": "thumbnail"
+   },
+   {
+    "title": "Three-Phone Fan-Out Comparison Layout (16:9)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Progress Ring & Bar Chart Animations",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Composition Variables with Portrays for Asset Auto-Selection",
+    "kind": "better",
+    "area": "visual"
+   },
+   {
+    "title": "Thinking Indicator as Retention Hook",
+    "kind": "knowledge",
+    "area": "hook"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-19 16:55",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source provides four production-ready HyperFrames blocks (money counter, bar chart race, beat-freeze cut, blue-sweater intro) showcasing deterministic animation patterns, configurable variables, and advanced motion techniques. Quality is high: each block is self-contained, uses seek-safe property-setter drivers, precomputed specs, and CSS-variable theming.",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Beat-synced freeze cut with hard-cut connector",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Bar chart race with closed-form rank interpolation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Money counter with bill/coin particle burst",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Fragment word reassembly with carry/settle/lock phases",
+    "kind": "build",
+    "area": "hook"
+   },
+   {
+    "title": "Cursor choreography across multi-scene UI demo",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "UI panel state machine for AI interactions",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "CONFIG object pattern for block parameters",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Deterministic particle spec precomputation",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Smoothstep rank interpolation for bar races",
+    "kind": "knowledge",
     "area": "motion"
    }
   ],

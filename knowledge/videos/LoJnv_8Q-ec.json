@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "Okay, here are four signs",
+ "first_frame": "A young woman holding a small microphone, looking directly at the camera with a serious expression. Text overlay: '4 signs of LOW intelligence'",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 133,
+ "cuts_estimate": 25,
+ "avg_shot_s": 5.3,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-14 s: Introduction to the topic and setting the stage.",
+  "14-25 s: Sign 1: Self-serving bias, explained with an illustration.",
+  "25-37 s: Sign 2: Black and white thinking, using cricket examples.",
+  "37-1:07 s: Sign 3: Dunning-Kruger effect, using the Hedgehog vs. Fox analogy.",
+  "1:07-1:27 s: Further explanation of the Dunning-Kruger effect.",
+  "1:27-1:59 s: Sign 4: Conversational narcissism, explaining shift vs. support responses.",
+  "1:59-2:13 s: Conclusion, personal reflection, and call to action."
+ ],
+ "visual_techniques": [
+  "Text overlays for each sign (0:14, 0:25, 1:07, 1:27)",
+  "Animated illustrations to explain concepts (0:09, 0:23, 0:38, 0:44, 0:51, 0:57, 1:15, 1:30, 1:41, 1:47, 1:55)",
+  "Jump cuts between the talking head and the animations"
+ ],
+ "captions": "Style: Bold, sans-serif, white text with black outline. Position: Bottom center. Highlight colour: Yellow for key terms.",
+ "sound": "Voice: Clear, conversational, slightly fast-paced. Music: Upbeat, lo-fi background track. Sound effects: Subtle whooshes for transitions.",
+ "recurring_element": "The creator holding a small microphone while speaking directly to the camera.",
+ "ending": "CTA: Asks viewers to comment if they agree and to share their own signs of low intelligence.",
+ "why": "It combines a provocative hook with relatable, well-researched psychological concepts, making the content both engaging and educational. The use of simple, clear animations helps break down complex ideas, keeping the viewer's attention.",
+ "reusable_faceless": [
+  "Use of simple, flat-style animations to explain complex concepts.",
+  "Clear, bold text overlays to highlight key points.",
+  "Fast-paced editing with frequent cuts to maintain engagement.",
+  "Direct, conversational tone to build rapport with the audience."
+ ],
+ "id": "LoJnv_8Q-ec",
+ "url": "https://www.youtube.com/watch?v=LoJnv_8Q-ec",
+ "channel": "aevytv",
+ "niche": "tech stories, English, India",
+ "title": "4 signs of Low Intelligence!",
+ "views": 523000,
+ "channel_median": 187000,
+ "ratio": 2.8,
+ "label": "winner",
+ "watched": "2026-11-19T17:02+05:30"
+}

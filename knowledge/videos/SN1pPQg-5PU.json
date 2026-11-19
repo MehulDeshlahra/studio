@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "So first one lakh comes from having",
+ "first_frame": "A medium shot of a man in a black jacket and glasses speaking into a microphone, with the text 'Easiest way to make your first 1 lakh🔥' at the top and '1 lakh' at the bottom.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 50,
+ "cuts_estimate": 17,
+ "avg_shot_s": 2.9,
+ "words_per_s_estimate": 2.6,
+ "beats": [
+  "0-4 s: Hook and initial explanation of the business model.",
+  "4-14 s: Explaining the 'time' value proposition.",
+  "14-21 s: Differentiating from AI and defining the 'human' role.",
+  "21-30 s: Visualizing the 'to-do list' of tasks.",
+  "30-36 s: Scaling the model to reach the 1 lakh target.",
+  "36-50 s: Concluding thoughts on human communication as an underrated skill."
+ ],
+ "visual_techniques": [
+  "Motion graphics (0:02): Animated icons of buildings and a person representing clients.",
+  "Graphic overlay (0:09): 'YOU' appearing over a silhouette of a person.",
+  "List animation (0:21): A checklist appearing with items being ticked off.",
+  "Grid layout (0:32): Four animated character icons appearing in a 2x2 grid.",
+  "Text overlays (throughout): Captions highlighting key points."
+ ],
+ "captions": "Style: Bold, white text with black outline, centered at the bottom. Words per chunk: 3-6. Highlight colour: Yellow for emphasis.",
+ "sound": "Voice type: Clear, conversational, slightly fast-paced. Music: Upbeat, low-volume background lo-fi track. Sound effects: Subtle 'pop' sounds during graphic transitions.",
+ "recurring_element": "The speaker's headshot in the center of the frame, interspersed with motion graphics.",
+ "ending": "The speaker concludes with a thought on 'underrated skills' and the video fades out.",
+ "why": "The video failed to gain traction because the premise—'making 1 lakh'—is a common, saturated topic. The advice provided is generic (virtual assistant work) and lacks actionable, unique steps. The visual style is repetitive, and the lack of a strong, specific CTA or a 'show, don't tell' demonstration makes it feel like filler content.",
+ "reusable_faceless": [
+  "Animated checklist to demonstrate a workflow.",
+  "Using simple 2D character icons to represent client/business relationships.",
+  "Using a 'You' vs 'Them' graphic to simplify complex value propositions.",
+  "Using a grid layout to show scaling potential."
+ ],
+ "id": "SN1pPQg-5PU",
+ "url": "https://www.youtube.com/watch?v=SN1pPQg-5PU",
+ "channel": "IshanSharma7390",
+ "niche": "AI tools, Hinglish",
+ "title": "Have you tried this?",
+ "views": 15000,
+ "channel_median": 76000,
+ "ratio": 0.2,
+ "label": "flop",
+ "watched": "2026-11-19T17:02+05:30"
+}

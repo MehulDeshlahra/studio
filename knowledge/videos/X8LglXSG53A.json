@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "Just look at this flock of birds.",
+ "first_frame": "A large flock of birds (murmuration) flying in the sky.",
+ "hook_type": "visual surprise",
+ "format": "animation",
+ "length_s": 40,
+ "cuts_estimate": 15,
+ "avg_shot_s": 2.6,
+ "words_per_s_estimate": 2.2,
+ "beats": [
+  "0-3 s: Hook with visual of birds, establishing the mystery.",
+  "3-5 s: Explaining that it's an algorithm, not magic.",
+  "5-10 s: Transition to computer simulation concept.",
+  "10-12 s: Humorous 'bird drone' conspiracy theory interlude.",
+  "12-36 s: Step-by-step breakdown of the 3 Boids algorithm rules (Separation, Alignment, Cohesion).",
+  "36-40 s: Final reveal and conclusion."
+ ],
+ "visual_techniques": [
+  "Stock footage of bird murmuration (0s)",
+  "Text overlays with bold, sans-serif font (2s)",
+  "Fast-paced motion graphics showing vector math/physics (6s)",
+  "Humorous static image of a pigeon with 'components' labeled (11s)",
+  "Split-screen: Top showing simulation logic, bottom showing the resulting animation (17s)",
+  "Dynamic lines showing pathing/movement (20s)"
+ ],
+ "captions": "Bold, white text with black outline, centered, 1-3 words per chunk, pops in sync with the narration.",
+ "sound": "Upbeat, rhythmic electronic background music; clear, fast-paced male voiceover; subtle 'pop' sound effects for text appearances.",
+ "recurring_element": "The 'bird drone' conspiracy joke and the recurring yellow bird icons in the simulation.",
+ "ending": "Punchline: 'Congratulations, you just implemented Boids algorithm.'",
+ "why": "It combines a visually stunning natural phenomenon with a 'conspiracy' joke to hook the viewer, then provides high-value educational content in a simple, digestible format that makes complex coding concepts feel accessible.",
+ "reusable_faceless": [
+  "Use a 'conspiracy' joke to introduce a technical topic",
+  "Split-screen technique for showing theory vs. result",
+  "Use simple geometric shapes (triangles/circles) to visualize complex algorithms",
+  "Fast, punchy text overlays that match the beat of the music"
+ ],
+ "id": "X8LglXSG53A",
+ "url": "https://www.youtube.com/watch?v=X8LglXSG53A",
+ "channel": "Fireship",
+ "niche": "dev/tech humour",
+ "title": "how god programmed birds probably",
+ "views": 3000000,
+ "channel_median": 1500000,
+ "ratio": 2.0,
+ "label": "winner",
+ "watched": "2026-11-19T17:02+05:30"
+}

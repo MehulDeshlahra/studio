@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "Just as I predicted",
+ "first_frame": "A person wearing a headset/device on their head with text 'JUST AS I PREDICTED' overlaying the screen.",
+ "hook_type": "bold claim",
+ "format": "meme-cut explainer",
+ "length_s": 27,
+ "cuts_estimate": 14,
+ "avg_shot_s": 1.9,
+ "words_per_s_estimate": 3.5,
+ "beats": [
+  "0-3 s: Hook and introduction",
+  "3-8 s: Explaining the problem with traditional LLMs",
+  "8-15 s: Introducing the solution (Phind)",
+  "15-20 s: Comparing features",
+  "20-27 s: Humorous conclusion"
+ ],
+ "visual_techniques": [
+  "meme overlays (0s, 2s, 9s, 16s, 19s, 22s)",
+  "screen recording of software (4s, 11s)",
+  "text callouts (13s, 14s)",
+  "jump cuts (throughout)"
+ ],
+ "captions": "White text with black outline, bottom-center, 3-5 words per chunk, no highlight colour",
+ "sound": "Fast-paced, energetic voiceover, upbeat background music, sound effects for transitions",
+ "recurring_element": "Phind search engine interface",
+ "ending": "punchline",
+ "why": "It addresses a specific pain point for developers (knowledge cutoffs in AI) with high-speed editing, relatable memes, and a clear, concise demonstration of the solution.",
+ "reusable_faceless": [
+  "Meme-cut explainer style",
+  "Screen recording with text callouts",
+  "Fast-paced jump cuts",
+  "Humorous commentary on tech news"
+ ],
+ "id": "91IPJ6LFmto",
+ "url": "https://www.youtube.com/watch?v=91IPJ6LFmto",
+ "channel": "Fireship",
+ "niche": "dev/tech humour",
+ "title": "Uh oh… AI-search engine for developers has emerged",
+ "views": 3000000,
+ "channel_median": 1500000,
+ "ratio": 2.0,
+ "label": "winner",
+ "watched": "2026-11-19T17:02+05:30"
+}

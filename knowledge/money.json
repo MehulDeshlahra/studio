@@ -15,6 +15,22 @@
     "videos": 0,
     "views_90d": null
    }
+  },
+  {
+   "day": "2026-11-19",
+   "ig": {
+    "followers": 3,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {
+    "subs": 0,
+    "views_total": 0,
+    "videos": 0,
+    "views_90d": null
+   }
   }
  ],
  "katha": [
@@ -22,6 +38,22 @@
    "day": "2026-11-18",
    "ig": {
     "followers": 3,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {
+    "subs": 0,
+    "views_total": 0,
+    "videos": 0,
+    "views_90d": null
+   }
+  },
+  {
+   "day": "2026-11-19",
+   "ig": {
+    "followers": 4,
     "posts": 0
    },
    "fb": {
@@ -51,6 +83,66 @@
     "videos": 0,
     "views_90d": null
    }
+  },
+  {
+   "day": "2026-11-19",
+   "ig": {
+    "followers": 5,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {
+    "subs": 0,
+    "views_total": 0,
+    "videos": 0,
+    "views_90d": null
+   }
+  }
+ ],
+ "cutcapsule": [
+  {
+   "day": "2026-11-19",
+   "ig": {
+    "followers": 2,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 9
+   },
+   "yt": {
+    "subs": 0,
+    "views_total": 0,
+    "videos": 0,
+    "views_90d": null
+   }
+  }
+ ],
+ "finance": [
+  {
+   "day": "2026-11-19",
+   "ig": {
+    "followers": 27,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {}
+  }
+ ],
+ "jain": [
+  {
+   "day": "2026-11-19",
+   "ig": {
+    "followers": 1,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {}
   }
  ]
 }

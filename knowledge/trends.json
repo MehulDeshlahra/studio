@@ -1,6 +1,22 @@
 {
  "tech": [
   {
+   "topic": "GTA 6 Software Warning",
+   "search": "GTA 6 release news",
+   "fit": 9,
+   "why": "With GTA 6 being a massive cultural phenomenon and PlayStation issuing a software warning, viewers are desperate for info. The 'Kaise Tech' angle: How do pre-launch software checks actually work to prevent leaks?",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "iPhone Handoff Feature",
+   "search": "iOS 27 handoff feature",
+   "fit": 9,
+   "why": "New iOS 27 features are always trending. The 'Kaise Tech' angle: How does the 'One number, two devices' handoff tech actually sync data instantly?",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
    "topic": "Apple Server Outage",
    "search": "Apple iCloud down reason",
    "fit": 9,
@@ -11,17 +27,6 @@
    "source": "trend"
   },
   {
-   "topic": "AI Agents (WhatsApp automation)",
-   "search": "How AI agents work",
-   "fit": 9,
-   "why": "The news about IT professionals building 57 AI agents using WhatsApp is viral tech news. It demystifies AI for the common user, making it highly clickable.",
-   "question": "AI Agents bina coding ke kaise kaam karte hain?",
-   "metaphor": "Think of an AI agent like a digital 'personal assistant' who has read every manual in the world. You give him a task, he reads the instructions, and executes them step-by-step just like a human would, but at light speed.",
-   "day": "2026-11-18",
-   "source": "trend",
-   "used": "2026-11-18"
-  },
-  {
    "topic": "Prison jammers in Bengaluru have left residents without signal for nearly two years",
    "search": "how mobile jammers block signal",
    "fit": 9,
@@ -30,15 +35,28 @@
    "source": "trend"
   },
   {
-   "topic": "Semiconductor/Chip Manufacturing",
-   "search": "How computer chips work",
+   "topic": "AI Coding Agents (Devin Bots)",
+   "search": "AI coding agents explained",
    "fit": 8,
-   "why": "With the 'Semiconductor and AI Revolution' news and India's electronics export jump, this is a hot topic. It's the backbone of all tech, and people are curious about the 'sand to silicon' process.",
-   "question": "Ret (sand) se computer chip kaise banti hai?",
-   "metaphor": "Imagine building a city of billions of tiny light switches on a piece of glass the size of your fingernail. That’s a chip—it's just billions of 'on/off' gates that process your data.",
-   "day": "2026-11-18",
-   "source": "trend",
-   "used": "2026-11-18"
+   "why": "The news about Cognition's 'Devin Bots' challenging Anthropic/OpenAI is huge for tech enthusiasts. The 'Kaise Tech' angle: How does an AI 'write' code without a human typing?",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "Smartphone Export Surge",
+   "search": "Indian smartphone manufacturing growth",
+   "fit": 8,
+   "why": "India's electronics exports jumping 44% is a major positive economic trend. The 'Kaise Tech' angle: How does a phone go from a factory in India to a user in Japan or Saudi Arabia?",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "Semiconductor/Chip Design",
+   "search": "how chips are made",
+   "fit": 8,
+   "why": "With India's push into chip design services and IP, this is a relevant 'how it works' topic. The 'Kaise Tech' angle: How do you fit billions of transistors onto a chip the size of a fingernail?",
+   "day": "2026-11-19",
+   "source": "trend"
   },
   {
    "topic": "Cyclone Tracking Technology",
@@ -69,6 +87,22 @@
    "source": "trend"
   },
   {
+   "topic": "The Significance of Sun Worship during Chhath Puja",
+   "search": "Chhath Puja story significance",
+   "fit": 9,
+   "why": "With 'Chhath Puja 2026' trending, viewers are looking for the mythological roots of this festival. The story of Draupadi performing the Chhath ritual (Mahabharata, Vana Parva) to regain her kingdom is a perfect, high-engagement fit.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "The Legend of Narak Chaturdashi and Victory over Evil",
+   "search": "Narak Chaturdashi story",
+   "fit": 9,
+   "why": "Trending festival topic. Retelling the story of Lord Krishna defeating Narakasura (Bhagavata Purana, Skandha 10) explains the 'Abhyang Snan' tradition and the lesson of inner purification.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
    "topic": "Manu and the Great Flood (Satapatha Brahmana) – How the world was saved from a deluge",
    "search": "Manu flood story",
    "fit": 9,
@@ -82,6 +116,22 @@
    "fit": 9,
    "why": "Searches for Vande Bharat Express and Rickshaw show high interest in transport; linking ancient flying chariot to modern fast trains creates a relatable contrast and delivers a moral about humility.",
    "day": "2026-11-18",
+   "source": "trend"
+  },
+  {
+   "topic": "The Devotion of Pundalik and the Origin of Pandharpur",
+   "search": "Kartiki Ekadashi story",
+   "fit": 8,
+   "why": "Kartiki Ekadashi is trending. The story of Pundalik's devotion to his parents and how Lord Vitthal stood on a brick to wait for him (Skanda Purana) is a classic, deeply resonant story for this occasion.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "The Power of Dharma: Lessons from the Ramayana",
+   "search": "Ramayana moral stories",
+   "fit": 8,
+   "why": "With 'Ramayana' trending in news headlines regarding cultural identity, a short, impactful story about Lord Rama's adherence to duty (Valmiki Ramayana, Ayodhya Kanda) provides a timely, positive, and non-political connection to current discourse.",
+   "day": "2026-11-19",
    "source": "trend"
   },
   {
@@ -110,6 +160,14 @@
   }
  ],
  "raaz": [
+  {
+   "topic": "A lost landmass discovered under the sea",
+   "search": "lost continent under ocean",
+   "fit": 9,
+   "why": "Based on the 'Lost Landmass' history news. It's perfect for a sci-fi/mystery serial about a team of researchers who find a signal coming from beneath the ocean floor that shouldn't exist.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
   {
    "topic": "The 'Akvan' Cyclone Mystery: A small-town survival thriller where a village realizes the cyclone isn't just weather, but a cover for something ancient waking up.",
    "search": "Cyclone Akvan mystery story",
@@ -143,6 +201,38 @@
    "source": "trend"
   },
   {
+   "topic": "A mysterious 400-year-old lock that won't open",
+   "search": "mystery lock secret mechanism",
+   "fit": 8,
+   "why": "Based on the 'Mysterious 400-Year-Old Lock' history news. Ideal for a thriller serial about an antique dealer who finds a lock that, when opened, reveals a map to a place that doesn't appear on any modern GPS.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "The secret bunker found under a cliff",
+   "search": "secret bunker mystery story",
+   "fit": 8,
+   "why": "Based on the 'WW2 bunker' history news. Great for a survival/thriller serial about a group of friends who explore an abandoned coastal bunker, only to realize the door has sealed behind them and something else is inside.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "The glitch in the game world",
+   "search": "GTA 6 secrets mystery",
+   "fit": 8,
+   "why": "Based on the 'GTA 6' and 'little secrets in Rockstar worlds' news. Perfect for a small-town sci-fi serial where a gamer realizes that the 'glitches' in a new open-world game are actually messages from a missing person.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "The butterfly that fooled scientists for 200 years",
+   "search": "mystery butterfly species secret",
+   "fit": 8,
+   "why": "Based on the 'butterfly that fooled scientists' news. Good for a mystery/thriller serial about a biologist who discovers a species that mimics human voices, leading to a dark discovery in a remote forest.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
    "topic": "The Hidden Coin Stash: A family drama/mystery about a struggling middle-class family finding a hidden fortune under their floorboards, only to realize it comes with a dangerous curse.",
    "search": "hidden treasure mystery story",
    "fit": 8,
@@ -165,21 +255,48 @@
    "why": "History/science headline: 'I’m a Neurosurgeon. My Near-Death Experience Showed Me Universal Consciousness'. Stories exploring the afterlife and consciousness trigger intense curiosity in Hindi-speaking audiences.",
    "day": "2026-11-17",
    "source": "trend"
-  },
+  }
+ ],
+ "jain": [],
+ "finance": [
   {
-   "topic": "400 saal puraane taale ka CT scan: Andar chhipa tha ek ajeeb rahasya",
-   "search": "mysterious 400 year old lock",
-   "fit": 8,
-   "why": "Featured in history news: 'CT Scans Reveal the Secret of a Mysterious 400-Year-Old Lock'. An intriguing bite-sized story about ancient trick-locks and hidden puzzle mechanisms.",
-   "day": "2026-11-17",
+   "topic": "SBI UPI Downtime Alert",
+   "search": "SBI UPI down today",
+   "fit": 10,
+   "why": "Headline: 'SBI UPI Services To Be Down Tomorrow on 19 November'. This is highly actionable and urgent for the target audience using UPI daily.",
+   "day": "2026-11-19",
    "source": "trend"
   },
   {
-   "topic": "England ki rani Anne Boleyn ki 500 saal puraani painting mein chhipa rahasya",
-   "search": "anne boleyn portrait secret",
+   "topic": "Unclaimed Financial Assets",
+   "search": "unclaimed money in bank",
+   "fit": 9,
+   "why": "Headline: 'Over ₹1 Lakh Crore in Unclaimed Financial Assets'. This is a massive 'money trap/lost money' story that resonates with the audience's desire to find hidden wealth.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "Credit Card Payment Delay Rules",
+   "search": "credit card payment late",
+   "fit": 9,
+   "why": "Headline: 'Credit card payment made on due date but credited late?'. This addresses a common anxiety about bank penalties and clarifies the rules, fitting the 'mistake warning' format.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "Sovereign Gold Bond Redemption",
+   "search": "SGB redemption price 2026",
    "fit": 8,
-   "why": "National Geographic headline: 'A Famous Portrait of Anne Boleyn Hides a Strange Secret'. Combines royal betrayal, mystery, and hidden forensic discoveries under old paint layers.",
-   "day": "2026-11-17",
+   "why": "Headline: 'RBI announces SGB 2020-21 Series VIII premature redemption price: Investors to earn up to 163% gains'. This showcases a successful long-term investment example.",
+   "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "Free Credit Report Check",
+   "search": "how to check CIBIL",
+   "fit": 8,
+   "why": "Headline: 'How to get four free credit reports every year in India'. This provides immediate utility and financial literacy for the 16-35 demographic.",
+   "day": "2026-11-19",
    "source": "trend"
   }
  ]

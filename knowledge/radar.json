@@ -224,5 +224,135 @@
     "title": "I Found an Open-Source Claude Code Plugin That Creates Insane Animations 🎬"
    }
   ]
+ },
+ {
+  "day": "2026-11-19",
+  "t": "06:48",
+  "scanned": 294,
+  "new": 67,
+  "sources": [
+   "dev.to",
+   "github",
+   "google news",
+   "hacker news",
+   "hugging face models",
+   "hugging face spaces",
+   "product hunt"
+  ],
+  "picks": [
+   {
+    "name": "tiny-voca TTS",
+    "what": "4.5M-parameter open-weights text-to-speech model, small enough to run real-time on a 2-core ARM CPU.",
+    "why": "Gives us a fully local, zero-cost, no-API-limit TTS fallback for voice gate failures or when Gemini credits run low; keeps the pipeline running offline.",
+    "free": "Open weights (licence TBD), runs entirely on our 12 GB RAM ARM server, no GPU, no cloud credits.",
+    "action": "learn_repo",
+    "how": "Clone repo, test inference speed/quality on ARM; if ≥ 22 kHz and natural enough, add as secondary TTS in voice_gate.py with a quality threshold.",
+    "effort": "small",
+    "score": 8,
+    "risk": "Quality may not match Gemini Charon; must benchmark Hinglish pronunciation before trusting it for publish.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQNDRCaFNEeU1Edl9yUF9NSjh2SFBydUFzdjVzTkFOWjI0R0hkSnNuZVl0Zmdkem9McVlqbEhpclpQMDJmeExETG1rVTVhY3k5U3otWUd4eklfeDdfTkFqb05zT3F2MjBjYVBBZEdCbWlyOE9ERXJmbWh0NzlBRFJWTQ?oc=5",
+    "title": "tiny-voca TTS Opens a 4.5M-Parameter Speech Model - remio"
+   },
+   {
+    "name": "Reson8 Rumble-2-Flash",
+    "what": "Free open-weights speech model (size unspecified) released as a direct download.",
+    "why": "Second local TTS candidate to A/B against tiny-voca; more options increase chance of finding a Gemini-grade voice that runs on our hardware.",
+    "free": "Open weights, free download, self-hostable on CPU.",
+    "action": "learn_repo",
+    "how": "Download weights, run quick CPU benchmark; if latency < 2 s per 30-word sentence and MOS > 3.5, add to voice_gate.py rotation.",
+    "effort": "small",
+    "score": 7,
+    "risk": "Unknown model size/licence; could be too heavy for 12 GB RAM or have restrictive terms.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdWFOZGwwdlFOQUlOR0hCdzNPSWl3RU5NNDJGR2U2dHBnTHIzZkg0d1pQc0o2VjVNSzBkbWd5bGpaTFRHZ2lQSjdiM0JKVmVlR1AwWUNCSzFiNUdjUnVfbFNlR25sU3ZaM3NpSzY0dzg0WTY0RHRFbXUzeVR1QzhYUW5rdndNelBOWXdfekpkajEyQk12LVdKYnNMdjNxemNjem00TU9KSjg3MThNM3BNejd3?oc=5",
+    "title": "Reson8 releases Rumble-2-Flash speech model as a free open-weights download - SiliconANGLE"
+   },
+   {
+    "name": "Browser beat-synced editor article",
+    "what": "HackerNoon write-up on keeping 48 beat-synced shots editable in a browser timeline.",
+    "why": "Beat-synced cuts are on our 'not built yet' list; this article likely contains concrete GSAP/HTML patterns we can port to HyperFrames.",
+    "free": "Free article, no code repo but techniques are unpatented.",
+    "action": "add_to_brain",
+    "how": "Fetch article, extract GSAP timeline + audio sync patterns, store in knowledge/brain.jsonl under 'beat_sync_techniques' for compose.py/compose_lab.py.",
+    "effort": "small",
+    "score": 7,
+    "risk": "Implementation still medium effort; article may lack full source code.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNcWZFR0t6Nkp1ZVZFWkwxTGp4UW5iMUxqeUpXaU5FWXJSQlpuVHpGYWlDZmdhMW03NTV1MGJYeTVKZ1NlU0hfM1F6RDM0QzU3UmM5NEx4bzhGaGhDekMwTWVkeUczLWh0ZGZWUTdUV2xSeWtjcU10SW5JVzJpSHVZTXhBbExRRHZtbmduekJR?oc=5",
+    "title": "How a Browser Video Editor Keeps 48 Beat-Synced Shots Editable - HackerNoon",
+    "done": "added to the brain"
+   },
+   {
+    "name": "LinkBit",
+    "what": "Free URL shortener with MCP + API designed for AI agents to create/track links programmatically.",
+    "why": "Automates UTM-tagged short links in video descriptions/pinned comments without manual work; MCP means our publish.py agent can call it directly.",
+    "free": "Free tier (limits unspecified), API + MCP access.",
+    "action": "owner_signup",
+    "how": "Owner creates account, drops API key in .env; publish.py updated to shorten every destination URL (channel, source, affiliate) via LinkBit MCP before posting.",
+    "effort": "small",
+    "score": 6,
+    "risk": "Free tier may have low monthly limits; verify before relying on it for every upload.",
+    "src": "product hunt",
+    "url": "https://www.producthunt.com/products/linkbit",
+    "title": "LinkBit"
+   },
+   {
+    "name": "Gemini Free Plan 2026 guide",
+    "what": "Fello AI article detailing what's free in Google Gemini as of 2026 (limits, models, regions).",
+    "why": "We run on Gemini free credits; this tells us if Gemini 4 Neon / Omni 1.2 Flash are included and what the new rate limits are.",
+    "free": "Free article.",
+    "action": "add_to_brain",
+    "how": "Scrape article, parse current free tier specs (RPM, model names, context), update brain.jsonl and scout.py's model selector.",
+    "effort": "small",
+    "score": 6,
+    "risk": "Third-party summary; always cross-check with official Google AI Studio docs.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5iREpNUDN0cWl4OUk2RWJuZHU1OUp5RVlQcXhjdmVISUtlb3NwZldETExEZnc5cHJJUm9BOGpxNmFHNjZvckFhVFdJZw?oc=5",
+    "title": "Is Google Gemini Free? Google's Free Plan Explained (2026) - Fello AI"
+   },
+   {
+    "name": "Gemini Omni 1.2 Flash",
+    "what": "Google's updated multimodal video model (text→video, image→video) documented in Incrypted guide.",
+    "why": "If available on free tier, could replace Muse image-to-video for B-roll clips; runs in cloud so no GPU needed here.",
+    "free": "Potentially free via Gemini API free tier (see #47); cloud inference.",
+    "action": "watch",
+    "how": "Monitor Gemini API changelog; when Omni 1.2 Flash appears in free model list, test 5-sec clip quality vs Muse, then swap in compose_lab.py clip generator.",
+    "effort": "medium",
+    "score": 6,
+    "risk": "May stay paid-only or have strict quota; video style may not match our dark lab aesthetic.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9GTmxoVWRjV0RfMlVsSzV3QmhNOC1UZEppQTJxdFV0MWpPS2p4eG1NMTJuMV8zX19vTnFOd1RyTUJZYWJaSWh1S1laRVd2ZE5IckJJa3BPX0RsdkJNbDJScWxiZ2ZWc2N0RDZhNGxjTmp2bFNQ?oc=5",
+    "title": "Gemini Omni 1.2 Flash: Overview and Guide to Google’s Updated Video Model - Incrypted"
+   },
+   {
+    "name": "YouTube view count change",
+    "what": "The Publish Press reports YouTube altered what counts as a view (again).",
+    "why": "Our stats.py tracks retention; definition changes skew historical comparisons. Need to log the rule change date in brain.",
+    "free": "Free article.",
+    "action": "add_to_brain",
+    "how": "Extract effective date + new rule, append to brain.jsonl under 'platform_rules.youtube.views', annotate stats.py to segment pre/post change.",
+    "effort": "small",
+    "score": 5,
+    "risk": "Article may be speculative; wait for YouTube official blog confirmation before baking into analytics.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQVnBCVC1uMEVRcHNSemFNUnAzbzdMQ2NEU3ZLMENMTTlnNXE4VUZKTnp6dmIyWjV1aFBrMWY2ekJGRHc5SHVtbU0tNUlmOUtnd2xCTGljLWFBU2QyQ1VndTJCSG03eWNBZGFoTkNOc3liUld3TmhzSC01MzgyTGJsV09Ebw?oc=5",
+    "title": "YouTube Changed What Counts as Views (Again) 👥 - The Publish Press"
+   },
+   {
+    "name": "phasyn-studio",
+    "what": "Self-hosted Apache-2.0 'AI filmmaking studio' that generates short videos with sound and stills on your own GPUs.",
+    "why": "Long-shot: if it has a CPU-only mode, it could become an all-in-one backup for our entire pipeline; worth a quick architecture scan.",
+    "free": "Open source Apache-2.0, but README says 'on your own GPUs'.",
+    "action": "watch",
+    "how": "Star repo, watch for 'CPU support' issue/PR; if merged, evaluate as potential compose.py replacement.",
+    "effort": "large",
+    "score": 4,
+    "risk": "Almost certainly needs GPU; licence allows modification but rewriting for CPU would be huge effort.",
+    "src": "github",
+    "url": "https://github.com/phasyn/phasyn-studio",
+    "title": "phasyn/phasyn-studio"
+   }
+  ]
  }
 ]

@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "Mahila evam bal vikas mantralaya",
+ "first_frame": "Host in glasses and tan jacket, speaking directly to camera. Logo for 'Mahila evam bal vikas vibhag' is superimposed in the bottom-center.",
+ "hook_type": "other",
+ "format": "talking head + graphics",
+ "length_s": 76,
+ "cuts_estimate": 10,
+ "avg_shot_s": 7.6,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-8 s: Intro to Kanya Sumangla Yojana and its benefits.",
+  "8-15 s: Explanation of the 2-girl child limit and Rs 25,000 benefit.",
+  "15-24 s: Government's goal for health and education.",
+  "24-30 s: Visual table of the benefit structure.",
+  "30-59 s: Step-by-step screen recording of the application process on the MKSY portal.",
+  "59-76 s: Explanation of document uploads, bank account details, and CTA to watch a longer video."
+ ],
+ "visual_techniques": [
+  "Logo overlay (0s)",
+  "Graphic overlay of scheme logo (5s)",
+  "Split screen with host and stock images of girls (9s)",
+  "Stock footage of government event (18s)",
+  "Full-screen graphic table of benefits (25s)",
+  "Screen recording of web portal (33s)",
+  "Zoom/crop on specific web form fields (38s)"
+ ],
+ "captions": "None visible in the video.",
+ "sound": "Host speaking in Hindi, background music is light and upbeat, no sound effects.",
+ "recurring_element": "The host's talking head is the primary anchor, with screen recordings and graphics appearing as overlays.",
+ "ending": "CTA to watch a dedicated long-form video on the channel.",
+ "why": "The video is overly long (76s) for a simple government scheme explanation, and the screen recording portion is dense with small, hard-to-read text, which likely caused viewer drop-off. It lacks dynamic editing or captions to maintain engagement.",
+ "reusable_faceless": [
+  "Use screen recordings for step-by-step tutorials",
+  "Create clear, high-contrast tables for data-heavy information",
+  "Incorporate stock footage to illustrate context",
+  "Use call-to-action overlays to direct traffic to long-form content"
+ ],
+ "id": "FnvtC0iSwgc",
+ "url": "https://www.youtube.com/watch?v=FnvtC0iSwgc",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "Kanya Sumangla Yojana #sarkaridna  #government  #news",
+ "views": 31000,
+ "channel_median": 123000,
+ "ratio": 0.25,
+ "label": "flop",
+ "watched": "2026-11-19T17:03+05:30"
+}

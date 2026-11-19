@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "What happens if I lower this weight into the water?",
+ "first_frame": "Host pointing at a beaker of water on a digital scale, with a metal weight suspended above it.",
+ "hook_type": "question",
+ "format": "evidence/news",
+ "length_s": 74,
+ "cuts_estimate": 25,
+ "avg_shot_s": 2.96,
+ "words_per_s_estimate": 2.4,
+ "beats": [
+  "0-7 s: Hook and setup: posing the question to the audience and random people on the street.",
+  "7-26 s: Man-on-the-street interviews: various people guess whether the weight will increase, decrease, or stay the same.",
+  "26-34 s: The experiment: host lowers the weight into the water, showing the scale reading increase.",
+  "34-47 s: Explanation: 2D animation illustrating buoyancy and displacement.",
+  "47-56 s: Verification: host weighs the metal piece on the scale to confirm its weight.",
+  "56-74 s: Conclusion: host explains the displacement principle to the participants and wraps up."
+ ],
+ "visual_techniques": [
+  "Split screen (0:05-0:26): Shows both the host's interview and the scale's reading simultaneously.",
+  "2D animation (0:34-0:47, 1:01-1:05): Simple vector graphics to explain the physics of buoyancy.",
+  "Jump cuts (0:07-0:26): Rapid cuts between different interviewees to maintain momentum.",
+  "Text overlays (0:03-0:04, 0:35-0:45, 1:02-1:05): Simple text highlighting key terms like '13g' and '13ml'."
+ ],
+ "captions": "White text with black outline, centered, 3-5 words per chunk, highlighting specific numbers in yellow.",
+ "sound": "Host's voiceover, ambient street noise, upbeat background music, sound effects for scale changes.",
+ "recurring_element": "The scale reading, which is shown repeatedly to build anticipation and then confirm the result.",
+ "ending": "Punchline: participants react with surprise to the explanation, followed by a final shot of the host.",
+ "why": "It uses a clear, relatable experiment to challenge common misconceptions, uses man-on-the-street interviews to create social proof and curiosity, and provides a concise, visual explanation that makes complex physics easy to understand.",
+ "reusable_faceless": [
+  "Use of man-on-the-street interviews to gauge audience intuition.",
+  "Simple 2D animations to explain complex concepts.",
+  "Split-screen format to show both the 'what' and the 'how' simultaneously.",
+  "Clear, concise text overlays to emphasize key data points."
+ ],
+ "id": "zEmabFZvdqA",
+ "url": "https://www.youtube.com/watch?v=zEmabFZvdqA",
+ "channel": "Veritasium",
+ "niche": "Science/Tech Curiosity",
+ "title": "What happens if I lower this weight into the water?",
+ "views": 3400000,
+ "channel_median": 1700000,
+ "ratio": 2.0,
+ "label": "winner",
+ "watched": "2026-11-19T17:02+05:30"
+}
