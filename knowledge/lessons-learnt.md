@@ -68,3 +68,7 @@ strongest, not its oldest (katha: Ujjain/Greenwich first).
 - Clips: a picker ranked 'JAPANESE PORN...' first: brand-safety filter (UNSAFE/STRONG) on moments, notes and speech. An
   English page got Hinglish notes from Hindi examples in the prompt: the language is stated per page and checked in code.
   An audience face in one crowd shot was taken for a webcam: a webcam box must persist across 2+ shots.
+- 19 Nov: Telegram spam (owner): clipwatch alerted on try 1 and 3 of every failing link, ~30 a day, from 4 code bugs nobody
+  fixed: Hindi clips written with Windows' default encoding ('charmap'), Drive files without an extension skipped, gdown 6.5
+  has no fuzzy=, Frame.io share pages that hold only folders. RULE: an alert that repeats is a bug report: fix the cause the
+  same day; alert the owner only when he can act (once, after retries).
