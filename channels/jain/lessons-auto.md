@@ -179,3 +179,16 @@
 - scene 6: The caption 'KE LIYE NAHI CHEENTI' does not match the intended script line 'Yeh sirf insanon ke liye nahi — cheenti, patte, hawa ke kan tak pahuncha hai'. It seems to be missing the beginning of the sentence.
 - scene 7: The caption 'HAIN' does not match the intended script line 'Pratikraman mein yeh teen baar doharate hain, Paryushan ke aakhri din Samvatsari ko'. It appears to be a fragment of the end of the sentence rather than a coherent summary.
 - scene 9: The caption 'JATA HAI' does not match the intended script line 'Samvatsari ke din yeh formula bola jata hai, naya saal shuru hota hai'. It is a fragment of the sentence.
+
+## Why King Megharath Cut His Own Flesh to Save a Pigeon (Sourc (story check)
+- STORY scene 2: false: 'Ye Adipurana ki kahani hai, Raja Megharath ki': The prompt research note explicitly states: 'Research on Why King Megharath Cut His Own Flesh to Save a Pigeon (Source:  (really: The story of King Megharath is a traditional Jain narrative found in various Jain story collections
+
+## 1119-0215 (pre-render check)
+- FIT: Raja is holding a bird instead of mithai (sweets) as mentioned in the voiceover.
+
+## 1119-0215 (pre-render check)
+- FIT: Indra is depicted without his crown or vajra, failing the traditional form requirements.
+
+## 1119-0215 (pre-render check)
+- FIT: Caption says 'se aaya' and 'raja ki godi' but the visual shows only the pigeon flying in the courtyard with no king or lap visible yet
+- DUP: Both stills show identical caption text 'KASAI SE MAANS' instead of progressing through the line

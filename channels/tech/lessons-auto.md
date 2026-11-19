@@ -402,3 +402,19 @@
 
 ## 1118-1845 (pre-render check)
 - CUT: text in the ui rows box on the right is cut off at the bottom
+
+## 1118-1845 (pre-render check)
+- FIT: Visual does not match the voice (expected hand holding phone with chat, got WhatsApp logo)
+- FIT: UI content does not match the requested fields (Stock Check/Order Lock values differ from prompt)
+- FIT: Visual does not match the requested flow nodes (expected nodes, got globe icon)
+- FIT: Missing Razorpay official logo as requested
+
+## 1118-1845 (pre-render check)
+- FIT: chat UI shows 'Order' instead of full messages as specified in the script
+- FIT: visual shows people walking in a street instead of a modern data center server room
+- READ: chat text in the UI box is truncated and too faint to read clearly
+- READ: backend rows value text overlaps slightly with the border line
+
+## 1118-1845 AI Agents (WhatsApp automation)
+- scene 6: The label 'BACKEND' is slightly obscured/cut off by the top border of the UI box, though readable.
+- scene 10: The caption 'Razorpay ka Agent Studio har mahine' is slightly cut off at the bottom edge of the frame.
