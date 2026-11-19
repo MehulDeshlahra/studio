@@ -3,8 +3,10 @@
   "job": "1119-1607d-c1",
   "topic": "ADULT REFUSES TURN, KIDS WATCHING",
   "title": "ADULT REFUSES TURN, KIDS WATCHING",
-  "status": "approved",
-  "review": [],
+  "status": "superseded",
+  "review": [
+   "19 Nov: made in the old clip format; only the new format (owner OK 19 Nov) posts"
+  ],
   "clip": {
    "url": "https://drive.google.com/drive/folders/1OKVyljW0bzydqhh1MKu3OxFoxL61hH1C",
    "start": 18.7,

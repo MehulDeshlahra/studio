@@ -432,8 +432,10 @@
   "job": "1119-1540-c1",
   "topic": "Did he just pack an 89?",
   "title": "Did he just pack an 89?",
-  "status": "approved",
-  "review": [],
+  "status": "superseded",
+  "review": [
+   "19 Nov: made in the old clip format; only the new format (owner OK 19 Nov) posts"
+  ],
   "clip": {
    "url": "https://www.youtube.com/watch?v=7huJGEbsdks",
    "start": 388.65,
@@ -444,8 +446,10 @@
   "job": "1119-1540-c2",
   "topic": "How to save time in FM27",
   "title": "How to save time in FM27",
-  "status": "approved",
-  "review": [],
+  "status": "superseded",
+  "review": [
+   "19 Nov: made in the old clip format; only the new format (owner OK 19 Nov) posts"
+  ],
   "clip": {
    "url": "https://www.youtube.com/watch?v=7huJGEbsdks",
    "start": 250.17,
@@ -577,8 +581,10 @@
   "job": "1119-1640-c1",
   "topic": "LAMINE YAMAL DESTROYS MY DEFENSE",
   "title": "LAMINE YAMAL DESTROYS MY DEFENSE",
-  "status": "approved",
-  "review": [],
+  "status": "superseded",
+  "review": [
+   "19 Nov: made in the old clip format; only the new format (owner OK 19 Nov) posts"
+  ],
   "clip": {
    "url": "https://www.youtube.com/watch?v=zRApVSFmc08",
    "start": 630.85,
@@ -768,6 +774,74 @@
    "url": "https://www.youtube.com/watch?v=yUME5U4OQ0A",
    "start": 732.0,
    "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-2045-c1",
+  "topic": "GEN Z KNOWS EVERYTHING AND NOTHING",
+  "title": "GEN Z KNOWS EVERYTHING AND NOTHING",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=AB7Q0XP6i9o",
+   "start": 154.01,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-2045-c2",
+  "topic": "DAUGHTER'S JOB INTERVIEW GOES WRONG",
+  "title": "DAUGHTER'S JOB INTERVIEW GOES WRONG",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=AB7Q0XP6i9o",
+   "start": 182.65,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-2053-c1",
+  "topic": "DAUGHTER TRIGGERS MOM'S ANXIETY",
+  "title": "DAUGHTER TRIGGERS MOM'S ANXIETY",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=AB7Q0XP6i9o",
+   "start": 173.51,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-2053-c2",
+  "topic": "DAUGHTER'S CARD GETS DECLINED",
+  "title": "DAUGHTER'S CARD GETS DECLINED",
+  "status": "held",
+  "review": [
+   "TEST: no clipping permission for this source, never post"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=AB7Q0XP6i9o",
+   "start": 385.55,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1119-2040e-c1",
+  "topic": "FINDING THE ULTRA RARE DOLLFACE",
+  "title": "FINDING THE ULTRA RARE DOLLFACE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15ENXF4Vvs9PTrgWxCEuf5-YHe7DHH56Y",
+   "start": 5.17,
+   "layout": "vertical"
   }
  }
 ]

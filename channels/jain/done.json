@@ -18,9 +18,8 @@
   "title": "Raja ne apna maans kaise kaata kabutar bachane?",
   "status": "held",
   "review": [
-   "19 Nov audit: Mughal / Taj Mahal-like domes behind an ancient Jain king (scenes 2, 3, 4)",
-   "King Megharath changes face: white-bearded king in scene 1, shaven monk in scenes 6 and 11",
-   "scene 6 voice-over is garbled ('Raja ne mithai maansi sab mana kar diya'): he offered other food/meat, the hawk refused"
+   "before render, scene 5: FIT: Caption says 'se aaya' and 'raja ki godi' but the visual shows only the pigeon flying in the courtyard with no king or lap visible yet",
+   "before render, scene 9: DUP: Both stills show identical caption text 'KASAI SE MAANS' instead of progressing through the line"
   ],
   "replan_requested": "2026-11-19 15:51"
  },

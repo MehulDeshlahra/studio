@@ -3,8 +3,10 @@
   "job": "1119-1755-c1",
   "topic": "NIC VANS SURPRISES MOM AS SANTA",
   "title": "NIC VANS SURPRISES MOM AS SANTA",
-  "status": "approved",
-  "review": [],
+  "status": "superseded",
+  "review": [
+   "19 Nov: made in the old clip format; only the new format (owner OK 19 Nov) posts"
+  ],
   "clip": {
    "url": "https://www.youtube.com/watch?v=hAhiN-SCtL8",
    "start": 9.65,
