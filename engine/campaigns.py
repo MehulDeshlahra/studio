@@ -65,8 +65,57 @@ def _objs(html, key):
     return out
 
 
+API = BASE + "/api/campaign/campaigns/discover?collapseGroups=true&limit=50&view=summary"
+
+
+def listing_api(max_pages=120):
+    """19 Nov: the site's own JSON API (public, no login) pages through EVERY live campaign (1,500+), where the old page
+    scrape saw 120. Rows are mapped to the fields the rest of this file uses; payouts come with it (no detail fetch)."""
+    import urllib.parse
+    seen, rows, url = set(), [], API
+    for _ in range(max_pages):
+        try:
+            d = json.loads(urllib.request.urlopen(urllib.request.Request(url, headers=dict(UA, Accept="application/json")),
+                                                  timeout=60).read().decode("utf-8", "ignore"))
+        except Exception as e:
+            log("campaigns: api page failed", str(e)[:100]); break
+        for r in d.get("data") or []:
+            if not r.get("id") or r["id"] in seen or r.get("status") not in (None, "active"):
+                continue
+            seen.add(r["id"])
+            m = r.get("metrics") or {}
+            spent = (m.get("budgetSpentCents") or 0) / 100.0
+            total = (r.get("budgetCents") or 0) / 100.0
+            lo, hi = (r.get("cpmMinRateCents") or 0) / 100.0, (r.get("cpmMaxRateCents") or 0) / 100.0
+            rows.append({
+                "id": r["id"], "title": r.get("name"), "brand": r.get("organizationName"),
+                "category": ((r.get("categories") or [{}])[0] or {}).get("id"),
+                "categories": [c.get("id") for c in r.get("categories") or [] if isinstance(c, dict)],
+                "description": r.get("description"), "availableBudgetRaw": max(0.0, total - spent), "budgetTotalRaw": total,
+                "budgetSpentRaw": spent, "creatorCountRaw": m.get("creatorCount"), "submissionCountRaw": m.get("approvedSubmissionCount"),
+                "paidOutRaw": (m.get("paidOutCents") or 0) / 100.0, "totalViews": m.get("totalViews"),
+                "platforms": r.get("platforms") or [], "requiresApplication": bool(r.get("requiresApplication")),
+                "geoPriced": bool(r.get("geoPriced")), "type": r.get("payoutType"),
+                "ratePer1kLabel": f"${lo:.2f}" + (f"-{hi:.2f}" if hi > lo else ""),
+                "organizationProfileHandle": r.get("organizationProfileHandle"),
+                "launchedAtMs": r.get("launchDate"),
+                "payout": [{"platform": p.get("platform"), "rate_cents": p.get("rateCents"), "max_cents": p.get("maxPayoutCents"),
+                            "min_cents": p.get("minPayoutCents")} for p in r.get("payouts") or [] if isinstance(p, dict)],
+                "detail_at": time.time(),
+            })
+        cur = (d.get("pagination") or {}).get("nextCursor")
+        if not cur or not d.get("data"):
+            break
+        url = API + "&cursor=" + urllib.parse.quote(cur)
+        time.sleep(0.5)
+    return rows
+
+
 def listing():
-    seen, rows = set(), []
+    rows = listing_api()
+    if len(rows) >= 50:
+        return rows
+    seen, rows = set(), []                         # fallback: the old page scrape (120 campaigns)
     for p in PAGES:
         try:
             html = _get(BASE + p)
@@ -125,6 +174,13 @@ def score(c):
     comp = (c.get("creatorCountRaw") or 0) / max(1.0, left / 100.0)
     s_comp = 1.0 / (1.0 + comp / 3.0)
     sc = 100 * (0.35 * s_rate + 0.15 * s_cap + 0.3 * s_left + 0.2 * s_comp) * fit * (1.0 if is_clip else 0.6)
+    # 19 Nov: money actually paid out to clippers = the campaign approves and pays (ClippingAlpha's best signal)
+    paid = float(c.get("paidOutRaw") or 0)
+    if len(hist) >= 2 and hist[-1].get("paid", 0) > hist[0].get("paid", 0):
+        sc *= 1.1; why.append(f"paying now (+${hist[-1]['paid'] - hist[0]['paid']:,.0f})")
+    elif paid > 0:
+        why.append(f"${paid:,.0f} paid out so far")
+    sc = min(100, sc)
     if c.get("pre_approval") or c.get("requiresApplication"):
         sc *= 0.85; why.append("needs approval first")
     why = [f"${rate:.2f}/1K", f"cap ${cap:.0f}/clip" if cap else "no cap", f"${left:,.0f} left",
@@ -145,10 +201,14 @@ def run(report=False):
         c.update({k: r.get(k) for k in ("title", "brand", "category", "description", "availableBudgetRaw", "budgetTotalRaw",
                                          "budgetSpentRaw", "creatorCountRaw", "submissionCountRaw", "platforms", "requiresApplication",
                                          "ratePer1kLabel", "type", "organizationProfileHandle", "launchedAtMs")})
+        for k in ("payout", "categories", "geoPriced", "paidOutRaw", "totalViews", "detail_at"):   # API rows carry these
+            if r.get(k) is not None:
+                c[k] = r[k]
         c["url"] = f"{BASE}/c/campaigns/{r['id']}"
         c["last_seen"] = now
         c["hist"] = ([h for h in c["hist"] if now - h["t"] < 7 * 86400] + [{"t": now, "spent": r.get("budgetSpentRaw") or 0,
-                                                                            "left": r.get("availableBudgetRaw") or 0}])[-60:]
+                                                                            "left": r.get("availableBudgetRaw") or 0,
+                                                                            "paid": r.get("paidOutRaw") or 0}])[-60:]
         if not c.get("detail_at") or now - c["detail_at"] > 86400:
             d = detail(r["id"])
             if "error" not in d:
@@ -159,13 +219,19 @@ def run(report=False):
     ranked = sorted(live.items(), key=lambda kv: -kv[1].get("score", 0))
     joined = {s.get("campaign_id") for s in ((load(os.path.join(ROOT, "channels", "cutcapsule", "sources.json"), {}) or {})
                                              .get("sources") or {}).values()}
-    new = [(k, v) for k, v in ranked if v.get("score", 0) >= 60 and not v.get("told") and k not in joined]
+    # 19 Nov: 1,500 campaigns now (was 120): first run marks them all as seen, digests only list really new ones (>= 75)
+    first_full = not st.get("api_seeded")
+    if first_full:
+        for k, v in live.items():
+            v["told"] = v.get("told") or now
+        st["api_seeded"] = now
+    new = [(k, v) for k, v in ranked if v.get("score", 0) >= 75 and not v.get("told") and k not in joined]
     if new:
-        msg = ["💸 New clipping campaigns worth joining (Cut Capsule):"]
+        msg = ["💸 New clipping campaigns (whopbot joins the best ones itself, nothing to do):"]
         for k, v in new[:6]:
             msg.append(f"• {v['score']}/100 {v.get('brand') or ''}: {v.get('title', '')[:70]}\n  {', '.join(v['why'][:5])}\n  {v['url']}")
             v["told"] = now
-        msg.append("Join on Whop (your click), then paste the campaign link + source channel in the dashboard: I clip it automatically.")
+
         telegram("\n".join(msg)[:3900])
     if report:
         top = [f"{v['score']} · {v.get('brand') or ''} · {v.get('title', '')[:60]} · {', '.join(v['why'][:3])}" for k, v in ranked[:5]]
