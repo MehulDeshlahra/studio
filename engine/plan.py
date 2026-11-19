@@ -750,14 +750,7 @@ CTA_RX = re.compile(r"^\s*(follow|subscribe)\b[^.?!]*(@\w|for more)[^.?!]*[.!]?\
 HOWWHY_RX = re.compile(r"\b(kaise|kyun|kyon|kya hota|how|why|samjho|explained|matlab kya)\b", re.I)
 
 
-def explainer_gate(ch, topic, plan, research_text, W0, W1):
-    """19 Nov (owner: the WhatsApp AI agent reel 'is not top notch', the reviewer gave it 10/10). The editor pass fixes form
-    (hook, line length); nothing checked that a 'kaise kaam karta hai' reel actually EXPLAINS. This gate grades the script
-    as a viewer would and rewrites it once when it fails: does it answer the title question, which real steps does the viewer
-    learn, which lines are filler or advert, which numbers have no source. Story pages are skipped."""
-    title = f"{plan.get('title', '')} {topic}"
-    if (ch.get("serial") or ch.get("id") in ("katha", "jain", "raaz")) or not HOWWHY_RX.search(title):
-        return plan
+def _grade(plan, topic, research_text):
     lines = "\n".join(f"{i + 1}. {s.get('vo', '')}" for i, s in enumerate(plan.get("scenes", [])))
     g = ask(f"""You are a viewer who knows nothing about "{plan.get('title') or topic}". Read this 45 s reel script (Hinglish).
 SCRIPT:
@@ -767,33 +760,61 @@ SOURCES (what is true):
 Answer as JSON: {{"answers_title": true/false (after watching, can you explain HOW it works, not just WHAT it does?),
 "steps_learned": ["each concrete step of the mechanism the script actually explains, in order"],
 "missing_steps": ["the important steps a 14-year-old would still not understand, from the sources"],
-"filler": [line numbers that add no new information: hype, benefits list, repeated idea, 'follow' lines],
-"unsourced": ["numbers or claims not in the sources or out of date"], "score": 1-10}}""", max_tokens=1500) or {}
-    steps = g.get("steps_learned") or []
-    ok = g.get("answers_title") and len(steps) >= 3 and not g.get("unsourced") and len(g.get("filler") or []) <= 1 and (g.get("score") or 0) >= 8
-    log("explainer gate:", "pass" if ok else "fail", "score", g.get("score"), "steps", len(steps), "filler", g.get("filler"), "unsourced", (g.get("unsourced") or [])[:3])
-    if ok:
+"filler": [line numbers that add no new information: hype, benefits list, repeated idea, 'follow' lines; the hook (line 1)
+and the final question are NOT filler],
+"unsourced": ["numbers or claims not in the sources or out of date"],
+"jargon": ["technical words used without an everyday comparison (e.g. webhook, LLM, API, function calling)"],
+"stiff": [line numbers that sound bookish or like a manual instead of a friend talking ('ka upyog karke', 'execute karta')],
+"score": 1-10 (10 = a top Hindi tech creator would post it as is)}}""", max_tokens=1500) or {}
+    g["ok"] = bool(g.get("answers_title") and len(g.get("steps_learned") or []) >= 3 and not g.get("unsourced")
+                   and len(g.get("filler") or []) <= 1 and len(g.get("jargon") or []) <= 1 and len(g.get("stiff") or []) <= 1
+                   and (g.get("score") or 0) >= 8)
+    return g
+
+
+def explainer_gate(ch, topic, plan, research_text, W0, W1, rounds=2):
+    """19 Nov (owner: the WhatsApp AI agent reel 'is not top notch', the reviewer gave it 10/10). The editor pass fixes form
+    (hook, line length); nothing checked that a 'kaise kaam karta hai' reel actually EXPLAINS. This gate grades the script
+    as a viewer would (answers the title? which real steps are learned? filler? unsourced numbers?), rewrites it with that
+    feedback, grades again, up to `rounds` times, and keeps the best-graded plan. Story pages are skipped."""
+    title = f"{plan.get('title', '')} {topic}"
+    if (ch.get("serial") or ch.get("id") in ("katha", "jain", "raaz")) or not (HOWWHY_RX.search(title) or (ch.get("theme") or {}).get("style") == "lab"):
         return plan
-    fixed = ask(f"""Rewrite this reel plan so it truly EXPLAINS "{plan.get('title') or topic}". A test viewer said:
-- steps they learned: {json.dumps(steps, ensure_ascii=False)}
+    g = _grade(plan, topic, research_text)
+    best, best_g = plan, g
+    for rnd in range(rounds + 1):
+        log(f"explainer gate round {rnd}:", "pass" if g["ok"] else "fail", "score", g.get("score"), "steps", len(g.get("steps_learned") or []),
+            "filler", g.get("filler"), "unsourced", (g.get("unsourced") or [])[:3])
+        if (g.get("score") or 0) > (best_g.get("score") or 0) or (g["ok"] and not best_g["ok"]):
+            best, best_g = plan, g
+        if g["ok"] or rnd == rounds:
+            break
+        fixed = ask(f"""Rewrite this reel plan so it truly EXPLAINS "{plan.get('title') or topic}". A test viewer said:
+- steps they learned: {json.dumps(g.get('steps_learned') or [], ensure_ascii=False)}
 - steps still missing: {json.dumps(g.get('missing_steps') or [], ensure_ascii=False)}
 - filler lines (cut or replace with a mechanism step): {g.get('filler')}
 - numbers/claims with no source or out of date (fix from the SOURCES or remove): {json.dumps(g.get('unsourced') or [], ensure_ascii=False)}
-Rules: keep the hook idea and the JSON shape; fill "mechanism" with 3-6 real steps from the sources and walk them in order,
+- jargon left unexplained: {json.dumps(g.get('jargon') or [], ensure_ascii=False)}; stiff, bookish lines: {g.get('stiff')}
+Rules: 10-14 scenes, each ONE spoken line of 5-14 words, natural Hinglish like a friend explaining at a chai stall (short
+words, "socho", "matlab", "bas"); every technical word gets an everyday comparison the first time (webhook = "ek doorbell jo
+business ke server ko jagaati hai"); keep the hook idea and the JSON shape; fill "mechanism" with 3-6 real steps from the sources and walk them in order,
 one scene per step, each scene's visual showing that step (a flow node lighting up, the message moving, the tool card);
 at most one benefits line; no spoken 'follow' line; end with a payoff + an easy comment question; {W0}-{W1} words total;
-same channel look and scene types.
+same channel look and scene types; every number must appear in the SOURCES.
 SOURCES:
 {str(research_text)[:5000]}
 PLAN:
 {json.dumps(plan, ensure_ascii=False)}""")
-    sc = (fixed or {}).get("scenes") or []
-    words = sum(len(s.get("vo", "").split()) for s in sc)
-    if len(sc) >= 6 and W0 - 10 <= words <= W1 + 15:
-        log("explainer gate: plan rewritten,", len(sc), "scenes,", words, "words")
-        return fixed
-    log("explainer gate: rewrite unusable, keeping the plan")
-    return plan
+        sc = (fixed or {}).get("scenes") or []
+        words = sum(len(s.get("vo", "").split()) for s in sc)
+        if not (len(sc) >= 8 and W0 - 10 <= words <= W1 + 15):
+            log("explainer gate: rewrite unusable (", len(sc), "scenes,", words, "words)")
+            break
+        plan = fixed
+        g = _grade(plan, topic, research_text)
+    best["explainer"] = {k: best_g.get(k) for k in ("score", "ok", "steps_learned", "missing_steps", "unsourced")}
+    log("explainer gate: kept the plan with score", best_g.get("score"), "(pass)" if best_g["ok"] else "(best available)")
+    return best
 
 
 def clean(plan):
