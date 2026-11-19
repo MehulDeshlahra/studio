@@ -167,3 +167,12 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
   publish.py "submit to campaign" Telegram after each campaign post, clipper.what_worked() learning from views.
   Untested end to end: a real joined source (needs the owner's Whop join).
 - Owner to do: join campaigns (digest sent 06:41) and add each in the dashboard; Cut Capsule YouTube channel.
+- 19 Nov (later): automation instead of owner work. YouTube @cut.capsule connected. tools/whop.py (Playwright, owner's
+  saved Content Rewards login on the laptop) + engine/whopbot.py (2-hourly): adopt_joined (campaigns the owner joined get
+  a source), join_best (joins top-scored ones up to 5 active), submit_all (posts links after publish), retire. Briefs:
+  "Reference materials" Google Docs are read; named official videos found on YouTube. Drive footage -> laptop
+  "transcribe" (gdown list, sound files only, rotates files) -> text moments. publish.py posts a campaign clip only to the
+  platforms its source allows. Cut Capsule posts at US hours 06:30 + 22:30 IST (studio-post-us): campaigns do NOT pay
+  India/Pakistan/Bangladesh views, several need 50-70% US audience.
+- Owner's 5 joined: Jo Koy (Drive, IG only, 70% US), Daise (Drive UGC), SEGA (YouTube trailers, 50% US), CoD MW4 (Google
+  Doc footage, @callofduty + #Ad), Eneba BroPacks (brief bans automated clipping: skipped).

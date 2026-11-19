@@ -81,6 +81,8 @@ def run(only=None):
             for v in s.get("videos") or []:
                 if f"{cid}:{v}" not in st["done"]:
                     todo.append((0, key, v, s))
+                elif "/folders/" in v and time.time() - st["done"][f"{cid}:{v}"] > 12 * 3600:
+                    todo.append((1, key, v, s))   # 19 Nov: a Drive folder has many files; each run takes the next unused ones
             for h in s.get("channels") or []:
                 try:
                     cidy = s.setdefault("_ids", {}).get(h) or channel_id(h)
