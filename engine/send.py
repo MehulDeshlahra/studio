@@ -47,11 +47,13 @@ def auto_approve(cid, job, rv):
     """Dashboard setting (~/studio-out/dash-settings.json): approve videos that passed review with a high visual score."""
     st = load(os.path.join(OUT, "dash-settings.json"), {}) or {}
     score = ((rv or {}).get("checks") or {}).get("vision", {}).get("score")
-    if not st.get("auto_approve") or not (rv or {}).get("ok") or score is None or score < st.get("min_score", 9):
+    ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}
+    # 19 Nov (owner on Cut Capsule: "auto approve from my side"): channel.json schedule.auto_approve turns it on per page
+    on = st.get("auto_approve") or (ch.get("schedule") or {}).get("auto_approve")
+    if not on or not (rv or {}).get("ok") or score is None or score < st.get("min_score", 9):
         return
     # 19 Nov (owner: "show me the frames before the first one posts"): channel.json schedule.manual_first = a new page's
     # first N videos wait for the owner's own approval, whatever their score.
-    ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}
     n = int((ch.get("schedule") or {}).get("manual_first") or 0)
     if n:
         seen = sum(1 for d in (load(os.path.join(ROOT, "channels", cid, "done.json"), []) or [])

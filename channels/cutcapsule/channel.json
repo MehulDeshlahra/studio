@@ -19,6 +19,7 @@
     "post_hours_note": "06:30 IST = 8 pm New York, 22:30 IST = noon New York: campaigns pay on US/global views, not India",
     "backlog": 6,
     "manual_first": 0,
+    "auto_approve": true,
     "manual_first_note": "19 Nov owner: auto approve from my side"
   },
   "warmup": {
