@@ -189,8 +189,10 @@ def make_source(k, v, d, st):
         st.get("tried", {}).pop(k, None)          # a laptop hiccup is not a verdict on the campaign: try again next run
         return None
     try:
-        b = llm.text(READ.format(text=(r.get("text") or "")[:18000], links=", ".join(r.get("footage") or [])[:2000]), json_mode=True,
-                     max_tokens=1500)
+        # 19 Nov: studio-text's big model took 8-10 min per 18k-char brief; Gemini Flash-Lite reads it in seconds
+        p = READ.format(text=(r.get("text") or "")[:18000], links=", ".join(r.get("footage") or [])[:2000])
+        b = llm._chain(["gemini/gemini-3.1-flash-lite"] + llm.TEXT_MODELS, p + "\n\nReturn ONLY valid JSON, no other text.",
+                       True, 3000, timeout=120)
     except Exception as e:
         log("whopbot: brief read failed", str(e)[:120]); return None
     foot = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (b.get("footage_pages") or [])
