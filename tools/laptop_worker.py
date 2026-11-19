@@ -376,7 +376,26 @@ def clip_job(jid, spec):
                 os.remove(p)
         if not os.path.exists(full) and re.match(r"^[gf][0-9a-f]{12}$", vid):
             raise RuntimeError(f"cached footage {vid} is gone and its source is unknown: re-run the transcribe job")
-        if not os.path.exists(full):
+        # 19 Nov (owner: "are we downloading the whole video? why?"): a 65-min set was 636 MB for ~1 min of clips. Fetch
+        # only each clip's window (+pad) at the best quality; the whole video only when a section download fails
+        pad = float(spec.get("pad", 4))
+        pre = {}
+        if not os.path.exists(full) and re.search(r"youtube\.com|youtu\.be", url) and spec.get("clips"):
+            for i, c in enumerate(spec["clips"]):
+                cd = os.path.join(work, f"c{i}"); os.makedirs(cd, exist_ok=True)
+                s0, e0 = max(0.0, float(c["a"]) - pad), float(c["b"]) + pad
+                w = os.path.join(cd, "window.mp4")
+                r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
+                         "-f", "bv*[height<=1440]+ba/b[height<=1440]/bv*+ba/b", "-S", "res:1440,vcodec:vp9,fps:30,acodec:m4a",
+                         "--download-sections", f"*{s0:.2f}-{e0:.2f}", "--force-keyframes-at-cuts",
+                         "--merge-output-format", "mp4", "-o", w, url], timeout=420)
+                if not os.path.exists(w) or os.path.getsize(w) < 50000:
+                    log("clip: section download failed, downloading the whole video", (r.stderr or "")[-160:])
+                    pre = {}; break
+                pre[i] = (w, s0)
+            if pre:
+                log("clip: downloaded only the clip windows", sum(os.path.getsize(p) for p, _ in pre.values()) // 1048576, "MB")
+        if not pre and not os.path.exists(full):
             r = run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
                      # 19 Nov: without a sort yt-dlp took the AV1 stream (399); AV1 decodes slowly on this CPU -> H.264 first
                      # 19 Nov research: a 9:16 crop of 1080p is a 607 px slice stretched to 1080 (soft, owner: "are you
@@ -390,17 +409,19 @@ def clip_job(jid, spec):
         olds = [os.path.join(CACHE, f) for f in os.listdir(CACHE) if f.endswith(".mp4") and f != vid + ".mp4"]
         for old in sorted(olds, key=os.path.getmtime)[:-16]:   # 22 GB free on C: (19 Nov)
             os.remove(old)                                    # keep the last 10 sources (a Drive folder has several)
-        os.utime(full)
-        pad, done = float(spec.get("pad", 4)), 0
+        if os.path.exists(full):
+            os.utime(full)
+        done = 0
         for i, c in enumerate(spec.get("clips") or []):
-            cd = os.path.join(work, f"c{i}"); os.makedirs(cd)
-            s0 = max(0.0, float(c["a"]) - pad)
+            cd = os.path.join(work, f"c{i}"); os.makedirs(cd, exist_ok=True)
+            s0 = pre[i][1] if i in pre else max(0.0, float(c["a"]) - pad)
             win = os.path.join(cd, "window.mp4")
             if spec.get("words_only"):
                 # 19 Nov: notes must quote the EXACT speech; the server writes them from these words, then asks for the render
                 try:
-                    clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full,
-                                  "-vn", "-c:a", "aac", "-b:a", "128k", win], 600)
+                    if i not in pre:
+                        clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full,
+                                      "-vn", "-c:a", "aac", "-b:a", "128k", win], 600)
                     Wd, lang = clipcore.words(win, spec.get("lang"), " ".join(x for x in (spec.get("wprompt") or "",
                                               ", ".join(spec.get("glossary") or [])) if x))
                     Wd = clipcore.fix_names(Wd, spec.get("glossary") or [])
@@ -415,8 +436,9 @@ def clip_job(jid, spec):
                         os.remove(win)
                 continue
             try:
-                clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full]
-                             + clipcore.venc(False) + ["-c:a", "aac", "-b:a", "192k", win], 900)
+                if i not in pre:
+                    clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full]
+                                 + clipcore.venc(False) + ["-c:a", "aac", "-b:a", "192k", win], 900)
                 res = clipcore.make_clip(win, float(c["a"]) - s0, float(c["b"]) - s0, c.get("hook", ""), cd, spec.get("lang"),
                                          brand=spec.get("brand") or "", glossary=spec.get("glossary") or [],
                                          notes=c.get("notes") or [], wprompt=spec.get("wprompt") or "")

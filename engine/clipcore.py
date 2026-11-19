@@ -876,6 +876,49 @@ def lufs(f):
     return float(m[-1]) if m else None
 
 
+# 19 Nov (owner: "just copy paste what is on github"): the cut + reframe + edit is Plextrang/Claude-Video-Clipper's
+# engine, copied into engine/cvc and used as-is (engine/cvc_run.py). "own" = the hand-built path below (kept as a fallback).
+ENGINE = "cvc"
+
+
+def _make_cvc(src, Wd, a2, b2, ranges, hook, out_dir, lang, brand, notes):
+    import cvc_run
+    rs = [[round(s, 3), round(e, 3)] for s, e in ranges] if 1 <= len(ranges) <= 6 else [[a2, b2]]
+    hook_ass = None
+    if hook:
+        hook_ass = os.path.join(out_dir, "hook.ass")
+        hw = str(hook).upper().replace("{", "(").replace("}", ")").split()
+        k = max(1, len(hw) - 2)
+        txt = " ".join(hw[:k]) + " {\\c&H000AD6FF&}" + " ".join(hw[k:])
+        open(hook_ass, "w", encoding="utf-8").write("\n".join([
+            "[Script Info]", "ScriptType: v4.00+", f"PlayResX: {W}", f"PlayResY: {H}", "WrapStyle: 0", "ScaledBorderAndShadow: yes", "",
+            "[V4+ Styles]",
+            "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, "
+            "StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
+            "Style: HookT,Montserrat Thin,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,13,7,5,90,90,0,1",
+            "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
+            # cvc captions sit at y 1270: the hook goes above them, in the chest band, for the opening line only
+            f"Dialogue: 2,{_ts(0)},{_ts(HOOK_SECONDS)},HookT,,0,0,0,,{{\\pos({W // 2},1010)\\fscx70\\fscy70"
+            f"\\t(0,140,\\fscx100\\fscy100)\\fad(0,160)}}{txt}"]) + "\n")
+    logo = LOGO if (brand and os.path.exists(LOGO)) else None
+    final, meta, plan = cvc_run.make(src, rs, Wd, hook, out_dir, logo, hook_ass)
+    q = probe(final); q["lufs"] = lufs(final)
+    d = max(1.0, q["dur"])
+    run(["ffmpeg", "-v", "error", "-y", "-i", final, "-vf", f"fps={6 / d},scale=450:800,tile=6x1", "-frames:v", "1", "-q:v", "3",
+         os.path.join(out_dir, "sheet.jpg")], 120)
+    run(["ffmpeg", "-v", "error", "-y", "-ss", "0.8", "-i", final, "-frames:v", "1", "-q:v", "2", os.path.join(out_dir, "cover.jpg")], 60)
+    Wt = [(w["s"], w["e"], w["w"]) for w in meta["words"]]
+    modes = sorted({s["mode"] for s in meta["shots"]})
+    res = {"layout": modes[0] if len(modes) == 1 else "mixed:" + "+".join(modes),
+           "segments": [{"s": s["t0"], "e": s["t1"], "layout": s["mode"]} for s in meta["shots"]],
+           "faces": {}, "shots": len(meta["shots"]), "lost": 0.0, "engine": "cvc (Claude-Video-Clipper)",
+           "cut": [round(a2, 2), round(b2, 2)], "kept": meta["parts"], "removed_s": 0, "lang": lang, "words": len(Wt),
+           "format": q, "text": " ".join(w[2] for w in Wt), "notes": [], "notes_asked": len(notes or []), "asr": ASR[0],
+           "beats": len(plan.get("transitions") or []), "notes_on_screen": False}
+    json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w"), ensure_ascii=False)
+    return res
+
+
 def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, notes=None, wprompt=""):
     """src = a downloaded window of the video; a, b = the asked moment inside it (seconds in src).
     wprompt: a sample in the wanted script (19 Nov Hindi page: whisper wrote garbled Devanagari; a Roman Hinglish sample
@@ -885,6 +928,8 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     Wd = fix_names(Wd, glossary)
     a2, b2 = trim(Wd, a, b)
     ranges = keep_ranges(Wd, a2, b2, loudness(src))
+    if ENGINE == "cvc":
+        return _make_cvc(src, Wd, a2, b2, ranges, hook, out_dir, lang, brand, notes)
     tight = tighten(src, ranges, os.path.join(out_dir, "tight.mp4"))
     Wt = remap(Wd, ranges)
     info = analyse(tight)
