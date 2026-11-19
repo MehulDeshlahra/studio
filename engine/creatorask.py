@@ -59,6 +59,9 @@ def find(page="cutcapsulehindi", per_query=25):
             sn, stt = it["snippet"], it.get("statistics") or {}
             subs = int(stt.get("subscriberCount") or 0)
             mails = [m for m in EMAIL.findall(sn.get("description") or "") if not m.lower().endswith((".png", ".jpg"))]
+            if ASTRO.search((sn.get("title") or "") + " " + (sn.get("description") or "")[:600]):
+                st["c"][it["id"]] = {"page": page, "title": sn.get("title"), "status": "skip-astrology", "found": time.strftime("%Y-%m-%d")}
+                continue
             row = {"page": page, "title": sn.get("title"), "handle": sn.get("customUrl"), "subs": subs,
                    "videos": int(stt.get("videoCount") or 0), "email": mails[0] if mails else None, "found": time.strftime("%Y-%m-%d"),
                    "status": "no-email" if not mails else ("too-small" if subs < 20000 else ("too-big" if subs > 2000000 else "draft"))}
@@ -70,6 +73,7 @@ def find(page="cutcapsulehindi", per_query=25):
     return drafts
 
 
+ASTRO = re.compile(r"astro|jyotish|tantra|totke|totka|vastu|kundli|rashifal|numerolog|tarot|horoscope|remed", re.I)
 SKIP_HANDLES = {"@revererecords", "@realtalkclipp", "@gyanhindifacts", "@panchtantraone", "@vermacreationtv"}   # 19 Nov:
 # a UK music label, another clip page, a facts channel, a kids-story channel, a tiny general channel: not clippable talk
 FROM = "Mehul | Scroll House <hello@scrollhouse.in>"
