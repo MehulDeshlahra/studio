@@ -1,74 +1,43 @@
 # Rules learnt from mistakes (engine/lessons.py, daily; every script prompt reads this)
-Updated 2026-11-19 03:57 from 636 recorded problems on 5 pages.
+Updated 2026-11-20 03:46 from 1100 recorded problems on 9 pages.
 
-- ALWAYS write on-screen text as the exact words of its spoken line or a 1-4 word tag of it; never a different phrase (seen 50+ times: tech, katha, jain)
-- ALWAYS put titles, numbers and labels on a clear dark area of the picture; never text over a busy or bright part (seen 20+ times: tech, katha)
-- ALWAYS give every scene one clear main visual in the centre; a scene with only a dark gradient or empty frame is a hold (seen 12+ times: tech, katha)
-- NEVER repeat the same text twice in one scene (title and tag saying the same thing) (seen 5+ times: tech)
-- ALWAYS end with the page's own end line and handle; never another page's handle or end line (seen 10+ times: tech, katha)
-- ALWAYS start the first spoken line with the hook itself in the first 4-6 words; no greeting, no intro (seen 6 times: katha, tech)
-- ALWAYS keep the script inside the page's word range (channel.json edit.words); too long is cut, too short is held (seen 6 times: raaz, tech)
-- ALWAYS keep each recurring character's description word for word in every image prompt that shows them (seen 2 times: katha)
-- ALWAYS draw a deity in their traditional form, dignified and fully dressed; never count faces or arms (seen 8 times: katha)
-- NEVER put English articles (THE, A) or Devanagari in on-screen text; Hinglish in Roman letters only (seen 8 times: katha, tech)
-- NEVER ask an image model for readable text, numbers or logos inside a picture; real logos come from the 'real' field (seen 10+ times: tech)
-- ALWAYS use a scene type the page's look can draw, with its data (stat needs a number in 'value', compare needs 2+ items, flow needs 2+ nodes, ui needs rows) (seen 4 times: finance, tech)
-- ALWAYS show a real logo on its own card scene, once, at the brand's reveal; never as a full-screen background behind text (seen 3 times: finance, tech)
-- NEVER use a YouTube thumbnail, a stock-site preview or any picture with burnt-in text as a real picture (seen 3 times: finance, tech)
-- ALWAYS say who does what: a regulator (RBI, SEBI, NPCI) SETS a rule; the bank or company PAYS or acts (seen 1 time: finance)
-- ALWAYS say a rule with its exact condition and the day it starts (for each day of delay AFTER T+1, from the 31st day, only if nothing is outstanding, 7 WORKING days) (seen 3 times: finance)
-- ALWAYS show who set a rule and when on screen (a source card: RBI circular · 20 Sep 2019) and in the caption (seen 2 times: finance)
-- NEVER state a loss figure, a percentage or a 'most / majority' claim without an official source; without one, say it without the number (seen 3 times: finance)
-- ALWAYS make every calculated number come out of the script's own numbers exactly (₹45,000 at 42% with ₹5,000 a month paid is paid off in a year; it never grows to ₹1,02,000) (seen 2 times: finance)
-- NEVER mix two rules' numbers (₹500/day is card closure; ₹5,000/day is property papers; ₹100/day is failed payments) (seen 2 times: finance)
-- NEVER give investment advice: no stock, fund or coin picks, no return claims, no market prices from the last 3 months (SEBI) (finance rule)
-- ALWAYS end a finance reel with one action the viewer can do today and 'Save karo' (finance format, from 30 watched rival reels)
-- ALWAYS keep fiction serial parts in order, each ending on its own cliffhanger; never a real victim or a friend as the villain (raaz rules)
-- ALWAYS ensure the first spoken line starts within 4-6 seconds of the video start; no delay (seen 6 times: katha, tech)
-- ALWAYS ensure the script matches the spoken lines; no missing or extra parts (seen 26 times: katha, tech)
-- ALWAYS review the video for visual quality and consistency; no missing or low-quality visuals (seen 18 times: katha, raaz, tech)
-- ALWAYS ensure the video length is within the allowed range (25-55 seconds); no too short or too long videos (seen 3 times: raaz, tech)
-
-## GOLDEN RULE (19 Nov, owner, after a low-effort Finance Fuel Story went live)
-OUR CONTENT SHOULD NEVER BE LOW EFFORT. Money comes after hard work. Before doing anything: research what the best do
-and what NOT to do, think it through, ask "is this good?" and if it is only good, discard it and make it better. Ship
-only the best of the best. Every format, feature and post has research behind it (written down) and its real output
-is looked at before it goes live.
-
-## 19 Nov: the Stories that went live (Finance Fuel "myth", 2 frames)
-Plain text on black, no brand or picture, "DM karo" instead of a sticker, the answer frame posted together with the
-question (no suspense), and the answer did not answer the question (asked "send unknown money back?", answered "PIN is
-never needed to receive"). Rules: a question and its answer are checked against each other; a reveal is never posted
-in the same minute as the question; no format ships without a researched design and frames checked by eye. The API
-cannot add poll / quiz / link stickers, so automated "quiz" Stories can never be interactive.
-
-## 19 Nov audit (golden rule): a 9-10 vision score meant nothing
-Frame-by-frame audit of everything queued: 8 of 30 approved reels were not postable although the final review gave
-them 9-10/10: all 6 Navkar Bhav (Mughal onion domes, blue/green-skinned Tirthankara and Bahubali, saffron-robed Jain
-monks, a female Hindu-style Dharanendra, a king who changes face, one story needing a source check), Puraan Ki Katha
-"Brahma's fifth head" with a one-headed Brahma, Finance Fuel gold/silver (investment advice, unsourced numbers).
-Fix: every page has channel.json "visual_checks", a must-answer checklist the reviewer answers per frame; any yes is
-serious and caps the score at 5 (tested: the same 3 reels went 9-10 -> 4). Positive iconography text was not enough
-for the image model: write the NEVER list too (iconography.JAIN_NEVER). Order matters: a page's first posts are its
-strongest, not its oldest (katha: Ujjain/Greenwich first).
-
-## 19 Nov: true before pretty (story pages + clips)
-- Scripture pages had no fact check: a jain Reel said Mahavira went 12 years without food then ate kheer and got
-  kevalgyan (false: ~325 meal days in 4545; kevalgyan during a 2-day fast); a katha Reel mixed two Mahakal stories.
-  Fix: channel.json "story_check" (plan.story_fix): every event and history claim judged against web sources and the
-  named scriptures, 2 rewrites, then held before voice. Overclaims ("whole world", "first ever") count as false.
-- Clip context notes invented a special and a year. Fix: notes get the video's own facts (title, channel, date,
-  description); a name or number not in them or the transcript is rejected in code, asked again once, then dropped.
-- The vision check scored a clip 10 with an empty stage (the comedian walked out of a fixed crop). Fix: the crop
-  follows the speaker (smoothed path, dead zone, pan limit) and code measures time out of crop (>10% = held).
-- The story checker itself was wrong when it had no sources (said the Bhagavata has Satyabhama kill Narakasura; flagged
-  Ganga 'would sink the earth to patala', which the Bhagavata does say). Fix: a flag counts only when a second,
-  independent model (OmniRoute) agrees; when the two disagree on what really happened, the detail is removed, never
-  replaced by a guess. The web search fallback was broken (ddgs 'wt-wt' -> wt.wikipedia.org); now us-en + a short query.
-- Clips: a picker ranked 'JAPANESE PORN...' first: brand-safety filter (UNSAFE/STRONG) on moments, notes and speech. An
-  English page got Hinglish notes from Hindi examples in the prompt: the language is stated per page and checked in code.
-  An audience face in one crowd shot was taken for a webcam: a webcam box must persist across 2+ shots.
-- 19 Nov: Telegram spam (owner): clipwatch alerted on try 1 and 3 of every failing link, ~30 a day, from 4 code bugs nobody
-  fixed: Hindi clips written with Windows' default encoding ('charmap'), Drive files without an extension skipped, gdown 6.5
-  has no fuzzy=, Frame.io share pages that hold only folders. RULE: an alert that repeats is a bug report: fix the cause the
-  same day; alert the owner only when he can act (once, after retries).
+- ALWAYS write on-screen text as the exact words of its spoken line or a 1-4 word tag of it; never a different phrase (seen 80+ times: tech, katha, jain)
+- ALWAYS ensure the recorded voice matches 100% of the script; never skip lines or include spoken instructions/meta-talk (seen 61+ times: finance, katha, tech)
+- ALWAYS provide a high-quality, relevant visual for every scene; never use empty gradients, blank frames, or low-res screen recordings (seen 49+ times: tech, katha, raaz, cutcapsulehindi)
+- ALWAYS place text on dark, clear areas and keep it within safe margins; never let text be cut off or overlap UI/graphics (seen 47+ times: tech, katha, finance, jain)
+- NEVER use source material for clips without explicit clipping permission (seen 31 times: cutcapsule)
+- ALWAYS start the first spoken line within 1 second of the video start and use the hook in the first 4-6 words (seen 24 times: katha, tech)
+- ALWAYS add at least 2 original page notes/insights per clip to ensure originality (seen 23 times: cutcapsule, cutcapsulehindi)
+- ALWAYS keep the total video length between 25-55 seconds; too short is held, too long is cut (seen 20 times: raaz, tech, cutcapsule)
+- NEVER show the same person or shot twice in the same frame, including top/bottom split-screen copies (seen 20 times: cutcapsule, cutcapsulehindi)
+- ALWAYS use culturally accurate visuals: Jain monks in white, no Mughal/Islamic architecture in Puranic or Jain stories (seen 14+ times: jain, katha)
+- ALWAYS give every scene one clear main visual in the centre; never leave the centre frame empty (seen 13+ times: tech, katha)
+- NEVER use Devanagari script or English articles (THE, A) in on-screen text; use Roman Hinglish only (seen 8+ times: katha, tech)
+- ALWAYS draw deities in traditional, dignified forms; never count faces/arms or use abstract/melted AI figures (seen 9+ times: katha, tech)
+- ALWAYS cite the regulator (RBI/SEBI) and exact dates/conditions for rules; never state percentages or losses without sources (seen 10+ times: finance)
+- NEVER ask an image model for text or logos; real logos must come from the 'real' field and appear on their own card (seen 13+ times: tech, finance)
+- ALWAYS address the viewer as 'Aap'; NEVER use 'Tu' or disrespectful language (seen 5 times: katha)
+- ALWAYS perform a full visual/audio review to catch silly mistakes like cut-off text or missing backgrounds before submission (seen 5 times: raaz, tech)
+- ALWAYS split complex topics into two parts or use a comparison table to ensure clarity (seen 5 times: finance)
+- ALWAYS include required format elements like the top mono bar or yellow tag pills in finance reels (seen 8 times: finance)
+- NEVER repeat the same text twice in one scene, such as a title and tag saying the same thing (seen 7+ times: tech, katha)
+- ALWAYS end with the page's own handle and end-card; never miss it or use another page's handle (seen 16+ times: tech, katha)
+- ALWAYS keep the script within the specific word range defined in the page's configuration (seen 6 times: raaz, tech)
+- ALWAYS ensure the speaker remains inside the crop; never let the subject walk out of the frame (seen 6 times: cutcapsule, cutcapsuletv)
+- NEVER use gibberish or misheard captions; ensure subtitles are coherent and readable (seen 15+ times: cutcapsule, cutcapsulehindi)
+- ALWAYS maintain loudness at -14.4 LUFS and ensure true peak does not exceed -1.1 (seen 5 times: raaz, tech, cutcapsule)
+- ALWAYS use scene types that match the page's data (stats need numbers, comparisons need 2+ items) (seen 4 times: finance, tech)
+- NEVER use pictures with burnt-in text, YouTube thumbnails, or stock-site previews (seen 3 times: finance, tech)
+- NEVER post astrology, remedies, or brand-unsafe content; check UNSAFE/STRONG filters (seen 3 times: cutcapsulehindi)
+- ALWAYS ensure all calculated numbers in the script are mathematically exact based on the provided figures (seen 2 times: finance)
+- ALWAYS use the exact same word-for-word description for recurring characters in image prompts (seen 2 times: katha)
+- NEVER give investment advice, pick stocks/coins, or claim specific returns (finance rule)
+- ALWAYS end finance reels with one action the viewer can do today and 'Save karo' (finance format)
+- ALWAYS keep fiction serial parts in order with cliffhangers; never make a real victim the villain (raaz rules)
+- ALWAYS verify religious or historical facts against sources; never invent years or events (seen 2+ times: jain, katha)
+- NEVER mix numbers from different rules (e.g., card closure vs failed payments) (seen 2 times: finance)
+- NEVER use text that is too small or dense to read on a mobile screen (seen 2 times: jain)
+- NEVER use abrupt white boxes or unstyled graphics that break the visual aesthetic (seen 1 time: tech)
+- ALWAYS ensure UI tables and graphics stay on screen as long as the speech describes them (seen 2 times: tech)
+- NEVER mix architectural styles or character designs within the same story (seen 2 times: katha)
+- ALWAYS ensure clip context notes use the video's own facts like title and date rather than invented info (katha/jain rule)
