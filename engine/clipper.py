@@ -78,8 +78,15 @@ The on-screen hook title is "{hook}". The full transcript of the clip: "{text}"
 2) Look at the frames for real, clearly visible problems only: captions covering a face or mouth, a black or frozen frame,
    the main person cut out of the frame, a broken layout (a webcam box cut in half, two copies of the same person side by
    side), a watermark of another clip app, nudity, gore.
+3) CHECKLIST (19 Nov: a stand-up clip showing the SAME comedian twice, top and bottom, scored 9): answer each, yes/no:
+   a. Is the same person (same face, same shot) shown twice at once, top and bottom or side by side?
+   b. Is a caption word clearly misheard (nonsense next to the transcript, e.g. "CRYPTO JAIL" for "crystal gel")?
+   c. Is any on-screen page note just describing what is said, vague ("iconic moment"), negative, or false?
+   d. Is the picture blurry, very low resolution or pixelated for most of the clip?
+   e. Is another account's big logo or watermark covering part of the picture?
 Do not list guesses. Return JSON {{"score": <1-10 how good and postable>, "problems": ["<only clear, serious problems>"],
-"minor": ["<small notes>"]}}"""
+"minor": ["<small notes>"], "checklist": {{"a": true/false, "b": true/false, "c": true/false, "d": true/false, "e": true/false}}}}
+Every checklist "true" must also be written in problems."""
 
 
 def vision_check(prompt, img):
@@ -93,7 +100,16 @@ def vision_check(prompt, img):
             r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
                                        data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
             d = json.load(urllib.request.urlopen(r, timeout=120))
-            return llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"])
+            res = llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"])
+            cl = res.get("checklist") if isinstance(res, dict) else None
+            if isinstance(cl, dict):
+                names = {"a": "same person shown twice", "b": "misheard caption", "c": "weak / vague / negative page note",
+                         "d": "blurry or low-resolution picture", "e": "another account's watermark over the picture"}
+                hits = [names.get(k, k) for k, v in cl.items() if v is True]
+                if hits:
+                    res.setdefault("problems", []).extend(f"checklist: {h}" for h in hits if f"checklist: {h}" not in res.get("problems", []))
+                    res["score"] = min(int(res.get("score") or 10), 5)
+            return res
         except Exception as e:
             log("clipper: vision", m, "failed", str(e)[:100])
     return llm.vision(prompt, img)
