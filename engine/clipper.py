@@ -311,6 +311,32 @@ Return JSON {{"notes": [{{"after": "", "text": "...", "kind": "context"}}, {{"af
  {{"after": "...", "text": "...", "kind": "react"}}]}}"""
 
 
+def fan_comments(vid_id):
+    """19 Nov: the notes read like a model guessing ('The accuracy is actually terrifying' on two clips). The video's own
+    top comments are what real viewers felt; a comment with a timestamp says WHERE. [(likes, text, [seconds...])]."""
+    if not vid_id:
+        return []
+    try:
+        import rivals
+        d = rivals._yt_api(f"commentThreads?part=snippet&maxResults=100&order=relevance&textFormat=plainText&videoId={vid_id}")
+    except Exception as e:
+        log("clipper: fan comments unavailable", str(e)[:100]); return []
+    out = []
+    for it in d.get("items") or []:
+        s = ((it.get("snippet") or {}).get("topLevelComment") or {}).get("snippet") or {}
+        t = re.sub(r"\s+", " ", str(s.get("textDisplay") or s.get("textOriginal") or "")).strip()
+        if not t or len(t) > 220 or PLUG.search(t) or UNSAFE.search(t):
+            continue
+        secs = [int(a) * 60 + int(b) for a, b in re.findall(r"\b(\d{1,2}):(\d{2})\b", t)]
+        out.append((int(s.get("likeCount") or 0), t, secs))
+    return out
+def comments_for(cm, a, b, text):
+    """Up to 6 comments about THIS moment: a timestamp inside it first, then the most-liked sharing its rarer words."""
+    words = {w for w in re.findall(r"[a-z']{5,}", text.lower())}
+    at = [c for c in cm if any(a - 3 <= x <= b + 3 for x in c[2])]
+    about = [c for c in cm if c not in at and len(words & set(re.findall(r"[a-z']{5,}", c[1].lower()))) >= 2]
+    pick = sorted(at, key=lambda c: -c[0])[:4] + sorted(about, key=lambda c: -c[0])[:6]
+    return [f"({c[0]} likes) {c[1]}" for c in pick[:6]]
 def video_facts(info):
     """What a context note may say: the video's own title, channel, upload date, chapters and description."""
     info = info or {}
@@ -373,12 +399,20 @@ def exact_notes(ch, src, url, vid_id, ms, label, info=None):
             m["notes"] = []
         return ms
     guide = MOMENTS.split("NOTES (19 Nov")[1].split("Return JSON")[0]
+    cm = None                                     # the video's top comments, fetched once for all its clips
     for i, m in enumerate(ms):
         r = load(os.path.join(out, f"c{i}", "result.json"), {}) or {}
         text = " ".join(w[2] for w in r.get("words") or [])
         if len(text.split()) < 8:
             continue
         facts = video_facts(info)
+        if cm is None:
+            cm = fan_comments(vid_id)
+        fans = comments_for(cm, m["a"], m["b"], text)
+        if fans:
+            facts += ("\nREAL VIEWER COMMENTS about this moment (what fans actually felt and joked; write your react notes in "
+                      "that spirit, sharper and shorter; never copy one word for word, never state a 'fact' from a comment):\n- "
+                      + "\n- ".join(fans))
         ask = NOTES_ONLY.format(page=ch.get("name", ch["id"]), about=ch.get("format", "")[:200], hook=m["hook"],
                                 why=m.get("why", ""), guide=guide + campaign_guide(src), facts=facts, text=text[:2500],
                                 lang_rule=_note_lang(ch)[0])
