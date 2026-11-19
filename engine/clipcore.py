@@ -312,7 +312,45 @@ HOOK_Y = {"stack": 700, "crop": 300, "fill": 400}     # 19 Nov frames: the stack
 CAP_Y = {"stack": 1560, "crop": 1450, "fill": 1450}   # captions low (off the actors' faces and mouths)
 
 
-def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand=""):
+def place_notes(notes, Wt, dur):
+    """19 Nov (originality, golden rule): the page's own notes on the clip ({"after": "<words from the transcript>",
+    "text": "<our note>", "kind": "react"|"context"}). Each starts when its anchor words are spoken (found in the
+    tightened word list, so cuts don't shift it) and stays ~3 s; no two overlap. A note whose anchor is not found is
+    dropped (never shown at a wrong moment), except "context" notes with no anchor, which open at 0.6 s."""
+    norm = lambda s: re.sub(r"[^a-z0-9 ]", "", str(s).lower()).split()
+    ws = [norm(w[2]) for w in Wt]
+    flat = [(i, x) for i, xs in enumerate(ws) for x in xs]
+    out = []
+    for n in notes or []:
+        txt = str(n.get("text") or "").strip()
+        if not txt:
+            continue
+        anchor = norm(n.get("after") or "")
+        st = None
+        if anchor:
+            seq = [x for _, x in flat]
+            k = len(anchor)
+            for j in range(0, max(0, len(seq) - k) + 1):
+                hit = sum(1 for a, b in zip(anchor, seq[j:j + k]) if a == b)
+                if k and hit >= max(1, int(0.75 * k + 0.5)):
+                    st = Wt[flat[min(len(flat) - 1, j + k - 1)][0]][1]      # right after the anchor's last word
+                    break
+        elif n.get("kind") == "context":
+            st = 0.6
+        if st is None or st > dur - 1.2:
+            continue
+        en = min(dur - 0.2, st + max(2.4, min(4.0, 0.33 * len(txt.split()) + 1.4)))
+        if out and st < out[-1][1] + 0.3:
+            ps, pe, pt, pk = out[-1]
+            if st - 0.25 - ps >= 1.8:                 # the earlier note has been read: shorten it, keep the new one
+                out[-1] = (ps, round(st - 0.25, 2), pt, pk)
+            else:
+                continue
+        out.append((round(st, 2), round(en, 2), txt[:90], n.get("kind") or "react"))
+    return out
+
+
+def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None):
     """Hook banner (frame 1 to the end) + 3-word pop captions; the spoken word in the accent colour, a touch larger.
     Positions follow the layout on screen at that moment (segs from analyse())."""
     esc = lambda s: str(s).replace("{", "(").replace("}", ")").replace("\\", "/").replace("\n", " ")
@@ -325,6 +363,8 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand=""):
          "Style: Hook,Anton,84,&H00111111,&H00111111,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,1,0,3,22,0,5,80,80,0,1",
          "Style: Cap,Montserrat Thin,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,8,4,5,60,60,0,1",
          "Style: Brand,Montserrat Thin,40,&H50FFFFFF,&H50FFFFFF,&H70000000,&H00000000,0,0,0,0,100,100,2,0,1,3,0,5,40,40,0,1",
+         # the page's own voice (notes): brand-yellow box, black bold text, smaller than the hook
+         "Style: Note,Montserrat ExtraBold,50,&H00111111,&H00111111,&H0030D8FF,&H0030D8FF,0,0,0,0,100,100,0,0,3,16,0,5,90,90,0,1",
          "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
     if brand:
         # 19 Nov (owner: "did you add our branding?"): a small, see-through handle the whole clip, under the captions and
@@ -334,6 +374,10 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand=""):
         for gi, g in enumerate(segs):
             e = dur if gi == len(segs) - 1 else g["e"]
             L.append(f"Dialogue: 2,{_ts(g['s'])},{_ts(e)},Hook,,0,0,0,,{{\\pos({W // 2},{HOOK_Y[g['layout']]})}}{esc(hook.upper())}")
+    for st, en, txt, kind in notes or []:
+        y = HOOK_Y[lay_at(st)] + (150 if hook else 0)
+        L.append(f"Dialogue: 3,{_ts(st)},{_ts(en)},Note,,0,0,0,,{{\\pos({W // 2},{y})\\fscx80\\fscy80\\t(0,120,\\fscx100\\fscy100)"
+                 f"\\fad(80,120)}}{esc(txt)}")
     groups, cur = [], []
     for w in Wd:
         cur.append(w)
@@ -438,7 +482,7 @@ def lufs(f):
     return float(m[-1]) if m else None
 
 
-def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None):
+def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, notes=None):
     """src = a downloaded window of the video; a, b = the asked moment inside it (seconds in src)."""
     os.makedirs(out_dir, exist_ok=True)
     Wd, lang = words(src, lang, ", ".join(glossary or []))
@@ -450,7 +494,8 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None):
     info = analyse(tight)
     assf = os.path.join(out_dir, "captions.ass")
     logo = LOGO if (brand and os.path.exists(LOGO)) else None      # 19 Nov: the page's real logo; text handle only without it
-    ass(assf, hook, Wt, info["dur"], info["segments"], brand="" if logo else brand)
+    placed = place_notes(notes, Wt, info["dur"])
+    ass(assf, hook, Wt, info["dur"], info["segments"], brand="" if logo else brand, notes=placed)
     final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"), logo)
     q = probe(final); q["lufs"] = lufs(final)
     d = max(1.0, q["dur"])
@@ -462,7 +507,8 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None):
     res = {"layout": info["layout"], "segments": info["segments"],
            "faces": {k: info.get(k) for k in ("face_share", "face_h", "cam")}, "shots": len(info["cuts"]),
            "cut": [round(a2, 2), round(b2, 2)], "kept": ranges, "removed_s": round((b2 - a2) - sum(e - s for s, e in ranges), 2),
-           "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt)}
+           "lang": lang, "words": len(Wt), "format": q, "text": " ".join(w[2] for w in Wt),
+           "notes": [{"s": s, "e": e, "text": t, "kind": k} for s, e, t, k in placed], "notes_asked": len(notes or [])}
     json.dump({"words": Wt, **res}, open(os.path.join(out_dir, "clip.json"), "w"), ensure_ascii=False)
     return res
 

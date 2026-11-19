@@ -45,12 +45,23 @@ Use real names spelled exactly as given. Never word salad (19 Nov rejects: "REBE
 POWER", "JO KOY ORDERS GET A DOG"; better: "SHE SAYS DREAMS CAN BEAT THE KING", "JO KOY'S CURE FOR THERAPY: GET A DOG").
 CAPTION: the context the clip leaves out, naming the show / game / product and the person. Do NOT repeat required
 campaign lines or tags (they are added after it).
+NOTES (19 Nov, Instagram + YouTube originality rules: a clip page must ADD its own perspective, not only crop and
+caption): 3 short on-screen notes in the page's voice, a witty fan watching along. One "context" note first (who /
+what show or game / why this moment matters, with a fact the clip itself does not say) and 2 "react" notes, each tied
+to the exact words it follows ("after": 3-6 words copied EXACTLY from the speech). Each note 3-8 words, says something
+the viewer is thinking (a joke, an opinion, a "wait for it", a fact), NEVER repeats or describes what is being said,
+never negative about the brand, show, game or person, never a lie, no emojis, no hashtags.
+Good: "Cheaper than therapy, honestly" / "He did NOT see that coming" / "This scene took 9 months to film".
+Bad: "Jo Koy talks about dogs" (describes) / "LOL" (empty) / "Worst show ever" (negative).
 Return JSON:
 {{"moments": [{{"start": "<MM:SS where the hook begins>", "end": "<MM:SS where the payoff ends>", "hook": "<hook title>",
    "why": "<why people will watch to the end, one line>",
    "score": {{"hook": <1-10>, "flow": <1-10>, "value": <1-10>, "trend": <1-10>}},
    "caption": "<Instagram caption: one or two short lines that add the context the clip leaves out, no hashtags>",
-   "tags": ["<4-6 specific hashtags without # (people, game, topic)>"]}}]}}"""
+   "tags": ["<4-6 specific hashtags without # (people, game, topic)>"],
+   "notes": [{{"after": "", "text": "<context note>", "kind": "context"}},
+             {{"after": "<3-6 exact spoken words>", "text": "<react note>", "kind": "react"}},
+             {{"after": "<3-6 exact spoken words>", "text": "<react note>", "kind": "react"}}]}}]}}"""
 
 CHECK = """You check a finished vertical clip before it is posted on the clip page "{page}". The image is 6 frames sampled
 across the clip, left to right (shrunk: judge the layout, not the font size).
@@ -223,7 +234,7 @@ def find_moments(ch, url, n, info, source=None):
         near = any(x["at"] - 25 <= b and a <= x["until"] + 5 for x in pk)
         ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200], "score": total,
                    "scores": sc, "replayed": near, "caption": str(m.get("caption") or "")[:300],
-                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6]})
+                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6], "notes": _notes(m)})
     ms.sort(key=lambda m: -(m["score"] + (1.0 if m["replayed"] else 0)))     # a replayed moment gets a bonus
     return ms[:n], pk
 
@@ -235,7 +246,19 @@ TRANSCRIPT:
 {lines}
 Return JSON {{"moments": [{{"start": <seconds where the hook line begins>, "end": <seconds where the payoff ends>, "hook": "<hook title>",
  "why": "<one line>", "score": {{"hook": <1-10>, "flow": <1-10>, "value": <1-10>, "trend": <1-10>}},
- "caption": "<one or two short lines adding the missing context, no hashtags>", "tags": ["<4-6 hashtags without #>"]}}]}}"""
+ "caption": "<one or two short lines adding the missing context, no hashtags>", "tags": ["<4-6 hashtags without #>"],
+ "notes": [{{"after": "", "text": "<context note>", "kind": "context"}},
+           {{"after": "<3-6 words copied exactly from the transcript>", "text": "<react note>", "kind": "react"}},
+           {{"after": "<3-6 words copied exactly from the transcript>", "text": "<react note>", "kind": "react"}}]}}]}}"""
+
+
+def _notes(m):
+    out = []
+    for n in (m.get("notes") or [])[:4]:
+        if isinstance(n, dict) and str(n.get("text") or "").strip():
+            out.append({"after": str(n.get("after") or "")[:80], "text": re.sub(r"[#\U0001F000-\U0001FFFF]", "", str(n["text"])).strip()[:80],
+                        "kind": "context" if n.get("kind") == "context" else "react"})
+    return out
 
 
 def find_moments_text(ch, item, n, source=None):
@@ -266,7 +289,7 @@ def find_moments_text(ch, item, n, source=None):
         ms.append({"a": a, "b": b, "hook": str(m.get("hook") or "")[:70], "why": str(m.get("why") or "")[:200],
                    "score": round(sum(float(sc.get(k) or 0) for k in ("hook", "flow", "value", "trend")) / max(1, len(sc)), 2),
                    "scores": sc, "replayed": False, "caption": str(m.get("caption") or "")[:300],
-                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6]})
+                   "tags": [re.sub(r"[^\w]", "", str(t)) for t in (m.get("tags") or [])][:6], "notes": _notes(m)})
     ms.sort(key=lambda m: -m["score"])
     return ms[:n]
 
@@ -296,7 +319,7 @@ def make_files(cid, url, n=4, test=False, campaign=None):
         log("clipper (files): moments", it.get("name"), [(round(m["a"]), round(m["b"]), m["hook"], m["score"]) for m in ms])
         brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")
         out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 4, "brand": brand, "glossary": glossary(src),
-                          "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"]} for m in ms]}, f"{cid} {b2}", wait=3600)
+                          "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {b2}", wait=3600)
         info = {"title": it.get("name"), "channel": (src or {}).get("title") or "", "webpage_url": url}
         made += ingest(ch, cid, url, info, src, test, ms, out, b2)
         shutil.rmtree(os.path.dirname(out), ignore_errors=True)
@@ -345,7 +368,7 @@ def make(cid, url, n=4, test=False, campaign=None):
     log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
     brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")    # campaigns that say "no watermark"
     out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src),
-                      "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"]} for m in ms]}, f"{cid} {base}", wait=3600)
+                      "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {base}", wait=3600)
     made = ingest(ch, cid, url, info, src, test, ms, out, base)
     shutil.rmtree(os.path.dirname(out), ignore_errors=True)
     if test and made:
@@ -389,7 +412,13 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
         plug = PLUG.search(res.get("text", ""))
         if plug:
             probs.append(f"self-promotion inside the clip ('{plug.group(0)}'): someone else's channel plug, never post")
-        v = vision(ch, jd, m["hook"], res.get("text", ""))
+        # 19 Nov golden rule + originality (Instagram/YouTube stop recommending re-uploads without material edits):
+        # every clip must carry at least 2 of our own notes, actually placed on screen
+        placed = res.get("notes") or []
+        if (ch.get("kind") == "clips") and len(placed) < 2:
+            probs.append(f"not original enough: {len(placed)} of {res.get('notes_asked', 0)} page notes placed (need 2+)")
+        v = vision(ch, jd, m["hook"], res.get("text", "") + ("\nPAGE NOTES SHOWN ON SCREEN (must be true to the clip, "
+                   "never negative, never just repeating the speech): " + " | ".join(n["text"] for n in placed) if placed else ""))
         probs += [str(x)[:200] for x in v.get("problems") or []]
         credit = f"🎥 Credit: {who}" + (f" ({info.get('webpage_url') or url})" if (not src or src.get("credit_link", True)) else "")
         tags = list(dict.fromkeys([t for t in m["tags"] if t] + [t.lstrip("#") for t in (ch.get("hashtags_base") or [])]
@@ -418,6 +447,7 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
         plan = {"title": m["hook"], "topic": m["hook"], "caption": caption, "hashtags": ["#" + t for t in tags], "lang": res.get("lang", ""),
                 "clip": {"url": url, "start": start, "end": round(res.get("offset", 0) + res["cut"][1], 2), "layout": res.get("layout"),
                          "removed_s": res.get("removed_s"), "why": m["why"], "scores": m["scores"], "replayed": m["replayed"],
+                         "notes": res.get("notes") or [],
                          "source": (src or {}).get("key"), "test": test, "creator": who},
                 "seo": {"ig": {"caption": caption, "hashtags": ["#" + t for t in tags]},
                         "fb": {"caption": caption, "hashtags": ["#" + t for t in tags]},

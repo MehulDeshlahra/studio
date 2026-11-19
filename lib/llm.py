@@ -135,7 +135,23 @@ def from_parts(parts, json_mode=True, max_tokens=4000):
     return _chain(VISION_MODELS, content, json_mode, max_tokens)
 
 
+BLIND = re.compile(r"(can'?t|cannot|unable to|don'?t have the ability to) (see|view|watch|access|open|play)\b.{0,40}"
+                   r"(video|link|url|content)|share (it|the video)|describe (it|the video)", re.I)
+
+
 def watch(video_url, prompt, json_mode=True, max_tokens=3000):
+    """19 Nov: gemini-3.8-flash answers "I can't see the video" (no video input) and the chain took that as a success:
+    a model must prove it watched (no "can't see" text, and JSON when JSON was asked) or the next one is tried."""
     content = [{"type": "text", "text": prompt + ("\n\nReturn ONLY valid JSON, no other text." if json_mode else "")},
                {"type": "video_url", "video_url": {"url": video_url}}]
-    return _chain(WATCH_MODELS, content, json_mode, max_tokens)
+    errs = []
+    for m in WATCH_MODELS:
+        try:
+            out = _chain([m], content, json_mode, max_tokens, timeout=180)
+        except Exception as e:
+            errs.append(f"{m}: {str(e)[:100]}"); continue
+        txt = json.dumps(out) if not isinstance(out, str) else out
+        if BLIND.search(txt[:600]) or (json_mode and not isinstance(out, (dict, list))):
+            errs.append(f"{m}: did not watch the video"); continue
+        return out
+    raise RuntimeError("no model watched the video: " + " | ".join(errs))
