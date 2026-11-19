@@ -41,5 +41,14 @@
   "review": [
    "before render, scene 16: OVERLAP/CUT (layout audit): text_occluded on #s15b"
   ]
+ },
+ {
+  "job": "1119-1015",
+  "topic": "Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)",
+  "title": "Mahavira ne 12 saal bhookha reh kar kheer kyun khayi?",
+  "status": "held",
+  "review": [
+   "before render, scene 12: OVERLAP/CUT (layout audit): text_occluded on #s11b"
+  ]
  }
 ]

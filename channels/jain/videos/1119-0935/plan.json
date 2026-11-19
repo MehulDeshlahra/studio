@@ -248,15 +248,15 @@
    "label": null
   },
   {
-   "type": "card",
-   "big": "Comment BAHUBALI",
+   "type": "image",
+   "big": "",
    "sub": "Bahubali HD wallpaper DM mein 📩",
-   "small": "Free wallpaper DM",
+   "small": "",
    "vo": "Ye wallpaper chahiye? Comment BAHUBALI, main DM kar dunga.",
    "offer_cta": true,
    "label": "FREE",
-   "prompt": "Bahubali movie character, epic pose, dramatic lighting, vertical 9:16, space for text",
-   "title": "Bahubali Wallpaper",
+   "prompt": "Bahubali movie character, epic pose, dramatic lighting, vertical 9:16, space for text, no text or logos",
+   "title": "Bahubali",
    "motion": "slow zoom"
   }
  ],

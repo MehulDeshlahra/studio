@@ -608,5 +608,127 @@
     "score": 3.75
    }
   ]
+ },
+ {
+  "t": "2026-11-19 10:15",
+  "picked": "Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)",
+  "ideas": [
+   {
+    "topic": "Why did Mahavira endure a 12-year fast — and why did he break it with kheer in a merchant's house? (source: Kalpasutra)",
+    "note": "",
+    "search": "Mahavira 12 year fast story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 8.1,
+    "median_views": 1773921,
+    "fresh": 5.0,
+    "score": 7.79
+   },
+   {
+    "topic": "Why don't Jains eat root vegetables? The invisible beings in every potato (source: Agam - Acharanga Sutra)",
+    "note": "",
+    "search": "Jains avoid root vegetables why",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.7,
+    "median_views": 28970,
+    "fresh": 5.8,
+    "score": 6.33
+   },
+   {
+    "topic": "Why do Jains say 'Micchami Dukkadam' on Samvatsari — the annual forgiveness ritual (source: Kalpasutra)",
+    "note": "",
+    "search": "Micchami Dukkadam meaning Samvatsari",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.6,
+    "median_views": 27073,
+    "fresh": 5.0,
+    "score": 6.12
+   },
+   {
+    "topic": "What question made King Nami renounce his throne while holding a mango? (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "King Nami mango renunciation story",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.5,
+    "score": 5.5
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 3.2,
+    "median_views": 19328,
+    "fresh": 7.6,
+    "score": 5.41
+   },
+   {
+    "topic": "The monk who accepted poisoned kheer knowingly — why he didn't warn the donor (source: Agam - Uttaradhyayana Sutra)",
+    "note": "",
+    "search": "monk poisoned kheer Jain story",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.4,
+    "median_views": 9206,
+    "fresh": 5.7,
+    "score": 5.02
+   },
+   {
+    "topic": "How did Chandanbala, a shackled slave girl, offer Mahavira his first alms after 12 years? (source: Kalpasutra)",
+    "note": "",
+    "search": "Chandanbala Mahavira first alms",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 1.5,
+    "median_views": 3838,
+    "fresh": 5.5,
+    "score": 4.93
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 1.1,
+    "median_views": 2683,
+    "fresh": 6.7,
+    "score": 4.29
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 577,
+    "fresh": 6.5,
+    "score": 3.75
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 14,
+    "fresh": 6.0,
+    "score": 3.65
+   }
+  ]
  }
 ]

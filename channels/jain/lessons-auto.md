@@ -81,3 +81,15 @@
 
 ## 1119-0935 (pre-render check)
 - OVERLAP/CUT (layout audit): text_occluded on #s15b
+
+## 1119-1015 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s11b
+- READ: scroll text is too dense and small to read on a mobile screen
+- READ: scroll text is too dense and small to read on a mobile screen
+
+## 1119-1015 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s11b
+- FIT: the visual shows an altar and book instead of the meditation or karma burning mentioned in the voiceover
+
+## 1119-1015 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s11b

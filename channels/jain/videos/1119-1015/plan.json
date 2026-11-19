@@ -1,0 +1,264 @@
+{
+ "slug": "mahavira-12-year-fast-kheer",
+ "title": "Mahavira ne 12 saal bhookha reh kar kheer kyun khayi?",
+ "hooks": [
+  "12 saal bhookha raha Mahavira ne kyun?",
+  "Ek kheer ne badal di Mahavira ki tapasya",
+  "Kyun toda 12 saal ka vrat sirf kheer se?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct question with shocking timeframe creates immediate curiosity; matches Jain audience's reverence for Mahavira's austerities",
+ "metaphor": "Burning karmic layers like fire purifies gold — each year of fast burns one layer, kheer is the first pure offering received after complete purification",
+ "cast": {
+  "Mahavira_idol": "Serene meditating Tirthankara idol in padmasana, eyes half-closed, lion emblem on pedestal, white marble with gentle saffron glow, ornate Jain temple backdrop",
+  "Siddhashila": "Crescent-shaped Siddhashila at apex of universe, radiant golden light, lotus blooming beneath, soft marble texture",
+  "Kheer_bowl": "Simple clay bowl with white kheer (rice pudding), steam rising gently, placed on marble floor, single spoon, warm golden light"
+ },
+ "scenes": [
+  {
+   "vo": "12 saal bhookha raha Mahavira ne kyun?",
+   "type": "image",
+   "prompt": "Serene meditating Tirthankara idol in padmasana, eyes half-closed, lion emblem on pedestal, white marble with gentle saffron glow, ornate Jain temple backdrop, centered in serene Jain temple, soft saffron and gold light filtering through marble arches, calm uncluttered composition",
+   "motion": "push",
+   "title": "12 SAAL VRAT",
+   "keywords": [
+    "12 saal",
+    "Mahavira",
+    "vrata"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Kalpasutra kehta hai tapasya se karm jalte hain, ek ek parat.",
+   "type": "image",
+   "prompt": "A serene Jain monk meditating in lotus position, subtle flames of karma burning around him, soft golden glow, vertical 9:16 composition with space above and below for text, no text or logos",
+   "motion": "slow zoom",
+   "title": "KALPASUTRA",
+   "keywords": [
+    "Kalpasutra",
+    "karm nash"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "real": null
+  },
+  {
+   "vo": "Har saal ek karm ki parat dhalti gayi, jaise mail dhool jaye.",
+   "type": "image",
+   "prompt": "Pure gold bar passing through gentle fire, dark impurities burning away, serene saffron glow, 9:16 vertical",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "karm",
+    "parat",
+    "jalata"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "real": null
+  },
+  {
+   "vo": "Na ann na jal, sirf atma ka dhyan raha.",
+   "type": "image",
+   "prompt": "Serene meditating Tirthankara idol in padmasana, eyes half-closed, lion emblem on pedestal, white marble with gentle saffron glow, ornate Jain temple backdrop, in kayotsarga standing meditation, arms relaxed, radiant white light emanating from heart center, no food or water vessels, pure marble serenity",
+   "motion": "pull",
+   "title": "NIRJAL VRAT",
+   "keywords": [
+    "ann",
+    "jal",
+    "dhyan"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Barah saal poore hone par ek seth kheer le aaya.",
+   "type": "image",
+   "prompt": "Pair of hands (merchant's) offering Simple clay bowl with white kheer (rice pudding), steam rising gently, placed on marble floor, single spoon, warm golden light on marble floor before Serene meditating Tirthankara idol in padmasana, eyes half-closed, lion emblem on pedestal, white marble with gentle saffron glow, ornate Jain temple backdrop, steam rising, warm golden light on hands, bowl centered, no face shown",
+   "motion": "push",
+   "title": "PEHLA GRAAS",
+   "keywords": [
+    "seth",
+    "kheer",
+    "graas"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Yeh pehla graas tha, bina ahankar, shuddh bhav se.",
+   "type": "image",
+   "prompt": "Simple clay bowl with white kheer (rice pudding), steam rising gently, placed on marble floor, single spoon, warm golden light, close-up, single spoon lifting rice pudding, each grain glowing softly, no ego symbol, pure offering energy, marble texture background",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "graas",
+    "ahankar",
+    "nahi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Is graas ke baad keval gyan hua, sab dikhne laga.",
+   "type": "image",
+   "prompt": "Crescent-shaped Siddhashila at apex of universe, radiant golden light, lotus blooming beneath, soft marble texture, with Serene meditating Tirthankara idol in padmasana, eyes half-closed, lion emblem on pedestal, white marble with gentle saffron glow, ornate Jain temple backdrop's footprints, keval gyan light spreading in all directions, serene",
+   "motion": "pull",
+   "title": "KEVAL GYAN",
+   "keywords": [
+    "keval gyan",
+    "uday"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Sab chhod diya tab asli khazana mila, andar hi tha.",
+   "type": "image",
+   "prompt": "Empty cupped hands opening on marble, transforming into radiant light particles rising toward Crescent-shaped Siddhashila at apex of universe, radiant golden light, lotus blooming beneath, soft marble texture, lotus petals unfolding, saffron gold gradient",
+   "motion": "push",
+   "title": "TYAG HI SHAKTI",
+   "keywords": [
+    "chhoda",
+    "paaya",
+    "khazana"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Tyag hi shakti hai aaj bhi, aazma ke dekho.",
+   "type": "card",
+   "prompt": "Single white lotus in marble bowl with Simple clay bowl with white kheer (rice pudding), steam rising gently, placed on marble floor, single spoon, warm golden light beside it, soft saffron light, Jain temple pillars blurred background, peaceful",
+   "motion": "push",
+   "big": "TYAG HI SHAKTI",
+   "small": "KALPASUTRA",
+   "keywords": [
+    "tyag",
+    "shakti",
+    "aaj"
+   ],
+   "title": "",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aap hote toh kya chhodte? Comment mein batao.",
+   "type": "image",
+   "prompt": "Calm water reflection in marble pool showing viewer's silhouette, single lotus floating, ripple spreading gently, question in the stillness",
+   "motion": "pan",
+   "title": "AAP KYA CHHODENGE",
+   "keywords": [
+    "aap",
+    "chhod",
+    "sakte"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Srot Kalpasutra, Jai Jinendra.",
+   "type": "card",
+   "prompt": "Navkar Mantra symbol (Om Hrim) in gold on white marble, Crescent-shaped Siddhashila at apex of universe, radiant golden light, lotus blooming beneath, soft marble texture above, soft saffron glow, clean uncluttered",
+   "motion": "push",
+   "big": "JAI JINENDRA",
+   "small": "SROT: KALPASUTRA",
+   "keywords": [
+    "Kalpasutra",
+    "Jai Jinendra"
+   ],
+   "title": "",
+   "sub": null,
+   "label": null
+  },
+  {
+   "type": "card",
+   "big": "Comment SCREEN",
+   "sub": "Mahavira Keval Gyan wallpaper DM mein 📩",
+   "small": "Mahavira Keval Gyan DM",
+   "vo": "Ye HD wallpaper chahiye? Comment karo SCREEN, main DM kar dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "prompt": "a gift box with soft warm light, simple background",
+   "title": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "12 saal ka nirjal vrat... aur phir ek kheer 🍚\nKalpasutra bataata hai Mahavira ne kyun kiya yeh sab.\nTyag mein hi chhupi hai asli shakti — aap kya sochte hain?",
+ "hashtags": [
+  "#Mahavira",
+  "#Kalpasutra",
+  "#Jainism",
+  "#Tyag",
+  "#NavkarBhav",
+  "#JaiJinendra"
+ ],
+ "claims": [
+  {
+   "claim": "Mahavira practiced severe austerities for 12.5 years",
+   "basis": "Kalpasutra, traditional Jain texts; Wikipedia Mahavira entry confirms 12.5 years of intense meditation and austerities before Kevala Jnana"
+  },
+  {
+   "claim": "He broke his fast with kheer offered by a merchant (seth)",
+   "basis": "Kalpasutra narrative tradition; standard Jain hagiography episode of Mahavira's first alms (parana) after omniscience"
+  },
+  {
+   "claim": "The fast was for karmic purification (nirjara)",
+   "basis": "Jain doctrine: tapasya burns karmic particles; Kalpasutra describes Mahavira's austerities as karmic shedding"
+  },
+  {
+   "claim": "Kevala Jnana (omniscience) arose after this period",
+   "basis": "Kalpasutra, Acharanga Sutra; all Jain traditions agree Mahavira attained omniscience after 12.5 years of tapasya"
+  }
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "fc294ac58f",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "4396759d41",
+  "161339712e",
+  "7fa182f8ef",
+  "1e1964f463",
+  "9db4cc694f",
+  "6ce7203c71",
+  "e15cfaed29",
+  "f945e2a937",
+  "0755cc155a",
+  "1e60a34718"
+ ],
+ "offer": {
+  "kind": "wallpaper",
+  "keyword": "SCREEN",
+  "gift": "Mahavira Keval Gyan wallpaper",
+  "title": "Mahavira Keval Gyan HD Wallpaper",
+  "items": [
+   {
+    "head": "Phone Wallpaper",
+    "text": "Scene 7: Mahavira keval gyan moment as HD lockscreen"
+   }
+  ],
+  "wallpaper_scene": 7,
+  "job": "1119-1015",
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/jain/offer-screen.jpg"
+ }
+}
