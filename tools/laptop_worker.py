@@ -226,7 +226,9 @@ def _fetch_any(url, dest_dir, max_files=6):
                 used = json.load(open(used_p, encoding="utf-8"))
             except Exception:
                 used = {}
-            vids.sort(key=lambda f: used.get(f.id, 0))
+            # unused first; among them names that say they carry sound/voice (Daise: "_SOUND.mov" next to "_NO SOUND.mov",
+            # and camera files "IMG_8923.mov" without any audio track)
+            vids.sort(key=lambda f: (used.get(f.id, 0), not re.search(r"sound|voice|talk|interview|audio", str(f.path), re.I)))
             out = []
             for f in vids[:max_files]:
                 used[f.id] = time.time()
