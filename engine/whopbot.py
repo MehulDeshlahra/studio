@@ -58,7 +58,11 @@ def _save_sources(d, msg):
 
 def _job(cmd, *args, wait=900):
     import laptop
-    d = laptop.job({"kind": "whop", "cmd": cmd, "args": list(args)}, f"whop {cmd}", wait=wait)
+    try:     # 19 Nov: the laptop busy with a long transcribe = "did not pick the job up", which crashed the whole run
+        d = laptop.job({"kind": "whop", "cmd": cmd, "args": list(args)}, f"whop {cmd}", wait=wait)
+    except Exception as e:
+        log("whopbot: laptop job failed", cmd, str(e)[:150])
+        return {"error": str(e)[:300]}
     r = load(os.path.join(d, "result.json"), {}) or {}
     shot = os.path.join(d, "shot.png")
     if os.path.exists(shot):
@@ -181,7 +185,9 @@ def make_source(k, v, d, st):
     now = time.time()
     r = _job("brief", v["url"])
     if r.get("error"):
-        log("whopbot: brief failed", v.get("title"), r["error"][:120]); return None
+        log("whopbot: brief failed", v.get("title"), r["error"][:120])
+        st.get("tried", {}).pop(k, None)          # a laptop hiccup is not a verdict on the campaign: try again next run
+        return None
     try:
         b = llm.text(READ.format(text=(r.get("text") or "")[:18000], links=", ".join(r.get("footage") or [])[:2000]), json_mode=True,
                      max_tokens=1500)

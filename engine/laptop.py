@@ -103,6 +103,9 @@ def job(spec, label="", wait=2400):
             if os.path.exists(done):
                 break
             if time.time() - t0 > CLAIM_WAIT * 2 and not os.path.exists(claimed) and os.path.exists(q + ".json"):
+                # 19 Nov: the worker does one job at a time; while it is busy (a transcribe/clip job) the queue waits
+                if status().get("busy") and status().get("age", 999) < 90 and time.time() - t0 < wait:
+                    time.sleep(4); continue
                 raise RuntimeError("the laptop did not pick the job up")
             if os.path.exists(claimed) and status().get("age", 999) > 180:
                 raise RuntimeError("the laptop went away during the job")
