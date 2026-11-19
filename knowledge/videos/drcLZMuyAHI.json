@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "The log is split in half",
+ "first_frame": "A 3D character holding a knife above a log with holes in it, against a blue background.",
+ "hook_type": "visual surprise",
+ "format": "3D how-it-works",
+ "length_s": 27,
+ "cuts_estimate": 14,
+ "avg_shot_s": 1.9,
+ "words_per_s_estimate": 2.4,
+ "beats": [
+  "0-3 s: Hook: The log is split, revealing what look like worms.",
+  "3-7 s: Reveal: The worms are actually shell-less clams called Tamilok.",
+  "7-10 s: Context: Where they are found (muddy swamps).",
+  "10-16 s: Process: Harvesting, decapitation, and cleaning.",
+  "16-21 s: Preparation: Soaking in vinegar, salt, and chili.",
+  "21-27 s: Consumption and conclusion: Eating the clam and cultural context."
+ ],
+ "visual_techniques": [
+  "3D animation (throughout)",
+  "Camera zoom-in (0:01)",
+  "Cross-section reveal (0:01)",
+  "Object transition/morph (0:06)",
+  "Camera pan (0:09)",
+  "Close-up shots of the clam (0:11-0:14)",
+  "Flag overlay (0:26)"
+ ],
+ "captions": "White text with black outline, 1-4 words per chunk, centered at the bottom, no highlight colour.",
+ "sound": "AI voiceover (calm, informative), ambient nature sounds (water, wood cracking), subtle 'pop' and 'slice' sound effects, no background music.",
+ "recurring_element": "The 3D character (avatar) who performs all the actions.",
+ "ending": "CTA/Punchline: The character eats the clam and gives a thumbs up in front of the Philippine flag.",
+ "why": "It performs well because it uses high-quality 3D animation to visualize a 'gross' or 'weird' biological process that would be difficult to film in real life. The pacing is extremely fast, and the visual hook (splitting the log) creates immediate curiosity.",
+ "reusable_faceless": [
+  "Use a consistent 3D avatar to perform actions",
+  "Start with a high-impact visual action (splitting, cutting, breaking)",
+  "Use clean, minimalist backgrounds to keep focus on the subject",
+  "Keep the narration strictly focused on the 'how-to' or 'what-is' aspect"
+ ],
+ "id": "drcLZMuyAHI",
+ "url": "https://www.youtube.com/watch?v=drcLZMuyAHI",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "The Filipino Clam That Lives Inside Wood 😮",
+ "views": 6700000,
+ "channel_median": 3300000,
+ "ratio": 2.03,
+ "label": "winner",
+ "watched": "2026-11-20T05:03+05:30"
+}

@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "Scoop some sea water",
+ "first_frame": "A person's hand holding a measuring cup above a body of water",
+ "hook_type": "other",
+ "format": "3D how-it-works",
+ "length_s": 24,
+ "cuts_estimate": 10,
+ "avg_shot_s": 2.4,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Introduction to the process of gathering sea water.",
+  "3-5 s: Filtering the water through a cloth.",
+  "6-10 s: Boiling the water on a stove to create salt crust.",
+  "11-17 s: Scraping the salt and drying it in an oven.",
+  "18-24 s: Final product application and consumption."
+ ],
+ "visual_techniques": [
+  "3D animation (throughout)",
+  "Match cuts between steps (0:02, 0:05, 0:11)",
+  "Close-up shots of the salt formation (0:09)",
+  "Character animation of the creator at the end (0:18)"
+ ],
+ "captions": "White, bold, sans-serif font, centered at the bottom of the screen, 3-5 words per chunk.",
+ "sound": "Clear voiceover, upbeat background music, subtle sound effects for pouring, boiling, and scraping.",
+ "recurring_element": "The 3D-rendered measuring cup and the creator's avatar.",
+ "ending": "CTA (implied by the visual of enjoying the meal), no explicit verbal CTA.",
+ "why": "The video lacks a strong, relatable hook or a 'wow' factor. While visually polished, the process is mundane and doesn't offer a unique or surprising insight, which is usually required for high engagement on this channel.",
+ "reusable_faceless": [
+  "3D-rendered step-by-step process",
+  "Fast-paced editing to maintain viewer attention",
+  "Clear, concise voiceover narration",
+  "Consistent visual style and branding"
+ ],
+ "id": "k_d7SwESXhk",
+ "url": "https://www.youtube.com/watch?v=k_d7SwESXhk",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "How To Make Sea Salt At Home 🤔",
+ "views": 606000,
+ "channel_median": 3300000,
+ "ratio": 0.18,
+ "label": "flop",
+ "watched": "2026-11-20T05:04+05:30"
+}

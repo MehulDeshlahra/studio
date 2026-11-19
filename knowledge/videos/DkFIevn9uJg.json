@@ -1,0 +1,47 @@
+{
+ "hook_first_words": "जनगणना 2027",
+ "first_frame": "The host sitting in a chair, facing the camera.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 120,
+ "cuts_estimate": 15,
+ "avg_shot_s": 8.0,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-7 s: Hook and introduction of the census 2027 timeline.",
+  "8-15 s: Mentioning specific states and the two-phase process.",
+  "16-25 s: Explaining the self-enumeration process.",
+  "26-44 s: Explaining the new geo-mapping and digital system.",
+  "45-120 s: Step-by-step tutorial on how to apply online and a concluding CTA."
+ ],
+ "visual_techniques": [
+  "Static image overlay (Census 2027 logo) at 0:01",
+  "Text list overlay at 0:03",
+  "Animated icons at 0:06",
+  "Map zoom-in at 0:08",
+  "Browser screen recording at 0:45",
+  "Highlight box around URL at 0:51",
+  "Form filling simulation at 0:55"
+ ],
+ "captions": "White text with black outline, 3-5 words per chunk, bottom-center, no highlight colour.",
+ "sound": "Host voiceover, no background music, no sound effects.",
+ "recurring_element": "The host's talking head.",
+ "ending": "CTA asking viewers to comment and follow.",
+ "why": "The video is too long (2 minutes) for a YouTube Short, lacks engaging background music, and the pacing is slow, making it feel like a lecture rather than a quick, digestible explainer.",
+ "reusable_faceless": [
+  "Screen recording of official government portals",
+  "Animated map overlays for location-specific news",
+  "Text-based list overlays for clarity",
+  "Step-by-step tutorial format with clear visual cues"
+ ],
+ "id": "DkFIevn9uJg",
+ "url": "https://www.youtube.com/watch?v=DkFIevn9uJg",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "Census 2027. Apply for Census online #sarkaridna",
+ "views": 34000,
+ "channel_median": 123000,
+ "ratio": 0.28,
+ "label": "flop",
+ "watched": "2026-11-20T05:04+05:30"
+}

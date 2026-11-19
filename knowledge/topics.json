@@ -1,136 +1,136 @@
 {
  "picks": [
   {
-   "title": "The Cambridge Dictionary has named ‘human’ as the Word of the Year 2026",
-   "url": "https://www.cam.ac.uk/news/cambridge-dictionary-reveals-word-of-the-year-2026",
-   "src": "Cambridge University",
-   "angle": "In the peak AI era of 2026, the most searched and discussed word is what makes us 'human'.",
-   "hook": "2026 ka word of the year 'Human' kyun hai?",
-   "format": "story",
+   "title": "Google gives Gemini the ability to use your Mac for you",
+   "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+   "src": "TechCrunch AI",
+   "angle": "Gemini can now perform tasks directly on macOS, making it a powerful productivity assistant for Indian professionals.",
+   "hook": "Gemini ab aapka Mac khud control karega!",
+   "format": "tool-demo",
    "freshness": "today",
    "score": 10,
-   "found": "2026-11-19T17:01+05:30"
+   "found": "2026-11-20T05:02+05:30"
   },
   {
-   "title": "SSD prices will start going down the second half of next year",
-   "url": "https://www.drivevault.io/blog/when-will-hard-drive-prices-come-down.html",
-   "src": "DriveVault",
-   "angle": "Indian users planning PC upgrades should wait as storage prices are predicted to drop soon.",
-   "hook": "Naya SSD lene waale ho? Thoda ruk jao!",
-   "format": "evidence",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-19T17:01+05:30"
-  },
-  {
-   "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
-   "url": "https://techcrunch.com/2026/11/18/satya-nadella-predicts-ai-agents-will-reshuffle-the-economics-of-the-web/",
-   "src": "TechCrunch",
-   "angle": "Microsoft's CEO says AI agents will change how small businesses and websites make money.",
-   "hook": "Internet ka pura system badalne wala hai!",
-   "format": "story",
+   "title": "AutoClip: Open-source AI video clipping tool",
+   "url": "https://github.com/zhouxiaoka/autoclip",
+   "src": "GitHub trending",
+   "angle": "Indian creators can now automatically turn long podcasts or interviews into viral Shorts and Reels.",
+   "hook": "Long videos se viral Shorts banao ek click mein.",
+   "format": "tool-demo",
    "freshness": "today",
-   "score": 9,
-   "found": "2026-11-19T17:01+05:30"
+   "score": 10,
+   "found": "2026-11-20T05:02+05:30"
   },
   {
-   "title": "PaperOrchestra: A multi-agent framework for automated AI research paper writing",
-   "url": "https://github.com/google-research/paper-orchestra",
-   "src": "Google Research",
-   "angle": "Students can now see how Google uses multiple AI agents to research and write full papers.",
-   "hook": "Ab AI khud research papers likh kar dega!",
+   "title": "ChatGPT can transcribe as you speak now with Live Dictation",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1037634/openai-chatgpt-live-dictation",
+   "src": "The Verge AI",
+   "angle": "Real-time transcription makes note-taking and content creation effortless for students and creators.",
+   "hook": "ChatGPT ab aapke bolte hi live typing karega.",
    "format": "tool-demo",
    "freshness": "today",
    "score": 9,
-   "found": "2026-11-19T17:01+05:30"
+   "found": "2026-11-20T05:02+05:30"
   },
   {
-   "title": "Cursor plugins: Official specification and plugins released",
-   "url": "https://github.com/cursor/plugins",
-   "src": "GitHub",
-   "angle": "The world's most popular AI code editor just opened up for custom plugins, huge for Indian devs.",
-   "hook": "Cursor AI editor ab aur bhi powerful ho gaya!",
+   "title": "Google is putting AI chats right on the homepage",
+   "url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
+   "src": "The Verge AI",
+   "angle": "The iconic Google homepage is changing to prioritize AI interaction, affecting every Indian internet user.",
+   "hook": "Google Search ka homepage hamesha ke liye badal gaya.",
+   "format": "evidence",
+   "freshness": "today",
+   "score": 9,
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "title": "Pancreatic cancer halted by virus injection in three patients",
+   "url": "https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/",
+   "src": "Hacker News",
+   "angle": "A major medical breakthrough using viral tech to fight one of the deadliest cancers.",
+   "hook": "Scientists ne virus se cancer ko rok diya!",
+   "format": "story",
+   "freshness": "today",
+   "score": 9,
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "title": "Meta’s new Muse Charm device may cost $300",
+   "url": "https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/",
+   "src": "TechCrunch AI",
+   "angle": "Meta's new AI wearable is entering the market at a competitive price point for tech enthusiasts.",
+   "hook": "Meta ka naya AI wearable sirf 300 dollars mein?",
+   "format": "evidence",
+   "freshness": "today",
+   "score": 8,
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "title": "Anthropic hits Nasdaq exchanges at $111",
+   "url": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+   "src": "TechCrunch AI",
+   "angle": "The creator of Claude AI is now a public company, marking a massive milestone in the AI industry.",
+   "hook": "Claude banane wali company Anthropic ab stock market par!",
+   "format": "story",
+   "freshness": "today",
+   "score": 8,
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "title": "Ghost-Downloader-3: The only downloader you need",
+   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+   "src": "GitHub trending",
+   "angle": "A powerful all-in-one tool for Indian users to download media from across the web.",
+   "hook": "Har cheez download karne ke liye bas ek tool.",
    "format": "tool-demo",
-   "freshness": "today",
-   "score": 9,
-   "found": "2026-11-19T17:01+05:30"
-  },
-  {
-   "title": "Will Wright’s next game uses AI to map your memories",
-   "url": "https://www.theverge.com/games/1036140/will-wright-mymems-ai-game-interview",
-   "src": "The Verge",
-   "angle": "The creator of The Sims is back with an AI game that builds levels based on your personal life.",
-   "hook": "Aapki yaadon se game banayega ye naya AI!",
-   "format": "story",
-   "freshness": "today",
-   "score": 9,
-   "found": "2026-11-19T17:01+05:30"
-  },
-  {
-   "title": "Distributed, high-performance blob storage on SQLite",
-   "url": "https://zerodha.tech/blog/high-performance-distributed-blob-storage/",
-   "src": "Zerodha Tech",
-   "angle": "India's biggest broker is sharing how they build massive tech infra using simple tools like SQLite.",
-   "hook": "Zerodha ne storage ke liye apna jugad bana liya!",
-   "format": "how-it-works",
    "freshness": "this week",
    "score": 8,
-   "found": "2026-11-19T17:01+05:30"
+   "found": "2026-11-20T05:02+05:30"
   },
   {
-   "title": "Disney’s new Star Wars animatronics interact with guests using AI",
-   "url": "https://www.theverge.com/tech/1036729/disney-star-wars-anzellans-animatronic-amazon-aws-cloud-ai",
-   "src": "The Verge",
-   "angle": "Disney is using real-time cloud AI to make theme park robots actually talk and respond to you.",
-   "hook": "Disney ke robots ab aapse baatein karenge!",
-   "format": "evidence",
-   "freshness": "today",
-   "score": 8,
-   "found": "2026-11-19T17:01+05:30"
-  },
-  {
-   "title": "The nation’s largest school districts consider ditching Google Search",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
-   "src": "The Verge",
-   "angle": "Education is shifting as schools move from traditional search to direct AI answers.",
-   "hook": "Google Search ka zamana khatam ho raha hai?",
+   "title": "Apple is hiring engineers to build its own AI agent",
+   "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
+   "src": "The Verge AI",
+   "angle": "Apple is finally moving toward autonomous AI agents, promising a smarter iPhone experience soon.",
+   "hook": "Apple bhi apna khud ka AI agent la raha hai.",
    "format": "story",
    "freshness": "today",
    "score": 8,
-   "found": "2026-11-19T17:01+05:30"
+   "found": "2026-11-20T05:02+05:30"
   },
   {
-   "title": "Nvidia’s rise, visualized",
-   "url": "https://www.theverge.com/tech/1035924/nvidia-visualized-revenue-profit-earnings-after-huang",
-   "src": "The Verge",
-   "angle": "A visual look at how the chip giant took over the world economy in just 2 years.",
-   "hook": "Nvidia kaise bani duniya ki sabse badi company?",
-   "format": "evidence",
-   "freshness": "today",
-   "score": 8,
-   "found": "2026-11-19T17:01+05:30"
-  },
-  {
-   "title": "Do not buy RAM, compress",
-   "url": "https://curiousbits.nl/blog/do-not-buy-ram-compress/",
-   "src": "CuriousBits",
-   "angle": "A technical trick to get more speed out of old laptops or phones without spending money.",
-   "hook": "Phone slow hai? RAM mat kharido, compress karo!",
+   "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit",
+   "url": "https://huggingface.co/blog/moe-expert-streaming",
+   "src": "Hugging Face blog",
+   "angle": "Massive AI models can now run on standard consumer PCs, democratizing high-end AI for Indian students.",
+   "hook": "Bhari AI models ab saste PC par chalenge.",
    "format": "how-it-works",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-19T17:01+05:30"
+   "found": "2026-11-20T05:02+05:30"
   },
   {
-   "title": "Movie2Game-Bench: Holistic Evaluation of Film-to-Game Adaptation",
-   "url": "https://huggingface.co/papers/2611.24669",
-   "src": "Hugging Face",
-   "angle": "New AI research shows how we can soon turn any movie scene into a playable video game.",
-   "hook": "Apni favorite movie ko game mein badlo!",
-   "format": "comparison",
+   "title": "Claude solves two open problems in the physics of black holes",
+   "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+   "src": "Hacker News",
+   "angle": "AI is now solving complex scientific mysteries that humans couldn't crack for years.",
+   "hook": "Claude AI ne solve ki black hole ki mystery.",
+   "format": "story",
    "freshness": "today",
    "score": 7,
-   "found": "2026-11-19T17:01+05:30"
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "title": "Everything you need to survive and rebuild society",
+   "url": "https://lastbook.org/",
+   "src": "Hacker News",
+   "angle": "A fascinating open-source project documenting essential human knowledge for survival.",
+   "hook": "Duniya khatam hui toh yeh website kaam aayegi.",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-20T05:02+05:30"
   }
  ],
  "history": [
@@ -548,7 +548,67 @@
    "url": "https://www.theverge.com/games/1036140/will-wright-mymems-ai-game-interview",
    "title": "Will Wright’s next game uses AI to map your memories",
    "found": "2026-11-19T17:01+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+   "title": "Google gives Gemini the ability to use your Mac for you",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1037634/openai-chatgpt-live-dictation",
+   "title": "ChatGPT can transcribe as you speak now with Live Dictation",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/",
+   "title": "Meta’s new Muse Charm device may cost $300",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
+   "title": "Google is putting AI chats right on the homepage",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+   "title": "Anthropic hits Nasdaq exchanges at $111",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://github.com/zhouxiaoka/autoclip",
+   "title": "AutoClip: Open-source AI video clipping tool",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/",
+   "title": "Pancreatic cancer halted by virus injection in three patients",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+   "title": "Ghost-Downloader-3: The only downloader you need",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://huggingface.co/blog/moe-expert-streaming",
+   "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
+   "title": "Apple is hiring engineers to build its own AI agent",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+   "title": "Claude solves two open problems in the physics of black holes",
+   "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://lastbook.org/",
+   "title": "Everything you need to survive and rebuild society",
+   "found": "2026-11-20T05:02+05:30"
   }
  ],
- "updated": "2026-11-19T17:01+05:30"
+ "updated": "2026-11-20T05:02+05:30"
 }

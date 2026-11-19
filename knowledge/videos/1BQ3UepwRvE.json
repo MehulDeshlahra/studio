@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "Pour in the milk",
+ "first_frame": "A 3D animated hand pouring a carton of milk into a bowl on a wooden table against a blue background.",
+ "hook_type": "visual surprise",
+ "format": "3D how-it-works",
+ "length_s": 32,
+ "cuts_estimate": 16,
+ "avg_shot_s": 2.0,
+ "words_per_s_estimate": 2.3,
+ "beats": [
+  "0-4 s: Introduction of ingredients (milk, acid) and the curdling process.",
+  "5-9 s: Straining the solids and rinsing them with water and ethanol.",
+  "10-12 s: Boiling the mixture until water evaporates.",
+  "13-23 s: Molding, trimming, and pressing the material into a knife shape, then drying.",
+  "24-32 s: Attaching the handle, sharpening the blade, and demonstrating the finished knife cutting fruit and the milk carton."
+ ],
+ "visual_techniques": [
+  "3D animation throughout (0-32 s)",
+  "Smooth camera pans and zooms to highlight specific actions (e.g., pouring, straining, molding) (0-32 s)",
+  "Clean, minimalist aesthetic with a consistent blue background (0-32 s)",
+  "Close-up shots for detail-oriented tasks like trimming and sharpening (16-28 s)",
+  "Character animation at the end to demonstrate the product (28-32 s)"
+ ],
+ "captions": "Simple, white sans-serif text with a black outline, centered at the bottom of the screen, 2-5 words per chunk, no highlight colour.",
+ "sound": "Upbeat, rhythmic background music; crisp, satisfying sound effects (pouring, sizzling, scraping, sharpening); clear, professional voiceover.",
+ "recurring_element": "The blue background and the wooden table surface.",
+ "ending": "Punchline: The character uses the milk knife to cut the milk carton it was made from, followed by a quick fade to black.",
+ "why": "The video succeeds by presenting an absurd, high-effort 'how-to' project that combines satisfying 3D animation with a 'curiosity gap'—viewers stay to see if a knife made of milk is actually possible.",
+ "reusable_faceless": [
+  "Use of satisfying, high-quality 3D animations for 'how-it-works' content.",
+  "Fast-paced editing that cuts out all unnecessary downtime.",
+  "Clear, concise voiceover that explains the process without fluff.",
+  "Ending with a demonstration of the final product to provide a sense of completion."
+ ],
+ "id": "1BQ3UepwRvE",
+ "url": "https://www.youtube.com/watch?v=1BQ3UepwRvE",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "How To Make A Knife From Milk 🤨",
+ "views": 8600000,
+ "channel_median": 3300000,
+ "ratio": 2.61,
+ "label": "winner",
+ "watched": "2026-11-20T05:03+05:30"
+}

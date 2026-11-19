@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "As you brush your teeth",
+ "first_frame": "A 3D-animated person brushing their teeth with a green toothbrush, facing the camera.",
+ "hook_type": "other",
+ "format": "3D how-it-works",
+ "length_s": 24,
+ "cuts_estimate": 7,
+ "avg_shot_s": 3.4,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Introduction of the toothbrushing action.",
+  "3-8 s: Macro 3D animation showing friction and dye wearing off bristles.",
+  "8-10 s: Explanation of non-toxic particles.",
+  "10-13 s: Person spitting out toothpaste.",
+  "13-18 s: Comparison showing bristles getting softer and losing more dye.",
+  "18-24 s: Visual indicator of when to replace the toothbrush and disposal."
+ ],
+ "visual_techniques": [
+  "Macro 3D animation (0:02-0:08)",
+  "Slow-motion (0:03-0:08)",
+  "Graphic overlay/pop-up text 'NON TOXIC PRODUCT' (0:08)",
+  "Match cut (0:10-0:11)",
+  "Visual demonstration/indicator (0:18-0:20)"
+ ],
+ "captions": "White, bold, sans-serif font, centered at the bottom, 3-5 words per chunk, no highlight colour.",
+ "sound": "Clear, professional male voiceover, upbeat background music, subtle sound effects like brushing and spitting.",
+ "recurring_element": "The green toothbrush.",
+ "ending": "CTA (implied advice) / Punchline: throwing the toothbrush away.",
+ "why": "It uses high-quality, relatable 3D animation to explain a mundane daily habit, making it visually satisfying and educational. The macro shots provide a 'microscopic' perspective that viewers find fascinating.",
+ "reusable_faceless": [
+  "Macro 3D animation to explain everyday processes",
+  "Clear, concise voiceover explaining a 'why' question",
+  "Visual indicator/timer for when a product is worn out",
+  "Simple, bold, centered captions"
+ ],
+ "id": "Zsr6EQdWNjA",
+ "url": "https://www.youtube.com/watch?v=Zsr6EQdWNjA",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "When You Should Replace Your Toothbrush 🤔",
+ "views": 6900000,
+ "channel_median": 3300000,
+ "ratio": 2.09,
+ "label": "winner",
+ "watched": "2026-11-20T05:03+05:30"
+}
