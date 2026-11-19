@@ -113,3 +113,9 @@ strongest, not its oldest (katha: Ujjain/Greenwich first).
 - 19 Nov: "whisper on the GPU" (said on 18-19 Nov) was never true in the worker: cublas64_12.dll failed to load (a half-done
   pip uninstall left nvidia/cublas/bin renamed to '~in') and clipcore silently fell back to the small CPU model. RULE: a
   fallback must LOG which path ran; verify a speed/quality claim in the real process (worker), not in a test shell.
+- 19 Nov: I picked katha 1118-1015 (Ujjain/Greenwich) as the page's FIRST post from its look, never checked its story:
+  it said the whole world kept Ujjain time, mixed two Shiva Purana episodes, and had a trishul where the text says a
+  hunkara. Jain 1119-1015 (12 years without food) passed every check too. RULE: on a scripture page, a Reel is judged
+  on its events against the text (plan.story_check) before its looks; "strongest first" means strongest AND true.
+- 19 Nov: the clip context note said "Ali Wong, Baby Cobra 2016" on a Jo Koy clip: the prompt had no video facts so the
+  model guessed. RULE: a model may only state facts it was GIVEN; check names/numbers in code (clipper.ungrounded).

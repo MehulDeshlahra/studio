@@ -51,3 +51,13 @@ Fix: every page has channel.json "visual_checks", a must-answer checklist the re
 serious and caps the score at 5 (tested: the same 3 reels went 9-10 -> 4). Positive iconography text was not enough
 for the image model: write the NEVER list too (iconography.JAIN_NEVER). Order matters: a page's first posts are its
 strongest, not its oldest (katha: Ujjain/Greenwich first).
+
+## 19 Nov: true before pretty (story pages + clips)
+- Scripture pages had no fact check: a jain Reel said Mahavira went 12 years without food then ate kheer and got
+  kevalgyan (false: ~325 meal days in 4545; kevalgyan during a 2-day fast); a katha Reel mixed two Mahakal stories.
+  Fix: channel.json "story_check" (plan.story_fix): every event and history claim judged against web sources and the
+  named scriptures, 2 rewrites, then held before voice. Overclaims ("whole world", "first ever") count as false.
+- Clip context notes invented a special and a year. Fix: notes get the video's own facts (title, channel, date,
+  description); a name or number not in them or the transcript is rejected in code, asked again once, then dropped.
+- The vision check scored a clip 10 with an empty stage (the comedian walked out of a fixed crop). Fix: the crop
+  follows the speaker (smoothed path, dead zone, pan limit) and code measures time out of crop (>10% = held).
