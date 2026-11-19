@@ -268,6 +268,11 @@ def find_moments(ch, url, n, info, source=None):
             b = a + 15
         if b - a > 60:
             b = a + 55
+        if str(m.get("type", "")).lower() == "story" and b - a < 28:
+            # 19 Nov benchmark: the winning stand-up clips run ~60 s; ours were 17 s and lost the setup. A story gets
+            # 30+ s (the cutter snaps the end to a sentence)
+            log("clipper: story moment too short, extended", mmss(a), round(b - a, 1), "->", 32)
+            b = a + 32
         if any(not (b <= x["a"] or a >= x["b"]) for x in ms):
             continue
         bad = UNSAFE.search(" ".join(str(m.get(k) or "") for k in ("hook", "why", "caption")))
@@ -296,6 +301,7 @@ with its time in seconds). Pick the {n} best moments to post as standalone Reels
 TRANSCRIPT:
 {lines}
 Return JSON {{"moments": [{{"start": <seconds where the hook line begins>, "end": <seconds where the payoff ends>, "hook": "<hook title>",
+ "type": "reaction|story" (a stand-up bit, a story or an argument is "story": 30-55 s with its setup),
  "why": "<one line>", "score": {{"hook": <1-10>, "flow": <1-10>, "value": <1-10>, "trend": <1-10>}},
  "caption": "<one or two short lines adding the missing context, no hashtags>", "tags": ["<4-6 hashtags without #>"],
  "notes": [{{"after": "", "text": "<context note>", "kind": "context"}},
