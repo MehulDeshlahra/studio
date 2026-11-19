@@ -148,6 +148,12 @@ Make the sequence of pictures tell the story on its own, like a documentary: nev
 REAL BRANDS ARE REQUIRED (owner): a reel about ChatGPT shows the real ChatGPT logo, a reel about UPI shows the UPI and app logos,
 a reel about a phone shows the real phone. Every brand the script is about gets at least one real logo or real product photo;
 a 'chat' scene's "title" is the real app name (ChatGPT, Gemini, Claude...). Big tech news: real photos of the CEO/founder are good.
+SCENE 1 IS NEVER A LOGO (19 Nov: the WhatsApp agent reel opened on a white logo card; the top reels show the moment
+first): the hook frame shows the situation the viewer knows (a hand holding a phone as a WhatsApp message arrives at 2 am,
+a shop owner swamped with chats); the logo comes as a 1.5-3 s punctuation when the brand is first explained.
+HOW-IT-WORKS SCENES: use a 'flow' (3-5 nodes) for the path the message/data takes, a 'chat' for what the user sees, a 'code'
+or 'ui' only when its lines/rows say something real (never a placeholder like "sync cal"); every 'ui' row and chat bubble has
+real readable words.
 """
 
 
