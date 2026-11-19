@@ -17,8 +17,10 @@
   "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
   "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
   "qc_ok": true,
-  "status": "approved",
-  "review": [],
+  "status": "held",
+  "review": [
+   "19 Nov story check: scene 1 said Nachiketa made Death HIS guest (backwards: he was Yama's guest, Katha Upanishad 1.1) and gave an age the text does not; scene 5 'bina paani' (the text: three nights without food). Lines fixed in plan.json, rebuilding from voice"
+  ],
   "mehul_rebuilt": "2026-11-18",
   "replan_requested": "2026-11-18 05:54"
  },
