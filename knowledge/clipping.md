@@ -111,3 +111,15 @@ Paid SaaS doing the same: OpusClip, Vizard, Klap, Submagic (not used: Rs 0 rule)
   the official Content Posting API makes unaudited apps post PRIVATE only; other GitHub uploaders use browser
   automation (against TikTok's terms). Our server is in Mumbai (Oracle AS31898, IN). Parked: costs money, low
   reliability, account risk. Re-check if the owner has someone abroad or the ban changes.
+- 19 Nov 10:44: engine/campaigns.py reads Content Rewards' own JSON API (/api/campaign/campaigns/discover, public,
+  cursor pages): 733 live campaigns, $1.64M left (was 120 from the page scrape). 93 score >= 60, 45 >= 75. Country-priced
+  campaigns (geoPriced, SEGA) carry the rate in cpmMaxRateCents. Blocked now too: AI-girlfriend / NSFW chat apps
+  (Candy.AI), poker / rummy / teen patti / fantasy-cash, regional-only campaigns ([NORDICS], [FRANCE]...).
+- First 9 campaign clips (19 Nov 08:05-10:10): CoD 2, SEGA 3, Jo Koy 4; vision 10/10 but hooks were word salad and a
+  subtitle said HEISMAN (Heismay). Fixed: brief names glossary (whisper initial_prompt + fuzzy snap, clipcore.fix_names),
+  natural-hook rules with bad examples, captions name the product, required lines never repeated, YouTube title = the
+  caption sentence. FaZe (ClippedIn) needs an application + their logo overlay: whopbot keeps "apply_later".
+- Indian platforms (19 Nov): no paid campaigns (ClipConnect 1 XP challenge, Vyuzz 0, Dashrize samples only).
+  engine/indiawatch.py checks daily and pings when one appears.
+- Post capacity is now the bottleneck, not campaigns: 1 post/day in warm-up (to 27 Nov), 2/day after, while there are
+  45 campaigns >= 75. More English clip accounts = more paid posts (each campaign accepts every account we connect).
