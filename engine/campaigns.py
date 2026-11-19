@@ -82,8 +82,10 @@ def detail(cid):
         return {"error": str(e)[:100]}
     d = next((o for o in _objs(html, "payoutModel") if o.get("payoutModel") is not None), {})
     pm = d.get("payoutModel") or []
-    cats = [c.get("id") for c in (next((o for o in _objs(html, "categories") if o.get("categories")), {}).get("categories") or [])]
-    types = [c.get("id") for c in (next((o for o in _objs(html, "contentTypes") if o.get("contentTypes")), {}).get("contentTypes") or [])]
+    ids = lambda xs: [x.get("id") if isinstance(x, dict) else str(x) for x in (xs or []) if x]
+    cats = ids(next((o["categories"] for o in _objs(html, "categories") if isinstance(o.get("categories"), list) and o["categories"]
+                     and isinstance(o["categories"][0], dict)), []))
+    types = ids(next((o["contentTypes"] for o in _objs(html, "contentTypes") if isinstance(o.get("contentTypes"), list)), []))
     return {"payout": [{"platform": x.get("platform"), "rate_cents": x.get("rate"), "max_cents": x.get("maxPayout"),
                         "min_cents": x.get("minPayout")} for x in pm if isinstance(x, dict)],
             "pre_approval": bool((d.get("requirement") or {}).get("preApproval")), "categories": cats, "types": types}
