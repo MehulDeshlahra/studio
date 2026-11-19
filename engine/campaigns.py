@@ -22,7 +22,11 @@ OUR_PLATFORMS = ("instagram", "youtube")             # where Cut Capsule posts (
 FIT = {"gaming": 1.0, "entertainment": 1.0, "streaming": 1.0, "podcast": 0.95, "music": 0.8, "sports": 0.85, "comedy": 1.0,
        "lifestyle": 0.7, "education": 0.7, "business": 0.65, "finance": 0.6, "technology": 0.5, "crypto": 0.3, "betting": 0.0,
        "gambling": 0.0, "adult": 0.0}
-BAD = re.compile(r"\b(casino|gambl|betting|bet365|stake\.com|onlyfans|nsfw|crypto pump|forex signal)\b", re.I)
+BAD = re.compile(r"(casino|gambl|betting|\bbet\b|bet365|1win|1xbet|melbet|parimatch|stake\.com|\bstake\b|roobet|rollbit|"
+                 r"onlyfans|nsfw|crypto pump|forex signal|sportsbook)", re.I)
+# Cut Capsule speaks English / Hinglish: campaigns that require another language get no score
+LANG = re.compile(r"(french|fran[cç]ais|arabic|عربي|espa[nñ]ol|spanish|portugu|brasil|deutsch|german|italian|italiano|"
+                  r"turkish|t[uü]rk|japanese|korean|russian|polski|polish|vietnam|indonesia)", re.I)
 
 
 def _get(url):
@@ -110,6 +114,10 @@ def score(c):
     text = f"{c.get('title', '')} {c.get('description', '')} {c.get('brand', '')}"
     if BAD.search(text):
         return 0, ["gambling / adult / pump content: never"]
+    if LANG.search(f"{c.get('title', '')} {c.get('brand', '')}"):
+        return 0, ["needs another language (French/Arabic/...)"]
+    if rate <= 0:
+        return 0, ["no pay per view (flat / influencer deal)"]
     is_clip = "clipping" in (c.get("types") or []) or "clip" in text.lower()
     s_rate = min(1.0, rate / 2.0)                                 # $2/1K = full marks
     s_cap = 1.0 if not cap else min(1.0, cap / 100.0)             # a $35 cap limits what a hit can earn
