@@ -17,8 +17,12 @@ What it is: an entertainment clipping page. The engine (engine/clipper.py) takes
 - Follow each campaign's brief exactly (tags, length, sound, platforms): breaking the brief is the #1 rejection reason.
 - Caption credits the creator. No on-screen AI label.
 
-## Format (v1)
-- 1080x1920, blurred fill of the same frame, the video full width in the middle, hook title (Anton, 3-7 words) on top,
-  3-word captions (Montserrat ExtraBold) with the spoken word in yellow, -14 LUFS.
-- Start on the hook sentence, end right after the payoff (whisper word times; never cut mid-word).
-- Next: face-tracked 9:16 crop for podcasts, facecam-over-gameplay for streams.
+## Format (v2, 19 Nov; engine/clipcore.py on the laptop)
+- Layout PER SHOT, joined: webcam box over a game/video -> webcam on top (1080x700) + content below (1080x1220);
+  a big face -> full 9:16 face crop, held still within the shot; anything else -> blurred fill, video full width.
+- Hook banner (Anton, black on white, who + action + twist, true) from frame 1: on the seam for stack, top otherwise.
+- 3-word pop captions (Montserrat ExtraBold), spoken word yellow + 112%, low on the frame (off faces and mouths).
+- Start on the hook sentence, end on a sentence end; 30-45 s target, 58 s cap; only really quiet gaps cut (max 25%).
+- Never intros, outros, channel plugs or sponsor reads (prompt + transcript check). -14 LUFS. 8-12 hashtags.
+- Speed: ~2 min per clip on the laptop CPU. The NVIDIA driver is too old for NVENC (needs 610+); a driver update would
+  move encoding to the GPU (owner's choice, not needed).
