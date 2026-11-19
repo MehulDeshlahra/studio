@@ -3,8 +3,14 @@
   "job": "1118-1015",
   "topic": "12 Jyotirlinga ki katha - Part 3: Mahakaleshwar",
   "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "19 Nov story check: scene 1 'poori duniya ka samay Ujjain se chalta tha' is false: Ujjain was the prime meridian of Indian astronomy (Surya Siddhanta), not of the world; say that exactly",
+   "19 Nov story check: scenes 4-5 mix two Shiva Purana stories: Dushana attacked the Brahmin Vedapriya's sons in Avanti (Kotirudra Samhita 16); King Chandrasena and the boy Shrikar are a different episode (ch. 17)",
+   "19 Nov story check: scene 7 'ek trishul se' is false: Shiva burned Dushana to ash with a hunkara (a roar), no weapon",
+   "19 Nov story check: scene 10 'sundial desh ka reference' is unsourced: remove or source it (Jantar Mantar Ujjain was built c.1725)"
+  ],
+  "replan_requested": "2026-11-19 15:46"
  },
  {
   "job": "1117-0145",
