@@ -160,5 +160,23 @@
   "first": "2026-11-19 21:52",
   "last": "2026-11-19 21:52",
   "example": "before render, scene 6: CUT: text in the ui rows box on the right is cut off at the bottom"
+ },
+ {
+  "sig": "owner agent: fix iconography: bahubali must have natural skin tone, no hindu-god jewellery, and simple, dignif",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 00:07",
+  "last": "2026-11-20 00:07",
+  "example": "owner agent: Fix iconography: Bahubali must have natural skin tone, no Hindu-god jewellery, and simple, dignified appearance."
+ },
+ {
+  "sig": "visual: scene #: the caption says '…' and '…', but the script for this scene is '…' the word '…' is completely",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 01:07",
+  "last": "2026-11-20 01:07",
+  "example": "visual: Scene 5: The caption says 'NAACHE' and 'MAHAVIRA NE DEKHA:', but the script for this scene is 'Phir bhoot-pret naache — vikrit chehre, bhayanak aawazen.' The word 'BHOOT-PRET' is completely mi"
  }
 ]

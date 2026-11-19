@@ -1,29 +1,34 @@
 {
  "topic": "The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)",
- "title": "Mahavira Swami ne shmashan mein raat kaise bitaayi?",
+ "title": "Shmashan mein Mahavira Swami ko Yaksha ne kaise pariksha di?",
  "format": {
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.8,
-  "true_peak": -1.6,
-  "dur": 59.63
+  "lufs": -14.4,
+  "true_peak": -3.4,
+  "dur": 39.83
  },
  "vision": {
-  "score": 8,
+  "score": 9,
   "ok": true,
   "problems": [
-   "scene 4: The caption 'MAHAVIRA NE DEKHA:' is redundant as it appears in scene 5 as well, and the visual shows fire but the text is slightly repetitive.",
-   "scene 5: The caption 'MAHAVIRA NE DEKHA:' is identical to scene 4's caption, which might be confusing for the viewer given the different visual content (ghosts vs fire).",
-   "scene 6: The visual is quite abstract and the 'blind saffron aura' label is somewhat disconnected from the actual visual representation of the Yaksha.",
-   "scene 9: The visual of the person meditating in the archway is visually disconnected from the 'Raakshas' text label below it."
+   "scene 9: The title is missing in the provided list, though the card text 'SAMKITVA JEETA' is present in the image.",
+   "scene 1: The caption 'MAHAVIRA SWAMI' does not match the script line 'Shmashan ki raat... Mahavira Swami kayotsarga mein khade the.'",
+   "scene 2: The caption 'UNKI SAMTA TODNE' is a partial match, but the title 'YAKSHA KI PARIKSHA' is displayed, which is correct.",
+   "scene 3: The caption 'UTHAI' is a fragment of the line 'Pehle aag ki lein uthai', but the title 'AAG KA MAYAJAAL' is correct.",
+   "scene 4: The caption 'HILE NAHI' is a fragment of the line 'Par Mahavira Swami hile nahi', which is correct.",
+   "scene 5: The caption 'AAYI' is a fragment of the line 'Phir bhooton ki sena aayi', which is correct.",
+   "scene 6: The caption 'NAHI DOLI' is a fragment of the line 'Swami ki drishti nahi doli', which is correct.",
+   "scene 7: The caption 'SAB AAYE' is a fragment of the line 'Sher, saanp, haathi... sab aaye', which is correct.",
+   "scene 8: The caption 'ROOP DIKHAYA' is a fragment of the line 'Yaksha ne asli roop dikhaya', which is correct."
   ]
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.8974358974358975,
-  "words": 130,
+  "matched": 0.9761904761904762,
+  "words": 88,
   "problems": []
  },
  "ok": true

@@ -214,3 +214,58 @@
 - scene 10: The caption 'BACHTA' does not match the intended script 'Fal todo to ped bachta, kand ukhado to dono marte'.
 - scene 11: The caption 'MEIN ALOO' does not match the intended script 'Isliye Jain kitchen mein aloo, pyaaz, lahsun nahi hote'.
 - scene 12: The caption 'JEEV KI NAHI' does not match the intended script 'Ahimsa sirf bade jeev ki nahi, sookshm ki bhi hai'.
+
+## 1119-0935 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s9b
+- FIT: RESPECT - The statue is depicted with blue/green skin, which violates the requirement for a natural warm human skin tone.
+
+## 1119-0935 Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)
+- scene 1: The caption 'PAIRON MEIN BEL' is visible, but the intended text was '57 feet unchi murti, pairon mein bel'. The caption box seems to be missing the first part of the sentence compared to the prompt description.
+- scene 2: The caption 'BHAIYON KO SADHU' is visible, but the intended text was 'Bharata ne 98 bhaiyon ko sadhu bana diya, par Bahubali nahi jhuke'. The caption is truncated.
+- scene 3: The caption 'JAL' is visible, but the intended text was 'Teen muqable hue — drishti, jal, kushti — teeno Bahubali jeete'. The caption is truncated.
+- scene 4: The caption 'KE RUK GAYE' is visible, but the intended text was 'Jeet ke pal mein haath utha ke ruk gaye — ye rajya kya hai?'. The caption is truncated.
+- scene 5: The caption 'VAN MEIN KAYOTSARGA' is visible, but the intended text was 'Apne baal ukhade, rajya chhoda, van mein kayotsarga mein khade ho gaye.'. The caption is truncated.
+- scene 6: The caption 'KEEDE SHAREER PAR PAR' is visible, but the intended text was 'Bel pairon tak pahuche, baalon mein pakshi, keede shareer par — par wo hile nahi.'. The caption is truncated.
+- scene 7: The caption 'BOLI SAB CHHODA' is visible, but the intended text was 'Behnein aayi, boli — sab chhoda, bas ek ahankar bacha: gajraj ka.'. The caption is truncated.
+- scene 8: The caption 'JUNG ANDAR THI' is visible, but the intended text was 'Samjhe ki asli jung andar thi, ahankar chhoda, karma gal gaye.'. The caption is truncated.
+- scene 9: The caption 'POORA GYAAN' is visible, but the intended text was 'Kevala-jnana mila — poora gyaan, poori shanti.'. The caption is truncated.
+
+## The Night Mahavira Swami Stayed in a Cremation Ground — What (story check)
+- STORY scene 10: false: 'Yeh thi samta ki parakashtha, Kalpasutra mein likhi hai.': The provided sources for the Kalpasutra (Wikipedia, Wisdom Library, Hinduwebsite) do not contain this story; they focus  (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1118-2242 (pre-render check)
+- FIT: the visual shows a blank arched frame with lotus flowers instead of animals like lion or snake as the voice says
+- FIT: the captions split awkwardly across the two stills showing 'SACHCHA TAP BAHAR' and 'KA NAHI' instead of the full line
+
+## 1118-2242 (pre-render check)
+- FIT: voice mentions sher, saanp, haathi, but caption shows 'SAANP' and image shows multiple statues instead of animals
+
+## 1118-2242 The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)
+- scene 9: The title is missing in the provided list, though the card text 'SAMKITVA JEETA' is present in the image.
+- scene 1: The caption 'MAHAVIRA SWAMI' does not match the script line 'Shmashan ki raat... Mahavira Swami kayotsarga mein khade the.'
+- scene 2: The caption 'UNKI SAMTA TODNE' is a partial match, but the title 'YAKSHA KI PARIKSHA' is displayed, which is correct.
+- scene 3: The caption 'UTHAI' is a fragment of the line 'Pehle aag ki lein uthai', but the title 'AAG KA MAYAJAAL' is correct.
+- scene 4: The caption 'HILE NAHI' is a fragment of the line 'Par Mahavira Swami hile nahi', which is correct.
+- scene 5: The caption 'AAYI' is a fragment of the line 'Phir bhooton ki sena aayi', which is correct.
+- scene 6: The caption 'NAHI DOLI' is a fragment of the line 'Swami ki drishti nahi doli', which is correct.
+- scene 7: The caption 'SAB AAYE' is a fragment of the line 'Sher, saanp, haathi... sab aaye', which is correct.
+- scene 8: The caption 'ROOP DIKHAYA' is a fragment of the line 'Yaksha ne asli roop dikhaya', which is correct.
+
+## What Prince Parshvanatha saw inside a burning log that made  (story check)
+- STORY scene 3: invented: 'He put his hand into the fire and saved the snake.': No source mentions Parshvanatha putting his hand into the fire; they only say he intervened to save the serpent. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 4: invented: 'This snake was not ordinary; it was shining.': No source describes the snake as shining or extraordinary in appearance at the moment of rescue. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## What Prince Parshvanatha saw inside a burning log that made  (story check)
+- STORY scene 9: false: 'The snake died and became Dharanendra and Padmavati.': hindu-blog.com & Wikipedia: the rescued serpent was reborn as Dharanendra (lord of nagas); Padmavati is his consort, not (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1119-0335 (pre-render check)
+- FIT: RESPECT: Female deity/figure shown incorrectly with multiple heads/arms or incorrect form for this context
+- FIT: RESPECT: Tirthankara shown with non-human skin tone (green skin)
+
+## 1119-0335 What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)
+- scene 11: The caption 'BANI PARSHVANATH' does not match the intended line 'Wahi saanp ka chhatra bani Parshvanath ki pehchan'.
+
+## review 1119-0335
+- visual: Checklist item 1: Mughal / Islamic architecture with onion domes and arched structures appears in the background of scenes 1-11, which is historically and culturally inappropriate for Jain iconography.
+- visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1 to 11 background architecture features arched structures and domes resembling Islamic/Mughal styles rather than traditional ancient Indian or Jain temple architecture.
+- visual score 5/10

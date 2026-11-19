@@ -1,407 +1,393 @@
 {
- "slug": "chip-fab-uv-city",
- "title": "Chip banta kaise hai? Ret se supercomputer tak.",
+ "slug": "chip-manufacturing-explained",
+ "title": "Rait se processor kaise banta hai?",
  "hooks": [
-  "Tere phone ka dimag... ret se banta hai!",
-  "Ret se supercomputer? Haa, asli magic yahan hai.",
-  "Ek chip mein arab switches... kaise bane?"
+  "Rait... aur usse nikalta hai tera processor. Socho kaise?",
+  "Kya aapko pata hai aapka phone rait se bana hai?",
+  "Processor banane ka asli tarika dekh lo."
  ],
  "hook_choice": 0,
- "hook_why": "Second-person, colloquial Hinglish, names the surprise (sand to supercomputer) in first 5 words. No greeting, no buildup.",
- "metaphor": "Chip manufacturing is 3D printing a microscopic city layer-by-layer using extreme UV light (13.5 nm), where each floor is a circuit pattern 10,000x thinner than hair.",
+ "hook_why": "Uses a visceral transformation (sand to processor) to trigger instant curiosity with a conversational 'Socho kaise?'",
+ "metaphor": "Skyscraper: Building a chip floor-by-floor using light and chemicals until the tiny structure is complete.",
+ "mechanism": [
+  "Clean room and FOUPs for contamination control",
+  "Silicon ingot slicing into wafers",
+  "Repetitive photolithography using EUV light",
+  "Plasma etching and Ion implantation",
+  "Copper interconnect wiring",
+  "Die singulation and packaging"
+ ],
  "cast": {},
  "scenes": [
   {
-   "vo": "Tere phone ka dimag... ret se banta hai!",
-   "type": "object",
-   "prompt": "pure silicon ingot glowing faintly, cylindrical, mirror finish, centered on black",
+   "vo": "Rait... aur usse nikalta hai tera processor. Socho kaise?",
+   "type": "clip",
+   "prompt": "Cinematic macro shot: golden sand grains flowing, then hard match-cut to a pristine silicon ingot glowing on pure black.",
    "motion": "push",
-   "title": "",
+   "title": "RAIT SE CHIP",
+   "big": "",
+   "small": "",
    "keywords": [
-    "Phone",
-    "Dimag",
-    "Ret"
+    "Rait",
+    "Processor"
    ],
-   "bg_prompt": "photorealistic silicon ingot 99.99% pure, studio lighting, pure black background",
-   "real": {
-    "q": "hand holding smartphone close-up",
-    "kind": "photo",
-    "subject": "A person holding a smartphone, showing the device's front"
-   },
-   "big": null,
-   "small": null,
+   "real": null,
+   "bg_prompt": "Macro photograph of golden sand grains on black background, studio lighting.",
+   "label": "HOOK",
+   "sub": null,
    "skin": "keynote"
   },
   {
-   "vo": "Shuruat 99.99% pure silicon ingot se hoti hai.",
-   "type": "stat",
-   "value": "99.99%",
-   "sub": "SILICON PURITY",
-   "label": "INGOT SPEC",
-   "motion": "pull",
-   "title": "",
+   "vo": "Pehle, ultra-saaf 'Clean Room' jahan dhool ka ek tinka bhi mana hai.",
+   "type": "object",
+   "prompt": "A sealed plastic FOUP box moving on an automated overhead track in a futuristic blue-lit factory.",
+   "motion": "pan",
+   "title": "CLEAN ROOM",
+   "big": "",
+   "small": "",
    "keywords": [
-    "99.99%",
-    "Silicon",
-    "Ingot"
+    "Clean Room",
+    "FOUP"
    ],
-   "bg_prompt": "silicon ingot being measured for purity, cleanroom environment, pure black background",
-   "big": null,
-   "small": null,
-   "skin": "blueprint",
-   "prompt": "",
    "real": {
-    "q": "silicon ingot close-up",
+    "q": "clean room manufacturing facility semiconductor",
     "kind": "photo",
-    "subject": "Polished silicon ingot"
-   }
+    "subject": "A highly controlled, spotless clean room environment with technicians in full cleanroom suits, emphasizing cleanliness."
+   },
+   "bg_prompt": "Semiconductor fab interior, high-tech automated material handling system, nitrogen-filled FOUPs.",
+   "label": "ENVIRONMENT",
+   "sub": null,
+   "skin": "keynote"
   },
   {
-   "vo": "Ingot kaate jaate wafer-thin slices mein.",
+   "vo": "Rait ko pighla kar chamakti 'Ingot' yaani shuddh silli banate hain.",
    "type": "object",
-   "prompt": "thin silicon wafer sliced from ingot, iridescent rainbow sheen, held by precision tool",
+   "prompt": "A single crystal silicon ingot, mirror finish, standing upright on a black pedestal.",
    "motion": "tilt",
-   "title": "Wafer Slice",
+   "title": "SILICON INGOT",
+   "big": "",
+   "small": "",
    "keywords": [
-    "Ingot",
+    "99.99%",
+    "Ingot"
+   ],
+   "real": {
+    "q": "semiconductor ingot purification process",
+    "kind": "photo",
+    "subject": "A close-up, industrial photo of molten silicon or a polished silicon ingot, suggesting high purity."
+   },
+   "bg_prompt": "Photorealistic studio shot of a monocrystalline silicon ingot, sharp edges.",
+   "label": "PURIFICATION",
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Isse mirror jaisi patli 'Wafers' yaani CD jaisi plates kaat-te hain.",
+   "type": "object",
+   "prompt": "A 300mm silicon wafer held by vacuum tweezers, reflecting a single studio light.",
+   "motion": "pan",
+   "title": "WAFER SLICE",
+   "big": "",
+   "small": "",
+   "keywords": [
     "Wafer",
     "Slice"
    ],
-   "bg_prompt": "diamond wire saw slicing silicon ingot into wafers, cleanroom, pure black background",
    "real": {
     "q": "Slice logo",
     "kind": "logo",
     "subject": "the official Slice logo"
    },
-   "big": null,
-   "small": null,
-   "skin": "blueprint",
-   "label": "Material",
-   "value": "Silicon"
+   "bg_prompt": "Top-down photo of a 300mm silicon wafer on black background.",
+   "label": "SLICING",
+   "sub": null,
+   "skin": "keynote"
   },
   {
-   "vo": "Har wafer polish hota, mirror jaisa smooth.",
-   "type": "stat",
-   "value": "0.1 nm",
-   "sub": "ROUGHNESS",
-   "label": "POLISH SPEC",
-   "motion": "push",
-   "title": "",
-   "keywords": [
-    "Wafer",
-    "Polish",
-    "Mirror"
-   ],
-   "bg_prompt": "chemical mechanical polishing machine smoothing wafer to atomic flatness, pure black background",
-   "big": null,
-   "small": null,
-   "skin": "blueprint",
-   "prompt": "",
-   "real": {
-    "q": "polished silicon wafer mirror finish",
-    "kind": "photo",
-    "subject": "Polished wafer with mirror-like surface"
-   }
-  },
-  {
-   "vo": "Ab deposition: conducting, insulating layers deposit.",
+   "vo": "Inpe 'Films' yaani chemical ki patli parat chadhai jaati hai.",
    "type": "flow",
-   "nodes": [
-    "DEPOSIT",
-    "RESIST",
-    "LITHO",
-    "ETCH",
-    "DOPE"
-   ],
-   "label": "FAB LOOP",
-   "motion": "pan",
-   "title": "",
-   "keywords": [
-    "Deposition",
-    "Layers",
-    "Loop"
-   ],
-   "bg_prompt": "deposition chamber interior, thin films coating wafer, pure black background",
-   "big": null,
-   "small": null,
-   "skin": "blueprint",
    "prompt": "",
-   "real": {
-    "q": "chemical vapor deposition chamber semiconductor",
-    "kind": "photo",
-    "subject": "Deposition chamber with wafer inside"
-   }
-  },
-  {
-   "vo": "Photoresist lagta, EUV light pattern bana deta.",
-   "type": "flow",
-   "prompt": "EUV scanner exposing wafer, 13.5nm light writing circuits, camera tracks light path",
-   "motion": "push",
-   "title": "EUV Steps",
-   "keywords": [
-    "Photoresist",
-    "EUV",
-    "Pattern"
-   ],
-   "label": "Parts",
-   "real": {
-    "q": "EUV lithography machine",
-    "kind": "photo",
-    "subject": "EUV lithography system with wafer"
-   },
-   "big": null,
-   "small": null,
-   "skin": "blueprint",
-   "value": null,
-   "items": [
-    "Scanner",
-    "Mirrors",
-    "Lens"
-   ],
-   "nodes": [
-    "Photoresist",
-    "EUV Beam",
-    "Pattern"
-   ]
-  },
-  {
-   "vo": "13.5 nanometer... baal se hazaron guna patla.",
-   "type": "stat",
-   "value": "13.5 nm",
-   "sub": "Baal se patla",
-   "label": "Wavelength",
-   "motion": "pull",
-   "title": "EUV Light",
-   "keywords": [
-    "13.5 nm",
-    "EUV",
-    "Baal"
-   ],
-   "bg_prompt": "EUV beam reflecting off multilayer mirrors, high contrast on black background, schematic line art, no logos",
-   "real": {
-    "q": "13.5 nm semiconductor chip",
-    "kind": "photo",
-    "subject": "Chip showing 13.5 nm features"
-   },
-   "big": null,
-   "small": null,
-   "skin": "keynote",
-   "prompt": ""
-  },
-  {
-   "vo": "Plasma etch unwanted hata, circuits bana deta.",
-   "type": "object",
-   "prompt": "plasma etch chamber, blue glow carving trenches into wafer, atomic precision",
-   "motion": "pan",
-   "title": "",
-   "keywords": [
-    "Etch",
-    "Circuits",
-    "Plasma"
-   ],
-   "bg_prompt": "reactive ion etch chamber, plasma etching silicon, pure black background",
-   "big": null,
-   "small": null,
-   "skin": "blueprint",
-   "real": {
-    "q": "plasma etching chamber semiconductor",
-    "kind": "photo",
-    "subject": "Plasma etch system with wafer"
-   }
-  },
-  {
-   "vo": "Ion implantation se transistors on/off switch bante.",
-   "type": "ui",
-   "title": "ION IMPLANT",
-   "rows": [
-    {
-     "label": "BORON",
-     "value": "P-TYPE",
-     "pct": 50
-    },
-    {
-     "label": "PHOSPHORUS",
-     "value": "N-TYPE",
-     "pct": 50
-    }
-   ],
-   "label": "Doping Ctrl",
-   "motion": "push",
-   "keywords": [
-    "Doping",
-    "Transistor",
-    "Switch"
-   ],
-   "bg_prompt": "Blueprint style ion‑implant diagram, crisp white line art on deep blue cyanotype, isometric view, no text or logos",
-   "big": null,
-   "small": null,
-   "skin": "blueprint",
-   "prompt": "",
-   "real": {
-    "q": "ion implantation machine semiconductor",
-    "kind": "photo",
-    "subject": "Ion implantation system with wafer"
-   }
-  },
-  {
-   "vo": "Ye loop chalta 100+ layers tak... 3D city banti.",
-   "type": "chart",
-   "title": "Layer Count",
-   "points": [
-    10,
-    25,
-    50,
-    75,
-    100
-   ],
-   "end_label": "+100 Layers",
-   "label": "3D Stack",
-   "motion": "tilt",
-   "keywords": [
-    "100+",
-    "Layers",
-    "3D City"
-   ],
-   "bg_prompt": "Blueprint of 3D NAND stack, white line art on dark cyanotype, isometric layers, no logos or text",
-   "big": null,
-   "small": null,
-   "skin": "blueprint",
-   "prompt": "",
-   "real": {
-    "q": "3D stacked chip semiconductor",
-    "kind": "photo",
-    "subject": "Stacked chip layers"
-   }
-  },
-  {
-   "vo": "Wafer test, dice, package... 15 weeks lagte.",
-   "type": "object",
-   "prompt": "probe card testing wafer, then diamond saw dicing, then BGA package assembly",
    "motion": "punch",
-   "title": "",
-   "keywords": [
-    "Test",
-    "Dice",
-    "Package"
+   "title": "DEPOSITION",
+   "nodes": [
+    "Oxide",
+    "Metal",
+    "Nitride"
    ],
-   "bg_prompt": "wafer probe test station, cleanroom, pure black background",
-   "real": {
-    "q": "wafer testing equipment semiconductor",
-    "kind": "photo",
-    "subject": "Wafer test setup"
-   },
-   "big": null,
-   "small": null,
-   "skin": "keynote"
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Films",
+    "Layers"
+   ],
+   "real": null,
+   "bg_prompt": "Cross-section render of a wafer showing alternating thin-film layers in false color.",
+   "label": "DEPOSITION",
+   "sub": null,
+   "skin": "blueprint"
   },
   {
-   "vo": "Result: arab transistors tere haath mein.",
+   "vo": "EUV light se design chhapte hain, ye floor-by-floor baar-baar hota hai.",
    "type": "object",
-   "prompt": "finished processor package, gold pads, substrate, tiny but powerful, hero lighting",
-   "motion": "pull",
-   "title": "",
+   "prompt": "ASML EUV lithography tool in clean room, cyan laser line indicating beam path.",
+   "motion": "push",
+   "title": "LITHOGRAPHY",
+   "big": "",
+   "small": "",
    "keywords": [
-    "Arab",
-    "Transistors",
-    "Haath"
+    "EUV",
+    "13.5nm"
    ],
-   "bg_prompt": "Apple A17 Pro chip package on black velvet, studio macro, pure black background",
    "real": {
-    "q": "hand holding smartphone",
+    "q": "EUV lithography machine operation close up",
     "kind": "photo",
-    "subject": "Finished phone in hand"
+    "subject": "A dramatic, real photo of an EUV lithography machine in operation (focusing on the hardware, not the brand logo)."
    },
-   "big": null,
-   "small": null,
-   "skin": "keynote"
+   "bg_prompt": "Photorealistic shot of an ASML EUV scanner in a semiconductor fab.",
+   "label": "PHOTOLITHOGRAPHY",
+   "sub": null,
+   "skin": "blueprint"
   },
   {
-   "vo": "Agla phone use kar, yaad rakh: ret tha. Comment: transistor kitna chhota?",
-   "type": "title",
-   "big": "RET THA",
-   "sub": "AB ARAB TRANSISTORS",
-   "motion": "push",
-   "title": "",
+   "vo": "'Plasma' yaani garam gas faltu hissa hata kar rasta banati hai.",
+   "type": "flow",
+   "prompt": "",
+   "motion": "punch",
+   "title": "ETCHING",
+   "nodes": [
+    "Mask",
+    "Plasma",
+    "Etch"
+   ],
+   "big": "",
+   "small": "",
    "keywords": [
-    "Ret",
-    "Phone",
+    "Plasma",
+    "Etch"
+   ],
+   "real": {
+    "q": "plasma etching semiconductor process visual",
+    "kind": "photo",
+    "subject": "A controlled, industrial shot of plasma etching equipment, showing gas interaction, not a schematic."
+   },
+   "bg_prompt": "SEM-style cross-section of etched trenches in silicon, vertical sidewalls.",
+   "label": "ETCHING",
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "'Ion beam' yaani bijli ki gun se tiny switches ya transistors bante hain.",
+   "type": "title",
+   "prompt": "",
+   "motion": "tilt",
+   "title": "TRANSISTORS",
+   "value": "Billions",
+   "sub": "of switches per chip",
+   "big": "TRANSISTORS",
+   "small": "",
+   "keywords": [
+    "Ion Beam",
     "Transistor"
    ],
-   "bg_prompt": "smartphone on black surface, screen glowing, x-ray view showing chip inside, pure black background",
-   "small": null,
-   "skin": "keynote",
-   "prompt": ""
+   "real": {
+    "q": "ion implantation equipment semiconductor",
+    "kind": "photo",
+    "subject": "A close-up of an ion beam/implantation chamber in a semiconductor fab."
+   },
+   "bg_prompt": "Ion implanter beamline end station, subtle blue glow of ion beam.",
+   "label": "ION IMPLANT",
+   "skin": "blueprint"
+  },
+  {
+   "vo": "'Copper' ki baarik taarein in saari layers ko aapas mein jodti hain.",
+   "type": "object",
+   "prompt": "Microscopic view of copper interconnects and vias in a multi-layered chip.",
+   "motion": "pan",
+   "title": "WIRING",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Copper",
+    "Wiring"
+   ],
+   "real": {
+    "q": "copper interconnect metallization semiconductor",
+    "kind": "photo",
+    "subject": "A microscopic or highly detailed photo showing copper wiring/interconnects within a chip layer."
+   },
+   "bg_prompt": "High-magnification cross-section SEM of copper dual-damascene interconnects.",
+   "label": "METALLIZATION",
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Yahan 'Fab' khatam, ab wafer ko 'Die' yaani tukdon mein kaatenge.",
+   "type": "ui",
+   "prompt": "",
+   "motion": "punch",
+   "title": "DICING",
+   "rows": [
+    {
+     "label": "Wafer Fab",
+     "value": "Done",
+     "pct": 100
+    },
+    {
+     "label": "Assembly",
+     "value": "Next",
+     "pct": 10
+    }
+   ],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Die",
+    "Dicing"
+   ],
+   "real": null,
+   "bg_prompt": "Wafer dicing saw cutting through a silicon wafer into individual dies.",
+   "label": "ASSEMBLY START",
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "'Package' matlab chip ka ghar, jo use motherboard se jodta hai.",
+   "type": "object",
+   "prompt": "Flip-chip BGA package showing the die on substrate with solder balls underneath.",
+   "motion": "pull",
+   "title": "PACKAGING",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Package",
+    "BGA"
+   ],
+   "real": {
+    "q": "semiconductor packaging process close up",
+    "kind": "photo",
+    "subject": "A hand or robotic arm carefully placing a silicon die into a protective package (e.g., BGA/QFN style)."
+   },
+   "bg_prompt": "Exploded view of a processor package: die, substrate, and connection balls.",
+   "label": "PACKAGING",
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Isme 11 se 13 weeks lagte hain, tab banti hai ek chip.",
+   "type": "stat",
+   "prompt": "",
+   "motion": "tilt",
+   "title": "TIME TAKEN",
+   "value": "11-13",
+   "sub": "Weeks on average",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Weeks",
+    "Steps"
+   ],
+   "real": {
+    "q": "modern smartphone chip inside packaging",
+    "kind": "photo",
+    "subject": "A high-quality, non-branded photo of a finished, packaged semiconductor chip ready for integration."
+   },
+   "bg_prompt": "Time-lapse style blur of a busy semiconductor fab floor.",
+   "label": "SCALE",
+   "skin": "keynote"
+  },
+  {
+   "vo": "Itni mehnat ke baad tera phone chalta hai. Agla kya dekhna hai?",
+   "type": "title",
+   "prompt": "",
+   "motion": "push",
+   "title": "",
+   "big": "NEXT?",
+   "small": "Comment mein batao",
+   "keywords": [
+    "Comment",
+    "Next"
+   ],
+   "real": null,
+   "bg_prompt": "Extreme close-up of a finished processor die, light sweeping across the surface.",
+   "label": "OUTRO",
+   "sub": null,
+   "skin": "keynote"
   }
  ],
  "music_mood": "driving",
- "caption": "Tere phone ka dimag... ret se banta hai! 🏭➡️📱 Comment: transistor kitna chhota?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "caption": "Rait se processor kaise banta hai? 🏗️\nEk chip banane mein 11-13 weeks aur saikdon steps lagte hain.\nAgla tech process kaunsa dekhna hai? Comment mein batao! 👇\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
-  "#KaiseTech",
-  "#ChipManufacturing",
+  "#TechExplained",
   "#Semiconductor",
-  "#EUV",
-  "#ASML",
-  "#TechExplained"
+  "#HowItsMade",
+  "#Processor",
+  "#Engineering"
  ],
  "claims": [
   {
-   "claim": "Semiconductor fabrication starts with 99.99% pure silicon ingots",
-   "basis": "ASML source: 'Wafers are sliced from a salami-shaped bar of 99.99% pure silicon (known as an ingot)'"
+   "claim": "Silicon ingots are 99.99% pure.",
+   "basis": "ASML Source: 'Wafers are sliced from a salami-shaped bar of 99.99% pure silicon (known as an 'ingot')'."
   },
   {
-   "claim": "Wafers are sliced thin and polished to atomic smoothness (~0.1 nm roughness)",
-   "basis": "ASML: 'polished to extreme smoothness'; Microchip USA: 'Sliced into thin wafers, Polished to achieve a mirror-like finish'"
+   "claim": "EUV lithography uses 13.5 nm wavelength light.",
+   "basis": "ASML Source: 'extreme ultraviolet (EUV) light... 13.5 nm, which is used to produce some of the finest details of a chip'."
   },
   {
-   "claim": "Deposition adds thin films of conducting and insulating materials",
-   "basis": "ASML: 'Thin films of conducting, isolating or semiconducting materials... are deposited on the wafer'"
+   "claim": "Fabrication takes 11-13 weeks on average.",
+   "basis": "Wikipedia Source: '11–13 weeks being the industry average' for advanced semiconductor devices."
   },
   {
-   "claim": "Photoresist is coated then patterned by EUV lithography",
-   "basis": "ASML: 'The wafer is then covered with a light-sensitive coating called photoresist... lithography stage'"
+   "claim": "Wafers are transported in FOUPs with nitrogen.",
+   "basis": "Wikipedia Source: 'wafers are transported inside special sealed plastic boxes called FOUPs... contain an internal nitrogen atmosphere'."
   },
   {
-   "claim": "EUV lithography uses 13.5 nm wavelength light",
-   "basis": "Microchip USA: 'Extreme Ultraviolet (EUV) lithography uses 13.5-nanometer wavelength light'"
-  },
-  {
-   "claim": "Etch removes unwanted material to form circuit patterns",
-   "basis": "ASML: 'advances in... etch... are enablers of shrink'; Wikipedia: 'etching... during which electronic circuits are gradually created'"
-  },
-  {
-   "claim": "Doping/ion implantation creates transistor switches (P-type/N-type)",
-   "basis": "ASML: 'ionization'; Microchip USA: 'Doping and ion implantation'; Wikipedia: 'ion implantation'"
-  },
-  {
-   "claim": "The process repeats for 100+ layers in advanced chips",
-   "basis": "Wikipedia: 'processing steps are repeated in different sequences'; Microchip USA: 'hundreds of manufacturing steps'"
-  },
-  {
-   "claim": "Advanced chip fabrication takes up to 15 weeks (11–13 weeks industry average)",
-   "basis": "Wikipedia: 'fabrication can take up to 15 weeks, with 11–13 weeks being the industry average'"
-  },
-  {
-   "claim": "Modern chips contain billions of transistors",
-   "basis": "Wikipedia: 'modern 14/10/7 nm nodes' implying high density; general semiconductor knowledge"
+   "claim": "Copper is used for wiring in modern chips.",
+   "basis": "Wikipedia Source: 'Copper is used in modern semiconductors for wiring.'"
   }
  ],
+ "explainer": {
+  "score": 9,
+  "ok": false,
+  "steps_learned": [
+   "Clean room environment",
+   "Melting sand into ingots",
+   "Cutting ingots into wafers",
+   "Adding chemical film layers",
+   "Using EUV light for design printing",
+   "Using plasma to etch/remove material",
+   "Using ion beams to create transistors",
+   "Adding copper wiring",
+   "Dicing wafers into individual dies",
+   "Packaging the chip"
+  ],
+  "missing_steps": [
+   "Thermal oxidation (the process of growing a thin layer of silicon dioxide)",
+   "The role of FOUPs (sealed boxes) for transport",
+   "The concept of 'yield' (why not all chips work)",
+   "Photolithography specifics (the script mentions EUV but doesn't explain it's a light-based printing process)"
+  ],
+  "unsourced": [
+   "11 to 13 weeks (The source says 11-13 weeks is the industry average, but advanced nodes can take up to 15 weeks; the script is slightly outdated/narrow on this specific range)",
+   "Bijli ki gun (This is a simplified metaphor for ion implantation, but not a standard technical term)"
+  ]
+ },
  "brain_ids": [
-  "4396759d41",
   "1e1964f463",
+  "fc294ac58f",
+  "f945e2a937",
   "7fa182f8ef",
-  "1e60a34718",
-  "efef8ced81",
-  "1e2336282f",
+  "6ce7203c71",
+  "4396759d41",
+  "b2fabb69c4",
   "161339712e",
   "7f620e6fdf",
-  "a6473f9768",
-  "d52bfa64b5",
-  "b349ca221e",
-  "6ce7203c71",
+  "b69d65467f",
   "6055c69660",
-  "f945e2a937"
+  "1e60a34718",
+  "9db4cc694f",
+  "e15cfaed29"
  ],
- "skin": "blueprint",
- "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
- "visual_done": "2026-11-19 09:22"
+ "visual_done": "2026-11-20 03:24",
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

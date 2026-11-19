@@ -170,3 +170,24 @@
 
 ## 1119-0429 (pre-render check)
 - CUT: bottom card text slightly overlapping or cut off near the frame edge
+
+## 1119-0426-p2 (pre-render check)
+- CUT: Table columns are cut off at the right edge, hiding Pvt Ltd and OPC.
+- CUT: Rule card bottom line is cut off.
+- CUT: Table columns are cut off at the right edge, hiding Pvt Ltd and OPC.
+
+## 1119-0426-p2 (pre-render check)
+- FIT: Visual shows 22% tax rate while voiceover states 25% effective rate
+
+## 1119-0426-p2 Business Ka Structure - Part 2: Ek table mein poora comparison (risk, tax, audit, kharcha, funding)
+- scene 2: The intended title is 'Unincorporated vs Incorporated', but the card text says 'Core difference: apna ghar vs alag insaan'.
+- scene 3: The intended title is 'Liability', but the card text says 'Liability'. This matches, however, the visual content shows 'Liability: Prop aur Partnership unlimited' which is correct, but the card itself is blank/generic compared to the specific prompt text.
+- scene 4: The intended title is 'Income Tax Act', but the card text says 'Income Tax Act' (this is fine), however, the card content 'Concessional corporate rates...' seems slightly misaligned with the voiceover which focuses on '30% flat' and '25% effective'.
+- scene 6: The intended title is 'Income-tax Act, 2025', but the card text says 'Income-tax Act, 2025'. The content inside the card is very small/blurry, making the specific thresholds difficult to read compared to the clear text in the prompt.
+- scene 9: The intended title is missing in the prompt, but the card text says 'Only Private Limited raises equity via CCPS', which is a specific claim not fully aligned with the general 'Funding' topic.
+- scene 12: The intended title is missing in the prompt, but the card text says 'Save Karo' and 'Structure kaunsa hai? Comment karo', which works well.
+- only 0% of the script was found in the voice
+
+## review 1119-0426-p2
+- length 54.5 s is outside 28-50 s
+- only 0% of the script was found in the voice

@@ -1,292 +1,268 @@
 {
- "slug": "parshvanatha-snake-debt",
- "title": "Jalte lakdi mein saanp phansa tha",
+ "slug": "parshvanath-burning-log-karma",
+ "title": "Jalte lakdi mein saanp bacha kar Parshvanath ne kya paaya?",
  "hooks": [
-  "Jalte lakdi mein saanp phansa tha",
-  "Rajkumar ne agni mein dard dekha",
-  "Ek karuna ne badla bhavishya"
+  "Ek jalta lakdi... andar saanp phansa tha",
+  "Rajkumar Parshvanath ne saanp ko bachaya... kaise?",
+  "Ek saanp ka badla... do janam tak kaise chala?"
  ],
  "hook_choice": 0,
- "hook_why": "First 4 words drop the viewer into the exact visual shock — a living serpent trapped in a burning log. No greeting, no setup. Fire + serpent is instantly arresting and unique to this story.",
- "metaphor": "A golden thread of compassion stitches two lifetimes: the pull that frees the snake becomes the canopy that shields the Tirthankara.",
+ "hook_why": "Opens with immediate visual danger (burning log + trapped snake) in the first spoken words, satisfying the sound-off visual loop requirement — fire and snake are visible before any voice registers; named entity Parshvanath arrives in the very next line.",
+ "metaphor": "Burning log as karmic mirror — the fire reveals the hidden past-life debt and the single act of compassion that rewrites the future.",
+ "mechanism": [
+  "Prince Parshvanath hears a snake crying inside a burning log during sage Katha's panchatapa",
+  "He reaches into the fire and pulls the snake out, choosing compassion over safety",
+  "The snake is Kamath, his past-life enemy who killed him as Marubhuti and again in later births",
+  "Compassion breaks the karmic revenge cycle; the snake dies and is reborn as Dharanendra and Padmavati",
+  "Later, during Parshvanath's meditation, Dharanendra and Padmavati shield him from Meghmali's storm with a serpent canopy",
+  "That canopy becomes Parshvanath's eternal iconographic emblem — the snake hood over the Tirthankara"
+ ],
  "cast": {
-  "Parshvanatha_idol": "serene meditating temple idol in padmasana, eyes half closed, green complexion, seven-hooded serpent canopy over head, lotus emblem on pedestal, white marble with gold accents, gentle saffron glow",
-  "Sage_Katha": "elderly Jain monk in plain white robes, holding rajoharan broom, seated in meditation by a fire pit, calm wrinkled face, soft light on beard",
-  "Dharanendra": "serpent deity with seven majestic hoods, gentle compassionate eyes, golden aura, coiled protectively, ornate jeweled crown on central hood",
-  "Padmavati": "serpent goddess with multiple hoods, compassionate expression, golden ornaments, coiled gracefully, soft pink-gold glow"
+  "Prince Parshvanath": "young prince in ancient Indian royal attire — silk dhoti, jeweled necklace, calm compassionate face, dark hair tied in a topknot, standing barefoot on marble",
+  "Sage Katha": "elderly Jain ascetic in plain white unstitched cotton robes, carrying a soft white whisk broom (rajoharan), seated in meditation before a fire altar",
+  "Snake pair": "two divine serpents with multi-hooded crowns, iridescent scales, golden eyes, coiled together — one male (Dharanendra), one female (Padmavati), radiating gentle light",
+  "Demon Meghmali": "dark storm-cloud figure with fierce eyes, riding a black cloud, hurling rain and lightning — never shown attacking the Tirthankara directly"
  },
  "scenes": [
   {
-   "vo": "Jalte lakdi mein saanp phansa tha. Aag usko jala rahi thi.",
-   "type": "image",
-   "prompt": "A single burning log in a sacrificial fire pit, flames licking upward in soft saffron-orange. Inside the cracked wood, a small serpent coils in pain, scales shimmering. No human figure. Serene painterly Indian style, soft saffron gold and white marble light, calm peaceful, ornate Jain temple details in background, gentle glow, uncluttered.",
+   "vo": "Ek jalta lakdi... andar saanp phansa tha",
+   "type": "clip",
+   "prompt": "Close-up of a burning sandalwood log in a stone fire altar, flames licking the bark, a small snake visibly trapped inside a crack, writhing in pain. Warm golden firelight illuminates the surrounding white marble floor of a Jain temple courtyard. Serene painterly Indian style, Dilwara temple architecture in background with tall shikhara spires. No text, no logos.",
    "motion": "push",
-   "title": "JALTE LAKDI MEIN",
+   "title": "",
    "keywords": [
-    "jalte lakdi",
+    "jalta lakdi",
     "saanp"
    ],
+   "real": null,
    "big": null,
    "small": null,
    "sub": null,
    "label": null
   },
   {
-   "vo": "Rishi Katha agni ke paas tap kar rahe the.",
+   "vo": "Parshvanath wahan se guzre, cheekh sun ruk gaye",
    "type": "image",
-   "prompt": "Sage Katha seated in meditation beside the fire pit, plain white robes, rajoharan in hand, eyes closed. Flames reflect on his calm face. The burning log from previous scene sits in the fire. Serene painterly Indian style, soft saffron gold light, ornate Jain temple pillars behind, gentle glow, uncluttered.",
-   "motion": "pan",
-   "title": "RISHI KATHA TAP",
-   "keywords": [
-    "Rishi Katha",
-    "tap"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Rajkumar Parshvanatha aaye. Pairon se sone ki roshni nikli.",
-   "type": "image",
-   "prompt": "Golden lotus footprints glowing on marble floor, leading toward the fire pit. No figure — only the footprints and a soft golden light spilling from them onto the scene. The burning log visible ahead. Serene painterly Indian style, saffron gold white marble, calm, ornate Jain temple details, gentle glow.",
-   "motion": "pull",
-   "title": "PAD CHINH AAYE",
-   "keywords": [
-    "Parshvanatha",
-    "pad chinh"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Saanp ki peeda unhe mehsoos hui. Jaise apna dard.",
-   "type": "image",
-   "prompt": "Close on the serpent inside the log, one eye reflecting a golden light. A single thread of golden light touches its head — compassion made visible. Flames softened to warm glow. Serene painterly style, saffron gold, white marble, gentle, uncluttered.",
-   "motion": "push",
-   "title": "KARUNA JAGI",
-   "keywords": [
-    "peeda",
-    "karuna"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Karuna se sone ka dhaga bana. Saanp aag se bahaar aaya.",
-   "type": "image",
-   "prompt": "A golden thread gently wraps around a serpent, lifting it from a burning log. The flames part like curtains. The serpent glows gold as it rises, unharmed. Composition: serpent and thread centered vertically, with ample clear space above and below for text. Serene painterly Indian style, saffron gold white marble light, calm peaceful, ornate Jain temple details. 9:16 aspect ratio.",
-   "motion": "push",
-   "title": "DHAGA NE BACHAYA",
-   "keywords": [
-    "bachaya",
-    "karuna"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null,
-   "real": null
-  },
-  {
-   "vo": "Woh saanp agle janam mein Dharanendra bana. Saat phanon wala nagraj.",
-   "type": "image",
-   "prompt": "Male serpent deity Dharanendra with seven hoods, coiled on a lotus in a celestial palace. Golden aura, jeweled crown on central hood, compassionate eyes. Soft pink-gold clouds. Serene Indian miniature style, saffron gold white marble, calm, ornate details, gentle glow. 9:16 aspect ratio, centered, room above and below for text, single continuous composition.",
+   "prompt": "Prince Parshvanath walking on a marble pathway beside the fire altar, royal silk dhoti, jeweled necklace, calm compassionate face, dark hair in topknot. Morning golden light filters through carved sandstone pillars. He pauses, hearing something, head turning toward the fire. Serene painterly style, warm glow, uncluttered. No text, no logos.",
    "motion": "pan",
    "title": "",
    "keywords": [
-    "Dharanendra",
-    "agle janam"
+    "Parshvanath",
+    "cheekh"
    ],
+   "real": null,
    "big": null,
    "small": null,
    "sub": null,
-   "label": null,
-   "real": null
+   "label": null
   },
   {
-   "vo": "Padmavati bhi saath thi. Dono ka pyaar amrit jaisa.",
-   "type": "image",
-   "prompt": "Serpent goddess Padmavati with multiple hoods coiled gracefully beside Dharanendra, both facing each other in a silent bond. Golden ornaments, compassionate expressions, soft pink-gold glow. Serene painterly style, saffron gold white marble, calm peaceful, ornate Jain temple details. 9:16 aspect ratio, centered, room above and below for text, single continuous composition.",
-   "motion": "pull",
-   "title": "PADMAVATI SAATH",
+   "vo": "Saanp ko bacha liya",
+   "type": "clip",
+   "prompt": "Prince Parshvanath standing by the fire altar, the snake being freed from the burning log. Warm golden light, serene painterly style, white marble temple courtyard. No text, no logos.",
+   "motion": "punch",
+   "title": "",
    "keywords": [
-    "Padmavati",
-    "sangini"
+    "aag",
+    "bacha liya"
    ],
+   "real": null,
    "big": null,
    "small": null,
    "sub": null,
-   "label": null,
-   "real": null
+   "label": null
   },
   {
-   "vo": "Samay beeta. Parshvanatha tapasya mein baith gaye.",
+   "vo": "Ye saanp... alag tha",
    "type": "image",
-   "prompt": "Parshvanatha idol in padmasana on a marble pedestal, seven-hooded serpent canopy above, lotus emblem below. Deep meditation, eyes half closed. Green complexion, gold accents. Soft saffron light bathes the idol. Serene painterly Indian style, white marble gold, calm, ornate temple sanctum, gentle glow.",
+   "prompt": "The rescued snake resting on Prince Parshvanath's open palm, calm and ordinary. Background: blurred temple arches. Serene painterly Indian style. No text, no logos.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "aam nahi",
+    "chamak"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Pichle janam ka shatru Kamath tha ye",
+   "type": "image",
+   "prompt": "Visual metaphor: two overlapping translucent scenes — left, Marubhuti (young priest in white robes) struck by a stone thrown by Kamath (angry man in royal attire); right, the same snake on Parshvanath's palm. Golden thread connects the scenes. Serene painterly style, warm light on white marble. No text, no logos.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "pichle janam",
+    "Kamath"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Kamath ne Marubhuti ko maara, phir saanp ban badla leta raha",
+   "type": "image",
+   "prompt": "Cinematic symbolic visual: a dark shadowy serpent coiling around an ancient stone block in a dense misty forest, bathed in ominous twilight. High detail, ethereal mist, atmospheric mood, room above and below for text, vertical 9:16 aspect ratio, serene painterly style, no human or divine figures, no text, no logos.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "saanp ban",
+    "badla"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Par Parshvanath ne badla nahi... daya chuni",
+   "type": "image",
+   "prompt": "Prince Parshvanath holding the snake close to his heart, eyes half-closed in compassion. A soft golden aura surrounds both. The snake's hoods begin to glow. Background: white marble temple with carved lotus pillars. Serene painterly Indian style, calm and peaceful. No text, no logos.",
    "motion": "push",
-   "title": "TAPASYA SHURU",
+   "title": "",
+   "keywords": [
+    "badla nahi",
+    "daya chuni"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Us daya ne karmik bandhan tod diya",
+   "type": "image",
+   "prompt": "Abstract spiritual metaphor: heavy glowing iron chains shattering in mid-air, the broken metal links dissolving into brilliant golden sparks and soft white flower petals. Centered composition against a smooth white marble backdrop, ethereal pure white and golden divine lighting, room above and below for text, vertical 9:16 aspect ratio, painterly style, no people, no deities, no text, no logos.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "karmik bandhan",
+    "tod diya"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Saanp mar ke Dharanendra ban gaye",
+   "type": "image",
+   "prompt": "The snake dissolving into golden light, reforming as Dharanendra, the lord of nagas — a divine serpent deity with multi-hooded crown, iridescent scales, gentle smile, radiating protection, seated on a lotus throne in a celestial palace. Serene painterly Indian style, warm golden glow. No text, no logos.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Dharanendra"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Tapasya mein dono ne Meghmali ke toofan se bachaya",
+   "type": "image",
+   "prompt": "Parshvanath as a meditating Tirthankara in traditional form — dignified, fully dressed in monastic robes, padmasana, eyes half-closed, serene — on a marble pedestal. Above him, Dharanendra and Padmavati form a living canopy of interlocked hoods. Goddess Padmavati coils gently around the base. Warm golden light, Dilwara-style temple interior. Serene painterly style. No text, no logos.",
+   "motion": "tilt",
+   "title": "",
    "keywords": [
     "tapasya",
-    "Parshvanatha"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Rakshas Meghmali ne toofan chheda. Bijli, barish sab unpar.",
-   "type": "image",
-   "prompt": "Dark storm clouds swirling above the meditating idol. Torrential rain lashes down, wind bending trees. Lightning flashes. The idol remains perfectly still, untouched by chaos. Serene painterly style, dramatic low-key lighting, saffron gold accents on idol, white marble, calm center in storm.",
-   "motion": "tilt",
-   "title": "MEGHMALI KA KRODH",
-   "keywords": [
-    "Meghmali",
     "toofan"
    ],
+   "real": null,
    "big": null,
    "small": null,
    "sub": null,
    "label": null
   },
   {
-   "vo": "Dharanendra ne hazaar phan failaye. Sone ki chhatra ban gayi.",
+   "vo": "Wahi saanp ka chhatra bani Parshvanath ki pehchan",
    "type": "image",
-   "prompt": "Dharanendra's thousand hoods expand into a vast golden canopy over the meditating idol. Each hood glows with soft light. Raindrops turn to pearls on the canopy. The idol stays dry, serene. Serene painterly Indian style, saffron gold white marble, calm, ornate, gentle glow.",
+   "prompt": "Iconic close-up: the Tirthankara's face (padmasana, half-closed eyes, gentle smile) framed by the multi-hooded serpent canopy in perfect symmetry. Each hood bears a tiny lotus. Warm golden light on white marble. This is the emblem of Parshvanath. Serene painterly Indian style. No text, no logos.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "saanp ka chhatra",
+    "pehchan"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ek janam ki daya... agle janam ki chhaya",
+   "type": "card",
+   "prompt": "Soft gradient background — warm saffron to white marble. Center: a single lotus blooming from a cracked stone, with a tiny serpent hood forming a protective arch over it. Gentle glow. Serene painterly Indian style. No text, no logos.",
    "motion": "pull",
-   "title": "HAZAAR PHAN CHHATRA",
-   "keywords": [
-    "hazaar phan",
-    "chhatra"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Padmavati ne neeche se ghera liya. Do taraf se suraksha.",
-   "type": "image",
-   "prompt": "Padmavati coils gently around the base of the idol, her hoods forming a protective ring at the pedestal. Golden light flows between her and Dharanendra's canopy. The storm rages outside the shield. Serene painterly style, saffron gold white marble, calm peaceful, ornate details.",
-   "motion": "pan",
-   "title": "PADMAVATI KI RAKSHA",
-   "keywords": [
-    "Padmavati",
-    "ghera"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Isliye Parshvanatha ka prateek saanp hai. Saat phan, shanti ka nishaan.",
-   "type": "image",
-   "prompt": "Close on the Parshvanatha idol's serpent canopy — seven hoods perfectly arched, each scaled detail catching gold light. The lotus emblem on pedestal. No storm, only peace. Serene painterly Indian style, saffron gold white marble, calm, uncluttered, gentle glow.",
-   "motion": "push",
-   "title": "SAANP PRATEEK",
-   "keywords": [
-    "prateek",
-    "saanp"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null
-  },
-  {
-   "vo": "Ek chhoti karuna ne hazaron janam ka karz chukaya.",
-   "type": "image",
-   "prompt": "A large glowing golden lotus flower centered in the frame, radiating gentle light against a soft saffron gradient with subtle marble texture. The lotus occupies the middle vertical space, leaving clear safe zones above and below for text. Minimal, elegant, serene Indian aesthetic. 9:16 aspect ratio.",
-   "motion": "push",
-   "title": "KARZ CHUKAYA",
-   "big": "EK CHHOTI KARUNA",
-   "small": "HAZARON JANAM KA KARZ",
-   "keywords": [
-    "karuna",
-    "karz"
-   ],
-   "sub": null,
-   "label": null,
-   "real": null
-  },
-  {
-   "vo": "Tum hote toh kya karte? Comment mein likho.",
-   "type": "card",
-   "prompt": "Plain white marble background, single golden lotus centered. Soft saffron light from above. Serene, uncluttered, space for text.",
-   "motion": "push",
    "title": "",
-   "big": "TUM HOTE TOH?",
-   "small": "comment mein likho",
+   "big": "DAYA = RAKSHA",
+   "small": "Ek janam ki daya, agle janam ki chhaya",
    "keywords": [
-    "kya karte"
+    "daya",
+    "raksha"
    ],
+   "real": null,
    "sub": null,
    "label": null
-  },
-  {
-   "vo": "Jai Jinendra.",
-   "type": "card",
-   "prompt": "White marble texture with subtle saffron glow at edges. Serene, peaceful, uncluttered. 9:16 aspect ratio, centered, room above and below for text. No text in image.",
-   "motion": "push",
-   "title": "",
-   "big": "JAI JINENDRA",
-   "small": "",
-   "keywords": [
-    "Jai Jinendra"
-   ],
-   "sub": null,
-   "label": null,
-   "real": null
   }
  ],
  "music_mood": "calm",
- "caption": "Jalte lakdi mein phanse saanp ne badla Parshvanatha ka bhavishya. Ek karuna ka kaam hazaron janam ka karz chukata hai. 🙏\n\nTum hote toh kya karte? Comment mein likho.\n\n#Parshvanatha #Jainism #Karuna #Tirthankara #NavkarBhav #Kalpasutra",
+ "caption": "Jalte lakdi mein phanse saanp ko bacha kar Parshvanath ne karmik badle ka chakra tod diya. Wahi saanp Dharanendra-Padmavati ban ke unki raksha kare. 🙏\n\nSrot: Kalpasutra, Uttaradhyayana Sutra\n\nTum hote toh aag mein haath daalte? Batao comments mein.",
  "hashtags": [
-  "#Parshvanatha",
   "#Jainism",
-  "#Karuna",
-  "#Tirthankara",
+  "#Parshvanatha",
+  "#Karma",
+  "#Compassion",
   "#NavkarBhav",
-  "#Kalpasutra"
+  "#Kalpasutra",
+  "#Tirthankara"
  ],
  "claims": [
   {
-   "claim": "Prince Parshvanatha saved a serpent trapped in a burning log during sage Katha's panchatapa penance",
-   "basis": "Kalpasutra, Uttaradhyayana Sutra — documented in Jain scriptures as the origin of Parshvanatha's serpent emblem"
+   "claim": "Parshvanatha is the 23rd Tirthankara of Jainism, symbolized by a snake canopy.",
+   "basis": "Wikipedia: Pārśvanātha page lists symbol as Snake, predecessor Neminatha, successor Mahavira."
   },
   {
-   "claim": "The rescued serpent was reborn as Dharanendra, lord of nagas, with his consort Padmavati",
-   "basis": "Kalpasutra, Vividha Tirtha Kalpa — Jain tradition records the serpent's rebirth as protective deities"
+   "claim": "Prince Parshvanatha saved a snake trapped in a burning log during sage Katha's panchatapa austerity.",
+   "basis": "Hindu-blog.com article on Parshvanatha sculpture symbolism cites Kalpa-sutra: 'Parshvanatha once saved a serpent that had been trapped in a log in an ascetic's fire.'"
   },
   {
-   "claim": "Dharanendra and Padmavati protected Parshvanatha with a serpent canopy during meditation when demon Meghmali sent a storm",
-   "basis": "Vividha Tirtha Kalpa, Jain iconographic tradition — explains the seven-hooded canopy over Parshvanatha idols"
+   "claim": "The snake was Kamath, Parshvanatha's past-life enemy who killed him as Marubhuti and in subsequent births.",
+   "basis": "Jainworld.com 'Parshvanath Bhagavan – 23' details past incarnations: Marubhuti killed by brother Kamath; Kamath reborn as serpent stinging elephant; later as Bhil killing ascetic Vajranabh."
   },
   {
-   "claim": "Parshvanatha's emblem (lanchhan) is the snake",
-   "basis": "Kalpasutra, all Jain iconographic texts — Parshvanatha is uniquely identified by the serpent canopy"
+   "claim": "The snake died and was reborn as Dharanendra, who later protected Parshvanatha during meditation from Meghmali's storm along with his consort Padmavati.",
+   "basis": "Hindu-blog.com: 'The rescued serpent was later reborn as Dharanendra... Padmavati and her husband Dharanendra protected Lord Parshvanatha when he was harassed by Meghmali.'"
+  },
+  {
+   "claim": "The serpent canopy (snake hoods) became Parshvanatha's eternal iconographic emblem.",
+   "basis": "Hindu-blog.com: 'In sculpture and painting he is always identified by a canopy of snake hoods over his head.' Wikipedia confirms symbol is Snake."
   }
  ],
  "brain_ids": [
+  "b69d65467f",
   "fc294ac58f",
-  "7f620e6fdf",
   "b2fabb69c4",
+  "7f620e6fdf",
+  "0755cc155a",
   "161339712e",
   "e15cfaed29",
-  "0755cc155a",
-  "1e60a34718",
   "6ce7203c71",
+  "9db4cc694f",
+  "1e60a34718",
   "4396759d41",
   "7fa182f8ef",
-  "a688e48ca2",
-  "b69d65467f",
-  "f945e2a937",
-  "1e1964f463"
+  "1e1964f463",
+  "a688e48ca2"
  ]
 }

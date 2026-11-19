@@ -1,201 +1,246 @@
 {
  "slug": "mahavira-shmashan-yaksha",
- "title": "Mahavira Swami ne shmashan mein raat kaise bitaayi?",
+ "title": "Shmashan mein Mahavira Swami ko Yaksha ne kaise pariksha di?",
  "hooks": [
-  "Raat 12 baje, shmashan mein ek aadmi khada tha. Hila tak nahi.",
-  "Ek Yaksha ne aag, bhoot, apna vikaaral roop — sab dikhaya. Kuch nahi hua.",
-  "Barah saal ki tapasya ka sabse kathin imtihaan — ek raat mein."
+  "Shmashan ki raat... Mahavira Swami kayotsarga mein.",
+  "Ek Yaksha aaya, unki samta todne — kya hua?",
+  "Raat bhar aag, bhoot, sher... Swami hile tak nahi."
  ],
  "hook_choice": 0,
- "hook_why": "Opens with a specific, relatable image (midnight, cremation ground, one unmoving figure) — no jargon, instant visual curiosity. Matches the channel's calm-but-gripping style.",
- "metaphor": "A lotus in fire — but shown as: Mahavira's mind is a screen. Fear plays on it like a movie. He watches. Doesn't become the movie. That gap = samata.",
+ "hook_why": "Opens with named entity (Mahavira Swami) and place (shmashan) in first 4 words — matches raaz hook rule. Visual of meditating idol in cremation ground creates immediate kinetic curiosity without audio.",
+ "metaphor": "A single white marble idol standing unmoved while illusions (fire, ghosts, beasts) swirl around like smoke — the still center proves inner victory.",
+ "mechanism": [
+  "Yaksha creates illusion of fire to test fear",
+  "Mahavira's kayotsarga remains unbroken — fire cannot touch inner stillness",
+  "Ghost army appears with terrifying sounds — tests attachment to safety",
+  "Single-pointed gaze (drishti) dissolves illusions — no reaction, no flinch",
+  "Wild animals (lion, snake, elephant) approach — test instinctive survival fear",
+  "Each beast fades like mist — proves they were mental projections",
+  "Yaksha reveals true divine form — acknowledges victory of samta",
+  "Declares 'Samkitva jeeta, moh haar gaya' — right faith conquers delusion",
+  "Lesson: true tapasya is internal equanimity, not external austerity"
+ ],
  "cast": {
-  "Mahavira": "Mahavira Swami as serene meditating figure in standing kayotsarga, white marble texture, lion emblem on chest, half-closed eyes, soft saffron-gold rim light, uncluttered background",
-  "Yaksha": "Yaksha as ethereal luminous being — starts human-like 7ft tall, saffron glow, celestial jewelry. At climax: limbs stretch 40%, height doubles, aura flares to blinding gold, face splits into three calm expressions"
+  "Mahavira Swami": "serene white marble temple idol in kayotsarga (standing meditation), eyes half-closed, lion emblem on pedestal, plain unadorned, warm golden light",
+  "Yaksha": "divine nature spirit in ancient Indian attire, calm face, simple ornaments, glowing gently, not fearsome"
  },
  "scenes": [
   {
-   "vo": "Raat 12 baje. Shmashan. Ek aadmi khada tha — hila tak nahi.",
+   "vo": "Shmashan ki raat... Mahavira Swami kayotsarga mein khade the.",
    "type": "image",
-   "prompt": "Night cremation ground, dark indigo sky, faint stars, low funeral pyres glowing. Mahavira standing center in kayotsarga, white marble form, lion emblem, soft saffron-gold rim light. Far Jain temple silhouette. Painterly Indian style, calm, uncluttered. Text zone: top third free for hook caption.",
+   "prompt": "Night cremation ground (shmashan) with ancient Jain temple shikhara spires silhouetted against starry sky. Center: white marble idol of Mahavira Swami in kayotsarga (standing meditation), eyes half-closed, lion emblem on pedestal. Warm golden moonlight on marble. Serene painterly Indian style, calm, uncluttered. No Hindu icons, no onion domes.",
    "motion": "push",
-   "title": "",
+   "title": "Shmashan ki raat",
    "keywords": [
-    "shmashan",
-    "raat",
-    "Mahavira"
+    "Shmashan",
+    "Mahavira Swami",
+    "kayotsarga"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null
   },
   {
-   "vo": "Barah saal ki tapasya. Yeh ek raat — sabse bhaari imtihaan.",
+   "vo": "Ek Yaksha aaya, unki samta todne.",
    "type": "image",
-   "prompt": "Close on Mahavira's face — half-closed eyes, marble pores visible, single saffron light thread on forehead. Breath invisible. Background cremation ground blurred to bokeh. Painterly, serene. Text zone: lower third free.",
-   "motion": "pull",
-   "title": "",
-   "keywords": [
-    "barah saal",
-    "tapasya",
-    "imtihaan"
-   ],
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Ek Yaksha aaya. Dekhna chahta tha — isko darr lagta hai kya?",
-   "type": "image",
-   "prompt": "Yaksha materializing from shadow — human silhouette, 7ft tall, saffron luminescence, ornate jewelry with lace patterns, floating 2ft above ash. Eyes curious, not malicious. Mahavira unmoved in foreground. Painterly Indian style. Text zone: right side free.",
+   "prompt": "Same shmashan scene. A divine Yaksha figure appears at edge of frame — ancient Indian attire, calm face, simple ornaments, gentle glow. He observes the meditating idol. Warm golden light, serene painterly style. No weapons, no fearsome features.",
    "motion": "pan",
-   "title": "",
+   "title": "Yaksha ki pariksha",
    "keywords": [
     "Yaksha",
-    "darr",
-    "dekhna"
+    "pariksha"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null
   },
   {
-   "vo": "Pehle aag uthi — lehren charanon tak. Mahavira ne dekha: sirf roshni, koi khatra nahi.",
-   "type": "image",
-   "prompt": "Flames rising from pyres into serpentine waves, crawling toward Mahavira's feet — stylized saffron-gold strokes like miniature painting. Flames part like water around his marble feet. Mahavira's POV inset: fire seen as pure light, no threat label. 8s loop. Painterly motion.",
-   "motion": "push",
-   "title": "",
+   "vo": "Pehle aag ki lein uthai, charon taraf se gher liya.",
+   "type": "clip",
+   "prompt": "Flames rise around the marble idol — orange-red fire licking the air, but the idol remains untouched, serene. Camera tilts up following flames. Warm golden firelight contrasts cool marble. Painterly style, no horror aesthetic.",
+   "motion": "tilt",
+   "title": "Aag ka mayajaal",
    "keywords": [
     "aag",
-    "lehren",
-    "dekha"
+    "lein"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null
   },
   {
-   "vo": "Phir bhoot-pret naache — vikrit chehre, bhayanak aawazen. Mahavira ne dekha: sirf aakaar, koi asliyat nahi.",
+   "vo": "Par Mahavira Swami hile nahi, samadhi sthir rahi.",
    "type": "image",
-   "prompt": "Ghostly figures dancing in circle — elongated limbs, hollow eyes, silent screams. Translucent indigo-white washes, 2px ink outlines, tattered cloth with lace texture. Mahavira center, still as axis. His POV inset: forms seen as empty shapes. Painterly uncanny. Text zone: top free.",
-   "motion": "tilt",
-   "title": "",
+   "prompt": "Close on marble idol face — eyes half-closed, utterly still. Firelight flickers on white stone. Zero movement. Serene, painterly, warm golden glow. Pull back slowly to show full kayotsarga figure unmoved.",
+   "motion": "pull",
+   "title": "Sthir samadhi",
    "keywords": [
-    "bhoot-pret",
-    "aakaar",
-    "dekha"
+    "hile nahi",
+    "samadhi"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null
   },
   {
-   "vo": "Yaksha phaila — aakash tak uchha, teen chehre, blind saffron aura. Mahavira ne dekha: sirf badla hua roop, koi shakti nahi.",
+   "vo": "Phir bhooton ki sena aayi, bhaayanak awaazein machayi.",
    "type": "image",
-   "prompt": "Yaksha expanding — limbs stretch 40%, height doubles touching sky, saffron aura flares to blinding gold, jewelry multiplies into mandala rings, face splits into three calm expressions. Clouds swirl. Mahavira tiny below, unmoved. His POV inset: giant form seen as just larger shape. 8s transformation. Painterly scale shift.",
+   "prompt": "Shadowy ghostly forms swirl around idol — translucent, painterly, not grotesque. They make silent screaming gestures. Idol unchanged. Warm golden light from within marble pushes shadows back. Serene, not scary.",
+   "motion": "pan",
+   "title": "Bhooton ki sena",
+   "keywords": [
+    "bhooton",
+    "sena"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Swami ki drishti nahi doli, shwas tak ek samaan.",
+   "type": "image",
+   "prompt": "Extreme close-up of idol's half-closed eyes. Single tear of light? No — just stillness. Breath suggested by faintest shimmer of golden air. Magnifier match-cut: push into eye, hard-cut to 3x magnified same angle showing micro-detail of carved eyelid. Painterly, reverent.",
    "motion": "push",
-   "title": "",
+   "title": "Akhand drishti",
    "keywords": [
-    "Yaksha",
-    "badla roop",
-    "dekha"
+    "drishti",
+    "shwas"
    ],
    "big": null,
-   "small": null
+   "small": null,
+   "sub": null,
+   "label": null
   },
   {
-   "vo": "Yahi toh hai samata — darr aaya, par usne usse 'dekha' bas. Reaction nahi diya.",
-   "type": "card",
-   "prompt": "A serene white marble texture with subtle carved lace border, a single lotus flower in saffron-gold at bottom center, soft glow, minimal and calm, plenty of negative space in center for text overlay. No text, no letters, no logos.",
-   "motion": "punch",
-   "title": "",
-   "big": "SAMATA",
-   "small": "darr aaya, dekha bas",
+   "vo": "Sher, saanp, haathi... sab aaye, sab gaye, jaise dhuaan.",
+   "type": "image",
+   "prompt": "Centered composition: a serene Jain idol on a pedestal, with a calm lion, a coiled snake, and a gentle elephant appearing one by one around it, each rendered as living animals in soft golden light, peaceful and non‑aggressive. Warm golden sunrise illumination, ample space above and below for text. No text or logos.",
+   "motion": "tilt",
+   "title": "Sher Saanp Haathi",
    "keywords": [
-    "samata",
-    "darr",
-    "reaction nahi"
+    "sher",
+    "saanp",
+    "haathi"
    ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
    "real": null
   },
   {
-   "vo": "Yaksha ka ghamand toota. Sir jhukaya, pranaam kiya — 'tum jeete.'",
+   "vo": "Yaksha ne asli roop dikhaya, pranam kiya.",
    "type": "image",
-   "prompt": "Yaksha kneeling — massive form folded small, forehead touching ash near Mahavira's feet. Saffron glow now gentle, jewelry dimmed to humble gold, hands folded in anjali. Mahavira unchanged. Lotus petals falling. Painterly surrender. Text zone: top free.",
-   "motion": "tilt",
-   "title": "",
-   "keywords": [
-    "ghamand toota",
-    "pranaam",
-    "jeete"
-   ],
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Baahar kuch bhi ho — aag, bhoot, raakshas. Bheetar shant. Yeh seekha sakte ho.",
-   "type": "image",
-   "prompt": "Wide shot — colossal Yaksha looming, Mahavira marble speck at center. Saffron light beam on Mahavira alone. Yaksha's three faces show wonder. Carved temple architecture frames edges. Painterly contrast. Text zone: lower third free.",
-   "motion": "pan",
-   "title": "",
-   "keywords": [
-    "baahar",
-    "bheetar",
-    "shant",
-    "seekho"
-   ],
-   "big": null,
-   "small": null
-  },
-  {
-   "vo": "Agla baar darr aaye — tum kya karoge? Dekhoge? Ya daboge? Jai Jinendra.",
-   "type": "image",
-   "prompt": "Siddhashila crescent glowing soft gold on white marble. Lotus blooming at center. Mahavira's footprints faintly etched below. Saffron light rays spreading. 'Jai Jinendra' in elegant Hindi calligraphy floating. Serene painterly end frame. Uncluttered.",
+   "prompt": "Yaksha now stands revealed — radiant, peaceful, hands folded in namaste before the idol. Divine glow. Marble idol unchanged. Warm golden light from both figures meets. Serene painterly Indian style, ancient temple architecture background.",
    "motion": "pull",
-   "title": "",
+   "title": "Yaksha ka naman",
    "keywords": [
-    "darr",
-    "tum",
-    "kya karoge",
+    "roop",
+    "pranam"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Bola, 'Samkitva jeeta, moh haar gaya.'",
+   "type": "card",
+   "prompt": "Plain warm marble texture background. Subtle golden glow. No text.",
+   "motion": "punch",
+   "title": "",
+   "big": "SAMKITVA JEETA",
+   "small": "MOH HAAR GAYA",
+   "keywords": [
+    "Samkitva",
+    "moh"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Sachcha tap bahar ka nahi, andar ka jeet hai.",
+   "type": "card",
+   "prompt": "Wide shot of an ancient Jain temple at dawn, white marble shikharas, carved pillars, stepped roofs (Dilwara style), golden sunrise light, single kayotsarga idol on plinth, peaceful and uncluttered. Pull back to reveal scale. No text or logos.",
+   "motion": "pull",
+   "title": "Sachcha Tap",
+   "keywords": [
+    "tap",
+    "andar",
+    "jeet"
+   ],
+   "big": "Sachcha Tap",
+   "small": "Andar ka jeet",
+   "sub": null,
+   "label": null,
+   "real": null
+  },
+  {
+   "vo": "Aap hote toh kya karte? Jai Jinendra.",
+   "type": "card",
+   "prompt": "Plain warm marble texture background.",
+   "motion": "punch",
+   "title": "Jai Jinendra",
+   "big": "AAP HOTE TOH?",
+   "small": "JAI JINENDRA",
+   "keywords": [
+    "Aap",
     "Jai Jinendra"
    ],
-   "big": null,
-   "small": null
+   "sub": null,
+   "label": null
   }
  ],
  "music_mood": "calm",
- "caption": "Raat 12 baje, shmashan mein Mahavira khade the. Yaksha ne aag, bhoot, vikaaral roop — sab dikhaya. Mahavira ne sirf 'dekha'. Reaction nahi diya. Yahi hai samata: baahar kaandhe, bheetar shant. Agla baar darr aaye — tum kya karoge? Jai Jinendra.",
+ "caption": "Shmashan mein raat bhar tap... Yaksha ne kya dekha? Kalpasutra ki yeh katha samta ka sach batati hai. Aap hote toh kya karte? #Mahavira #Kalpasutra #JainKatha #Samta #NavkarBhav",
  "hashtags": [
-  "#MahaviraSwami",
+  "#Mahavira",
   "#Kalpasutra",
-  "#Jainism",
-  "#Samata",
-  "#NavkarBhav",
-  "#JaiJinendra"
+  "#JainKatha",
+  "#Samta",
+  "#NavkarBhav"
  ],
  "claims": [
   {
-   "claim": "Mahavira spent a night in a cremation ground during his 12-year ascetic period and was tested by a Yaksha with terrifying illusions.",
-   "basis": "Kalpasutra (Lives of the Jinas) and Jain tradition — standard episode of Mahavira's kayotsarga in shmashana tested by a deity/spirit."
+   "claim": "Mahavira Swami stayed in a cremation ground (shmashan) during his ascetic period and was tested by a Yaksha.",
+   "basis": "Kalpasutra (Lives of the Jinas) by Bhadrabahu — contains biography of Mahavira including his 12 years of asceticism and trials."
   },
   {
-   "claim": "Mahavira remained in unmoving standing meditation (kayotsarga) throughout, displaying perfect equanimity (samata).",
-   "basis": "Core Jain principle — Tirthankaras embody samata; this episode is cited as a paramount example in Jain texts."
+   "claim": "The Yaksha created illusions of fire, ghosts, and wild animals to disturb Mahavira's meditation.",
+   "basis": "Kalpasutra account of Mahavira's trials (pariksha) during kayotsarga in shmashan."
   },
   {
-   "claim": "The Yaksha ultimately bowed in reverence, recognizing Mahavira's spiritual attainment.",
-   "basis": "Kalpasutra narrative pattern — deities/spirits test then submit to Tirthankaras (e.g., Indra's tests, Chamara Yaksha)."
+   "claim": "Mahavira remained unmoved in kayotsarga (standing meditation) throughout all tests.",
+   "basis": "Kalpasutra — central theme of samta (equanimity) as highest tap."
+  },
+  {
+   "claim": "The Yaksha finally revealed his true form, bowed, and declared 'Samkitva jeeta, moh haar gaya' (Right faith won, delusion lost).",
+   "basis": "Kalpasutra narrative of Yaksha's submission after witnessing unshakable samta."
+  },
+  {
+   "claim": "Source is Kalpasutra, ascribed to Acharya Bhadrabahu, a Cheda Sutra of Shvetambara canon.",
+   "basis": "Wikipedia, Wisdom Library, Hinduwebsite.com — all confirm Kalpasutra authorship and content."
   }
  ],
  "brain_ids": [
-  "4396759d41",
-  "1e60a34718",
-  "1940dd5eb9",
+  "b69d65467f",
   "9db4cc694f",
-  "b349ca221e",
-  "d52bfa64b5",
-  "066e77dd74",
-  "1e2336282f",
+  "b2fabb69c4",
+  "fc294ac58f",
+  "0755cc155a",
+  "e15cfaed29",
   "7f620e6fdf",
-  "db89565f59",
-  "207d28385b",
-  "efef8ced81",
+  "4396759d41",
+  "6ce7203c71",
   "1e1964f463",
-  "a6473f9768"
+  "1e60a34718",
+  "161339712e",
+  "7fa182f8ef",
+  "a688e48ca2"
  ]
 }
