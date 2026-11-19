@@ -176,3 +176,8 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
   India/Pakistan/Bangladesh views, several need 50-70% US audience.
 - Owner's 5 joined: Jo Koy (Drive, IG only, 70% US), Daise (Drive UGC), SEGA (YouTube trailers, 50% US), CoD MW4 (Google
   Doc footage, @callofduty + #Ad), Eneba BroPacks (brief bans automated clipping: skipped).
+- 19 Nov 08:05: owner "auto approve from my side": Cut Capsule channel.json schedule.auto_approve true + manual_first 0
+  (send.py reads a per-page auto_approve; the global dashboard switch stays off for the other pages). Content Rewards
+  Settings > Accounts: @cut.capsule YouTube, @cutcapsule Instagram + X connected, Facebook "Verify" pending; Profile >
+  "Whop: Connect" not done (payouts). Sources live: Jo Koy (Drive), Daise (Drive), CoD (official YouTube trailer,
+  MediaSilo link dead), SEGA (Frame.io). Eneba off (bans automation). clipwatch now clips up to 3 campaigns per run.

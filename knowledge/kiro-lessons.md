@@ -75,3 +75,6 @@ knowledge/lessons-learnt.md for the engine.
   `git add <files>` first, then check the output shows the server HAS the new commit.
 - 19 Nov: `systemctl is-active -q` is FALSE for a running oneshot unit ("activating"); a script took a running whopbot
   as finished and edited files under it. Test `systemctl show -p ActiveState --value` for active|activating.
+- 19 Nov: switched brief reading to a fast model and it at once said "can do" for a brief that bans automation, and
+  wrote an instruction as caption text. Rule: any yes/no that can cost money or an account (bans, required caption
+  text) is a hard check in code after the model, tested against every stored real example before shipping.
