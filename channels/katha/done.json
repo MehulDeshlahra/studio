@@ -1,5 +1,22 @@
 [
  {
+  "job": "1118-1015",
+  "topic": "12 Jyotirlinga ki katha - Part 3: Mahakaleshwar",
+  "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
+  "status": "approved",
+  "review": []
+ },
+ {
+  "job": "1117-0145",
+  "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
+  "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
+  "qc_ok": true,
+  "status": "approved",
+  "review": [],
+  "mehul_rebuilt": "2026-11-18",
+  "replan_requested": "2026-11-18 05:54"
+ },
+ {
   "job": "kuber-01",
   "topic": "Kuber ka ghamand",
   "title": "Kuber ka ghamand aur Ganesh ji ki bhookh",
@@ -14,16 +31,6 @@
   "status": "removed",
   "review": [],
   "pruned": "2026-11-18"
- },
- {
-  "job": "1117-0145",
-  "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
-  "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
-  "qc_ok": true,
-  "status": "approved",
-  "review": [],
-  "mehul_rebuilt": "2026-11-18",
-  "replan_requested": "2026-11-18 05:54"
  },
  {
   "job": "1117-0145-en",
@@ -102,17 +109,12 @@
   ]
  },
  {
-  "job": "1118-1015",
-  "topic": "12 Jyotirlinga ki katha - Part 3: Mahakaleshwar",
-  "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
-  "status": "approved",
-  "review": []
- },
- {
   "job": "1118-1635",
   "topic": "Why Shiva manifested as Bhairava to sever Brahma's fifth head — Shiva Purana, Shatarudra Samhita. Lesson: Intellectual superiority paired with ego creates falsehood that demands immediate ego-death.",
   "title": "Brahma Ka Paanchwa Sir Kyun Kata?",
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "19 Nov audit: the story is about Brahma's FIFTH head, but Brahma is drawn with one head in every scene (8s, 22s, 28s): show Brahma with five heads before Bhairava's act, four after"
+  ]
  }
 ]
