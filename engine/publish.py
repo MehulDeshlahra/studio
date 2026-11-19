@@ -231,8 +231,20 @@ def post_one(cid, dry=False):
     if dry:
         log("publish dry", cid, nxt["job"], caption[:80]); return
     res = {}
+    # 19 Nov: a campaign may allow only some platforms (Jo Koy: Instagram Reels only); its source's "platforms" decides
+    only = None
+    _sk = (plan.get("clip") or {}).get("source")
+    if _sk:
+        _pl = [str(x).lower() for x in ((((load(os.path.join(ROOT, "channels", cid, "sources.json"), {}) or {}).get("sources")
+                                          or {}).get(_sk) or {}).get("platforms") or [])]
+        if _pl:
+            only = {n for n, words in (("ig", ("instagram", "ig", "reels")), ("fb", ("facebook", "fb")),
+                                       ("yt", ("youtube", "yt", "shorts"))) if any(w in p for p in _pl for w in words)}
+            log("publish", cid, "campaign platforms", _pl, "->", sorted(only))
     for name, fn in (("ig", lambda: instagram(acc, mp4, caption)), ("fb", lambda: facebook(acc, mp4, fbcap)),
                      ("yt", lambda: youtube(acc, mp4, ytx["title"], ytx["description"], ytx.get("tags"), cv))):
+        if only is not None and name not in only:
+            continue
         if name == "yt" and not acc.get("yt"):
             continue
         if name in ("ig", "fb") and not acc.get("page_token"):

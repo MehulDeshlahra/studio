@@ -105,40 +105,74 @@ def join_best(st):
         if len(active) >= MAX_ACTIVE:
             break
         tried[k] = now
-        r = _job("brief", v["url"])
-        if r.get("error"):
-            log("whopbot: brief failed", v.get("title"), r["error"][:120]); continue
-        try:
-            b = llm.text(READ.format(text=(r.get("text") or "")[:12000], links=", ".join(r.get("footage") or [])[:2000]), json_mode=True,
-                         max_tokens=1500)
-        except Exception as e:
-            log("whopbot: brief read failed", str(e)[:120]); continue
-        yt = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (r.get("footage") or [])
-              if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/|drive\.google\.com/(file|drive/folders|drive/u/\d+/folders))", str(x))]
-        chans = [x for x in (b.get("youtube_channels") or []) if x]
-        if not b.get("can_do") or not (yt or chans):
-            st.setdefault("skipped", {})[k] = {"title": v.get("title"), "why": b.get("why_not") or "no YouTube footage",
-                                               "other": b.get("other_footage"), "t": now}
-            log("whopbot: skip", v.get("title"), "-", b.get("why_not") or "no YouTube footage"); continue
-        key = re.sub(r"[^a-z0-9]+", "-", (v.get("brand") or v.get("title") or "campaign").lower()).strip("-")[:30]
-        while key in d["sources"] and d["sources"][key].get("campaign_id") != k:
-            key += "-2"
-        rules = [str(x)[:200] for x in b.get("rules") or []]
-        if b.get("min_s") or b.get("max_s"):
-            rules.append(f"clip length {b.get('min_s') or 20}-{b.get('max_s') or 58} s")
-        d["sources"][key] = {"platform": "whop", "campaign_url": v["url"], "campaign_id": k, "title": v.get("title"),
-                             "channels": chans, "videos": sorted(set(yt)), "match": chans + sorted(set(yt)), "rules": rules,
-                             "caption_add": str(b.get("caption_add") or "")[:300], "no_watermark": bool(b.get("no_watermark")),
-                             "platforms": b.get("platforms") or [], "clips_per_video": 4, "active": True, "auto": True,
-                             "rate": (v.get("why") or [""])[0], "added": time.strftime("%Y-%m-%d %H:%M"), "added_t": now,
-                             "brief_shot": r.get("shot_server")}
-        active.add(k); joined.append(f"{v.get('score')}/100 {v.get('brand') or ''}: {v.get('title')} ({', '.join((v.get('why') or [])[:2])})")
-        log("whopbot: joined", key, v.get("title"))
+        res = make_source(k, v, d, st)          # opens the campaign (joins it) + reads the brief
+        if not res:
+            continue
+        active.add(k); joined.append(f"{v.get('score')}/100 " + res)
     if joined:
         _save_sources(d, f"whopbot: joined {len(joined)} campaign(s)")
         telegram("🤝 Joined on Whop and clipping now:\n• " + "\n• ".join(joined))
         os.system("sudo systemctl start --no-block studio-clipwatch.service")
     return joined
+
+
+def adopt_joined(st):
+    """19 Nov (owner joined 5 himself): campaigns on his Content Rewards 'Campaigns' page that have no source yet get one."""
+    r = _job("look", "https://contentrewards.com/c/campaigns", wait=600)
+    text = r.get("text") or ""
+    camp = (load(CAMP, {}) or {}).get("c") or {}
+    d = _sources()
+    have = {v.get("campaign_id") for v in d["sources"].values()}
+    low = text.lower()
+    mine = [k for k, v in camp.items() if v.get("title") and k not in have and
+            (v["title"][:40].lower() in low or k in text)]
+    log("whopbot: joined by the owner without a source:", [camp[k]["title"] for k in mine])
+    added = []
+    for k in mine:
+        res = make_source(k, camp[k], d, st)
+        if res:
+            added.append(res)
+    if added:
+        _save_sources(d, f"whopbot: sources for {len(added)} joined campaign(s)")
+        telegram("✂️ Clipping now for the campaigns you joined:\n• " + "\n• ".join(added))
+        os.system("sudo systemctl start --no-block studio-clipwatch.service")
+    return added
+
+
+def make_source(k, v, d, st):
+    """Read the brief of a joined campaign and write its source entry. Returns a one-line summary, or None (skipped)."""
+    now = time.time()
+    r = _job("brief", v["url"])
+    if r.get("error"):
+        log("whopbot: brief failed", v.get("title"), r["error"][:120]); return None
+    try:
+        b = llm.text(READ.format(text=(r.get("text") or "")[:12000], links=", ".join(r.get("footage") or [])[:2000]), json_mode=True,
+                     max_tokens=1500)
+    except Exception as e:
+        log("whopbot: brief read failed", str(e)[:120]); return None
+    foot = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (r.get("footage") or [])
+            if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/|drive\.google\.com/(file|drive/folders|drive/u/\d+/folders))", str(x))]
+    chans = [x for x in (b.get("youtube_channels") or []) if x]
+    if not b.get("can_do") or not (foot or chans):
+        st.setdefault("skipped", {})[k] = {"title": v.get("title"), "why": b.get("why_not") or "no usable footage",
+                                           "other": b.get("other_footage"), "t": now}
+        log("whopbot: skip", v.get("title"), "-", b.get("why_not") or "no usable footage")
+        telegram(f"⏭ Can't clip '{v.get('title')}': {b.get('why_not') or 'no YouTube/Drive footage in the brief'}")
+        return None
+    key = re.sub(r"[^a-z0-9]+", "-", (v.get("brand") or v.get("title") or "campaign").lower()).strip("-")[:30]
+    while key in d["sources"] and d["sources"][key].get("campaign_id") != k:
+        key += "-2"
+    rules = [str(x)[:200] for x in b.get("rules") or []]
+    if b.get("min_s") or b.get("max_s"):
+        rules.append(f"clip length {b.get('min_s') or 20}-{b.get('max_s') or 58} s")
+    d["sources"][key] = {"platform": "whop", "campaign_url": v["url"], "campaign_id": k, "title": v.get("title"),
+                         "channels": chans, "videos": sorted(set(foot)), "match": chans + sorted(set(foot)), "rules": rules,
+                         "caption_add": str(b.get("caption_add") or "")[:300], "no_watermark": bool(b.get("no_watermark")),
+                         "platforms": b.get("platforms") or [], "clips_per_video": 4, "active": True,
+                         "rate": (v.get("why") or [""])[0], "added": time.strftime("%Y-%m-%d %H:%M"), "added_t": now,
+                         "brief": (r.get("text") or "")[:6000], "brief_shot": r.get("shot_server")}
+    log("whopbot: source", key, v.get("title"), "footage", len(foot), "channels", len(chans))
+    return f"{v.get('brand') or ''}: {v.get('title')} ({len(foot)} footage link(s), {len(rules)} rules)"
 
 
 def retire(st):
@@ -170,6 +204,7 @@ def run():
         return
     submit_all(st)
     retire(st)
+    adopt_joined(st)
     join_best(st)
     st["last"] = time.strftime("%Y-%m-%d %H:%M")
     save(STATE, st)
