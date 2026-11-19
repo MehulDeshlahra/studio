@@ -320,7 +320,8 @@ def jobs(running):
         if not os.path.isdir(base):
             continue
         for j in os.listdir(base):
-            if not os.path.isdir(os.path.join(base, j)) or not os.path.exists(os.path.join(base, j, "plan.json")):
+            jd = os.path.join(base, j)
+            if not os.path.isdir(jd) or not os.path.exists(os.path.join(jd, "plan.json")):
                 continue
             s = job_state(c, j, act.get((c, j)))
             d = done.get(j)
