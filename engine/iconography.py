@@ -65,7 +65,26 @@ def notes(text):
     return "; ".join(hits)
 
 
-def prompt_addition(text):
-    """Text to add to an image prompt that mentions a deity ('' when none is named)."""
+MONK = re.compile(r"monk|nun\b|ascetic|sadhu|sanyas|tapasv|\bmuni|sadhvi|yati\b|renunciant|saint", re.I)
+def _positive(n):
+    """19 Nov: image models draw the nouns they read, 'NEVER saffron robes' too (jain 1119-0305 rebuild: saffron monks
+    again). For a PICTURE prompt drop every NEVER clause and '(never ...)' aside; the checkers keep the full text."""
+    n = re.sub(r"\s*\((?:never|not)[^)]*\)", "", n, flags=re.I)
+    n = re.sub(r"[;,]?\s*NEVER(?:[^;.]|\.(?!\s|$))*", "", n)
+    n = re.sub(r"[;,]?\s*no Hindu-god ornaments:?", ",", n)
+    return re.sub(r"\s{2,}", " ", n).strip(" ;,")
+OLD_JAIN = re.compile(r"\bsoft saffron,?\s*|\bsaffron\b,?\s*", re.I)
+def clean_prompt(prompt, page=None):
+    """A finished picture prompt, positive words only (old plans carry the old look with 'saffron' and a NEVER list)."""
+    p = _positive(prompt) if "NEVER" in prompt else prompt
+    if page == "jain":
+        p = OLD_JAIN.sub("", p)
+    return p
+def prompt_addition(text, page=None):
+    """Text to add to an image prompt that mentions a deity ('' when none is named). Positive words only. On the Jain
+    page any monk / ascetic gets the Jain monk's form (a prompt saying just 'a monk' got a saffron Hindu monk)."""
     n = notes(text)
+    if page == "jain" and MONK.search(text or "") and "Jain monk:" not in n:
+        n = (n + "; " if n else "") + "Jain monk: " + FORMS["Jain monk"][1]
+    n = _positive(n)
     return f" Traditional form: {n}. {DECENCY}." if n else ""

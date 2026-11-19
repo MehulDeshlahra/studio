@@ -15,7 +15,8 @@
   },
   "visuals": {
     "primary": "muse",
-    "look": "serene painterly Indian style, soft saffron, gold and white marble light, calm and peaceful, ornate Jain temple details, gentle glow, uncluttered; architecture: ancient Indian stone palaces, courtyards and Jain temples (Maru-Gurjara / Nagara carving, shikhara spires, carved pillars); NEVER Mughal or Islamic domes, onion domes, minarets or anything like the Taj Mahal",
+    "look": "serene painterly Indian style, warm golden light on white marble, calm and peaceful, gentle glow, uncluttered; architecture: ancient Indian sandstone and white-marble Jain temples and palaces with tall pointed shikhara spires, finely carved pillars and stepped stone roofs (Dilwara, Ranakpur, Palitana style), village lanes of mud and stone houses; every monk, nun or ascetic wears plain white unstitched cotton robes and carries a soft white whisk broom",
+    "look_note": "19 Nov: positive words only. The old look said 'soft saffron' (every monk came out in saffron robes) and listed 'onion domes, minarets, Taj Mahal' after NEVER (image models draw the nouns they read). The NEVER rules live in visual_checks for the reviewers",
     "cast": "the story's people in ancient Indian attire, calm faces; Tirthankaras only as serene meditating temple idols (seated padmasana or standing kayotsarga, eyes half closed, with their emblem) or as symbols (lotus, light, footprints, the siddhashila crescent), never as action characters; Jain monks and nuns in plain white robes with a broom (rajoharan); never Hindu gods, never weapons in a Tirthankara's hands; the same person keeps the same face, age, beard, hair and clothes in every scene (a king stays a crowned king)"
   },
   "looks": {

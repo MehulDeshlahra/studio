@@ -610,7 +610,8 @@ def _stage_assets(ch, p, job):
             prompt += " One single scene in one frame: no split screen, no panels, no collage, no side-by-side copies."
             try:
                 import iconography
-                prompt += iconography.prompt_addition(s["prompt"] + " " + s.get("vo", ""))
+                prompt += iconography.prompt_addition(s["prompt"] + " " + s.get("vo", ""), ch.get("id"))
+                prompt = iconography.clean_prompt(prompt, ch.get("id"))
             except Exception as e:
                 log("iconography skipped", str(e)[:80])
             if theme.get("style") == "lab":
