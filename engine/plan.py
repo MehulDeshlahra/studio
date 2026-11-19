@@ -368,6 +368,11 @@ PLAN:
                         plan = fixed
                 except Exception as e:
                     log("numbers fix failed:", str(e)[:120]); break
+    if ch.get("story_check"):                      # 19 Nov: jain 1119-1015 said '12 years without food, then kheer, then kevalgyan'
+        try:
+            plan = story_fix(ch, topic, plan, research_text)
+        except Exception as e:
+            log("story check skipped:", str(e)[:120])
     if ch.get("theme", {}).get("style") == "lab":
         plan = lab_fix(plan, bool(ch.get("theme", {}).get("phone")))
     out = clean(plan)
@@ -626,6 +631,76 @@ def numbers_check(plan, sources="", strict=False):
     return probs
 
 
+STORYCHK = """You check a short scripture-story Reel ({page}) against its SOURCES before it is published. Devotees know these
+stories well: one wrong event loses their trust for ever.
+List EVERY story claim in the voice-over and on-screen text: who did what, to whom, where, when, how long, in what
+order, what caused what, who gave what (a meal, a boon, a curse), numbers (years, days, heads, arms).
+Judge each claim:
+- "false": a SOURCE contradicts it (quote the source in "why"), OR it contradicts the standard account of the
+  tradition's own scriptures ({texts}) and you are sure (name the text and say what it really says). Mixing in another
+  tradition's version (a Hindu or Buddhist telling inside a Jain story, or the reverse) is false.
+- "invented": a specific detail (a person, a meal, a number, a cause, an order of events) that neither the sources nor
+  the scriptures give: the script made it up to sound vivid.
+- "ok": supported, or a plain moral / feeling line that claims no event.
+A moral, a question to the viewer or a call to comment is never a claim.
+SOURCES:
+{sources}
+SCRIPT (scene | voice-over | on-screen):
+{rows}
+Return JSON {{"claims": [{{"scene": n, "claim": "...", "verdict": "ok|false|invented", "why": "short, quote or name the source",
+"truth": "what the sources / scriptures really say (empty when unknown)"}}]}}"""
+def story_check(ch, plan, sources):
+    """19 Nov: problems with a story page's events ([] = fine): false or invented events, judged against the sources."""
+    rows = "\n".join(f"{i + 1} | {s.get('vo', '')} | {s.get('text') or s.get('headline') or ''}"
+                     for i, s in enumerate(plan.get("scenes", [])))
+    r = ask(STORYCHK.format(page=ch.get("name", ch["id"]), texts=ch.get("story_texts", "the tradition's scriptures"),
+                            sources=(sources or "(no sources found: judge from the scriptures only when sure)")[:12000],
+                            rows=rows), max_tokens=3000) or {}
+    out = []
+    for c in r.get("claims") or []:
+        v = str(c.get("verdict", "")).lower()
+        if v in ("false", "invented"):
+            t = f" (really: {str(c.get('truth'))[:140]})" if c.get("truth") else ""
+            out.append(f"STORY scene {c.get('scene')}: {v}: '{str(c.get('claim'))[:110]}': {str(c.get('why'))[:120]}{t}")
+    return out
+def story_fix(ch, topic, plan, research_text):
+    """Story check + up to 2 rewrites; a plan still wrong after them carries numbers_hold (held before any voice)."""
+    src = _fact_sources(ch, topic, research_text)
+    try:                                           # scripture-specific evidence on top of the topic research
+        import web
+        extra = web.facts(f"{topic} {ch.get('story_texts', '')}".strip(), n=3, per=3000)
+        if extra:
+            src = (src + "\n\n" + extra).strip()
+    except Exception as e:
+        log("story check: web sources failed", str(e)[:100])
+    for rnd in range(3):
+        probs = story_check(ch, plan, src)
+        if not probs:
+            log("story check: every event matches the sources" + (" after a fix" if rnd else ""))
+            plan.pop("numbers_hold", None)
+            return plan
+        log("story check found", len(probs), "problem(s):", " | ".join(probs)[:400])
+        try:
+            from core import note_problem
+            note_problem(ch["id"], str(topic)[:60], probs, "story check")
+        except Exception:
+            pass
+        plan["numbers_hold"] = probs
+        if rnd == 2:
+            break
+        try:
+            fixed = ask("Fix ONLY these story errors in this Shorts plan; keep everything else the same (same JSON shape). "
+                        "Tell each event exactly as the sources / scriptures do (use the 'really' part). An invented detail is "
+                        "REMOVED, not replaced by another invention. If the title or hook rests on a false event, rewrite the "
+                        "title and hook around what really happened. Keep the story moving after the change."
+                        "\nERRORS:\n- " + "\n- ".join(probs) + "\nSOURCES:\n" + src[:6000]
+                        + "\nPLAN:\n" + json.dumps(plan, ensure_ascii=False))
+            if len(fixed.get("scenes", [])) >= 6:
+                keep = {k: plan[k] for k in ("numbers_hold",) if k in plan}
+                plan = fixed; plan.update(keep)
+        except Exception as e:
+            log("story fix failed:", str(e)[:120]); break
+    return plan
 ART = re.compile(r"(?:(?<=\s)|^)the\s+|^an?\s+", re.I)
 
 

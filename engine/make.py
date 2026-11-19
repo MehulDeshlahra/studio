@@ -774,7 +774,7 @@ def main():
         row = next((d for d in done if d["job"] == job_id), None)
         if not row:
             row = {"job": job_id, "topic": topic, "title": p.get("title")}; done.append(row)
-        row.update(status="held", review=["NUMBERS: " + x for x in p["numbers_hold"]][:6])
+        row.update(status="held", review=[("" if x.startswith("STORY") else "NUMBERS: ") + x for x in p["numbers_hold"]][:6])
         save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
         meta = load(os.path.join(job, "meta.json"), {}) or {}
         meta.update(stage="held", held_at=time.strftime("%Y-%m-%d %H:%M")); save(os.path.join(job, "meta.json"), meta)

@@ -1,6 +1,8 @@
 {
   "id": "jain",
   "name": "Navkar Bhav (@navkarbhav)",
+  "story_check": true,
+  "story_texts": "Jain scriptures: Kalpasutra, Acharanga Sutra, Trishashti-shalaka-purusha-charitra (Hemachandra), Uttaradhyayana Sutra, Adipurana (Digambara)",
   "status": "pilot",
   "language": "Hindi",
   "format": "One Jain story (Tirthankaras, saints, kings, Jain festivals and practices) with one clear lesson, 40-75 s; every story names its source (Agam / Kalpasutra / Adipurana / Trishashti-shalaka-purusha-charitra)",
