@@ -422,6 +422,10 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None):
         y = max(HOOK_Y[l] for l in lays) + (170 if hook else 0)
         L.append(f"Dialogue: 3,{_ts(st)},{_ts(en)},Note,,0,0,0,,{{\\pos({W // 2},{y})\\fscx80\\fscy80\\t(0,120,\\fscx100\\fscy100)"
                  f"\\fad(80,120)}}{esc(txt)}")
+    # 19 Nov test: "WHERE THE FUCK DID YOU LOSE IT" on screen. The audio stays original; the on-screen words are masked
+    mask = lambda s: re.sub(r"(?i)\b(f)u(ck\w*)|\b(s)hi(t\w*)|\b(b)itc(h\w*)|\b(m)otherf\w*|\b(c)un(t\w*)",
+                            lambda m: next(g for g in m.groups() if g) + "**" + (m.group(0)[-1] if len(m.group(0)) > 3 else ""), s)
+    Wd = [(a, b, mask(t)) for a, b, t in Wd]
     groups, cur = [], []
     for w in Wd:
         cur.append(w)

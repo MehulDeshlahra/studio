@@ -387,6 +387,24 @@ def clip_job(jid, spec):
             cd = os.path.join(work, f"c{i}"); os.makedirs(cd)
             s0 = max(0.0, float(c["a"]) - pad)
             win = os.path.join(cd, "window.mp4")
+            if spec.get("words_only"):
+                # 19 Nov: notes must quote the EXACT speech; the server writes them from these words, then asks for the render
+                try:
+                    clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full,
+                                  "-vn", "-c:a", "aac", "-b:a", "128k", win], 600)
+                    Wd, lang = clipcore.words(win, spec.get("lang"), " ".join(x for x in (spec.get("wprompt") or "",
+                                              ", ".join(spec.get("glossary") or [])) if x))
+                    Wd = clipcore.fix_names(Wd, spec.get("glossary") or [])
+                    a2, b2 = clipcore.trim(Wd, float(c["a"]) - s0, float(c["b"]) - s0)
+                    json.dump({"words": [w for w in Wd if a2 - 0.05 <= w[0] <= b2], "lang": lang, "asr": clipcore.ASR[0]},
+                              open(os.path.join(cd, "result.json"), "w"), ensure_ascii=False)
+                    done += 1
+                except Exception as e:
+                    json.dump({"error": str(e)[:600]}, open(os.path.join(cd, "result.json"), "w"))
+                finally:
+                    if os.path.exists(win):
+                        os.remove(win)
+                continue
             try:
                 clipcore.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.2f}", "-to", f"{float(c['b']) + pad:.2f}", "-i", full]
                              + clipcore.venc(False) + ["-c:a", "aac", "-b:a", "192k", win], 900)

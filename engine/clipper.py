@@ -277,6 +277,49 @@ Return JSON {{"moments": [{{"start": <seconds where the hook line begins>, "end"
            {{"after": "<3-6 words copied exactly from the transcript>", "text": "<react note>", "kind": "react"}}]}}]}}"""
 
 
+NOTES_ONLY = """You write the on-screen notes for ONE clip on the clip page "{page}" ({about}).
+CLIP hook title: "{hook}". Why it works: {why}
+{guide}
+EXACT TRANSCRIPT of the clip (what is said, in order):
+"{text}"
+Write 3 notes: 1 "context" (who / which show or game by name + one specific fact the clip does not say; "after": "")
+and 2 "react" notes, each placed right after DIFFERENT words: "after" = 3-6 words copied EXACTLY from the transcript
+above, in order, and the two react notes must follow different parts (one early-middle, one near the payoff).
+Each note 3-9 words, in the clip's language (Hinglish in Roman script for Hindi), no emojis, no hashtags.
+Return JSON {{"notes": [{{"after": "", "text": "...", "kind": "context"}}, {{"after": "...", "text": "...", "kind": "react"}},
+ {{"after": "...", "text": "...", "kind": "react"}}]}}"""
+
+
+def exact_notes(ch, src, url, vid_id, ms, label):
+    """19 Nov: on the YouTube path the moment-picker WATCHES the video and cannot quote the speech exactly (3 notes on
+    the same anchor, 1 of 3 placed). Ask the laptop for the exact words of each moment (no render), then write the
+    notes from them. Keeps the old notes when anything fails."""
+    import laptop
+    try:
+        out = laptop.job({"kind": "clip", "url": url, "id": vid_id, "pad": 4, "words_only": True, "glossary": glossary(src),
+                          **_lang_spec(ch), "clips": [{"a": m["a"], "b": m["b"]} for m in ms]}, f"{ch['id']} {label} words", wait=1800)
+    except Exception as e:
+        log("clipper: exact words failed, keeping the first notes", str(e)[:150]); return ms
+    guide = MOMENTS.split("NOTES (19 Nov")[1].split("Return JSON")[0]
+    for i, m in enumerate(ms):
+        r = load(os.path.join(out, f"c{i}", "result.json"), {}) or {}
+        text = " ".join(w[2] for w in r.get("words") or [])
+        if len(text.split()) < 8:
+            continue
+        try:
+            d = llm.text(NOTES_ONLY.format(page=ch.get("name", ch["id"]), about=ch.get("format", "")[:200], hook=m["hook"],
+                                           why=m.get("why", ""), guide=guide + campaign_guide(src), text=text[:2500]),
+                         json_mode=True, max_tokens=700)
+            new = _notes({"notes": (d or {}).get("notes")})
+            if len(new) >= 2:
+                m["notes"] = new
+        except Exception as e:
+            log("clipper: notes from words failed", str(e)[:120])
+    shutil.rmtree(os.path.dirname(out), ignore_errors=True)
+    log("clipper: exact-word notes", [[n["text"] for n in m.get("notes") or []] for m in ms])
+    return ms
+
+
 def _lang_spec(ch):
     """Clip job language: a Hindi page transcribes in Hindi and writes Roman Hinglish (channel.json clip.whisper_prompt)."""
     c = ch.get("clip") or {}
@@ -415,6 +458,8 @@ def make(cid, url, n=4, test=False, campaign=None):
     log("clipper: replay peaks", [(mmss(p["at"]), p["replay"]) for p in pk])
     log("clipper: moments", [(mmss(m["a"]), mmss(m["b"]), m["hook"], m["score"], "replayed" if m["replayed"] else "") for m in ms])
     brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")    # campaigns that say "no watermark"
+    if ch.get("kind") == "clips":
+        ms = exact_notes(ch, src, url, info.get("id"), ms, base)
     out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src), **_lang_spec(ch),
                       "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {base}", wait=3600)
     made = ingest(ch, cid, url, info, src, test, ms, out, base)
