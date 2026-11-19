@@ -349,6 +349,11 @@ def clip_job(jid, spec):
     # (render 8 ran old code while the worker was busy). Reload it per job: always today's code.
     try:
         clipcore = importlib.reload(clipcore)
+        # 19 Nov: cvc_run and the copied engine (engine/cvc) are imported by clipcore; reload them too, or a shipped
+        # tracking fix only runs after a manual worker restart
+        for name in [m for m in list(sys.modules) if m == "cvc" or m.startswith("cvc.")] + ["cvc_run"]:
+            if name in sys.modules:
+                importlib.reload(sys.modules[name])
     except Exception as e:
         log("clipcore reload failed, using the loaded one:", str(e)[:120])
     work = os.path.join(HOME, "jobs", jid)
