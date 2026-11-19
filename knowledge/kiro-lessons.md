@@ -89,4 +89,7 @@ knowledge/lessons-learnt.md for the engine.
 - 19 Nov: a 10/10 review and an 83 % voice match hid a reel the owner called "not top notch" (WhatsApp AI agent): the
   checks only hunted defects. Before calling a video good, look at full-size frames at 6+ moments and read the script as a
   viewer: does it TEACH the title question, do the frames show what the line says, do captions follow the voice. The
-  engine now has the same three checks (plan.explainer_gate, review content rules, align.sync_problems).
+  engine now has the same three checks (plan.explainer_gate, review content rules, align.sync_problems).- 19 Nov: told the owner "nothing has posted yet" from done.json alone; Finance Fuel had 2 Stories live and every FB
+  page had public profile/cover "updated" posts plus verification Reels. RULE: before saying what is or is not posted,
+  read the LIVE accounts (IG media + stories, FB posts/reels/stories via the Graph API: .tmp/live_check.py,
+  .tmp/fb_posts.py). Never infer the live state from our own files.
