@@ -185,19 +185,26 @@ def post_one(cid, dry=False):
     # 19 Nov: a page can post at its own hours (IST, the server clock): Cut Capsule earns only on US/global views, so it
     # posts at US evening (06:30 IST = 8 pm New York) from its own timer (studio-post-us) instead of 13:00/20:00.
     hours = [int(h) for h in (ch.get("schedule") or {}).get("post_hours_ist") or []]
+    # 19 Nov (owner: "why only 1 a day?"): schedule.ramp = [[date, posts_per_day], ...] raises the pace step by step
+    # (new-account warming: ~1 Reel/day for 2 weeks, then more). The page's hours are in priority order: N posts a day
+    # use the first N hours. Instagram's own API cap is 50 posts / 24 h, YouTube uploads 100 / day: the limit is ours.
+    ramp = (ch.get("schedule") or {}).get("ramp") or []
+    ppd = int((ch.get("schedule") or {}).get("posts_per_day", 1) or 1)
+    for d0, n0 in ramp:
+        if day >= d0:
+            ppd = int(n0)
     if hours:
         hr = int(time.strftime("%H"))
-        if hr not in hours:
-            log("publish", cid, "not this page's posting hour", hours); return
-        if w.get("one_a_day_until") and day < w["one_a_day_until"] and hr != hours[0]:
-            log("publish", cid, "warm-up: only the first slot until", w["one_a_day_until"]); return
+        if hr not in hours[:max(1, ppd)]:
+            log("publish", cid, "not one of today's posting hours", hours[:max(1, ppd)], f"({ppd}/day)"); return
     elif w.get("one_a_day_until") and day < w["one_a_day_until"] and int(time.strftime("%H")) < 17:
         log("publish", cid, "warm-up: only the evening slot until", w["one_a_day_until"]); return
+    if not ramp and w.get("one_a_day_until") and day < w["one_a_day_until"]:
+        ppd = 1
     p = os.path.join(ROOT, "channels", cid, "done.json")
     done = load(p, [])
     # 18 Nov: posts_per_day was never read, so after the warm-up (27 Nov) every page would post at both slots
     # (13:00 and 20:00), katha and Aage Suno (1 a day) included. One a day = the evening slot only.
-    ppd = int((ch.get("schedule") or {}).get("posts_per_day", 1) or 1)
     today_n = sum(1 for d in done if str((d.get("posted") or {}).get("at", "")).startswith(day))
     if today_n >= ppd:
         log("publish", cid, f"already posted {today_n} today (posts_per_day {ppd})"); return

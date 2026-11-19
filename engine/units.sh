@@ -55,6 +55,6 @@ mk studio-learn-deep "Studio deep repo reader (3x a day)" "*-*-* 01,09,15:30:00"
 [ -f /home/ubuntu/studio/engine/campaigns.py ] && mk studio-campaigns "Studio clipping campaign watcher (6-hourly)" "*-*-* 00,06,12,18:20:00" campaigns.py 900
 [ -f /home/ubuntu/studio/engine/whopbot.py ] && mk studio-whopbot "Studio Whop autopilot: submit clips, join best campaigns (2-hourly)" "*-*-* 01/2:50:00" whopbot.py 3600
 [ -f /home/ubuntu/studio/engine/indiawatch.py ] && mk studio-indiawatch "Studio Indian clipping platforms watcher (daily)" "*-*-* 11:10:00" indiawatch.py 900
-mk studio-post-us "Studio posting at US hours (Cut Capsule: campaigns pay on US/global views)" "*-*-* 06,22:30:00" "publish.py cutcapsule" 3600
+mk studio-post-us "Studio posting at US hours (Cut Capsule: campaigns pay on US/global views)" "*-*-* 02,04,06,22:30:00" "publish.py cutcapsule" 3600
 [ -f /home/ubuntu/studio/engine/clipwatch.py ] && mk studio-clipwatch "Studio auto-clipper for joined sources (hourly)" "*-*-* *:40:00" clipwatch.py 9000
 systemctl list-timers 'studio-*' --no-pager | head -30
