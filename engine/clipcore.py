@@ -91,13 +91,21 @@ def fix_names(Wd, glossary):
     return out
 
 
+_DLLS_DONE = [False]
+
+
 def _cuda_dlls():
     """19 Nov: the GPU whisper never loaded (cublas64_12.dll not found: a half-done pip uninstall had renamed nvidia/cublas/bin
     to '~in') and every clip silently used the small CPU model (misheard 'crystal gel' as 'crypto jail', garbled Hindi).
     Make the pip-installed NVIDIA runtime folders visible to CTranslate2 on Windows."""
-    if os.name != "nt":
+    # 19 Nov: this ran on EVERY transcription and prepended ~10 folders each time; after enough clip jobs PATH passed
+    # Windows' 8191-char cmd limit and Reel renders failed with "'npx.cmd' is not recognized". Once per process, and
+    # only folders not on PATH yet.
+    if os.name != "nt" or _DLLS_DONE[0]:
         return
+    _DLLS_DONE[0] = True
     import glob, site
+    have = set(os.environ.get("PATH", "").lower().split(os.pathsep))
     for sp in site.getsitepackages() + [site.getusersitepackages()]:
         for d in glob.glob(os.path.join(sp, "nvidia", "*", "bin")) + [os.path.join(sp, "ctranslate2")]:
             if os.path.isdir(d):
@@ -105,7 +113,8 @@ def _cuda_dlls():
                     os.add_dll_directory(d)
                 except Exception:
                     pass
-                os.environ["PATH"] = d + os.pathsep + os.environ.get("PATH", "")
+                if d.lower() not in have:
+                    os.environ["PATH"] = d + os.pathsep + os.environ.get("PATH", ""); have.add(d.lower())
 
 
 def words(mp4, lang=None, prompt=""):
