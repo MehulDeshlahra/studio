@@ -110,12 +110,23 @@ def main():
             ctx = browser(p, headless=False)
             page = ctx.pages[0] if ctx.pages else ctx.new_page()
             page.goto("https://whop.com/login/", wait_until="domcontentloaded")
-            print("Log in to Whop in this window. It closes by itself once you are logged in (10 min max).", flush=True)
-            for _ in range(120):
-                page.wait_for_timeout(5000)
-                if "/login" not in page.url and "whop.com" in page.url:
-                    page.wait_for_timeout(4000); break
-            ctx.close(); print(json.dumps({"ok": True})); return
+            print("Log in to Whop in this window. It closes by itself once you are logged in (15 min max).", flush=True)
+            ok = False
+            for _ in range(180):                         # 19 Nov: /login redirected at once, so the URL alone proved nothing
+                try:
+                    page.wait_for_timeout(5000)
+                    names = {c["name"].lower() for c in ctx.cookies("https://whop.com")}
+                    if any(("token" in n or "session" in n) and "csrf" not in n for n in names) and "/login" not in page.url:
+                        txt = page.inner_text("body")[:4000]
+                        if not re.search(r"\bSign in\b|\bLog in\b", txt):
+                            ok = True; page.wait_for_timeout(3000); break
+                except Exception:
+                    break                                # the owner closed the window
+            try:
+                ctx.close()
+            except Exception:
+                pass
+            print(json.dumps({"ok": ok})); return
         ctx = browser(p)
         page = ctx.new_page()
         try:
@@ -132,7 +143,9 @@ def main():
         except Exception as e:
             out = {"error": str(e)[:500], "shot": shot(page, "error")}
         ctx.close()
-    print(json.dumps(out, ensure_ascii=False))
+    if os.environ.get("WHOP_OUT"):                       # a file path: written as utf-8 (PowerShell '>' writes UTF-16)
+        json.dump(out, open(os.environ["WHOP_OUT"], "w", encoding="utf-8"), ensure_ascii=False)
+    print(json.dumps(out, ensure_ascii=True))
 
 
 if __name__ == "__main__":

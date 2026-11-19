@@ -68,3 +68,6 @@ knowledge/lessons-learnt.md for the engine.
   >= 450x800 and judge text claims (the hook) against the transcript, not pixels.
 - The laptop worker imports engine code once: after changing clipcore.py, restart the worker before testing (a run used
   the old code for clips 2-3).
+- REPEATED 19 Nov (3rd time): wrote a file and ran it in the same parallel batch. HARD RULE: fs_write is always alone in
+  its batch; the run is the NEXT call. Never pipe source files through PowerShell (Get-Content | python): it mangled
+  every non-ASCII character in api.py (restored from git). Edit with str_replace or a Python script that opens utf-8.

@@ -258,6 +258,30 @@ def clip_job(jid, spec):
         shutil.rmtree(work, ignore_errors=True)
 
 
+def whop_job(jid, spec):
+    """tools/whop.py with the saved Whop login (brief / submit / check / look); the result + screenshot go back."""
+    work = os.path.join(HOME, "jobs", jid)
+    shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
+    try:
+        out = os.path.join(work, "result.json")
+        env = dict(os.environ, WHOP_OUT=out, PYTHONIOENCODING="utf-8")
+        r = subprocess.run([sys.executable, os.path.join(REPO, "tools", "whop.py"), spec["cmd"]] + [str(a) for a in spec.get("args") or []],
+                           capture_output=True, text=True, timeout=600, creationflags=NOWIN, env=env)
+        if not os.path.exists(out):
+            json.dump({"error": (r.stderr or r.stdout or "no output")[-800:]}, open(out, "w"))
+        res = json.load(open(out, encoding="utf-8"))
+        if res.get("shot") and os.path.exists(res["shot"]):
+            shutil.copy(res["shot"], os.path.join(work, "shot.png"))
+        _send_back(jid, work)
+        log("whop", spec["cmd"], jid, "ok" if not res.get("error") else res["error"][:120])
+    except Exception as e:
+        log("whop job", jid, "failed:", str(e)[:300])
+        msg = str(e)[:1500].replace("'", " ")
+        run(SSH + [f"echo '{msg}' > {R}/done/{jid}.err"], timeout=40)
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
 def job_spec(jid):
     r = run(SSH + [f"cat {R}/claimed/{jid}.json"], timeout=40)
     try:
@@ -353,7 +377,7 @@ def main():
                 th = threading.Thread(target=beat, daemon=True); th.start()
                 try:
                     spec = job_spec(jid)
-                    {"fetch": fetch, "info": info_job, "clip": clip_job}.get(spec.get("kind"), lambda j, s: render(j))(jid, spec)
+                    {"fetch": fetch, "info": info_job, "clip": clip_job, "whop": whop_job}.get(spec.get("kind"), lambda j, s: render(j))(jid, spec)
                 finally:
                     stop.set()
                 continue
