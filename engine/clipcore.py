@@ -320,6 +320,23 @@ def analyse(mp4, fps=4):
     info["cam"] = cam
     info["segments"] = segs
     info["lost"] = subject_lost(samples, segs, is_cam, sw, sh)
+    # 19 Nov frames: a note sat on the comedian's face. Where the main face is on the OUTPUT frame (px, top..bottom with
+    # hair and chin), per sample, so ass() can move a note off it.
+    fy = []
+    fh_out = W * sh / max(1, sw)                       # fill: the frame scaled to full width, centred +40
+    for t, fs in samples:
+        g = next((g for g in segs if g["s"] <= t < g["e"]), None)
+        fx = [f for f in fs if not is_cam(f)]
+        if not g or not fx or g["layout"] == "stack":
+            continue
+        f = max(fx, key=lambda q: q[2])
+        if g["layout"] == "crop":
+            top, bot = (f[1] - 0.75 * f[2]) * H, (f[1] + 0.65 * f[2]) * H
+        else:
+            y0 = (H - fh_out) / 2 + 40
+            top, bot = y0 + (f[1] - 0.75 * f[2]) * fh_out, y0 + (f[1] + 0.65 * f[2]) * fh_out
+        fy.append((round(t, 2), int(top), int(bot)))
+    info["face_y"] = fy
     lays = {g["layout"] for g in segs}
     info["layout"] = lays.pop() if len(lays) == 1 else "mixed:" + "+".join(sorted({g["layout"] for g in segs}))
     return info
@@ -448,7 +465,7 @@ def place_notes(notes, Wt, dur):
     return out
 
 
-def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None):
+def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, face_y=None):
     """Hook banner (frame 1 to the end) + 3-word pop captions; the spoken word in the accent colour, a touch larger.
     Positions follow the layout on screen at that moment (segs from analyse())."""
     esc = lambda s: str(s).replace("{", "(").replace("}", ")").replace("\\", "/").replace("\n", " ")
@@ -478,6 +495,14 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None):
         # 19 Nov test: the layout (and so the hook) can change while a note is up: sit below the LOWEST hook in its span
         lays = {g["layout"] for g in segs if g["s"] < en and g["e"] > st} or {lay_at(st)}
         y = max(HOOK_Y[l] for l in lays) + (170 if hook else 0)
+        # 19 Nov frames: the note covered the speaker's face. Over a face for >25% of its time -> the low band above the
+        # captions, whichever band covers the face less
+        span = [(a, b) for t, a, b in (face_y or []) if st <= t <= en]
+        if span:
+            over = lambda yy: sum(1 for a, b in span if a < yy + 95 and b > yy - 95) / len(span)
+            low = min(CAP_Y[l] for l in lays) - 230
+            if over(y) > 0.25 and over(low) < over(y):
+                y = low
         L.append(f"Dialogue: 3,{_ts(st)},{_ts(en)},Note,,0,0,0,,{{\\pos({W // 2},{y})\\fscx80\\fscy80\\t(0,120,\\fscx100\\fscy100)"
                  f"\\fad(80,120)}}{esc(txt)}")
     # 19 Nov test: "WHERE THE FUCK DID YOU LOSE IT" on screen. The audio stays original; the on-screen words are masked
@@ -603,7 +628,7 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     assf = os.path.join(out_dir, "captions.ass")
     logo = LOGO if (brand and os.path.exists(LOGO)) else None      # 19 Nov: the page's real logo; text handle only without it
     placed = place_notes(notes, Wt, info["dur"])
-    ass(assf, hook, Wt, info["dur"], info["segments"], brand="" if logo else brand, notes=placed)
+    ass(assf, hook, Wt, info["dur"], info["segments"], brand="" if logo else brand, notes=placed, face_y=info.get("face_y"))
     final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"), logo)
     q = probe(final); q["lufs"] = lufs(final)
     d = max(1.0, q["dur"])
