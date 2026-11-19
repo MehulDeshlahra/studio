@@ -2,6 +2,7 @@
   "id": "katha",
   "name": "Puraan Ki Katha (@puraankikatha)",
   "story_check": true,
+  "story_query": "katha",
   "story_texts": "Hindu scriptures: the Puranas (Shiva, Vishnu, Bhagavata, Skanda, Padma, Markandeya), Valmiki Ramayana, Mahabharata, Devi Bhagavata",
   "status": "pilot",
   "language": "Hindi",

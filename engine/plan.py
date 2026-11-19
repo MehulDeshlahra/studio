@@ -670,7 +670,8 @@ def story_fix(ch, topic, plan, research_text):
     src = _fact_sources(ch, topic, research_text)
     try:                                           # scripture-specific evidence on top of the topic research
         import web
-        extra = web.facts(f"{topic} {ch.get('story_texts', '')}".strip(), n=3, per=3000)
+        # 19 Nov: the whole scripture list in the query found nothing; a short page word ("Jain", "Purana") finds sources
+        extra = web.facts(f"{topic} {ch.get('story_query', '')}".strip(), n=3, per=3000)
         if extra:
             src = (src + "\n\n" + extra).strip()
     except Exception as e:
