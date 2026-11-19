@@ -61,3 +61,10 @@ strongest, not its oldest (katha: Ujjain/Greenwich first).
   description); a name or number not in them or the transcript is rejected in code, asked again once, then dropped.
 - The vision check scored a clip 10 with an empty stage (the comedian walked out of a fixed crop). Fix: the crop
   follows the speaker (smoothed path, dead zone, pan limit) and code measures time out of crop (>10% = held).
+- The story checker itself was wrong when it had no sources (said the Bhagavata has Satyabhama kill Narakasura; flagged
+  Ganga 'would sink the earth to patala', which the Bhagavata does say). Fix: a flag counts only when a second,
+  independent model (OmniRoute) agrees; when the two disagree on what really happened, the detail is removed, never
+  replaced by a guess. The web search fallback was broken (ddgs 'wt-wt' -> wt.wikipedia.org); now us-en + a short query.
+- Clips: a picker ranked 'JAPANESE PORN...' first: brand-safety filter (UNSAFE/STRONG) on moments, notes and speech. An
+  English page got Hinglish notes from Hindi examples in the prompt: the language is stated per page and checked in code.
+  An audience face in one crowd shot was taken for a webcam: a webcam box must persist across 2+ shots.
