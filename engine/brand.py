@@ -204,7 +204,19 @@ def do_page(cid, st, force):
         log("brand:", cid, "no Instagram DP set yet")
         return
     raw = urllib.request.urlopen(url, timeout=60).read()
-    h = hashlib.sha1(raw).hexdigest()[:12]
+    # 19 Nov: Instagram's CDN re-encodes the same DP, so a byte hash "changed" on every run and the Facebook DP + cover were
+    # re-uploaded each time: every upload is a public "updated their profile picture" post (Kaise Tech had 10). Hash what
+    # the picture LOOKS like (16x16 grey average hash) instead.
+    try:
+        import io
+        from PIL import Image
+        im = Image.open(io.BytesIO(raw)).convert("L").resize((16, 16))
+        px = list(im.getdata()); avg = sum(px) / len(px)
+        h = "a" + hex(int("".join("1" if p > avg else "0" for p in px), 2))[2:].zfill(64)[:16]
+    except Exception:
+        h = hashlib.sha1(raw).hexdigest()[:12]
+    if s.get("src") and not str(s["src"]).startswith("a") and os.path.exists(os.path.join(d, "yt_banner.png")):
+        s["src"] = h            # first run with the look hash: adopt it, no re-upload (that would be one more public post)
     changed = force or s.get("src") != h or not os.path.exists(os.path.join(d, "yt_banner.png"))
     if changed:
         open(os.path.join(d, "src.jpg"), "wb").write(raw)
