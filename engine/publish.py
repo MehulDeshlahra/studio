@@ -29,13 +29,58 @@ def _req(url, data=None, headers=None, method=None):
         raise
 
 
+MEDIA_REPO = os.path.expanduser("~/studio-media")
+MEDIA_RAW = "https://raw.githubusercontent.com/offhours-lab/studio-media/main/"
+
+
+def _public_url(mp4, name):
+    """Put the file in the public repo (offhours-lab/studio-media) and wait until raw.githubusercontent serves it."""
+    import shutil, subprocess
+    subprocess.run(["git", "-C", MEDIA_REPO, "pull", "-q", "--rebase"], timeout=120)
+    os.makedirs(os.path.join(MEDIA_REPO, "reels"), exist_ok=True)
+    shutil.copy(mp4, os.path.join(MEDIA_REPO, "reels", name))
+    for c in (["git", "-C", MEDIA_REPO, "add", "-A"], ["git", "-C", MEDIA_REPO, "commit", "-qm", "reel " + name],
+              ["git", "-C", MEDIA_REPO, "push", "-q"]):
+        subprocess.run(c, timeout=300)
+    url = MEDIA_RAW + "reels/" + name
+    for _ in range(30):
+        try:
+            if urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=30).status == 200:
+                return url
+        except Exception:
+            pass
+        time.sleep(10)
+    return url
+
+
 def instagram(acc, mp4, caption):
+    """19 Nov: the first Reel by the resumable upload failed (rupload 'ProcessingFailedError', also with the v27 URI) and
+    by the FB video URL (2207076). By video_url from our public repo it published at once: that is the route now."""
+    tok, uid = acc["page_token"], acc["ig_user_id"]
+    url = _public_url(mp4, f"{uid}-{int(time.time())}.mp4")
+    c = _req(f"{G}/{uid}/media", {"media_type": "REELS", "video_url": url, "caption": caption,
+                                    "share_to_feed": "true", "access_token": tok})
+    cid = c["id"]
+    for _ in range(60):
+        st = _req(f"{G}/{cid}?fields=status_code,status&access_token={tok}")
+        if st.get("status_code") == "FINISHED":
+            break
+        if st.get("status_code") == "ERROR":
+            raise RuntimeError("IG processing error: " + str(st))
+        time.sleep(10)
+    p = _req(f"{G}/{uid}/media_publish", {"creation_id": cid, "access_token": tok})
+    return p["id"]
+
+
+def instagram_resumable(acc, mp4, caption):
     tok, uid = acc["page_token"], acc["ig_user_id"]
     c = _req(f"{G}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
                                     "share_to_feed": "true", "thumb_offset": "0", "access_token": tok})
     cid = c["id"]
     size = os.path.getsize(mp4)
-    _req(f"https://rupload.facebook.com/ig-api-upload/v23.0/{cid}", open(mp4, "rb").read(),
+    # 19 Nov: Instagram moved the upload host to v27.0; the hard-coded v23.0 URL failed ("ProcessingFailedError", the
+    # Finance Fuel Reel went out on FB only). Use the upload URI the create call returns.
+    _req(c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v23.0/{cid}", open(mp4, "rb").read(),
          {"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(size)}, "POST")
     for _ in range(60):
         st = _req(f"{G}/{cid}?fields=status_code,status&access_token={tok}")
@@ -270,7 +315,18 @@ def post_one(cid, dry=False):
         try:
             res[name] = fn(); log("published", cid, name, res[name])
         except Exception as e:
-            res[name + "_error"] = str(e)[:300]; log("publish fail", cid, name, e)
+            # 19 Nov: "HTTP Error 400: Bad Request" alone hid the reason; keep the platform's own error text
+            body = ""
+            try:
+                body = (e.read() or b"").decode("utf-8", "ignore")[:400] if hasattr(e, "read") else ""
+            except Exception:
+                pass
+            res[name + "_error"] = (str(e) + " " + body)[:500]; log("publish fail", cid, name, e, body)
+            try:
+                from core import telegram
+                telegram(f"⚠️ {cid}: {name.upper()} post failed ({str(e)[:80]} {body[:160]}). The other platforms went out.")
+            except Exception:
+                pass
     if res.get("yt"):                                          # 19 Nov: serial / series parts go into one YouTube playlist per story
         try:
             import ytlists
