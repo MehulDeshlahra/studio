@@ -30,6 +30,8 @@ Return JSON:
 {{"can_do": true/false, "why_not": "<if false: what we cannot do (needs face cam / original video / not on YouTube / UGC talking to camera / app demo...)>",
  "youtube_channels": ["<@handle or channel URL of the footage creator, only if the brief says to clip that channel>"],
  "youtube_videos": ["<YouTube video / live URLs given as footage>"],
+ "youtube_search": ["<when the brief NAMES official videos without a link (e.g. 'the Heismay Character Trailer'), a YouTube search for each: game/brand + video name>"],
+ "official_channel": "<the brand's official YouTube channel name if footage is its official videos, else empty>",
  "other_footage": ["<Drive / Dropbox / other links given as footage>"],
  "rules": ["<every posting rule, short: length, required sound, on-screen text, what not to show, platforms>"],
  "caption_add": "<text the caption MUST contain: tags, @mentions, #ad, link text; empty if none>",
@@ -62,6 +64,28 @@ def _job(cmd, *args, wait=900):
         r["shot_server"] = os.path.join(keep, f"{time.strftime('%m%d-%H%M%S')}-{cmd}.png")
         os.replace(shot, r["shot_server"])
     return r
+
+
+def _yt_find(q, official=""):
+    """Best YouTube match for a named official video: the result from a channel whose name contains the brand wins."""
+    import urllib.parse, rivals
+    try:
+        d = rivals._yt_api("search?part=snippet&type=video&maxResults=8&q=" + urllib.parse.quote(q))
+    except Exception as e:
+        log("whopbot: YouTube search failed", q, str(e)[:100]); return None
+    items = [it for it in d.get("items") or [] if (it.get("id") or {}).get("videoId")]
+    if not items:
+        return None
+    off = re.sub(r"[^a-z0-9]", "", official.lower())
+    words = [w for w in re.findall(r"[a-z0-9]{3,}", q.lower())]
+
+    def rank(it):
+        sn = it.get("snippet") or {}
+        ch = re.sub(r"[^a-z0-9]", "", (sn.get("channelTitle") or "").lower())
+        title = (sn.get("title") or "").lower()
+        return (bool(off) and (off in ch or ch in off), sum(w in title for w in words))
+    best = max(items, key=rank)
+    return "https://www.youtube.com/watch?v=" + best["id"]["videoId"]
 
 
 def logged_in():
@@ -163,6 +187,11 @@ def make_source(k, v, d, st):
         log("whopbot: brief read failed", str(e)[:120]); return None
     foot = [x for x in (b.get("youtube_videos") or []) + (b.get("other_footage") or []) + (r.get("footage") or [])
             if re.search(r"(youtube\.com/(watch|live|shorts)|youtu\.be/|drive\.google\.com/(file|drive/folders|drive/u/\d+/folders))", str(x))]
+    # 19 Nov (SEGA): footage named but not linked ("use the Launch Trailer"): find each on YouTube, preferring the brand's channel
+    for q in (b.get("youtube_search") or [])[:4]:
+        u = _yt_find(str(q), str(b.get("official_channel") or ""))
+        if u:
+            foot.append(u); log("whopbot: found footage on YouTube", q, "->", u)
     # one link per footage item: "...folders/X?usp=sharing" and "...folders/X" are the same folder (transcribed twice before)
     foot = list(dict.fromkeys(re.sub(r"\?usp=\w+$", "", str(x).rstrip("/.,")) for x in foot))
     chans = [x for x in (b.get("youtube_channels") or []) if x]
