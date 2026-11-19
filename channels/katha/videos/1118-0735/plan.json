@@ -1,30 +1,30 @@
 {
  "slug": "karna-kavach-daan",
- "title": "Kavach phaad diya apne haathon se?",
+ "title": "Karna ne apna divya kavach kyun ukhada?",
  "hooks": [
-  "Kavach phaad diya... apne haathon se.",
-  "Amartya hoke bhi... maut chuni usne.",
-  "Indra ne maanga... sab kuch daan mein."
+  "Karna ne apna divya kavach ukhad diya...",
+  "Divya kavach wala Karna ne kyun chhoda apna suraksha kavach?",
+  "Kya aap apni divya taqat daan kar sakte ho?"
  ],
  "hook_choice": 0,
- "hook_why": "Starts with the violent, voluntary act — tearing off divine armor — creating immediate shock and an incomplete thought that forces retention past 3 seconds. Matches the 'shock-fact/urgency' hook type that wins in this niche.",
- "metaphor": "Second Skin — the divine kavach as a living golden layer he chooses to shed, revealing that his true armor was never metal but generosity.",
+ "hook_why": "Mystery-tease hook shows the shocking act immediately, first sentence incomplete to force retention past 3 seconds, visual of golden armor tearing away creates instant curiosity.",
+ "metaphor": "Golden armor cracking open to reveal an inner light that never fades — invincibility was a cage, generosity the key that freed his true identity.",
+ "mechanism": [],
  "cast": {
-  "Karna": "Tall warrior with golden skin, wearing ornate golden kavach (armor) and kundal (earrings), long dark hair, calm dignified expression, traditional dhoti, soft divine light around him",
-  "Indra_Brahmin": "Old brahmin with white beard, simple cotton dhoti, kamandalu (water pot), humble posture, but eyes hold divine lightning",
-  "Indra_True": "Four-armed deva on Airavata elephant, golden crown, vajra in hand, radiant but only hinted in shadows and reflections — never fully shown"
+  "Karna": "Tall, broad-shouldered warrior with golden skin, wearing ornate golden armor (kavach) and large golden earrings (kundal), long hair tied in a bun, calm determined expression, traditional dhoti, radiant but mortal.",
+  "Indra_brahmin": "Old brahmin with white beard, simple cotton dhoti, wooden staff, kamandalu, humble posture, but eyes sharp and divine.",
+  "Indra_true": "Four-armed deity riding white elephant Airavata, golden crown, lightning in hand, majestic, surrounded by celestial glow."
  },
  "scenes": [
   {
-   "vo": "Kavach phaad diya... apne haathon se, khoon aur roshni ek saath baha.",
+   "vo": "Karna ne apna divya kavach ukhad diya...",
    "type": "clip",
-   "prompt": "Extreme close-up: golden kavach cracking at the chest, Karna's fingers digging into the seams, warm golden light bleeding through the fissures, slow motion tear, painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light",
+   "prompt": "Karna standing in forest clearing at dawn, tearing heavy golden armor from his chest with both hands, golden earrings ripped from earlobes, blood dripping on dhoti, soft divine light on face, painterly cinematic Indian miniature style, warm gold and deep maroon, ornate but uncluttered.",
    "motion": "punch",
-   "title": "Kavach phaad diya",
+   "title": "DIVYA KAVACH",
    "keywords": [
-    "kavach",
-    "phaad",
-    "haathon"
+    "divya kavach",
+    "ukhad diya"
    ],
    "big": null,
    "small": null,
@@ -33,83 +33,13 @@
    "skin": "painting"
   },
   {
-   "vo": "Karna janam se hi amartya tha, Surya ka vardaan.",
+   "vo": "Sang mein kundal bhi",
    "type": "image",
-   "prompt": "Newborn Karna floating on a lotus in a celestial river, golden kavach and kundal already fused to his tiny body, soft divine glow, Surya's rays blessing him, painterly cinematic Indian miniature style, warm gold and deep maroon",
-   "motion": "push",
-   "title": "Janam se amartya",
-   "keywords": [
-    "janam",
-    "amartya",
-    "surya"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null,
-   "skin": "painting"
-  },
-  {
-   "vo": "Kavach-kundal uske shareer se chipke the, jaise doosri chamdi.",
-   "type": "image",
-   "prompt": "Young Karna standing, the kavach glowing like a second skin — intricate filigree patterns pulsing with light, kundal shimmering at ears, no visible seams, divine anatomy, painterly cinematic Indian miniature style, warm gold and deep maroon",
-   "motion": "pan",
-   "title": "Doosri chamdi",
-   "keywords": [
-    "kavach",
-    "kundal",
-    "chamdi"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null,
-   "skin": "painting"
-  },
-  {
-   "vo": "Koi shastra bhed na saka, teer toot ke bikhar gaye.",
-   "type": "image",
-   "prompt": "Battlefield: arrows, spears, chakras shattering on impact with Karna's chest, golden sparks flying, he stands untouched, calm, weapons turning to dust, painterly cinematic Indian miniature style, warm gold and deep maroon",
-   "motion": "tilt",
-   "title": "Koi shastra na bhed",
-   "keywords": [
-    "shastra",
-    "bhed",
-    "teer"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null,
-   "skin": "painting"
-  },
-  {
-   "vo": "Ek din brahmin aaya daan maangne, suraj dhalte waqt van mein.",
-   "type": "image",
-   "prompt": "Forest hermitage at golden hour: old brahmin with kamandalu approaches Karna who sits in meditation, dappled light through trees, painterly cinematic Indian miniature style, warm gold and deep maroon",
-   "motion": "pull",
-   "title": "Brahmin maanga daan",
-   "keywords": [
-    "brahmin",
-    "daan",
-    "van"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null,
-   "skin": "painting"
-  },
-  {
-   "vo": "Woh brahmin... Indra the chhup ke, parchhai mein char haath dikhe.",
-   "type": "image",
-   "prompt": "Same scene, but the brahmin's shadow on the ground shows four arms and a crown, lightning flickering in his eyes, Karna's gaze sharp with recognition, painterly cinematic Indian miniature style, warm gold and deep maroon",
+   "prompt": "Close-up of Karna's hands holding the golden armor and earrings, blood on fingertips, earrings glowing faintly, forest background blurred, painterly cinematic Indian miniature style, warm gold and deep maroon.",
    "motion": "push",
    "title": "",
    "keywords": [
-    "indra",
-    "chhup",
-    "parchhai"
+    "kundal"
    ],
    "big": null,
    "small": null,
@@ -118,15 +48,14 @@
    "skin": "painting"
   },
   {
-   "vo": "Indra ne maanga kavach-kundal, haath faila ke, aankhon mein bijli.",
+   "vo": "Indra brahmin ban kar maangne aaya tha usse",
    "type": "image",
-   "prompt": "Brahmin's hand extended, palm up — requesting. Karna's kavach glows brighter at the gesture, kundal tremble at his ears, the air thick with divine tension, painterly cinematic Indian miniature style, warm gold and deep maroon",
+   "prompt": "Indra disguised as old brahmin standing before Karna, holding out hand for alms, Karna looking at him with knowing eyes, forest hermitage setting, soft golden hour light, painterly cinematic Indian miniature style.",
    "motion": "pan",
-   "title": "Indra ne maanga",
+   "title": "INDRA CHHADMA",
    "keywords": [
-    "indra",
-    "maanga",
-    "kavach"
+    "Indra",
+    "brahmin ban"
    ],
    "big": null,
    "small": null,
@@ -135,15 +64,14 @@
    "skin": "painting"
   },
   {
-   "vo": "Karna jaanta tha yeh maut hai, phir bhi man na dola.",
+   "vo": "Karna pehchaan gaya, yeh Indra ki maya hai",
    "type": "image",
-   "prompt": "Close on Karna's face: eyes half-closed, a single tear tracking down golden cheek, internal fire visible in his pupils — he sees his own death, painterly cinematic Indian miniature style, warm gold and deep maroon",
-   "motion": "push",
-   "title": "Maut nishchay",
+   "prompt": "Karna's face half in shadow, one eye reflecting Indra's true form faintly, subtle lightning in pupil, realization without surprise, painterly cinematic Indian miniature style, warm gold and deep maroon.",
+   "motion": "tilt",
+   "title": "",
    "keywords": [
-    "jaanta",
-    "maut",
-    "man"
+    "pehchaan gaya",
+    "Indra ki maya"
    ],
    "big": null,
    "small": null,
@@ -152,32 +80,14 @@
    "skin": "painting"
   },
   {
-   "vo": "Phir bhi usne daan diya muskura ke, ungliyon ne seem dhoondh nikali.",
-   "type": "clip",
-   "prompt": "Karna's fingers find the seam at his throat, kavach peels away like golden silk, kundal slide off earlobes — he smiles, serene, blood wells but light pours out brighter, slow motion, painterly cinematic Indian miniature style, warm gold and deep maroon",
-   "motion": "punch",
-   "title": "Daan diya muskura ke",
-   "keywords": [
-    "daan",
-    "muskura",
-    "seem"
-   ],
-   "big": null,
-   "small": null,
-   "sub": null,
-   "label": null,
-   "skin": "painting"
-  },
-  {
-   "vo": "Kavach phaad ke khoon baha, har boond moti si chamki.",
+   "vo": "Par daan veer Karna mukar na saka kabhi",
    "type": "image",
-   "prompt": "Golden armor and earrings in Karna's cupped hands, offered upward. His chest bare, blood trickling down golden skin, but each drop catches light like a gem. Indra's shadow receives the gift, painterly cinematic Indian miniature style, warm gold and deep maroon",
+   "prompt": "Karna bowing slightly, placing armor and earrings in brahmin's outstretched hands, posture humble but spine straight, forest around them, painterly cinematic Indian miniature style.",
    "motion": "pull",
-   "title": "Khoon baha, moti si",
+   "title": "DAAN VEER",
    "keywords": [
-    "kavach",
-    "khoon",
-    "boond"
+    "daan veer",
+    "mukar na saka"
    ],
    "big": null,
    "small": null,
@@ -186,15 +96,30 @@
    "skin": "painting"
   },
   {
-   "vo": "Amartya martya ho gaya, par uska tej aur badh gaya.",
+   "vo": "Kavach kundal shareer se judey they, khoon beh gaya",
+   "type": "clip",
+   "prompt": "Slow motion: golden armor peeling away from skin like second skin, thin threads of light and blood connecting, earrings stretching earlobes before release, Karna's face calm through pain, painterly cinematic Indian miniature style, warm gold and deep maroon.",
+   "motion": "punch",
+   "title": "KHOON BEH GAYA",
+   "keywords": [
+    "shareer se judey",
+    "khoon beh gaya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Bina kavach ke, Karna mrityulok ka bana",
    "type": "image",
-   "prompt": "Karna stands vulnerable, no armor, no earrings — yet his aura expands, brighter than before. The forest glows around him. Indra's true form bows in the distance, unseen by others, painterly cinematic Indian miniature style, warm gold and deep maroon",
-   "motion": "pan",
-   "title": "Tej badh gaya",
+   "prompt": "Karna standing bare-chested, mortal skin glowing with inner light, armor and earrings glowing in Indra's hands, forest around, soft divine light on Karna's face, painterly cinematic Indian miniature style.",
+   "motion": "push",
+   "title": "MRITYULOK KA BANA",
    "keywords": [
-    "amartya",
-    "martya",
-    "tej"
+    "bina kavach",
+    "mrityulok ka bana"
    ],
    "big": null,
    "small": null,
@@ -203,28 +128,91 @@
    "skin": "painting"
   },
   {
-   "vo": "Sacha bal kavach mein nahi, daan mein hai. Tu kya karta? Comment kar.",
-   "type": "card",
-   "prompt": "Dark maroon textured background with carved gold lattice edges. Center: large gold Roman 'DAAN' glowing, smaller Roman 'Sacha bal daan mein hai' below. Space for question at bottom.",
-   "motion": "push",
-   "big": "DAAN",
-   "small": "Sacha bal daan mein hai",
-   "title": "Sacha bal daan mein",
+   "vo": "Indra prasann hua, Shakti astra diya varadaan mein",
+   "type": "image",
+   "prompt": "Indra reveals true form: four-armed on Airavata, golden crown, lightning spear (Shakti) extended toward Karna, celestial glow, Karna receives weapon with both hands, forest transformed to divine court, painterly cinematic Indian miniature style.",
+   "motion": "pan",
+   "title": "SHAKTI ASTRA",
    "keywords": [
-    "sacha bal",
-    "daan",
-    "kya karta"
+    "Indra prasann",
+    "Shakti astra"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Par Karna ki pehchaan uske daan mein thi",
+   "type": "image",
+   "prompt": "Karna holding Shakti astra, but gaze on empty hands where armor was, faint golden aura around him, smile of contentment, forest background, painterly cinematic Indian miniature style, warm gold and deep maroon.",
+   "motion": "tilt",
+   "title": "PEHCHAAN DAAN",
+   "keywords": [
+    "pehchaan",
+    "daan mein thi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Daan ki mahima reh gayi",
+   "type": "image",
+   "prompt": "Split composition: left side golden armor fading to dust, right side Karna's silhouette radiating soft gold, single lotus blooming at his feet, painterly cinematic Indian miniature style, warm gold and deep maroon.",
+   "motion": "pull",
+   "title": "MAHIMA REH GAYI",
+   "keywords": [
+    "daan ki mahima"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "vo": "Yeh kahaani hai Mahabharata ke Vana Parva ki",
+   "type": "card",
+   "prompt": "Plain warm maroon background with soft gold texture, elegant Devanagari-style border, text appears in Hindi (Roman script) centered.",
+   "motion": "push",
+   "title": "SROAT",
+   "big": "MAHABHARATA",
+   "small": "Vana Parva",
+   "keywords": [
+    "Mahabharata",
+    "Vana Parva"
    ],
    "sub": null,
    "label": null,
    "skin": "painting"
   },
   {
+   "vo": "Aap hote toh kya karte? Amartya ya daan?",
+   "type": "image",
+   "prompt": "Karna's silhouette against rising sun, arms open, forest waking up, viewer's perspective from behind, inviting reflection, painterly cinematic Indian miniature style, warm gold and deep maroon.",
+   "motion": "pan",
+   "title": "AAP KYA KARTE?",
+   "keywords": [
+    "Aap hote",
+    "Amartya ya daan"
+   ],
+   "big": "AMARTYA YA DAAN",
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "real": null
+  },
+  {
    "type": "card",
-   "big": "Comment KARNA",
+   "big": "Comment IMAGE",
    "sub": "Karna HD wallpaper DM mein 📩",
    "small": "Karna HD wallpaper DM mein",
-   "vo": "Karna ka wallpaper chahiye? Comment KARNA, DM kar dunga.",
+   "vo": "Ye HD wallpaper chahiye? Comment karo IMAGE, main DM kar dunga.",
    "offer_cta": true,
    "label": "FREE",
    "prompt": "a gift box with soft warm light, simple background",
@@ -233,63 +221,57 @@
   }
  ],
  "music_mood": "emotional",
- "caption": "Kavach phaad diya apne haathon se... 🏹\n\nKarna ne amartya hote hue bhi maut chuni — kyunki uska daan uski pehchaan tha.\n\nTu kya karta? Comment kar.\n\n#PuraanKiKatha\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "caption": "Karna ne apni divya taqat khud hi chhor di. Kyun?\nMahabharata Vana Parva ki yeh kahaani batati hai ki asli pehchaan daan mein hoti hai, kavach mein nahi.\nAap hote toh kya chunte — divya taqat ya daan?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
-  "#Mahabharata",
   "#Karna",
-  "#Daan",
-  "#KavachKundal",
-  "#PuraanKiKatha",
-  "#VanaParva"
+  "#Mahabharata",
+  "#VanaParva",
+  "#DaanVeer",
+  "#PuraanKiKatha"
  ],
  "claims": [
   {
-   "claim": "Karna was born with divine armor (kavach) and earrings (kundal) that made him invincible.",
-   "basis": "Mahabharata, Vana Parva (Araneya Parva), Chapters 290-295 — Karna's birth and divine gifts from Surya."
+   "claim": "Karna tore off his divine armor (kavach) and earrings (kundal) when Indra asked for them in disguise.",
+   "basis": "Mahabharata, Vana Parva (Araneya Parva), chapters 29-30: Indra approaches Karna as a brahmin during his sun worship; Karna recognizes him but gives the armor and earrings anyway."
   },
   {
-   "claim": "Indra, disguised as a brahmin, asked Karna for his kavach and kundal as alms.",
-   "basis": "Mahabharata, Vana Parva, Chapter 300 — Indra approaches Karna to weaken him before the Kurukshetra war."
+   "claim": "The armor and earrings were part of Karna's body, making him invincible; removing them made him mortal.",
+   "basis": "Mahabharata, Vana Parva: The kavach and kundal were born with Karna, attached to his flesh; their removal caused bleeding and loss of immortality."
   },
   {
-   "claim": "Karna knew giving them away would make him mortal but gave them anyway due to his vow of never refusing alms.",
-   "basis": "Mahabharata, Vana Parva, Chapter 301 — Karna tears off his armor and earrings, bleeding, and offers them to Indra."
+   "claim": "Indra rewarded Karna's generosity with the Shakti astra (weapon).",
+   "basis": "Mahabharata, Vana Parva: After receiving the armor, Indra reveals his true form and grants Karna the infallible Shakti weapon."
   },
   {
-   "claim": "This event is from the Vana Parva (Book of the Forest) of the Mahabharata.",
-   "basis": "Critical Edition of Mahabharata, Vana Parva, Araneya Parva, Adhyayas 290-301."
+   "claim": "Source: Mahabharata, Vana Parva (Critical Edition).",
+   "basis": "Standard scholarly reference for this episode; the story appears in the Araneya Parva section of Vana Parva."
   }
  ],
  "brain_ids": [
-  "161339712e",
   "b69d65467f",
-  "7fa182f8ef",
-  "fc294ac58f",
-  "7f620e6fdf",
+  "161339712e",
   "e15cfaed29",
+  "fc294ac58f",
+  "7fa182f8ef",
   "b2fabb69c4",
-  "b349ca221e",
+  "7f620e6fdf",
   "1e1964f463",
+  "9db4cc694f",
   "f945e2a937",
   "4396759d41",
-  "6055c69660",
   "6ce7203c71",
-  "9db4cc694f"
+  "0755cc155a",
+  "b349ca221e"
  ],
  "offer": {
   "kind": "wallpaper",
-  "keyword": "KARNA",
+  "keyword": "IMAGE",
   "gift": "Karna HD wallpaper",
-  "title": "Karna Kavach Daan Wallpaper",
-  "items": [
-   {
-    "head": "Best Scene",
-    "text": "Khoon moti si chamka, tej badha"
-   }
-  ],
-  "wallpaper_scene": 10,
+  "title": "Divya Kavach Wallpaper",
+  "items": [],
+  "wallpaper_scene": 1,
   "job": "1118-0735",
-  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/katha/offer-karna.jpg"
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/katha/offer-image.jpg"
  },
  "skin": "painting",
  "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"

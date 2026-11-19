@@ -28,3 +28,9 @@
 - Captions contain severe mishearings and gibberish (e.g., 'BYHERYUNG AUR VERY' instead of coherent speech from transcript), rendering the subtitles mostly nonsensical.
 - A heavy orange/red filter covers frame 3 completely, disrupting continuity.
 - checklist: misheard caption
+
+## 1119-2240a-c2 (clipper)
+- The hook 'HEAL YOUR BRAIN WITH GOLDEN LIGHT' is misleading as the transcript never mentions 'Golden Light'.
+- The visual quality is very low, as it is a screen recording of a Zoom meeting, resulting in a pixelated and blurry appearance.
+- The speaker is shown twice in sharp copies (once in the top box and once in the bottom grid), which is visually distracting and redundant.
+- The on-screen captions are poorly placed, often floating in the middle of the screen or partially obscured by the grid layout.

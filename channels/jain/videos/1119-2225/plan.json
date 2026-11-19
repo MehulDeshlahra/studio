@@ -1,0 +1,306 @@
+{
+ "slug": "jain-potato-ahimsa-science",
+ "title": "Ek aloo mein anant jeev? Jain kyun nahi khate kand-mool",
+ "hooks": [
+  "Ek aloo mein anant jeev? Jain kyun nahi khate?",
+  "Aloo kaate to naya paudha? Ye kaise sambhav hai?",
+  "Jain kitchen se aloo-pyaaz gayab kyun? Asli reason yeh hai"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with a shocking visual fact — one potato holds infinite microscopic lives — instantly triggering curiosity about the real reason behind Jain dietary rules.",
+ "metaphor": "Ek apartment building (aloo) jisme hazaron chhote parivar (nigoda) rehte hain vs ek single-family ghar (seb) jisme ek hi parivar rehta hai",
+ "mechanism": [
+  "Acharanga Sutra classifies root vegetables as anantkay (infinite-bodied)",
+  "Anantkay plants host innumerable nigoda souls in one physical form",
+  "Nigoda are sub-microscopic life forms existing in vast collectives",
+  "Uprooting destroys the whole plant plus soil microorganisms",
+  "Regeneration of cut potato proves life distributed throughout tuber",
+  "Contrast: pratyek vanaspatikay (fruit) = one body, one soul",
+  "Therefore Jain kitchen avoids all root vegetables",
+  "Ahimsa extends to every life form, no matter how small"
+ ],
+ "cast": {
+  "muni": "A calm Shvetambara monk in plain white unstitched cotton robes, carrying a soft white rajoharan (whisk broom), serene face, standing in a white marble Jain temple corridor with golden light",
+  "shravak": "A Jain layperson in simple traditional attire, hands folded in respect, peaceful expression, standing near a temple doorway"
+ },
+ "scenes": [
+  {
+   "vo": "Acharanga Sutra kehta hai ki kand-mool anantkay hain—ek anant aatmaon ka samuh",
+   "type": "image",
+   "prompt": "A single potato on polished white marble, warm golden sunlight through carved sandstone jali, serene painterly Indian style, uncluttered",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "aloo",
+    "anantkay"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Acharanga Sutra kehta hai: kand-mool anantkay hain",
+   "type": "image",
+   "prompt": "Ancient palm-leaf manuscript open on wooden stand in temple library, warm golden light on white marble, Prakrit script visible but not readable, serene painterly style",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Acharanga Sutra",
+    "anantkay"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Anantkay matlab ek shareer, anant atma",
+   "type": "image",
+   "prompt": "Glowing potato shaped like an apartment building with infinite tiny windows, each showing microscopic golden light for nigoda souls, white marble background, warm golden glow, painterly Indian style",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "anantkay",
+    "anant atma"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ye atma hain nigoda, itne chhote ki dikhai na dein",
+   "type": "image",
+   "prompt": "Microscopic view: countless tiny golden points clustered like stars in a water drop, representing nigoda souls, white marble petri dish, warm golden illumination, serene painterly style",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "nigoda",
+    "sookshm"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Seb mein ek jeev, aloo mein anant — yeh farak hai",
+   "type": "flow",
+   "prompt": "Split comparison on white marble: left apple, right potato, golden connecting lines, warm light, no text labels",
+   "motion": "pan",
+   "title": "",
+   "nodes": [
+    "Seb: Ek Jeev",
+    "Aloo: Anant Jeev"
+   ],
+   "keywords": [
+    "seb",
+    "aloo",
+    "pratyek",
+    "anantkay"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Agam kehte hain: kand-mool mein nigoda vas karte hain",
+   "type": "image",
+   "prompt": "Monk in white robes with rajoharan gesturing toward carved stone panel showing root vegetables with tiny golden dots inside, ancient Jain temple architecture, warm golden light on sandstone pillars",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "kand-mool",
+    "nigoda",
+    "Agam"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ukhado to poora paudha mar jata hai",
+   "type": "image",
+   "prompt": "Hands in simple cotton sleeves uprooting potato plant from dark soil, whole plant with roots exposed, white marble temple courtyard background, warm golden hour light, no violence shown, serene",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "ukhado",
+    "poora paudha"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Mitti ke sookshm jeev bhi nasht hote hain",
+   "type": "image",
+   "prompt": "Close view of dark fertile soil with tiny microorganisms as microscopic golden dots, potato being washed in brass vessel, water carrying away tiny lights, white marble steps, warm golden light",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "mitti",
+    "keede",
+    "teen sthan"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Kata hua aloo bhi naya paudha ban jata hai",
+   "type": "image",
+   "prompt": "Cut potato piece on moist cotton in clay bowl, tiny green sprouts emerging, white marble shelf, warm golden sunlight, showing regeneration, serene painterly style",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "kata aloo",
+    "naya paudha",
+    "saboot"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Fal todo to ped bachta, kand ukhado to dono marte",
+   "type": "flow",
+   "prompt": "Flow diagram on white marble: top node fruit to tree alive (green), bottom node root to plant dead + microbes dead (red), golden arrows, warm light, no text labels",
+   "motion": "pan",
+   "title": "",
+   "nodes": [
+    "Fal: Ped Bachta",
+    "Kand: Dono Marte"
+   ],
+   "keywords": [
+    "fal",
+    "kand",
+    "ped bachta"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Isliye Jain kitchen mein aloo, pyaaz, lahsun nahi hote",
+   "type": "image",
+   "prompt": "Traditional Jain kitchen shelf on white marble: bowls of grains, lentils, green vegetables, fruits — no onion, garlic, potato visible. Layperson arranging items, warm golden light, temple architecture backdrop",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Jain kitchen",
+    "aloo pyaaz lahsun nahi"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ahimsa sirf bade jeev ki nahi, sookshm ki bhi hai",
+   "type": "image",
+   "prompt": "Monk in white robes with rajoharan walking gently on marble temple corridor, sweeping path softly with broom, golden light on carved pillars, serene expression, embodying ahimsa for all life",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "ahimsa",
+    "sookshm jeev"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Tu hota to kya karta? Comment mein bata",
+   "type": "card",
+   "prompt": "White marble card with golden glow, uncluttered, serene painterly style",
+   "motion": "push",
+   "title": "",
+   "big": "TU HOTA TO?",
+   "small": "KYA KARTA?",
+   "keywords": [
+    "tu",
+    "kya karta"
+   ],
+   "real": null,
+   "sub": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Ek aloo mein anant nigoda atma rehti hain — yeh hai Jain ahimsa ka sookshm vigyan. Acharanga Sutra ke anusar kand-mool anantkay hain.\n\nTu hota to kya karta? Comment mein bata.\n\nJai Jinendra 🙏",
+ "hashtags": [
+  "#Jainism",
+  "#Ahimsa",
+  "#AcharangaSutra",
+  "#NavkarBhav",
+  "#JainFood",
+  "#MicroscopicLife"
+ ],
+ "claims": [
+  {
+   "claim": "Jains avoid root vegetables (potato, onion, garlic, carrot, beet) due to ahimsa principle",
+   "basis": "Jain vegetarianism Wikipedia; Jain Knowledge; The Jain Religion sources"
+  },
+  {
+   "claim": "Root vegetables are classified as anantkay (infinite-bodied) in Jain texts",
+   "basis": "The Jain Religion (thejainreligion.in) — anantkay definition; Acharanga Sutra reference"
+  },
+  {
+   "claim": "Anantkay plants host innumerable nigoda souls (sub-microscopic life forms) in one body",
+   "basis": "The Jain Religion — nigoda description; Jain Knowledge — micro-organisms in roots"
+  },
+  {
+   "claim": "Uprooting kills the whole plant and disturbs soil microorganisms",
+   "basis": "Jain Knowledge — uprooting kills whole plant and soil micro-organisms"
+  },
+  {
+   "claim": "Cut potato can regenerate into new plant, evidence of distributed life",
+   "basis": "The Jain Religion — regeneration illustration"
+  },
+  {
+   "claim": "Contrast: pratyek vanaspatikay (fruit) = one body, one soul",
+   "basis": "The Jain Religion — technical contrast with pratyek vanaspatikay"
+  },
+  {
+   "claim": "Source: Acharanga Sutra / Agam",
+   "basis": "User prompt specification; Jain Knowledge cites Agam guidance"
+  }
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "f945e2a937",
+  "fc294ac58f",
+  "7f620e6fdf",
+  "b2fabb69c4",
+  "161339712e",
+  "7fa182f8ef",
+  "1e1964f463",
+  "4396759d41",
+  "e15cfaed29",
+  "a688e48ca2",
+  "0755cc155a",
+  "6ce7203c71",
+  "9db4cc694f"
+ ]
+}

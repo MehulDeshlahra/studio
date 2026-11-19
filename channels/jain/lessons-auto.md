@@ -195,3 +195,22 @@
 
 ## What lives inside a potato that makes Jains refuse all root  (story check)
 - STORY scene 1: false: 'Ek aloo mein hazaron chhote jeev rehte hain': Jain scripture defines potatoes as anantkay, containing 'infinite' (anant) souls, not just 'thousands'. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## What lives inside a potato that makes Jains refuse all root  (story check)
+- STORY scene 1: false: 'Acharanga Sutra kehta hai ki aloo anantkay hain—ek anant aatmaon ka samuh': The Acharanga Sutra (c. 3rd–4th century BCE) cannot mention 'aloo' (potato), a New World crop introduced to India only a (the two checks disagree on what really happened: REMOVE this detail, do not rep
+- STORY scene 2: false: 'Acharanga Sutra kehta hai: ye anantkay hai': Same as scene 1: the sutra does not refer to potato specifically; 'ye' (this) pointing to potato is anachronistic. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 8: invented: 'Mitti ke keede bhi marte — teen sthan par himsa hoti hai': Sources list multiple harms (uprooting kills plant, soil microorganisms disturbed, root itself contains nigoda) but no s (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 9: invented: 'Kata hua aloo bhi naya paudha ban jata hai — saboot jeev har hisse mein hai': Potato propagation from cut pieces is a biological fact, but 'saboot jeev har hisse mein hai' (a whole living being in e (the two checks disagree on what really happened: REMOVE this detail, do no
+
+## 1119-2225 What lives inside a potato that makes Jains refuse all root vegetables? The microscopic ahimsa science. (source: Acharanga Sutra / Agam)
+- scene 1: The caption 'ANANTKAY HAIN EK ANANT' does not match the intended script 'Acharanga Sutra kehta hai ki kand-mool anantkay hain—ek anant aatmaon ka samuh'.
+- scene 2: The caption 'KEHTA HAI: KAND-MOOL' does not match the intended script 'Acharanga Sutra kehta hai: kand-mool anantkay hain'.
+- scene 3: The caption 'EK SHAREER' does not match the intended script 'Anantkay matlab ek shareer, anant atma'.
+- scene 4: The caption 'ITNE CHHOTE KI DIKHAI' does not match the intended script 'Ye atma hain nigoda, itne chhote ki dikhai na dein'.
+- scene 6: The caption 'KAND-MOOL MEIN NIGODA' does not match the intended script 'Agam kehte hain: kand-mool mein nigoda vas karte hain'.
+- scene 7: The caption 'UKHADO TO POORA' does not match the intended script 'Ukhado to poora paudha mar jata hai'.
+- scene 8: The caption 'MITTI KE SOOKSHM' does not match the intended script 'Mitti ke sookshm jeev bhi nasht hote hain'.
+- scene 9: The caption 'BHI NAYA PAUDHA' does not match the intended script 'Kata hua aloo bhi naya paudha ban jata hai'.
+- scene 10: The caption 'BACHTA' does not match the intended script 'Fal todo to ped bachta, kand ukhado to dono marte'.
+- scene 11: The caption 'MEIN ALOO' does not match the intended script 'Isliye Jain kitchen mein aloo, pyaaz, lahsun nahi hote'.
+- scene 12: The caption 'JEEV KI NAHI' does not match the intended script 'Ahimsa sirf bade jeev ki nahi, sookshm ki bhi hai'.

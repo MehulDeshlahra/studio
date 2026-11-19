@@ -22,10 +22,10 @@
  "scenes": [
   {
    "vo": "Raat do baje WhatsApp par order bheja, aur do second mein confirm!",
-   "type": "object",
+   "type": "chat",
    "prompt": "Sleek modern smartphone resting on a matte dark desk, screen casting a soft green notification glow across the surface, premium minimalist studio lighting, no text, no letters, pure black background",
    "motion": "push",
-   "title": "DO SECOND MEIN CONFIRM",
+   "title": "2 Sec Confirm",
    "nodes": [],
    "big": "",
    "small": "",
@@ -39,10 +39,20 @@
     "kind": "photo",
     "subject": "A person's hand holding a phone in a dark room, showing a WhatsApp chat with an order message."
    },
-   "bg_prompt": "Sleek modern smartphone resting on a matte dark desk, screen casting a soft green notification glow across the surface, premium minimalist studio lighting, no text, no letters, pure black background",
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: 2 sec confirm, whatsapp order confirm, whatsapp ai agent kaise kaam karta hai?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
    "sub": null,
    "label": null,
-   "skin": "keynote"
+   "skin": "keynote",
+   "messages": [
+    {
+     "from": "Me",
+     "text": "Order bheja"
+    },
+    {
+     "from": "Store",
+     "text": "Confirm"
+    }
+   ]
   },
   {
    "vo": "Aapka message bhejte hi, Meta ke cloud server par receive hota hai.",
@@ -51,8 +61,8 @@
    "motion": "pan",
    "title": "META SERVER",
    "nodes": [
-    "WhatsApp User",
-    "Meta Cloud Server"
+    "User",
+    "Meta Server"
    ],
    "big": "",
    "small": "",
@@ -171,7 +181,7 @@
    "type": "ui",
    "prompt": "",
    "motion": "push",
-   "title": "BACKEND",
+   "title": "Backend",
    "nodes": [],
    "big": null,
    "small": "",
@@ -185,19 +195,17 @@
     "kind": "photo",
     "subject": "A real warehouse/godown to visually explain the concept of a backend."
    },
-   "bg_prompt": "Dark database server environment with glowing status indicators, minimalist render, pure black background, no text",
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: backend, backend godown stock check, whatsapp ai agent kaise kaam karta hai?. Style: glowing cyan wireframe hologram made of thin light lines floating above a round projector pad, near-black stage, faint dot grid, depth fog, no solid surfaces, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
    "ui": {
-    "title": "Backend Stock Verification",
+    "title": "Backend",
     "rows": [
      {
-      "label": "Stock Check",
-      "value": "Available",
-      "pct": 100
+      "label": "Stock",
+      "value": "Avail"
      },
      {
-      "label": "Order Lock",
-      "value": "Reserved",
-      "pct": 100
+      "label": "Order",
+      "value": "Resrv"
      }
     ]
    },
@@ -206,12 +214,12 @@
    "skin": "hologram",
    "rows": [
     {
-     "label": "Stock Check",
-     "value": "OK"
+     "label": "Stock",
+     "value": "Avail"
     },
     {
-     "label": "Order Lock",
-     "value": "Done"
+     "label": "Order",
+     "value": "Resrv"
     }
    ]
   },
