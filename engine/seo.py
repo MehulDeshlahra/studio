@@ -27,6 +27,9 @@ one clear question at the end that is easy to answer in a comment; Roman script 
 ig and fb captions also carry ONE natural send line naming who to send it to (2026: Instagram ranks sends per reach above
 comments), specific to this video, e.g. "Us dost ko bhejo jo phone 24 ghante charge pe rakhta hai" (never "share karo");
 no price/medical/political claims; no 'follow for follow'; hashtags only relevant ones (mix 2 big + 2-4 niche).
+19 Nov: the second line names ONE concrete thing the video teaches (a step, a number from the voice-over), so the caption
+is worth saving; never a feature list; never a handle and never a "Follow @..." line (the post is already on the page,
+and the model wrote a wrong handle "@KaiseTech"); numbers only if the voice-over says them.
 Return JSON {{"ig": {{"caption": "...", "hashtags": ["#..", ...4-6]}},
 "fb": {{"caption": "...", "hashtags": ["#..", "#.."]}},
 "yt": {{"title": "<=70 chars, main keyword first", "description": "3 short lines then a line of keywords", "tags": ["8-12 tags"], "hashtags": ["#..", "#..", "#.."]}},
@@ -131,10 +134,17 @@ def clamp_tags(tags, n=5):
     return out[:n]
 
 
+FOLLOW_LINE = re.compile(r"^\s*(follow|subscribe)\b[^\n]*$", re.I | re.M)
+
+
 def text_for(plan, platform, music_credit=None, cid=None):
     """Final text for 'ig' / 'fb' / 'yt' (falls back to the plan's own caption + hashtags).
     18 Nov: with cid, ig/fb get the channel's comment-to-DM line (engine/dm.py cta) before the hashtags."""
     s = (plan.get("seo") or {}).get(platform) or {}
+    if s.get("caption"):                     # 19 Nov: a "Follow @KaiseTech for more tech" line (wrong handle) went into the caption
+        s = dict(s, caption=FOLLOW_LINE.sub("", s["caption"]).strip())
+    if plan.get("caption"):
+        plan = dict(plan, caption=FOLLOW_LINE.sub("", plan["caption"]).strip())
     line = ""
     if cid and platform in ("ig", "fb"):
         try:
