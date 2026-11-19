@@ -248,13 +248,13 @@ def job_state(cid, job, active=None):
             done = False                      # an old file from an earlier build that this run will remake
         steps.append({"key": key, "label": label, "done": done, "t": int(t) if done else 0})
         prev_t = max(prev_t, t if done else 0)
-    if not active and os.path.exists(os.path.join(jd, final)):
+    if os.path.exists(os.path.join(jd, final)):
         for st_ in steps:                      # finished: files older runs never made (cover, qc) are not "missing steps"
             st_["done"] = True
     if active and active.get("until") == "assets":
         steps = steps[:6]
     cur = next((i for i, s in enumerate(steps) if not s["done"]), None)
-    n = len([s for s in steps if s['key'] not in ('research', 'plan', 'images')]); doneN = sum(1 for s in steps if s['done'] and s['key'] in ('render', 'audio', 'video', 'final'))
+    n = len([s for s in steps if s['key'] not in ('research', 'plan', 'images')]); doneN = sum(1 for s in steps if s['done'] and s['key'] in ('render', 'audio', 'video', 'final', 'plan'))
     pct = doneN / n
     eta = None
     if active and cur is not None:
