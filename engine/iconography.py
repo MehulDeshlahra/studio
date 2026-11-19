@@ -51,7 +51,7 @@ for _k in ("Mahavir Swami", "Rishabhdev", "Parshvanath", "Bahubali"):
 FORMS.update({
     "Jain monk": (r"\bmuni\b|sadhvi|jain monk|acharya|maharaj saheb|digambar|shwetambar|svetambar",
                   "Jain monk or nun in plain white robes with a rajoharan (soft whisk broom) and a mouth cloth (muhpatti), "
-                  "calm and simple, no jewellery"),
+                  "calm and simple, no jewellery; NEVER saffron, orange or red robes (those are Hindu / Buddhist monks)"),
 })
 # 18 Nov: the checkers held Kartikeya for "five faces instead of six" twice; in a turned head some faces are hidden.
 NO_COUNT = (" Never count faces, heads or arms (in a painting at an angle some are hidden): report a deity only for a clearly "
