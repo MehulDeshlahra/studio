@@ -701,13 +701,60 @@ def state():
     st = {"auto_approve": False, "min_score": 9, **(jload(SETTINGS, {}) or {})}
     out = {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
             "schedule": sched, "issues": iss, "channels": chs, "budgets": budgets(), "activity": activity(), "settings": st,
-            "token_days": token_days, "render_median": render_median(), "quality": quality(), "offers": offers_list()}
+            "token_days": token_days, "render_median": render_median(), "quality": quality(), "offers": offers_list(), "campaigns": campaigns_list()}
     out["needs"] = extra.needs_you(out)
     _last.update(t=time.time(), s=out)
     return out
 
 
 _last = {"t": 0, "s": None}
+
+
+def campaigns_list():
+    """19 Nov: ranked clipping campaigns (engine/campaigns.py) + Cut Capsule's joined sources."""
+    st = jload(os.path.join(OUT, "campaigns.json"), {}) or {}
+    now = time.time()
+    src = (jload(os.path.join(ROOT, "channels", "cutcapsule", "sources.json"), {}) or {}).get("sources") or {}
+    joined = {v.get("campaign_id"): k for k, v in src.items()}
+    rows = [{"id": k, "title": v.get("title"), "brand": v.get("brand"), "score": v.get("score", 0), "why": (v.get("why") or [])[:5],
+             "url": v.get("url"), "joined": joined.get(k)} for k, v in (st.get("c") or {}).items() if now - v.get("last_seen", 0) < 2 * 86400]
+    rows.sort(key=lambda r: -r["score"])
+    return {"updated": st.get("updated"), "top": rows[:15],
+            "sources": [{"key": k, "campaign": v.get("campaign_url"), "channels": v.get("channels") or [], "videos": len(v.get("videos") or []),
+                         "active": v.get("active", True), "no_watermark": v.get("no_watermark", False)} for k, v in src.items()]}
+
+
+def add_source(body):
+    """'I joined this campaign': campaign link + where its footage is (YouTube channels / video links) + its rules."""
+    cu = str(body.get("campaign_url") or "").strip()
+    m = re.search(r"/campaigns/([0-9a-f-]{36})", cu)
+    chans = [x.strip() for x in re.split(r"[\s,]+", str(body.get("channels") or "")) if x.strip()]
+    vids = [x for x in chans if re.search(r"(youtu\.be/|watch\?v=|/live/|/shorts/)", x)]
+    chans = [x for x in chans if x not in vids]
+    if not (cu or chans or vids):
+        raise ValueError("give the campaign link and at least one YouTube channel or video")
+    st = jload(os.path.join(OUT, "campaigns.json"), {}) or {}
+    c = (st.get("c") or {}).get(m.group(1) if m else "", {})
+    key = re.sub(r"[^a-z0-9]+", "-", (c.get("brand") or c.get("title") or (chans[0] if chans else "source")).lower()).strip("-")[:30] or "source"
+    p = os.path.join(ROOT, "channels", "cutcapsule", "sources.json")
+    d = jload(p, {}) or {}
+    d.setdefault("sources", {})
+    n, k = 2, key
+    while k in d["sources"] and d["sources"][k].get("campaign_url") != cu:
+        k = f"{key}-{n}"; n += 1
+    rules = [x.strip(" -•") for x in str(body.get("rules") or "").splitlines() if x.strip(" -•")]
+    d["sources"][k] = {**(d["sources"].get(k) or {}), "platform": "whop" if "contentrewards" in cu or "whop" in cu else "creator",
+                       "campaign_url": cu or None, "campaign_id": m.group(1) if m else None, "title": c.get("title"),
+                       "channels": chans, "videos": vids, "match": chans + vids, "rules": rules,
+                       "caption_add": str(body.get("caption_add") or "").strip(), "no_watermark": bool(body.get("no_watermark")),
+                       "clips_per_video": max(1, min(8, int(body.get("clips_per_video") or 4))), "active": True,
+                       "added": time.strftime("%Y-%m-%d %H:%M"), "added_t": time.time()}
+    jsave(p, d)
+    subprocess.Popen(["bash", "-c", f"cd {ROOT} && git add channels/cutcapsule/sources.json && git commit -qm 'cutcapsule: source {k}' "
+                                     "&& git pull -q --rebase --autostash && git push -q"])
+    if vids or chans:                                   # start clipping now instead of waiting for the hourly run
+        subprocess.Popen(["sudo", "systemctl", "start", "--no-block", "studio-clipwatch.service"])
+    return {"ok": True, "key": k}
 
 
 def offers_list():
@@ -957,6 +1004,8 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, decide(body["cid"], body["job"], body["action"], body.get("note", "")[:1000]))
             if u == "/api/make":
                 return self.send(200, make_now(body["cid"], body.get("topic", "")))
+            if u == "/api/source":
+                return self.send(200, add_source(body))
             if u == "/api/change":
                 return self.send(200, change_job(body["cid"], body["job"], body.get("action", ""), body.get("to", ""),
                                                  str(body.get("topic", ""))[:300]))

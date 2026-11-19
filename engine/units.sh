@@ -51,4 +51,7 @@ mk studio-lessons "Studio rule book from every page's mistakes (daily)" "*-*-* 0
 # 18 Nov: whole-repo reading (engine/learn.py deep), 70 chunks a run, 3 runs a day through the repos in ~/studio-out/learn-deep-list.json
 mk studio-learn-deep "Studio deep repo reader (3x a day)" "*-*-* 01,09,15:30:00" "learn.py deep --max 70" 14400
 [ -f /home/ubuntu/studio/engine/stories.py ] && mk studio-stories "Studio daily Stories (IG + FB, every page)" "*-*-* 11,19:00:00" stories.py 1800
+# 19 Nov: Cut Capsule money: clipping campaign ranking (every 6 h) + auto-clipping of joined sources (hourly)
+[ -f /home/ubuntu/studio/engine/campaigns.py ] && mk studio-campaigns "Studio clipping campaign watcher (6-hourly)" "*-*-* 00,06,12,18:20:00" campaigns.py 900
+[ -f /home/ubuntu/studio/engine/clipwatch.py ] && mk studio-clipwatch "Studio auto-clipper for joined sources (hourly)" "*-*-* *:40:00" clipwatch.py 5400
 systemctl list-timers 'studio-*' --no-pager | head -30

@@ -117,6 +117,35 @@ def heat_peaks(info, k=6):
     return [{"at": round(p[0]), "until": round(p[1]), "replay": round(p[2], 2)} for p in sorted(out)]
 
 
+def what_worked(cid, k=5):
+    """19 Nov learning loop: our posted clips with Instagram stats (engine/stats.py fills done.json "stats" daily), best and
+    worst by views, with hook, layout, length and average watch time. Also written to channels/<cid>/results-clips.md."""
+    rows = []
+    for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []:
+        s = d.get("stats") or {}
+        if d.get("status") != "posted" or s.get("views") is None:
+            continue
+        p = load(os.path.join(OUT, cid, d["job"], "plan.json"), {}) or {}
+        q = (load(os.path.join(OUT, cid, d["job"], "qc.json"), {}) or {}).get("format") or {}
+        c = p.get("clip") or {}
+        rows.append({"hook": d.get("title"), "views": s.get("views") or 0, "watch": s.get("avg_watch") or s.get("ig_reels_avg_watch_time"),
+                     "shares": s.get("shares"), "layout": c.get("layout"), "dur": q.get("dur"), "creator": c.get("creator"),
+                     "replayed": c.get("replayed")})
+    if len(rows) < 3:
+        return ""
+    rows.sort(key=lambda r: -r["views"])
+    f = lambda r: (f"- {r['views']:,} views | hook \"{r['hook']}\" | {r['layout']} | {r['dur']} s | watch {r['watch']} | "
+                   f"shares {r['shares']} | {r['creator']}{' | was most-replayed' if r['replayed'] else ''}")
+    best, worst = rows[:k], rows[-3:] if len(rows) > k + 2 else []
+    txt = "BEST:\n" + "\n".join(map(f, best)) + ("\nWORST:\n" + "\n".join(map(f, worst)) if worst else "")
+    try:
+        open(os.path.join(ROOT, "channels", cid, "results-clips.md"), "w", encoding="utf-8").write(
+            f"# Cut Capsule clip results ({time.strftime('%Y-%m-%d')}, {len(rows)} posted clips with stats)\n\n" + txt + "\n")
+    except OSError:
+        pass
+    return txt
+
+
 def mmss(s):
     s = int(s)
     return f"{s // 3600}:{s % 3600 // 60:02d}:{s % 60:02d}" if s >= 3600 else f"{s // 60}:{s % 60:02d}"
@@ -127,6 +156,9 @@ def find_moments(ch, url, n, info, source=None):
     if source:
         rules = "CAMPAIGN RULES (every clip must follow them):\n- " + "\n- ".join(source.get("rules") or []) + "\n"
     rules += "- " + "\n- ".join((ch.get("clip") or {}).get("rules") or [])
+    learned = what_worked(ch["id"])
+    if learned:
+        rules += "\nWHAT WORKED ON OUR PAGE (real views; pick moments and hooks like the winners, avoid the losers):\n" + learned
     pk = heat_peaks(info)
     heat = ("MOST REPLAYED by viewers (YouTube's own heatmap, strongest crowd signal; look here first, the moment usually "
             "starts 5-20 s before the peak): " + ", ".join(f"{mmss(p['at'])} ({p['replay']})" for p in pk)) if pk else ""

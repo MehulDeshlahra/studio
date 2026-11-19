@@ -253,6 +253,23 @@ def post_one(cid, dry=False):
     nxt["posted"] = {"at": time.strftime("%Y-%m-%d %H:%M"), **res}
     save(p, done)
     telegram(f"📤 {cid} {nxt['job']} posted: {res}")
+    src_key = (plan.get("clip") or {}).get("source")
+    if src_key and any(k in res for k in ("ig", "yt")):
+        # 19 Nov: a campaign clip earns only once its post link is submitted on Whop (the owner's login): say exactly what
+        try:
+            s = ((load(os.path.join(ROOT, "channels", cid, "sources.json"), {}) or {}).get("sources") or {}).get(src_key) or {}
+            links = []
+            if res.get("ig"):
+                pl = _req(f"{G}/{res['ig']}?fields=permalink&access_token={acc['page_token']}").get("permalink")
+                links.append(pl or f"Instagram media {res['ig']}")
+            if res.get("yt"):
+                links.append(f"https://youtube.com/shorts/{res['yt']}")
+            nxt["submit"] = {"campaign": s.get("campaign_url"), "links": links, "at": time.strftime("%Y-%m-%d %H:%M")}
+            save(p, done)
+            telegram(f"💰 Submit to the campaign now (views count from submission): {s.get('campaign_url') or src_key}\n"
+                     + "\n".join(links))
+        except Exception as e:
+            log("campaign submit note failed", str(e)[:120])
     if any(k in res for k in ("ig", "fb")) and ch.get("serial"):
         try:                                                   # 17 Nov: recap Story the day a part goes up; long cut at the end
             import extras, serials
