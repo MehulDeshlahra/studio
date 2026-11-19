@@ -96,17 +96,26 @@ def run(only=None):
         if not todo:
             log("clipwatch:", cid, "no new source videos"); continue
         todo.sort(key=lambda x: x[0])
-        _, key, url, s = todo[0]
-        st["done"][f"{cid}:{url}"] = time.time(); save(STATE, st)
-        log("clipwatch:", cid, "clipping", url, "for", key)
-        try:
-            made = clipper.make(cid, url, int(s.get("clips_per_video") or 4), test=False, campaign=key)
-            ok = [j for j, q, p, lay, sc in made if not p]
-            log("clipwatch: made", len(made), "clips,", len(ok), "passed checks")
-        except Exception as e:
-            log("clipwatch: clip run failed", str(e)[:200])
-            st["done"].pop(f"{cid}:{url}", None); save(STATE, st)     # try again next hour
-            telegram(f"⚠ Cut Capsule auto-clip failed for {url}: {str(e)[:200]}")
+        # 19 Nov: one source per run left 4 campaigns waiting 4 hours. Now: one video per campaign, up to 3 per run,
+        # within ~70 min, while the backlog has room.
+        t0, picked = time.time(), set()
+        for _, key, url, s in todo:
+            if key in picked or len(picked) >= 3 or time.time() - t0 > 70 * 60 or waiting(cid) >= cap:
+                continue
+            picked.add(key)
+            st["done"][f"{cid}:{url}"] = time.time(); save(STATE, st)
+            log("clipwatch:", cid, "clipping", url, "for", key)
+            try:
+                made = clipper.make(cid, url, int(s.get("clips_per_video") or 4), test=False, campaign=key)
+                ok = [j for j, q, p, lay, sc in made if not p]
+                log("clipwatch: made", len(made), "clips,", len(ok), "passed checks")
+            except Exception as e:
+                log("clipwatch: clip run failed", str(e)[:200])
+                st["done"].pop(f"{cid}:{url}", None); save(STATE, st)     # try again next hour
+                n = st.setdefault("fails", {}).get(url, 0) + 1
+                st["fails"][url] = n
+                if n in (1, 3):                                            # no Telegram spam every hour
+                    telegram(f"⚠ Cut Capsule auto-clip failed for {url} (try {n}): {str(e)[:200]}")
     save(STATE, st)
 
 
