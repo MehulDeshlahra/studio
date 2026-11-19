@@ -105,8 +105,10 @@
   "job": "1119-0852d-c1",
   "topic": "WARRIOR REJECTS DESTINY TO FIGHT ANYWAY",
   "title": "WARRIOR REJECTS DESTINY TO FIGHT ANYWAY",
-  "status": "approved",
-  "review": [],
+  "status": "held",
+  "review": [
+   "subtitle says HEISMAN (Heismay): brief wants true, correctly named content"
+  ],
   "clip": {
    "url": "https://f.io/WAjz4A2Y",
    "start": 2.3,
