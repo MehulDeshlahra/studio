@@ -820,6 +820,16 @@ def main():
             p["cliff_done"] = True; save(pp, p)
         except Exception as e:
             log("teaser line skipped", str(e)[:100])
+    # 20 Nov owner ("never say tu, always a request to viewers"; said before and not followed): every viewer-facing
+    # line becomes "aap" + request form BEFORE the voice is made (engine/respect.py). Clip pages are the creator's words
+    if not ch.get("clips"):
+        try:
+            import respect
+            nfix = respect.fix_plan(p)
+            if nfix:
+                log("respect:", nfix, "lines rewritten to 'aap' + request"); save(pp, p)
+        except Exception as e:
+            log("respect skipped", str(e)[:100])
     # 3 voice (one request)
     vo = os.path.join(job, "vo-raw.wav")
     if "voice" in redo or not os.path.exists(vo):

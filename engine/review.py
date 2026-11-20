@@ -270,6 +270,11 @@ def review(cid, job):
     mp4 = os.path.join(jd, f"{cid}-{job}.mp4")
     lang = plan.get("lang") or ch.get("lang", "hi")
     probs, checks = [], {}
+    try:                                     # 20 Nov owner: never tu / tum / batao: a hard stop, not a hint
+        import respect
+        probs += respect.problems(plan)
+    except Exception as e:
+        log("respect check failed", str(e)[:100])
     # 5 format + loudness
     f = qc.fmt(mp4)
     checks["format"] = f

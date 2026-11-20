@@ -2,7 +2,7 @@
 no webhook: polls every 10 min (timer studio-dm). Uses the same Ads MCP login as publish.py (owner's own pages need no App Review).
 
 1. Comment keyword -> private reply (one DM per comment; Meta allows it within 7 days of the comment) + a short public reply
-   "DM check karo" so others see it works.
+   "DM check kijiye" so others see it works.
 2. Someone DMs the keyword (Instagram Direct or Messenger) -> same message, inside Meta's 24 h window only.
 
 Message: if the page posted something AFTER the commented post (serial: the next part), link it; else "jaldi aa raha hai, follow
@@ -28,19 +28,19 @@ DRY = "--dry" in sys.argv
 ONLY = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
 DAY_CAP, LOOKBACK_DAYS, USAGE_STOP = 250, 7, 60   # 19 Nov: offer reels bring hundreds of comments (Meta allows 750 private replies/h)
 DEFAULT = {
-    "raaz": {"keywords": ["PART2", "PART 2", "AAGE"], "cta": "Comment karo \"PART2\", agla part seedha DM mein 📩"},
-    "katha": {"keywords": ["AAGE", "KATHA", "PART2", "PART 2"], "cta": "Comment karo \"AAGE\", agli katha seedha DM mein 📩",
-              "text_next": "Ye rahi agli katha 👇\n{next}\n\nRoz ek katha ke liye follow karo {handle}",
-              "text_wait": "Agli katha jaldi aa rahi hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
-    "tech": {"keywords": ["TECH", "LINK", "PART2", "PART 2"], "cta": "Comment karo \"TECH\", agla explainer seedha DM mein 📩",
-             "text_next": "Ye raha agla explainer 👇\n{next}\n\nAise aur ke liye follow karo {handle}",
-             "text_wait": "Agla explainer jaldi aa raha hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
-    "jain": {"keywords": ["AAGE", "KATHA", "JAI JINENDRA"], "cta": "Comment karo \"AAGE\", agli katha seedha DM mein 📩",
-             "text_next": "Ye rahi agli katha 👇\n{next}\n\nRoz ek Jain katha ke liye follow karo {handle}",
-             "text_wait": "Agli katha jaldi aa rahi hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
-    "finance": {"keywords": ["PAISA", "MONEY", "LINK"], "cta": "Comment karo \"PAISA\", agla money explainer seedha DM mein 📩",
-             "text_next": "Ye raha agla money explainer 👇\n{next}\n\nAise aur ke liye follow karo {handle}",
-             "text_wait": "Agla explainer jaldi aa raha hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}"},
+    "raaz": {"keywords": ["PART2", "PART 2", "AAGE"], "cta": "Comment kijiye \"PART2\", agla part seedha DM mein 📩"},
+    "katha": {"keywords": ["AAGE", "KATHA", "PART2", "PART 2"], "cta": "Comment kijiye \"AAGE\", agli katha seedha DM mein 📩",
+              "text_next": "Ye rahi agli katha 👇\n{next}\n\nRoz ek katha ke liye follow kijiye {handle}",
+              "text_wait": "Agli katha jaldi aa rahi hai! Follow kijiye {handle} taaki miss na ho 🔔\n{profile}"},
+    "tech": {"keywords": ["TECH", "LINK", "PART2", "PART 2"], "cta": "Comment kijiye \"TECH\", agla explainer seedha DM mein 📩",
+             "text_next": "Ye raha agla explainer 👇\n{next}\n\nAise aur ke liye follow kijiye {handle}",
+             "text_wait": "Agla explainer jaldi aa raha hai! Follow kijiye {handle} taaki miss na ho 🔔\n{profile}"},
+    "jain": {"keywords": ["AAGE", "KATHA", "JAI JINENDRA"], "cta": "Comment kijiye \"AAGE\", agli katha seedha DM mein 📩",
+             "text_next": "Ye rahi agli katha 👇\n{next}\n\nRoz ek Jain katha ke liye follow kijiye {handle}",
+             "text_wait": "Agli katha jaldi aa rahi hai! Follow kijiye {handle} taaki miss na ho 🔔\n{profile}"},
+    "finance": {"keywords": ["PAISA", "MONEY", "LINK"], "cta": "Comment kijiye \"PAISA\", agla money explainer seedha DM mein 📩",
+             "text_next": "Ye raha agla money explainer 👇\n{next}\n\nAise aur ke liye follow kijiye {handle}",
+             "text_wait": "Agla explainer jaldi aa raha hai! Follow kijiye {handle} taaki miss na ho 🔔\n{profile}"},
 }
 
 def cta(cid):
@@ -51,9 +51,9 @@ def cta(cid):
         return ""
 BASE = {
     "keywords": ["PART2", "PART 2"],
-    "text_next": "Ye raha agla part 👇\n{next}\n\nAise aur ke liye follow karo {handle}",
-    "text_wait": "Agla part jaldi aa raha hai! Follow karo {handle} taaki miss na ho 🔔\n{profile}",
-    "public_reply": "DM check karo 📩",
+    "text_next": "Ye raha agla part 👇\n{next}\n\nAise aur ke liye follow kijiye {handle}",
+    "text_wait": "Agla part jaldi aa raha hai! Follow kijiye {handle} taaki miss na ho 🔔\n{profile}",
+    "public_reply": "DM check kijiye 📩",
 }
 
 class Busy(Exception):
@@ -100,11 +100,11 @@ def _cfg(cid):
 
 # ---- offer reels + follow gate (19 Nov, knowledge/comment-dm.md) ----
 OFFERS = os.path.join(OUT, "offers.json")
-GATE_ASK = ("Hi{user}! 🎁 Aapka {gift} ready hai.\n\nLink sirf followers ko jaata hai:\n1) {handle} ko follow karo\n"
-            "2) Yahin reply mein DONE likho\n\nLink kuch hi minute mein aa jayega 👇")   # the poller runs every 10 min
-GATE_NOT_YET = "Abhi follow nahi dikh raha 🙂\n{profile} pe Follow dabao, phir yahan DONE likho."
+GATE_ASK = ("Hi{user}! 🎁 Aapka {gift} ready hai.\n\nLink sirf followers ko jaata hai:\n1) {handle} ko follow kijiye\n"
+            "2) Yahin reply mein DONE likhiye\n\nLink kuch hi minute mein aa jayega 👇")   # the poller runs every 10 min
+GATE_NOT_YET = "Abhi follow nahi dikh raha 🙂\n{profile} pe Follow dabaiye, phir yahan DONE likhiye."
 GATE_LINK = "Ye raha aapka {gift} 🎁\n{url}\n\nSave kar lo. Aise aur ke liye {handle} pe bane raho 🔔"
-GATE_SOON = "Aapka {gift} bas ban raha hai ⏳ 15-20 min mein phir DONE likho, link bhej dunga."
+GATE_SOON = "Aapka {gift} bas ban raha hai ⏳ 15-20 min mein phir DONE likhiye, link bhej dunga."
 MAX_ASKS = 3
 
 
@@ -340,7 +340,7 @@ def _send(acc, sender_id, recipient, text):
         log("dm: Ads MCP app can message the public on", cid, "- used from now on")
         return res
 
-PUBLIC_VARIANTS = ["DM check karo 📩", "Bhej diya, inbox dekho 📩", "DM mein hai 🎁", "Check karo DM 👀", "Done ✅ DM dekho",
+PUBLIC_VARIANTS = ["DM check kijiye 📩", "Bhej diya, inbox dekhiye 📩", "DM mein hai 🎁", "Check kijiye DM 👀", "Done ✅ DM dekhiye",
                    "Inbox mein bheja hai 📬"]
 
 

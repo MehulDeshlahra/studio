@@ -45,9 +45,9 @@ tap to the reel. Types:
  quiz   : top = "KAUN THA YE?" + a clue (max 12 words), answer = the name
  festival: top = the festival name, body = one line about why it is celebrated (from the material only)
  recap  : top = "PICHHLE PART MEIN...", body = what happened last time in 2 short lines (no spoiler of the end)
- guess  : top = "AAGE KYA HOGA?", body = the cliffhanger as a question, ask = "DM mein apna guess bhejo"
+ guess  : top = "AAGE KYA HOGA?", body = the cliffhanger as a question, ask = "DM mein apna guess bhejiye"
  cast   : top = "KAUN HAI YE?" + the character's name, body = one line about them from the material
-JSON {{"top": "...", "body": "...", "answer": "... or empty", "ask": "reply ask, MAX 24 characters (e.g. 'DM karo: SACH ya JHOOTH?')"}}
+JSON {{"top": "...", "body": "...", "answer": "... or empty", "ask": "reply ask, MAX 24 characters (e.g. 'DM kijiye: SACH ya JHOOTH?')"}}
 For myth and quiz the answer goes ONLY in "answer" (never in "body")."""
 
 
@@ -227,7 +227,7 @@ def one(cid, ch, st):
         pic = _picture(cid, job, hist["used"])
         frames = [_frame(cid, pic, r["top"], r.get("body", ""), r.get("ask", ""), os.path.join(work, f"{kind}-1.jpg"))]
         if r.get("answer") and kind in ("myth", "quiz"):
-            frames.append(_frame(cid, pic, "JAWAB", r["answer"], "Aur aise sawal? Follow karo", os.path.join(work, f"{kind}-2.jpg")))
+            frames.append(_frame(cid, pic, "JAWAB", r["answer"], "Aur aise sawal? Follow kijiye", os.path.join(work, f"{kind}-2.jpg")))
         log("story", cid, kind, "|", r["top"][:50], "|", str(r.get("body", ""))[:60])
         if DRY:
             return {"kind": kind, "frames": frames}

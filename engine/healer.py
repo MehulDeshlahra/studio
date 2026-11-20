@@ -316,6 +316,19 @@ def heal_held():
                     save(os.path.join(jd_, "plan.json"), p_)
                 note(f"{cid} {job}: new pictures for scenes {[k + 1 for k in ks]} (picsmith)")
                 rebuild(cid, job, "assets", "wrong pictures redrawn"); save(STATE, S); return
+            # 1c 20 Nov: informal address ("tum", "batao") -> rewrite the lines (engine/respect.py) and make a new voice
+            if any("informal '" in x for x in probs) and ("respect", h) not in tried:
+                it["state"] = "working"; it["steps"].append({"step": "respect", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
+                if not DRY:
+                    import respect
+                    jd_ = os.path.join(OUT, cid, job)
+                    p_ = load(os.path.join(jd_, "plan.json"), {}) or {}
+                    respect.fix_plan(p_); save(os.path.join(jd_, "plan.json"), p_)
+                    for f_ in ("vo-raw.wav", "vo-paced.wav", "timing.json"):
+                        if os.path.exists(os.path.join(jd_, f_)):
+                            os.remove(os.path.join(jd_, f_))
+                note(f"{cid} {job}: lines rewritten to 'aap' + request, new voice")
+                rebuild(cid, job, "voice", "informal address fixed"); save(STATE, S); return
             # 2 rebuild after a code change
             since = next((s["code"] for s in reversed(it["steps"]) if s.get("code")), None) or \
                 (load(os.path.join(OUT, cid, job, "meta.json"), {}) or {}).get("doctor_code")

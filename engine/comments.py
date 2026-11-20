@@ -66,6 +66,11 @@ def _yt_comments(acc, vid):
 
 
 def _post(acc, plat, target, text, reply_to=None):
+    try:                                     # 20 Nov owner: always "aap" and a request, also in replies
+        import respect
+        text = respect.fix(text)
+    except Exception:
+        pass
     if DRY:
         log("comments DRY", plat, reply_to or target, text[:70]); return True
     if plat == "ig":

@@ -100,7 +100,7 @@ IGNORE the visual types above and use ONLY these scene types; never two of the s
   {"type":"title","big":"<2-4 words>","sub":"<short line>"}   for the one action to take and the ending (a title shows ONLY
       big + sub: never put lines, items or a comparison in it)
 Flow of a reel: hook (wa or sms: the problem as it happens) -> what it means (pay / sms / stat) -> the real rule (rule card)
--> the maths (bill or stat) -> what to do (title or wa reply) -> "Save karo" + a question (title).
+-> the maths (bill or stat) -> what to do (title or wa reply) -> "Save kijiye" + a question (title).
 No "object", "image", "ui", "chart" or "clip" scenes: everything on the phone, receipt and card is drawn exactly.
 The on-screen texts (chat lines, SMS, receipt rows) are part of the story, not a copy of the voice: the voice explains
 what the viewer is looking at.
@@ -754,7 +754,7 @@ LAB_TYPES = ("object", "stat", "ui", "chart", "flow", "compare", "title", "clip"
 PHONE_TYPES = ("wa", "sms", "pay", "bill", "rule", "stat", "compare", "title", "flow", "table", "list")
 FRIENDS = ["Mehul", "Raghav", "Aditya", "Shobhit", "Shwetal", "Saumya", "Suhail", "Jahnvi", "Masood", "Animesh", "Jayesh",
            "Aaryan", "Dhruv", "Mudit", "Shruti"]
-NOT_NAMES = {"me", "friend", "dost", "bhai", "mummy", "papa", "bank", "messages", "save karo", ""}
+NOT_NAMES = {"me", "friend", "dost", "bhai", "mummy", "papa", "bank", "messages", "save kijiye", "save karo", ""}
 
 
 def _friend_names(plan):
@@ -907,7 +907,8 @@ def explainer_gate(ch, topic, plan, research_text, W0, W1, rounds=2):
 - numbers/claims with no source or out of date (fix from the SOURCES or remove): {json.dumps(g.get('unsourced') or [], ensure_ascii=False)}
 - jargon left unexplained: {json.dumps(g.get('jargon') or [], ensure_ascii=False)}; stiff, bookish lines: {g.get('stiff')}
 Rules: 10-14 scenes, each ONE spoken line of 5-14 words, natural Hinglish like a friend explaining at a chai stall (short
-words, "socho", "matlab", "bas"); every technical word gets an everyday comparison the first time (webhook = "ek doorbell jo
+words, "sochiye", "matlab", "bas"); the viewer is ALWAYS "aap" and every ask is a polite request ("comment mein bataiye", "follow kijiye", "sochiye",
+"dekhiye"); never "tu", "tum", "batao", "karo", "likho" (owner rule); every technical word gets an everyday comparison the first time (webhook = "ek doorbell jo
 business ke server ko jagaati hai"); keep the hook idea and the JSON shape; fill "mechanism" with 3-6 real steps from the sources and walk them in order,
 one scene per step, each scene's visual showing that step (a flow node lighting up, the message moving, the tool card);
 at most one benefits line; no spoken 'follow' line; end with a payoff + an easy comment question; {W0}-{W1} words total;

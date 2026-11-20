@@ -151,8 +151,8 @@ def context(ch, topic):
         pl = load(os.path.join(OUT, ch["id"], j, "plan.json"), {}) if j else {}
         said = " ".join(x.get("vo", "") for x in pl.get("scenes", []))
         prev.append(f"Part {k}: " + (said[:600] if said else s["parts"][k - 1]["beats"]))
-    nxt = "THIS IS THE LAST PART: pay everything off with the twist; end with: 'Kal ek nayi kahani. Follow karo.'" if n == last \
-        else f"End on this cliffhanger: {part.get('cliffhanger')}. Last spoken line: 'Part {n + 1} kal. Follow karo.'"
+    nxt = "THIS IS THE LAST PART: pay everything off with the twist; end with: 'Kal ek nayi kahani. Follow kijiye.'" if n == last \
+        else f"End on this cliffhanger: {part.get('cliffhanger')}. Last spoken line: 'Part {n + 1} kal. Follow kijiye.'"
     return (f"THIS VIDEO IS PART {n} OF {last} of our original serial \"{s['title']}\" ({s['genre']}). Logline: {s['logline']}\n"
             f"Setting: {s['setting']}\nCAST (paste each description verbatim in every image prompt that shows them): "
             f"{json.dumps(s['cast'], ensure_ascii=False)}\nTHIS PART: {part.get('title')}: {part['beats']}\n"

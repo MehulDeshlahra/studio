@@ -63,7 +63,7 @@ def announce(page, job):
     """Text for the 'Part 2 kal' comment if this job has a queued Part 2 not announced yet, else None."""
     for i in (load(F, {"items": []}) or {}).get("items", []):
         if i["page"] == page and i["of_job"] == job and not i["announced"] and not i["used"]:
-            return "Part 2 kal aa raha hai. Follow karo taaki miss na ho."
+            return "Part 2 kal aa raha hai. Follow kijiye taaki miss na ho."
     return None
 
 

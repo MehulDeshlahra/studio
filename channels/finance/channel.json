@@ -63,7 +63,7 @@
     "Emergency fund kitna hona chahiye",
     "Buy Now Pay Later ka sach",
     "FD ka interest aur tax: asli kamai kitni",
-    "Salary slip ka har hissa samjho"
+    "Salary slip ka har hissa samjhiye"
   ],
   "theme": {
     "bg": "#04100b",
@@ -75,7 +75,7 @@
     "style": "lab",
     "film": true,
     "hud": "FINANCE.FUEL",
-    "end_line": "Follow karo, paisa samjho",
+    "end_line": "Follow kijiye, paisa samjhiye",
     "phone": true,
     "phone_bg": true
   },
@@ -83,8 +83,8 @@
     "Bank aapko paisa dega (series): RBI rules where the bank must pay YOU (failed UPI ₹100/day, property papers ₹5,000/day, card closure ₹500/day, CIBIL fix ₹100/day)",
     "Scam alert: how a live scam works and the one thing to do (wrong-UPI refund, digital arrest, fake KYC, loan apps); source: RBI, NPCI, I4C, 1930",
     "Galti mat karna: buying traps with the real maths (gold making charges and HUID, No Cost EMI, minimum due, old gold resale)",
-    "Paisa news samjho: this week's RBI / NPCI / EPFO / tax change in 30 s, what changes for you (verified, 2+ sources, proposals labelled)",
-    "Save karo lists: official websites and rights every earner should know (UDGAM, Sanchar Saathi, AIS, ESIC benefits)",
+    "Paisa news samjhiye: this week's RBI / NPCI / EPFO / tax change in 30 s, what changes for you (verified, 2+ sources, proposals labelled)",
+    "Save kijiye lists: official websites and rights every earner should know (UDGAM, Sanchar Saathi, AIS, ESIC benefits)",
     "Concepts only: compounding, inflation, emergency fund, with exact arithmetic; never a product pick"
   ],
   "english": false,
@@ -94,7 +94,7 @@
   },
   "handle": "@finance.fuel",
   "handle_instagram": "@finance.fuel",
-  "tagline": "Paisa samjho, simple bhasha mein.",
+  "tagline": "Paisa samjhiye, simple bhasha mein.",
   "youtube": null,
   "caption_footer": "Education only, not financial advice.",
   "numbers_check": true,

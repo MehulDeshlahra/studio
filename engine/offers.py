@@ -45,7 +45,7 @@ Return JSON:
  "title": "<sheet title, 2-6 words>",
  "items": [{{"head": "<2-5 words>", "text": "<one line, under 16 words>"}}],
  "wallpaper_scene": <scene number whose picture is the best wallpaper, 1-based, for wallpaper only>,
- "say": "<the spoken closing line, Hinglish, under 14 words, e.g. 'Ye poori checklist chahiye? Comment karo REFUND, main DM kar dunga.'>"}}"""
+ "say": "<the spoken closing line, Hinglish, under 14 words, e.g. 'Ye poori checklist chahiye? Comment kijiye REFUND, main DM kar dunga.'>"}}"""
 
 
 CHECK = """You check a free cheat sheet before it is sent to viewers. SCRIPT of the video:
@@ -163,7 +163,7 @@ def decide(ch, plan, job, force=False):
     gift = str(o.get("gift") or ("checklist" if kind == "sheet" else "HD wallpaper"))[:40]
     say = str(o.get("say") or "").strip()
     if kw not in say.upper():
-        say = f"Ye {gift} chahiye? Comment karo {kw}, DM mein bhej dunga."
+        say = f"Ye {gift} chahiye? Comment kijiye {kw}, DM mein bhej dunga."
     plan["offer"] = {"kind": kind, "keyword": kw, "gift": gift, "title": str(o.get("title") or gift)[:60], "items": items[:7],
                      "wallpaper_scene": int(o.get("wallpaper_scene") or 1) if str(o.get("wallpaper_scene") or "1").isdigit() else 1,
                      "job": os.path.basename(job)}
@@ -216,7 +216,7 @@ def _sheet(ch, o, out):
     handle = ch.get("handle") or th.get("handle") or ""
     items = "".join(f'<div class="it"><div class="n">{i + 1}</div><div><div class="h">{html.escape(x["head"])}</div>'
                     f'<div class="x">{html.escape(x["text"])}</div></div></div>' for i, x in enumerate(o["items"]))
-    foot = f"Save karo, kaam aayega. Aise aur ke liye follow karo <b>{html.escape(handle)}</b>"
+    foot = f"Save kijiye, kaam aayega. Aise aur ke liye follow kijiye <b>{html.escape(handle)}</b>"
     if ch.get("caption_footer"):
         foot += "<br>" + html.escape(ch["caption_footer"])
     return _shot(SHEET.format(acc=acc, hud=html.escape((th.get("hud") or ch.get("name") or "").upper()),

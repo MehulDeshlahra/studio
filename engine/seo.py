@@ -25,9 +25,9 @@ WHAT THE TOP SHORTS IN THIS NICHE USE (from their real titles/descriptions/tags)
 Rules: the first 90 characters of every caption must make a stranger want to watch (curiosity, no spoilers, no clickbait lie);
 one clear question at the end that is easy to answer in a comment; Roman script Hinglish unless the video is English;
 ig and fb captions also carry ONE natural send line naming who to send it to (2026: Instagram ranks sends per reach above
-comments), about THIS video's own situation: "Us dost ko bhejo jo <someone who lives exactly this video's problem>"
+comments), about THIS video's own situation: "Us dost ko bhejiye jo <someone who lives exactly this video's problem>"
 (19 Nov: a full example sentence here was copied word for word onto a wedding-mystery Reel; never reuse an example)
-(never "share karo");
+(never "share kijiye");
 no price/medical/political claims; no 'follow for follow'; hashtags only relevant ones (mix 2 big + 2-4 niche).
 19 Nov: the second line names ONE concrete thing the video teaches (a step, a number from the voice-over), so the caption
 is worth saving; never a feature list; never a handle and never a "Follow @..." line (the post is already on the page,
@@ -142,6 +142,11 @@ FOLLOW_LINE = re.compile(r"^\s*(follow|subscribe)\b[^\n]*$", re.I | re.M)
 def text_for(plan, platform, music_credit=None, cid=None):
     """Final text for 'ig' / 'fb' / 'yt' (falls back to the plan's own caption + hashtags).
     18 Nov: with cid, ig/fb get the channel's comment-to-DM line (engine/dm.py cta) before the hashtags."""
+    try:                                     # 20 Nov owner: the viewer is always "aap", asked with a request (engine/respect.py)
+        import copy, respect
+        plan = copy.deepcopy(plan); respect.fix_plan(plan)
+    except Exception:
+        pass
     s = (plan.get("seo") or {}).get(platform) or {}
     if s.get("caption"):                     # 19 Nov: a "Follow @KaiseTech for more tech" line (wrong handle) went into the caption
         s = dict(s, caption=FOLLOW_LINE.sub("", s["caption"]).strip())

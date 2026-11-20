@@ -66,7 +66,7 @@ def recap_story(cid, row, acc, plan):
         "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,eq=brightness=-0.15,"
         f"drawtext=fontfile={font}:text='{t1}':fontsize=96:fontcolor=0xf2b134:x=(w-tw)/2:y=260:box=1:boxcolor=black@0.55:boxborderw=26,"
         f"drawtext=fontfile={font}:textfile={txt}:fontsize=52:fontcolor=white:x=(w-tw)/2:y=1500:box=1:boxcolor=black@0.55:boxborderw=20,"
-        f"drawtext=fontfile={font}:text='Reel dekho - link profile pe':fontsize=44:fontcolor=white:x=(w-tw)/2:y=1680",
+        f"drawtext=fontfile={font}:text='Reel dekhiye - link profile pe':fontsize=44:fontcolor=white:x=(w-tw)/2:y=1680",
         "-frames:v", "1", "-q:v", "2", out], timeout=120)
     try:
         # IG Stories need a public URL; the dashboard serves /media/<cid>/<job>/<file> over Tailscale only, so use the
@@ -142,7 +142,7 @@ def katha_next(ch):
 MYTHS = ["Raat bhar charging se battery kharab hoti hai?", "5G se sehat ko nuksan hota hai?", "Incognito mode mein koi nahi dekhta?",
          "Zyada bars matlab fast internet?", "Phone ko chawal mein rakhne se theek hota hai?", "Apps band karne se battery bachti hai?",
          "Megapixel zyada matlab photo achhi?", "Mac ko virus nahi hota?", "Airplane mode mein phone jaldi charge hota hai?",
-         "Flight mode na karo toh plane gir sakta hai?"]
+         "Flight mode na karein toh plane gir sakta hai?"]
 
 
 def mythbust_due(ch):
