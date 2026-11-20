@@ -294,6 +294,21 @@ def post_one(cid, dry=False):
     acc = resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     # 17 Nov: English editions (-en) only go out once the page has an English account (handle_en); the English page is parked
     cands = [d for d in done if d.get("status") == "approved" and (not d["job"].endswith("-en") or ch.get("handle_en"))]
+    # 20 Nov GOLDEN RULE (owner): "every channel should have something to post at the desired time, never a skip". Nothing
+    # approved -> the newest reel that passed every check and only waits for the owner's tap posts, and he is told
+    if not cands and ch.get("kind") != "clips" and not dry:
+        ok_ = [d for d in done if d.get("status") == "made" and not d["job"].endswith("-en")
+               and (load(os.path.join(OUT, cid, d["job"], "review.json"), {}) or {}).get("ok")
+               and os.path.exists(os.path.join(OUT, cid, d["job"], f"{cid}-{d['job']}.mp4"))]
+        if ok_:
+            pick = ok_[-1]
+            pick["status"] = "approved"; pick["auto_approved"] = "no approved reel at the slot (golden rule: never skip)"
+            save(p, done); cands = [pick]
+            log("publish", cid, "nothing approved: posting the reviewed reel waiting for the owner", pick["job"])
+            telegram(f"⚠ {cid}: nothing was approved for this slot, so the reviewed reel {pick['job']} '{(pick.get('title') or '')[:60]}' "
+                     "posts now (never skip). Reply 'mehul: ...' if you want it taken down.")
+        else:
+            telegram(f"🚨 {cid}: NOTHING to post at this slot (no approved or reviewed reel). The prep lane makes this page first.")
     if ch.get("serial") and cands:
         cands, why = serial_order(dict(ch, id=cid), done, cands)
         if why:

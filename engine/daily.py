@@ -87,21 +87,54 @@ def serial_blocked(cid):
     return False
 
 
-URGENT_MIN = 2
+URGENT_MIN = 2           # kept for older callers; the rule is STOCK_MIN below
 
 
-def urgent_pages():
-    """18 Nov: live pages with fewer than URGENT_MIN ready videos, emptiest first. They get the next build before the
-    healer's rebuilds (engine/healer.py checks this too): from 04:35 to 10:50 only 3 new videos were started because healer
-    rebuilds held the server, while Aage Suno had 1 ready video two days before launch."""
+POSTING = ("pilot", "active", "live", "live (warm-up)")
+STOCK_MIN = 2           # owner 20 Nov GOLDEN RULE: "every channel should have something to post at the desired time, never a skip"
+
+
+def posting_pages():
+    """Story pages that post (clip pages are stocked by engine/clipwatch.py)."""
     out = []
     for cid in sorted(os.listdir(os.path.join(ROOT, "channels"))):
         c = load(os.path.join(ROOT, "channels", cid, "channel.json")) or {}
-        if str(c.get("status", "")).startswith("live"):
-            n = backlog(cid)
-            if n < URGENT_MIN:
-                out.append((n, cid))
-    return [cid for n, cid in sorted(out)]
+        if c.get("status") in POSTING and c.get("kind") != "clips" and c.get("post") is not False:
+            out.append(cid)
+    return out
+
+
+def stock(cid):
+    """(approved = ready to post, in_flight = being made right now and not held)."""
+    appr = sum(1 for d in done_list(cid) if d.get("status") == "approved" and not d["job"].endswith("-en"))
+    known = {d["job"]: d.get("status") for d in done_list(cid)}
+    fl = 0
+    cd = os.path.join(OUT, cid)
+    for j in (os.listdir(cd) if os.path.isdir(cd) else []):
+        if j.endswith("-en") or known.get(j) in ("approved", "held", "rejected", "removed", "posted", "made"):
+            continue
+        m = load(os.path.join(cd, j, "meta.json"), {}) or {}
+        if m.get("stage") not in ("held", "done", "cancelled") and time.time() - os.path.getmtime(os.path.join(cd, j)) < 6 * 3600:
+            fl += 1
+    return appr, fl
+
+
+def urgent_pages():
+    """GOLDEN RULE (owner 20 Nov): a page with fewer than STOCK_MIN approved reels gets the next build before anything
+    else (the healer's turn, other pages, the prepped limit), emptiest first. Counted on APPROVED reels only: reels still
+    waiting for the owner, held or half-made do not post. 18-20 Nov: "pilot" pages (tech, katha, finance, jain) were
+    never urgent (only "live*" counted) and the healer's turn skipped ~20 prep rounds while Navkar Bhav had nothing."""
+    out = []
+    for cid in posting_pages():
+        appr, fl = stock(cid)
+        if appr + fl < STOCK_MIN:
+            out.append((appr, fl, cid))
+    return [cid for appr, fl, cid in sorted(out)]
+
+
+def starving_pages():
+    """Pages below STOCK_MIN approved, even if a reel is already being made for them (render lane priority)."""
+    return [cid for cid in posting_pages() if stock(cid)[0] < STOCK_MIN]
 
 
 def run(args, hours=4):
@@ -124,7 +157,7 @@ def lane_render(dry):
     # 18 Nov: with the laptop the two lanes take turns non-stop, so the healer (runs only when nothing builds) got no turn
     # from 11:07 to 15:10 with 6 videos held. Its flag now pauses the render lane too, once, until the healer has run.
     w = os.path.join(OUT, "healer-wants-turn")
-    if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600 and not urgent_pages():
+    if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600 and not starving_pages():
         # 18 Nov: while a manual job runs the healer cannot take its turn anyway, so waiting for it only left the laptop idle
         lap_free = False
         if manual_busy():
@@ -136,8 +169,10 @@ def lane_render(dry):
         if not lap_free:
             log("render lane: the healer needs a turn to fix held videos, skip this round"); return
         log("render lane: the healer is waiting for a manual job anyway, so the laptop renders meanwhile")
+    st = starving_pages()                    # GOLDEN RULE: a page with nothing to post is rendered first
+    todo.sort(key=lambda t: (t[0] not in st,))
     cid, j, m = todo[0]
-    log("render lane:", cid, j)
+    log("render lane:", cid, j, "(page needs stock: never skip a post)" if cid in st else "")
     if dry:
         return
     args = [os.path.join(ENGINE, "make.py"), cid, "--job", j, "--from", "compose"]
@@ -148,7 +183,7 @@ def lane_render(dry):
 
 
 def lane_prep(dry):
-    if len(jobs_in("prepped")) >= PREPPED_MAX:
+    if len(jobs_in("prepped")) >= PREPPED_MAX and not urgent_pages():     # GOLDEN RULE: a page with nothing still gets one
         log("prep lane: enough prepped jobs waiting for the render lane"); return
     b = today()
     if b.get("tts", 0) >= TTS_CAP:
@@ -186,7 +221,19 @@ def lane_prep(dry):
     if os.path.exists(w) and time.time() - os.path.getmtime(w) < 3600 and not urgent:
         log("prep lane: the healer needs a turn to fix held videos, skip this round"); return
     if urgent:
-        log("prep lane: new video for", urgent[0], f"(urgent: fewer than {URGENT_MIN} ready videos on a live page)")
+        try:                                  # one early warning per page per day, hours before the slot
+            wf = os.path.join(OUT, "stock-warned.json"); wd = load(wf, {}) or {}
+            k = time.strftime("%Y-%m-%d") + ":" + urgent[0]
+            if k not in wd:
+                from core import telegram
+                a_, f_ = stock(urgent[0])
+                telegram(f"⏳ {urgent[0]}: only {a_} approved reel(s) left ({f_} being made). Making this page first now, "
+                         "so its next post is not skipped." + (" Please approve its waiting reels in Telegram." if any(
+                             d.get("status") == "made" for d in done_list(urgent[0])) else ""))
+                wd[k] = time.time(); save(wf, {x: v for x, v in wd.items() if x[:10] == time.strftime("%Y-%m-%d")})
+        except Exception as e:
+            log("stock warning failed", str(e)[:100])
+        log("prep lane: new video for", urgent[0], f"(GOLDEN RULE: fewer than {STOCK_MIN} approved reels, never skip a post)")
         if dry:
             return
         note("reels"); note("tts")
