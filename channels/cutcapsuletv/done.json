@@ -221,12 +221,24 @@
   "job": "1120-0201c-c1",
   "topic": "MOM BREAKS DOWN: BABY LEAVING FOR COLLEGE",
   "title": "MOM BREAKS DOWN: BABY LEAVING FOR COLLEGE",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
    "start": 214.6,
    "layout": "mixed:crop+fit"
+  },
+  "sched": {
+   "slot": 1795280400,
+   "at": "2026-11-21 22:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsuletv/1120-0201c-c1/post.mp4",
+   "prepared": "2026-11-20 23:39",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-0201c-c1-1795198196.mp4",
+   "ig_container": "18196639237406979",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-0201c-c1-1795198196.mp4"
   }
  },
  {

@@ -5,16 +5,15 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -14.6,
-  "true_peak": -1.6,
-  "dur": 47.33
+  "lufs": -14.4,
+  "true_peak": -3.1,
+  "dur": 43.5
  },
  "vision": {
-  "score": 9,
-  "ok": true,
-  "problems": [
-   "scene 9: The image shows a potato in a bowl, but the script says 'Kata hua aloo bhi naya paudha ban jata hai' (A cut potato also becomes a new plant). The visual is just a potato in a bowl, not a cut potato or a sprouting plant, which makes the visual slightly disconnected from the specific claim about propagation."
-  ]
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
  },
  "voice": {
   "ok": true,

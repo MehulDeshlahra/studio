@@ -231,12 +231,12 @@
    "label": null
   },
   {
-   "vo": "Tu hota to kya karta? Comment mein bata",
+   "vo": "Tum hote to kya karte? Comment mein batao",
    "type": "card",
    "prompt": "White marble card with golden glow, uncluttered, serene painterly style",
    "motion": "push",
    "title": "",
-   "big": "TU HOTA TO?",
+   "big": "TUM HOTA TO?",
    "small": "KYA KARTA?",
    "keywords": [
     "tu",
@@ -248,7 +248,7 @@
   }
  ],
  "music_mood": "calm",
- "caption": "Ek aloo mein anant nigoda atma rehti hain — yeh hai Jain ahimsa ka sookshm vigyan. Acharanga Sutra ke anusar kand-mool anantkay hain.\n\nTu hota to kya karta? Comment mein bata.\n\nJai Jinendra 🙏",
+ "caption": "Ek aloo mein anant nigoda atma rehti hain — yeh hai Jain ahimsa ka sookshm vigyan. Acharanga Sutra ke anusar kand-mool anantkay hain.\n\nTum hota to kya karta? Comment mein batao.\n\nJai Jinendra 🙏",
  "hashtags": [
   "#Jainism",
   "#Ahimsa",
@@ -302,5 +302,57 @@
   "0755cc155a",
   "6ce7203c71",
   "9db4cc694f"
- ]
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Jain Monk",
+    "scenes": [
+     6,
+     12
+    ],
+    "look": "Middle-aged man with a peaceful, clean-shaven face and calm eyes. He wears simple, plain white unstitched cotton robes draped modestly. A white mouth cloth covers his face, and he carries a soft white whisk broom. He stands barefoot with a gentle, humble posture."
+   },
+   {
+    "name": "Layperson",
+    "scenes": [
+     11
+    ],
+    "look": "Young adult with a serene, clean-shaven face and neatly groomed hair. He wears a simple, plain white cotton kurta and dhoti. His posture is respectful and calm, reflecting deep devotion while arranging items on a marble shelf in a quiet, sunlit space."
+   },
+   {
+    "name": "Tirthankara Idol",
+    "scenes": [],
+    "look": "A white marble statue seated in a meditative padmasana pose. The face is serene with half-closed eyes. A lotus emblem is carved into the pedestal. The idol radiates a gentle, warm golden glow within a quiet, sacred temple setting."
+   }
+  ],
+  "places": [
+   {
+    "name": "Jain Temple",
+    "scenes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13
+    ],
+    "look": "A serene sanctuary featuring polished white marble floors and intricately carved sandstone pillars. Tall shikhara spires rise in the distance. The space is bathed in warm, golden sunlight, creating an uncluttered, peaceful atmosphere of ancient spiritual devotion."
+   },
+   {
+    "name": "Jain Kitchen",
+    "scenes": [
+     11
+    ],
+    "look": "A clean, minimalist space with white marble shelves. The shelves hold polished brass bowls filled with vibrant grains, lentils, and fresh fruits. Soft golden light illuminates the scene, with a glimpse of carved temple architecture visible through a graceful archway."
+   }
+  ]
+ }
 }

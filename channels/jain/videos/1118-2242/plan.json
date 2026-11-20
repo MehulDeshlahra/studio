@@ -44,9 +44,9 @@
   {
    "vo": "Ek Yaksha aaya, unki samta todne.",
    "type": "image",
-   "prompt": "Same shmashan scene. A divine Yaksha figure appears at edge of frame — ancient Indian attire, calm face, simple ornaments, gentle glow. He observes the meditating idol. Warm golden light, serene painterly style. No weapons, no fearsome features.",
+   "prompt": "A majestic male Yaksha standing at the edge of a cremation ground, wearing traditional dhoti and angavastram, strong jawline, short beard, dark hair tied in a low knot, simple gold earrings, hands folded in namaste, gentle golden aura, night sky with subtle stars behind, vertical 9:16 composition with space above and below for text, no weapons, no text or logos.",
    "motion": "pan",
-   "title": "Yaksha ki pariksha",
+   "title": "Yaksha ki Pariksha",
    "keywords": [
     "Yaksha",
     "pariksha"
@@ -54,7 +54,22 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s1q0.jpg",
+      "prompt": "A radiant Yaksha standing in a traditional Indian dhoti and angavastram, calm oval face with a gentle smile, long dark hair tied in a low knot, simple gold earrings and necklace, hands folded in namaste, bare feet on stone. He stands at the edge of a serene night cremation ground with ancient Jain temple shikhara spires silhouetted against a star-filled sky. Serene painterly Indian style, faint glow of distant lamps, calm mist over ground, warm golden aura, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.42
+     }
+    ],
+    "passed": true
+   },
+   "real": null
   },
   {
    "vo": "Pehle aag ki lein uthai, charon taraf se gher liya.",
@@ -99,7 +114,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s4q0.jpg",
+      "prompt": "White marble idol of Mahavira Swami standing in kayotsarga, calm face, half-closed eyes, tight curled hair, shrivatsa mark on chest, lion emblem at base, smooth unadorned surface, bare head, plain stone form, rests on carved stone pedestal, exactly as the idol from image 1, surrounded by translucent ghostly figures swirling around the idol, pale luminous bodies, flowing drapery, silent open mouths, gentle upward motion, ancient Jain temple courtyard, serene painterly Indian style, soft golden light emanating from within marble pushing shadows back, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.29
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Swami ki drishti nahi doli, shwas tak ek samaan.",
@@ -125,7 +154,7 @@
       "file": "s5r0.jpg",
       "prompt": "real photo",
       "fails": {},
-      "top": 0.43
+      "top": 0.25
      }
     ],
     "real_photo": true
@@ -134,7 +163,7 @@
   {
    "vo": "Sher, saanp, haathi... sab aaye, sab gaye, jaise dhuaan.",
    "type": "image",
-   "prompt": "Centered composition: a serene Jain idol on a pedestal, with a calm lion, a coiled snake, and a gentle elephant appearing one by one around it, each rendered as living animals in soft golden light, peaceful and non‑aggressive. Warm golden sunrise illumination, ample space above and below for text. No text or logos.",
+   "prompt": "Centered vertical 9:16 composition: a serene white marble idol of Mahavira Swami in kayotsarga on a carved marble pedestal, flanked on the left by a calm lion with golden mane, on the right by a coiled emerald snake, and behind a gentle elephant with ivory tusks, all bathed in soft golden sunrise light, peaceful, ample space above and below for text, no text or logos.",
    "motion": "tilt",
    "title": "Sher Saanp Haathi",
    "keywords": [
@@ -146,14 +175,46 @@
    "small": "Sab aaye sab gaye",
    "sub": null,
    "label": null,
-   "real": null
+   "real": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s6r0.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p3": 0.64
+      },
+      "top": 0.64
+     },
+     {
+      "file": "s6r1.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p3": 0.62
+      },
+      "top": 0.62
+     },
+     {
+      "file": "s6q0.jpg",
+      "prompt": "White marble idol of Mahavira Swami standing in kayotsarga, calm face, half-closed eyes, tight curled hair, shrivatsa mark on chest, lion emblem at base, smooth unadorned surface, bare head, plain stone form, rests on carved stone pedestal, flanked by a majestic lion with golden mane, a coiled serpent with smooth emerald scales, and a gentle elephant with ivory tusks, serene painterly Indian style, warm golden sunrise light, ancient Jain temple courtyard, peaceful, uncluttered, vertical 9:16 composition.",
+      "fails": {
+       "p3": 0.79
+      },
+      "top": 0.79
+     }
+    ],
+    "passed": false
+   }
   },
   {
    "vo": "Yaksha ne asli roop dikhaya, pranam kiya.",
    "type": "image",
-   "prompt": "Yaksha now stands revealed — radiant, peaceful, hands folded in namaste before the idol. Divine glow. Marble idol unchanged. Warm golden light from both figures meets. Serene painterly Indian style, ancient temple architecture background.",
+   "prompt": "A radiant male Yaksha revealing his true divine form, luminous golden aura surrounding him, hands folded in namaste before a marble Jain idol, both illuminated by warm golden light, ancient temple pillars in the background, vertical 9:16 with space above and below for text, no text or logos.",
    "motion": "pull",
-   "title": "Yaksha ka naman",
+   "title": "Yaksha ka Naman",
    "keywords": [
     "roop",
     "pranam"
@@ -161,7 +222,22 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "A radiant Yaksha in a traditional Indian dhoti and angavastram, hands folded in namaste, stands before the white marble idol of Mahavira Swami from image 1, which stands upright with arms hanging straight down by the sides and feet together. The Yaksha glows with a soft golden aura within an ancient Jain temple featuring intricately carved white marble pillars and stepped stone roofs. Serene painterly Indian style, warm golden sunrise light bathing the scene, peaceful uncluttered atmosphere, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.41
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Bola, 'Samkitva jeeta, moh haar gaya.'",
@@ -176,7 +252,29 @@
     "moh"
    ],
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s8q0.jpg",
+      "prompt": "White marble idol of Mahavira Swami standing in kayotsarga, arms hanging straight down by the sides, feet together, calm face, half-closed eyes, tight curled hair, shrivatsa mark on chest, lion emblem at base, smooth unadorned surface, bare head, plain stone form, rests on carved stone pedestal. The idol is centered against a plain warm marble texture background with a subtle golden glow, serene painterly Indian style, peaceful, gentle light, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {
+       "p3": 0.82
+      },
+      "top": 0.82
+     },
+     {
+      "file": "s8q1.jpg",
+      "prompt": "the idol from image 1, a white marble Mahavira Swami standing upright in kayotsarga with arms hanging straight down by the sides and feet together, calm face with half‑closed eyes, tight curled hair covering the crown, a smooth unmarked marble forehead completely free of any tilak dot or painted mark, shrivatsa mark on the chest, lion emblem at the base, smooth unadorned stone surface, bare head and chest, resting on a carved stone pedestal, set against a plain warm marble texture background, serene painterly Indian style, warm golden light bathing the marble with a subtle golden glow, vertical 9:16 composition with the idol centered in the middle third and generous calm space above and below",
+      "fails": {},
+      "top": 0.47
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Sachcha tap bahar ka nahi, andar ka jeet hai.",
@@ -212,7 +310,7 @@
   }
  ],
  "music_mood": "calm",
- "caption": "Shmashan mein raat bhar tap... Yaksha ne kya dekha? Kalpasutra ki yeh katha samta ka sach batati hai. Aap hote toh kya karte? #Mahavira #Kalpasutra #JainKatha #Samta #NavkarBhav",
+ "caption": "Shmashan mein raat bhar tap... Yaksha ne kya dekha? Kalpasutra ki yeh katha samta ka sach batati hai. Aap hote toh kya karte? #Mahavira #Kalpasutra #JainKatha #Samta #NavkarBhav\nVideo: Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)\nVideo: Photo: Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar) (Wikimedia Commons)",
  "hashtags": [
   "#Mahavira",
   "#Kalpasutra",
@@ -324,9 +422,16 @@
   ]
  },
  "idol_photos_used": [
-  "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg"
+  "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg",
+  "File:Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar).jpg",
+  "File:Lord Mahavira.jpg",
+  "File:Rujuwalika Jain Temple Mahavira Kevalgyan statue 2.jpg"
  ],
  "credits": [
-  "Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)"
- ]
+  "Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)",
+  "Photo: Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar) (Wikimedia Commons)",
+  "Photo: Lord Mahavira (Wikimedia Commons)",
+  "Photo: Rujuwalika Jain Temple Mahavira Kevalgyan statue 2 (Wikimedia Commons)"
+ ],
+ "pic_redraws": 2
 }

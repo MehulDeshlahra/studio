@@ -1,0 +1,331 @@
+{
+ "slug": "face-unlock-dark-tech",
+ "title": "Face unlock andhera mein kaise kaam karta hai?",
+ "hooks": [
+  "Andhera bilkul ghup... phir bhi phone aapka chehra kaise pehchan leta hai?",
+  "Face unlock andhere mein jaadu lagta hai, par iska raaz infrared dots mein hai.",
+  "Kya aapka phone andhere mein aapko pehchanta hai? Dekhiye ye kaise hota hai."
+ ],
+ "hook_choice": 0,
+ "hook_why": "It starts with a relatable problem (pitch black darkness) and immediately poses the curiosity question with a high-stakes visual.",
+ "metaphor": "An invisible 3D digital mask made of 30,000 light points.",
+ "mechanism": [
+  "Flood Illuminator coats the face in infrared light",
+  "Dot Projector throws 30,000+ invisible IR dots",
+  "Infrared Camera captures the dot pattern",
+  "Processor compares the 3D map with stored biometric data",
+  "Secure Enclave grants access if the 3D structure matches"
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Andhera bilkul ghup... phir bhi phone aapka chehra kaise pehchan leta hai?",
+   "type": "clip",
+   "prompt": "A cinematic shot in a pitch-black room where a modern smartphone screen suddenly flashes twice (50ms on, 70ms off) to reveal a face, premium studio look.",
+   "motion": "push",
+   "label": "PITCH BLACK",
+   "keywords": [
+    "Andhera",
+    "pehchan"
+   ],
+   "real": {
+    "q": "iPhone 16 Pro in dark room",
+    "kind": "photo",
+    "subject": "iPhone screen lighting up in the dark"
+   },
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Iska raaz hai screen ke peeche chhupa ek invisible laser system.",
+   "type": "object",
+   "prompt": "Extreme close-up of a smartphone's top notch or dynamic island, showing tiny glass lenses glowing with a faint purple hue, black background.",
+   "motion": "tilt",
+   "label": "HIDDEN SENSORS",
+   "keywords": [
+    "invisible",
+    "laser"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Sabse pehle, ek Flood Illuminator aapke chehre ko infrared light se bhar deta hai.",
+   "type": "flow",
+   "nodes": [
+    "FLOOD LIGHT",
+    "FACE COATING",
+    "IR SENSOR"
+   ],
+   "bg_prompt": "A 3D model of a human face being washed over by a wave of translucent purple light in a dark studio.",
+   "label": "STEP 1: FLOOD",
+   "keywords": [
+    "Flood",
+    "Illuminator"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Ye light humein nahi dikhti, par phone ke liye ye din jaisa ujaala hai.",
+   "type": "object",
+   "prompt": "A high-tech infrared camera lens glowing intensely, reflecting a grid pattern, photorealistic render on black.",
+   "motion": "pull",
+   "label": "IR VISION",
+   "keywords": [
+    "din jaisa",
+    "ujaala"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Ab aata hai asli hero... Dot Projector.",
+   "type": "object",
+   "prompt": "A microscopic view of a semiconductor chip with thousands of tiny laser apertures, a horizontal plane peeling through the layers.",
+   "motion": "push",
+   "label": "DOT PROJECTOR",
+   "keywords": [
+    "asli",
+    "hero"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Ye projector aapke chehre par 30,000 se zyada invisible dots phenkta hai.",
+   "type": "stat",
+   "value": "30,000+",
+   "sub": "Invisible Infrared Dots",
+   "bg_prompt": "A human face covered in a dense, precise grid of glowing purple dots, 3D wireframe style on black.",
+   "label": "PRECISION GRID",
+   "keywords": [
+    "30,000",
+    "dots"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Ye dots ek digital mask banate hain jo aapke chehre ki gehraai naapta hai.",
+   "type": "ui",
+   "title": "3D DEPTH MAPPING",
+   "rows": [
+    {
+     "label": "NOSE DEPTH",
+     "value": "8.2mm",
+     "pct": 85
+    },
+    {
+     "label": "EYE DISTANCE",
+     "value": "64mm",
+     "pct": 92
+    }
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: digital mask, 3d depth mapping, digital mask, face unlock andhera mein kaise kaam karta hai?. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "label": "DIGITAL MASK",
+   "keywords": [
+    "digital",
+    "mask"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Infrared camera is 3D pattern ko scan karke processor ko bhejta hai.",
+   "type": "flow",
+   "nodes": [
+    "SCAN DOTS",
+    "ENCRYPT",
+    "PROCESSOR"
+   ],
+   "bg_prompt": "Data streams flowing from a camera sensor into a glowing golden CPU chip.",
+   "label": "DATA FLOW",
+   "keywords": [
+    "scan",
+    "processor"
+   ],
+   "real": {
+    "q": "Apple A18 chip photo",
+    "kind": "photo",
+    "subject": "Apple mobile processor chip"
+   },
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Processor purane data se match karte hi lock khol deta hai.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "STORED MAP",
+     "value": "MATCH",
+     "pct": 100
+    },
+    {
+     "label": "LIVE SCAN",
+     "value": "VERIFIED",
+     "pct": 100
+    }
+   ],
+   "bg_prompt": "Two 3D face meshes overlapping perfectly and turning green.",
+   "label": "MATCH FOUND",
+   "keywords": [
+    "match",
+    "lock"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram",
+   "prompt": ""
+  },
+  {
+   "vo": "Isliye photo dikhane par phone nahi khulta, kyuki photo 3D nahi hoti.",
+   "type": "title",
+   "big": "3D ONLY",
+   "sub": "Photos can't trick it",
+   "bg_prompt": "A flat photograph of a person being rejected by a 3D scanner, a red 'X' appearing over the photo.",
+   "keywords": [
+    "photo",
+    "3D"
+   ],
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null,
+   "skin": "hologram",
+   "prompt": ""
+  },
+  {
+   "vo": "Agli baar andhere mein phone khule, toh samajh lena infrared ka jaadu hai.",
+   "type": "object",
+   "prompt": "A hand holding a smartphone, the lock icon at the top morphing into an open shackle with a satisfying click sound effect.",
+   "motion": "punch",
+   "label": "UNLOCKED",
+   "keywords": [
+    "infrared",
+    "jaadu"
+   ],
+   "real": {
+    "q": "iPhone Face ID unlock animation",
+    "kind": "photo",
+    "subject": "iPhone lock screen unlocking"
+   },
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Aapka face unlock kitna fast hai? Comment mein batao.",
+   "type": "title",
+   "value": "FAST?",
+   "sub": "Share your experience",
+   "bg_prompt": "A sleek smartphone lying on a black marble table, glowing with a yellow accent light.",
+   "label": "TELL US",
+   "keywords": [
+    "fast",
+    "Comment"
+   ],
+   "big": "TELL US",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Andhere mein bhi Face ID kaise kaam karta hai? 🌙✨\n\nYe koi jaadu nahi, balki 30,000 invisible dots ka kamaal hai jo aapke chehre ka 3D map banate hain. Isliye ye itna secure hai!\n\nAapka phone andhere mein kitni der mein unlock hota hai? 👇",
+ "hashtags": [
+  "#FaceID",
+  "#TechExplained",
+  "#Infrared",
+  "#SmartphoneTech",
+  "#KaiseTech"
+ ],
+ "claims": [
+  {
+   "claim": "Face ID uses a Dot Projector to throw 30,000+ dots.",
+   "basis": "Common technical specification for Apple's Face ID hardware."
+  },
+  {
+   "claim": "Infrared sensors allow face unlock to work in total darkness.",
+   "basis": "Source: timesnowhindi.com states infrared sensors can recognize faces even in the dark."
+  },
+  {
+   "claim": "Face unlock creates a 3D digital map of the face.",
+   "basis": "Source: timesnowhindi.com and makeuseof.com explain the use of depth sensors and 3D mapping."
+  }
+ ],
+ "explainer": {
+  "score": 8,
+  "ok": false,
+  "steps_learned": [
+   "Flood Illuminator fills the face with infrared light.",
+   "Dot Projector throws over 30,000 invisible dots on the face.",
+   "The dots create a digital mask to measure facial depth.",
+   "Infrared camera scans this 3D pattern and sends it to the processor.",
+   "Processor matches the scan with stored data to unlock."
+  ],
+  "missing_steps": [
+   "The initial setup process where the phone records facial features (eyes, nose, structure) to create the baseline profile.",
+   "The distinction that not all phones use this hardware; some rely only on software/front camera, which is why some phones struggle in the dark.",
+   "The role of AI in analyzing the facial features during the initial scan."
+  ],
+  "unsourced": [
+   "The specific number '30,000' dots is a common claim for Apple's Face ID but is not mentioned in the provided sources.",
+   "The claim that 'photo 3D nahi hoti' is implied by the source but not explicitly stated as the reason for security failure in the provided text."
+  ]
+ },
+ "brain_ids": [
+  "fc294ac58f",
+  "1e1964f463",
+  "f945e2a937",
+  "4396759d41",
+  "6ce7203c71",
+  "161339712e",
+  "b69d65467f",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "7fa182f8ef",
+  "e15cfaed29",
+  "9db4cc694f",
+  "1e60a34718",
+  "6055c69660"
+ ],
+ "skin": "blueprint"
+}

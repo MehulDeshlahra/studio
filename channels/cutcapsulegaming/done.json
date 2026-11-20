@@ -382,12 +382,24 @@
   "job": "1120-2040b-c1",
   "topic": "SEGA BLACK FRIDAY SALE",
   "title": "SEGA BLACK FRIDAY SALE",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://f.io/O1zu3kBp",
    "start": 0.0,
    "layout": "mixed:crop+fill"
+  },
+  "sched": {
+   "slot": 1795280400,
+   "at": "2026-11-21 22:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsulegaming/1120-2040b-c1/post.mp4",
+   "prepared": "2026-11-20 23:37",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040b-c1-1795198063.mp4",
+   "ig_container": "17905388235397877",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040b-c1-1795198063.mp4"
   }
  },
  {

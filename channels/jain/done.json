@@ -6,12 +6,9 @@
   "qc_ok": false,
   "status": "held",
   "review": [
-   "visual: Scene 6 shows an older man with a beard and robes instead of the Tirthankara form described in the guidelines.",
-   "visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scene 6",
-   "visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scene 6",
-   "picture check: scene 2: Is any monk or nun wearing saffron, orange or red robes? (yes 65%); Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 86%); Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 66%)",
-   "picture check: scene 5: Is any monk or nun wearing saffron, orange or red robes? (yes 81%)",
-   "picture check: scene 9: Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 72%)",
+   "visual: Scene 2 and Scene 8 show the Yaksha as a female figure wearing feminine attire and a top, which contradicts the traditional description of a radiant male Yaksha in dhoti and angavastram.",
+   "visual: Checklist item 7: A figure resembling a Hindu deity/celestial with feminine royal depiction is shown instead of the prescribed male Yaksha.",
+   "picture check: scene 4: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 69%)",
    "visual score 5/10"
   ],
   "replan_requested": "2026-11-19 15:51",
@@ -53,9 +50,7 @@
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
   "status": "held",
   "review": [
-   "picture check: scene 1: Is any monk or nun wearing saffron, orange or red robes? (yes 69%)",
-   "picture check: scene 3: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 68%); The narration names Bahubali (Gommateshwara), and he is shown wearing a crown or clothes, or with his hands fo (yes 66%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 66%)",
-   "picture check: scene 5: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 89%)"
+   "picture check: scene 3: Does the idol or Tirthankara have blue, green or grey skin? (yes 75%)"
   ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
@@ -109,12 +104,8 @@
   "topic": "What lives inside a potato that makes Jains refuse all root vegetables? The microscopic ahimsa science. (source: Acharanga Sutra / Agam)",
   "title": "Ek aloo mein anant jeev? Jain kyun nahi khate kand-mool",
   "qc_ok": true,
-  "status": "held",
-  "review": [
-   "scene 13 vo: informal 'Tu, bata' in \"Tu hota to kya karta? Comment mein bata\" (owner: never 'tu')",
-   "scene 13 big: informal 'TU' in \"TU HOTA TO?\" (owner: never 'tu')",
-   "post caption: informal 'Tu, bata' (owner: never 'tu')"
-  ]
+  "status": "made",
+  "review": []
  },
  {
   "job": "1120-1028",

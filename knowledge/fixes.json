@@ -322,5 +322,14 @@
   "first": "2026-11-20 23:22",
   "last": "2026-11-20 23:22",
   "example": "visual: Checklist item 2: Scene 3 and Scene 12 show the Tirthankara (Parshvanath) with yellow/gold skin tone and ornamentation/jewellery, which violates the strict traditional Jain representation (whi"
+ },
+ {
+  "sig": "scene # vo: informal '…' in '…' (owner: never '…')",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-21 00:22",
+  "last": "2026-11-21 00:22",
+  "example": "scene 13 vo: informal 'Tu, bata' in \"Tu hota to kya karta? Comment mein bata\" (owner: never 'tu')"
  }
 ]

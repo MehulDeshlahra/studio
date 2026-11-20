@@ -10,11 +10,10 @@
   "dur": 56.63
  },
  "vision": {
-  "score": 9,
-  "ok": true,
-  "problems": [
-   "scene 6: The caption 'KEEDE SHAREER PAR PAR' contains a repetition of the word 'PAR', which seems like a slight typo compared to the intended script 'keede shareer par — par wo hile nahi'."
-  ]
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
  },
  "voice": {
   "ok": true,

@@ -33,7 +33,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s0q0.jpg",
+      "prompt": "A single closed lotus bud rests centered on a polished white marble temple step, its delicate petals tightly furled, bathed in warm golden morning light. Intricately carved sandstone pillars with floral motifs rise beside it, a tall pointed shikhara spire soaring softly blurred in the distance behind stepped stone roofs. Serene painterly Indian style, calm and peaceful, gentle glow on uncluttered architecture. Vertical 9:16 frame, the bud placed in the middle third with generous tranquil space above and below.",
+      "fails": {},
+      "top": 0.16
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Yeh teen fold ka ek formula hai",
@@ -99,7 +113,7 @@
   {
    "vo": "Yeh sirf insanon ke liye nahi — cheenti, patte, hawa ke kan tak pahuncha hai",
    "type": "image",
-   "prompt": "Wide view of a blooming lotus on marble steps in a Jain temple lane. In foreground, tiny ants crawl near the base, a fallen leaf rests beside it, a feather drifts in the air. Background shows mud and stone houses, carved pillars, shikhara spires softly focused. Extreme close-up inserts: an ant's delicate step on marble, leaf vein pattern, a dust mote dancing in a shaft of golden light. The three lotus petals reflected in a nearby water bowl. Painterly, reverent, microscopic detail, 9:16 vertical.",
+   "prompt": "Extreme close-up of tiny ants crawling on rough stone, a dry leaf curling in a gentle breeze, a single feather drifting in the air, dust motes dancing in a shaft of golden light. Background blurred ancient temple corridor. Painterly, reverent, microscopic detail, 9:16 vertical.",
    "motion": "pull",
    "title": "",
    "keywords": [
@@ -143,7 +157,7 @@
   {
    "vo": "Digambar parampara mein isey Kshamavani kehte hain",
    "type": "image",
-   "prompt": "A Digambar monk (sky-clad, as per tradition) stands in a rock-cut cave temple, head bowed. The three lotus petals appear as subtle carvings on the stone lintel. Respectful, serene, no sectarian contrast — just the shared formula.",
+   "prompt": "A naked Digambar monk, slender build, clean‑shaven head, light brown complexion, standing in a steady kayotsarga posture inside an ancient rock‑cut cave temple. Rough stone walls surround him and a lintel above bears subtle lotus‑petal carvings. Warm golden light filters in, creating a serene atmosphere. Vertical 9:16 composition with clear space above and below the figure for on‑screen text. No clothing, no logos, no text in the image.",
    "motion": "pan",
    "title": "",
    "keywords": [
@@ -161,12 +175,14 @@
     "tries": [
      {
       "file": "s7q0.jpg",
-      "prompt": "A Digambar monk, middle-aged man with a slender build, calm face, clean-shaven head, and light brown complexion, stands in a steady kayotsarga posture with arms hanging straight down by his sides and feet together. He holds a soft white peacock-feather whisk broom in his hand. He is positioned inside an ancient rock-cut cave temple with rough textured stone walls and a lintel featuring delicate lotus carvings. Serene painterly Indian style, warm golden light, peaceful atmosphere, vertical 9:16 composition.",
+      "prompt": "A middle-aged Digambar monk with a slender build, clean-shaven head, and light brown complexion, standing in a steady kayotsarga posture with arms hanging straight down by the sides and feet together, holding a soft white peacock-feather whisk broom in his hand, eyes half-closed in deep peaceful meditation, inside an ancient rock-cut cave temple with rough textured stone walls, dim golden light illuminating a stone lintel featuring delicate lotus carvings, serene painterly Indian style, warm gentle glow, vertical 9:16 composition.",
       "fails": {},
-      "top": 0.57
+      "top": 0.39
      }
-    ]
-   }
+    ],
+    "passed": true
+   },
+   "real": null
   },
   {
    "vo": "Samvatsari ke din yeh formula bola jata hai, naya saal shuru hota hai",
@@ -211,7 +227,21 @@
     "Agam"
    ],
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s10q0.jpg",
+      "prompt": "A single, pristine white marble lotus flower blooms at the center, its delicate petals unfolding in perfect symmetry. The lotus rests upon a polished, seamless white marble surface that reflects a soft, warm golden glow. The background is a serene, uncluttered space of pure white stone, evoking a sense of profound peace and spiritual stillness. The style is a serene painterly Indian aesthetic, bathed in gentle morning sunlight, captured in a vertical 9:16 composition with generous calm space above and below.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
   }
  ],
  "music_mood": "calm",

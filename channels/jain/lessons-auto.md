@@ -512,3 +512,38 @@
 
 ## review 1119-0335
 - picture check: scene 11: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 82%)
+
+## review 1119-0935
+- picture check: scene 3: Does the idol or Tirthankara have blue, green or grey skin? (yes 75%)
+
+## review 1119-2225
+- visual: Scene 1: Architecture features prominent onion domes in the background which reflect Mughal/Islamic styles rather than traditional Jain temple architecture.
+- visual: Scene 3: The visual literalization of 'anantkay' as a giant surreal glowing potato building with windows is bizarre and tonally inappropriate for a serious religious-philosophical short.
+- visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scene 1, Scene 3, Scene 6 background architecture (onion domes)
+- visual score 5/10
+
+## 1118-2242 (pre-render check)
+- FIT: Yaksha shown as a female figure instead of male
+- FIT: Caption says 'SAANP' but voice mentions sher, saanp, haathi
+- FIT: Both stills show identical text 'ROOP DIKHAYA' despite voice line progression
+
+## 1118-2242 (pre-render check)
+- FIT: Yaksha is depicted as a female figure instead of a male figure as described in the prompt and traditional form.
+- FIT: Caption says 'SAANP' while voice says 'Sher, saanp, haathi... sab aaye, sab gaye', but the visual labels only 'SAANP' for the first still while showing all animals.
+
+## 1118-2242 (pre-render check)
+- FIT: Yaksha is depicted as a female figure instead of the traditional male Yaksha described in the cast list
+- FIT: The visual only shows a snake while the voice mentions multiple animals (sher, saanp, haathi)
+
+## review 1118-2242
+- visual: Scene 2 and Scene 8 show the Yaksha as a female figure wearing feminine attire and a top, which contradicts the traditional description of a radiant male Yaksha in dhoti and angavastram.
+- visual: Checklist item 7: A figure resembling a Hindu deity/celestial with feminine royal depiction is shown instead of the prescribed male Yaksha.
+- picture check: scene 4: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 69%)
+- visual score 5/10
+
+## 1119-1915 (pre-render check)
+- FIT: Digambar monk is described as remaining unclad (naked), but the character in the scene is wearing white robes.
+
+## 1119-1915 (pre-render check)
+- FIT: text and visual order mismatch where visual shows a lotus instead of ants, leaves, or wind as mentioned in voice
+- FIT: Digambar monk is described as unclad, but here the monk is wearing robes

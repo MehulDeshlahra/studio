@@ -1,0 +1,293 @@
+{
+ "slug": "apple-server-outage",
+ "title": "Apple ke servers down?",
+ "hooks": [
+  "Apple ke saare servers down?",
+  "iCloud aur App Store band?",
+  "Kya Apple par cyberattack hua?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Directly addresses the user's immediate concern with a question, matching the 'Kaise Tech' curiosity hook.",
+ "metaphor": "A 'traffic jam' on a digital highway caused by a faulty signal (the update).",
+ "mechanism": [
+  "Internal software update triggers system instability",
+  "Authentication servers fail to process requests",
+  "Services like iCloud and App Store become inaccessible",
+  "Apple identifies the glitch and restores systems"
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Apple ke saare servers down?",
+   "type": "object",
+   "prompt": "A modern iPhone lying face up on a dark desk showing a 'Cannot Connect' error message on the screen.",
+   "motion": "push",
+   "title": "APPLE OUTAGE",
+   "keywords": [
+    "Apple",
+    "servers",
+    "down"
+   ],
+   "real": {
+    "q": "iPhone 15 Pro Max held by hand showing Apple logo on device back",
+    "kind": "photo",
+    "subject": "iPhone 15 Pro Max held in human hand with visible Apple logo on back"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "iCloud, App Store, Apple Pay — sab ruk gaya.",
+   "type": "object",
+   "title": "AFFECTED SERVICES",
+   "rows": [
+    {
+     "label": "iCloud",
+     "value": "DOWN",
+     "pct": 100
+    },
+    {
+     "label": "App Store",
+     "value": "DOWN",
+     "pct": 100
+    },
+    {
+     "label": "Apple Pay",
+     "value": "DOWN",
+     "pct": 100
+    }
+   ],
+   "label": "SERVICES",
+   "real": {
+    "q": "iPhone 15 Pro Max screen showing iOS notification shade with grayed out iCloud App Store Apple Pay icons",
+    "kind": "photo",
+    "subject": "iPhone screen showing iOS notification shade with grayed out service icons"
+   },
+   "prompt": "Apple service logos",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Hazaron users ne report kiya ki wo login nahi kar pa rahe.",
+   "type": "stat",
+   "value": "1000s",
+   "sub": "Users reported issues",
+   "label": "REPORTS",
+   "prompt": "A dark, premium studio shot of a smartphone screen displaying a surge of error notifications.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "real": {
+    "q": "WhatsApp chat screenshot showing multiple users reporting Apple login issues",
+    "kind": "photo",
+    "subject": "WhatsApp chat with text messages about Apple login problems"
+   },
+   "skin": "keynote",
+   "bg_prompt": "Vertical scene for a technology explainer about: reports, apple ke servers down?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. One clear subject in the middle third, empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16."
+  },
+  {
+   "vo": "Log dar gaye ki shayad ye koi bada cyberattack hai.",
+   "type": "title",
+   "big": "CYBERATTACK?",
+   "sub": "Panic online",
+   "prompt": "A dramatic low-key shot of a digital security warning icon on a dark background.",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null,
+   "skin": "keynote",
+   "bg_prompt": "Vertical scene for a technology explainer about: apple ke servers down?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. One clear subject in the middle third, empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16."
+  },
+  {
+   "vo": "Par Apple ne turant saaf kiya: ye sirf ek internal update tha.",
+   "type": "object",
+   "prompt": "A clean, photorealistic Apple logo on a pure black background.",
+   "label": "OFFICIAL STATEMENT",
+   "real": {
+    "q": "Apple logo",
+    "kind": "logo",
+    "subject": "the official Apple logo"
+   },
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Software update mein galti hui, aur systems crash ho gaye.",
+   "type": "flow",
+   "nodes": [
+    "Update",
+    "Glitch",
+    "Crash"
+   ],
+   "label": "CAUSE",
+   "prompt": "A dark, minimal studio background with a glowing flow diagram.",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "iOS settings app screen showing software update progress bar",
+    "kind": "photo",
+    "subject": "iOS settings app showing software update in progress"
+   },
+   "skin": "keynote"
+  },
+  {
+   "vo": "iCloud photos, documents, aur payments — sab access nahi ho rahe the.",
+   "type": "object",
+   "prompt": "A person's hands holding an iPhone, trying to open an app, with a dark, blurred background.",
+   "label": "USER IMPACT",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "iPhone screen showing iCloud web interface with loading spinner and grayed out file icons",
+    "kind": "photo",
+    "subject": "iCloud web interface showing loading state with unavailable files"
+   },
+   "skin": "keynote"
+  },
+  {
+   "vo": "Aise outages aajkal tech duniya mein aam ho gaye hain.",
+   "type": "chart",
+   "title": "TECH OUTAGES",
+   "points": [
+    10,
+    25,
+    40,
+    35
+   ],
+   "end_label": "RISING",
+   "label": "TREND",
+   "prompt": "A dark, premium chart showing a rising trend of tech outages.",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "infographic chart showing tech outage statistics on office whiteboard with marker drawings",
+    "kind": "photo",
+    "subject": "Hand-drawn outage trend chart on physical whiteboard surface"
+   },
+   "skin": "hologram",
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: trend, tech outages, apple ke servers down?. Style: glowing cyan wireframe hologram made of thin light lines floating above a round projector pad, near-black stage, faint dot grid, depth fog, no solid surfaces, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16."
+  },
+  {
+   "vo": "Ab sab restore ho chuka hai, services wapas chal rahi hain.",
+   "type": "title",
+   "value": "RESTORED",
+   "sub": "Systems back online",
+   "label": "STATUS",
+   "prompt": "A modern server room with blue LED lights, photorealistic.",
+   "big": "STATUS",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "real": {
+    "q": "iPhone screen showing iOS notification center with green success indicators for restored services",
+    "kind": "photo",
+    "subject": "iOS notification center showing service restoration notifications"
+   },
+   "skin": "keynote",
+   "bg_prompt": "Vertical scene for a technology explainer about: status, apple ke servers down?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. One clear subject in the middle third, empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16."
+  },
+  {
+   "vo": "Aapka phone chala ya aap bhi pareshan the? Comment mein batao.",
+   "type": "object",
+   "prompt": "A close-up of a smartphone screen showing a checkmark icon, signifying success.",
+   "label": "DID IT WORK?",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "Instagram comments section on phone screen showing user reactions about Apple outage",
+    "kind": "photo",
+    "subject": "Instagram app comments showing user feedback about outage experience"
+   },
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Apple ke servers down? 🍎 Kya hua tha? \n\nApple ne finally clarify kiya hai ki ye koi cyberattack nahi, balki ek internal update ki wajah se hua tha. iCloud, App Store aur Apple Pay sab affected the. \n\nAapka phone chala ya aap bhi pareshan the? Comment mein batao.\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#Apple",
+  "#TechNews",
+  "#ServerOutage",
+  "#KaiseTech",
+  "#iCloud"
+ ],
+ "claims": [
+  {
+   "claim": "Apple services including iCloud, App Store, and Apple Pay experienced an outage on November 17-18, 2026.",
+   "basis": "Multiple news sources including Hindustan Times and Live Mint reported the outage on 2026-11-18."
+  },
+  {
+   "claim": "Apple ruled out a cyberattack and attributed the outage to an internal software update.",
+   "basis": "Official reports from Apple and news coverage confirm it was an internal update, not a cyberattack."
+  },
+  {
+   "claim": "Most systems were restored shortly after the disruption.",
+   "basis": "Apple confirmed that most systems had been restored."
+  }
+ ],
+ "explainer": {
+  "score": 6,
+  "ok": false,
+  "steps_learned": [
+   "Apple pushed an internal software update",
+   "The update contained an error",
+   "That error caused multiple systems to crash",
+   "iCloud, App Store, Apple Pay and other services went down",
+   "Apple confirmed it was not a cyberattack",
+   "Most services have been restored"
+  ],
+  "missing_steps": [
+   "What type of internal update (config change, code push, certificate rotation, etc.)",
+   "How the error propagated across different service clusters",
+   "What Apple's detection and rollback process looked like",
+   "Why iCloud photos/documents and payments were specifically affected",
+   "How long the outage lasted in minutes/hours",
+   "Whether user data was at risk during the crash"
+  ],
+  "unsourced": [
+   "\"Apple ke saare servers down\" — sources specify multiple services, not all servers",
+   "\"Hazaron users\" — sources say \"thousands\" or \"widespread\" but no exact number",
+   "Line 4 presents cyberattack fear as a narrative beat; sources only note Apple ruled it out"
+  ]
+ },
+ "brain_ids": [
+  "1e1964f463",
+  "f945e2a937",
+  "fc294ac58f",
+  "6ce7203c71",
+  "7f620e6fdf",
+  "4396759d41",
+  "7fa182f8ef",
+  "b2fabb69c4",
+  "161339712e",
+  "9db4cc694f",
+  "b69d65467f",
+  "1e60a34718",
+  "6055c69660",
+  "e15cfaed29"
+ ],
+ "visual_done": "2026-11-20 23:47",
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}

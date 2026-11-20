@@ -10,19 +10,10 @@
   "dur": 39.83
  },
  "vision": {
-  "score": 9,
-  "ok": true,
-  "problems": [
-   "scene 9: The title is missing in the provided list, though the card text 'SAMKITVA JEETA' is present in the image.",
-   "scene 1: The caption 'MAHAVIRA SWAMI' does not match the script line 'Shmashan ki raat... Mahavira Swami kayotsarga mein khade the.'",
-   "scene 2: The caption 'UNKI SAMTA TODNE' is a partial match, but the title 'YAKSHA KI PARIKSHA' is displayed, which is correct.",
-   "scene 3: The caption 'UTHAI' is a fragment of the line 'Pehle aag ki lein uthai', but the title 'AAG KA MAYAJAAL' is correct.",
-   "scene 4: The caption 'HILE NAHI' is a fragment of the line 'Par Mahavira Swami hile nahi', which is correct.",
-   "scene 5: The caption 'AAYI' is a fragment of the line 'Phir bhooton ki sena aayi', which is correct.",
-   "scene 6: The caption 'NAHI DOLI' is a fragment of the line 'Swami ki drishti nahi doli', which is correct.",
-   "scene 7: The caption 'SAB AAYE' is a fragment of the line 'Sher, saanp, haathi... sab aaye', which is correct.",
-   "scene 8: The caption 'ROOP DIKHAYA' is a fragment of the line 'Yaksha ne asli roop dikhaya', which is correct."
-  ]
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
  },
  "voice": {
   "ok": true,

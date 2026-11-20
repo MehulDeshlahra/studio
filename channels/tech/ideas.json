@@ -783,5 +783,253 @@
     "score": 4.04
    }
   ]
+ },
+ {
+  "t": "2026-11-20 23:36",
+  "picked": "Apple Server Outage",
+  "ideas": [
+   {
+    "topic": "Apple Server Outage",
+    "search": "Apple iCloud down reason",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "The 'Apple outages' trend is massive (2000+ searches). Users are frustrated and curious why a giant like Apple goes down. Explaining server load balancing via a 'traffic jam' metaphor fits the 'Kaise Tech' style perfectly.",
+    "demand_known": true,
+    "demand": 7.8,
+    "median_views": 1302608,
+    "fresh": 6.4,
+    "score": 8.94
+   },
+   {
+    "topic": "QR code kaise scan hota hai aur data kaise decode hota hai?",
+    "note": "",
+    "search": "how QR code works",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 7.1,
+    "median_views": 670170,
+    "fresh": 6.1,
+    "score": 7.56
+   },
+   {
+    "topic": "Bluetooth headphones ka latency kaise kam hoti hai?",
+    "note": "",
+    "search": "Bluetooth latency explained",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 6.9,
+    "median_views": 598430,
+    "fresh": 5.1,
+    "score": 7.28
+   },
+   {
+    "topic": "Google Gemini 1.5 ka real‑time translation feature kaise kaam karta hai?",
+    "note": "",
+    "search": "Google Gemini real time translation",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 6.0,
+    "median_views": 262817,
+    "fresh": 5.1,
+    "score": 6.87
+   },
+   {
+    "topic": "GTA 6 Software Warning",
+    "search": "GTA 6 release news",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With GTA 6 being a massive cultural phenomenon and PlayStation issuing a software warning, viewers are desperate for info. The 'Kaise Tech' angle: How do pre-launch software checks actually work to prevent leaks?",
+    "demand_known": true,
+    "demand": 2.9,
+    "median_views": 14040,
+    "fresh": 6.1,
+    "score": 6.67
+   },
+   {
+    "topic": "Fast charging kaise battery ko 0‑50% sirf 15 min mein charge karta hai?",
+    "note": "",
+    "search": "fast charging technology",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.8,
+    "score": 6.46
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 7.0,
+    "median_views": 645441,
+    "fresh": 2.7,
+    "score": 6.14
+   },
+   {
+    "topic": "iPhone Handoff Feature",
+    "search": "iOS 27 handoff feature",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "New iOS 27 features are always trending. The 'Kaise Tech' angle: How does the 'One number, two devices' handoff tech actually sync data instantly?",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 102,
+    "fresh": 6.3,
+    "score": 5.41
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 5.27
+   },
+   {
+    "topic": "Incognito mode aapki browsing history ko kaise hide karta hai?",
+    "note": "",
+    "search": "incognito mode hidden browsing",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 834,
+    "fresh": 5.2,
+    "score": 3.84
+   }
+  ]
+ },
+ {
+  "t": "2026-11-20 23:55",
+  "picked": "Face unlock andhera mein kaise kaam karta hai? Infrared dots ka raaz",
+  "ideas": [
+   {
+    "topic": "Face unlock andhera mein kaise kaam karta hai? Infrared dots ka raaz",
+    "note": "",
+    "search": "face unlock infrared how it works dark",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 7.0,
+    "median_views": 609890,
+    "fresh": 4.4,
+    "score": 7.18
+   },
+   {
+    "topic": "Prison jammers in Bengaluru have left residents without signal for nearly two years",
+    "search": "how mobile jammers block signal",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Trending on Reddit r/india about prison jammers cutting off entire neighborhoods; highly relatable tech curiosity.",
+    "demand_known": true,
+    "demand": 3.3,
+    "median_views": 20352,
+    "fresh": 7.1,
+    "score": 7.05
+   },
+   {
+    "topic": "iPhone Handoff Feature",
+    "search": "iOS 27 handoff feature",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "New iOS 27 features are always trending. The 'Kaise Tech' angle: How does the 'One number, two devices' handoff tech actually sync data instantly?",
+    "demand_known": true,
+    "demand": 3.5,
+    "median_views": 25819,
+    "fresh": 6.3,
+    "score": 6.98
+   },
+   {
+    "topic": "GTA 6 Software Warning",
+    "search": "GTA 6 release news",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With GTA 6 being a massive cultural phenomenon and PlayStation issuing a software warning, viewers are desperate for info. The 'Kaise Tech' angle: How do pre-launch software checks actually work to prevent leaks?",
+    "demand_known": true,
+    "demand": 2.9,
+    "median_views": 14403,
+    "fresh": 6.1,
+    "score": 6.67
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 7.0,
+    "median_views": 645441,
+    "fresh": 2.7,
+    "score": 6.14
+   },
+   {
+    "topic": "Free AI video generator jo Sora jaisa kaam kare? Real demo with prompts",
+    "note": "",
+    "search": "free AI video generator alternative Sora",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.8,
+    "score": 6.11
+   },
+   {
+    "topic": "Wireless charging wire bina bijli kaise pahunchta hai? Magnetic field ka khel",
+    "note": "",
+    "search": "wireless charging magnetic induction explained",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 4.2,
+    "median_views": 47830,
+    "fresh": 5.2,
+    "score": 5.73
+   },
+   {
+    "topic": "AI image generator text se photo kaise banata hai? Diffusion ka visual demo",
+    "note": "",
+    "search": "AI image generation diffusion model explained",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.4,
+    "median_views": 8849,
+    "fresh": 5.8,
+    "score": 5.39
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 5.27
+   },
+   {
+    "topic": "Myth: Background apps band karne se battery bachti hai? Sach yeh hai",
+    "note": "",
+    "search": "closing apps battery life myth debunked",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 19,
+    "fresh": 6.0,
+    "score": 4.0
+   }
+  ]
  }
 ]
