@@ -253,8 +253,9 @@ def ig_container(acc, mp4, caption, url=None):
     raise RuntimeError("IG container not ready after 15 min")
 
 
-def prepare(cid, ch, d, slot):
-    """Get one reel ready on every platform for `slot` (unix time). Writes d['sched'] and status 'scheduled'."""
+def prepare(cid, ch, d, slot, only=None):
+    """Get one reel ready on every platform for `slot` (unix time). Writes d['sched'] and status 'scheduled'.
+    only = [platforms] retries just those on an already scheduled reel (keeps what is ready)."""
     acc = P.resolve(load(os.path.expanduser(f"~/.studio-accounts/{cid}.json")))
     if not acc:
         log("schedule", cid, "no accounts connected"); return
@@ -269,12 +270,20 @@ def prepare(cid, ch, d, slot):
         except Exception as e:
             log("cover stamp failed, posting plain", str(e)[:120])
     plats = _platforms(cid, plan, acc)
-    sch = {"slot": int(slot), "at": dt.datetime.fromtimestamp(slot).strftime("%Y-%m-%d %H:%M"), "platforms": plats,
-           "mp4": mp4, "prepared": time.strftime("%Y-%m-%d %H:%M")}
+    if only:
+        sch = dict(d.get("sched") or {})
+        for n in only:
+            sch.pop(n + "_prep_error", None)
+        sch["retried"] = int(time.time())
+        plats_do = [n for n in plats if n in only]
+    else:
+        sch = {"slot": int(slot), "at": dt.datetime.fromtimestamp(slot).strftime("%Y-%m-%d %H:%M"), "platforms": plats,
+               "mp4": mp4, "prepared": time.strftime("%Y-%m-%d %H:%M")}
+        plats_do = plats
     direct = slot - time.time() < LEAD_MIN
     update(cid, d["job"], lambda r: r.update(status="scheduled", sched=sch))      # claim the reel first
-    url = None
-    if "ig" in plats or "fb" in plats:                 # one public copy for Instagram AND Facebook to fetch
+    url = sch.get("url")
+    if not url and ("ig" in plats_do or "fb" in plats_do):   # one public copy for Instagram AND Facebook to fetch
         try:
             with _GIT:
                 url = P._public_url(mp4, f"{cid}-{d['job']}-{int(time.time())}.mp4")
@@ -296,7 +305,7 @@ def prepare(cid, ch, d, slot):
             log("schedule: ready", cid, d["job"], n, "for", sch["at"])
         except Exception as e:
             sch[n + "_prep_error"] = _err(e); log("schedule: prepare failed", cid, n, sch[n + "_prep_error"][:200])
-    ths = [threading.Thread(target=do, args=(n,)) for n in plats]
+    ths = [threading.Thread(target=do, args=(n,)) for n in plats_do]
     [t.start() for t in ths]; [t.join() for t in ths]
     update(cid, d["job"], lambda r: r.update(sched=sch))
 
@@ -333,8 +342,14 @@ def stage():
             if d.get("sched") and d.get("status") not in ("scheduled", "posted") and d["sched"].get("slot", 0) > time.time() \
                     and (d["sched"].get("fb") or d["sched"].get("yt")):
                 unschedule(cid, d)
-        if any(d.get("status") == "scheduled" for d in rows):
-            continue                                     # one prepared reel per page at a time
+        sc_ = [d for d in rows if d.get("status") == "scheduled"]
+        if sc_:                                          # one prepared reel per page at a time; finish what is missing
+            d = sc_[0]
+            s = d.get("sched") or {}
+            miss = [n for n in s.get("platforms") or [] if not (s.get("ig_container") if n == "ig" else s.get(n))]
+            if miss and s.get("slot", 0) - time.time() > LEAD_MIN and time.time() - s.get("retried", 0) > 600:
+                jobs.append((cid, ch, d, s["slot"], miss))
+            continue
         slot = next_slot(cid, ch, rows, now)
         if not slot or slot - time.time() > WINDOW:
             continue
