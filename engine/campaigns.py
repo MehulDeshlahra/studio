@@ -12,7 +12,7 @@ campaigns scoring >= 60 (once each) + a daily top 5. Joining = the owner's click
 dashboard (Channels > Cut Capsule sources) and engine/clipwatch.py clips it automatically."""
 import json, os, re, sys, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from core import ROOT, OUT, log, load, save, telegram
+from core import ROOT, OUT, log, load, save, telegram, fyi
 
 BASE = "https://contentrewards.com"
 PAGES = ["/c/discover/clipping", "/c/discover"]
@@ -246,10 +246,10 @@ def run(report=False):
             msg.append(f"• {v['score']}/100 {v.get('brand') or ''}: {v.get('title', '')[:70]}\n  {', '.join(v['why'][:5])}\n  {v['url']}")
             v["told"] = now
 
-        telegram("\n".join(msg)[:3900])
+        fyi("\n".join(msg)[:3900])
     if report:
         top = [f"{v['score']} · {v.get('brand') or ''} · {v.get('title', '')[:60]} · {', '.join(v['why'][:3])}" for k, v in ranked[:5]]
-        telegram("📊 Top clipping campaigns today:\n" + "\n".join(top))
+        fyi("📊 Top clipping campaigns today:\n" + "\n".join(top))
     lines = ["# Clipping campaigns (engine/campaigns.py, " + time.strftime("%Y-%m-%d %H:%M") + ")",
              f"{len(live)} live on contentrewards.com. Score = rate x cap x budget left/runway x competition x fit (our platforms: IG, YT).",
              "", "| score | brand | campaign | why | joined | link |", "|---|---|---|---|---|---|"]

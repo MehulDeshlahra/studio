@@ -11,7 +11,7 @@ Only Telegram on what changed (joined X, submitted N, a failure). Never joins be
 (campaigns.py scores them 0)."""
 import json, os, re, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from core import ROOT, OUT, log, load, save, telegram
+from core import ROOT, OUT, log, load, save, telegram, fyi
 import llm
 
 CID = "cutcapsule"
@@ -149,7 +149,7 @@ def submit_all(st):
         a, b = _submit_page(page)
         n_ok += a; fails += b
     if n_ok or fails:
-        telegram(f"💰 Whop: {n_ok} clip link(s) submitted." + ("\n⚠ Not submitted: " + "; ".join(fails[:4]) if fails else ""))
+        (telegram if fails else fyi)(f"💰 Whop: {n_ok} clip link(s) submitted." + ("\n⚠ Not submitted: " + "; ".join(fails[:4]) if fails else ""))
     return n_ok
 
 
@@ -208,7 +208,7 @@ def join_best(st):
     for page in changed:
         _save_sources(ds[page], f"whopbot: joined campaign(s) for {page}", page)
     if joined:
-        telegram("🤝 Joined on Whop and clipping now:\n• " + "\n• ".join(joined))
+        fyi("🤝 Joined on Whop and clipping now:\n• " + "\n• ".join(joined))
         os.system("sudo systemctl start --no-block studio-clipwatch.service")
     return joined
 
@@ -251,7 +251,7 @@ def adopt_joined(st):
     for page in changed:
         _save_sources(ds[page], f"whopbot: sources for joined campaign(s) on {page}", page)
     if added:
-        telegram("✂️ Clipping now for campaigns joined on the account (not by the bot's picker):\n• " + "\n• ".join(added))
+        fyi("✂️ Clipping now for campaigns joined on the account (not by the bot's picker):\n• " + "\n• ".join(added))
         os.system("sudo systemctl start --no-block studio-clipwatch.service")
     return added
 
@@ -310,7 +310,7 @@ def make_source(k, v, d, st):
         st.setdefault("skipped", {})[k] = {"title": v.get("title"), "why": b.get("why_not") or "no usable footage",
                                            "other": b.get("other_footage"), "t": now}
         log("whopbot: skip", v.get("title"), "-", b.get("why_not") or "no usable footage")
-        telegram(f"⏭ Can't clip '{v.get('title')}': {b.get('why_not') or 'no YouTube/Drive footage in the brief'}")
+        fyi(f"⏭ Can't clip '{v.get('title')}': {b.get('why_not') or 'no YouTube/Drive footage in the brief'}")
         return None
     key = re.sub(r"[^a-z0-9]+", "-", (v.get("brand") or v.get("title") or "campaign").lower()).strip("-")[:30]
     while key in d["sources"] and d["sources"][key].get("campaign_id") != k:
@@ -369,7 +369,7 @@ def retire(st):
             _save_sources(d, f"whopbot: retired {', '.join(off)}", page)
             alloff += [f"{page}/{k}" for k in off]
     if alloff:
-        telegram("🛑 Campaign budget finished, stopped clipping: " + ", ".join(alloff))
+        fyi("🛑 Campaign budget finished, stopped clipping: " + ", ".join(alloff))
 
 
 def run():

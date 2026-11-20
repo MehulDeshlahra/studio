@@ -149,6 +149,17 @@ def read(path, limit=None):
         return ""
 
 
+def fyi(text):
+    """20 Nov (owner: Telegram only when something needs me or something earned money): updates that need nothing from
+    him go to ~/studio-out/owner-feed.jsonl (dashboard / weekly report) instead of Telegram."""
+    try:
+        with open(os.path.join(OUT, "owner-feed.jsonl"), "a", encoding="utf-8") as fh:
+            fh.write(json.dumps({"t": time.strftime("%Y-%m-%d %H:%M:%S"), "text": text[:2000]}, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
+    log("fyi:", text[:160].replace("\n", " "))
+
+
 def telegram(text, video=None, photo=None):
     """Studio Telegram group (~/.studio-telegram.json {"token","chat"}). Silently logs when not set up yet."""
     cfg = load(os.path.join(HOME, ".studio-telegram.json"))
