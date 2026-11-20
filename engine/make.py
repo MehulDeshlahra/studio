@@ -526,6 +526,17 @@ def _stage_assets(ch, p, job):
     adir = os.path.join(job, "assets"); os.makedirs(adir, exist_ok=True)
     got = load(os.path.join(job, "assets.json"), {})
     last_img = None
+    # 20 Nov (owner: "1.5-2.5 h for one video? not accepted"): story pictures were made one scene after another (prompt
+    # writer + image service + check, ~1 min each, 12-14 scenes). They come from remote services, so up to 3 scenes are
+    # made at the same time; anything that depends on the order (reuse the previous picture, Muse clips) runs after
+    from concurrent.futures import ThreadPoolExecutor
+    pool, later = ThreadPoolExecutor(max_workers=int(os.environ.get("STUDIO_PIC_PARALLEL", "3"))), []
+    try:
+        import picsmith
+        if picsmith.on(ch, theme.get("style")):
+            picsmith.ensure_bible(p, ch)                  # once, before the scenes run side by side
+    except Exception as e:
+        log("picsmith bible skipped", str(e)[:100])
     for i, s in enumerate(p["scenes"]):
         k = str(i)
         if k in got and all(os.path.exists(v) for v in got[k].values()):
@@ -630,29 +641,42 @@ def _stage_assets(ch, p, job):
                         or muse.omni_image(pr, os.path.join(adir, f"s{i}o{sfx}.jpg"))
                         or muse.cloudflare(pr, os.path.join(adir, f"s{i}{sfx}.jpg"))
                         or muse.pollinations(pr, os.path.join(adir, f"s{i}p{sfx}.jpg")))
-            img = None
-            try:                      # 20 Nov: prompt engineer + reference pictures + Decisions check (engine/picsmith.py)
-                import picsmith
-                if picsmith.on(ch, theme.get("style")) and s["type"] != "flow":
-                    img = picsmith.scene_picture(ch, p, s, i, prompt, adir, chain)
-                    save(os.path.join(job, "plan.json"), p)
-            except Exception as e:
-                log("picsmith failed, normal picture:", str(e)[:160])
-            img = img or chain(prompt)
-            if img:
-                a["image"] = img
-            elif last_img:
-                a["image"] = last_img; log("scene", i, "reuses the previous image")
-            if s["type"] == "clip" and a.get("image"):
-                v = muse.video(s["prompt"] + ". Smooth natural motion, no text, no subtitles, no speech.", a["image"],
-                               os.path.join(adir, f"s{i}.mp4"))
-                if v:
-                    a["video"] = prep_clip(v)
-                else:
-                    s["type"] = "image"; s["motion"] = "push"; log("scene", i, "clip failed -> still image")
+            def make_pic(s=s, i=i, prompt=prompt, chain=chain):
+                img = None
+                try:                  # 20 Nov: prompt engineer + reference pictures + Decisions check (engine/picsmith.py)
+                    import picsmith
+                    if picsmith.on(ch, theme.get("style")) and s["type"] != "flow":
+                        img = picsmith.scene_picture(ch, p, s, i, prompt, adir, chain)
+                except Exception as e:
+                    log("picsmith failed, normal picture:", str(e)[:160])
+                return img or chain(prompt)
+            later.append((i, k, s, a, pool.submit(make_pic)))
+            continue
         got[k] = a
         last_img = a.get("image", last_img)
         save(os.path.join(job, "assets.json"), got)
+    # the parallel pictures, in scene order (the previous-picture fallback and Muse clips need the order)
+    for i, k, s, a, fut in later:
+        try:
+            img = fut.result()
+        except Exception as e:
+            log("scene", i, "picture failed:", str(e)[:120]); img = None
+        if img:
+            a["image"] = img
+        else:
+            prev = next((got[str(j)].get("image") for j in range(i - 1, -1, -1) if got.get(str(j), {}).get("image")), None)
+            if prev:
+                a["image"] = prev; log("scene", i, "reuses the previous image")
+        if s["type"] == "clip" and a.get("image"):
+            v = muse.video(s["prompt"] + ". Smooth natural motion, no text, no subtitles, no speech.", a["image"],
+                           os.path.join(adir, f"s{i}.mp4"))
+            if v:
+                a["video"] = prep_clip(v)
+            else:
+                s["type"] = "image"; s["motion"] = "push"; log("scene", i, "clip failed -> still image")
+        got[k] = a
+        save(os.path.join(job, "assets.json"), got)
+    pool.shutdown(wait=True)
     save(os.path.join(job, "plan.json"), p)
     return {int(k): v for k, v in got.items()}
 
