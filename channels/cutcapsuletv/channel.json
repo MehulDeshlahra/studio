@@ -49,7 +49,7 @@
   "warmup": {
     "post_from": "2026-11-20",
     "one_a_day_until": "2026-11-27",
-    "note": "new account (created 19 Nov)"
+    "note": "20 Nov: Instagram linked (owner), new account warm-up"
   },
   "handle": "@cutcapsule.tv",
   "handle_instagram": "@cutcapsule.tv",
@@ -123,6 +123,6 @@
     "jo koy",
     "all's fair"
   ],
-  "post": false,
+  "post": true,
   "post_note": "19 Nov HOLD (golden rule): Instagram + YouTube stop recommending accounts that mostly post others' clips without material edits (crop/captions/logo do not count). Posting resumes when the clip format adds real commentary / storyline (owner sees frames first)."
 }
