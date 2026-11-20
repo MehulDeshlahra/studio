@@ -1,0 +1,444 @@
+{
+ "slug": "devuthani-ekadashi-2026",
+ "title": "Bhagwan Vishnu kyun sote hain 4 mahine?",
+ "hooks": [
+  "Devuthani Ekadashi par Bhagwan Vishnu jaag gaye hain.",
+  "Kya aapko pata hai shubh kaam aaj se hi kyun shuru hote hain?",
+  "Chaar mahine ki Yoga Nidra ke baad, aaj srishti jaag rahi hai."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Uses the specific current date and a high-stakes claim about a deity awakening to trigger immediate curiosity as per the 2026 top-performer rules.",
+ "metaphor": "The transition from a silent, dark cosmic ocean to a radiant, golden awakening representing the return of auspicious energy.",
+ "mechanism": [],
+ "cast": {
+  "Vishnu": "Lord Vishnu with a calm, divine face, blue skin, wearing yellow silk pitambara, an ornate golden crown, resting on the multi-headed serpent Sheshnag in the cosmic ocean.",
+  "Lakshmi": "Goddess Lakshmi in a rich maroon and gold saree, radiant face, sitting respectfully near Lord Vishnu's feet."
+ },
+ "scenes": [
+  {
+   "vo": "Devuthani Ekadashi par Bhagwan Vishnu apni chaar mahine ki neend se jaag gaye hain.",
+   "type": "image",
+   "prompt": "A cinematic close-up of Lord Vishnu's closed eyes, soft golden light hitting his face, slowly his eyes open with a divine glow. Painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon.",
+   "motion": "push",
+   "title": "VISHNU JI JAAG GAYE",
+   "keywords": [
+    "jaag gaye"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Vishnu"
+    ],
+    "tries": [
+     {
+      "file": "s0q0.jpg",
+      "prompt": "A cinematic close-up of the idol from image 1, Lord Vishnu, possessing radiant blue skin, a calm divine face, and an ornate, intricate golden crown. His eyes are initially closed, then slowly opening with a soft, divine golden glow emanating from within. The scene is captured in a painterly cinematic Indian miniature-meets-epic style, bathed in warm gold and deep maroon tones, with soft divine light highlighting his features, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {},
+      "top": 0.11
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Isse kehte hain Devuthani Ekadashi. Is din se hi saare ruki hui shadiyan aur shubh kaam phir shuru hote hain.",
+   "type": "image",
+   "prompt": "A traditional Indian wedding mandap being decorated with marigold flowers and bells, warm golden hour light, no people, focus on the ornate pillars. Ornate but uncluttered.",
+   "motion": "pan",
+   "title": "SHUBH KAAM SHURU",
+   "keywords": [
+    "shadiyan",
+    "shubh kaam"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Lakshmi",
+     "Vishnu"
+    ],
+    "tries": [
+     {
+      "file": "s1q0.jpg",
+      "prompt": "A wedding mandap featuring ornate wooden pillars carved with intricate traditional patterns, decorated with vibrant marigold flower garlands and hanging brass bells. The scene captures the sacred space bathed in warm golden hour light, casting long soft shadows across the clean stone floor. The style is painterly cinematic Indian miniature-meets-epic, with a palette of warm gold and deep maroon, maintaining an uncluttered and celebratory atmosphere. Vertical 9:16 composition, focusing on the pillars in the middle third.",
+      "fails": {},
+      "top": 0.15
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Puraan kehte hain ki Devshayani Ekadashi par Vishnu ji Sheshnag par Yoga Nidra mein leen ho jaate hain.",
+   "type": "image",
+   "prompt": "Lord Vishnu resting on Sheshnag in the middle of the dark blue Kshira Sagara cosmic ocean, Goddess Lakshmi at his feet, soft divine light. Lord Vishnu with a calm, divine face, blue skin, wearing yellow silk pitambara, an ornate golden crown, resting on the multi-headed serpent Sheshnag in the cosmic ocean. Goddess Lakshmi in a rich maroon and gold saree, radiant face, sitting respectfully near Lord Vishnu's feet.",
+   "motion": "pull",
+   "title": "YOGA NIDRA",
+   "keywords": [
+    "Yoga Nidra"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Lakshmi",
+     "Vishnu"
+    ],
+    "tries": [
+     {
+      "file": "s2q0.jpg",
+      "prompt": "Lord Vishnu from image 2, radiant blue skin, calm divine face, four arms holding conch chakra mace lotus, vibrant yellow silk pitambara, ornate golden crown radiating soft divine light, resting in Yoga Nidra upon massive multi-headed Sheshnag with iridescent scales coiled protectively, vast Kshira Sagara cosmic ocean of deep blue water calm gentle ripples reflecting golden glow, Goddess Lakshmi from image 1 serene face luxurious red silk saree gold embroidery seated on lotus gold coins flowing from hand majestic elephants beside her adorned ornate gold jewelry positioned respectfully near his feet, painterly cinematic Indian miniature-meets-epic style warm gold deep maroon soft divine light ornate uncluttered, vertical 9:16 composition main subject middle third generous calm space above below",
+      "fails": {},
+      "top": 0.33
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Ye chaar mahine yaani Chaturmas, bhakt ke liye sanyam aur dhyan ka samay hota hai.",
+   "type": "image",
+   "prompt": "A sage sitting in deep meditation under a banyan tree near a river, monsoon clouds in the background, painterly style, deep maroon and earthy tones.",
+   "motion": "punch",
+   "title": "CHATURMAS",
+   "keywords": [
+    "sanyam",
+    "dhyan"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s3.jpg",
+      "prompt": "An elderly sage with a lean build, long white beard, and flowing hair sits in a meditative posture, seated cross-legged with hands resting in his lap, eyes closed in deep contemplation. He wears a simple saffron-colored cotton dhoti, positioned beneath the sprawling, ancient roots of a massive banyan tree near a calm riverbank. Painterly cinematic Indian miniature-meets-epic style, deep maroon and earthy tones, soft divine light filtering through monsoon clouds, vertical 9:16 composition, main subject centered with generous space above and below.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Par ye koi sadharan neend nahi hai. Ye vishva ki urja ko andar sametne ka ek tarika hai.",
+   "type": "image",
+   "prompt": "A glowing golden orb at the center of Vishnu's chest, representing cosmic energy, radiating soft light into the dark water. Painterly style.",
+   "motion": "tilt",
+   "title": "COSMIC ENERGY",
+   "keywords": [
+    "urja",
+    "sametne"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Vishnu"
+    ],
+    "tries": [
+     {
+      "file": "s4q0.jpg",
+      "prompt": "Lord Vishnu, the idol from image 1, possessing radiant blue skin, a calm divine face, and four arms holding a conch, chakra, mace, and lotus, wears vibrant yellow silk pitambara garments and an ornate, intricate golden crown. A glowing golden orb rests at the center of his chest, radiating soft divine light into the surrounding Kshira Sagara, a vast cosmic ocean of deep blue water. Painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.27
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Aaj ke din Tulsi Maa ka vivah Shaligram roop mein Vishnu ji se kiya jaata hai.",
+   "type": "image",
+   "prompt": "A beautiful Tulsi plant in a decorated clay pot (Vrindavan), adorned with a red dupatta and jewelry, a black Shaligram stone placed next to it. Warm candle light.",
+   "motion": "push",
+   "title": "TULSI VIVAH",
+   "keywords": [
+    "Tulsi Maa",
+    "Shaligram"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Lakshmi",
+     "Vishnu"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "A decorated clay pot containing a lush green Tulsi plant, adorned with a delicate red silk dupatta and gold jewelry, a smooth black Shaligram stone rests beside it, illuminated by the soft, flickering glow of warm candle light, sitting on a clean stone floor, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon palette, soft divine light, ornate but uncluttered, vertical 9:16 composition, centered in the middle third with generous calm space above and below.",
+      "fails": {},
+      "top": 0.1
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Ye milan humein sikhata hai ki prakriti aur parmatma alag nahi, balki ek hi hain.",
+   "type": "image",
+   "prompt": "A symbolic fusion of a green leaf and a golden divine aura, merging together in a soft glow. Ornate and divine.",
+   "motion": "pan",
+   "title": "PRAKRITI AUR PARMATMA",
+   "keywords": [
+    "milan",
+    "ek hi"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Lakshmi",
+     "Vishnu"
+    ],
+    "tries": [
+     {
+      "file": "s6q0.jpg",
+      "prompt": "A vibrant green pipal leaf merging seamlessly with a radiant, swirling golden divine aura, the leaf veins glowing with liquid light, the aura expanding into soft ethereal ripples. This symbolic fusion floats centrally against a dark, velvety background. Painterly cinematic Indian miniature-meets-epic style, rich warm gold and deep maroon hues, soft divine light emanating from the center, vertical 9:16 composition with generous calm space above and below, ornate but uncluttered, high resolution, serene and mystical atmosphere.",
+      "fails": {},
+      "top": 0.19
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Sroat: Padma Purana, Uttara Khanda. Sachi bhakti wahi hai jo dikhaave ke liye nahi, dil se ho.",
+   "type": "card",
+   "prompt": "A single oil lamp (diya) burning brightly in the dark, soft focus on a temple shikhara in the background. Warm gold light.",
+   "motion": "punch",
+   "big": "SACHI BHAKTI",
+   "small": "Sroat: Padma Purana",
+   "keywords": [
+    "Padma Purana",
+    "dil se"
+   ],
+   "real": null,
+   "title": "",
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Lakshmi",
+     "Vishnu"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "A single oil lamp, a diya, burning with a steady, bright golden flame, sits in the foreground, casting a warm, flickering glow. In the soft-focus background, the towering silhouette of an ancient temple shikhara rises against a deep twilight sky. The style is a painterly cinematic Indian miniature-meets-epic aesthetic, utilizing a palette of warm gold and deep maroon. The scene is bathed in soft divine light, creating a serene, sacred atmosphere in a vertical 9:16 composition with generous space above and below.",
+      "fails": {},
+      "top": 0.14
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Kya aapne aaj Tulsi Vivah ki taiyari ki hai? Humein comments mein bataiye.",
+   "type": "image",
+   "prompt": "A courtyard of a traditional Indian home with rangoli and many diyas lit up for the festival. Warm and welcoming atmosphere.",
+   "motion": "pull",
+   "title": "AAP BATAO?",
+   "keywords": [
+    "Tulsi Vivah",
+    "comments"
+   ],
+   "real": {
+    "q": "Tulsi Vivah celebration India",
+    "kind": "photo",
+    "subject": "Traditional Tulsi Vivah puja setup with lamps"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting"
+  },
+  {
+   "type": "card",
+   "big": "Comment VRAT",
+   "sub": "Devuthani Ekadashi vrata checklist DM mein 📩",
+   "small": "Devuthani Ekadashi vrata checklist DM mein",
+   "vo": "Ye poori vrata checklist chahiye? Comment kijiye VRAT, main DM kar dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "prompt": "a gift box with soft warm light, simple background",
+   "title": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Lakshmi",
+     "Vishnu"
+    ],
+    "tries": [
+     {
+      "file": "s9q0.jpg",
+      "prompt": "An ornate traditional Indian gift box carved from warm sandalwood with intricate gold filigree patterns and a deep maroon silk ribbon tied in a perfect bow, resting centered on a smooth ivory stone pedestal, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon palette, soft divine light glowing from within the box illuminating delicate marigold petals scattered around its base, vertical 9:16 composition with the box in the middle third, generous calm ivory space above and below",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
+  }
+ ],
+ "music_mood": "uplifting",
+ "caption": "Bhagwan Vishnu jaag gaye hain! 🙏\n\nDevuthani Ekadashi marks the end of Chaturmas and the start of all auspicious events. \n\nKya aapne aaj Tulsi Vivah ki taiyari ki? \n\n#Katha #DevuthaniEkadashi #Vishnu #TulsiVivah #PuraanKiKatha #Spirituality",
+ "hashtags": [
+  "#Katha",
+  "#DevuthaniEkadashi",
+  "#Vishnu",
+  "#TulsiVivah",
+  "#PuraanKiKatha",
+  "#Spirituality"
+ ],
+ "claims": [
+  {
+   "claim": "Devuthani Ekadashi 2026 falls on November 20.",
+   "basis": "Free Press Journal and Moneycontrol reports dated 2026-11-20."
+  },
+  {
+   "claim": "Lord Vishnu wakes up after four months of Yoga Nidra on this day.",
+   "basis": "Padma Purana and general Puranic tradition cited in research sources."
+  },
+  {
+   "claim": "Tulsi Vivah is performed on Devuthani Ekadashi.",
+   "basis": "Moneycontrol and India TV News reports dated 2026-11-20."
+  }
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "7f620e6fdf",
+  "b2fabb69c4",
+  "fc294ac58f",
+  "9db4cc694f",
+  "0755cc155a",
+  "f945e2a937",
+  "6ce7203c71",
+  "161339712e",
+  "e15cfaed29",
+  "4396759d41",
+  "a688e48ca2",
+  "1e1964f463",
+  "7fa182f8ef"
+ ],
+ "offer": {
+  "kind": "sheet",
+  "keyword": "VRAT",
+  "gift": "Devuthani Ekadashi vrata checklist",
+  "title": "Devuthani Ekadashi Poora Vidhi",
+  "items": [
+   {
+    "head": "Ekadashi Tithi Samay",
+    "text": "20 Nov 07:15 AM se 21 Nov 06:31 AM tak"
+   },
+   {
+    "head": "Parana Ka Sahi Muhurat",
+    "text": "21 Nov 12:40 PM se 02:51 PM, Hari Vasara 12:07 PM"
+   },
+   {
+    "head": "Tulsi Vivah Ki Vidhi",
+    "text": "Tulsi ji ko Shaligram sang baandhein, sindoor-chawal chadhayein, aarti karein"
+   },
+   {
+    "head": "Vrat Niyam Aur Bhojan",
+    "text": "Nirjala ya phalahar vrat, anaj-telein na khayein, Vishnu-Lakshmi puja karein"
+   },
+   {
+    "head": "Daan-Punya Ka Mahatva",
+    "text": "Diya mandir, peepal, tulsi ke paas jalayein, ann-daan karein"
+   },
+   {
+    "head": "Shubh Kaam Shuru Karne Ka Din",
+    "text": "Is din se vivah, grih pravesh, naye kaam shuru honge"
+   }
+  ],
+  "wallpaper_scene": 1,
+  "job": "1121-0315",
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/katha/offer-vrat.jpg"
+ },
+ "skin": "painting",
+ "bible": {
+  "figures": [
+   {
+    "name": "Vishnu",
+    "scenes": [
+     1,
+     3,
+     5
+    ],
+    "look": "Lord Vishnu possesses radiant blue skin, a calm divine face, and four arms holding a conch, chakra, mace, and lotus. He wears vibrant yellow silk pitambara garments and an ornate, intricate golden crown, radiating soft divine light."
+   },
+   {
+    "name": "Lakshmi",
+    "scenes": [
+     3
+    ],
+    "look": "Goddess Lakshmi displays a serene face, draped in a luxurious red silk saree with gold embroidery. She sits upon a lotus, gold coins flowing from her hand, while majestic elephants stand beside her, adorned in ornate gold jewelry."
+   },
+   {
+    "name": "Sage",
+    "scenes": [
+     4
+    ],
+    "look": "An elderly sage with a lean build, long white beard, and flowing hair sits in a meditative posture. He wears a simple saffron-colored cotton dhoti, maintaining a serene expression while seated cross-legged under a sprawling banyan tree."
+   },
+   {
+    "name": "Sheshnag",
+    "scenes": [
+     3
+    ],
+    "look": "A massive multi-headed serpent with iridescent scales, coiled in a protective posture. Its eyes glow softly amidst the deep blue cosmic ocean, providing a divine base for Lord Vishnu, surrounded by ripples reflecting golden light."
+   }
+  ],
+  "places": [
+   {
+    "name": "Kshira Sagara",
+    "look": "A vast cosmic ocean of deep blue water, illuminated by soft divine light. The surface remains calm with gentle ripples, reflecting a golden glow while the massive Sheshnag emerges from the depths, creating a mystical and serene atmosphere."
+   },
+   {
+    "name": "Wedding Mandap",
+    "look": "Ornate wooden pillars carved with traditional patterns, decorated with vibrant marigold flower garlands and hanging brass bells. The space is bathed in warm golden hour light, maintaining an uncluttered, sacred, and celebratory appearance on the stone floor."
+   },
+   {
+    "name": "Vrindavan",
+    "look": "A decorated clay pot containing a lush green Tulsi plant, adorned with a delicate red silk dupatta and gold jewelry. A smooth black Shaligram stone rests beside it, illuminated by the soft, flickering glow of warm candle light."
+   },
+   {
+    "name": "Courtyard",
+    "look": "A traditional stone courtyard featuring an intricate, colorful rangoli pattern on the floor. Rows of glowing clay diyas illuminate the space, creating a warm, welcoming atmosphere with a temple shikhara visible against the dark, soft-focus background."
+   }
+  ]
+ }
+}

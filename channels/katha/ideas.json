@@ -1122,5 +1122,130 @@
     "score": 3.53
    }
   ]
+ },
+ {
+  "t": "2026-11-21 03:16",
+  "picked": "The Significance of Devuthani Ekadashi: When Lord Vishnu Wakes Up",
+  "ideas": [
+   {
+    "topic": "The Significance of Devuthani Ekadashi: When Lord Vishnu Wakes Up",
+    "search": "Devuthani Ekadashi katha significance",
+    "fit": 10.0,
+    "from": "trend",
+    "note": "With 'Devuthani Ekadashi 2026' trending in festival news, this is the perfect time to explain the mythology behind Vishnu waking from his four-month slumber (Yoganidra) and the start of auspicious wedding seasons.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.2,
+    "score": 7.54
+   },
+   {
+    "topic": "The Story of the Sun Temple and Chhath Puja",
+    "search": "Chhath Puja sun worship story",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Chhath Puja is trending in Bihar and across India. Connecting the current festival fervor to the Puranic stories of why the Sun God (Surya Dev) is worshipped, specifically focusing on the setting sun, aligns perfectly with the channel's niche.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.9,
+    "score": 7.13
+   },
+   {
+    "topic": "Why Lord Vitthal is worshipped on Kartiki Ekadashi",
+    "search": "Kartiki Ekadashi Pandharpur story",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "Kartiki Ekadashi is trending due to the Pandharpur Yatra. A short, engaging story about the devotion of Pundalik and how Lord Vitthal came to stand on the brick is highly relevant to the current search interest.",
+    "demand_known": true,
+    "demand": 2.6,
+    "median_views": 11094,
+    "fresh": 5.0,
+    "score": 6.32
+   },
+   {
+    "topic": "Why Hanuman tore open his chest to show Ram and Sita inside — Ramayana, Yuddha Kanda. Lesson: true devotion needs no external proof.",
+    "note": "",
+    "search": "Hanuman chest Ram Sita",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.0,
+    "score": 6.15
+   },
+   {
+    "topic": "Five-year-old Dhruva's tapasya made him the Pole Star — Bhagavata Purana, Canto 4. Lesson: determination transcends age and circumstance.",
+    "note": "",
+    "search": "Dhruva tapasya pole star",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.8,
+    "score": 6.11
+   },
+   {
+    "topic": "Savitri out-argued Yama to win back Satyavan's life — Mahabharata, Vana Parva. Lesson: righteous persistence conquers even death.",
+    "note": "",
+    "search": "Savitri Satyavan Yama debate",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.6,
+    "score": 6.07
+   },
+   {
+    "topic": "Shiva drank Halahala poison during Samudra Manthan — Shiva Purana / Bhagavata Purana. Lesson: leadership means absorbing toxicity so others survive.",
+    "note": "",
+    "search": "Shiva Halahala poison story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.2,
+    "median_views": 19727,
+    "fresh": 6.0,
+    "score": 5.79
+   },
+   {
+    "topic": "Ganesha circled Shiva-Parvati and won the universe — Shiva Purana. Lesson: wisdom sees the whole world in one's parents.",
+    "note": "",
+    "search": "Ganesha circles parents story",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 117,
+    "fresh": 6.2,
+    "score": 4.04
+   },
+   {
+    "topic": "King Nriga gave a cow twice by mistake and became a lizard — Bhagavata Purana, Canto 10. Lesson: unintended errors in charity bind even kings.",
+    "note": "",
+    "search": "King Nriga lizard curse",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 142,
+    "fresh": 6.1,
+    "score": 4.02
+   },
+   {
+    "topic": "Karna aur Indra ka daan (Mahabharata)",
+    "search": "Karna aur Indra ka daan (Mahabharata)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1658,
+    "fresh": 4.3,
+    "score": 3.53
+   }
+  ]
  }
 ]

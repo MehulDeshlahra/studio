@@ -490,3 +490,7 @@
 
 ## review 1118-1635
 - picture check: scene 2: Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 75%)
+
+## The Significance of Devuthani Ekadashi: When Lord Vishnu Wak (story check)
+- STORY scene 1: false: 'Today is 22 November 2026 (Bees November do hazaar chhabis).': All 2026 news sources state Dev Uthani Ekadashi 2026 fell on Friday, 20 November 2026; Ekadashi Tithi ended 06:31 AM on  (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 1: false: 'Lord Vishnu woke up today from his four-month sleep.': Sources say Vishnu awakens on Dev Uthani Ekadashi (20 Nov 2026), not 22 Nov. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)

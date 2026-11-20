@@ -468,3 +468,16 @@
 - picture check: scene 3: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 74%)
 - picture check: scene 4: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 74%)
 - picture check: scene 8: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 63%)
+
+## 1121-0225 (pre-render check)
+- READ: text in UI rows has slight overlapping or artifacts in the second still
+- READ: caption text 'rehta pair' is split awkwardly across the two stills
+
+## 1121-0225 (pre-render check)
+- READ: overlapping and distorted text in the background headers
+- CUT: title text slightly clipped at top
+- FIT: screenshot UI layout is cluttered and overlapping with settings text box
+
+## review 1121-0225
+- picture check: scene 9: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 64%)
+- picture check: scene 11: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 65%)

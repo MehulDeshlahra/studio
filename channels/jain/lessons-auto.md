@@ -553,3 +553,6 @@
 
 ## 1118-2242 (pre-render check)
 - FIT: The voice mentions 'Sher, saanp, haathi', but the visual only shows a snake and the text only says 'SAANP' / 'SAB AAYE' instead of the full menagerie described.
+
+## review 1119-0935
+- picture check: scene 3: Does the idol or Tirthankara have blue, green or grey skin? (yes 66%)

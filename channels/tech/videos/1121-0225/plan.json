@@ -24,7 +24,7 @@
  "scenes": [
   {
    "vo": "Ek number... do phone? Kaise?",
-   "type": "image",
+   "type": "object",
    "prompt": "Two premium iPhones side by side on pure black studio surface. A glowing neon phone number (e.g. +1 555 0199) detaches from the left iPhone, travels along a sleek digital highway with subtle particle trail, and docks into the right iPhone. Cinematic 9:16, 30fps, photoreal, dramatic rim lighting.",
    "motion": "push",
    "title": "EK NUMBER DO PHONE",
@@ -63,12 +63,12 @@
    "title": "REQUIREMENTS",
    "rows": [
     {
-     "label": "APPLE ACCOUNT",
+     "label": "APPLE ID",
      "value": "SAME",
      "pct": 100
     },
     {
-     "label": "WIFI / BLUETOOTH",
+     "label": "WIFI/BT",
      "value": "ON",
      "pct": 100
     },
@@ -79,12 +79,12 @@
     },
     {
      "label": "DISTANCE",
-     "value": "< 30 FT",
+     "value": "<30 FT",
      "pct": 100
     }
    ],
-   "label": "SETUP CHECKLIST",
-   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: setup checklist, requirements, ek number do phone pe? iphone handoff kaise kaam karta hai?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "label": "SETUP",
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: setup, requirements, ek number do phone pe? iphone handoff kaise kaam karta hai?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
    "real": {
     "q": "iPhone Settings General AirPlay and Continuity iPhone Handoff toggle on",
     "kind": "photo",
@@ -139,12 +139,17 @@
    "rows": [
     {
      "label": "GENERAL",
-     "value": "AIRPLAY & CONTINUITY",
+     "value": "AIRPLAY",
      "pct": 100
     },
     {
-     "label": "IPHONE HANDOFF",
-     "value": "TOGGLE ON",
+     "label": "CONTINUITY",
+     "value": "HANDOFF",
+     "pct": 100
+    },
+    {
+     "label": "HANDOFF",
+     "value": "ON",
      "pct": 100
     }
    ],
@@ -264,7 +269,7 @@
    "type": "object",
    "prompt": "Apple Watch Ultra on black studio surface, a subtle tether line connects it to the Main iPhone labeled 'MAIN'. The Secondary iPhone has no tether. Premium product render, dramatic lighting.",
    "motion": "pan",
-   "title": "WATCH STAYS PAIRED",
+   "title": "WATCH PAIRED",
    "label": "APPLE WATCH",
    "keywords": [
     "watch",
@@ -339,7 +344,7 @@
   }
  ],
  "music_mood": "driving",
- "caption": "Ek number, do iPhone — Handoff feature exactly kaise kaam karta hai? 🛣️\n\nSetup se switch tak, 60 second mein samjho.\n\nAapka carrier Handoff support karta hai? Comment mein batao 👇",
+ "caption": "Ek number, do iPhone — Handoff feature exactly kaise kaam karta hai? 🛣️\n\nSetup se switch tak, 60 second mein samjho.\n\nAapka carrier Handoff support karta hai? Comment mein batao 👇\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#iPhoneHandoff",
   "#AppleContinuity",
@@ -463,5 +468,6 @@
   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/tech/offer-handoff.jpg"
  },
  "visual_done": "2026-11-21 02:33",
- "skin": "keynote"
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

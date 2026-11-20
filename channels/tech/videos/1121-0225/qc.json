@@ -1,0 +1,26 @@
+{
+ "topic": "iPhone Handoff Feature",
+ "title": "Ek number do phone pe? iPhone Handoff kaise kaam karta hai?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.4,
+  "true_peak": -2.7,
+  "dur": 50.63
+ },
+ "vision": {
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9834710743801653,
+  "words": 134,
+  "problems": []
+ },
+ "ok": true
+}
