@@ -58,6 +58,10 @@ def waiting(cid):
     return sum(1 for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or [] if d.get("status") in ("made", "approved"))
 
 
+def _approved(cid):
+    return sum(1 for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or [] if d.get("status") == "approved")
+
+
 def run(only=None):
     import laptop, clipper
     st = load(STATE, {}) or {}
@@ -95,6 +99,23 @@ def run(only=None):
                         todo.append((-t, key, v["url"], s))
                 except Exception as e:
                     log("clipwatch: channel", h, "failed:", str(e)[:120])
+        if not todo and _approved(cid) < 2:
+            # 20 Nov audit (golden rule): Cut Capsule Gaming had 0 approved clips with posting on, every source "done" and
+            # all 9 of its clips removed (Japanese captions, off-niche). A source whose clips ALL failed is not used up:
+            # clip it again (other moments; clipcore now skips non-English speech), at most twice, 6 h apart.
+            good = {str((d.get("clip") or {}).get("url")) for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
+                    if d.get("status") in ("approved", "posted", "made")}
+            st.setdefault("reclip", {})
+            for key, s in srcs.items():
+                for v in s.get("videos") or []:
+                    k2 = f"{cid}:{v}"
+                    n2, t2 = (st["reclip"].get(k2) or [0, 0])
+                    if (v not in good and k2 in st["done"] and v not in (st.get("not_footage") or {}) and n2 < 2
+                            and time.time() - t2 > 6 * 3600):
+                        todo.append((2, key, v, s)); st["reclip"][k2] = [n2 + 1, time.time()]
+            if todo:
+                log("clipwatch:", cid, f"only {_approved(cid)} approved clips and no new videos: re-clipping",
+                    len(todo), "source(s) whose earlier clips all failed")
         if not todo:
             log("clipwatch:", cid, "no new source videos"); continue
         todo.sort(key=lambda x: x[0])
