@@ -118,6 +118,14 @@ def pick(cid, ch, rows):
             log("schedule", cid, why)
     elif cands:
         cands = P.series_order(cid, rows, cands)
+    # 20 Nov (owner: "where is part 2?"): a reel that answers a part already posted ("Jawab kal") goes first. A reel
+    # names the part it answers in plan.json "part_of"; it is ready once that part is posted
+    posted_ = {d["job"] for d in rows if d.get("status") == "posted"}
+
+    def _answers(d):
+        po = (load(os.path.join(OUT, cid, d["job"], "plan.json"), {}) or {}).get("part_of")
+        return bool(po) and po in posted_
+    cands = sorted(cands, key=lambda d: not _answers(d))
     for c in cands[:3]:
         if not cid.startswith("cutcapsule"):
             try:
