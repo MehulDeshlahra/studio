@@ -251,6 +251,20 @@ def repair_classic(plan, bad, lang, page="story"):
     """Classic look (Katha, Aage Suno): new picture prompts / shorter text for the failing scenes.
     Returns the indices whose picture must be made again (make.py clears their assets and re-stages them)."""
     import plan as planner
+    # 20 Nov audit (katha 1120-1837z): "text_occluded" from the layout audit was "repaired" three times with a new PICTURE
+    # prompt (~6 min) and still failed: a picture cannot fix overlapping text. A scene whose only problems are layout-audit
+    # overlaps loses its extra on-screen text (title / big / small; the spoken captions stay) and keeps its picture
+    layout_only = {k for k, pr in bad.items() if pr and all("layout audit" in str(x).lower() for x in pr)}
+    for k in layout_only:
+        s0 = plan["scenes"][int(k)]
+        for f_ in ("title", "big", "small"):
+            s0.pop(f_, None)
+        if s0.get("type") == "card":
+            s0["type"] = "image"
+        log("preflight: scene", int(k) + 1, "layout overlap -> extra on-screen text removed, picture kept")
+    bad = {k: v for k, v in bad.items() if k not in layout_only}
+    if not bad:
+        return []
     items = "\n".join(f"{k}: {json.dumps(plan['scenes'][int(k)], ensure_ascii=False)} -> {probs}" for k, probs in bad.items())
     r = planner.ask(REPAIR_CLASSIC.format(page=page, lang="English" if lang == "en" else "Hinglish (Roman)", items=items), max_tokens=3000) or {}
     redo = []
