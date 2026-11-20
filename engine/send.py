@@ -14,6 +14,14 @@ def send(cid, job):
     if not FORCE and (not rv or not rv.get("ok")):
         log("send: not sent, review missing or failed", cid, job, (rv or {}).get("problems"))
         return None
+    # 20 Nov (owner: "stop sending thumbnails or spam"): 52 reels in 24 h each came as a video + a separate cover photo
+    # + an "auto-approved" line (~140 messages). A page that approves itself (clip pages) is approved silently and only
+    # shows on the dashboard; other pages get ONE message: the video with its caption. No cover photo.
+    if not FORCE and _would_auto(cid, job, rv):
+        import inbox
+        inbox.set_status(cid, job, "approved")
+        log("auto-approved silently (no Telegram)", cid, job)
+        return "auto"
     p = load(os.path.join(jd, "plan.json"), {})
     q = load(os.path.join(jd, "qc.json"), {})
     f = q.get("format", {})
@@ -31,16 +39,29 @@ def send(cid, job):
                 "-movflags", "+faststart", prev], timeout=1800)
         mp4 = prev
     mid = telegram(txt[:1000], video=mp4)
-    cv = os.path.join(jd, "cover.jpg")
-    if os.path.exists(cv):
-        telegram("cover / thumbnail", photo=cv)
     if isinstance(mid, int):
         m = load(os.path.join(OUT, "tg-map.json"), {})
         m[str(mid)] = {"channel": cid, "job": job}
         save(os.path.join(OUT, "tg-map.json"), m)
         log("sent for approval", cid, job, mid)
-        auto_approve(cid, job, rv)
     return mid
+
+
+def _would_auto(cid, job, rv):
+    """Same rule as auto_approve below, without side effects."""
+    st = load(os.path.join(OUT, "dash-settings.json"), {}) or {}
+    score = ((rv or {}).get("checks") or {}).get("vision", {}).get("score")
+    ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}
+    on = st.get("auto_approve") or (ch.get("schedule") or {}).get("auto_approve")
+    if not on or not (rv or {}).get("ok") or score is None or score < st.get("min_score", 9):
+        return False
+    n = int((ch.get("schedule") or {}).get("manual_first") or 0)
+    if n:
+        seen = sum(1 for d in (load(os.path.join(ROOT, "channels", cid, "done.json"), []) or [])
+                   if d.get("status") in ("approved", "posted") and d.get("job") != job)
+        if seen < n:
+            return False
+    return True
 
 
 def auto_approve(cid, job, rv):

@@ -19,7 +19,9 @@ SRC = os.path.join(ROOT, "channels", CID, "sources.json")
 DONE = os.path.join(ROOT, "channels", CID, "done.json")
 CAMP = os.path.join(OUT, "campaigns.json")
 STATE = os.path.join(OUT, "whopbot.json")
-MAX_ACTIVE, JOIN_MIN = 5, 75
+# 20 Nov: 5 per page = 15 in all, reached since 19 Nov, while 42 live campaigns scored 75+. 8 per page gives each page
+# a choice of footage every day (posting is the real limit: 1 a day per page until 27 Nov, then 2)
+MAX_ACTIVE, JOIN_MIN = 8, 75
 
 READ = """You read a paid clipping campaign brief for the clip page "Cut Capsule" (Instagram Reels, YouTube Shorts, Facebook;
 English/Hinglish; we cut vertical clips from long YouTube videos automatically: no face cam, no voice-over, no original
@@ -190,7 +192,11 @@ def join_best(st):
             break
         page = route(v)
         if per.get(page, 0) >= MAX_ACTIVE:
-            page = min(per, key=per.get) if v.get("category") not in ("gaming", "streamer") else page
+            # 20 Nov: the overflow went to the emptiest page, so baby / family clips (Rascals) landed on Cut Capsule Gaming.
+            # A full page's campaign may only move to a page of the same kind: never into gaming unless it is gaming
+            gaming = v.get("category") in ("gaming", "streamer", "fortnite", "gta")
+            ok_pages = [q for q in per if ("gaming" in q) == gaming]
+            page = min(ok_pages, key=per.get) if ok_pages else page
             if per.get(page, 0) >= MAX_ACTIVE:
                 continue
         tried[k] = now
