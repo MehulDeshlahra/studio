@@ -132,7 +132,8 @@ def picture_check(mp4, timing, checks, max_frames=14):
     try:
         import picsmith
         single = {f"c{k + 1}": q for k, q in enumerate(checks) if not re.search(r"between scenes", q, re.I)}
-        single.update(picsmith.GENERAL)
+        # rendered frames carry our own captions + page handle: the "text" question is asked on the raw picture only
+        single.update({k: v for k, v in picsmith.GENERAL.items() if k != "text"})
         out, scores = [], []
         for i in range(len(pts)):
             fjpg = os.path.join(tmp, f"{i}.jpg")
