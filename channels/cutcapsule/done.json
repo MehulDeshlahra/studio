@@ -851,8 +851,10 @@
   "job": "1120-0040a-c1",
   "topic": "FIRST DAY MANAGER: NO PRESSURE",
   "title": "FIRST DAY MANAGER: NO PRESSURE",
-  "status": "approved",
-  "review": [],
+  "status": "held",
+  "review": [
+   "20 Nov: the ad has its own burned-in captions; ours under them = every line twice"
+  ],
   "clip": {
    "url": "https://drive.google.com/drive/folders/1XCvBQqY3vIzg5s9kEmOmw20cIJNCD3jT",
    "start": 3.47,
