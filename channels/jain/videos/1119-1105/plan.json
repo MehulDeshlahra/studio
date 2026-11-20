@@ -132,28 +132,18 @@
       "file": "s5r0.jpg",
       "prompt": "real photo",
       "fails": {
-       "p1": 0.79
+       "text": 0.76
       },
-      "top": 0.79
+      "top": 0.76
      },
      {
       "file": "s5r1.jpg",
       "prompt": "real photo",
-      "fails": {
-       "p3": 0.82
-      },
-      "top": 0.82
-     },
-     {
-      "file": "s5q0.jpg",
-      "prompt": "Lord Neminath, the 22nd Tirthankara, a smooth dark blue-black stone idol, serene meditative face with half-closed eyes in deep compassion, plain head, seated cross-legged with hands resting in the lap, positioned in the center of a Dilwara-style temple interior, white marble hall with intricately carved pillars and lotus-motif domed ceiling, warm golden morning light casting a gentle glow on the stone, serene painterly Indian style, vertical 9:16 composition with generous calm space above and below.",
-      "fails": {
-       "p3": 0.78
-      },
-      "top": 0.78
+      "fails": {},
+      "top": 0.33
      }
     ],
-    "passed": false
+    "real_photo": true
    }
   },
   {
@@ -286,7 +276,7 @@
   }
  ],
  "music_mood": "emotional",
- "caption": "Baraat laut gayi... dulha ne kyun mod liya rath? 🐘\n\nEk cheekh ne badal di 22ve Tirthankara Neminath ki zindagi. Karuna itni badi ki mahal, rajya, byah... sab chhod diya.\n\nAap us pal hote toh kya karte?\nVideo: Photo: Achalgachh jain temple - Neminath statue (Wikimedia Commons)\nVideo: Photo: Neminatha at Sambhavnath ni khadki, Ahmedabad (Wikimedia Commons)",
+ "caption": "Baraat laut gayi... dulha ne kyun mod liya rath? 🐘\n\nEk cheekh ne badal di 22ve Tirthankara Neminath ki zindagi. Karuna itni badi ki mahal, rajya, byah... sab chhod diya.\n\nAap us pal hote toh kya karte?\nVideo: Photo: Achalgachh jain temple - Neminath statue (Wikimedia Commons)\nVideo: Photo: Neminatha at Sambhavnath ni khadki, Ahmedabad (Wikimedia Commons)\nVideo: Photo: Neminath Prabhu, Tagdi tirth (Wikimedia Commons)\nVideo: Photo: Neminath Temple (Wikimedia Commons)",
  "hashtags": [
   "#Neminath",
   "#Jainism",
@@ -443,10 +433,14 @@
  },
  "idol_photos_used": [
   "File:Achalgachh jain temple - Neminath statue.jpg",
-  "File:Neminatha at Sambhavnath ni khadki, Ahmedabad.jpg"
+  "File:Neminatha at Sambhavnath ni khadki, Ahmedabad.jpg",
+  "File:Neminath Prabhu, Tagdi tirth.jpg",
+  "File:Neminath Temple.jpg"
  ],
  "credits": [
   "Photo: Achalgachh jain temple - Neminath statue (Wikimedia Commons)",
-  "Photo: Neminatha at Sambhavnath ni khadki, Ahmedabad (Wikimedia Commons)"
+  "Photo: Neminatha at Sambhavnath ni khadki, Ahmedabad (Wikimedia Commons)",
+  "Photo: Neminath Prabhu, Tagdi tirth (Wikimedia Commons)",
+  "Photo: Neminath Temple (Wikimedia Commons)"
  ]
 }

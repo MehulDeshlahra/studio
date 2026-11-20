@@ -1,0 +1,363 @@
+{
+ "slug": "repo-rate-75bps-emi-impact",
+ "title": "Repo rate 0.75% badha toh ₹30 lakh home loan ki EMI kitni badhegi?",
+ "hooks": [
+  "Repo rate 0.75% badha... ₹30 lakh home loan ki EMI kitni badhegi?",
+  "RBI ne repo rate 75 bps badhaya... aapki EMI pe kya asar?",
+  "Home loan ₹30 lakh ka... 0.75% rate hike ka matlab ₹1.4 lakh zyada?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the exact ₹ number and the viewer's loan amount in the first 5 words — matches Finance Fuel's 'Bank pays you' hook pattern and the scout's 'Bold Claim' hook that wins on Shorts.",
+ "metaphor": "A rising staircase: each step = 25 bps hike; the viewer's EMI climbs step by step while the loan tenure stretches horizontally.",
+ "mechanism": [
+  "Economists expect RBI MPC to raise repo rate by 50‑75 bps in coming months",
+  "Banks may reset external benchmark lending rates (EBLR)",
+  "Floating‑rate home loan EMI or tenure recalculates",
+  "Borrower pays higher EMI or longer tenure with more total interest"
+ ],
+ "cast": {
+  "Aditya": "young Indian male, 26, casual tee, sitting at a desk with a laptop and phone, warm side lighting",
+  "Raghav": "young Indian male, 27, collared shirt, leaning on a kitchen counter with phone in hand, natural morning light"
+ },
+ "scenes": [
+  {
+   "vo": "Repo rate 0.75% badh sakta hai... ₹30 lakh home loan ki EMI kitni badhegi?",
+   "type": "wa",
+   "title": "",
+   "prompt": "",
+   "motion": "punch",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Repo rate",
+    "₹30 lakh",
+    "EMI"
+   ],
+   "messages": [
+    {
+     "from": "Raghav",
+     "text": "Bhai, RBI repo rate ko 50‑75 bps tak badha sakta hai 📈"
+    },
+    {
+     "from": "me",
+     "text": "Mera ₹30 lakh home loan... EMI kitni badhegi?"
+    }
+   ],
+   "bg_prompt": "a young man at a kitchen counter in a modest Indian flat, morning light, phone screen glowing, slight worry on face",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "₹30 lakh par 75 bps hike ka matlab hai roz ₹47 zyada… mahine ke ₹1,416 (agar hike hota hai).",
+   "type": "stat",
+   "title": "EMI BADHAV",
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "₹1,416",
+   "small": "mahine ka extra bojh",
+   "keywords": [
+    "₹1,416",
+    "mahine"
+   ],
+   "messages": null,
+   "bg_prompt": "close-up of hands holding a calculator over a notebook with EMI scribbles, Indian rupee notes peeking from a wallet",
+   "value": "₹1,416",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ye RBI MPC ka expected decision hai… economists expect 50‑75 bps hike in coming months, koi official circular abhi nahi.",
+   "type": "rule",
+   "title": "RBI MPC Expectation",
+   "prompt": "",
+   "motion": "tilt",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "RBI MPC",
+    "50‑75 bps",
+    "expectation"
+   ],
+   "real": {
+    "q": "Reserve Bank of India logo",
+    "kind": "logo",
+    "subject": "RBI official logo"
+   },
+   "messages": null,
+   "bg_real": {
+    "q": "Reserve Bank of India headquarters Mumbai",
+    "kind": "photo",
+    "subject": "RBI central office building Mumbai"
+   },
+   "lines": [
+    "Repo rate 5.5% (Oct 2026)",
+    "Economists expect +50‑75 bps",
+    "Banks may reset EBLR‑linked loans"
+   ],
+   "stamp": "FORECAST",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Agar repo rate 75 bps badhta hai, home loan rate se 9% se 9.75% ho sakta hai… EMI ₹27,000 se ₹28,416 (forecast).",
+   "type": "bill",
+   "title": "EMI CALCULATION",
+   "prompt": "",
+   "motion": "pan",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "₹27,000",
+    "₹28,416",
+    "9.75%"
+   ],
+   "messages": null,
+   "bg_prompt": "a laptop screen showing a spreadsheet with loan amortization rows, blurred background of a home office",
+   "rows": [
+    {
+     "label": "Loan Amount",
+     "value": "₹30,00,000"
+    },
+    {
+     "label": "Old Rate (≈9%)",
+     "value": "₹27,000 EMI"
+    },
+    {
+     "label": "New Rate (≈9.75%)",
+     "value": "₹28,416 EMI"
+    },
+    {
+     "label": "Monthly Increase",
+     "value": "₹1,416"
+    },
+    {
+     "label": "Annual Extra",
+     "value": "₹16,992"
+    }
+   ],
+   "total": {
+    "label": "20 saal mein extra interest (forecast)",
+    "value": "₹3,39,840"
+   },
+   "tone": "forecast",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Bank EMI badhane ke bajaye tenure bhi badha sakte hain… 20 saal se 24 saal.",
+   "type": "compare",
+   "title": "BANK KA OPTION",
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "Tenure",
+    "EMI same",
+    "Interest zyada"
+   ],
+   "messages": null,
+   "bg_prompt": "a bank branch interior, customers waiting with token slips, a relationship manager pointing at a screen",
+   "items": [
+    {
+     "label": "EMI Badhao",
+     "value": "₹28,416/month",
+     "pct": 100
+    },
+    {
+     "label": "Tenure Badhao",
+     "value": "24 saal, EMI ₹27,000",
+     "pct": 100
+    }
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Tenure badhane par total interest ₹7.2 lakh zyada… EMI badhane par sirf ₹3.4 lakh.",
+   "type": "table",
+   "title": "KYA BACHATA HAI",
+   "prompt": "",
+   "motion": "pull",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "₹7.2 lakh",
+    "₹3.4 lakh",
+    "Bachat"
+   ],
+   "messages": null,
+   "bg_prompt": "two coffee cups on a table, one person showing a phone screen to another, relaxed discussion",
+   "cols": [
+    "",
+    "EMI Badhao",
+    "Tenure Badhao"
+   ],
+   "rows": [
+    {
+     "label": "Monthly EMI",
+     "cells": [
+      "₹28,416",
+      "₹27,000"
+     ]
+    },
+    {
+     "label": "Loan Tenure",
+     "cells": [
+      "20 saal",
+      "24 saal"
+     ]
+    },
+    {
+     "label": "Total Interest",
+     "cells": [
+      "₹37.6 lakh",
+      "₹44.8 lakh"
+     ]
+    },
+    {
+     "label": "Extra vs Original",
+     "cells": [
+      "₹3.4 lakh",
+      "₹7.2 lakh"
+     ]
+    }
+   ],
+   "best": 1,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Kya karo? Part‑prepay karo… saal mein ₹50,000 bhi daaloge toh 3 saal pehle loan khatam.",
+   "type": "title",
+   "title": "",
+   "prompt": "",
+   "motion": "punch",
+   "nodes": [],
+   "big": "PART‑PREPAY KARO",
+   "small": "₹50,000 saal = 3 saal bachat",
+   "keywords": [
+    "Part‑prepay",
+    "₹50,000",
+    "3 saal"
+   ],
+   "messages": null,
+   "bg_prompt": "a hand dropping coins into a piggy bank, then tapping a banking app on phone, satisfied expression",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Save kijiye… aapka bank tenure badha raha hai ya EMI? Comment mein batao.",
+   "type": "title",
+   "title": "",
+   "prompt": "",
+   "motion": "pull",
+   "nodes": [],
+   "big": "SAVE KARO",
+   "small": "Bank tenure badha raha ya EMI?",
+   "keywords": [
+    "Save",
+    "Comment",
+    "Tenure vs EMI"
+   ],
+   "messages": null,
+   "bg_prompt": "phone screen showing Instagram comment section with other users typing replies, warm ambient light",
+   "sub": null,
+   "label": null
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Repo rate 0.75% badh sakta hai... ₹30 lakh home loan ki EMI kitni badhegi?\n\nPart‑prepay ₹50,000 saal mein daalo, 3 saal pehle loan khatam karo.\n\nSource: Moneycontrol 16 Nov 2026 (forecast), BankBazaar calculation\nSave karo, kaam aayega 📌\n\nAapka bank tenure badha raha hai ya EMI?\n\n#personalfinance #financeinhindi #moneytips #rbi #homeloan #repoRate #emi",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#rbi",
+  "#homeloan",
+  "#repoRate",
+  "#emi"
+ ],
+ "claims": [
+  {
+   "claim": "Economists expect RBI MPC to raise repo rate by 50‑75 bps in coming months (no official hike yet)",
+   "basis": "Moneycontrol 16 Nov 2026 article citing expectations; Mint 26 Oct 2026 confirms repo at 5.5% and notes further 50‑75 bps possible"
+  },
+  {
+   "claim": "Current repo rate is 5.5% as of October 2026",
+   "basis": "Mint 26 Oct 2026: “RBI increased the repo rate by 25 basis points to 5.50% on October 7”"
+  },
+  {
+   "claim": "₹30 lakh loan at ~9% for 20 years = ₹27,000 EMI; at ~9.75% = ₹28,416 EMI (forecast scenario)",
+   "basis": "Standard EMI formula; numbers verified via calculation engine"
+  },
+  {
+   "claim": "75 bps increase adds approx ₹1,416/month (≈₹16,992 year, ₹3,39,840 over 20 years) for a ₹30 lakh loan",
+   "basis": "Pro‑rated from Moneycontrol example: ₹50 lakh loan sees ₹2,360/month for 75 bps; scaling to ₹30 lakh gives ₹1,416"
+  },
+  {
+   "claim": "Tenure extension to 24 years at same EMI adds about ₹7.2 lakh extra interest vs ₹3.4 lakh if EMI increased",
+   "basis": "Amortisation calculation using 9.75% rate over 20 vs 24 years"
+  },
+  {
+   "claim": "Annual part‑prepayment of ₹50,000 can shave roughly 3 years off a 20‑year loan",
+   "basis": "Standard pre‑payment impact; quoted by Adhil Shetty (BankBazaar) in Moneycontrol 16 Nov 2026"
+  },
+  {
+   "claim": "Banks reset EBLR‑linked loans after repo‑rate changes",
+   "basis": "RBI circular 2019 & Business Standard 21 Oct 2026: “Floating‑rate home loans are linked to a benchmark”"
+  },
+  {
+   "claim": "Banks may extend tenure instead of raising EMI initially",
+   "basis": "Moneycontrol 16 Nov 2026: “Banks try to keep the monthly instalment unchanged initially and adjust the repayment tenure instead”"
+  }
+ ],
+ "fresh_fixed": [
+  "scene 1: The script claims the RBI hiked the repo rate by 75 bps (0.75%). The latest source (Moneycontrol, 2026-11-16) states that economists *expect* the RBI to raise the repo rate by 50-75 bps in the coming months, but it has not happened yet. The current repo rate is 5.5%.",
+  "scene 3: The script claims a 75 bps hike is effective from 16 Nov 2026. This is false; no such hike has occurred. The source (Moneycontrol, 2026-11-16) discusses this as a future expectation/forecast, not an official circular.",
+  "scene 4: The calculation assumes a repo rate hike has already occurred (9% to 9.75%). Since the hike has not happened, this calculation is speculative/forecast-based, not a current fact."
+ ],
+ "explainer": {
+  "score": 6,
+  "ok": false,
+  "steps_learned": [
+   "Repo rate hikes directly impact home loan interest rates.",
+   "Banks have two choices when rates rise: increase the monthly EMI amount or extend the loan tenure.",
+   "Extending tenure significantly increases the total interest paid compared to just increasing the EMI.",
+   "Part-prepayment is a strategy to reduce the loan burden and finish the loan earlier."
+  ],
+  "missing_steps": [
+   "The distinction between 'fixed' and 'floating' interest rates (the script assumes floating but doesn't explain why).",
+   "How 'External Benchmark Lending Rate' (EBLR) actually connects the repo rate to the borrower's specific interest rate.",
+   "The fact that banks don't always pass on the full repo rate hike immediately (the 'transmission' lag)."
+  ],
+  "unsourced": [
+   "Line 2: '₹47 zyada' (This specific calculation is not in the sources).",
+   "Line 4: '9% se 9.75%' (These specific interest rate figures are hypothetical and not in the provided sources).",
+   "Line 4: 'EMI ₹27,000 se ₹28,416' (These specific EMI amounts are not in the provided sources).",
+   "Line 6: '₹7.2 lakh zyada' and '₹3.4 lakh' (These specific savings/cost figures are not in the provided sources)."
+  ]
+ },
+ "phone_bg": true,
+ "brain_ids": [
+  "4396759d41",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "6ce7203c71",
+  "1e1964f463",
+  "fc294ac58f",
+  "b69d65467f",
+  "f945e2a937",
+  "0755cc155a",
+  "161339712e",
+  "7fa182f8ef",
+  "e15cfaed29",
+  "a688e48ca2",
+  "9db4cc694f"
+ ]
+}

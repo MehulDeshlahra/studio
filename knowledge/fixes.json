@@ -331,5 +331,14 @@
   "first": "2026-11-21 00:22",
   "last": "2026-11-21 00:22",
   "example": "scene 13 vo: informal 'Tu, bata' in \"Tu hota to kya karta? Comment mein bata\" (owner: never 'tu')"
+ },
+ {
+  "sig": "picture check: scene #: does the idol or tirthankara have blue, green or grey skin? (yes #%); is there a tilak",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-21 01:52",
+  "last": "2026-11-21 01:52",
+  "example": "picture check: scene 6: Does the idol or Tirthankara have blue, green or grey skin? (yes 71%); Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)"
  }
 ]

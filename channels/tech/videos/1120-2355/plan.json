@@ -269,7 +269,7 @@
   }
  ],
  "music_mood": "driving",
- "caption": "Andhere mein bhi Face ID kaise kaam karta hai? 🌙✨\n\nYe koi jaadu nahi, balki 30,000 invisible dots ka kamaal hai jo aapke chehre ka 3D map banate hain. Isliye ye itna secure hai!\n\nAapka phone andhere mein kitni der mein unlock hota hai? 👇",
+ "caption": "Andhere mein bhi Face ID kaise kaam karta hai? 🌙✨\n\nYe koi jaadu nahi, balki 30,000 invisible dots ka kamaal hai jo aapke chehre ka 3D map banate hain. Isliye ye itna secure hai!\n\nAapka phone andhere mein kitni der mein unlock hota hai? 👇\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#FaceID",
   "#TechExplained",
@@ -327,5 +327,6 @@
   "1e60a34718",
   "6055c69660"
  ],
- "skin": "blueprint"
+ "skin": "blueprint",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

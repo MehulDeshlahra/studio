@@ -463,3 +463,8 @@
 - picture check: scene 5: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 70%)
 - picture check: scene 8: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 60%)
 - picture check: scene 10: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 77%)
+
+## review 1120-2355
+- picture check: scene 3: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 74%)
+- picture check: scene 4: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 74%)
+- picture check: scene 8: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 63%)

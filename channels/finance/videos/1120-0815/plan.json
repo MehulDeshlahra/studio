@@ -51,8 +51,7 @@
    "title": "RBI Circular",
    "sub": "17 Sep 2013",
    "lines": [
-    "Zero percent interest loan schemes prohibited",
-    "Interest must be genuine, not hidden in discount"
+    "Zero % interest loans banned"
    ],
    "stamp": "ASLI NIYAM",
    "real": {
@@ -71,7 +70,8 @@
    "motion": "push",
    "big": null,
    "small": null,
-   "label": null
+   "label": null,
+   "bg_prompt": "A person in India in the middle of this money moment: 80,000 ka phone No Cost EMI pe: kitna extra lagta hai?"
   },
   {
    "vo": "Dukan interest utna discount deti hai, bank loan chalaata hai.",
@@ -92,21 +92,21 @@
   {
    "vo": "Bank processing fee jaise file charge lagta hai, plus GST.",
    "type": "bill",
-   "title": "One-Time Bank Fee",
-   "sub": "Processing Fee + 18% GST",
+   "title": "Bank Fee",
+   "sub": "Processing + GST",
    "rows": [
     {
-     "label": "Processing Fee",
-     "value": "Bank charge"
+     "label": "Fee",
+     "value": "Charge"
     },
     {
-     "label": "18% GST",
+     "label": "GST 18%",
      "value": "On fee"
     }
    ],
    "total": {
-    "label": "Upfront Charge",
-    "value": "Fee + GST"
+    "label": "Total",
+    "value": "Fee+GST"
    },
    "tone": "bad",
    "keywords": [
@@ -166,13 +166,13 @@
    "vo": "RBI master direction: full purchase amount blocks credit limit, not just EMI.",
    "type": "title",
    "value": "Limit Blocked",
-   "sub": "Full purchase amount",
+   "sub": "Full amount blocks limit",
    "keywords": [
     "credit limit",
     "block hota hai"
    ],
    "bg_prompt": "a minimalist credit card placed on a dark sleek tabletop under dramatic side lighting",
-   "big": "RBI MASTER DIRECTION:",
+   "big": "RBI Master Direction",
    "motion": "push",
    "title": "",
    "small": null,
@@ -181,8 +181,8 @@
   {
    "vo": "Matlab zero cost ke naam pe extra kharcha hi kharcha.",
    "type": "title",
-   "value": "Extra Cost",
-   "sub": "Processing fee + GST + lost discount",
+   "value": "Extra",
+   "sub": "Fee+GST+Disc",
    "keywords": [
     "zero cost",
     "extra kharcha"
@@ -281,11 +281,6 @@
   ],
   "unsourced": []
  },
- "numbers_hold": [
-  "scene 2: 'RBI 2013 circular: zero percent interest loan schemes prohibited without genuine restructuring. Inte' is not in the sources: remove it or say only what the sources say",
-  "scene 4: 'Bank processing fee is charged, plus GST.' is not in the sources: remove it or say only what the sources say",
-  "scene 7: 'RBI master direction: full purchase amount blocks credit limit, not just EMI.' is not in the sources: remove it or say only what the sources say"
- ],
  "phone_bg": true,
  "brain_ids": [
   "b2fabb69c4",
@@ -302,5 +297,10 @@
   "161339712e",
   "e15cfaed29",
   "1e60a34718"
+ ],
+ "story_notes": [
+  "scene 2: 'RBI 2013 circular: zero percent interest loan schemes prohibited without genuine restructuring. Inte' is not in the sources: remove it or say only what the sources say",
+  "scene 4: 'Bank processing fee is charged, plus GST.' is not in the sources: remove it or say only what the sources say",
+  "scene 7: 'RBI master direction: full purchase amount blocks credit limit, not just EMI.' is not in the sources: remove it or say only what the sources say"
  ]
 }
