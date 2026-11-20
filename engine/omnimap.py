@@ -223,12 +223,13 @@ def probe():
     return data
 
 
-def hung_models(hours=24, at_least=3):
+def hung_models(hours=24, at_least=5, share=0.25):
     """20 Nov: a model can pass the morning probe and then hang all day (gemini-3.7-flash: 14 calls waited 300 s each
     for nothing, a Jain reel spent 30 min in planning). Models that timed out (499) or stalled (503 after 20 s+) at
-    least 3 times in Studio's own calls of the last day go to the END of every combo until they behave again."""
+    least 5 times AND in a quarter or more of Studio's own calls to them in the last day go to the END of every combo
+    until they behave again (a busy model that mostly answers keeps its place)."""
     import glob
-    bad = {}
+    bad, tot = {}, {}
     since = time.time() - hours * 3600
     base = os.path.expanduser("~/.omniroute/call_logs")
     for day in (time.strftime("%Y-%m-%d", time.gmtime(since)), time.strftime("%Y-%m-%d", time.gmtime())):
@@ -241,10 +242,12 @@ def hung_models(hours=24, at_least=3):
                 continue
             if s.get("apiKeyName") != "studio" or str(s.get("model", "")).startswith("studio-"):
                 continue
+            m = s.get("requestedModel") or s.get("model")
+            tot[m] = tot.get(m, 0) + 1
             if s.get("status") == 499 or (s.get("status") == 503 and (s.get("duration") or 0) > 20000):
                 m = s.get("requestedModel") or s.get("model")
                 bad[m] = bad.get(m, 0) + 1
-    return {m for m, n in bad.items() if n >= at_least}
+    return {m for m, n in bad.items() if n >= at_least and n / max(1, tot.get(m, 1)) >= share}
 
 
 def rank(data, cands, kind, need_tier=0, only=None):
