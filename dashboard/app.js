@@ -10,7 +10,7 @@ const healerLine = (j) => { const h = j.healer || {}; if (h.state === "parked") 
 const K = { green: "var(--green)", amber: "var(--amber)", red: "var(--red)", blue: "var(--blue)", violet: "var(--violet)", teal: "var(--teal)", gray: "var(--gray)" };
 const ST = {
   building: ["Building", K.blue, 1], prepped: ["Prepped", K.blue], waiting: ["Needs approval", K.violet], ready: ["Ready, not sent", K.violet],
-  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], removed: ["Removed", K.gray], superseded: ["Replaced", K.gray], paused: ["Stopped midway", K.gray], made: ["Made", K.gray], cancelled: ["Cancelled", K.gray],
+  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], removed: ["Removed", K.gray], superseded: ["Replaced", K.gray], scheduled: ["Scheduled", K.teal], paused: ["Stopped midway", K.gray], made: ["Made", K.gray], cancelled: ["Cancelled", K.gray],
 };
 const LV = { ok: K.green, warn: K.amber, bad: K.red, info: K.gray, run: K.blue, wait: K.violet };
 const P = {
@@ -222,10 +222,10 @@ const V = {
   },
   approvals() {
     const Q = S.queue || S.jobs;   // 20 Nov: full approval queue, not the newest-40 Runs list
-    const w = Q.filter((j) => ["waiting", "ready"].includes(j.status)), held = Q.filter((j) => j.status === "held"), ap = Q.filter((j) => j.status === "approved");
+    const w = Q.filter((j) => ["waiting", "ready"].includes(j.status)), held = Q.filter((j) => j.status === "held"), ap = Q.filter((j) => j.status === "approved" || j.status === "scheduled");
     const card = (j) => { const c = ch(j.cid), base = `/media/${j.cid}/${j.job}/`;
       return `<div class="card pad"><div class="media"><div class="cover" onclick="openJob('${j.cid}','${j.job}')">${(j.files[j.final] || j.files["preview.mp4"]) ? `${j.files["cover.jpg"] ? `<img src="${base}cover-s.jpg?v=${j.updated}" onerror="this.onerror=null;this.src='${base}cover.jpg'">` : ""}<span class="pl">${ic("play")}${j.qc.dur ? Math.round(j.qc.dur) + "s" : "Play"}</span>` : `<div class="empty" style="padding:70px 8px;font-size:12px">No video yet<br>held before render</div>`}</div>
-       <div style="min-width:0"><div style="display:flex;gap:8px;align-items:center">${dp(c, 20)}<span class="mut">${esc(c.name)} · ${j.lang === "en" ? "English" : "Hindi"}</span><span style="margin-left:auto">${badge(j.status, j)}</span></div>
+       <div style="min-width:0"><div style="display:flex;gap:8px;align-items:center">${dp(c, 20)}<span class="mut">${esc(c.name)} · ${j.lang === "en" ? "English" : "Hindi"}</span><span style="margin-left:auto">${badge(j.status, j)}${j.status === "scheduled" && j.slot ? ` <span class="mut" style="font-size:12px">posts ${new Date(j.slot * 1000).toLocaleString([], { weekday: "short", hour: "2-digit", minute: "2-digit" })}</span>` : ""}</span></div>
        <div style="font-weight:600;font-size:14.5px;margin-top:6px">${esc(j.title)}</div>
        <div class="chips" style="margin-top:8px">${j.review.ok ? lvlBadge("ok", "Passed review") : ""}${j.review.score ? lvlBadge(j.review.score >= 8 ? "ok" : "warn", `Visual ${j.review.score}/10`) : ""}${j.qc.lufs ? lvlBadge("info", `${j.qc.lufs} LUFS`) : ""}</div>
        ${(j.review.problems || []).length ? `<ul class="mut" style="margin:8px 0 0 16px;font-size:12.5px">${j.review.problems.slice(0, 3).map((p) => `<li>${esc(String(p).slice(0, 160))}</li>`).join("")}</ul>` : ""}
@@ -479,7 +479,11 @@ async function loadLearned() {
      <span class="mut num" style="white-space:nowrap">+${x.knowledge}${x.build ? ` · ${x.build} build` : ""}</span></div>`).join("") || `<div class="empty">Nothing learned yet. Send a GitHub link or a PDF in Studio360.</div>`}`;
 }
 /* ---------- actions ---------- */
-async function decide(cid, job, action) { try { await post("/api/decide", { cid, job, action }); toast(action === "approve" ? "Approved" : action === "remove" ? "Removed" : "Rejected"); if (drawerKey) closeDrawer(); load(); } catch (e) { toast("Failed: " + e.message); } }
+async function decide(cid, job, action) {
+  // 20 Nov (owner: "lag on approval"): the card changes at once; the server is told in the background
+  const nst = { approve: "approved", reject: "rejected", remove: "removed" }[action];
+  if (S && nst) { for (const L of [S.queue || [], S.jobs || []]) for (const j of L) if (j.cid === cid && j.job === job) j.status = nst; render(1); }
+  try { await post("/api/decide", { cid, job, action }); toast(action === "approve" ? "Approved" : action === "remove" ? "Removed" : "Rejected"); if (drawerKey) closeDrawer(); load(); } catch (e) { toast("Failed: " + e.message); } }
 function feedback(cid, job) {
   drawerKey = "fb"; $("#drawer").classList.add("on");
   $("#panel").innerHTML = `<div class="ph"><div style="flex:1;font-weight:600">Feedback</div><button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div><div class="pb"><div class="mut">Saved as a lesson for this page; the video is marked for a fix.</div><textarea id="fb" rows="6" style="margin-top:10px" placeholder="What should change?"></textarea><div style="display:flex;gap:8px;margin-top:10px"><button class="btn pri" onclick="sendFb('${cid}','${job}')">Send</button><button class="btn" onclick="closeDrawer()">Cancel</button></div></div>`;

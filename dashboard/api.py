@@ -339,6 +339,8 @@ def jobs(running):
                 status = "posted"
             elif st in ("approved",):
                 status = "approved"
+            elif st == "scheduled":           # 20 Nov: engine/schedule.py prepares approved reels ahead of their slot;
+                status = "scheduled"          # unknown here, they fell through to "needs approval" (owner: "they keep coming back")
             elif st in ("rejected",):
                 status = "rejected"
             elif st == "superseded":          # 20 Nov: old clip format replaced; showed as "needs approval"
@@ -358,6 +360,7 @@ def jobs(running):
             else:
                 status = "made"
             s["status"] = status; s["posted"] = (d or {}).get("posted"); s["held_why"] = (d or {}).get("review")
+            s["slot"] = ((d or {}).get("sched") or {}).get("slot")
             if status == "held":      # 18 Nov: the healer (engine/healer.py) owns held videos; show its real step
                 hit = ((jload(os.path.join(OUT, "healer.json"), {}) or {}).get("items") or {}).get(f"held:{c}:{j}") or {}
                 last = (hit.get("steps") or [{}])[-1]
@@ -725,7 +728,7 @@ def state():
     st = {"auto_approve": False, "min_score": 9, **(jload(SETTINGS, {}) or {})}
     out = {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
            # 20 Nov: Approvals showed 16 of 42 approved and 13 of 78 held (it read the newest-40 Runs list): full queue here
-           "queue": [j for j in jl if j["status"] in ("waiting", "ready", "held", "approved")],
+           "queue": [j for j in jl if j["status"] in ("waiting", "ready", "held", "approved", "scheduled")],
             "schedule": sched, "issues": iss, "channels": chs, "budgets": budgets(), "activity": activity(), "settings": st,
             "token_days": token_days, "render_median": render_median(), "quality": quality(), "offers": offers_list(), "campaigns": campaigns_list()}
     out["needs"] = extra.needs_you(out)
@@ -846,19 +849,31 @@ def brain():
 
 
 # ---------------- actions ----------------
+def _tg_later(text):
+    """20 Nov (owner: "lag on approval"): the click waited for Telegram (1-3 s) before answering. Sent in the background."""
+    def go():
+        try:
+            import inbox
+            inbox.telegram(text)
+        except Exception:
+            pass
+    threading.Thread(target=go, daemon=True).start()
+
+
 def decide(cid, job, action, note=""):
     sys.path.insert(0, os.path.join(ROOT, "engine"))
     import inbox
     if action == "approve":
-        inbox.set_status(cid, job, "approved"); inbox.telegram(f"✅ {cid} {job} approved (dashboard)")
+        inbox.set_status(cid, job, "approved"); _tg_later(f"✅ {cid} {job} approved (dashboard)")
     elif action == "reject":
-        inbox.set_status(cid, job, "rejected"); inbox.telegram(f"❌ {cid} {job} rejected (dashboard)")
+        inbox.set_status(cid, job, "rejected"); _tg_later(f"❌ {cid} {job} rejected (dashboard)")
     elif action == "remove":      # 18 Nov (owner): take an approved video out of the queue; never posted, files kept
-        inbox.set_status(cid, job, "removed"); inbox.telegram(f"🗑 {cid} {job} removed from the queue (dashboard)")
+        inbox.set_status(cid, job, "removed"); _tg_later(f"🗑 {cid} {job} removed from the queue (dashboard)")
     elif action == "fix":
-        inbox.set_status(cid, job, "fix", note); inbox.add_lesson(cid, note, job); inbox.telegram(f"✍️ {cid} {job} feedback (dashboard): {note[:200]}")
+        inbox.set_status(cid, job, "fix", note); inbox.add_lesson(cid, note, job); _tg_later(f"✍️ {cid} {job} feedback (dashboard): {note[:200]}")
     else:
         raise ValueError("unknown action")
+    _last["t"] = 0                    # the next /api/state is fresh, not the 20 s cache
     return {"ok": True}
 
 
