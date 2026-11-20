@@ -320,7 +320,13 @@ Return JSON with exactly this shape:
         p += PHONE if ch.get("theme", {}).get("phone") else LAB      # 19 Nov: finance tells reels on the viewer's phone
         if ch.get("theme", {}).get("phone") and ch.get("theme", {}).get("phone_bg"):
             p += PHONE_BG
-    plan = ask(p)
+    # 20 Nov: finance phone plans (chat messages, SMS screens per scene) were cut off at 8,000 output tokens; the JSON
+    # reader then kept a fragment with no scenes ("plan has 0 words", 4 extra calls, ~18 min). Room for the long plan,
+    # and an answer without scenes is asked again once instead of being "fixed"
+    plan = ask(p, max_tokens=16000)
+    if not (plan.get("scenes") if isinstance(plan, dict) else None):
+        log("plan came back without scenes (cut off?) -> asking again")
+        plan = ask(p, max_tokens=16000)
     for _ in range(2):
         words = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))
         if W0 <= words <= W1 + 10:
@@ -333,7 +339,7 @@ Return JSON with exactly this shape:
         log("plan has", words, "words -> asking for a fix")
         plan = ask(f"This plan has {words} spoken words; it needs {W0 + 5}-{W1 - 5}. Rewrite it to fit: add the missing "
                    f"steps of the mechanism (or cut repetition), keep the same JSON shape.\n{EXAMPLE}\n"
-                   f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}")
+                   f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}", max_tokens=16000)
     log("plan v1", len(plan.get("scenes", [])), "scenes")
     review = f"""You are a strict senior editor of viral Indian Shorts. Review this plan against the requirements and lessons,
 then return the IMPROVED plan (same JSON shape). Fix: weak hook, repeated visuals, lines over 16 words, scenes that add
@@ -353,7 +359,7 @@ PLAN:
             log("plan has", w1_, "words -> length fix")
             fx = ask(f"This plan has {w1_} spoken words; it needs {W0 + 5}-{W1 - 5}. Rewrite it to fit: add the missing "
                      f"steps of the mechanism (or cut repetition), keep the same JSON shape.\n{EXAMPLE}\n"
-                     f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}")
+                     f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}", max_tokens=16000)
             if len((fx or {}).get("scenes") or []) >= 6:
                 plan = fx
         return _checks(ch, topic, plan, research_text, W0, W1, bids)
@@ -369,7 +375,7 @@ PLAN:
                 log("plan v2 still", bw, "words -> length fix")
                 fx = ask(f"This plan has {w1_} spoken words; it needs {W0 + 5}-{W1 - 5}. Rewrite it to fit: add the missing "
                          f"steps of the mechanism (or cut repetition), keep the same JSON shape.\n{EXAMPLE}\n"
-                         f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}")
+                         f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}", max_tokens=16000)
                 if len((fx or {}).get("scenes") or []) >= 6:
                     plan = fx
     except Exception as e:
