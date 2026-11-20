@@ -36,7 +36,7 @@ Plan:
 ## Status
 - [x] engine + VAJRA business + intake, first reel approved for quality (20 Nov)
 - [ ] server: sparse checkout clips/music, push token, timer
-- [ ] owner: Oracle login recovered, boot volume expanded
+- [x] owner: Oracle login recovered, boot volume expanded to 200 GB (20 Nov; server / = 193 GB, 156 GB free)
 - [ ] second business
 
 ## Oracle login
