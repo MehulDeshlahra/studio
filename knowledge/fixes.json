@@ -340,5 +340,23 @@
   "first": "2026-11-21 01:52",
   "last": "2026-11-21 01:52",
   "example": "picture check: scene 6: Does the idol or Tirthankara have blue, green or grey skin? (yes 71%); Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)"
+ },
+ {
+  "sig": "owner agent: remove the specific rbi # circular claim; replace with a verified, generic reference to rbi's fai",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-21 02:22",
+  "last": "2026-11-21 02:22",
+  "example": "owner agent: Remove the specific RBI 2013 circular claim; replace with a verified, generic reference to RBI's fair practice code for lending transparency."
+ },
+ {
+  "sig": "visual: scene # and scene # show the yaksha as a female figure wearing feminine attire and a top, which contra",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-21 02:52",
+  "last": "2026-11-21 02:52",
+  "example": "visual: Scene 2 and Scene 8 show the Yaksha as a female figure wearing feminine attire and a top, which contradicts the traditional description of a radiant male Yaksha in dhoti and angavastram."
  }
 ]

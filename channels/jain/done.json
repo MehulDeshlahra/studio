@@ -4,13 +4,8 @@
   "topic": "The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)",
   "title": "Mahavira Swami ne shmashan mein raat kaise bitaayi?",
   "qc_ok": false,
-  "status": "held",
-  "review": [
-   "visual: Scene 2 and Scene 8 show the Yaksha as a female figure wearing feminine attire and a top, which contradicts the traditional description of a radiant male Yaksha in dhoti and angavastram.",
-   "visual: Checklist item 7: A figure resembling a Hindu deity/celestial with feminine royal depiction is shown instead of the prescribed male Yaksha.",
-   "picture check: scene 4: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 69%)",
-   "visual score 5/10"
-  ],
+  "status": "made",
+  "review": [],
   "replan_requested": "2026-11-19 15:51",
   "minor": [
    "before render, scene 3: FIT: split / collage picture shown instead of a single cohesive scene",
@@ -50,7 +45,7 @@
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
   "status": "held",
   "review": [
-   "picture check: scene 3: Does the idol or Tirthankara have blue, green or grey skin? (yes 75%)"
+   "picture check: scene 3: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 64%); Does the idol or Tirthankara have blue, green or grey skin? (yes 69%)"
   ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"

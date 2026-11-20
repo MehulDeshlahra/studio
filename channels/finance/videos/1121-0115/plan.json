@@ -99,49 +99,46 @@
    ],
    "stamp": "FORECAST",
    "sub": null,
-   "label": null
+   "label": null,
+   "bg_prompt": "A person in India in the middle of this money moment: Repo rate 0.75% badha toh ₹30 lakh home loan ki EMI kitni badhegi?"
   },
   {
    "vo": "Agar repo rate 75 bps badhta hai, home loan rate se 9% se 9.75% ho sakta hai… EMI ₹27,000 se ₹28,416 (forecast).",
    "type": "bill",
-   "title": "EMI CALCULATION",
+   "title": "EMI Calc",
    "prompt": "",
    "motion": "pan",
    "nodes": [],
    "big": "",
    "small": "",
    "keywords": [
-    "₹27,000",
-    "₹28,416",
+    "₹27k",
+    "₹28.4k",
     "9.75%"
    ],
    "messages": null,
    "bg_prompt": "a laptop screen showing a spreadsheet with loan amortization rows, blurred background of a home office",
    "rows": [
     {
-     "label": "Loan Amount",
-     "value": "₹30,00,000"
+     "label": "Loan Amt",
+     "value": "₹30L"
     },
     {
-     "label": "Old Rate (≈9%)",
-     "value": "₹27,000 EMI"
+     "label": "Old Rate 9%",
+     "value": "₹27k"
     },
     {
-     "label": "New Rate (≈9.75%)",
-     "value": "₹28,416 EMI"
+     "label": "New Rate 9.75%",
+     "value": "₹28.4k"
     },
     {
-     "label": "Monthly Increase",
-     "value": "₹1,416"
-    },
-    {
-     "label": "Annual Extra",
-     "value": "₹16,992"
+     "label": "Monthly Inc",
+     "value": "₹1.4k"
     }
    ],
    "total": {
-    "label": "20 saal mein extra interest (forecast)",
-    "value": "₹3,39,840"
+    "label": "20yr extra int",
+    "value": "₹3.4L"
    },
    "tone": "forecast",
    "sub": null,
@@ -188,44 +185,44 @@
    "big": "",
    "small": "",
    "keywords": [
-    "₹7.2 lakh",
-    "₹3.4 lakh",
+    "₹7.2L",
+    "₹3.4L",
     "Bachat"
    ],
    "messages": null,
    "bg_prompt": "two coffee cups on a table, one person showing a phone screen to another, relaxed discussion",
    "cols": [
     "",
-    "EMI Badhao",
-    "Tenure Badhao"
+    "EMI Up",
+    "Tenure Up"
    ],
    "rows": [
     {
      "label": "Monthly EMI",
      "cells": [
-      "₹28,416",
-      "₹27,000"
+      "₹28.4k",
+      "₹27k"
      ]
     },
     {
      "label": "Loan Tenure",
      "cells": [
-      "20 saal",
-      "24 saal"
+      "20yr",
+      "24yr"
      ]
     },
     {
-     "label": "Total Interest",
+     "label": "Total Int",
      "cells": [
-      "₹37.6 lakh",
-      "₹44.8 lakh"
+      "₹37.6L",
+      "₹44.8L"
      ]
     },
     {
-     "label": "Extra vs Original",
+     "label": "Extra vs Or",
      "cells": [
-      "₹3.4 lakh",
-      "₹7.2 lakh"
+      "₹3.4L",
+      "₹7.2L"
      ]
     }
    ],

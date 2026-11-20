@@ -274,3 +274,10 @@
 
 ## 1120-0815 (pre-render check)
 - CUT: text '>' overlaps and clips with the bottom border of the container box
+
+## 1121-0115 (pre-render check)
+- CUT: bill card on-screen content is slightly cut off at the bottom edge
+- READ: table text in the first still of scene 6 is extremely small and hard to read
+
+## review 1121-0115
+- length 54.97 s is outside 28-50 s

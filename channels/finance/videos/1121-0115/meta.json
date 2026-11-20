@@ -3,7 +3,8 @@
  "job": "1121-0115",
  "topic": "Repo rate 0.75% badha toh ₹30 lakh home loan ki EMI kitni badhegi",
  "voice_gate": 1,
- "stage": "prepped",
+ "stage": "done",
  "lang": "hi",
- "prepped_at": "2026-11-21 01:38"
+ "prepped_at": "2026-11-21 01:38",
+ "brain_judged": true
 }

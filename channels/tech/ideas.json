@@ -1031,5 +1031,129 @@
     "score": 4.0
    }
   ]
+ },
+ {
+  "t": "2026-11-21 02:25",
+  "picked": "iPhone Handoff Feature",
+  "ideas": [
+   {
+    "topic": "iPhone Handoff Feature",
+    "search": "iOS 27 handoff feature",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "New iOS 27 features are always trending. The 'Kaise Tech' angle: How does the 'One number, two devices' handoff tech actually sync data instantly?",
+    "demand_known": true,
+    "demand": 4.1,
+    "median_views": 43338,
+    "fresh": 6.3,
+    "score": 7.25
+   },
+   {
+    "topic": "Airplane mode actually kya karta hai? Kya yeh sab radios band karta hai?",
+    "note": "",
+    "search": "airplane mode what actually happens",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 6.6,
+    "median_views": 455118,
+    "fresh": 6.7,
+    "score": 7.11
+   },
+   {
+    "topic": "Free AI video generator jo Sora/Runway ko replace kare? Real demo dekhiye",
+    "note": "",
+    "search": "free AI video generator alternative 2026",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 5.8,
+    "median_views": 212994,
+    "fresh": 6.7,
+    "score": 7.1
+   },
+   {
+    "topic": "AI-Powered Cyberattacks",
+    "search": "how ai cyberattacks work",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "Nikesh Arora's warning about AI making cyberattacks easier is timely and fits the 'Kaise Tech' educational vibe.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.2,
+    "score": 6.84
+   },
+   {
+    "topic": "GTA 6 Software Warning",
+    "search": "GTA 6 release news",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With GTA 6 being a massive cultural phenomenon and PlayStation issuing a software warning, viewers are desperate for info. The 'Kaise Tech' angle: How do pre-launch software checks actually work to prevent leaks?",
+    "demand_known": true,
+    "demand": 2.8,
+    "median_views": 12595,
+    "fresh": 6.1,
+    "score": 6.63
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 6.5,
+    "median_views": 389443,
+    "fresh": 2.7,
+    "score": 5.92
+   },
+   {
+    "topic": "Passkey password kaise replace karta hai? Bina password login kaise hota hai?",
+    "note": "",
+    "search": "passkey passwordless login explained",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.9,
+    "median_views": 35285,
+    "fresh": 4.9,
+    "score": 5.88
+   },
+   {
+    "topic": "Phone 80% ke baad dhire kyun charge hota hai? Battery ka asli raaz kya hai?",
+    "note": "",
+    "search": "why phone charges slow after 80 percent",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.3,
+    "median_views": 21336,
+    "fresh": 5.6,
+    "score": 5.41
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 5.27
+   },
+   {
+    "topic": "Satellite messaging phone mein kaise kaam karta hai? Bina tower ke message kaise jaata hai?",
+    "note": "",
+    "search": "satellite messaging smartphone how works",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 40,
+    "fresh": 4.3,
+    "score": 4.01
+   }
+  ]
  }
 ]

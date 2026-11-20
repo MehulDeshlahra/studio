@@ -83,9 +83,9 @@
   {
    "vo": "Teen muqable hue — drishti, jal, kushti — teeno Bahubali jeete.",
    "type": "image",
-   "prompt": "Three panels in one frame: left — eye-stare contest (two princes inches apart, intense calm gaze); center — water wrestling in lotus pond (ripples, lotus petals); right — malla-yuddha on sand arena (Bahubali lifting Bharata gently). Warm saffron-gold light, ancient Jain palace architecture backdrop, serene painterly style",
+   "prompt": "Bahubali standing serenely in ancient Jain palace courtyard, warm saffron-gold light, calm expression, vertical 9:16 composition with ample space above and below for text, painterly style, no text or logos",
    "motion": "tilt",
-   "title": "Teen Muqable, Teen Jeet",
+   "title": "Teen Jeet",
    "keywords": [
     "drishti",
     "jal",
@@ -104,11 +104,12 @@
       "file": "s2r0.jpg",
       "prompt": "real photo",
       "fails": {},
-      "top": 0.5
+      "top": 0.54
      }
     ],
     "real_photo": true
-   }
+   },
+   "real": null
   },
   {
    "vo": "Jeet ke pal mein haath utha ke ruk gaye — ye rajya kya hai?",
@@ -258,7 +259,7 @@
   }
  ],
  "music_mood": "calm",
- "caption": "57 feet unchi Gommateshwara murti, 12 saal tak ek saans nahi li — kyun?\n\nAhankar ka haathi jab tak pairon tale hai, bel badhti rahegi.\n\nTum hote toh kya karte? #JaiJinendra\nVideo: Photo: Shravanabelagola, Statue of Bahubali (50053122913) (Wikimedia Commons)\nVideo: Photo: Bahubali karkala (Wikimedia Commons)\nVideo: Photo: Gomatesvara Statue, Shravanabelagola (Wikimedia Commons)\nVideo: Photo: Gomateswara Bahubali Karkala Karnataka 07 (Wikimedia Commons)",
+ "caption": "57 feet unchi Gommateshwara murti, 12 saal tak ek saans nahi li — kyun?\n\nAhankar ka haathi jab tak pairon tale hai, bel badhti rahegi.\n\nTum hote toh kya karte? #JaiJinendra\nVideo: Photo: Shravanabelagola, Statue of Bahubali (50053122913) (Wikimedia Commons)\nVideo: Photo: Bahubali karkala (Wikimedia Commons)\nVideo: Photo: Gomatesvara Statue, Shravanabelagola (Wikimedia Commons)\nVideo: Photo: Gomateswara Bahubali Karkala Karnataka 07 (Wikimedia Commons)\nVideo: Photo: Bahubali, Jain, western India, perhaps Rajasthan, 1500-1600 AD, stone - British Museum - DSC01160 (Wikimedia Commons)\nVideo: Photo: Jaina statue of Gomateswara N-KA-B201 (Wikimedia Commons)\nVideo: Photo: The Gommateshwara Statue (Close up), Shravanabelagola (Wikimedia Commons)",
  "hashtags": [
   "#NavkarBhav",
   "#Bahubali",
@@ -368,12 +369,18 @@
   "File:Shravanabelagola, Statue of Bahubali (50053122913).jpg",
   "File:Gomatesvara Statue, Shravanabelagola.jpg",
   "File:Bahubali karkala.jpg",
-  "File:Gomateswara Bahubali Karkala Karnataka 07.jpg"
+  "File:Gomateswara Bahubali Karkala Karnataka 07.jpg",
+  "File:Bahubali, Jain, western India, perhaps Rajasthan, 1500-1600 AD, stone - British Museum - DSC01160.jpg",
+  "File:Jaina statue of Gomateswara N-KA-B201.JPG",
+  "File:The Gommateshwara Statue (Close up), Shravanabelagola.jpg"
  ],
  "credits": [
   "Photo: Shravanabelagola, Statue of Bahubali (50053122913) (Wikimedia Commons)",
   "Photo: Bahubali karkala (Wikimedia Commons)",
   "Photo: Gomatesvara Statue, Shravanabelagola (Wikimedia Commons)",
-  "Photo: Gomateswara Bahubali Karkala Karnataka 07 (Wikimedia Commons)"
+  "Photo: Gomateswara Bahubali Karkala Karnataka 07 (Wikimedia Commons)",
+  "Photo: Bahubali, Jain, western India, perhaps Rajasthan, 1500-1600 AD, stone - British Museum - DSC01160 (Wikimedia Commons)",
+  "Photo: Jaina statue of Gomateswara N-KA-B201 (Wikimedia Commons)",
+  "Photo: The Gommateshwara Statue (Close up), Shravanabelagola (Wikimedia Commons)"
  ]
 }

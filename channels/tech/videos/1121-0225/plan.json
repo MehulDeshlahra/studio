@@ -1,0 +1,467 @@
+{
+ "slug": "iphone-handoff-number-share",
+ "title": "Ek number do phone pe? iPhone Handoff kaise kaam karta hai?",
+ "hooks": [
+  "Ek number... do phone? Kaise?",
+  "Do iPhone, ek number? Handoff magic.",
+  "Phone number ab portable hai. Dekho kaise."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with Hindi hook word 'Ek' at frame 0, instant curiosity about one number on two phones, colloquial Hinglish, no greeting. Visual: two iPhones with a glowing number traveling between them on a digital highway — matches top Shorts' relay-baton metaphor.",
+ "metaphor": "Digital highway: the phone number is a glowing data car that drives on a neon highway between two iPhone destinations. The highway lights up only when the target iPhone is unlocked.",
+ "mechanism": [
+  "Same Apple Account on both devices",
+  "Bluetooth and Wi-Fi turned on for each device",
+  "Handoff enabled in Settings > General > AirPlay & Continuity",
+  "Devices within 30 feet (10 meters) of each other",
+  "Carrier eSIM that supports number sharing (T-Mobile US, Telekom Germany, EE UK)",
+  "One iPhone becomes Main, the other Secondary sharing the number",
+  "Unlock the iPhone you want to use — number switches automatically",
+  "Number active on only one iPhone at a time; arrow icon on old device, 'Switched to this iPhone' on new",
+  "Apple Watch stays paired to Main iPhone"
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Ek number... do phone? Kaise?",
+   "type": "image",
+   "prompt": "Two premium iPhones side by side on pure black studio surface. A glowing neon phone number (e.g. +1 555 0199) detaches from the left iPhone, travels along a sleek digital highway with subtle particle trail, and docks into the right iPhone. Cinematic 9:16, 30fps, photoreal, dramatic rim lighting.",
+   "motion": "push",
+   "title": "EK NUMBER DO PHONE",
+   "label": "HOOK CLIP",
+   "bg_prompt": "Two iPhones on black studio surface, glowing number traveling on digital highway between them, photoreal premium render",
+   "real": {
+    "q": "iPhone 16 Pro side view",
+    "kind": "photo",
+    "subject": "two iPhones on black background"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Yeh hai Apple ka powerful iPhone Handoff feature.",
+   "type": "title",
+   "big": "IPHONE",
+   "sub": "HANDOFF",
+   "label": "FEATURE TITLE",
+   "bg_prompt": "iPhone showing lock screen with subtle Handoff icon, pure black studio, premium product render",
+   "real": {
+    "q": "iPhone Handoff icon lock screen",
+    "kind": "photo",
+    "subject": "iPhone with Handoff interface"
+   },
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Do iPhone, ek Apple ID, Wi-Fi, Bluetooth, aur Handoff on.",
+   "type": "ui",
+   "title": "REQUIREMENTS",
+   "rows": [
+    {
+     "label": "APPLE ACCOUNT",
+     "value": "SAME",
+     "pct": 100
+    },
+    {
+     "label": "WIFI / BLUETOOTH",
+     "value": "ON",
+     "pct": 100
+    },
+    {
+     "label": "HANDOFF",
+     "value": "ENABLED",
+     "pct": 100
+    },
+    {
+     "label": "DISTANCE",
+     "value": "< 30 FT",
+     "pct": 100
+    }
+   ],
+   "label": "SETUP CHECKLIST",
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: setup checklist, requirements, ek number do phone pe? iphone handoff kaise kaam karta hai?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "real": {
+    "q": "iPhone Settings General AirPlay and Continuity iPhone Handoff toggle on",
+    "kind": "photo",
+    "subject": "Close-up of a hand holding an iPhone showing the Settings menu with 'iPhone Handoff' toggled on"
+   },
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Carrier eSIM chahiye: T-Mobile, Telekom, EE.",
+   "type": "object",
+   "items": [
+    {
+     "label": "USA",
+     "value": "T-MOBILE",
+     "pct": 100
+    },
+    {
+     "label": "GERMANY",
+     "value": "TELEKOM",
+     "pct": 100
+    },
+    {
+     "label": "UK",
+     "value": "EE",
+     "pct": 100
+    }
+   ],
+   "label": "SUPPORTED CARRIERS",
+   "bg_prompt": "Three carrier logo cards floating on dark studio surface: T-Mobile magenta, Telekom magenta, EE yellow, premium product photography",
+   "real": {
+    "q": "T-Mobile Telekom EE logos",
+    "kind": "logo",
+    "subject": "three carrier logos"
+   },
+   "prompt": "three carrier logos",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Settings > General > AirPlay & Continuity > iPhone Handoff on karo.",
+   "type": "ui",
+   "title": "SETTINGS PATH",
+   "rows": [
+    {
+     "label": "GENERAL",
+     "value": "AIRPLAY & CONTINUITY",
+     "pct": 100
+    },
+    {
+     "label": "IPHONE HANDOFF",
+     "value": "TOGGLE ON",
+     "pct": 100
+    }
+   ],
+   "label": "ENABLE HANDOFF",
+   "bg_prompt": "iPhone Settings app deep-linked to AirPlay & Continuity screen with iPhone Handoff toggle highlighted, photoreal on black",
+   "real": {
+    "q": "iPhone Settings General AirPlay and Continuity iPhone Handoff toggle on",
+    "kind": "photo",
+    "subject": "Screen recording of the specific settings path to enable Handoff"
+   },
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Ek Main banta hai, dusra Secondary — number share hota hai.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "MAIN IPHONE",
+     "value": "PRIMARY DEVICE",
+     "pct": 100
+    },
+    {
+     "label": "SECONDARY IPHONE",
+     "value": "SHARES NUMBER",
+     "pct": 100
+    }
+   ],
+   "label": "MAIN VS SECONDARY",
+   "bg_prompt": "Two iPhones labeled MAIN and SECONDARY with a shared number badge between them, premium studio render on black",
+   "real": {
+    "q": "iPhone Settings Phone Cellular Plan Main vs Secondary Handoff",
+    "kind": "photo",
+    "subject": "Phone settings screen showing the 'Main' and 'Secondary' plan labels for the shared number"
+   },
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Switch karne ke liye bas unlock karo — number shift ho jata hai.",
+   "type": "object",
+   "prompt": "Close-up of a finger touching Face ID area on an iPhone, subtle glow animation as unlock completes, the glowing number car on the digital highway accelerates toward this iPhone. Photoreal macro shot on pure black.",
+   "motion": "punch",
+   "title": "UNLOCK = SWITCH",
+   "label": "UNLOCK ACTION",
+   "keywords": [
+    "unlock",
+    "switch"
+   ],
+   "bg_prompt": "Finger on iPhone Face ID area, unlock animation, number traveling on highway, photoreal macro on black",
+   "real": {
+    "q": "iPhone lock screen unlock finger swipe",
+    "kind": "photo",
+    "subject": "A thumb swiping up to unlock an iPhone, triggering the number switch"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Number ek time pe ek hi phone pe active — arrow icon batata hai yahan se gaya.",
+   "type": "flow",
+   "nodes": [
+    "UNLOCK",
+    "NUMBER MOVES",
+    "ARROW ICON",
+    "OLD DEVICE"
+   ],
+   "label": "SWITCH FLOW",
+   "bg_prompt": "Animated flow diagram on black: unlock icon → number car on highway → arrow icon on source iPhone → 'Switched to this iPhone' on target, clean mono HUD style",
+   "keywords": [
+    "active",
+    "arrow"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Naye phone pe 'Switched to this iPhone' message aata hai.",
+   "type": "ui",
+   "title": "CONFIRMATION",
+   "rows": [
+    {
+     "label": "STATUS BAR",
+     "value": "SWITCHED TO THIS IPHONE",
+     "pct": 100
+    }
+   ],
+   "label": "SWITCH CONFIRMED",
+   "bg_prompt": "iPhone status bar showing 'Switched to this iPhone' message in iOS 27 style, photoreal on black",
+   "real": {
+    "q": "iPhone notification banner Switched to this iPhone",
+    "kind": "photo",
+    "subject": "Native iOS notification banner appearing on the lock screen confirming the switch"
+   },
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Apple Watch Main iPhone ke saath rehta hai — pair nahi badalta.",
+   "type": "object",
+   "prompt": "Apple Watch Ultra on black studio surface, a subtle tether line connects it to the Main iPhone labeled 'MAIN'. The Secondary iPhone has no tether. Premium product render, dramatic lighting.",
+   "motion": "pan",
+   "title": "WATCH STAYS PAIRED",
+   "label": "APPLE WATCH",
+   "keywords": [
+    "watch",
+    "paired"
+   ],
+   "bg_prompt": "Apple Watch connected to Main iPhone only, tether visualization, photoreal on black",
+   "real": {
+    "q": "Apple Watch Series 9 next to iPhone 15 Pro",
+    "kind": "photo",
+    "subject": "Real photo of an Apple Watch and iPhone placed together on a desk"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Carrier fees lag sakte hain — apne provider se check karein.",
+   "type": "title",
+   "big": "CARRIER FEES",
+   "small": "MAY APPLY",
+   "label": "COST NOTE",
+   "bg_prompt": "Minimal card on black: carrier bill document with fee line item, premium studio photography",
+   "keywords": [
+    "fees",
+    "carrier"
+   ],
+   "motion": "push",
+   "title": "",
+   "sub": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Ab aapka number aapke saath — har device pe, automatically.",
+   "type": "title",
+   "big": "NUMBER FOLLOWS YOU",
+   "sub": "AUTOMATICALLY",
+   "label": "PAYOFF",
+   "bg_prompt": "Two iPhones with the same glowing number badge, digital highway connecting them, number car parked at the unlocked iPhone, premium hero shot on black",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Aap kis carrier pe ho? Comment mein batao.",
+   "type": "title",
+   "big": "COMMENT MEIN",
+   "sub": "CARRIER NAME BATAO",
+   "label": "CTA",
+   "bg_prompt": "Clean end card on black: Kaise Tech logo, Instagram handle @kaise.tech, subtle yellow accent line",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "type": "title",
+   "big": "Comment HANDOFF",
+   "sub": "iPhone Handoff setup checklist DM mein 📩",
+   "small": "iPhone Handoff setup checklist DM mein",
+   "vo": "Ye Handoff checklist chahiye? Comment kijiye HANDOFF, main DM kar dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "title": null,
+   "skin": "keynote",
+   "prompt": "",
+   "bg_prompt": "Vertical scene for a technology explainer about: free, ek number do phone pe? iphone handoff kaise kaam karta hai?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. One clear subject in the middle third, empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16."
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Ek number, do iPhone — Handoff feature exactly kaise kaam karta hai? 🛣️\n\nSetup se switch tak, 60 second mein samjho.\n\nAapka carrier Handoff support karta hai? Comment mein batao 👇",
+ "hashtags": [
+  "#iPhoneHandoff",
+  "#AppleContinuity",
+  "#KaiseTech",
+  "#TechExplained",
+  "#AppleEcosystem"
+ ],
+ "claims": [
+  {
+   "claim": "iPhone Handoff is an existing Continuity feature that allows sharing a phone number between two iPhones",
+   "basis": "Apple Support documentation and 2026-11-20 The Droid Guy report on Handoff features"
+  },
+  {
+   "claim": "Requirements for Handoff include Same Apple Account, Bluetooth, Wi-Fi, Handoff enabled, and proximity within 30 feet",
+   "basis": "2026-11-20 The Droid Guy: How To Fix Handoff And Universal Clipboard On Mac (2026)"
+  },
+  {
+   "claim": "Carrier eSIM must support iPhone Handoff: T-Mobile (USA), Telekom (Germany), EE (UK)",
+   "basis": "Apple Support 'Set up iPhone Handoff' - carrier list"
+  },
+  {
+   "claim": "Enable in Settings > General > AirPlay & Continuity > iPhone Handoff",
+   "basis": "Apple Support 'Set up iPhone Handoff' - setup steps"
+  },
+  {
+   "claim": "One iPhone becomes Main, the other Secondary; switch by unlocking desired device",
+   "basis": "Apple Support 'Set up iPhone Handoff' - switching mechanism"
+  },
+  {
+   "claim": "Number active on only one iPhone at a time; arrow icon on old device, 'Switched to this iPhone' on new",
+   "basis": "Apple Support 'Set up iPhone Handoff' - visual indicators"
+  },
+  {
+   "claim": "Apple Watch stays paired to Main iPhone",
+   "basis": "Apple Support 'Set up iPhone Handoff' - Apple Watch section"
+  },
+  {
+   "claim": "Carrier fees may apply",
+   "basis": "Apple Support 'Set up iPhone Handoff' - carrier fees note"
+  }
+ ],
+ "fresh_fixed": [
+  "scene 2: claims 'iOS 27 ka naya iPhone Handoff feature' -> Handoff is an existing Continuity feature, not a new iOS 27 addition according to the latest sources.",
+  "scene 3: lists 'MESSAGES IN ICLOUD' and 'FaceTime' as required -> latest sources state the only requirements are Same Apple Account, Bluetooth on, Wi‑Fi on, Handoff enabled, and devices within 30 ft; Messages in iCloud and FaceTime are not required."
+ ],
+ "explainer": {
+  "score": 4,
+  "ok": false,
+  "steps_learned": [
+   "Enable Handoff in Settings > General > AirPlay & Continuity",
+   "Ensure both iPhones have the same Apple ID, Wi-Fi, and Bluetooth on",
+   "Use a carrier that supports eSIM (T-Mobile, Telekom, EE)",
+   "Designate one phone as Main and the other as Secondary to share the number",
+   "Unlock the desired phone to switch the active number",
+   "Observe the arrow icon indicating where the number is currently active"
+  ],
+  "missing_steps": [
+   "Explanation of what eSIM is and why physical SIM cards cannot be shared this way",
+   "Clarification that this feature is not available for all carriers or regions (specifically missing Indian carrier context)",
+   "Explanation of how to initially set up the 'Secondary' phone status in the phone settings"
+  ],
+  "unsourced": [
+   "Carrier eSIM chahiye: T-Mobile, Telekom, EE (Sources do not list specific carriers, only mention eSIM requirement generally)",
+   "Settings > General > AirPlay & Continuity > iPhone Handoff on karo (Sources do not provide this specific menu path for the new number-sharing feature)",
+   "Apple Watch Main iPhone ke saath rehta hai — pair nahi badalta (Not mentioned in sources)"
+  ]
+ },
+ "brain_ids": [
+  "1e1964f463",
+  "f945e2a937",
+  "fc294ac58f",
+  "4396759d41",
+  "6ce7203c71",
+  "161339712e",
+  "7fa182f8ef",
+  "9db4cc694f",
+  "6055c69660",
+  "1e60a34718",
+  "7f620e6fdf",
+  "b2fabb69c4",
+  "b69d65467f",
+  "e15cfaed29"
+ ],
+ "offer": {
+  "kind": "sheet",
+  "keyword": "HANDOFF",
+  "gift": "iPhone Handoff setup checklist",
+  "title": "iPhone Handoff Setup Checklist",
+  "items": [
+   {
+    "head": "Requirements Check",
+    "text": "Same Apple ID, Wi-Fi & Bluetooth on, Handoff enabled, within 30 feet"
+   },
+   {
+    "head": "Carrier Support",
+    "text": "Needs carrier eSIM: T-Mobile (USA), Telekom (Germany), EE (UK) only"
+   },
+   {
+    "head": "Enable Handoff",
+    "text": "Settings > General > AirPlay & Continuity > iPhone Handoff ON"
+   },
+   {
+    "head": "Main vs Secondary",
+    "text": "Main iPhone = primary device, Secondary shares number via unlock"
+   },
+   {
+    "head": "Switch & Confirm",
+    "text": "Unlock secondary to switch, watch for 'Switched to this iPhone' message"
+   },
+   {
+    "head": "Apple Watch Stays",
+    "text": "Watch remains paired with Main iPhone, pairing does not change"
+   },
+   {
+    "head": "Carrier Fees Check",
+    "text": "Confirm extra charges with your provider before enabling feature"
+   }
+  ],
+  "wallpaper_scene": 1,
+  "job": "1121-0225",
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/tech/offer-handoff.jpg"
+ },
+ "visual_done": "2026-11-21 02:33",
+ "skin": "keynote"
+}

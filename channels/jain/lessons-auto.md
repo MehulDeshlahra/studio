@@ -547,3 +547,9 @@
 ## 1119-1915 (pre-render check)
 - FIT: text and visual order mismatch where visual shows a lotus instead of ants, leaves, or wind as mentioned in voice
 - FIT: Digambar monk is described as unclad, but here the monk is wearing robes
+
+## review 1119-0935
+- picture check: scene 3: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 64%); Does the idol or Tirthankara have blue, green or grey skin? (yes 69%)
+
+## 1118-2242 (pre-render check)
+- FIT: The voice mentions 'Sher, saanp, haathi', but the visual only shows a snake and the text only says 'SAANP' / 'SAB AAYE' instead of the full menagerie described.

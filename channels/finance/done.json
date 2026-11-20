@@ -136,13 +136,8 @@
   "job": "1120-0815",
   "topic": "₹80,000 ka phone 'No Cost EMI' pe: asli mein kitna extra lagta hai",
   "title": "80,000 ka phone No Cost EMI pe: kitna extra lagta hai?",
-  "status": "held",
-  "review": [
-   "owner agent: Remove the specific RBI 2013 circular claim; replace with a verified, generic reference to RBI's fair practice code for lending transparency.",
-   "NUMBERS: scene 2: 'RBI 2013 circular: zero percent interest loan schemes prohibited without genuine restructuring. Inte' is not in the sources: remove it or say only what the sources say",
-   "NUMBERS: scene 4: 'Bank processing fee is charged, plus GST.' is not in the sources: remove it or say only what the sources say",
-   "NUMBERS: scene 7: 'RBI master direction: full purchase amount blocks credit limit, not just EMI.' is not in the sources: remove it or say only what the sources say"
-  ],
+  "status": "made",
+  "review": [],
   "mehul_rebuilt": "2026-11-20",
   "replan_requested": "2026-11-20 22:32"
  },
@@ -158,6 +153,14 @@
   "job": "1120-2150",
   "topic": "Purana sona bechne par poora paisa kyun nahi milta",
   "title": "Purana sona bechne par poora paisa kyun nahi milta",
+  "qc_ok": true,
+  "status": "made",
+  "review": []
+ },
+ {
+  "job": "1121-0115",
+  "topic": "Repo rate 0.75% badha toh ₹30 lakh home loan ki EMI kitni badhegi",
+  "title": "Repo rate 0.75% badha toh ₹30 lakh home loan ki EMI kitni badhegi?",
   "qc_ok": true,
   "status": "made",
   "review": []
