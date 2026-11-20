@@ -316,6 +316,9 @@ def main():
     if "--probe-only" in sys.argv:
         return data
     text = rank(data, TEXT, "text", need_tier=2)
+    # 20 Nov audit: gemini-3.1-pro-preview ranked first after a re-rank and each plan call waited its full 75 s slot
+    # before flash-lite answered (plan v1 took 91 s). Pro models go last: tried only when the fast ones fail
+    text = [m for m in text if "-pro" not in m] + [m for m in text if "-pro" in m]
     # 20 Nov: gemini-3.1-pro-preview (low free quota, slow) came first in studio-fast and used its whole 20 s slot: no
     # "pro" model in the fast combo
     fast = sorted([m for m in rank(data, TEXT, "text") if "-pro" not in m],
