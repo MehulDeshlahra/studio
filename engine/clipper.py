@@ -696,6 +696,10 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
             probs.append(f"loudness {q['lufs']} LUFS")
         if (res.get("words") or 0) < 12:
             probs.append("almost no speech (captions nearly empty)")
+        # 20 Nov: Japanese captions (a Yakuza cutscene) passed the review. Our captions are Latin script on every page
+        txt = res.get("text", "") or ""
+        if txt and sum(1 for ch in txt if ord(ch) > 0x2E7F) > 0.1 * len(txt):
+            probs.append(f"captions not in Latin script (spoken language '{res.get('lang')}'): wrong language for this page")
         if (res.get("lost") or 0) > 0.1:             # 19 Nov: vision scored 10 with the comedian walked out of the crop
             probs.append(f"speaker out of the crop for {res['lost']:.0%} of the time (crop did not follow him)")
         rude = STRONG.search(res.get("text", "")) or UNSAFE.search(" ".join(n["text"] for n in res.get("notes") or []))
