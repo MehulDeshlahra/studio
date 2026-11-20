@@ -35,13 +35,20 @@ MEDIA_RAW = "https://raw.githubusercontent.com/offhours-lab/studio-media/main/"
 
 def _public_url(mp4, name):
     """Put the file in the public repo (offhours-lab/studio-media) and wait until raw.githubusercontent serves it."""
-    import shutil, subprocess
-    subprocess.run(["git", "-C", MEDIA_REPO, "pull", "-q", "--rebase"], timeout=120)
-    os.makedirs(os.path.join(MEDIA_REPO, "reels"), exist_ok=True)
-    shutil.copy(mp4, os.path.join(MEDIA_REPO, "reels", name))
-    for c in (["git", "-C", MEDIA_REPO, "add", "-A"], ["git", "-C", MEDIA_REPO, "commit", "-qm", "reel " + name],
-              ["git", "-C", MEDIA_REPO, "push", "-q"]):
-        subprocess.run(c, timeout=300)
+    import shutil, subprocess, fcntl
+    # 20 Nov: two posting processes pushed to this repo at the same moment and git refused ("untracked files would be
+    # overwritten"); one git operation at a time, across processes
+    with open(os.path.join(OUT, ".studio-media.lock"), "w") as lk:
+        fcntl.flock(lk, fcntl.LOCK_EX)
+        subprocess.run(["git", "-C", MEDIA_REPO, "pull", "-q", "--rebase", "--autostash"], timeout=120)
+        os.makedirs(os.path.join(MEDIA_REPO, "reels"), exist_ok=True)
+        shutil.copy(mp4, os.path.join(MEDIA_REPO, "reels", name))
+        for c in (["git", "-C", MEDIA_REPO, "add", "-A"], ["git", "-C", MEDIA_REPO, "commit", "-qm", "reel " + name]):
+            subprocess.run(c, timeout=300)
+        for _ in range(3):
+            if subprocess.run(["git", "-C", MEDIA_REPO, "push", "-q"], timeout=300).returncode == 0:
+                break
+            subprocess.run(["git", "-C", MEDIA_REPO, "pull", "-q", "--rebase", "--autostash"], timeout=120)
     url = MEDIA_RAW + "reels/" + name
     for _ in range(30):
         try:
