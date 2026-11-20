@@ -257,7 +257,9 @@ def job_state(cid, job, active=None):
     if active and active.get("until") == "assets":
         steps = steps[:6]
     cur = next((i for i, s in enumerate(steps) if not s["done"]), None)
-    n = len([s for s in steps if s['key'] not in ('research', 'images')]); doneN = sum(1 for s in steps if s['done'] and s['key'] in ('render', 'audio', 'video', 'final', 'plan'))
+    # 20 Nov: doneN counted 5 keys but n counted every step, so a finished video showed 18% (dashboard audit). Same set now
+    counted = [s for s in steps if s['key'] not in ('research', 'images')]
+    n = max(1, len(counted)); doneN = sum(1 for s in counted if s['done'])
     pct = doneN / n
     eta = None
     if active and cur is not None:

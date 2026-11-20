@@ -34,10 +34,8 @@ def jl(p, d=None):
 folders = [(c, j) for c in _pages() for j in os.listdir(os.path.join(OUT, c)) if os.path.isdir(os.path.join(OUT, c, j)) and os.path.exists(os.path.join(OUT, c, j, "plan.json"))]
 shown = {(j["cid"], j["job"]) for j in S["jobs"]}
 CAP = 40                                   # 20 Nov: /api/state sends the newest 40 runs on purpose (Cut Capsule alone has 70+)
-if len(shown) >= CAP:
-    mt = lambda k: os.path.getmtime(os.path.join(OUT, k[0], k[1]))
-    oldest = min(mt(k) for k in shown if k in set(folders)) if shown & set(folders) else 0
-    folders = [k for k in folders if mt(k) > oldest or k in shown]
+if len(shown) >= CAP:                      # the window is by job_state "updated", not folder mtime: check only shown runs exist
+    folders = [k for k in folders if k in shown]
 check("runs: videos with a plan", len(shown & set(folders)), len(folders))
 for k in set(folders) - shown:
     bad.append(f"runs: {k} exists on disk but is not shown")
