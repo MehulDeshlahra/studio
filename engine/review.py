@@ -46,7 +46,8 @@ def _starts_like(heard, line, n=5):
 
 PICCHK = """You check the pictures of a devotional short video before it is published. Each image is ONE scene, shown
 large. Answer every question for every image strictly from what you SEE (a figure that shows it = yes). Do not excuse a
-mistake as "artistic style": devotees notice every wrong detail.
+mistake as "artistic style": devotees notice every wrong detail. Each image comes with the line narrated over it: the
+main figure is the one that line is about (if the line is about Yamraj, the figure must look like Yamraj, not Vishnu).
 QUESTIONS:
 {qs}
 Return JSON {{"frames": [{{"n": <image number from 1>, "yes": [<question numbers answered yes>], "what": "<short: what is wrong>"}}]}}
@@ -123,7 +124,8 @@ def picture_check(mp4, timing, checks, max_frames=14):
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-i", mp4, "-frames:v", "1", "-vf", "scale=540:960", "-q:v", "4", f],
                        capture_output=True)
         if os.path.exists(f):
-            parts.append({"text": f"Image {i + 1} (scene {i + 1}):"})
+            # 20 Nov: without the narration the model cannot know WHO a figure should be (missed a Vishnu-like Yamraj)
+            parts.append({"text": f"Image {i + 1} (scene {i + 1}), narration: \"{said[i]}\":"})
             parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(open(f, "rb").read()).decode()}})
     qs = "\n".join(f"{i + 1}. {q}" for i, q in enumerate(checks))
     body = {"contents": [{"parts": [{"text": PICCHK.format(qs=qs)}] + parts}],
