@@ -220,10 +220,13 @@ def submit(page, url, post):
     still_open = bool(re.search(r"i'?ve read the requirements", text, re.I))
     confirmed = bool(re.search(r"(submitted|under review|pending review|submission received)", text, re.I)) and not still_open
     # (20 Nov test: the green row "Not already submitted to a campaign" matched "already submitted": only red/negative text)
-    bad = re.search(r"(clips can be submitted for \d+ minutes after posting|(?<!not )already submitted|invalid link|"
-                    r"not eligible|isn'?t from one of your linked accounts|can'?t be submitted)", text, re.I)
-    if bad and re.search(r"submitted for \d+ minutes", bad.group(0), re.I):
-        bad = re.match(r"(.*)", "too late: past the 30-minute submit window")
+    bad = None
+    for rx, why_ in ((r"clips can be submitted for \d+ minutes after posting", "too late: past the 30-minute submit window"),
+                     (r"(?<!not )already submitted", "already submitted"), (r"invalid link", "invalid link"),
+                     (r"isn'?t from one of your linked accounts|not from a linked account", "not a linked account"),
+                     (r"not eligible", "not eligible")):
+        if re.search(rx, text, re.I):
+            bad = re.match(r"(.*)", why_); break
     ok = bool(done) and confirmed and not bad
     why = None if ok else (bad.group(0) if bad else "the dialog is still open after Submit" if still_open else "no confirmation on the page")
     return {"ok": ok, "why": why, "clicked": done, "ticked": ticked, "shot": shot(page, "submit"),
