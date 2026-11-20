@@ -64,19 +64,31 @@ def _confirm(model, jpg, qs):
               "what you see and where in the picture. If you are not sure, or it needs guessing, answer no.\n"
               + "\n".join(f"{i + 1}. {q}" for i, q in enumerate(qs))
               + '\nReturn JSON {"answers": [{"q": <number>, "yes": true/false, "seen": "<what and where>"}]}')
-    body = {"contents": [{"parts": [{"text": prompt}, {"inline_data": {"mime_type": "image/jpeg", "data": b}}]}],
-            "generationConfig": {"responseMimeType": "application/json", "temperature": 0.0}}
+    # 20 Nov: the same model checking twice is not a second opinion (it then cleared a crowned Bahubali). The confirm
+    # look uses OmniRoute's vision combo (other free vision models); Gemini only if OmniRoute does not answer
     try:
-        r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-                                   data=json.dumps(body).encode(),
-                                   headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(model)})
-        d = json.load(urllib.request.urlopen(r, timeout=120))
-        a = llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"]) or {}
-        seen = [str(x.get("seen") or "")[:120] for x in a.get("answers") or [] if x.get("yes") is True and len(str(x.get("seen") or "")) > 8]
-        return "; ".join(seen)
+        a = llm.vision(prompt, open(jpg, "rb").read()) or {}
+        if isinstance(a, str):
+            a = llm.parse_json(a) or {}
     except Exception as e:
-        log("picture check confirm failed", str(e)[:100])
-        return "confirm step failed"                    # cannot confirm -> keep the flag (safe side)
+        log("picture check confirm (omniroute) failed, Gemini instead", str(e)[:100])
+        body = {"contents": [{"parts": [{"text": prompt}, {"inline_data": {"mime_type": "image/jpeg", "data": b}}]}],
+                "generationConfig": {"responseMimeType": "application/json", "temperature": 0.0}}
+        try:
+            r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                                       data=json.dumps(body).encode(),
+                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(model)})
+            d = json.load(urllib.request.urlopen(r, timeout=120))
+            a = llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"]) or {}
+        except Exception as e2:
+            log("picture check confirm failed", str(e2)[:100])
+            return "confirm step failed"                # cannot confirm -> keep the flag (safe side)
+    if isinstance(a, list):
+        a = {"answers": a}
+    if not isinstance(a, dict):
+        return "confirm step failed"
+    seen = [str(x.get("seen") or "")[:120] for x in a.get("answers") or [] if isinstance(x, dict) and x.get("yes") is True and len(str(x.get("seen") or "")) > 8]
+    return "; ".join(seen)
 
 
 def picture_check(mp4, timing, checks, max_frames=14):
