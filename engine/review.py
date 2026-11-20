@@ -44,6 +44,53 @@ def _starts_like(heard, line, n=5):
     return best, h
 
 
+PICCHK = """You check the pictures of a devotional short video before it is published. Each image is ONE scene, shown
+large. Answer every question for every image strictly from what you SEE (a figure that shows it = yes). Do not excuse a
+mistake as "artistic style": devotees notice every wrong detail.
+QUESTIONS:
+{qs}
+Return JSON {{"frames": [{{"n": <image number from 1>, "yes": [<question numbers answered yes>], "what": "<short: what is wrong>"}}]}}
+(list only images with at least one yes)."""
+
+
+def picture_check(mp4, timing, checks, max_frames=14):
+    """20 Nov: the contact-sheet review passed 3 Navkar Bhav reels with a bearded saffron Mahavira, a crowned Bahubali
+    and saffron monks (26 tiny frames + a 'traditional forms, never report' note). Here: ONE frame per scene at 540x960,
+    only the page's checklist, any yes = a problem. Returns {"problems": [...], "frames": n}."""
+    import tempfile, urllib.request
+    pts = [round((L["start"] + L["end"]) / 2, 2) for L in timing if L.get("end", 0) > L.get("start", 0)][:max_frames]
+    if not pts:
+        return {"problems": [], "frames": 0}
+    tmp = tempfile.mkdtemp()
+    parts = []
+    for i, t in enumerate(pts):
+        f = os.path.join(tmp, f"{i}.jpg")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-i", mp4, "-frames:v", "1", "-vf", "scale=540:960", "-q:v", "4", f],
+                       capture_output=True)
+        if os.path.exists(f):
+            parts.append({"text": f"Image {i + 1} (scene {i + 1}):"})
+            parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(open(f, "rb").read()).decode()}})
+    qs = "\n".join(f"{i + 1}. {q}" for i, q in enumerate(checks))
+    body = {"contents": [{"parts": [{"text": PICCHK.format(qs=qs)}] + parts}],
+            "generationConfig": {"responseMimeType": "application/json", "temperature": 0.0}}
+    for m in tts.usable(VISION_MODELS):
+        try:
+            r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
+                                       data=json.dumps(body).encode(),
+                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
+            d = json.load(urllib.request.urlopen(r, timeout=180))
+            res = llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"]) or {}
+            out = []
+            for fr in res.get("frames") or []:
+                ys = [int(y) for y in fr.get("yes") or [] if str(y).isdigit() and 1 <= int(y) <= len(checks)]
+                if ys:
+                    out.append(f"scene {fr.get('n')}: {str(fr.get('what') or '')[:140]} (checklist {', '.join(map(str, ys))})")
+            return {"problems": out, "frames": len(pts), "model": m}
+        except Exception as e:
+            log("picture check fail", m, str(e)[:120])
+    return {"problems": [], "frames": len(pts), "error": "no vision model answered"}
+
+
 def vision_review(mp4, plan, timing, out_jpg, lang, handle, checks=None):
     times = []
     for L in timing:
@@ -212,6 +259,10 @@ def review(cid, job):
                       checks=ch.get("visual_checks") or [])
     checks["vision"] = v
     probs += [f"visual: {x}" for x in (v.get("serious") or [])]
+    if ch.get("visual_checks"):
+        pc = picture_check(mp4, tj.get("lines", []), ch["visual_checks"])
+        checks["picture_check"] = pc
+        probs += [f"picture check: {x}" for x in pc.get("problems") or []]
     if (v.get("score") or 0) < 6:
         probs.append(f"visual score {v.get('score')}/10")
     rep = {"ok": not probs, "problems": probs, "minor": v.get("minor") or [], "checks": checks}
