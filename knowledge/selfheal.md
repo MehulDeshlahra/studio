@@ -84,6 +84,12 @@ diagnosis (checked on the server, not from notes) and the build. Status lines ar
   failure (it could have become a caption or a plan). Checked: no such text in any plan, caption or reply so far.
 - The healer would have re-run its steps after every render (sync commits change HEAD): steps now follow the CODE
   version (last commit touching engine/ or lib/), max 6 steps per video per day.
+  20 Nov audit (knowledge/AUDIT-2026-11.md, F5): now max 3 steps per video per day; "code changed" counts only the files
+  of the stage that holds the video (not make.py / plan.py) and runs once a day; a learned fix runs once per video; the
+  re-plan of failing scenes once a day. Before: 84 rebuilds in 32 h, 32 of them only because some engine file changed.
+- 20 Nov audit: selfcheck never asks a model to patch a dashboard-vs-raw-data mismatch (0 of 131 such attempts worked);
+  learn-deep pauses while a reel builds and never uses Studio's Gemini keys; OmniRoute combos carry a per-model deadline
+  (omnimap.COMBO_CONFIG) so one hung model no longer eats the whole call.
 - Healer checks must not change the video: a check re-voiced a good video (old timing without a voice score) -> check
   mode never re-aligns or re-voices; the "good video" must have a real voice score.
 - Voice: OmniRoute cannot route Gemini TTS (no speech endpoint for gemini), so voice stays on Studio's own 4 keys.
