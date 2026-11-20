@@ -257,3 +257,9 @@
 ## Purana sona bechne par poora paisa kyun nahi milta (numbers check)
 - NUMBERS: scene 4: 'Solder/Joints deduction is None' is wrong: Source goldmartjewels.com states: 'Impurity / Solder Deduction... Typically 1–3% deducted.'
 - NUMBERS: scene 4: 'Stones deduction is None' is wrong: Source goldmartjewels.com states: 'Stone Weight... stones ki alag valuation hoti hai.'
+
+## Purana sona bechne par poora paisa kyun nahi milta (numbers check)
+- NUMBERS: scene 9: 'File a complaint on RBI CMS if cheated.' is not in the sources: remove it or say only what the sources say
+
+## review 1118-2303
+- picture check: scene 9: Is any number, date or rule on screen different from the voice-over? (yes 67%)

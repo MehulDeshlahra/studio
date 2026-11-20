@@ -135,5 +135,63 @@
    "setting schedule.posts_per_day: 2 -> 1 (Focus on fixing the factual and visual quality of the chip video before increasi)"
   ],
   "dry": false
+ },
+ {
+  "t": "2026-11-20 22:32",
+  "page": "finance",
+  "score": 6,
+  "verdict": "The content quality is improving, but the new requirement for clear comparison tables in Finance Fuel videos is not being consistently met, leading to avoidable holds.",
+  "did": [
+   "asked the healer to re-plan 1120-0815: Remove the specific RBI 2013 circular claim; replace with a verified, generic re",
+   "rule: For all Finance Fuel comparison videos, a side-by-side table frame must be placed no later than the 5th scene to ensure data digestibility.",
+   "code task (the healer works on it): engine/plan.py: Add a validation step that flags scripts containing 'vs' or 'comparison' keywords if they lack a defined table layout in the scene sequence."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-20 22:34",
+  "page": "jain",
+  "score": 8,
+  "verdict": "The visuals have a serene, high-end feel and storytelling depth, but architectural backgrounds still occasionally lean toward Mughal styles.",
+  "did": [
+   "rule: Ensure prompt generation for ancient Jain temples strictly avoids Islamic or Mughal architectural cues like cusped arches and onion domes.",
+   "code task (the healer works on it): engine/muse.py: Add negative prompt filters for Mughal domes, minarets, and saffron/red monk garments in image generation pipelines."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-20 22:39",
+  "page": "katha",
+  "score": 7,
+  "verdict": "The storytelling is engaging and the visual consistency is improving, but we are still slipping up with English labels and straying too close to photorealistic depictions of deities.",
+  "did": [
+   "rule: All on-screen text must be in Hindi or Hinglish; absolutely no English labels like 'DIVINE JUSTICE' or 'BROAT' are permitted.",
+   "code task (the healer works on it): Update engine/muse.py to append '--style painting' or '--artistic' to all prompts involving gods or heroes to ensure they never look like real photographs.",
+   "code task (the healer works on it): Update engine/compose.py to include a pre-render check that scans for English character sets in text layers and blocks the build if found."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-20 22:40",
+  "page": "raaz",
+  "score": 8,
+  "verdict": "The mystery arcs are gripping and visually moody, but we need to ensure the character names in generated scripts strictly avoid any real owner names like Mehul.",
+  "did": [
+   "rule: Never use owner or staff names like Mehul in fiction character prompts or scripts; ensure the name randomizer strictly picks entirely unrelated common Indian names.",
+   "code task (the healer works on it): Update engine/plan.py to include a strict validation filter that blacklists owner and real staff names from ever appearing as character names in generated story scripts."
+  ],
+  "dry": false
+ },
+ {
+  "t": "2026-11-20 22:43",
+  "page": "tech",
+  "score": 8,
+  "verdict": "The technical visual quality is excellent and consistent with the lab aesthetic, but we must tighten the verification process for 'news' content to avoid speculative clickbait.",
+  "did": [
+   "rule: Replace generic engagement bait like 'Try Kiya?' at the end of tech videos with a 'Did you know?' or a specific technical takeaway to maintain the premium lab brand identity.",
+   "code task (the healer works on it): Update engine/preflight.py to automatically reject any script containing keywords like 'Launch', 'Price', or 'Release' unless it contains at least two verified source URLs in the metadata.",
+   "rule: For 'India connection' style videos, the script must explicitly name the Indian studio or developer involved; vague claims about 'Indian talent' are no longer permitted."
+  ],
+  "dry": false
  }
 ]

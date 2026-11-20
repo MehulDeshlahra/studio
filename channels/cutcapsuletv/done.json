@@ -56,12 +56,35 @@
   "job": "1119-2140c-c1",
   "topic": "DON'T BUY PEANUTS WITHOUT THIS BUNDLE",
   "title": "DON'T BUY PEANUTS WITHOUT THIS BUNDLE",
-  "status": "approved",
+  "status": "posted",
   "review": [],
   "clip": {
    "url": "https://f.io/LGgDvyP3",
    "start": 0.0,
    "layout": "vertical"
+  },
+  "sched": {
+   "slot": 1795194000,
+   "at": "2026-11-20 22:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsuletv/1119-2140c-c1/post.mp4",
+   "prepared": "2026-11-20 22:15",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1119-2140c-c1-1795193153.mp4",
+   "ig_container": "18196631599406979",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1119-2140c-c1-1795193153.mp4"
+  },
+  "posted": {
+   "at": "2026-11-20 22:30",
+   "ig": "18013162775776833"
+  },
+  "submit": {
+   "campaign": "https://contentrewards.com/c/campaigns/eb28f557-df7b-4245-8603-01380c4d84cc",
+   "links": [
+    "https://www.instagram.com/reel/Df-Hfa1lDRA/"
+   ],
+   "at": "2026-11-20 22:30"
   }
  },
  {
@@ -115,12 +138,24 @@
   "job": "1120-0124a-c3",
   "topic": "AJ REVEALS GRANDFATHER'S DEATH BY FAKE DRUG",
   "title": "AJ REVEALS GRANDFATHER'S DEATH BY FAKE DRUG",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
    "start": 27.35,
    "layout": "crop"
+  },
+  "sched": {
+   "slot": 1795208400,
+   "at": "2026-11-21 02:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsuletv/1120-0124a-c3/post.mp4",
+   "prepared": "2026-11-20 22:39",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-0124a-c3-1795194560.mp4",
+   "ig_container": "18196633534406979",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-0124a-c3-1795194560.mp4"
   }
  },
  {

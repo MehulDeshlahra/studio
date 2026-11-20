@@ -5,3 +5,4 @@
 - 19 Nov 1118-0735: stop saying tu and all, give respect to viewers, say aap
 - 19 Nov: When generating ancient Indian cities or temples, prompts must explicitly exclude minarets, bulbous domes, and Islamic architectural elements; use only stone-carved shikharas and mandapas.
 - 19 Nov: Remove all pure English top-corner labels like 'DIVINE JUSTICE'; use Hinglish or context-specific Hindi keywords that match the page's aesthetic.
+- 20 Nov: All on-screen text must be in Hindi or Hinglish; absolutely no English labels like 'DIVINE JUSTICE' or 'BROAT' are permitted.

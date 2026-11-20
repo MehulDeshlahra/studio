@@ -28,3 +28,4 @@
 - 18 Nov: Never use 'Mehul' or any real-world names of staff/owners as character names in fiction scripts; use a randomized list of common Indian names.
 - 18 Nov: Stop using generic 'Comments mein batao' end cards; every video must end with the mandatory 'Kal ek nayi kahani. Follow karo.' signature.
 - 19 Nov: Every video must end with the exact text 'Kal ek nayi kahani. Follow karo.' on the final frame; no 'Comments mein batao', 'Part X mein', or other custom CTAs are allowed.
+- 20 Nov: Never use owner or staff names like Mehul in fiction character prompts or scripts; ensure the name randomizer strictly picks entirely unrelated common Indian names.

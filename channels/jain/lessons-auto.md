@@ -506,3 +506,6 @@
 
 ## review 1120-1542
 - picture check: scene 6: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 82%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 77%)
+
+## review 1119-1105
+- picture check: scene 6: Does the idol or Tirthankara have blue, green or grey skin? (yes 71%); Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)

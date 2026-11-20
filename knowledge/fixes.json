@@ -286,5 +286,32 @@
   "first": "2026-11-20 20:52",
   "last": "2026-11-20 20:52",
   "example": "2"
+ },
+ {
+  "sig": "visual: scene #: the script intended '…', but the text on screen says '…'. this is a mismatch.",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 21:22",
+  "last": "2026-11-20 21:22",
+  "example": "visual: scene 1: The script intended 'Samvatsari par ghante tak kyun baithte hain Jain?', but the text on screen says 'PRATIKRAMAN KA MATLAB'. This is a mismatch."
+ },
+ {
+  "sig": "picture check: scene #: is any monk or nun wearing saffron, orange or red robes? (yes #%); are there onion dom",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 22:07",
+  "last": "2026-11-20 22:07",
+  "example": "picture check: scene 6: Is any monk or nun wearing saffron, orange or red robes? (yes 84%); Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 70%)"
+ },
+ {
+  "sig": "numbers: scene #: '…' is wrong: while southeast asia is a major hub, no authoritative public data confirms '…'",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 22:37",
+  "last": "2026-11-20 22:37",
+  "example": "NUMBERS: scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing v"
  }
 ]

@@ -22,3 +22,12 @@
 
 ## 1120-1951b-c1 (clipper)
 - loudness -17.3 LUFS
+
+## 1120-2149a-c1 (clipper)
+- not brand-safe: 'niggas' in the clip (brands and campaigns pay for brand-safe clips only)
+- The hook 'BEN'S SECRET WEAPON FOR GTA 6' is false; the speaker never mentions GTA 6.
+- The on-screen captions do not match the provided transcript, leading to inaccuracies.
+
+## 1120-2149b-c1 (clipper)
+- not brand-safe: 'Nigga' in the clip (brands and campaigns pay for brand-safe clips only)
+- Captioning error: The final frame shows incoherent text 'I YOU WHEN' instead of the actual transcript.

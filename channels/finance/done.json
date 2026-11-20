@@ -15,12 +15,8 @@
   "job": "1118-2303",
   "topic": "'Digital Arrest' scam ka blueprint: video call pe police wala kaise darata hai, aur ek screenshot se bachav.",
   "title": "Digital Arrest scam ka asli blueprint kya hai?",
-  "status": "held",
-  "review": [
-   "NUMBERS: scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing varie",
-   "scene 12 vo: informal 'kar' in \"Tune kabhi aisa call uthaya? Comment kar.\" (owner: never 'tu')",
-   "post caption: informal 'tera' (owner: never 'tu')"
-  ]
+  "status": "made",
+  "review": []
  },
  {
   "job": "1118-2334",
@@ -142,9 +138,12 @@
   "title": "80,000 ka phone No Cost EMI pe: kitna extra lagta hai?",
   "status": "held",
   "review": [
+   "owner agent: Remove the specific RBI 2013 circular claim; replace with a verified, generic reference to RBI's fair practice code for lending transparency.",
    "NUMBERS: scene 2: 'RBI 2013 circular: zero percent interest loan schemes prohibited without genuine restructuring. Inte' is not in the sources: remove it or say only what the sources say",
    "NUMBERS: scene 4: 'Bank processing fee is charged, plus GST.' is not in the sources: remove it or say only what the sources say",
    "NUMBERS: scene 7: 'RBI master direction: full purchase amount blocks credit limit, not just EMI.' is not in the sources: remove it or say only what the sources say"
-  ]
+  ],
+  "mehul_rebuilt": "2026-11-20",
+  "replan_requested": "2026-11-20 22:32"
  }
 ]

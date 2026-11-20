@@ -24,14 +24,8 @@
   "job": "1119-0215",
   "topic": "Why King Megharath Cut His Own Flesh to Save a Pigeon (Source: Adipurana)",
   "title": "Raja ne apna maans kaise kaata kabutar bachane?",
-  "status": "held",
-  "review": [
-   "picture check: scene 6: Is any monk or nun wearing saffron, orange or red robes? (yes 84%); Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 70%)",
-   "picture check: scene 7: Is any monk or nun wearing saffron, orange or red robes? (yes 81%)",
-   "picture check: scene 8: Is any monk or nun wearing saffron, orange or red robes? (yes 78%)",
-   "picture check: scene 11: Is any monk or nun wearing saffron, orange or red robes? (yes 66%)",
-   "picture check: scene 12: Is any monk or nun wearing saffron, orange or red robes? (yes 72%)"
-  ],
+  "status": "approved",
+  "review": [],
   "replan_requested": "2026-11-19 15:51"
  },
  {
@@ -39,26 +33,8 @@
   "topic": "What happens during Paryushana's Pratikraman — the Jain ritual of self‑purification (source: Agam)",
   "title": "Paryushan mein Pratikraman kaise hota hai?",
   "qc_ok": true,
-  "status": "held",
-  "review": [
-   "visual: scene 1: The script intended 'Samvatsari par ghante tak kyun baithte hain Jain?', but the text on screen says 'PRATIKRAMAN KA MATLAB'. This is a mismatch.",
-   "visual: scene 2: The script intended 'Pratikraman ka matlab hai apni bhoolon se wapas lautna.', but the text says 'APNE ASLI SWABHAV'. This is a mismatch.",
-   "visual: scene 3: The script intended 'Agam kehta hai, karam dhyaan se hi chhutte hain.', but the text says 'YEH EK SOUL-RESET'. This is a mismatch.",
-   "visual: scene 4: The script intended 'Iske cheh avashyak hain...', but the text says '48 MINUTE HILNA'. This is a mismatch.",
-   "visual: scene 5: The script intended 'Pehla: Samayika...', but the text says 'DOOSRA: 24 TIRTHANKARON'. This is a mismatch.",
-   "visual: scene 6: The script intended 'Doosra: Logassa...', but the text says 'ROSHNI JAGATE HAIN'. This is a mismatch.",
-   "visual: scene 7: The script intended 'Teesra: Vandana...', but the text says 'TEESRA: VANDANA'. This matches, but the sequence is misaligned with the previous slides.",
-   "visual: scene 8: The script intended 'Chautha: Pratikraman...', but the text says 'CHAUTHA: ASLI HISAAB'. This is a mismatch.",
-   "visual: scene 9: The script intended 'Paanchva: Kayotsarga...', but the text says 'SHARIR DHEELA CHHOD'. This is a mismatch.",
-   "visual: scene 10: The script intended 'Chhatha: Pratyakhyana...', but the text says 'NAYA SANKALP'. This is a mismatch.",
-   "visual: scene 11: The script intended 'Samvatsari Pratikraman saal mein bas ek baar hota hai.', but the text says 'GHANTE CHALTA HAI'. This is a mismatch.",
-   "visual: scene 12: The script intended 'Ant mein Micchami Dukkadam...', but the text says 'MECHANISM AATMA KI SHUDDHI'. This is a mismatch.",
-   "picture check: scene 2: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 66%); Is any monk or nun wearing saffron, orange or red robes? (yes 82%)",
-   "picture check: scene 4: Is any monk or nun wearing saffron, orange or red robes? (yes 78%)",
-   "picture check: scene 6: Is any monk or nun wearing saffron, orange or red robes? (yes 79%)",
-   "picture check: scene 9: Is any monk or nun wearing saffron, orange or red robes? (yes 79%)",
-   "picture check: scene 10: Is any monk or nun wearing saffron, orange or red robes? (yes 69%)"
-  ],
+  "status": "approved",
+  "review": [],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
  },
@@ -114,8 +90,7 @@
   "status": "held",
   "offer": "WALLPAPER",
   "review": [
-   "picture check: scene 6: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 63%)",
-   "picture check: scene 8: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 81%)"
+   "picture check: scene 6: Does the idol or Tirthankara have blue, green or grey skin? (yes 71%); Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)"
   ],
   "replan_requested": "2026-11-19 15:51",
   "minor": [
