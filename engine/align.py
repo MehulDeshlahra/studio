@@ -213,7 +213,9 @@ def words_by_line(wav, texts, lang="hi"):
         pairs_, cover_ = match(W_)
         if best is None or cover_ > best[1]:
             best = (pairs_, cover_, W_, total_, t0_, t1_, eng)
-        if best[1] >= 0.9:
+        # 20 Nov: the local 'small' model also ran whenever Groq matched under 90% (2.5-3 min on 2 CPU cores per reel)
+        # and only won by a few points (85% -> 88%). Groq at 75%+ (the voice gate's own bar) is used as it is.
+        if best[1] >= 0.75:
             break
     pairs, cover, W, total, t0, t1, engine_used = best
     LAST_ENGINE[0] = engine_used
