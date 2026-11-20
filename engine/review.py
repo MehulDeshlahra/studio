@@ -53,42 +53,57 @@ Return JSON {{"frames": [{{"n": <image number from 1>, "yes": [<question numbers
 (list only images with at least one yes)."""
 
 
-def _confirm(model, jpg, qs):
-    """One image, only the flagged questions: '' unless the model clearly sees it (and says exactly what and where)."""
+def _confirm(model, jpg, qs, said=""):
+    """One image, only the flagged questions: '' unless a model clearly sees it (and says exactly what and where).
+    20 Nov: (1) the same Gemini model checking twice cleared a crowned Bahubali; (2) OmniRoute alone then cleared a
+    bearded, white-robed Mahavira and a bearded saffron sage, because it was never told WHO the figure is. Now the
+    narration line of that scene is given, and two different models look (OmniRoute vision + Gemini): the flag holds
+    if either one sees it and names what and where."""
     import urllib.request
     try:
-        b = base64.b64encode(open(jpg, "rb").read()).decode()
+        raw = open(jpg, "rb").read()
     except OSError:
         return ""
-    prompt = ("Look carefully at this ONE picture. For each question answer yes ONLY if it is clearly visible, and say exactly "
-              "what you see and where in the picture. If you are not sure, or it needs guessing, answer no.\n"
+    ctx = (f"The narration at this moment says: \"{said}\". The main figure in the picture is the person this line is "
+           "about (the narration names him or her).\n") if said else ""
+    prompt = (ctx + "Look carefully at this ONE picture. For each question answer yes ONLY if it is clearly visible, and say "
+              "exactly what you see and where in the picture. Do not excuse it as an artistic or traditional choice: if the "
+              "thing asked about is in the picture, the answer is yes. If it is not in the picture, answer no.\n"
               + "\n".join(f"{i + 1}. {q}" for i, q in enumerate(qs))
               + '\nReturn JSON {"answers": [{"q": <number>, "yes": true/false, "seen": "<what and where>"}]}')
-    # 20 Nov: the same model checking twice is not a second opinion (it then cleared a crowned Bahubali). The confirm
-    # look uses OmniRoute's vision combo (other free vision models); Gemini only if OmniRoute does not answer
-    try:
-        a = llm.vision(prompt, open(jpg, "rb").read()) or {}
+
+    def seen_of(a):
         if isinstance(a, str):
             a = llm.parse_json(a) or {}
+        if isinstance(a, list):
+            a = {"answers": a}
+        if not isinstance(a, dict):
+            return None
+        return [str(x.get("seen") or "")[:120] for x in a.get("answers") or []
+                if isinstance(x, dict) and x.get("yes") is True and len(str(x.get("seen") or "")) > 8]
+
+    got, answered = [], 0
+    try:
+        r1 = seen_of(llm.vision(prompt, raw))
+        if r1 is not None:
+            answered += 1; got += r1
     except Exception as e:
-        log("picture check confirm (omniroute) failed, Gemini instead", str(e)[:100])
-        body = {"contents": [{"parts": [{"text": prompt}, {"inline_data": {"mime_type": "image/jpeg", "data": b}}]}],
-                "generationConfig": {"responseMimeType": "application/json", "temperature": 0.0}}
-        try:
-            r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-                                       data=json.dumps(body).encode(),
-                                       headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(model)})
-            d = json.load(urllib.request.urlopen(r, timeout=120))
-            a = llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"]) or {}
-        except Exception as e2:
-            log("picture check confirm failed", str(e2)[:100])
-            return "confirm step failed"                # cannot confirm -> keep the flag (safe side)
-    if isinstance(a, list):
-        a = {"answers": a}
-    if not isinstance(a, dict):
-        return "confirm step failed"
-    seen = [str(x.get("seen") or "")[:120] for x in a.get("answers") or [] if isinstance(x, dict) and x.get("yes") is True and len(str(x.get("seen") or "")) > 8]
-    return "; ".join(seen)
+        log("picture check confirm (omniroute) failed", str(e)[:100])
+    body = {"contents": [{"parts": [{"text": prompt}, {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(raw).decode()}}]}],
+            "generationConfig": {"responseMimeType": "application/json", "temperature": 0.0}}
+    try:
+        r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                                   data=json.dumps(body).encode(),
+                                   headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(model)})
+        d = json.load(urllib.request.urlopen(r, timeout=120))
+        r2 = seen_of(d["candidates"][0]["content"]["parts"][0]["text"])
+        if r2 is not None:
+            answered += 1; got += r2
+    except Exception as e:
+        log("picture check confirm (gemini) failed", str(e)[:100])
+    if not answered:
+        return "confirm step failed"                    # cannot confirm -> keep the flag (safe side)
+    return "; ".join(dict.fromkeys(got))
 
 
 def picture_check(mp4, timing, checks, max_frames=14):
@@ -96,7 +111,9 @@ def picture_check(mp4, timing, checks, max_frames=14):
     and saffron monks (26 tiny frames + a 'traditional forms, never report' note). Here: ONE frame per scene at 540x960,
     only the page's checklist, any yes = a problem. Returns {"problems": [...], "frames": n}."""
     import tempfile, urllib.request
-    pts = [round((L["start"] + L["end"]) / 2, 2) for L in timing if L.get("end", 0) > L.get("start", 0)][:max_frames]
+    used = [L for L in timing if L.get("end", 0) > L.get("start", 0)][:max_frames]
+    pts = [round((L["start"] + L["end"]) / 2, 2) for L in used]
+    said = [str(L.get("text") or "")[:200] for L in used]
     if not pts:
         return {"problems": [], "frames": 0}
     tmp = tempfile.mkdtemp()
@@ -126,7 +143,7 @@ def picture_check(mp4, timing, checks, max_frames=14):
                     continue
                 # 20 Nov: flash-lite flagged "mosque domes" in a palace interior with none (Kuber). A flag holds only
                 # when a second, single-image look at that frame confirms it with what it sees
-                ok_ys = _confirm(m, os.path.join(tmp, f"{n - 1}.jpg"), [checks[y - 1] for y in ys])
+                ok_ys = _confirm(m, os.path.join(tmp, f"{n - 1}.jpg"), [checks[y - 1] for y in ys], said[n - 1])
                 if ok_ys:
                     out.append(f"scene {n}: {ok_ys} (checklist {', '.join(map(str, ys))})")
                 else:
