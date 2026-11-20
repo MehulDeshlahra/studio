@@ -35,7 +35,10 @@ Plan:
 
 ## Status
 - [x] engine + VAJRA business + intake, first reel approved for quality (20 Nov)
-- [ ] server: sparse checkout clips/music, push token, timer
+- [x] server (checked 20 Nov 13:55): ~/libraries/vajra 307 MB (clips, photos, music); delivery pushes to
+  offhours-lab/vajra-gen with the server deploy key (host github-vajra), GitHub studio-intake.yml imports it;
+  timer studio-biz-vajra (first auto run 15:20). Server-made reel vajra-s1 (13:22) frame-audited: real footage,
+  1080x1920, 21 s, -13.4 LUFS
 - [x] owner: Oracle login recovered, boot volume expanded to 200 GB (20 Nov; server / = 193 GB, 156 GB free)
 - [ ] second business
 
