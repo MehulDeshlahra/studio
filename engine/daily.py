@@ -308,11 +308,20 @@ def main():
                 lap_ok = laptop.available()
             except Exception:
                 lap_ok = False
+        # 20 Nov: 64 prep rounds were skipped today for a manual job. The prep lane mostly waits on web APIs; with 4 GB+
+        # free it runs beside a manual job (the memory floor below still guards the job bot)
+        try:
+            free_mb = int(next(l for l in open("/proc/meminfo") if l.startswith("MemAvailable")).split()[1]) // 1024
+        except Exception:
+            free_mb = 0
+        if lane == "prep" and free_mb >= 4000:
+            lap_ok = True
+            log("prep lane: a manual job is running, but", free_mb, "MB are free: going ahead")
         if not lap_ok and not (lane == "prep" and urgent_pages()):
             log(f"{lane} lane: a manual job is running, skip"); return
         if not lap_ok:
             log("prep lane: a manual job is running, but a page has nothing to post (golden rule): going ahead")
-        else:
+        elif lane == "render":
             log("render lane: a manual job is running, but the laptop is free: rendering there")
     try:                                                    # 18 Nov: the job bot shares this server; never push it into swap
         avail = int(next(l for l in open("/proc/meminfo") if l.startswith("MemAvailable")).split()[1]) // 1024

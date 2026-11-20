@@ -271,13 +271,23 @@ def _media(acc, plat):
                         "user": c.get("username", ""), "t": _ts(c.get("timestamp"))} for c in (m.get("comments") or {}).get("data", [])]}
                 for m in d.get("data", [])]
     out, seen = [], set()
+    # 20 Nov: a page whose token lacks the permission answered "Missing Permissions" every 10 min (99 errors a day).
+    # A refused edge rests 24 h, then is tried again (a new token may have the permission by then)
+    bk_f = os.path.join(OUT, "dm-backoff.json")
+    bk = load(bk_f, {}) or {}
     for edge in ("video_reels", "posts"):
+        key_ = f"{acc.get('page_id')}:{edge}"
+        if time.time() - bk.get(key_, 0) < 86400:
+            continue
         try:
             d = _r(f"{G}/{acc['page_id']}/{edge}?fields=id,permalink_url,created_time,comments.limit(50){{{CF_FB}}}&limit=15&access_token={tok}")
         except RuntimeError as e:
             if edge == "posts" and "#10/" in str(e):
                 continue        # 19 Nov: our posts are Reels (video_reels edge works); the plain posts edge needs Page Public Content Access and logged 13 errors per 2 h
-            log("dm fb media fail", edge, str(e)[:120]); continue
+            log("dm fb media fail", edge, str(e)[:120])
+            if "Missing Permission" in str(e) or "#10/" in str(e) or "(#200)" in str(e):
+                bk[key_] = time.time(); save(bk_f, bk); log("dm: fb", edge, "rests 24 h for page", acc.get("page_id"))
+            continue
         for m in d.get("data", []):
             if m["id"] in seen:
                 continue
