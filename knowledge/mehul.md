@@ -65,3 +65,12 @@ is looked at before it goes live.
 - Address: "tu" is bad only when WE speak to the viewer. "tum", "batao", "karo" are fine. Inside the story a character
   may say "tu" (quoted speech, "Raghav bola, ...").
 - Pages with fewer than 2 approved reels come first for the healer and for new reels.
+
+## GOLDEN RULE: never skip a post (owner, 20 Nov 2026)
+- "Every channel should have something to post at the desired time. There should never be a skip. If a channel doesn't
+  have anything, make something for it first, before anything else."
+- Code (engine/daily.py): stock = APPROVED reels only. A posting page (pilot / active / live, story pages) with fewer
+  than 2 approved reels is built first: before other pages, the healer's turn, the prepped limit and manual jobs
+  (memory floor still applies); its prepped reel is rendered first. Telegram warns once a day when a page runs low.
+- At the slot (engine/publish.py): nothing approved -> the newest reel that passed every check and only waits for the
+  owner's tap posts, and Telegram says so. Nothing at all -> Telegram alarm.
