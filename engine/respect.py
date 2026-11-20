@@ -27,7 +27,8 @@ CTA = r"(?:comment|comments|share|follow|save|like|subscribe|dm|message|reply|ta
 HARD = re.compile(r"(?<![a-z])(" + "|".join(sorted((re.escape(k) for k in MAP if k not in SOFT), key=len, reverse=True)) + r")(?![a-z])", re.I)
 # "DM kar dunga" / "bhej diya" (I will / I did) is not a request: a first-person ending after it keeps the word
 SOFTRX = re.compile(r"(?<![a-z])(" + CTA + r")\s+(" + "|".join(SOFT) + r")(?![a-z])"
-                    r"(?!\s+(?:dunga|dungi|denge|diya|liya|raha|rahi|rahe|chuka|chuki|sakta|sakti|payega))", re.I)
+                    r"(?!\s+(?:dunga|dungi|denge|diya|liya|raha|rahi|rahe|chuka|chuki|sakta|sakti|payega))"
+                    r"(?=\s*(?:$|[.,!?|:;\u2014-]|aur\b))", re.I)   # "mein do devtaon" (two gods) is no request
 # "tum ... ho" / "tu ... hai" endings become "aap ... hain"
 HO = re.compile(r"(?<![a-z])(aap\b[^.?!|]{0,40}?\b)(ho|hai|tha|thi)(?=[\s?!.,]|$)", re.I)
 
@@ -69,6 +70,30 @@ def fix(text):
 FIELDS = ("vo", "title", "big", "small", "headline", "text", "label", "question", "cta", "caption", "line", "hook")
 
 
+REWRITE = """Rewrite this one line of a Hindi short-video script (Roman Hinglish) so it speaks respectfully: everyone,
+the viewer and every character, is addressed as "aap" with the matching verb forms ("aap kya karenge", "tension mat
+lijiye"), and every ask to the viewer is a polite request ("comment mein bataiye", "follow kijiye", "sochiye").
+Keep the meaning, the names, the length (within a few words) and the Roman letters. Change nothing else.
+Line: {line}
+Return JSON {{"line": "..."}}"""
+
+
+def rewrite_line(line):
+    """A spoken line: the text model rewrites it into natural respectful Hindi (word swaps break the grammar:
+    "bhai tu tension mat le" -> "aap tension mat le"); checked, else the word-level fix."""
+    if not find(line):
+        return line
+    try:
+        import llm
+        r = llm.text(REWRITE.format(line=line), json_mode=True, max_tokens=400, fast=True) or {}
+        new = str(r.get("line") or "").strip()
+        if new and not find(new) and 0.6 <= len(new) / max(1, len(line)) <= 1.6 and not re.search(r"[\u0900-\u097f]", new):
+            return new
+    except Exception:
+        pass
+    return fix(line)
+
+
 def fix_plan(p):
     """Rewrite every viewer-facing text field of a plan (scenes + post text). Returns the number of fields changed."""
     n = 0
@@ -78,7 +103,7 @@ def fix_plan(p):
         if isinstance(o, dict):
             for k, v in list(o.items()):
                 if isinstance(v, str) and (k in FIELDS or k.endswith("_text") or k in ("description", "pinned", "comment", "first_comment")):
-                    f = fix(v)
+                    f = rewrite_line(v) if k == "vo" else fix(v)
                     if f != v:
                         o[k] = f; n += 1
                 elif isinstance(v, (dict, list)) and k not in ("bible", "pic", "credits", "research", "sources"):

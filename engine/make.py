@@ -1100,12 +1100,17 @@ def main():
         subprocess.run(args)
         return
     done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), [])
+    # 20 Nov: a video the owner already approved that was only re-voiced to "aap" wording keeps his approval when it
+    # passes again (it was held during the rebuild, so the old voice could not post)
+    keep = bool(meta.pop("keep_approval", None)) and rv["ok"]
     for d in done:
         if d["job"] == job_id:
-            d["status"] = "made" if rv["ok"] else "held"
+            d["status"] = "approved" if keep else ("made" if rv["ok"] else "held")
             d["review"] = rv["problems"]
     save(os.path.join(ROOT, "channels", ch["id"], "done.json"), done)
-    if not a.no_send and rv["ok"]:
+    if keep:
+        log("re-voiced to 'aap' wording, passed again: owner's approval kept", ch["id"], job_id)
+    if not a.no_send and rv["ok"] and not keep:
         import send
         send.send(ch["id"], job_id)
     meta.update({"stage": "done"}); save(os.path.join(job, "meta.json"), meta)

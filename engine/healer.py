@@ -324,6 +324,9 @@ def heal_held():
                     jd_ = os.path.join(OUT, cid, job)
                     p_ = load(os.path.join(jd_, "plan.json"), {}) or {}
                     respect.fix_plan(p_); save(os.path.join(jd_, "plan.json"), p_)
+                    if "owner-approved" in " ".join(probs):      # tools/revoice.py marks videos the owner had approved
+                        m_ = load(os.path.join(jd_, "meta.json"), {}) or {}
+                        m_["keep_approval"] = True; save(os.path.join(jd_, "meta.json"), m_)
                     for f_ in ("vo-raw.wav", "vo-paced.wav", "timing.json"):
                         if os.path.exists(os.path.join(jd_, f_)):
                             os.remove(os.path.join(jd_, f_))

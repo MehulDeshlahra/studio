@@ -305,6 +305,18 @@ def post_one(cid, dry=False):
     # passed them). A page with a visual checklist gets the picture check right before posting: a fail is held (the healer
     # rebuilds it) and the next approved video is tried, up to 3; clip pages (no checklist) are not affected
     for c in cands[:3]:
+        # 20 Nov owner: a reel whose voice says "tum" / "batao" / "karo" never goes out (the healer re-voices it)
+        if not cid.startswith("cutcapsule") and not dry:
+            try:
+                import respect
+                rp = respect.problems(load(os.path.join(OUT, cid, c["job"], "plan.json"), {}) or {})
+            except Exception:
+                rp = []
+            if rp:
+                log("publish: informal address HOLD", cid, c["job"], rp[0][:200])
+                c["status"] = "held"; c["review"] = rp[:6] + (c.get("review") or [])
+                save(p, done)
+                continue
         if not (ch.get("visual_checks") and ch.get("kind") != "clips") or dry:
             nxt = c; break
         try:
