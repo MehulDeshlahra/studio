@@ -117,12 +117,22 @@ async function bizLib(id) {
   if (BIZOPEN && !BIZLIB[id]) { try { BIZLIB[id] = await (await fetch("/api/biz-library?id=" + encodeURIComponent(id))).json(); } catch (e) { BIZLIB[id] = { items: [], error: String(e) }; } render(1); }
 }
 function bizFilter(f) { BIZF = f; render(1); }
+async function bizDel(id, h, name, restore) {
+  if (!restore && !confirm(`Delete "${name}" from the library? Reels will never use it again. You can restore it from the Deleted filter.`)) return;
+  let r; try { r = await post("/api/biz-delete", { id, h, restore: !!restore }); } catch (e) { alert("Could not " + (restore ? "restore" : "delete") + ": " + e.message); return; }
+  const L = BIZLIB[id], x = L && (L.items || []).find((i) => i.h === h);
+  if (x) { if (restore) { x.why = ""; x.used = true; } else { x.why = "deleted"; x.used = false; } }
+  BIZLIB[id] = null; render(1);
+  try { BIZLIB[id] = await (await fetch("/api/biz-library?id=" + encodeURIComponent(id))).json(); } catch (e) {}
+  render(1);
+}
 function bizLibView(id) {
   const L = BIZLIB[id];
   if (!L) return `<div class="mut" style="margin-top:10px">Loading the library...</div>`;
   const dup = (L.items || []).filter((x) => x.why === "duplicate copy").length;   // "-proxy" copies of the same clip: hidden
-  const it = (L.items || []).filter((x) => BIZF === "dup" ? x.why === "duplicate copy" : x.why !== "duplicate copy" &&
-    (BIZF === "all" || (BIZF === "used" ? x.used : BIZF === "out" ? !x.used : x.kind === BIZF)));
+  const del = (L.items || []).filter((x) => x.why === "deleted").length;
+  const it = (L.items || []).filter((x) => BIZF === "dup" ? x.why === "duplicate copy" : BIZF === "del" ? x.why === "deleted" :
+    x.why !== "duplicate copy" && x.why !== "deleted" && (BIZF === "all" || (BIZF === "used" ? x.used : BIZF === "out" ? !x.used : x.kind === BIZF)));
   const day = (t) => t ? new Date(t * 1000).toLocaleDateString(undefined, { day: "numeric", month: "short" }) : "never";
   const btn = (k, t) => `<button class="btn sm${BIZF === k ? " ok" : ""}" onclick="bizFilter('${k}')">${t}</button>`;
   const tile = (x) => `<div class="card" style="padding:0;overflow:hidden;${x.used ? "" : "opacity:.55"}">
@@ -132,9 +142,11 @@ function bizLibView(id) {
         <div style="margin-top:4px;white-space:normal">${esc(x.desc || x.file)}</div>
         ${x.why ? `<div class="dn" style="margin-top:3px">${esc(x.why)}</div>` : ""}
         <div class="faint" style="margin-top:3px">Last used: ${day(x.last)}${x.used && x.fresh ? " · fresh" : ""}</div>
-        <div class="faint" style="word-break:break-all">${esc(x.file)}</div></div></div>`;
-  return `<div style="margin-top:12px"><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><b>Library</b><span class="mut">${(L.total || 0) - dup} files · ${L.used || 0} used by the engine · ${(L.total || 0) - dup - (L.used || 0)} left out${dup ? ` · ${dup} duplicate copies hidden` : ""}</span>
-      <span style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap">${btn("all", "All")}${btn("used", "Used")}${btn("out", "Left out")}${btn("clip", "Clips")}${btn("photo", "Photos")}${dup ? btn("dup", "Copies") : ""}</span></div>
+        <div class="faint" style="word-break:break-all">${esc(x.file)}</div>
+        <div style="margin-top:6px">${x.why === "deleted" ? `<button class="btn sm" onclick="bizDel('${id}','${x.h}','',1)">Restore</button>`
+          : `<button class="btn sm no" onclick="bizDel('${id}','${x.h}','${esc(x.file).replace(/'/g, "")}',0)">Delete</button>`}</div></div></div>`;
+  return `<div style="margin-top:12px"><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><b>Library</b><span class="mut">${(L.total || 0) - dup - del} files · ${L.used || 0} used by the engine · ${(L.total || 0) - dup - del - (L.used || 0)} left out${del ? ` · ${del} deleted` : ""}${dup ? ` · ${dup} duplicate copies hidden` : ""}</span>
+      <span style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap">${btn("all", "All")}${btn("used", "Used")}${btn("out", "Left out")}${btn("clip", "Clips")}${btn("photo", "Photos")}${del ? btn("del", "Deleted") : ""}${dup ? btn("dup", "Copies") : ""}</span></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px">${it.map(tile).join("") || `<div class="mut">Nothing here.</div>`}</div></div>`;
 }
 async function bizMake(id) { const r = await post("/api/biz-make", { id }); alert(r.ok ? "Started: one reel for " + id + " (about 15-25 min). It shows here when done." : (r.error || "failed")); }

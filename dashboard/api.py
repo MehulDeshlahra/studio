@@ -892,7 +892,7 @@ def biz_library(bid):
     paths = {}
     for it in items:
         h = hashlib.md5(it["key"].encode()).hexdigest()[:16]
-        paths[h] = it.pop("path"); it["h"] = h
+        paths[h] = (it.pop("path"), it["key"]); it["h"] = h
     _LIB[bid] = paths
     return {"id": bid, "items": items, "total": len(items), "used": sum(1 for i in items if i["used"]),
             "clips": sum(1 for i in items if i["kind"] == "clip"), "photos": sum(1 for i in items if i["kind"] != "clip")}
@@ -902,7 +902,7 @@ def biz_file(bid, h, thumb):
     """The library file (clip/photo) or a cached 270 px thumbnail of it."""
     if bid not in _LIB:
         biz_library(bid)
-    src = (_LIB.get(bid) or {}).get(h)
+    src = ((_LIB.get(bid) or {}).get(h) or (None,))[0]
     if not src or not os.path.isfile(src):
         return None
     if not thumb:
@@ -913,6 +913,49 @@ def biz_file(bid, h, thumb):
         pre = ["-ss", "1.0"] if src.lower().endswith((".mp4", ".mov", ".m4v", ".webm")) else []
         subprocess.run(["ffmpeg", "-v", "error", "-y"] + pre + ["-i", src, "-frames:v", "1", "-vf", "scale=270:-2", "-q:v", "5", t], timeout=40)
     return t if os.path.exists(t) else None
+
+
+def biz_delete(bid, h, restore=False):
+    """20 Nov (owner: "give option to delete photos / videos"). The engine never uses a deleted file again
+    (businesses' removed.json, read by biz.index). A plain folder library: the file moves to ~/studio-out/biz/<id>/trash.
+    A git library (VAJRA: the server cannot push to it): the file stays in the clone and is excluded, so a pull
+    cannot bring it back. Restore undoes both."""
+    if not re.fullmatch(r"[0-9a-f]{16}", h or ""):
+        raise ValueError("bad id")
+    biz_library(bid)
+    hit = (_LIB.get(bid) or {}).get(h)
+    if not hit:
+        raise ValueError("file not found")
+    path, key = hit
+    sys.path.insert(0, os.path.join(ROOT, "engine")); os.environ["BIZ_NO_UPDATE"] = "1"
+    import biz
+    b = biz.business(bid)
+    rp = os.path.join(b["out"], "removed.json")
+    gone = jload(rp, {}) or {}
+    roots = [os.path.realpath(os.path.expanduser(r)) for r in (b.get("library") or {}).get("roots", [])]
+    root = next((r for r in roots if os.path.isdir(r)), "")
+    tdir = os.path.realpath(os.path.join(b["out"], "trash"))
+    if restore:
+        g = gone.pop(key, None)
+        if g and g.get("trash") and os.path.exists(g["trash"]) and g.get("orig"):
+            os.makedirs(os.path.dirname(g["orig"]), exist_ok=True); shutil.move(g["trash"], g["orig"])
+    else:
+        rpath = os.path.realpath(path)
+        if not root or not rpath.startswith(root + os.sep):
+            raise ValueError("file is outside the library")
+        g = {"t": time.strftime("%Y-%m-%d %H:%M"), "trash": "", "orig": rpath}
+        if not os.path.isdir(os.path.join(root, ".git")):             # plain folder: move it out
+            os.makedirs(tdir, exist_ok=True)
+            g["trash"] = os.path.join(tdir, key.replace("/", "__"))
+            shutil.move(rpath, g["trash"])
+        gone[key] = g
+    os.makedirs(b["out"], exist_ok=True)
+    tmp = rp + ".new"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(gone, f, ensure_ascii=False, indent=1)
+    os.replace(tmp, rp)
+    _LIB.pop(bid, None)
+    return {"ok": True, "deleted": not restore, "key": key}
 
 
 def biz_make(bid):
@@ -1108,6 +1151,8 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, decide(body["cid"], body["job"], body["action"], body.get("note", "")[:1000]))
             if u == "/api/make":
                 return self.send(200, make_now(body["cid"], body.get("topic", "")))
+            if u == "/api/biz-delete":
+                return self.send(200, biz_delete(body.get("id", ""), body.get("h", ""), bool(body.get("restore"))))
             if u == "/api/biz-make":
                 return self.send(200, biz_make(body.get("id", "")))
             if u == "/api/source":

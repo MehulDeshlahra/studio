@@ -182,6 +182,7 @@ def index(b, describe=True):
     m = b.get("media") or {}
     ban = re.compile(m["ban"], re.I) if m.get("ban") else None
     cache = load(os.path.join(b["out"], "index.json"), {}) or {}
+    gone = removed(b)
     items, new = [], 0
     for src in (b.get("library") or {}).get("sources", []):
         d = R(b, src["dir"])
@@ -197,6 +198,8 @@ def index(b, describe=True):
             if dd and stem.endswith(dd) and (stem[: -len(dd)] + ext) in files:
                 continue                                   # keep the original, skip its copy
             path = os.path.join(d, f)
+            if f"{src['dir']}/{f}" in gone:                # deleted by the owner (dashboard)
+                continue
             meta = own.get(f) or own.get(stem) or {}
             if meta.get("ok") is False:
                 continue
@@ -244,6 +247,11 @@ def index(b, describe=True):
     return out
 
 
+def removed(b):
+    """20 Nov: files the owner deleted from the dashboard: {library key: {"t", "trash"}}. Never used again."""
+    return load(os.path.join(b["out"], "removed.json"), {}) or {}
+
+
 def library(b):
     """20 Nov (owner: "where can I see the library?"): EVERY file in the business library, read-only, with what the
     engine decided about it: used / left out (why), what vision saw, last used. Nothing is described or changed here."""
@@ -251,6 +259,7 @@ def library(b):
     ban = re.compile(m["ban"], re.I) if m.get("ban") else None
     cache = load(os.path.join(b["out"], "index.json"), {}) or {}
     usage, cd = _usage(b), float(m.get("cooldown_days", 21))
+    gone = removed(b)
     out = []
     for src in (b.get("library") or {}).get("sources", []):
         d = R(b, src["dir"])
@@ -285,11 +294,21 @@ def library(b):
                 why = "vision: not usable"
             elif key not in cache:
                 why = "not looked at yet"
+            if key in gone:
+                why = "deleted"
             last = usage.get(f, 0)
             out.append({"key": key, "file": f, "kind": src["kind"], "secs": c.get("secs", 0), "desc": desc[:220],
                         "ai": bool(c.get("ai_seen") or c.get("ai") or meta.get(src.get("ai_field") or "_")),
                         "used": not why, "why": why, "crop": c.get("crop", ""), "last": int(last),
                         "fresh": (time.time() - last) > cd * 86400, "path": os.path.join(d, f)})
+    seen = {i["key"] for i in out}
+    for key, g in gone.items():                            # moved to the trash folder: still listed, can be restored
+        if key not in seen and g.get("trash") and os.path.exists(g["trash"]):
+            c = cache.get(key) or {}
+            out.append({"key": key, "file": os.path.basename(key), "kind": "clip" if key.lower().endswith(VID) else "photo",
+                        "secs": c.get("secs", 0), "desc": (c.get("seen") or c.get("desc") or "")[:220], "ai": bool(c.get("ai_seen")),
+                        "used": False, "why": "deleted", "crop": "", "last": int(usage.get(os.path.basename(key), 0)), "fresh": False,
+                        "path": g["trash"]})
     return out
 
 
