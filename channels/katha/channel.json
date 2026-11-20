@@ -96,5 +96,14 @@
     "Does the same character change face, age or clothes between scenes?",
     "Is there any modern object or modern building, or a MOSQUE-style building (large onion dome over a hall, minarets, a Taj Mahal look) in an ancient Puranic story? (Small Rajput chhatris and temple shikharas are fine: answer no for those)",
     "Is any figure dressed immodestly or shown without dignity?"
-  ]
+  ],
+  "frame_checks": [
+    "Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a god who is not Krishna)?",
+    "Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gender)?",
+    "Does any god, goddess or sage have a comic, silly or cartoonish facial expression?",
+    "Is there a mosque-style onion dome over a hall, minarets, or a Taj Mahal-like building?",
+    "Is there a modern object or modern building in the picture?",
+    "Is any figure dressed immodestly or shown without dignity?"
+  ],
+  "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass"
 }

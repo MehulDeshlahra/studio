@@ -80,7 +80,8 @@ def decide(img, context, questions, resolution="high"):
 
 def frame_checks(ch):
     """The page's checklist questions that one frame can answer (cross-scene ones go to the final review) + general."""
-    qs = {f"p{i + 1}": q for i, q in enumerate(ch.get("visual_checks") or []) if not re.search(r"between scenes", q, re.I)}
+    src = ch.get("frame_checks") or ch.get("visual_checks") or []          # frame_checks: one thing per question
+    qs = {f"p{i + 1}": q for i, q in enumerate(src) if not re.search(r"between scenes", q, re.I)}
     qs.update(GENERAL)
     return qs
 

@@ -109,5 +109,19 @@
     "Does any figure look like a Hindu god or goddess (many arms, Hindu ornaments) where the story is about a Jain figure?",
     "Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)?",
     "Is any frame an empty arch, wall or background with no subject behind a big word?"
-  ]
+  ],
+  "frame_checks": [
+    "Is there a crown, tiara, cap or golden headpiece on the head of the idol or Tirthankara?",
+    "Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery?",
+    "Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara?",
+    "Does the idol or Tirthankara have a beard or moustache?",
+    "Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)?",
+    "Does the idol or Tirthankara have blue, green or grey skin?",
+    "Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol?",
+    "Is any monk or nun wearing saffron, orange or red robes?",
+    "Does any figure have more than two arms or a third eye?",
+    "Are there onion domes, minarets or Mughal-style buildings in the picture?",
+    "Is Bahubali shown wearing a crown or clothes, or with his hands folded?"
+  ],
+  "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass"
 }
