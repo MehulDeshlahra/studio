@@ -22,7 +22,7 @@ DRY = "--dry" in sys.argv
 # (model, tier) tier 4 = best for our Hinglish scripts, 1 = small. ONLY free models: on zai / siliconflow / huggingface a
 # paid model answers 402 and OmniRoute then marks the WHOLE connection "credits_exhausted" (free models too, also for the
 # job bot). Learned 18 Nov 04:00: a first probe locked all three; heal_connections() below re-tests and re-opens them.
-TEXT = [
+BASE_TEXT = [
     ("gemini/gemini-3.8-flash", 4), ("gemini/gemini-3.7-flash", 4), ("gemini/gemini-3.1-pro-preview", 4),
     ("gemini/gemini-3-flash-preview", 3), ("gemini/gemini-3.1-flash-lite", 2),
     ("groq/openai/gpt-oss-120b", 3), ("groq/qwen/qwen3.8-27b", 2), ("groq/openai/gpt-oss-20b", 1), ("groq/compound", 2),
@@ -42,7 +42,7 @@ TEXT = [
     ("openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", 3), ("openrouter/google/gemma-4-31b-it:free", 2),
     ("openrouter/baidu/ernie-5.5-flash-preview:free", 1), ("openrouter/inclusionai/ling-3.2-flash:free", 1),
 ]
-VISION = [
+BASE_VISION = [
     ("gemini/gemini-3.8-flash", 4), ("gemini/gemini-3.7-flash", 4), ("gemini/gemini-3-flash-preview", 3),
     ("gemini/gemini-3.1-flash-lite", 2),
     ("nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b", 3), ("openrouter/nvidia/nemotron-3.5-super-vl:free", 3),
@@ -51,6 +51,30 @@ VISION = [
     ("cloudflare-ai/@cf/google/gemma-4-26b-a4b-it", 2), ("pollinations/openai", 2), ("pollinations/qwen-vision", 2),
     ("pollinations/gemini", 2),
 ]
+
+def merged(base, kind):
+    """20 Nov: the hand tiers above are only the starting list. engine/modelscout.py tests every model on our own test
+    set once a week (and finds new free ones): a tested model gets the tier its score earns, under 0.5 it is left out."""
+    try:
+        import modelscout
+        tested = dict(modelscout.tiers(kind))
+        db = load(modelscout.MODELS, {}) or {}
+    except Exception:
+        return list(base)
+    out = []
+    for m, t in base:
+        if m in db and db[m].get(kind) is not None:
+            if m in tested:
+                out.append((m, tested[m]))
+        else:
+            out.append((m, t))
+    out += [(m, t) for m, t in tested.items() if m not in {x for x, _ in out}]
+    return out
+
+
+TEXT = merged(BASE_TEXT, "text")
+VISION = merged(BASE_VISION, "vision")
+
 CODE = {"gemini/gemini-3.1-pro-preview", "gemini/gemini-3.8-flash", "gemini/gemini-3.7-flash", "groq/openai/gpt-oss-120b",
         "nvidia/nvidia/nemotron-3-ultra-550b-a55b", "huggingface/deepseek-ai/DeepSeek-V3", "pollinations/kimi",
         "pollinations/deepseek", "pollinations/openai-large", "pollinations/qwen-coder-large", "gemini/gemini-3-flash-preview",
@@ -237,6 +261,14 @@ def set_combo(name, models):
 
 
 def main():
+    global TEXT, VISION
+    if "--no-scout" not in sys.argv:                 # 20 Nov: find + test free models first (engine/modelscout.py)
+        try:
+            import modelscout
+            modelscout.scout()
+        except Exception as e:
+            log("omnimap: model scout failed", str(e)[:160])
+        TEXT, VISION = merged(BASE_TEXT, "text"), merged(BASE_VISION, "vision")
     data = probe() if "--no-probe" not in sys.argv else load(PROBE)
     if "--probe-only" in sys.argv:
         return data
