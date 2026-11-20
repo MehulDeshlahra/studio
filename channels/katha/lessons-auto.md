@@ -438,3 +438,11 @@
 
 ## 1118-0735 (pre-render check)
 - FIT: big text says DAAN instead of AMARTYA YA DAAN in the first still
+
+## 1118-1015 12 Jyotirlinga ki katha - Part 3: Mahakaleshwar
+- scene 3: The caption 'RAKSHAS DUSHAN NE AVANTI' is slightly misaligned with the intended script 'Rakshas Dushan ne Avanti nagari mein aatank machaya', though it conveys the meaning.
+- scene 4: The caption 'SHIV BHAKTI MEIN HI' is slightly misaligned with the intended script 'Raja Chandrasen Shiv bhakti mein hi lage rahe'.
+
+## 1117-0145 Nachiketa aur Yamraj (Katha Upanishad)
+- scene 3: The card text 'TEEN BAAR' and 'PAPA BHADAK GAYE' is slightly obscured/blended into the background clouds/light, making it harder to read than other cards.
+- scene 13: The card text 'NACHIKETA' and 'GHAR WAPAS' is slightly low in the frame, bordering on being too close to the edge, though still legible.

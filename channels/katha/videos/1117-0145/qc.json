@@ -5,25 +5,23 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -14.2,
-  "true_peak": -2.5,
-  "dur": 50.13
+  "lufs": -13.7,
+  "true_peak": -3.2,
+  "dur": 51.13
  },
  "vision": {
-  "score": 8,
+  "score": 9,
   "ok": true,
   "problems": [
-   "scene 3: The text overlay 'MAIN KISE DAAN' is a bit awkward as it cuts off the sentence 'Main kise daan doge' abruptly, though it follows the '2-3 words' rule.",
-   "scene 5: The text 'DWAR' is placed over the boy's body, making it slightly hard to read against the busy background.",
-   "scene 12: The image shows a deity with too many arms/hands (at least 6 visible), which is stylistically inconsistent with the human-like depiction of Yamraj in previous frames, though acceptable in a mythological context.",
-   "scene 13: The text 'HI NACHIKETA AZAD' is slightly confusing as it doesn't clearly match the script line 'Ye gyaan milte hi Nachiketa azad ho gaya'."
+   "scene 3: The card text 'TEEN BAAR' and 'PAPA BHADAK GAYE' is slightly obscured/blended into the background clouds/light, making it harder to read than other cards.",
+   "scene 13: The card text 'NACHIKETA' and 'GHAR WAPAS' is slightly low in the frame, bordering on being too close to the edge, though still legible."
   ]
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.8625954198473282,
-  "words": 140,
+  "matched": 0.9461538461538461,
+  "words": 138,
   "problems": []
  },
  "ok": true

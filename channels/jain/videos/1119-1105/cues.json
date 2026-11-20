@@ -26,12 +26,6 @@
    "align": "onset"
   },
   {
-   "t": 10.59,
-   "file": "sfx/pop-light.mp3",
-   "gain_db": -17,
-   "align": "onset"
-  },
-  {
    "t": 10.54,
    "file": "sfx/whoosh-fast.mp3",
    "gain_db": -18,

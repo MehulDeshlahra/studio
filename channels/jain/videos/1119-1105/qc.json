@@ -1,28 +1,24 @@
 {
  "topic": "Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)",
- "title": "Neminath ne apni baraat kyun wapas mod di?",
+ "title": "Baraat laut gayi... dulha ne kyun mod liya rath?",
  "format": {
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.6,
-  "true_peak": -3.2,
-  "dur": 54.0
+  "lufs": -14.4,
+  "true_peak": -2.8,
+  "dur": 49.47
  },
  "vision": {
-  "score": 7,
+  "score": 6,
   "ok": true,
-  "problems": [
-   "scene 5: Minor anatomical distortions in the animals' necks and heads.",
-   "scene 6: The sarathi's hand and staff exhibit slight AI melting artifacts.",
-   "scene 8: The animal in the lower foreground has a distorted, irregular shape."
-  ]
+  "problems": []
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.912,
-  "words": 129,
+  "matched": 0.9230769230769231,
+  "words": 121,
   "problems": []
  },
  "ok": true

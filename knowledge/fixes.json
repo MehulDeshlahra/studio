@@ -178,5 +178,32 @@
   "first": "2026-11-20 01:07",
   "last": "2026-11-20 01:07",
   "example": "visual: Scene 5: The caption says 'NAACHE' and 'MAHAVIRA NE DEKHA:', but the script for this scene is 'Phir bhoot-pret naache — vikrit chehre, bhayanak aawazen.' The word 'BHOOT-PRET' is completely mi"
+ },
+ {
+  "sig": "before render, scene #: cut: word '…' is physically cut off at the right edge of the frame in the second still",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 06:07",
+  "last": "2026-11-20 06:07",
+  "example": "before render, scene 4: CUT: word 'DI' is physically cut off at the right edge of the frame in the second still"
+ },
+ {
+  "sig": "visual: scene # shows islamic/mughal style dome architecture (minarets and bulbous domes) which is historicall",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 06:22",
+  "last": "2026-11-20 06:22",
+  "example": "visual: Scene 10 shows Islamic/Mughal style dome architecture (minarets and bulbous domes) which is historically inaccurate for an ancient Puranic story set in Avantika."
+ },
+ {
+  "sig": "before render, scene #: overlap: caption text overlaps the foreground elements and is hard to read",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 06:37",
+  "last": "2026-11-20 06:37",
+  "example": "before render, scene 14: OVERLAP: caption text overlaps the foreground elements and is hard to read"
  }
 ]

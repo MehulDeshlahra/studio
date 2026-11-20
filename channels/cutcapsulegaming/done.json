@@ -26,5 +26,44 @@
    "start": 28.0,
    "layout": "fill"
   }
+ },
+ {
+  "job": "1120-0540a-c1",
+  "topic": "RASCALS DELIVERS MOM'S FIRST SUSHI POST-BIRTH",
+  "title": "RASCALS DELIVERS MOM'S FIRST SUSHI POST-BIRTH",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 35.71,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0540d-c1",
+  "topic": "RASCAL SURPRISED MOM WITH SUSHI BOAT",
+  "title": "RASCAL SURPRISED MOM WITH SUSHI BOAT",
+  "status": "held",
+  "review": [
+   "ASR caption hallucination: 'sleep is night' instead of 'sleep is tight' or similar, and 'Tier' capitalized incorrectly from 'time', resulting in poor caption accuracy.",
+   "checklist: misheard caption"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-0540e-c1",
+  "topic": "Rascals challenge: Change a baby one-handed",
+  "title": "Rascals challenge: Change a baby one-handed",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "vertical"
+  }
  }
 ]

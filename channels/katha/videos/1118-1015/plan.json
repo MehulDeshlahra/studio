@@ -185,12 +185,12 @@
   },
   {
    "vo": "Yeh ekmatra dakshin mukhi Jyotirlinga hai aaj",
-   "type": "card",
-   "prompt": "Dark maroon textured background with subtle gold ornamental border, soft divine light vignette, 9:16 vertical",
+   "type": "image",
+   "prompt": "Ancient stone Shiva lingam facing south, subtle golden aura, simple temple courtyard background, soft divine light, 9:16 vertical, centered, space above and below for text, no text or logos",
    "motion": "push",
-   "title": "",
-   "big": "DAKSHIN MUKHI",
-   "small": "EKMATRA JYOTIRLINGA",
+   "title": "Dakshin Mukhi",
+   "big": "",
+   "small": "",
    "keywords": [
     "ekmatra",
     "dakshin mukhi"

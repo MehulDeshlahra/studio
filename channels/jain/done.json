@@ -4,7 +4,7 @@
   "topic": "The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)",
   "title": "Mahavira Swami ne shmashan mein raat kaise bitaayi?",
   "qc_ok": false,
-  "status": "made",
+  "status": "approved",
   "review": [],
   "replan_requested": "2026-11-19 15:51"
  },
@@ -26,12 +26,8 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "owner agent: Fix iconography: Monks must wear plain white robes; remove Mughal/Islamic onion domes and replace with ancient Indian or simple stone architecture.",
-   "visual: Jain monks are depicted wearing saffron/orange/red robes instead of plain white (seen in multiple scenes including Scene 1, 2, 4, 5, 6, 8, 9, etc.).",
-   "visual: Mughal/Islamic architecture with prominent onion domes and arches is used throughout the video for a Jain-themed spiritual reel.",
-   "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> All scenes (onion domes and arches throughout the background).",
-   "visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 1, 2, 4, 5, 6, 8, 9 (monks wearing orange/saffron robes).",
-   "visual score 4/10"
+   "before render, scene 2: FIT: monk is wearing orange/saffron robes instead of plain white robes",
+   "before render, scene 5: OVERLAP/CUT (layout audit): text_occluded on #s3n4"
   ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
@@ -53,7 +49,7 @@
   "job": "1119-0935",
   "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
-  "status": "made",
+  "status": "approved",
   "review": [],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
@@ -74,12 +70,9 @@
   "topic": "Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)",
   "title": "Neminath ne apni baraat kyun wapas mod di?",
   "qc_ok": true,
-  "status": "held",
+  "status": "approved",
   "offer": "WALLPAPER",
-  "review": [
-   "before render, scene 4: CUT: word 'DI' is physically cut off at the right edge of the frame in the second still",
-   "before render, scene 12: CUT: word 'DI ZINDAGI' is physically clipped at the right frame edge in the second still"
-  ],
+  "review": [],
   "replan_requested": "2026-11-19 15:51"
  },
  {
@@ -95,7 +88,7 @@
   "topic": "What lives inside a potato that makes Jains refuse all root vegetables? The microscopic ahimsa science. (source: Acharanga Sutra / Agam)",
   "title": "Ek aloo mein anant jeev? Jain kyun nahi khate kand-mool",
   "qc_ok": true,
-  "status": "made",
+  "status": "approved",
   "review": []
  }
 ]

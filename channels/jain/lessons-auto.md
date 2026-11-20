@@ -269,3 +269,20 @@
 - visual: Checklist item 1: Mughal / Islamic architecture with onion domes and arched structures appears in the background of scenes 1-11, which is historically and culturally inappropriate for Jain iconography.
 - visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1 to 11 background architecture features arched structures and domes resembling Islamic/Mughal styles rather than traditional ancient Indian or Jain temple architecture.
 - visual score 5/10
+
+## 1119-0305 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s3n4
+- OVERLAP/CUT (layout audit): text_occluded on #s11b
+- FIT: Monks are wearing saffron/orange robes instead of plain white robes as required for Jain monks.
+- FIT: Monks are wearing saffron/orange robes instead of plain white robes as required for Jain monks.
+- FIT: Monk is wearing saffron/orange robes instead of plain white robes as required for Jain monks.
+- FIT: Monks are wearing saffron/orange robes instead of plain white robes as required for Jain monks.
+
+## 1119-0305 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s3n4
+- OVERLAP/CUT (layout audit): text_occluded on #s11b
+- FIT: scene is split horizontally with duplicate upper and lower misaligned frames
+
+## 1119-0305 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s3n4
+- FIT: monk is wearing orange/saffron robes instead of plain white robes

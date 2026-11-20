@@ -3,12 +3,8 @@
   "job": "1118-1015",
   "topic": "12 Jyotirlinga ki katha - Part 3: Mahakaleshwar",
   "title": "Greenwich se pehle samay Ujjain se napa jata tha?",
-  "status": "held",
-  "review": [
-   "visual: Scene 10 shows Islamic/Mughal style dome architecture (minarets and bulbous domes) which is historically inaccurate for an ancient Puranic story set in Avantika.",
-   "visual: checklist: Is there any modern object, modern building or Mughal / Islamic architecture in an ancient Puranic story? -> scene 10",
-   "visual score 5/10"
-  ],
+  "status": "approved",
+  "review": [],
   "replan_requested": "2026-11-19 15:46"
  },
  {
@@ -16,10 +12,8 @@
   "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
   "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
   "qc_ok": true,
-  "status": "held",
-  "review": [
-   "before render, scene 14: OVERLAP: caption text overlaps the foreground elements and is hard to read"
-  ],
+  "status": "made",
+  "review": [],
   "mehul_rebuilt": "2026-11-18",
   "replan_requested": "2026-11-18 05:54"
  },

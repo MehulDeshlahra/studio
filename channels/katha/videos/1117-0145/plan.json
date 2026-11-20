@@ -213,9 +213,9 @@
   {
    "vo": "Tum hote toh Mrityu se kya maangte? Comment karo",
    "type": "image",
-   "prompt": "Nachiketa and Yamraj sitting opposite each other, both looking directly at camera with curious expressions. A glowing diya floats between them. Warm golden light, inviting atmosphere. Vertical 9:16, ample space above and below for text overlay. No text, no letters, no numbers.",
-   "motion": "pull",
-   "title": "Kya Maangte?",
+   "prompt": "Nachiketa sitting cross-legged on a simple mat, gazing at a single glowing diya floating in front of him. Soft warm golden light, minimal background. Vertical 9:16, ample space above and below for text overlay. No text, no letters, no numbers.",
+   "motion": "slow zoom",
+   "title": "",
    "keywords": [
     "comment",
     "kya maangte"

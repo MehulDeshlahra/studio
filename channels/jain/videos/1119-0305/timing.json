@@ -1,697 +1,576 @@
 {
  "method": "whisper",
- "dur": 51.31,
+ "dur": 42.661,
  "lines": [
   {
-   "text": "Pratikraman ka matlab... wapas lautna.",
+   "text": "Samvatsari par ghante tak kyun baithte hain Jain?",
    "start": 0.0,
-   "end": 2.66,
-   "words": [
-    {
-     "w": "Pratikraman",
-     "s": 0.0,
-     "e": 0.76
-    },
-    {
-     "w": "ka",
-     "s": 0.76,
-     "e": 0.94
-    },
-    {
-     "w": "matlab...",
-     "s": 0.94,
-     "e": 1.34
-    },
-    {
-     "w": "wapas",
-     "s": 1.82,
-     "e": 2.1
-    },
-    {
-     "w": "lautna.",
-     "s": 2.1,
-     "e": 2.66
-    }
-   ]
-  },
-  {
-   "text": "Kahan? Apne asli swabhav ki taraf.",
-   "start": 2.66,
-   "end": 5.2,
-   "words": [
-    {
-     "w": "Kahan?",
-     "s": 2.66,
-     "e": 3.26
-    },
-    {
-     "w": "Apne",
-     "s": 3.4,
-     "e": 3.76
-    },
-    {
-     "w": "asli",
-     "s": 3.76,
-     "e": 4.28
-    },
-    {
-     "w": "swabhav",
-     "s": 4.28,
-     "e": 4.78
-    },
-    {
-     "w": "ki",
-     "s": 4.78,
-     "e": 4.96
-    },
-    {
-     "w": "taraf.",
-     "s": 4.96,
-     "e": 5.2
-    }
-   ]
-  },
-  {
-   "text": "Saal bhar bhatakte hain... yeh ek soul-reset.",
-   "start": 5.2,
-   "end": 8.02,
-   "words": [
-    {
-     "w": "Saal",
-     "s": 5.2,
-     "e": 5.76
-    },
-    {
-     "w": "bhar",
-     "s": 5.76,
-     "e": 5.92
-    },
-    {
-     "w": "bhatakte",
-     "s": 5.92,
-     "e": 6.36
-    },
-    {
-     "w": "hain...",
-     "s": 6.36,
-     "e": 6.84
-    },
-    {
-     "w": "yeh",
-     "s": 6.84,
-     "e": 7.08
-    },
-    {
-     "w": "ek",
-     "s": 7.08,
-     "e": 7.36
-    },
-    {
-     "w": "soul-reset.",
-     "s": 7.86,
-     "e": 8.02
-    }
-   ]
-  },
-  {
-   "text": "Pehla: Samayik. 48 minute hilna nahi, sirf man sthir.",
-   "start": 8.38,
-   "end": 12.96,
-   "words": [
-    {
-     "w": "Pehla:",
-     "s": 8.38,
-     "e": 8.74
-    },
-    {
-     "w": "Samayik.",
-     "s": 8.74,
-     "e": 9.5
-    },
-    {
-     "w": "48",
-     "s": 9.5,
-     "e": 10.54
-    },
-    {
-     "w": "minute",
-     "s": 10.54,
-     "e": 10.84
-    },
-    {
-     "w": "hilna",
-     "s": 10.84,
-     "e": 11.22
-    },
-    {
-     "w": "nahi,",
-     "s": 11.22,
-     "e": 11.9
-    },
-    {
-     "w": "sirf",
-     "s": 11.9,
-     "e": 12.26
-    },
-    {
-     "w": "man",
-     "s": 12.26,
-     "e": 12.66
-    },
-    {
-     "w": "sthir.",
-     "s": 12.66,
-     "e": 12.96
-    }
-   ]
-  },
-  {
-   "text": "Doosra: 24 Tirthankaron ka gun-gaan, roshni jagate hain.",
-   "start": 12.96,
-   "end": 17.28,
-   "words": [
-    {
-     "w": "Doosra:",
-     "s": 12.96,
-     "e": 13.68
-    },
-    {
-     "w": "24",
-     "s": 13.68,
-     "e": 14.42
-    },
-    {
-     "w": "Tirthankaron",
-     "s": 14.42,
-     "e": 15.26
-    },
-    {
-     "w": "ka",
-     "s": 15.26,
-     "e": 15.36
-    },
-    {
-     "w": "gun-gaan,",
-     "s": 15.36,
-     "e": 15.94
-    },
-    {
-     "w": "roshni",
-     "s": 15.94,
-     "e": 16.58
-    },
-    {
-     "w": "jagate",
-     "s": 16.58,
-     "e": 16.94
-    },
-    {
-     "w": "hain.",
-     "s": 16.94,
-     "e": 17.28
-    }
-   ]
-  },
-  {
-   "text": "Teesra: Vandana. Guru ke aage jhukna, ahankaar kam karna.",
-   "start": 17.28,
-   "end": 21.28,
-   "words": [
-    {
-     "w": "Teesra:",
-     "s": 17.28,
-     "e": 17.7
-    },
-    {
-     "w": "Vandana.",
-     "s": 17.7,
-     "e": 18.56
-    },
-    {
-     "w": "Guru",
-     "s": 18.56,
-     "e": 19.06
-    },
-    {
-     "w": "ke",
-     "s": 19.06,
-     "e": 19.18
-    },
-    {
-     "w": "aage",
-     "s": 19.18,
-     "e": 19.34
-    },
-    {
-     "w": "jhukna,",
-     "s": 19.34,
-     "e": 19.86
-    },
-    {
-     "w": "ahankaar",
-     "s": 20.24,
-     "e": 20.68
-    },
-    {
-     "w": "kam",
-     "s": 20.68,
-     "e": 20.84
-    },
-    {
-     "w": "karna.",
-     "s": 20.84,
-     "e": 21.28
-    }
-   ]
-  },
-  {
-   "text": "Chautha: asli hisaab. Galtiyan yaad karke qubool karna.",
-   "start": 21.28,
-   "end": 25.46,
-   "words": [
-    {
-     "w": "Chautha:",
-     "s": 21.28,
-     "e": 21.82
-    },
-    {
-     "w": "asli",
-     "s": 21.82,
-     "e": 22.62
-    },
-    {
-     "w": "hisaab.",
-     "s": 22.62,
-     "e": 23.04
-    },
-    {
-     "w": "Galtiyan",
-     "s": 23.48,
-     "e": 23.88
-    },
-    {
-     "w": "yaad",
-     "s": 23.88,
-     "e": 24.2
-    },
-    {
-     "w": "karke",
-     "s": 24.2,
-     "e": 24.58
-    },
-    {
-     "w": "qubool",
-     "s": 24.58,
-     "e": 25.1
-    },
-    {
-     "w": "karna.",
-     "s": 25.1,
-     "e": 25.46
-    }
-   ]
-  },
-  {
-   "text": "Paanchva: Kayotsarg. Sharir dheela chhod dena, jaise paraya ho.",
-   "start": 25.46,
-   "end": 29.42,
-   "words": [
-    {
-     "w": "Paanchva:",
-     "s": 25.46,
-     "e": 26.14
-    },
-    {
-     "w": "Kayotsarg.",
-     "s": 26.74,
-     "e": 27.02
-    },
-    {
-     "w": "Sharir",
-     "s": 27.02,
-     "e": 27.62
-    },
-    {
-     "w": "dheela",
-     "s": 27.62,
-     "e": 28.02
-    },
-    {
-     "w": "chhod",
-     "s": 28.02,
-     "e": 28.32
-    },
-    {
-     "w": "dena,",
-     "s": 28.32,
-     "e": 28.56
-    },
-    {
-     "w": "jaise",
-     "s": 28.56,
-     "e": 28.86
-    },
-    {
-     "w": "paraya",
-     "s": 28.86,
-     "e": 29.22
-    },
-    {
-     "w": "ho.",
-     "s": 29.22,
-     "e": 29.42
-    }
-   ]
-  },
-  {
-   "text": "Aakhri: Pratyakhyan. Agle saal ke liye naya sankalp.",
-   "start": 29.42,
-   "end": 33.0,
-   "words": [
-    {
-     "w": "Aakhri:",
-     "s": 29.42,
-     "e": 30.08
-    },
-    {
-     "w": "Pratyakhyan.",
-     "s": 30.08,
-     "e": 31.16
-    },
-    {
-     "w": "Agle",
-     "s": 31.16,
-     "e": 31.84
-    },
-    {
-     "w": "saal",
-     "s": 31.84,
-     "e": 32.08
-    },
-    {
-     "w": "ke",
-     "s": 32.08,
-     "e": 32.22
-    },
-    {
-     "w": "liye",
-     "s": 32.22,
-     "e": 32.3
-    },
-    {
-     "w": "naya",
-     "s": 32.3,
-     "e": 32.54
-    },
-    {
-     "w": "sankalp.",
-     "s": 32.54,
-     "e": 33.0
-    }
-   ]
-  },
-  {
-   "text": "Samvatsari pe yeh kai ghante chalta hai — dopahar se shaam.",
-   "start": 33.0,
-   "end": 36.34,
+   "end": 3.08,
    "words": [
     {
      "w": "Samvatsari",
-     "s": 33.0,
-     "e": 33.54
+     "s": 0.0,
+     "e": 0.58
     },
     {
-     "w": "pe",
+     "w": "par",
+     "s": 0.78,
+     "e": 1.04
+    },
+    {
+     "w": "ghante",
+     "s": 1.04,
+     "e": 1.5
+    },
+    {
+     "w": "tak",
+     "s": 1.5,
+     "e": 1.68
+    },
+    {
+     "w": "kyun",
+     "s": 1.68,
+     "e": 1.98
+    },
+    {
+     "w": "baithte",
+     "s": 1.98,
+     "e": 2.42
+    },
+    {
+     "w": "hain",
+     "s": 2.42,
+     "e": 2.54
+    },
+    {
+     "w": "Jain?",
+     "s": 2.54,
+     "e": 3.08
+    }
+   ]
+  },
+  {
+   "text": "Pratikraman ka matlab hai apni bhoolon se wapas lautna.",
+   "start": 3.08,
+   "end": 6.18,
+   "words": [
+    {
+     "w": "Pratikraman",
+     "s": 3.08,
+     "e": 3.68
+    },
+    {
+     "w": "ka",
+     "s": 3.68,
+     "e": 3.86
+    },
+    {
+     "w": "matlab",
+     "s": 3.86,
+     "e": 4.12
+    },
+    {
+     "w": "hai",
+     "s": 4.12,
+     "e": 4.28
+    },
+    {
+     "w": "apni",
+     "s": 4.28,
+     "e": 4.64
+    },
+    {
+     "w": "bhoolon",
+     "s": 4.64,
+     "e": 5.04
+    },
+    {
+     "w": "se",
+     "s": 5.04,
+     "e": 5.14
+    },
+    {
+     "w": "wapas",
+     "s": 5.14,
+     "e": 5.54
+    },
+    {
+     "w": "lautna.",
+     "s": 5.54,
+     "e": 6.18
+    }
+   ]
+  },
+  {
+   "text": "Agam kehta hai, karam dhyaan se hi chhutte hain.",
+   "start": 6.18,
+   "end": 9.28,
+   "words": [
+    {
+     "w": "Agam",
+     "s": 6.18,
+     "e": 6.58
+    },
+    {
+     "w": "kehta",
+     "s": 6.58,
+     "e": 6.98
+    },
+    {
+     "w": "hai,",
+     "s": 6.98,
+     "e": 7.14
+    },
+    {
+     "w": "karam",
+     "s": 7.14,
+     "e": 7.66
+    },
+    {
+     "w": "dhyaan",
+     "s": 7.66,
+     "e": 8.1
+    },
+    {
+     "w": "se",
+     "s": 8.1,
+     "e": 8.28
+    },
+    {
+     "w": "hi",
+     "s": 8.28,
+     "e": 8.4
+    },
+    {
+     "w": "chhutte",
+     "s": 8.4,
+     "e": 8.82
+    },
+    {
+     "w": "hain.",
+     "s": 8.82,
+     "e": 9.28
+    }
+   ]
+  },
+  {
+   "text": "Iske cheh avashyak hain, jo shuddhi ka marg dikhate hain.",
+   "start": 9.28,
+   "end": 12.66,
+   "words": [
+    {
+     "w": "Iske",
+     "s": 9.28,
+     "e": 9.56
+    },
+    {
+     "w": "cheh",
+     "s": 9.56,
+     "e": 9.82
+    },
+    {
+     "w": "avashyak",
+     "s": 9.82,
+     "e": 10.48
+    },
+    {
+     "w": "hain,",
+     "s": 10.48,
+     "e": 10.66
+    },
+    {
+     "w": "jo",
+     "s": 10.66,
+     "e": 11.12
+    },
+    {
+     "w": "shuddhi",
+     "s": 11.12,
+     "e": 11.66
+    },
+    {
+     "w": "ka",
+     "s": 11.66,
+     "e": 11.8
+    },
+    {
+     "w": "marg",
+     "s": 11.8,
+     "e": 12.08
+    },
+    {
+     "w": "dikhate",
+     "s": 12.08,
+     "e": 12.5
+    },
+    {
+     "w": "hain.",
+     "s": 12.5,
+     "e": 12.66
+    }
+   ]
+  },
+  {
+   "text": "Pehla: Samayika, 48 minute ki poori sthirta.",
+   "start": 12.66,
+   "end": 16.14,
+   "words": [
+    {
+     "w": "Pehla:",
+     "s": 12.66,
+     "e": 13.28
+    },
+    {
+     "w": "Samayika,",
+     "s": 13.28,
+     "e": 14.52
+    },
+    {
+     "w": "48",
+     "s": 14.52,
+     "e": 14.78
+    },
+    {
+     "w": "minute",
+     "s": 14.78,
+     "e": 15.26
+    },
+    {
+     "w": "ki",
+     "s": 15.26,
+     "e": 15.4
+    },
+    {
+     "w": "poori",
+     "s": 15.4,
+     "e": 15.76
+    },
+    {
+     "w": "sthirta.",
+     "s": 15.76,
+     "e": 16.14
+    }
+   ]
+  },
+  {
+   "text": "Doosra: Logassa, 24 Tirthankaron ki stuti.",
+   "start": 16.14,
+   "end": 19.66,
+   "words": [
+    {
+     "w": "Doosra:",
+     "s": 16.14,
+     "e": 17.06
+    },
+    {
+     "w": "Logassa,",
+     "s": 17.06,
+     "e": 18.22
+    },
+    {
+     "w": "24",
+     "s": 18.22,
+     "e": 18.72
+    },
+    {
+     "w": "Tirthankaron",
+     "s": 18.72,
+     "e": 19.5
+    },
+    {
+     "w": "ki",
+     "s": 19.5,
+     "e": 19.6
+    },
+    {
+     "w": "stuti.",
+     "s": 19.6,
+     "e": 19.66
+    }
+   ]
+  },
+  {
+   "text": "Teesra: Vandana, guru aur sadhuon ko naman.",
+   "start": 19.52,
+   "end": 23.64,
+   "words": [
+    {
+     "w": "Teesra:",
+     "s": 19.52,
+     "e": 20.82
+    },
+    {
+     "w": "Vandana,",
+     "s": 20.82,
+     "e": 22.04
+    },
+    {
+     "w": "guru",
+     "s": 22.04,
+     "e": 22.46
+    },
+    {
+     "w": "aur",
+     "s": 22.46,
+     "e": 22.92
+    },
+    {
+     "w": "sadhuon",
+     "s": 22.92,
+     "e": 23.46
+    },
+    {
+     "w": "ko",
+     "s": 23.46,
+     "e": 23.58
+    },
+    {
+     "w": "naman.",
+     "s": 23.58,
+     "e": 23.64
+    }
+   ]
+  },
+  {
+   "text": "Chautha: Pratikraman, har vrat ki bhool ka hisaab.",
+   "start": 23.48,
+   "end": 27.28,
+   "words": [
+    {
+     "w": "Chautha:",
+     "s": 23.48,
+     "e": 24.6
+    },
+    {
+     "w": "Pratikraman,",
+     "s": 24.6,
+     "e": 25.76
+    },
+    {
+     "w": "har",
+     "s": 25.76,
+     "e": 26.04
+    },
+    {
+     "w": "vrat",
+     "s": 26.04,
+     "e": 26.36
+    },
+    {
+     "w": "ki",
+     "s": 26.36,
+     "e": 26.52
+    },
+    {
+     "w": "bhool",
+     "s": 26.52,
+     "e": 26.76
+    },
+    {
+     "w": "ka",
+     "s": 26.76,
+     "e": 26.92
+    },
+    {
+     "w": "hisaab.",
+     "s": 26.92,
+     "e": 27.28
+    }
+   ]
+  },
+  {
+   "text": "Paanchva: Kayotsarga, sharir chhod kar dhyaan.",
+   "start": 27.32,
+   "end": 30.94,
+   "words": [
+    {
+     "w": "Paanchva:",
+     "s": 27.32,
+     "e": 28.12
+    },
+    {
+     "w": "Kayotsarga,",
+     "s": 28.84,
+     "e": 29.62
+    },
+    {
+     "w": "sharir",
+     "s": 29.62,
+     "e": 30.12
+    },
+    {
+     "w": "chhod",
+     "s": 30.12,
+     "e": 30.48
+    },
+    {
+     "w": "kar",
+     "s": 30.48,
+     "e": 30.68
+    },
+    {
+     "w": "dhyaan.",
+     "s": 30.68,
+     "e": 30.94
+    }
+   ]
+  },
+  {
+   "text": "Chhatha: Pratyakhyana, aane wale samay ka naya sankalp.",
+   "start": 30.98,
+   "end": 34.7,
+   "words": [
+    {
+     "w": "Chhatha:",
+     "s": 30.98,
+     "e": 31.58
+    },
+    {
+     "w": "Pratyakhyana,",
+     "s": 31.58,
+     "e": 32.42
+    },
+    {
+     "w": "aane",
+     "s": 32.68,
+     "e": 33.32
+    },
+    {
+     "w": "wale",
+     "s": 33.32,
+     "e": 33.5
+    },
+    {
+     "w": "samay",
+     "s": 33.5,
+     "e": 33.78
+    },
+    {
+     "w": "ka",
      "s": 33.78,
      "e": 33.94
     },
     {
-     "w": "yeh",
+     "w": "naya",
      "s": 33.94,
-     "e": 34.12
+     "e": 34.24
     },
     {
-     "w": "kai",
-     "s": 34.12,
-     "e": 34.38
-    },
-    {
-     "w": "ghante",
-     "s": 34.38,
-     "e": 34.72
-    },
-    {
-     "w": "chalta",
-     "s": 34.72,
-     "e": 35.06
-    },
-    {
-     "w": "hai",
-     "s": 35.06,
-     "e": 35.72
-    },
-    {
-     "w": "dopahar",
-     "s": 35.72,
-     "e": 35.96
-    },
-    {
-     "w": "se",
-     "s": 35.96,
-     "e": 36.1
-    },
-    {
-     "w": "shaam.",
-     "s": 36.1,
-     "e": 36.34
+     "w": "sankalp.",
+     "s": 34.24,
+     "e": 34.7
     }
    ]
   },
   {
-   "text": "Yeh mechanism aatma par jami dhool poori tarah dho deta hai.",
-   "start": 36.34,
-   "end": 40.22,
+   "text": "Samvatsari Pratikraman saal mein bas ek baar hota hai.",
+   "start": 34.7,
+   "end": 37.78,
    "words": [
     {
-     "w": "Yeh",
-     "s": 36.34,
-     "e": 36.84
+     "w": "Samvatsari",
+     "s": 34.7,
+     "e": 35.74
     },
     {
-     "w": "mechanism",
-     "s": 36.84,
-     "e": 37.36
+     "w": "Pratikraman",
+     "s": 35.74,
+     "e": 36.26
     },
     {
-     "w": "aatma",
-     "s": 37.68,
-     "e": 37.96
+     "w": "saal",
+     "s": 36.26,
+     "e": 36.58
     },
     {
-     "w": "par",
-     "s": 37.96,
-     "e": 38.12
+     "w": "mein",
+     "s": 36.58,
+     "e": 36.72
     },
     {
-     "w": "jami",
-     "s": 38.12,
-     "e": 38.38
+     "w": "bas",
+     "s": 36.72,
+     "e": 36.9
     },
     {
-     "w": "dhool",
-     "s": 38.38,
-     "e": 38.68
+     "w": "ek",
+     "s": 36.9,
+     "e": 37.22
     },
     {
-     "w": "poori",
-     "s": 38.68,
-     "e": 39.18
+     "w": "baar",
+     "s": 37.22,
+     "e": 37.42
     },
     {
-     "w": "tarah",
-     "s": 39.18,
-     "e": 39.58
-    },
-    {
-     "w": "dho",
-     "s": 39.58,
-     "e": 39.8
-    },
-    {
-     "w": "deta",
-     "s": 39.8,
-     "e": 40.06
+     "w": "hota",
+     "s": 37.42,
+     "e": 37.72
     },
     {
      "w": "hai.",
-     "s": 40.06,
-     "e": 40.22
+     "s": 37.72,
+     "e": 37.78
     }
    ]
   },
   {
-   "text": "Ant mein... Micchami Dukkadam. Sabse maafi, bojh halka.",
-   "start": 40.22,
-   "end": 44.32,
+   "text": "Ant mein Micchami Dukkadam. Aapne kab kiya Pratikraman? Save karo.",
+   "start": 37.54,
+   "end": 42.2,
    "words": [
     {
      "w": "Ant",
-     "s": 40.22,
-     "e": 40.66
+     "s": 37.54,
+     "e": 38.4
     },
     {
-     "w": "mein...",
-     "s": 40.66,
-     "e": 41.28
+     "w": "mein",
+     "s": 38.4,
+     "e": 38.62
     },
     {
      "w": "Micchami",
-     "s": 41.28,
-     "e": 41.86
+     "s": 38.62,
+     "e": 39.42
     },
     {
      "w": "Dukkadam.",
-     "s": 42.12,
-     "e": 42.36
+     "s": 39.42,
+     "e": 39.78
     },
-    {
-     "w": "Sabse",
-     "s": 42.36,
-     "e": 42.88
-    },
-    {
-     "w": "maafi,",
-     "s": 43.06,
-     "e": 43.34
-    },
-    {
-     "w": "bojh",
-     "s": 43.8,
-     "e": 44.02
-    },
-    {
-     "w": "halka.",
-     "s": 44.02,
-     "e": 44.32
-    }
-   ]
-  },
-  {
-   "text": "Ye ritual karma dho deta hai... agar poore dhyan se kiya.",
-   "start": 44.32,
-   "end": 47.98,
-   "words": [
-    {
-     "w": "Ye",
-     "s": 44.32,
-     "e": 44.74
-    },
-    {
-     "w": "ritual",
-     "s": 44.74,
-     "e": 45.1
-    },
-    {
-     "w": "karma",
-     "s": 45.1,
-     "e": 45.58
-    },
-    {
-     "w": "dho",
-     "s": 45.58,
-     "e": 45.78
-    },
-    {
-     "w": "deta",
-     "s": 45.78,
-     "e": 46.08
-    },
-    {
-     "w": "hai...",
-     "s": 46.08,
-     "e": 46.22
-    },
-    {
-     "w": "agar",
-     "s": 46.22,
-     "e": 46.84
-    },
-    {
-     "w": "poore",
-     "s": 46.84,
-     "e": 47.12
-    },
-    {
-     "w": "dhyan",
-     "s": 47.12,
-     "e": 47.4
-    },
-    {
-     "w": "se",
-     "s": 47.4,
-     "e": 47.56
-    },
-    {
-     "w": "kiya.",
-     "s": 47.56,
-     "e": 47.98
-    }
-   ]
-  },
-  {
-   "text": "Aapne kab kiya... itni gehraai se?",
-   "start": 48.06,
-   "end": 50.04,
-   "words": [
     {
      "w": "Aapne",
-     "s": 48.06,
-     "e": 48.36
+     "s": 39.78,
+     "e": 40.5
     },
     {
      "w": "kab",
-     "s": 48.36,
-     "e": 48.5
+     "s": 40.5,
+     "e": 40.68
     },
     {
-     "w": "kiya...",
-     "s": 48.5,
-     "e": 49.02
+     "w": "kiya",
+     "s": 40.68,
+     "e": 40.84
     },
     {
-     "w": "itni",
-     "s": 49.02,
-     "e": 49.52
+     "w": "Pratikraman?",
+     "s": 40.84,
+     "e": 41.74
     },
     {
-     "w": "gehraai",
-     "s": 49.52,
-     "e": 49.88
+     "w": "Save",
+     "s": 41.74,
+     "e": 41.96
     },
     {
-     "w": "se?",
-     "s": 49.88,
-     "e": 50.04
-    }
-   ]
-  },
-  {
-   "text": "Jai Jinendra.",
-   "start": 50.04,
-   "end": 50.92,
-   "words": [
-    {
-     "w": "Jai",
-     "s": 50.04,
-     "e": 50.1
-    },
-    {
-     "w": "Jinendra.",
-     "s": 50.04,
-     "e": 50.92
+     "w": "karo.",
+     "s": 41.96,
+     "e": 42.2
     }
    ]
   }
  ],
- "cover": 0.9719626168224299
+ "cover": 0.9560439560439561
 }
