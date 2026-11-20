@@ -113,6 +113,10 @@ def vision(sheet, plan, lang):
     # name; the cast designed for this video (picsmith bible) is correct as described
     forms += ("\nThe traditional forms above apply ONLY to the figures they name. Kings, queens, devotees, devas and other "
               "people may wear crowns, jewellery, beards and coloured clothes; never report that as a problem.")
+    # 21 Nov: Jain Tirthankaras have golden/yellow skin (not blue/green/grey which are Hindu deity colours).
+    # The vision model was incorrectly flagging correct golden skin as a RESPECT issue.
+    forms += ("\nJAIN ICONOGRAPHY: Tirthankaras and Jinas have GOLDEN/YELLOW skin. Blue, green or grey skin on a "
+              "Tirthankara is WRONG and must be reported as FIT: RESPECT. Golden/yellow skin is CORRECT, never a problem.")
     bib = (plan.get("bible") or {}).get("figures") or []
     if bib:
         forms += "\nCast as designed for this video (correct, not a problem): " + "; ".join(
