@@ -123,5 +123,7 @@
     "Are there onion domes, minarets or Mughal-style buildings in the picture?",
     "Is Bahubali shown wearing a crown or clothes, or with his hands folded?"
   ],
-  "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass"
+  "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass",
+  "real_idols": true,
+  "real_idols_note": "20 Nov owner OK: a scene about a Tirthankara or Bahubali uses a real temple idol photo from Wikimedia Commons first (engine/picsmith.real_idol)"
 }

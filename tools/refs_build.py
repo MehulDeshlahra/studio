@@ -106,6 +106,9 @@ def main(only):
         best = [x for x in sorted(scored, key=lambda x: -x["score"]) if x["score"] >= 0.4][:2]
         idx[fig] = {"pattern": iconography.FORMS.get(fig, ("",))[0], "refs": best, "checked": time.strftime("%Y-%m-%d"),
                     "candidates": len(scored)}
+        if fig in picsmith.JAIN_IDOLS:      # 20 Nov (owner OK): real temple photos used as the picture itself
+            idx[fig]["photos"] = [{"title": x["title"], "score": x["score"]} for x in sorted(scored, key=lambda x: -x["score"])
+                                  if x["score"] >= 0.5][:8]
         log("refs:", fig, "kept", [(b["title"][5:50], b["score"]) for b in best], "of", len(scored))
         save(INDEX, idx)
     return idx

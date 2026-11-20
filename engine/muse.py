@@ -151,8 +151,15 @@ def omni_image(prompt, dest):
 
 
 def pollinations(prompt, dest):
-    """Free backup still (Pollinations flux through OmniRoute)."""
+    """Free backup still. 20 Nov: OmniRoute's Pollinations connection lost its key (401); the owner's 4 keys go direct
+    (FLUX.2 klein 4B, engine/picsmith.poll_klein), OmniRoute only if that fails."""
     import llm
+    try:
+        import picsmith
+        if picsmith.poll_klein(prompt, [], dest):
+            return dest
+    except Exception as e:
+        log("pollinations direct fail", str(e)[:120])
     try:
         body = json.dumps({"model": "pollinations/flux", "prompt": prompt, "size": "1080x1920", "n": 1}).encode()
         req = urllib.request.Request("http://127.0.0.1:20128/v1/images/generations", data=body,

@@ -146,6 +146,87 @@ def nv_klein(prompt, refs, dest):
         log("nv klein fail", str(e)[:120]); return None
 
 
+POLL_KEYS = os.path.expanduser("~/.studio-pollinations.key")
+POLL_DEAD = os.path.join(OUT, "poll-quota.json")
+
+
+def poll_klein(prompt, refs, dest):
+    """20 Nov: FLUX.2 [klein] 4B on Pollinations (gen.pollinations.ai), $0.005 a picture from the free Quest balance of
+    the owner's 4 accounts; follows a reference (tested: plain standing white Tirthankara from the Kundalpur photo).
+    A key that answers 402/403 (balance used) rests until the next UTC day."""
+    try:
+        keys = [k.strip() for k in open(POLL_KEYS).read().split() if k.strip()]
+    except OSError:
+        return None
+    day = time.strftime("%Y-%m-%d", time.gmtime())
+    dead = load(POLL_DEAD, {}) or {}
+    pf = dest + ".prompt.txt"
+    open(pf, "w", encoding="utf-8").write(prompt)
+    for n, k in enumerate(keys):
+        if dead.get(str(n)) == day:
+            continue
+        if refs:
+            args = ["curl", "-s", "-m", "200", "https://gen.pollinations.ai/v1/images/edits", "-H", "Authorization: Bearer " + k,
+                    "-F", "model=black-forest-labs/flux.2-klein-4b", "-F", f"prompt=<{pf}", "-F", "size=768x1344"]
+            for _, f in refs[:4]:
+                args += ["-F", f"image=@{f}"]
+        else:
+            args = ["curl", "-s", "-m", "200", "https://gen.pollinations.ai/v1/images/generations", "-H", "Authorization: Bearer " + k,
+                    "-H", "Content-Type: application/json", "-d",
+                    json.dumps({"model": "black-forest-labs/flux.2-klein-4b", "prompt": prompt, "size": "768x1344", "n": 1})]
+        try:
+            out = subprocess.run(args + ["-w", "\n%{http_code}"], capture_output=True, timeout=220).stdout.decode("utf-8", "ignore")
+            body, code = out.rsplit("\n", 1) if "\n" in out else (out, "0")
+            if code in ("402", "403") or "balance" in body[:300].lower() and code != "200":
+                dead[str(n)] = day
+                from core import save
+                save(POLL_DEAD, dead)
+                log("pollinations key", n + 1, "out of balance until 00:00 UTC"); continue
+            d = json.loads(body)["data"][0]
+            raw = base64.b64decode(d["b64_json"]) if d.get("b64_json") else urllib.request.urlopen(d["url"], timeout=90).read()
+            if len(raw) < 20000:
+                raise RuntimeError("tiny image")
+            open(dest, "wb").write(raw)
+            log("pollinations klein image", f"key {n + 1}", f"{len(refs)} refs", os.path.basename(dest))
+            return dest
+        except Exception as e:
+            log("pollinations klein fail", f"key {n + 1}", str(e)[:120])
+    return None
+
+
+# ---------------- real temple idol photos (owner OK 20 Nov) ----------------
+JAIN_IDOLS = {"Mahavir Swami", "Rishabhdev", "Parshvanath", "Neminath", "Bahubali"}
+UA = {"User-Agent": "StudioRefs/1.0 (https://scrollhouse.in; reference pictures for devotional art)"}
+
+
+def real_idol(p, fig, dest):
+    """A real photo of the figure's temple idol from Wikimedia Commons (knowledge/refs.json 'photos'), one not used yet
+    in this video, as a 1080x1920 frame: the whole photo on a blurred copy of itself. Records the credit."""
+    import urllib.parse
+    photos = ((load(REFS, {}) or {}).get(fig) or {}).get("photos") or []
+    used = p.setdefault("idol_photos_used", [])
+    for ph in photos:
+        if ph["title"] in used:
+            continue
+        used.append(ph["title"])
+        try:
+            u = "https://commons.wikimedia.org/wiki/Special:FilePath/" + urllib.parse.quote(ph["title"].split(":", 1)[-1]) + "?width=1080"
+            raw = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=90).read()
+            src = dest + ".src"
+            open(src, "wb").write(raw)
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex",
+                            "split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,"
+                            "eq=brightness=-0.12[bg];[b]scale=1080:1920:force_original_aspect_ratio=decrease[fg];"
+                            "[bg][fg]overlay=(W-w)/2:(H-h)/2", "-q:v", "2", dest], check=True)
+            os.remove(src)
+            p.setdefault("credits", []).append(f"Photo: {ph['title'].split(':', 1)[-1].rsplit('.', 1)[0]} (Wikimedia Commons)")
+            log("picsmith real idol photo", fig, ph["title"][5:70])
+            return dest
+        except Exception as e:
+            log("picsmith real idol photo failed", ph["title"][5:60], str(e)[:100])
+    return None
+
+
 def cf_klein(prompt, refs, dest, model="flux-2-klein-9b"):
     """FLUX.2 [klein] on Cloudflare Workers AI (free plan, multipart, up to 4 reference images of 512x512)."""
     if _cf_out():
@@ -296,6 +377,24 @@ def scene_picture(ch, p, s, i, base_prompt, adir, chain):
     said = str(s.get("vo") or "")
     refs = refs_for(said + " " + str(s.get("prompt") or "") + " " + _bible_for(bible, i), ch.get("id"))
     tries, feedback, best = [], "", None
+    # 20 Nov (owner OK): a scene ABOUT a Tirthankara / Bahubali on a page with real_idols gets a real temple photo of
+    # that idol first (cannot get the form wrong); it still passes the same check (a photo with signboard text fails)
+    named = [f for f, _ in refs_for(said + " " + str(s.get("prompt") or ""), ch.get("id")) if f in JAIN_IDOLS]
+    if ch.get("real_idols") and named:
+        for k in range(2):
+            ph = real_idol(p, named[0], os.path.join(adir, f"s{i}r{k}.jpg"))
+            if not ph:
+                break
+            try:
+                a, qs = check(ph, said, ch, str(s.get("prompt") or ""))
+            except Exception as e:
+                log("picsmith check unavailable for the real photo, kept:", str(e)[:100]); a, qs = {}, {}
+            fails = {x: v for x, v in a.items() if v >= FAIL}
+            tries.append({"file": os.path.basename(ph), "prompt": "real photo", "fails": fails, "top": max(a.values() or [0])})
+            log(f"picsmith scene {i + 1} real photo:", "OK" if not fails else "skip " + ", ".join(f"{x}={v}" for x, v in fails.items()))
+            if not fails:
+                s["pic"] = {"refs": [named[0]], "tries": tries, "real_photo": True}
+                return ph
     for n in range(TRIES):
         if n and p.get("pic_redraws", 0) >= REDRAWS_PER_VIDEO:
             log(f"picsmith scene {i + 1}: redraw budget of this video used ({REDRAWS_PER_VIDEO}), the review decides")
@@ -307,8 +406,9 @@ def scene_picture(ch, p, s, i, base_prompt, adir, chain):
         if refs:
             # 20 Nov: NVIDIA klein accepts input_image but ignores it (drew a robed, bearded figure from a plain
             # standing idol photo); only Cloudflare's klein follows references. nv_klein stays unused
-            img = cf_klein(prompt, refs, os.path.join(adir, f"s{i}k{n}.jpg"))
-        img = img or chain(prompt, n)
+            img = (cf_klein(prompt, refs, os.path.join(adir, f"s{i}k{n}.jpg"))
+                   or poll_klein(prompt, refs, os.path.join(adir, f"s{i}q{n}.jpg")))
+        img = img or chain(prompt, n) or poll_klein(prompt, [], os.path.join(adir, f"s{i}q{n}t.jpg"))
         if not img:
             continue
         try:
