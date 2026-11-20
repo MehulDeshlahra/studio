@@ -166,6 +166,15 @@ def telegram(text, video=None, photo=None):
             body = json.dumps({"chat_id": cfg["chat"], "text": text[:4000]}).encode()
             r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://api.telegram.org/bot{cfg['token']}/sendMessage",
                           data=body, headers={"Content-Type": "application/json"}), timeout=60))
+        try:                     # 20 Nov audit: owner wants Telegram only for "needs me" or "earned money"; count what goes out
+            import sys as _s
+            fr = _s._getframe(1)
+            with open(os.path.join(OUT, "telegram-sent.jsonl"), "a", encoding="utf-8") as fh:
+                fh.write(json.dumps({"t": time.strftime("%Y-%m-%d %H:%M:%S"), "from": os.path.basename(fr.f_code.co_filename)[:-3]
+                                     + "." + fr.f_code.co_name, "media": bool(video or photo), "text": text[:120]},
+                                    ensure_ascii=False) + "\n")
+        except Exception:
+            pass
         return r.get("result", {}).get("message_id") or True
     except Exception as e:
         log("telegram error", e)
