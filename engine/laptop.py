@@ -11,6 +11,7 @@ from core import OUT, log
 D = os.path.join(OUT, "laptop")
 CLAIM_WAIT = 75            # the worker polls every 15 s
 MAX_RENDER = 1500          # a laptop render takes 2-4 min; 25 min means something is wrong -> render here
+BUSY_WAIT = 1200           # 20 Nov: a busy-but-on laptop is waited for up to 20 min before the server renders
 
 
 def status():
@@ -49,7 +50,11 @@ def render(rdir, out, total, label=""):
     claimed = os.path.join(D, "claimed", jid + ".json")
     done, err = os.path.join(D, "done", jid + ".mp4"), os.path.join(D, "done", jid + ".err")
     try:
-        while time.time() - t0 < CLAIM_WAIT and not os.path.exists(claimed):
+        # 20 Nov audit (owner: a video should take 5-10 min): while the laptop is ON but busy with another job (a clip),
+        # waiting for it beats the shared server (tech 1120-1748z: 23 min here vs 3-5 min there). Renders are claimed
+        # right after Whop jobs, so the wait is one job long; after BUSY_WAIT, or if the laptop goes away, render here
+        while not os.path.exists(claimed) and (time.time() - t0 < CLAIM_WAIT or (
+                time.time() - t0 < BUSY_WAIT and status().get("busy") and status().get("age", 999) < 90)):
             time.sleep(3)
         if not os.path.exists(claimed):
             try:
@@ -61,7 +66,7 @@ def render(rdir, out, total, label=""):
                 log("laptop: did not pick the job up, rendering here"); return False
         log("laptop: rendering", label, "on", status().get("mode", "?"), "mode")
         open(os.path.join(D, "rendering"), "w").write(label)   # engine/daily.py: the prep lane may build meanwhile
-        while time.time() - t0 < MAX_RENDER:
+        while time.time() - t0 < MAX_RENDER + BUSY_WAIT:
             if os.path.exists(err):
                 log("laptop: render failed:", open(err, encoding="utf-8", errors="ignore").read()[-300:]); return False
             if os.path.exists(done):

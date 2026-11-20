@@ -882,6 +882,17 @@ def main():
                 av += ["--job", job_id]
             os.execv(sys.executable, [sys.executable] + av + ["--from", "plan"])
         raise SystemExit(f"script still broken after a new plan ({nw_} words)")
+    # 20 Nov audit (owner: max 5-10 min a video): pictures do not depend on the voice, so they are made WHILE the voice
+    # is spoken, paced and aligned (both wait on remote services). A voice-gate restart keeps every finished picture
+    # (assets.json is saved per scene).
+    import threading
+    _pics = {}
+    def _pics_run():
+        try:
+            _pics['a'] = stage_assets(ch, p, job)
+        except Exception as e:
+            _pics['e'] = e
+    _pt = threading.Thread(target=_pics_run, daemon=True); _pt.start()
     # 3 voice (one request)
     vo = os.path.join(job, "vo-raw.wav")
     if "voice" in redo or not os.path.exists(vo):
@@ -966,8 +977,11 @@ def main():
         sf.write(vo_use, np.concatenate(pieces), sr)
         vdur += shift
     total = round(vdur + 0.7 + (1.4 if theme.get("handle") else 0.0), 3)
-    # 4 assets
-    assets = stage_assets(ch, p, job)
+    # 4 assets (started before the voice, see above)
+    _pt.join()
+    if 'e' in _pics:
+        log('pictures beside the voice failed, making them now:', str(_pics['e'])[:120])
+    assets = _pics.get('a') or stage_assets(ch, p, job)
     if p.get("offer") and not p["offer"].get("url"):
         try:
             import offers
@@ -1019,7 +1033,17 @@ def main():
         redo.add("mix")
     # 5b preflight: check the composed page with stills BEFORE the slow render; repair bad scenes (visual fields only)
     lang_p = p.get("lang") or ch.get("lang", "hi")
-    if "mix" in redo and os.environ.get("STUDIO_NO_PREFLIGHT") != "1":
+    # 20 Nov audit (owner OK): with the laptop on, a render costs 3-5 min, so the stills check before it (1.5-7 min with
+    # repairs) is skipped and the final review judges the real video; healer checks (STOP_AFTER_PREFLIGHT) keep it
+    _lap_fast = False
+    try:
+        import laptop as _lp
+        _lap_fast = os.name != "nt" and _lp.available() and os.environ.get("STUDIO_STOP_AFTER_PREFLIGHT") != "1"
+    except Exception:
+        pass
+    if _lap_fast and "mix" in redo:
+        log("preflight skipped: the laptop renders in minutes, the final review judges the video")
+    if "mix" in redo and os.environ.get("STUDIO_NO_PREFLIGHT") != "1" and not _lap_fast:
         import preflight
         pr = {"ok": True}
         tries = max(1, int(os.environ.get("STUDIO_PREFLIGHT_TRIES", "3")))   # healer checks use 1: judge the code, not repairs

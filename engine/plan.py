@@ -923,7 +923,7 @@ and the final question are NOT filler],
     return g
 
 
-def explainer_gate(ch, topic, plan, research_text, W0, W1, rounds=2):
+def explainer_gate(ch, topic, plan, research_text, W0, W1, rounds=1):   # 20 Nov: 1 fix round (2nd added ~2 min, 8 -> 9)
     """19 Nov (owner: the WhatsApp AI agent reel 'is not top notch', the reviewer gave it 10/10). The editor pass fixes form
     (hook, line length); nothing checked that a 'kaise kaam karta hai' reel actually EXPLAINS. This gate grades the script
     as a viewer would (answers the title? which real steps are learned? filler? unsourced numbers?), rewrites it with that
