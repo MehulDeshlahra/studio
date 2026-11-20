@@ -300,7 +300,27 @@ def post_one(cid, dry=False):
             log("publish", cid, why)
     elif cands:
         cands = series_order(cid, done, cands)
-    nxt = cands[0] if cands else None
+    nxt = None
+    # 20 Nov: 3 approved Navkar Bhav reels had a bearded saffron Mahavira / crowned Bahubali (the contact-sheet review
+    # passed them). A page with a visual checklist gets the picture check right before posting: a fail is held (the healer
+    # rebuilds it) and the next approved video is tried, up to 3; clip pages (no checklist) are not affected
+    for c in cands[:3]:
+        if not (ch.get("visual_checks") and ch.get("kind") != "clips") or dry:
+            nxt = c; break
+        try:
+            import review
+            jd_ = os.path.join(OUT, cid, c["job"])
+            pc = review.picture_check(os.path.join(jd_, f"{cid}-{c['job']}.mp4"),
+                                      (load(os.path.join(jd_, "timing.json"), {}) or {}).get("lines", []), ch["visual_checks"])
+        except Exception as e:
+            log("publish: picture check failed to run, posting", cid, c["job"], str(e)[:100]); nxt = c; break
+        if not pc.get("problems"):
+            nxt = c; break
+        log("publish: picture check HOLD", cid, c["job"], " | ".join(pc["problems"])[:300])
+        c["status"] = "held"
+        c["review"] = ["pre-post picture check: " + p for p in pc["problems"][:6]] + (c.get("review") or [])
+        save(p, done)
+        telegram(f"⏸ {cid} {c['job']} held right before posting: {pc['problems'][0][:160]}. Trying the next video.")
     if not nxt:
         log("publish", cid, "nothing approved"); return
     if not acc:
