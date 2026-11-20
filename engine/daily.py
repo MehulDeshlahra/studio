@@ -241,7 +241,9 @@ def lane_prep(dry):
         if dry:
             return
         note("reels"); note("tts")
-        run([os.path.join(ENGINE, "make.py"), urgent[0], "--until", "assets"])
+        # 20 Nov: a page with nothing to post is built in one go (prep -> render -> review) instead of stopping at
+        # "prepped" and waiting up to 10 min for the render lane's next round
+        run([os.path.join(ENGINE, "make.py"), urgent[0]])
         return
     if not muse._bridges("image"):     # 18 Nov: this stopped ALL new videos although pictures fall back to free FLUX
         log("prep lane: Muse image budget used today; pictures come from the free FLUX sources (OmniRoute, Cloudflare, Pollinations)")
