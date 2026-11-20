@@ -706,10 +706,19 @@ def make(cid, url, n=4, test=False, campaign=None):
             if len(keep) < len(m.get("notes") or []):
                 log("clipper: ungrounded context note dropped", [n["text"] for n in m["notes"] if n not in keep])
             m["notes"] = keep
-    out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src), **_lang_spec(ch),
-                      "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {base}", wait=3600)
-    made = ingest(ch, cid, url, info, src, test, ms, out, base)
-    shutil.rmtree(os.path.dirname(out), ignore_errors=True)
+    # 20 Nov audit (goal: a clip in under 10 min): one laptop job for all 4 clips returned nothing until the last was
+    # rendered (1120-0740a: 1004 s). One job per clip: the first clip is checked and approved while the next renders
+    made = []
+    for i, m in enumerate(ms):
+        bi = base + chr(97 + i)
+        try:
+            out = laptop.job({"kind": "clip", "url": url, "id": info.get("id"), "pad": 4, "brand": brand, "glossary": glossary(src),
+                              **_lang_spec(ch), "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []}]},
+                             f"{cid} {bi}", wait=1800)
+        except Exception as e:
+            log("clipper: clip", i + 1, "of", len(ms), "failed on the laptop:", str(e)[:150]); continue
+        made += ingest(ch, cid, url, info, src, test, [m], out, bi)
+        shutil.rmtree(os.path.dirname(out), ignore_errors=True)
     if test and made:
         telegram(f"✂️ {cid} TEST clips from {url} (not for posting, no permission entry): "
                  + ", ".join(f"{j} ({lay}, {sc}/10)" for j, _, _, lay, sc in made))
