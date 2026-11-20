@@ -219,7 +219,11 @@ def submit(page, url, post):
     # proof, not a click: the dialog is gone / says submitted, and the checkbox text is no longer on screen
     still_open = bool(re.search(r"i'?ve read the requirements", text, re.I))
     confirmed = bool(re.search(r"(submitted|under review|pending review|submission received)", text, re.I)) and not still_open
-    bad = re.search(r"(invalid|error|already submitted|not eligible|older than|more than 30 minutes|can'?t be used)", text, re.I)
+    # (20 Nov test: the green row "Not already submitted to a campaign" matched "already submitted": only red/negative text)
+    bad = re.search(r"(clips can be submitted for \d+ minutes after posting|(?<!not )already submitted|invalid link|"
+                    r"not eligible|isn'?t from one of your linked accounts|can'?t be submitted)", text, re.I)
+    if bad and re.search(r"submitted for \d+ minutes", bad.group(0), re.I):
+        bad = re.match(r"(.*)", "too late: past the 30-minute submit window")
     ok = bool(done) and confirmed and not bad
     why = None if ok else (bad.group(0) if bad else "the dialog is still open after Submit" if still_open else "no confirmation on the page")
     return {"ok": ok, "why": why, "clicked": done, "ticked": ticked, "shot": shot(page, "submit"),
