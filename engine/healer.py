@@ -289,6 +289,27 @@ def heal_held():
                 else:
                     rebuild(cid, job, stg, f"known fix: {kf['fix']}")
                 save(STATE, S); return
+            # 1b 20 Nov: a wrong PICTURE is not fixed by a rebuild (it reuses the picture). Redraw only the flagged scenes
+            # through engine/picsmith.py (prompt engineer, reference / real idol photo, Decisions check), once per code
+            pic = [x for x in probs if re.search(r"picture check|frame check|iconograph|wrong (traditional )?form", x, re.I)]
+            ks = sorted(k for k in scenes_in(pic) if k >= 0) if pic else []
+            if ks and ("redraw", h) not in tried:
+                it["state"] = "working"
+                it["steps"].append({"step": "redraw", "code": h, "scenes": [k + 1 for k in ks], "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
+                if not DRY:
+                    jd_ = os.path.join(OUT, cid, job)
+                    got = load(os.path.join(jd_, "assets.json"), {}) or {}
+                    for k in ks:
+                        got.pop(str(k), None)
+                    save(os.path.join(jd_, "assets.json"), got)
+                    p_ = load(os.path.join(jd_, "plan.json"), {}) or {}
+                    p_.pop("pic_redraws", None)
+                    for k in ks:
+                        if k < len(p_.get("scenes") or []):
+                            p_["scenes"][k].pop("pic", None)
+                    save(os.path.join(jd_, "plan.json"), p_)
+                note(f"{cid} {job}: new pictures for scenes {[k + 1 for k in ks]} (picsmith)")
+                rebuild(cid, job, "assets", "wrong pictures redrawn"); save(STATE, S); return
             # 2 rebuild after a code change
             since = next((s["code"] for s in reversed(it["steps"]) if s.get("code")), None) or \
                 (load(os.path.join(OUT, cid, job, "meta.json"), {}) or {}).get("doctor_code")
