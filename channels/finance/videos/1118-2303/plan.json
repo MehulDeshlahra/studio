@@ -24,7 +24,8 @@
     "digital arrest"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "small": null
   },
   {
    "vo": "Scammer video call karta, police uniform mein.",
@@ -37,7 +38,9 @@
     "police",
     "uniform"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Fake FIR, warrant dikhake darta hai.",
@@ -49,7 +52,9 @@
     "warrant",
     "darta"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "'Safe account' mein paisa maangta, warna jail.",
@@ -67,7 +72,9 @@
     "mule"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Paisa mule accounts se zyadaatar Myanmar, Cambodia chala jata.",
@@ -85,7 +92,8 @@
    "big": "SE Asia",
    "sub": "Myanmar, Cambodia",
    "label": "Destinations",
-   "value": "2"
+   "value": "2",
+   "small": null
   },
   {
    "vo": "Asli police kabhi WhatsApp pe arrest nahi karti.",
@@ -109,7 +117,9 @@
     "arrest"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Call record karo, screenshot lo — proof banta.",
@@ -121,7 +131,9 @@
     "screenshot",
     "proof"
    ],
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "1930 pe bhejo, bank ko bhi, turant.",
@@ -150,7 +162,9 @@
     "bank",
     "turant"
    ],
-   "motion": "push"
+   "motion": "push",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Pehle ghante mein report karne se recovery ke chances badhte hain.",
@@ -164,7 +178,9 @@
     "wapas"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "big": null,
+   "small": null
   },
   {
    "vo": "OTP, PIN, CVV — kabhi kisi ko mat dena.",
@@ -178,7 +194,8 @@
     "CVV"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "small": null
   },
   {
    "vo": "Police video call pe verification nahi maangti, yaad rakho.",
@@ -195,7 +212,7 @@
    "title": ""
   },
   {
-   "vo": "Tune kabhi aisa call uthaya? Comment kar.",
+   "vo": "Tumne kabhi aisa call uthaya? Comment karo.",
    "type": "title",
    "big": "COMMENT BELOW",
    "sub": "Tune aisa call uthaya?",
@@ -206,11 +223,12 @@
     "comment"
    ],
    "motion": "push",
-   "title": ""
+   "title": "",
+   "small": null
   }
  ],
  "music_mood": "suspense",
- "caption": "Digital Arrest ka kanoon nahi — victims lost hundreds of crores. Scammer video call pe police banta, fake FIR dikhake 'safe account' mein paisa maangta. Ek screenshot (1930 pe bhejo) bacha sakta tera paisa. Kabhi OTP/PIN mat dena. Pehle ghante mein report karne se recovery ke chances badhte hain. Tune kabhi aisa call uthaya?\n\nEducation only, not financial advice.",
+ "caption": "Digital Arrest ka kanoon nahi — victims lost hundreds of crores. Scammer video call pe police banta, fake FIR dikhake 'safe account' mein paisa maangta. Ek screenshot (1930 pe bhejo) bacha sakta tumhara paisa. Kabhi OTP/PIN mat dena. Pehle ghante mein report karne se recovery ke chances badhte hain. Tune kabhi aisa call uthaya?\n\nEducation only, not financial advice.",
  "hashtags": [
   "#DigitalArrest",
   "#CyberScam",
@@ -246,9 +264,6 @@
    "basis": "Universal banking safety rule reinforced by RBI, NPCI, and all major banks."
   }
  ],
- "numbers_hold": [
-  "scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing varie"
- ],
  "brain_ids": [
   "4396759d41",
   "1e60a34718",
@@ -264,5 +279,8 @@
   "1940dd5eb9",
   "7fa182f8ef",
   "b349ca221e"
+ ],
+ "story_notes": [
+  "scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing varie"
  ]
 }

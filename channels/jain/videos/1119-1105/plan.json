@@ -122,7 +122,39 @@
    "small": null,
    "sub": null,
    "label": null,
-   "real": null
+   "real": null,
+   "pic": {
+    "refs": [
+     "Neminath"
+    ],
+    "tries": [
+     {
+      "file": "s5r0.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p1": 0.79
+      },
+      "top": 0.79
+     },
+     {
+      "file": "s5r1.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p3": 0.82
+      },
+      "top": 0.82
+     },
+     {
+      "file": "s5q0.jpg",
+      "prompt": "Lord Neminath, the 22nd Tirthankara, a smooth dark blue-black stone idol, serene meditative face with half-closed eyes in deep compassion, plain head, seated cross-legged with hands resting in the lap, positioned in the center of a Dilwara-style temple interior, white marble hall with intricately carved pillars and lotus-motif domed ceiling, warm golden morning light casting a gentle glow on the stone, serene painterly Indian style, vertical 9:16 composition with generous calm space above and below.",
+      "fails": {
+       "p3": 0.78
+      },
+      "top": 0.78
+     }
+    ],
+    "passed": false
+   }
   },
   {
    "vo": "Saare baade khulwa diye, har jeev ko azad kiya",
@@ -153,7 +185,21 @@
    "small": null,
    "sub": null,
    "label": null,
-   "real": null
+   "real": null,
+   "pic": {
+    "refs": [
+     "Neminath"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "An ornate wedding chariot with a dark teak wood frame featuring gold leaf carvings of elephants and lotuses, draped in heavy jasmine and marigold garlands, turning away from a magnificent white marble palace gate with carved jharokha windows, wheels kicking up soft dust, moving towards distant misty blue mountains, serene painterly Indian style, warm golden morning light casting long shadows, white marble and ancient sandstone architecture, peaceful atmosphere, generous calm space above and below, centered composition.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Girnar parvat gaye, tapasya ki, kevalgyan paaya, moksha mila",
@@ -240,7 +286,7 @@
   }
  ],
  "music_mood": "emotional",
- "caption": "Baraat laut gayi... dulha ne kyun mod liya rath? 🐘\n\nEk cheekh ne badal di 22ve Tirthankara Neminath ki zindagi. Karuna itni badi ki mahal, rajya, byah... sab chhod diya.\n\nAap us pal hote toh kya karte?",
+ "caption": "Baraat laut gayi... dulha ne kyun mod liya rath? 🐘\n\nEk cheekh ne badal di 22ve Tirthankara Neminath ki zindagi. Karuna itni badi ki mahal, rajya, byah... sab chhod diya.\n\nAap us pal hote toh kya karte?\nVideo: Photo: Achalgachh jain temple - Neminath statue (Wikimedia Commons)\nVideo: Photo: Neminatha at Sambhavnath ni khadki, Ahmedabad (Wikimedia Commons)",
  "hashtags": [
   "#Neminath",
   "#Jainism",
@@ -295,5 +341,112 @@
   "6ce7203c71",
   "4396759d41",
   "7fa182f8ef"
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Lord Neminath (22nd Tirthankara)",
+    "scenes": [
+     2,
+     6,
+     8,
+     9
+    ],
+    "look": "Dark blue-black complexion, serene meditative face, half-closed eyes, broad shoulders, seated padmasana on white marble pedestal, conch emblem carved below, bare chest, plain head, no ornaments, golden light halo"
+   },
+   {
+    "name": "Rajul (Princess, later Sadhvi)",
+    "scenes": [
+     2,
+     10
+    ],
+    "look": "Young woman, fair golden skin, calm oval face, dark almond eyes, long black hair in simple braid, wearing rich silk lehenga-choli in crimson and gold for wedding, bare feet, delicate gold anklets, gentle smile"
+   },
+   {
+    "name": "Charioteer (Sarathi)",
+    "scenes": [
+     5
+    ],
+    "look": "Middle-aged man, wheatish skin, strong weathered face, short trimmed beard, white cotton dhoti tied at waist, white angavastram draped over shoulder, bare chest, holding carved wooden reins, seated upright on chariot bench"
+   },
+   {
+    "name": "Jain Sadhvi (Rajul after diksha)",
+    "scenes": [
+     10
+    ],
+    "look": "Mature woman, fair skin, serene lined face, dark eyes, shaven head covered by white cotton cloth, plain white unstitched cotton robes draped simply, holding white rajoharan whisk in right hand, bare feet, peaceful expression"
+   },
+   {
+    "name": "Wedding Musicians",
+    "scenes": [
+     3
+    ],
+    "look": "Group of men, various ages, dusky skin, traditional dhotis and kurtas in saffron and white, playing curved horns, drums, cymbals, blurred motion in background, joyful focused expressions, bare feet on stone"
+   },
+   {
+    "name": "Deer (frightened)",
+    "scenes": [
+     4,
+     7
+    ],
+    "look": "Spotted chital deer, slender build, large liquid black eyes, twitching ears, tawny coat with white spots, delicate hooves, standing alert in wooden cage, then leaping free into golden light"
+   },
+   {
+    "name": "Goats",
+    "scenes": [
+     7
+    ],
+    "look": "Small herd, mixed white and brown coats, curved horns, bright horizontal pupils, sturdy legs, stepping cautiously from cage doors onto warm stone, ears flicking, calm after release"
+   },
+   {
+    "name": "Birds",
+    "scenes": [
+     7
+    ],
+    "look": "Flock of small birds, emerald and gold feathers, rapid wingbeats, rising in spiral from open cages, catching sunrise light, silhouettes against pale sky, swift graceful flight"
+   }
+  ],
+  "places": [
+   {
+    "name": "Palace Road",
+    "look": "Wide stone-paved avenue flanked by white marble palace walls with carved jharokha windows, tall pointed shikhara spires visible above, golden morning light casting long shadows, garlands draped on pillars"
+   },
+   {
+    "name": "Dilwara-Style Temple Interior",
+    "look": "White marble hall with intricately carved pillars, domed ceiling with lotus motifs, marble floor inlaid with geometric patterns, warm golden light from high windows, central raised platform for idol"
+   },
+   {
+    "name": "Ornate Wedding Chariot",
+    "look": "Dark teak wood frame with gold leaf carvings of elephants and lotuses, silk canopy in crimson and gold, heavy jasmine and marigold garlands draping sides, large wooden wheels with iron bands, carved yoke for bullocks"
+   },
+   {
+    "name": "Stone Road with Cages",
+    "look": "Ancient uneven stone path worn by centuries, rough wooden cages with iron hinges placed at intervals, dry grass at edges, long morning shadows, distant palace walls, pale blue sky"
+   },
+   {
+    "name": "White Marble Palace Gate",
+    "look": "Massive arched gateway of carved white marble, ornate torana lintel with celestial beings, heavy teak doors studded with brass, guardian elephants carved at base, steps descending to road, golden light"
+   },
+   {
+    "name": "Mount Girnar Summit",
+    "look": "Rocky peak with cluster of ancient Jain temples, tall pointed shikhara spires of white marble and sandstone, marble meditation platform at highest point, golden sunrise bathing cliffs, mist in valleys below"
+   },
+   {
+    "name": "Temple Courtyard",
+    "look": "Open square of polished white marble, surrounded by carved pillared corridors, central tulsi plant in stone planter, soft morning light, quiet shadows, single lotus pond reflecting spires"
+   },
+   {
+    "name": "White Marble Background",
+    "look": "Smooth unblemished white marble surface stretching infinitely, subtle golden veining, soft directional glow from above, gentle shadows, pristine minimal space for sacred symbols"
+   }
+  ]
+ },
+ "idol_photos_used": [
+  "File:Achalgachh jain temple - Neminath statue.jpg",
+  "File:Neminatha at Sambhavnath ni khadki, Ahmedabad.jpg"
+ ],
+ "credits": [
+  "Photo: Achalgachh jain temple - Neminath statue (Wikimedia Commons)",
+  "Photo: Neminatha at Sambhavnath ni khadki, Ahmedabad (Wikimedia Commons)"
  ]
 }

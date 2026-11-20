@@ -243,7 +243,12 @@
    "links": [
     "https://www.instagram.com/reel/Df-HV--nI2l/"
    ],
-   "at": "2026-11-20 22:30"
+   "at": "2026-11-20 22:30",
+   "ok_links": [
+    "https://www.instagram.com/reel/Df-HV--nI2l/"
+   ],
+   "tries": 1,
+   "submitted": "2026-11-20 22:48"
   }
  },
  {
@@ -353,12 +358,24 @@
   "job": "1120-2040a-c1",
   "topic": "STEAM BLACK FRIDAY SALE",
   "title": "STEAM BLACK FRIDAY SALE",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://f.io/O1zu3kBp",
    "start": 0.0,
    "layout": "mixed:crop+fill"
+  },
+  "sched": {
+   "slot": 1795215600,
+   "at": "2026-11-21 04:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsulegaming/1120-2040a-c1/post.mp4",
+   "prepared": "2026-11-20 22:49",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040a-c1-1795195168.mp4",
+   "ig_container": "17905376952397877",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040a-c1-1795195168.mp4"
   }
  },
  {

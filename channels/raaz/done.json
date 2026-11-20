@@ -102,7 +102,23 @@
   "topic": "Shaadi ka 5 lakh ka lifafa (Part 2, jawab)",
   "title": "Shaadi ka 5 lakh ka lifafa: chor kaun? (Part 2, jawab)",
   "qc_ok": true,
-  "status": "approved",
-  "review": []
+  "status": "scheduled",
+  "review": [],
+  "sched": {
+   "slot": 1795271400,
+   "at": "2026-11-21 20:00",
+   "platforms": [
+    "ig",
+    "fb",
+    "yt"
+   ],
+   "mp4": "/home/ubuntu/studio-out/raaz/case2-p2/post.mp4",
+   "prepared": "2026-11-20 22:51",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/raaz-case2-p2-1795195278.mp4",
+   "yt": "w2mjg8bzm6M",
+   "fb": "1700519234741262",
+   "ig_container": "18185377057442685",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/raaz-case2-p2-1795195278.mp4"
+  }
  }
 ]

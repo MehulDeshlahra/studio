@@ -263,3 +263,6 @@
 
 ## review 1118-2303
 - picture check: scene 9: Is any number, date or rule on screen different from the voice-over? (yes 67%)
+
+## review 1120-2137
+- visual: Scene 4 (Teesra): The rule card background is largely blank and blurry compared to other detailed cards, showing minimal text before expanding.

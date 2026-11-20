@@ -1,0 +1,363 @@
+{
+ "slug": "purana-sona-bechna-loss",
+ "title": "Purana sona bechne par poora paisa kyun nahi milta",
+ "hooks": [
+  "Purana sona becha? Poora paisa kyun nahi mila?",
+  "Sona bechne gaye the, haath aaya sirf 60%?",
+  "Nani ki choodi bechi, making charges gayab?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct mistake warning in first 4 words, matches top rival pattern 'PURANE SONE...' (Indian Dollar, 173k views), poses the exact viewer question",
+ "metaphor": "Gold jewellery melting into pure gold bar with deductions peeling away as slag",
+ "mechanism": [
+  "Purity test (XRF/karat machine) determines gold %",
+  "Net weight = gross weight minus stone weight",
+  "Impurity/solder deduction 1-3% applied",
+  "Making charges never returned, only gold value paid",
+  "Final payout = net gold weight × today's MCX rate × purity %"
+ ],
+ "cast": {
+  "Mehul": "Young Indian man, 25, casual kurta, holding phone at jewellery shop counter",
+  "Raghav": "Friend, 26, checked shirt, leaning on counter beside Mehul"
+ },
+ "scenes": [
+  {
+   "vo": "Purana sona becha? Poora paisa kyun nahi mila?",
+   "type": "wa",
+   "title": "Raghav",
+   "messages": [
+    {
+     "from": "Raghav",
+     "text": "Bhai, daadi ki chain bechi 45k ki 😕"
+    },
+    {
+     "from": "Raghav",
+     "text": "Market rate 60k tha, 15k kahan gaya?"
+    },
+    {
+     "from": "me",
+     "text": "Tumhare saath hi nahi, sabke saath hota hai"
+    }
+   ],
+   "motion": "push",
+   "keywords": [
+    "Purana sona",
+    "poora paisa"
+   ],
+   "bg_prompt": "Two young men at a busy Indian jewellery shop counter, gold necklaces in velvet trays behind glass, warm halogen lights, one looks worried at phone",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Sunaar bolta hai purity kam hai, making charges nahi milte.",
+   "type": "sms",
+   "title": "",
+   "messages": [
+    {
+     "app": "Messages",
+     "from": "VM-GOLD",
+     "text": "Gold Rate 22K: Market-linked | 18K: Market-linked | MCX Live"
+    },
+    {
+     "app": "Messages",
+     "from": "VM-HDFCBK",
+     "text": "A/c XX4821 debited ₹45,000 for Gold Sale. Ref: GLD201126"
+    }
+   ],
+   "motion": "pan",
+   "keywords": [
+    "purity",
+    "making charges"
+   ],
+   "bg_prompt": "Close-up of phone screen showing bank SMS and gold rate alert, blurred jewellery shop background with weighing scale visible",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "BIS hallmark se purity confirm hoti hai, bina hallmark testing zaroori.",
+   "type": "rule",
+   "title": "BIS Hallmark Niyam",
+   "sub": "BIS Hallmark: Mandatory Standard",
+   "lines": [
+    "Hallmark = purity guarantee",
+    "22K = 91.6% shuddh sona",
+    "18K = 75% shuddh sona",
+    "Bina hallmark? XRF test maango"
+   ],
+   "stamp": "ASLI NIYAM",
+   "motion": "punch",
+   "keywords": [
+    "BIS hallmark",
+    "purity"
+   ],
+   "real": {
+    "q": "BIS hallmark logo",
+    "kind": "logo",
+    "subject": "BIS hallmark symbol with 22K/18K markings"
+   },
+   "bg_prompt": "BIS hallmark stamp being pressed on gold jewellery, macro shot, gold dust particles in air, dark workshop background",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Bill dekho: stone weight alag, solder 2% kata, making charges zero.",
+   "type": "bill",
+   "title": "Sona Bechne Ka Bill",
+   "sub": "Aaj ka rate: Market-linked (Check MCX)",
+   "rows": [
+    {
+     "label": "Gross weight",
+     "value": "10.00 gm"
+    },
+    {
+     "label": "Stone weight",
+     "value": "-1.50 gm"
+    },
+    {
+     "label": "Net gold weight",
+     "value": "8.50 gm"
+    },
+    {
+     "label": "Solder deduction (2%)",
+     "value": "-0.17 gm"
+    },
+    {
+     "label": "Payable gold",
+     "value": "8.33 gm"
+    },
+    {
+     "label": "Value @ Market Rate",
+     "value": "Calculated"
+    },
+    {
+     "label": "Making charges paid",
+     "value": "₹0 (wapas nahi)"
+    }
+   ],
+   "total": {
+    "label": "Aapko mila",
+    "value": "₹45,000"
+   },
+   "tone": "bad",
+   "motion": "tilt",
+   "keywords": [
+    "stone weight",
+    "solder",
+    "making charges"
+   ],
+   "bg_prompt": "Jeweller's hand writing on thermal receipt printer, gold jewellery pieces on weighing scale pan, calculator showing numbers",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Making charges ₹8,000 the, bechte waqt ek rupee nahi mila.",
+   "type": "stat",
+   "value": "₹8,000",
+   "sub": "Making charges kho gaye",
+   "motion": "punch",
+   "keywords": [
+    "making charges",
+    "₹8,000"
+   ],
+   "bg_prompt": "Stack of ₹500 notes being counted on wooden counter, some notes fading away like dust, jewellery box open beside",
+   "title": "",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Exchange karte to full gold value milti, sirf difference pe GST.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "Sell (Cash)",
+     "value": "₹45,000 mila",
+     "pct": 75
+    },
+    {
+     "label": "Exchange (New)",
+     "value": "Full gold value",
+     "pct": 100
+    }
+   ],
+   "motion": "pan",
+   "keywords": [
+    "Exchange",
+    "GST"
+   ],
+   "bg_prompt": "Two paths diverging at jewellery counter: left side cash handover, right side new necklace being tried on, customer smiling",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Sell karte waqt GST nahi lagta, naya khareedte waqt 3% GST.",
+   "type": "rule",
+   "title": "GST Niyam Purana Sona",
+   "sub": "GST Norms for Gold",
+   "lines": [
+    "Purana sona bechne pe GST nahi",
+    "Naya jewellery pe 3% GST",
+    "Exchange pe difference pe GST",
+    "Making charges pe bhi GST"
+   ],
+   "stamp": "ASLI NIYAM",
+   "motion": "punch",
+   "keywords": [
+    "GST",
+    "3%"
+   ],
+   "real": {
+    "q": "GST India logo",
+    "kind": "logo",
+    "subject": "Official GST India logo with tricolor"
+   },
+   "bg_prompt": "GST council meeting hall, Indian flag, officials at long table, documents with GST logo on table",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Checklist: 3 jewellers se rate lo, hallmark dekho, bill maango.",
+   "type": "list",
+   "title": "Sona Bechne Se Pehle",
+   "lines": [
+    "2-3 jewellers se rate compare karo",
+    "BIS hallmark ya XRF test maango",
+    "Stone weight alag likhwao",
+    "Solder deduction % pucho",
+    "Likha hua bill lo, cash na lo"
+   ],
+   "motion": "push",
+   "keywords": [
+    "checklist",
+    "bill"
+   ],
+   "bg_prompt": "Person's hand ticking checkboxes on paper notepad, pen, gold jewellery and weighing scale in background blur",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aaj hi 3 jewellers se rate lo, likha bill maango.",
+   "type": "title",
+   "big": "AAJ HI KARO",
+   "sub": "3 rates + likha bill",
+   "motion": "punch",
+   "keywords": [
+    "3 jewellers",
+    "bill"
+   ],
+   "bg_prompt": "Person typing on phone at home, gold jewellery box on table, notepad with rates written",
+   "title": "",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Save karo, kaam aayega. Tumne kab sona becha? Comment mein batao.",
+   "type": "title",
+   "big": "SAVE KARO",
+   "sub": "Tumne kab sona becha? Comment mein batao",
+   "motion": "pull",
+   "keywords": [
+    "Save karo",
+    "comment"
+   ],
+   "bg_prompt": "Phone screen showing Finance Fuel Instagram reel with save icon highlighted, thumb hovering, cosy home lighting",
+   "title": "",
+   "small": null,
+   "label": null
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Purana sona becha? Poora paisa kyun nahi mila?\n\nMaking charges wapas nahi milte, solder/stone weight kat-ta hai, hallmark bina testing zaroori. 3 jewellers se rate lo, likha bill maango.\n\nSource: BIS Standards, GST Norms, Gold Mart Jewellers guide\nSave karo, kaam aayega 📌\n\nTumne kab sona becha? Comment mein batao.\n\n#personalfinance #financeinhindi #moneytips #gold #hallmark #bis #gst #scamalert",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#gold",
+  "#hallmark",
+  "#bis",
+  "#gst",
+  "#scamalert"
+ ],
+ "claims": [
+  {
+   "claim": "Making charges are not returned when selling old gold, only gold value is paid",
+   "basis": "Gold Mart Jewellers guide: 'Making charges aapne originally making charges diye the — sell karte waqt woh nahi milte. Sirf gold ki value milti hai.'"
+  },
+  {
+   "claim": "Impurity/solder deduction typically 1-3% deducted from gross weight",
+   "basis": "Gold Mart Jewellers guide: 'Impurity / Solder Deduction... Typically 1–3% deducted.'"
+  },
+  {
+   "claim": "Stone weight is separated and valued separately",
+   "basis": "Gold Mart Jewellers guide: 'Stone weight... stones ki alag valuation hoti hai.'"
+  },
+  {
+   "claim": "No GST when selling old gold for cash, 3% GST on new jewellery purchase",
+   "basis": "Gold Mart Jewellers guide: 'Jab aap purana sona bechte hain, GST aap pe nahi lagta — GST tab lagta hai jab aap naya jewellery khareedte hain ya exchange karte hain.'"
+  },
+  {
+   "claim": "BIS hallmark confirms purity (22K = 91.6%, 18K = 75%)",
+   "basis": "Gold Mart Jewellers guide: '22K — 91.6% Pure Most Indian jewellery is 22K. Hallmarked pieces clearly mention this. 18K — 75% Pure'"
+  },
+  {
+   "claim": "Exchange gives full gold value, GST only on difference amount",
+   "basis": "Gold Mart Jewellers guide: 'Agar aap exchange kar rahe hain (old gold against new jewellery), to difference amount pe GST calculate hota hai.'"
+  }
+ ],
+ "fresh_fixed": [
+  "scene 2: The message shows a date 'Ref: GLD261120' which implies 2020, and the gold rate ₹6,150/gm is a generic placeholder; the script should reflect current 2026 market realities or avoid specific dated references that look like past years.",
+  "scene 3: The sub 'BIS Act 2016, 15 June 2021 se laagu' is historical context; while the act is valid, the framing suggests it's a new rule, whereas it is now standard practice in 2026.",
+  "scene 4: The sub 'Aaj ka rate: ₹6,150/gm (22K)' is an arbitrary figure; the script should clarify that rates fluctuate daily and are not fixed at this specific number in Nov 2026.",
+  "scene 7: The sub 'CGST Rate Notification 2017, 28 June 2017' is historical context; while the GST law is current, the script frames it as a specific 'Niyam' notification date, which is outdated for a 2026 viewer."
+ ],
+ "explainer": {
+  "score": 8,
+  "ok": false,
+  "steps_learned": [
+   "Check for BIS hallmark to confirm purity.",
+   "Understand that making charges are not returned when selling.",
+   "Review the bill for stone weight deductions and solder (2%) cuts.",
+   "Understand that selling old gold does not attract GST, but exchanging it for new gold attracts GST on the price difference.",
+   "Get rates from 3 different jewellers before selling.",
+   "Request a written bill.",
+   "File a complaint with RBI CMS if cheated."
+  ],
+  "missing_steps": [
+   "How the purity test is actually conducted (e.g., acid test or XRF machine) so the viewer knows what to expect at the shop.",
+   "The difference between 22K and 24K gold valuation, which affects the final payout.",
+   "How the weight of stones is deducted (e.g., are they returned to the customer or just subtracted from the gold weight?)."
+  ],
+  "unsourced": [
+   "Line 9: 'RBI CMS pe complaint karo agar dhokha' - RBI CMS (Complaint Management System) is primarily for banking/NBFC complaints. While RBI regulates the financial sector, gold selling disputes are typically consumer court or BIS-related matters, not RBI CMS."
+  ]
+ },
+ "phone_bg": true,
+ "brain_ids": [
+  "fc294ac58f",
+  "4396759d41",
+  "1e1964f463",
+  "b2fabb69c4",
+  "f945e2a937",
+  "6ce7203c71",
+  "e15cfaed29",
+  "b69d65467f",
+  "161339712e",
+  "7f620e6fdf",
+  "0755cc155a",
+  "a688e48ca2",
+  "9db4cc694f",
+  "7fa182f8ef"
+ ]
+}

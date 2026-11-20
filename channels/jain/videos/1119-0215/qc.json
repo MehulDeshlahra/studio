@@ -10,12 +10,10 @@
   "dur": 55.03
  },
  "vision": {
-  "score": 6,
-  "ok": true,
-  "problems": [
-   "scene 1: character design of the king differs visibly from scene 5 (aged bearded king vs young king)",
-   "scene 8: bird anatomy and hand interaction looks slightly distorted/unnatural"
-  ]
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
  },
  "voice": {
   "ok": true,

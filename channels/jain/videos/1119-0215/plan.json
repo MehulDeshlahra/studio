@@ -128,7 +128,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Indra"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "King Megharath, middle-aged, athletic build, fair, neatly trimmed beard, regal silk dhoti with gold embroidery, crown of precious gems, compassionate eyes, serene expression, royal posture on marble throne, holds a small delicate pigeon with soft white feathers and gentle dark eyes safely in his palms. A large hawk with sharp brown feathers, piercing yellow eyes, and curved beak hovers intensely before him. Jain Palace Hall with ornate white marble architecture, finely carved pillars, warm golden light, serene atmosphere, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.28
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Raja ne mithai mangwayi, baaz ne mana kar di",
@@ -145,7 +159,21 @@
    "small": "Hawk refuses",
    "sub": null,
    "label": null,
-   "real": null
+   "real": null,
+   "pic": {
+    "refs": [
+     "Indra"
+    ],
+    "tries": [
+     {
+      "file": "s6q0.jpg",
+      "prompt": "King Megharath, middle-aged with a neatly trimmed beard, regal silk dhoti with gold embroidery, and a crown of precious gems, sits on a marble throne, extending a silver tray piled with colorful Indian sweets toward a large hawk. The hawk, with sharp brown feathers, piercing yellow eyes, and a curved beak, perches nearby, sharply turning its head away. Set in an ornate white marble Jain palace hall with finely carved pillars. Serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.18
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Raja bola — mera maans le lo, kabootar bach jayega",
@@ -161,7 +189,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Indra"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "King Megharath, middle-aged, athletic build, fair skin, neatly trimmed beard, wearing a regal silk dhoti with gold embroidery and a crown of precious gems, holds a small, ornate dagger in his hand, his expression resolute and compassionate. Before him, an elderly minister, thin frame, wrinkled face, kind eyes, wearing a white cotton dhoti and angavastram, stands with folded hands in a humble, pleading posture. Set within a grand Jain palace hall featuring finely carved white marble pillars and tall shikhara spires, serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.28
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Mantri kaha — kasai se maans mang lo maharaj",
@@ -198,9 +240,9 @@
   },
   {
    "vo": "Raja ne jaang se maans kaata, baaz ko diya, baaz bola — barabar tol do",
-   "type": "clip",
+   "type": "image",
    "prompt": "Close-up: King Megharath cuts flesh from thigh with dagger, places it on golden plate, offers to hawk, blood minimal, golden light on marble, pigeon safe on lap, large ornate weighing scale brought in — pigeon on one side, king's flesh piece on other, scale tips toward pigeon",
-   "motion": "punch",
+   "motion": "push",
    "keywords": [
     "jaang",
     "maans",
@@ -211,7 +253,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Indra"
+    ],
+    "tries": [
+     {
+      "file": "s10q0.jpg",
+      "prompt": "King Megharath, middle-aged with a neatly trimmed beard, regal silk dhoti with gold embroidery, and a crown of precious gems, sits on a marble throne, carefully placing a piece of flesh onto a golden plate held before a large hawk with sharp brown feathers and piercing yellow eyes. A small white pigeon rests safely on his lap. Beside them, a large ornate weighing scale tips toward the pigeon. Serene painterly Indian style, warm golden light on white marble, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.36
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Raja maans kat-kat ke rakhta gaya, kam padta raha, ant mein khud tula pe baith gaya, dhyan laga liya",
@@ -228,7 +284,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Indra"
+    ],
+    "tries": [
+     {
+      "file": "s11q0.jpg",
+      "prompt": "King Megharath, middle-aged, athletic build, fair skin, neatly trimmed beard, regal silk dhoti with gold embroidery, crown of precious gems, compassionate eyes, serene expression, seated cross-legged with hands resting in the lap, eyes closed in deep meditation, balanced perfectly on a large ornate golden scale opposite a small delicate pigeon with soft white feathers, inside a grand Jain palace hall with finely carved white marble pillars and stepped stone roofs, serene painterly Indian style, warm golden light, gentle glow, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.25
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Kabootar-baaz bane devta, raja ko aashirwad diya, yehi atma bani Shantinath — 16ve Tirthankar. Tum kya karte? Jai Jinendra",
@@ -292,5 +362,83 @@
   "7fa182f8ef",
   "4396759d41",
   "97e1b2fcbb"
- ]
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "King Megharath",
+    "scenes": [
+     1,
+     2,
+     5,
+     6,
+     7,
+     8,
+     10,
+     11,
+     12
+    ],
+    "look": "Middle-aged, athletic build, fair skin, neatly trimmed beard, regal silk dhoti with gold embroidery, crown of precious gems, compassionate eyes, serene expression, royal posture on marble throne, majestic and calm presence."
+   },
+   {
+    "name": "Indra",
+    "scenes": [
+     3
+    ],
+    "look": "Divine king, tall, powerful build, radiant golden skin, elaborate jeweled crown, silken robes, holding a golden vajra, seated on white elephant Airavata, surrounded by celestial light, majestic and authoritative presence."
+   },
+   {
+    "name": "Elderly Minister",
+    "scenes": [
+     8,
+     9
+    ],
+    "look": "Elderly, thin frame, wrinkled face, kind eyes, white cotton dhoti and angavastram, bare head, humble posture with folded hands, respectful expression, simple and modest appearance, wise and concerned demeanor."
+   },
+   {
+    "name": "Shantinath Idol",
+    "scenes": [
+     13
+    ],
+    "look": "White marble statue, seated in padmasana, serene face, half-closed eyes, meditative expression, deer emblem carved on pedestal, glowing golden aura, peaceful presence, smooth polished stone texture, sacred and divine appearance."
+   },
+   {
+    "name": "Pigeon",
+    "scenes": [
+     1,
+     4,
+     5,
+     6,
+     11,
+     12
+    ],
+    "look": "Small delicate bird, soft white feathers, gentle dark eyes, trembling posture, resting safely in palms, light and airy appearance, calm presence, graceful and fragile form."
+   },
+   {
+    "name": "Hawk",
+    "scenes": [
+     4,
+     6,
+     7,
+     11,
+     12
+    ],
+    "look": "Large bird of prey, sharp brown feathers, piercing yellow eyes, curved beak, powerful talons, fierce and alert posture, majestic stance, intense gaze, strong and predatory presence."
+   }
+  ],
+  "places": [
+   {
+    "name": "Jain Palace Hall",
+    "look": "Ornate white marble architecture, tall shikhara spires, finely carved pillars, stepped stone roofs, warm golden light, serene atmosphere, uncluttered space, regal and sacred environment, grand and peaceful palace hall."
+   },
+   {
+    "name": "Indra's Court",
+    "look": "Celestial golden throne floating on soft clouds, radiant divine light, ethereal atmosphere, grand scale, golden pillars, magnificent and heavenly setting, glowing aura, divine and majestic assembly hall."
+   },
+   {
+    "name": "Jain Temple Interior",
+    "look": "White marble sanctuary, serene atmosphere, glowing lotus and deer emblems, soft golden light, meditative silence, polished floors, sacred and peaceful environment for prayer, clean and spiritual temple space."
+   }
+  ]
+ }
 }

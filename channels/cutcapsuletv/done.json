@@ -84,7 +84,12 @@
    "links": [
     "https://www.instagram.com/reel/Df-Hfa1lDRA/"
    ],
-   "at": "2026-11-20 22:30"
+   "at": "2026-11-20 22:30",
+   "ok_links": [
+    "https://www.instagram.com/reel/Df-Hfa1lDRA/"
+   ],
+   "tries": 1,
+   "submitted": "2026-11-20 22:48"
   }
  },
  {
@@ -162,12 +167,24 @@
   "job": "1120-0124a-c4",
   "topic": "IT'S NOT YOUR FAULT, PARENTS",
   "title": "IT'S NOT YOUR FAULT, PARENTS",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
    "start": 105.58,
    "layout": "crop"
+  },
+  "sched": {
+   "slot": 1795215600,
+   "at": "2026-11-21 04:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsuletv/1120-0124a-c4/post.mp4",
+   "prepared": "2026-11-20 22:48",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-0124a-c4-1795195083.mp4",
+   "ig_container": "18196634341406979",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-0124a-c4-1795195083.mp4"
   }
  },
  {

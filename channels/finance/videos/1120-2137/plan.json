@@ -1,0 +1,331 @@
+{
+ "slug": "purana-sona-deductions",
+ "title": "Purana sona bechne par poora paisa kyun nahi milta",
+ "hooks": [
+  "Purana sona bech rahe ho? Ye 3 galtiyan paisa kaat leti hain.",
+  "Sona becha par poora paisa nahi mila? Ye raaz jaan lo.",
+  "Gold exchange karne ja rahe ho? Pehle ye 3 deductions dekh lo."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct mistake warning with specific number (3 galtiyan) matches top-performing Finance Fuel pattern and rival data showing 'PURANE SONE...' as high-retention opener.",
+ "metaphor": "A gold ornament being peeled layer by layer — hallmark stamp, stone weight, solder joints, making charges — each layer revealing a deduction until only pure gold value remains.",
+ "mechanism": [
+  "Purity test (XRF/karat machine) confirms karat (22K/18K/14K)",
+  "Stone weight separated and valued separately",
+  "Impurity/solder deduction 1-3% applied",
+  "Net weight × current MCX rate × purity % = gold value",
+  "Making charges never returned on resale",
+  "GST only on exchange difference, not cash sale"
+ ],
+ "cast": {
+  "Mehul": "Young Indian man, 25, casual kurta, holding phone, warm lighting",
+  "Raghav": "Friend, 26, checked shirt, leaning on counter, curious expression"
+ },
+ "scenes": [
+  {
+   "vo": "Purana sona bech rahe ho? Ye 3 galtiyan paisa kaat leti hain.",
+   "type": "wa",
+   "title": "Raghav",
+   "prompt": "WhatsApp chat on dark green-black background, two bubbles",
+   "motion": "push",
+   "keywords": [
+    "Purana sona",
+    "3 galtiyan"
+   ],
+   "messages": [
+    {
+     "from": "Raghav",
+     "text": "Bhai, naani ke kangan bechne hain. Poora rate milega na?"
+    },
+    {
+     "from": "me",
+     "text": "Ruko. Pehle ye 3 deductions samajh le."
+    }
+   ],
+   "bg_prompt": "A young man sitting on a sofa in a middle-class Indian living room, evening light, phone in hand, looking thoughtful",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Pehla: making charges kabhi wapas nahi milte — sirf gold ka rate.",
+   "type": "stat",
+   "title": "MAKING CHARGES",
+   "prompt": "Big bold number on deep black-green studio render, soft gold accent",
+   "motion": "punch",
+   "big": "₹0",
+   "small": "Making charges return",
+   "keywords": [
+    "making charges",
+    "wapas nahi"
+   ],
+   "value": "₹0",
+   "sub": "Making charges return on resale",
+   "bg_prompt": "Close-up of hands examining a gold bangle under a magnifying lamp in a jewellery workshop, gold dust visible",
+   "label": null
+  },
+  {
+   "vo": "Doosra: stones ka weight alag hota hai, unki alag valuation.",
+   "type": "bill",
+   "title": "STONE DEDUCTION",
+   "prompt": "Receipt style card on dark green-black, line items with red/green values",
+   "motion": "pan",
+   "keywords": [
+    "stones",
+    "alag valuation"
+   ],
+   "rows": [
+    {
+     "label": "Total weight",
+     "value": "10.00 gm"
+    },
+    {
+     "label": "Stone weight",
+     "value": "-2.50 gm"
+    },
+    {
+     "label": "Net gold weight",
+     "value": "7.50 gm"
+    }
+   ],
+   "total": {
+    "label": "Gold valued at",
+    "value": "7.50 gm × rate"
+   },
+   "tone": "bad",
+   "bg_prompt": "A jeweller's scale with a gold necklace being weighed, small loose stones in a tray beside it",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Teesra: solder/joints pe 1 se 3 percent impurity deduction.",
+   "type": "rule",
+   "title": "BIS Hallmark Rule",
+   "prompt": "Official rule card with BIS logo, gold border on deep green",
+   "motion": "tilt",
+   "keywords": [
+    "solder",
+    "1-3%"
+   ],
+   "lines": [
+    "Impurity/solder deduction: 1-3%",
+    "BIS hallmark confirms purity",
+    "XRF test non-destructive"
+   ],
+   "stamp": "ASLI NIYAM",
+   "real": {
+    "q": "BIS hallmark logo",
+    "kind": "logo",
+    "subject": "BIS hallmark symbol"
+   },
+   "bg_real": {
+    "q": "Bureau of Indian Standards headquarters New Delhi",
+    "kind": "photo",
+    "subject": "BIS building exterior"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Final formula: net weight × aaj ka MCX rate × purity percent.",
+   "type": "compare",
+   "title": "VALUE CALCULATION",
+   "prompt": "Side-by-side comparison card, green for exchange, red for cash sale",
+   "motion": "push",
+   "keywords": [
+    "net weight",
+    "MCX rate",
+    "purity %"
+   ],
+   "items": [
+    {
+     "label": "Exchange (new jewellery)",
+     "value": "Full gold value + GST on diff",
+     "pct": 100
+    },
+    {
+     "label": "Cash sale",
+     "value": "Gold value only, no GST",
+     "pct": 95
+    }
+   ],
+   "bg_prompt": "MCX gold rate ticker on a screen in a bullion trading office, traders watching numbers",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "GST sirf exchange pe lagta hai, cash bechne pe nahi.",
+   "type": "sms",
+   "title": "HDFC Bank",
+   "prompt": "Lock screen SMS notification, realistic bank format",
+   "motion": "pull",
+   "keywords": [
+    "GST",
+    "exchange",
+    "cash"
+   ],
+   "time": "14:32",
+   "messages": [
+    {
+     "app": "Messages",
+     "from": "VM-HDFCBK",
+     "text": "Gold exchange: 3% GST on difference amount. Cash sale: No GST. Check current MCX rate."
+    }
+   ],
+   "bg_prompt": "Phone screen glowing in a dim room, reflection in a glass showcase of gold jewellery",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Checklist: hallmark dekho, XRF test maango, 2-3 jewellers compare karo.",
+   "type": "list",
+   "title": "BEST PRICE STEPS",
+   "prompt": "Clean checklist card with tick marks, gold accents on dark green",
+   "motion": "pan",
+   "keywords": [
+    "hallmark",
+    "XRF test",
+    "compare"
+   ],
+   "lines": [
+    "BIS hallmark verify karein",
+    "XRF machine test maangein",
+    "2-3 jewellers se rate compare karein",
+    "Stone weight alag likhwa lein",
+    "Bill pe net weight aur rate clear ho"
+   ],
+   "bg_prompt": "A customer standing at a jewellery counter, jeweller showing XRF machine report on tablet",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aaj hi apne sona ka hallmark aur weight note kar lo.",
+   "type": "title",
+   "big": "ACTION LO",
+   "sub": "Hallmark & weight note karein",
+   "prompt": "Bold title card, gold text on deep black-green, subtle particle shimmer",
+   "motion": "punch",
+   "keywords": [
+    "hallmark",
+    "weight",
+    "note"
+   ],
+   "bg_prompt": "A hand writing in a small notebook beside a gold jewellery box, warm lamp light",
+   "title": "",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Save karo, kaam aayega. Tumne kab purana sona becha tha?",
+   "type": "title",
+   "big": "SAVE KARO",
+   "sub": "Kab becha tha purana sona?",
+   "prompt": "End card with Finance Fuel handle, gold underline, soft glow",
+   "motion": "tilt",
+   "keywords": [
+    "Save karo",
+    "comment"
+   ],
+   "bg_prompt": "Phone screen showing Instagram save animation, blurred background of Indian festival lights",
+   "title": "",
+   "small": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Purana sona bech rahe ho? Ye 3 galtiyan paisa kaat leti hain.\n\n1. Making charges wapas nahi milte\n2. Stone weight alag hota hai\n3. Solder pe 1-3% deduction\n\nHallmark check karo, XRF test maango, 2-3 jewellers compare karo.\n\nSource: BIS Hallmarking Regulations 2021, Gold Mart Jewellers guide\nSave karo, kaam aayega 📌\n\nTumne kab purana sona becha tha? Comment mein batao.\n\n#personalfinance #financeinhindi #moneytips #gold #hallmark #bis #oldgold #jewellery",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#gold",
+  "#hallmark",
+  "#bis",
+  "#oldgold",
+  "#jewellery"
+ ],
+ "claims": [
+  {
+   "claim": "Making charges are not returned when selling old gold for cash",
+   "basis": "Gold Mart Jewellers guide: 'Making charges aapne originally making charges diye the — sell karte waqt woh nahi milte. Sirf gold ki value milti hai.'"
+  },
+  {
+   "claim": "Stone weight is deducted and valued separately",
+   "basis": "Gold Mart Jewellers guide: 'Stone weight agar piece mein stones hain to unka weight alag kiya jaata hai — stones ki alag valuation hoti hai.'"
+  },
+  {
+   "claim": "Impurity/solder deduction typically 1-3%",
+   "basis": "Gold Mart Jewellers guide: 'Impurity / Solder Deduction... Typically 1–3% deducted.'"
+  },
+  {
+   "claim": "Final value = Net gold weight × Today's gold rate × Purity %",
+   "basis": "Gold Mart Jewellers guide: 'Final value = Net gold weight × Today's gold rate × Purity %'"
+  },
+  {
+   "claim": "GST applies only on exchange difference, not on cash sale of old gold",
+   "basis": "Gold Mart Jewellers guide: 'Jab aap purana sona bechte hain, GST aap pe nahi lagta — GST tab lagta hai jab aap naya jewellery khareedte hain ya exchange karte hain.'"
+  },
+  {
+   "claim": "BIS hallmark confirms purity; XRF test is non-destructive",
+   "basis": "Gold Mart Jewellers guide: 'BIS hallmark se confirm hoti hai purity... Reputable jewellers use a karat testing machine (XRF machine) — ek non-destructive test jo exact purity batata hai.'"
+  }
+ ],
+ "fresh_fixed": [
+  "scene 5: The SMS message uses a specific gold rate of '₹6,245/gm' which is a static, arbitrary number not sourced from the current date (2026) or provided in the text; the prompt requires relying only on dated sources, and no specific current gold rate for Nov 2026 is provided in the source text to validate this figure."
+ ],
+ "explainer": {
+  "score": 6,
+  "ok": false,
+  "steps_learned": [
+   "Making charges are never refunded — only gold rate is paid",
+   "Stones weight is separated and valued separately",
+   "Solder/joints attract 1–3% impurity deduction",
+   "Final payout formula: net weight × today's MCX rate × purity percentage",
+   "GST applies only on exchange, not on cash sale",
+   "Checklist: verify hallmark, ask for XRF test, compare 2–3 jewellers"
+  ],
+  "missing_steps": [
+   "What MCX rate is and how it differs from the jeweller's buying rate",
+   "How karat converts to purity percentage (e.g., 22K = 91.6%)",
+   "What 'net weight' means (gross weight minus stone weight)",
+   "How the 1–3% solder/joint deduction is actually calculated",
+   "What an XRF test is and why it's more reliable than touchstone",
+   "What a BIS hallmark looks like (logo, purity mark, jeweller code, year)",
+   "Difference between 24K/22K/18K in resale value"
+  ],
+  "unsourced": [
+   "1–3% impurity deduction on solder/joints",
+   "MCX rate used as the benchmark rate",
+   "XRF test mentioned as a required step",
+   "Stones having separate valuation (not detailed in source)"
+  ]
+ },
+ "phone_bg": true,
+ "brain_ids": [
+  "fc294ac58f",
+  "4396759d41",
+  "1e1964f463",
+  "b2fabb69c4",
+  "f945e2a937",
+  "6ce7203c71",
+  "e15cfaed29",
+  "b69d65467f",
+  "161339712e",
+  "7f620e6fdf",
+  "0755cc155a",
+  "a688e48ca2",
+  "9db4cc694f",
+  "7fa182f8ef"
+ ]
+}

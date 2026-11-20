@@ -2,8 +2,9 @@
  "channel": "finance",
  "job": "1118-2303",
  "topic": "'Digital Arrest' scam ka blueprint: video call pe police wala kaise darata hai, aur ek screenshot se bachav.",
- "stage": "held",
+ "stage": "done",
  "held_at": "2026-11-20 08:07",
  "soft_review": 1,
- "soft_preflight": 1
+ "soft_preflight": 1,
+ "brain_judged": true
 }
