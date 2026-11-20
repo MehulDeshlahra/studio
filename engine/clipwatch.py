@@ -58,6 +58,21 @@ def waiting(cid):
     return sum(1 for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or [] if d.get("status") in ("made", "approved"))
 
 
+
+def _save(st, mine):
+    """20 Nov: a run held the whole state in memory for an hour and wrote it back, undoing outside edits (the gaming
+    re-queue was undone twice). Only this run's own changes are written on top of the file as it is now."""
+    cur = load(STATE, {}) or {}
+    cur.setdefault("done", {})
+    for k, v in mine["add"].items():
+        cur["done"][k] = v
+    for k in mine["pop"]:
+        cur["done"].pop(k, None)
+    for sec in ("not_footage", "fails", "reclip"):
+        if st.get(sec):
+            cur.setdefault(sec, {}).update(st[sec])
+    save(STATE, cur)
+
 def _approved(cid):
     return sum(1 for d in load(os.path.join(ROOT, "channels", cid, "done.json"), []) or [] if d.get("status") == "approved")
 
@@ -65,6 +80,7 @@ def _approved(cid):
 def run(only=None):
     import laptop, clipper
     st = load(STATE, {}) or {}
+    mine = {"add": {}, "pop": set()}
     st.setdefault("done", {})
     for cid in pages():
         ch = load(os.path.join(ROOT, "channels", cid, "channel.json"), {}) or {}
@@ -129,7 +145,7 @@ def run(only=None):
             if key in picked or len(picked) >= 3 or time.time() - t0 > 70 * 60 or waiting(cid) >= cap:
                 continue
             picked.add(key)
-            st["done"][f"{cid}:{url}"] = time.time(); save(STATE, st)
+            st["done"][f"{cid}:{url}"] = time.time(); mine["add"][f"{cid}:{url}"] = st["done"][f"{cid}:{url}"]; mine["pop"].discard(f"{cid}:{url}"); _save(st, mine)
             log("clipwatch:", cid, "clipping", url, "for", key)
             try:
                 made = clipper.make(cid, url, int(s.get("clips_per_video") or 4), test=False, campaign=key)
@@ -139,10 +155,10 @@ def run(only=None):
                 log("clipwatch: clip run failed", str(e)[:200])
                 if "NOT_FOOTAGE" in str(e) or "TOO_LONG" in str(e):
                     # 20 Nov: brief links to a guidelines PDF and a logo PNG were tried as footage every hour. Never again
-                    st.setdefault("not_footage", {})[url] = str(e)[:160]; save(STATE, st)
+                    st.setdefault("not_footage", {})[url] = str(e)[:160]; _save(st, mine)
                     log("clipwatch: not footage, skipped for good:", url)
                     continue
-                st["done"].pop(f"{cid}:{url}", None); save(STATE, st)     # try again next hour
+                st["done"].pop(f"{cid}:{url}", None); mine["add"].pop(f"{cid}:{url}", None); mine["pop"].add(f"{cid}:{url}"); _save(st, mine)     # try again next hour
                 n = st.setdefault("fails", {}).get(url, 0) + 1
                 st["fails"][url] = n
                 # 19 Nov (owner: "i keep getting error messages in telegram"): ~30 alerts a day, most fixed by the next
@@ -151,7 +167,7 @@ def run(only=None):
                 if n == 3:
                     telegram(f"⚠ Cut Capsule: footage for '{key}' failed 3 times ({str(e)[:160]}). Studio keeps trying "
                              "daily; nothing to do unless the campaign link itself is wrong.")
-    save(STATE, st)
+    _save(st, mine)
 
 
 if __name__ == "__main__":
