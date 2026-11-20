@@ -120,7 +120,9 @@ function bizFilter(f) { BIZF = f; render(1); }
 function bizLibView(id) {
   const L = BIZLIB[id];
   if (!L) return `<div class="mut" style="margin-top:10px">Loading the library...</div>`;
-  const it = (L.items || []).filter((x) => BIZF === "all" || (BIZF === "used" ? x.used : BIZF === "out" ? !x.used : x.kind === BIZF));
+  const dup = (L.items || []).filter((x) => x.why === "duplicate copy").length;   // "-proxy" copies of the same clip: hidden
+  const it = (L.items || []).filter((x) => BIZF === "dup" ? x.why === "duplicate copy" : x.why !== "duplicate copy" &&
+    (BIZF === "all" || (BIZF === "used" ? x.used : BIZF === "out" ? !x.used : x.kind === BIZF)));
   const day = (t) => t ? new Date(t * 1000).toLocaleDateString(undefined, { day: "numeric", month: "short" }) : "never";
   const btn = (k, t) => `<button class="btn sm${BIZF === k ? " ok" : ""}" onclick="bizFilter('${k}')">${t}</button>`;
   const tile = (x) => `<div class="card" style="padding:0;overflow:hidden;${x.used ? "" : "opacity:.55"}">
@@ -131,8 +133,8 @@ function bizLibView(id) {
         ${x.why ? `<div class="dn" style="margin-top:3px">${esc(x.why)}</div>` : ""}
         <div class="faint" style="margin-top:3px">Last used: ${day(x.last)}${x.used && x.fresh ? " · fresh" : ""}</div>
         <div class="faint" style="word-break:break-all">${esc(x.file)}</div></div></div>`;
-  return `<div style="margin-top:12px"><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><b>Library</b><span class="mut">${L.total || 0} files · ${L.used || 0} used by the engine · ${L.clips || 0} clips · ${L.photos || 0} photos</span>
-      <span style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap">${btn("all", "All")}${btn("used", "Used")}${btn("out", "Left out")}${btn("clip", "Clips")}${btn("photo", "Photos")}</span></div>
+  return `<div style="margin-top:12px"><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><b>Library</b><span class="mut">${(L.total || 0) - dup} files · ${L.used || 0} used by the engine · ${(L.total || 0) - dup - (L.used || 0)} left out${dup ? ` · ${dup} duplicate copies hidden` : ""}</span>
+      <span style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap">${btn("all", "All")}${btn("used", "Used")}${btn("out", "Left out")}${btn("clip", "Clips")}${btn("photo", "Photos")}${dup ? btn("dup", "Copies") : ""}</span></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px">${it.map(tile).join("") || `<div class="mut">Nothing here.</div>`}</div></div>`;
 }
 async function bizMake(id) { const r = await post("/api/biz-make", { id }); alert(r.ok ? "Started: one reel for " + id + " (about 15-25 min). It shows here when done." : (r.error || "failed")); }
