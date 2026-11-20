@@ -114,7 +114,11 @@ def stock(cid):
         if j.endswith("-en") or known.get(j) in ("approved", "held", "rejected", "removed", "posted", "made"):
             continue
         m = load(os.path.join(cd, j, "meta.json"), {}) or {}
-        if m.get("stage") not in ("held", "done", "cancelled") and time.time() - os.path.getmtime(os.path.join(cd, j)) < 6 * 3600:
+        jd = os.path.join(cd, j)
+        # alive = waiting for the render lane, or a file written in the last 30 min (20 Nov: jain 1120-1015 died at
+        # 10:28 in its voice step and was counted as "being made" all afternoon)
+        newest = max([os.path.getmtime(os.path.join(jd, f)) for f in os.listdir(jd)] or [0])
+        if m.get("stage") == "prepped" or (m.get("stage") not in ("held", "done", "cancelled") and time.time() - newest < 1800):
             fl += 1
     return appr, fl
 
@@ -302,8 +306,10 @@ def main():
                 lap_ok = laptop.available()
             except Exception:
                 lap_ok = False
-        if not lap_ok:
+        if not lap_ok and not (lane == "prep" and urgent_pages()):
             log(f"{lane} lane: a manual job is running, skip"); return
+        if not lap_ok:
+            log("prep lane: a manual job is running, but a page has nothing to post (golden rule): going ahead")
         log("render lane: a manual job is running, but the laptop is free: rendering there")
     try:                                                    # 18 Nov: the job bot shares this server; never push it into swap
         avail = int(next(l for l in open("/proc/meminfo") if l.startswith("MemAvailable")).split()[1]) // 1024
