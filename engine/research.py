@@ -66,13 +66,17 @@ def run(topic, queries, job, watch_n=3):
                 seen.add(v["id"]); found.append(v)
     found.sort(key=lambda v: -v["views"])
     watched = []
-    for v in found[:watch_n]:
+
+    def _w(v):                               # 20 Nov audit: the 3 Shorts are watched side by side (was ~15 s each in a row)
         try:
             a = llm.watch(v["url"], WATCH_PROMPT.format(topic=topic))
             a.update({k: v[k] for k in ("url", "title", "views", "channel")})
-            watched.append(a); log("watched", v["url"], v["views"])
+            log("watched", v["url"], v["views"]); return a
         except Exception as e:
             log("watch fail", v["url"], str(e)[:120])
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=3) as ex:
+        watched += [a for a in ex.map(_w, found[:watch_n]) if a]
     try:                                     # 18 Nov: Instagram reels under the topic's own hashtags (smaller pages too)
         import hookstudy, re as _re
         page = os.path.basename(os.path.dirname(job))

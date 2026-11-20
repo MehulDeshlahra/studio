@@ -790,6 +790,12 @@ def main():
 
     # 1 research
     rp = os.path.join(job, "research.json")
+    _part = re.search(r" - Part (\d+)", str(topic))
+    if ("research" in redo or not os.path.exists(rp)) and ch.get("serial") and _part and int(_part.group(1)) > 1:
+        # 20 Nov audit: raaz Part 7 spent 4 min searching the web for its own made-up title ("No results found" x5). Later
+        # parts of an original serial follow the story bible (engine/serials.py); Part 1 still studies the niche
+        save(rp, {"topic": topic, "queries": [], "top": [], "watched": [], "web": "", "note": "serial part: story bible only"})
+        log("research skipped: serial Part", _part.group(1), "follows the story bible")
     if "research" in redo or not os.path.exists(rp):
         qs = [topic, topic + " shorts", topic + " explained"]
         r = research.run(topic, qs, job)
