@@ -19,6 +19,9 @@ PAGES = ["/c/discover/clipping", "/c/discover"]
 STORE = os.path.join(OUT, "campaigns.json")
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131 Safari/537.36"}
 OUR_PLATFORMS = ("instagram", "youtube")             # where Cut Capsule posts (Facebook is not paid by these campaigns)
+# 20 Nov owner: "target US if they pay US, similarly other countries, don't stick to India". English clip pages can reach
+# these viewers (slots are US evenings; captions English). A country-priced campaign is scored on its best rate here.
+REACH = ("US", "CA", "GB", "AU", "IN")
 FIT = {"gaming": 1.0, "entertainment": 1.0, "streaming": 1.0, "podcast": 0.95, "music": 0.8, "sports": 0.85, "comedy": 1.0,
        "lifestyle": 0.7, "education": 0.7, "business": 0.65, "finance": 0.6, "technology": 0.5, "crypto": 0.3, "betting": 0.0,
        "gambling": 0.0, "adult": 0.0}
@@ -148,9 +151,33 @@ def detail(cid):
     cats = ids(next((o["categories"] for o in _objs(html, "categories") if isinstance(o.get("categories"), list) and o["categories"]
                      and isinstance(o["categories"][0], dict)), []))
     types = ids(next((o["contentTypes"] for o in _objs(html, "contentTypes") if isinstance(o.get("contentTypes"), list)), []))
-    return {"payout": [{"platform": x.get("platform"), "rate_cents": x.get("rate"), "max_cents": x.get("maxPayout"),
-                        "min_cents": x.get("minPayout")} for x in pm if isinstance(x, dict)],
-            "pre_approval": bool((d.get("requirement") or {}).get("preApproval")), "categories": cats, "types": types}
+    out = {"payout": [{"platform": x.get("platform"), "rate_cents": x.get("rate"), "max_cents": x.get("maxPayout"),
+                       "min_cents": x.get("minPayout")} for x in pm if isinstance(x, dict)],
+           "pre_approval": bool((d.get("requirement") or {}).get("preApproval")), "categories": cats, "types": types}
+    # 20 Nov (owner: "target US if they pay US, similarly other countries"): the pay-by-country table, e.g. SEGA FM27 =
+    # US & Canada $2/1K, rest of the world $0; SEGA Steam = IN/PK/BD $0 on TikTok/YouTube
+    g = d.get("geoRates") or next((o["geoRates"] for o in _objs(html, "geoRates") if isinstance(o.get("geoRates"), dict)), None)
+    if isinstance(g, dict):
+        out["geo"] = {"tiers": [{"countries": t.get("countries") or [], "label": t.get("label"), "platform": t.get("platform"),
+                                 "rate_cents": t.get("rate") or 0} for t in g.get("tiers") or [] if isinstance(t, dict)],
+                      "rest": {x.get("platform"): x.get("rate") or 0 for x in g.get("restOfWorld") or [] if isinstance(x, dict)}}
+    return out
+
+
+def geo_rate(c, platform, country):
+    """Cents per 1K for one platform + viewer country. A geo tier wins, then rest-of-world, then the flat platform rate."""
+    g = c.get("geo") or {}
+    for t in g.get("tiers") or []:
+        if t.get("platform") == platform and country in (t.get("countries") or []):
+            return t.get("rate_cents") or 0
+    if platform in (g.get("rest") or {}):
+        return g["rest"][platform] or 0
+    return next((p.get("rate_cents") or 0 for p in c.get("payout") or [] if p.get("platform") == platform), 0)
+
+
+def pays_in(c, platforms=OUR_PLATFORMS):
+    """{country: best cents/1K on our platforms} for the countries we can reach (REACH)."""
+    return {cc: max(geo_rate(c, p, cc) for p in platforms) for cc in REACH}
 
 
 def score(c):
@@ -160,6 +187,14 @@ def score(c):
     if not pay:
         return 0, ["not paid on Instagram or YouTube"]
     rate = max((p.get("rate_cents") or 0) for p in pay) / 100.0                     # $ per 1K
+    if c.get("geoPriced"):
+        if not c.get("geo"):
+            return 0, ["pays by country: table not read yet"]
+        pin = pays_in(c)
+        best = max(pin.values() or [0])
+        rate = best / 100.0
+        c["pays_in"] = sorted([k for k, v in pin.items() if v == best and v > 0])
+        why.append("pays in " + (", ".join(c["pays_in"]) or "none of our countries"))
     cap = max((p.get("max_cents") or 0) for p in pay) / 100.0 or None                 # $ per clip
     left = float(c.get("availableBudgetRaw") or 0)
     hist = c.get("hist") or []
@@ -223,8 +258,12 @@ def run(report=False):
         c["hist"] = ([h for h in c["hist"] if now - h["t"] < 7 * 86400] + [{"t": now, "spent": r.get("budgetSpentRaw") or 0,
                                                                             "left": r.get("availableBudgetRaw") or 0,
                                                                             "paid": r.get("paidOutRaw") or 0}])[-60:]
-        if not c.get("detail_at") or now - c["detail_at"] > 86400:
+        # 20 Nov: country-priced campaigns: the API row has no country table, the campaign page does (geoRates)
+        need_geo = c.get("geoPriced") and (not c.get("geo") or now - c.get("geo_at", 0) > 86400)
+        if need_geo or not c.get("detail_at") or now - c["detail_at"] > 86400:
             d = detail(r["id"])
+            if "error" not in d and need_geo:
+                c["geo_at"] = now
             if "error" not in d:
                 c.update(d); c["detail_at"] = now
             time.sleep(1.5)
