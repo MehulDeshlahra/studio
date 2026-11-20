@@ -130,6 +130,11 @@ def known_fix(problems):
 
 
 # ---------------------------------------------------------------- held videos
+PIC_PROB = re.compile(r"picture check|frame check|iconograph|wrong (traditional )?form", re.I)
+PIC_WORDS = re.compile(r"dome|minaret|mosque|robe|saffron|orange|crown|tilak|jewel|beard|moustache|split|collage|blue skin|"
+                       r"clothing|dhoti|deity|idol|god|goddess|monk|four-armed|third eye|tirthankara|bahubali", re.I)
+
+
 def stage_for(probs):
     """Which stage a held video's problems point at."""
     t = " ".join(probs).lower()
@@ -291,7 +296,7 @@ def heal_held():
                 save(STATE, S); return
             # 1b 20 Nov: a wrong PICTURE is not fixed by a rebuild (it reuses the picture). Redraw only the flagged scenes
             # through engine/picsmith.py (prompt engineer, reference / real idol photo, Decisions check), once per code
-            pic = [x for x in probs if re.search(r"picture check|frame check|iconograph|wrong (traditional )?form", x, re.I)]
+            pic = [x for x in probs if PIC_PROB.search(x) or (re.search(r"\bFIT:|visual:", x) and PIC_WORDS.search(x))]
             ks = sorted(k for k in scenes_in(pic) if k >= 0) if pic else []
             if ks and ("redraw", h) not in tried:
                 it["state"] = "working"
