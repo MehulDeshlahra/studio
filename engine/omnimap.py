@@ -282,7 +282,7 @@ def admin(method, path, body=None):
 # whole call and the combo never reached model 2 (19-20 Nov: 153 studio-text calls hung for 678 min in total). Each model
 # now gets its own deadline and the combo moves on. Answers that work: nemotron plans p90 84 s, flash-lite p90 21 s.
 COMBO_CONFIG = {"studio-text": {"targetTimeoutMs": 75000, "comboTimeoutMs": 210000},
-                "studio-fast": {"targetTimeoutMs": 20000, "comboTimeoutMs": 60000},
+                "studio-fast": {"targetTimeoutMs": 12000, "comboTimeoutMs": 60000},
                 "studio-vision": {"targetTimeoutMs": 60000, "comboTimeoutMs": 170000},
                 "studio-code": {"targetTimeoutMs": 240000, "comboTimeoutMs": 580000}}
 
