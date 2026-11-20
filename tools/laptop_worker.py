@@ -330,7 +330,10 @@ def transcribe_job(jid, spec):
     try:
         items = _fetch_any(spec["url"], CACHE, int(spec.get("max_files") or 6))
         if not items:
-            raise RuntimeError("nothing downloadable at " + spec["url"][:120])
+            # 20 Nov: a Drive link that downloads fine but holds no video (a guidelines PDF, a logo PNG) is NOT_FOOTAGE:
+            # the server skips it for good instead of retrying every hour
+            tag = "NOT_FOOTAGE " if "drive.google.com/file/" in spec["url"] else ""
+            raise RuntimeError(tag + "nothing downloadable at " + spec["url"][:120])
         res = []
         skipped = []
         for key, path, name in items[: int(spec.get("max_files") or 6)]:

@@ -79,6 +79,8 @@ def run(only=None):
         for key, s in srcs.items():
             added = s.get("added_t") or 0
             for v in s.get("videos") or []:
+                if v in (st.get("not_footage") or {}):
+                    continue
                 if f"{cid}:{v}" not in st["done"]:
                     todo.append((0, key, v, s))
                 elif "/folders/" in v and time.time() - st["done"][f"{cid}:{v}"] > 12 * 3600:
@@ -111,6 +113,11 @@ def run(only=None):
                 log("clipwatch: made", len(made), "clips,", len(ok), "passed checks")
             except Exception as e:
                 log("clipwatch: clip run failed", str(e)[:200])
+                if "NOT_FOOTAGE" in str(e):
+                    # 20 Nov: brief links to a guidelines PDF and a logo PNG were tried as footage every hour. Never again
+                    st.setdefault("not_footage", {})[url] = str(e)[:160]; save(STATE, st)
+                    log("clipwatch: not footage, skipped for good:", url)
+                    continue
                 st["done"].pop(f"{cid}:{url}", None); save(STATE, st)     # try again next hour
                 n = st.setdefault("fails", {}).get(url, 0) + 1
                 st["fails"][url] = n
