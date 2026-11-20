@@ -351,7 +351,15 @@ def transcribe_job(jid, spec):
                     lines.append([round(cur[0][0], 1), " ".join(x[2] for x in cur)]); cur = []
             if cur:
                 lines.append([round(cur[0][0], 1), " ".join(x[2] for x in cur)])
-            res.append({"id": key, "name": name, "dur": round(W[-1][1], 1) if W else 0, "lang": lang, "lines": lines})
+            item = {"id": key, "name": name, "dur": round(W[-1][1], 1) if W else 0, "lang": lang, "lines": lines}
+            try:          # 20 Nov: speechless trailers / ad creatives: real length + loudest seconds (Gaming-Clipper approach)
+                item["real_dur"] = clipcore.probe(path)["dur"]
+                db = clipcore.loudness(path)
+                sec = [float(sum(db[i:i + 20]) / max(1, len(db[i:i + 20]))) for i in range(0, len(db), 20)]
+                item["peaks"] = sorted(range(len(sec)), key=lambda i: -sec[i])[:12]
+            except Exception as e:
+                log("transcribe: no peaks for", name, str(e)[:100])
+            res.append(item)
         if not res:
             raise RuntimeError("no file with speech: " + "; ".join(skipped)[:600])
         json.dump({"items": res, "skipped": skipped}, open(os.path.join(work, "transcript.json"), "w", encoding="utf-8"), ensure_ascii=False)
@@ -470,7 +478,8 @@ def clip_job(jid, spec):
                                  + clipcore.venc(False) + ["-c:a", "aac", "-b:a", "192k", win], 900)
                 res = clipcore.make_clip(win, float(c["a"]) - s0, float(c["b"]) - s0, c.get("hook", ""), cd, spec.get("lang"),
                                          brand=spec.get("brand") or "", glossary=spec.get("glossary") or [],
-                                         notes=c.get("notes") or [], wprompt=spec.get("wprompt") or "")
+                                         notes=c.get("notes") or [], wprompt=spec.get("wprompt") or "",
+                                         **({"silent": True} if c.get("silent") else {}))
                 res["offset"] = s0
                 json.dump(res, open(os.path.join(cd, "result.json"), "w", encoding="utf-8"), ensure_ascii=False)
                 done += 1

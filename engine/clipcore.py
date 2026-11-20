@@ -663,7 +663,7 @@ def place_notes(notes, Wt, dur):
     return out
 
 
-def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, face_y=None):
+def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, face_y=None, hook_all=False):
     """Hook banner (frame 1 to the end) + 3-word pop captions; the spoken word in the accent colour, a touch larger.
     Positions follow the layout on screen at that moment (segs from analyse())."""
     esc = lambda s: str(s).replace("{", "(").replace("}", ")").replace("\\", "/").replace("\n", " ")
@@ -697,6 +697,8 @@ def ass(path, hook, Wd, dur, segs, accent="&H0030D8FF&", brand="", notes=None, f
         txt = " ".join(hw[:k]) + " {\\c" + accent + "}" + " ".join(hw[k:])
         en = min(dur, HOOK_SECONDS)
         y = CAP_Y[lay_at(0.1)] + 250                 # two lines under the captions with a clear gap (19 Nov frames)
+        if hook_all:                                 # 20 Nov trailer mode: no captions, so the hook header stays up top
+            en, y = dur, 330
         L.append(f"Dialogue: 2,{_ts(0)},{_ts(en)},HookT,,0,0,0,,{{\\pos({W // 2},{y})\\fscx70\\fscy70"
                  f"\\t(0,140,\\fscx100\\fscy100)\\fad(0,160)}}{txt}")
     elif hook:
@@ -928,21 +930,26 @@ def _make_cvc(src, Wd, a2, b2, ranges, hook, out_dir, lang, brand, notes):
     return res
 
 
-def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, notes=None, wprompt=""):
+def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, notes=None, wprompt="", silent=False):
     """src = a downloaded window of the video; a, b = the asked moment inside it (seconds in src).
     wprompt: a sample in the wanted script (19 Nov Hindi page: whisper wrote garbled Devanagari; a Roman Hinglish sample
     as initial_prompt makes it write Latin, which our captions and the note anchors need)."""
     os.makedirs(out_dir, exist_ok=True)
     forced = lang
-    Wd, lang = words(src, lang, " ".join(x for x in (wprompt, ", ".join(glossary or [])) if x))
+    if silent:
+        # 20 Nov (owner OK): trailer / ad-creative mode for speechless footage (Gaming campaigns): no captions, the hook
+        # banner carries the clip, the whole window is kept (no speech-based trimming)
+        Wd, lang = [], "none"
+    else:
+        Wd, lang = words(src, lang, " ".join(x for x in (wprompt, ", ".join(glossary or [])) if x))
     # 20 Nov: a Japanese-audio Yakuza cutscene got Japanese captions over its own English subtitles and was approved
     # (cutcapsuletv 1120-0311a-c1). A page without a set language is English: other spoken languages are not clipped
-    if not forced and lang and lang != "en" and len(Wd) >= 8:
+    if not silent and not forced and lang and lang != "en" and len(Wd) >= 8:
         raise RuntimeError(f"spoken language is '{lang}', not English: captions would be wrong for this page, clip skipped")
     Wd = fix_names(Wd, glossary)
     a2, b2 = trim(Wd, a, b)
-    ranges = keep_ranges(Wd, a2, b2, loudness(src))
-    if ENGINE == "cvc":
+    ranges = [(round(a2, 3), round(b2, 3))] if silent else keep_ranges(Wd, a2, b2, loudness(src))
+    if ENGINE == "cvc" and not silent:
         # 19 Nov: cvc has crop / fit only. A streamer's webcam box over gameplay needs our stack layout (cam on top,
         # game below), so those clips keep the own engine; everything else uses cvc
         # 20 Nov: cvc_run finds a stream's facecam itself (gta6-clipper detector) and uses the Gaming-Clipper stack layout
@@ -961,7 +968,7 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     logo = LOGO if (brand and os.path.exists(LOGO)) else None      # 19 Nov: the page's real logo; text handle only without it
     placed = place_notes(notes, Wt, info["dur"])
     ass(assf, hook, Wt, info["dur"], info["segments"], brand="" if logo else brand, notes=placed,
-        face_y=info.get("face_out") or info.get("face_y"))
+        face_y=info.get("face_out") or info.get("face_y"), hook_all=silent)
     final = render(tight, info, assf, os.path.join(out_dir, "final.mp4"), logo)
     q = probe(final); q["lufs"] = lufs(final)
     d = max(1.0, q["dur"])

@@ -552,6 +552,47 @@ def find_moments_text(ch, item, n, source=None):
     return ms[:n]
 
 
+SILENT_HOOK = """You write the on-screen hook and the post caption for a short vertical clip of OFFICIAL campaign footage
+(a game trailer or ad creative with no speech) for the page {page}. Facts you may use, and NOTHING else (never invent
+release dates, prices, platforms, features or names):
+- file name: {name}
+- campaign: {title}
+{guide}
+Hook: 3-6 words, ALL CAPS, states the payoff or the tease (research 20 Nov: a hook header that states the payoff wins;
+gaming clips without burned-in text lose retention). Caption: one plain sentence. Tags: 3 topic words without '#'.
+Return JSON {{"hook": "...", "caption": "...", "tags": ["...", "...", "..."]}}"""
+
+
+def silent_moments(ch, it, n, src):
+    """20 Nov (owner OK: trailer clips with a hook title, no captions). Short creatives (<= 60 s) are used whole; longer
+    footage gives 18-24 s windows that open 3 s before a loudness peak (the beat lands in the first seconds)."""
+    dur = float(it.get("real_dur") or 0)
+    if dur < 10:
+        return []
+    if dur <= 60:
+        wins = [(0.0, dur)]
+    else:
+        wins = []
+        for p in it.get("peaks") or []:
+            a = max(0.0, min(dur - 20, p - 3.0)); b = min(dur, a + 22)
+            if all(b <= x or a >= y for x, y in wins):
+                wins.append((a, b))
+            if len(wins) >= n:
+                break
+    try:
+        d = llm.text(SILENT_HOOK.format(page=ch.get("name", ch["id"]), name=it.get("name", ""), title=src.get("title", ""),
+                                        guide=campaign_guide(src)[:1500]), json_mode=True, max_tokens=400, fast=True)
+    except Exception as e:
+        log("clipper: trailer hook failed", str(e)[:120]); return []
+    hook = re.sub(r"\s+", " ", str(d.get("hook") or "")).strip().upper()[:48]
+    if not hook or VAGUE_HOOK.search(hook) or UNSAFE.search(hook):
+        log("clipper: trailer hook rejected", hook); return []
+    tags = [re.sub(r"[^\w]", "", str(t)) for t in (d.get("tags") or [])][:3]
+    return [{"a": a, "b": b, "hook": hook, "why": "official campaign footage, loudness peak" if dur > 60 else "whole creative",
+             "score": 6.0, "scores": {"hook": 6}, "replayed": False, "caption": str(d.get("caption") or "")[:200], "tags": tags,
+             "notes": [], "silent": True} for a, b in wins[:n]]
+
+
 def make_files(cid, url, n=4, test=False, campaign=None):
     """Non-YouTube footage (a Drive file or folder): transcribe on the laptop, pick moments from the text, clip each file."""
     import laptop
@@ -567,8 +608,13 @@ def make_files(cid, url, n=4, test=False, campaign=None):
     per = max(1, n // max(1, len(items))) if len(items) > 1 else n
     for k, it in enumerate(items):
         if len(it.get("lines") or []) < 5:
-            log("clipper (files): almost no speech in", it.get("name")); continue
-        ms = find_moments_text(ch, it, per, src)
+            if (ch.get("clip") or {}).get("silent_ok") and src and src.get("campaign_id") and it.get("real_dur"):
+                ms = silent_moments(ch, it, per, src)
+                log("clipper (files): no speech in", it.get("name"), "-> trailer mode,", len(ms), "moment(s)")
+            else:
+                log("clipper (files): almost no speech in", it.get("name")); continue
+        else:
+            ms = find_moments_text(ch, it, per, src)
         if not ms:
             continue
         b2 = f"{base}{chr(97 + k)}"
@@ -576,8 +622,10 @@ def make_files(cid, url, n=4, test=False, campaign=None):
         save(os.path.join(OUT, cid, "sources", b2, "moments.json"), {"url": url, "file": it.get("name"), "moments": ms, "source": src, "test": test})
         log("clipper (files): moments", it.get("name"), [(round(m["a"]), round(m["b"]), m["hook"], m["score"]) for m in ms])
         brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")
-        out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 4, "brand": brand, "glossary": glossary(src), **_lang_spec(ch),
-                          "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or []} for m in ms]}, f"{cid} {b2}", wait=3600)
+        out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 0 if ms[0].get("silent") else 4, "brand": brand,
+                          "glossary": glossary(src), **_lang_spec(ch),
+                          "clips": [{"a": m["a"], "b": m["b"], "hook": m["hook"], "notes": m.get("notes") or [],
+                                     **({"silent": True} if m.get("silent") else {})} for m in ms]}, f"{cid} {b2}", wait=3600)
         info = {"title": it.get("name"), "channel": (src or {}).get("title") or "", "webpage_url": url}
         made += ingest(ch, cid, url, info, src, test, ms, out, b2)
         shutil.rmtree(os.path.dirname(out), ignore_errors=True)
@@ -698,7 +746,8 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
             probs.append("no audio")
         if q.get("lufs") is not None and abs(q["lufs"] + 14) > 2:
             probs.append(f"loudness {q['lufs']} LUFS")
-        if (res.get("words") or 0) < 12:
+        silent_ = bool(m.get("silent"))             # trailer mode: no speech, no captions, no notes by design
+        if (res.get("words") or 0) < 12 and not silent_:
             probs.append("almost no speech (captions nearly empty)")
         # 20 Nov: Japanese captions (a Yakuza cutscene) passed the review. Our captions are Latin script on every page
         txt = res.get("text", "") or ""
@@ -715,7 +764,9 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
         # 19 Nov golden rule + originality (Instagram/YouTube stop recommending re-uploads without material edits):
         # every clip must carry at least 2 of our own notes, actually placed on screen
         placed = res.get("notes") or []
-        if (ch.get("kind") == "clips") and res.get("notes_on_screen") is False:
+        if silent_:
+            pass                                     # official campaign creative: the brief asks for the footage itself
+        elif (ch.get("kind") == "clips") and res.get("notes_on_screen") is False:
             # 19 Nov benchmark: the winning pages add an EDIT (reframing on the beats), not note boxes
             if str(res.get("layout", "")).startswith(("crop", "mixed")) and (res.get("beats") or 0) < 3:
                 probs.append(f"not edited enough: {res.get('beats') or 0} framing beats (need 3+)")
