@@ -112,6 +112,17 @@ def pick(cid, ch, rows):
         if ok_:
             cands = [ok_[-1]]
             log("schedule", cid, "nothing approved: the reviewed reel waiting for the owner takes the slot", ok_[-1]["job"])
+    if ch.get("kind") == "clips" and cands:
+        # 20 Nov: a clip whose campaign is paused / retired earns nothing (Whop greys out Submit): post a paying one
+        srcs = (load(os.path.join(ROOT, "channels", cid, "sources.json"), {}) or {}).get("sources") or {}
+        def _pays(d):
+            sk_ = ((load(os.path.join(OUT, cid, d["job"], "plan.json"), {}) or {}).get("clip") or {}).get("source")
+            s_ = srcs.get(sk_) or {}
+            return not s_.get("campaign_url") or s_.get("active", True)
+        paying = [d for d in cands if _pays(d)]
+        if len(paying) < len(cands):
+            log("schedule", cid, f"skipped {len(cands) - len(paying)} clip(s) from paused/finished campaigns")
+        cands = paying
     if ch.get("serial") and cands:
         cands, why = P.serial_order(dict(ch, id=cid), rows, cands)
         if why:
@@ -463,7 +474,8 @@ def after(cid, d, acc, res, s):
             if src.get("campaign_url"):
                 update(cid, d["job"], lambda r: r.update(submit={"campaign": src["campaign_url"], "links": links,
                                                                   "at": time.strftime("%Y-%m-%d %H:%M")}))
-                os.system("sudo systemctl start --no-block studio-whopbot.service")
+                # 20 Nov owner: "do whop in priority, every time": the submit-only unit (no login check, no joining)
+                os.system("sudo systemctl start --no-block studio-whopsubmit.service")
             log("campaign clip posted, whopbot submits:", src.get("campaign_url") or sk, links)
         except Exception as e:
             log("campaign submit note failed", str(e)[:120])

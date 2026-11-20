@@ -182,6 +182,9 @@ def brief(page, url):
 def submit(page, url, post):
     page.goto(url, wait_until="domcontentloaded", timeout=60000)
     page.wait_for_timeout(5000)
+    # 20 Nov: "Paused by the brand since Nov 20" = the Submit button is greyed out; say so instead of "no link box"
+    if re.search(r"paused by the brand", page.inner_text("body"), re.I):
+        return {"ok": False, "why": "paused", "shot": shot(page, "submit-paused")}
     click_text(page, [r"submit( a)?( post| clip| content)?", r"^\+?\s*new submission", r"add submission"])
     box = None
     for sel in ("input[type=url]", "input[placeholder*='http' i]", "input[placeholder*='link' i]", "input[placeholder*='url' i]",

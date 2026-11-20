@@ -149,19 +149,50 @@ def submit_all(st):
         a, b = _submit_page(page)
         n_ok += a; fails += b
     if n_ok or fails:
-        (telegram if fails else fyi)(f"💰 Whop: {n_ok} clip link(s) submitted." + ("\n⚠ Not submitted: " + "; ".join(fails[:4]) if fails else ""))
+        real = [f for f in fails if "missed the 30-minute" not in f and "paused by the brand" not in f]
+        (telegram if real else fyi)(f"💰 Whop: {n_ok} clip link(s) submitted." + ("\n⚠ Not submitted: " + "; ".join(fails[:4]) if fails else ""))
     return n_ok
 
 
+def _pause_source(page, campaign_url):
+    """A brand paused its campaign: stop clipping it and stop posting its clips (schedule.pick skips inactive sources)."""
+    d = _sources(page)
+    hit = [k for k, s in d["sources"].items() if s.get("campaign_url") == campaign_url and s.get("active", True)]
+    for k in hit:
+        d["sources"][k]["active"] = False; d["sources"][k]["retired"] = time.strftime("%Y-%m-%d %H:%M") + " paused by brand"
+    if hit:
+        _save_sources(d, f"whopbot: paused by brand {', '.join(hit)}", page)
 def _whop_link(x):
     return str(x).startswith("http") and ("instagram.com" in x or "tiktok.com" in x)
 def _submit_page(page):
+    # 20 Nov: one submitter at a time (the 5-min unit and the 2-hourly run), and each row is saved under the schedule.py
+    # done.json lock: the old whole-file save after minutes of laptop jobs could overwrite a slot that posted meanwhile
+    import fcntl, schedule as S
+    lk = open(os.path.join(OUT, ".whop-submit.lock"), "w")
+    try:
+        fcntl.flock(lk, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        lk.close(); return 0, []
+    try:
+        return _submit_rows(page, S)
+    finally:
+        lk.close()
+def _submit_rows(page, S):
     path = os.path.join(ROOT, "channels", page, "done.json")
     done = load(path, []) or []
     n_ok, fails = 0, []
     for d in done:
         s = d.get("submit") or {}
-        if not s.get("campaign") or s.get("submitted") or s.get("tries", 0) >= 3:
+        if not s.get("campaign") or s.get("submitted") or s.get("missed") or s.get("tries", 0) >= 3:
+            continue
+        at = str((d.get("posted") or {}).get("at") or s.get("at") or "")
+        try:
+            age = time.time() - time.mktime(time.strptime(at[:16], "%Y-%m-%d %H:%M"))
+        except ValueError:
+            age = 0
+        if age > 32 * 60:                                # 20 Nov: Whop takes a link only for 30 min after posting
+            s["missed"] = time.strftime("%Y-%m-%d %H:%M"); fails.append(f"{d['job']}: missed the 30-minute window")
+            S.update(page, d["job"], lambda r, s=s: r.update(submit=s))
             continue
         for link in s.get("links") or []:
             # 20 Nov: the Whop form only takes Instagram / TikTok links ("Enter a Instagram or TikTok link" on a YouTube one)
@@ -170,12 +201,17 @@ def _submit_page(page):
             r = _job("submit", s["campaign"], link)
             if r.get("ok"):
                 s.setdefault("ok_links", []).append(link); n_ok += 1
+            elif r.get("why") == "paused":
+                s["paused"] = True; s["tries"] = 3
+                _pause_source(page, s["campaign"])
+                fails.append(f"{d['job']}: campaign paused by the brand (clipping stopped for it)")
+                break
             else:
                 fails.append(f"{d['job']}: {r.get('why') or r.get('error') or 'not confirmed'}")
         s["tries"] = s.get("tries", 0) + 1
         if set(s.get("ok_links") or []) >= {x for x in s.get("links") or [] if _whop_link(x)}:
             s["submitted"] = time.strftime("%Y-%m-%d %H:%M")
-    save(path, done)
+        S.update(page, d["job"], lambda r, s=s: r.update(submit=s))
     return n_ok, [f"{page} {f}" for f in fails]
 
 
@@ -395,5 +431,21 @@ def run():
     save(STATE, st)
 
 
+def submit_only():
+    """20 Nov owner: "do whop in priority, every time". Runs at every clip post (schedule.py) and every 5 min: only the
+    30-minute submits, no login check (the submit itself shows a login problem), no joining. Calls the laptop only
+    when a posted clip is still waiting inside its window."""
+    import laptop
+    pending = 0
+    for page in en_pages():
+        for d in load(os.path.join(ROOT, "channels", page, "done.json"), []) or []:
+            s = d.get("submit") or {}
+            if s.get("campaign") and not (s.get("submitted") or s.get("missed") or s.get("tries", 0) >= 3):
+                pending += 1
+    if not pending:
+        return
+    if not laptop.available():
+        log("whopbot: clip waiting to submit but the laptop is off"); return
+    submit_all(load(STATE, {}) or {})
 if __name__ == "__main__":
-    run()
+    submit_only() if sys.argv[1:2] == ["submit"] else run()
