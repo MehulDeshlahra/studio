@@ -124,6 +124,9 @@ def learn_deep(url, start=0, max_chunks=10 ** 6):
     total_k = total_b = 0
     log("learn deep:", name, len(files), "files,", len(chunks), "chunks, from chunk", start + 1)
     for ci in range(start, min(len(chunks), start + max_chunks)):   # a nightly run reads max_chunks, the next one goes on
+        if _reels_busy():
+            log("learn deep: a reel is being built, stopping at chunk", ci + 1, "(continues next run)")
+            break
         body = "".join(chunks[ci])
         src = {"name": name, "url": f"https://github.com/{name}", "license": "see repo",
                "text": f"REPO {name}, part {ci + 1} of {len(chunks)} (the whole repo is being read in parts; judge THIS part)\n" + body}
@@ -205,7 +208,25 @@ def judge_source(src):
         except Exception as e:
             log("learn: omniroute read failed", str(e)[:120])
         return None
-    return planner.ask(head + src["text"], max_tokens=8000)
+    # 20 Nov audit: R&D reading used planner.ask (Studio's own Gemini keys first, which reels need) and 1,196 model calls
+    # in two days; it now goes to OmniRoute only
+    import llm
+    return llm.text(head + src["text"], json_mode=True, max_tokens=8000)
+
+
+def _reels_busy():
+    """True while a reel build holds a lane lock: deep reading shares the planner's free models (nvidia nemotron)."""
+    import fcntl
+    for n in ("engine.lock", "engine-prep.lock"):
+        try:
+            with open(os.path.join(OUT, n), "a") as f:
+                fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                fcntl.flock(f, fcntl.LOCK_UN)
+        except OSError:
+            return True
+        except Exception:
+            pass
+    return False
 
 
 def apply(src, res):
@@ -214,10 +235,8 @@ def apply(src, res):
     build = [i for i in items if i.get("kind") == "build"]
     ids = brain.add(know, src["url"]) if know else []
     bids = brain.add([dict(b, kind="build") for b in build], src["url"]) if build else []
-    if build:
-        with open(BUILD, "a", encoding="utf-8", newline="\n") as f:
-            for b in build:
-                f.write(f"\n- [ ] [{b.get('area')}] {b['title']} ({src['name']}, {time.strftime('%Y-%m-%d')}): {b.get('text', '')} HOW: {b.get('how', '')}\n")
+    # 20 Nov audit: build ideas live in the brain (kind "build") only; appending them here made build-queue.md 5,607
+    # lines that nobody could read (215 items from one repo in a day)
     rec = load(LEARNED, []) or []
     rec.append({"t": time.strftime("%Y-%m-%d %H:%M"), "name": src["name"], "url": src["url"], "license": src.get("license"),
                 "verdict": res.get("verdict"), "summary": res.get("summary", "")[:400], "knowledge": len(ids), "build": len(bids),

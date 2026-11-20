@@ -74,26 +74,32 @@ def _dated(content):
     return content
 
 
-def _chain(models, content, json_mode, max_tokens, timeout=120):
-    # 20 Nov: OmniRoute's gemini-3.7-flash hung without answering; each call waited the full 300 s, 14 such calls cost a
-    # Jain reel ~30 min of planning. Answers that work come in 5-90 s (nemotron plans 27-88 s): 120 s is the limit.
+# 20 Nov audit: each combo has its own per-model deadline inside OmniRoute (engine/omnimap.py COMBO_CONFIG), so the
+# client waits just past the combo's whole budget. A combo that timed out is NOT asked again (19-20 Nov: a second
+# 120-300 s wait on the same hung model was the usual pattern); the next combo / model is.
+COMBO_WAIT = {"studio-text": 220, "studio-fast": 70, "studio-vision": 180, "studio-code": 600}
+
+
+def _chain(models, content, json_mode, max_tokens, timeout=None):
     errs = []
     if models is not CODE_MODELS:
         content = _dated(content)
     for m in models:
         for attempt in range(2):
             try:
-                out = _call(m, content, max_tokens, timeout)
+                out = _call(m, content, max_tokens, timeout or COMBO_WAIT.get(m, 120))
                 return parse_json(out) if json_mode else out
             except urllib.error.HTTPError as e:
                 errs.append(f"{m}: HTTP {e.code}")
-                if e.code in (429, 401, 402, 403, 404):
-                    break          # this model / combo is out; next one
+                if e.code in (429, 401, 402, 403, 404) or e.code >= 500:
+                    break          # out, or the combo already walked its models: next one
                 time.sleep(5)
             except (ValueError, json.JSONDecodeError) as e:
                 errs.append(f"{m}: bad JSON")      # malformed JSON is usually a one-off: ask again once
             except Exception as e:
                 errs.append(f"{m}: {str(e)[:80]}")
+                if "timed out" in str(e).lower():
+                    break
                 time.sleep(3)
     raise RuntimeError("all models failed: " + " | ".join(errs))
 

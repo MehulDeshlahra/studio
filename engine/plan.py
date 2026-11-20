@@ -38,7 +38,8 @@ def _gem(models, prompt, max_tokens):
             r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
                                        data=json.dumps(body).encode(),
                                        headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
-            d = json.load(urllib.request.urlopen(r, timeout=300))
+            # 20 Nov audit: 6 calls hung the full 300 s on 19-20 Nov; good answers come in < 90 s
+            d = json.load(urllib.request.urlopen(r, timeout=120))
             out = "".join(p.get("text", "") for p in d["candidates"][0]["content"]["parts"])
             log("plan text by", m)
             return llm.parse_json(out)

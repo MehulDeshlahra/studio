@@ -276,10 +276,19 @@ def admin(method, path, body=None):
     return json.loads(p.stdout or "{}")
 
 
+# 20 Nov audit: OmniRoute's default per-model timeout is 120 s, the same as our client's, so a hung FIRST model used the
+# whole call and the combo never reached model 2 (19-20 Nov: 153 studio-text calls hung for 678 min in total). Each model
+# now gets its own deadline and the combo moves on. Answers that work: nemotron plans p90 84 s, flash-lite p90 21 s.
+COMBO_CONFIG = {"studio-text": {"targetTimeoutMs": 75000, "comboTimeoutMs": 210000},
+                "studio-fast": {"targetTimeoutMs": 20000, "comboTimeoutMs": 60000},
+                "studio-vision": {"targetTimeoutMs": 60000, "comboTimeoutMs": 170000},
+                "studio-code": {"targetTimeoutMs": 240000, "comboTimeoutMs": 580000}}
+
+
 def set_combo(name, models):
     if not models:
         log("omnimap:", name, "has no working model today, kept as it was"); return False
-    body = {"name": name, "models": models, "strategy": "priority"}
+    body = {"name": name, "models": models, "strategy": "priority", "config": COMBO_CONFIG.get(name, {})}
     if DRY:
         log("omnimap dry:", name, "->", ", ".join(models[:6])); return True
     cur = admin("GET", "/api/combos").get("body") or {}

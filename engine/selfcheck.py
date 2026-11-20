@@ -271,6 +271,14 @@ def try_fix(f):
     fid = sig(f["kind"], f.get("path") or f.get("tab") or "", f["msg"][:80])
     if S["attempts"].get(fid) == TODAY or sum(1 for x in S["fixes"] if x["day"] == TODAY) >= 4:
         return False
+    # 20 Nov audit: 131 code-fix attempts for dashboard-vs-raw-file mismatches on 19-20 Nov, 0 fixed (each job id was a
+    # new problem, so every run asked the model again; most were timing races). Data mismatches are reported, not patched.
+    if f["kind"] == "data":
+        k = "data:" + re.sub(r"\d+", "#", f["msg"][:60])
+        if S["attempts"].get(k) != TODAY:
+            S["attempts"][k] = TODAY
+            note(f, "dashboard figure differs from the raw files: reported for a human session, not patched by a model")
+        return False
     S["attempts"][fid] = TODAY
     ctx = context_for(f)
     if not ctx:
