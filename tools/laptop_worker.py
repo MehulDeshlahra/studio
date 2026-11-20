@@ -219,7 +219,7 @@ def info_job(jid, spec):
         shutil.rmtree(work, ignore_errors=True)
 
 
-def _fetch_any(url, dest_dir, max_files=6):
+def _fetch_any(url, dest_dir, max_files=6, audio_only=False):
     """Download footage: YouTube/Twitch/Kick through yt-dlp, Google Drive files or folders through gdown, any direct
     video link. Returns [(key, path, name)] (a Drive folder gives several)."""
     import hashlib
@@ -326,6 +326,14 @@ def _fetch_any(url, dest_dir, max_files=6):
         return out
     key = "y" + hashlib.md5(url.encode()).hexdigest()[:12]
     final = os.path.join(dest_dir, key + ".mp4")
+    if audio_only:
+        # 20 Nov (owner: "why is the whole video downloaded?"): the transcript needs only the sound. Audio only here (an
+        # hour is ~60 MB instead of GBs of 1080p); the clip job then fetches just each clip's window in full quality
+        aud = os.path.join(dest_dir, key + ".m4a")
+        if not os.path.exists(aud):
+            run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
+                 "-f", "ba[ext=m4a]/ba", "-N", "4", "-o", aud, url], timeout=3600)
+        return [(key, aud, os.path.basename(url))] if os.path.exists(aud) else []
     if not os.path.exists(final):
         run([sys.executable, "-m", "yt_dlp", "--js-runtimes", "node", "-q", "--no-warnings", "--no-playlist",
              "-f", "bv*[height<=1080]+ba/b[height<=1080]/bv*+ba/b", "-S", "vcodec:h264,res:1080,fps:30,acodec:m4a",
@@ -341,7 +349,7 @@ def transcribe_job(jid, spec):
     work = os.path.join(HOME, "jobs", jid)
     shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
     try:
-        items = _fetch_any(spec["url"], CACHE, int(spec.get("max_files") or 6))
+        items = _fetch_any(spec["url"], CACHE, int(spec.get("max_files") or 6), audio_only=True)
         if not items:
             # 20 Nov: a Drive link that downloads fine but holds no video (a guidelines PDF, a logo PNG) is NOT_FOOTAGE:
             # the server skips it for good instead of retrying every hour
