@@ -1,0 +1,250 @@
+{
+ "slug": "aparigraha-economic-wisdom",
+ "title": "Aaj ki economy mein Aparigraha kaise laagu karein?",
+ "hooks": [
+  "GDP badh raha, par sukh kyun ghat raha?",
+  "Sabse bada economist tha ek Jain raja",
+  "Mahavir ne 2500 saal pehle bata diya tha"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with a high-stakes claim connecting modern economic pain to ancient Jain wisdom, triggering curiosity immediately.",
+ "metaphor": "Haath mein ret jitni zor se pakdo, utni hi tez nikal jaati hai",
+ "mechanism": [
+  "Pehle zaroorat pehchano",
+  "Phir moh ko chhodo",
+  "Ant mein santosh pao"
+ ],
+ "cast": {
+  "Raja Megharath": "Young king in ancient Indian royal attire, gold crown with simple design, white dhoti and angavastram, calm compassionate face, seated on carved sandstone throne in Jain palace with shikhara spires visible behind",
+  "Jain Muni": "Elderly monk in plain white unstitched cotton robes, carrying soft white rajoharan whisk broom, serene face with gentle smile, standing in palace courtyard with carved pillars"
+ },
+ "scenes": [
+  {
+   "vo": "GDP badh raha par sukh kyun ghat raha?",
+   "type": "image",
+   "prompt": "Modern smartphone screen showing breaking news ticker 'GDP Growth 7%' but person's reflection in screen looks worried, warm golden light, serene painterly style",
+   "motion": "push",
+   "title": "AAJ KI HAALAT",
+   "keywords": [
+    "GDP",
+    "sukh"
+   ],
+   "real": {
+    "q": "smartphone news ticker GDP growth",
+    "kind": "photo",
+    "subject": "phone screen showing economic news"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "2500 saal pehle ek raja ne jawab diya tha.",
+   "type": "image",
+   "prompt": "Ancient Jain palace courtyard with tall pointed shikhara spires, white marble floors, warm golden hour light, Raja Megharath seated on carved sandstone throne, Jain Muni standing before him with rajoharan",
+   "motion": "pull",
+   "title": "RAJA MEGHARATH",
+   "keywords": [
+    "raja",
+    "jawab"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Raja Megharath ke paas sab kuch tha.",
+   "type": "image",
+   "prompt": "Palace interior showing wealth: granaries full, jewel chests, horses, but king's face serene not proud, warm golden light on white marble pillars, carved lotus motifs on walls",
+   "motion": "pan",
+   "title": "SAMPATTI APAR",
+   "keywords": [
+    "sab kuch",
+    "raja"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'",
+   "type": "image",
+   "prompt": "Close composition: Jain Muni in white robes with rajoharan gesturing gently toward king's heart, not the treasure, king listening with folded hands, carved sandstone pillars frame them, soft glow",
+   "motion": "push",
+   "title": "MUNI KA PRASHNA",
+   "keywords": [
+    "bojh",
+    "bhari"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'",
+   "type": "image",
+   "prompt": "King's hands open, jewels slipping through fingers like sand, turning into lotus petals as they fall, Muni nodding approvingly, palace shikhara in background, warm painterly light",
+   "motion": "tilt",
+   "title": "RAJA KA GYAN",
+   "keywords": [
+    "rakhna",
+    "bojh"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Yahi hai Aparigraha: zaroorat lekin moh nahi.",
+   "type": "card",
+   "prompt": "White marble slab with golden Devanagari 'अपरिग्रह' glowing softly, lotus petals drifting around it, warm golden light, uncluttered serene composition",
+   "motion": "punch",
+   "title": "APARIGRAHA",
+   "big": "APARIGRAHA",
+   "small": "Zaroorat lekin moh nahi",
+   "keywords": [
+    "Aparigraha",
+    "moh"
+   ],
+   "real": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aaj bhi wohi sawal: kitna kaafi hai?",
+   "type": "image",
+   "prompt": "Split composition: left side modern shopping bags piling up, right side single lotus flower in calm water, both under same warm golden sky, Jain temple shikhara faintly visible in distance connecting both eras",
+   "motion": "pull",
+   "title": "KITNA KAAFI",
+   "keywords": [
+    "kitna",
+    "kaafi"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Muni ne upadesh diya.",
+   "type": "image",
+   "prompt": "Jain Muni in white robes with rajoharan gesturing gently, king watching with folded hands, palace courtyard warm light, serene atmosphere",
+   "motion": "push",
+   "title": "MUNI KA UPADESH",
+   "keywords": [
+    "upadesh",
+    "muni"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aaj hum bhi chhodo jo zaroori nahi hai.",
+   "type": "image",
+   "prompt": "Modern person opening hand, letting go of excess shopping bags, bags dissolve into light, Jain temple shikhara faint in background, golden hour",
+   "motion": "tilt",
+   "title": "HUMARA KADAM",
+   "keywords": [
+    "chhodo",
+    "zaroori"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Chhota sa badlav, badi shanti laata hai.",
+   "type": "image",
+   "prompt": "Split screen: left cluttered desk, right clean desk with single lotus, both under same warm light, subtle transition",
+   "motion": "pull",
+   "title": "BADLAV KA ASAR",
+   "keywords": [
+    "badlav",
+    "shanti"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Soch badlo, duniya badalti hai.",
+   "type": "image",
+   "prompt": "Person's reflection in water changes from worried to calm as lotus blooms, ancient Jain temple spire mirrored, serene painterly style",
+   "motion": "push",
+   "title": "SOCH KA KHEL",
+   "keywords": [
+    "soch",
+    "duniya"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "GDP badh raha par sukh kyun ghat raha? 2500 saal pehle Raja Megharath ne bata diya tha: zaroorat lekin moh nahi. Aapke hisaab se kitna kaafi hai? #Aparigraha #JainWisdom #NavkarBhav",
+ "hashtags": [
+  "#Aparigraha",
+  "#JainWisdom",
+  "#NavkarBhav",
+  "#UttaradhyayanaSutra",
+  "#NonPossessiveness"
+ ],
+ "claims": [
+  {
+   "claim": "Aparigraha is the Jain principle of non-possessiveness, meaning keeping desires to what is necessary.",
+   "basis": "Wikipedia: Non-possession (aparigraha) is a religious tenet in Jainism meaning virtue of non-possessiveness, non-greediness; keeping desire for possessions to what is necessary."
+  },
+  {
+   "claim": "Raja Megharath (Meghkumar) is a figure in Jain tradition who exemplified renunciation.",
+   "basis": "Trishashti-shalaka-purusha-charitra by Hemachandra includes stories of kings like Megharath who practiced Jain principles."
+  },
+  {
+   "claim": "Uttaradhyayana Sutra Chapter 29 contains teachings on renunciation and non-attachment.",
+   "basis": "Uttaradhyayana Sutra is a canonical Jain Agam text; Chapter 29 (or sections within) discusses monk's conduct and renunciation."
+  },
+  {
+   "claim": "PM Modi referenced Samrat Samprati propagating aparigraha from the throne in 2026.",
+   "basis": "WION news 16 Nov 2026: PM Modi inaugurated Samrat Samprati Museum, stated Samrat Samprati propagated satya, asteya, and aparigraha with detachment."
+  }
+ ],
+ "numbers_hold": [
+  "STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)",
+  "STORY scene 5: invented: 'Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'': This specific exchange is a modern parable and does not appear in the scriptures. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)"
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "7f620e6fdf",
+  "fc294ac58f",
+  "b2fabb69c4",
+  "7fa182f8ef",
+  "161339712e",
+  "e15cfaed29",
+  "f945e2a937",
+  "a688e48ca2",
+  "9db4cc694f",
+  "0755cc155a",
+  "4396759d41",
+  "1e1964f463",
+  "97e1b2fcbb"
+ ]
+}

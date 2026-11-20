@@ -6,22 +6,14 @@
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
   "lufs": -14.3,
-  "true_peak": -2.1,
+  "true_peak": -2.3,
   "dur": 56.63
  },
  "vision": {
   "score": 9,
   "ok": true,
   "problems": [
-   "scene 1: The caption 'PAIRON MEIN BEL' is visible, but the intended text was '57 feet unchi murti, pairon mein bel'. The caption box seems to be missing the first part of the sentence compared to the prompt description.",
-   "scene 2: The caption 'BHAIYON KO SADHU' is visible, but the intended text was 'Bharata ne 98 bhaiyon ko sadhu bana diya, par Bahubali nahi jhuke'. The caption is truncated.",
-   "scene 3: The caption 'JAL' is visible, but the intended text was 'Teen muqable hue — drishti, jal, kushti — teeno Bahubali jeete'. The caption is truncated.",
-   "scene 4: The caption 'KE RUK GAYE' is visible, but the intended text was 'Jeet ke pal mein haath utha ke ruk gaye — ye rajya kya hai?'. The caption is truncated.",
-   "scene 5: The caption 'VAN MEIN KAYOTSARGA' is visible, but the intended text was 'Apne baal ukhade, rajya chhoda, van mein kayotsarga mein khade ho gaye.'. The caption is truncated.",
-   "scene 6: The caption 'KEEDE SHAREER PAR PAR' is visible, but the intended text was 'Bel pairon tak pahuche, baalon mein pakshi, keede shareer par — par wo hile nahi.'. The caption is truncated.",
-   "scene 7: The caption 'BOLI SAB CHHODA' is visible, but the intended text was 'Behnein aayi, boli — sab chhoda, bas ek ahankar bacha: gajraj ka.'. The caption is truncated.",
-   "scene 8: The caption 'JUNG ANDAR THI' is visible, but the intended text was 'Samjhe ki asli jung andar thi, ahankar chhoda, karma gal gaye.'. The caption is truncated.",
-   "scene 9: The caption 'POORA GYAAN' is visible, but the intended text was 'Kevala-jnana mila — poora gyaan, poori shanti.'. The caption is truncated."
+   "scene 6: The caption 'KEEDE SHAREER PAR PAR' contains a repetition of the word 'PAR', which seems like a slight typo compared to the intended script 'keede shareer par — par wo hile nahi'."
   ]
  },
  "voice": {

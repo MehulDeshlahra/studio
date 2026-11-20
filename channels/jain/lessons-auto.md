@@ -313,3 +313,35 @@
 
 ## 1119-0935 (pre-render check)
 - FIT: RESPECT - the figure has blue skin tone, violating the rule that Jain ascetics or Tirthankaras must have natural warm human skin tone (never blue, grey, or green).
+
+## 1119-0935 (pre-render check)
+- FIT: RESPECT: Bahubali is depicted with a blue/grey skin tone instead of a natural warm human skin tone.
+- FIT: RESPECT: The figure has blue/grey skin instead of a natural warm human skin tone.
+
+## 1119-0935 Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)
+- scene 6: The caption 'KEEDE SHAREER PAR PAR' contains a repetition of the word 'PAR', which seems like a slight typo compared to the intended script 'keede shareer par — par wo hile nahi'.
+
+## The principle of Aparigraha (Non-Possessiveness) amidst econ (story check)
+- STORY scene 7: invented: 'Vyapari ne suna, apne hisaab-kitaab jala diye.': This event is not documented in any Jain scripture or historical source. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 9: invented: 'Muni ne kaha: haath khol, ret behne do.': This specific instruction is not found in the Uttaradhyayana Sutra. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 14: false: 'Srot: Uttaradhyayana Sutra, Adhyay 29.': Uttaradhyayana Sutra, Adhyay 29 (Samyaktva-parakrama) discusses the 25 qualities of right conduct and does not contain t (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## review 1119-0935
+- visual: Scene 5, 7, and 9: Bahubali/ascetic is depicted wearing clothing (dhoti/lower garment), violating the traditional Digambar/Jain ascetic form rules.
+- visual: Scene 3 and 7: Figures wear crowns and royal ornaments which violate the plain ascetic representation rules for Jain figures in this context.
+- visual: Checklist q5: Bahubali / Gommateshwara is shown wearing clothes in multiple scenes.
+- visual: checklist: Is Bahubali / Gommateshwara shown wearing a crown or clothes, or with hands folded (he stands bare, arms straight down, creepers on his legs)? -> Scenes 5, 7, 9
+- picture check: scene 1: the statue is shown wearing clothes/cloth around the waist, with hands folded/raised in a thumbs-up gesture, which is no (checklist 5)
+- picture check: scene 3: A crown and jewellery are visible on the central seated statue, and a tilak is on its forehead.; The central seated statue wears a crown and clothes; its hands are not folded, with one hand holding a scepter.; A large central figure wearing a golden crown and jewellery (necklaces and armlets) is shown seated in the middle, under; The central figure is wearing a crown and clothes (sash/drapery over the shoulder), seated rather than standing bare wit (checklist 2, 5)
+- picture check: scene 5: In the top panel, the standing Bahubali figure is bare-chested but wears a light-colored dhoti/wrap cloth around his wai; The figure is shown wearing lower clothing/garment in all three panels, and is sitting cross-legged (hands folded in med (checklist 5)
+- picture check: scene 7: A golden crown with a red jewel is worn on the head of the main figure in the foreground.; A crown is clearly visible on the head of the main figure at the top of the image. (checklist 5)
+- visual score 3/10
+
+## The principle of Aparigraha (Non-Possessiveness) amidst econ (story check)
+- STORY scene 7: invented: 'Vyapari ne suna, soch mein pad gaya.': The inclusion of a merchant character in this specific narrative is an invented detail. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 10: invented: 'Vyapari ne mehsoos kiya: kam mein bhi sukh hai.': Part of the invented story arc involving the merchant. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 14: false: 'Srot: Jain Agam parampara.': The story presented is not found in the Jain Agamas; attributing this specific narrative to the Agam parampara is factua (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## The principle of Aparigraha (Non-Possessiveness) amidst econ (story check)
+- STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+- STORY scene 5: invented: 'Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'': This specific exchange is a modern parable and does not appear in the scriptures. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)

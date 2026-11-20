@@ -10,10 +10,11 @@
   "dur": 33.4
  },
  "vision": {
-  "score": 9,
+  "score": 6,
   "ok": true,
   "problems": [
-   "scene 11: The caption 'BANI PARSHVANATH' does not match the intended line 'Wahi saanp ka chhatra bani Parshvanath ki pehchan'."
+   "scene 2: character depicted looks like an elderly ascetic rather than young Prince Parshvanath",
+   "scene 7: imagery of human-snake hybrid figures does not clearly depict Parshvanath choosing compassion over revenge"
   ]
  },
  "voice": {

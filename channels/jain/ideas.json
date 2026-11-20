@@ -1096,5 +1096,249 @@
     "score": 3.65
    }
   ]
+ },
+ {
+  "t": "2026-11-20 10:16",
+  "picked": "Why is eating after sunset considered a violation of Ahimsa? The microscopic truth behind the Jain practice. (Source: Acharanga Sutra / Agam)",
+  "ideas": [
+   {
+    "topic": "Why is eating after sunset considered a violation of Ahimsa? The microscopic truth behind the Jain practice. (Source: Acharanga Sutra / Agam)",
+    "note": "",
+    "search": "why jains avoid night eating",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 4.4,
+    "median_views": 57858,
+    "fresh": 4.3,
+    "score": 6.34
+   },
+   {
+    "topic": "Why did Lord Mahavira break his 6-month fast with simple grain from a slave girl? The lesson of true humility and equality. (Source: Kalpasutra)",
+    "note": "",
+    "search": "Mahavira swami chandana story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 6.32
+   },
+   {
+    "topic": "The principle of Aparigraha (Non-Possessiveness) amidst economic news",
+    "search": "Jain philosophy non-possessiveness",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With headlines about gold prices falling, stock market volatility, and corporate wage debates, young viewers are stressed about money. A story about a wealthy merchant or king who realized the futility of material hoarding (from the Agams) provides a grounding, timeless perspective on true wealth.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 25,
+    "fresh": 7.0,
+    "score": 5.2
+   },
+   {
+    "topic": "The power of Truth (Satya) in a world of 'blame games'",
+    "search": "Jain story power of truth",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With political news dominated by 'blame games' and international tensions, the Jain value of Satya (Truth) is a great counter-narrative. A story about a Tirthankara or great Shravaka who stood by the truth despite consequences (from the Kalpasutra) offers a strong moral lesson for today's youth.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 397,
+    "fresh": 7.0,
+    "score": 5.2
+   },
+   {
+    "topic": "The story of King Megharatha and the Pigeon (Compassion in Action)",
+    "search": "Jain story compassion kindness",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With the news of Cyclone 'Akvan' and massive rescue efforts, the audience is thinking about empathy and saving lives. This story from the Trishashti-shalaka-purusha-charitra about King Megharatha sacrificing his own flesh to save a pigeon resonates deeply with the current theme of disaster relief and selfless service.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 203,
+    "fresh": 5.0,
+    "score": 5.15
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 9907,
+    "fresh": 7.6,
+    "score": 5.09
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 1.1,
+    "median_views": 2702,
+    "fresh": 6.7,
+    "score": 4.29
+   },
+   {
+    "topic": "What did King Shrenik ask Mahavira about his next life that changed his perspective on karma forever? (Source: Bhagavati Sutra / Agam)",
+    "note": "",
+    "search": "King Shrenik Mahavira conversation",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 721,
+    "fresh": 5.4,
+    "score": 4.23
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 578,
+    "fresh": 6.5,
+    "score": 3.75
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 14,
+    "fresh": 6.0,
+    "score": 3.65
+   }
+  ]
+ },
+ {
+  "t": "2026-11-20 10:29",
+  "picked": "The principle of Aparigraha (Non-Possessiveness) amidst economic news",
+  "ideas": [
+   {
+    "topic": "The principle of Aparigraha (Non-Possessiveness) amidst economic news",
+    "search": "Jain philosophy non-possessiveness",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With headlines about gold prices falling, stock market volatility, and corporate wage debates, young viewers are stressed about money. A story about a wealthy merchant or king who realized the futility of material hoarding (from the Agams) provides a grounding, timeless perspective on true wealth.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.0,
+    "score": 7.0
+   },
+   {
+    "topic": "Why Mahavira accepted his first meal after 6 months from Chandanbala, a weeping slave girl — the karma that bound them across lifetimes (source: Kalpasutra)",
+    "note": "",
+    "search": "Mahavira Chandanbala first bhiksha story",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 4.7,
+    "median_views": 72679,
+    "fresh": 5.2,
+    "score": 6.66
+   },
+   {
+    "topic": "How Mallinatha became the only female Tirthankara — the 6 kings, the hollow statue, and the lesson that soul has no gender (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Mallinatha female Tirthankara story Jain",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.4,
+    "median_views": 22010,
+    "fresh": 4.6,
+    "score": 5.95
+   },
+   {
+    "topic": "The power of Truth (Satya) in a world of 'blame games'",
+    "search": "Jain story power of truth",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With political news dominated by 'blame games' and international tensions, the Jain value of Satya (Truth) is a great counter-narrative. A story about a Tirthankara or great Shravaka who stood by the truth despite consequences (from the Kalpasutra) offers a strong moral lesson for today's youth.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 397,
+    "fresh": 7.0,
+    "score": 5.2
+   },
+   {
+    "topic": "The story of King Megharatha and the Pigeon (Compassion in Action)",
+    "search": "Jain story compassion kindness",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With the news of Cyclone 'Akvan' and massive rescue efforts, the audience is thinking about empathy and saving lives. This story from the Trishashti-shalaka-purusha-charitra about King Megharatha sacrificing his own flesh to save a pigeon resonates deeply with the current theme of disaster relief and selfless service.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 203,
+    "fresh": 5.0,
+    "score": 5.15
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 9686,
+    "fresh": 7.6,
+    "score": 5.09
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 1.1,
+    "median_views": 2702,
+    "fresh": 6.7,
+    "score": 4.29
+   },
+   {
+    "topic": "Why King Samprati built 125,000 temples in 12 years — the Jain emperor history forgot and his midnight vow (source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "King Samprati Jain emperor temples",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 739,
+    "fresh": 4.1,
+    "score": 3.97
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 578,
+    "fresh": 6.5,
+    "score": 3.75
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 679,
+    "fresh": 6.0,
+    "score": 3.65
+   }
+  ]
  }
 ]

@@ -8,12 +8,6 @@
  },
  "sfx": [
   {
-   "t": 6.13,
-   "file": "sfx/pop-light.mp3",
-   "gain_db": -17,
-   "align": "onset"
-  },
-  {
    "t": 6.08,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,
@@ -23,6 +17,12 @@
    "t": 10.66,
    "file": "sfx/sweep-small.mp3",
    "gain_db": -18,
+   "align": "onset"
+  },
+  {
+   "t": 15.47,
+   "file": "sfx/pop-light.mp3",
+   "gain_db": -17,
    "align": "onset"
   },
   {
@@ -101,12 +101,6 @@
    "t": 47.14,
    "file": "sfx/impact.mp3",
    "gain_db": -18,
-   "align": "onset"
-  },
-  {
-   "t": 47.17,
-   "file": "sfx/pop-light.mp3",
-   "gain_db": -17,
    "align": "onset"
   },
   {

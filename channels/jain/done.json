@@ -53,7 +53,15 @@
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
   "status": "held",
   "review": [
-   "20 Nov pre-post check: 57-ft Gommateshwara drawn crowned with folded hands (he stands bare, arms down); monks in saffron (scenes 2, 4, 11)"
+   "visual: Scene 5, 7, and 9: Bahubali/ascetic is depicted wearing clothing (dhoti/lower garment), violating the traditional Digambar/Jain ascetic form rules.",
+   "visual: Scene 3 and 7: Figures wear crowns and royal ornaments which violate the plain ascetic representation rules for Jain figures in this context.",
+   "visual: Checklist q5: Bahubali / Gommateshwara is shown wearing clothes in multiple scenes.",
+   "visual: checklist: Is Bahubali / Gommateshwara shown wearing a crown or clothes, or with hands folded (he stands bare, arms straight down, creepers on his legs)? -> Scenes 5, 7, 9",
+   "picture check: scene 1: the statue is shown wearing clothes/cloth around the waist, with hands folded/raised in a thumbs-up gesture, which is no (checklist 5)",
+   "picture check: scene 3: A crown and jewellery are visible on the central seated statue, and a tilak is on its forehead.; The central seated statue wears a crown and clothes; its hands are not folded, with one hand holding a scepter.; A large central figure wearing a golden crown and jewellery (necklaces and armlets) is shown seated in the middle, under; The central figure is wearing a crown and clothes (sash/drapery over the shoulder), seated rather than standing bare wit (checklist 2, 5)",
+   "picture check: scene 5: In the top panel, the standing Bahubali figure is bare-chested but wears a light-colored dhoti/wrap cloth around his wai; The figure is shown wearing lower clothing/garment in all three panels, and is sitting cross-legged (hands folded in med (checklist 5)",
+   "picture check: scene 7: A golden crown with a red jewel is worn on the head of the main figure in the foreground.; A crown is clearly visible on the head of the main figure at the top of the image. (checklist 5)",
+   "visual score 3/10"
   ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
@@ -97,6 +105,16 @@
   "status": "held",
   "review": [
    "20 Nov pre-post picture check: the monk changes from clean-shaven to an old man with a white beard (scenes 6, 12)"
+  ]
+ },
+ {
+  "job": "1120-1028",
+  "topic": "The principle of Aparigraha (Non-Possessiveness) amidst economic news",
+  "title": "Aaj ki economy mein Aparigraha kaise laagu karein?",
+  "status": "held",
+  "review": [
+   "STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)",
+   "STORY scene 5: invented: 'Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'': This specific exchange is a modern parable and does not appear in the scriptures. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)"
   ]
  }
 ]

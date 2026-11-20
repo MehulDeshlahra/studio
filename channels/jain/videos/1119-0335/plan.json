@@ -26,8 +26,8 @@
  "scenes": [
   {
    "vo": "Ek jalta lakdi... andar saanp phansa tha",
-   "type": "clip",
-   "prompt": "Close-up of a burning sandalwood log in a stone fire altar, flames licking the bark, a small snake visibly trapped inside a crack, writhing in pain. Warm golden firelight illuminates the surrounding white marble floor of a Jain temple courtyard. Serene painterly Indian style, Dilwara temple architecture in background with tall shikhara spires. No text, no logos.",
+   "type": "image",
+   "prompt": "Close-up of a burning sandalwood log in a stone fire altar, flames licking the bark, a small snake visibly trapped inside a crack, writhing in pain. Warm golden firelight illuminates the log. Simple background of ancient Jain temple marble carvings with subtle shikhara spire silhouettes. No text, no logos. 9:16 vertical.",
    "motion": "push",
    "title": "",
    "keywords": [

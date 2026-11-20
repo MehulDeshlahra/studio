@@ -20,7 +20,11 @@
     "ameer",
     "bachche"
    ],
-   "hud_right": "LOK KATHA"
+   "hud_right": "LOK KATHA",
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Kuber ke paas itna sona tha, ki wo use dikhane ke liye ek bhoj rakhte hain.",
@@ -30,7 +34,11 @@
    "keywords": [
     "sona",
     "bhoj"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Wo Kailash jaate hain, aur Mahadev ko nyota dete hain.",
@@ -40,7 +48,11 @@
    "keywords": [
     "kailash",
     "mahadev"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Mahadev muskura kar kehte hain... main nahi aa sakta. Mera beta Ganesh aayega.",
@@ -49,7 +61,11 @@
    "motion": "pull",
    "keywords": [
     "ganesh"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Ganesh ji khaane baithte hain. Pehli thaali, khatam. Dusri, khatam.",
@@ -58,7 +74,11 @@
    "motion": "punch",
    "keywords": [
     "khatam"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Rasoi khaali ho gayi. Bhandaar khaali ho gaya.",
@@ -69,7 +89,9 @@
    "small": "phir bhi bhookh",
    "keywords": [
     "khaali"
-   ]
+   ],
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Ganesh ji bole... mujhe abhi bhi bhookh lagi hai.",
@@ -78,7 +100,11 @@
    "motion": "push",
    "keywords": [
     "bhookh"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Ghabraaye Kuber, bhaag kar Mahadev ke paas pahunche.",
@@ -87,7 +113,11 @@
    "motion": "pan",
    "keywords": [
     "mahadev"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Mahadev ne bas ek mutthi chaawal diye, aur kaha: ise prem se khilao.",
@@ -97,7 +127,11 @@
    "keywords": [
     "mutthi",
     "prem"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Ek mutthi chaawal. Aur Ganesh ji ka pet bhar gaya.",
@@ -107,7 +141,11 @@
    "keywords": [
     "mutthi",
     "bhar"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Bhagwan ko sona nahi chahiye. Bas bhaav chahiye.",
@@ -118,7 +156,9 @@
    "small": "sona nahi",
    "keywords": [
     "bhaav"
-   ]
+   ],
+   "title": null,
+   "skin": "painting"
   },
   {
    "vo": "Aap ne kabhi dikhaave ke liye kuch kiya hai? Comment mein batao.",
@@ -127,10 +167,14 @@
    "motion": "pull",
    "keywords": [
     "comment"
-   ]
+   ],
+   "big": null,
+   "small": null,
+   "title": null,
+   "skin": "painting"
   }
  ],
- "caption": "Teeno lok ka sabse ameer devta ek bachche ka pet nahi bhar paaya 🙏 Ek mutthi chaawal ne sab badal diya. (Lok katha) Aap ne kabhi dikhaave ke liye kuch kiya hai?",
+ "caption": "Teeno lok ka sabse ameer devta ek bachche ka pet nahi bhar paaya 🙏 Ek mutthi chaawal ne sab badal diya. (Lok katha) Aap ne kabhi dikhaave ke liye kuch kiya hai?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#Ganesh",
   "#Kuber",
@@ -188,5 +232,7 @@
    ]
   },
   "comment_q": "Kabhi dikhaava kiya? (Haan/Na)"
- }
+ },
+ "skin": "painting",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

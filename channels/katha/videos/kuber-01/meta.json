@@ -1,5 +1,8 @@
 {
  "channel": "katha",
  "job": "kuber-01",
- "topic": "Kuber ka ghamand"
+ "topic": "Kuber ka ghamand",
+ "voice_gate": 1,
+ "brain_judged": true,
+ "stage": "done"
 }

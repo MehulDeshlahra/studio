@@ -24,7 +24,10 @@
   "topic": "Kuber ka ghamand",
   "title": "Kuber ka ghamand aur Ganesh ji ki bhookh",
   "qc_ok": false,
-  "status": "approved"
+  "status": "held",
+  "review": [
+   "picture check: scene 1: Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 65%); Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 83%); Does any god, goddess or sage have a comic, silly or cartoonish facial expression? (yes 86%)"
+  ]
  },
  {
   "job": "kuber-01-en",

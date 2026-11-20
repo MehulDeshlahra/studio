@@ -453,3 +453,10 @@
 
 ## review 1118-0735
 - format/loudness: h264,1080,1920,30/1 -16.3 LUFS, true peak -3.2
+
+## kuber-01 Kuber ka ghamand
+- scene 1: The caption 'AMEER DEVTA' is partially obscured by the character's dhoti/clothing, making it slightly hard to read.
+- scene 8: The caption 'BHAAG KAR MAHADEV' is slightly cut off at the bottom, though still legible.
+
+## review kuber-01
+- picture check: scene 1: Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 65%); Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 83%); Does any god, goddess or sage have a comic, silly or cartoonish facial expression? (yes 86%)

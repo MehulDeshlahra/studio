@@ -28,7 +28,7 @@
   {
    "vo": "57 feet unchi murti, pairon mein bel — 12 saal tak hile bhi nahi?",
    "type": "image",
-   "prompt": "Cinematic 9:16 shot of the 57-foot Gommateshwara monolith at Shravanabelagola — warm golden sunrise light on white granite, natural warm human skin tone on the statue, vines sculpted around legs, birds perched on shoulders, camera slowly pushes in from low angle, serene painterly Indian style, ancient Jain temple shikhara spires visible in misty background, no people, peaceful atmosphere",
+   "prompt": "Cinematic 9:16 shot of the 57-foot Gommateshwara monolith at Shravanabelagola — warm golden sunrise light, the statue depicted with natural warm human skin tone (not blue or grey), vines sculpted around legs, birds perched on shoulders, camera slowly pushes in from low angle, serene painterly Indian style, ancient Jain temple shikhara spires visible in misty background, no people, peaceful atmosphere",
    "motion": "push",
    "title": "57 Feet Murti",
    "keywords": [
@@ -44,9 +44,9 @@
   {
    "vo": "Bharata ne 98 bhaiyon ko sadhu bana diya, par Bahubali nahi jhuke.",
    "type": "image",
-   "prompt": "Ancient Indian palace courtyard in warm golden light — Bharata seated on carved sandstone throne, 98 brothers in white robes walking away toward temple shikharas, Bahubali stands firm center frame with folded hands, white marble pillars with intricate carvings, Dilwara-style architecture, serene painterly style",
-   "motion": "pan",
-   "title": "Jab 98 Bhai Chhode",
+   "prompt": "Bahubali (Gommateshwara) standing bare, arms down, serene, in ancient stone temple courtyard, soft golden light, 9:16 vertical composition, space above and below for text",
+   "motion": "slow zoom",
+   "title": "Bahubali Stands",
    "keywords": [
     "98 bhai",
     "sadhu",
@@ -76,9 +76,9 @@
   {
    "vo": "Jeet ke pal mein haath utha ke ruk gaye — ye rajya kya hai?",
    "type": "image",
-   "prompt": "Close-up: Bahubali's raised fist frozen mid-air, Bharata on ground below. Bahubali's eyes shift from intensity to profound questioning. Golden hour light catches the moment. Faint translucent elephant silhouette (gajraj) under Bahubali's feet — pride. Ancient stone temple pillars frame the scene. Serene painterly Indian style",
-   "motion": "punch",
-   "title": "Jeet Ka Pal, Sawal",
+   "prompt": "Bahubali standing bare, arms down, head slightly tilted in contemplation, ancient temple background, golden hour light, 9:16 vertical, space above and below for text",
+   "motion": "slow zoom",
+   "title": "Questioning Victory",
    "keywords": [
     "vijay",
     "rajya",
@@ -161,7 +161,7 @@
   {
    "vo": "Kevala-jnana mila — poora gyaan, poori shanti.",
    "type": "image",
-   "prompt": "Bahubali in perfect kayotsarga, now radiant — lotus blooms at feet where vines were, halo of soft gold, siddhashila crescent symbol glowing above. Forest transformed into celestial grove. Rishabhanatha idol (seated padmasana, bull emblem) appears faintly in background as witness. Serene painterly style, warm golden light on white marble",
+   "prompt": "Bahubali in perfect kayotsarga, now radiant with natural warm human skin tone (not blue or grey) — lotus blooms at feet where vines were, halo of soft gold, siddhashila crescent symbol glowing above. Forest transformed into celestial grove. Rishabhanatha idol (seated padmasana, bull emblem) appears faintly in background as witness. Serene painterly style, warm golden light",
    "motion": "pull",
    "title": "Kevala-Jnana Ki Roshni",
    "keywords": [
@@ -172,7 +172,8 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Asli vijay bahar nahi, andar jeetne mein hai. Tum hote toh kya karte?",
@@ -192,11 +193,11 @@
   {
    "vo": "Jai Jinendra. Srot: Adipurana (9th century), Trishashti-shalaka-purusha-charitra (12th century).",
    "type": "card",
-   "prompt": "Same warm gradient, centered text, small lotus icon, Navkar Bhav logo mark subtle at bottom",
+   "prompt": "Warm gradient background, centered lotus icon, subtle Navkar Bhav logo at bottom, 9:16 vertical, space for text",
    "motion": "push",
-   "title": "Srot Aur Pranam",
-   "big": "JAI JINENDRA",
-   "small": "Srot: Adipurana (9th century), Trishashti-shalaka-purusha-charitra (12th century)",
+   "title": "Jai Jinendra",
+   "big": "Jai Jinendra",
+   "small": "Adipurana, 9th century",
    "keywords": [
     "Jai Jinendra",
     "Srot"

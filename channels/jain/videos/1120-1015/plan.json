@@ -1,0 +1,296 @@
+{
+ "slug": "jain-chauvihar-microscopic-truth",
+ "title": "Raat ko khana kyun nahi? Ahimsa ka sookshm sach",
+ "hooks": [
+  "Raat ka khana... ahimsa tod deta hai?",
+  "Suraj doobte hi... anek jeev jaagte hain",
+  "Acharanga Sutra ka raaz... microscope se dekho"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct question with surprise in first 5 words; mirrors viewer's daily curiosity about Chauvihar",
+ "metaphor": "Microscope lens revealing invisible night microorganisms waking at sunset",
+ "mechanism": [
+  "Sunset triggers microorganism surge (Jain belief)",
+  "Invisible beings contaminate food and water",
+  "Cooking and eating harms or ingests them",
+  "Daylight eating avoids this invisible violence",
+  "Circadian science backs early eating for health"
+ ],
+ "cast": {
+  "jain_monk": "calm middle-aged Jain monk, plain white unstitched cotton robes, soft white rajoharan whisk broom in hand, serene face, half-closed eyes, standing in white marble temple corridor with tall shikhara spires visible through arched doorway",
+  "layperson": "middle-aged Jain householder in simple cotton kurta, calm expression, sitting cross-legged on floor before a thali in warm golden light"
+ },
+ "scenes": [
+  {
+   "vo": "Raat ka khana... ahimsa tod deta hai",
+   "type": "image",
+   "prompt": "serene painterly Indian style, warm golden sunset light on white marble Jain temple courtyard, tall pointed shikhara spires in background, a calm Jain monk in plain white unstitched cotton robes with soft white rajoharan stands looking at a simple thali, microscopic glow particles rising from food representing invisible beings, gentle glow, uncluttered composition",
+   "motion": "push",
+   "title": "RAAT KA KHANA",
+   "keywords": [
+    "raat",
+    "ahimsa",
+    "tod deta"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Acharanga Sutra kehta hai... sookshm jeev jaagte hain",
+   "type": "image",
+   "prompt": "ancient palm leaf manuscript Acharanga Sutra open on wooden stand in white marble Jain temple, warm golden light, soft focus background of carved pillars and shikhara, gentle glow, serene painterly style",
+   "motion": "pan",
+   "title": "ACHARANGA SUTRA",
+   "keywords": [
+    "acharanga",
+    "sookshm",
+    "jeev"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Suraj doobte hi... anek jeev badhte hain",
+   "type": "image",
+   "prompt": "split view: top half warm golden sunset over Jain temple shikharas, bottom half microscopic view showing tiny organisms multiplying in dark water drops, painterly transition from light to dark, serene style, white marble textures",
+   "motion": "tilt",
+   "title": "SURAST KE BAAD",
+   "keywords": [
+    "suraj",
+    "doobte",
+    "jeev badhte"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ye itne chhote... aankhon se dikhte nahi",
+   "type": "image",
+   "prompt": "microscope lens view: dark field illumination showing translucent microorganisms swimming, painterly scientific illustration style, warm golden rim light, Jain temple marble texture faintly visible at edges, serene uncluttered",
+   "motion": "push",
+   "title": "DIKHTE NAHI",
+   "keywords": [
+    "chhote",
+    "aankhon",
+    "dikhte nahi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Khana banate waqt... ye mar jaate",
+   "type": "image",
+   "prompt": "Jain layperson in simple cotton kurta cooking in traditional kitchen with stone floor, warm golden lamp light, steam rising from pot carries microscopic glow particles, monk observing calmly in background, white marble temple architecture visible through window, serene painterly",
+   "motion": "pan",
+   "title": "KHAANA BANATE",
+   "keywords": [
+    "khana",
+    "banate",
+    "mar jaate"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Paani mein bhi... sookshm jeev hote hain",
+   "type": "image",
+   "prompt": "copper water vessel on white marble floor, warm golden light, microscopic view overlay showing tiny beings in water, Jain monk's white robed hand with rajoharan nearby, carved pillar reflection in water, serene uncluttered",
+   "motion": "pull",
+   "title": "PAANI MEIN BHI",
+   "keywords": [
+    "paani",
+    "sookshm",
+    "jeev"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Andhere mein... ye dikhai nahi dete",
+   "type": "image",
+   "prompt": "dark kitchen scene illuminated only by single oil lamp, Jain householder serving food, invisible microorganism glow particles on thali visible only to viewer, monk's silhouette in doorway, warm golden light pools, serene painterly style",
+   "motion": "pan",
+   "title": "ANDHERE KA DHOKA",
+   "keywords": [
+    "andhere",
+    "dikhai",
+    "nahi dete"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Isliye Jain... surya ast ke baad nahi khate",
+   "type": "image",
+   "prompt": "Jain family sitting together for early dinner before sunset, warm golden light through carved stone windows, white marble floor, simple thalis, calm faces, tall shikhara spire visible outside, serene painterly Indian style",
+   "motion": "pull",
+   "title": "CHAUVIHAR NIYAM",
+   "keywords": [
+    "jain",
+    "surya ast",
+    "nahi khate"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Chauvihar... surya ast ke baad na khana na paani",
+   "type": "card",
+   "prompt": "white marble texture background, warm golden light, subtle lotus motif, serene minimal",
+   "motion": "punch",
+   "title": "CHAUVIHAR",
+   "big": "CHAUVIHAR",
+   "small": "raat ko na khana na paani",
+   "keywords": [
+    "chauvihar",
+    "raat",
+    "na khana"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Sadhu-sadhvi... dopahar se pehle hi khate",
+   "type": "image",
+   "prompt": "Jain monk in plain white unstitched robes with rajoharan accepting alms in wooden bowl before noon, bright midday sun on white marble temple steps, layperson offering food with folded hands, carved pillars, shikhara spires, serene painterly",
+   "motion": "pan",
+   "title": "SADHU KA NIYAM",
+   "keywords": [
+    "sadhu",
+    "dopahar",
+    "pehle"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Vigyan bhi maanta hai... circadian rhythm",
+   "type": "image",
+   "prompt": "split composition: left side ancient Jain manuscript, right side modern scientific diagram of human circadian rhythm clock, warm golden light bridging both, white marble background, serene painterly fusion of tradition and science",
+   "motion": "tilt",
+   "title": "VIGYAN KI MOHAR",
+   "keywords": [
+    "vigyan",
+    "circadian",
+    "rhythm"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Raat ka khana... pachan bigadta, neend bhi",
+   "type": "image",
+   "prompt": "person sleeping peacefully on simple cot in mud-stone house, warm moonlight, dream bubble showing healthy digestion cycle, Jain temple shikhara silhouette on horizon, serene painterly style, gentle glow",
+   "motion": "pull",
+   "title": "SEHAT KA RAZ",
+   "keywords": [
+    "pachan",
+    "bigadta",
+    "neend"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ek niyam... anek jeev bachata hai",
+   "type": "card",
+   "prompt": "white marble slab with warm golden light, single lotus flower, subtle microscope icon, serene minimal",
+   "motion": "punch",
+   "title": "EK NIYAM",
+   "big": "EK NIYAM",
+   "small": "anek jeev bachte",
+   "keywords": [
+    "ek niyam",
+    "anek",
+    "jeev"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aap bhi try karenge... raat ka khana chhod ke?",
+   "type": "image",
+   "prompt": "Jain monk in white robes with rajoharan looking directly at viewer with gentle smile, warm golden light on white marble temple interior, carved doorway frames distant shikhara, inviting calm gaze, serene painterly",
+   "motion": "push",
+   "title": "AAP KYA SOCHTE",
+   "keywords": [
+    "aap",
+    "try",
+    "chhod sakte"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Raat ka khana ahimsa ka ullanghan kyun? Acharanga Sutra ka microscopic sach. 🕉️\n\nChauvihar sirf niyam nahi, jeev daya ka daily practice hai.\n\nAap Chauvihar follow karte hain? Comment mein batayein.\n\n@yourpagehandle",
+ "hashtags": [
+  "#JainDharma",
+  "#Ahimsa",
+  "#Chauvihar",
+  "#AcharangaSutra",
+  "#NavkarBhav"
+ ],
+ "claims": [
+  {
+   "claim": "Acharanga Sutra prohibits eating after sunset to avoid harming microscopic beings",
+   "basis": "Acharanga Sutra / Agam source cited in prompt; Jainknowledge.com confirms chauvihar rooted in ahimsa for invisible beings"
+  },
+  {
+   "claim": "Jain texts state microorganisms become more active after sunset",
+   "basis": "Jinsetu.in states 'many micro-organisms (Trasa Jiva) emerge and multiply rapidly after the sun goes down'"
+  },
+  {
+   "claim": "Chauvihar means no food and no water after sunset for laypeople",
+   "basis": "Jainknowledge.com: 'Śvetāmbara: Laypeople commonly keep full chauvihār—no food and no water after sunset'"
+  },
+  {
+   "claim": "Monks eat only in daylight, often before noon",
+   "basis": "Jainknowledge.com: 'Sādhus/sādhvīs of both traditions are stricter: food only in daylight (often before noon), never after sunset'"
+  },
+  {
+   "claim": "Circadian rhythm science supports early eating for digestion and sleep",
+   "basis": "Jinsetu.in: 'Modern science now supports the ancient Jain practice through the study of Circadian Rhythms'"
+  }
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "7f620e6fdf",
+  "fc294ac58f",
+  "b2fabb69c4",
+  "f945e2a937",
+  "e15cfaed29",
+  "161339712e",
+  "4396759d41",
+  "0755cc155a",
+  "1e1964f463",
+  "6ce7203c71",
+  "a688e48ca2",
+  "9db4cc694f",
+  "1e60a34718"
+ ]
+}
