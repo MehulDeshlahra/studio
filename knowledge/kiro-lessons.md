@@ -151,4 +151,6 @@ strongest, not its oldest (katha: Ujjain/Greenwich first).
   from 4.5 s to 20.7 s. RULE: after ANY combo change, call each combo once (.tmp/t_llm.py) and compare the time with before.
 - 20 Nov audit: two retry loops stacked (OmniRoute combo + llm.py) turned one hung model into 240-600 s. RULE: one retry
   loop only, in the gateway; the client never re-asks a combo that timed out.
+- 20 Nov audit: I told the owner a reel had a "black bar" from ONE still; it was a scene wipe mid-transition. RULE: a
+  defect seen in one still is confirmed on the frames 1-2 s around it before it is reported.
 - 20 Nov: I told the owner a reel takes 1.5-2.5 h as if that were normal. Measured: (1) a hung model (gemini-3.7-flash) made 14 calls wait 300 s each, ~30 min of a Jain plan; (2) the voice-gate restart dropped --job and started a NEW video, throwing the plan away; (3) a Devanagari script was stripped to ',' and '?' and the voice model made up its own story. RULE: never quote a duration I have not measured; when something is slow, measure each stage from logs and fix the cause the same hour; a reel should take ~20-30 min.
