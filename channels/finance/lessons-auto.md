@@ -223,3 +223,9 @@
 - NUMBERS: scene 2: 'RBI 2013 circular: zero percent interest loan schemes prohibited without genuine restructuring. Inte' is not in the sources: remove it or say only what the sources say
 - NUMBERS: scene 4: 'Bank processing fee is charged, plus GST.' is not in the sources: remove it or say only what the sources say
 - NUMBERS: scene 7: 'RBI master direction: full purchase amount blocks credit limit, not just EMI.' is not in the sources: remove it or say only what the sources say
+
+## Purana sona bechne par poora paisa kyun nahi milta (numbers check)
+- NUMBERS: scene 8: 'BIS Care app par 6-digit code dalo, purity dikh jayegi' is not in the sources: remove it or say only what the sources say
+
+## Purana sona bechne par poora paisa kyun nahi milta (numbers check)
+- NUMBERS: scene 1: 'Example loss of ₹15000 when selling old gold.' is not in the sources: remove it or say only what the sources say

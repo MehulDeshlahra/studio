@@ -68,3 +68,8 @@
 
 ## 1120-0341-c4 (clipper)
 - almost no speech (captions nearly empty)
+
+## 1120-0940e-c1 (clipper)
+- Captions overlapping or corrupted ('JOCKEYSE THE')
+- Checklist a: Same person duplicated or layout issues visible
+- checklist: misheard caption

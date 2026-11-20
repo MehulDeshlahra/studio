@@ -859,7 +859,7 @@
     "https://youtube.com/shorts/-8kexdmHtrc"
    ],
    "at": "2026-11-20 06:36",
-   "tries": 1
+   "tries": 2
   },
   "stats": {
    "views": 2,
@@ -995,6 +995,82 @@
   "clip": {
    "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
    "start": 189.85,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0940a-c1",
+  "topic": "MOM SAYS DO IT JOSEPH",
+  "title": "MOM SAYS DO IT JOSEPH",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 20.41,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0940b-c1",
+  "topic": "JO KOY REVEALS HIS MCDONALD'S HEIST",
+  "title": "JO KOY REVEALS HIS MCDONALD'S HEIST",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 5.03,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0940c-c1",
+  "topic": "JO KOY REVEALS DOGS CRAZY LOYALTY",
+  "title": "JO KOY REVEALS DOGS CRAZY LOYALTY",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 114.35,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0940d-c1",
+  "topic": "SHELTER LADY HIDES DOG'S RUNAWAY PAST",
+  "title": "SHELTER LADY HIDES DOG'S RUNAWAY PAST",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 187.99,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0940e-c1",
+  "topic": "Dog escapes with a jockey on",
+  "title": "Dog escapes with a jockey on",
+  "status": "held",
+  "review": [
+   "Captions overlapping or corrupted ('JOCKEYSE THE')",
+   "Checklist a: Same person duplicated or layout issues visible",
+   "checklist: misheard caption"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 134.94,
+   "layout": "mixed:crop+fit"
+  }
+ },
+ {
+  "job": "1120-0940f-c1",
+  "topic": "STEPDAD GOT PURPLE HEART THEN WENT BACK",
+  "title": "STEPDAD GOT PURPLE HEART THEN WENT BACK",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 170.67,
    "layout": "crop"
   }
  }

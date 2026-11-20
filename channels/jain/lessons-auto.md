@@ -303,3 +303,13 @@
 - visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1, 2, 6, 7, 9, 10, 11, 12, 13
 - visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 9, 10, 11
 - visual score 3/10
+
+## 1119-0335 What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)
+- scene 2: character depicted looks like an elderly ascetic rather than young Prince Parshvanath
+- scene 7: imagery of human-snake hybrid figures does not clearly depict Parshvanath choosing compassion over revenge
+
+## Why is eating after sunset considered a violation of Ahimsa? (story check)
+- STORY scene 9: invented: 'Ye hai Chauvihar... chaar vichar ka niyam': Chauvihar refers to the four-fold renunciation (food, water, fruits, grains/spices) or the four-fold nature of the vow;  (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1119-0935 (pre-render check)
+- FIT: RESPECT - the figure has blue skin tone, violating the rule that Jain ascetics or Tirthankaras must have natural warm human skin tone (never blue, grey, or green).
