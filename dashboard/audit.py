@@ -39,6 +39,18 @@ if len(shown) >= CAP:                      # the window is by job_state "updated
 check("runs: videos with a plan", len(shown & set(folders)), len(folders))
 for k in set(folders) - shown:
     bad.append(f"runs: {k} exists on disk but is not shown")
+# 1b 20 Nov: the Approvals page (S["queue"]) must list EVERY approved and held video of done.json (it showed 16/42 and
+# 13/78 when it read the newest-40 Runs list). A held video being rebuilt right now shows as building: allowed.
+qshown = {(j["cid"], j["job"], j["status"]) for j in S.get("queue") or []}
+building = {(j["cid"], j["job"]) for j in S["jobs"] if j.get("active")}
+for p in glob.glob(os.path.join(ROOT, "channels", "*", "done.json")):
+    c = p.split(os.sep)[-2]
+    for x in jl(p, []) or []:
+        if x.get("status") in ("approved", "held") and os.path.isdir(os.path.join(OUT, c, x["job"])) and (c, x["job"]) not in building:
+            if (c, x["job"], x["status"]) in qshown:
+                ok += 1
+            else:
+                bad.append(f"approvals: {c}/{x['job']} is {x['status']} in done.json but not on the Approvals page")
 # 2 status of each run vs done.json
 for j in S["jobs"]:
     d = {x["job"]: x for x in (jl(os.path.join(ROOT, "channels", j["cid"], "done.json"), []) or [])}.get(j["job"])
