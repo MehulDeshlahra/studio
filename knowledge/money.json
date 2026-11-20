@@ -31,6 +31,22 @@
     "videos": 0,
     "views_90d": null
    }
+  },
+  {
+   "day": "2026-11-20",
+   "ig": {
+    "followers": 3,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {
+    "subs": 0,
+    "views_total": 0,
+    "videos": 0,
+    "views_90d": null
+   }
   }
  ],
  "katha": [
@@ -52,6 +68,22 @@
   },
   {
    "day": "2026-11-19",
+   "ig": {
+    "followers": 4,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {
+    "subs": 0,
+    "views_total": 0,
+    "videos": 0,
+    "views_90d": null
+   }
+  },
+  {
+   "day": "2026-11-20",
    "ig": {
     "followers": 4,
     "posts": 0
@@ -99,6 +131,22 @@
     "videos": 0,
     "views_90d": null
    }
+  },
+  {
+   "day": "2026-11-20",
+   "ig": {
+    "followers": 6,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {
+    "subs": 0,
+    "views_total": 0,
+    "videos": 0,
+    "views_90d": null
+   }
   }
  ],
  "cutcapsule": [
@@ -117,6 +165,22 @@
     "videos": 0,
     "views_90d": null
    }
+  },
+  {
+   "day": "2026-11-20",
+   "ig": {
+    "followers": 2,
+    "posts": 1
+   },
+   "fb": {
+    "followers": 9
+   },
+   "yt": {
+    "subs": 0,
+    "views_total": 0,
+    "videos": 1,
+    "views_90d": null
+   }
   }
  ],
  "finance": [
@@ -125,6 +189,17 @@
    "ig": {
     "followers": 27,
     "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {}
+  },
+  {
+   "day": "2026-11-20",
+   "ig": {
+    "followers": 27,
+    "posts": 1
    },
    "fb": {
     "followers": 0
@@ -141,6 +216,61 @@
    },
    "fb": {
     "followers": 0
+   },
+   "yt": {}
+  },
+  {
+   "day": "2026-11-20",
+   "ig": {
+    "followers": 1,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 0
+   },
+   "yt": {
+    "subs": 2,
+    "views_total": 0,
+    "videos": 0,
+    "views_90d": null
+   }
+  }
+ ],
+ "cutcapsulegaming": [
+  {
+   "day": "2026-11-20",
+   "ig": {
+    "followers": 0,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 5
+   },
+   "yt": {}
+  }
+ ],
+ "cutcapsulehindi": [
+  {
+   "day": "2026-11-20",
+   "ig": {
+    "followers": 0,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 62
+   },
+   "yt": {}
+  }
+ ],
+ "cutcapsuletv": [
+  {
+   "day": "2026-11-20",
+   "ig": {
+    "followers": 0,
+    "posts": 0
+   },
+   "fb": {
+    "followers": 3
    },
    "yt": {}
   }

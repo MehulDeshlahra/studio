@@ -1,6 +1,14 @@
 {
  "tech": [
   {
+   "topic": "GTA VI and India's Game Dev Talent",
+   "search": "how gta 6 is made",
+   "fit": 9,
+   "why": "India's role in GTA VI development is a massive trending story. It connects national pride with tech curiosity.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
    "topic": "GTA 6 Software Warning",
    "search": "GTA 6 release news",
    "fit": 9,
@@ -32,6 +40,30 @@
    "fit": 9,
    "why": "Trending on Reddit r/india about prison jammers cutting off entire neighborhoods; highly relatable tech curiosity.",
    "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "AI-Powered Cyberattacks",
+   "search": "how ai cyberattacks work",
+   "fit": 8,
+   "why": "Nikesh Arora's warning about AI making cyberattacks easier is timely and fits the 'Kaise Tech' educational vibe.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
+   "topic": "Semiconductor Manufacturing in India",
+   "search": "how chips are made",
+   "fit": 8,
+   "why": "With the government's focus on the semiconductor revolution and chip design, explaining the tech behind it is highly relevant.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
+   "topic": "One UI 9.5 Beta Features",
+   "search": "samsung one ui 9.5",
+   "fit": 8,
+   "why": "Samsung is a huge brand in India; the beta launch for the S26 series is a hot topic for tech enthusiasts.",
+   "day": "2026-11-20",
    "source": "trend"
   },
   {
@@ -67,23 +99,39 @@
    "metaphor": "Think of a giant invisible net spread over the ocean. Satellites and buoys are the 'sensors' on that net that feel the wind speed and pressure, telling us exactly where the monster is moving.",
    "day": "2026-11-18",
    "source": "trend"
-  },
-  {
-   "topic": "New phones, old chips: Inside the rise of recycled memory in smartphones",
-   "search": "how old chips are reused in phones",
-   "fit": 8,
-   "why": "Business Standard tech report on recycled smartphone memory chips, appealing to tech-savvy youth interested in hardware secrets.",
-   "day": "2026-11-17",
-   "source": "trend"
   }
  ],
  "katha": [
+  {
+   "topic": "The Significance of Devuthani Ekadashi: When Lord Vishnu Wakes Up",
+   "search": "Devuthani Ekadashi katha significance",
+   "fit": 10,
+   "why": "With 'Devuthani Ekadashi 2026' trending in festival news, this is the perfect time to explain the mythology behind Vishnu waking from his four-month slumber (Yoganidra) and the start of auspicious wedding seasons.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
   {
    "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
    "search": "did ravan touch sita maa valmiki ramayana",
    "fit": 10,
    "why": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
    "day": "2026-11-17",
+   "source": "trend"
+  },
+  {
+   "topic": "The Story of the Sun Temple and Chhath Puja",
+   "search": "Chhath Puja sun worship story",
+   "fit": 9,
+   "why": "Chhath Puja is trending in Bihar and across India. Connecting the current festival fervor to the Puranic stories of why the Sun God (Surya Dev) is worshipped, specifically focusing on the setting sun, aligns perfectly with the channel's niche.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
+   "topic": "Why Lord Vitthal is worshipped on Kartiki Ekadashi",
+   "search": "Kartiki Ekadashi Pandharpur story",
+   "fit": 9,
+   "why": "Kartiki Ekadashi is trending due to the Pandharpur Yatra. A short, engaging story about the devotion of Pundalik and how Lord Vitthal came to stand on the brick is highly relevant to the current search interest.",
+   "day": "2026-11-20",
    "source": "trend"
   },
   {
@@ -149,17 +197,17 @@
    "why": "Test cricket searches are soaring; an archery competition from the Mahabharata parallels a sports event, drawing curiosity and teaching the value of concentration.",
    "day": "2026-11-18",
    "source": "trend"
-  },
-  {
-   "topic": "Samudra Manthan – Churning the ocean for Amrita, patience and cooperation",
-   "search": "Samudra Manthan story",
-   "fit": 8,
-   "why": "Apple service outages have generated massive search volume; the myth of the cosmic churning illustrates collaborative effort to resolve a crisis, resonating with today’s tech disruption concerns.",
-   "day": "2026-11-18",
-   "source": "trend"
   }
  ],
  "raaz": [
+  {
+   "topic": "The 'GTA VI' Contract Mystery (Fiction Serial Idea)",
+   "search": "GTA 6 game mystery",
+   "fit": 9,
+   "why": "The news about a couple signing a 10-day GTA 6 contract and facing backlash is perfect for a 'Small-town Sci-Fi/Thriller' serial. We can adapt this into a story about a gamer who signs a contract for a game that starts controlling real-life events.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
   {
    "topic": "A lost landmass discovered under the sea",
    "search": "lost continent under ocean",
@@ -201,6 +249,30 @@
    "source": "trend"
   },
   {
+   "topic": "The Secret Bunker Under the Cliffs (Mystery Thriller Serial)",
+   "search": "secret bunker mystery story",
+   "fit": 8,
+   "why": "The news about the WW2 bunker discovery is a great hook for a 'Mystery Thriller' serial. We can create a fiction story about a group of friends who find a similar hidden bunker in an old Indian hill station, leading to a decades-old secret.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
+   "topic": "The Missing Billion Years (Small-town Sci-Fi Serial)",
+   "search": "missing time mystery science",
+   "fit": 8,
+   "why": "The scientific discovery about Earth missing a billion years of history is a fantastic premise for a 'Small-town Sci-Fi' serial. We can weave a story about a small village where time seems to 'skip' or 'loop' for certain people, mirroring the geological mystery.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
+   "topic": "The 400-Year-Old Lock Secret (Mystery/Karma Twist Serial)",
+   "search": "mysterious ancient lock story",
+   "fit": 8,
+   "why": "The CT scan of a 400-year-old lock is a compelling visual hook. We can start a 'Karma Twist' serial where an antique dealer finds a lock that cannot be opened, and every time he tries, something from his past comes back to haunt him.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
    "topic": "A mysterious 400-year-old lock that won't open",
    "search": "mystery lock secret mechanism",
    "fit": 8,
@@ -223,41 +295,35 @@
    "why": "Based on the 'GTA 6' and 'little secrets in Rockstar worlds' news. Perfect for a small-town sci-fi serial where a gamer realizes that the 'glitches' in a new open-world game are actually messages from a missing person.",
    "day": "2026-11-19",
    "source": "trend"
-  },
+  }
+ ],
+ "jain": [
   {
-   "topic": "The butterfly that fooled scientists for 200 years",
-   "search": "mystery butterfly species secret",
-   "fit": 8,
-   "why": "Based on the 'butterfly that fooled scientists' news. Good for a mystery/thriller serial about a biologist who discovers a species that mimics human voices, leading to a dark discovery in a remote forest.",
-   "day": "2026-11-19",
+   "topic": "The story of King Megharatha and the Pigeon (Compassion in Action)",
+   "search": "Jain story compassion kindness",
+   "fit": 9,
+   "why": "With the news of Cyclone 'Akvan' and massive rescue efforts, the audience is thinking about empathy and saving lives. This story from the Trishashti-shalaka-purusha-charitra about King Megharatha sacrificing his own flesh to save a pigeon resonates deeply with the current theme of disaster relief and selfless service.",
+   "day": "2026-11-20",
    "source": "trend"
   },
   {
-   "topic": "The Hidden Coin Stash: A family drama/mystery about a struggling middle-class family finding a hidden fortune under their floorboards, only to realize it comes with a dangerous curse.",
-   "search": "hidden treasure mystery story",
+   "topic": "The principle of Aparigraha (Non-Possessiveness) amidst economic news",
+   "search": "Jain philosophy non-possessiveness",
    "fit": 8,
-   "why": "The news about the worker finding gold coins in Tennessee is a classic 'hidden treasure' hook. This translates perfectly into a relatable Indian family drama with a suspenseful twist.",
-   "day": "2026-11-18",
-   "source": "trend"
+   "why": "With headlines about gold prices falling, stock market volatility, and corporate wage debates, young viewers are stressed about money. A story about a wealthy merchant or king who realized the futility of material hoarding (from the Agams) provides a grounding, timeless perspective on true wealth.",
+   "day": "2026-11-20",
+   "source": "trend",
+   "used": "2026-11-20"
   },
   {
-   "topic": "The Butterfly Effect: A fantasy/karma serial about a researcher who discovers a 'fake' butterfly that has been manipulating human history for 200 years, and now it's targeting them.",
-   "search": "butterfly mystery secret story",
+   "topic": "The power of Truth (Satya) in a world of 'blame games'",
+   "search": "Jain story power of truth",
    "fit": 8,
-   "why": "The 'butterfly that fooled scientists' headline is weird and intriguing. It provides a great foundation for a fantasy/thriller serial about hidden history and secrets.",
-   "day": "2026-11-18",
-   "source": "trend"
-  },
-  {
-   "topic": "Brain-dead neurosurgeon ne maut ke baad kya dekha? Real near-death experience",
-   "search": "neurosurgeon near death experience",
-   "fit": 8,
-   "why": "History/science headline: 'I’m a Neurosurgeon. My Near-Death Experience Showed Me Universal Consciousness'. Stories exploring the afterlife and consciousness trigger intense curiosity in Hindi-speaking audiences.",
-   "day": "2026-11-17",
+   "why": "With political news dominated by 'blame games' and international tensions, the Jain value of Satya (Truth) is a great counter-narrative. A story about a Tirthankara or great Shravaka who stood by the truth despite consequences (from the Kalpasutra) offers a strong moral lesson for today's youth.",
+   "day": "2026-11-20",
    "source": "trend"
   }
  ],
- "jain": [],
  "finance": [
   {
    "topic": "SBI UPI Downtime Alert",
@@ -265,6 +331,14 @@
    "fit": 10,
    "why": "Headline: 'SBI UPI Services To Be Down Tomorrow on 19 November'. This is highly actionable and urgent for the target audience using UPI daily.",
    "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "SGB 2020-21 Redemption Gains",
+   "search": "SGB redemption profit calculation",
+   "fit": 9,
+   "why": "The RBI announcement on SGB 2020-21 Series II & VIII premature redemption with 163-194% gains is a massive hook for gold investors. It shows the power of long-term holding vs current market volatility.",
+   "day": "2026-11-20",
    "source": "trend"
   },
   {
@@ -284,6 +358,22 @@
    "source": "trend"
   },
   {
+   "topic": "NEFT Transfer Limits Explained",
+   "search": "NEFT transfer limit rules",
+   "fit": 8,
+   "why": "With the recent news cycle focusing on RBI NEFT rules, viewers are confused about daily limits. A quick 'How much can you actually send?' explainer is high-utility content.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
+   "topic": "Gen Z Spending vs Saving",
+   "search": "Gen Z savings habits",
+   "fit": 8,
+   "why": "The trending news about Gen Z spending habits vs saving for tomorrow is highly relatable for the 16-35 demographic. It allows for a 'Compare your spending' hook.",
+   "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
    "topic": "Sovereign Gold Bond Redemption",
    "search": "SGB redemption price 2026",
    "fit": 8,
@@ -297,6 +387,14 @@
    "fit": 8,
    "why": "Headline: 'How to get four free credit reports every year in India'. This provides immediate utility and financial literacy for the 16-35 demographic.",
    "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "Gold Loan Stressed Assets",
+   "search": "how gold loans work",
+   "fit": 7,
+   "why": "Gold loan firms seeking RBI clarity on selling stressed loans is a niche but important topic for anyone who has pledged gold. It explains the 'what happens if I default' fear.",
+   "day": "2026-11-20",
    "source": "trend"
   }
  ]

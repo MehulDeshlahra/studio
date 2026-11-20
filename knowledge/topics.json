@@ -1,136 +1,136 @@
 {
  "picks": [
   {
-   "title": "Google gives Gemini the ability to use your Mac for you",
-   "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
-   "src": "TechCrunch AI",
-   "angle": "Gemini can now perform tasks directly on macOS, making it a powerful productivity assistant for Indian professionals.",
-   "hook": "Gemini ab aapka Mac khud control karega!",
-   "format": "tool-demo",
-   "freshness": "today",
+   "title": "TwinD: Generalizing Deepfake Detection",
+   "url": "https://huggingface.co/papers/2611.25935",
+   "src": "Hugging Face",
+   "angle": "Better tech to spot deepfakes, crucial for Indian social media.",
+   "hook": "Deepfake se bachna hai? Yeh naya AI model dekho.",
+   "format": "how-it-works",
+   "freshness": "this week",
    "score": 10,
-   "found": "2026-11-20T05:02+05:30"
+   "found": "2026-11-20T17:06+05:30"
   },
   {
-   "title": "AutoClip: Open-source AI video clipping tool",
-   "url": "https://github.com/zhouxiaoka/autoclip",
-   "src": "GitHub trending",
-   "angle": "Indian creators can now automatically turn long podcasts or interviews into viral Shorts and Reels.",
-   "hook": "Long videos se viral Shorts banao ek click mein.",
-   "format": "tool-demo",
-   "freshness": "today",
-   "score": 10,
-   "found": "2026-11-20T05:02+05:30"
-  },
-  {
-   "title": "ChatGPT can transcribe as you speak now with Live Dictation",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1037634/openai-chatgpt-live-dictation",
-   "src": "The Verge AI",
-   "angle": "Real-time transcription makes note-taking and content creation effortless for students and creators.",
-   "hook": "ChatGPT ab aapke bolte hi live typing karega.",
-   "format": "tool-demo",
+   "title": "Meta’s AI agent Muse leaking private data",
+   "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+   "src": "TechCrunch",
+   "angle": "Privacy alert for Indian users using Meta's new AI features.",
+   "hook": "Meta ka naya AI agent aapki baatein leak kar raha hai?",
+   "format": "story",
    "freshness": "today",
    "score": 9,
-   "found": "2026-11-20T05:02+05:30"
+   "found": "2026-11-20T17:06+05:30"
   },
   {
-   "title": "Google is putting AI chats right on the homepage",
-   "url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
-   "src": "The Verge AI",
-   "angle": "The iconic Google homepage is changing to prioritize AI interaction, affecting every Indian internet user.",
-   "hook": "Google Search ka homepage hamesha ke liye badal gaya.",
-   "format": "evidence",
-   "freshness": "today",
-   "score": 9,
-   "found": "2026-11-20T05:02+05:30"
-  },
-  {
-   "title": "Pancreatic cancer halted by virus injection in three patients",
-   "url": "https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/",
+   "title": "The Garage Door Spam Phenomenon",
+   "url": "https://blog.harrison.page/garage-door-spam/",
    "src": "Hacker News",
-   "angle": "A major medical breakthrough using viral tech to fight one of the deadliest cancers.",
-   "hook": "Scientists ne virus se cancer ko rok diya!",
+   "angle": "Surprising new way spammers are targeting smart home devices.",
+   "hook": "Smart garage door hai? Yeh naya scam bachke rehna!",
    "format": "story",
-   "freshness": "today",
+   "freshness": "this week",
    "score": 9,
-   "found": "2026-11-20T05:02+05:30"
+   "found": "2026-11-20T17:06+05:30"
   },
   {
-   "title": "Meta’s new Muse Charm device may cost $300",
-   "url": "https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/",
-   "src": "TechCrunch AI",
-   "angle": "Meta's new AI wearable is entering the market at a competitive price point for tech enthusiasts.",
-   "hook": "Meta ka naya AI wearable sirf 300 dollars mein?",
-   "format": "evidence",
-   "freshness": "today",
-   "score": 8,
-   "found": "2026-11-20T05:02+05:30"
+   "title": "Firecrawl: Knowledge infrastructure for agents",
+   "url": "https://github.com/firecrawl/firecrawl",
+   "src": "GitHub",
+   "angle": "Easier web scraping for Indian AI startup founders.",
+   "hook": "AI agents ko internet ka data kaise milega? Firecrawl dekho.",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-20T17:06+05:30"
   },
   {
-   "title": "Anthropic hits Nasdaq exchanges at $111",
-   "url": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
-   "src": "TechCrunch AI",
-   "angle": "The creator of Claude AI is now a public company, marking a massive milestone in the AI industry.",
-   "hook": "Claude banane wali company Anthropic ab stock market par!",
-   "format": "story",
-   "freshness": "today",
-   "score": 8,
-   "found": "2026-11-20T05:02+05:30"
-  },
-  {
-   "title": "Ghost-Downloader-3: The only downloader you need",
-   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
-   "src": "GitHub trending",
-   "angle": "A powerful all-in-one tool for Indian users to download media from across the web.",
-   "hook": "Har cheez download karne ke liye bas ek tool.",
+   "title": "PostgreSQL 19 Released",
+   "url": "https://www.postgresql.org/docs/release/19.0/",
+   "src": "PostgreSQL",
+   "angle": "Essential update for Indian developers and database admins.",
+   "hook": "PostgreSQL 19 aa gaya hai, database management ab aur fast!",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 8,
-   "found": "2026-11-20T05:02+05:30"
+   "found": "2026-11-20T17:06+05:30"
   },
   {
-   "title": "Apple is hiring engineers to build its own AI agent",
-   "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
-   "src": "The Verge AI",
-   "angle": "Apple is finally moving toward autonomous AI agents, promising a smarter iPhone experience soon.",
-   "hook": "Apple bhi apna khud ka AI agent la raha hai.",
-   "format": "story",
-   "freshness": "today",
+   "title": "FFmpeg 9.1 'Gauss' Released",
+   "url": "https://ffmpeg.org/download.html#release_9.1",
+   "src": "FFmpeg",
+   "angle": "Major update for Indian video editors and content creators.",
+   "hook": "Video editing karte ho? FFmpeg ka naya update check karo.",
+   "format": "tool-demo",
+   "freshness": "this week",
    "score": 8,
-   "found": "2026-11-20T05:02+05:30"
+   "found": "2026-11-20T17:06+05:30"
   },
   {
-   "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit",
-   "url": "https://huggingface.co/blog/moe-expert-streaming",
-   "src": "Hugging Face blog",
-   "angle": "Massive AI models can now run on standard consumer PCs, democratizing high-end AI for Indian students.",
-   "hook": "Bhari AI models ab saste PC par chalenge.",
+   "title": "UK fridges secured from hackers",
+   "url": "https://www.bbc.co.uk/news/articles/c6eq49zyx7p4o",
+   "src": "BBC",
+   "angle": "Why your smart appliances need better security in India too.",
+   "hook": "Aapka fridge hack ho sakta hai? Yeh news dekho.",
+   "format": "story",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "title": "DailySafe: Benchmarking Dynamic Safety",
+   "url": "https://huggingface.co/papers/2611.26298",
+   "src": "Hugging Face",
+   "angle": "How researchers are making AI safer for everyday chats.",
+   "hook": "Kya aapka AI safe hai? Naya benchmark test dekho.",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "title": "Research acceleration: The jagged frontier",
+   "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+   "src": "OpenAI",
+   "angle": "Understanding why AI is great at some things and bad at others.",
+   "hook": "AI kabhi genius, kabhi dumb kyun hota hai?",
+   "format": "how-it-works",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "title": "Show HN: Tinnitus frequency finder",
+   "url": "https://trynotched.com/find",
+   "src": "Hacker News",
+   "angle": "A simple tool to help people identify ear ringing frequencies.",
+   "hook": "Kaano mein ghanti bajti hai? Yeh tool try karo.",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+   "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+   "src": "OpenAI",
+   "angle": "Behind the scenes of how ChatGPT handles massive traffic.",
+   "hook": "ChatGPT itna fast kaise chalta hai? Secret reveal!",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "title": "Weight-Space Programming",
+   "url": "https://notesbylex.com/weight-space-programming-1990s",
+   "src": "Hacker News",
+   "angle": "A retro-inspired way to build neural networks.",
+   "hook": "AI banane ka purana tarika, phir se trend mein?",
    "format": "how-it-works",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-20T05:02+05:30"
-  },
-  {
-   "title": "Claude solves two open problems in the physics of black holes",
-   "url": "https://www.anthropic.com/research/claude-black-hole-physics",
-   "src": "Hacker News",
-   "angle": "AI is now solving complex scientific mysteries that humans couldn't crack for years.",
-   "hook": "Claude AI ne solve ki black hole ki mystery.",
-   "format": "story",
-   "freshness": "today",
-   "score": 7,
-   "found": "2026-11-20T05:02+05:30"
-  },
-  {
-   "title": "Everything you need to survive and rebuild society",
-   "url": "https://lastbook.org/",
-   "src": "Hacker News",
-   "angle": "A fascinating open-source project documenting essential human knowledge for survival.",
-   "hook": "Duniya khatam hui toh yeh website kaam aayegi.",
-   "format": "evidence",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-20T05:02+05:30"
+   "found": "2026-11-20T17:06+05:30"
   }
  ],
  "history": [
@@ -608,7 +608,67 @@
    "url": "https://lastbook.org/",
    "title": "Everything you need to survive and rebuild society",
    "found": "2026-11-20T05:02+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+   "title": "Meta’s AI agent Muse leaking private data",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://www.postgresql.org/docs/release/19.0/",
+   "title": "PostgreSQL 19 Released",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://ffmpeg.org/download.html#release_9.1",
+   "title": "FFmpeg 9.1 'Gauss' Released",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://trynotched.com/find",
+   "title": "Show HN: Tinnitus frequency finder",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://blog.harrison.page/garage-door-spam/",
+   "title": "The Garage Door Spam Phenomenon",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://www.bbc.co.uk/news/articles/c6eq49zyx7p4o",
+   "title": "UK fridges secured from hackers",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://github.com/firecrawl/firecrawl",
+   "title": "Firecrawl: Knowledge infrastructure for agents",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+   "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.25935",
+   "title": "TwinD: Generalizing Deepfake Detection",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://notesbylex.com/weight-space-programming-1990s",
+   "title": "Weight-Space Programming",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.26298",
+   "title": "DailySafe: Benchmarking Dynamic Safety",
+   "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+   "title": "Research acceleration: The jagged frontier",
+   "found": "2026-11-20T17:06+05:30"
   }
  ],
- "updated": "2026-11-20T05:02+05:30"
+ "updated": "2026-11-20T17:06+05:30"
 }

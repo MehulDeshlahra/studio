@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "Agar dam hai na toh yeh karke dikhao",
+ "first_frame": "A medium shot of the creator (CodeWithHarry) speaking directly into a microphone, with a neon 'CodeWithHarry' sign in the background.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 76,
+ "cuts_estimate": 15,
+ "avg_shot_s": 5.0,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-2 s: Hook: Creator challenges the audience to name a folder 'CON'.",
+  "2-10 s: Demonstration of the 'CON' naming error on Windows.",
+  "10-17 s: Explanation of reserved names in Windows.",
+  "17-26 s: Historical context of MS-DOS and hardware reservation.",
+  "26-30 s: Transition to the solution/trick.",
+  "30-55 s: Step-by-step guide on using Alt+255 for an invisible character.",
+  "55-69 s: Application of the trick to create an invisible folder.",
+  "69-76 s: Outro: Call to action for comments."
+ ],
+ "visual_techniques": [
+  "Screen recording overlay (0:02-0:09, 0:36-0:45, 0:55-1:03)",
+  "Animated graphics/icons (0:10-0:16, 0:24-0:26)",
+  "2D character animation (0:27-0:30, 1:04-1:09)",
+  "Picture-in-picture (PiP) of the creator (0:02-0:30, 0:36-1:09)",
+  "Text overlays for key terms (0:02, 0:10, 0:17, 0:27, 0:36, 0:47, 0:55)"
+ ],
+ "captions": "Style: Bold, white text with black outline, centered, 3-5 words per chunk, highlights in yellow/green.",
+ "sound": "Voice: Clear, conversational, energetic. Music: Upbeat, rhythmic background track. Sound effects: Keyboard clicking sounds, error 'ding' sound.",
+ "recurring_element": "The creator's face in a circular frame (PiP) and the consistent use of a virtual keyboard graphic.",
+ "ending": "CTA: Asks the audience to comment on what they would hide in an invisible folder.",
+ "why": "It combines a relatable technical frustration with a 'secret' solution, providing high value in a short time. The pacing is fast, and the visual aids (keyboard, animations) make complex concepts easy to follow.",
+ "reusable_faceless": [
+  "Using a virtual keyboard to demonstrate shortcuts",
+  "Using 2D character animations to illustrate abstract concepts",
+  "Screen recording with clear, highlighted overlays",
+  "Structuring content as a 'challenge' followed by a 'secret' solution"
+ ],
+ "id": "WwjqENPaNQ0",
+ "url": "https://www.youtube.com/watch?v=WwjqENPaNQ0",
+ "channel": "CodeWithHarry",
+ "niche": "Programming education",
+ "title": "Impossible Impossible Impossible!",
+ "views": 459000,
+ "channel_median": 176000,
+ "ratio": 2.61,
+ "label": "winner",
+ "watched": "2026-11-20T17:07+05:30"
+}

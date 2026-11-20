@@ -1,0 +1,595 @@
+{
+ "Mahavir Swami": {
+  "pattern": "mahavir swami|mahaveer swami|bhagwan mahavir|bhagwan mahaveer|vardhaman|tirthankar mahavir|mahavira\\b",
+  "refs": [
+   {
+    "title": "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg",
+    "file": "cand-tirthankara-statue-at-mathura-chaurasi-digambara-jain-t.png",
+    "score": 0.768,
+    "is": 0.8919397647882692,
+    "bad": 0.12414598115957681
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 8,
+  "photos": [
+   {
+    "title": "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg",
+    "score": 0.768
+   },
+   {
+    "title": "File:Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar).jpg",
+    "score": 0.634
+   },
+   {
+    "title": "File:Lord Mahavira.jpg",
+    "score": 0.556
+   },
+   {
+    "title": "File:Rujuwalika Jain Temple Mahavira Kevalgyan statue 2.jpg",
+    "score": 0.515
+   }
+  ]
+ },
+ "Rishabhdev": {
+  "pattern": "rishabh ?dev|rishabhanatha|adinath|adinatha|aadinath",
+  "refs": [
+   {
+    "title": "File:Idol of Lord Rishabhanatha at Golakot, Madhya Pradesh.jpg",
+    "file": "cand-idol-of-lord-rishabhanatha-at-golakot-madhya-pradesh-jp.png",
+    "score": 0.698,
+    "is": 0.7964298539210747,
+    "bad": 0.09855756114709605
+   },
+   {
+    "title": "File:Ancient idol of Adinath Bhagwan (Rishabhanatha), the first Tirthankar of Jainism, located in Gaya, Bihar..jpg",
+    "file": "cand-ancient-idol-of-adinath-bhagwan-rishabhanatha-the-first.png",
+    "score": 0.681,
+    "is": 0.844931607791403,
+    "bad": 0.16344976479096485
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 17,
+  "photos": [
+   {
+    "title": "File:Idol of Lord Rishabhanatha at Golakot, Madhya Pradesh.jpg",
+    "score": 0.698
+   },
+   {
+    "title": "File:Ancient idol of Adinath Bhagwan (Rishabhanatha), the first Tirthankar of Jainism, located in Gaya, Bihar..jpg",
+    "score": 0.681
+   },
+   {
+    "title": "File:Jain temple, Mettupudur - Rishabhanatha Idol.jpg",
+    "score": 0.628
+   },
+   {
+    "title": "File:Amarkantak Adinath.png",
+    "score": 0.612
+   },
+   {
+    "title": "File:Rishabhdev Idol - Kota databari.jpg",
+    "score": 0.606
+   },
+   {
+    "title": "File:Bada Gaon - Trilok Teerth Dham - Rishabhdev (2).jpg",
+    "score": 0.568
+   },
+   {
+    "title": "File:Jain shravak bowing to Lord Adinath idol at the ancient Chandwar Jain Temple near Firozabad.jpg",
+    "score": 0.515
+   }
+  ]
+ },
+ "Parshvanath": {
+  "pattern": "parshvanath|parshwanath|parasnath|parshva\\b",
+  "refs": [
+   {
+    "title": "File:Idol of Tirthankara Parshvanath at Kachner Digambar Jain Atishay Kshetra, Maharashtra, India.jpg",
+    "file": "cand-idol-of-tirthankara-parshvanath-at-kachner-digambar-jai.png",
+    "score": 0.743,
+    "is": 0.88975303340226,
+    "bad": 0.1466695782143269
+   },
+   {
+    "title": "File:Ancient white idol of Tirthankara Parshvanath at Jinathapura, Shravanabelagola Digambar Jain Tirth, Karnataka, India.jpg",
+    "file": "cand-ancient-white-idol-of-tirthankara-parshvanath-at-jinath.png",
+    "score": 0.718,
+    "is": 0.8540741777922399,
+    "bad": 0.13652037850609638
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 11,
+  "photos": [
+   {
+    "title": "File:Idol of Tirthankara Parshvanath at Kachner Digambar Jain Atishay Kshetra, Maharashtra, India.jpg",
+    "score": 0.743
+   },
+   {
+    "title": "File:Ancient white idol of Tirthankara Parshvanath at Jinathapura, Shravanabelagola Digambar Jain Tirth, Karnataka, India.jpg",
+    "score": 0.718
+   },
+   {
+    "title": "File:Parshvanatha Basti sanctum (Lord Parshvanatha idol), Shravanabelagola.jpg",
+    "score": 0.68
+   }
+  ]
+ },
+ "Neminath": {
+  "pattern": "neminath|nemi ?nath|arishtanemi",
+  "refs": [
+   {
+    "title": "File:Achalgachh jain temple - Neminath statue.jpg",
+    "file": "cand-achalgachh-jain-temple-neminath-statue-jpg.png",
+    "score": 0.749,
+    "is": 0.8673672887232102,
+    "bad": 0.11841919473040971
+   },
+   {
+    "title": "File:Neminatha at Sambhavnath ni khadki, Ahmedabad.jpg",
+    "file": "cand-neminatha-at-sambhavnath-ni-khadki-ahmedabad-jpg.png",
+    "score": 0.725,
+    "is": 0.8575190204378859,
+    "bad": 0.13259804999681285
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 11,
+  "photos": [
+   {
+    "title": "File:Achalgachh jain temple - Neminath statue.jpg",
+    "score": 0.749
+   },
+   {
+    "title": "File:Neminatha at Sambhavnath ni khadki, Ahmedabad.jpg",
+    "score": 0.725
+   },
+   {
+    "title": "File:Neminath Prabhu, Tagdi tirth.jpg",
+    "score": 0.646
+   },
+   {
+    "title": "File:Neminath Temple.jpg",
+    "score": 0.628
+   },
+   {
+    "title": "File:Neminath Idol.jpg",
+    "score": 0.606
+   },
+   {
+    "title": "File:Idol of Bhagwan Neminath 20250816 072740505.MP.jpg",
+    "score": 0.537
+   }
+  ]
+ },
+ "Jain monk": {
+  "pattern": "\\bmuni\\b|sadhvi|jain monk|acharya|maharaj saheb|digambar|shwetambar|svetambar",
+  "refs": [
+   {
+    "title": "File:Sthanakvasi Jain Monk.jpg",
+    "file": "cand-sthanakvasi-jain-monk-jpg.png",
+    "score": 0.727,
+    "is": 0.8683798190651172,
+    "bad": 0.14138031646296345
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 3,
+  "photos": []
+ },
+ "Shiva": {
+  "pattern": "\\bshiv\\b|shiva|mahadev|shankar|bholenath|neelkanth|rudra",
+  "refs": [
+   {
+    "title": "File:Sivakempfort.jpg",
+    "file": "cand-sivakempfort-jpg.png",
+    "score": 0.479,
+    "is": 0.6131149029016437,
+    "bad": 0.13396180309257463
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 18,
+  "photos": []
+ },
+ "Parvati": {
+  "pattern": "parvati|gauri|uma\\b",
+  "refs": [
+   {
+    "title": "File:An Oleograph of Shiva, Parvati and Nandi by Raja Ravi Varma.jpg",
+    "file": "cand-an-oleograph-of-shiva-parvati-and-nandi-by-raja-ravi-va.png",
+    "score": 0.629,
+    "is": 0.7844790894568162,
+    "bad": 0.15571729681756682
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 11,
+  "photos": []
+ },
+ "Ganesha": {
+  "pattern": "ganesh|ganesha|ganpati|ganapati|vinayak",
+  "refs": [
+   {
+    "title": "File:Tanjore Painting Vinayaka 2.jpg",
+    "file": "cand-tanjore-painting-vinayaka-2-jpg.png",
+    "score": 0.632,
+    "is": 0.8024667545778794,
+    "bad": 0.17061154043167945
+   },
+   {
+    "title": "File:Ganedyah.jpg",
+    "file": "cand-ganedyah-jpg.png",
+    "score": 0.525,
+    "is": 0.7458877779891447,
+    "bad": 0.22128318222419444
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 8,
+  "photos": []
+ },
+ "Kartikeya": {
+  "pattern": "kartikeya|kartikey|murugan|skanda|subrahmanya|shanmukha",
+  "refs": [
+   {
+    "title": "File:Kartikeya.jpg",
+    "file": "cand-kartikeya-jpg.png",
+    "score": 0.77,
+    "is": 0.8903086933932716,
+    "bad": 0.11983692377203439
+   },
+   {
+    "title": "File:Sri Shanmukaha Subramania Swami.jpg",
+    "file": "cand-sri-shanmukaha-subramania-swami-jpg.png",
+    "score": 0.733,
+    "is": 0.8500702439241045,
+    "bad": 0.1175223431798526
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 9,
+  "photos": []
+ },
+ "Durga": {
+  "pattern": "durga|ambe|sherawali|mahishasura",
+  "refs": [
+   {
+    "title": "File:Durga Mahishasura-mardini, the slayer of the buffalo demon, Germany.jpg",
+    "file": "cand-durga-mahishasura-mardini-the-slayer-of-the-buffalo-dem.png",
+    "score": 0.507,
+    "is": 0.8714615443736552,
+    "bad": 0.36421166036910413
+   },
+   {
+    "title": "File:Mahishasura-mardini.jpg",
+    "file": "cand-mahishasura-mardini-jpg.png",
+    "score": 0.471,
+    "is": 0.8207211729600242,
+    "bad": 0.3501870842581208
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 6,
+  "photos": []
+ },
+ "Lakshmi": {
+  "pattern": "lakshmi|laxmi",
+  "refs": [
+   {
+    "title": "File:Gajalakshmi in Tanjore Painting.png",
+    "file": "cand-gajalakshmi-in-tanjore-painting-png.png",
+    "score": 0.465,
+    "is": 0.6331008416861513,
+    "bad": 0.16773729773652138
+   },
+   {
+    "title": "File:Lakshmi, by Raja Ravi Varma and Ravi Varma Press, 1930s, edit.jpg",
+    "file": "cand-lakshmi-by-raja-ravi-varma-and-ravi-varma-press-1930s-e.png",
+    "score": 0.445,
+    "is": 0.6002522298888028,
+    "bad": 0.15546453774965238
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 21,
+  "photos": []
+ },
+ "Krishna": {
+  "pattern": "krishna|kanha|govind|gopal|murari",
+  "refs": [
+   {
+    "title": "File:The Flute Player-Krishna.jpg",
+    "file": "cand-the-flute-player-krishna-jpg.png",
+    "score": 0.613,
+    "is": 0.758490924274123,
+    "bad": 0.14544274929892664
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 11,
+  "photos": []
+ },
+ "Rama": {
+  "pattern": "\\bram\\b|\\brama\\b|shri ram|raghav",
+  "refs": [
+   {
+    "title": "File:Lord Rama with arrows.jpg",
+    "file": "cand-lord-rama-with-arrows-jpg.png",
+    "score": 0.742,
+    "is": 0.8724664194877575,
+    "bad": 0.13055877506296934
+   },
+   {
+    "title": "File:Ramapanchayan, Raja Ravi Varma (Lithograph).jpg",
+    "file": "cand-ramapanchayan-raja-ravi-varma-lithograph-jpg.png",
+    "score": 0.544,
+    "is": 0.689051311130122,
+    "bad": 0.14486642288838164
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 10,
+  "photos": []
+ },
+ "Hanuman": {
+  "pattern": "hanuman|bajrang|maruti|pavanputra",
+  "refs": [
+   {
+    "title": "File:Hanuman fetches the herb-bearing mountain, in a print from the Ravi Varma Press, 1910's.jpg",
+    "file": "cand-hanuman-fetches-the-herb-bearing-mountain-in-a-print-fr.png",
+    "score": 0.592,
+    "is": 0.8246694899062609,
+    "bad": 0.23247808802024061
+   },
+   {
+    "title": "File:Ahimahi Vadh, Ravi Varma Press.jpg",
+    "file": "cand-ahimahi-vadh-ravi-varma-press-jpg.png",
+    "score": 0.561,
+    "is": 0.7972990381683227,
+    "bad": 0.2362345058146564
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 7,
+  "photos": []
+ },
+ "Brahma": {
+  "pattern": "brahma\\b|brahmaji|brahma ji",
+  "refs": [
+   {
+    "title": "File:Mural depicting Brahma, from Ramtatwali Dham, Hoshiarpur district, Punjab, circa 19th century.jpg",
+    "file": "cand-mural-depicting-brahma-from-ramtatwali-dham-hoshiarpur.png",
+    "score": 0.517,
+    "is": 0.6701559714379683,
+    "bad": 0.1530839968274607
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 7,
+  "photos": []
+ },
+ "Saraswati": {
+  "pattern": "saraswati|sarasvati",
+  "refs": [
+   {
+    "title": "File:1895 CE Saraswati on hamsa सरस्वती हंस painting.jpg",
+    "file": "cand-1895-ce-saraswati-on-hamsa-painting-jpg.png",
+    "score": 0.652,
+    "is": 0.7996751570196159,
+    "bad": 0.14799047050252986
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 11,
+  "photos": []
+ },
+ "Yamraj": {
+  "pattern": "yamraj|yama\\b|yamaraj|dharmaraj",
+  "refs": [
+   {
+    "title": "File:Yama on buffalo.jpg",
+    "file": "cand-yama-on-buffalo-jpg.png",
+    "score": 0.54,
+    "is": 0.6511749360753337,
+    "bad": 0.11116191519349469
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 5,
+  "photos": []
+ },
+ "Indra": {
+  "pattern": "\\bindra\\b|devraj",
+  "refs": [
+   {
+    "title": "File:Tiruchchirappalli painting Indra (cropped).jpg",
+    "file": "cand-tiruchchirappalli-painting-indra-cropped-jpg.png",
+    "score": 0.743,
+    "is": 0.8536275102943661,
+    "bad": 0.11097335992941153
+   },
+   {
+    "title": "File:Indra deva.jpg",
+    "file": "cand-indra-deva-jpg.png",
+    "score": 0.66,
+    "is": 0.7808602369427422,
+    "bad": 0.12049101817580309
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 12,
+  "photos": []
+ },
+ "Surya": {
+  "pattern": "surya|suryadev|sun god",
+  "refs": [
+   {
+    "title": "File:SURYA GOD.JPG",
+    "file": "cand-surya-god-jpg.png",
+    "score": 0.663,
+    "is": 0.8557897438888087,
+    "bad": 0.19314312710290468
+   },
+   {
+    "title": "File:Surya Poona painting 1800-05.jpg",
+    "file": "cand-surya-poona-painting-1800-05-jpg.png",
+    "score": 0.577,
+    "is": 0.7073614989957877,
+    "bad": 0.13057532949446046
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 11,
+  "photos": []
+ },
+ "Ganga": {
+  "pattern": "\\bganga\\b|gangaji|ganga maa",
+  "refs": [
+   {
+    "title": "File:Ganga Devi Painting.jpg",
+    "file": "cand-ganga-devi-painting-jpg.png",
+    "score": 0.565,
+    "is": 0.6670357055152402,
+    "bad": 0.10242592502947517
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 9,
+  "photos": []
+ },
+ "Narad": {
+  "pattern": "narad|narada",
+  "refs": [
+   {
+    "title": "File:Possibly Narada, the inventor of the Vina..jpg",
+    "file": "cand-possibly-narada-the-inventor-of-the-vina-jpg.png",
+    "score": 0.458,
+    "is": 0.5766092201069793,
+    "bad": 0.11880602660910278
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 12,
+  "photos": []
+ },
+ "Kuber": {
+  "pattern": "kuber|kubera",
+  "refs": [
+   {
+    "title": "File:Kubera 3, Bronze, from Nalanda, Bihar, dating from 10th century A.D.jpg",
+    "file": "cand-kubera-3-bronze-from-nalanda-bihar-dating-from-10th-cen.png",
+    "score": 0.666,
+    "is": 0.8098441695778751,
+    "bad": 0.14343540575371969
+   },
+   {
+    "title": "File:Statue of Kubera.jpg",
+    "file": "cand-statue-of-kubera-jpg.png",
+    "score": 0.62,
+    "is": 0.8125464160734167,
+    "bad": 0.19293776855384306
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 12,
+  "photos": []
+ },
+ "Bahubali": {
+  "pattern": "bahubali|gommateshwara|gomateshwara",
+  "refs": [
+   {
+    "title": "File:Shravanabelagola, Statue of Bahubali (50053122913).jpg",
+    "file": "cand-shravanabelagola-statue-of-bahubali-50053122913-jpg.png",
+    "score": 0.778,
+    "is": 0.9016188969781161,
+    "bad": 0.12367504026911111
+   },
+   {
+    "title": "File:Gomatesvara Statue, Shravanabelagola.jpg",
+    "file": "cand-gomatesvara-statue-shravanabelagola-jpg.png",
+    "score": 0.736,
+    "is": 0.90426463470215,
+    "bad": 0.16844486202126982
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 18,
+  "photos": [
+   {
+    "title": "File:Shravanabelagola, Statue of Bahubali (50053122913).jpg",
+    "score": 0.778
+   },
+   {
+    "title": "File:Gomatesvara Statue, Shravanabelagola.jpg",
+    "score": 0.736
+   },
+   {
+    "title": "File:Bahubali karkala.jpg",
+    "score": 0.725
+   },
+   {
+    "title": "File:Gomateswara Bahubali Karkala Karnataka 07.jpg",
+    "score": 0.718
+   },
+   {
+    "title": "File:Bahubali, Jain, western India, perhaps Rajasthan, 1500-1600 AD, stone - British Museum - DSC01160.jpg",
+    "score": 0.704
+   },
+   {
+    "title": "File:Jaina statue of Gomateswara N-KA-B201.JPG",
+    "score": 0.675
+   },
+   {
+    "title": "File:The Gommateshwara Statue (Close up), Shravanabelagola.jpg",
+    "score": 0.571
+   }
+  ]
+ },
+ "Vishnu": {
+  "pattern": "vishnu|narayan(?!a narayana)|hari\\b",
+  "refs": [
+   {
+    "title": "File:Raja Ravi Varma, Dhruv Narayan.jpg",
+    "file": "cand-raja-ravi-varma-dhruv-narayan-jpg.png",
+    "score": 0.645,
+    "is": 0.7836863019852233,
+    "bad": 0.13901204760020344
+   },
+   {
+    "title": "File:Mural depicting Vishnu, from Ramtatwali Dham, Hoshiarpur district, Punjab, circa 19th century.jpg",
+    "file": "cand-mural-depicting-vishnu-from-ramtatwali-dham-hoshiarpur.png",
+    "score": 0.442,
+    "is": 0.5596838218249545,
+    "bad": 0.11782063257379476
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 9,
+  "photos": []
+ },
+ "Sita": {
+  "pattern": "\\bsita\\b|janaki",
+  "refs": [
+   {
+    "title": "File:Sita in exile.jpg",
+    "file": "cand-sita-in-exile-jpg.png",
+    "score": 0.713,
+    "is": 0.8544377890964008,
+    "bad": 0.14171600146589344
+   },
+   {
+    "title": "File:'Sita Vanavasa' or Sita in exile. Wellcome L0021787.jpg",
+    "file": "cand-sita-vanavasa-or-sita-in-exile-wellcome-l0021787-jpg.png",
+    "score": 0.503,
+    "is": 0.8317731639088775,
+    "bad": 0.32896086008035724
+   }
+  ],
+  "checked": "2026-11-20",
+  "candidates": 13,
+  "photos": []
+ }
+}

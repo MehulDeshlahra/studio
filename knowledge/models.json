@@ -1,0 +1,50 @@
+{
+ "openrouter/inclusionai/ling-3.2-flash:free": {
+  "first_seen": "2026-11-20",
+  "text": 0.25,
+  "text_secs": 19.7,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795152680.5471172,
+  "tested_day": "2026-11-20"
+ },
+ "openrouter/baidu/ernie-5.5-flash-preview:free": {
+  "first_seen": "2026-11-20",
+  "text": 1.0,
+  "text_secs": 2.6,
+  "tested": 1795152680.5471172,
+  "tested_day": "2026-11-20"
+ },
+ "openrouter/liquid/lfm-3-1.7b:free": {
+  "first_seen": "2026-11-20",
+  "text": 0.25,
+  "text_secs": 55.7,
+  "tested": 1795152680.5471172,
+  "tested_day": "2026-11-20"
+ },
+ "openrouter/particle-ai/particle-1:free": {
+  "first_seen": "2026-11-20",
+  "text": 1.0,
+  "text_secs": 1.8,
+  "vision": 1.0,
+  "vision_secs": 1.8,
+  "tested": 1795152680.5471172,
+  "tested_day": "2026-11-20"
+ },
+ "openrouter/recursive/flint-v1.0:free": {
+  "first_seen": "2026-11-20",
+  "text": 0.75,
+  "text_secs": 7.4,
+  "tested": 1795152680.5471172,
+  "tested_day": "2026-11-20"
+ },
+ "openrouter/nvidia/nemotron-3.5-super-vl:free": {
+  "first_seen": "2026-11-20",
+  "text": 1.0,
+  "text_secs": 2.1,
+  "vision": 1.0,
+  "vision_secs": 3.1,
+  "tested": 1795152680.5471172,
+  "tested_day": "2026-11-20"
+ }
+}

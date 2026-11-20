@@ -1,0 +1,43 @@
+{
+ "hook_first_words": "I would learn really how to sell effectively?",
+ "first_frame": "The creator (Ishan) sitting in a studio, wearing black-rimmed glasses and a dark jacket, speaking into a microphone. Text overlay reads: 'Do you have guts to do this?🤯'",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 59,
+ "cuts_estimate": 15,
+ "avg_shot_s": 3.9,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-5 s: Introduction of the 'cold calling' concept with a B-roll clip of someone on the phone.",
+  "5-28 s: Anecdote about cold calling people from his father's WhatsApp group to sell a podcasting course.",
+  "28-37 s: Humorous re-enactment of a cold call rejection.",
+  "37-58 s: Philosophical pivot on how rejection and awkwardness are learning experiences.",
+  "58-59 s: Final thought on 'raw sales' in the age of AI."
+ ],
+ "visual_techniques": [
+  "B-roll footage (stock video of someone on a phone) at 0:04, 0:18",
+  "Split-screen interview setup at 0:29",
+  "Anime-style animation clips at 0:42, 0:44, 0:47",
+  "Dynamic text captions appearing in sync with speech throughout"
+ ],
+ "captions": "Bold, sans-serif, white with yellow highlights for emphasis, centered at the bottom, 3-5 words per chunk.",
+ "sound": "Creator's voice (Hinglish), light background lo-fi beat, no specific sound effects used.",
+ "recurring_element": "The text overlay 'Do you have guts to do this?🤯' remains at the top of the screen throughout the entire video.",
+ "ending": "No clear CTA, just a concluding statement about the future of sales.",
+ "why": "The video lacks a strong, high-energy hook or a clear, actionable takeaway. The pacing is slow, and the transition from a personal story to a generic life lesson feels disconnected, failing to maintain the viewer's attention.",
+ "reusable_faceless": [
+  "Use of anime-style B-roll to illustrate abstract concepts like 'rejection' or 'awkwardness'.",
+  "Persistent top-screen text overlay to maintain the video's theme.",
+  "Syncing captions with speech to improve accessibility and engagement."
+ ],
+ "id": "5HPfF6mCq2I",
+ "url": "https://www.youtube.com/watch?v=5HPfF6mCq2I",
+ "channel": "IshanSharma7390",
+ "niche": "AI tools, Hinglish",
+ "title": "I was cold calling people at 18!👀",
+ "views": 22000,
+ "channel_median": 76000,
+ "ratio": 0.29,
+ "label": "flop",
+ "watched": "2026-11-20T17:08+05:30"
+}

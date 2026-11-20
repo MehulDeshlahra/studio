@@ -354,5 +354,80 @@
     "title": "phasyn/phasyn-studio"
    }
   ]
+ },
+ {
+  "day": "2026-11-20",
+  "t": "06:51",
+  "scanned": 294,
+  "new": 71,
+  "sources": [
+   "dev.to",
+   "github",
+   "google news",
+   "hacker news",
+   "hugging face models",
+   "hugging face spaces",
+   "product hunt"
+  ],
+  "picks": [
+   {
+    "name": "zeative/motion-educator",
+    "what": "An agent skill and film engine that builds teardown-style educational videos using HTML, GSAP, and Three.js.",
+    "why": "Directly expands our HyperFrames rendering stack (compose_lab.py) with 3D product-teardown camera moves and pinned 3D labels without requiring heavy GPU rendering software.",
+    "free": "Open source code on GitHub (check repository for exact OSI license)",
+    "action": "learn_repo",
+    "how": "Extract GSAP and Three.js camera movement/label-pinning templates to integrate into compose_lab.py for Kaise Tech explainers.",
+    "effort": "medium",
+    "score": 8,
+    "risk": "Three.js rendering in headless Chrome on a 2-core ARM server can be CPU-intensive; must keep polygon count minimal.",
+    "src": "github",
+    "url": "https://github.com/zeative/motion-educator",
+    "title": "zeative/motion-educator",
+    "done": "queued for the learner"
+   },
+   {
+    "name": "mankidev/antialgorithm",
+    "what": "A skill to push LLMs away from generic first-pass picks in creative ideation, titles, and UI design.",
+    "why": "Helps ideas.py and plan.py avoid cliché tropes and repetitive Hinglish hooks/titles, directly improving early viewer retention.",
+    "free": "MIT licence",
+    "action": "learn_repo",
+    "how": "Incorporate its negative prompting and anti-cliché steering patterns into plan.py hook generation prompts.",
+    "effort": "small",
+    "score": 8,
+    "risk": "Aggressive divergence penalties might occasionally create bizarre or unnatural Hinglish phrasing.",
+    "src": "github",
+    "url": "https://github.com/mankidev/antialgorithm",
+    "title": "mankidev/antialgorithm",
+    "done": "queued for the learner"
+   },
+   {
+    "name": "nilbuild/stick-scene",
+    "what": "A tool/skill to generate animated stick figure visuals.",
+    "why": "Adds an expressive, low-overhead visual format for Kaise Tech or Aage Suno stories that avoids heavy AI video generation latency.",
+    "free": "MIT licence",
+    "action": "learn_repo",
+    "how": "Inspect output format (SVG/Canvas/GSAP) and add as a lightweight procedural visual component in HyperFrames.",
+    "effort": "medium",
+    "score": 6,
+    "risk": "Visual style might look too primitive if not properly styled with our dark lab aesthetic.",
+    "src": "github",
+    "url": "https://github.com/nilbuild/stick-scene",
+    "title": "nilbuild/stick-scene"
+   },
+   {
+    "name": "Instagram Story Post-Edit Feature",
+    "what": "Instagram platform update allowing creators to edit Stories within 15 minutes of posting without losing engagement.",
+    "why": "Enables automated typo or link corrections on story teasers after posting without resetting engagement algorithms.",
+    "free": "Built-in free native Instagram platform capability",
+    "action": "add_to_brain",
+    "how": "Record in knowledge/brain.jsonl and assess whether Graph API supports Story patch/edit calls in publish.py.",
+    "effort": "small",
+    "score": 6,
+    "risk": "15-minute window is strict; Meta API endpoint support may lag native mobile app features.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNUUVGTmlGVTNkdFlNSzgxSlRJREdzX0ZPQmc4aTdoTDROdG1NdzFyZFJja1Etc29fNC1EQXBkamR3dXZaV001TVlKOUcydnQ2ODRYR1VudloxTzRxX2tPMG5zX21DZUZHVXFmVWVMVERLSndjZm05OGh4R1BhcGxsNXFaTzRzTURfcjctTVNUZHhnUERGdXNRYXZ2R0MtLUN4NXVGR2JQZ1V4aTM4NkhXYWhpX1l2eXMxcFJNOUZR0gG-AUFVX3lxTE1RRUZOaUZVM2R0WU1LODFKVElER3NfRk9CZzhpN2hMNE50bU13MXJkUmNrUS1zb180LURBcGRqZHd1dlpXTTVNWUo5RzJ2dDY4NFhHVW52WjFPNHFfa08wbnNfbUNlRkdVcWZVZUxUREtKd2NmbTk4aHhHUGFwbGw1cVpPNHNNRF9yNy1NU1RkeGdQREZ1c1FhdnZHQy0tQ3g1dUZHYlBnVXhpMzg2SFdhaGlfWXZ5czFwUk05RlE?oc=5",
+    "title": "Instagram lets users edit Stories within 15 minutes without losing engagement - Buzzincontent"
+   }
+  ]
  }
 ]

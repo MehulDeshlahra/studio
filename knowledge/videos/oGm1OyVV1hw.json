@@ -1,0 +1,40 @@
+{
+ "hook_first_words": "None (music starts immediately)",
+ "first_frame": "An Indian flag attached to a white wooden fence near a lake.",
+ "hook_type": "other",
+ "format": "talking head + b-roll",
+ "length_s": 19,
+ "cuts_estimate": 3,
+ "avg_shot_s": 6.3,
+ "words_per_s_estimate": 0.0,
+ "beats": [
+  "0-6 s: Establishing shot of an Indian flag by a lake.",
+  "6-12 s: The creator, Nasim Ali Khan, stands by the fence, smiling and posing.",
+  "12-19 s: Close-up of tricolour pinwheels on a table."
+ ],
+ "visual_techniques": [
+  "Slow pan (0-6 s)",
+  "Jump cut (6 s)",
+  "Static shot (12 s)"
+ ],
+ "captions": "None",
+ "sound": "Patriotic Hindi song playing throughout; no voiceover or speech.",
+ "recurring_element": "The Indian tricolour theme (flag, pinwheels).",
+ "ending": "Fade out on the pinwheels.",
+ "why": "The video is a generic, low-effort holiday greeting with no educational value or utility, which contradicts the channel's 'Utility/Tech Explainer' brand identity. The audience expects tech news, not a silent patriotic montage.",
+ "reusable_faceless": [
+  "Use of thematic b-roll to set a mood for a holiday",
+  "Simple, high-contrast colour-themed object shots",
+  "Syncing visual cuts to the beat of a popular song"
+ ],
+ "id": "oGm1OyVV1hw",
+ "url": "https://www.youtube.com/watch?v=oGm1OyVV1hw",
+ "channel": "SarkariDNA",
+ "niche": "Utility/Tech Explainers (Hindi)",
+ "title": "Nasim Ali Khan Ki Taraf Se 15 August Ki Shubhkamnayein | 2026",
+ "views": 19000,
+ "channel_median": 75000,
+ "ratio": 0.25,
+ "label": "flop",
+ "watched": "2026-11-20T17:08+05:30"
+}
