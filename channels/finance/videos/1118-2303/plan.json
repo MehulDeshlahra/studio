@@ -71,21 +71,21 @@
   },
   {
    "vo": "Paisa mule accounts se zyadaatar Myanmar, Cambodia chala jata.",
-   "type": "chart",
-   "title": "TOP OFFSHORE HUBS 2024",
-   "points": [
-    42,
-    33,
-    20
-   ],
-   "end_label": "MAJORITY OFFSHORE",
+   "type": "stat",
+   "title": "Mule Funds",
+   "points": [],
+   "end_label": "",
    "bg_prompt": "photorealistic premium studio render on deep black-green, a dark 3D globe with three pulsing red nodes over Myanmar, Laos, Cambodia, connected by faint gold lines to India, soft green-gold atmosphere, 9:16",
    "keywords": [
     "Myanmar",
     "Cambodia",
     "offshore"
    ],
-   "motion": "push"
+   "motion": "push",
+   "big": "SE Asia",
+   "sub": "Myanmar, Cambodia",
+   "label": "Destinations",
+   "value": "2"
   },
   {
    "vo": "Asli police kabhi WhatsApp pe arrest nahi karti.",

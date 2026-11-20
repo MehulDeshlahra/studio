@@ -1,12 +1,18 @@
 {
  "lufs": -14,
  "music": {
-  "file": "music/lib/katha/dissappointment.mp3",
-  "offset": 2.0,
+  "file": "music/lib/katha/lamentation.mp3",
+  "offset": 6.0,
   "gain_db": -22,
   "fade_out": 1.5
  },
  "sfx": [
+  {
+   "t": 0.0,
+   "file": "sfx/impact.mp3",
+   "gain_db": -15,
+   "align": "onset"
+  },
   {
    "t": 2.62,
    "file": "sfx/air-zoom.mp3",

@@ -860,6 +860,16 @@
    ],
    "at": "2026-11-20 06:36",
    "tries": 1
+  },
+  "stats": {
+   "views": 2,
+   "reach": 1,
+   "likes": 1,
+   "comments": 0,
+   "shares": 0,
+   "saved": 0,
+   "avg_watch_s": 35.4,
+   "at": "2026-11-20 09:00"
   }
  },
  {
@@ -962,6 +972,30 @@
    "url": "https://www.youtube.com/watch?v=XJSdMpANjDU",
    "start": 512.0,
    "layout": "stack"
+  }
+ },
+ {
+  "job": "1120-0840a-c1",
+  "topic": "NEW PORTABLE OXYGEN MACHINE SOLVES IT",
+  "title": "NEW PORTABLE OXYGEN MACHINE SOLVES IT",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 186.21,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-0840b-c1",
+  "topic": "FRED'S LAST LINE STEALS THE SHOW",
+  "title": "FRED'S LAST LINE STEALS THE SHOW",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1iN45R_UoW0PPpBEmhjkpnt6GxhdtSwf_",
+   "start": 189.85,
+   "layout": "crop"
   }
  }
 ]

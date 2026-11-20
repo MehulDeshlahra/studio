@@ -1,28 +1,28 @@
 {
  "topic": "Karna tears off his divine armor and earrings, knowing it makes him mortal — Mahabharata, Vana Parva. Lesson: Identity rooted in generosity outlives invincibility.",
- "title": "Kavach phaad diya apne haathon se?",
+ "title": "Karna ne apna divya kavach kyun ukhada?",
  "format": {
-  "ok": true,
+  "ok": false,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -14.4,
-  "true_peak": -3.0,
-  "dur": 50.8
+  "lufs": -16.3,
+  "true_peak": -3.2,
+  "dur": 37.4
  },
  "vision": {
-  "score": 8,
+  "score": 6,
   "ok": true,
   "problems": [
-   "scene 6: The caption 'KE' is displayed, but the corresponding line 'Indra the chhup ke, parchhai mein char haath dikhe' is missing the visual representation of the 'four hands' or shadow aspect, making the visual disconnect from the narration.",
-   "scene 13: The text 'DM MEIN' is slightly cut off at the bottom edge of the frame."
+   "scene 2: visual style shifts drastically to a flat, basic illustration unlike the rest of the realistic frames",
+   "scene 1, 3, 5, 6, 7, 8, 9, 10, 12: top title tags specified in prompt are omitted from the renders"
   ]
  },
  "voice": {
   "ok": true,
   "method": "whisper",
-  "matched": 0.9312977099236641,
-  "words": 137,
+  "matched": 0.967032967032967,
+  "words": 99,
   "problems": []
  },
- "ok": true
+ "ok": false
 }

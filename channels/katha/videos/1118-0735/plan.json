@@ -193,14 +193,14 @@
   {
    "vo": "Aap hote toh kya karte? Amartya ya daan?",
    "type": "image",
-   "prompt": "Karna's silhouette against rising sun, arms open, forest waking up, viewer's perspective from behind, inviting reflection, painterly cinematic Indian miniature style, warm gold and deep maroon.",
+   "prompt": "Silhouette of warrior Karna standing at sunrise by a river, arms outstretched towards the glowing morning sun, vertical 9:16 portrait composition, plenty of empty space at top and bottom, cinematic Indian mythological painting style, dramatic golden hour light.",
    "motion": "pan",
    "title": "AAP KYA KARTE?",
    "keywords": [
     "Aap hote",
     "Amartya ya daan"
    ],
-   "big": "AMARTYA YA DAAN",
+   "big": null,
    "small": null,
    "sub": null,
    "label": null,

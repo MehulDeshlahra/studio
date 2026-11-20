@@ -210,3 +210,16 @@
 - visual: Scene 7 frame 2 and Scene 9 say 'invest karein' and ask 'Kya kharidoge? Comment' which violates educational boundaries by pushing direct investment/buying advice.
 - visual: checklist: Does any frame give a buy / sell / invest recommendation (advice) instead of education? -> Scene 7 and Scene 9 ('app se kharid lo', 'Kya kharidoge?')
 - visual score 5/10
+
+## ₹80,000 ka phone 'No Cost EMI' pe: asli mein kitna extra lag (numbers check)
+- NUMBERS: scene 2: 'RBI kehta hai zero percent interest hota hi nahi.' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 7: 'Poora 80 hazaar credit limit block hota hai, sirf EMI nahi.' is not in the sources: remove it or say only what the sources say
+
+## ₹80,000 ka phone 'No Cost EMI' pe: asli mein kitna extra lag (numbers check)
+- NUMBERS: scene 2: 'RBI circular: zero percent interest loan scheme invalid.' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 7: 'Full purchase amount blocks the credit limit, not just the EMI amount.' is not in the sources: remove it or say only what the sources say
+
+## ₹80,000 ka phone 'No Cost EMI' pe: asli mein kitna extra lag (numbers check)
+- NUMBERS: scene 2: 'RBI 2013 circular: zero percent interest loan schemes prohibited without genuine restructuring. Inte' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 4: 'Bank processing fee is charged, plus GST.' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 7: 'RBI master direction: full purchase amount blocks credit limit, not just EMI.' is not in the sources: remove it or say only what the sources say

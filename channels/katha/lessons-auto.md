@@ -446,3 +446,10 @@
 ## 1117-0145 Nachiketa aur Yamraj (Katha Upanishad)
 - scene 3: The card text 'TEEN BAAR' and 'PAPA BHADAK GAYE' is slightly obscured/blended into the background clouds/light, making it harder to read than other cards.
 - scene 13: The card text 'NACHIKETA' and 'GHAR WAPAS' is slightly low in the frame, bordering on being too close to the edge, though still legible.
+
+## 1118-0735 Karna tears off his divine armor and earrings, knowing it makes him mortal — Mahabharata, Vana Parva. Lesson: Identity rooted in generosity outlives invincibility.
+- scene 2: visual style shifts drastically to a flat, basic illustration unlike the rest of the realistic frames
+- scene 1, 3, 5, 6, 7, 8, 9, 10, 12: top title tags specified in prompt are omitted from the renders
+
+## review 1118-0735
+- format/loudness: h264,1080,1920,30/1 -16.3 LUFS, true peak -3.2

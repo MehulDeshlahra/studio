@@ -65,5 +65,53 @@
    "start": 0.0,
    "layout": "vertical"
   }
+ },
+ {
+  "job": "1120-0740a-c1",
+  "topic": "MYSTERIOUS ALLY STEPS INTO DANGER",
+  "title": "MYSTERIOUS ALLY STEPS INTO DANGER",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/c9bVMF-u",
+   "start": 79.71,
+   "layout": "mixed:crop+fit"
+  }
+ },
+ {
+  "job": "1120-0740a-c2",
+  "topic": "KURE BOSS WARNS EVERYONE AWAY",
+  "title": "KURE BOSS WARNS EVERYONE AWAY",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/c9bVMF-u",
+   "start": 15.93,
+   "layout": "mixed:crop+fit"
+  }
+ },
+ {
+  "job": "1120-0740a-c3",
+  "topic": "UNDERWORLD BOSS CONFRONTS RIVAL GANG",
+  "title": "UNDERWORLD BOSS CONFRONTS RIVAL GANG",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/c9bVMF-u",
+   "start": 56.92,
+   "layout": "mixed:crop+fit"
+  }
+ },
+ {
+  "job": "1120-0740a-c4",
+  "topic": "NEW CREW MEMBER GETS INTRODUCED",
+  "title": "NEW CREW MEMBER GETS INTRODUCED",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/c9bVMF-u",
+   "start": 102.67,
+   "layout": "mixed:crop+fit"
+  }
  }
 ]

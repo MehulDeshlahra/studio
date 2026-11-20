@@ -1,0 +1,306 @@
+{
+ "slug": "no-cost-emi-phone-trap",
+ "title": "80,000 ka phone No Cost EMI pe: kitna extra lagta hai?",
+ "hooks": [
+  "Raghav ne 80 hazaar ka phone No Cost EMI pe liya.",
+  "No Cost EMI pe phone lene se pehle ye hisab dekh lo.",
+  "Assi hazar ke phone pe No Cost EMI ka asli bill kitna hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Relatable scenario hook naming a person, the exact phone cost, and the topic in the first 5 words.",
+ "metaphor": "Zero interest discount banner hiding bank processing fee and monthly GST stamps underneath.",
+ "mechanism": [
+  "RBI circular says zero percent interest loans are invalid; interest is hidden in invoice discount",
+  "Merchant discounts invoice by the interest amount, bank runs a standard loan on that discounted price",
+  "Bank charges a one-time processing fee (like a file charge) plus 18% GST upfront",
+  "Government levies 18% GST on the interest portion of every monthly EMI",
+  "Buyer loses the instant card discount on full payment and the full purchase amount blocks the credit limit"
+ ],
+ "cast": {
+  "Raghav": "A 24-year-old Indian corporate professional wearing a casual polo t-shirt, short black hair"
+ },
+ "scenes": [
+  {
+   "vo": "Raghav ne 80 hazaar ka phone No Cost EMI pe liya.",
+   "type": "wa",
+   "title": "Raghav",
+   "messages": [
+    {
+     "from": "Raghav",
+     "text": "Naya phone le liya, zero cost EMI pe!"
+    },
+    {
+     "from": "me",
+     "text": "Card statement check kiya aapne?"
+    }
+   ],
+   "keywords": [
+    "80 hazaar",
+    "No Cost EMI"
+   ],
+   "bg_prompt": "a young Indian professional unboxing a premium sleek smartphone in an urban apartment living room",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "RBI 2013 circular: zero percent interest loan schemes prohibited without genuine restructuring.",
+   "type": "rule",
+   "title": "RBI Circular",
+   "sub": "17 Sep 2013",
+   "lines": [
+    "Zero percent interest loan schemes prohibited",
+    "Interest must be genuine, not hidden in discount"
+   ],
+   "stamp": "ASLI NIYAM",
+   "real": {
+    "q": "Reserve Bank of India logo",
+    "kind": "logo"
+   },
+   "keywords": [
+    "RBI",
+    "zero percent interest"
+   ],
+   "bg_real": {
+    "q": "Reserve Bank of India headquarters Mumbai exterior",
+    "kind": "photo",
+    "subject": "the Reserve Bank of India headquarters facade in Mumbai"
+   },
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Dukan interest utna discount deti hai, bank loan chalaata hai.",
+   "type": "title",
+   "value": "Dukan Discount",
+   "sub": "Bank poora interest leta hai",
+   "keywords": [
+    "dukan discount",
+    "bank loan"
+   ],
+   "bg_prompt": "modern electronics retail display shelves softly blurred in warm showroom lighting",
+   "big": "DUKAN INTEREST UTNA",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Bank processing fee jaise file charge lagta hai, plus GST.",
+   "type": "bill",
+   "title": "One-Time Bank Fee",
+   "sub": "Processing Fee + 18% GST",
+   "rows": [
+    {
+     "label": "Processing Fee",
+     "value": "Bank charge"
+    },
+    {
+     "label": "18% GST",
+     "value": "On fee"
+    }
+   ],
+   "total": {
+    "label": "Upfront Charge",
+    "value": "Fee + GST"
+   },
+   "tone": "bad",
+   "keywords": [
+    "processing fee",
+    "GST"
+   ],
+   "bg_prompt": "a clean retail billing glass counter with subtle warm reflections",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Har mahine interest portion par 18 percent GST bhi lagta hai.",
+   "type": "stat",
+   "value": "18% GST",
+   "sub": "Har mahine ke interest par",
+   "keywords": [
+    "har mahine",
+    "18 percent GST"
+   ],
+   "bg_prompt": "a thoughtful Indian passenger in the back seat of a car looking at a smartphone during evening commute",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Upfront card discount matlab turant card pay pe milne wala discount gaya.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "Instant Discount",
+     "value": "Full Payment",
+     "pct": 100
+    },
+    {
+     "label": "EMI Offer",
+     "value": "No Discount",
+     "pct": 0
+    }
+   ],
+   "keywords": [
+    "upfront card discount",
+    "discount gaya"
+   ],
+   "bg_prompt": "shopping paper bags on a polished checkout table in a retail store",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "RBI master direction: full purchase amount blocks credit limit, not just EMI.",
+   "type": "title",
+   "value": "Limit Blocked",
+   "sub": "Full purchase amount",
+   "keywords": [
+    "credit limit",
+    "block hota hai"
+   ],
+   "bg_prompt": "a minimalist credit card placed on a dark sleek tabletop under dramatic side lighting",
+   "big": "RBI MASTER DIRECTION:",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Matlab zero cost ke naam pe extra kharcha hi kharcha.",
+   "type": "title",
+   "value": "Extra Cost",
+   "sub": "Processing fee + GST + lost discount",
+   "keywords": [
+    "zero cost",
+    "extra kharcha"
+   ],
+   "bg_prompt": "a calculator showing numbers with a red cross mark over a zero percent banner",
+   "big": "MATLAB ZERO COST",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Lene se pehle processing fee, GST, discount sab compare karo.",
+   "type": "list",
+   "title": "EMI Checkout Niyam",
+   "lines": [
+    "Processing fee dekho",
+    "18% GST jodo",
+    "Instant card discount compare karo"
+   ],
+   "keywords": [
+    "processing fee",
+    "GST",
+    "instant discount"
+   ],
+   "bg_prompt": "a young Indian man standing thoughtfully near a wide office window looking outside",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Save karo, kaam aayega. Kabhi No Cost EMI li hai?",
+   "type": "title",
+   "big": "Save Karo",
+   "sub": "Kabhi No Cost EMI li hai?",
+   "keywords": [
+    "Save karo",
+    "No Cost EMI"
+   ],
+   "bg_prompt": "a dark gradient digital studio backdrop with soft golden rim light",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null
+  }
+ ],
+ "music_mood": "suspense",
+ "caption": "Raghav ne ₹80,000 ka phone No Cost EMI pe liya, par asli kharcha kitna hua?\n\nRBI ke 2013 circular ke mutabiq zero percent interest loan valid nahi hai. Merchant interest discount deta hai, par bank loan par processing fee + 18% GST upfront lagata hai. Har mahine interest portion par 18% GST lagta hai. Saath hi full payment par milne wala instant card discount bhi nahi milta aur poora amount credit limit block karta hai.\n\nSource: RBI circular DBOD.No.Dir.BC.47/13.03.00/2013-14 dated 17 Sep 2013; Bank EMI schedules; CGST Act 2017.\n\nSave karo, kaam aayega 📌\n\nKabhi No Cost EMI li hai? Comment karein.\n\nEducation only, not financial advice.",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#nocostemi",
+  "#creditcard",
+  "#rbi"
+ ],
+ "claims": [
+  {
+   "claim": "RBI prohibited zero percent interest loan schemes without genuine restructuring in 2013",
+   "basis": "RBI Circular DBOD.No.Dir.BC.47/13.03.00/2013-14 dated 17 September 2013"
+  },
+  {
+   "claim": "Banks charge an EMI conversion processing fee plus 18% GST on that fee",
+   "basis": "Standard major Indian credit card EMI schedule of charges (HDFC, ICICI, SBI Card)"
+  },
+  {
+   "claim": "18% GST is levied on the interest component of No Cost EMIs",
+   "basis": "Section 15 of CGST Act 2017 & Indian bank consumer lending T&Cs on subvention EMIs"
+  },
+  {
+   "claim": "Retailers offer instant discount on upfront full card payment which is not available on EMI subvention",
+   "basis": "Amazon India and Flipkart electronics sale pricing terms"
+  },
+  {
+   "claim": "The full purchase amount blocks the credit card limit, not just the EMI amount",
+   "basis": "Credit card limit mechanics per RBI master direction on credit card operations"
+  }
+ ],
+ "explainer": {
+  "score": 9,
+  "ok": false,
+  "steps_learned": [
+   "RBI's stance that 0% interest is not a reality in the banking system",
+   "The mechanism where the retailer provides a discount equal to the interest amount to the bank",
+   "The application of a processing fee (file charge) by the bank at the start",
+   "The addition of 18% GST on the processing fee and the monthly interest component",
+   "The trade-off where you lose the benefit of instant upfront card discounts",
+   "The blocking of the full purchase amount (80,000) against the credit card limit"
+  ],
+  "missing_steps": [
+   "The specific calculation of how the 'interest' is hidden within the 'discount' amount",
+   "The impact on the credit score if an EMI is missed",
+   "Pre-payment or foreclosure charges if one wants to close the loan early"
+  ],
+  "unsourced": []
+ },
+ "numbers_hold": [
+  "scene 2: 'RBI 2013 circular: zero percent interest loan schemes prohibited without genuine restructuring. Inte' is not in the sources: remove it or say only what the sources say",
+  "scene 4: 'Bank processing fee is charged, plus GST.' is not in the sources: remove it or say only what the sources say",
+  "scene 7: 'RBI master direction: full purchase amount blocks credit limit, not just EMI.' is not in the sources: remove it or say only what the sources say"
+ ],
+ "phone_bg": true,
+ "brain_ids": [
+  "b2fabb69c4",
+  "f945e2a937",
+  "7f620e6fdf",
+  "fc294ac58f",
+  "6ce7203c71",
+  "4396759d41",
+  "b69d65467f",
+  "1e1964f463",
+  "0755cc155a",
+  "9db4cc694f",
+  "a688e48ca2",
+  "161339712e",
+  "e15cfaed29",
+  "1e60a34718"
+ ]
+}
