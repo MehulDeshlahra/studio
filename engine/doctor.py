@@ -142,6 +142,7 @@ def check_stuck_jobs():
 
 
 def check_disk():
+    disk_guard()                                   # every run (10 min), before the 6-hour cache-clean cooldown below
     du = shutil.disk_usage("/")
     pct = 100 * du.used / du.total
     if pct < 90 or time.time() - st.get("disk_clean", 0) < 6 * 3600:   # 17 Nov: it cleaned every 10 min for nothing
@@ -158,6 +159,32 @@ def check_disk():
     du = shutil.disk_usage("/")
     if 100 * du.used / du.total >= 93 and once_a_day("disk"):
         owner.append(f"Disk is still {100 * du.used / du.total:.0f}% full after cleaning. Nothing urgent tonight; I will free more space next session.")
+
+
+def disk_guard():
+    du = shutil.disk_usage("/")
+    # 20 Nov: the disk went from 5 GB free to 0 in 3 h (VAJRA's git left 22 failed tmp_pack files, 7 GB) and the
+    # dashboard, posting and a registry file broke. Failed git temp packs are garbage by definition: removed when no git
+    # process runs and they are > 30 min old, in every repo under ~ (the owner is told which repo made them)
+    if du.free < 4 * 1024 ** 3:
+        import glob
+        busy = sh("pgrep -x git >/dev/null && echo busy")[1].strip() == "busy"
+        old = [p for p in glob.glob(os.path.expanduser("~/*/.git/objects/pack/tmp_pack_*")) if time.time() - os.path.getmtime(p) > 1800]
+        if old and not busy:
+            freed = sum(os.path.getsize(p) for p in old)
+            repos = sorted({p.split("/.git/")[0].split("/")[-1] for p in old})
+            for p in old:
+                try:
+                    os.remove(p)
+                except OSError:
+                    pass
+            log(f"doctor: removed {len(old)} failed git temp packs ({freed / 1e9:.1f} GB) in {', '.join(repos)}")
+            telegram(f"⚠ Server disk was low: removed {len(old)} failed git temp files ({freed / 1e9:.1f} GB) left by "
+                     f"{', '.join(repos)}. Its git push keeps failing; check that project.")
+        du = shutil.disk_usage("/")
+    if du.free < 2 * 1024 ** 3 and once_a_day("disk-low"):
+        top = sh("du -xsh ~/* 2>/dev/null | sort -rh | head -n 4")[1].strip().replace("\n", ", ")
+        telegram(f"⚠ Server disk almost full: {du.free / 1e9:.1f} GB free. Biggest: {top}")
 
 
 def check_housekeeping():
