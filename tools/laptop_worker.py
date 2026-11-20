@@ -15,6 +15,16 @@ R = "/home/ubuntu/studio-out/laptop"
 SSH = ["ssh", "-i", KEY, "-o", "ConnectTimeout=10", "-o", "BatchMode=yes", "-o", "ServerAliveInterval=15", HOST]
 SCP = ["scp", "-q", "-i", KEY, "-o", "ConnectTimeout=10", "-o", "BatchMode=yes"]
 NOWIN = 0x08000000                                     # CREATE_NO_WINDOW: no console flashes
+# 20 Nov (owner: "what is repeatedly opening my cmd?"): this worker runs windowless (pythonw), so ANY console child
+# started without CREATE_NO_WINDOW opens a terminal window (ffmpeg / ffprobe calls in clipcore and engine/cvc had no
+# flag). Every child process of this worker is windowless by default now.
+if os.name == "nt":
+    _Popen_init = subprocess.Popen.__init__
+    def _nowin_init(self, *a, **kw):
+        if not kw.get("creationflags"):
+            kw["creationflags"] = NOWIN
+        _Popen_init(self, *a, **kw)
+    subprocess.Popen.__init__ = _nowin_init
 PRIO = {"fast": 0x00000020, "quiet": 0x00004000}         # NORMAL / BELOW_NORMAL priority class (Chrome inherits it)
 WORKERS = {"fast": "6", "quiet": "3"}
 
