@@ -82,6 +82,20 @@ def _groq_words(wav, lang):
     return words
 
 
+def _laptop_words(wav, lang):
+    """20 Nov audit: Groq's free whisper answered 429 for 26 of 37 reels (19-20 Nov) and the server's CPU model then took
+    2-8 min on the shared 2 cores. The laptop's GPU whisper (tools/laptop_worker.py words_job) takes seconds."""
+    import json, os, laptop
+    if os.name == "nt" or not laptop.available():
+        raise RuntimeError("laptop not available")
+    d = laptop.job({"kind": "words", "path": os.path.abspath(wav), "lang": lang}, "align", wait=300)
+    W = json.load(open(os.path.join(d, "words.json"), encoding="utf-8"))["words"]
+    words = [(str(w[2]).strip(), float(w[0]), float(w[1])) for w in W if str(w[2]).strip()]
+    if len(words) < 5:
+        raise RuntimeError("laptop whisper gave no word times")
+    return words
+
+
 def _whisper(wav, lang="hi", prompt=None, engine="local"):
     a, sr = sf.read(wav, dtype="float32")
     if a.ndim > 1:
@@ -90,6 +104,8 @@ def _whisper(wav, lang="hi", prompt=None, engine="local"):
         a = np.interp(np.arange(0, len(a), sr / 16000), np.arange(len(a)), a).astype("float32")
     if engine == "groq":
         out = _groq_words(wav, lang)
+    elif engine == "laptop":
+        out = _laptop_words(wav, lang)
     else:
         from faster_whisper import WhisperModel
         # 17 Nov: Hinglish matched only 62-84% (Devanagari output vs our Latin script). The script as initial_prompt makes
@@ -204,7 +220,7 @@ def words_by_line(wav, texts, lang="hi"):
     # 18 Nov: Groq Whisper large-v3 (free, via OmniRoute) first; the local 'small' model runs too when Groq is busy or
     # matches less than 90%, and the better match wins.
     best = None
-    for eng in ("groq", "local"):
+    for eng in ("groq", "laptop", "local"):
         try:
             W_, total_, t0_, t1_ = _whisper(wav, lang, engine=eng)   # 17 Nov: no script as initial_prompt (made Whisper loop)
         except Exception as e:

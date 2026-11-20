@@ -87,7 +87,7 @@ def checkin(mode, ac, busy=""):
         # 20 Nov: Content Rewards accepts a link only within 30 min of posting: Whop jobs (-w) go first
         # 20 Nov audit: then story renders (plain MMDD-HHMMSS names): two renders fell back to the loaded server while
         # the worker downloaded an 11.5 h stream for a clip transcript. Clip / info / transcribe jobs come after
-        f'cd {R}/queue 2>/dev/null && for f in $(ls -tr *-w.json 2>/dev/null) $(ls -tr *[0-9].json 2>/dev/null) $(ls -tr *.json 2>/dev/null); do mv "$f" ../claimed/ 2>/dev/null && echo "JOB $f" && break; done')
+        f'cd {R}/queue 2>/dev/null && for f in $(ls -tr *-w.json 2>/dev/null) $(ls -tr *[0-9].json *-o.json 2>/dev/null) $(ls -tr *.json 2>/dev/null); do mv "$f" ../claimed/ 2>/dev/null && echo "JOB $f" && break; done')
     r = run(SSH + [f"mkdir -p {R}/queue {R}/claimed {R}/done; echo '{info}' > {R}/alive.json; {claim}"], timeout=40)
     for line in r.stdout.splitlines():
         if line.startswith("JOB "):
@@ -196,6 +196,32 @@ def _send_back(jid, work):
         raise RuntimeError("upload failed: " + r.stderr[-200:])
     run(SSH + [f"mv {R}/done/{jid}.tgz.part {R}/done/{jid}.tgz"], timeout=40)
     os.remove(out)
+
+
+def words_job(jid, spec):
+    """20 Nov audit: story-reel caption timing. Groq's free whisper was out (429) for 26 of 37 reels and the server's CPU
+    model took 2-8 min; the laptop's GPU model does it in seconds. Fetch the voice file, return word times."""
+    sys.path.insert(0, os.path.join(REPO, "engine"))
+    import clipcore
+    work = os.path.join(HOME, "jobs", jid)
+    shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
+    try:
+        wav = os.path.join(work, "vo.wav")
+        r = run(SCP + [f"{HOST}:{spec['path']}", wav], timeout=120)
+        if r.returncode or not os.path.exists(wav):
+            raise RuntimeError("voice download failed: " + (r.stderr or "")[-200:])
+        W, lang = clipcore.words(wav, spec.get("lang"), spec.get("prompt") or "")
+        os.remove(wav)
+        json.dump({"words": W, "lang": lang, "asr": clipcore.ASR[0]}, open(os.path.join(work, "words.json"), "w", encoding="utf-8"),
+                  ensure_ascii=False)
+        _send_back(jid, work)
+        log("words", jid, len(W), "words by", clipcore.ASR[0])
+    except Exception as e:
+        log("words", jid, "failed:", str(e)[:300])
+        msg = str(e)[:1500].replace("'", " ")
+        run(SSH + [f"echo '{msg}' > {R}/done/{jid}.err"], timeout=40)
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
 
 
 def info_job(jid, spec):
@@ -645,7 +671,7 @@ def main():
                 th = threading.Thread(target=beat, daemon=True); th.start()
                 try:
                     spec = job_spec(jid)
-                    {"fetch": fetch, "info": info_job, "clip": clip_job, "whop": whop_job, "transcribe": transcribe_job}.get(spec.get("kind"), lambda j, s: render(j))(jid, spec)
+                    {"fetch": fetch, "info": info_job, "clip": clip_job, "whop": whop_job, "transcribe": transcribe_job, "words": words_job}.get(spec.get("kind"), lambda j, s: render(j))(jid, spec)
                 finally:
                     stop.set()
                 continue
