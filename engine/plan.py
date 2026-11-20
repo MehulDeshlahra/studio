@@ -14,17 +14,30 @@ def ask(prompt, max_tokens=8000):
     usable = tts.usable(GEM_TEXT)
     r = _gem([m for m in usable if "lite" not in m], prompt, max_tokens)
     if r is not None:
-        return r
+        return _unwrap(r)
     try:
         r = llm.text(prompt, json_mode=True, max_tokens=max_tokens)
         log("plan text by omniroute", llm.last_model)
-        return r
+        return _unwrap(r)
     except Exception as e:
         log("plan text omniroute fail", str(e)[:160])
     r = _gem([m for m in usable if "lite" in m], prompt, max_tokens)
     if r is not None:
         return r
     raise RuntimeError("no model answered the planning request")
+
+
+def _unwrap(r):
+    """20 Nov: finance 1120-1928z got two plans with '0 words' (the scenes sat one level down, e.g. {"plan": {...}} or a
+    one-item list), and each cost a full extra call. A wrapped plan is unwrapped."""
+    for _ in range(2):
+        if isinstance(r, list) and len(r) == 1 and isinstance(r[0], dict):
+            r = r[0]
+        if isinstance(r, dict) and "scenes" not in r:
+            inner = [v for v in r.values() if isinstance(v, dict) and "scenes" in v]
+            if len(inner) == 1:
+                r = inner[0]
+    return r
 
 
 def _gem(models, prompt, max_tokens):
