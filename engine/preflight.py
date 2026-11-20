@@ -108,6 +108,15 @@ def vision(sheet, plan, lang):
             forms = ("\nTraditional forms (correct, never report them as a mistake): " + n + "." + iconography.NO_COUNT)
     except Exception:
         pass
+    # 20 Nov: King Shrenik in red royal robes was reported as "FIT: violates the Jain monk rule" (the monk / Tirthankara
+    # forms were read as rules for everyone) and the reel was held before render. The forms are for the figures they
+    # name; the cast designed for this video (picsmith bible) is correct as described
+    forms += ("\nThe traditional forms above apply ONLY to the figures they name. Kings, queens, devotees, devas and other "
+              "people may wear crowns, jewellery, beards and coloured clothes; never report that as a problem.")
+    bib = (plan.get("bible") or {}).get("figures") or []
+    if bib:
+        forms += "\nCast as designed for this video (correct, not a problem): " + "; ".join(
+            f"{f.get('name')}: {str(f.get('look'))[:160]}" for f in bib[:6])
     prompt = f"""You are the strictest finishing editor at a premium short-video studio. The sheet shows two stills per scene,
 in order, each labelled with its scene number (yellow). Captions at the lower third are expected and show only a PART of the spoken line (one phrase at a time), so a caption with missing words is NOT a problem, and words not yet spoken are dimmed on purpose; a small mono top bar
 (page name left, tag right) MAY appear; a small tag pill above the main visual MAY appear. On our film look they show only on some
