@@ -362,6 +362,13 @@ def _direct(cid, acc, n, d, s):
     if n == "ig":
         return P.instagram(acc, mp4, cap)
     if n == "fb":
+        if s.get("url"):                                # Facebook fetches the public copy (no binary push)
+            tok, pid = acc["page_token"], acc["page_id"]
+            st = P._req(f"{P.G}/{pid}/video_reels", {"upload_phase": "start", "access_token": tok})
+            P._req(st["upload_url"], b"", {"Authorization": f"OAuth {tok}", "file_url": s["url"]}, "POST")
+            P._req(f"{P.G}/{pid}/video_reels", {"upload_phase": "finish", "video_id": st["video_id"], "video_state": "PUBLISHED",
+                                                 "description": fbcap, "access_token": tok})
+            return st["video_id"]
         return P.facebook(acc, mp4, fbcap)
     return P.youtube(acc, mp4, ytx["title"], ytx["description"], ytx.get("tags"), os.path.join(job, "cover.jpg"))
 
