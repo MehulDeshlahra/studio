@@ -1,0 +1,26 @@
+{
+ "topic": "Chouthi Manzil Ka Raaz - Part 7",
+ "title": "Chouthi manzil ke us band kamre mein kya hai?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.0,
+  "true_peak": -2.1,
+  "dur": 51.73
+ },
+ "vision": {
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9090909090909091,
+  "words": 131,
+  "problems": []
+ },
+ "ok": true
+}

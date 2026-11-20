@@ -1,0 +1,29 @@
+{
+ "topic": "What happened when merchant Shalibhadra offered his last meal to a monk? (Source: Trishashti-shalaka-purusha-charitra)",
+ "title": "Shalibhadra ki kheer ka raaz?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.9,
+  "true_peak": -3.1,
+  "dur": 43.23
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 4: The character 'Sangama' has a slightly distorted/melted left hand (the one holding the bowl).",
+   "scene 6: The Jain Muni's hand holding the broom/staff has slightly distorted fingers.",
+   "scene 7: The boy's hand holding the bowl is slightly morphed/unclear."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9895833333333334,
+  "words": 105,
+  "problems": []
+ },
+ "ok": true
+}

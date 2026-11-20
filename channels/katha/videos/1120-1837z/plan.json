@@ -1,0 +1,556 @@
+{
+ "slug": "somnath-jyotirlinga-part-1",
+ "title": "Chandrama ka tej kyu ho gaya lupt?",
+ "hooks": [
+  "Chandrama ka tej kyu lupt hua?",
+  "Daksha ne kyun diya shraap?",
+  "Somnath ka raaz kya hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Moon losing light hooks instantly; curse + Shiva's fix gives stakes.",
+ "metaphor": "Moon phases = penalty → penance → partial pardon cycle.",
+ "mechanism": [
+  "Daksha weds 27 daughters to Chandra",
+  "Chandra favors only Rohini",
+  "Daksha curses: light will fade to zero",
+  "Great outcry among gods and sages",
+  "Brahma sends Chandra to Prabhas",
+  "Chandra chants Mahamrityunjaya 6 months",
+  "Shiva appears, grants life but keeps curse",
+  "Result: moon waxes/wanes forever",
+  "Spot becomes first Jyotirlinga: Somnath"
+ ],
+ "cast": {
+  "Chandra": "Divine serene figure, soft glow, silk dhoti, ornate jewelry, calm face.",
+  "Daksha": "Elderly sage, white beard, saffron robes, rudraksha, stern authoritative.",
+  "Shiva": "Radiant majestic deity, matted hair, crescent on head, compassionate, divine glow."
+ },
+ "scenes": [
+  {
+   "vo": "Chandrama ka tej kyu lupt hua?",
+   "type": "image",
+   "prompt": "Full moon fading fast in starry night, painterly, warm gold and deep maroon, soft divine light, no text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Chandrama",
+    "tej lupt"
+   ],
+   "real": null,
+   "on_screen": "Chandrama ka tej kyu lupt hua?",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s0o.jpg",
+      "prompt": "A full moon, radiant and pale silver-white, fading rapidly against a deep maroon night sky, its luminous glow dimming into soft embers. The celestial orb hangs suspended in the upper third of the frame, surrounded by scattered, twinkling stars. The scene is rendered in a painterly cinematic Indian miniature style, bathed in warm gold and deep maroon hues. Soft divine light emanates from the moon, casting gentle shadows across the vast, empty space below. Vertical 9:16 composition, serene and majestic atmosphere.",
+      "fails": {},
+      "top": 0.13
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Daksha ne 27 betiyon ka vivah Chandra se kiya.",
+   "type": "image",
+   "prompt": "Daksha with 27 daughters in palace courtyard, Indian miniature style, warm lighting, uncluttered.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Daksha",
+    "27 betiyan"
+   ],
+   "real": null,
+   "on_screen": "Daksha ne 27 betiyon se vivah kiya",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s1o.jpg",
+      "prompt": "Daksha, elderly with a long white beard, regal posture, wearing saffron silk robes, heavy gold necklaces, and an ornate crown, stands with an authoritative stance, gesturing firmly toward twenty-seven young women dressed in vibrant traditional silk saris standing in a respectful semicircle before him. Palace courtyard with ornate stone pillars, marble floors, hanging marigold garlands, and warm golden lamps. Painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon palette, soft divine light, uncluttered composition, vertical 9:16 framing.",
+      "fails": {},
+      "top": 0.25
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Par Chandra ka dil sirf Rohini pe atka tha.",
+   "type": "image",
+   "prompt": "Chandra gazing at Rohini, other wives aside, painterly, gold maroon tones, soft light.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Chandra",
+    "Rohini"
+   ],
+   "real": null,
+   "on_screen": "Sirf Rohini pe dhyan tha",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s2o.jpg",
+      "prompt": "Chandra, youthful, radiant, pale silver-white skin, crescent moon on forehead, wearing white silk dhoti, gold ornaments, gentle expression, ethereal glow, slender build, long dark hair tied with silk ribbon, standing with graceful posture, divine aura, gazing intently at Rohini, who stands nearby in a deep maroon silk saree with gold embroidery, elegant posture, soft smile, amidst a palace courtyard with ornate stone pillars, marble floors, hanging marigold garlands, warm golden lamps, painterly cinematic Indian miniature-meets-epic style, soft divine light, warm gold and deep maroon tones, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.17
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Daksha ne gussa ho ke shraap de diya.",
+   "type": "image",
+   "prompt": "Daksha pointing finger, stern face, dramatic low-key lighting, painterly style.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Daksha",
+    "shraap"
+   ],
+   "real": null,
+   "on_screen": "Daksha ne shraap diya",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s3o.jpg",
+      "prompt": "Daksha, elderly, long white beard, regal posture, wearing saffron silk robes, heavy gold necklaces, ornate crown, stern facial expression, authoritative stance, broad shoulders, deep-set eyes, pointing his finger firmly forward in a dramatic gesture. He stands within a palace courtyard featuring ornate stone pillars, marble floors, and hanging marigold garlands. The scene is rendered in a painterly cinematic Indian miniature-meets-epic style, bathed in warm gold and deep maroon tones with soft divine light, creating a majestic atmosphere in a vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.18
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Tumhara tej ghat jayega, tum lupt ho jaoge.",
+   "type": "image",
+   "prompt": "Chandra distressed, aura fading, deep maroon background, soft divine light.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "tej ghat",
+    "lupt"
+   ],
+   "real": null,
+   "on_screen": "Tera tej ghat jayega",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s4o.jpg",
+      "prompt": "Chandra, youthful, radiant, pale silver-white skin, crescent moon on forehead, wearing white silk dhoti, gold ornaments, gentle expression, ethereal glow, slender build, long dark hair tied with silk ribbon, standing with graceful posture, divine aura, looks visibly distressed as his radiant aura dims and flickers, set against a deep maroon palace courtyard with ornate stone pillars and polished marble floors, painterly cinematic Indian miniature-meets-epic style, soft divine light fading into shadows, vertical 9:16 composition, centered subject.",
+      "fails": {},
+      "top": 0.19
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Sab devta aur rishi hahakar karne lage.",
+   "type": "image",
+   "prompt": "Gods and sages in great distress, wailing, painterly style.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "hahakar",
+    "devta",
+    "rishi"
+   ],
+   "real": null,
+   "on_screen": "Devta aur rishi hahakar karne lage",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s5o.jpg",
+      "prompt": "Devtas and Rishis, diverse, bearded, wearing simple saffron and white dhotis, gold beads, hands raised in distress, expressive faces, aged features, long hair, standing in a group, looking upward with emotional intensity, are gathered in a palace courtyard with ornate stone pillars, marble floors, hanging marigold garlands, and warm golden lamps. The scene is rendered in a painterly cinematic Indian miniature-meets-epic style, bathed in soft divine light with warm gold and deep maroon tones, vertical 9:16 composition, main subjects centered.",
+      "fails": {},
+      "top": 0.24
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Brahma ne kaha: Prabhas ja, Shiva ki tapas kar.",
+   "type": "image",
+   "prompt": "Brahma guiding Chandra, serene, golden light, painterly style.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Brahma",
+    "Prabhas"
+   ],
+   "real": null,
+   "on_screen": "Brahma ne Prabhas bheja",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Shiva",
+     "Brahma"
+    ],
+    "tries": [
+     {
+      "file": "s6q0.jpg",
+      "prompt": "Brahma, the idol from image 2, with four bearded faces, four arms, golden skin, wearing white silk, holding Vedas and a water pot, seated on a large blooming lotus, swan nearby, serene expression, ornate jewelry, divine aura, calm posture, meditative state, majestic, gesturing towards the horizon, set in an ornate palace courtyard with marble floors and hanging marigold garlands, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, vertical 9:16 composition, generous space above and below.",
+      "fails": {},
+      "top": 0.23
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Chandra ne 6 mahine Mahamrityunjaya jaap kiya.",
+   "type": "image",
+   "prompt": "Chandra meditating before Shivling on seashore, divine light, peaceful, painterly.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Mahamrityunjaya",
+    "6 mahine"
+   ],
+   "real": null,
+   "on_screen": "6 mahine tapas ki",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s7o.jpg",
+      "prompt": "Chandra, youthful and radiant with pale silver-white skin, a crescent moon on his forehead, wearing a white silk dhoti and gold ornaments, sits in padmasana, legs crossed with hands resting in his lap, meditating before a smooth, dark stone Shivling. The scene is set on a serene seashore with soft sand and gentle crashing waves under a golden sunset. Painterly cinematic Indian miniature style, warm gold and deep maroon tones, soft divine light, vertical 9:16 composition with generous calm space.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Shiva aaye, jeevan daan diya par shraap rakha.",
+   "type": "image",
+   "prompt": "Shiva appearing in golden light before Chandra, majestic compassionate, painterly.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Shiva",
+    "jeevan daan"
+   ],
+   "real": null,
+   "on_screen": "Shiva ne jeevan diya, shraap rakha",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Shiva",
+     "Ganga"
+    ],
+    "tries": [
+     {
+      "file": "s8q0.jpg",
+      "prompt": "the idol from image 1, ash-grey skin, matted hair with crescent moon and Ganga flowing, third eye, trident held upright, damru at hip, snake coiled at neck, tiger skin draped across shoulders, muscular build, serene divine expression, broad chest, powerful posture, glowing aura, standing with grace, right hand raised in abhaya mudra bestowing blessing, left hand holding trident, golden light radiating from form illuminating Chandra kneeling before him with folded hands, ornate palace courtyard with stone pillars and marble floors, hanging marigold garlands, warm golden lamps, intricate carvings, open sky view, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon tones, soft divine light, ornate but uncluttered, vertical 9:16 composition, Shiva centered in middle third, generous calm space above and below",
+      "fails": {},
+      "top": 0.32
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Isliye chandra ghat-ta badhta rahta hai.",
+   "type": "image",
+   "prompt": "Moon phases cycle in sky, artistic painterly, beautiful transition.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "ghat-ta",
+    "badhta"
+   ],
+   "real": null,
+   "on_screen": "Isliye chandra ghat-ta badhta hai",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s9o.jpg",
+      "prompt": "Chandra, youthful, radiant, pale silver-white skin, crescent moon on forehead, wearing white silk dhoti, gold ornaments, gentle expression, ethereal glow, slender build, long dark hair tied with silk ribbon, standing with graceful posture, divine aura, gazes upward at the shifting celestial sky where the moon phases cycle through crescent to full, set within a serene Palace Courtyard with ornate stone pillars and hanging marigold garlands, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.42
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Yahi sthan bana pehla Jyotirlinga: Somnath.",
+   "type": "image",
+   "prompt": "Somnath temple by sea at sunset, majestic ornate, painterly style.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Somnath",
+    "Jyotirlinga"
+   ],
+   "real": {
+    "q": "Somnath temple front view sunset",
+    "kind": "photo",
+    "subject": "Somnath temple architecture"
+   },
+   "on_screen": "Yahi hai pehla Jyotirlinga Somnath",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "pattachitra"
+  },
+  {
+   "vo": "Seekh: Pakshpaat ka ant bura hota hai.",
+   "type": "image",
+   "prompt": "A single golden lotus flower centered on a deep maroon background, soft divine light, minimalistic, vertical 9:16, ample empty space above and below for text, no text or logos.",
+   "motion": "zoom",
+   "title": "",
+   "big": "",
+   "small": "",
+   "keywords": [
+    "pakshpaat",
+    "seekh"
+   ],
+   "real": null,
+   "on_screen": "Pakshpaat ka ant bura hota hai",
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s11o.jpg",
+      "prompt": "A deep maroon background with a thin golden ornate border at the top and bottom, creating a clean minimalistic frame with large empty space in the center. The scene is bathed in soft divine light, evoking a painterly cinematic Indian miniature-meets-epic style. The atmosphere is rich with warm gold and deep maroon tones, featuring polished, uncluttered surfaces. The composition is vertical 9:16, focusing on the majestic, serene aesthetic of an empty palace courtyard setting, emphasizing architectural elegance and divine calm.",
+      "fails": {},
+      "top": 0.33
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Agla part: Mallikarjun ki katha. Save karo.",
+   "type": "image",
+   "prompt": "Ornate temple door, mysterious lighting, painterly, suspenseful.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Mallikarjun",
+    "agla part"
+   ],
+   "real": null,
+   "on_screen": "Agla part: Mallikarjun. Save karo",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s12.jpg",
+      "prompt": "Ornate temple door, massive intricately carved wooden doors standing slightly ajar, revealing a sliver of mysterious glowing golden light from within, set within a grand stone archway, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon color palette, soft divine light spilling from the crack, dramatic shadows, vertical 9:16 composition, centered subject, generous calm space above and below, clean polished stone surfaces, rich textures, majestic and suspenseful atmosphere.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Sroat: Shiva Purana, Koti Rudra Samhita. @PuranKiKatha",
+   "type": "card",
+   "prompt": "Simple parchment, warm gold text, clean layout.",
+   "motion": "pan",
+   "title": "",
+   "big": "SHIVA PURANA",
+   "small": "Koti Rudra Samhita",
+   "keywords": [
+    "Shiva Purana",
+    "source"
+   ],
+   "real": null,
+   "on_screen": "Sroat: Shiva Purana. @PuranKiKatha",
+   "sub": null,
+   "label": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Shiva"
+    ],
+    "tries": [
+     {
+      "file": "s13q0.jpg",
+      "prompt": "Chandra, youthful, radiant, pale silver-white skin, crescent moon on forehead, wearing white silk dhoti, gold ornaments, gentle expression, ethereal glow, slender build, long dark hair tied with silk ribbon, standing with graceful posture, divine aura, stands serenely in the center of a palace courtyard with ornate stone pillars and marble floors. Painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon palette, soft divine light illuminating the space, vertical 9:16 composition with generous calm space above and below.",
+      "fails": {},
+      "top": 0.24
+     }
+    ],
+    "passed": true
+   }
+  }
+ ],
+ "music_mood": "epic",
+ "caption": "Chandrama ka tej kyu lupt hua? Daksha ke shraap se Shiva ke var tak. Somnath pehla Jyotirlinga kaise bana? Agla part Mallikarjun. Save karo. #Somnath #Shiva #PuranKiKatha #Jyotirlinga #Mahadev\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#Somnath",
+  "#Shiva",
+  "#PuranKiKatha",
+  "#Jyotirlinga",
+  "#Mahadev"
+ ],
+ "claims": [
+  {
+   "claim": "Somnath is the first of the 12 Jyotirlingas per Shiva Purana.",
+   "basis": "Shiva Purana, Koti Rudra Samhita."
+  },
+  {
+   "claim": "Moon's waxing/waning linked to Daksha's curse and Shiva's partial pardon.",
+   "basis": "Shiva Purana, Koti Rudra Samhita."
+  }
+ ],
+ "brain_ids": [
+  "e15cfaed29",
+  "b69d65467f",
+  "9db4cc694f",
+  "7f620e6fdf",
+  "fc294ac58f",
+  "161339712e",
+  "0755cc155a",
+  "b2fabb69c4",
+  "4396759d41",
+  "6ce7203c71",
+  "1e1964f463",
+  "a688e48ca2",
+  "f945e2a937",
+  "b349ca221e"
+ ],
+ "skin": "painting",
+ "bible": {
+  "figures": [
+   {
+    "name": "Chandra",
+    "scenes": [
+     1,
+     3,
+     5,
+     8
+    ],
+    "look": "Youthful, radiant, pale silver-white skin, crescent moon on forehead, wearing white silk dhoti, gold ornaments, gentle expression, ethereal glow, slender build, long dark hair tied with silk ribbon, standing with graceful posture, divine aura."
+   },
+   {
+    "name": "Daksha",
+    "scenes": [
+     2,
+     4
+    ],
+    "look": "Elderly, long white beard, regal posture, wearing saffron silk robes, heavy gold necklaces, ornate crown, stern facial expression, authoritative stance, broad shoulders, deep-set eyes, hands gesturing firmly, standing on marble floor, majestic presence."
+   },
+   {
+    "name": "Rohini",
+    "scenes": [
+     3
+    ],
+    "look": "Beautiful, graceful, youthful, dark hair, wearing deep maroon silk saree with gold embroidery, gold jewelry, soft smile, elegant posture, almond eyes, delicate features, standing amidst soft golden light, slender build, radiant skin, serene demeanor."
+   },
+   {
+    "name": "Brahma",
+    "scenes": [
+     7
+    ],
+    "look": "Four bearded faces, four arms, golden skin, wearing white silk, holding Vedas and water pot, seated on a large blooming lotus, swan nearby, serene expression, ornate jewelry, divine aura, calm posture, meditative state, majestic."
+   },
+   {
+    "name": "Shiva",
+    "scenes": [
+     9
+    ],
+    "look": "Ash-grey skin, matted hair with crescent moon and Ganga, third eye, trident, damru, snake at the neck, tiger skin, muscular build, serene divine expression, broad chest, powerful posture, glowing aura, standing with grace."
+   },
+   {
+    "name": "Devtas and Rishis",
+    "scenes": [
+     6
+    ],
+    "look": "Diverse, bearded, wearing simple saffron or white dhotis, gold beads, hands raised in distress, expressive faces, aged features, long hair, standing in a group, looking upward, emotional intensity, warm golden light illuminating figures, traditional attire."
+   }
+  ],
+  "places": [
+   {
+    "name": "Palace Courtyard",
+    "look": "Ornate stone pillars, marble floors, hanging marigold garlands, warm golden lamps, intricate carvings, open sky view, vast space, architectural elegance, soft shadows, divine light, polished surfaces, vibrant colors, majestic atmosphere, rich textures."
+   },
+   {
+    "name": "Seashore",
+    "look": "Sandy beach, crashing waves, golden sunset light, rocky outcrops, peaceful atmosphere, vast horizon, shimmering water, divine glow, natural beauty, serene environment, soft sand, gentle breeze, warm tones, painterly textures, calm sea."
+   },
+   {
+    "name": "Somnath Temple",
+    "look": "Majestic stone structure, towering shikhara, intricate carvings, glowing lamps, sea waves in background, divine golden light, ornate entrance, sacred atmosphere, grand scale, architectural detail, warm maroon tones, historic beauty, stone texture."
+   },
+   {
+    "name": "Temple Door",
+    "look": "Massive carved wooden door, brass studs, ornate floral patterns, mysterious shadows, warm light emanating from within, heavy hinges, intricate craftsmanship, deep maroon wood, golden accents, grand scale, inviting mystery, closed position."
+   }
+  ]
+ },
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}

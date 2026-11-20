@@ -1,0 +1,235 @@
+{
+ "slug": "gps-kaise-kaam-karta-hai",
+ "title": "GPS ko kaise pata ki aap kahan ho?",
+ "hooks": [
+  "GPS ko kaise pata ki aap kahan ho?",
+  "Kya aap jante hain GPS kaise kaam karta hai?",
+  "Aapka phone bina internet ke location kaise batata hai?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct question addressing the core curiosity immediately, matching the channel's 'Kaise Tech' style.",
+ "metaphor": "Invisible timing pulses from space forming a 3D intersection point.",
+ "mechanism": [
+  "Satellites orbit at 20,200 km in MEO",
+  "Phone acts as a passive receiver",
+  "Phone measures signal travel time",
+  "Distance calculation using speed of light",
+  "3 satellites for 3D position",
+  "4th satellite for timing correction"
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "GPS ko kaise pata chalta hai ki aap kahan ho?",
+   "type": "object",
+   "prompt": "A modern smartphone held in hand displaying a blue dot on a map, dark cinematic studio environment",
+   "label": "LOCATION TRACKING",
+   "bg_prompt": "A close-up of a smartphone screen showing a map with a blue dot",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Yaad rakhein, aapka phone space mein koi signal nahi bhejta.",
+   "type": "object",
+   "prompt": "A smartphone icon with a blocked transmission arrow, dark tech aesthetic",
+   "label": "PASSIVE RECEIVER",
+   "bg_prompt": "A smartphone in a dark room, no outgoing signals shown",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "31 satellites 20,200 km upar, ek invisible grid ki tarah ghoom rahe hain.",
+   "type": "stat",
+   "value": "20,200 km",
+   "sub": "Medium Earth Orbit",
+   "label": "MEO ORBIT",
+   "bg_prompt": "3D render of GPS satellites orbiting Earth at high altitude",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Ye satellites lagataar time aur apni position ka signal bhejte rehte hain.",
+   "type": "object",
+   "prompt": "A high-tech satellite broadcasting glowing radio waves towards Earth",
+   "label": "SIGNAL BROADCAST",
+   "bg_prompt": "Cinematic shot of a satellite in orbit emitting light pulses",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Aapka phone bas ek radio ki tarah in signals ko sunta hai.",
+   "type": "object",
+   "prompt": "Close-up of a smartphone internal GPS chip receiving data",
+   "label": "SIGNAL RECEPTION",
+   "bg_prompt": "Close-up of a smartphone motherboard with a glowing GPS chip",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Phone ye measure karta hai ki signal ko aane mein kitna time laga.",
+   "type": "object",
+   "prompt": "A digital timer counting down milliseconds on a smartphone screen",
+   "label": "TIME MEASUREMENT",
+   "bg_prompt": "Abstract digital lines showing timing pulses",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Light ki speed se multiply karke, phone satellite se apni doori nikalta hai.",
+   "type": "title",
+   "big": "DISTANCE = TIME × SPEED",
+   "sub": "Speed of light calculation",
+   "label": "CALCULATION",
+   "bg_prompt": "Abstract digital lines connecting a satellite to a phone",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "hologram",
+   "prompt": ""
+  },
+  {
+   "vo": "Teen satellites se spheres—yaani ghere—bante hain jo aapki 3D position batate hain.",
+   "type": "flow",
+   "nodes": [
+    "SAT 1",
+    "SAT 2",
+    "SAT 3",
+    "POSITION"
+   ],
+   "label": "TRILATERATION",
+   "bg_prompt": "A 3D diagram showing three spheres intersecting at a single point",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Chautha satellite aapke phone ki sasti clock ki galti ko sudharta hai.",
+   "type": "object",
+   "prompt": "A clock icon being corrected by a satellite signal",
+   "label": "CLOCK CORRECTION",
+   "bg_prompt": "Digital clock interface being adjusted by a satellite beam",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Bas, isi data ko map par plot karke aapko raasta dikhaya jaata hai.",
+   "type": "object",
+   "prompt": "A smartphone screen showing a navigation route on Google Maps",
+   "label": "NAVIGATION",
+   "bg_prompt": "A smartphone showing a map route, dark studio lighting",
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Kya aapne kabhi NavIC ka naam suna hai, jo India ka GPS hai?",
+   "type": "title",
+   "big": "NAVIC KA NAAM?",
+   "sub": "Comment mein batao",
+   "label": "ENGAGEMENT",
+   "bg_prompt": "Dark minimal studio background with a subtle glowing grid",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "GPS kaise kaam karta hai? 🛰️\n\nSpace se aane wale signals aur trilateration ka pura mechanism samjho.\n\nNavIC use kiya hai kabhi? Save karo aur comment mein batao.\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#KaiseTech",
+  "#GPS",
+  "#TechExplained",
+  "#Navigation",
+  "#NavIC"
+ ],
+ "claims": [
+  {
+   "claim": "GPS satellites orbit at roughly 20,200 kilometers.",
+   "basis": "gnssdecoded.com"
+  },
+  {
+   "claim": "At least 4 satellites are needed for a 3D position fix.",
+   "basis": "gnssdecoded.com"
+  },
+  {
+   "claim": "GPS works by measuring the travel time of radio signals.",
+   "basis": "gnssdecoded.com"
+  }
+ ],
+ "explainer": {
+  "score": 9,
+  "ok": false,
+  "steps_learned": [
+   "Satellites are 20,200 km above Earth (Space Segment).",
+   "Satellites broadcast time and position signals.",
+   "Phone acts as a receiver (listens to signals).",
+   "Phone calculates travel time of the signal.",
+   "Phone calculates distance by multiplying time by the speed of light.",
+   "Three satellites create spheres to determine 3D position (trilateration).",
+   "A fourth satellite corrects the phone's clock error."
+  ],
+  "missing_steps": [
+   "The concept of the 'Space Segment' vs 'Control Segment' vs 'User Segment' (the three segments of GPS).",
+   "Why the fourth satellite is specifically needed for time synchronization (the 'cheap clock' vs atomic clock discrepancy).",
+   "The role of the atomic clocks on satellites that make this precision possible."
+  ],
+  "unsourced": [
+   "The script mentions '31 satellites'—while the source says 'at least 31 operational satellites', the script implies a fixed number which is technically true but could be framed more accurately as a constellation size."
+  ]
+ },
+ "brain_ids": [
+  "1e1964f463",
+  "f945e2a937",
+  "4396759d41",
+  "fc294ac58f",
+  "7fa182f8ef",
+  "b69d65467f",
+  "7f620e6fdf",
+  "6055c69660",
+  "161339712e",
+  "b2fabb69c4",
+  "6ce7203c71",
+  "9db4cc694f",
+  "1e60a34718",
+  "e15cfaed29"
+ ],
+ "skin": "hologram",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}

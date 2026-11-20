@@ -443,3 +443,15 @@
 - only 73% of the script was found in the voice
 - captions out of sync: line 5 has 10 words in 0.8 s
 - visual: Scene 12 shows '10-13' in the first frame while the spoken line and second frame say '11-13' weeks, creating a mismatch in the stat displayed.
+
+## review 1120-1748z
+- picture check: scene 6: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 75%)
+
+## review 1118-2205
+- scene 1 vo: informal 'tera' in "Rait... aur usse nikalta hai tera processor. Socho kaise?" (owner: never 'tu')
+- scene 13 vo: informal 'tera' in "Itni mehnat ke baad tera phone chalta hai. Agla kya dekhna hai?" (owner: never 'tu')
+- only 73% of the script was found in the voice
+- captions out of sync: line 5 has 10 words in 0.8 s
+- visual: Scene 12 text says '10-13' in the first frame but voice and next frame state '11-13 weeks', creating a contradiction for viewers.
+- picture check: scene 7: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 62%)
+- picture check: scene 9: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 66%)

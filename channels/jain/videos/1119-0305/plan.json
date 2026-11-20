@@ -53,7 +53,19 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s1o.jpg",
+      "prompt": "A shravak, a man in his mid-thirties, lean build, calm expression, short black hair, tan skin, wearing a simple white unstitched cotton dhoti and a plain white cotton shawl draped over one shoulder, walks slowly along a stone path in a Jain Upashray, pausing to turn back gently with a peaceful gaze. The setting features ancient white marble architecture with tall pointed shikhara spires and finely carved pillars. Serene painterly Indian style, warm golden sunlight, peaceful, uncluttered, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.29
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Agam kehta hai, karam dhyaan se hi chhutte hain.",
@@ -127,7 +139,21 @@
    "small": null,
    "sub": null,
    "label": null,
-   "real": null
+   "real": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "Twenty-four identical white marble Tirthankara idols, each seated cross-legged with hands resting in the lap on a carved lotus pedestal, arranged in a long, receding row within an ancient Jain Upashray hall. The idols feature smooth, polished surfaces, serene expressions with half-closed eyes, and faint carved halos. In the foreground, a devotee's hands are folded in reverence. Jain monks in plain white unstitched cotton robes stand nearby. Warm golden sunlight filters through intricately carved stone windows, illuminating the finely carved pillars and stepped roofs.",
+      "fails": {},
+      "top": 0.27
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Teesra: Vandana, guru aur sadhuon ko naman.",
@@ -178,7 +204,21 @@
    "small": null,
    "sub": null,
    "label": null,
-   "real": null
+   "real": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s8q0.jpg",
+      "prompt": "Jain Muni: A man in his fifties, thin build, serene face, clean-shaven head, tan skin, wearing plain white unstitched cotton robes and a white mouth cloth tied across his face. He stands perfectly still in kayotsarga, feet together, arms hanging straight down by his sides, eyes half-closed in deep meditation. He holds a soft white whisk broom made of cotton threads. Set within an ancient hall of white marble architecture with finely carved pillars, bathed in warm golden sunlight, vertical 9:16.",
+      "fails": {},
+      "top": 0.26
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Chhatha: Pratyakhyana, aane wale samay ka naya sankalp.",
@@ -195,7 +235,19 @@
    "small": null,
    "sub": null,
    "label": null,
-   "real": null
+   "real": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s9o.jpg",
+      "prompt": "A shravak, a man in his mid-thirties, lean build, calm expression, short black hair, tan skin, wearing a simple white unstitched cotton dhoti and a plain white cotton shawl draped over one shoulder, rises gracefully from meditation, hands folded at his heart in a silent vow. He stands within a Jain Upashray, an ancient hall of white marble with finely carved pillars and intricate floral motifs. Serene painterly Indian style, warm golden sunlight filtering through, gentle glow, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.27
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Samvatsari Pratikraman saal mein bas ek baar hota hai.",
@@ -269,5 +321,42 @@
   "e15cfaed29",
   "4396759d41",
   "7fa182f8ef"
- ]
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Shravak",
+    "scenes": [
+     2,
+     5,
+     8,
+     10,
+     12
+    ],
+    "look": "A man in his mid-thirties, lean build, calm expression, short black hair, tan skin. He wears a simple white unstitched cotton dhoti and a plain white cotton shawl draped over one shoulder. He stands or sits with peaceful posture, bare feet, and folded hands."
+   },
+   {
+    "name": "Jain Muni",
+    "scenes": [
+     7,
+     9,
+     11
+    ],
+    "look": "A man in his fifties, thin build, serene face, clean-shaven head, tan skin. He wears plain white unstitched cotton robes, a white mouth cloth tied across his face, and carries a soft white whisk broom made of cotton threads in his hand."
+   },
+   {
+    "name": "Tirthankara Idol",
+    "scenes": [
+     6
+    ],
+    "look": "A white marble statue, seated in padmasana pose on a carved lotus pedestal. The face displays a serene expression with half-closed eyes and a gentle smile. The surface is smooth and polished, catching the warm golden light, with a faint carved halo behind the head."
+   }
+  ],
+  "places": [
+   {
+    "name": "Jain Upashray",
+    "look": "An ancient hall featuring white marble architecture, tall pointed shikhara spires, and finely carved pillars with intricate floral motifs. The space includes stepped stone roofs and clean marble floors, bathed in warm golden sunlight filtering through carved stone windows, creating a peaceful, uncluttered atmosphere."
+   }
+  ]
+ }
 }

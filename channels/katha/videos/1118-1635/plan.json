@@ -206,7 +206,23 @@
     "aasan",
     "comment"
    ],
-   "skin": "painting"
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Shiva",
+     "Brahma",
+     "Ganga"
+    ],
+    "tries": [
+     {
+      "file": "s11q0.jpg",
+      "prompt": "Antique brass scales of truth, two shallow pans suspended from a central beam by delicate chains, the beam adorned with subtle lotus engravings, hanging perfectly balanced, centered in a deep indigo cosmic void, painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon tones, soft divine backlight glowing through the brass creating golden rim light, vertical 9:16 composition with the scales in the middle third, generous calm indigo space above and below",
+      "fails": {},
+      "top": 0.18
+     }
+    ],
+    "passed": true
+   }
   }
  ],
  "music_mood": "epic",
@@ -258,5 +274,87 @@
   "1e1964f463"
  ],
  "skin": "painting",
- "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "bible": {
+  "figures": [
+   {
+    "name": "Shiva",
+    "scenes": [
+     3,
+     8,
+     9,
+     10
+    ],
+    "look": "Ash-grey skin, athletic build, matted hair adorned with a crescent moon and flowing Ganga, a vertical third eye on the forehead, a cobra coiled around the neck, wearing a tiger skin loincloth, holding a trident and damru."
+   },
+   {
+    "name": "Vishnu",
+    "scenes": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "look": "Radiant blue skin, youthful face, four arms holding a conch, chakra, mace, and lotus, wearing ornate yellow silk garments, a golden crown encrusted with jewels, and elegant pearl necklaces, standing with a calm, divine posture."
+   },
+   {
+    "name": "Brahma",
+    "scenes": [
+     1,
+     2,
+     3,
+     4,
+     6,
+     7,
+     10
+    ],
+    "look": "Four bearded faces with serene expressions, four arms holding sacred Vedas and a golden water pot, seated on a blooming lotus, wearing white silk robes and golden ornaments, radiating a soft, scholarly, and divine aura."
+   },
+   {
+    "name": "Bhairava",
+    "scenes": [
+     1,
+     8,
+     9,
+     10
+    ],
+    "look": "Fierce dark-skinned deity, wild flowing hair, wearing a garland of skulls, athletic build, intense eyes, holding a sharp blade, radiating raw cosmic energy, standing with a powerful, dynamic stance ready for divine justice."
+   },
+   {
+    "name": "Swan",
+    "scenes": [
+     4
+    ],
+    "look": "Elegant white feathers, graceful neck, golden beak, soaring with wings spread wide against a starry cosmic background, embodying purity and speed, depicted in a stylized, fluid Indian miniature form."
+   },
+   {
+    "name": "Wild Boar",
+    "scenes": [
+     4
+    ],
+    "look": "Powerful muscular build, dark coarse fur, sharp tusks, determined eyes, digging through cosmic waters, depicted with strong, rhythmic lines, embodying strength and persistence in a traditional Indian epic style."
+   },
+   {
+    "name": "Ketaki Flower",
+    "scenes": [
+     6
+    ],
+    "look": "Radiant white petals, glowing with a supernatural inner light, delicate structure, positioned prominently, casting a soft ethereal aura, depicted with fine, painterly brushstrokes in a rich, ornate Indian miniature style."
+   }
+  ],
+  "places": [
+   {
+    "name": "Cosmic Ocean",
+    "look": "Vast expanse of deep navy blue waters, swirling with golden stardust, gentle waves reflecting celestial light, serene and infinite, providing a majestic backdrop for divine figures, painted in a rich, atmospheric style."
+   },
+   {
+    "name": "Jyotirlinga",
+    "look": "Infinite towering pillar of brilliant golden fire, piercing through the heavens and abyss, radiating intense heat and light, textured with swirling flames, standing as the central, awe-inspiring focus of the cosmic scene."
+   },
+   {
+    "name": "Celestial Sky",
+    "look": "Deep indigo expanse filled with shimmering golden stars, swirling nebulae, and soft, divine clouds, creating a majestic, ethereal atmosphere for cosmic events, rendered in a rich, painterly, and uncluttered Indian miniature style."
+   }
+  ]
+ }
 }

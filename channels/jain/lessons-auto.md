@@ -411,3 +411,98 @@
 ## 1120-1615 Why did the first Tirthankara Rishabhanatha wait 365 days for his first alms — and what did people finally offer? (source: adipurana / trishashti-shalaka-purusha-charitra)
 - scene 10: The caption 'DAAN KA TARIKA AUR BHAV MATTER KARTA HAI' does not match the intended script 'Seekh: Sirf daan dena kaafi nahi, sahi tarika aur bhav bhi matter karta hai'. The text is truncated/shortened.
 - scene 11: The caption 'DETE?' does not match the intended script 'Aap hote toh kya dete? Jai Jinendra.' The text is truncated/shortened.
+
+## review 1120-1542
+- picture check: scene 3: Is Bahubali shown wearing a crown or clothes, or with his hands folded? (yes 62%)
+- picture check: scene 6: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)
+
+## review 1120-1542
+- picture check: scene 6: Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 62%); Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)
+
+## 1120-1542 How King Shrenik, currently in hell, is destined to be the first Tirthankara of the next time cycle. (Source: Trishashti-shalaka-purusha-charitra)
+- scene 8: caption misspells 'kabhi' as 'KARBI' (should read 'KABHI VYARTH NAHI JAATA')
+
+## review 1120-1542
+- picture check: scene 6: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 79%)
+
+## 1120-1645 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s13b
+- FIT: the first still's caption says 'KO MAAR DAALA' but the voice says 'Sainik ne ma ko maar daala'
+
+## 1120-1724 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s10b
+
+## 1120-1724 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s10b
+
+## 1120-1724 What happened when merchant Shalibhadra offered his last meal to a monk? (Source: Trishashti-shalaka-purusha-charitra)
+- scene 4: The character 'Sangama' has a slightly distorted/melted left hand (the one holding the bowl).
+- scene 6: The Jain Muni's hand holding the broom/staff has slightly distorted fingers.
+- scene 7: The boy's hand holding the bowl is slightly morphed/unclear.
+
+## review 1118-2242
+- visual: Scene 6 shows an older man with a beard and robes instead of the Tirthankara form described in the guidelines.
+- visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scene 6
+- visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scene 6
+- picture check: scene 2: Is any monk or nun wearing saffron, orange or red robes? (yes 65%); Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 86%); Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 66%)
+- picture check: scene 5: Is any monk or nun wearing saffron, orange or red robes? (yes 81%)
+- picture check: scene 9: Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 72%)
+- visual score 5/10
+
+## review 1119-0215
+- picture check: scene 6: Is any monk or nun wearing saffron, orange or red robes? (yes 84%); Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 70%)
+- picture check: scene 7: Is any monk or nun wearing saffron, orange or red robes? (yes 81%)
+- picture check: scene 8: Is any monk or nun wearing saffron, orange or red robes? (yes 78%)
+- picture check: scene 11: Is any monk or nun wearing saffron, orange or red robes? (yes 66%)
+- picture check: scene 12: Is any monk or nun wearing saffron, orange or red robes? (yes 72%)
+
+## review 1119-0305
+- visual: scene 1: The script intended 'Samvatsari par ghante tak kyun baithte hain Jain?', but the text on screen says 'PRATIKRAMAN KA MATLAB'. This is a mismatch.
+- visual: scene 2: The script intended 'Pratikraman ka matlab hai apni bhoolon se wapas lautna.', but the text says 'APNE ASLI SWABHAV'. This is a mismatch.
+- visual: scene 3: The script intended 'Agam kehta hai, karam dhyaan se hi chhutte hain.', but the text says 'YEH EK SOUL-RESET'. This is a mismatch.
+- visual: scene 4: The script intended 'Iske cheh avashyak hain...', but the text says '48 MINUTE HILNA'. This is a mismatch.
+- visual: scene 5: The script intended 'Pehla: Samayika...', but the text says 'DOOSRA: 24 TIRTHANKARON'. This is a mismatch.
+- visual: scene 6: The script intended 'Doosra: Logassa...', but the text says 'ROSHNI JAGATE HAIN'. This is a mismatch.
+- visual: scene 7: The script intended 'Teesra: Vandana...', but the text says 'TEESRA: VANDANA'. This matches, but the sequence is misaligned with the previous slides.
+- visual: scene 8: The script intended 'Chautha: Pratikraman...', but the text says 'CHAUTHA: ASLI HISAAB'. This is a mismatch.
+- visual: scene 9: The script intended 'Paanchva: Kayotsarga...', but the text says 'SHARIR DHEELA CHHOD'. This is a mismatch.
+- visual: scene 10: The script intended 'Chhatha: Pratyakhyana...', but the text says 'NAYA SANKALP'. This is a mismatch.
+- visual: scene 11: The script intended 'Samvatsari Pratikraman saal mein bas ek baar hota hai.', but the text says 'GHANTE CHALTA HAI'. This is a mismatch.
+- visual: scene 12: The script intended 'Ant mein Micchami Dukkadam...', but the text says 'MECHANISM AATMA KI SHUDDHI'. This is a mismatch.
+- picture check: scene 2: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 66%); Is any monk or nun wearing saffron, orange or red robes? (yes 82%)
+- picture check: scene 4: Is any monk or nun wearing saffron, orange or red robes? (yes 78%)
+- picture check: scene 6: Is any monk or nun wearing saffron, orange or red robes? (yes 79%)
+- picture check: scene 9: Is any monk or nun wearing saffron, orange or red robes? (yes 79%)
+- picture check: scene 10: Is any monk or nun wearing saffron, orange or red robes? (yes 69%)
+
+## review 1119-0335
+- visual: Checklist item 2: Scene 3 and Scene 12 show the Tirthankara (Parshvanath) with yellow/gold skin tone and ornamentation/jewellery, which violates the strict traditional Jain representation (white or dark stone, bare form without jewellery).
+- visual: Checklist item 4: Scene 1 and Scene 2 show an ascetic/monk figure with a grey beard and moustache, whereas Tirthankaras are traditionally depicted as young and beardless.
+- visual: Checklist item 8: The main figure dramatically changes appearance, age, and beard/clothing style between scenes (Scene 1/2 shows an old bearded ascetic, Scene 3 shows a meditative idol, Scene 7 shows a royal figure with a crown, Scene 9/10 shows a seated Tirthankara).
+- visual: checklist: Is a Tirthankara, Bahubali or Jain idol shown with blue, green or grey skin, a crown, jewellery, a tilak, horns or a third eye? -> Scene 3, Scene 11, Scene 12
+- visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scene 1, Scene 2
+- visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scenes 1-2 vs Scenes 3-12
+- picture check: scene 3: Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 66%); Is any monk or nun wearing saffron, orange or red robes? (yes 88%)
+- picture check: scene 9: Is any monk or nun wearing saffron, orange or red robes? (yes 61%)
+- picture check: scene 12: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 65%)
+- visual score 5/10
+
+## review 1119-0935
+- picture check: scene 1: Is any monk or nun wearing saffron, orange or red robes? (yes 69%)
+- picture check: scene 3: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 68%); The narration names Bahubali (Gommateshwara), and he is shown wearing a crown or clothes, or with his hands fo (yes 66%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 66%)
+- picture check: scene 5: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 89%)
+
+## review 1119-1105
+- picture check: scene 6: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 63%)
+- picture check: scene 8: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 81%)
+
+## review 1119-1915
+- picture check: scene 11: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 65%)
+
+## review 1119-2225
+- scene 13 vo: informal 'Tu, bata' in "Tu hota to kya karta? Comment mein bata" (owner: never 'tu')
+- scene 13 big: informal 'TU' in "TU HOTA TO?" (owner: never 'tu')
+- post caption: informal 'Tu, bata' (owner: never 'tu')
+
+## review 1120-1542
+- picture check: scene 6: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 82%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 77%)

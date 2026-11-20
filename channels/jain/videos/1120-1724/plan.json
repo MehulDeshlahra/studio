@@ -1,0 +1,484 @@
+{
+ "slug": "shalibhadra-kheer-daan",
+ "title": "Shalibhadra ki kheer ka raaz?",
+ "hooks": [
+  "Ek katori kheer ne raja banaya.",
+  "Kya ek waqt ka khana kismat badal sakta hai? Shalibhadra ki kahani.",
+  "32 raniyan aur itna vaibhav ki Raja Shrenik hairan — par mila kaise?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "First line delivers the core surprise in 6 words: a single bowl of kheer made a king. High stakes, visual, immediate curiosity.",
+ "metaphor": "An earthen bowl of kheer morphing into a golden crown.",
+ "mechanism": [
+  "Sangama ki maa mushkil se kheer banati hai.",
+  "Jain Muni bhiksha maangne aate hain.",
+  "Bhookha Sangama poori kheer nishkaam bhav se daan karta hai.",
+  "Ye karma beej agle janam mein Shalibhadra ka atyant vaibhav banta hai.",
+  "Shalibhadra samajhta hai ki asli malik atma hai, daulat nahi."
+ ],
+ "cast": {
+  "Shalibhadra": "A handsome young man in royal white silk, simple golden crown, calm face, ancient Indian jewelry, serene, seated on white marble throne.",
+  "Sangama": "Young boy in worn cotton clothes, innocent face, messy hair, hungry but hopeful.",
+  "Jain Monk": "Serene Jain monk in plain white unstitched cotton robes, carrying white whisk broom (rajoharan), calm compassionate face.",
+  "King Shrenik": "Majestic king in ancient Indian royal attire, large golden crown, dignified expression, standing with authority."
+ },
+ "scenes": [
+  {
+   "vo": "Ek katori kheer ne raja banaya.",
+   "type": "clip",
+   "prompt": "Shalibhadra on white marble throne, golden pillars, glowing lamps, serene face. Slow zoom into eyes.",
+   "motion": "push",
+   "title": "EK KATORI KHEER",
+   "keywords": [
+    "kheer",
+    "raja"
+   ],
+   "real": {
+    "q": "Palitana Jain temple architecture",
+    "kind": "photo",
+    "subject": "white marble carvings"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s0p.jpg",
+      "prompt": "Shalibhadra, a handsome man in his mid-twenties with glowing olive skin and short dark hair, wearing an ornate silk dhoti, a golden crown, and heavy gold necklaces, sits with a calm serene expression on a grand white marble throne. He is positioned in an uncluttered palace hall with finely carved pillars featuring floral motifs and glowing oil lamps. The scene is captured in a serene painterly Indian style with warm golden light, vertical 9:16 composition, centered framing.",
+      "fails": {},
+      "top": 0.24
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Ye Shalibhadra — 32 raniyan, Raja Shrenik bhi hairan.",
+   "type": "image",
+   "prompt": "Shalibhadra with wives in grand white marble hall, King Shrenik standing amazed in background.",
+   "motion": "pan",
+   "title": "32 RANIYAN",
+   "keywords": [
+    "Shalibhadra",
+    "vaibhav"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s1p.jpg",
+      "prompt": "Shalibhadra, a handsome man in his mid-twenties with short dark hair, wearing an ornate silk dhoti, golden crown, and heavy gold necklaces, sits on a grand white marble throne, surrounded by his wives, young women in fine pastel silk sarees with fresh jasmine flowers in their hair, moving with fluid grace, while King Shrenik, an older man with a grey-streaked beard and royal silk robes, stands nearby observing with a respectful expression, set in a grand white marble palace hall with finely carved pillars, serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.26
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Par shuruat hui ek purani jhopdi mein.",
+   "type": "image",
+   "prompt": "Small mud-stone hut in ancient Indian village, warm sunset, humble setting.",
+   "motion": "pull",
+   "title": "PURANI JHOPADI",
+   "keywords": [
+    "jhopdi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s2o.jpg",
+      "prompt": "Hut, a small structure made of mud and stone with a thatched roof, sits nestled in an ancient Indian village lane. Warm sunset light filters through the open doorway, casting a gentle glow on the earthen floor where a simple wooden bowl rests. The humble interior features an earthen hearth with glowing embers, creating a rustic, peaceful atmosphere. Serene painterly Indian style, warm golden light, uncluttered, vertical 9:16 composition, main subject centered, generous calm space above and below.",
+      "fails": {},
+      "top": 0.17
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Pichle janam mein Sangama bhookha, kheer ke liye rota.",
+   "type": "image",
+   "prompt": "Sangama in village lane watching children eat sweets, sad teary eyes, tattered clothes.",
+   "motion": "tilt",
+   "title": "BHOOKHA SANGAMA",
+   "keywords": [
+    "Sangama",
+    "kheer"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s3o.jpg",
+      "prompt": "Shalibhadra (Sangama): Young boy, thin build, olive skin, messy dark hair, wearing tattered brown cotton rags, expressive sad eyes with glistening tears, humble posture, standing in dusty village lanes, holding a simple earthen bowl with both hands. He is watching other children in the distance enjoying sweets. The setting is a rustic village lane with mud and stone houses, warm golden sunset light, serene painterly Indian style, soft gentle glow, vertical 9:16 composition, main subject centered, generous calm space.",
+      "fails": {},
+      "top": 0.2
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Maa ne pados se doodh-chawal maang kar kheer banayi.",
+   "type": "image",
+   "prompt": "Poor mother in simple saree cooking kheer in earthen pot over small fire, steam rising, golden firelight on tired loving face.",
+   "motion": "push",
+   "title": "MAA KI KHEER",
+   "keywords": [
+    "maa",
+    "mushkil"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s4o.jpg",
+      "prompt": "Mother, a middle-aged woman with a gentle face and kind eyes, wearing a simple faded cotton saree with her hair tied in a neat bun, stirs a bubbling earthen pot of kheer over a small earthen hearth with glowing embers. She stands inside a small hut made of mud and stone with a thatched roof. Serene painterly Indian style, warm golden firelight illuminating her soft features and loving expression, steam rising, rustic atmosphere, vertical 9:16 composition, centered.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Pehla niwala hothon tak aaya, Jain Muni aaye.",
+   "type": "image",
+   "prompt": "Jain Monk at wooden hut door holding wooden bowl, Sangama holding kheer bowl looking up surprised.",
+   "motion": "punch",
+   "title": "DHARMA LABH",
+   "keywords": [
+    "Jain Muni"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "A Jain monk, a middle-aged man with a shaved head, calm peaceful expression, wearing plain white unstitched cotton robes, carrying a soft white whisk broom, and a white mouth cloth covering his face, stands upright at the doorway of a hut. Beside him, a young boy with messy dark hair, wearing tattered brown cotton rags, holds a simple earthen bowl with both hands and looks up with a surprised expression. Serene painterly Indian style, warm sunset light, rustic mud and stone hut.",
+      "fails": {},
+      "top": 0.23
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Bhookha baccha ne bina soche poori kheer daan kar di.",
+   "type": "image",
+   "prompt": "Sangama pouring white kheer from his bowl into Monk's wooden bowl with pure devotion smile.",
+   "motion": "push",
+   "title": "NISHKAAM DAAN",
+   "keywords": [
+    "daan"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s6q0.jpg",
+      "prompt": "Shalibhadra, a young boy with olive skin and messy dark hair wearing tattered brown cotton rags, and a Jain monk, a middle-aged man with a shaved head wearing plain white unstitched cotton robes and a white mouth cloth, stand in a dusty village lane. The boy pours white kheer from his simple earthen bowl into the monk's wooden bowl with a pure, devoted smile. Serene painterly Indian style, warm golden sunset light, ancient sandstone architecture in the background, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.37
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Ye nishkaam bhav agle janam mein atyant vaibhav bana.",
+   "type": "image",
+   "prompt": "Visual metaphor: earthen kheer bowl morphing into golden crown, serene painterly style, gentle glow.",
+   "motion": "pull",
+   "title": "BHAV KA PHAL",
+   "keywords": [
+    "bhav",
+    "vaibhav"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s7o.jpg",
+      "prompt": "An earthen kheer bowl held in cupped hands transforms into a golden crown, golden light particles swirling upward from rough clay to ornate gold filigree, the bowl's rim becoming crown's circlet, set on white marble threshold of a Jain palace, tall shikhara spires rising behind carved pillars, warm golden sunrise light bathing the metamorphosis, serene painterly Indian style, gentle glow on polished stone floors, vertical composition with the transforming object centered in middle third, ample peaceful space above spires and below marble steps.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "16 mehengi shawls sirf pair ponchne ke kaam aati theen.",
+   "type": "image",
+   "prompt": "Queens in white marble palace using rich diamond-studded shawls to wipe feet on carved stone floor.",
+   "motion": "pan",
+   "title": "ATYANT VAIBHAV",
+   "keywords": [
+    "shawls"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s8p.jpg",
+      "prompt": "Young women, elegant graceful posture, wearing fine silk sarees in pastel colors, delicate gold jewelry, calm serene faces, long dark hair adorned with fresh jasmine flowers, gracefully kneeling on polished stone floors, gently pressing rich, intricately embroidered shawls against their feet to wipe the floor, inside a grand white marble palace with finely carved pillars and floral motifs, serene painterly Indian style, warm golden light, uncluttered open halls, vertical 9:16 composition, main subject in the middle third, generous calm space above and below.",
+      "fails": {},
+      "top": 0.3
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Raja Shrenik mila toh pata chala — asli malik atma hai.",
+   "type": "image",
+   "prompt": "King Shrenik meeting Shalibhadra in grand courtyard, Shalibhadra thoughtful realizing true master.",
+   "motion": "push",
+   "title": "ASLI MALIK",
+   "keywords": [
+    "King Shrenik",
+    "atma"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s9p.jpg",
+      "prompt": "King Shrenik, an older man with a grey-streaked beard wearing royal silk robes and an elaborate golden crown, stands with a dignified posture holding a golden staff, facing Shalibhadra, a handsome man in his mid-twenties with short dark hair wearing an ornate silk dhoti and heavy gold necklaces, sitting on a grand white marble throne in an open palace courtyard with finely carved pillars and tall shikhara spires, serene painterly Indian style, warm golden sunlight, peaceful atmosphere, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.32
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Seekh: Daan ki keemat paise se nahi, bhav se hoti hai.",
+   "type": "card",
+   "prompt": "A single lit diya lamp centered on a plain white marble pedestal, tiny steady flame, soft golden glow, completely minimal background, vast empty space above and below for text, vertical 9:16 composition, subject in middle third, no distractions.",
+   "motion": "pull",
+   "big": "BHAV HI SHAKTI",
+   "small": "Daan ki asli shakti",
+   "keywords": [
+    "Seekh",
+    "bhav"
+   ],
+   "title": "",
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s10o.jpg",
+      "prompt": "A single lit diya lamp centered on a plain white marble pedestal, tiny steady flame burning upright, minimal background of ancient Indian sandstone and white-marble Jain temple architecture with tall pointed shikhara spires and finely carved pillars, serene painterly Indian style, warm golden light on white marble, calm and peaceful gentle glow, vertical 9:16 composition with subject in middle third and generous calm space above and below",
+      "fails": {},
+      "top": 0.25
+     }
+    ],
+    "passed": true
+   },
+   "real": null
+  },
+  {
+   "vo": "Kabhi bina swarth madad ki? Batao, Jai Jinendra.",
+   "type": "image",
+   "prompt": "Peaceful Jain temple shikhara against golden sunrise sky, birds flying, calm uncluttered.",
+   "motion": "tilt",
+   "title": "AAP BATAO",
+   "keywords": [
+    "madad",
+    "Jai Jinendra"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s11o.jpg",
+      "prompt": "White marble Jain temple, intricate carvings, tall shikhara spires, serene idol in padmasana pose on pedestal, soft golden sunrise light, peaceful atmosphere, clear sky background with birds flying, standing majestically against a radiant dawn, ancient sandstone and white-marble spires rising into a calm uncluttered sky, serene painterly Indian style, warm golden light on white marble, gentle glow, vertical 9:16 composition with main subject in middle third, generous calm space above and below",
+      "fails": {},
+      "top": 0.34
+     }
+    ],
+    "passed": true
+   }
+  }
+ ],
+ "music_mood": "emotional",
+ "caption": "Ek katori kheer ne gareeb ko raja bana diya? ✨\n\nShalibhadra ki kahani batati hai ki daan chhota ho ya bada, bhav saccha ho to phal anant milta hai.\n\nKabhi aapne bina swarth kisi ki madad ki?\n\nSrot: Trishashti-shalaka-purusha-charitra\n\n#Jainism #Shalibhadra #Inspiration #Ahimsa #JainStory #NavkarBhav #Daan #Karma",
+ "hashtags": [
+  "#Jainism",
+  "#Shalibhadra",
+  "#Inspiration",
+  "#Ahimsa",
+  "#JainStory",
+  "#NavkarBhav",
+  "#Daan",
+  "#Karma"
+ ],
+ "claims": [
+  {
+   "claim": "Shalibhadra was a wealthy merchant with 32 wives in his life as Shalibhadra.",
+   "basis": "Source: Trishashti-shalaka-purusha-charitra and Jain tradition."
+  },
+  {
+   "claim": "In his previous birth, Shalibhadra was a poor boy named Sangama who offered kheer to a Jain monk.",
+   "basis": "Source: Trishashti-shalaka-purusha-charitra by Hemachandra."
+  },
+  {
+   "claim": "King Shrenik visited Shalibhadra's palace and was astonished by its luxury.",
+   "basis": "Source: Jain tradition and Trishashti-shalaka-purusha-charitra."
+  }
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "fc294ac58f",
+  "161339712e",
+  "7f620e6fdf",
+  "0755cc155a",
+  "4396759d41",
+  "b2fabb69c4",
+  "f945e2a937",
+  "9db4cc694f",
+  "e15cfaed29",
+  "a688e48ca2",
+  "6ce7203c71",
+  "7fa182f8ef",
+  "1e1964f463"
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Shalibhadra (Boy/Sangama)",
+    "scenes": [
+     4,
+     6,
+     7
+    ],
+    "look": "Young boy, thin build, olive skin, messy dark hair, wearing tattered brown cotton rags, expressive sad eyes, humble posture, standing in dusty village lanes, holding a simple earthen bowl with both hands."
+   },
+   {
+    "name": "Shalibhadra (King)",
+    "scenes": [
+     1,
+     2,
+     9,
+     10
+    ],
+    "look": "Handsome man, mid-twenties, athletic build, glowing olive skin, short dark hair, wearing ornate silk dhoti, golden crown, heavy gold necklaces, calm serene expression, sitting on a grand white marble throne."
+   },
+   {
+    "name": "Mother",
+    "scenes": [
+     5
+    ],
+    "look": "Middle-aged woman, gentle face, kind eyes, wearing simple faded cotton saree, hair tied in neat bun, standing near earthen hearth, warm firelight illuminating her soft features and loving expression."
+   },
+   {
+    "name": "Jain Monk",
+    "scenes": [
+     6,
+     7
+    ],
+    "look": "Middle-aged man, shaved head, calm peaceful expression, wearing plain white unstitched cotton robes, carrying soft white whisk broom, white mouth cloth covering face, standing with upright posture, holding a wooden bowl."
+   },
+   {
+    "name": "King Shrenik",
+    "scenes": [
+     2,
+     10
+    ],
+    "look": "Older man, regal presence, grey-streaked beard, wearing royal silk robes, elaborate golden crown, standing with dignified posture, respectful expression, holding a golden staff, observing the surroundings with keen interest."
+   },
+   {
+    "name": "Wives",
+    "scenes": [
+     2,
+     9
+    ],
+    "look": "Young women, elegant graceful posture, wearing fine silk sarees in pastel colors, delicate gold jewelry, calm serene faces, long dark hair adorned with fresh jasmine flowers, moving with fluid grace."
+   }
+  ],
+  "places": [
+   {
+    "name": "Hut",
+    "scenes": [
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "look": "Small structure made of mud and stone, thatched roof, humble interior, warm sunset light filtering through doorway, simple wooden bowl on floor, earthen hearth with glowing embers, rustic atmosphere."
+   },
+   {
+    "name": "Palace",
+    "scenes": [
+     1,
+     2,
+     9,
+     10
+    ],
+    "look": "Grand architecture, white marble walls, finely carved pillars with floral motifs, tall pointed shikhara spires, polished stone floors, glowing oil lamps, serene atmosphere, uncluttered open halls, expansive golden light."
+   },
+   {
+    "name": "Temple",
+    "scenes": [
+     11,
+     12
+    ],
+    "look": "White marble Jain temple, intricate carvings, tall shikhara spires, serene idol in padmasana pose on pedestal, soft golden sunrise light, peaceful atmosphere, clear sky background with birds flying."
+   }
+  ]
+ }
+}

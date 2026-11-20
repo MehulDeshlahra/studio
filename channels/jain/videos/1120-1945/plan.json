@@ -1,0 +1,403 @@
+{
+ "slug": "draupadi-jain-devotee",
+ "title": "Kya Draupadi ek Jain sadhika thi?",
+ "hooks": [
+  "Kya Draupadi ka jeevan sirf ek yuddh tha?",
+  "Draupadi ki adhyatmik yatra ka raaz kya hai?",
+  "Trishashti-shalaka-purusha-charitra mein Draupadi ki kahani."
+ ],
+ "hook_choice": 1,
+ "hook_why": "It directly challenges the common perception of Draupadi as just a warrior-queen, sparking curiosity about her spiritual side.",
+ "metaphor": "A lotus blooming in muddy water, representing the soul seeking purity amidst the chaos of worldly life.",
+ "mechanism": [],
+ "cast": {
+  "Draupadi": "A woman with a calm, dignified face, wearing traditional ancient Indian attire, simple jewelry, and a serene expression.",
+  "Jain Muni": "An elderly monk with a peaceful face, wearing plain white unstitched cotton robes, carrying a white rajoharan (whisk broom)."
+ },
+ "scenes": [
+  {
+   "vo": "Kya Draupadi ka jeevan sirf ek yuddh aur apmaan ki kahani thi?",
+   "type": "image",
+   "prompt": "Close-up of Draupadi with a serene expression, painterly Indian style, warm golden lighting, ancient palace background with carved sandstone pillars.",
+   "motion": "push",
+   "title": "DRAUPADI KA RAZ",
+   "keywords": [
+    "Draupadi",
+    "yuddh"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s0.jpg",
+      "prompt": "Draupadi, age thirty, slender build, oval face, large dark eyes, long black hair in single braid adorned with jasmine flowers, golden skin tone, deep red silk saree with gold border draped in royal style, gold necklace, earrings, bangles, calm serene expression, hands folded gracefully, standing in an ancient Indian palace hall with tall carved sandstone pillars, white marble floor inlaid with floral patterns, serene painterly Indian style, warm golden sunset light filtering through arched windows, close-up, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.32
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Trishashti-shalaka-purusha-charitra ke anusar, unka jeevan ek gehri adhyatmik khoj bhi tha.",
+   "type": "image",
+   "prompt": "An ancient palm-leaf manuscript lying on a white marble pedestal, soft golden glow, serene atmosphere.",
+   "motion": "pan",
+   "title": "SROT: TRISHASHTI",
+   "keywords": [
+    "Trishashti",
+    "adhyatmik"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s1o.jpg",
+      "prompt": "Ancient palm-leaf manuscript bound with cord, resting on a carved white marble pedestal decorated with lotus motifs, the yellowed leaves fanned open to reveal intricate black markings, set within a serene white marble chamber with smooth walls, in the style of serene painterly Indian art, illuminated by soft golden light filtering from a high window, creating a gentle glow on the delicate brittle texture, vertical 9:16 composition with generous calm space above and below, peaceful and reverent atmosphere.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Mahabharata ki raj-satta aur dukhon ke beech, unhone karma ke siddhant ko samjha.",
+   "type": "image",
+   "prompt": "Draupadi sitting in a quiet corner of a palace, looking at the horizon, ancient Indian architecture, warm sunset light.",
+   "motion": "pull",
+   "title": "KARMA KA SIDDHANT",
+   "keywords": [
+    "karma",
+    "dukh"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s2.jpg",
+      "prompt": "Draupadi, age thirty, slender build, oval face, large dark eyes, long black hair in single braid adorned with jasmine flowers, golden skin tone, deep red silk saree with gold border draped in royal style, gold necklace, earrings, bangles, calm serene expression, hands folded gracefully, sitting on royal cushions in a quiet corner, gazing towards the horizon, ancient Indian palace hall with tall carved sandstone pillars, white marble floor, arched windows, serene painterly Indian style, warm golden sunset light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Jain granthon mein unhe ek aisi jeevatma bataya gaya hai jo moh-maya se mukti chahti thi.",
+   "type": "image",
+   "prompt": "A Jain Muni in plain white robes teaching, Draupadi listening with folded hands, serene temple background with shikhara spires.",
+   "motion": "pan",
+   "title": "MUKTI KI KHOJ",
+   "keywords": [
+    "Jain",
+    "mukti"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s3q0.jpg",
+      "prompt": "A Jain Muni, age sixty, lean build, shaved head, plain white cotton robe unstitched draped over left shoulder, white muhpatti cloth covering mouth, white rajoharan whisk broom held in right hand, standing and gesturing gently while teaching, alongside Draupadi, age thirty, slender build, long black hair in single braid with jasmine flowers, deep red silk saree with gold border, hands folded gracefully in respect, inside an ancient Jain temple sanctum with finely carved white marble pillars, serene painterly Indian style, warm golden sunset light, vertical 9:16.",
+      "fails": {},
+      "top": 0.23
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Unhone jana ki sachha sukh bahari jeet mein nahi, balki atma ki shanti mein hai.",
+   "type": "image",
+   "prompt": "A serene Tirthankara idol in padmasana, eyes half-closed, white marble, soft candlelight, peaceful environment.",
+   "motion": "push",
+   "title": "ATMA KI SHANTI",
+   "keywords": [
+    "sukh",
+    "atma"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s4o.jpg",
+      "prompt": "A smooth, simply carved white marble Tirthankara idol seated cross-legged with hands resting in the lap, half-closed eyes, gentle smile, elongated earlobes, curly hair tied in a topknot, srivatsa mark on the chest, emblem of a conch carved on the lotus pedestal front, inside a serene Jain temple sanctum with finely carved pillars, soft candlelight flickering, serene painterly Indian style, warm golden light, peaceful meditative atmosphere, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {
+       "p2": 0.63
+      },
+      "top": 0.63
+     },
+     {
+      "file": "s4ot1.jpg",
+      "prompt": "A smooth white marble idol of a Tirthankara seated cross-legged with hands resting in the lap, half-closed eyes, gentle smile, elongated earlobes, curly hair tied in a topknot, srivatsa mark on the chest, emblem of a conch carved on the pedestal front, completely plain and unadorned, soft candlelight glow, serene meditative aura, peaceful divine presence, ancient Jain temple sanctum, intricate carved pillars, soft golden light, vertical 9:16 composition, centered, generous calm space above and below.",
+      "fails": {
+       "p3": 0.72
+      },
+      "top": 0.72
+     },
+     {
+      "file": "s4ot2.jpg",
+      "prompt": "White marble idol seated in padmasana on lotus pedestal, half-closed eyes, gentle smile, elongated earlobes, curly hair tied in topknot, srivatsa mark on chest, emblem of conch carved on pedestal front, forehead is completely smooth and unadorned, soft candlelight glow, serene meditative aura, peaceful divine presence, ancient Jain temple sanctum with finely carved pillars, serene painterly Indian style, warm golden light, vertical 9:16 composition, main subject in the middle third, generous calm space above and below.",
+      "fails": {
+       "p2": 0.64
+      },
+      "top": 0.64
+     },
+     {
+      "file": "s4ot3.jpg",
+      "prompt": "A peaceful Temple Sanctum, ancient Jain temple with tall pointed shikhara spires visible through a wide arched doorway, white marble pillars finely carved with celestial beings, a central raised white marble pedestal carved with lotus petals sitting empty, soft candlelight flickering on the stone floor, warm golden sunset light filtering through intricate arched windows, serene spiritual atmosphere, pure sacred simplicity, focused illumination, vertical 9:16 composition, serene painterly Indian style, uncluttered and majestic architectural grandeur.",
+      "fails": {},
+      "top": 0.26,
+      "figure_free": true
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Unka jeevan humein sikhata hai ki kathin paristhitiyon mein bhi hum adhyatmik marg chun sakte hain.",
+   "type": "image",
+   "prompt": "Draupadi walking through a peaceful village lane with mud houses, calm expression, early morning golden light.",
+   "motion": "pan",
+   "title": "ADHYATMIK MARG",
+   "keywords": [
+    "adhyatmik",
+    "marg"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s5.jpg",
+      "prompt": "Draupadi, age thirty, slender build, oval face, large dark eyes, long black hair in single braid adorned with jasmine flowers, golden skin tone, deep red silk saree with gold border draped in royal style, gold necklace, earrings, bangles, calm serene expression, hands folded gracefully, walking with gentle poise through a quiet village lane lined with traditional mud and stone houses, serene painterly Indian style, soft early morning golden sunlight casting long shadows on the earthen path, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {},
+      "top": 0.28
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Sikh yeh hai ki dukh sirf ek pariksha hai, jo humein apne karmon ko sudharne ka avsar deti hai.",
+   "type": "image",
+   "prompt": "A single lotus flower blooming in a calm pond, warm light reflecting on the water, painterly style.",
+   "motion": "pull",
+   "title": "DUKH EK PARIKSHA",
+   "keywords": [
+    "dukh",
+    "pariksha"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s6o.jpg",
+      "prompt": "Single pink lotus flower fully bloomed on broad green leaf, delicate petals curved upward, golden stamens visible, floating on tranquil dark pond water reaching toward warm sunlight, gentle painterly ripples surrounding the sacred bloom, ancient Indian temple architecture with tall pointed shikhara spires visible in the background, serene painterly Indian style with warm golden light on white marble, calm and peaceful ambiance with gentle glow reflecting on water's surface, vertical composition with generous calm space above and below.",
+      "fails": {},
+      "top": 0.29
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Aapke liye adhyatmik shanti ka matlab kya hai? Comment mein batao.",
+   "type": "card",
+   "prompt": "A simple, clean white marble background with a soft glow, text space in the center.",
+   "motion": "push",
+   "title": "AAPKI RAAI",
+   "big": "SHANTI KYA HAI?",
+   "small": "Comment mein batao",
+   "keywords": [
+    "shanti",
+    "comment"
+   ],
+   "real": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "A serene white marble chamber, smooth walls of polished white marble, a central raised pedestal carved with delicate lotus petals, soft golden light filtering from a high window creating a gentle glow, minimal uncluttered space in the center for focus, cool polished stone floor reflecting the ambient light, serene spiritual atmosphere, quiet contemplative setting, pure sacred simplicity, focused illumination, vertical 9:16 composition, centered framing with generous calm space above and below, serene painterly Indian style.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Jai Jinendra.",
+   "type": "image",
+   "prompt": "A beautiful, serene Jain temple entrance in white marble, soft morning light, peaceful atmosphere.",
+   "motion": "pan",
+   "title": "JAI JINENDRA",
+   "keywords": [
+    "Jai Jinendra"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s8q0.jpg",
+      "prompt": "A beautiful, serene Jain temple entrance in white marble, featuring tall pointed shikhara spires and finely carved pillars with celestial beings, stands in the center. The entrance is bathed in soft morning light, creating a gentle glow on the polished stone surfaces. The scene is set in a peaceful, uncluttered courtyard with stepped stone roofs. The style is serene painterly Indian, emphasizing harmonious architectural grandeur and a quiet, contemplative atmosphere, captured in a vertical 9:16 composition with generous space above and below.",
+      "fails": {},
+      "top": 0.25
+     }
+    ],
+    "passed": true
+   }
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Kya aapne Draupadi ki adhyatmik yatra ke baare mein suna hai? Trishashti-shalaka-purusha-charitra ke anusar, unka jeevan sirf yuddh nahi, balki karma aur mukti ki khoj thi. \n\nAapke liye 'sacha sukh' kya hai? Comment mein zaroor batayein.\n\n#Jainism #Draupadi #Mahabharata #Adhyatma #NavkarBhav #Karma",
+ "claims": [
+  {
+   "claim": "Draupadi is mentioned in the Trishashti-shalaka-purusha-charitra.",
+   "basis": "The text is a comprehensive Jain hagiography by Hemachandra that covers the lives of 63 great figures, including those related to the Mahabharata era."
+  },
+  {
+   "claim": "Jain tradition views the Mahabharata characters through the lens of karma and spiritual liberation.",
+   "basis": "Jain texts like the Trishashti-shalaka-purusha-charitra provide a distinct perspective on the characters of the epic, focusing on their karmic journeys."
+  }
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "161339712e",
+  "fc294ac58f",
+  "f945e2a937",
+  "9db4cc694f",
+  "7f620e6fdf",
+  "4396759d41",
+  "6ce7203c71",
+  "b2fabb69c4",
+  "7fa182f8ef",
+  "e15cfaed29",
+  "1e1964f463",
+  "0755cc155a",
+  "a688e48ca2"
+ ],
+ "hashtags": [],
+ "bible": {
+  "figures": [
+   {
+    "name": "Draupadi",
+    "scenes": [
+     1,
+     3,
+     4,
+     6
+    ],
+    "look": "Age thirty, slender build, oval face, large dark eyes, long black hair in single braid adorned with jasmine flowers, golden skin tone, deep red silk saree with gold border draped in royal style, gold necklace, earrings, bangles, bare feet, calm serene expression, hands folded gracefully."
+   },
+   {
+    "name": "Jain Muni",
+    "scenes": [
+     4
+    ],
+    "look": "Age sixty, lean build, shaved head, smooth brown skin, plain white cotton robe unstitched draped over left shoulder, white muhpatti cloth covering mouth, white rajoharan whisk broom held in right hand, bare feet, calm downward gaze, simple peaceful posture, hands resting gently."
+   },
+   {
+    "name": "Tirthankara Idol",
+    "scenes": [
+     5
+    ],
+    "look": "White marble idol seated in padmasana on lotus pedestal, half-closed eyes, gentle smile, elongated earlobes, curly hair tied in topknot, srivatsa mark on chest, emblem of conch carved on pedestal front, soft candlelight glow, serene meditative aura, peaceful divine presence."
+   },
+   {
+    "name": "Palm-leaf Manuscript",
+    "scenes": [
+     2
+    ],
+    "look": "Ancient palm-leaf manuscript bound with cord, yellowed leaves inscribed with black Devanagari script, resting on carved white marble pedestal with lotus motifs, soft golden glow illuminating edges, peaceful reverent atmosphere, delicate brittle texture visible, sacred scholarly object."
+   },
+   {
+    "name": "Lotus Flower",
+    "scenes": [
+     7
+    ],
+    "look": "Single pink lotus flower fully bloomed on broad green leaf, delicate petals curved upward, golden stamens visible, floating on calm dark pond water, warm sunlight reflection shimmering, painterly gentle ripples, serene natural beauty, perfect symmetrical form, tranquil aquatic elegance."
+   }
+  ],
+  "places": [
+   {
+    "name": "Palace Hall",
+    "look": "Ancient Indian palace hall with tall carved sandstone pillars, white marble floor inlaid with floral patterns, arched windows filtering warm golden sunset light, intricate ceiling frescoes, royal cushions on floor, peaceful majestic ambiance, spacious regal interior, harmonious architectural grandeur."
+   },
+   {
+    "name": "Manuscript Chamber",
+    "look": "White marble chamber with smooth walls, central raised pedestal carved with lotus petals, soft golden light from high window, minimal uncluttered space, serene spiritual atmosphere, cool polished stone floor, quiet contemplative setting, pure sacred simplicity, focused illumination."
+   },
+   {
+    "name": "Temple Sanctum",
+    "look": "Ancient Jain temple with tall pointed shikhara spires visible through doorway, white marble pillars finely carved with celestial beings, stepped stone roof, soft candlelight flickering, incense fragrance implied, peaceful meditative sanctum, intricate carved ceilings, divine tranquil interior, spiritual architectural mastery."
+   },
+   {
+    "name": "Village Lane",
+    "look": "Peaceful village lane with mud and stone houses, thatched roofs, uneven stone pathway, early morning golden light casting long shadows, potted plants at doorways, quiet simple rural charm, calm serene mood, dust motes dancing, humble harmonious dwellings, timeless pastoral tranquility."
+   },
+   {
+    "name": "Lotus Pond",
+    "look": "Calm rectangular pond with stone steps, dark still water reflecting sky, pink lotus blooms and broad leaves floating, warm sunlight creating golden highlights, surrounding greenery lush, painterly tranquil scene, peaceful natural beauty, mirror-like surface, serene aquatic sanctuary, reflective quietude."
+   },
+   {
+    "name": "Marble Text Space",
+    "look": "Clean white marble wall with subtle veining, soft diffused golden glow from unseen source, smooth uncluttered surface, ample central negative space for text, serene minimalist elegance, peaceful spiritual backdrop, pure luminous simplicity, focused gentle radiance, unadorned sacred canvas."
+   },
+   {
+    "name": "Temple Gateway",
+    "look": "Beautiful Jain temple entrance with ornate white marble archway, carved elephants and floral motifs, tall shikhara spire rising behind, soft morning light illuminating steps, peaceful inviting atmosphere, sacred tranquil threshold, intricate lintel carvings, harmonious proportional design, divine welcoming portal."
+   }
+  ]
+ },
+ "pic_redraws": 2
+}

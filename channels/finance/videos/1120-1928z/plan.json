@@ -1,0 +1,75 @@
+{
+ "slug": "purana-sona-bechna",
+ "title": "Purana sona bechne par poora paisa kyun nahi milta?",
+ "hooks": [
+  "Raghav ne 22K ki chain bechi, par cash kam mila. Kyun?",
+  "Purana sona bech rahe ho? Ye 3 wajah se paisa kat-ta hai.",
+  "Gold bechne gaye aur rate kam mila? Ye galti mat karna."
+ ],
+ "hook_choice": 0,
+ "hook_why": "It starts with a relatable problem (getting less money) which directly addresses the viewer's curiosity about the topic.",
+ "metaphor": "Gold valuation as a balance: Gross weight vs Net gold weight after removing impurities.",
+ "mechanism": [
+  "Suno... jeweller pehle XRF machine se sona check karta hai.",
+  "Us machine ki ray batati hai sona kitna khara hai.",
+  "Phir woh patthar aur solder ka wazan kaat deta hai.",
+  "Yeh 1 se 3 percent tak ho sakta hai.",
+  "Making charges? Woh toh wapas milte hi nahi.",
+  "Kyunki woh banwane ki mehnat thi, sona nahi.",
+  "Ab bachta hai shuddh sona ka wazan.",
+  "Uske hisaab se aaj ka bhav lagta hai.",
+  "Agar GST banta hai, toh woh bhi kaat lete hain.",
+  "Aakhir mein... likhit receipt zaroor maango."
+ ],
+ "cast": {},
+ "scenes": [],
+ "music_mood": "calm",
+ "caption": "Purana sona bechne par poora paisa kyun nahi milta? 🧐\n\nMaking charges aur solder ki wajah se resale value kam ho jaati hai. Hamesha purity test karwayein aur rates compare karein.\n\nSave karo, kaam aayega 📌\n\nKya aapne kabhi sona becha hai? Comments mein batao.\n\nEducation only, not financial advice.",
+ "hashtags": [
+  "#personalfinance",
+  "#gold",
+  "#financeinhindi",
+  "#moneytips",
+  "#bis"
+ ],
+ "claims": [
+  {
+   "claim": "Making charges are not returned when selling old gold.",
+   "basis": "Standard industry practice for gold resale as confirmed by goldmartjewels.com"
+  },
+  {
+   "claim": "Solder and stones are deducted from the total weight during valuation.",
+   "basis": "Standard gold valuation process as per goldmartjewels.com"
+  },
+  {
+   "claim": "BIS hallmark is used to verify gold purity.",
+   "basis": "Bureau of Indian Standards (BIS) mandate"
+  }
+ ],
+ "explainer": {
+  "score": 0,
+  "ok": false,
+  "steps_learned": [],
+  "missing_steps": [
+   "Script not provided in prompt — lines 1-6 are empty"
+  ],
+  "unsourced": []
+ },
+ "phone_bg": true,
+ "brain_ids": [
+  "fc294ac58f",
+  "4396759d41",
+  "1e1964f463",
+  "b2fabb69c4",
+  "f945e2a937",
+  "6ce7203c71",
+  "b69d65467f",
+  "e15cfaed29",
+  "161339712e",
+  "7f620e6fdf",
+  "0755cc155a",
+  "a688e48ca2",
+  "9db4cc694f",
+  "1e60a34718"
+ ]
+}

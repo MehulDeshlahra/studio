@@ -121,5 +121,221 @@
    "layout": "mixed:crop+fit"
   },
   "removed_why": "20 Nov frame audit: Japanese-audio cutscene, Japanese captions over English subtitles"
+ },
+ {
+  "job": "1120-1735a-c1",
+  "topic": "600 DIAPERS A MONTH? TRIPLETS MATH",
+  "title": "600 DIAPERS A MONTH? TRIPLETS MATH",
+  "status": "removed",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "vertical"
+  },
+  "removed_why": "20 Nov: not gaming, moved to Cut Capsule"
+ },
+ {
+  "job": "1120-1735f-c1",
+  "topic": "BEST DIAPERS FOR BLOWOUTS REVEALED",
+  "title": "BEST DIAPERS FOR BLOWOUTS REVEALED",
+  "status": "removed",
+  "review": [
+   "length 11.98 s"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 22.53,
+   "layout": "vertical"
+  },
+  "approved_by": "owner 20 Nov: loosened reviewers, soft problems approved",
+  "minor": [
+   "length 11.98 s"
+  ],
+  "removed_why": "20 Nov: not gaming, moved to Cut Capsule"
+ },
+ {
+  "job": "1120-1819-c1",
+  "topic": "THIS GADGET IS FROM THE FUTURE",
+  "title": "THIS GADGET IS FROM THE FUTURE",
+  "status": "held",
+  "review": [
+   "not brand-safe: 'Niggas' in the clip (brands and campaigns pay for brand-safe clips only)",
+   "The video features a large, heavily blurred duplicate/enlargement of the main speaker's face dominating the lower half of the frame, which obstructs the visual composition.",
+   "a. Is the same person shown twice at once in two SHARP copies, top and bottom or side by side? (A heavily BLURRED enlarged copy of the frame behind the video is our intended background style: that is "
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=80Tvy2tORvs",
+   "start": 19.55,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-1819-c2",
+  "topic": "GAMING GOALS: GETTING ABSOLUTELY FRIED",
+  "title": "GAMING GOALS: GETTING ABSOLUTELY FRIED",
+  "status": "removed",
+  "review": [
+   "not brand-safe: 'Nigga' in the clip (brands and campaigns pay for brand-safe clips only)",
+   "A heavily blurred enlarged copy of the stream frame is duplicated underneath as a split-screen background, creating a distracting lower half.",
+   "The split-screen layout places a massive blurred duplicate of the streamer's torso covering the lower half of the vertical canvas.",
+   "checklist: same person shown twice"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=80Tvy2tORvs",
+   "start": 0.0,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-1940a-c1",
+  "topic": "BIG STEAM SAVINGS",
+  "title": "BIG STEAM SAVINGS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/O1zu3kBp",
+   "start": 0.0,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1120-1940b-c1",
+  "topic": "BIG STEAM SAVINGS",
+  "title": "BIG STEAM SAVINGS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/O1zu3kBp",
+   "start": 0.0,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1120-1940c-c1",
+  "topic": "BIG STEAM SAVINGS",
+  "title": "BIG STEAM SAVINGS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/O1zu3kBp",
+   "start": 0.0,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1120-1951a-c1",
+  "topic": "WIN A SUSHI BOAT",
+  "title": "WIN A SUSHI BOAT",
+  "status": "removed",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "fill"
+  },
+  "removed_why": "20 Nov: not gaming, moved to Cut Capsule"
+ },
+ {
+  "job": "1120-1951b-c1",
+  "topic": "WIN A SUSHI BOAT",
+  "title": "WIN A SUSHI BOAT",
+  "status": "held",
+  "review": [
+   "loudness -17.3 LUFS"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1120-1951c-c1",
+  "topic": "RASCALS HAND TAP CHALLENGE",
+  "title": "RASCALS HAND TAP CHALLENGE",
+  "status": "removed",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 22.88,
+   "layout": "stack"
+  },
+  "removed_why": "20 Nov: not gaming, moved to Cut Capsule"
+ },
+ {
+  "job": "1120-1951d-c1",
+  "topic": "WIN $3 PER 1K VIEWS",
+  "title": "WIN $3 PER 1K VIEWS",
+  "status": "removed",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "fill"
+  },
+  "removed_why": "20 Nov: not gaming, moved to Cut Capsule"
+ },
+ {
+  "job": "1120-1951e-c1",
+  "topic": "Rascal Friends is now Rascals",
+  "title": "Rascal Friends is now Rascals",
+  "status": "removed",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 1.42,
+   "layout": "stack"
+  },
+  "removed_why": "20 Nov: not gaming, moved to Cut Capsule"
+ },
+ {
+  "job": "1120-1951f-c1",
+  "topic": "GET PAID $3 PER 1K VIEWS",
+  "title": "GET PAID $3 PER 1K VIEWS",
+  "status": "removed",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "fill"
+  },
+  "removed_why": "20 Nov: not gaming, moved to Cut Capsule"
+ },
+ {
+  "job": "1120-2040a-c1",
+  "topic": "STEAM BLACK FRIDAY SALE",
+  "title": "STEAM BLACK FRIDAY SALE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/O1zu3kBp",
+   "start": 0.0,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1120-2040b-c1",
+  "topic": "SEGA BLACK FRIDAY SALE",
+  "title": "SEGA BLACK FRIDAY SALE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/O1zu3kBp",
+   "start": 0.0,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1120-2040c-c1",
+  "topic": "SEGA BLACK FRIDAY SALE",
+  "title": "SEGA BLACK FRIDAY SALE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://f.io/O1zu3kBp",
+   "start": 0.0,
+   "layout": "mixed:crop+fill"
+  }
  }
 ]

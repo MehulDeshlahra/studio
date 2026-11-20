@@ -1,0 +1,26 @@
+{
+ "topic": "Was Draupadi a Jain devotee? The untold story of her spiritual journey and path to liberation. (Source: Trishashti-shalaka-purusha-charitra)",
+ "title": "Kya Draupadi ek Jain sadhika thi?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.9,
+  "true_peak": -1.8,
+  "dur": 45.73
+ },
+ "vision": {
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9906542056074766,
+  "words": 115,
+  "problems": []
+ },
+ "ok": true
+}

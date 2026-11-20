@@ -112,7 +112,21 @@
    "small": null,
    "sub": null,
    "label": null,
-   "skin": "painting"
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Krishna"
+    ],
+    "tries": [
+     {
+      "file": "s4q0.jpg",
+      "prompt": "Krishna, the divine youth with radiant dark blue skin, peacock feather in a golden crown, yellow silk dhoti, and flute at his waist, alongside Satyabhama, the radiant queen in a deep maroon silk saree with gold borders, mount the majestic Garuda, a golden-winged divine eagle with a human torso and white face. They ascend into a vast sky, wings unfolding with radiant golden light. Painterly cinematic Indian miniature style, warm gold and deep maroon palette, soft divine light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.15
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Pragjyotishpur ke dwar pe Mura naam ka rakshas tha",
@@ -163,7 +177,21 @@
    "sub": null,
    "label": null,
    "skin": "puppet",
-   "real": null
+   "real": null,
+   "pic": {
+    "refs": [
+     "Krishna"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "Krishna, the divine youth with radiant dark blue skin, wearing a peacock feather in a golden crown and a yellow silk dhoti with gold embroidery, flute at his waist, calm and compassionate expression, mounted on a majestic golden-winged divine eagle with a human torso, facing Narakasura, a large demon king with dark skin, fierce red eyes, sharp fangs, wearing ornate iron armor and a spiked crown, wielding multiple weapons, emerging from a massive stone palace gate, painterly cinematic Indian miniature style, warm gold and deep maroon, soft divine light, 9:16 vertical.",
+      "fails": {},
+      "top": 0.17
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Krishna ne uska vadh kiya, Satyabhama ne saath diya",
@@ -318,5 +346,100 @@
   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/katha/offer-krishna.jpg"
  },
  "skin": "painting",
- "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "bible": {
+  "figures": [
+   {
+    "name": "Krishna",
+    "scenes": [
+     1,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     12,
+     14
+    ],
+    "look": "Divine youth with radiant dark blue skin and an athletic build. He wears a peacock feather in a golden crown, a yellow silk dhoti with intricate gold embroidery, and ornate gold jewelry. A flute rests at his waist, and his expression remains calm and compassionate."
+   },
+   {
+    "name": "Satyabhama",
+    "scenes": [
+     1,
+     5,
+     9
+    ],
+    "look": "Radiant queen with fair skin and a graceful build. She wears an elegant traditional silk saree in deep maroon with gold borders, adorned with ornate gold necklaces and bangles. Her expression is determined and compassionate, standing in a regal, upright posture."
+   },
+   {
+    "name": "Narakasura",
+    "scenes": [
+     2,
+     4,
+     8,
+     9
+    ],
+    "look": "Large demon king with dark skin, a muscular build, fierce red eyes, and sharp fangs. He wears ornate iron armor, a spiked crown, and carries multiple weapons in his hands. He maintains an aggressive, powerful stance, exuding a dark and formidable presence."
+   },
+   {
+    "name": "Aditi",
+    "scenes": [
+     2,
+     10
+    ],
+    "look": "Divine mother goddess with glowing fair skin and a gentle, serene face. She wears a simple white silk saree with golden trim and modest gold jewelry. Her posture is graceful, and her hands are held in a gesture of blessing and relief."
+   },
+   {
+    "name": "Mura",
+    "scenes": [
+     6,
+     7
+    ],
+    "look": "Fierce demon guardian with dark skin, a massive muscular build, and sharp horns. He wears heavy bronze armor and carries a large iron club. He maintains an intimidating, vigilant posture while standing guard at the massive palace gate."
+   },
+   {
+    "name": "Bhoodevi",
+    "scenes": [
+     4
+    ],
+    "look": "Earth goddess with radiant skin and a gentle, maternal face. She wears a traditional silk saree in earthy tones, adorned with gold jewelry. Her expression is loving, and her hands are raised in a gesture of blessing toward her son."
+   },
+   {
+    "name": "16000 Women",
+    "scenes": [
+     3,
+     10
+    ],
+    "look": "A large group of women with varied skin tones, wearing colorful silk sarees and ornate gold jewelry. They display expressions of relief and joy. They stand together in orderly rows, maintaining a graceful and hopeful posture."
+   }
+  ],
+  "places": [
+   {
+    "name": "Pragjyotishpur Palace",
+    "scenes": [
+     1,
+     3,
+     6,
+     8
+    ],
+    "look": "Massive stone architecture featuring high arched gates and intricate carvings of mythical creatures. The structure is decorated with warm gold and deep maroon accents, illuminated by soft divine light, remaining ornate yet uncluttered in design."
+   },
+   {
+    "name": "Dark Palace Hall",
+    "scenes": [
+     2
+    ],
+    "look": "Dimly lit interior featuring stone pillars and deep shadows. A throne made of dark obsidian sits prominently, decorated with ornate carvings and deep maroon tapestries. Glowing embers provide light, creating a mysterious and epic atmosphere."
+   },
+   {
+    "name": "Palm-leaf manuscript",
+    "scenes": [
+     11
+    ],
+    "look": "Ancient textured surface showing aged organic material. The background features soft golden light, warm gold and deep maroon decorative borders, and clear, elegant artistic space, maintaining an ornate but uncluttered aesthetic suitable for traditional storytelling."
+   }
+  ]
+ }
 }

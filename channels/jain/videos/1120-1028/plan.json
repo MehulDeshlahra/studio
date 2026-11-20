@@ -37,7 +37,19 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s0o.jpg",
+      "prompt": "A young adult with a slender build, calm face, short dark hair, wearing a casual cotton shirt and trousers, stands in a serene courtyard. He holds a smartphone at eye level, his gaze fixed on the screen with a worried expression, his reflection visible on the glass surface. The setting is a majestic Jain temple with white marble architecture, tall pointed shikhara spires, and finely carved pillars. The scene is captured in a serene painterly Indian style, bathed in warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.56
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "2500 saal pehle ek raja ne jawab diya tha.",
@@ -53,7 +65,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s1q0.jpg",
+      "prompt": "Raja Megharath, a middle-aged man with a regal build, calm face, short dark hair, wearing a golden crown with intricate floral carvings and a white silk dhoti with gold borders, sits on a carved sandstone throne. Before him stands a Jain Muni, a middle-aged man with a serene face, clean-shaven head, wearing plain white unstitched cotton robes, holding a white rajoharan in his right hand, with a white muhpatti covering his mouth. They are in an ancient Jain palace courtyard with tall pointed shikhara spires, finely carved pillars, and polished white marble floors, bathed in warm golden hour light, serene painterly Indian style.",
+      "fails": {},
+      "top": 0.18
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Raja Megharath ke paas sab kuch tha.",
@@ -69,7 +95,19 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s2o.jpg",
+      "prompt": "Raja Megharath, a middle-aged man with a regal build, calm face, short dark hair, wearing a golden crown with intricate floral carvings, a white silk dhoti with gold borders, and a simple pearl necklace, sits peacefully on a carved sandstone throne. The palace interior features ancient Indian sandstone walls with intricate lotus carvings, polished white marble floors, large wooden granaries, and ornate jewel chests. Serene painterly Indian style, warm golden light, gentle glow, uncluttered, vertical 9:16 composition, centered subject.",
+      "fails": {},
+      "top": 0.24
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'",
@@ -85,7 +123,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s3q0.jpg",
+      "prompt": "A Jain Muni, a middle-aged man with a slender build, serene face, clean-shaven head, wearing plain white unstitched cotton robes, a white muhpatti covering his mouth, and holding a white rajoharan in his right hand, gestures gently toward the heart of Raja Megharath. The Raja, a middle-aged man with a regal build, short dark hair, wearing a golden crown and white silk dhoti, listens with folded hands. Set within a palace interior with intricate lotus-carved sandstone pillars, serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.3
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'",
@@ -101,7 +153,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s4q0.jpg",
+      "prompt": "Raja Megharath, a middle-aged man with a regal build and golden crown, sits on a carved sandstone throne, his hands open as precious jewels slip through his fingers like sand, transforming into soft lotus petals mid-air. Beside him, a Jain Muni, a slender man in plain white unstitched cotton robes with a white rajoharan and muhpatti, stands in calm approval. Palace interior with intricate lotus carvings, serene painterly Indian style, warm golden hour light, vertical 9:16 composition, uncluttered marble floors.",
+      "fails": {},
+      "top": 0.26
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Yahi hai Aparigraha: zaroorat lekin moh nahi.",
@@ -117,7 +183,21 @@
    ],
    "real": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "A smooth, polished white marble slab resting in the center of a serene courtyard, featuring a soft, ethereal golden glow emanating from its surface, surrounded by delicate, floating lotus petals drifting gently through the air. The setting is a tranquil Jain temple with finely carved white marble pillars and stepped stone roofs in the background. The style is a serene painterly Indian aesthetic with warm golden hour lighting, creating a peaceful, uncluttered, and meditative atmosphere, captured in a vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.18
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Aaj bhi wohi sawal: kitna kaafi hai?",
@@ -133,7 +213,19 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s6o.jpg",
+      "prompt": "A young adult with a slender build, calm face, short dark hair, wearing a casual cotton shirt and trousers, stands in the center. To the left, a chaotic pile of modern shopping bags accumulates. To the right, a single pristine lotus flower floats in calm, still water. In the background, the faint silhouette of a white marble Jain temple with tall pointed shikhara spires rises against a warm golden sky. Serene painterly Indian style, soft golden light, peaceful atmosphere, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.19
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Muni ne upadesh diya.",
@@ -149,7 +241,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "Jain Muni, a middle-aged man with a slender build, serene face, clean-shaven head, wearing plain white unstitched cotton robes, holding a white rajoharan in his right hand, with a white muhpatti covering his mouth, gesturing gently with his left hand, standing before Raja Megharath, a middle-aged man with a regal build, short dark hair, wearing a golden crown and white silk dhoti, sitting on a carved sandstone throne with hands folded in prayer, set in a serene palace courtyard with intricate lotus carvings, warm golden hour light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.28
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Aaj hum bhi chhodo jo zaroori nahi hai.",
@@ -165,7 +271,19 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s8o.jpg",
+      "prompt": "Young adult slender build calm face short dark hair casual cotton shirt and trousers light skin tone peaceful expression standing posture open hands serene gaze gently releasing several shopping bags dissolving into golden light particles within a serene Jain temple courtyard white marble architecture tall pointed shikhara spires finely carved pillars lotus motifs on walls stepped stone roofs warm golden light uncluttered marble floors peaceful atmosphere painterly Indian style gentle glow vertical composition subject centered in middle third generous calm space above below",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Chhota sa badlav, badi shanti laata hai.",
@@ -181,7 +299,27 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s9o.jpg",
+      "prompt": "A split-screen composition showing two desks under warm golden light. On the left, a cluttered desk covered in scattered papers, pens, and tangled cables. On the right, a clean, minimalist desk featuring a single, pristine pink lotus flower resting on a polished white marble surface. The background transitions from a chaotic workspace to a serene, ancient Indian sandstone wall with intricate lotus carvings. The scene is captured in a soft, painterly Indian style with a gentle, peaceful glow, vertical 9:16 framing.",
+      "fails": {
+       "split": 0.82
+      },
+      "top": 0.82
+     },
+     {
+      "file": "s9ot1.jpg",
+      "prompt": "A young adult with a slender build, calm face, short dark hair, wearing a casual cotton shirt and trousers, stands peacefully in the center of a serene Jain temple courtyard. The person holds a single lotus flower in open hands. The setting features white marble architecture with tall pointed shikhara spires and finely carved pillars under warm golden light. The style is serene painterly Indian, with uncluttered marble floors, a gentle glow, and a peaceful atmosphere, captured in a vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.52
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Soch badlo, duniya badalti hai.",
@@ -197,7 +335,19 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s10o.jpg",
+      "prompt": "Young adult with a slender build, calm face, short dark hair, wearing a casual cotton shirt and trousers, standing posture with open hands, serene gaze, looking down at a still pool of water. The reflection in the water shifts from a worried expression to a peaceful smile, while a lotus flower blooms on the surface. Set within a serene Jain temple courtyard with white marble architecture, tall pointed shikhara spires, and finely carved pillars. Serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.51
+     }
+    ],
+    "passed": true
+   }
   }
  ],
  "music_mood": "calm",
@@ -227,10 +377,6 @@
    "basis": "WION news 16 Nov 2026: PM Modi inaugurated Samrat Samprati Museum, stated Samrat Samprati propagated satya, asteya, and aparigraha with detachment."
   }
  ],
- "numbers_hold": [
-  "STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)",
-  "STORY scene 5: invented: 'Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'': This specific exchange is a modern parable and does not appear in the scriptures. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)"
- ],
  "brain_ids": [
   "b69d65467f",
   "7f620e6fdf",
@@ -246,5 +392,56 @@
   "4396759d41",
   "1e1964f463",
   "97e1b2fcbb"
- ]
+ ],
+ "story_notes": [
+  "STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)",
+  "STORY scene 5: invented: 'Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'': This specific exchange is a modern parable and does not appear in the scriptures. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)"
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Raja Megharath",
+    "scenes": [
+     2,
+     3,
+     4,
+     5,
+     8
+    ],
+    "look": "Middle-aged man, regal build, calm face, short dark hair, golden crown with intricate floral carvings, white silk dhoti with gold borders, bare chest, simple pearl necklace, seated on a carved sandstone throne, peaceful posture."
+   },
+   {
+    "name": "Jain Muni",
+    "scenes": [
+     2,
+     4,
+     5,
+     8
+    ],
+    "look": "Middle-aged man, slender build, serene face, clean-shaven head, plain white unstitched cotton robes, white rajoharan held in right hand, white muhpatti covering mouth, peaceful expression, calm standing posture, bare feet."
+   },
+   {
+    "name": "Modern Person",
+    "scenes": [
+     1,
+     7,
+     9,
+     10,
+     11
+    ],
+    "look": "Young adult, slender build, calm face, short dark hair, casual cotton shirt and trousers, light skin tone, peaceful expression, standing posture, open hands, serene gaze."
+   }
+  ],
+  "places": [
+   {
+    "name": "Jain Temple",
+    "look": "White marble architecture, tall pointed shikhara spires, finely carved pillars, lotus motifs on walls, stepped stone roofs, serene courtyard, warm golden light, uncluttered marble floors, peaceful atmosphere."
+   },
+   {
+    "name": "Palace Interior",
+    "look": "Ancient Indian sandstone walls, intricate lotus carvings, polished white marble floors, golden hour light, large wooden granaries, ornate jewel chests, spacious courtyard, warm glow, serene ambiance."
+   }
+  ]
+ },
+ "pic_redraws": 1
 }

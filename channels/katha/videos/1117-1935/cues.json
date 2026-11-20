@@ -8,6 +8,12 @@
  },
  "sfx": [
   {
+   "t": 0.0,
+   "file": "sfx/impact.mp3",
+   "gain_db": -15,
+   "align": "onset"
+  },
+  {
    "t": 3.79,
    "file": "sfx/pop-light.mp3",
    "gain_db": -17,

@@ -1828,5 +1828,249 @@
     "score": 3.65
    }
   ]
+ },
+ {
+  "t": "2026-11-20 17:28",
+  "picked": "What happened when merchant Shalibhadra offered his last meal to a monk? (Source: Trishashti-shalaka-purusha-charitra)",
+  "ideas": [
+   {
+    "topic": "What happened when merchant Shalibhadra offered his last meal to a monk? (Source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Shalibhadra merchant last meal",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.2,
+    "score": 5.79
+   },
+   {
+    "topic": "The story of King Megharatha and the Pigeon (Compassion in Action)",
+    "search": "Jain story compassion kindness",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With the news of Cyclone 'Akvan' and massive rescue efforts, the audience is thinking about empathy and saving lives. This story from the Trishashti-shalaka-purusha-charitra about King Megharatha sacrificing his own flesh to save a pigeon resonates deeply with the current theme of disaster relief and selfless service.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 203,
+    "fresh": 5.0,
+    "score": 5.15
+   },
+   {
+    "topic": "The power of Truth (Satya) in a world of 'blame games'",
+    "search": "Jain story power of truth",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With political news dominated by 'blame games' and international tensions, the Jain value of Satya (Truth) is a great counter-narrative. A story about a Tirthankara or great Shravaka who stood by the truth despite consequences (from the Kalpasutra) offers a strong moral lesson for today's youth.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 398,
+    "fresh": 6.3,
+    "score": 5.06
+   },
+   {
+    "topic": "Why is Samvatsari called the 'Day of Universal Forgiveness' in Jainism? (Source: Agam)",
+    "note": "",
+    "search": "Samvatsari forgiveness day Jain",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 1.6,
+    "median_views": 4266,
+    "fresh": 5.0,
+    "score": 4.87
+   },
+   {
+    "topic": "Why did the 2nd Tirthankara Ajitanatha renounce his throne after seeing a withered flower? (Source: Kalpasutra)",
+    "note": "",
+    "search": "Ajitanatha renunciation story",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 340,
+    "fresh": 5.0,
+    "score": 4.15
+   },
+   {
+    "topic": "How did Acharya Bhadrabahu's famine prediction save the Jain sangha? (Source: Kalpasutra)",
+    "note": "",
+    "search": "Bhadrabahu famine prediction",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.2,
+    "median_views": 1231,
+    "fresh": 4.3,
+    "score": 4.1
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1540,
+    "fresh": 6.7,
+    "score": 4.01
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 256,
+    "fresh": 7.3,
+    "score": 3.91
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 14,
+    "fresh": 6.0,
+    "score": 3.65
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 578,
+    "fresh": 3.3,
+    "score": 3.11
+   }
+  ]
+ },
+ {
+  "t": "2026-11-20 19:47",
+  "picked": "Was Draupadi a Jain devotee? The untold story of her spiritual journey and path to liberation. (Source: Trishashti-shalaka-purusha-charitra)",
+  "ideas": [
+   {
+    "topic": "Was Draupadi a Jain devotee? The untold story of her spiritual journey and path to liberation. (Source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "Draupadi in Jain tradition",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 6.0,
+    "median_views": 248568,
+    "fresh": 4.5,
+    "score": 6.4
+   },
+   {
+    "topic": "Why did King Kunika imprison his own father, King Shrenik, despite their deep bond? The karmic cycle of betrayal explained. (Source: Trishashti-shalaka-purusha-charitra)",
+    "note": "",
+    "search": "King Kunika Shrenik story Jainism",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 4.2,
+    "score": 6.14
+   },
+   {
+    "topic": "What is the secret behind the Ayambil fast? Why do Jains avoid milk, curd, and spices to purify the soul? (Source: Agam)",
+    "note": "",
+    "search": "Ayambil fast significance Jainism",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.6,
+    "median_views": 10683,
+    "fresh": 6.0,
+    "score": 5.52
+   },
+   {
+    "topic": "The story of King Megharatha and the Pigeon (Compassion in Action)",
+    "search": "Jain story compassion kindness",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With the news of Cyclone 'Akvan' and massive rescue efforts, the audience is thinking about empathy and saving lives. This story from the Trishashti-shalaka-purusha-charitra about King Megharatha sacrificing his own flesh to save a pigeon resonates deeply with the current theme of disaster relief and selfless service.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 203,
+    "fresh": 5.0,
+    "score": 5.15
+   },
+   {
+    "topic": "The power of Truth (Satya) in a world of 'blame games'",
+    "search": "Jain story power of truth",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With political news dominated by 'blame games' and international tensions, the Jain value of Satya (Truth) is a great counter-narrative. A story about a Tirthankara or great Shravaka who stood by the truth despite consequences (from the Kalpasutra) offers a strong moral lesson for today's youth.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 398,
+    "fresh": 6.3,
+    "score": 5.06
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 9909,
+    "fresh": 7.3,
+    "score": 5.04
+   },
+   {
+    "topic": "Is there really life in a single drop of water? The ancient Jain science of 'Jiva' and why filtering water is a core practice. (Source: Acharanga Sutra)",
+    "note": "",
+    "search": "Jainism water filtering science",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 48,
+    "fresh": 5.8,
+    "score": 4.31
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1541,
+    "fresh": 6.7,
+    "score": 4.01
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 14,
+    "fresh": 6.0,
+    "score": 3.65
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 578,
+    "fresh": 3.3,
+    "score": 3.11
+   }
+  ]
  }
 ]

@@ -1,0 +1,58 @@
+{
+ "title": "THIS GADGET IS FROM THE FUTURE",
+ "topic": "THIS GADGET IS FROM THE FUTURE",
+ "caption": "When the gear is so advanced it feels like it came from the future. BenDaDonnn showing off the Puffco tech during his GTA 6 stream.",
+ "hashtags": [
+  "#BenDaDonnn",
+  "#GTA6",
+  "#Puffco"
+ ],
+ "lang": "en",
+ "clip": {
+  "url": "https://www.youtube.com/watch?v=80Tvy2tORvs",
+  "start": 19.55,
+  "end": 34.08,
+  "layout": "vertical",
+  "removed_s": 0,
+  "why": "The transition from gaming to showcasing the Puffco device creates a natural, high-value product placement.",
+  "scores": {
+   "hook": 8,
+   "flow": 9,
+   "value": 9,
+   "trend": 7
+  },
+  "replayed": false,
+  "notes": [],
+  "source": "launch-clipping",
+  "test": false,
+  "creator": "GTA 6 Clips Alpha"
+ },
+ "seo": {
+  "ig": {
+   "caption": "When the gear is so advanced it feels like it came from the future. BenDaDonnn showing off the Puffco tech during his GTA 6 stream.",
+   "hashtags": [
+    "#BenDaDonnn",
+    "#GTA6",
+    "#Puffco"
+   ]
+  },
+  "fb": {
+   "caption": "When the gear is so advanced it feels like it came from the future. BenDaDonnn showing off the Puffco tech during his GTA 6 stream.",
+   "hashtags": [
+    "#BenDaDonnn",
+    "#GTA6",
+    "#Puffco"
+   ]
+  },
+  "yt": {
+   "title": "THIS GADGET IS FROM THE FUTURE",
+   "description": "When the gear is so advanced it feels like it came from the future. BenDaDonnn showing off the Puffco tech during his GTA 6 stream.",
+   "tags": [
+    "BenDaDonnn",
+    "GTA6",
+    "Puffco"
+   ]
+  }
+ },
+ "scenes": []
+}

@@ -1,0 +1,25 @@
+{
+ "topic": "The story of Chandanbala: How a princess turned slave became the first female disciple of Mahavira. She offered her last bowl of rice to the Lord, breaking his 6-month fast. Source: Kalpasutra.",
+ "title": "Rajkumari bani daasi, phir Mahavir ki pehli shishya?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.8,
+  "true_peak": -1.8,
+  "dur": 48.57
+ },
+ "vision": {
+  "score": 10,
+  "ok": true,
+  "problems": []
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.956140350877193,
+  "words": 115,
+  "problems": []
+ },
+ "ok": true
+}

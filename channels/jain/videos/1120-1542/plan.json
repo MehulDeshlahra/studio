@@ -215,6 +215,7 @@
    "small": null,
    "sub": null,
    "label": null,
+   "real": null,
    "pic": {
     "refs": [
      "Jain monk"
@@ -222,15 +223,24 @@
     "tries": [
      {
       "file": "s5q0.jpg",
-      "prompt": "Padmanabha Tirthankara Idol, a smooth white marble idol seated cross-legged with hands resting in the lap, half-closed eyes, gentle smile, tight curls, shrivatsa mark on chest, lotus emblem carved on pedestal, smooth stone texture, golden aura encircling figure, centered in the vast Sarvarthasiddhi Vimana, a celestial hall of polished white marble with walls etched with glowing golden geometric patterns, serene painterly Indian style, warm golden light permeating the space, vertical 9:16 composition, generous calm space above and below.",
+      "prompt": "A smooth, simply carved white marble idol of Padmanabha Tirthankara, seated cross-legged with hands resting on knees, tight curls, calm oval face with half-closed eyes and a gentle smile, shrivatsa mark on chest, lotus emblem carved on the pedestal, encircled by a soft golden aura. Centered within the vast Sarvarthasiddhi Vimana, a celestial hall of polished white marble with walls etched with glowing golden geometric patterns, tall pointed shikhara spires visible through arched windows, floor inlaid with lotus motifs. Serene painterly Indian style, warm golden light, calm and peaceful, gentle glow, uncluttered, vertical 9:16 composition with generous calm space above and below.",
       "fails": {
-       "p3": 0.74
+       "p3": 0.79,
+       "p2": 0.77
       },
-      "top": 0.74
+      "top": 0.79
+     },
+     {
+      "file": "s5q1.jpg",
+      "prompt": "Padmanabha Tirthankara Idol, a smooth white marble figure seated cross-legged with hands resting in the lap, half-closed eyes, gentle smile, tight curls, shrivatsa mark on chest, lotus emblem carved on pedestal, smooth stone texture, golden aura encircling the figure, polished white marble hall, glowing golden geometric patterns on walls, soft golden light, serene painterly Indian style, vertical 9:16 composition, ample space above and below.",
+      "fails": {
+       "p3": 0.88
+      },
+      "top": 0.88
      }
-    ]
-   },
-   "real": null
+    ],
+    "passed": false
+   }
   },
   {
    "vo": "Punya ka uday aatma ko nikharta hai, jaise sona tapkar shuddh hota hai",
@@ -483,7 +493,6 @@
    }
   ]
  },
- "pic_redraws": 6,
  "idol_photos_used": [
   "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg",
   "File:Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar).jpg"
@@ -491,5 +500,6 @@
  "credits": [
   "Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)",
   "Photo: Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar) (Wikimedia Commons)"
- ]
+ ],
+ "pic_redraws": 1
 }

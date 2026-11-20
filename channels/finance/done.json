@@ -48,16 +48,31 @@
   "job": "1119-0005",
   "topic": "Home loan khatam, bank ne property ke papers nahi lautaye? ₹5,000 roz milenge (RBI rule, 1 Dec 2023)",
   "title": "Loan chukaya, papers nahi mile? Roz ₹5,000.",
-  "status": "approved",
-  "review": []
+  "status": "posted",
+  "review": [],
+  "posted": {
+   "at": "2026-11-20 20:16",
+   "ig": "17957250807037402",
+   "fb": "899580819848180"
+  }
  },
  {
   "job": "1119-0028",
   "topic": "Account mein achanak anjaan paisa aaya? Wapas mat bhejna, ye naya scam hai",
   "title": "Anjaan paisa aaya, call aaya? Ye jump deposit scam hai",
   "qc_ok": true,
-  "status": "approved",
-  "review": []
+  "status": "scheduled",
+  "review": [],
+  "sched": {
+   "slot": 1795271400,
+   "at": "2026-11-21 20:00",
+   "platforms": [
+    "ig",
+    "fb"
+   ],
+   "mp4": "/home/ubuntu/studio-out/finance/1119-0028/post.mp4",
+   "prepared": "2026-11-20 21:09"
+  }
  },
  {
   "job": "1119-0351",
@@ -79,7 +94,9 @@
   "offer": "GUIDE",
   "review": [
    "length 54.5 s is outside 28-50 s",
-   "only 0% of the script was found in the voice"
+   "only 0% of the script was found in the voice",
+   "picture check: scene 5: Is any number, date or rule on screen different from the voice-over? (yes 64%)",
+   "picture check: scene 7: Is any number, date or rule on screen different from the voice-over? (yes 64%)"
   ],
   "mehul_rebuilt": "2026-11-19",
   "replan_requested": "2026-11-19 22:33"

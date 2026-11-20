@@ -75,9 +75,9 @@
   "sig": "before render, scene #: overlap/cut (layout audit): text_occluded on #s",
   "fix": "simplify",
   "detail": "",
-  "n": 3,
+  "n": 4,
   "first": "2026-11-18 19:52",
-  "last": "2026-11-19 11:07",
+  "last": "2026-11-20 19:52",
   "example": "before render, scene 3: OVERLAP/CUT (layout audit): text_occluded on #s2b"
  },
  {
@@ -232,5 +232,59 @@
   "first": "2026-11-20 13:37",
   "last": "2026-11-20 13:37",
   "example": "owner agent: Fix Scene 3: Adjust the bottom card padding to prevent text cut-off at the frame edge."
+ },
+ {
+  "sig": "picture check: scene # split screen (kartikeya on the peacock beside ganesha, two panels)",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 19:37",
+  "last": "2026-11-20 19:37",
+  "example": "picture check: scene 1 split screen (Kartikeya on the peacock beside Ganesha, two panels)"
+ },
+ {
+  "sig": "story scene #: invented: '…'rajan, kaun sa bojh sabse bhari?'…': this dialogue is not found in the standard ja",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 20:07",
+  "last": "2026-11-20 20:07",
+  "example": "STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened"
+ },
+ {
+  "sig": "picture check: scene # shows a horned demon on a throne where krishna and satyabhama ride garuda; scene # two ",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 20:22",
+  "last": "2026-11-20 20:22",
+  "example": "picture check: scene 5 shows a horned demon on a throne where Krishna and Satyabhama ride Garuda; scene 8 two blue figures on horses (Narakasura is not blue)"
+ },
+ {
+  "sig": "picture check: scene # vishnu holds a trishul (shiva weapon; vishnu: conch, chakra, mace, lotus)",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 20:52",
+  "last": "2026-11-20 20:52",
+  "example": "picture check: scene 12 Vishnu holds a trishul (Shiva weapon; Vishnu: conch, chakra, mace, lotus)"
+ },
+ {
+  "sig": "owner agent: fix scene #: change '…' label to '…'. fix scene #: remove the unstyled white box and replace it w",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 20:52",
+  "last": "2026-11-20 20:52",
+  "example": "owner agent: Fix Scene 3: Change 'Diamond' label to 'Silicon Ingot'. Fix Scene 7: Remove the unstyled white box and replace it with an actual photo of an ASML EUV machine."
+ },
+ {
+  "sig": "#",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 20:52",
+  "last": "2026-11-20 20:52",
+  "example": "2"
  }
 ]

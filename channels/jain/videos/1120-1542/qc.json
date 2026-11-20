@@ -10,9 +10,10 @@
   "dur": 39.07
  },
  "vision": {
-  "score": 10,
-  "ok": true,
-  "problems": []
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
  },
  "voice": {
   "ok": true,

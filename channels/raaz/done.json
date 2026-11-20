@@ -12,8 +12,14 @@
   "topic": "Shaadi ka lifafa - Part 1",
   "title": "Shaadi ka 5 lakh ka lifafa: chor kaun? (Part 1)",
   "qc_ok": true,
-  "status": "approved",
-  "review": []
+  "status": "posted",
+  "review": [],
+  "posted": {
+   "at": "2026-11-20 20:25",
+   "ig": "18491955451109611",
+   "fb": "1441265510978440",
+   "yt": "s_s1BogBa8s"
+  }
  },
  {
   "job": "case2-p1-en",
@@ -80,6 +86,14 @@
   "job": "1118-1433",
   "topic": "Chouthi Manzil Ka Raaz - Part 8",
   "title": "Chouthi manzil ki deewar aaina kaise bani?",
+  "status": "approved",
+  "review": []
+ },
+ {
+  "job": "1120-1904z",
+  "topic": "Chouthi Manzil Ka Raaz - Part 7",
+  "title": "Chouthi manzil ke us band kamre mein kya hai?",
+  "qc_ok": true,
   "status": "approved",
   "review": []
  }

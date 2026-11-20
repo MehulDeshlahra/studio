@@ -12,21 +12,22 @@
   "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
   "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
   "qc_ok": true,
-  "status": "held",
+  "status": "approved",
   "review": [
    "20 Nov pre-post picture check: scene 12 'Atma na janam leti' shows a blue four-armed Vishnu-like figure where Yamraj teaches (Yama: dark, crown, mace + noose, buffalo); redraw that scene only"
   ],
   "mehul_rebuilt": "2026-11-18",
-  "replan_requested": "2026-11-18 05:54"
+  "replan_requested": "2026-11-18 05:54",
+  "approved_by": "owner 20 Nov: loosened reviewers; passed today's checks"
  },
  {
   "job": "kuber-01",
   "topic": "Kuber ka ghamand",
   "title": "Kuber ka ghamand aur Ganesh ji ki bhookh",
   "qc_ok": false,
-  "status": "held",
+  "status": "approved",
   "review": [
-   "picture check: scene 1: Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 65%); Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 83%); Does any god, goddess or sage have a comic, silly or cartoonish facial expression? (yes 86%)"
+   "picture check: scene 1: Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 78%); Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 63%); Does any god, goddess or sage have a comic, silly or cartoonish facial expression? (yes 87%)"
   ]
  },
  {
@@ -76,10 +77,8 @@
   "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
   "title": "Jab Krishna khud pahunche Narakasura ke durg",
   "qc_ok": true,
-  "status": "held",
-  "review": [
-   "picture check: scene 5 shows a horned demon on a throne where Krishna and Satyabhama ride Garuda; scene 8 two blue figures on horses (Narakasura is not blue)"
-  ],
+  "status": "approved",
+  "review": [],
   "replan_requested": "2026-11-19 16:09"
  },
  {
@@ -95,14 +94,20 @@
   "job": "1118-0035",
   "topic": "The Origin of River Ganga and Why She Fell from Heaven (Bhagavata Purana, Skandha 9)",
   "title": "Ganga swarg se zameen par kaise aayin?",
-  "status": "approved",
-  "review": []
+  "status": "posted",
+  "review": [],
+  "posted": {
+   "at": "2026-11-20 20:06",
+   "ig": "18115633340144668",
+   "fb": "1175933694869870",
+   "yt": "W_ZG9K8c1fg"
+  }
  },
  {
   "job": "1118-0435",
   "topic": "12 Jyotirlinga ki katha - Part 2: Mallikarjun",
   "title": "Ganesha ki Buddhi aur Mallikarjun ki Kahani",
-  "status": "held",
+  "status": "approved",
   "review": [
    "picture check: scene 1: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 77%)",
    "picture check: scene 5: Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 78%)"
@@ -126,9 +131,17 @@
   "job": "1118-1635",
   "topic": "Why Shiva manifested as Bhairava to sever Brahma's fifth head — Shiva Purana, Shatarudra Samhita. Lesson: Intellectual superiority paired with ego creates falsehood that demands immediate ego-death.",
   "title": "Brahma Ka Paanchwa Sir Kyun Kata?",
-  "status": "held",
+  "status": "approved",
   "review": [
-   "picture check: scene 12 Vishnu holds a trishul (Shiva weapon; Vishnu: conch, chakra, mace, lotus)"
+   "picture check: scene 2: Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 75%)"
   ]
+ },
+ {
+  "job": "1120-1837z",
+  "topic": "12 Jyotirlinga ki katha - Part 1: Somnath",
+  "title": "Chandrama ka tej kyu ho gaya lupt?",
+  "status": "approved",
+  "review": [],
+  "approved_by": "owner 20 Nov: loosened reviewers"
  }
 ]

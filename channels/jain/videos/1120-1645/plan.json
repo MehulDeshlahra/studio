@@ -1,0 +1,743 @@
+{
+ "slug": "chandanbala-mahavira-first-disciple",
+ "title": "Rajkumari bani daasi, phir Mahavir ki pehli shishya?",
+ "hooks": [
+  "Rajkumari se daasi, phir Mahavir ki pehli shishya",
+  "Ek katori chawal ne tod diya chhah maah ka upvaas",
+  "Raajmahal se zanjeer tak, kaise bani pehli sadhvi?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the stark identity flip — princess to slave to first female disciple — in the first 4 words, matching the 'named entity + shocking outcome' pattern that wins on Shorts.",
+ "metaphor": "A single rice bowl glowing in dark hands, passing through chains to reach a meditating idol's feet — the bowl is the thread linking every fall and rise.",
+ "mechanism": [
+  "Hook: Identity flip in first 4 words",
+  "Fall: War, capture, mother's death, sale into slavery",
+  "False hope: Kind merchant adopts, jealous wife tortures",
+  "Rock bottom: Chained in dark room, no one to tell",
+  "Parallel: Mahavira's 6-month fast, same silent endurance",
+  "Climax: Last rice bowl offered, chains fall, fast breaks",
+  "Rise: First female disciple, white robes, rajoharan in hand",
+  "Lesson: Dukh mein bhi daan ka bhav nahi chhuta",
+  "End: Relatable choice question + Jai Jinendra"
+ ],
+ "cast": {
+  "Vasumati_Chandanbala": "Young woman, same face across scenes. Scene 1-2: princess in silk and pearls. Scene 3-9: hair loose, simple cotton, later shaven head, chains on ankles. Scene 10-13: white unstitched sadhvi robes, rajoharan in hand, calm eyes.",
+  "King_Dadhivahan": "Middle-aged king, gold crown with central jewel, layered necklaces, silk dhoti-angavastram, same face and beard in every scene.",
+  "Queen_Dharini": "Queen in silk saree, gold ornaments, same face, gentle expression.",
+  "Soldier": "Armoured enemy soldier, turban, sword at waist, rough features.",
+  "Dhanavah": "Merchant in cotton dhoti-angavastram, simple turban, kind eyes, same face.",
+  "Moola": "Merchant's wife in silk saree, gold bangles, sharp eyes, same face.",
+  "Mahavira_idol": "Only as serene white marble idol in padmasana, eyes half-closed, lion emblem on pedestal, halo of soft gold light. Never as action character."
+ },
+ "scenes": [
+  {
+   "vo": "Rajkumari se daasi, phir Mahavir ki pehli shishya",
+   "type": "image",
+   "prompt": "Split composition: left half princess Vasumati in silk and pearls on marble balcony of palace with tall shikhara spires; right half same woman as Chandanbala, shaven head, white sadhvi robes, rajoharan in hand, kneeling before a white marble Mahavira idol with lion emblem. Warm golden light, serene painterly Indian style, white marble architecture, Dilwara temple pillars. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Rajkumari",
+    "daasi",
+    "pehli shishya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s0r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.48
+     }
+    ],
+    "real_photo": true
+   }
+  },
+  {
+   "vo": "Vasumati thi Champapuri ke raja ki beti",
+   "type": "image",
+   "prompt": "Princess Vasumati standing in palace courtyard, tall pointed shikhara spires behind her, finely carved sandstone pillars, warm golden hour light on white marble floors. She wears silk and pearls, calm face. Serene painterly Indian style. No text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Vasumati",
+    "Champapuri",
+    "raja ki beti"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s1q0.jpg",
+      "prompt": "Young woman, slender build, warm brown skin, large dark eyes, calm serene face, long black hair braided with pearls, silk lehenga-choli in deep red and gold, heavy pearl necklaces, gold bangles, bare feet on marble, standing gracefully in a palace courtyard, tall pointed shikhara spires rising behind, finely carved sandstone pillars framing the white marble floor, rendered in serene painterly Indian style, warm golden hour light bathing the marble, vertical 9:16 composition with the subject centered in the middle third and generous calm space above and below.",
+      "fails": {},
+      "top": 0.13
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Yudh hua, raja bhaag gaya, ma-beti pakdi gayi",
+   "type": "image",
+   "prompt": "Chaotic village lane of mud and stone houses at dusk. King Dadhivahan fleeing on horseback through arched gateway. Queen Dharini and Vasumati seized by armoured soldiers. Warm golden light from torches on stone walls. Serene painterly style, no Mughal domes. No text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Yudh",
+    "raja bhaag gaya",
+    "pakdi gayi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s2q0.jpg",
+      "prompt": "King Dadhivahan, a middle-aged man with trimmed black beard streaked with grey, wearing a gold crown and saffron silk dhoti, rides a chestnut horse fleeing through a narrow arched stone gateway. Beside him, Queen Dharini, wearing a white silk saree, and Vasumati, a young woman in a simple white cotton sadhvi robe, are held by a muscular soldier in leather armour. Serene painterly Indian style, warm golden torchlight flickering on rough mud walls at dusk, vertical 9:16 composition, generous calm space.",
+      "fails": {},
+      "top": 0.37
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Sainik ne ma ko maar daala, Vasumati bech di gayi",
+   "type": "image",
+   "prompt": "Dark forest clearing at dusk. A soldier in leather armour, curved sword dripping blood, stands over a lifeless middle-aged woman (mother) in royal attire. Nearby, a young woman (Vasumati) in plain white sadhvi robes, hands bound with rope, head bowed in grief, being pulled by another soldier toward distant lantern-lit slave market. Muted warm tones, painterly style, focus on Vasumati's sorrow. No text, no logos. Vertical 9:16, room above and below for text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "ma ko maar daala",
+    "bech di gayi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s3q0.jpg",
+      "prompt": "Vasumati as Chandanbala, a young woman with a shaven head and plain white unstitched cotton sadhvi robes, stands with hands bound by rope, head bowed in deep sorrow, being pulled away by a soldier in leather armour. Nearby, a middle-aged woman in a white silk saree with a gold border lies still on the ground. A second soldier with a curved sword stands over her. Dark forest clearing, dry leaves, painterly somber tones, muted warm light from distant lanterns, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.35
+     }
+    ],
+    "passed": true
+   },
+   "real": null
+  },
+  {
+   "vo": "Saudagar Dhanavah ne kharida, beti maan liya",
+   "type": "image",
+   "prompt": "Slave market platform. Merchant Dhanavah in cotton dhoti-angavastram, simple turban, kind eyes, handing coins to auctioneer. Vasumati beside him, ropes cut. Warm golden light on sandstone pavement. Serene painterly style. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "Dhanavah",
+    "kharida",
+    "beti maan liya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s4q0.jpg",
+      "prompt": "Merchant Dhanavah, a middle-aged man with warm brown skin, kind dark eyes, and a short grey-streaked beard, wearing a white cotton dhoti and white angavastram draped over his left shoulder with a simple white turban, stands in a slave market clearing, extending his right hand to offer coins. Beside him, Vasumati, a young woman with a slender build, warm brown skin, and calm serene face, stands with hands folded in gratitude. Serene painterly Indian style, warm golden light, ancient sandstone background, 9:16 vertical composition.",
+      "fails": {},
+      "top": 0.2
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Naam rakha Chandanbala, asli naam chhupa liya",
+   "type": "image",
+   "prompt": "Merchant's home courtyard with carved pillars. Dhanavah placing hand on Vasumati's head, naming her. She folds hands in gratitude. Wife Moola watching from upper balcony, sharp eyes. Warm light, white marble floors. No text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "Chandanbala",
+    "asli naam chhupa liya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "Merchant Dhanavah, a middle-aged man with warm brown skin, kind dark eyes, and a short grey-streaked beard, wearing a white cotton dhoti and white angavastram, gently places his hand on the head of Vasumati, a young woman with warm brown skin, large dark eyes, and a calm serene face, who stands with hands folded in gratitude. In the background, Moola, a middle-aged woman with sharp features, watches from an upper marble balcony. Serene painterly Indian style, warm golden light, white marble courtyard, finely carved pillars.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Saudagar ki patni Moola jalne lagi",
+   "type": "image",
+   "prompt": "Moola in silk saree, gold bangles, standing in shadowed corridor, watching Chandanbala serve Dhanavah food. Jealousy in eyes. Carved stone pillars, oil lamps. Painterly, warm tones. No text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Moola",
+    "jalne lagi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s6q0.jpg",
+      "prompt": "Moola, a middle-aged woman with sharp features and fair skin, stands in a shadowed corridor, her expression twisted with sharp jealousy as she watches from the darkness. She wears a rich silk saree in deep green with gold zari, heavy gold necklaces, and multiple gold bangles. The setting is an ancient Indian palace with finely carved pillars and stone jali screens. Serene painterly Indian style, warm golden light from flickering oil lamps, vertical 9:16 composition with generous space.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Saudagar gaya, Moola ne baal kaate, zanjeer pehna di",
+   "type": "image",
+   "prompt": "Dim storeroom. Moola commanding barber cutting Chandanbala's long hair. Heavy iron chains locked on ankles. Chandanbala silent, tears. Rough stone walls, single shaft of light. Painterly, somber. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "baal kaate",
+    "zanjeer pehna di"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "Chandanbala as princess, slender build, long black hair braided with pearls, silk lehenga-choli in deep red and gold, heavy pearl necklaces, gold bangles, standing silent with tears, heavy iron chains locked on ankles. Beside her, the barber, older man, thin build, dark wrinkled skin, white stubble, holding a straight razor in right hand, gripping her hair. Moola, middle-aged woman, rich green silk saree, gold jewellery, standing with hand on hip, commanding. Dim storeroom, rough stone walls, single shaft of light, serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.25
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Andhere kamre mein band, koi bataane wala nahi",
+   "type": "image",
+   "prompt": "Chandanbala seated on cold stone floor in dark room, chains stretching to wall. Single high window, thin light beam. Her face calm despite suffering. Painterly, warm golden shaft in darkness. No text.",
+   "motion": "tilt",
+   "title": "",
+   "keywords": [
+    "andhere kamre",
+    "koi bataane wala nahi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s8q0.jpg",
+      "prompt": "Chandanbala, a young woman with a shaven head smooth and pale, sits cross-legged on a cold, rough stone floor in a dark room, her hands folded in gratitude. Heavy iron ankle chains stretch from her feet to the stone wall behind her. A single high, narrow window allows a thin, sharp shaft of warm golden light to pierce the darkness, illuminating her calm, serene face. Serene painterly Indian style, dramatic chiaroscuro, uncluttered, vertical 9:16 composition with generous space above.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Mahavir Swami chhah maah se upvaas the",
+   "type": "image",
+   "prompt": "White marble Mahavira idol in padmasana on ornate pedestal with lion emblem, eyes half-closed, halo of soft gold light. Surrounded by carved pillars of Jain temple. No humans. Serene, painterly, warm glow. No text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Mahavir Swami",
+    "chhah maah",
+    "upvaas"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s9r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.3
+     }
+    ],
+    "real_photo": true
+   }
+  },
+  {
+   "vo": "Chandanbala ne aakhri chawal ki katori arpan ki",
+   "type": "clip",
+   "prompt": "Chandanbala, shaven head, white sadhvi robes, chains fallen, walking barefoot on marble temple steps at dawn. She holds a simple clay bowl with few rice grains. Kneels before Mahavira idol, offers bowl with both hands. Warm golden sunrise light. 10-second smooth camera move. No text.",
+   "motion": "push",
+   "title": "",
+   "keywords": [
+    "aakhri chawal",
+    "katori arpan ki"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s10r0.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p3": 0.82
+      },
+      "top": 0.82
+     },
+     {
+      "file": "s10r1.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p3": 0.72
+      },
+      "top": 0.72
+     },
+     {
+      "file": "s10q0.jpg",
+      "prompt": "Chandanbala, a young woman with a shaven head, wearing plain white unstitched cotton sadhvi robes, kneels barefoot on smooth marble temple steps, holding a simple clay bowl with a few rice grains in both hands, offering it to the idol from image 1, the serene meditating figure carved from smooth white marble seated in padmasana, ancient Indian palace with tall pointed shikhara spires and finely carved pillars in the background, serene painterly Indian style, warm golden sunrise light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.31
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Upvaas toota, Mahavir ne swikara kiya",
+   "type": "image",
+   "prompt": "Mahavira idol — same serene padmasana — now a single grain of rice rests on marble palm. Soft golden light expands. Chandanbala in foreground, hands folded, chains gone. Painterly, divine calm. No text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "upvaas toota",
+    "swikara kiya"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s11q0.jpg",
+      "prompt": "Mahavir Swami, the idol from image 1, seated in perfect padmasana on an ornate marble pedestal with a lion emblem, hands resting in dhyana mudra on his lap with a single grain of rice resting on his marble palm, eyes half-closed, calm face, curled hair. In the foreground, Chandanbala, a young woman with a shaven head, wearing plain white unstitched cotton sadhvi robes, hands folded in gratitude. Serene painterly Indian style, warm golden light, ancient white marble temple, peaceful, 9:16.",
+      "fails": {},
+      "top": 0.27
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Pehli mahila shishya bani, sadhvi Chandanbala",
+   "type": "image",
+   "prompt": "Chandanbala in white unstitched cotton robes, rajoharan in hand, standing beside white-robed Jain monks with whisk brooms. Tall shikhara spires behind. All faces calm. Warm golden light on marble. Serene painterly style. No text.",
+   "motion": "pan",
+   "title": "",
+   "keywords": [
+    "pehli mahila shishya",
+    "sadhvi Chandanbala"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s12q0.jpg",
+      "prompt": "Chandanbala as a Sadhvi with a shaven head, wearing plain white unstitched cotton robes, holding a soft white rajoharan whisk broom in her right hand, standing beside a row of adult Jain monks in identical white robes with mouth-cloths, all with calm serene faces, set against an ancient Indian palace with tall pointed white marble shikhara spires and finely carved pillars, serene painterly Indian style, warm golden hour light, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {},
+      "top": 0.33
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Seekh: Dukh mein bhi daan ka bhav nahi chhuta",
+   "type": "card",
+   "prompt": "Plain warm marble texture with subtle gold veins, ample vertical space for centered two-line text, clean uncluttered surface, serene painterly Indian style, warm golden hour light reflecting softly off polished stone, vertical 9:16 aspect ratio, high-quality detailed texture, calm peaceful atmosphere.",
+   "motion": "punch",
+   "title": "",
+   "big": "DUKH MEIN DAAN",
+   "small": "BHAV NAHI CHHUTA",
+   "keywords": [
+    "Seekh",
+    "daan ka bhav"
+   ],
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s13o.jpg",
+      "prompt": "A polished white marble surface with subtle gold veins, filling the frame with clean, uncluttered texture, serving as a serene backdrop for contemplation. The scene is bathed in soft, warm golden hour light reflecting gently across the stone, creating a peaceful and meditative atmosphere. The composition is vertical 9:16, focusing on the rich, high-quality detailed marble grain, with ample empty space above and below, evoking a calm, painterly Indian aesthetic, minimalist and elegant.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Aap uski jagah hote toh kya karte? Jai Jinendra",
+   "type": "image",
+   "prompt": "Wide shot of Jain temple complex at golden hour — multiple shikhara spires, carved pillars, marble steps. Devotees in white walking peacefully. Soft glow. Serene painterly Indian style. Bottom space reserved for end card with page handle. No text.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Aap uski jagah",
+    "Jai Jinendra"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s14q0.jpg",
+      "prompt": "Wide shot of an ancient Indian Jain temple complex, multiple tall pointed white marble shikhara spires rising into a clear sky, finely carved pillars with lotus capitals, stepped stone roofs, marble balconies with intricate stone jali screens, devotees in plain white unstitched cotton robes walking peacefully across polished marble courtyards, serene painterly Indian style, warm golden hour sunlight flooding the scene, soft gentle glow, uncluttered, vertical 9:16 composition with generous calm space above and below, peaceful atmosphere.",
+      "fails": {},
+      "top": 0.18
+     }
+    ],
+    "passed": true
+   }
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Rajkumari se daasi, daasi se pehli sadhvi — Chandanbala ki kahaani Kalpasutra se. Ek katori chawal ne tod diya Mahavir ka chhah maah ka upvaas. Aap uski jagah hote toh kya karte? #Chandanbala #Mahavira #Kalpasutra #JainKatha #NavkarBhav\nVideo: Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)\nVideo: Photo: Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar) (Wikimedia Commons)\nVideo: Photo: Lord Mahavira (Wikimedia Commons)\nVideo: Photo: Rujuwalika Jain Temple Mahavira Kevalgyan statue 2 (Wikimedia Commons)",
+ "hashtags": [
+  "#Chandanbala",
+  "#Mahavira",
+  "#Kalpasutra",
+  "#JainKatha",
+  "#NavkarBhav",
+  "#JaiJinendra"
+ ],
+ "claims": [
+  {
+   "claim": "Chandanbala was originally Princess Vasumati of Champapuri, daughter of King Dadhivahan and Queen Dharini",
+   "basis": "jainworld.com source: 'There once was a beautiful princess named Vasumati. She was the daughter of king Dadhivahan and queen Dharini of Champapuri.'"
+  },
+  {
+   "claim": "She was captured in war, mother died, and she was sold as a slave",
+   "basis": "jainworld.com source: 'When Vasumati's turn came to be sold as a slave...' and 'Upon hearing this, the queen went into shock and died.'"
+  },
+  {
+   "claim": "Merchant Dhanavah bought and freed her, renamed her Chandanbala",
+   "basis": "jainworld.com source: 'a merchant named Dhanavah happened to be passing by... bought Vasumati, freed her from slavery... They named her Chandanbala'"
+  },
+  {
+   "claim": "Merchant's wife Moola cut her hair, chained her, and locked her in a room",
+   "basis": "jainworld.com source: 'she called a barber to cut off all of Chandanbala's beautiful hair. Then she tied Chandanbala's legs with heavy chains and locked her into a distant room'"
+  },
+  {
+   "claim": "She offered her last bowl of rice to Mahavira, breaking his 6-month fast",
+   "basis": "Kalpasutra tradition and user prompt: 'She offered her last bowl of rice to the Lord, breaking his 6-month fast. Source: Kalpasutra.'"
+  },
+  {
+   "claim": "She became the first female disciple (sadhvi) of Mahavira",
+   "basis": "User prompt and Jain tradition: 'first female disciple of Mahavira' and jainknowledge.com reference to her role in Jainism."
+  }
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "fc294ac58f",
+  "f945e2a937",
+  "e15cfaed29",
+  "9db4cc694f",
+  "0755cc155a",
+  "161339712e",
+  "4396759d41",
+  "7fa182f8ef",
+  "1e1964f463",
+  "a688e48ca2",
+  "6ce7203c71"
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Vasumati / Chandanbala",
+    "scenes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     11,
+     12,
+     13
+    ],
+    "look": "Young woman, slender build, warm brown skin, large dark eyes, calm serene face. As princess: long black hair braided with pearls, silk lehenga-choli in deep red and gold, heavy pearl necklaces, gold bangles, bare feet on marble. As Chandanbala: shaven head smooth and pale, plain white unstitched cotton sadhvi robes draped simply, soft white rajoharan whisk broom in right hand, muhpatti mouth cloth tied at neck, iron ankle chains in early scenes, bare feet, hands folded in gratitude or offering."
+   },
+   {
+    "name": "King Dadhivahan",
+    "scenes": [
+     3
+    ],
+    "look": "Middle-aged man, tall broad shoulders, wheatish skin, trimmed black beard streaked with grey, sharp calm eyes. Wears gold crown with central ruby, silk dhoti in saffron, embroidered angavastram draped over shoulder, heavy gold necklaces, armlets, bare chest, bare feet. Rides chestnut horse, reins in left hand, right hand raised urging flight."
+   },
+   {
+    "name": "Queen Dharini",
+    "scenes": [
+     3,
+     4
+    ],
+    "look": "Middle-aged woman, graceful build, fair skin, long black hair loose over shoulders, gentle eyes. Wears white silk saree with gold border, simple gold necklace, gold bangles, bare feet. Draped modestly, hands bound in scene 4, head bowed, expression sorrowful but dignified."
+   },
+   {
+    "name": "Soldier",
+    "scenes": [
+     3,
+     4
+    ],
+    "look": "Adult male, muscular build, dusky skin, short cropped black hair, thick moustache, stern face. Wears leather armour over cotton tunic, metal greaves, curved sword at hip, round shield on back, leather sandals. Torch in left hand, right hand gripping queen's arm or gesturing to market."
+   },
+   {
+    "name": "Merchant Dhanavah",
+    "scenes": [
+     5,
+     6,
+     7
+    ],
+    "look": "Middle-aged man, medium build, warm brown skin, kind dark eyes, short grey-streaked beard, calm expression. Wears white cotton dhoti, white angavastram draped over left shoulder, simple white turban, no jewellery, bare feet. Carries cloth bag of coins, right hand extended in payment or blessing."
+   },
+   {
+    "name": "Moola",
+    "scenes": [
+     6,
+     7,
+     8
+    ],
+    "look": "Middle-aged woman, sharp features, fair skin, black hair parted centre and braided, piercing dark eyes. Wears rich silk saree in deep green with gold zari border, heavy gold necklaces, multiple gold bangles, gold anklets, diamond nose ring. Stands with hand on hip or gesturing sharply, expression jealous and commanding."
+   },
+   {
+    "name": "Barber",
+    "scenes": [
+     8
+    ],
+    "look": "Older man, thin build, dark wrinkled skin, white stubble, downcast eyes. Wears dirty white cotton loincloth, bare chest, bare feet. Holds straight razor in right hand, left hand gripping Chandanbala's hair, crouched low."
+   },
+   {
+    "name": "Auctioneer",
+    "scenes": [
+     5
+    ],
+    "look": "Middle-aged man, stout build, dusky skin, bald head, thick moustache, loud mouth open. Wears cotton dhoti, bare chest, bare feet, wooden gavel in raised right hand, ledger in left."
+   },
+   {
+    "name": "Mahavir Swami (temple idol)",
+    "scenes": [
+     10,
+     11,
+     12
+    ],
+    "look": "Serene meditating figure carved from smooth white marble, seated in perfect padmasana on ornate marble pedestal with lion emblem carved at front. Bare head of small tight curls, bare unmarked forehead, eyes half-closed, calm face, shrivatsa mark on chest, hands resting in dhyana mudra on lap. Halo of soft gold light behind head. No crown, no jewellery, no weapons."
+   },
+   {
+    "name": "Jain monks and nuns",
+    "scenes": [
+     1,
+     13
+    ],
+    "look": "Adult men and women, varied ages, slender builds, calm faces. All heads shaven smooth. Wear plain white unstitched cotton robes draped identically, muhpatti mouth cloths, soft white rajoharan whisk brooms held in right hands. Bare feet. Standing or walking in quiet rows."
+   },
+   {
+    "name": "Devotees",
+    "scenes": [
+     14
+    ],
+    "look": "Men, women, children of varied ages, warm brown skin, calm faces. Wear simple white cotton garments, dhotis, sarees, kurtas. Bare feet or simple leather sandals. Hands folded or holding prayer beads. Walking slowly in peaceful groups."
+   }
+  ],
+  "places": [
+   {
+    "name": "Palace with shikhara spires",
+    "look": "Ancient Indian palace of white marble and sandstone, tall pointed shikhara spires rising tiered and carved, finely carved pillars with lotus capitals, stepped stone roofs, marble balconies with stone jali screens, warm golden hour light flooding courtyards and floors, uncluttered serene spaces."
+   },
+   {
+    "name": "Village lane",
+    "look": "Narrow winding lane of mud and stone houses with thatched roofs, arched stone gateways, uneven stone paving, torchlight flickering on rough walls at dusk, shadows deep, warm golden glow from oil lamps in doorways."
+   },
+   {
+    "name": "Forest clearing",
+    "look": "Dark clearing among dense trees, ground covered in dry leaves, single shaft of muted warm light piercing canopy, rough stone outcrop, distant slave market suggested by faint lanterns, painterly somber tones."
+   },
+   {
+    "name": "Slave market platform",
+    "look": "Raised sandstone platform in open courtyard, carved stone pillars at corners, sandstone pavement worn smooth, warm golden sunlight, auction block centre, steps leading up, surrounding crowd suggested by silhouettes."
+   },
+   {
+    "name": "Merchant's home courtyard",
+    "look": "Square courtyard of white marble, carved sandstone pillars supporting upper gallery, central tulsi planter, warm golden light on marble floors, upper balcony with stone railing, rooms opening onto gallery."
+   },
+   {
+    "name": "Shadowed corridor",
+    "look": "Long stone corridor with carved pillars, oil lamps in wall niches casting warm pools of light, deep shadows between pillars, cool stone floor, doors to rooms on either side, silent watchful atmosphere."
+   },
+   {
+    "name": "Dim storeroom",
+    "look": "Small rough stone room, single high narrow window, single shaft of golden light cutting darkness, stone shelves with clay jars, iron rings set in walls, cold stone floor, somber painterly tones."
+   },
+   {
+    "name": "Dark room with high window",
+    "look": "Bare stone chamber, cold floor, single high window with stone bars, thin golden light beam crossing diagonally, iron chains anchored to wall, rough unplastered walls, profound stillness."
+   },
+   {
+    "name": "Jain temple sanctum",
+    "look": "White marble sanctum, ornate carved pillars, marble pedestal with lion emblem, soft golden glow from hidden lamps, halo of light around idol, incense smoke curling, serene uncluttered space, warm painterly atmosphere."
+   },
+   {
+    "name": "Marble temple steps at dawn",
+    "look": "Wide white marble steps ascending to temple entrance, carved balustrades, pale dawn light golden on stone, dew on steps, carved pillars flanking, peaceful empty space, gentle glow."
+   },
+   {
+    "name": "Jain temple complex",
+    "look": "Vast complex of multiple tall pointed shikhara spires rising tiered, white marble and sandstone, finely carved pillars lining courtyards, broad marble steps descending, devotees in white walking peacefully, golden hour light bathing everything in warm glow, serene painterly Indian style."
+   }
+  ]
+ },
+ "idol_photos_used": [
+  "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg",
+  "File:Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar).jpg",
+  "File:Lord Mahavira.jpg",
+  "File:Rujuwalika Jain Temple Mahavira Kevalgyan statue 2.jpg"
+ ],
+ "credits": [
+  "Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)",
+  "Photo: Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar) (Wikimedia Commons)",
+  "Photo: Lord Mahavira (Wikimedia Commons)",
+  "Photo: Rujuwalika Jain Temple Mahavira Kevalgyan statue 2 (Wikimedia Commons)"
+ ],
+ "seo": {
+  "ig": {
+   "caption": "Rajkumari se daasi bani, phir Mahavir ki pehli shishya? Ye kahani sunke aankhein bhar aayengi\n6 mahine ke upvaas ke baad sirf ek chawal ki katori se toota Mahavir ka vrat\nAap uski jagah hote toh kya karte?\nUs dost ko bhejiye jo dukh mein bhi daan ka bhav nahi chhodta\nJai Jinendra",
+   "hashtags": [
+    "#JainKahani",
+    "#MahavirSwami",
+    "#Chandanbala",
+    "#SadhviChandanbala",
+    "#Jainism"
+   ]
+  },
+  "fb": {
+   "caption": "Rajkumari se daasi bani, phir Mahavir ki pehli shishya? Ye kahani sunke aankhein bhar aayengi\n6 mahine ke upvaas ke baad sirf ek chawal ki katori se toota Mahavir ka vrat\nAap uski jagah hote toh kya karte?\nUs dost ko bhejiye jo dukh mein bhi daan ka bhav nahi chhodta\nJai Jinendra",
+   "hashtags": [
+    "#JainKahani",
+    "#MahavirSwami"
+   ]
+  },
+  "yt": {
+   "title": "Rajkumari Chandanbala: Mahavir Ki Pehli Mahila Shishya Ki Kahani",
+   "description": "Rajkumari Vasumati ka safar daasi se Sadhvi Chandanbala tak\nMahavir Swami ke 6 mahine ke upvaas ka anokha tutna\nDukh mein bhi daan ka bhav na chhodne ki shiksha\nJainKahani MahavirSwami Chandanbala SadhviChandanbala Jainism Dharma TrishashtiShalakaPurushaCharitra",
+   "tags": [
+    "Jain Kahani",
+    "Mahavir Swami",
+    "Chandanbala",
+    "Sadhvi Chandanbala",
+    "Jainism",
+    "Trishashti Shalaka Purusha Charitra",
+    "Jain Festival",
+    "Jain History",
+    "Mahavir Upvaas",
+    "First Female Disciple"
+   ],
+   "hashtags": [
+    "#JainKahani",
+    "#MahavirSwami",
+    "#Chandanbala"
+   ]
+  },
+  "comment_q": "Dukh mein daan doge?"
+ }
+}

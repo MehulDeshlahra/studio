@@ -1,0 +1,386 @@
+{
+ "slug": "chouthi-manzil-ka-raaz-part-7",
+ "title": "Chouthi manzil ke us band kamre mein kya hai?",
+ "hooks": [
+  "Chouthi manzil ka wo band darwaza... aaj aakhir khul hi gaya.",
+  "Sharma ji ki purani chabhi aur chouthi manzil ka khaufnaak raaz.",
+  "Mehul ne flat 402 ka darwaza dhakela, aur phir jo hua..."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Starts with a specific location and immediate action, creating instant curiosity about the mystery.",
+ "metaphor": "The transition from a rusted, locked exterior to a silent, claustrophobic interior, mirroring the protagonist's descent into danger.",
+ "mechanism": [
+  "Sharma ji hands over the rusted key",
+  "Mehul unlocks the heavy iron gate",
+  "Mehul enters the barren room",
+  "Mehul discovers the chair facing the wall",
+  "Mehul notices the damp earth smell",
+  "Door slams shut and locks from outside",
+  "Mehul is trapped in the dark"
+ ],
+ "cast": {
+  "Mehul": "27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, holding a cracked black smartphone.",
+  "Sharma ji": "58 years old, weathered face with deep laugh lines, thick graying mustache, receding salt-and-pepper hair tied in a small knot, khaki watchman uniform with brass buttons and a faded society badge, carries a wooden lathi with a red cloth."
+ },
+ "scenes": [
+  {
+   "vo": "Chouthi manzil ka wo band darwaza... aaj aakhir khul hi gaya.",
+   "type": "image",
+   "prompt": "Cinematic night thriller, Indian housing society hallway, Mehul 27 years old, tired brown eyes, messy black hair, faded blue cotton t-shirt, standing before a rusted iron gate of flat 402, cold teal shadows.",
+   "motion": "pan",
+   "title": "PART 7",
+   "keywords": [
+    "chouthi manzil",
+    "darwaza"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s0o.jpg",
+      "prompt": "Mehul, 27, lean build, tired brown eyes, messy black hair, olive skin, faded blue cotton t-shirt, worn indigo jeans, bare feet, hands relaxed at sides, cautious stance, stands before a rusted iron gate of flat 402 in an Indian housing society corridor, dim amber wall sconces casting cold teal shadows on peeling plaster walls, wet concrete floor reflecting lights, narrow stairwell visible behind, cinematic night thriller still with rain and film grain, cold teal shadows and warm amber practical lights, vertical 9:16 composition with main subject in middle third and generous calm space above and below",
+      "fails": {},
+      "top": 0.2
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Sharma ji ne kaanpte haathon se purani chabhi mere haath mein thama di.",
+   "type": "image",
+   "prompt": "Close up, weathered hands of Sharma ji, 58 years old, khaki uniform sleeve, handing a heavy, rusted iron key to a younger person, cinematic lighting.",
+   "motion": "push",
+   "title": "CHABHI",
+   "keywords": [
+    "sharma ji",
+    "chabhi"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s1o.jpg",
+      "prompt": "Sharma ji, 58, stocky build, weathered face, deep-set dark eyes, graying black hair, wheatish skin, khaki uniform shirt with rolled sleeves, rough hands, extended offering key, holds a heavy rusted iron key in his trembling fingers, passing it toward an unseen person. The scene is set in an Indian housing society corridor with dim amber wall sconces, peeling plaster walls, and wet concrete floors. Cinematic night thriller still, film grain, cold teal shadows, warm amber practical lights, vertical 9:16 framing, close-up shot.",
+      "fails": {},
+      "top": 0.35
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Lock khula, par andar ka sannata dekh kar meri rooh kaanp gayi.",
+   "type": "image",
+   "prompt": "Cinematic thriller, interior of a dark, barren 1BHK flat, dusty floor, peeling paint, dim light filtering from the hallway, cold teal tones.",
+   "motion": "pan",
+   "title": "SANNATA",
+   "keywords": [
+    "sannata",
+    "flat"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s2o.jpg",
+      "prompt": "Barren 1BHK flat, dusty floorboards, peeling paint walls, single wooden chair centered facing blank wall, faint damp patches on floor, cold teal light spilling from hallway, high contrast shadows. The room is empty and silent, captured in a cinematic night thriller still, heavy film grain, cold teal shadows, warm amber practical lights from the hallway, vertical 9:16 composition, main subject centered in the frame with generous calm space above and below.",
+      "fails": {},
+      "top": 0.11
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "SURAAG 1: Darwaze par laga wo zang laga padlock, jaise saalon se band ho.",
+   "type": "card",
+   "prompt": "Close up, heavy rusted iron padlock on a gate, cinematic night thriller, film grain, cold teal shadows.",
+   "motion": "punch",
+   "title": "SURAAG 1",
+   "big": "ZANG LAGA LOCK",
+   "small": "Iron gate 402",
+   "keywords": [
+    "padlock"
+   ],
+   "real": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s3o.jpg",
+      "prompt": "A heavy rusted iron padlock secured tightly on a dark, weathered metal gate, thick layers of orange and brown oxidation covering the metal surface, intricate scratches and grime visible, cinematic night thriller still, rain droplets clinging to the cold metal, film grain, deep cold teal shadows, warm amber practical lights reflecting off the damp surface, close-up shot, vertical 9:16 composition, main subject centered, generous calm space above and below, highly detailed texture.",
+      "fails": {},
+      "top": 0.09
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "SURAAG 2: Kamre ke beechon-beech ek akeli lakdi ki kursi, deewar ki taraf muh karke.",
+   "type": "card",
+   "prompt": "Cinematic thriller, a single empty wooden chair in the middle of a barren room facing a blank wall, dusty atmosphere, dim lighting.",
+   "motion": "pan",
+   "title": "SURAAG 2",
+   "big": "AKELI KURSI",
+   "small": "Facing wall",
+   "keywords": [
+    "kursi"
+   ],
+   "real": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s4.jpg",
+      "prompt": "a single weathered wooden chair centered on dusty floorboards facing a blank peeling wall in a barren 1BHK flat with faint damp patches on the floor, cinematic night thriller still with film grain and rain atmosphere, cold teal light spilling from the hallway casting high contrast shadows alongside warm amber practical lights, vertical 9:16 composition with the chair in the middle third and generous calm space above and below",
+      "fails": {},
+      "top": 0.11
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "SURAAG 3: Is sookhe kamre mein geeli mitti ki ajeeb si mehak aa rahi thi.",
+   "type": "card",
+   "prompt": "Cinematic thriller, close up of floorboards with faint damp patches, dark moody atmosphere, cold teal lighting.",
+   "motion": "tilt",
+   "title": "SURAAG 3",
+   "big": "GEELI MITTI",
+   "small": "Dry room smell",
+   "keywords": [
+    "geeli mitti"
+   ],
+   "real": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s5o.jpg",
+      "prompt": "Faint damp patches on dusty floorboards inside a barren 1BHK flat, dark moisture seeping into the wood grain, a single wooden chair leg visible in the corner, peeling paint walls in the background, cinematic night thriller still, heavy film grain, cold teal shadows, warm amber light spilling from a distant hallway, extreme close-up, vertical 9:16 composition, high contrast, moody atmosphere, sharp focus on the wet texture of the floorboards.",
+      "fails": {},
+      "top": 0.11
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Maine kursi ki taraf kadam badhaye, par tabhi peeche se ek bhari awaz aayi.",
+   "type": "image",
+   "prompt": "Cinematic thriller, Mehul 27 years old, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt, walking cautiously towards the chair in the dark room.",
+   "motion": "push",
+   "title": "RAAZ",
+   "keywords": [
+    "mehul",
+    "kadam"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s6o.jpg",
+      "prompt": "Mehul, 27, lean build, tired brown eyes, messy black hair, olive skin, faded blue cotton t-shirt, worn indigo jeans, bare feet, hands relaxed at sides, cautious stance, walking slowly towards a single wooden chair centered in a barren 1BHK flat, dusty floorboards, peeling paint walls, cold teal light spilling from the hallway, high contrast shadows, cinematic night thriller still, heavy rain outside, film grain, cold teal shadows, warm amber practical lights, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {},
+      "top": 0.25
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Darwaza ek jhatke se band hua, aur bahar se lock hone ki click sunayi di.",
+   "type": "image",
+   "prompt": "Cinematic thriller, the wooden door of flat 402 slamming shut, dark hallway outside, high contrast, dramatic shadows.",
+   "motion": "punch",
+   "title": "BAND DARWAZA",
+   "keywords": [
+    "band darwaza",
+    "click"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s7o.jpg",
+      "prompt": "A heavy wooden door of flat 402 slamming shut, captured mid-motion, the door frame vibrating slightly, dark hallway outside, rusted iron gate visible, wet concrete floor reflecting dim amber wall sconces, peeling plaster walls, cinematic night thriller still, film grain, cold teal shadows, warm amber practical lights, Indian location, high contrast, dramatic shadows, vertical 9:16 composition, main subject in the middle third, generous calm space above and below.",
+      "fails": {},
+      "top": 0.12
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Main andar phans chuka hoon, aur andhera badhta ja raha hai.",
+   "type": "image",
+   "prompt": "Cinematic thriller, silhouette of Mehul 27 years old, tired brown eyes, messy black hair, faded blue cotton t-shirt, trapped inside the dark room, looking at the door.",
+   "motion": "pan",
+   "title": "PHANS GAYA",
+   "keywords": [
+    "andhera",
+    "phans gaya"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s8o.jpg",
+      "prompt": "Mehul, 27, lean build, tired brown eyes, messy black hair, wearing a faded blue cotton t-shirt and worn indigo jeans, stands inside a barren 1BHK flat, looking cautiously toward the open doorway. He is positioned in the center, facing the rusted iron gate of flat 402. The setting is a dimly lit, dusty room with peeling paint walls and damp floorboards. Cinematic night thriller still, heavy rain outside, film grain, cold teal shadows, warm amber practical lights from the hallway, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
+  },
+  {
+   "vo": "Kya hoga ab? Part 8 mein dekhiye, aur abhi follow kijiye.",
+   "type": "image",
+   "prompt": "Cinematic thriller, dark room, focus on the door handle, suspenseful atmosphere, cold teal and amber lighting.",
+   "motion": "push",
+   "title": "PART 8",
+   "keywords": [
+    "aage suno",
+    "follow"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s9o.jpg",
+      "prompt": "A close-up of a rusted iron door handle on a peeling plaster wall, a hand gripping the cold metal, Flat 402 Interior, cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location, high contrast shadows, vertical 9:16 composition, centered focus on the door handle, generous calm space above and below.",
+      "fails": {},
+      "top": 0.3
+     }
+    ],
+    "passed": true
+   }
+  }
+ ],
+ "music_mood": "dark",
+ "caption": "Chouthi manzil ka raaz... kya Mehul ab phans chuka hai? Flat 402 ke andar ka sannata kuch keh raha hai. \n\nKal Part 8. Follow kijiye.\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#raaz",
+  "#mysterythriller",
+  "#aagesuno",
+  "#suspense",
+  "#hindistories"
+ ],
+ "claims": [
+  {
+   "claim": "Mehul enters flat 402 and finds a single chair facing a wall.",
+   "basis": "Part 7 script narrative."
+  },
+  {
+   "claim": "The door of flat 402 locks from the outside.",
+   "basis": "Part 7 cliffhanger."
+  }
+ ],
+ "brain_ids": [
+  "0755cc155a",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "fc294ac58f",
+  "a688e48ca2",
+  "e15cfaed29",
+  "9db4cc694f",
+  "97e1b2fcbb",
+  "b69d65467f",
+  "12739745ca",
+  "f945e2a937",
+  "1e1964f463",
+  "6ce7203c71",
+  "161339712e"
+ ],
+ "cliff_done": true,
+ "bible": {
+  "figures": [
+   {
+    "name": "Mehul",
+    "scenes": [
+     1,
+     7,
+     9
+    ],
+    "look": "Mehul, 27, lean build, tired brown eyes, messy black hair, olive skin, faded blue cotton t‑shirt, worn indigo jeans, bare feet, hands relaxed at sides, cautious stance"
+   },
+   {
+    "name": "Sharma ji",
+    "scenes": [
+     2
+    ],
+    "look": "Sharma ji, 58, stocky build, weathered face, deep‑set dark eyes, graying black hair, wheatish skin, khaki uniform shirt with rolled sleeves, brass badge on chest, plain bare head, rough hands, extended offering key"
+   }
+  ],
+  "places": [
+   {
+    "name": "Society Hallway",
+    "scenes": [
+     1,
+     2,
+     4,
+     8,
+     10
+    ],
+    "look": "Indian housing society corridor, dim amber wall sconces, cold teal shadows, peeling plaster walls, rusted iron gate of flat 402, wet concrete floor reflecting lights, narrow stairwell visible"
+   },
+   {
+    "name": "Flat 402 Interior",
+    "scenes": [
+     3,
+     5,
+     6,
+     7,
+     9,
+     10
+    ],
+    "look": "Barren 1BHK flat, dusty floorboards, peeling paint walls, single wooden chair centered facing blank wall, faint damp patches on floor, cold teal light spilling from hallway, high contrast shadows"
+   }
+  ]
+ },
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}

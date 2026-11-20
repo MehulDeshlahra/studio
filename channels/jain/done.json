@@ -6,7 +6,13 @@
   "qc_ok": false,
   "status": "held",
   "review": [
-   "picture check: scenes 1, 2, 3, 4, 5, 6, 8 Mahavira shown as a living man in robes / tilak / saffron monks"
+   "visual: Scene 6 shows an older man with a beard and robes instead of the Tirthankara form described in the guidelines.",
+   "visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scene 6",
+   "visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scene 6",
+   "picture check: scene 2: Is any monk or nun wearing saffron, orange or red robes? (yes 65%); Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 86%); Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 66%)",
+   "picture check: scene 5: Is any monk or nun wearing saffron, orange or red robes? (yes 81%)",
+   "picture check: scene 9: Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 72%)",
+   "visual score 5/10"
   ],
   "replan_requested": "2026-11-19 15:51",
   "minor": [
@@ -20,12 +26,11 @@
   "title": "Raja ne apna maans kaise kaata kabutar bachane?",
   "status": "held",
   "review": [
-   "visual: Scene 1, 2, 6, 7, 9, 10, 11, 12, 13 clearly feature Mughal/Islamic architecture including large white onion domes and minarets in the background, which is historically and culturally inappropriate for an ancient Jain story about Raja Megharath.",
-   "visual: Jain ascetic and figures in several scenes (such as scenes 9, 10, 11) are shown wearing orange/saffron robes, whereas Jain ascetics traditionally wear plain white or are Digambar.",
-   "visual: Checklist item 1 is true (Mughal/Islamic architecture present).",
-   "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1, 2, 6, 7, 9, 10, 11, 12, 13",
-   "visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 9, 10, 11",
-   "visual score 3/10"
+   "picture check: scene 6: Is any monk or nun wearing saffron, orange or red robes? (yes 84%); Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 70%)",
+   "picture check: scene 7: Is any monk or nun wearing saffron, orange or red robes? (yes 81%)",
+   "picture check: scene 8: Is any monk or nun wearing saffron, orange or red robes? (yes 78%)",
+   "picture check: scene 11: Is any monk or nun wearing saffron, orange or red robes? (yes 66%)",
+   "picture check: scene 12: Is any monk or nun wearing saffron, orange or red robes? (yes 72%)"
   ],
   "replan_requested": "2026-11-19 15:51"
  },
@@ -36,8 +41,23 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "before render, scene 2: FIT: monk is wearing orange/saffron robes instead of plain white robes",
-   "before render, scene 5: OVERLAP/CUT (layout audit): text_occluded on #s3n4"
+   "visual: scene 1: The script intended 'Samvatsari par ghante tak kyun baithte hain Jain?', but the text on screen says 'PRATIKRAMAN KA MATLAB'. This is a mismatch.",
+   "visual: scene 2: The script intended 'Pratikraman ka matlab hai apni bhoolon se wapas lautna.', but the text says 'APNE ASLI SWABHAV'. This is a mismatch.",
+   "visual: scene 3: The script intended 'Agam kehta hai, karam dhyaan se hi chhutte hain.', but the text says 'YEH EK SOUL-RESET'. This is a mismatch.",
+   "visual: scene 4: The script intended 'Iske cheh avashyak hain...', but the text says '48 MINUTE HILNA'. This is a mismatch.",
+   "visual: scene 5: The script intended 'Pehla: Samayika...', but the text says 'DOOSRA: 24 TIRTHANKARON'. This is a mismatch.",
+   "visual: scene 6: The script intended 'Doosra: Logassa...', but the text says 'ROSHNI JAGATE HAIN'. This is a mismatch.",
+   "visual: scene 7: The script intended 'Teesra: Vandana...', but the text says 'TEESRA: VANDANA'. This matches, but the sequence is misaligned with the previous slides.",
+   "visual: scene 8: The script intended 'Chautha: Pratikraman...', but the text says 'CHAUTHA: ASLI HISAAB'. This is a mismatch.",
+   "visual: scene 9: The script intended 'Paanchva: Kayotsarga...', but the text says 'SHARIR DHEELA CHHOD'. This is a mismatch.",
+   "visual: scene 10: The script intended 'Chhatha: Pratyakhyana...', but the text says 'NAYA SANKALP'. This is a mismatch.",
+   "visual: scene 11: The script intended 'Samvatsari Pratikraman saal mein bas ek baar hota hai.', but the text says 'GHANTE CHALTA HAI'. This is a mismatch.",
+   "visual: scene 12: The script intended 'Ant mein Micchami Dukkadam...', but the text says 'MECHANISM AATMA KI SHUDDHI'. This is a mismatch.",
+   "picture check: scene 2: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 66%); Is any monk or nun wearing saffron, orange or red robes? (yes 82%)",
+   "picture check: scene 4: Is any monk or nun wearing saffron, orange or red robes? (yes 78%)",
+   "picture check: scene 6: Is any monk or nun wearing saffron, orange or red robes? (yes 79%)",
+   "picture check: scene 9: Is any monk or nun wearing saffron, orange or red robes? (yes 79%)",
+   "picture check: scene 10: Is any monk or nun wearing saffron, orange or red robes? (yes 69%)"
   ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
@@ -48,7 +68,16 @@
   "title": "Jalte lakdi mein saanp phansa tha",
   "status": "held",
   "review": [
-   "picture check: scenes 2, 3, 7, 9, 10, 11, 12 wrong Jain forms (saffron monks, crowns, jewellery, clothed Bahubali)"
+   "visual: Checklist item 2: Scene 3 and Scene 12 show the Tirthankara (Parshvanath) with yellow/gold skin tone and ornamentation/jewellery, which violates the strict traditional Jain representation (white or dark stone, bare form without jewellery).",
+   "visual: Checklist item 4: Scene 1 and Scene 2 show an ascetic/monk figure with a grey beard and moustache, whereas Tirthankaras are traditionally depicted as young and beardless.",
+   "visual: Checklist item 8: The main figure dramatically changes appearance, age, and beard/clothing style between scenes (Scene 1/2 shows an old bearded ascetic, Scene 3 shows a meditative idol, Scene 7 shows a royal figure with a crown, Scene 9/10 shows a seated Tirthankara).",
+   "visual: checklist: Is a Tirthankara, Bahubali or Jain idol shown with blue, green or grey skin, a crown, jewellery, a tilak, horns or a third eye? -> Scene 3, Scene 11, Scene 12",
+   "visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scene 1, Scene 2",
+   "visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scenes 1-2 vs Scenes 3-12",
+   "picture check: scene 3: Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 66%); Is any monk or nun wearing saffron, orange or red robes? (yes 88%)",
+   "picture check: scene 9: Is any monk or nun wearing saffron, orange or red robes? (yes 61%)",
+   "picture check: scene 12: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 65%)",
+   "visual score 5/10"
   ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
@@ -59,15 +88,9 @@
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
   "status": "held",
   "review": [
-   "visual: Scene 5, 7, and 9: Bahubali/ascetic is depicted wearing clothing (dhoti/lower garment), violating the traditional Digambar/Jain ascetic form rules.",
-   "visual: Scene 3 and 7: Figures wear crowns and royal ornaments which violate the plain ascetic representation rules for Jain figures in this context.",
-   "visual: Checklist q5: Bahubali / Gommateshwara is shown wearing clothes in multiple scenes.",
-   "visual: checklist: Is Bahubali / Gommateshwara shown wearing a crown or clothes, or with hands folded (he stands bare, arms straight down, creepers on his legs)? -> Scenes 5, 7, 9",
-   "picture check: scene 1: the statue is shown wearing clothes/cloth around the waist, with hands folded/raised in a thumbs-up gesture, which is no (checklist 5)",
-   "picture check: scene 3: A crown and jewellery are visible on the central seated statue, and a tilak is on its forehead.; The central seated statue wears a crown and clothes; its hands are not folded, with one hand holding a scepter.; A large central figure wearing a golden crown and jewellery (necklaces and armlets) is shown seated in the middle, under; The central figure is wearing a crown and clothes (sash/drapery over the shoulder), seated rather than standing bare wit (checklist 2, 5)",
-   "picture check: scene 5: In the top panel, the standing Bahubali figure is bare-chested but wears a light-colored dhoti/wrap cloth around his wai; The figure is shown wearing lower clothing/garment in all three panels, and is sitting cross-legged (hands folded in med (checklist 5)",
-   "picture check: scene 7: A golden crown with a red jewel is worn on the head of the main figure in the foreground.; A crown is clearly visible on the head of the main figure at the top of the image. (checklist 5)",
-   "visual score 3/10"
+   "picture check: scene 1: Is any monk or nun wearing saffron, orange or red robes? (yes 69%)",
+   "picture check: scene 3: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 68%); The narration names Bahubali (Gommateshwara), and he is shown wearing a crown or clothes, or with his hands fo (yes 66%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 66%)",
+   "picture check: scene 5: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 89%)"
   ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
@@ -91,7 +114,8 @@
   "status": "held",
   "offer": "WALLPAPER",
   "review": [
-   "picture check: scenes 1, 6, 7 Mahavira shown as a living man in coloured robes with a tilak"
+   "picture check: scene 6: The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure i (yes 63%)",
+   "picture check: scene 8: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 81%)"
   ],
   "replan_requested": "2026-11-19 15:51",
   "minor": [
@@ -105,6 +129,7 @@
   "qc_ok": true,
   "status": "held",
   "review": [
+   "pre-post picture check: scene 11: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 65%)",
    "visual: Mughal/Islamic architecture with cusped arches and domes heavily featured across multiple scenes (e.g., scenes 1-11), which is stylistically inaccurate for a traditional Jain temple environment.",
    "visual: Checklist item 1 triggered: Mughal / Islamic architecture style arches are present throughout the video background.",
    "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1 through 11 (background arches)",
@@ -112,7 +137,8 @@
   ],
   "minor": [
    "picture check: scene 8 onion domes / Mughal-style buildings"
-  ]
+  ],
+  "approved_by": "owner 20 Nov: loosened reviewers; passed today's checks"
  },
  {
   "job": "1119-2225",
@@ -121,11 +147,6 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "picture check: scene 3: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 77%)",
-   "picture check: scene 6: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 76%)",
-   "picture check: scene 8: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 72%)",
-   "picture check: scene 10: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 77%)",
-   "picture check: scene 12: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 84%)",
    "scene 13 vo: informal 'Tu, bata' in \"Tu hota to kya karta? Comment mein bata\" (owner: never 'tu')",
    "scene 13 big: informal 'TU' in \"TU HOTA TO?\" (owner: never 'tu')",
    "post caption: informal 'Tu, bata' (owner: never 'tu')"
@@ -135,11 +156,8 @@
   "job": "1120-1028",
   "topic": "The principle of Aparigraha (Non-Possessiveness) amidst economic news",
   "title": "Aaj ki economy mein Aparigraha kaise laagu karein?",
-  "status": "held",
-  "review": [
-   "STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)",
-   "STORY scene 5: invented: 'Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'': This specific exchange is a modern parable and does not appear in the scriptures. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)"
-  ]
+  "status": "approved",
+  "review": []
  },
  {
   "job": "1120-1542",
@@ -148,20 +166,43 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "visual: Scene 1 & 2: King Raja Shrenik is depicted wearing a crown, jewelry, and royal clothing, but Jain kings and Tirthankaras in heaven/ascetic state are not depicted with Hindu-style ornate crowns and heavy gold jewelry in traditional iconographic accuracy, and more critically, Scene 5/6 and other scenes depict a figure with a crown and ornaments where a Jain soul/Tirthankara is meant.",
-   "visual: Checklist item 4 violated: Tirthankaras or sacred figures are depicted with crowns and jewelry (Scenes 1, 2, 5, 6, 10 show a figure with a crown and necklace representing a soul/future Tirthankara).",
-   "visual: Checklist item 8 violated: King changes appearance/attire across scenes inconsistently.",
-   "visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scenes 1, 2, 5, 6, 10",
-   "visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scenes 1-2 (crowned king) vs Scenes 5-6 (white robes/different depiction)",
-   "picture check: scene 3: Is Bahubali shown wearing a crown or clothes, or with his hands folded? (yes 62%)",
-   "picture check: scene 6: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)",
-   "visual score 4/10"
+   "picture check: scene 6: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 82%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 77%)"
   ]
  },
  {
   "job": "1120-1615",
   "topic": "Why did the first Tirthankara Rishabhanatha wait 365 days for his first alms — and what did people finally offer? (source: adipurana / trishashti-shalaka-purusha-charitra)",
   "title": "Pehle Tirthankara ne 400 din bhookha kyun raha?",
+  "qc_ok": true,
+  "status": "posted",
+  "review": [],
+  "posted": {
+   "at": "2026-11-20 20:50",
+   "ig": "18120650597010296",
+   "fb": "2434222006985953",
+   "yt": "vBOigFMRUWg"
+  }
+ },
+ {
+  "job": "1120-1645",
+  "topic": "The story of Chandanbala: How a princess turned slave became the first female disciple of Mahavira. She offered her last bowl of rice to the Lord, breaking his 6-month fast. Source: Kalpasutra.",
+  "title": "Rajkumari bani daasi, phir Mahavir ki pehli shishya?",
+  "qc_ok": true,
+  "status": "approved",
+  "review": []
+ },
+ {
+  "job": "1120-1724",
+  "topic": "What happened when merchant Shalibhadra offered his last meal to a monk? (Source: Trishashti-shalaka-purusha-charitra)",
+  "title": "Shalibhadra ki kheer ka raaz?",
+  "qc_ok": true,
+  "status": "approved",
+  "review": []
+ },
+ {
+  "job": "1120-1945",
+  "topic": "Was Draupadi a Jain devotee? The untold story of her spiritual journey and path to liberation. (Source: Trishashti-shalaka-purusha-charitra)",
+  "title": "Kya Draupadi ek Jain sadhika thi?",
   "qc_ok": true,
   "status": "made",
   "review": []

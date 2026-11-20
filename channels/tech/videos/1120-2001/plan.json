@@ -1,0 +1,275 @@
+{
+ "slug": "gta-india-dev",
+ "title": "GTA 6 aur India ka connection",
+ "hooks": [
+  "GTA 6 launch ho gaya, par iske peeche asli hero India mein baithe hain.",
+  "Kya aapko pata hai GTA 6 banane mein India ka kitna bada haath hai?",
+  "GTA 6 ke peeche ki asli kahani, Bengaluru se shuru hoti hai."
+ ],
+ "hook_choice": 0,
+ "hook_why": "Starts with the trending topic (GTA 6) and immediately pivots to the 'Indian hero' angle, which is a strong curiosity trigger.",
+ "metaphor": "The 'bridge' between the global scale of GTA VI and the unseen, massive workforce of Indian developers in Bengaluru.",
+ "mechanism": [
+  "Rockstar Games Bengaluru studio employs over 1,600 developers.",
+  "Dhruva Interactive (acquired by Rockstar) contributed to the development.",
+  "Indian developers worked on environments, assets, and world-building.",
+  "Global impact of Indian talent on the gaming industry."
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "GTA 6 launch ho gaya, par iske peeche asli hero India mein baithe hain.",
+   "type": "clip",
+   "prompt": "Cinematic real-world shot of GTA VI gameplay trailer.",
+   "motion": "push",
+   "title": "GTA 6 LAUNCH",
+   "keywords": [
+    "GTA 6",
+    "asli hero",
+    "India"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Rockstar Games ke Bengaluru studio mein 1,600 se zyada developers ne isse banaya hai.",
+   "type": "object",
+   "prompt": "Rockstar Games logo on a dark premium background.",
+   "motion": "pan",
+   "title": "BENGALURU STUDIO",
+   "keywords": [
+    "Rockstar Games",
+    "1,600",
+    "developers"
+   ],
+   "real": {
+    "q": "Rockstar Games logo",
+    "kind": "logo",
+    "subject": "Rockstar Games logo"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Dhruva Interactive jaisi Indian studios ki mehnat, jo ab Rockstar ka hissa hain.",
+   "type": "object",
+   "prompt": "Dhruva Interactive logo on a dark premium background.",
+   "motion": "tilt",
+   "title": "DHRUVA INTERACTIVE",
+   "keywords": [
+    "Dhruva Interactive",
+    "Indian studios"
+   ],
+   "real": {
+    "q": "Dhruva Interactive logo",
+    "kind": "logo",
+    "subject": "Dhruva Interactive logo"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Rockstar ne 2019 mein Dhruva ko acquire kiya tha.",
+   "type": "stat",
+   "value": "2019",
+   "sub": "Acquisition Year",
+   "label": "ACQUISITION",
+   "bg_prompt": "Rockstar Games office in Bengaluru",
+   "real": {
+    "q": "Rockstar Games office Bengaluru",
+    "kind": "photo",
+    "subject": "Rockstar Games office in Bengaluru"
+   },
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Environment, assets, aur world building... sab mein Indian talent ka haath hai.",
+   "type": "object",
+   "prompt": "Game development screen showing 3D assets.",
+   "motion": "push",
+   "title": "WORLD BUILDING",
+   "keywords": [
+    "Environment",
+    "assets",
+    "Indian talent"
+   ],
+   "real": {
+    "q": "Game development screen",
+    "kind": "photo",
+    "subject": "Game development screen"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Game ka Vice Beach, Indian developers ki den hai.",
+   "type": "object",
+   "prompt": "GTA 6 Vice Beach location screenshot.",
+   "motion": "pan",
+   "title": "VICE BEACH",
+   "keywords": [
+    "Vice Beach",
+    "Indian developers"
+   ],
+   "real": {
+    "q": "GTA 6 Vice Beach",
+    "kind": "photo",
+    "subject": "GTA 6 Vice Beach location"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Global gaming mein India ka naam ab top par hai.",
+   "type": "title",
+   "value": "TOP",
+   "sub": "Global Gaming Rank",
+   "label": "GROWTH",
+   "bg_prompt": "Global gaming industry",
+   "real": {
+    "q": "Global gaming industry",
+    "kind": "photo",
+    "subject": "Global gaming industry"
+   },
+   "big": "GROWTH",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "PM Modi ne bhi kaha, India ab ek nayi game khel raha hai.",
+   "type": "object",
+   "prompt": "PM Modi's GTA 6 themed post on X.",
+   "motion": "tilt",
+   "title": "INDIA UPGRADED",
+   "keywords": [
+    "PM Modi",
+    "nayi game"
+   ],
+   "real": {
+    "q": "PM Narendra Modi GTA 6 post",
+    "kind": "photo",
+    "subject": "PM Modi's GTA 6 themed post on X"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Gaming industry mein India ka future bahut bright hai.",
+   "type": "object",
+   "prompt": "Indian game developers working in a studio.",
+   "motion": "push",
+   "title": "BRIGHT FUTURE",
+   "keywords": [
+    "Gaming industry",
+    "future"
+   ],
+   "real": {
+    "q": "Indian game developers",
+    "kind": "photo",
+    "subject": "Indian game developers"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Aapne game try kiya? Comment mein batao.",
+   "type": "title",
+   "big": "TRY KIYA?",
+   "sub": "Comment mein batao",
+   "label": "PAYOFF",
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": "",
+   "bg_prompt": "Vertical scene for a technology explainer about: payoff, gta 6 aur india ka connection. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. One clear subject in the middle third, empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16."
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "GTA 6 ke peeche asli hero India mein baithe hain! 🇮🇳 Bengaluru ke developers ne Rockstar ke saath milkar ye game banayi hai. Kya aapne game try kiya?",
+ "hashtags": [
+  "#GTA6",
+  "#IndiaGaming",
+  "#Bengaluru",
+  "#RockstarGames",
+  "#KaiseTech"
+ ],
+ "claims": [
+  {
+   "claim": "Rockstar Games Bengaluru studio employs over 1,600 developers who contributed to GTA VI.",
+   "basis": "CNBCTV18 report (2026-11-19)"
+  },
+  {
+   "claim": "Dhruva Interactive was acquired by Rockstar Games in 2019.",
+   "basis": "TheWeek report (2026-11-19)"
+  },
+  {
+   "claim": "PM Modi shared a GTA VI-themed post highlighting India's progress.",
+   "basis": "IBTimes India report (2026-11-19)"
+  }
+ ],
+ "explainer": {
+  "score": 7,
+  "ok": false,
+  "steps_learned": [
+   "Rockstar Games has a studio in Bengaluru.",
+   "Over 1,600 developers in Bengaluru contributed to building the game.",
+   "Dhruva Interactive was acquired by Rockstar in 2019 and contributed to the game.",
+   "PM Modi referenced the GTA 6 launch to comment on India's development."
+  ],
+  "missing_steps": [
+   "The script claims Indian developers built 'Vice Beach' or specific assets, but the provided sources only mention general contribution/development work, not specific environmental assets or 'Vice Beach'.",
+   "It doesn't explain *how* a studio in Bengaluru collaborates with a global team (e.g., remote assets, specific departments), which would help a viewer understand the 'connection' better.",
+   "It fails to clarify that the PM's post was a political comparison (India's progress since GTA V) rather than a direct comment on the game's development quality."
+  ],
+  "unsourced": [
+   "Line 6: 'Game ka Vice Beach, Indian developers ki den hai.' (No source confirms this specific asset was built by Indian developers; it's a specific claim without evidence in the provided text.)"
+  ]
+ },
+ "brain_ids": [
+  "1e1964f463",
+  "4396759d41",
+  "f945e2a937",
+  "fc294ac58f",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "6ce7203c71",
+  "7fa182f8ef",
+  "b69d65467f",
+  "161339712e",
+  "9db4cc694f",
+  "1e60a34718",
+  "e15cfaed29",
+  "6055c69660"
+ ],
+ "skin": "keynote"
+}

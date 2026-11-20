@@ -469,3 +469,24 @@
 ## review 1118-0435
 - picture check: scene 1: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 77%)
 - picture check: scene 5: Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 78%)
+
+## 12 Jyotirlinga ki katha - Part 1: Somnath (story check)
+- STORY scene 6: invented: 'World became dark, gods panicked': Source says 'सब ओर महान् हाहाकार मच गया। सब देवता और ऋषि कहने लगे कि ‘हाय ! हाय ! अब क्या करना चाहिये' — great outcry am (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1120-1837z (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s11b
+
+## 1120-1837z (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s11b
+
+## 1120-1837z (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s11b
+
+## review kuber-01
+- picture check: scene 1: Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 78%); Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 63%); Does any god, goddess or sage have a comic, silly or cartoonish facial expression? (yes 87%)
+
+## review 1118-1635
+- picture check: scene 2: Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 75%)
+
+## review 1118-1635
+- picture check: scene 2: Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 75%)

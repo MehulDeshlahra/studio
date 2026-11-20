@@ -928,12 +928,27 @@
   "job": "1120-0040c-c1",
   "topic": "Kacce's FIRST MATCH ENDS LEVEL",
   "title": "Kacce's FIRST MATCH ENDS LEVEL",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://drive.google.com/drive/folders/1XCvBQqY3vIzg5s9kEmOmw20cIJNCD3jT",
    "start": 25.28,
    "layout": "vertical"
+  },
+  "unscheduled": "2026-11-20 20:47",
+  "sched": {
+   "slot": 1795222800,
+   "at": "2026-11-21 06:30",
+   "platforms": [
+    "ig",
+    "yt"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsule/1120-0040c-c1/post.mp4",
+   "prepared": "2026-11-20 20:47",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsule-1120-0040c-c1-1795187848.mp4",
+   "yt": "oZcfzijBTG4",
+   "ig_container": "17869722918675188",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsule-1120-0040c-c1-1795187848.mp4"
   }
  },
  {
@@ -1140,5 +1155,104 @@
    "layout": "vertical"
   },
   "moved_from": "cutcapsulegaming"
+ },
+ {
+  "job": "1120-1735a-c1",
+  "topic": "600 DIAPERS A MONTH? TRIPLETS MATH",
+  "title": "600 DIAPERS A MONTH? TRIPLETS MATH",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "vertical"
+  },
+  "moved_from": "cutcapsulegaming"
+ },
+ {
+  "job": "1120-1735f-c1",
+  "topic": "BEST DIAPERS FOR BLOWOUTS REVEALED",
+  "title": "BEST DIAPERS FOR BLOWOUTS REVEALED",
+  "status": "approved",
+  "review": [
+   "length 11.98 s"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 22.53,
+   "layout": "vertical"
+  },
+  "approved_by": "owner 20 Nov: loosened reviewers, soft problems approved",
+  "minor": [
+   "length 11.98 s"
+  ],
+  "moved_from": "cutcapsulegaming"
+ },
+ {
+  "job": "1120-1951a-c1",
+  "topic": "WIN A SUSHI BOAT",
+  "title": "WIN A SUSHI BOAT",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "fill"
+  },
+  "moved_from": "cutcapsulegaming"
+ },
+ {
+  "job": "1120-1951c-c1",
+  "topic": "RASCALS HAND TAP CHALLENGE",
+  "title": "RASCALS HAND TAP CHALLENGE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 22.88,
+   "layout": "stack"
+  },
+  "moved_from": "cutcapsulegaming"
+ },
+ {
+  "job": "1120-1951d-c1",
+  "topic": "WIN $3 PER 1K VIEWS",
+  "title": "WIN $3 PER 1K VIEWS",
+  "status": "removed",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "fill"
+  },
+  "moved_from": "cutcapsulegaming",
+  "removed_why": "20 Nov: clip of the campaign's own brief ('PER 1K VIEWS'), never post"
+ },
+ {
+  "job": "1120-1951e-c1",
+  "topic": "Rascal Friends is now Rascals",
+  "title": "Rascal Friends is now Rascals",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 1.42,
+   "layout": "stack"
+  },
+  "moved_from": "cutcapsulegaming"
+ },
+ {
+  "job": "1120-1951f-c1",
+  "topic": "GET PAID $3 PER 1K VIEWS",
+  "title": "GET PAID $3 PER 1K VIEWS",
+  "status": "removed",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
+   "start": 0.0,
+   "layout": "fill"
+  },
+  "moved_from": "cutcapsulegaming",
+  "removed_why": "20 Nov: clip of the campaign's own brief ('GET PAID'), never post"
  }
 ]

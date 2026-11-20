@@ -26,3 +26,8 @@
 ## 1120-1440c-c1 (clipper)
 - Caption 'CHCHICKENOD' is a transcription error (nonsense word).
 - checklist: misheard caption
+
+## 1120-1823f-c1 (clipper)
+- Caption typo: 'Tiz' instead of 'this', 'lessom lassies' instead of 'lesson lassies', 'Farm' instead of 'form'
+- Checklist b: Caption words are misheard/misspelled compared to the transcript ('is Tiz', 'lessom lassies', 'Farm')
+- checklist: misheard caption

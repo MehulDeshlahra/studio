@@ -32,12 +32,24 @@
   "job": "1119-2140b-c1",
   "topic": "13 BAG FOR $39, GET FIRED",
   "title": "13 BAG FOR $39, GET FIRED",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://f.io/LGgDvyP3",
    "start": 0.0,
    "layout": "vertical"
+  },
+  "sched": {
+   "slot": 1795222800,
+   "at": "2026-11-21 06:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsuletv/1119-2140b-c1/post.mp4",
+   "prepared": "2026-11-20 20:47",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1119-2140b-c1-1795187823.mp4",
+   "ig_container": "18196620850406979",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1119-2140b-c1-1795187823.mp4"
   }
  },
  {
@@ -241,7 +253,7 @@
   "job": "1120-1440a-c1",
   "topic": "MOM QUESTIONS LITTLE LIES",
   "title": "MOM QUESTIONS LITTLE LIES",
-  "status": "held",
+  "status": "approved",
   "review": [
    "A heavily blurred enlarged copy of the frame behind the video creates a split stacked layout where the top half shows cropped sections of the speaker's head/face, causing a broken layout.",
    "The split top/bottom layout results in the speaker being awkwardly cropped in the upper frames."
@@ -250,7 +262,12 @@
    "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
    "start": 0.0,
    "layout": "stack"
-  }
+  },
+  "approved_by": "owner 20 Nov: loosened reviewers, soft problems approved",
+  "minor": [
+   "A heavily blurred enlarged copy of the frame behind the video creates a split stacked layout where the top half shows cropped sections of the speaker's head/face, causing a broken layout.",
+   "The split top/bottom layout results in the speaker being awkwardly cropped in the upper frames."
+  ]
  },
  {
   "job": "1120-1440b-c1",
@@ -268,7 +285,7 @@
   "job": "1120-1440c-c1",
   "topic": "SECRET SEASONING REVEALED, THEN SNAP",
   "title": "SECRET SEASONING REVEALED, THEN SNAP",
-  "status": "held",
+  "status": "approved",
   "review": [
    "Caption 'CHCHICKENOD' is a transcription error (nonsense word).",
    "checklist: misheard caption"
@@ -277,7 +294,12 @@
    "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
    "start": 353.77,
    "layout": "mixed:crop+fit"
-  }
+  },
+  "approved_by": "owner 20 Nov: loosened reviewers, soft problems approved",
+  "minor": [
+   "Caption 'CHCHICKENOD' is a transcription error (nonsense word).",
+   "checklist: misheard caption"
+  ]
  },
  {
   "job": "1120-1440d-c1",
@@ -314,5 +336,99 @@
    "start": 0.03,
    "layout": "crop"
   }
+ },
+ {
+  "job": "1120-1752a-c1",
+  "topic": "DANCING CAPYBARA STARTS FAMILY DANCE BATTLES",
+  "title": "DANCING CAPYBARA STARTS FAMILY DANCE BATTLES",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1OKVyljW0bzydqhh1MKu3OxFoxL61hH1C",
+   "start": 0.0,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-1823a-c1",
+  "topic": "NAVY PARACHUTIST PLUMMETS AS CHUTE FAILS",
+  "title": "NAVY PARACHUTIST PLUMMETS AS CHUTE FAILS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1OBN9ijIUa39DYfo6FlOosgADwBH8gW4b",
+   "start": 0.19,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-1823b-c1",
+  "topic": "PILOT CATAPULTED 50 YARDS IN CRASH",
+  "title": "PILOT CATAPULTED 50 YARDS IN CRASH",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1OBN9ijIUa39DYfo6FlOosgADwBH8gW4b",
+   "start": 5.63,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-1823c-c1",
+  "topic": "Skydiver cuts loose, backup saves him",
+  "title": "Skydiver cuts loose, backup saves him",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1OBN9ijIUa39DYfo6FlOosgADwBH8gW4b",
+   "start": 4.3,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-1823d-c1",
+  "topic": "VOLUNTEER SITS BACKWARDS, CLAIMS SAFETY",
+  "title": "VOLUNTEER SITS BACKWARDS, CLAIMS SAFETY",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1OBN9ijIUa39DYfo6FlOosgADwBH8gW4b",
+   "start": 0.0,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-1823e-c1",
+  "topic": "Man survives brutal rocket sled crash",
+  "title": "Man survives brutal rocket sled crash",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1OBN9ijIUa39DYfo6FlOosgADwBH8gW4b",
+   "start": 0.0,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1120-1823f-c1",
+  "topic": "CHICAGO MODELS LEARN JUDO FOR FLIRTS",
+  "title": "CHICAGO MODELS LEARN JUDO FOR FLIRTS",
+  "status": "approved",
+  "review": [
+   "Caption typo: 'Tiz' instead of 'this', 'lessom lassies' instead of 'lesson lassies', 'Farm' instead of 'form'",
+   "Checklist b: Caption words are misheard/misspelled compared to the transcript ('is Tiz', 'lessom lassies', 'Farm')",
+   "checklist: misheard caption"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1OBN9ijIUa39DYfo6FlOosgADwBH8gW4b",
+   "start": 1.88,
+   "layout": "vertical"
+  },
+  "approved_by": "owner 20 Nov: loosened reviewers, soft problems approved",
+  "minor": [
+   "Caption typo: 'Tiz' instead of 'this', 'lessom lassies' instead of 'lesson lassies', 'Farm' instead of 'form'",
+   "Checklist b: Caption words are misheard/misspelled compared to the transcript ('is Tiz', 'lessom lassies', 'Farm')",
+   "checklist: misheard caption"
+  ]
  }
 ]

@@ -241,3 +241,19 @@
 
 ## review 1119-0005
 - only 80% of the script was found in the voice
+
+## review 1119-0426-p2
+- length 54.5 s is outside 28-50 s
+- only 0% of the script was found in the voice
+- picture check: scene 5: Is any number, date or rule on screen different from the voice-over? (yes 64%)
+- picture check: scene 7: Is any number, date or rule on screen different from the voice-over? (yes 64%)
+
+## review 1119-0426-p2
+- length 54.5 s is outside 28-50 s
+- only 0% of the script was found in the voice
+- picture check: scene 5: Is any number, date or rule on screen different from the voice-over? (yes 64%)
+- picture check: scene 7: Is any number, date or rule on screen different from the voice-over? (yes 64%)
+
+## Purana sona bechne par poora paisa kyun nahi milta (numbers check)
+- NUMBERS: scene 4: 'Solder/Joints deduction is None' is wrong: Source goldmartjewels.com states: 'Impurity / Solder Deduction... Typically 1–3% deducted.'
+- NUMBERS: scene 4: 'Stones deduction is None' is wrong: Source goldmartjewels.com states: 'Stone Weight... stones ki alag valuation hoti hai.'

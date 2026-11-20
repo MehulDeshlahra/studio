@@ -536,5 +536,252 @@
     "score": 5.27
    }
   ]
+ },
+ {
+  "t": "2026-11-20 17:49",
+  "picked": "GPS ko kaise pata ki aap kahan ho",
+  "ideas": [
+   {
+    "topic": "GPS ko kaise pata ki aap kahan ho",
+    "search": "GPS ko kaise pata ki aap kahan ho",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 9.5,
+    "median_views": 6165172,
+    "fresh": 4.9,
+    "score": 7.71
+   },
+   {
+    "topic": "GTA VI and India's Game Dev Talent",
+    "search": "how gta 6 is made",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "India's role in GTA VI development is a massive trending story. It connects national pride with tech curiosity.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.3,
+    "score": 7.41
+   },
+   {
+    "topic": "iPhone Handoff Feature",
+    "search": "iOS 27 handoff feature",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "New iOS 27 features are always trending. The 'Kaise Tech' angle: How does the 'One number, two devices' handoff tech actually sync data instantly?",
+    "demand_known": true,
+    "demand": 4.1,
+    "median_views": 43272,
+    "fresh": 6.3,
+    "score": 7.25
+   },
+   {
+    "topic": "GTA 6 Software Warning",
+    "search": "GTA 6 release news",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With GTA 6 being a massive cultural phenomenon and PlayStation issuing a software warning, viewers are desperate for info. The 'Kaise Tech' angle: How do pre-launch software checks actually work to prevent leaks?",
+    "demand_known": true,
+    "demand": 3.5,
+    "median_views": 25290,
+    "fresh": 6.6,
+    "score": 7.04
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 7.0,
+    "median_views": 645373,
+    "fresh": 2.7,
+    "score": 6.14
+   },
+   {
+    "topic": "AI Agents: Kya ye aapka kaam khud kar sakte hain? (AI ka naya)",
+    "note": "",
+    "search": "what are ai agents explained",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.7,
+    "score": 6.09
+   },
+   {
+    "topic": "AI ko photo kaise samajh aati hai? (AI kaise)",
+    "note": "",
+    "search": "how computer vision works simply",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 4.0,
+    "median_views": 40973,
+    "fresh": 5.0,
+    "score": 5.95
+   },
+   {
+    "topic": "Airplane mode asli mein kya karta hai? (Tech raaz)",
+    "note": "",
+    "search": "how airplane mode works explained",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.2,
+    "median_views": 7870,
+    "fresh": 5.5,
+    "score": 5.59
+   },
+   {
+    "topic": "Touchscreen ungli kaise detect karta hai? (Kaise kaam karta hai)",
+    "note": "",
+    "search": "how capacitive touchscreen works",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 9592,
+    "fresh": 4.3,
+    "score": 5.49
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 186,
+    "fresh": 5.1,
+    "score": 3.47
+   }
+  ]
+ },
+ {
+  "t": "2026-11-20 20:02",
+  "picked": "GTA VI and India's Game Dev Talent",
+  "ideas": [
+   {
+    "topic": "GTA VI and India's Game Dev Talent",
+    "search": "how gta 6 is made",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "India's role in GTA VI development is a massive trending story. It connects national pride with tech curiosity.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 7.3,
+    "score": 7.41
+   },
+   {
+    "topic": "GTA 6 Software Warning",
+    "search": "GTA 6 release news",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With GTA 6 being a massive cultural phenomenon and PlayStation issuing a software warning, viewers are desperate for info. The 'Kaise Tech' angle: How do pre-launch software checks actually work to prevent leaks?",
+    "demand_known": true,
+    "demand": 2.7,
+    "median_views": 11525,
+    "fresh": 6.6,
+    "score": 6.69
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 7.0,
+    "median_views": 616236,
+    "fresh": 2.7,
+    "score": 6.14
+   },
+   {
+    "topic": "Bluetooth kaise kaam karta hai? Invisible handshake visual metaphor",
+    "note": "",
+    "search": "bluetooth how it works",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 3.2,
+    "median_views": 19371,
+    "fresh": 5.6,
+    "score": 5.71
+   },
+   {
+    "topic": "iPhone Handoff Feature",
+    "search": "iOS 27 handoff feature",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "New iOS 27 features are always trending. The 'Kaise Tech' angle: How does the 'One number, two devices' handoff tech actually sync data instantly?",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 102,
+    "fresh": 6.3,
+    "score": 5.41
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 5.27
+   },
+   {
+    "topic": "AI image generation kaise kaam karta hai? Diffusion noise-to-image demo",
+    "note": "",
+    "search": "ai image generation explained",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 1.7,
+    "median_views": 4915,
+    "fresh": 5.1,
+    "score": 4.94
+   },
+   {
+    "topic": "Gemini 2.0 Project Astra naya kya hai? Real screen captures, sourced",
+    "note": "",
+    "search": "gemini 2.0 project astra features",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 22,
+    "fresh": 7.1,
+    "score": 4.22
+   },
+   {
+    "topic": "Photopea: Free Photoshop alternative real browser demo",
+    "note": "",
+    "search": "free photoshop alternative browser",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 91,
+    "fresh": 6.6,
+    "score": 4.12
+   },
+   {
+    "topic": "Incognito mode ka sach: Kya really private hai? Myths vs reality",
+    "note": "",
+    "search": "incognito mode privacy myths",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 10,
+    "fresh": 6.2,
+    "score": 4.04
+   }
+  ]
  }
 ]

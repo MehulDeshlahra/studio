@@ -2,8 +2,9 @@
  "channel": "jain",
  "job": "1120-1028",
  "topic": "The principle of Aparigraha (Non-Possessiveness) amidst economic news",
- "stage": "held",
+ "stage": "done",
  "held_at": "2026-11-20 11:37",
  "soft_review": 1,
- "soft_preflight": 1
+ "soft_preflight": 1,
+ "brain_judged": true
 }

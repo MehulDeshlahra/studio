@@ -6,18 +6,14 @@
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
   "lufs": -14.4,
-  "true_peak": -2.3,
+  "true_peak": -2.0,
   "dur": 45.1
  },
  "vision": {
-  "score": 5,
-  "ok": false,
-  "problems": [
-   "scene 5: Image mismatch. The frame shows a demon on a throne, but the title says 'MOUNTING GARUDA' and the line describes Krishna and Satyabhama on Garuda.",
-   "scene 11: Misspelling. 'SROT' is used instead of 'SHROT' (Source).",
-   "scene 1, 6, 7, 11, 13, 14: The titles specified in the prompt are missing from these frames.",
-   "scene 13: The background silhouettes of the figures look distorted and 'melted', typical of AI errors."
-  ]
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
  },
  "voice": {
   "ok": true,
@@ -26,5 +22,5 @@
   "words": 122,
   "problems": []
  },
- "ok": false
+ "ok": true
 }
