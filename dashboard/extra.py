@@ -167,7 +167,15 @@ def published():
                "likes": sum((r.get("likes") or 0) + (r.get("yt_likes") or 0) for r in rows),
                "campaign": sum(1 for r in rows if r["campaign"]), "submitted": sum(1 for r in rows if r["campaign"] and r["submitted"])}
         return {"rows": rows, "totals": tot, "t": time.time()}
-    return cached("published", 1200, f)
+    # 20 Nov (owner: a post made 20:49 was not on the page): the list is rebuilt as soon as any done.json changes (a new
+    # post shows at once); the live numbers are still fetched at most every 20 min when nothing changed
+    sig = max((os.path.getmtime(os.path.join(ROOT, "channels", c, "done.json")) for c in os.listdir(os.path.join(ROOT, "channels"))
+               if os.path.exists(os.path.join(ROOT, "channels", c, "done.json"))), default=0)
+    v = _c.get("published")
+    if v and v[1].get("sig") != sig:
+        _c.pop("published", None)
+    r = cached("published", 1200, lambda: dict(f(), sig=sig))
+    return r
 
 
 # ---------------- connected sources ----------------
