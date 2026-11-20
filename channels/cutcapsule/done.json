@@ -754,8 +754,10 @@
   "job": "1119-1940-c3",
   "topic": "Why 80% of players play LBC",
   "title": "Why 80% of players play LBC",
-  "status": "approved",
-  "review": [],
+  "status": "held",
+  "review": [
+   "20 Nov: webcam over game cropped as a plain crop (game text cut at both sides, webcam small at top): needs the stack layout"
+  ],
   "clip": {
    "url": "https://www.youtube.com/watch?v=yUME5U4OQ0A",
    "start": 123.87,
