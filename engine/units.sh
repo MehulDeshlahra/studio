@@ -59,6 +59,11 @@ mk studio-learn-deep "Studio deep repo reader (3x a day)" "*-*-* 01,09,15:30:00"
 [ -f /home/ubuntu/studio/engine/indiawatch.py ] && mk studio-indiawatch "Studio Indian clipping platforms watcher (daily)" "*-*-* 11:10:00" indiawatch.py 900
 [ -f /home/ubuntu/studio/engine/creatorask.py ] && mk studio-creatorask "Studio creator clipping-permission emails (daily, 15 max)" "*-*-* 11:30:00" "creatorask.py daily" 1800
 [ -f /home/ubuntu/studio/engine/creatorask.py ] && mk studio-creatorreplies "Studio creator email replies (hourly)" "*-*-* *:15:00" "creatorask.py replies" 600
-mk studio-post-us "Studio posting at US hours (English clip pages: campaigns pay on US/global views)" "*-*-* 02,04,06,22:30:00" "publish.py cutcapsule cutcapsulegaming cutcapsuletv" 3600
+# 20 Nov (owner: "posting should happen instantly"): studio-post / studio-post-us are replaced by engine/schedule.py:
+# prepare every 15 min (FB scheduled Reel, YT publishAt, IG container ready), publish at the slot every minute
+# mk studio-post-us ... (retired)
+mk studio-schedule "Studio posting: prepare the next slots (FB/YT scheduled, IG container ready)" "*-*-* *:02/15:00" "schedule.py stage" 3000
+mk studio-fire "Studio posting: publish at the slot (every minute)" "*-*-* *:*:00" "schedule.py fire" 1800
+mkdir -p /etc/systemd/system/studio-fire.timer.d; printf "[Timer]\nAccuracySec=1s\n" > /etc/systemd/system/studio-fire.timer.d/accuracy.conf; systemctl daemon-reload
 [ -f /home/ubuntu/studio/engine/clipwatch.py ] && mk studio-clipwatch "Studio auto-clipper for joined sources (hourly)" "*-*-* *:40:00" clipwatch.py 9000
 systemctl list-timers 'studio-*' --no-pager | head -30
