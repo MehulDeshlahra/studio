@@ -783,6 +783,15 @@ def main():
             log("offer skipped:", str(e)[:120])
         save(pp, p)
     p = load(pp)
+    if p.get("numbers_hold"):                 # 20 Nov: only HARD story / numbers problems hold (engine/strict.py)
+        try:
+            import strict
+            hard_, soft_ = strict.split(p["numbers_hold"])
+            if not hard_:
+                log("story/numbers check: only soft points, going on:", " | ".join(soft_)[:200])
+                p["story_notes"] = soft_; p.pop("numbers_hold", None); save(pp, p)
+        except Exception as e:
+            log("strict split failed", str(e)[:100])
     if p.get("numbers_hold"):     # 18 Nov: wrong maths after one fix round -> held before any voice / render time is spent
         done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), []) or []
         row = next((d for d in done if d["job"] == job_id), None)

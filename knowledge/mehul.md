@@ -52,3 +52,16 @@ OUR CONTENT SHOULD NEVER BE LOW EFFORT. Money comes after hard work. Before doin
 and what NOT to do, think it through, ask "is this good?" and if it is only good, discard it and make it better. Ship
 only the best of the best. Every format, feature and post has research behind it (written down) and its real output
 is looked at before it goes live.
+
+## Strictness (owner decisions, 20 Nov 2026; engine/strict.py and engine/respect.py enforce them)
+- Owner: "we are getting too strict, nothing will ever be posted". A reel is stopped ONLY for:
+  1. the MAIN figure in the wrong form (wrong god, another god's weapon or emblem, beard / crown / saffron robes on a
+     Tirthankara, blue skin, clothed Bahubali). Background details pass with a note.
+  2. Mughal domes / minarets filling 3+ scenes (1-2 scenes pass with a note); a tilak, earrings or an ornament alone pass.
+  3. a story change that alters the story, its ending or its teaching (an added line of dialogue passes);
+  4. wrong numbers / money facts; 5. "tu" to the viewer; 6. a broken voice (script not found, spoken instructions);
+  7. unsafe content; 8. broken sound / format; 9. captions in the wrong language; 10. visual score under 5/10.
+- Everything else gets ONE automatic fix, then posts; the problem goes into the page's lessons file.
+- Address: "tu" is bad only when WE speak to the viewer. "tum", "batao", "karo" are fine. Inside the story a character
+  may say "tu" (quoted speech, "Raghav bola, ...").
+- Pages with fewer than 2 approved reels come first for the healer and for new reels.

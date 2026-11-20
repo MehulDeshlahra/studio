@@ -38,6 +38,23 @@ def find(text):
     return [m.group(0) for m in HARD.finditer(t)] + [m.group(2) for m in SOFTRX.finditer(t)]
 
 
+# 20 Nov owner: "tu" is bad only when we speak to the VIEWER; inside the story a character may say "tu"
+SPEECH = re.compile(r"(?<![a-z])(bola|boli|bole|bolta|bolti|kaha|kahi|kehta|kehti|kahta|kahti|puchha|poocha|puchhi|poochhi|"
+                    r"chillaya|chillayi|chilla(?:ya|yi)|gurraya|daanta|samjhaya|samjhayi|jawab diya|ne kaha|said)(?![a-z])", re.I)
+QUOTED = re.compile(r"[\"\u201c\u201d][^\"\u201c\u201d]*[\"\u201c\u201d]|'[^']{3,}'")
+
+
+def viewer_tu(text):
+    """The "tu" words that speak to the viewer: quoted speech and lines where a character speaks ("Raghav bola, bhai tu
+    ...") are the story, not us; a line with a call to the viewer (comment / follow / share ...) always counts."""
+    t = text or ""
+    if re.search(r"(?<![a-z])(comment|follow|share|subscribe|save|like|dm|link)(?![a-z])", t, re.I):
+        return find(t)
+    if SPEECH.search(t):
+        return []
+    return find(QUOTED.sub(" ", t))
+
+
 def fix(text):
     if not text or not isinstance(text, str):
         return text
@@ -60,7 +77,7 @@ FIELDS = ("vo", "title", "big", "small", "headline", "text", "label", "question"
 
 
 REWRITE = """You fix ONE line of a Hindi short-video script (Roman Hinglish). Owner rule: nobody is spoken to as "tu".
-Change every "tu" form (tu, tera, teri, tere, tujhe, tujhse and the bare commands like "bata", "kar", "le") to the
+Only lines where WE speak to the viewer reach you. Change every "tu" form (tu, tera, teri, tere, tujhe, tujhse and the bare commands like "bata", "kar", "le") to the
 "tum" form with the matching verbs. "tum" and "aap" stay as they are. Do not add, drop or move anything else: same
 names, same keywords in capitals, same punctuation, same meaning.
 Examples:
@@ -75,7 +92,7 @@ Return JSON {{"line": "..."}}"""
 def rewrite_line(line):
     """A spoken line: the text model rewrites it into natural respectful Hindi (word swaps break the grammar:
     "bhai tu tension mat le" -> "aap tension mat le"); checked, else the word-level fix."""
-    if not find(line):
+    if not viewer_tu(line):
         return line
     try:
         import llm
@@ -99,6 +116,8 @@ def fix_plan(p):
         if isinstance(o, dict):
             for k, v in list(o.items()):
                 if isinstance(v, str) and (k in FIELDS or k.endswith("_text") or k in ("description", "pinned", "comment", "first_comment")):
+                    if not viewer_tu(v):
+                        continue
                     f = rewrite_line(v) if k == "vo" else fix(v)
                     if f != v:
                         o[k] = f; n += 1
@@ -117,12 +136,12 @@ def problems(p):
     for i, s in enumerate(p.get("scenes") or []):
         for k in FIELDS:
             v = s.get(k)
-            if isinstance(v, str) and find(v):
-                out.append(f"scene {i + 1} {k}: informal '{', '.join(find(v))}' in \"{v[:80]}\" (owner: never 'tu')")
+            if isinstance(v, str) and viewer_tu(v):
+                out.append(f"scene {i + 1} {k}: informal '{', '.join(viewer_tu(v))}' in \"{v[:80]}\" (owner: never 'tu')")
     for k in ("caption", "description", "title", "first_comment", "pinned"):
         v = p.get(k)
-        if isinstance(v, str) and find(v):
-            out.append(f"post {k}: informal '{', '.join(find(v))}' (owner: never 'tu')")
+        if isinstance(v, str) and viewer_tu(v):
+            out.append(f"post {k}: informal '{', '.join(viewer_tu(v))}' (owner: never 'tu')")
     return out
 
 

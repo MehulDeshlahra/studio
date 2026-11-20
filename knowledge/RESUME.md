@@ -208,3 +208,16 @@ Server helper `~/bq "line"` appends a verified line to knowledge/build-queue.md 
 - False-positive check of sync_problems on all 52 existing timings: 5 flagged, all real (incl. two English edits with leaks).
 - v1 kept as plan.v1.json / research.v1.json / /tmp/wa-v1.mp4; rebuild running as studio-job-wa5.- 19 Nov: the 37 duplicate FB 'updated profile picture / cover photo' posts (before the brand.py fix at 13:52) stay: Facebook's API cannot delete them and the owner said 'leave'. Do not raise it again.
 - 19 Nov 21:10: owner approved the new clip format ('looking great' on the Telegram draft: cvc engine + face-following crop, 38 s stand-up bit). Cut Capsule posting ON; gaming / tv / hindi stay off until each has its own test (webcam stack layout, Hinglish captions). Old-format approved clips superseded.
+
+## Strictness (owner decisions, 20 Nov 2026; engine/strict.py and engine/respect.py enforce them)
+- Owner: "we are getting too strict, nothing will ever be posted". A reel is stopped ONLY for:
+  1. the MAIN figure in the wrong form (wrong god, another god's weapon or emblem, beard / crown / saffron robes on a
+     Tirthankara, blue skin, clothed Bahubali). Background details pass with a note.
+  2. Mughal domes / minarets filling 3+ scenes (1-2 scenes pass with a note); a tilak, earrings or an ornament alone pass.
+  3. a story change that alters the story, its ending or its teaching (an added line of dialogue passes);
+  4. wrong numbers / money facts; 5. "tu" to the viewer; 6. a broken voice (script not found, spoken instructions);
+  7. unsafe content; 8. broken sound / format; 9. captions in the wrong language; 10. visual score under 5/10.
+- Everything else gets ONE automatic fix, then posts; the problem goes into the page's lessons file.
+- Address: "tu" is bad only when WE speak to the viewer. "tum", "batao", "karo" are fine. Inside the story a character
+  may say "tu" (quoted speech, "Raghav bola, ...").
+- Pages with fewer than 2 approved reels come first for the healer and for new reels.
