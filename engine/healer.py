@@ -236,7 +236,11 @@ def heal_held():
         want_turn(False)
         if not rows:
             return
-    if busy():
+    # 20 Nov (owner: "videos are kept for rebuild so long, why don't they get rebuilt?"): the healer waited until NOTHING
+    # else ran (lanes, any manual job), so held videos got no turn from 13:07 to 19:40. Rebuilds mostly wait on remote
+    # models: with 4 GB+ free it runs ONE rebuild beside the other work (never two of its own at once)
+    own = sh("systemctl list-units --state=active,activating --no-legend 'studio-job-heal-*.service'")[1].strip()
+    if own or (busy() and mem_mb() < 4000):
         if any(r[0].startswith("0") for r in rows):
             want_turn(True)
         return
@@ -278,7 +282,7 @@ def heal_held():
             it["steps"] = [s for s in it["steps"] if not (s["step"] == "code" and "result" not in s)]
             tried = {(s["step"], s.get("code")) for s in it["steps"]}
             today_steps = sum(1 for s in it["steps"] if s.get("t", "")[:10] == time.strftime("%Y-%m-%d"))
-            if today_steps >= 3:                            # a hard daily cap per video: never loop on one job (was 6)
+            if today_steps >= 5:                            # a hard daily cap per video (20 Nov: 3 left most held videos idle all evening)
                 continue
             stg = stage_for(probs)
             # 20 Nov audit: with make.py / plan.py in this list, each of the 138 engine commits of 19-20 Nov counted as "the
