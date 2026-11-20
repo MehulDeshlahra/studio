@@ -34,7 +34,7 @@ LANG = re.compile(r"(french|fran[cç]ais|arabic|عربي|espa[nñ]ol|spanish|por
                   r"turkish|t[uü]rk|japanese|korean|russian|polski|polish|vietnam|indonesia|"
                   # 19 Nov: regional campaigns pay only views from that region ([NORDICS], [FRANCE] Blizzard)
                   r"\[(nordics?|france|fr|de|dach|germany|spain|es|latam|br|brazil|mena|ksa|uae|gcc|it|italy|pl|tr|jp|kr|mx|"
-                  r"benelux|nl|pt|ro|cz|hu|uk)\]|\bnordics\b|\blatam\b|clipping france|\bjours\b|\(fr\)|\bfrance\b)", re.I)
+                  r"benelux|nl|pt|ro|cz|hu)\]|\bnordics\b|\blatam\b|clipping france|\bjours\b|\(fr\)|\bfrance\b)", re.I)
 
 
 def _get(url):
