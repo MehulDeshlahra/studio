@@ -1129,8 +1129,9 @@ def main():
     # 8 qc
     rep = {"topic": topic, "title": p.get("title"), "format": qc.fmt(final)}
     mids = [((t["start"] + t["end"]) / 2) for t in timed]
-    sheet = qc.sheet(final, mids, os.path.join(job, "sheet.jpg"))
-    rep["vision"] = qc.vision(sheet, p)
+    # 20 Nov audit: qc.vision judged a contact sheet here and review.vision_review judged another one a minute later
+    # (stricter, with the page checklist); only qc's format numbers were read downstream. One vision judge now: review.
+    rep["vision"] = {"ok": None, "score": None, "problems": [], "note": "judged by review.py"}
     tj2 = load(os.path.join(job, "timing.json"), {})
     words = [w for L in tj2.get("lines", []) for w in L.get("words", [])]
     cover = tj2.get("cover")
