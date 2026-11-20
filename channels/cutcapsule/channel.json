@@ -14,7 +14,7 @@
     "layout": "fill"
   },
   "schedule": {
-    "posts_per_day": 2,
+    "posts_per_day": 4,
     "post_hours_ist": [
       6,
       22,
@@ -24,31 +24,18 @@
     "post_hours_note": "priority order. 06:30 IST = 8 pm New York, 22:30 = noon NY, 02:30 = 4 pm NY, 04:30 = 6 pm NY: campaigns pay on US/global views",
     "ramp": [
       [
-        "2026-11-20",
-        1
-      ],
-      [
-        "2026-11-24",
-        2
-      ],
-      [
-        "2026-12-01",
-        3
-      ],
-      [
-        "2026-12-08",
+        "2026-11-21",
         4
       ]
     ],
-    "ramp_note": "19 Nov owner: more posts = more paid views. Account made 19 Nov; warming advice is ~1 Reel/day for 2 weeks. Step back if reach falls.",
-    "backlog": 6,
+    "ramp_note": "20 Nov owner: 'yes 4' - warm-up dropped on clip pages, 4 a day from 21 Nov (more posted clips = more Whop paid views). Step back if reach falls.",
+    "backlog": 12,
     "manual_first": 0,
     "auto_approve": true,
     "manual_first_note": "19 Nov owner: auto approve from my side"
   },
   "warmup": {
     "post_from": "2026-11-20",
-    "one_a_day_until": "2026-11-27",
     "note": "new account (created 19 Nov): standard warm-up"
   },
   "handle": "@cutcapsule",
@@ -81,6 +68,5 @@
   },
   "youtube": "@cut.capsule",
   "post": true,
-  "post_note": "19 Nov: owner OK on the new clip format (Telegram draft, 'looking great'); gaming / tv / hindi stay off until each is tested",
   "post_note": "19 Nov HOLD (golden rule): Instagram + YouTube stop recommending accounts that mostly post others' clips without material edits (crop/captions/logo do not count). Posting resumes when the clip format adds real commentary / storyline (owner sees frames first)."
 }
