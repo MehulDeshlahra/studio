@@ -246,7 +246,9 @@ def hung_models(hours=24, at_least=5, share=0.5):
             m = s.get("requestedModel") or s.get("model")
             if s.get("status") == 200:
                 tot[m] = tot.get(m, 0) + 1
-            if s.get("status") == 499 or (s.get("status") == 503 and (s.get("duration") or 0) > 20000):
+            # 20 Nov audit: pollinations deepseek / openai-large / kimi answered 401 2,478 times in 2 days (the connection
+            # lost its key after the morning probe) and stayed first in line; a model that keeps refusing is treated the same
+            if s.get("status") in (499, 401, 402, 403) or (s.get("status") == 503 and (s.get("duration") or 0) > 20000):
                 m = s.get("requestedModel") or s.get("model")
                 bad[m] = bad.get(m, 0) + 1
     return {m for m, n in bad.items() if n >= at_least and n >= share * tot.get(m, 0)}
