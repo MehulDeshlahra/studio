@@ -312,6 +312,11 @@ Return JSON with exactly this shape:
         words = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))
         if W0 <= words <= W1 + 10:
             break
+        # 20 Nov audit: 12 of 33 plans (19-20 Nov) took this extra call, then the editor pass below rewrote the plan to
+        # W0-W1 anyway. A plan within 25 words of the range is fitted by the editor pass (told the count) instead
+        if W0 - 25 <= words <= W1 + 40:
+            log("plan has", words, "words -> the editor pass fits it to", f"{W0}-{W1}")
+            break
         log("plan has", words, "words -> asking for a fix")
         plan = ask(f"This plan has {words} spoken words; it needs {W0 + 5}-{W1 - 5}. Rewrite it to fit: add the missing "
                    f"steps of the mechanism (or cut repetition), keep the same JSON shape.\n{EXAMPLE}\n"
@@ -321,7 +326,8 @@ Return JSON with exactly this shape:
 then return the IMPROVED plan (same JSON shape). Fix: weak hook, repeated visuals, lines over 16 words, scenes that add
 no new information, unclear mechanism, prompts that would make cluttered or text-filled images, risky or unverifiable
 claims (remove them), a weak ending question, stiff or bookish Hindi (make it sound like a friend talking),
-production-label titles. Make the mechanism complete (no missing step). Keep 10-15 scenes and {W0}-{W1} words total.
+production-label titles. Make the mechanism complete (no missing step). Keep 10-15 scenes and {W0}-{W1} words total
+(the plan now has {sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))} spoken words: add real steps or cut repetition to fit).
 LESSONS:
 {lessons}
 PLAN:
@@ -332,6 +338,15 @@ PLAN:
         if len(better.get("scenes", [])) >= 6 and W0 - 5 <= bw <= W1 + 15:
             plan = better
             log("plan v2 (reviewed)", len(plan["scenes"]), "scenes")
+        else:
+            w1_ = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))
+            if not (W0 - 5 <= w1_ <= W1 + 15):           # neither version fits: the old length fix, once
+                log("plan v2 still", bw, "words -> length fix")
+                fx = ask(f"This plan has {w1_} spoken words; it needs {W0 + 5}-{W1 - 5}. Rewrite it to fit: add the missing "
+                         f"steps of the mechanism (or cut repetition), keep the same JSON shape.\n{EXAMPLE}\n"
+                         f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}")
+                if len((fx or {}).get("scenes") or []) >= 6:
+                    plan = fx
     except Exception as e:
         log("plan review failed, keeping v1:", str(e)[:120])
     return _checks(ch, topic, plan, research_text, W0, W1, bids)
