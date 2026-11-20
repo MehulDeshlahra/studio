@@ -106,6 +106,15 @@ def write():
     L.append(f"- Known fixes learned: {len(fx)}" + ("".join(f"\n  - {f['fix']} x{f['n']}: {f['example'][:120]}" for f in fx[-5:])))
     L.append("")
     # models
+    try:                                          # 20 Nov audit: what is left of every free quota, in one place
+        import quota
+        L.append("## Free quotas today (engine/quota.py)")
+        L += [quota.line(r) for r in quota.left()]
+        sp = quota.spend()
+        L += [f"- OmniRoute (Studio key, UTC day): reels {sp['reels'][0]} calls ({sp['reels'][1]} failed), other work "
+              f"{sp['other'][0]} ({sp['other'][1]} failed)", ""]
+    except Exception as e:
+        L += [f"- quota view failed: {str(e)[:100]}", ""]
     pr = load(os.path.join(OUT, "omni-probe.json"), {}) or {}
     res = pr.get("results", {})
     L.append("## Models (engine/omnimap.py, OmniRoute)")
