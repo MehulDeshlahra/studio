@@ -623,9 +623,22 @@ def _stage_assets(ch, p, job):
             if s["type"] == "flow":
                 prompt = "Soft, simple, uncluttered background for a diagram: " + prompt
             f = os.path.join(adir, f"s{i}.webp")
-            img = (muse.image(prompt, f) or muse.omni_image(prompt, os.path.join(adir, f"s{i}o.jpg"))
-                   or muse.cloudflare(prompt, os.path.join(adir, f"s{i}.jpg"))
-                   or muse.pollinations(prompt, os.path.join(adir, f"s{i}p.jpg")))
+
+            def chain(pr, n=0, i=i, f=f):
+                sfx = "" if n == 0 else f"t{n}"
+                return (muse.image(pr, f if n == 0 else os.path.join(adir, f"s{i}{sfx}.webp"))
+                        or muse.omni_image(pr, os.path.join(adir, f"s{i}o{sfx}.jpg"))
+                        or muse.cloudflare(pr, os.path.join(adir, f"s{i}{sfx}.jpg"))
+                        or muse.pollinations(pr, os.path.join(adir, f"s{i}p{sfx}.jpg")))
+            img = None
+            try:                      # 20 Nov: prompt engineer + reference pictures + Decisions check (engine/picsmith.py)
+                import picsmith
+                if picsmith.on(ch, theme.get("style")) and s["type"] != "flow":
+                    img = picsmith.scene_picture(ch, p, s, i, prompt, adir, chain)
+                    save(os.path.join(job, "plan.json"), p)
+            except Exception as e:
+                log("picsmith failed, normal picture:", str(e)[:160])
+            img = img or chain(prompt)
             if img:
                 a["image"] = img
             elif last_img:
