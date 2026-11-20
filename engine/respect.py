@@ -30,7 +30,7 @@ SOFTRX = re.compile(r"(?<![a-z])(" + CTA + r")\s+(" + "|".join(SOFT) + r")(?![a-
                     r"(?!\s+(?:dunga|dungi|denge|diya|liya|raha|rahi|rahe|chuka|chuki|sakta|sakti|payega))"
                     r"(?=\s*(?:$|[.,!?|:;\u2014-]|aur\b))", re.I)   # "mein do devtaon" (two gods) is no request
 # "tum ... ho" / "tu ... hai" endings become "aap ... hain"
-HO = re.compile(r"(?<![a-z])(aap\b[^.?!|]{0,40}?\b)(ho|hai|tha|thi)(?=[\s?!.,]|$)", re.I)
+HO = re.compile(r"(?<![a-z])(aap\b[^.?!|]{0,40}?\b)(ho|hai|tha|thi)(?=\s*(?:[?!.,|]|$))", re.I)   # "ho jayega" stays
 
 
 def _case(src, new):
@@ -70,10 +70,18 @@ def fix(text):
 FIELDS = ("vo", "title", "big", "small", "headline", "text", "label", "question", "cta", "caption", "line", "hook")
 
 
-REWRITE = """Rewrite this one line of a Hindi short-video script (Roman Hinglish) so it speaks respectfully: everyone,
-the viewer and every character, is addressed as "aap" with the matching verb forms ("aap kya karenge", "tension mat
-lijiye"), and every ask to the viewer is a polite request ("comment mein bataiye", "follow kijiye", "sochiye").
-Keep the meaning, the names, the length (within a few words) and the Roman letters. Change nothing else.
+REWRITE = """You fix ONE line of a Hindi short-video script (Roman Hinglish). Owner rule: nobody is spoken to as "tu" or
+"tum"; everyone (the viewer and every character) is "aap", and every ask to the viewer is a polite request.
+Change ONLY the informal words and the verbs that go with them. Do not add, drop or move anything else: no new words
+like "aapki" or "mein", same names, same keywords in capitals, same punctuation, same meaning.
+Examples:
+"Comment karo MAHAKAL, main DM kar dunga." -> "Comment kijiye MAHAKAL, main DM kar dunga."
+"bhai tu tension mat le, sab theek ho jayega." -> "bhai aap tension mat lijiye, sab theek ho jayega."
+"Tum ho detective." -> "Aap hain detective."
+"Socho agar paani girta, toh kya hota?" -> "Sochiye, agar paani girta, toh kya hota?"
+"Tum kya karoge? Dekhoge ya bhaagoge?" -> "Aap kya karenge? Dekhenge ya bhaagenge?"
+"Part 2 kal. Follow karo." -> "Part 2 kal. Follow kijiye."
+"Comment mein batao." -> "Comment mein bataiye."
 Line: {line}
 Return JSON {{"line": "..."}}"""
 
@@ -85,9 +93,11 @@ def rewrite_line(line):
         return line
     try:
         import llm
-        r = llm.text(REWRITE.format(line=line), json_mode=True, max_tokens=400, fast=True) or {}
+        r = llm.text(REWRITE.format(line=line), json_mode=True, max_tokens=400) or {}
         new = str(r.get("line") or "").strip()
-        if new and not find(new) and 0.6 <= len(new) / max(1, len(line)) <= 1.6 and not re.search(r"[\u0900-\u097f]", new):
+        wo, wn = re.findall(r"[a-z0-9]+", line.lower()), re.findall(r"[a-z0-9]+", new.lower())
+        kept_caps = all(w in new for w in re.findall(r"\b[A-Z0-9]{3,}\b", line))     # keywords like MAHAKAL / PART2
+        if new and not find(new) and abs(len(wn) - len(wo)) <= 2 and kept_caps and not re.search(r"[\u0900-\u097f]", new):
             return new
     except Exception:
         pass
