@@ -205,6 +205,9 @@ Rules (from Black Forest Labs' official prompting guide):
   by the sides, feet together"; "padmasana" -> "seated cross-legged, hands resting in the lap").
 - Every surface is clean and unmarked: the picture carries no writing of any kind (do not mention text at all).
 - Respectful and dignified; everyone modestly dressed in traditional attire.
+- Image services refuse or blank out prompts with body words: never write naked, nude, unclothed, bare body, bare
+  chest, skin, undressed. A Tirthankara or Bahubali is "a smooth, simply carved white marble idol" (or dark stone):
+  describe the stone, the pose, the curled hair and the calm face, nothing about the body.
 - Vertical 9:16 composition, main subject in the middle third, generous calm space above and below.
 {refline}
 Page look (use as the style): {look}
@@ -302,7 +305,9 @@ def scene_picture(ch, p, s, i, base_prompt, adir, chain):
         prompt = write_prompt(ch, s, i, bible, refs, feedback) or base_prompt
         img = None
         if refs:
-            img = cf_klein(prompt, refs, os.path.join(adir, f"s{i}k{n}.jpg")) or nv_klein(prompt, refs, os.path.join(adir, f"s{i}n{n}.jpg"))
+            # 20 Nov: NVIDIA klein accepts input_image but ignores it (drew a robed, bearded figure from a plain
+            # standing idol photo); only Cloudflare's klein follows references. nv_klein stays unused
+            img = cf_klein(prompt, refs, os.path.join(adir, f"s{i}k{n}.jpg"))
         img = img or chain(prompt, n)
         if not img:
             continue

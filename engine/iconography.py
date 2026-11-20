@@ -47,7 +47,7 @@ FORMS = {
 # 20 Nov: "natural warm human skin tone" made the picture model draw a living bronze man (with a tilak) instead of an
 # idol; an idol is described as stone: smooth white marble, bare head of small tight curls, bare unmarked forehead
 JAIN_NEVER = ("shown as a temple idol of smooth white marble or dark stone, bare head of small tight curls, bare unmarked "
-              "forehead, unadorned body (never blue, grey or green skin), no crown, no jewellery, no weapons, no third eye, "
+              "forehead, simply carved smooth stone form (never blue, grey or green skin), no crown, no jewellery, no weapons, no third eye, "
               "no Hindu-god ornaments: a Jain ascetic or Tirthankara is plain and serene")
 for _k in ("Mahavir Swami", "Rishabhdev", "Parshvanath", "Bahubali"):
     FORMS[_k] = (FORMS[_k][0], FORMS[_k][1] + "; " + JAIN_NEVER)
