@@ -334,15 +334,55 @@ PLAN:
             log("plan v2 (reviewed)", len(plan["scenes"]), "scenes")
     except Exception as e:
         log("plan review failed, keeping v1:", str(e)[:120])
+    return _checks(ch, topic, plan, research_text, W0, W1, bids)
+
+
+def _check_fresh(ch, topic, plan, research_text, W0, W1):
     try:                                           # 19 Nov: before the numbers check, so a rewritten number is checked too
-        plan = fresh_fix(plan, research_text)
+        return fresh_fix(plan, research_text)
     except Exception as e:
-        log("freshness check skipped:", str(e)[:120])
+        log("freshness check skipped:", str(e)[:120]); return plan
+
+
+def _check_explainer(ch, topic, plan, research_text, W0, W1):
     try:
-        plan = explainer_gate(ch, topic, plan, research_text, W0, W1)
+        return explainer_gate(ch, topic, plan, research_text, W0, W1)
     except Exception as e:
-        log("explainer gate skipped:", str(e)[:120])
-    if ch.get("numbers_check"):                    # 18 Nov (finance 1118-2228 said Rs 50k -> Rs 1,02,000 with Rs 5k/month paid)
+        log("explainer gate skipped:", str(e)[:120]); return plan
+
+
+def _check_story(ch, topic, plan, research_text, W0, W1):
+    try:
+        return story_fix(ch, topic, plan, research_text)
+    except Exception as e:
+        log("story check skipped:", str(e)[:120]); return plan
+
+
+def _checks(ch, topic, plan, research_text, W0, W1, bids):
+    """20 Nov audit: the checks after the review ran one after another, 10.9 min median per reel (24 reels), and most
+    of them change nothing. They now run side by side on the same plan. If one changes it, its plan is kept; if several
+    do, the first change is kept and the others run again, in order, on that plan (each still sees the final text)."""
+    import copy
+    from concurrent.futures import ThreadPoolExecutor
+    steps = [_check_fresh, _check_explainer] + ([_check_numbers] if ch.get("numbers_check") else []) + \
+            ([_check_story] if ch.get("story_check") else [])
+    base = json.dumps(plan, sort_keys=True, ensure_ascii=False)
+    with ThreadPoolExecutor(max_workers=len(steps)) as ex:
+        futs = [ex.submit(f, ch, topic, copy.deepcopy(plan), research_text, W0, W1) for f in steps]
+        res = [f_.result() for f_ in futs]
+    changed = [(f, r) for f, r in zip(steps, res) if json.dumps(r, sort_keys=True, ensure_ascii=False) != base]
+    log("checks side by side:", len(steps), "run,", len(changed), "changed the plan" +
+        (" (" + ", ".join(f.__name__[7:] for f, _ in changed) + ")" if changed else ""))
+    if changed:                                    # same result as the old order: every check AFTER the first change sees it
+        i0 = steps.index(changed[0][0])
+        plan = changed[0][1]
+        for f in steps[i0 + 1:]:
+            plan = f(ch, topic, plan, research_text, W0, W1)
+    return _finish(ch, plan, bids)
+
+
+def _check_numbers(ch, topic, plan, research_text, W0, W1):
+    if True:                                       # 18 Nov (finance 1118-2228 said Rs 50k -> Rs 1,02,000 with Rs 5k/month paid)
         for rnd in range(3):                       # 19 Nov: 2 fix rounds (one was not enough for unsourced claims)
             probs = numbers_check(plan, _fact_sources(ch, topic, research_text), strict=bool(ch.get("facts_strict")))
             if not probs:
@@ -369,11 +409,10 @@ PLAN:
                         plan = fixed
                 except Exception as e:
                     log("numbers fix failed:", str(e)[:120]); break
-    if ch.get("story_check"):                      # 19 Nov: jain 1119-1015 said '12 years without food, then kheer, then kevalgyan'
-        try:
-            plan = story_fix(ch, topic, plan, research_text)
-        except Exception as e:
-            log("story check skipped:", str(e)[:120])
+    return plan
+
+
+def _finish(ch, plan, bids):
     if ch.get("theme", {}).get("style") == "lab":
         plan = lab_fix(plan, bool(ch.get("theme", {}).get("phone")))
     out = clean(plan)
