@@ -105,5 +105,6 @@
     "Is there a modern object or modern building in the picture?",
     "Is any figure dressed immodestly or shown without dignity?"
   ],
-  "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass"
+  "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass",
+  "frame_context": "Kings, queens, sages and ordinary people may wear crowns, jewellery and coloured clothes: only a god or goddess drawn in the wrong traditional form counts."
 }

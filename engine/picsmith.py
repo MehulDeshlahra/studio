@@ -89,7 +89,8 @@ def frame_checks(ch):
 def check(img, said, ch, scene_idea=""):
     ctx = (f"One picture from a short devotional / story video (page: {ch.get('name') or ch.get('id')}). "
            f"Narration over this picture: \"{said}\". The main figure is the one the narration is about."
-           + (f" Planned scene: {scene_idea[:300]}" if scene_idea else ""))
+           + (f" Planned scene: {scene_idea[:300]}" if scene_idea else "")
+           + (" " + ch["frame_context"] if ch.get("frame_context") else ""))   # 20 Nov: a crowned King Shrenik failed 3 times
     qs = frame_checks(ch)
     a = decide(img, ctx, qs)
     return {k: round(v, 2) for k, v in a.items()}, qs
@@ -425,6 +426,10 @@ def scene_picture(ch, p, s, i, base_prompt, adir, chain):
             f"({len(refs)} refs)")
         if not fails:
             best = img
+            break
+        # 20 Nov: two tries that fail on the same questions did not get better on the third either (6 min lost per reel)
+        if len(tries) >= 2 and set(tries[-1]["fails"]) <= set(tries[-2]["fails"]):
+            log(f"picsmith scene {i + 1}: same problem twice, no third try")
             break
         feedback = "; ".join(f"{qs[k]} (yes, {v:.0%})" for k, v in fails.items())
     if best is None and tries:                   # every try failed: keep the least bad one, the review will hold it

@@ -339,7 +339,7 @@ def post_one(cid, dry=False):
             jd_ = os.path.join(OUT, cid, c["job"])
             pc = review.picture_check(os.path.join(jd_, f"{cid}-{c['job']}.mp4"),
                                       (load(os.path.join(jd_, "timing.json"), {}) or {}).get("lines", []), ch["visual_checks"],
-                                      frame_checks=ch.get("frame_checks"))
+                                      frame_checks=ch.get("frame_checks"), frame_context=ch.get("frame_context", ""))
         except Exception as e:
             log("publish: picture check failed to run, posting", cid, c["job"], str(e)[:100]); nxt = c; break
         if not pc.get("problems"):

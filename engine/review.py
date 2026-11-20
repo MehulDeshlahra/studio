@@ -107,7 +107,7 @@ def _confirm(model, jpg, qs, said=""):
     return "; ".join(dict.fromkeys(got))
 
 
-def picture_check(mp4, timing, checks, max_frames=14, frame_checks=None):
+def picture_check(mp4, timing, checks, max_frames=14, frame_checks=None, frame_context=""):
     """20 Nov: the contact-sheet review passed 3 Navkar Bhav reels with a bearded saffron Mahavira, a crowned Bahubali
     and saffron monks (26 tiny frames + a 'traditional forms, never report' note). Here: ONE frame per scene at 540x960,
     only the page's checklist, any yes = a problem. Returns {"problems": [...], "frames": n}."""
@@ -131,6 +131,7 @@ def picture_check(mp4, timing, checks, max_frames=14, frame_checks=None):
     # 3/3 wrong Jain pictures and passed 6/6 clean ones at 0.6). The two-model look below is the fallback.
     try:
         import picsmith
+        frame_context_text = frame_context or ""
         single = {f"c{k + 1}": q for k, q in enumerate(frame_checks or checks) if not re.search(r"between scenes", q, re.I)}
         # rendered frames carry our own captions + page handle: the "text" question is asked on the raw picture only
         single.update({k: v for k, v in picsmith.GENERAL.items() if k != "text"})
@@ -140,7 +141,7 @@ def picture_check(mp4, timing, checks, max_frames=14, frame_checks=None):
             if not os.path.exists(fjpg):
                 continue
             a = picsmith.decide(fjpg, f"One picture from a short devotional / story video. Narration over this picture: "
-                                      f"\"{said[i]}\". The main figure is the one the narration is about.", single)
+                                      f"\"{said[i]}\". The main figure is the one the narration is about. {frame_context_text}", single)
             bad = {k: v for k, v in a.items() if v >= picsmith.FAIL}
             scores.append(round(max(a.values() or [0]), 2))
             if bad:
@@ -353,7 +354,8 @@ def review(cid, job):
     checks["vision"] = v
     probs += [f"visual: {x}" for x in (v.get("serious") or [])]
     if ch.get("visual_checks"):
-        pc = picture_check(mp4, tj.get("lines", []), ch["visual_checks"], frame_checks=ch.get("frame_checks"))
+        pc = picture_check(mp4, tj.get("lines", []), ch["visual_checks"], frame_checks=ch.get("frame_checks"),
+                           frame_context=ch.get("frame_context", ""))
         checks["picture_check"] = pc
         probs += [f"picture check: {x}" for x in pc.get("problems") or []]
     if (v.get("score") or 0) < 6:

@@ -125,5 +125,6 @@
   ],
   "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass",
   "real_idols": true,
-  "real_idols_note": "20 Nov owner OK: a scene about a Tirthankara or Bahubali uses a real temple idol photo from Wikimedia Commons first (engine/picsmith.real_idol)"
+  "real_idols_note": "20 Nov owner OK: a scene about a Tirthankara or Bahubali uses a real temple idol photo from Wikimedia Commons first (engine/picsmith.real_idol)",
+  "frame_context": "The questions about crowns, jewellery, a tilak, a beard or coloured clothes are ONLY about a Tirthankara or a Jain temple idol. A king (for example Raja Shrenik), queen, devotee, deva or any other person may wear a crown, jewellery, a beard and coloured clothes: for them answer no."
 }
