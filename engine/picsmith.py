@@ -102,7 +102,8 @@ def refs_for(text, page=None, n=3):
     out = []
     for fig, e in idx.items():
         pat = e.get("pattern") or ""
-        hit = bool(pat) and re.search(pat, t, re.I)
+        # 20 Nov: names match only as the start of a word ("ambe" in "amber light" gave a Yaksha scene the Durga picture)
+        hit = bool(pat) and re.search(r"(?<![a-z])(?:" + pat + ")", t, re.I)
         if not hit and fig == "Jain monk" and page == "jain":
             import iconography
             hit = bool(iconography.MONK.search(t))
