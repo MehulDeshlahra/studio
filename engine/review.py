@@ -53,6 +53,32 @@ Return JSON {{"frames": [{{"n": <image number from 1>, "yes": [<question numbers
 (list only images with at least one yes)."""
 
 
+def _confirm(model, jpg, qs):
+    """One image, only the flagged questions: '' unless the model clearly sees it (and says exactly what and where)."""
+    import urllib.request
+    try:
+        b = base64.b64encode(open(jpg, "rb").read()).decode()
+    except OSError:
+        return ""
+    prompt = ("Look carefully at this ONE picture. For each question answer yes ONLY if it is clearly visible, and say exactly "
+              "what you see and where in the picture. If you are not sure, or it needs guessing, answer no.\n"
+              + "\n".join(f"{i + 1}. {q}" for i, q in enumerate(qs))
+              + '\nReturn JSON {"answers": [{"q": <number>, "yes": true/false, "seen": "<what and where>"}]}')
+    body = {"contents": [{"parts": [{"text": prompt}, {"inline_data": {"mime_type": "image/jpeg", "data": b}}]}],
+            "generationConfig": {"responseMimeType": "application/json", "temperature": 0.0}}
+    try:
+        r = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                                   data=json.dumps(body).encode(),
+                                   headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(model)})
+        d = json.load(urllib.request.urlopen(r, timeout=120))
+        a = llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"]) or {}
+        seen = [str(x.get("seen") or "")[:120] for x in a.get("answers") or [] if x.get("yes") is True and len(str(x.get("seen") or "")) > 8]
+        return "; ".join(seen)
+    except Exception as e:
+        log("picture check confirm failed", str(e)[:100])
+        return "confirm step failed"                    # cannot confirm -> keep the flag (safe side)
+
+
 def picture_check(mp4, timing, checks, max_frames=14):
     """20 Nov: the contact-sheet review passed 3 Navkar Bhav reels with a bearded saffron Mahavira, a crowned Bahubali
     and saffron monks (26 tiny frames + a 'traditional forms, never report' note). Here: ONE frame per scene at 540x960,
@@ -80,12 +106,22 @@ def picture_check(mp4, timing, checks, max_frames=14):
                                        headers={"Content-Type": "application/json", "x-goog-api-key": tts._key(m)})
             d = json.load(urllib.request.urlopen(r, timeout=180))
             res = llm.parse_json(d["candidates"][0]["content"]["parts"][0]["text"]) or {}
-            out = []
+            out, dropped = [], []
             for fr in res.get("frames") or []:
                 ys = [int(y) for y in fr.get("yes") or [] if str(y).isdigit() and 1 <= int(y) <= len(checks)]
-                if ys:
-                    out.append(f"scene {fr.get('n')}: {str(fr.get('what') or '')[:140]} (checklist {', '.join(map(str, ys))})")
-            return {"problems": out, "frames": len(pts), "model": m}
+                n = int(fr.get("n") or 0) if str(fr.get("n") or "").isdigit() else 0
+                if not ys or not 1 <= n <= len(pts):
+                    continue
+                # 20 Nov: flash-lite flagged "mosque domes" in a palace interior with none (Kuber). A flag holds only
+                # when a second, single-image look at that frame confirms it with what it sees
+                ok_ys = _confirm(m, os.path.join(tmp, f"{n - 1}.jpg"), [checks[y - 1] for y in ys])
+                if ok_ys:
+                    out.append(f"scene {n}: {ok_ys} (checklist {', '.join(map(str, ys))})")
+                else:
+                    dropped.append(n)
+            if dropped:
+                log("picture check: not confirmed on a second look, kept:", dropped)
+            return {"problems": out, "frames": len(pts), "model": m, "unconfirmed": dropped}
         except Exception as e:
             log("picture check fail", m, str(e)[:120])
     return {"problems": [], "frames": len(pts), "error": "no vision model answered"}
