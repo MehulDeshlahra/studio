@@ -928,8 +928,48 @@ PLAN:
     return best
 
 
+def _roman(plan):
+    """20 Nov: nemotron wrote a whole Jain script in Devanagari; clean() then deleted every Devanagari letter, the lines
+    became ",", "24", "?" and the voice model invented its own story (alignment 0%). Lines in Devanagari are now
+    rewritten in Roman Hinglish (one text call) before anything else touches them."""
+    dev = [i for i, s in enumerate(plan.get("scenes") or []) if re.search(r"[\u0900-\u097F]", s.get("vo", ""))]
+    keys = [k for k in ("title", "caption") if re.search(r"[\u0900-\u097F]", str(plan.get(k) or ""))]
+    if not dev and not keys:
+        return 0
+    import llm
+    src = {f"s{i}": plan["scenes"][i]["vo"] for i in dev}
+    src.update({k: plan[k] for k in keys})
+    for i, s in enumerate(plan.get("scenes") or []):
+        for k in ("title", "big", "small"):
+            if re.search(r"[\u0900-\u097F]", str(s.get(k) or "")):
+                src[f"{k}{i}"] = s[k]
+    try:
+        r = llm.text("Rewrite each value below in natural Roman-letter Hinglish exactly as an Indian reel narrator would type it "
+                     "(e.g. 'Raja Shrenik narak mein hain, phir bhi agle kaal ke pehle Tirthankar kaise?'). Same meaning, same "
+                     "names, no Devanagari letters, no English translation. Return JSON with the same keys.\n"
+                     + json.dumps(src, ensure_ascii=False), json_mode=True, max_tokens=3000) or {}
+    except Exception as e:
+        log("roman rewrite failed:", str(e)[:120]); r = {}
+    n = 0
+    for k, v in src.items():
+        new = str(r.get(k) or "").strip()
+        if not new or re.search(r"[\u0900-\u097F]", new):
+            continue
+        if k.startswith("s") and k[1:].isdigit():
+            plan["scenes"][int(k[1:])]["vo"] = new
+        elif k in ("title", "caption"):
+            plan[k] = new
+        else:
+            kk = re.match(r"(title|big|small)(\d+)", k)
+            plan["scenes"][int(kk.group(2))][kk.group(1)] = new
+        n += 1
+    log("plan: Devanagari rewritten in Roman letters:", n, "of", len(src), "values")
+    return n
+
+
 def clean(plan):
     clips = 0
+    _roman(plan)
     for s in plan["scenes"]:
         s["vo"] = re.sub(r"[\u0900-\u097F]+", "", s.get("vo", "")).strip()
         t = s.get("type", "image")

@@ -839,6 +839,25 @@ def main():
                 log("respect:", nfix, "lines rewritten to 'aap' + request"); save(pp, p)
         except Exception as e:
             log("respect skipped", str(e)[:100])
+    # 20 Nov: never voice a broken script (jain 1120-1542: every line was "," or "?" and the voice model made up its own
+    # story). Fewer than 4 real words a scene = make the plan again, once
+    nw_ = sum(len(re.findall(r"[A-Za-z]{2,}", s.get("vo", ""))) for s in p["scenes"])
+    if nw_ < 4 * max(1, len(p["scenes"])) or len(p["scenes"]) < 5:
+        if not meta.get("replanned_empty"):
+            meta["replanned_empty"] = True; save(os.path.join(job, "meta.json"), meta)
+            log("script is empty or broken (", nw_, "words in", len(p["scenes"]), "scenes): making the plan again")
+            os.remove(pp)
+            av, skip = [], False
+            for x in sys.argv:                     # same arguments, without "--from X"
+                if skip:
+                    skip = False; continue
+                if x == "--from":
+                    skip = True; continue
+                av.append(x)
+            if "--job" not in av:
+                av += ["--job", job_id]
+            os.execv(sys.executable, [sys.executable] + av + ["--from", "plan"])
+        raise SystemExit(f"script still broken after a new plan ({nw_} words)")
     # 3 voice (one request)
     vo = os.path.join(job, "vo-raw.wav")
     if "voice" in redo or not os.path.exists(vo):
