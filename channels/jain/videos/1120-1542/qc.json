@@ -10,12 +10,9 @@
   "dur": 39.07
  },
  "vision": {
-  "score": 9,
+  "score": 10,
   "ok": true,
-  "problems": [
-   "scene 4: The caption 'NE TRISHASHTI SHALAKA' seems slightly misaligned with the intended script 'Hemchandra Acharya ne Trishashti Shalaka Purusha Charitra mein likha', though it captures the essence.",
-   "scene 5: The caption 'KAALCHAKRA KE PEHLE' is slightly truncated compared to the full line 'Agle kaalchakra ke pehle Tirthankar honge Padmanabh', though acceptable per instructions."
-  ]
+  "problems": []
  },
  "voice": {
   "ok": true,

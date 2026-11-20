@@ -1706,5 +1706,127 @@
     "score": 3.69
    }
   ]
+ },
+ {
+  "t": "2026-11-20 16:46",
+  "picked": "The story of Chandanbala: How a princess turned slave became the first female disciple of Mahavira. She offered her last bowl of rice to the Lord, breaking his 6-month fast. Source: Kalpasutra.",
+  "ideas": [
+   {
+    "topic": "The story of Chandanbala: How a princess turned slave became the first female disciple of Mahavira. She offered her last bowl of rice to the Lord, breaking his 6-month fast. Source: Kalpasutra.",
+    "note": "",
+    "search": "Chandanbala story Jainism history",
+    "fit": 10.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.4,
+    "score": 6.58
+   },
+   {
+    "topic": "Is Karma a ghost or a physical particle? Jainism describes Karma as subtle matter (varganas) that sticks to the soul like dust on a wet cloth. Source: Agam.",
+    "note": "",
+    "search": "what is karma in jainism",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.7,
+    "score": 6.29
+   },
+   {
+    "topic": "The mystery of the Siddhashila: Where do souls go after liberation? The Jain map of the universe places the abode of the liberated at the very top of the cosmos. Source: Agam.",
+    "note": "",
+    "search": "Siddhashila location Jain cosmology",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.3,
+    "score": 6.21
+   },
+   {
+    "topic": "Chandanbala ki katha (Kalpasutra)",
+    "search": "Chandanbala ki katha (Kalpasutra)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.5,
+    "score": 5.55
+   },
+   {
+    "topic": "The story of King Megharatha and the Pigeon (Compassion in Action)",
+    "search": "Jain story compassion kindness",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With the news of Cyclone 'Akvan' and massive rescue efforts, the audience is thinking about empathy and saving lives. This story from the Trishashti-shalaka-purusha-charitra about King Megharatha sacrificing his own flesh to save a pigeon resonates deeply with the current theme of disaster relief and selfless service.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 203,
+    "fresh": 5.0,
+    "score": 5.15
+   },
+   {
+    "topic": "The power of Truth (Satya) in a world of 'blame games'",
+    "search": "Jain story power of truth",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With political news dominated by 'blame games' and international tensions, the Jain value of Satya (Truth) is a great counter-narrative. A story about a Tirthankara or great Shravaka who stood by the truth despite consequences (from the Kalpasutra) offers a strong moral lesson for today's youth.",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 398,
+    "fresh": 6.3,
+    "score": 5.06
+   },
+   {
+    "topic": "Navkar Mantra ka asli arth",
+    "search": "Navkar Mantra ka asli arth",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 2.5,
+    "median_views": 9908,
+    "fresh": 7.3,
+    "score": 5.04
+   },
+   {
+    "topic": "Mahavir Swami aur Chandkaushik naag",
+    "search": "Mahavir Swami aur Chandkaushik naag",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.5,
+    "median_views": 1540,
+    "fresh": 6.7,
+    "score": 4.01
+   },
+   {
+    "topic": "King Shrenik's 60,000 questions: Why did a powerful king spend his life asking the Tirthankara about the nature of existence and the future of the universe? Source: Trishashti-shalaka-purusha-charitra.",
+    "note": "",
+    "search": "King Shrenik Mahavira questions",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 116,
+    "fresh": 4.5,
+    "score": 3.7
+   },
+   {
+    "topic": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "search": "Bharat aur Bahubali ka yuddh (Adipurana)",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 14,
+    "fresh": 6.0,
+    "score": 3.65
+   }
+  ]
  }
 ]

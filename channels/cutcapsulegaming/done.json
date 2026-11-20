@@ -32,13 +32,14 @@
   "job": "1120-0540a-c1",
   "topic": "RASCALS DELIVERS MOM'S FIRST SUSHI POST-BIRTH",
   "title": "RASCALS DELIVERS MOM'S FIRST SUSHI POST-BIRTH",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
    "start": 35.71,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov: family/baby campaign clip, moved to the main Cut Capsule page (not gaming)"
  },
  {
   "job": "1120-0540d-c1",
@@ -60,60 +61,65 @@
   "job": "1120-0540e-c1",
   "topic": "Rascals challenge: Change a baby one-handed",
   "title": "Rascals challenge: Change a baby one-handed",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
    "start": 0.0,
    "layout": "vertical"
-  }
+  },
+  "removed_why": "20 Nov: family/baby campaign clip, moved to the main Cut Capsule page (not gaming)"
  },
  {
   "job": "1120-0740a-c1",
   "topic": "MYSTERIOUS ALLY STEPS INTO DANGER",
   "title": "MYSTERIOUS ALLY STEPS INTO DANGER",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://f.io/c9bVMF-u",
    "start": 79.71,
    "layout": "mixed:crop+fit"
-  }
+  },
+  "removed_why": "20 Nov frame audit: Japanese-audio cutscene, Japanese captions over English subtitles"
  },
  {
   "job": "1120-0740a-c2",
   "topic": "KURE BOSS WARNS EVERYONE AWAY",
   "title": "KURE BOSS WARNS EVERYONE AWAY",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://f.io/c9bVMF-u",
    "start": 15.93,
    "layout": "mixed:crop+fit"
-  }
+  },
+  "removed_why": "20 Nov frame audit: Japanese-audio cutscene, Japanese captions over English subtitles"
  },
  {
   "job": "1120-0740a-c3",
   "topic": "UNDERWORLD BOSS CONFRONTS RIVAL GANG",
   "title": "UNDERWORLD BOSS CONFRONTS RIVAL GANG",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://f.io/c9bVMF-u",
    "start": 56.92,
    "layout": "mixed:crop+fit"
-  }
+  },
+  "removed_why": "20 Nov frame audit: Japanese-audio cutscene, Japanese captions over English subtitles"
  },
  {
   "job": "1120-0740a-c4",
   "topic": "NEW CREW MEMBER GETS INTRODUCED",
   "title": "NEW CREW MEMBER GETS INTRODUCED",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://f.io/c9bVMF-u",
    "start": 102.67,
    "layout": "mixed:crop+fit"
-  }
+  },
+  "removed_why": "20 Nov frame audit: Japanese-audio cutscene, Japanese captions over English subtitles"
  }
 ]
