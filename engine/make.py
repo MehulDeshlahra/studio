@@ -1006,6 +1006,15 @@ def main():
             open(os.path.join(rdir, "index.html"), "w", encoding="utf-8").write(doc)
             cj = load(os.path.join(job, "cues.json"), {}); cj["sfx"] = cues; save(os.path.join(job, "cues.json"), cj)
             log("preflight: repaired", len(pr["bad"]), "scene(s), checking again")
+        if not pr["ok"]:                     # 20 Nov: layout / small picture issues get one fix, then render (strict.py)
+            try:
+                import strict
+                lines = [f"before render, scene {int(k) + 1}: {v[0]}" for k, v in pr["bad"].items()]
+                if lines and not strict.split(lines)[0] and strict.allow_soft(job, lines, "preflight"):
+                    log("preflight: only soft problems after one fix, rendering", ch["id"], job_id, "|", " | ".join(lines)[:200])
+                    pr["ok"] = True
+            except Exception as e:
+                log("strict split failed", str(e)[:100])
         if not pr["ok"]:
             done = load(os.path.join(ROOT, "channels", ch["id"], "done.json"), [])
             row = next((d for d in done if d["job"] == job_id), None)

@@ -254,7 +254,10 @@ def heal_held():
     want_turn(False)
     h = head()
     # oldest last attempt first: every held video gets its turn (18 Nov: one tech video took every run)
-    for _, cid, d in sorted(rows, key=lambda r: r[0]) + [(None, cid_, d_) for cid_ in PAGES
+    # 20 Nov: the page whose next post has nothing approved goes first, then the oldest attempt
+    _appr = {c: sum(1 for x in (load(os.path.join(ROOT, "channels", c, "done.json"), []) or []) if x.get("status") == "approved")
+             for c in {r[1] for r in rows}}
+    for _, cid, d in sorted(rows, key=lambda r: (_appr.get(r[1], 0) >= 2, r[0])) + [(None, cid_, d_) for cid_ in PAGES
                                                           for d_ in (load(os.path.join(ROOT, "channels", cid_, "done.json"), []) or [])
                                                           if d_.get("status") == "held" and d_["job"].endswith("-en")]:
         if True:

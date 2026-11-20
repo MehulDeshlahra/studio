@@ -201,12 +201,14 @@ def lane_prep(dry):
         target = c.get("schedule", {}).get("backlog", 6)
         n = backlog(cid)
         log("prep lane:", cid, "backlog", n, "target", target)
-        if n < target:
-            want.append((n / max(1, target), cid))
+        # 20 Nov: a page with fewer than 2 APPROVED reels (ready to post) goes first, whatever its "made" count
+        appr = sum(1 for d in done_list(cid) if d.get("status") == "approved" and not d["job"].endswith("-en"))
+        if n < target or appr < 2:
+            want.append((0 if appr < 2 else 1, n / max(1, target), cid))
     if not want:
         log("prep lane: every backlog is full"); return
     want.sort()
-    cid = want[0][1]
+    cid = want[0][-1]
     log("prep lane: new video for", cid)
     if dry:
         return

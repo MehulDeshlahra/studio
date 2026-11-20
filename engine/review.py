@@ -358,12 +358,25 @@ def review(cid, job):
         probs += [f"picture check: {x}" for x in pc.get("problems") or []]
     if (v.get("score") or 0) < 6:
         probs.append(f"visual score {v.get('score')}/10")
-    rep = {"ok": not probs, "problems": probs, "minor": v.get("minor") or [], "checks": checks}
+    # 20 Nov owner ("too strict, nothing will ever be posted"): only HARD problems stop a video for good; soft ones get
+    # one automatic fix, and on the next review the video passes with them listed as minor (engine/strict.py)
+    minor = list(v.get("minor") or [])
+    try:
+        import strict
+        hard, soft = strict.split(probs)
+        if soft and not hard and strict.allow_soft(jd, soft, "review"):
+            log("review: only soft problems after one fix, passing", cid, job, "|", " | ".join(soft)[:200])
+            minor = soft + minor
+            checks["passed_with_soft"] = soft
+            probs = []
+    except Exception as e:
+        log("strict split failed", str(e)[:100])
+    rep = {"ok": not probs, "problems": probs, "minor": minor, "checks": checks}
     save(os.path.join(jd, "review.json"), rep)
     log("review", cid, job, "PASS" if rep["ok"] else "HOLD: " + " | ".join(probs)[:300])
-    if probs:
+    if probs or checks.get("passed_with_soft"):
         with open(os.path.join(ROOT, "channels", cid, "lessons-auto.md"), "a", encoding="utf-8") as fh:
-            fh.write(f"\n## review {job}\n" + "\n".join("- " + p for p in probs) + "\n")
+            fh.write(f"\n## review {job}\n" + "\n".join("- " + p for p in (probs or checks["passed_with_soft"])) + "\n")
     return rep
 
 
