@@ -146,8 +146,9 @@
   "topic": "Purana sona bechne par poora paisa kyun nahi milta",
   "title": "Purana sona bechne par poora paisa kyun nahi milta",
   "qc_ok": true,
-  "status": "made",
-  "review": []
+  "status": "removed",
+  "review": [],
+  "removed_why": "duplicate of 1120-2150"
  },
  {
   "job": "1120-2150",

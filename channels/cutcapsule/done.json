@@ -11,7 +11,8 @@
    "url": "https://www.youtube.com/watch?v=CKZKZQNq1DU",
    "start": 84.91,
    "layout": "mixed:crop+stack"
-  }
+  },
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-0536-c2",
@@ -25,7 +26,8 @@
    "url": "https://www.youtube.com/watch?v=CKZKZQNq1DU",
    "start": 313.91,
    "layout": "stack"
-  }
+  },
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-0536-c3",
@@ -39,7 +41,8 @@
    "url": "https://www.youtube.com/watch?v=CKZKZQNq1DU",
    "start": 382.15,
    "layout": "stack"
-  }
+  },
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-0805-c1",
@@ -124,7 +127,8 @@
    "start": 2.3,
    "layout": "fill"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-0940a-c1",
@@ -265,7 +269,8 @@
    "start": 442.95,
    "layout": "stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1443-c2",
@@ -281,7 +286,8 @@
    "start": 101.29,
    "layout": "fill"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1458-c1",
@@ -297,7 +303,8 @@
    "start": 502.61,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1458-c2",
@@ -312,7 +319,8 @@
    "start": 101.29,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1513-c1",
@@ -330,7 +338,8 @@
    "start": 63.38,
    "layout": "mixed:crop+fill"
   },
-  "removed_why": "duplicate of 1119-1545-c1"
+  "removed_why": "duplicate of 1119-1545-c1",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1513-c2",
@@ -347,7 +356,8 @@
    "start": 189.95,
    "layout": "mixed:crop+fill"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1521-c1",
@@ -363,7 +373,8 @@
    "start": 63.36,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1521-c2",
@@ -379,7 +390,8 @@
    "start": 309.29,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1532-c1",
@@ -394,7 +406,8 @@
    "start": 309.29,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1532-c2",
@@ -409,7 +422,8 @@
    "start": 63.33,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1545-c1",
@@ -424,7 +438,8 @@
    "start": 63.55,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1545-c2",
@@ -439,7 +454,8 @@
    "start": 130.58,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1540-c1",
@@ -485,7 +501,8 @@
    "start": 71.0,
    "layout": "stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1540-c4",
@@ -503,7 +520,8 @@
    "start": 979.0,
    "layout": "stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1554-c1",
@@ -518,7 +536,8 @@
    "start": 376.35,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1554-c2",
@@ -533,7 +552,8 @@
    "start": 500.75,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1606-c1",
@@ -551,7 +571,8 @@
    "start": 263.99,
    "layout": "mixed:crop+fill+stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1606-c2",
@@ -566,7 +587,8 @@
    "start": 133.63,
    "layout": "mixed:crop+stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1615-c1",
@@ -581,7 +603,8 @@
    "start": 165.81,
    "layout": "mixed:crop+fill"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1615-c2",
@@ -596,7 +619,8 @@
    "start": 35.63,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1640-c1",
@@ -626,7 +650,8 @@
    "start": 867.0,
    "layout": "mixed:crop+fill+stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1640-c3",
@@ -641,7 +666,8 @@
    "start": 92.71,
    "layout": "stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1640-c4",
@@ -656,7 +682,8 @@
    "start": 18.81,
    "layout": "stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1724-c1",
@@ -671,7 +698,8 @@
    "start": 576.07,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1724-c2",
@@ -687,7 +715,8 @@
    "start": 193.55,
    "layout": "mixed:crop+fill"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1733-c1",
@@ -702,7 +731,8 @@
    "start": 153.83,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1733-c2",
@@ -717,7 +747,8 @@
    "start": 17.75,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1758a-c1",
@@ -734,7 +765,8 @@
    "start": 1055.77,
    "layout": "fill"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1758a-c2",
@@ -749,7 +781,8 @@
    "start": 3834.01,
    "layout": "mixed:crop+fill"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1853-c1",
@@ -764,7 +797,8 @@
    "start": 392.53,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1853-c2",
@@ -779,7 +813,8 @@
    "start": 177.19,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1940-c3",
@@ -794,7 +829,8 @@
    "start": 123.87,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-1940-c4",
@@ -810,7 +846,8 @@
    "start": 732.0,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-2045-c1",
@@ -825,7 +862,8 @@
    "start": 154.01,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-2045-c2",
@@ -840,7 +878,8 @@
    "start": 182.65,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-2053-c1",
@@ -855,7 +894,8 @@
    "start": 173.51,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-2053-c2",
@@ -870,7 +910,8 @@
    "start": 385.55,
    "layout": "crop"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1119-2040e-c1",
@@ -922,7 +963,8 @@
    "start": 3.47,
    "layout": "vertical"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1120-0040c-c1",
@@ -1005,7 +1047,8 @@
    "start": 92.29,
    "layout": "mixed:crop+stack"
   },
-  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)",
+  "pruned": "2026-11-21"
  },
  {
   "job": "1120-0341-c1",
