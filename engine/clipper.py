@@ -104,8 +104,13 @@ The on-screen hook title is "{hook}". The full transcript of the clip: "{text}"
    c. Is any on-screen page note just describing what is said, vague ("iconic moment"), negative, or false?
    d. Is the picture blurry, very low resolution or pixelated for most of the clip?
    e. Is another account's big logo or watermark covering part of the picture?
+   f. Are there TWO caption layers at once: the video's own burned-in subtitles AND our big bold word captions saying
+      the same words (20 Nov: a brand ad with its own subtitles got ours under them, every line twice)?
+   g. Is a game / app screen cut off at the sides so its menu text is unreadable, with a small webcam face above it
+      (a stream layout cropped as if it were a talking head)?
 Do not list guesses. Return JSON {{"score": <1-10 how good and postable>, "problems": ["<only clear, serious problems>"],
-"minor": ["<small notes>"], "checklist": {{"a": true/false, "b": true/false, "c": true/false, "d": true/false, "e": true/false}}}}
+"minor": ["<small notes>"], "checklist": {{"a": true/false, "b": true/false, "c": true/false, "d": true/false, "e": true/false,
+"f": true/false, "g": true/false}}}}
 Every checklist "true" must also be written in problems."""
 
 
@@ -124,7 +129,9 @@ def vision_check(prompt, img):
             cl = res.get("checklist") if isinstance(res, dict) else None
             if isinstance(cl, dict):
                 names = {"a": "same person shown twice", "b": "misheard caption", "c": "weak / vague / negative page note",
-                         "d": "blurry or low-resolution picture", "e": "another account's watermark over the picture"}
+                         "d": "blurry or low-resolution picture", "e": "another account's watermark over the picture",
+                         "f": "two caption layers (the source's own subtitles + ours)",
+                         "g": "stream layout cropped like a talking head (game text cut, small webcam)"}
                 hits = [names.get(k, k) for k, v in cl.items() if v is True]
                 if hits:
                     res.setdefault("problems", []).extend(f"checklist: {h}" for h in hits if f"checklist: {h}" not in res.get("problems", []))
