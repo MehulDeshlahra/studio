@@ -153,4 +153,8 @@ strongest, not its oldest (katha: Ujjain/Greenwich first).
   loop only, in the gateway; the client never re-asks a combo that timed out.
 - 20 Nov audit: I told the owner a reel had a "black bar" from ONE still; it was a scene wipe mid-transition. RULE: a
   defect seen in one still is confirmed on the frames 1-2 s around it before it is reported.
+- 20 Nov audit: a timer job that holds a state file in memory for an hour and saves it whole undoes every outside edit
+  (the gaming re-queue, twice). RULE: long jobs save only their own changes on top of the file as it is on disk.
+- 20 Nov audit: "Groq whisper first" looked fine in the code, but 26 of 37 alignments ran on the slow CPU fallback (Groq
+  429). RULE: for every fallback chain, count which step really answered in the logs before calling it fast.
 - 20 Nov: I told the owner a reel takes 1.5-2.5 h as if that were normal. Measured: (1) a hung model (gemini-3.7-flash) made 14 calls wait 300 s each, ~30 min of a Jain plan; (2) the voice-gate restart dropped --job and started a NEW video, throwing the plan away; (3) a Devanagari script was stripped to ',' and '?' and the voice model made up its own story. RULE: never quote a duration I have not measured; when something is slow, measure each stage from logs and fix the cause the same hour; a reel should take ~20-30 min.
