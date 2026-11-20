@@ -74,9 +74,11 @@
   "topic": "Why Lord Neminath turned his wedding chariot around and renounced his kingdom after hearing cries from an animal enclosure (source: Trishashti-shalaka-purusha-charitra)",
   "title": "Neminath ne apni baraat kyun wapas mod di?",
   "qc_ok": true,
-  "status": "approved",
+  "status": "held",
   "offer": "WALLPAPER",
-  "review": [],
+  "review": [
+   "20 Nov pre-post picture check: scene 7 figure with a Hindu-style tilak"
+  ],
   "replan_requested": "2026-11-19 15:51"
  },
  {
@@ -92,7 +94,9 @@
   "topic": "What lives inside a potato that makes Jains refuse all root vegetables? The microscopic ahimsa science. (source: Acharanga Sutra / Agam)",
   "title": "Ek aloo mein anant jeev? Jain kyun nahi khate kand-mool",
   "qc_ok": true,
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "20 Nov pre-post picture check: the monk changes from clean-shaven to an old man with a white beard (scenes 6, 12)"
+  ]
  }
 ]

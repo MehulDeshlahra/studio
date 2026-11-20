@@ -12,8 +12,10 @@
   "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
   "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
   "qc_ok": true,
-  "status": "made",
-  "review": [],
+  "status": "held",
+  "review": [
+   "20 Nov pre-post picture check: scene 12 'Atma na janam leti' shows a blue four-armed Vishnu-like figure where Yamraj teaches (Yama: dark, crown, mace + noose, buffalo); redraw that scene only"
+  ],
   "mehul_rebuilt": "2026-11-18",
   "replan_requested": "2026-11-18 05:54"
  },
@@ -102,7 +104,7 @@
   "job": "1118-0735",
   "topic": "Karna tears off his divine armor and earrings, knowing it makes him mortal — Mahabharata, Vana Parva. Lesson: Identity rooted in generosity outlives invincibility.",
   "title": "Karna ne apna kavach kyun phaada?",
-  "status": "held",
+  "status": "approved",
   "review": [
    "format/loudness: h264,1080,1920,30/1 -16.3 LUFS, true peak -3.2"
   ],
