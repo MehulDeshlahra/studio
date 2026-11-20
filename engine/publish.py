@@ -349,7 +349,12 @@ def post_one(cid, dry=False):
                                       frame_checks=ch.get("frame_checks"), frame_context=ch.get("frame_context", ""))
         except Exception as e:
             log("publish: picture check failed to run, posting", cid, c["job"], str(e)[:100]); nxt = c; break
-        if not pc.get("problems"):
+        try:                                     # 20 Nov owner (loosened reviewers): only HARD picture problems hold
+            import strict
+            hard_ = strict.split(["picture check: " + x for x in pc.get("problems") or []])[0]
+        except Exception:
+            hard_ = pc.get("problems") or []
+        if not hard_:
             nxt = c; break
         log("publish: picture check HOLD", cid, c["job"], " | ".join(pc["problems"])[:300])
         c["status"] = "held"
