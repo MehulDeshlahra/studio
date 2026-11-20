@@ -322,7 +322,7 @@ def jobs(running):
             continue
         for j in os.listdir(base):
             jd = os.path.join(base, j)
-            if not os.path.isdir(jd):
+            if not os.path.isdir(jd) or j.startswith('.'):
                 continue
             s = job_state(c, j, act.get((c, j)))
             d = done.get(j)
