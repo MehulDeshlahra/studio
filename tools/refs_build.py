@@ -12,7 +12,8 @@ from core import ROOT, OUT, log, save, load
 
 # 20 Nov, checked by eye: wrong person (Shakuntala as Sita), unusual form (Vishnu as the Cosmic Man), statue under
 # scaffolding. Kali has no reference picture: her paintings show severed heads (page rule: never gory).
-BAN = re.compile(r"Shakuntala|Cosmic Man|Gommateshwara Statue 1\.jpg|Damayanti|Menaka|Urvashi", re.I)
+# Gautam Swami / Gandhar: Mahavira's disciples, not Mahavira (picked 20 Nov)
+BAN = re.compile(r"Shakuntala|Cosmic Man|Gommateshwara Statue 1\.jpg|Damayanti|Menaka|Urvashi|Gautam|Gandhar|Sudharma", re.I)
 UA = {"User-Agent": "StudioRefs/1.0 (https://scrollhouse.in; reference pictures for devotional art)"}
 INDEX = os.path.join(ROOT, "knowledge", "refs.json")
 # what to search for each figure (first queries are the most specific)
