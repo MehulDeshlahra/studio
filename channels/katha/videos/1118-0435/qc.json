@@ -6,13 +6,17 @@
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
   "lufs": -13.7,
-  "true_peak": -3.3,
+  "true_peak": -2.6,
   "dur": 49.63
  },
  "vision": {
-  "score": 10,
+  "score": 9,
   "ok": true,
-  "problems": []
+  "problems": [
+   "scene 1: The caption text 'PAR GANESHA NE BINA' does not match the intended script line 'Kartikeya poori duniya ghoomne nikal gaye, par Ganesha ne bina hile race kaise jeet li?'. It seems to have skipped the first part of the sentence.",
+   "scene 2: The caption text 'RAKHI: JO PRITHVI' does not match the intended script line 'Mahadev aur Parvati Maa ne ek shart rakhi: jo prithvi ke chakkar pehle lagaega, wahi jeetega.'",
+   "scene 7: The caption text 'LAUTE' is a single word, while the script line is 'Ganesha jeet gaye! Par jab Kartikeya laute, toh naraz hokar door Krauncha parvat par chale gaye.' It seems to be a very truncated summary."
+  ]
  },
  "voice": {
   "ok": true,

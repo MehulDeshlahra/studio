@@ -104,7 +104,7 @@
   {
    "vo": "Swami ki drishti nahi doli, shwas tak ek samaan.",
    "type": "image",
-   "prompt": "Extreme close-up of idol's half-closed eyes. Single tear of light? No — just stillness. Breath suggested by faintest shimmer of golden air. Magnifier match-cut: push into eye, hard-cut to 3x magnified same angle showing micro-detail of carved eyelid. Painterly, reverent.",
+   "prompt": "Vertical 9:16 composition. Serene close-up profile of Bhagwan Mahavira in deep meditation, strictly authentic Jain Tirthankara iconography: clean-shaven face, no beard, no mustache, tight meditative dark curled hair on head, elongated earlobes, calm half-closed eyes focused completely within in absolute stillness, no ornaments, simple unadorned ascetic aura, soft golden divine glow around the face, centered subject, ample empty space at top and bottom for text, painterly, hyper-detailed, peaceful atmosphere, no text, no letters.",
    "motion": "push",
    "title": "Akhand drishti",
    "keywords": [
@@ -114,7 +114,22 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s5r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.43
+     }
+    ],
+    "real_photo": true
+   }
   },
   {
    "vo": "Sher, saanp, haathi... sab aaye, sab gaye, jaise dhuaan.",
@@ -127,8 +142,8 @@
     "saanp",
     "haathi"
    ],
-   "big": null,
-   "small": null,
+   "big": "Sher Saanp Haathi",
+   "small": "Sab aaye sab gaye",
    "sub": null,
    "label": null,
    "real": null
@@ -242,5 +257,76 @@
   "161339712e",
   "7fa182f8ef",
   "a688e48ca2"
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Mahavira Swami (idol)",
+    "scenes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     10
+    ],
+    "look": "White marble idol of Mahavira Swami standing in kayotsarga, calm face, half‑closed eyes, tight curled hair, shrivatsa mark on chest, lion emblem at base, smooth unadorned surface, bare head, bare chest, plain stone form, rests on carved stone pedestal"
+   },
+   {
+    "name": "Yaksha",
+    "scenes": [
+     2,
+     8
+    ],
+    "look": "Radiant Yaksha in traditional Indian dhoti and angavastram, calm oval face, gentle smile, long dark hair tied in a low knot, simple gold earrings and necklace, soft golden aura, hands folded in namaste, bare feet on stone"
+   },
+   {
+    "name": "Ghostly forms",
+    "scenes": [
+     5
+    ],
+    "look": "Translucent ghostly figures swirling around idol, pale luminous bodies, flowing drapery, silent open mouths, gentle upward motion, soft golden light emanating from within marble pushes them back"
+   },
+   {
+    "name": "Lion",
+    "scenes": [
+     7
+    ],
+    "look": "Majestic lion with golden mane, calm amber eyes, muscular body, relaxed posture, front paws resting on stone, gentle breath, warm light highlighting silky serene fur"
+   },
+   {
+    "name": "Snake",
+    "scenes": [
+     7
+    ],
+    "look": "Coiled serpent with smooth emerald scales, hood gently raised, calm eyes, resting on marble base, subtle golden glow along body, peaceful demeanor graceful fluid soft"
+   },
+   {
+    "name": "Elephant",
+    "scenes": [
+     7
+    ],
+    "look": "Gentle elephant with ivory tusks, wrinkled grey skin, large flapping ears, calm dark eyes, standing serenely beside idol, golden sunrise light caressing soft warm hide"
+   }
+  ],
+  "places": [
+   {
+    "name": "Shmashan (night cremation ground)",
+    "look": "Night cremation ground with ancient Jain temple shikhara spires silhouetted against star‑filled sky, white marble platform, scattered stone steps, faint glow of distant lamps, calm mist over ground"
+   },
+   {
+    "name": "Ancient Jain Temple (dawn)",
+    "look": "Dawn ancient Jain temple complex, white marble shikharas rising, intricately carved pillars, stepped stone roofs in Dilwara style, golden sunrise light bathing courtyard, single kayotsarga idol on polished plinth, peaceful uncluttered space"
+   }
+  ]
+ },
+ "idol_photos_used": [
+  "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg"
+ ],
+ "credits": [
+  "Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)"
  ]
 }

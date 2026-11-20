@@ -1,0 +1,28 @@
+{
+ "topic": "Why did the first Tirthankara Rishabhanatha wait 365 days for his first alms — and what did people finally offer? (source: adipurana / trishashti-shalaka-purusha-charitra)",
+ "title": "Pehle Tirthankara ne 400 din bhookha kyun raha?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.6,
+  "true_peak": -2.6,
+  "dur": 49.8
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 10: The caption 'DAAN KA TARIKA AUR BHAV MATTER KARTA HAI' does not match the intended script 'Seekh: Sirf daan dena kaafi nahi, sahi tarika aur bhav bhi matter karta hai'. The text is truncated/shortened.",
+   "scene 11: The caption 'DETE?' does not match the intended script 'Aap hote toh kya dete? Jai Jinendra.' The text is truncated/shortened."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.9024390243902439,
+  "words": 131,
+  "problems": []
+ },
+ "ok": true
+}

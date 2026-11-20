@@ -123,3 +123,11 @@
 ## 1118-1433 Chouthi Manzil Ka Raaz - Part 8
 - Scene 4: Text layout on the paper graphic is slightly crowded.
 - Scene 9: Minor AI anatomical distortion in the hand holding the device.
+
+## case2-p1 (pre-render check)
+- FIT: The clue label shows 'C' for Dost Sunny, but the previous clues used 'A' and 'B', wait, scene 6 card has 'C' which is correct, but let's check the tag pill: scene 6 has label C on card, but the v
+- OVERLAP: The second still for scene 9 has extra text 'COMMENT KARO: A, B YA C' at the bottom that overlaps with the silhouette visual.
+
+## case2-p1 Shaadi ka lifafa
+- scene 5: the hand in the syrup has distorted, melted AI shapes
+- scene 8: the hand holding the flashlight is poorly rendered and looks broken

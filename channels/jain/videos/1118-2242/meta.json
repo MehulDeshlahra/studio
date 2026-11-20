@@ -3,5 +3,8 @@
  "job": "1118-2242",
  "topic": "The Night Mahavira Swami Stayed in a Cremation Ground — What the Yaksha Tested (Source: Kalpasutra)",
  "brain_judged": true,
- "stage": "done"
+ "stage": "held",
+ "held_at": "2026-11-20 11:56",
+ "soft_review": 1,
+ "soft_preflight": 1
 }

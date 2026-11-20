@@ -4,5 +4,7 @@
  "topic": "Kuber ka ghamand",
  "voice_gate": 1,
  "brain_judged": true,
- "stage": "done"
+ "stage": "done",
+ "soft_review": 1,
+ "soft_preflight": 1
 }

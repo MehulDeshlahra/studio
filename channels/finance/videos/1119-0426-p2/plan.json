@@ -62,8 +62,8 @@
   },
   {
    "vo": "Liability: Prop aur Partnership unlimited, LLP Pvt Ltd OPC limited.",
-   "type": "bill",
-   "title": "Liability",
+   "type": "compare",
+   "title": "Liability Status",
    "cols": [
     "",
     "Proprietorship",
@@ -97,10 +97,10 @@
    "sub": null,
    "label": null,
    "items": [
-    "Proprietorship: Unlimited",
-    "Partnership: Unlimited (joint)",
+    "Prop: Unlimited",
+    "Part: Unlimited",
     "LLP: Limited",
-    "Pvt Ltd/OPC: Limited"
+    "Pvt Ltd: Limited"
    ]
   },
   {
@@ -150,12 +150,12 @@
   {
    "vo": "Audit: Prop Partnership Section 63 threshold, LLP 40 lakh, Pvt Ltd OPC mandatory.",
    "type": "rule",
-   "title": "Income-tax Act, 2025 ·",
-   "sub": "Sec 63 IT Act · Sec 34 LLP Act · Sec 139 Cos Act",
+   "title": "Audit Rules",
+   "sub": "IT & LLP Acts",
    "lines": [
-    "LLP audit if turnover >40L or contribution >25L",
-    "Pvt Ltd & OPC: statutory audit yearly",
-    "Prop/Partnership: Sec 63 thresholds"
+    "LLP: >40L turnover",
+    "Pvt Ltd/OPC: Yearly",
+    "Prop/Part: Sec 63"
    ],
    "stamp": "",
    "motion": "pan",
@@ -193,8 +193,8 @@
   },
   {
    "vo": "Compliance: Prop sabse kam, Partnership kam, LLP medium, Pvt Ltd sabse zyada.",
-   "type": "bill",
-   "title": "Compliance",
+   "type": "compare",
+   "title": "Compliance Level",
    "cols": [
     "",
     "Proprietorship",
@@ -228,10 +228,10 @@
    "sub": null,
    "label": null,
    "items": [
-    "Proprietorship: Sabse kam",
-    "Partnership: Kam",
+    "Prop: Sabse kam",
+    "Part: Kam",
     "LLP: Medium",
-    "Pvt Ltd/OPC: High"
+    "Pvt Ltd: Zyada"
    ]
   },
   {

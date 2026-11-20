@@ -1,0 +1,28 @@
+{
+ "topic": "How King Shrenik, currently in hell, is destined to be the first Tirthankara of the next time cycle. (Source: Trishashti-shalaka-purusha-charitra)",
+ "title": "Sarvarthasiddhi viman mein Raja Shrenik, agle kaal ke pehle Tirthankar kaise?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -14.2,
+  "true_peak": -3.3,
+  "dur": 39.07
+ },
+ "vision": {
+  "score": 9,
+  "ok": true,
+  "problems": [
+   "scene 4: The caption 'NE TRISHASHTI SHALAKA' seems slightly misaligned with the intended script 'Hemchandra Acharya ne Trishashti Shalaka Purusha Charitra mein likha', though it captures the essence.",
+   "scene 5: The caption 'KAALCHAKRA KE PEHLE' is slightly truncated compared to the full line 'Agle kaalchakra ke pehle Tirthankar honge Padmanabh', though acceptable per instructions."
+  ]
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8829787234042553,
+  "words": 102,
+  "problems": []
+ },
+ "ok": true
+}

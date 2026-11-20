@@ -1,5 +1,7 @@
 {
  "channel": "raaz",
  "job": "case2-p1",
- "topic": "Shaadi ka lifafa"
+ "topic": "Shaadi ka lifafa",
+ "brain_judged": true,
+ "stage": "done"
 }

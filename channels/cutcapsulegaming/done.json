@@ -17,7 +17,7 @@
   "job": "1119-1755-c2",
   "topic": "NIC VANS HAS A SPECIAL LIST",
   "title": "NIC VANS HAS A SPECIAL LIST",
-  "status": "held",
+  "status": "removed",
   "review": [
    "length 6.9 s"
   ],
@@ -25,7 +25,8 @@
    "url": "https://www.youtube.com/watch?v=hAhiN-SCtL8",
    "start": 28.0,
    "layout": "fill"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0540a-c1",
@@ -43,7 +44,7 @@
   "job": "1120-0540d-c1",
   "topic": "RASCAL SURPRISED MOM WITH SUSHI BOAT",
   "title": "RASCAL SURPRISED MOM WITH SUSHI BOAT",
-  "status": "held",
+  "status": "removed",
   "review": [
    "ASR caption hallucination: 'sleep is night' instead of 'sleep is tight' or similar, and 'Tier' capitalized incorrectly from 'time', resulting in poor caption accuracy.",
    "checklist: misheard caption"
@@ -52,7 +53,8 @@
    "url": "https://drive.google.com/drive/folders/15a6HwojYke9f41EVt83a1BOqd3fSjyN4",
    "start": 0.0,
    "layout": "vertical"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0540e-c1",

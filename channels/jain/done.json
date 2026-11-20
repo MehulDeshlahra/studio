@@ -6,10 +6,13 @@
   "qc_ok": false,
   "status": "held",
   "review": [
+   "picture check: scenes 1, 2, 3, 4, 5, 6, 8 Mahavira shown as a living man in robes / tilak / saffron monks"
+  ],
+  "replan_requested": "2026-11-19 15:51",
+  "minor": [
    "before render, scene 3: FIT: split / collage picture shown instead of a single cohesive scene",
    "before render, scene 7: READ: caption text says 'SAANP' while the voice says 'Sher, saanp, haathi...'"
-  ],
-  "replan_requested": "2026-11-19 15:51"
+  ]
  },
  {
   "job": "1119-0215",
@@ -43,8 +46,10 @@
   "job": "1119-0335",
   "topic": "What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)",
   "title": "Jalte lakdi mein saanp phansa tha",
-  "status": "made",
-  "review": [],
+  "status": "held",
+  "review": [
+   "picture check: scenes 2, 3, 7, 9, 10, 11, 12 wrong Jain forms (saffron monks, crowns, jewellery, clothed Bahubali)"
+  ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
  },
@@ -86,17 +91,28 @@
   "status": "held",
   "offer": "WALLPAPER",
   "review": [
-   "20 Nov pre-post picture check: scene 7 figure with a Hindu-style tilak"
+   "picture check: scenes 1, 6, 7 Mahavira shown as a living man in coloured robes with a tilak"
   ],
-  "replan_requested": "2026-11-19 15:51"
+  "replan_requested": "2026-11-19 15:51",
+  "minor": [
+   "20 Nov pre-post picture check: scene 7 figure with a Hindu-style tilak"
+  ]
  },
  {
   "job": "1119-1915",
   "topic": "Micchami Dukkadam isn't just 'sorry' — the threefold forgiveness formula Jains use every Paryushan (source: Agam)",
   "title": "Micchami Dukkadam sirf sorry nahi — teeno fold ka formula kya hai",
   "qc_ok": true,
-  "status": "made",
-  "review": []
+  "status": "held",
+  "review": [
+   "visual: Mughal/Islamic architecture with cusped arches and domes heavily featured across multiple scenes (e.g., scenes 1-11), which is stylistically inaccurate for a traditional Jain temple environment.",
+   "visual: Checklist item 1 triggered: Mughal / Islamic architecture style arches are present throughout the video background.",
+   "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1 through 11 (background arches)",
+   "visual score 4/10"
+  ],
+  "minor": [
+   "picture check: scene 8 onion domes / Mughal-style buildings"
+  ]
  },
  {
   "job": "1119-2225",
@@ -109,7 +125,10 @@
    "picture check: scene 6: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 76%)",
    "picture check: scene 8: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 72%)",
    "picture check: scene 10: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 77%)",
-   "picture check: scene 12: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 84%)"
+   "picture check: scene 12: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 84%)",
+   "scene 13 vo: informal 'Tu, bata' in \"Tu hota to kya karta? Comment mein bata\" (owner: never 'tu')",
+   "scene 13 big: informal 'TU' in \"TU HOTA TO?\" (owner: never 'tu')",
+   "post caption: informal 'Tu, bata' (owner: never 'tu')"
   ]
  },
  {
@@ -121,5 +140,30 @@
    "STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)",
    "STORY scene 5: invented: 'Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'': This specific exchange is a modern parable and does not appear in the scriptures. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)"
   ]
+ },
+ {
+  "job": "1120-1542",
+  "topic": "How King Shrenik, currently in hell, is destined to be the first Tirthankara of the next time cycle. (Source: Trishashti-shalaka-purusha-charitra)",
+  "title": "Sarvarthasiddhi viman mein Raja Shrenik, agle kaal ke pehle Tirthankar kaise?",
+  "qc_ok": true,
+  "status": "held",
+  "review": [
+   "visual: Scene 1 & 2: King Raja Shrenik is depicted wearing a crown, jewelry, and royal clothing, but Jain kings and Tirthankaras in heaven/ascetic state are not depicted with Hindu-style ornate crowns and heavy gold jewelry in traditional iconographic accuracy, and more critically, Scene 5/6 and other scenes depict a figure with a crown and ornaments where a Jain soul/Tirthankara is meant.",
+   "visual: Checklist item 4 violated: Tirthankaras or sacred figures are depicted with crowns and jewelry (Scenes 1, 2, 5, 6, 10 show a figure with a crown and necklace representing a soul/future Tirthankara).",
+   "visual: Checklist item 8 violated: King changes appearance/attire across scenes inconsistently.",
+   "visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scenes 1, 2, 5, 6, 10",
+   "visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scenes 1-2 (crowned king) vs Scenes 5-6 (white robes/different depiction)",
+   "picture check: scene 3: Is Bahubali shown wearing a crown or clothes, or with his hands folded? (yes 62%)",
+   "picture check: scene 6: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)",
+   "visual score 4/10"
+  ]
+ },
+ {
+  "job": "1120-1615",
+  "topic": "Why did the first Tirthankara Rishabhanatha wait 365 days for his first alms — and what did people finally offer? (source: adipurana / trishashti-shalaka-purusha-charitra)",
+  "title": "Pehle Tirthankara ne 400 din bhookha kyun raha?",
+  "qc_ok": true,
+  "status": "made",
+  "review": []
  }
 ]

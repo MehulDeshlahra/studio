@@ -27,7 +27,30 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting",
+   "pic": {
+    "refs": [
+     "Ganesha",
+     "Kartikeya"
+    ],
+    "tries": [
+     {
+      "file": "s0q0.jpg",
+      "prompt": "Split screen vertical composition: left side the idol from image 2, youthful warrior god with six radiant faces, athletic build, glowing golden skin, wearing ornate silk dhoti, peacock-feather crown, golden armlets, holding a glowing vel spear, riding a magnificent vibrant peacock with iridescent feathers soaring swiftly through golden clouds; right side the idol from image 1, elephant-headed deity, one broken tusk, stout pot-bellied build, four arms holding a modak, wearing bright yellow silk dhoti and heavy gold necklaces, standing calmly with gentle smile, accompanied by a small humble mouse at his feet; painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon palette, soft divine light, ornate but uncluttered, vertical 9:16 framing with generous calm space above and below",
+      "fails": {
+       "split": 0.91
+      },
+      "top": 0.91
+     },
+     {
+      "file": "s0q1.jpg",
+      "prompt": "Kartikeya, the youthful warrior god with six radiant faces, riding a magnificent vibrant peacock with iridescent feathers across the sky, holding a glowing vel spear, positioned above Ganesha, the elephant-headed deity with one broken tusk and stout build, standing calmly on the ground with four arms holding a modak and a small humble mouse nearby. Painterly cinematic Indian miniature-meets-epic style, warm gold and deep maroon, soft divine light, ornate but uncluttered, vertical composition, generous calm space above and below.",
+      "fails": {},
+      "top": 0.42
+     }
+    ]
+   }
   },
   {
    "vo": "Mahadev aur Parvati Maa ne ek shart rakhi: jo prithvi ke chakkar pehle lagaega, wahi jeetega.",
@@ -40,7 +63,8 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Kartikeya turant apne mayur par sawar hokar tezi se nikal pade.",
@@ -53,7 +77,8 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Lekin Ganesha ka vahan toh ek nanha sa mooshak tha. Woh itni door kaise jaate?",
@@ -66,7 +91,8 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Tab Ganesha ne apni buddhi lagayi aur wahin baithe apne Mata-Pita ki parikrama shuru kar di.",
@@ -79,7 +105,8 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Unhone kaha—Hamare shastra kehte hain ki Mata-Pita ke charno mein hi poori srishti basi hai.",
@@ -93,7 +120,8 @@
    "title": "",
    "big": null,
    "small": null,
-   "real": null
+   "real": null,
+   "skin": "pattachitra"
   },
   {
    "vo": "Ganesha jeet gaye! Par jab Kartikeya laute, toh naraz hokar door Krauncha parvat par chale gaye.",
@@ -107,7 +135,8 @@
    "title": "",
    "big": null,
    "small": null,
-   "real": null
+   "real": null,
+   "skin": "painting"
   },
   {
    "vo": "Apne bete ko manane Mahadev 'Arjun' aur Mata 'Mallika' ke roop mein wahan pahunche.",
@@ -121,7 +150,8 @@
    "title": "",
    "big": null,
    "small": null,
-   "real": null
+   "real": null,
+   "skin": "painting"
   },
   {
    "vo": "Isi wajah se is pavitra sthan ka naam pada—Mallikarjun Jyotirlinga.",
@@ -135,7 +165,8 @@
    "title": "",
    "big": null,
    "small": null,
-   "real": null
+   "real": null,
+   "skin": "pattachitra"
   },
   {
    "vo": "Ye mandir Andhra Pradesh ke Srisailam mein hai, jahan aaj bhi bhakt umadte hain.",
@@ -149,7 +180,8 @@
    ],
    "title": "",
    "big": null,
-   "small": null
+   "small": null,
+   "skin": "painting"
   },
   {
    "vo": "Kya aapne kabhi Mallikarjun ke darshan kiye hain? Comment mein 'Har Har Mahadev' likhiye.",
@@ -162,7 +194,8 @@
     "Mahadev",
     "Comment"
    ],
-   "title": ""
+   "title": "",
+   "skin": "painting"
   }
  ],
  "music_mood": "devotional_epic",
@@ -205,5 +238,87 @@
   "4204a43442",
   "1662db247e"
  ],
- "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "skin": "painting",
+ "bible": {
+  "figures": [
+   {
+    "name": "Kartikeya",
+    "scenes": [
+     1,
+     3,
+     7
+    ],
+    "look": "Youthful warrior god with six radiant faces, athletic build, glowing golden skin. Wears ornate silk dhoti, peacock-feather crown, and golden armlets. Holds a glowing vel spear. Accompanied by a magnificent, vibrant peacock with iridescent feathers."
+   },
+   {
+    "name": "Ganesha",
+    "scenes": [
+     1,
+     4,
+     5,
+     6
+    ],
+    "look": "Elephant-headed deity, one broken tusk, stout pot-bellied build, four arms holding a modak. Wears a bright yellow silk dhoti and heavy gold necklaces. Accompanied by a small, humble mouse as his loyal vehicle."
+   },
+   {
+    "name": "Shiva",
+    "scenes": [
+     2,
+     5,
+     6
+    ],
+    "look": "Ash-grey skin, athletic build, matted hair adorned with a crescent moon and flowing Ganga. Third eye on forehead, trident and damru in hands, snake coiled around neck, tiger skin draped over waist."
+   },
+   {
+    "name": "Parvati",
+    "scenes": [
+     2,
+     5,
+     6
+    ],
+    "look": "Graceful goddess, youthful, almond-shaped eyes, radiant skin. Wears a rich red silk saree with intricate gold embroidery, heavy gold temple jewellery, and jasmine flowers in her dark, flowing hair."
+   },
+   {
+    "name": "Shiva as Arjun",
+    "scenes": [
+     8
+    ],
+    "look": "Hunter form, tanned skin, athletic build, simple leaf garments covering the waist. Holds a wooden bow and arrow. Hair tied in a simple knot, humble posture, serene expression, divine light surrounding his form."
+   },
+   {
+    "name": "Parvati as Mallika",
+    "scenes": [
+     8
+    ],
+    "look": "Tribal woman, youthful, radiant skin. Wears simple earthy-toned fabric, jasmine flowers woven into her hair, and minimal wooden jewellery. Standing with a graceful, humble posture beside Arjun, radiating a gentle, divine aura."
+   }
+  ],
+  "places": [
+   {
+    "name": "Kailash",
+    "scenes": [
+     2,
+     6
+    ],
+    "look": "Majestic, snow-capped mountain peak, glowing with warm golden divine light. Features a natural stone throne carved into the rock, surrounded by soft, swirling clouds and an ethereal, painterly divine atmosphere."
+   },
+   {
+    "name": "Krauncha Mountain",
+    "scenes": [
+     7
+    ],
+    "look": "High, rocky, misty mountain peak. Atmospheric, vertical composition with sharp crags and swirling white clouds. Soft, dim light highlighting the rugged texture of the stone, creating a sense of deep solitude and grandeur."
+   },
+   {
+    "name": "Mallikarjun Temple",
+    "scenes": [
+     9,
+     10
+    ],
+    "look": "Majestic temple architecture in Srisailam, intricate stone carvings, golden sunset light bathing the structure. Sanctum contains the linga adorned with white jasmine garlands and a small golden bow. Serene, divine, and ancient atmosphere."
+   }
+  ]
+ },
+ "pic_redraws": 1
 }

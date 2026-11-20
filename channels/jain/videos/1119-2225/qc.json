@@ -13,17 +13,7 @@
   "score": 9,
   "ok": true,
   "problems": [
-   "scene 1: The caption 'ANANTKAY HAIN EK ANANT' does not match the intended script 'Acharanga Sutra kehta hai ki kand-mool anantkay hain—ek anant aatmaon ka samuh'.",
-   "scene 2: The caption 'KEHTA HAI: KAND-MOOL' does not match the intended script 'Acharanga Sutra kehta hai: kand-mool anantkay hain'.",
-   "scene 3: The caption 'EK SHAREER' does not match the intended script 'Anantkay matlab ek shareer, anant atma'.",
-   "scene 4: The caption 'ITNE CHHOTE KI DIKHAI' does not match the intended script 'Ye atma hain nigoda, itne chhote ki dikhai na dein'.",
-   "scene 6: The caption 'KAND-MOOL MEIN NIGODA' does not match the intended script 'Agam kehte hain: kand-mool mein nigoda vas karte hain'.",
-   "scene 7: The caption 'UKHADO TO POORA' does not match the intended script 'Ukhado to poora paudha mar jata hai'.",
-   "scene 8: The caption 'MITTI KE SOOKSHM' does not match the intended script 'Mitti ke sookshm jeev bhi nasht hote hain'.",
-   "scene 9: The caption 'BHI NAYA PAUDHA' does not match the intended script 'Kata hua aloo bhi naya paudha ban jata hai'.",
-   "scene 10: The caption 'BACHTA' does not match the intended script 'Fal todo to ped bachta, kand ukhado to dono marte'.",
-   "scene 11: The caption 'MEIN ALOO' does not match the intended script 'Isliye Jain kitchen mein aloo, pyaaz, lahsun nahi hote'.",
-   "scene 12: The caption 'JEEV KI NAHI' does not match the intended script 'Ahimsa sirf bade jeev ki nahi, sookshm ki bhi hai'."
+   "scene 9: The image shows a potato in a bowl, but the script says 'Kata hua aloo bhi naya paudha ban jata hai' (A cut potato also becomes a new plant). The visual is just a potato in a bowl, not a cut potato or a sprouting plant, which makes the visual slightly disconnected from the specific claim about propagation."
   ]
  },
  "voice": {

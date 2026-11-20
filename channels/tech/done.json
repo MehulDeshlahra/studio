@@ -90,8 +90,13 @@
   "job": "1117-0729",
   "topic": "'Hey Google' phone kaise sunta hai",
   "title": "Phone Band Phir Bhi 'Hey Google' Kaise Sunta Hai?",
-  "status": "approved",
-  "review": []
+  "status": "removed",
+  "review": [
+   "scene 10 vo: informal 'batao' in \"Kya aapka phone kisi dost ki aawaz se bhi khul jaata hai? Test karke batao!\" (owner: always 'aap' and a request)",
+   "scene 10 big: informal 'KARO' in \"TEST KARO\" (owner: always 'aap' and a request)",
+   "owner-approved before the re-voice"
+  ],
+  "removed_why": "20 Nov archived: test video"
  },
  {
   "job": "1117-0729-en",
@@ -116,7 +121,7 @@
   "job": "1118-1845",
   "topic": "AI Agents (WhatsApp automation)",
   "title": "Chatbot aur AI Agent mein farak kya hai?",
-  "status": "made",
+  "status": "approved",
   "review": [],
   "mehul_rebuilt": "2026-11-18",
   "replan_requested": "2026-11-18 22:37"
@@ -129,7 +134,9 @@
   "review": [
    "only 73% of the script was found in the voice",
    "captions out of sync: line 5 has 10 words in 0.8 s",
-   "visual: Scene 12 shows '10-13' in the first frame while the spoken line and second frame say '11-13' weeks, creating a mismatch in the stat displayed."
+   "visual: Scene 12 shows '10-13' in the first frame while the spoken line and second frame say '11-13' weeks, creating a mismatch in the stat displayed.",
+   "scene 1 vo: informal 'tera' in \"Rait... aur usse nikalta hai tera processor. Socho kaise?\" (owner: never 'tu')",
+   "scene 13 vo: informal 'tera' in \"Itni mehnat ke baad tera phone chalta hai. Agla kya dekhna hai?\" (owner: never 'tu')"
   ],
   "mehul_rebuilt": "2026-11-19",
   "replan_requested": "2026-11-19 22:46"

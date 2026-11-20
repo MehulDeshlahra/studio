@@ -8,5 +8,7 @@
  "brain_judged": true,
  "voice_retry": 1,
  "stage": "done",
- "held_at": "2026-11-19 07:27"
+ "held_at": "2026-11-19 07:27",
+ "soft_review": 1,
+ "soft_preflight": 1
 }

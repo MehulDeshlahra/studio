@@ -1,0 +1,257 @@
+{
+ "slug": "shrenik-hell-tirthankara",
+ "title": "Narak mein pade atma Tirthankar ban sakti hai?",
+ "hooks": [
+  "Narak mein padi atma Tirthankar ban sakti hai?",
+  "Raja Shrenik narak gaye the, phir bhi Tirthankar banenge?",
+  "Mahavir ke bhakt Shrenik ka ant kya hua?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct question hits the core curiosity immediately; mentions 'hell' and 'Tirthankara' in first 5 words for maximum swipe-stop power.",
+ "metaphor": "A lotus blooming from muddy water — the soul's purity emerges despite current circumstances.",
+ "mechanism": [
+  "Death and rebirth in hell due to past karma",
+  "Constant remembrance of Mahavira in hell",
+  "Repentance purifies the soul",
+  "Soul ascends to become Tirthankara in next cycle"
+ ],
+ "cast": {
+  "King Shrenik": "Middle-aged king with trimmed beard, gold crown with central jewel, rich embroidered dhoti and angavastram in deep red and gold, calm regal face, hands folded in reverence",
+  "Mahavira Swami": "Serene meditating idol only — seated padmasana on white marble simhasana, half-closed eyes, gentle smile, srivatsa mark on chest, lion emblem at base, golden aura, no action poses",
+  "Jain Monk": "Plain white unstitched cotton robes (two pieces), soft white whisk broom (rajoharan) in hand, shaved head, peaceful expression, walking barefoot on marble"
+ },
+ "scenes": [
+  {
+   "vo": "Narak mein padi atma Tirthankar ban sakti hai kya?",
+   "type": "image",
+   "prompt": "Wide shot of a grand Jain temple shikhara at dawn, warm golden light washing over white marble spires and carved pillars. In foreground, a single lotus rises from dark muddy water at temple tank edge. Serene painterly Indian style, calm peaceful atmosphere.",
+   "motion": "push",
+   "title": "NARAK ATMA TIRTHANKAR",
+   "keywords": [
+    "Narak",
+    "Tirthankar"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Yeh sawal Raja Shrenik ki kahaani se aata hai.",
+   "type": "image",
+   "prompt": "Ancient Indian palace courtyard of white marble and sandstone, tall pointed shikhara spires visible beyond carved stone pillars. King Shrenik stands with folded hands facing a serene meditating idol of Mahavira Swami on a raised marble platform. Warm golden hour light, gentle glow on marble.",
+   "motion": "pan",
+   "title": "RAJA SHRENIK KAHANI",
+   "keywords": [
+    "Raja Shrenik",
+    "kahaani"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Shrenik Mahavir ke param bhakt the, din raat seva.",
+   "type": "image",
+   "prompt": "Close-up of King Shrenik's face — calm devotion, trimmed beard, gold crown with central jewel, rich red-gold angavastram. He kneels on white marble before the Mahavira idol, hands in anjali mudra. Soft golden light illuminates his face. Painterly serene style.",
+   "motion": "push",
+   "title": "MAHAVIR BHAKT SHRENIK",
+   "keywords": [
+    "Mahavir",
+    "bhakt"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ek chhoti bhool se unka jeevan badal gaya.",
+   "type": "image",
+   "prompt": "King Shrenik in royal court, moment of tension — he gestures sharply, a single golden crown jewel catches light. Subtle shadow falls across marble floor. Warm cinematic lighting, low-key drama but serene palette. No weapons, no violence shown.",
+   "motion": "tilt",
+   "title": "EK BHOOL BADLA",
+   "keywords": [
+    "bhool",
+    "badla"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Maran ke baad wo narak ke andhere pahunche.",
+   "type": "image",
+   "prompt": "Symbolic representation: dark cavernous space with faint red glow, but a single beam of golden light pierces down from above onto a lotus bud. Ancient Jain cosmic geography style — painterly, not graphic. Warm golden light contrasts with darkness. Serene, not frightening.",
+   "motion": "pull",
+   "title": "MARAN NARAK AAGMAN",
+   "keywords": [
+    "maran",
+    "narak"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Wahan bhi unke mann mein Mahavir ki yaad rahi.",
+   "type": "image",
+   "prompt": "In the symbolic darkness, King Shrenik sits in meditation posture, eyes closed, hands folded. A faint golden silhouette of Mahavira's meditating idol appears in his mind's eye — lotus, lion emblem, srivatsa. Painterly inner vision, warm glow from within.",
+   "motion": "push",
+   "title": "NARAK MEIN MAHAVIR YAAD",
+   "keywords": [
+    "mann",
+    "Mahavir"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Paschatap ke aansuon se atma shuddhi hui.",
+   "type": "image",
+   "prompt": "The lotus bud in the dark cavern begins to open — petals unfurling toward the golden beam. Each petal glows with warm light. Muddy water below clears gradually. Painterly metaphor of purification, serene and hopeful. Jain temple architecture motifs in background stone.",
+   "motion": "push",
+   "title": "PASCHATAP SE SHUDDHI",
+   "keywords": [
+    "paschatap",
+    "shuddhi"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Agle kalp mein wo Tirthankar banenge.",
+   "type": "image",
+   "prompt": "Cosmic time cycle visualization: a great wheel of time (kalachakra) turning slowly. One spoke rises upward — a radiant soul ascending toward Siddhashila (crescent-shaped liberated realm at universe apex). Warm golden light, serene painterly style, white marble and gold tones.",
+   "motion": "pull",
+   "title": "AGLE KALP TIRTHANKAR",
+   "keywords": [
+    "agle kalp",
+    "Tirthankar"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Yeh baat Trishashti Shalaka Purusha Charitra mein likhi hai.",
+   "type": "image",
+   "prompt": "Ancient palm-leaf manuscript (pothi) open on a carved wooden stand in a Jain temple library. Golden light falls on the text. Marble pillars and shikhara spires frame the scene. Serene, scholarly atmosphere. No readable text on leaves.",
+   "motion": "pan",
+   "title": "TRISHASHTI CHARITRA SROT",
+   "keywords": [
+    "Trishashti",
+    "Charitra"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Paschatap aapki bhi kismat badal sakta hai aaj.",
+   "type": "image",
+   "prompt": "Split composition: left — muddy water with closed lotus bud; right — same lotus fully bloomed in clear water under golden sun. White marble temple steps descend into both pools. Painterly, serene, warm golden light throughout. One continuous marble floor connects both.",
+   "motion": "push",
+   "title": "PASCHATAP BADLE KISMAT",
+   "keywords": [
+    "paschatap",
+    "kismat"
+   ],
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aap hote to kya karte? Comment karo.",
+   "type": "card",
+   "prompt": "Clean white marble background with subtle carved lotus border. Warm golden light from top-left. Center space for text.",
+   "motion": "push",
+   "title": "",
+   "big": "AAP KYA KARTE",
+   "small": "COMMENT KARO",
+   "keywords": [
+    "aap",
+    "kya karte"
+   ],
+   "sub": null,
+   "label": null
+  },
+  {
+   "type": "card",
+   "big": "Comment IMAGE",
+   "sub": "HD phone wallpaper DM mein 📩",
+   "small": "HD phone wallpaper DM mein",
+   "vo": "Ye HD wallpaper chahiye? Comment kijiye IMAGE, main DM bhej dunga.",
+   "offer_cta": true,
+   "label": "FREE",
+   "prompt": "a gift box with soft warm light, simple background"
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Narak mein padi atma Tirthankar ban sakti hai? Raja Shrenik ki kahaani bataati hai paschatap ka shakti. 🙏\n\nSrot: Trishashti-shalaka-purusha-charitra\n\nAap hote to kya karte? Comment karo.\n\n#JainKatha #RajaShrenik #Mahavir #Paschatap #Tirthankar #NavkarBhav",
+ "hashtags": [
+  "#JainKatha",
+  "#RajaShrenik",
+  "#Mahavir",
+  "#Paschatap",
+  "#Tirthankar",
+  "#NavkarBhav"
+ ],
+ "claims": [
+  {
+   "claim": "King Shrenik (Bimbisara) was a devoted follower of Mahavira",
+   "basis": "Trishashti-shalaka-purusha-charitra by Hemachandra"
+  },
+  {
+   "claim": "Shrenik was reborn in hell due to a karmic error",
+   "basis": "Trishashti-shalaka-purusha-charitra narrative"
+  },
+  {
+   "claim": "His repentance (paschatap) in hell purified his soul",
+   "basis": "Trishashti-shalaka-purusha-charitra narrative"
+  },
+  {
+   "claim": "He is destined to become a Tirthankara in the next cosmic cycle (kalpa)",
+   "basis": "Trishashti-shalaka-purusha-charitra prophecy"
+  },
+  {
+   "claim": "Source text is Trishashti-shalaka-purusha-charitra by Acharya Hemachandra",
+   "basis": "Standard Jain textual tradition"
+  }
+ ],
+ "brain_ids": [
+  "fc294ac58f",
+  "b69d65467f",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "9db4cc694f",
+  "0755cc155a",
+  "a688e48ca2",
+  "161339712e",
+  "f945e2a937",
+  "e15cfaed29",
+  "1e1964f463",
+  "4396759d41",
+  "7fa182f8ef",
+  "6ce7203c71"
+ ],
+ "offer": {
+  "kind": "wallpaper",
+  "keyword": "IMAGE",
+  "gift": "HD phone wallpaper",
+  "title": "Narak se Tirthankar Wallpaper",
+  "items": [],
+  "wallpaper_scene": 7,
+  "job": "1120-1510"
+ }
+}

@@ -5,9 +5,9 @@
   "ok": true,
   "video": "h264,1080,1920,30/1",
   "audio": "aac",
-  "lufs": -13.5,
+  "lufs": -13.9,
   "true_peak": -2.1,
-  "dur": 43.57
+  "dur": 43.07
  },
  "vision": {
   "score": 10,

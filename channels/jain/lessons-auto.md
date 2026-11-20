@@ -365,3 +365,49 @@
 ## 1118-2242 (pre-render check)
 - FIT: split / collage picture shown instead of a single cohesive scene
 - READ: caption text says 'SAANP' while the voice says 'Sher, saanp, haathi...'
+
+## 1119-1915 (pre-render check)
+- FIT: scene 5 voice says 'Teesra: Mitti Me Savva Bhuyesu — dosti sabse, dushmani kisi se nahi', but the caption text incorrectly starts with 'BHUYESU DOSTI SABSE' omitting the beginning of the line
+- FIT: scene 6 voice mentions 'cheenti, patte, hawa ke kan', but the visuals show only ants and leaves around a lotus without the broader context
+
+## 1119-1915 Micchami Dukkadam isn't just 'sorry' — the threefold forgiveness formula Jains use every Paryushan (source: Agam)
+- scene 5: The caption 'BHUYESU DOSTI SABSE' does not match the intended line 'Mitti Me Savva Bhuyesu — dosti sabse, dushmani kisi se nahi'. It seems to have skipped 'Mitti Me'.
+- scene 6: The caption 'KE LIYE NAHI CHEENTI' does not match the intended line 'Yeh sirf insanon ke liye nahi — cheenti, patte, hawa ke kan tak pahuncha hai'. It seems to have skipped 'Yeh sirf insanon'.
+- scene 7: The caption 'HAIN' is incomplete and does not reflect the intended line 'Pratikraman mein yeh teen baar doharate hain, Paryushan ke aakhri din Samvatsari ko'.
+- scene 8: The caption 'MEIN ISEY KSHAMAVANI' does not match the intended line 'Digambar parampara mein isey Kshamavani kehte hain'. It seems to have skipped 'Digambar parampara'.
+- scene 9: The caption 'JATA HAI' does not match the intended line 'Samvatsari ke din yeh formula bola jata hai, naya saal shuru hota hai'.
+
+## review 1119-1915
+- visual: Mughal/Islamic architecture with cusped arches and domes heavily featured across multiple scenes (e.g., scenes 1-11), which is stylistically inaccurate for a traditional Jain temple environment.
+- visual: Checklist item 1 triggered: Mughal / Islamic architecture style arches are present throughout the video background.
+- visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1 through 11 (background arches)
+- visual score 4/10
+
+## 1120-1542 (pre-render check)
+- FIT: King Shrenik is shown wearing saffron/red robes, which violates the strict Jain rules for royal depictions/monks and creates duplicate figures in the same frame
+- FIT: King Shrenik is depicted incorrectly as a meditating figure in white robes with a halo, violating the historical persona of King Shrenik
+
+## 1120-1615 (pre-render check)
+- FIT: scene shows a decorated horse instead of villagers offering gold and a daughter's hand as mentioned in the voiceover
+- EMPTY: the centre of the frame has no main visual, just a dark background and a single lotus
+
+## 1120-1615 (pre-render check)
+- OVERLAP: caption text overlaps slightly with the lower figures in the second still
+
+## 1120-1542 How King Shrenik, currently in hell, is destined to be the first Tirthankara of the next time cycle. (Source: Trishashti-shalaka-purusha-charitra)
+- scene 4: The caption 'NE TRISHASHTI SHALAKA' seems slightly misaligned with the intended script 'Hemchandra Acharya ne Trishashti Shalaka Purusha Charitra mein likha', though it captures the essence.
+- scene 5: The caption 'KAALCHAKRA KE PEHLE' is slightly truncated compared to the full line 'Agle kaalchakra ke pehle Tirthankar honge Padmanabh', though acceptable per instructions.
+
+## review 1120-1542
+- visual: Scene 1 & 2: King Raja Shrenik is depicted wearing a crown, jewelry, and royal clothing, but Jain kings and Tirthankaras in heaven/ascetic state are not depicted with Hindu-style ornate crowns and heavy gold jewelry in traditional iconographic accuracy, and more critically, Scene 5/6 and other scenes depict a figure with a crown and ornaments where a Jain soul/Tirthankara is meant.
+- visual: Checklist item 4 violated: Tirthankaras or sacred figures are depicted with crowns and jewelry (Scenes 1, 2, 5, 6, 10 show a figure with a crown and necklace representing a soul/future Tirthankara).
+- visual: Checklist item 8 violated: King changes appearance/attire across scenes inconsistently.
+- visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scenes 1, 2, 5, 6, 10
+- visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scenes 1-2 (crowned king) vs Scenes 5-6 (white robes/different depiction)
+- picture check: scene 3: Is Bahubali shown wearing a crown or clothes, or with his hands folded? (yes 62%)
+- picture check: scene 6: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%)
+- visual score 4/10
+
+## 1120-1615 Why did the first Tirthankara Rishabhanatha wait 365 days for his first alms — and what did people finally offer? (source: adipurana / trishashti-shalaka-purusha-charitra)
+- scene 10: The caption 'DAAN KA TARIKA AUR BHAV MATTER KARTA HAI' does not match the intended script 'Seekh: Sirf daan dena kaafi nahi, sahi tarika aur bhav bhi matter karta hai'. The text is truncated/shortened.
+- scene 11: The caption 'DETE?' does not match the intended script 'Aap hote toh kya dete? Jai Jinendra.' The text is truncated/shortened.

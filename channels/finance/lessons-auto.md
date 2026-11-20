@@ -234,3 +234,10 @@
 - FIT: Table content is cut off or missing cells due to incorrect card rendering
 - CUT: The last line of the card text is cut off at the bottom of the container
 - FIT: Table content for compliance comparison is not rendering correctly inside the card
+
+## 1119-0005 Home loan khatam, bank ne property ke papers nahi lautaye? ₹5,000 roz milenge (RBI rule, 1 Dec 2023)
+- scene 5: The text 'Sarkari bank private NBFC HFC' at the bottom is slightly misaligned/cramped compared to the other frames, but readable.
+- scene 11: The caption 'Aapke' is cut off abruptly, though the prompt mentions captions are 2-3 words, this one feels like it's missing the rest of the sentence 'papers kab mile the' which is printed above it.
+
+## review 1119-0005
+- only 80% of the script was found in the voice

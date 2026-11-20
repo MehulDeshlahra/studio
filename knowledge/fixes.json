@@ -223,5 +223,14 @@
   "first": "2026-11-20 10:07",
   "last": "2026-11-20 10:07",
   "example": "visual: Checklist item 1: Mughal / Islamic architecture with onion domes and arched structures appears in the background of scenes 1-11, which is historically and culturally inappropriate for Jain ico"
+ },
+ {
+  "sig": "owner agent: fix scene #: adjust the bottom card padding to prevent text cut-off at the frame edge.",
+  "fix": "rebuild",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 13:37",
+  "last": "2026-11-20 13:37",
+  "example": "owner agent: Fix Scene 3: Adjust the bottom card padding to prevent text cut-off at the frame edge."
  }
 ]

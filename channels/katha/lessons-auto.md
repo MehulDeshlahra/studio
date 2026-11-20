@@ -460,3 +460,12 @@
 
 ## review kuber-01
 - picture check: scene 1: Is a god or goddess shown in the wrong traditional form (wrong skin colour, wrong mount or weapon, wrong gende (yes 65%); Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 83%); Does any god, goddess or sage have a comic, silly or cartoonish facial expression? (yes 86%)
+
+## 1118-0435 12 Jyotirlinga ki katha - Part 2: Mallikarjun
+- scene 1: The caption text 'PAR GANESHA NE BINA' does not match the intended script line 'Kartikeya poori duniya ghoomne nikal gaye, par Ganesha ne bina hile race kaise jeet li?'. It seems to have skipped the first part of the sentence.
+- scene 2: The caption text 'RAKHI: JO PRITHVI' does not match the intended script line 'Mahadev aur Parvati Maa ne ek shart rakhi: jo prithvi ke chakkar pehle lagaega, wahi jeetega.'
+- scene 7: The caption text 'LAUTE' is a single word, while the script line is 'Ganesha jeet gaye! Par jab Kartikeya laute, toh naraz hokar door Krauncha parvat par chale gaye.' It seems to be a very truncated summary.
+
+## review 1118-0435
+- picture check: scene 1: Is the picture split into panels, a collage, a split screen or side-by-side copies of the same scene? (yes 77%)
+- picture check: scene 5: Does the main deity carry an emblem of a different god (for example Krishna's peacock feather or flute on a go (yes 78%)

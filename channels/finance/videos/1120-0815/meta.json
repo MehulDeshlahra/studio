@@ -3,5 +3,7 @@
  "job": "1120-0815",
  "topic": "₹80,000 ka phone 'No Cost EMI' pe: asli mein kitna extra lagta hai",
  "stage": "held",
- "held_at": "2026-11-20 08:52"
+ "held_at": "2026-11-20 08:52",
+ "soft_review": 1,
+ "soft_preflight": 1
 }

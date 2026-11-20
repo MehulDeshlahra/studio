@@ -3,7 +3,7 @@
   "job": "1119-1340-c2",
   "topic": "PITRU DOSH KYA HOTA HAI?",
   "title": "PITRU DOSH KYA HOTA HAI?",
-  "status": "held",
+  "status": "removed",
   "review": [
    "almost no speech (captions nearly empty)",
    "Broken layout in the bottom row of frames where the person is cut in half and duplicated on the left and right sides of the frame.",
@@ -13,13 +13,14 @@
    "url": "https://www.youtube.com/watch?v=E_n5yk9sxqs",
    "start": 480.0,
    "layout": "stack"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-1340-c3",
   "topic": "KYA SAPNO MEIN AATMA AATI HAI?",
   "title": "KYA SAPNO MEIN AATMA AATI HAI?",
-  "status": "held",
+  "status": "removed",
   "review": [
    "almost no speech (captions nearly empty)"
   ],
@@ -27,13 +28,14 @@
    "url": "https://www.youtube.com/watch?v=E_n5yk9sxqs",
    "start": 73.0,
    "layout": "mixed:fill+stack"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-1348-c3",
   "topic": "JAGANNATH PURI MEIN VIP DARSHAN MIRACLE",
   "title": "JAGANNATH PURI MEIN VIP DARSHAN MIRACLE",
-  "status": "held",
+  "status": "removed",
   "review": [
    "almost no speech (captions nearly empty)"
   ],
@@ -41,13 +43,14 @@
    "url": "https://www.youtube.com/watch?v=B_DpiJ0SY0k",
    "start": 7.0,
    "layout": "mixed:crop+fill+stack"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-1440-c1",
   "topic": "PAISA ATTRACT KARNE KA TANTRA",
   "title": "PAISA ATTRACT KARNE KA TANTRA",
-  "status": "held",
+  "status": "removed",
   "review": [
    "astrology / remedy content: brand-unsafe (source paused 19 Nov)"
   ],
@@ -55,13 +58,14 @@
    "url": "https://www.youtube.com/watch?v=wPB05nNhvCo",
    "start": 2022.51,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-1440-c2",
   "topic": "DIVORCE CASES BADHNE WALE HAIN",
   "title": "DIVORCE CASES BADHNE WALE HAIN",
-  "status": "held",
+  "status": "removed",
   "review": [
    "astrology / remedy content: brand-unsafe (source paused 19 Nov)"
   ],
@@ -69,13 +73,14 @@
    "url": "https://www.youtube.com/watch?v=wPB05nNhvCo",
    "start": 308.13,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-1440-c3",
   "topic": "JOB JANE KA DARR? YE KAREIN",
   "title": "JOB JANE KA DARR? YE KAREIN",
-  "status": "held",
+  "status": "removed",
   "review": [
    "astrology / remedy content: brand-unsafe (source paused 19 Nov)"
   ],
@@ -83,13 +88,14 @@
    "url": "https://www.youtube.com/watch?v=wPB05nNhvCo",
    "start": 183.0,
    "layout": "mixed:crop+stack"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-1555-c3",
   "topic": "NEEND MEIN JAAGNE KI VIDHI",
   "title": "NEEND MEIN JAAGNE KI VIDHI",
-  "status": "held",
+  "status": "removed",
   "review": [
    "The same person is shown twice at once in the frame (top and bottom right).",
    "checklist: same person shown twice"
@@ -98,13 +104,14 @@
    "url": "https://www.youtube.com/watch?v=wj455R5SX5A",
    "start": 33.53,
    "layout": "stack"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-1757-c3",
   "topic": "MET MY DAD AFTER DEATH",
   "title": "MET MY DAD AFTER DEATH",
-  "status": "held",
+  "status": "removed",
   "review": [
    "Captions contain severe mishearings and gibberish (e.g., 'BYHERYUNG AUR VERY' instead of coherent speech from transcript), rendering the subtitles mostly nonsensical.",
    "A heavy orange/red filter covers frame 3 completely, disrupting continuity.",
@@ -114,13 +121,14 @@
    "url": "https://www.youtube.com/watch?v=V1cE3z0yS0Q",
    "start": 107.59,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-2240a-c1",
   "topic": "RELEASE ANCESTRAL MEMORIES NOW",
   "title": "RELEASE ANCESTRAL MEMORIES NOW",
-  "status": "made",
+  "status": "approved",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=hE7ZcRFA6-I",
@@ -132,7 +140,7 @@
   "job": "1119-2240a-c2",
   "topic": "HEAL YOUR BRAIN WITH GOLDEN LIGHT",
   "title": "HEAL YOUR BRAIN WITH GOLDEN LIGHT",
-  "status": "held",
+  "status": "removed",
   "review": [
    "The hook 'HEAL YOUR BRAIN WITH GOLDEN LIGHT' is misleading as the transcript never mentions 'Golden Light'.",
    "The visual quality is very low, as it is a screen recording of a Zoom meeting, resulting in a pixelated and blurry appearance.",
@@ -143,7 +151,8 @@
    "url": "https://www.youtube.com/watch?v=hE7ZcRFA6-I",
    "start": 1144.71,
    "layout": "stack"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-2240a-c3",

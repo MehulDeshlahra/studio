@@ -17,7 +17,7 @@
   "job": "1119-2140a-c1",
   "topic": "DOUBLE HEAT BAG CHOPSTICKS",
   "title": "DOUBLE HEAT BAG CHOPSTICKS",
-  "status": "held",
+  "status": "removed",
   "review": [
    "length 11.76 s"
   ],
@@ -25,7 +25,8 @@
    "url": "https://f.io/LGgDvyP3",
    "start": 15.65,
    "layout": "vertical"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1119-2140b-c1",
@@ -55,7 +56,7 @@
   "job": "1119-2140e-c1",
   "topic": "YOU CAN'T STOP EATING IT",
   "title": "YOU CAN'T STOP EATING IT",
-  "status": "held",
+  "status": "removed",
   "review": [
    "length 11.17 s"
   ],
@@ -63,13 +64,14 @@
    "url": "https://f.io/LGgDvyP3",
    "start": 69.73,
    "layout": "vertical"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0124a-c1",
   "topic": "SOCIAL MEDIA ADDICTS CHILDREN ON PURPOSE",
   "title": "SOCIAL MEDIA ADDICTS CHILDREN ON PURPOSE",
-  "status": "held",
+  "status": "removed",
   "review": [
    "The hook title 'SOCIAL MEDIA ADDICTS CHILDREN ON PURPOSE' is completely false and fabricated, as the transcript discusses being a stockbroker, law school, and using tech skills to improve client exper",
    "checklist: weak / vague / negative page note"
@@ -78,13 +80,14 @@
    "url": "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
    "start": 41.89,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0124a-c2",
   "topic": "FACEBOOK'S OWN PROVES ADDICTION",
   "title": "FACEBOOK'S OWN PROVES ADDICTION",
-  "status": "held",
+  "status": "removed",
   "review": [
    "length 3.12 s",
    "not edited enough: 1 framing beats (need 3+)"
@@ -93,7 +96,8 @@
    "url": "https://drive.google.com/file/d/1tTq5MTsNm76ek5ftbi9QbNZkCd30NMcZ/view",
    "start": 2667.2,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0124a-c3",
@@ -123,7 +127,7 @@
   "job": "1120-0201a-c1",
   "topic": "MOM MAKES DAUGHTER RAP AS PUNISHMENT",
   "title": "MOM MAKES DAUGHTER RAP AS PUNISHMENT",
-  "status": "held",
+  "status": "removed",
   "review": [
    "speaker out of the crop for 23% of the time (crop did not follow him)"
   ],
@@ -131,13 +135,14 @@
    "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
    "start": 125.89,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0201b-c1",
   "topic": "COCO ROASTS DESIREE'S BEAN PASTA DISASTER",
   "title": "COCO ROASTS DESIREE'S BEAN PASTA DISASTER",
-  "status": "held",
+  "status": "removed",
   "review": [
    "speaker out of the crop for 11% of the time (crop did not follow him)"
   ],
@@ -145,7 +150,8 @@
    "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
    "start": 58.01,
    "layout": "mixed:crop+fill+stack"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0201c-c1",
@@ -175,7 +181,7 @@
   "job": "1120-0311a-c1",
   "topic": "THEY CALL US USERS FOR A REASON",
   "title": "THEY CALL US USERS FOR A REASON",
-  "status": "held",
+  "status": "removed",
   "review": [
    "20 Nov frame check: Japanese-audio game cutscene, our captions came out in Japanese over the source's English subtitles; never post"
   ],
@@ -183,13 +189,14 @@
    "url": "https://www.youtube.com/watch?v=6uSskUaDL90",
    "start": 1493.15,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0311a-c2",
   "topic": "STOP BLAMING YOURSELF FOR THEIR ADDICTION",
   "title": "STOP BLAMING YOURSELF FOR THEIR ADDICTION",
-  "status": "held",
+  "status": "removed",
   "review": [
    "20 Nov frame check: Japanese-audio game cutscene, our captions came out in Japanese over the source's English subtitles; never post"
   ],
@@ -197,13 +204,14 @@
    "url": "https://www.youtube.com/watch?v=6uSskUaDL90",
    "start": 964.91,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0311a-c3",
   "topic": "THEY KNEW IT WAS CAUSING HARM",
   "title": "THEY KNEW IT WAS CAUSING HARM",
-  "status": "held",
+  "status": "removed",
   "review": [
    "20 Nov frame check: Japanese-audio game cutscene, our captions came out in Japanese over the source's English subtitles; never post"
   ],
@@ -211,19 +219,99 @@
    "url": "https://www.youtube.com/watch?v=6uSskUaDL90",
    "start": 2667.19,
    "layout": "crop"
-  }
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
  },
  {
   "job": "1120-0311a-c4",
   "topic": "THEY DESIGNED IT TO BE ADDICTIVE",
   "title": "THEY DESIGNED IT TO BE ADDICTIVE",
-  "status": "held",
+  "status": "removed",
   "review": [
    "20 Nov frame check: Japanese-audio game cutscene, our captions came out in Japanese over the source's English subtitles; never post"
   ],
   "clip": {
    "url": "https://www.youtube.com/watch?v=6uSskUaDL90",
    "start": 444.97,
+   "layout": "crop"
+  },
+  "removed_why": "20 Nov archived: held clip, never rebuilt (clip pages make fresh clips)"
+ },
+ {
+  "job": "1120-1440a-c1",
+  "topic": "MOM QUESTIONS LITTLE LIES",
+  "title": "MOM QUESTIONS LITTLE LIES",
+  "status": "held",
+  "review": [
+   "A heavily blurred enlarged copy of the frame behind the video creates a split stacked layout where the top half shows cropped sections of the speaker's head/face, causing a broken layout.",
+   "The split top/bottom layout results in the speaker being awkwardly cropped in the upper frames."
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 0.0,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1120-1440b-c1",
+  "topic": "WHO'S KID ARE YOU? CULINARY DISASTER",
+  "title": "WHO'S KID ARE YOU? CULINARY DISASTER",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 0.0,
+   "layout": "mixed:crop+fit"
+  }
+ },
+ {
+  "job": "1120-1440c-c1",
+  "topic": "SECRET SEASONING REVEALED, THEN SNAP",
+  "title": "SECRET SEASONING REVEALED, THEN SNAP",
+  "status": "held",
+  "review": [
+   "Caption 'CHCHICKENOD' is a transcription error (nonsense word).",
+   "checklist: misheard caption"
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 353.77,
+   "layout": "mixed:crop+fit"
+  }
+ },
+ {
+  "job": "1120-1440d-c1",
+  "topic": "ASIA WANTS OUT, BUT ROOM'S A MESS",
+  "title": "ASIA WANTS OUT, BUT ROOM'S A MESS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 0.0,
+   "layout": "mixed:crop+fit"
+  }
+ },
+ {
+  "job": "1120-1440e-c1",
+  "topic": "MOM KICKS THE KIDS OUTSIDE",
+  "title": "MOM KICKS THE KIDS OUTSIDE",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 25.72,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1120-1440f-c1",
+  "topic": "Mom asks fixing kids screen addiction",
+  "title": "Mom asks fixing kids screen addiction",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
+   "start": 0.03,
    "layout": "crop"
   }
  }

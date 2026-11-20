@@ -11,5 +11,7 @@
  "doctor_code": "7504b60",
  "doctor_tries": 3,
  "brain_judged": true,
- "held_at": "2026-11-19 19:13"
+ "held_at": "2026-11-19 19:13",
+ "soft_review": 1,
+ "soft_preflight": 1
 }

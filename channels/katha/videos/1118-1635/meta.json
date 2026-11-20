@@ -6,5 +6,7 @@
  "lang": "hi",
  "prepped_at": "2026-11-18 16:53",
  "held_at": "2026-11-18 19:56",
- "brain_judged": true
+ "brain_judged": true,
+ "soft_review": 1,
+ "soft_preflight": 1
 }

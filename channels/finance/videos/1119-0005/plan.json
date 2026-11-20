@@ -25,7 +25,7 @@
     },
     {
      "from": "me",
-     "text": "Toh bank tujhe roz ₹5,000 dega!"
+     "text": "Toh bank aapko roz ₹5,000 dega!"
     }
    ],
    "vo": "Loan chukaya, papers abhi tak nahi mile? Roz ₹5,000 bante hain.",
@@ -173,7 +173,7 @@
      "text": "Complaint register ho gayi hai 🙏"
     }
    ],
-   "vo": "Pehle bank ko likh ke complaint do, 30 din intezaar karo.",
+   "vo": "Pehle bank ko likh ke complaint dijiye, 30 din intezaar kijiye.",
    "skin": "keynote",
    "motion": "push",
    "keywords": [
@@ -188,7 +188,7 @@
    "type": "title",
    "big": "RBI CMS PORTAL",
    "sub": "cms.rbi.org.in",
-   "vo": "Nahi hua to RBI CMS portal pe jao, track karo.",
+   "vo": "Nahi hua to RBI CMS portal pe jaiye, track kijiye.",
    "skin": "keynote",
    "motion": "push",
    "keywords": [
@@ -203,7 +203,7 @@
    "type": "stat",
    "value": "₹5,000",
    "sub": "roz, ye aapka haq hai",
-   "vo": "Ye haq hai tumhara — maango, paisa tumhaara hai.",
+   "vo": "Ye haq hai aapka — maangiye, paisa aapka hai.",
    "skin": "keynote",
    "motion": "push",
    "keywords": [
@@ -217,9 +217,9 @@
   },
   {
    "type": "title",
-   "big": "SAVE KARO",
+   "big": "SAVE KIJIYE",
    "sub": "papers kab mile the?",
-   "vo": "Save karo. Tumhare papers kab mile the?",
+   "vo": "Save kijiye. Aapke papers kab mile the?",
    "skin": "keynote",
    "motion": "push",
    "keywords": [
@@ -232,7 +232,7 @@
   }
  ],
  "music_mood": "driving",
- "caption": "Loan chukaya, papers abhi tak nahi mile? Bank ko roz ₹5,000 dene padenge 💸\nRBI ka niyam: poora loan chukane ke 30 din mein original papers wapas. Der hui toh har din ₹5,000.\nPapers kho gaye? Bank ko 30 din aur, phir wahi ₹5,000 roz.\nPehle bank ko likh ke complaint, 30 din mein jawab nahi toh cms.rbi.org.in\nSource: RBI circular, 13 Sep 2023 (laagu 1 Dec 2023)\nSave karo, kaam aayega 📌",
+ "caption": "Loan chukaya, papers abhi tak nahi mile? Bank ko roz ₹5,000 dene padenge 💸\nRBI ka niyam: poora loan chukane ke 30 din mein original papers wapas. Der hui toh har din ₹5,000.\nPapers kho gaye? Bank ko 30 din aur, phir wahi ₹5,000 roz.\nPehle bank ko likh ke complaint, 30 din mein jawab nahi toh cms.rbi.org.in\nSource: RBI circular, 13 Sep 2023 (laagu 1 Dec 2023)\nSave kijiye, kaam aayega 📌",
  "hashtags": [
   "#personalfinance",
   "#financeinhindi",

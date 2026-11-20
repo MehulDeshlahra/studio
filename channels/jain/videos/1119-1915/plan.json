@@ -85,7 +85,7 @@
    "type": "image",
    "prompt": "Third lotus petal opens — the bloom complete, all three petals glowing. A calm Jain monk in plain white unstitched cotton robes, carrying a soft white rajoharan (whisk broom), serene face, seated in a marble temple corridor with carved pillars and shikhara spires visible behind. Stands with palms joined, facing a simple siddhashila crescent symbol carved in marble. Dilwara-style carved ceiling above. Serene, uncluttered.",
    "motion": "pull",
-   "title": "",
+   "title": "Mitti Me Savva",
    "keywords": [
     "Mitti Me Savva Bhuyesu",
     "dushmani kisi se nahi"
@@ -93,12 +93,13 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Yeh sirf insanon ke liye nahi — cheenti, patte, hawa ke kan tak pahuncha hai",
    "type": "image",
-   "prompt": "Wide view: the blooming lotus on marble steps. Tiny ants crawl near the base, a fallen leaf rests beside it, a feather drifts in the air. All illuminated by the same golden light. Jain temple lane of mud and stone houses in soft focus behind. Extreme close-up: an ant's delicate step on marble, a leaf's vein pattern, a dust mote dancing in a shaft of golden light. The three lotus petals reflected in a nearby water bowl. Painterly, reverent, microscopic detail.",
+   "prompt": "Wide view of a blooming lotus on marble steps in a Jain temple lane. In foreground, tiny ants crawl near the base, a fallen leaf rests beside it, a feather drifts in the air. Background shows mud and stone houses, carved pillars, shikhara spires softly focused. Extreme close-up inserts: an ant's delicate step on marble, leaf vein pattern, a dust mote dancing in a shaft of golden light. The three lotus petals reflected in a nearby water bowl. Painterly, reverent, microscopic detail, 9:16 vertical.",
    "motion": "pull",
    "title": "",
    "keywords": [
@@ -108,7 +109,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "A single blooming lotus flower rests on polished white marble steps, its vibrant pink petals unfurling in the morning light. Tiny ants crawl near the base of the flower, while a single fallen leaf lies beside it. In the soft-focus background, ancient sandstone pillars and tall shikhara spires rise above rustic mud houses. Serene painterly Indian style, warm golden light casting gentle shadows, microscopic detail on petals and stone, vertical 9:16 composition, peaceful and reverent atmosphere.",
+      "fails": {},
+      "top": 0.22
+     }
+    ]
+   }
   },
   {
    "vo": "Pratikraman mein yeh teen baar doharate hain, Paryushan ke aakhri din Samvatsari ko",
@@ -138,7 +153,20 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "A Digambar monk, middle-aged man with a slender build, calm face, clean-shaven head, and light brown complexion, stands in a steady kayotsarga posture with arms hanging straight down by his sides and feet together. He holds a soft white peacock-feather whisk broom in his hand. He is positioned inside an ancient rock-cut cave temple with rough textured stone walls and a lintel featuring delicate lotus carvings. Serene painterly Indian style, warm golden light, peaceful atmosphere, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.57
+     }
+    ]
+   }
   },
   {
    "vo": "Samvatsari ke din yeh formula bola jata hai, naya saal shuru hota hai",
@@ -235,5 +263,57 @@
   "161339712e",
   "1e1964f463",
   "7fa182f8ef"
- ]
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Jain Monk",
+    "scenes": [
+     3,
+     4,
+     5,
+     7
+    ],
+    "look": "Middle-aged man, slender build, calm face, clean-shaven head, light brown skin. He wears plain white unstitched cotton robes draped over his shoulders and a white mouth cloth tied across his face. He holds a soft white rajoharan whisk broom while seated in padmasana."
+   },
+   {
+    "name": "Digambar Monk",
+    "scenes": [
+     8
+    ],
+    "look": "Middle-aged man, slender build, calm face, clean-shaven head, light brown skin. He remains unclad, standing in a steady kayotsarga posture. He holds a soft white peacock-feather whisk broom in his hand. His expression is serene with eyes half-closed in deep, peaceful meditation."
+   }
+  ],
+  "places": [
+   {
+    "name": "Marble Temple Corridor",
+    "scenes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     9,
+     10,
+     11
+    ],
+    "look": "Polished white marble floors reflecting warm golden light, intricately carved sandstone pillars featuring floral motifs, tall pointed shikhara spires rising in the distance, stepped stone roofs, serene and uncluttered atmosphere, morning sunlight casting soft, gentle shadows across the sacred, quiet architectural space."
+   },
+   {
+    "name": "Rock-cut Cave Temple",
+    "scenes": [
+     8
+    ],
+    "look": "Ancient stone walls carved directly into a mountain, rough textured rock surfaces, dim golden light illuminating a stone lintel featuring delicate lotus carvings, minimalist and sacred environment, quiet stillness, earthy tones blended with warm light, creating a profound sense of historical and spiritual depth."
+   },
+   {
+    "name": "Village Lane",
+    "scenes": [
+     6
+    ],
+    "look": "Narrow path lined with traditional mud and stone houses, rustic textures, dusty ground, warm golden sunlight filtering through the space, peaceful atmosphere, simple architecture reflecting rural Indian heritage, clean and quiet surroundings with small natural details like ants and leaves resting on the ground."
+   }
+  ]
+ }
 }

@@ -17,7 +17,9 @@
   "title": "Digital Arrest scam ka asli blueprint kya hai?",
   "status": "held",
   "review": [
-   "NUMBERS: scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing varie"
+   "NUMBERS: scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing varie",
+   "scene 12 vo: informal 'kar' in \"Tune kabhi aisa call uthaya? Comment kar.\" (owner: never 'tu')",
+   "post caption: informal 'tera' (owner: never 'tu')"
   ]
  },
  {
@@ -87,21 +89,22 @@
   "topic": "Gold ya Silver? 2026 mein sahi decision: Gold-Silver ratio 90+ hai, ab ye strategy kaam karegi",
   "title": "Gold ya Silver? 2026 mein sahi decision kaise lein",
   "qc_ok": true,
-  "status": "held",
-  "review": [
+  "status": "made",
+  "review": [],
+  "mehul_rebuilt": "2026-11-19",
+  "replan_requested": "2026-11-19 22:33",
+  "minor": [
    "visual: Scene 7 frame 2 and Scene 9 say 'invest karein' and ask 'Kya kharidoge? Comment' which violates educational boundaries by pushing direct investment/buying advice.",
    "visual: checklist: Does any frame give a buy / sell / invest recommendation (advice) instead of education? -> Scene 7 and Scene 9 ('app se kharid lo', 'Kya kharidoge?')",
    "visual score 5/10"
-  ],
-  "mehul_rebuilt": "2026-11-19",
-  "replan_requested": "2026-11-19 22:33"
+  ]
  },
  {
   "job": "1119-0426-p1",
   "topic": "Business Ka Structure - Part 1: Proprietorship, Partnership, LLP, OPC, Pvt Ltd kya hain (aasan bhasha mein)",
   "title": "Business ka structure kaun sa chunna chahiye?",
   "qc_ok": true,
-  "status": "made",
+  "status": "approved",
   "review": []
  },
  {

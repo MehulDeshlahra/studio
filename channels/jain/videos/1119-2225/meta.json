@@ -5,5 +5,7 @@
  "stage": "done",
  "lang": "hi",
  "prepped_at": "2026-11-19 23:07",
- "brain_judged": true
+ "brain_judged": true,
+ "soft_review": 1,
+ "soft_preflight": 1
 }

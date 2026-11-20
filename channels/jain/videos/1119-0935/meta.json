@@ -7,5 +7,7 @@
  "prepped_at": "2026-11-19 09:59",
  "held_at": "2026-11-19 10:14",
  "brain_judged": true,
- "voice_gate": 1
+ "voice_gate": 1,
+ "soft_review": 1,
+ "soft_preflight": 1
 }

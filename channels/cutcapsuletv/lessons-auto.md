@@ -18,3 +18,11 @@
 
 ## 1120-0201b-c1 (clipper)
 - speaker out of the crop for 11% of the time (crop did not follow him)
+
+## 1120-1440a-c1 (clipper)
+- A heavily blurred enlarged copy of the frame behind the video creates a split stacked layout where the top half shows cropped sections of the speaker's head/face, causing a broken layout.
+- The split top/bottom layout results in the speaker being awkwardly cropped in the upper frames.
+
+## 1120-1440c-c1 (clipper)
+- Caption 'CHCHICKENOD' is a transcription error (nonsense word).
+- checklist: misheard caption

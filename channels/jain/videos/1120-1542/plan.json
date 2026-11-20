@@ -1,0 +1,495 @@
+{
+ "slug": "shrenik-next-tirthankar",
+ "title": "Sarvarthasiddhi viman mein Raja Shrenik, agle kaal ke pehle Tirthankar kaise?",
+ "hooks": [
+  "राजा श्रेणिक सर्वार्थसिद्धि विमान में हैं, और अगले काल के पहले तीर्थंकर बनेंगे",
+  "महावीर के भक्त राजा श्रेणिक का ऐसा भाग्य क्यों? त्रिषष्टि शलाका पुरुष चरित्र बताता है",
+  "स्वर्ग में विराजमान राजा, कैसे बनेगा पद्मनाभ तीर्थंकर? जानिए रहस्य"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with named entity 'राजा श्रेणिक' + shocking contradiction 'सर्वार्थसिद्धि विमान में हैं... फिर भी पहले तीर्थंकर' in first 6 words. Matches katha hook rule: voice at frame 0 with music bed, relatable paradox.",
+ "metaphor": "Lotus blooming from muddy water — soul's journey from lower realms to supreme enlightenment across time cycles.",
+ "mechanism": [
+  "महावीर भक्ति से तीर्थंकर नाम कर्म का बंध हुआ",
+  "वर्तमान में सर्वार्थसिद्धि विमान (स्वर्ग) में साधना रत हैं",
+  "कर्म शुद्धि के बाद नए कालचक्र में सर्वोच्च आत्मा पहले तीर्थंकर बनती है",
+  "हेमचंद्र आचार्य ने त्रिषष्टि शलाका पुरुष चरित्र में यही लिखा"
+ ],
+ "cast": {
+  "King Shrenik": "crowned king of ancient Magadha, gold crown with central jewel, draped silk dhoti and angavastram in deep crimson and gold, calm dignified face, medium beard, seated on lion-throne in white marble palace hall with carved sandstone pillars and pointed shikhara spires visible through arched windows",
+  "Mahavira Idol": "serene meditating temple idol of Lord Mahavira, seated padmasana on lion-throne, eyes half-closed, golden complexion, srivatsa mark on chest, lion emblem (simha) on pedestal, halo of soft golden light, white marble shrine with carved pillars",
+  "Jain Monk": "plain white unstitched cotton robes (two pieces), soft white whisk broom (rajoharan) in hand, calm face, shaved head, walking barefoot on marble temple corridor with warm golden light"
+ },
+ "scenes": [
+  {
+   "vo": "Raja Shrenik filhaal Sarvarthasiddhi viman mein hain, divya sukh mein leen",
+   "type": "image",
+   "prompt": "King Shrenik seated in a radiant celestial hall of Sarvarthasiddhi Vimana, white marble with glowing intricate patterns, divine golden light, peaceful expression, crown with central jewel, looking serene, shikhara spires of celestial temples in background",
+   "motion": "push",
+   "on_screen": "RAJA SHRENIK SWARG MEIN",
+   "keywords": [
+    "राजा श्रेणिक",
+    "सर्वार्थसिद्धि विमान"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s0q0.jpg",
+      "prompt": "King Shrenik, a middle-aged ruler with a sturdy build, calm oval face, short black beard, and hair tied in a high topknot, sits in reverence with hands folded in prayer. He wears a deep crimson silk dhoti with a gold border, an embroidered angavastram draped over his left shoulder, a jeweled crown centered with a ruby, and gold armlets. He is seated within the vast Sarvarthasiddhi Vimana, a celestial hall of polished white marble with walls etched in glowing golden geometric patterns. Serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {
+       "p5": 0.84,
+       "p4": 0.91,
+       "p11": 0.91,
+       "p2": 0.86,
+       "p1": 0.72
+      },
+      "top": 0.91
+     },
+     {
+      "file": "s0q1.jpg",
+      "prompt": "King Shrenik, a middle-aged ruler with a sturdy build, calm oval face, short black beard, hair tied in a high topknot, warm golden skin, wearing a deep crimson silk dhoti with gold border, embroidered angavastram draped over left shoulder, jeweled crown centered with a ruby, gold armlets and necklace, seated in reverence with hands folded. He rests within the Sarvarthasiddhi Vimana, a vast celestial hall of polished white marble with glowing golden geometric patterns. Serene painterly Indian style, soft golden light, vertical 9:16 composition.",
+      "fails": {
+       "p3": 0.72,
+       "p5": 0.82,
+       "p1": 0.78,
+       "p2": 0.83,
+       "p11": 0.82,
+       "p4": 0.86
+      },
+      "top": 0.86
+     },
+     {
+      "file": "s0q2.jpg",
+      "prompt": "King Shrenik, a middle-aged ruler with a sturdy build, calm oval face, short black beard, hair tied in a high topknot, warm golden skin, deep crimson silk dhoti with gold border, embroidered angavastram draped over left shoulder, jeweled crown centered with a ruby, gold armlets and necklace, sits with hands folded in reverence. He rests within the Sarvarthasiddhi Vimana, a vast celestial hall of polished white marble with walls etched in glowing golden geometric patterns. Serene painterly Indian style, soft golden light, vertical 9:16 composition.",
+      "fails": {
+       "p4": 0.89,
+       "p5": 0.8,
+       "p2": 0.91,
+       "p1": 0.91,
+       "p11": 0.7,
+       "p3": 0.8
+      },
+      "top": 0.91
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Magar wo roz Mahavir ke samavasaran jaate thhe, haath jodkar",
+   "type": "image",
+   "prompt": "King Shrenik in royal attire walking humbly toward grand Samavasarana assembly — tiered pavilion of white marble with carved pillars, Mahavira Idol seated at center on lion-throne, golden halo, monks and laypeople in white listening, warm golden hour light, gentle glow on marble floors",
+   "motion": "pan",
+   "on_screen": "MAHAVIR BHAKTI ROZ",
+   "keywords": [
+    "समवसरण",
+    "महावीर"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s1r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.33
+     }
+    ],
+    "real_photo": true
+   }
+  },
+  {
+   "vo": "Mahavir ki bhakti se unka bhavishya hi badal gaya",
+   "type": "image",
+   "prompt": "King Shrenik, a middle-aged Indian king with calm oval face, short black beard, hair tied in a high topknot, wearing a rich white silk dhoti with gold border, embroidered angavastram draped over left shoulder, jeweled crown with ruby, gold armlets and necklace, stands with hands folded in reverence. Before him, a radiant lotus bud rises through clear golden water, illuminated by warm light from above. In the background, ancient white marble Jain temple shikhara spires are reflected in the water. Serene painterly Indian style, warm golden light, vertical 9:16 composition with generous calm space above and below for text.",
+   "motion": "pull",
+   "on_screen": "BHAKTI SE BADLA BHAVISHYA",
+   "keywords": [
+    "भक्ति",
+    "भविष्य"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s2q0.jpg",
+      "prompt": "King Shrenik, a middle-aged ruler with a sturdy build, calm oval face, short black beard, and hair tied in a high topknot, stands with hands folded in reverence. He wears a rich white silk dhoti with a gold border, an embroidered angavastram draped over his left shoulder, a jeweled crown centered with a ruby, and gold armlets and necklace. Before him, a radiant lotus bud rises through clear golden water. In the background, ancient white marble Jain temple shikhara spires reflect in the water. Serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.46
+     }
+    ]
+   },
+   "real": null
+  },
+  {
+   "vo": "Hemchandra Acharya ne Trishashti Shalaka Purusha Charitra mein likha",
+   "type": "image",
+   "prompt": "Ancient palm-leaf manuscript (pothi) lying open on carved wooden stand in Jain temple library, warm candlelight, golden edges on pages, Sanskrit script visible but not readable, tall shikhara spires through window, peaceful atmosphere",
+   "motion": "tilt",
+   "on_screen": "HEMACANDRA GRANTH",
+   "keywords": [
+    "त्रिषष्टि शलाका",
+    "ग्रंथ"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s3q0.jpg",
+      "prompt": "An ancient palm-leaf manuscript lies open on a finely carved wooden stand, its golden-edged pages resting in a peaceful Jain temple library. The manuscript displays intricate Sanskrit characters, while soft, warm candlelight casts a gentle golden glow across the smooth stone floor. Through a lattice window, the silhouette of a tall, pointed white-marble shikhara spire rises against a soft twilight sky. Serene painterly Indian style, warm golden illumination, uncluttered, vertical 9:16 composition with generous space above and below.",
+      "fails": {},
+      "top": 0.19
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Agle kaalchakra ke pehle Tirthankar honge Padmanabh",
+   "type": "image",
+   "prompt": "Ethereal vision: a radiant lotus (padma) blooming in celestial space, golden light emanating from center, siddhashila crescent moon above, 24 lotus buds in a circle representing future tirthankaras, first bud largest and glowing brightest, serene painterly style, warm gold on white",
+   "motion": "push",
+   "on_screen": "PADMANABH PEHLA TIRTHANKAR",
+   "keywords": [
+    "पद्मनाभ",
+    "तीर्थंकर"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s4q0.jpg",
+      "prompt": "A radiant lotus blooming in celestial space, its petals unfolding with soft golden light emanating from the center, a luminous siddhashila crescent moon hovering above, twenty-four delicate lotus buds arranged in a circle representing future tirthankaras, the first bud largest and glowing brightest with divine brilliance. Serene painterly Indian style, warm golden light on white marble textures, calm and peaceful atmosphere, gentle glow, uncluttered composition, vertical 9:16 framing with generous space above and below.",
+      "fails": {},
+      "top": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Shrenik hi banenge Padmanabh, yahi granth ka satya hai",
+   "type": "image",
+   "prompt": "A serene white marble idol of Padmanabha Tirthankara seated in padmasana on a lotus pedestal, half-closed eyes, gentle smile, shrivatsa mark on chest, lotus emblem on pedestal, surrounded by a soft golden aura. The idol is centered in the vast Sarvarthasiddhi Vimana, a celestial hall of polished white marble with subtle glowing geometric patterns on walls. Warm golden light, peaceful atmosphere, vertical 9:16 composition with ample space above and below for text.",
+   "motion": "pan",
+   "on_screen": "SHRENIK HI PADMANABH",
+   "keywords": [
+    "हेमचंद्र",
+    "पद्मनाभ"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "Padmanabha Tirthankara Idol, a smooth white marble idol seated cross-legged with hands resting in the lap, half-closed eyes, gentle smile, tight curls, shrivatsa mark on chest, lotus emblem carved on pedestal, smooth stone texture, golden aura encircling figure, centered in the vast Sarvarthasiddhi Vimana, a celestial hall of polished white marble with walls etched with glowing golden geometric patterns, serene painterly Indian style, warm golden light permeating the space, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {
+       "p3": 0.74
+      },
+      "top": 0.74
+     }
+    ]
+   },
+   "real": null
+  },
+  {
+   "vo": "Punya ka uday aatma ko nikharta hai, jaise sona tapkar shuddh hota hai",
+   "type": "image",
+   "prompt": "Stylized celestial light transforming into golden lotus petals — radiant glow rising and becoming petals, warm golden palette, white marble temple floor reflecting light, peaceful transformation, no frightening imagery",
+   "motion": "push",
+   "on_screen": "PUNYA SE SHUDDHI",
+   "keywords": [
+    "पुण्य",
+    "शुद्धि"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s6q0.jpg",
+      "prompt": "A radiant, stylized celestial light transforming into shimmering golden lotus petals, the petals gently unfurling and rising upwards in a graceful, swirling motion, set within the vast, serene interior of a white marble temple with finely carved pillars and stepped stone roofs, serene painterly Indian style, warm golden light reflecting off the polished white marble floor, a gentle, peaceful glow permeating the entire space, vertical 9:16 composition, main subject centered in the middle third, generous calm space above and below.",
+      "fails": {},
+      "top": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Bhakti-gyan ka phal kabhi vyarth nahi jaata, har janam saath rehta",
+   "type": "image",
+   "prompt": "Jain Monk in white robes with rajoharan standing before marble shrine, offering single white lotus at feet of Mahavira Idol, warm golden light bathing scene, carved sandstone pillars, stepped stone roof, serene and uncluttered",
+   "motion": "pull",
+   "on_screen": "BHAKTI KA FAL SATH REHTA",
+   "keywords": [
+    "भक्ति",
+    "ज्ञान"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s7r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.24
+     }
+    ],
+    "real_photo": true
+   }
+  },
+  {
+   "vo": "Aaj ka karma tay karta hai aane waale kaal mein aapka sthaan",
+   "type": "image",
+   "prompt": "Cosmic time cycle (kalachakra) as great wheel of 24 spokes on white marble temple floor, each spoke a tirthankara emblem, first spoke (lotus) glowing, golden light from center, warm cinematic lighting, ancient Jain temple architecture around",
+   "motion": "tilt",
+   "on_screen": "AAJ KA KARM KAL TAY KAREGA",
+   "keywords": [
+    "कर्म",
+    "काल चक्र"
+   ],
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s8q0.jpg",
+      "prompt": "A vast, intricately carved white marble floor in an ancient Jain temple, featuring a large circular Kalachakra wheel with twenty-four spokes, each spoke displaying a unique Tirthankara emblem. The first spoke, marked with a glowing lotus, radiates a gentle, warm golden light that illuminates the polished stone. Surrounding the floor are finely carved pillars and arched doorways typical of Dilwara architecture. The scene is captured in a serene, painterly Indian style with soft, cinematic golden lighting, vertical 9:16 composition, peaceful and uncluttered.",
+      "fails": {},
+      "top": 0.26
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Aap hote toh kya chunte — bhakti ya bhog? Comment mein batao",
+   "type": "card",
+   "prompt": "Clean white marble background with subtle carved border, warm golden glow, lotus motif at corners",
+   "motion": "punch",
+   "on_screen": "AAP KYA CHUNENGE?",
+   "big": "BHAKTI YA BHOG?",
+   "small": "COMMENT KARO",
+   "keywords": [
+    "भक्ति",
+    "भोग"
+   ],
+   "title": "",
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s9q0.jpg",
+      "prompt": "King Shrenik, a middle-aged ruler with a sturdy build, calm oval face, short black beard, and hair tied in a high topknot, stands with hands folded in reverence. He wears a deep crimson silk dhoti with gold border, embroidered angavastram draped over his left shoulder, jeweled crown centered with a ruby, and gold armlets. The setting is a serene, clean white marble background with subtle carved borders and lotus motifs at the corners, captured in a serene painterly Indian style with warm golden light.",
+      "fails": {
+       "p2": 0.94,
+       "p3": 0.8,
+       "p11": 0.93,
+       "p4": 0.82,
+       "p1": 0.94,
+       "p5": 0.92
+      },
+      "top": 0.94
+     }
+    ]
+   }
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Raja Shrenik filhaal Sarvarthasiddhi viman mein hain, aur agle kaal ke pehle Tirthankar banenge. Trishashti Shalaka Purusha Charitra ka ye rahasya batata hai ki bhakti aur gyan ka phal kabhi vyarth nahi jaata.\n\nKarma hi humara bhavishya tay karte hain.\n\nAap hote toh kya chunte — bhakti ya bhog? Comment mein batao\n\n#JainStories #KingShrenik #Tirthankara #TrishashtiShalakaPurushaCharitra #Karma #NavkarBhav #Sarvarthasiddhi\n\n@katha_stories\nVideo: Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)\nVideo: Photo: Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar) (Wikimedia Commons)",
+ "hashtags": [
+  "#JainStories",
+  "#KingShrenik",
+  "#Tirthankara",
+  "#TrishashtiShalakaPurushaCharitra",
+  "#Karma",
+  "#NavkarBhav",
+  "#Sarvarthasiddhi"
+ ],
+ "claims": [
+  {
+   "claim": "King Shrenik (Bimbisara) is currently in the Sarvarthasiddhi Vimana (heavenly abode) per jainknowledge.com",
+   "basis": "Source jainknowledge.com as specified in the prompt instructions"
+  },
+  {
+   "claim": "King Shrenik is destined to be the first Tirthankara (Padmanabha) of the next time cycle",
+   "basis": "Jain tradition cited in Hemachandra's Trishashti-shalaka-purusha-charitra"
+  },
+  {
+   "claim": "King Shrenik frequently visited the Samavasarana of Mahavira",
+   "basis": "Jain tradition recorded in Trishashti-shalaka-purusha-charitra and Wikipedia"
+  },
+  {
+   "claim": "Source text is Trishashti-shalaka-purusha-charitra by Acharya Hemachandra",
+   "basis": "Standard Jain textual reference"
+  }
+ ],
+ "page_notes": [
+  "Insight 1: The current location of King Shrenik in Sarvarthasiddhi Vimana represents a state of high spiritual merit (punya) earned through his devotion to Lord Mahavira.",
+  "Insight 2: Hemachandra's 12th century text maps 63 illustrious beings across time cycles; Shrenik's transition from a royal devotee to the future Tirthankara Padmanabha illustrates the power of 'Tirthankara-nam-karma'."
+ ],
+ "fresh_fixed": [
+  "scene 1: The script claims King Shrenik is currently in hell (narak). According to the source 'jainknowledge.com', King Shrenik is currently in the Sarvarthasiddhi Vimana (heavenly abode), not in hell."
+ ],
+ "brain_ids": [
+  "fc294ac58f",
+  "b69d65467f",
+  "b2fabb69c4",
+  "0755cc155a",
+  "161339712e",
+  "7f620e6fdf",
+  "9db4cc694f",
+  "a688e48ca2",
+  "7fa182f8ef",
+  "f945e2a937",
+  "e15cfaed29",
+  "6ce7203c71",
+  "1e1964f463",
+  "12739745ca"
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "King Shrenik",
+    "scenes": [
+     1,
+     2,
+     3,
+     6
+    ],
+    "look": "Middle‑aged ruler, sturdy build, calm oval face, short black beard, hair tied in a high topknot, warm golden skin, deep crimson silk dhoti with gold border, embroidered angavastram draped over left shoulder, jeweled crown centered with a ruby, gold armlets and necklace, seated or standing with hands folded in reverence"
+   },
+   {
+    "name": "Mahavira Idol",
+    "scenes": [
+     2,
+     8
+    ],
+    "look": "White marble idol seated in padmasana on a lion throne, half‑closed serene eyes, gentle smile, tight curls covering head, shrivatsa mark on chest, lion emblem carved at base, smooth unadorned stone surface, golden halo radiating behind, bare head and chest, hands resting on knees"
+   },
+   {
+    "name": "Hemchandra Acharya",
+    "scenes": [
+     4
+    ],
+    "look": "Elderly monk, slender frame, deeply lined peaceful face, long white beard, completely shaved head, plain white cotton robe draped simply, muhpatti covering mouth, rajoharan held in right hand, seated cross‑legged on a cushion, eyes downcast in meditation"
+   },
+   {
+    "name": "Jain Monk",
+    "scenes": [
+     2,
+     8
+    ],
+    "look": "Middle‑aged ascetic, lean build, shaved head, calm expression, plain white unstitched cotton robe reaching ankles, muhpatti over mouth, soft white rajoharan in left hand, bare feet, standing with palms joined at chest, posture upright and serene"
+   },
+   {
+    "name": "Padmanabha Tirthankara Idol",
+    "scenes": [
+     5,
+     6
+    ],
+    "look": "White marble idol seated in padmasana, half‑closed eyes, gentle smile, tight curls, shrivatsa mark on chest, lotus emblem carved on pedestal, smooth stone texture, golden aura encircling figure, bare head and chest, hands resting on knees"
+   }
+  ],
+  "places": [
+   {
+    "name": "Sarvarthasiddhi Vimana",
+    "look": "Vast celestial hall of polished white marble, walls etched with glowing golden geometric patterns, tall pointed shikhara spires visible through arched windows, floor inlaid with lotus motifs, soft golden light permeating the space, serene and uncluttered atmosphere"
+   },
+   {
+    "name": "Samavasarana Assembly Pavilion",
+    "look": "Tiered pavilion of white marble with finely carved pillars, central lion throne elevated on steps, rows of white‑robed monks and laypeople seated on either side, golden halo above throne, shikhara spires rising in background, warm golden illumination throughout"
+   },
+   {
+    "name": "Jain Temple Library",
+    "look": "Quiet library with carved wooden stands, open palm‑leaf manuscript resting on a stand, warm candlelight casting golden glow on golden‑edged pages, tall shikhara spires seen through lattice windows, smooth stone floor, peaceful scholarly ambience"
+   },
+   {
+    "name": "Celestial Vision Space",
+    "look": "Infinite celestial expanse, a radiant lotus blooming at center emitting golden light, siddhashila crescent moon above, circle of twenty‑four lotus buds surrounding, first bud largest and luminous, soft pastel backdrop, tranquil and luminous"
+   },
+   {
+    "name": "Temple Floor Kalachakra",
+    "look": "White marble temple floor bearing a great wheel of twenty‑four spokes, each spoke engraved with a tirthankara emblem, first spoke lotus glowing brightly, golden light radiating from center, warm cinematic lighting, surrounding carved sandstone pillars"
+   },
+   {
+    "name": "Clean Marble Background",
+    "look": "Smooth white marble wall with subtle carved border, warm golden glow suffusing surface, lotus motifs at each corner, minimal and serene composition"
+   }
+  ]
+ },
+ "pic_redraws": 6,
+ "idol_photos_used": [
+  "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg",
+  "File:Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar).jpg"
+ ],
+ "credits": [
+  "Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)",
+  "Photo: Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar) (Wikimedia Commons)"
+ ]
+}

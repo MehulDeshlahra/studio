@@ -1,0 +1,549 @@
+{
+ "slug": "rishabh-ahara-akshaya-tritiya",
+ "title": "Pehle Tirthankara ne 400 din bhookha kyun raha?",
+ "hooks": [
+  "Pehle Tirthankara ne 400 din bhookha kyun raha?",
+  "400 din tak kisi ne nahi diya pehla ahara — kyun?",
+  "Rishabhanatha ne 400 din intezaar kiya, phir kya hua?"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Named entity (Rishabhanatha) + specific number (400 din) + question in first 6 words — matches raaz hook rule and Jain katha hook style.",
+ "metaphor": "Golden sugarcane juice flowing into a monk's cupped hands — the first correct alms after a year of wrong offerings.",
+ "mechanism": [
+  "Rishabhanatha chhoda raj-paat, bane pehle sadhu — logon ko pata nahi tha ahara ka niyam.",
+  "Gaonwale sona, ghode, betiyan le aaye — muni ne kuch nahi liya, sirf shuddh bhav se diya hua anna sweekar karte hain.",
+  "400 din beet gaye, Akshaya Tritiya pe Raja Shreyansa ko pichhle janam ki yaad aayi.",
+  "Unhone ikshu-ras (ganne ka ras) swarna ke bartan mein, prem se bhent kiya — yeh pehla sahi ahara tha.",
+  "Tabse Jain parampara mein ahara-vidhi ka niyam shuru hua: daan dena kaafi nahi, sahi tarika aur bhav bhi chahiye."
+ ],
+ "cast": {
+  "Rishabhanatha_idol": "Serene white marble idol of Rishabhanatha in padmasana, eyes half-closed, golden aura, bull (lanchhana) carved on pedestal, no crown, no jewellery, no weapons",
+  "Jain_monk": "Calm monk in plain white unstitched cotton robes, carrying soft white rajoharan (whisk broom), barefoot, peaceful face",
+  "King_Shreyansa": "Ancient Indian king in simple cotton dhoti and angavastram, gold necklace, turban with small ornament, folded hands, respectful posture",
+  "Villagers": "Simple ancient Indian villagers in cotton dhotis/sarees, mud-stone houses background, curious respectful faces"
+ },
+ "scenes": [
+  {
+   "vo": "Pehle Tirthankara ne 400 din bhookha kyun raha?",
+   "type": "image",
+   "prompt": "Painterly Indian style, warm golden light on white marble Jain temple interior. Centre: Rishabhanatha_idol seated padmasana on lotus pedestal, bull emblem visible. Soft glow around. Ancient sandstone pillars with fine carvings, pointed shikhara spire above. Calm, uncluttered.",
+   "motion": "push",
+   "title": "400 DIN BHOOKHA KYUN?",
+   "keywords": [
+    "Pehle Tirthankara",
+    "400 din"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Rishabhdev"
+    ],
+    "tries": [
+     {
+      "file": "s0r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.38
+     }
+    ],
+    "real_photo": true
+   }
+  },
+  {
+   "vo": "Rishabhanatha ne raj-paat chhoda, sadhu ban gaye. Par problem yeh thi.",
+   "type": "image",
+   "prompt": "Palace courtyard of white marble and sandstone, golden hour. Golden footprints on marble steps leading away from empty throne. Single white robe folded on step, rajoharan beside it. Tall shikhara spires behind. No human figures.",
+   "motion": "pan",
+   "title": "SANYAS KA PRARAMBH",
+   "keywords": [
+    "raj-paat chhoda",
+    "sadhu bane"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Rishabhdev",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s1r0.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p6": 0.64
+      },
+      "top": 0.64
+     },
+     {
+      "file": "s1r1.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p6": 0.65
+      },
+      "top": 0.65
+     },
+     {
+      "file": "s1q0.jpg",
+      "prompt": "Golden footprints glowing on white marble steps, leading away from an empty throne platform in a palace courtyard, a single white unstitched cotton robe folded neatly on the step with a soft white whisk broom resting beside it. Tall sandstone shikhara spires rise in the background, intricate floral carvings on pillars, serene painterly Indian style, warm golden hour light casting long soft shadows, peaceful uncluttered atmosphere, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {},
+      "top": 0.34
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Is yug ke pehle sadhu the, isliye logon ko daan ka niyam pata hi nahi tha.",
+   "type": "image",
+   "prompt": "Village lane of mud-stone houses, warm golden light. Jain_monk walking calmly with rajoharan. Villagers watching with folded hands, confused. Some holding grains, fruits, cloth — offering awkwardly. Ancient Jain temple shikhara far behind. No Mughal arches.",
+   "motion": "tilt",
+   "title": "DAAN KA NIYAM NAHI",
+   "keywords": [
+    "pehle sadhu",
+    "niyam nahi pata"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s2q0.jpg",
+      "prompt": "Jain_monk: Adult male, slender build, calm face, clean-shaven, bare head, warm brown skin, plain white unstitched cotton robe draped over left shoulder, soft white whisk broom (rajoharan) held in right hand, white mouth cloth (muhpatti) tied gently, bare feet, meditative half-closed eyes, serene posture walking forward. He walks through a dusty Village_lane lined with mud and stone houses. Villagers stand with folded hands, expressions of confusion, holding baskets of fruit and grain awkwardly. Ancient Jain temple shikhara rises in the distance. Serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.27
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Koi sona-chandi laata, toh koi apni beti ka haath dene lagta — galat daan.",
+   "type": "image",
+   "prompt": "Close view: Villagers' hands offering gold coins and jewelry, and a father placing his daughter's hand in the monk's hand as if donating her. Jain monk's bare feet walking past calmly. Warm golden light on dusty ground. Ancient Indian village lane setting. Vertical 9:16 composition with main action centered in the upper two-thirds of the frame, leaving the bottom third clear with only dusty ground texture for text placement. Generous calm space above and below the main subjects. Serene painterly Indian style, peaceful morning atmosphere.",
+   "motion": "pan",
+   "title": "GALAT DAAN",
+   "keywords": [
+    "sona chandi",
+    "galat daan"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s3q0.jpg",
+      "prompt": "Villagers' hands offering gold coins and jewelry alongside a father placing his daughter's hand toward a Jain monk, the Jain monk from image 1 walking past with calm bare feet on dusty ground, village lane with mud and stone houses, serene painterly Indian style, warm golden morning light, vertical 9:16 composition, main action centered in the upper two-thirds, generous calm space above and below, clean dusty ground texture in the bottom third.",
+      "fails": {},
+      "top": 0.31
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Muni sirf wahi lete hain jo shuddh ho, bina lalach ke diya jaye.",
+   "type": "image",
+   "prompt": "Close-up: Jain_monk face, eyes half-closed in meditation while walking. Soft golden aura. Blurred villagers offering worldly goods in background. Monk detached, serene. Painterly style.",
+   "motion": "push",
+   "title": "SHUDDH BHAV HI SWEEKAR",
+   "keywords": [
+    "shuddh",
+    "bin lalach"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s4q0.jpg",
+      "prompt": "The idol from image 1, adult male slender build calm face clean-shaven bare head warm brown skin plain white unstitched cotton robe draped over left shoulder soft white whisk broom held in right hand white mouth cloth tied gently bare feet meditative half-closed eyes serene posture walking slowly forward through village lane of mud and stone houses, villagers with folded hands offering fruits and cloth recede into soft focus at lane edges, serene painterly Indian style warm golden light pooling on marble gentle glow uncluttered, vertical nine sixteen composition monk centered in middle third generous calm space above and below",
+      "fails": {},
+      "top": 0.27
+     }
+    ]
+   }
+  },
+  {
+   "vo": "400 din beet gaye, kisi ne sahi vidhi se ahara nahi diya.",
+   "type": "image",
+   "prompt": "Wide painterly view: Ancient Jain temple complex at dawn, golden light on white marble. Shikhara spires catching first sun. Single lotus blooming in marble tank. Calendar metaphor: 400 tiny lotus petals forming a circle, one highlighted gold. No people. Serene.",
+   "motion": "pull",
+   "title": "400 DIN BEET GAYE",
+   "keywords": [
+    "400 din",
+    "ahara nahi"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Rishabhdev",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s5q0.jpg",
+      "prompt": "An ancient Jain temple complex at dawn, captured in a serene painterly style. In the middle third, a single, pristine lotus flower blooms within a still, reflective marble water tank. Surrounding the tank, 400 tiny, delicate lotus petals are arranged in a perfect circle on the white marble floor, with one single petal highlighted in brilliant gold. Tall, intricately carved sandstone shikhara spires rise into the soft, golden light of early morning, casting long, gentle shadows across the polished white marble courtyard.",
+      "fails": {},
+      "top": 0.21
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Phir Akshaya Tritiya pe Raja Shreyansa ko pichhle janam ki baat yaad aayi.",
+   "type": "image",
+   "prompt": "King_Shreyansa in meditative posture, eyes wide with realization. Faint ethereal dream-bubble above showing past life scene of monk being served. Soft blue-gold light. Palace interior background.",
+   "motion": "push",
+   "title": "YAAD AAYI VIDHI",
+   "keywords": [
+    "Akshaya Tritiya",
+    "pichhla janam"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s6q0.jpg",
+      "prompt": "King_Shreyansa, a middle-aged king with a sturdy build, calm face, short trimmed beard, and dark hair tied in a royal topknot, kneels in a meditative posture with hands cupped reverently, his eyes wide with sudden realization. Above him, a faint ethereal dream-bubble displays a past life scene of a monk being served. The setting is a palace interior with white marble floors and intricate sandstone pillars. Serene painterly Indian style, warm golden and soft blue light, vertical 9:16 composition.",
+      "fails": {
+       "p11": 0.72
+      },
+      "top": 0.72
+     },
+     {
+      "file": "s6q1.jpg",
+      "prompt": "King Shreyansa, a middle-aged king with a sturdy build, calm face, short trimmed beard, and dark hair tied in a royal topknot, kneeling in a meditative posture with hands cupped reverently, eyes wide with sudden realization, wearing a rich saffron silk dhoti with gold border, embroidered angavastram across his chest, gold crown with a central jewel, gold earrings, necklaces, and armlets. Set within a palace courtyard with white marble steps, tall sandstone pillars with intricate floral carvings, and glowing golden footprints on the steps. Serene painterly Indian style, warm golden light, vertical 9:16 composition.",
+      "fails": {
+       "p5": 0.78,
+       "p11": 0.66,
+       "p2": 0.93
+      },
+      "top": 0.93
+     },
+     {
+      "file": "s6q2.jpg",
+      "prompt": "King Shreyansa, a middle-aged man with a sturdy build, short trimmed beard, dark hair tied in a royal topknot, golden skin tone, wearing a rich saffron silk dhoti with gold border, embroidered angavastram, gold crown, earrings, and necklaces, sits in a meditative posture with hands cupped reverently, eyes wide with realization. Above him, a faint ethereal dream-bubble depicts a past life scene. Set in a palace interior with intricate sandstone pillars and white marble floors. Serene painterly Indian style, soft blue-gold lighting, vertical 9:16 composition.",
+      "fails": {
+       "p5": 0.76,
+       "p2": 0.88
+      },
+      "top": 0.88
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Unhone ikshu-ras, yani ganne ka ras, prem se swarna ke bartan mein bhent kiya.",
+   "type": "image",
+   "prompt": "King_Shreyansa kneeling on white marble steps, offering golden bowl filled with pale green sugarcane juice. Jain_monk standing before him, cupped hands receiving. Warm golden light, gentle steam. Carved pillars, shikhara behind. Villagers watching reverently.",
+   "motion": "push",
+   "title": "PEHLA SAHI AHARA: IKSHU",
+   "keywords": [
+    "ikshu ras",
+    "prem se"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "King_Shreyansa, middle-aged king with sturdy build, calm face, short trimmed beard, dark hair tied in royal topknot, golden skin tone, rich saffron silk dhoti with gold border, embroidered angavastram across chest, gold crown with central jewel, kneeling on white marble steps, offering a golden bowl filled with pale green sugarcane juice to a Jain_monk, adult male, slender build, calm face, clean-shaven, plain white unstitched cotton robe, white mouth cloth, meditative half-closed eyes, standing before him, serene painterly Indian style, warm golden light, ancient Jain temple interior, intricate sandstone pillars, 9:16 vertical composition",
+      "fails": {},
+      "top": 0.45
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Tabse Jain dharma mein ahara-vidhi ki pavitra parampara shuru hui.",
+   "type": "image",
+   "prompt": "Symbolic flow: Golden sugarcane juice pouring from bowl into monk's hands, transforming into soft golden light spreading along marble floor, touching carved lotus motifs. Ancient Jain manuscript (Adipurana) glowing faintly on wooden stand nearby. Warm, serene.",
+   "motion": "pan",
+   "title": "PARAMPARA KI SHURUAT",
+   "keywords": [
+    "ahara vidhi",
+    "parampara"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Rishabhdev",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s8q0.jpg",
+      "prompt": "Jain monk from image 2 standing calmly, bare head, warm brown skin, plain white unstitched cotton robe draped over left shoulder, soft white whisk broom held in right hand, white mouth cloth tied gently, receiving golden sugarcane pouring from brass bowl into cupped hands, transforming into soft golden light spreading across white marble floor, touching carved lotus motifs, ancient Adipurana manuscript glowing faintly on wooden stand nearby, Jain temple interior with tall sandstone pillars, warm golden light pooling on marble, serene painterly Indian style, calm and peaceful, gentle glow, vertical 9:16 composition, monk in middle third, generous space above and below",
+      "fails": {},
+      "top": 0.32
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Seekh: Sirf daan dena kaafi nahi, sahi tarika aur bhav bhi matter karta hai.",
+   "type": "card",
+   "prompt": "Clean warm gradient: deep gold to soft cream. Center: Large Roman text 'DAAN KA TARIKA' in Montserrat 900. Below: 'AUR BHAV' smaller. Subtle lotus watermark. No borders.",
+   "motion": "punch",
+   "title": "",
+   "big": "DAAN KA TARIKA",
+   "small": "AUR BHAV MATTER KARTA HAI",
+   "keywords": [
+    "Seekh",
+    "tarika",
+    "bhav"
+   ],
+   "real": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Rishabhdev",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s9q0.jpg",
+      "prompt": "King_Shreyansa, middle-aged, sturdy build, calm face, short trimmed beard, dark hair tied in royal topknot, golden skin tone, rich saffron silk dhoti with gold border, embroidered angavastram across chest, gold crown with central jewel, gold earrings, gold necklaces, gold armlets, kneeling in a meditative posture, hands cupped reverently, inside a Jain_temple_interior with white marble floor, tall sandstone pillars with intricate floral carvings, warm golden light pooling on marble, serene painterly Indian style, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {
+       "p1": 0.9,
+       "p11": 0.86,
+       "p2": 0.9,
+       "p4": 0.86,
+       "p3": 0.63,
+       "p5": 0.88
+      },
+      "top": 0.9
+     },
+     {
+      "file": "s9q1.jpg",
+      "prompt": "Rishabhanatha_idol: Smooth white marble idol seated padmasana on lotus pedestal, small tight curls on head, unmarked forehead, calm half-closed eyes, locks of hair resting on shoulders, bull emblem carved below pedestal, plain serene form, simple stone texture. The idol sits centered in a serene Jain_temple_interior with white marble floor, tall sandstone pillars with intricate floral carvings, warm golden light pooling on marble. Vertical 9:16 composition, generous calm space above and below, serene painterly Indian style.",
+      "fails": {
+       "p2": 0.71
+      },
+      "top": 0.71
+     },
+     {
+      "file": "s9q2.jpg",
+      "prompt": "King Shreyansa, a middle-aged king with a sturdy build, calm face, short trimmed beard, dark hair tied in a royal topknot, golden skin tone, wearing a rich saffron silk dhoti with gold border and an embroidered angavastram across his chest, adorned with a gold crown featuring a central jewel, gold earrings, and gold necklaces, kneeling in a meditative posture with hands cupped reverently, situated in a palace courtyard with white marble steps and sandstone pillars, serene painterly Indian style, warm golden hour light, vertical 9:16 composition.",
+      "fails": {
+       "p1": 0.89,
+       "p3": 0.72,
+       "p11": 0.89,
+       "p4": 0.82,
+       "p5": 0.9,
+       "p2": 0.9
+      },
+      "top": 0.9
+     }
+    ]
+   }
+  },
+  {
+   "vo": "Aap hote toh kya dete? Jai Jinendra.",
+   "type": "image",
+   "prompt": "End card: A simple stylized lotus flower emblem with the text 'NAVKAR BHAV' in clean Roman letters below the lotus, centered on a polished warm white marble surface. Soft golden glow emanates from the lotus. The handle '@navkarbhav' in small text at the bottom. Serene, inviting, vertical 9:16 composition with generous space above and below.",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "Aap hote",
+    "Jai Jinendra"
+   ],
+   "real": null,
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "pic": {
+    "refs": [
+     "Rishabhdev",
+     "Jain monk"
+    ],
+    "tries": [
+     {
+      "file": "s10q0.jpg",
+      "prompt": "A simple stylized lotus flower emblem carved into a polished warm white marble surface, centered in the frame. A soft golden glow emanates from the lotus, illuminating the smooth stone texture. The composition is clean, serene, and uncluttered, with generous empty space above and below the emblem. The lighting is warm and gentle, evoking a peaceful atmosphere in a vertical 9:16 aspect ratio, captured in a serene painterly Indian style.",
+      "fails": {},
+      "top": 0.22
+     }
+    ]
+   }
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Pehle Tirthankara Rishabhanatha ne 400 din intezaar kiya apne pehle ahara ka. Logon ko pata hi nahi tha sadhu ko daan kaise dete hain. Akshaya Tritiya ke din Raja Shreyansa ne ikshu ras swarna ke bartan mein diya — tab parampara shuru hui. Aaj bhi ahara dene ke niyam hain. Seekh: Daan dene ka tarika bhi matter karta hai.\n\nAap hote toh kya dete?\n\n#JainKatha #Rishabhanatha #AkshayaTritiya #Ahara #NavkarBhav\nVideo: Photo: Ancient idol of Adinath Bhagwan (Rishabhanatha), the first Tirthankar of Jainism, located in Gaya, Bihar. (Wikimedia Commons)\nVideo: Photo: Idol of Lord Rishabhanatha at Golakot, Madhya Pradesh (Wikimedia Commons)\nVideo: Photo: Jain temple, Mettupudur - Rishabhanatha Idol (Wikimedia Commons)",
+ "hashtags": [
+  "#JainKatha",
+  "#Rishabhanatha",
+  "#AkshayaTritiya",
+  "#Ahara",
+  "#NavkarBhav",
+  "#Jainism",
+  "#Tirthankara"
+ ],
+ "claims": [
+  {
+   "claim": "Rishabhanatha (Adinatha) is the first Tirthankara of the present half-cycle in Jain cosmology.",
+   "basis": "Trishashti-shalaka-purusha-charitra by Hemachandra; Adipurana by Jinasena; Wikipedia Rishabhanatha page."
+  },
+  {
+   "claim": "After renunciation, Rishabhanatha wandered without food for 400 days because people did not know the correct method of offering alms (ahara) to a monk.",
+   "basis": "Trishashti-shalaka-purusha-charitra (as cited in Wikipedia); Adipurana; Jain tradition."
+  },
+  {
+   "claim": "On Akshaya Tritiya, King Shreyansa offered sugarcane juice (ikshu rasa) in golden vessels, which became the first correct alms accepted by Rishabhanatha.",
+   "basis": "Trishashti-shalaka-purusha-charitra; Adipurana; standard Jain narrative of Akshaya Tritiya origin."
+  },
+  {
+   "claim": "This event established the tradition of ahara (alms-giving) for Jain monks, which continues today with specific rules.",
+   "basis": "Jain monastic practice documented in Agamas and living tradition."
+  }
+ ],
+ "fresh_fixed": [
+  "<scene 1: The script claims a 365-day fast, but the Wikipedia source (citing Trishashti-Shalakapurusha-Charitra) states Rishabhanatha traveled without food for 400 days.>"
+ ],
+ "brain_ids": [
+  "b69d65467f",
+  "b2fabb69c4",
+  "161339712e",
+  "fc294ac58f",
+  "7f620e6fdf",
+  "a688e48ca2",
+  "4396759d41",
+  "0755cc155a",
+  "e15cfaed29",
+  "9db4cc694f",
+  "f945e2a937",
+  "7fa182f8ef",
+  "1e1964f463",
+  "6ce7203c71"
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Rishabhanatha_idol",
+    "scenes": [
+     1,
+     2
+    ],
+    "look": "Smooth white marble idol seated padmasana on lotus pedestal, small tight curls on bare head, unmarked forehead, calm half-closed eyes, locks of hair resting on shoulders, bull emblem carved below pedestal, plain serene form, no crown, no jewellery, no weapons, bare chest, simple stone texture"
+   },
+   {
+    "name": "Jain_monk",
+    "scenes": [
+     3,
+     4,
+     5,
+     8
+    ],
+    "look": "Adult male, slender build, calm face, clean-shaven, bare head, warm brown skin, plain white unstitched cotton robe draped over left shoulder, soft white whisk broom (rajoharan) held in right hand, white mouth cloth (muhpatti) tied gently, bare feet, meditative half-closed eyes, serene posture walking or standing"
+   },
+   {
+    "name": "King_Shreyansa",
+    "scenes": [
+     7,
+     8
+    ],
+    "look": "Middle-aged king, sturdy build, calm face, short trimmed beard, dark hair tied in royal topknot, golden skin tone, rich saffron silk dhoti with gold border, embroidered angavastram across chest, gold crown with central jewel, gold earrings, gold necklaces, gold armlets, kneeling or seated meditative posture, hands cupped reverently"
+   },
+   {
+    "name": "Villagers",
+    "scenes": [
+     3,
+     4
+    ],
+    "look": "Group of adult men and women, varied builds, warm brown skin, simple cotton dhotis and sarees in earth tones, folded hands in reverence, some holding clay pots of grain, baskets of fruit, folded cloth, gold coins, jewelry, leading decorated horse with colorful trappings, expressions of devotion and confusion"
+   }
+  ],
+  "places": [
+   {
+    "name": "Jain_temple_interior",
+    "look": "White marble floor, tall sandstone pillars with intricate floral carvings, pointed shikhara spires visible through doorway, warm golden light pooling on marble, single lotus pedestal at center, carved lotus motifs on walls, serene uncluttered space, ancient Dilwara-style architecture"
+   },
+   {
+    "name": "Palace_courtyard",
+    "look": "White marble steps leading to empty throne platform, golden footprints glowing on steps, single folded white robe on step, white whisk broom beside robe, tall shikhara spires rising behind, sandstone pillars with fine carvings, golden hour light, peaceful open courtyard"
+   },
+   {
+    "name": "Village_lane",
+    "look": "Mud and stone houses with thatched roofs, dusty lane winding between them, warm golden light on walls, ancient Jain temple shikhara visible at lane end, carved stone doorway, villagers gathered, simple rural setting, peaceful morning atmosphere"
+   },
+   {
+    "name": "Jain_temple_complex_dawn",
+    "look": "White marble temple complex at dawn, multiple shikhara spires catching first sun, marble tank with single blooming lotus, golden light on stepped stone roofs, carved pillars lining courtyard, 400 tiny lotus petals forming symbolic circle on water surface, serene expansive view"
+   },
+   {
+    "name": "Palace_interior",
+    "look": "White marble walls with gold inlay, carved sandstone pillars, arched windows with soft blue-gold light, king seated on cushioned platform, faint ethereal dream-bubble showing past life scene, rich textiles on floor, royal yet peaceful atmosphere"
+   },
+   {
+    "name": "Marble_steps_offering_area",
+    "look": "White marble steps descending to courtyard, carved pillars flanking, shikhara spires above, warm golden light, gentle steam rising from golden bowl, pale green sugarcane juice visible, king kneeling on step, monk standing before him, peaceful offering moment"
+   },
+   {
+    "name": "Marble_floor_lotus_motifs",
+    "look": "White marble floor with carved lotus motifs, golden sugarcane juice transforming into soft golden light spreading along floor, touching lotus carvings, ancient manuscript (Adipurana) glowing faintly on marble stand, warm golden glow emanating, symbolic spiritual flow"
+   },
+   {
+    "name": "End_card_marble_texture",
+    "look": "Warm cream marble texture with subtle gold veining, simple lotus watermark, soft golden glow overall, serene inviting surface, clean uncluttered background"
+   }
+  ]
+ },
+ "idol_photos_used": [
+  "File:Idol of Lord Rishabhanatha at Golakot, Madhya Pradesh.jpg",
+  "File:Ancient idol of Adinath Bhagwan (Rishabhanatha), the first Tirthankar of Jainism, located in Gaya, Bihar..jpg",
+  "File:Jain temple, Mettupudur - Rishabhanatha Idol.jpg"
+ ],
+ "credits": [
+  "Photo: Ancient idol of Adinath Bhagwan (Rishabhanatha), the first Tirthankar of Jainism, located in Gaya, Bihar. (Wikimedia Commons)",
+  "Photo: Idol of Lord Rishabhanatha at Golakot, Madhya Pradesh (Wikimedia Commons)",
+  "Photo: Jain temple, Mettupudur - Rishabhanatha Idol (Wikimedia Commons)"
+ ],
+ "pic_redraws": 4
+}

@@ -12,7 +12,7 @@
  "metaphor": "Fast fair-play whodunit; two spoken clues clear A and expose C (no plug point = no charging).",
  "scenes": [
   {
-   "vo": "Tum ho detective. Aur ye shaadi... ab crime scene hai.",
+   "vo": "Aap hain detective. Aur ye shaadi... ab crime scene hai.",
    "type": "clip",
    "prompt": "A grand Indian wedding stage at night, the bride and groom on the stage, guests dancing, then the music stops and everyone turns around shocked, slow camera push-in. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
    "motion": "push",
@@ -20,7 +20,10 @@
     "detective",
     "crime"
    ],
-   "hud_right": "CASE 2"
+   "hud_right": "CASE 2",
+   "big": null,
+   "small": null,
+   "title": null
   },
   {
    "vo": "Dulhe ka paanch lakh ka lifafa, gayab!",
@@ -33,7 +36,8 @@
     "lakh",
     "gayab"
    ],
-   "hud_right": "CASE 2"
+   "hud_right": "CASE 2",
+   "title": null
   },
   {
    "vo": "Bag stage ke peeche tha. Aur wahan sirf teen log gaye.",
@@ -43,7 +47,10 @@
    "keywords": [
     "teen"
    ],
-   "hud_right": "3 SUSPECT"
+   "hud_right": "3 SUSPECT",
+   "big": null,
+   "small": null,
+   "title": null
   },
   {
    "vo": "Photographer bola: main toh poore time stage pe photo le raha tha.",
@@ -53,30 +60,51 @@
    "label": "A",
    "who": "Photographer Rohit",
    "quote": "Poore time stage pe photo le raha tha.",
-   "hud_right": "SUSPECT 1/3"
+   "hud_right": "SUSPECT 1/3",
+   "big": null,
+   "small": null,
+   "title": null
   },
   {
-   "vo": "Halwai bola: main bhatti pe tha. Dekho, haath abhi bhi chashni mein hain.",
+   "vo": "Halwai bola: main bhatti pe tha. Dekhiye, haath abhi bhi chashni mein hain.",
    "type": "clue",
    "prompt": "Halwai Ramesh: plump cheerful Indian man in his 50s, white vest and dhoti, orange gamchha on his shoulder, showing his sticky palms covered in sugar syrup, a big kadhai of jalebi frying behind him, steam. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
    "motion": "pan",
    "label": "B",
    "who": "Halwai Ramesh",
    "quote": "Haath abhi bhi chashni mein hain.",
-   "hud_right": "SUSPECT 2/3"
+   "hud_right": "SUSPECT 2/3",
+   "big": null,
+   "small": null,
+   "title": null
   },
   {
    "vo": "Aur dulhe ka dost bola: main toh bas phone charge karne gaya tha.",
-   "type": "clue",
-   "prompt": "Groom's friend Sunny: Indian man in his 20s, shiny maroon kurta, gold chain, gelled hair, smartphone in hand, smiling too much, holding up his phone, sweat on his forehead, behind a stage curtain. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "type": "card",
+   "prompt": "Sunny, a young Indian man in his 20s, wearing a shiny maroon kurta and gold chain, gelled hair, holding a smartphone, slight sweat on forehead, standing under a wedding stage curtain, cinematic graphic-novel style, vibrant night wedding colors, vertical 9:16, clear single subject, empty space above and below for text",
    "motion": "pull",
    "label": "C",
    "who": "Dost Sunny",
    "quote": "Bas phone charge karne gaya tha.",
-   "hud_right": "SUSPECT 3/3"
+   "hud_right": "SUSPECT 3/3",
+   "big": "Dost Sunny",
+   "small": "Phone charge",
+   "title": null,
+   "real": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s5p.jpg",
+      "prompt": "A young Indian man in his twenties with gelled spiked hair and light complexion, wearing a shiny maroon silk kurta with a prominent gold chain around his neck, holding a smartphone in his right hand, standing with nervous posture, slight sweat glistening on his forehead, beneath a grand outdoor wedding stage curtain draped with dense yellow marigold garlands and shimmering fairy lights, velvet red curtains and ornate gold-painted pillars framing the scene, polished wooden flooring reflecting light, cinematic night thriller still with rain and film grain, cold teal shadows deepening the background, warm amber practical spotlights cutting through darkness, vertical 9:16 composition with subject centered in middle third, generous calm space above and below",
+      "fails": {},
+      "top": 0.13
+     }
+    ]
+   }
   },
   {
-   "vo": "Ab suno. Bag pe chashni ka ek bhi nishaan nahi.",
+   "vo": "Ab suniye. Bag pe chashni ka ek bhi nishaan nahi.",
    "type": "image",
    "prompt": "Extreme close-up of a clean red-and-gold silk wedding bag, no stains at all, a magnifying glass over it. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
    "motion": "punch",
@@ -85,7 +113,9 @@
     "nishaan"
    ],
    "title": "SURAAG 1",
-   "hud_right": "SURAAG 1"
+   "hud_right": "SURAAG 1",
+   "big": null,
+   "small": null
   },
   {
    "vo": "Aur stage ke peeche... ek bhi plug point nahi tha.",
@@ -97,32 +127,49 @@
     "point"
    ],
    "title": "SURAAG 2",
-   "hud_right": "SURAAG 2"
+   "hud_right": "SURAAG 2",
+   "big": null,
+   "small": null
   },
   {
-   "vo": "Toh chor kaun? Teen second. Socho.",
-   "type": "choice",
+   "vo": "Toh chor kaun? Teen second. Sochiye.",
+   "type": "image",
    "hold": 3,
-   "prompt": "The wedding stage seen from far away, lights flickering, three silhouettes standing apart. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
+   "prompt": "Wedding stage viewed from a distance at night, illuminated by fairy lights and marigold garlands, three distinct silhouettes standing apart, cinematic graphic-novel illustration, warm saturated colors, deep shadows, vertical 9:16, single clear composition with empty space at top and bottom for text",
    "motion": "push",
    "options": [
     "Photographer",
     "Halwai",
     "Dulhe ka dost"
    ],
-   "hud_right": "TUMHARA FAISLA"
+   "hud_right": "TUMHARA FAISLA",
+   "big": null,
+   "small": null,
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s8p.jpg",
+      "prompt": "Three distinct silhouettes of wedding guests standing apart on a grand outdoor Indian wedding stage, adorned with dense yellow marigold garlands and shimmering fairy lights. The scene features velvet red curtains, ornate gold-painted pillars, and polished wooden flooring. Cinematic night thriller still, film grain, cold teal shadows, warm amber practical lights, graphic-novel illustration style. The composition is vertical 9:16, capturing the stage from a distance, with generous calm space above and below the subjects.",
+      "fails": {},
+      "top": 0.21
+     }
+    ]
+   }
   },
   {
-   "vo": "Comment mein likho A, B ya C. Jawab kal.",
+   "vo": "Comment mein likhiye A, B ya C. Jawab kal.",
    "type": "card",
    "prompt": "The empty wedding hall at dawn, flower petals on the floor, one lamp still burning. Cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, fairy lights, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16, one clear subject, empty space at the top and bottom of the frame",
    "motion": "pull",
    "big": "JAWAB KAL",
    "small": "PART 2",
-   "hud_right": "PART 2 KAL"
+   "hud_right": "PART 2 KAL",
+   "title": null
   }
  ],
- "caption": "Shaadi mein 5 lakh ka lifafa gayab 😱 Tum detective ho. Chor kaun hai? A, B ya C, comment karo. Jawab kal Part 2 mein 🕵️",
+ "caption": "Shaadi mein 5 lakh ka lifafa gayab 😱 Aap detective hain. Chor kaun hai? A, B ya C, comment kijiye. Jawab kal Part 2 mein 🕵️\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#RaazKaFaisla",
   "#HindiMystery",
@@ -141,7 +188,7 @@
  "answer_for_part2": "C, the groom's friend. There was no plug point behind the stage, so he could not have gone to charge his phone. The bag has no syrup, so it was not the halwai; the photographer's photos show him on stage the whole time.",
  "seo": {
   "ig": {
-   "caption": "Shaadi mein 5 lakh ka lifafa gayab — teen suspects, ek clue!\nTeen second mein socho, phir jawab do.\nA, B ya C? Comment mein likho.\nUs dost ko bhejo jo har shaadi mein sabse pehle lifafe ginta hai",
+   "caption": "Shaadi mein 5 lakh ka lifafa gayab — teen suspects, ek clue!\nTeen second mein sochiye, phir jawab do.\nA, B ya C? Comment mein likhiye.\nUs dost ko bhejiye jo har shaadi mein sabse pehle lifafe ginta hai",
    "hashtags": [
     "#hindicrimeshow",
     "#hindicrimestories",
@@ -151,7 +198,7 @@
    ]
   },
   "fb": {
-   "caption": "Shaadi mein 5 lakh ka lifafa gayab — teen suspects, ek clue!\nTeen second mein socho, phir jawab do.\nA, B ya C? Comment mein likho.\nUs dost ko bhejo jo har shaadi mein sabse pehle lifafe ginta hai",
+   "caption": "Shaadi mein 5 lakh ka lifafa gayab — teen suspects, ek clue!\nTeen second mein sochiye, phir jawab do.\nA, B ya C? Comment mein likhiye.\nUs dost ko bhejiye jo har shaadi mein sabse pehle lifafe ginta hai",
    "hashtags": [
     "#hindicrimeshow",
     "#shaadimystery"
@@ -159,7 +206,7 @@
   },
   "yt": {
    "title": "Shaadi ka 5 lakh ka lifafa: chor kaun? Part 1 🤯",
-   "description": "Detective bano, shaadi crime scene solve karo.\nTeen suspects, ek clue: bag pe chashni nahi.\nPlug point bhi nahi, toh kaun jhootha?\nshaadi mystery, detective short, hinglish story, cliffhanger, 5 lakh lifafa",
+   "description": "Detective bano, shaadi crime scene solve kijiye.\nTeen suspects, ek clue: bag pe chashni nahi.\nPlug point bhi nahi, toh kaun jhootha?\nshaadi mystery, detective short, hinglish story, cliffhanger, 5 lakh lifafa",
    "tags": [
     "shaadi mystery",
     "detective short",
@@ -180,5 +227,50 @@
   },
   "comment_q": "Kaun chor hai? A/B/C"
  },
- "seo_locked": "19 Nov: share line fixed by hand (was unrelated to the story)"
+ "seo_locked": "19 Nov: share line fixed by hand (was unrelated to the story)",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "bible": {
+  "figures": [
+   {
+    "name": "Detective",
+    "scenes": [
+     1,
+     2,
+     3,
+     7,
+     8,
+     9,
+     10
+    ],
+    "look": "A middle-aged Indian man with a sharp jawline, short salt-and-pepper hair, and intense brown eyes. He wears a charcoal grey wool trench coat over a crisp white shirt, maintaining a calm, observant posture with hands tucked into his pockets."
+   },
+   {
+    "name": "Rohit",
+    "scenes": [
+     4
+    ],
+    "look": "A lean Indian man in his early twenties with a clean-shaven face and short black hair. He wears a plain black cotton t-shirt and a backwards-facing baseball cap, holding a heavy DSLR camera with a thick neck strap."
+   },
+   {
+    "name": "Ramesh",
+    "scenes": [
+     5
+    ],
+    "look": "A plump Indian man in his fifties with a friendly, round face and a thick mustache. He wears a white cotton vest and a traditional dhoti, featuring a bright orange gamchha draped over his shoulder, displaying sticky sugar-coated palms."
+   },
+   {
+    "name": "Sunny",
+    "scenes": [
+     6
+    ],
+    "look": "A young Indian man in his twenties with gelled, spiked hair and a light complexion. He wears a shiny maroon silk kurta with a prominent gold chain around his neck, holding a smartphone in his right hand, standing with a nervous posture."
+   }
+  ],
+  "places": [
+   {
+    "name": "Wedding Venue",
+    "look": "A grand outdoor Indian wedding stage adorned with dense yellow marigold garlands and shimmering fairy lights. The setting features velvet red curtains, ornate gold-painted pillars, and polished wooden flooring, illuminated by warm amber spotlights against deep teal night shadows."
+   }
+  ]
+ }
 }
