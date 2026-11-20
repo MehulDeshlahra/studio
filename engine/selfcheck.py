@@ -56,7 +56,8 @@ def sig(*parts):
 # ------------------------------------------------------------------ probes
 def probe_api():
     out, state = [], None
-    paths = ["/api/state", "/api/brain", "/api/learned", "/api/sources", "/api/brief", "/api/ideas?cid=tech", "/api/ideas?cid=katha", "/api/posts?cid=vajra"]
+    paths = ["/api/state", "/api/brain", "/api/learned", "/api/sources", "/api/brief", "/api/ideas?cid=tech", "/api/ideas?cid=katha",
+             "/api/posts?cid=vajra", "/api/published"]
     for p in paths:
         code, body = get(p)
         try:
@@ -302,6 +303,13 @@ def try_fix(f):
     if path.startswith("dashboard/"):
         restart_dash()
     ok = recheck(f)
+    if path.startswith("dashboard/") and ok is not False:
+        # 20 Nov: three self-fixes to api.py each passed their own endpoint while /api/state returned 500 (the whole
+        # dashboard stuck on "Loading"). A dashboard fix is kept only if NO endpoint is broken afterwards.
+        broken = [x["path"] for x in probe_api()]
+        if broken:
+            ok = False
+            log("selfcheck: dashboard fix broke", broken)
     if ok is False:
         open(os.path.join(ROOT, path), "w", encoding="utf-8", newline="\n").write(before)
         if path.startswith("dashboard/"):
