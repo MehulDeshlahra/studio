@@ -39,7 +39,30 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Bahubali"
+    ],
+    "tries": [
+     {
+      "file": "s0r0.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p7": 0.61,
+       "text": 0.65
+      },
+      "top": 0.65
+     },
+     {
+      "file": "s0r1.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.2
+     }
+    ],
+    "real_photo": true
+   }
   },
   {
    "vo": "Bharata ne 98 bhaiyon ko sadhu bana diya, par Bahubali nahi jhuke.",
@@ -71,7 +94,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Bahubali"
+    ],
+    "tries": [
+     {
+      "file": "s2r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.5
+     }
+    ],
+    "real_photo": true
+   }
   },
   {
    "vo": "Jeet ke pal mein haath utha ke ruk gaye — ye rajya kya hai?",
@@ -103,7 +140,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Bahubali"
+    ],
+    "tries": [
+     {
+      "file": "s4r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "real_photo": true
+   }
   },
   {
    "vo": "Bel pairon tak pahuche, baalon mein pakshi, keede shareer par — par wo hile nahi.",
@@ -207,7 +258,7 @@
   }
  ],
  "music_mood": "calm",
- "caption": "57 feet unchi Gommateshwara murti, 12 saal tak ek saans nahi li — kyun?\n\nAhankar ka haathi jab tak pairon tale hai, bel badhti rahegi.\n\nTum hote toh kya karte? #JaiJinendra",
+ "caption": "57 feet unchi Gommateshwara murti, 12 saal tak ek saans nahi li — kyun?\n\nAhankar ka haathi jab tak pairon tale hai, bel badhti rahegi.\n\nTum hote toh kya karte? #JaiJinendra\nVideo: Photo: Shravanabelagola, Statue of Bahubali (50053122913) (Wikimedia Commons)\nVideo: Photo: Bahubali karkala (Wikimedia Commons)\nVideo: Photo: Gomatesvara Statue, Shravanabelagola (Wikimedia Commons)\nVideo: Photo: Gomateswara Bahubali Karkala Karnataka 07 (Wikimedia Commons)",
  "hashtags": [
   "#NavkarBhav",
   "#Bahubali",
@@ -259,5 +310,70 @@
   "1e60a34718",
   "0755cc155a",
   "6ce7203c71"
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Bahubali",
+    "scenes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "look": "Tall, athletic, serene face, half-closed eyes, tight curls on head, warm human skin tone, bare chest, bare legs, standing in rigid kayotsarga posture, calm expression, muscular build, contemplative presence."
+   },
+   {
+    "name": "Bharata",
+    "scenes": [
+     3
+    ],
+    "look": "Regal, athletic build, royal crown, intricate gold jewelry, fine silk dhoti, calm but intense expression, majestic stature, standing with royal poise, ancient Indian royal attire, confident posture."
+   },
+   {
+    "name": "Jain Nuns (Brahmi and Sundari)",
+    "scenes": [
+     7
+    ],
+    "look": "Serene faces, plain white unstitched cotton robes, white head covering, carrying soft white rajoharan whisks, simple appearance, calm demeanor, modest and peaceful presence, ancient Indian ascetic attire, gentle posture."
+   }
+  ],
+  "places": [
+   {
+    "name": "Shravanabelagola Temple",
+    "scenes": [
+     1,
+     2,
+     4
+    ],
+    "look": "Ancient stone architecture, white marble and sandstone, tall shikhara spires, finely carved pillars, stepped roofs, serene courtyard, golden sunrise light, peaceful atmosphere, uncluttered space, grand temple structure."
+   },
+   {
+    "name": "Forest Clearing",
+    "scenes": [
+     5,
+     6,
+     9
+    ],
+    "look": "Natural clearing, soft grass, ancient trees, dappled golden sunlight, peaceful atmosphere, quiet environment, serene nature setting, lush greenery, soft morning light, tranquil forest floor."
+   }
+  ]
+ },
+ "idol_photos_used": [
+  "File:Shravanabelagola, Statue of Bahubali (50053122913).jpg",
+  "File:Gomatesvara Statue, Shravanabelagola.jpg",
+  "File:Bahubali karkala.jpg",
+  "File:Gomateswara Bahubali Karkala Karnataka 07.jpg"
+ ],
+ "credits": [
+  "Photo: Shravanabelagola, Statue of Bahubali (50053122913) (Wikimedia Commons)",
+  "Photo: Bahubali karkala (Wikimedia Commons)",
+  "Photo: Gomatesvara Statue, Shravanabelagola (Wikimedia Commons)",
+  "Photo: Gomateswara Bahubali Karkala Karnataka 07 (Wikimedia Commons)"
  ]
 }

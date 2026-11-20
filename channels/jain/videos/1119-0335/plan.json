@@ -38,7 +38,19 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s0o.jpg",
+      "prompt": "Stone fire altar, ancient sandstone construction, glowing embers, flickering flames, sandalwood logs, warm golden light, situated in a quiet corner of a temple complex, rustic textures, radiant heat, a small common serpent, smooth dark skin, bright alert eyes, flexible body, resting comfortably on a palm, graceful coils, iridescent sheen, gentle movements, symbolic presence, amidst the burning wood, serene painterly Indian style, warm golden light on white marble, calm and peaceful, gentle glow, vertical 9:16 composition, main subject centered.",
+      "fails": {},
+      "top": 0.4
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Parshvanath wahan se guzre, cheekh sun ruk gaye",
@@ -54,7 +66,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Parshvanath"
+    ],
+    "tries": [
+     {
+      "file": "s1r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.28
+     }
+    ],
+    "real_photo": true
+   }
   },
   {
    "vo": "Saanp ko bacha liya",
@@ -70,7 +96,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Parshvanath"
+    ],
+    "tries": [
+     {
+      "file": "s2r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.33
+     }
+    ],
+    "real_photo": true
+   }
   },
   {
    "vo": "Ye saanp... alag tha",
@@ -134,7 +174,37 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Parshvanath"
+    ],
+    "tries": [
+     {
+      "file": "s6r0.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p6": 0.75
+      },
+      "top": 0.75
+     },
+     {
+      "file": "s6q0.jpg",
+      "prompt": "Prince Parshvanath, a young man with an athletic build, compassionate face, dark hair styled in a neat topknot, and golden skin tone, wearing a fine silk dhoti in saffron and an ornate jeweled necklace of gold and pearls, holds a small common serpent with smooth dark skin and iridescent sheen close to his chest, eyes half-closed in deep compassion, a soft golden aura surrounding both, the snake's hoods beginning to glow, ancient white marble temple courtyard with finely carved lotus pillars, serene painterly Indian style, warm golden sunlight, vertical 9:16 composition.",
+      "fails": {
+       "p7": 0.84
+      },
+      "top": 0.84
+     },
+     {
+      "file": "s6q1.jpg",
+      "prompt": "A smooth, simply carved white marble idol of Parshvanath, the 23rd Tirthankara, depicted as a serene meditating figure with a calm face, small tight curls on the head, sheltered by a seven-hooded serpent canopy carved from the same stone. The idol is held in a gentle, compassionate pose, with the snake's hoods emitting a soft, radiant golden aura. The setting is an ancient white marble temple courtyard with finely carved lotus pillars, bathed in warm, glowing golden sunlight, serene painterly Indian style.",
+      "fails": {},
+      "top": 0.37
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Us daya ne karmik bandhan tod diya",
@@ -165,7 +235,27 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s8o.jpg",
+      "prompt": "Dharanendra: Divine serpent deity, tall athletic build, iridescent scales, gentle smile, multi-hooded cobra crown, radiating golden light, seated on a lotus throne, adorned in celestial silks, subtle jewelry, protective posture, ethereal presence, emerging from a swirling cloud of glowing golden particles that form his shape, set within an ancient white marble courtyard with finely carved pillars and tall shikhara spires, serene painterly Indian style, warm golden sunlight, soft ethereal glow, vertical 9:16 composition, centered subject with generous space.",
+      "fails": {
+       "p9": 0.89
+      },
+      "top": 0.89
+     },
+     {
+      "file": "s8pt1.jpg",
+      "prompt": "Divine serpent deity, tall athletic build, iridescent scales, gentle smile, multi-hooded cobra crown, radiating golden light, seated on a lotus throne, adorned in celestial silks, subtle jewelry, protective posture, ethereal presence, rising from a swirl of luminous gold as the surrounding snake dissolves, within an ancient white marble courtyard lined with finely carved floral pillars and towering shikhara spires, serene painterly Indian style, warm golden light bathing the marble floor, vertical 9:16 composition with the figure centered and ample calm space above and below.",
+      "fails": {},
+      "top": 0.42
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Tapasya mein dono ne Meghmali ke toofan se bachaya",
@@ -197,7 +287,31 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Parshvanath"
+    ],
+    "tries": [
+     {
+      "file": "s10q0.jpg",
+      "prompt": "Tirthankara Parshvanath Idol: Smooth white marble idol, meditative padmasana posture, eyes half-closed in serenity, bare head with small tight curls, smooth stone form, seated on a carved lotus pedestal, radiating peace, symmetrical features. The face is framed by a magnificent seven-hooded serpent canopy in perfect symmetry, each hood bearing a tiny lotus carving. Serene painterly Indian style, warm golden light illuminating the white marble, gentle glow, uncluttered background, vertical 9:16 composition, centered subject, peaceful atmosphere.",
+      "fails": {
+       "p3": 0.81
+      },
+      "top": 0.81
+     },
+     {
+      "file": "s10q1.jpg",
+      "prompt": "Tirthankara Parshvanath idol, the smooth white marble idol from image 1, seated in meditative padmasana posture, eyes half-closed in serenity, bare head with small tight curls, smooth unmarked forehead, calm face with a gentle smile, sheltered by a magnificent seven-hooded serpent canopy rising symmetrically above the head, each cobra hood featuring a tiny lotus carving, serene painterly Indian style, warm golden light illuminating the polished white marble surface, soft gentle glow, uncluttered, vertical 9:16 composition, centered framing.",
+      "fails": {
+       "p3": 0.8
+      },
+      "top": 0.8
+     }
+    ],
+    "passed": false
+   }
   },
   {
    "vo": "Ek janam ki daya... agle janam ki chhaya",
@@ -213,11 +327,23 @@
    ],
    "real": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s11o.jpg",
+      "prompt": "A single lotus blooming from a cracked stone, a small common serpent with smooth dark skin and bright alert eyes resting comfortably on the stone, its flexible body forming a graceful protective arch over the flower with iridescent sheen, set against a soft gradient background transitioning from warm saffron to white marble. Serene painterly Indian style, gentle golden glow, peaceful atmosphere, uncluttered composition, vertical 9:16 aspect ratio, main subject centered in the middle third with generous calm space above and below.",
+      "fails": {},
+      "top": 0.23
+     }
+    ],
+    "passed": true
+   }
   }
  ],
  "music_mood": "calm",
- "caption": "Jalte lakdi mein phanse saanp ko bacha kar Parshvanath ne karmik badle ka chakra tod diya. Wahi saanp Dharanendra-Padmavati ban ke unki raksha kare. 🙏\n\nSrot: Kalpasutra, Uttaradhyayana Sutra\n\nTum hote toh aag mein haath daalte? Batao comments mein.",
+ "caption": "Jalte lakdi mein phanse saanp ko bacha kar Parshvanath ne karmik badle ka chakra tod diya. Wahi saanp Dharanendra-Padmavati ban ke unki raksha kare. 🙏\n\nSrot: Kalpasutra, Uttaradhyayana Sutra\n\nTum hote toh aag mein haath daalte? Batao comments mein.\nVideo: Photo: Ancient white idol of Tirthankara Parshvanath at Jinathapura, Shravanabelagola Digambar Jain Tirth, Karnataka, India (Wikimedia Commons)\nVideo: Photo: Idol of Tirthankara Parshvanath at Kachner Digambar Jain Atishay Kshetra, Maharashtra, India (Wikimedia Commons)\nVideo: Photo: Parshvanatha Basti sanctum (Lord Parshvanatha idol), Shravanabelagola (Wikimedia Commons)",
  "hashtags": [
   "#Jainism",
   "#Parshvanatha",
@@ -264,5 +390,90 @@
   "7fa182f8ef",
   "1e1964f463",
   "a688e48ca2"
- ]
+ ],
+ "bible": {
+  "figures": [
+   {
+    "name": "Prince Parshvanath",
+    "scenes": [
+     2,
+     3,
+     4,
+     7
+    ],
+    "look": "Young man, athletic build, compassionate face, dark hair styled in a neat topknot, golden skin tone, fine silk dhoti in saffron, ornate jeweled necklace of gold and pearls, calm posture, gentle expression, graceful movements."
+   },
+   {
+    "name": "Tirthankara Parshvanath Idol",
+    "scenes": [
+     10,
+     11
+    ],
+    "look": "Smooth white marble idol, meditative padmasana posture, eyes half-closed in serenity, bare head with small tight curls, bare chest, smooth stone form, seated on a carved lotus pedestal, radiating peace, symmetrical features."
+   },
+   {
+    "name": "Dharanendra",
+    "scenes": [
+     9,
+     10,
+     11
+    ],
+    "look": "Divine serpent deity, tall athletic build, iridescent scales, gentle smile, multi-hooded cobra crown, radiating golden light, seated on a lotus throne, adorned in celestial silks, subtle jewelry, protective posture, ethereal presence."
+   },
+   {
+    "name": "Kamath",
+    "scenes": [
+     5,
+     6
+    ],
+    "look": "Middle-aged man, sturdy build, stern face with furrowed brows, dark hair, royal attire in deep crimson silk, golden armbands, standing in an aggressive posture, holding a stone, intense gaze, powerful stance."
+   },
+   {
+    "name": "Marubhuti",
+    "scenes": [
+     5
+    ],
+    "look": "Young man, slender build, peaceful face, shaved head, plain white unstitched cotton robes, simple appearance, standing in a humble posture, hands folded in prayer, serene expression, clean skin."
+   },
+   {
+    "name": "Snake",
+    "scenes": [
+     1,
+     3,
+     4,
+     5,
+     6,
+     7,
+     9,
+     12
+    ],
+    "look": "Small common serpent, smooth dark skin, bright alert eyes, flexible body, resting comfortably on a palm, graceful coils, iridescent sheen, gentle movements, symbolic presence."
+   }
+  ],
+  "places": [
+   {
+    "name": "Temple Courtyard",
+    "look": "Ancient white marble courtyard, finely carved pillars with intricate floral motifs, tall shikhara spires in the background, warm golden sunlight, serene atmosphere, polished stone floors reflecting soft light, uncluttered space, peaceful environment."
+   },
+   {
+    "name": "Fire Altar",
+    "look": "Stone fire altar, ancient sandstone construction, glowing embers, flickering flames, sandalwood logs, warm golden light, situated in a quiet corner of a temple complex, rustic textures, radiant heat."
+   },
+   {
+    "name": "Forest",
+    "look": "Dense misty forest, ancient stone blocks covered in moss, ethereal twilight, soft shadows, tall trees, atmospheric haze, serene yet mysterious mood, dappled light filtering through the canopy."
+   }
+  ]
+ },
+ "idol_photos_used": [
+  "File:Idol of Tirthankara Parshvanath at Kachner Digambar Jain Atishay Kshetra, Maharashtra, India.jpg",
+  "File:Ancient white idol of Tirthankara Parshvanath at Jinathapura, Shravanabelagola Digambar Jain Tirth, Karnataka, India.jpg",
+  "File:Parshvanatha Basti sanctum (Lord Parshvanatha idol), Shravanabelagola.jpg"
+ ],
+ "credits": [
+  "Photo: Ancient white idol of Tirthankara Parshvanath at Jinathapura, Shravanabelagola Digambar Jain Tirth, Karnataka, India (Wikimedia Commons)",
+  "Photo: Idol of Tirthankara Parshvanath at Kachner Digambar Jain Atishay Kshetra, Maharashtra, India (Wikimedia Commons)",
+  "Photo: Parshvanatha Basti sanctum (Lord Parshvanatha idol), Shravanabelagola (Wikimedia Commons)"
+ ],
+ "pic_redraws": 3
 }

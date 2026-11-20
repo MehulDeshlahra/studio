@@ -42,19 +42,8 @@
   "job": "1119-0335",
   "topic": "What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)",
   "title": "Jalte lakdi mein saanp phansa tha",
-  "status": "held",
-  "review": [
-   "visual: Checklist item 2: Scene 3 and Scene 12 show the Tirthankara (Parshvanath) with yellow/gold skin tone and ornamentation/jewellery, which violates the strict traditional Jain representation (white or dark stone, bare form without jewellery).",
-   "visual: Checklist item 4: Scene 1 and Scene 2 show an ascetic/monk figure with a grey beard and moustache, whereas Tirthankaras are traditionally depicted as young and beardless.",
-   "visual: Checklist item 8: The main figure dramatically changes appearance, age, and beard/clothing style between scenes (Scene 1/2 shows an old bearded ascetic, Scene 3 shows a meditative idol, Scene 7 shows a royal figure with a crown, Scene 9/10 shows a seated Tirthankara).",
-   "visual: checklist: Is a Tirthankara, Bahubali or Jain idol shown with blue, green or grey skin, a crown, jewellery, a tilak, horns or a third eye? -> Scene 3, Scene 11, Scene 12",
-   "visual: checklist: Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)? -> Scene 1, Scene 2",
-   "visual: checklist: Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)? -> Scenes 1-2 vs Scenes 3-12",
-   "picture check: scene 3: Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)? (yes 66%); Is any monk or nun wearing saffron, orange or red robes? (yes 88%)",
-   "picture check: scene 9: Is any monk or nun wearing saffron, orange or red robes? (yes 61%)",
-   "picture check: scene 12: Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara? (yes 88%); Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery? (yes 65%)",
-   "visual score 5/10"
-  ],
+  "status": "made",
+  "review": [],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
  },

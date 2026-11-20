@@ -313,5 +313,14 @@
   "first": "2026-11-20 22:37",
   "last": "2026-11-20 22:37",
   "example": "NUMBERS: scene 5: 'Majority of mule-account funds go to Myanmar/Cambodia' is wrong: While Southeast Asia is a major hub, no authoritative public data confirms 'majority' for all India cases; routing v"
+ },
+ {
+  "sig": "visual: checklist item #: scene # and scene # show the tirthankara (parshvanath) with yellow/gold skin tone an",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-20 23:22",
+  "last": "2026-11-20 23:22",
+  "example": "visual: Checklist item 2: Scene 3 and Scene 12 show the Tirthankara (Parshvanath) with yellow/gold skin tone and ornamentation/jewellery, which violates the strict traditional Jain representation (whi"
  }
 ]
