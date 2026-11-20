@@ -194,12 +194,15 @@ def _err(e):
     return (str(e) + " " + body)[:400]
 
 
-def fb_schedule(acc, mp4, caption, slot):
+def fb_schedule(acc, mp4, caption, slot, url=None):
     tok, pid = acc["page_token"], acc["page_id"]
     s = P._req(f"{P.G}/{pid}/video_reels", {"upload_phase": "start", "access_token": tok})
     vid = s["video_id"]
-    P._req(s["upload_url"], open(mp4, "rb").read(),
-           {"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(os.path.getsize(mp4))}, "POST")
+    if url:      # 20 Nov: Facebook fetches the public file itself (a binary push from here stalled 10 min x 3 pages)
+        P._req(s["upload_url"], b"", {"Authorization": f"OAuth {tok}", "file_url": url}, "POST")
+    else:
+        P._req(s["upload_url"], open(mp4, "rb").read(),
+               {"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(os.path.getsize(mp4))}, "POST")
     P._req(f"{P.G}/{pid}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "SCHEDULED",
                                          "scheduled_publish_time": str(int(slot)), "description": caption, "access_token": tok})
     return vid
@@ -233,10 +236,11 @@ def yt_schedule(acc, mp4, ytx, thumb, slot):
 _GIT = threading.Lock()          # one git push to the public media repo at a time (pages prepare side by side)
 
 
-def ig_container(acc, mp4, caption):
+def ig_container(acc, mp4, caption, url=None):
     tok, uid = acc["page_token"], acc["ig_user_id"]
-    with _GIT:
-        url = P._public_url(mp4, f"{uid}-{int(time.time())}.mp4")
+    if not url:
+        with _GIT:
+            url = P._public_url(mp4, f"{uid}-{int(time.time())}.mp4")
     c = P._req(f"{P.G}/{uid}/media", {"media_type": "REELS", "video_url": url, "caption": caption, "share_to_feed": "true",
                                         "access_token": tok})
     for _ in range(90):
@@ -269,15 +273,26 @@ def prepare(cid, ch, d, slot):
            "mp4": mp4, "prepared": time.strftime("%Y-%m-%d %H:%M")}
     direct = slot - time.time() < LEAD_MIN
     update(cid, d["job"], lambda r: r.update(status="scheduled", sched=sch))      # claim the reel first
+    url = None
+    if "ig" in plats or "fb" in plats:                 # one public copy for Instagram AND Facebook to fetch
+        try:
+            with _GIT:
+                url = P._public_url(mp4, f"{cid}-{d['job']}-{int(time.time())}.mp4")
+            ok_ = urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=30).status == 200
+            if not ok_:
+                url = None
+        except Exception as e:
+            log("schedule: public copy failed (direct uploads instead)", cid, str(e)[:120]); url = None
+        sch["url"] = url
 
     def do(n):
         try:
             if n == "fb" and not direct:
-                sch["fb"] = fb_schedule(acc, mp4, fbcap, slot)
+                sch["fb"] = fb_schedule(acc, mp4, fbcap, slot, url)
             elif n == "yt" and not direct:
                 sch["yt"] = yt_schedule(acc, mp4, ytx, cv, slot)
             elif n == "ig":
-                sch["ig_container"], sch["ig_url"] = ig_container(acc, mp4, cap)
+                sch["ig_container"], sch["ig_url"] = ig_container(acc, mp4, cap, url)
             log("schedule: ready", cid, d["job"], n, "for", sch["at"])
         except Exception as e:
             sch[n + "_prep_error"] = _err(e); log("schedule: prepare failed", cid, n, sch[n + "_prep_error"][:200])
