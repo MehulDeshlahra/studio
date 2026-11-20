@@ -96,6 +96,78 @@ def posts(igid):
     return cached("posts-" + igid, 1800, f)
 
 
+# ---------------- published: every post on every page, one feed ----------------
+def published():
+    """20 Nov (owner: "where do I see all the things getting posted, a unified view?"): every post from every page's
+    done.json, newest first, with its live links and numbers (Instagram views/likes/comments, Facebook views, YouTube
+    views/likes), and for campaign clips whether the link was submitted on Content Rewards. Cached 20 min."""
+    def f():
+        sys.path.insert(0, os.path.join(ROOT, "engine"))
+        rows = []
+        for cid in sorted(os.listdir(os.path.join(ROOT, "channels"))):
+            d = jload(os.path.join(ROOT, "channels", cid, "done.json"), []) or []
+            for v in d if isinstance(d, list) else []:
+                p = v.get("posted") or {}
+                if not any(p.get(k) for k in ("ig", "fb", "yt")):
+                    continue
+                jd = os.path.join(OUT, cid, v["job"])
+                plan = jload(os.path.join(jd, "plan.json"), {}) or {}
+                cover = next((f"/media/{cid}/{v['job']}/{n}" for n in ("cover.jpg", "thumb.jpg", "cover.png") if os.path.exists(os.path.join(jd, n))), None)
+                src = (plan.get("clip") or {}).get("source")
+                rows.append({"cid": cid, "job": v["job"], "title": plan.get("title") or v.get("title") or v.get("topic") or v["job"],
+                             "at": p.get("at"), "ig": p.get("ig"), "fb": p.get("fb"), "yt": p.get("yt"), "cover": cover,
+                             "errors": {k[:-6]: str(x)[:160] for k, x in p.items() if k.endswith("_error")},
+                             "campaign": src if (v.get("submit") or {}).get("campaign") else None,
+                             "submitted": (v.get("submit") or {}).get("submitted"),
+                             "submit_ok": len((v.get("submit") or {}).get("ok_links") or []),
+                             "submit_n": len([x for x in (v.get("submit") or {}).get("links") or [] if str(x).startswith("http")])})
+        rows.sort(key=lambda r: r["at"] or "", reverse=True)
+        rows = rows[:80]
+        try:
+            import publish
+            accs = {}
+            for r in rows:
+                acc = accs.setdefault(r["cid"], publish.resolve(jload(os.path.join(HOME, ".studio-accounts", r["cid"] + ".json"), {}) or {}) or {})
+                tok = acc.get("page_token")
+                if r["ig"] and tok:
+                    try:
+                        m = json.load(urllib.request.urlopen(f"{G}/{r['ig']}?fields=permalink,like_count,comments_count&access_token={tok}", timeout=20))
+                        r.update(ig_url=m.get("permalink"), likes=m.get("like_count"), comments=m.get("comments_count"))
+                        ins = json.load(urllib.request.urlopen(f"{G}/{r['ig']}/insights?metric=views,shares,saved&access_token={tok}", timeout=20))
+                        for x in ins.get("data") or []:
+                            r["ig_" + x["name"]] = (x.get("values") or [{}])[0].get("value")
+                    except Exception as e:
+                        r.setdefault("errors", {})["ig_read"] = str(e)[:80]
+                if r["fb"] and tok:
+                    try:
+                        m = json.load(urllib.request.urlopen(f"{G}/{r['fb']}?fields=permalink_url&access_token={tok}", timeout=20))
+                        pu = m.get("permalink_url") or ""
+                        r["fb_url"] = pu if pu.startswith("http") else "https://www.facebook.com" + pu
+                        vi = json.load(urllib.request.urlopen(f"{G}/{r['fb']}/video_insights?metric=blue_reels_play_count&access_token={tok}", timeout=20))
+                        for x in vi.get("data") or []:
+                            r["fb_views"] = (x.get("values") or [{}])[0].get("value")
+                    except Exception:
+                        pass
+            yts = [r["yt"] for r in rows if r.get("yt")]
+            if yts:
+                import rivals
+                for i in range(0, len(yts), 50):
+                    d = rivals._yt_api("videos?part=statistics&id=" + ",".join(yts[i:i + 50]))
+                    st = {it["id"]: it.get("statistics") or {} for it in d.get("items") or []}
+                    for r in rows:
+                        if r.get("yt") in st:
+                            r["yt_views"] = int(st[r["yt"]].get("viewCount", 0)); r["yt_likes"] = int(st[r["yt"]].get("likeCount", 0))
+                            r["yt_url"] = f"https://youtube.com/shorts/{r['yt']}"
+        except Exception as e:
+            for r in rows:
+                r.setdefault("errors", {})["metrics"] = str(e)[:80]
+        tot = {"posts": len(rows), "views": sum((r.get("ig_views") or 0) + (r.get("fb_views") or 0) + (r.get("yt_views") or 0) for r in rows),
+               "likes": sum((r.get("likes") or 0) + (r.get("yt_likes") or 0) for r in rows),
+               "campaign": sum(1 for r in rows if r["campaign"]), "submitted": sum(1 for r in rows if r["campaign"] and r["submitted"])}
+        return {"rows": rows, "totals": tot, "t": time.time()}
+    return cached("published", 1200, f)
+
+
 # ---------------- connected sources ----------------
 def _tg():
     cfg = jload(os.path.join(HOME, ".studio-telegram.json"))

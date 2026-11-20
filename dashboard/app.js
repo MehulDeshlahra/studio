@@ -26,13 +26,13 @@ const P = {
 };
 const ic = (n) => `<svg viewBox="0 0 24 24">${P[n] || ""}</svg>`;
 const NAV = [
-  ["", [["today", "Today"], ["runs", "Runs"], ["approvals", "Approvals"]]],
+  ["", [["today", "Today"], ["published", "Published"], ["runs", "Runs"], ["approvals", "Approvals"]]],
   ["Channels", [["channels", "All channels"]]],
   ["System", [["server", "Server"], ["sources", "Connected apps"], ["activity", "Activity log"]]],
   ["Knowledge", [["brain", "Brain"], ["radar", "Radar"]]],
   ["", [["settings", "Settings"]]],
 ];
-const ICON = { radar: "spark", today: "today", runs: "runs", approvals: "approve", channels: "channels", server: "server", sources: "sources", activity: "activity", brain: "brain", settings: "settings" };
+const ICON = { published: "approve", radar: "spark", today: "today", runs: "runs", approvals: "approve", channels: "channels", server: "server", sources: "sources", activity: "activity", brain: "brain", settings: "settings" };
 let S = null, prev = "", runFilter = "all", runCh = "all", logQ = "", logLvl = "all", fails = 0, srcCache = null, briefCache = null, drawerKey = null;
 
 /* ---------- format ---------- */
@@ -231,6 +231,13 @@ const V = {
      <div class="sec"><h3>Learning</h3><span class="mut">GitHub links and files you send in Studio360, plus a weekly search of GitHub. Studio reads them, keeps what helps, and scores every item by results.</span></div>
      <div id="learned" class="card"><div class="empty">Loading…</div></div>`;
   },
+  published() {
+    setTimeout(() => loadPublished(0), 0);
+    return `<div class="h1">Published</div><div class="lead">Everything Studio has posted, on every page, newest first. Numbers come live from Instagram, Facebook and YouTube (refreshed every 20 min). Campaign clips show whether their link was submitted on Content Rewards.</div>
+     <div id="pubTot" class="strip" style="margin-top:16px"><div><div class="lbl">Posts</div><div class="val">…</div></div></div>
+     <div class="tools" style="margin-top:12px"><div class="tabs" id="pubTabs"></div><select id="pubCh" onchange="pubCh=this.value;drawPublished()"></select></div>
+     <div id="pubGrid" class="pubgrid" style="margin-top:12px"><div class="card empty">Loading…</div></div>`;
+  },
   radar() {
     setTimeout(loadRadar, 0);
     return `<div class="h1">Radar</div><div class="lead">Every morning Studio scans Reddit, Hacker News, GitHub, Hugging Face, Product Hunt, Google News and a Google web search for new FREE tools, models and platform features, and keeps only what fits us. Repos go to the learner, tips to the brain, features to the build list. Nothing paid, nothing signed up without you.</div>
@@ -346,6 +353,40 @@ async function startBrain() {
   cv.onpointerup = () => { if (drag && drag !== core) { if (drag.pin) { drag.fx = drag.pin[0]; drag.fy = drag.pin[1]; } else drag.fx = drag.fy = null; } drag = null; }; cv.onpointerleave = () => { tip.style.display = "none"; hov = null; };
 }
 
+/* ---------- published: one feed of every post (20 Nov) ---------- */
+let pubData = null, pubCh = "all", pubPl = "all";
+async function loadPublished(force) {
+  if (!pubData || force) { try { pubData = await (await fetch("/api/published")).json(); } catch (e) { pubData = { rows: [], error: e.message }; } }
+  drawPublished();
+}
+function drawPublished() {
+  const g = $("#pubGrid"); if (!g || !pubData) return;
+  const rows = (pubData.rows || []).filter((r) => (pubCh === "all" || r.cid === pubCh) && (pubPl === "all" || r[pubPl]));
+  const t = pubData.totals || {};
+  $("#pubTot").innerHTML = `<div><div class="lbl">Posts</div><div class="val">${nf(t.posts)}</div><div class="dl">last 80</div></div>
+    <div><div class="lbl">Views</div><div class="val">${nf(t.views)}</div><div class="dl">IG + FB + YouTube</div></div>
+    <div><div class="lbl">Likes</div><div class="val">${nf(t.likes)}</div><div class="dl">IG + YouTube</div></div>
+    <div><div class="lbl">Campaign clips</div><div class="val">${nf(t.campaign)}</div><div class="dl">${nf(t.submitted)} submitted for pay</div></div>
+    <div><div class="lbl">Updated</div><div class="dl" style="margin-top:8px">${pubData.t ? ago(pubData.t) : "—"} · <a href="javascript:loadPublished(1)">refresh</a></div></div>`;
+  $("#pubTabs").innerHTML = [["all", "All"], ["ig", "Instagram"], ["fb", "Facebook"], ["yt", "YouTube"]].map(([k, l]) => `<button class="${pubPl === k ? "on" : ""}" onclick="pubPl='${k}';drawPublished()">${l}</button>`).join("");
+  const ids = [...new Set((pubData.rows || []).map((r) => r.cid))];
+  $("#pubCh").innerHTML = `<option value="all">All pages</option>` + ids.map((i) => `<option value="${i}" ${pubCh === i ? "selected" : ""}>${esc(ch(i).name)}</option>`).join("");
+  const pl = (r, k, label, url, nums) => r[k] ? `<a class="badge" style="--c:${url ? "var(--green)" : "var(--gray)"}" href="${esc(url || "#")}" target="_blank">${label}${nums ? " · " + nums : ""}</a>`
+    : r.errors && r.errors[k] ? `<span class="badge" style="--c:var(--red)" title="${esc(r.errors[k])}">${label} failed</span>` : "";
+  g.innerHTML = rows.map((r) => {
+    const c = ch(r.cid);
+    const camp = r.campaign ? (r.submitted ? `<span class="badge" style="--c:var(--green)">Submitted ${esc(r.submitted.slice(5))}</span>` : `<span class="badge" style="--c:var(--amber)">Submit ${r.submit_ok}/${r.submit_n}</span>`) : "";
+    return `<div class="card pubcard">
+      <div class="pubthumb" style="${r.cover ? `background-image:url(${r.cover})` : ""}" onclick="openJob('${r.cid}','${r.job}')"></div>
+      <div class="pubbody"><div style="display:flex;gap:8px;align-items:center">${dp(c, 20)}<span class="mut" style="font-size:12px">${esc(c.name)} · ${esc((r.at || "").slice(5))}</span></div>
+      <div class="t" style="margin-top:6px;white-space:normal;line-height:1.3">${esc(r.title)}</div>
+      <div class="chips" style="margin-top:8px">
+        ${pl(r, "ig", "IG", r.ig_url, [r.ig_views != null ? nf(r.ig_views) + " views" : "", r.likes != null ? nf(r.likes) + " ♥" : ""].filter(Boolean).join(" "))}
+        ${pl(r, "fb", "FB", r.fb_url, r.fb_views != null ? nf(r.fb_views) + " views" : "")}
+        ${pl(r, "yt", "YT", r.yt_url, r.yt_views != null ? nf(r.yt_views) + " views" : "")}
+        ${camp}</div></div></div>`;
+  }).join("") || `<div class="card empty">${pubData.error ? "Could not load: " + esc(pubData.error) : "Nothing posted yet for this filter."}</div>`;
+}
 async function loadRadar() {
   const el = $("#radar"); if (!el) return;
   const days = await (await fetch("/api/radar")).json();
@@ -415,7 +456,7 @@ function render(force) {
   const p = page(), wait = S.jobs.filter((j) => ["waiting", "ready"].includes(j.status)).length, bad = S.issues.filter((i) => i.lvl === "bad").length, warn = S.issues.filter((i) => i.lvl === "warn").length;
   const cnt = { approvals: wait ? [wait, "v"] : null, server: bad ? [bad, "r"] : warn ? [warn, "a"] : null, runs: S.jobs.filter((j) => j.active).length ? [S.jobs.filter((j) => j.active).length, ""] : null };
   $("#nav").innerHTML = NAV.map(([g, it]) => (g ? `<div class="ng">${g}</div>` : `<div style="height:6px"></div>`) + it.map(([k, t]) => `<a href="#${k}" class="${k === p ? "on" : ""}">${ic(ICON[k])}${t}${cnt[k] ? `<span class="c ${cnt[k][1]}">${cnt[k][0]}</span>` : ""}</a>`).join("")).join("");
-  $("#tabbar").innerHTML = [["today", "Today"], ["runs", "Runs"], ["approvals", "Approve"], ["channels", "Channels"], ["server", "Server"], ["more", "More"]].map(([k, t]) => `<a href="${k === "more" ? "javascript:moreMenu()" : "#" + k}" class="${k === p ? "on" : ""}">${ic(ICON[k] || "more")}${t}${cnt[k] ? `<span class="c">${cnt[k][0]}</span>` : ""}</a>`).join("");
+  $("#tabbar").innerHTML = [["today", "Today"], ["published", "Posted"], ["approvals", "Approve"], ["channels", "Channels"], ["server", "Server"], ["more", "More"]].map(([k, t]) => `<a href="${k === "more" ? "javascript:moreMenu()" : "#" + k}" class="${k === p ? "on" : ""}">${ic(ICON[k] || "more")}${t}${cnt[k] ? `<span class="c">${cnt[k][0]}</span>` : ""}</a>`).join("");
   const label = NAV.flatMap(([, it]) => it).find(([k]) => k === p)?.[1] || "Today";
   $("#crumb").innerHTML = `<span class="mut hide-m">Studio /</span>${esc(label)}`;
   if (p === "brain") { if (force || !$("#brainc")) { $("#view").innerHTML = V.brain(); prev = ""; startBrain(); } return; }
@@ -440,7 +481,7 @@ document.addEventListener("input", (e) => { const el = e.target; if (el && el.id
 document.addEventListener("change", (e) => { const el = e.target; if (el && el.id && el.tagName === "SELECT") { const d = JSON.parse(sessionStorage.getItem(DRAFT) || "{}"); d[el.id] = el.value; sessionStorage.setItem(DRAFT, JSON.stringify(d)); } });
 function moreMenu() {
   drawerKey = "more"; $("#drawer").classList.add("on");
-  $("#panel").innerHTML = `<div class="ph"><div style="flex:1;font-weight:600">More</div><button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div><div>${[["sources", "Connected apps"], ["activity", "Activity log"], ["brain", "Brain"], ["settings", "Settings"]].map(([k, t]) => `<a class="row click" href="#${k}" onclick="closeDrawer()">${ic(ICON[k])}<span class="grow">${t}</span></a>`).join("")}<a class="row click" href="javascript:closeDrawer();openPalette()">${ic("spark")}<span class="grow">Ask a question</span></a></div>`;
+  $("#panel").innerHTML = `<div class="ph"><div style="flex:1;font-weight:600">More</div><button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div><div>${[["runs", "Runs"], ["sources", "Connected apps"], ["activity", "Activity log"], ["brain", "Brain"], ["settings", "Settings"]].map(([k, t]) => `<a class="row click" href="#${k}" onclick="closeDrawer()">${ic(ICON[k])}<span class="grow">${t}</span></a>`).join("")}<a class="row click" href="javascript:closeDrawer();openPalette()">${ic("spark")}<span class="grow">Ask a question</span></a></div>`;
 }
 async function load() {
   try {

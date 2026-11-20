@@ -940,6 +940,8 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, {"stats": brainmod.stats(), "learned": (jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or [])[::-1][:40],
                                        "build_open": bq.count("- [ ]"), "build_done": bq.count("- [x]"),
                                        "top": [{"title": i["title"], "uses": i["uses"], "wins": i.get("wins", 0)} for i in top]})
+            if u == "/api/published":                   # 20 Nov: every post on every page, one feed
+                return self.send(200, extra.published())
             if u == "/api/radar":
                 return self.send(200, (jload(os.path.join(ROOT, "knowledge", "radar.json"), []) or [])[::-1][:30])
             if u == "/api/ideas":

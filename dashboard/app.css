@@ -143,3 +143,12 @@ textarea{height:auto;padding:8px 10px;width:100%}
  .tabbar a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;color:var(--mut);min-width:56px;position:relative;padding:3px 0}.tabbar a.on{color:var(--tx)}.tabbar svg{width:20px;height:20px}
  .tabbar .c{position:absolute;top:-1px;right:10px;background:var(--violet);color:#fff;border-radius:99px;font-size:9.5px;padding:0 5px;line-height:15px}
 }
+
+/* 20 Nov: Published feed */
+.pubgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.pubcard{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.pubthumb{aspect-ratio:9/16;max-height:340px;background:var(--sub) center/cover no-repeat;cursor:pointer;border-bottom:1px solid var(--line)}
+.pubbody{padding:12px}
+.pubcard .chips{display:flex;flex-wrap:wrap;gap:6px}
+.pubcard a.badge{text-decoration:none}
+@media(max-width:640px){.pubgrid{grid-template-columns:repeat(2,1fr);gap:8px}.pubthumb{max-height:260px}}
