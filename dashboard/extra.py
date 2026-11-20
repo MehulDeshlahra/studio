@@ -112,7 +112,9 @@ def published():
                     continue
                 jd = os.path.join(OUT, cid, v["job"])
                 plan = jload(os.path.join(jd, "plan.json"), {}) or {}
-                cover = next((f"/media/{cid}/{v['job']}/{n}" for n in ("cover.jpg", "thumb.jpg", "cover.png") if os.path.exists(os.path.join(jd, n))), None)
+                # the 360 px thumbnail (api.py makes cover-s.jpg from cover.jpg once), not the full 1080x1920 cover
+                cover = (f"/media/{cid}/{v['job']}/cover-s.jpg" if os.path.exists(os.path.join(jd, "cover.jpg")) else
+                         next((f"/media/{cid}/{v['job']}/{n}" for n in ("thumb.jpg", "cover.png") if os.path.exists(os.path.join(jd, n))), None))
                 src = (plan.get("clip") or {}).get("source")
                 rows.append({"cid": cid, "job": v["job"], "title": plan.get("title") or v.get("title") or v.get("topic") or v["job"],
                              "at": p.get("at"), "ig": p.get("ig"), "fb": p.get("fb"), "yt": p.get("yt"), "cover": cover,

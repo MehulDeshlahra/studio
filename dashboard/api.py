@@ -1001,7 +1001,9 @@ class H(BaseHTTPRequestHandler):
         if ext == "mp4":
             self.send_header("Accept-Ranges", "bytes")
         # 19 Nov: profile pictures were re-asked on every 4 s redraw (no-cache); they change at most daily
-        self.send_header("Cache-Control", "max-age=3600" if os.sep + "dp" + os.sep in p else "no-cache"); self.end_headers(); self.wfile.write(data)
+        # 20 Nov: thumbnails (cover-s.jpg) cached a day, so the Published grid does not download them again
+        self.send_header("Cache-Control", "max-age=3600" if os.sep + "dp" + os.sep in p else
+                         "max-age=86400" if p.endswith("cover-s.jpg") else "no-cache"); self.end_headers(); self.wfile.write(data)
 
     def do_POST(self):
         u = urllib.parse.urlparse(self.path).path
