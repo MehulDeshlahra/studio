@@ -230,9 +230,13 @@ def yt_schedule(acc, mp4, ytx, thumb, slot):
     return vid
 
 
+_GIT = threading.Lock()          # one git push to the public media repo at a time (pages prepare side by side)
+
+
 def ig_container(acc, mp4, caption):
     tok, uid = acc["page_token"], acc["ig_user_id"]
-    url = P._public_url(mp4, f"{uid}-{int(time.time())}.mp4")
+    with _GIT:
+        url = P._public_url(mp4, f"{uid}-{int(time.time())}.mp4")
     c = P._req(f"{P.G}/{uid}/media", {"media_type": "REELS", "video_url": url, "caption": caption, "share_to_feed": "true",
                                         "access_token": tok})
     for _ in range(90):
