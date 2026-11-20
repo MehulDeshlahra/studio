@@ -887,8 +887,10 @@
   "job": "1120-0040e-c1",
   "topic": "Jude Bellingham's Crazy Stats",
   "title": "Jude Bellingham's Crazy Stats",
-  "status": "approved",
-  "review": [],
+  "status": "held",
+  "review": [
+   "20 Nov: stack layout shows the streamer twice (webcam on top and again in the game crop); hook overlaps captions"
+  ],
   "clip": {
    "url": "https://drive.google.com/drive/folders/1XCvBQqY3vIzg5s9kEmOmw20cIJNCD3jT",
    "start": 92.29,
