@@ -10,6 +10,9 @@ sys.path.insert(0, os.path.join(HERE, "..", "engine")); sys.path.insert(0, os.pa
 import iconography, picsmith
 from core import ROOT, OUT, log, save, load
 
+# 20 Nov, checked by eye: wrong person (Shakuntala as Sita), unusual form (Vishnu as the Cosmic Man), statue under
+# scaffolding. Kali has no reference picture: her paintings show severed heads (page rule: never gory).
+BAN = re.compile(r"Shakuntala|Cosmic Man|Gommateshwara Statue 1\.jpg|Damayanti|Menaka|Urvashi", re.I)
 UA = {"User-Agent": "StudioRefs/1.0 (https://scrollhouse.in; reference pictures for devotional art)"}
 INDEX = os.path.join(ROOT, "knowledge", "refs.json")
 # what to search for each figure (first queries are the most specific)
@@ -18,19 +21,18 @@ Q = {
     "Rishabhdev": ["Rishabhanatha idol", "Adinath idol Jain", "Rishabhdev statue"],
     "Parshvanath": ["Parshvanatha idol serpent hood", "Parshvanath statue Jain"],
     "Neminath": ["Neminatha idol", "Neminath Jain statue"],
-    "Bahubali": ["Gommateshwara statue Shravanabelagola", "Bahubali statue Jain"],
+    "Bahubali": ["Gommateshwara Shravanabelagola close", "Bahubali statue Karkala", "Bahubali statue Jain", "Gommateshwara statue"],
     "Jain monk": ["Svetambara Jain monks white", "Jain sadhvi white robes", "Jain monk muhpatti"],
-    "Shiva": ["Raja Ravi Varma Shiva", "Shiva painting traditional"],
+    "Shiva": ["Shiva Ravi Varma Press", "Shiva meditating painting", "Shiva Kailash painting", "Shiva Mahadeva painting"],
     "Parvati": ["Raja Ravi Varma Parvati", "Parvati painting"],
     "Ganesha": ["Raja Ravi Varma Ganesha", "Ganesha painting traditional"],
     "Kartikeya": ["Raja Ravi Varma Kartikeya", "Kartikeya peacock painting"],
     "Durga": ["Durga painting lion traditional", "Raja Ravi Varma Durga"],
-    "Kali": ["Kali painting traditional Kalighat", "Raja Ravi Varma Kali"],
     "Vishnu": ["Raja Ravi Varma Vishnu", "Vishnu painting four arms"],
-    "Lakshmi": ["Raja Ravi Varma Lakshmi", "Lakshmi painting lotus"],
+    "Lakshmi": ["Lakshmi Ravi Varma Press", "Gajalakshmi painting", "Goddess Lakshmi painting", "Lakshmi seated lotus"],
     "Krishna": ["Raja Ravi Varma Krishna", "Krishna painting flute"],
     "Rama": ["Raja Ravi Varma Rama", "Rama painting bow"],
-    "Sita": ["Raja Ravi Varma Sita", "Sita painting"],
+    "Sita": ["Sita Rama painting", "Sita Ravi Varma Press", "Sita Ashoka vatika painting"],
     "Hanuman": ["Hanuman painting traditional", "Raja Ravi Varma Hanuman"],
     "Brahma": ["Brahma painting four faces", "Raja Ravi Varma Brahma"],
     "Saraswati": ["Raja Ravi Varma Saraswati", "Saraswati painting veena"],
@@ -38,7 +40,7 @@ Q = {
     "Indra": ["Indra Airavata painting", "Raja Ravi Varma Indra"],
     "Surya": ["Surya chariot seven horses painting", "Surya deity painting"],
     "Ganga": ["Ganga goddess makara painting", "Raja Ravi Varma Ganga"],
-    "Narad": ["Narada muni painting veena", "Raja Ravi Varma Narada"],
+    "Narad": ["Narada painting", "Narada muni", "Narada veena sage painting"],
     "Kuber": ["Kubera painting", "Kubera statue"],
 }
 
@@ -84,7 +86,7 @@ def main(only):
             except Exception as e:
                 log("refs: search failed", fig, q, str(e)[:80]); continue
             for c in cs:
-                if c["title"] in seen:
+                if c["title"] in seen or BAN.search(c["title"]):
                     continue
                 seen.add(c["title"])
                 slug = re.sub(r"[^a-z0-9]+", "-", c["title"].lower())[5:60].strip("-")
