@@ -1,2053 +1,5 @@
 [
  {
-  "t": "2026-11-19 02:02",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source contains two sophisticated demo styles (kino-montage, lidar-survey) from a deterministic, code-driven video pipeline. They showcase archive-footage sourcing with license tracking, beat-grid-locked timelines verified by automated checks, procedural audio stem mixing with loudness mastering, data-driven on-screen facts, and a single-command reproducible build. The engineering rigor is hig",
-  "knowledge": 1,
-  "build": 0,
-  "items": [
-   {
-    "title": "Automated Archive Footage Sourcing with License Ledger",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Beat-Grid Locked Timeline with Half-Beat Verification Gate",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Procedural Audio Stems with Ducking and True-Peak Limited Master",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Data-Driven On-Screen Numbers Measured from Primary Source",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Subtitle Generation from Actual TTS Durations with Overlap Prevention",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Automated Human Cut-Outs via U2Net for Photo Compositing",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Motion Energy Flat-Stretch Detector and Cut-Spike Auditor",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Single-Command Reproducible Build with Isolated Dependency VenVs",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Consistent Duotone Print Grade for Heterogeneous Archive Sources",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Font Subsetting to Used Characters Only (WOFF2, Variable CJK)",
-    "kind": "build",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:04",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source contains two polished demo pipelines: a LiDAR survey toolchain for terrain analysis and a 'Living Screencast' showcasing a deterministic, beat-locked animation system with a procedural pixel character, dual-layer procedural audio, declarative UI simulation, and tight AV sync via a shared events.json. The Screencast demo is production-grade reference code for faceless technical shorts; t",
-  "knowledge": 6,
-  "build": 0,
-  "items": [
-   {
-    "title": "Two-Layer Procedural Score with Night-Mode Crossfade",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Procedural UI Sound-Effects Kit (Zero Samples)",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Circular Clip-Path Light/Dark Transition",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Pixel-Block Sweep Chapter Wipe",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Deterministic Typing Simulation with Jitter & SFX Events",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Actor Choreography DSL (Stand/Walk/Jump + Auto-Blink/Beat-Bob)",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Integrated HUD Overlay System",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Declarative UI State Machine for Simulated App Recording",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Terrain Cross-Section Profile Extraction for Map Shorts",
-    "kind": "knowledge",
-    "area": "ideas"
-   },
-   {
-    "title": "Broadband Voice Ducking via Envelope Follower (Fallback)",
-    "kind": "knowledge",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:05",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This part of lemo-opuscar contains two polished demo films (a living screencast and a low-poly island) with full reproducible pipelines: deterministic UI recreation, procedural foley/ambience, event-driven music with verification, Whisper-based intelligibility checks, and per-word timing. The engineering quality is high — every step is scripted, auditable, and designed for headless CI.",
-  "knowledge": 2,
-  "build": 0,
-  "items": [
-   {
-    "title": "Whisper Intelligibility Gate",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Word-Level Timing with Pre-Roll Offsets",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Procedural Foley by Material",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Music Ducking via Voice Activity Envelope",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Sky/Lighting Keyframe Interpolation for Time-Lapse",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Subtitle Timing Export Verification",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Event-Driven Ambience Bed with Probability & Swell",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Musical Silence Window Verification",
-    "kind": "knowledge",
-    "area": "review"
-   },
-   {
-    "title": "Narration Dip Points in Music Bed",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Deterministic UI State-to-HTML for Screencasts",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Per-Line Voice Speed Control",
-    "kind": "knowledge",
-    "area": "voice"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:06",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source reveals a tightly integrated procedural audiovisual pipeline where music is synthesized from the same event timeline that drives visuals, all locked to a musical grid. It demonstrates deterministic, seedable generation, stem-based mixing with narration ducking, precise subtitle timing rules, and a single-command reproducible build — techniques directly applicable to improving our Shorts",
-  "knowledge": 2,
-  "build": 0,
-  "items": [
-   {
-    "title": "Procedural score from visual events",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Beat-grid locked timeline for all events",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "VO-driven subtitle timing rules",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Single-command reproducible build script",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Stem-based mixing with narration ducking",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Deterministic seeded audio synthesis",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Event-driven logging for audit trail",
-    "kind": "knowledge",
-    "area": "review"
-   },
-   {
-    "title": "Word-level TTS timing JSON",
-    "kind": "knowledge",
-    "area": "voice"
-   },
-   {
-    "title": "Data-driven procedural texture updates",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Tilt-shift miniature look via post-process",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Gradient sky + stars blended by depth/fog",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Structured silence as a structural beat",
-    "kind": "knowledge",
-    "area": "hook"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:08",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a complete manga-style music video pipeline (KOMA ONE) built on Canvas 2D, driven entirely by a beat grid (beats.json). It demonstrates deterministic, beat-synced editing, procedural screentone rendering, sound-effect lettering, camera shake, flash frames, panel grammar, prop-swap workflow, font subsetting, and procedural audio synthesis — all in free, reproducible code.",
-  "knowledge": 1,
-  "build": 3,
-  "items": [
-   {
-    "title": "Beat-grid driven editing pipeline",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Manga screentone conversion (ink + paper + halftone + accent)",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Procedural sound-effect lettering (sfx) with per-glyph physics",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Beat-synchronized camera shake with exponential decay",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Prop-swap pipeline for consistent asset iteration",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Font subsetting via Google Fonts CSS API",
-    "kind": "knowledge",
-    "area": "ops"
-   },
-   {
-    "title": "Procedural rock score + foley from beat grid",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Grid-split climax animation (1→2→4→8→16→30 panels)",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Flipbook page-turn animation for photo sequences",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Focus-line and speed-line primitives for motion emphasis",
-    "kind": "knowledge",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:10",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a production-grade, code-driven 3D map explainer (Strait of Hormuz) built with Three.js, custom shaders, and a fully automated data/audio/asset pipeline. It demonstrates beat-synced cinematography, procedural visual primitives (glowing ribbons, growing pillars, cross-sections), bilingual subtitle layout, and reproducible asset baking — directly addressing several gaps in our studio'",
-  "knowledge": 5,
-  "build": 1,
-  "items": [
-   {
-    "title": "Beat-locked timeline grid (bars/beats as time unit)",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Event-driven cue sheet (events.json) as single source of truth",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Procedural music stem synthesis from event list",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Bilingual subtitle shelf: Chinese top / English bottom, left-aligned legend style",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Data-driven map asset pipeline (OSM + AWS Terrain + Sentinel-2 → optimized assets)",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Glowing ribbon primitive for routes/lanes/pipelines (world-width + screen-width, flow, dash, head, wake)",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Growing data pillar animation (slabs appear on beat, fractional Y-scale)",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Cross-section cutaway shader (clip plane + exaggerated depth + lane markers)",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Globe-to-map dissolve with matched frustums and atmosphere flash",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Font subsetting via Google Fonts CSS API (exact glyphs from script + UI)",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Voice-driven subtitle cue generation with min-duration enforcement",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Ruler/measure visual grammar (animated line with tick marks, labels on beat)",
-    "kind": "knowledge",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:12",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a complete, production-grade implementation of a 'Marker on Paper' explanatory short (52s, bilingual). It demonstrates a deterministic, code-driven pipeline: procedural handwriting via glyph skeletons, camera-space vector rendering for infinite zoom, parametric foley/music locked to stroke events, geometric match-cut/peel transitions, and a single-command reproducible build (fonts→g",
-  "knowledge": 1,
-  "build": 0,
-  "items": [
-   {
-    "title": "Procedural Handwriting Engine (Glyph Skeletons + 3-Frame Boil)",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Camera-Space Vector Rendering (Resolution-Independent Zoom)",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Parametric Marker Foley Synthesis (Velocity & Texture Driven)",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Generative Beat-Locked Score from Code (Stem Rendering + Voice-Band Ducking)",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Semantic Color-Coding Across Diagram & Formula (Blue=Known, Red=Unknown)",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Geometric Match-Cut & Paper-Peel Transitions",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Diegetic Torn-Paper Subtitle Prop (Bilingual + Jittered Edges)",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Automated On-Screen Text Geometry Export for Readability QC",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Unified Reproducible Build Script (Fonts→Glyphs→TTS+ASR→Events→Render→Mix→Mux→Subs→Poster)",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Film-Specific Font Subsetting (Used Glyphs Only via subset_film.py)",
-    "kind": "build",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:13",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The repo contains two polished demo styles: a 2D marker-on-paper engine with realistic ink density compositing, procedural paper texture, and glyph-skeleton handwriting; and a 3D Memphis diorama with a deterministic season-wave transition, flat-pattern shaders, halftone shadows, night lamp pools, and a one-command build script that includes font subsetting, 60 fps rendering, audio muxing, read-tim",
-  "knowledge": 3,
-  "build": 1,
-  "items": [
-   {
-    "title": "Multiplicative ink density compositing",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Glyph-skeleton handwriting pipeline",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Procedural paper texture with fibres and tooth",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Single-command reproducible build script",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Radial season-wave transition",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "World-space pattern shader for flat materials",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Halftone dots in shadow regions",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Hard-edged lamp pool night lighting",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Outline + grainy frame composite shader",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Automated read-time QC gate",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Font subsetting pipeline for Devanagari",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Per-word VO timestamps for caption sync",
-    "kind": "knowledge",
-    "area": "caption"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:15",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This part of the lemo-opuscar repo demonstrates a code-driven, reproducible pipeline for a 45-second microgame film: procedural music synthesis, font subsetting, beat-synced audio-visual events, multiple stylized renderers (ASCII/CRT, blueprint, pixel, etc.), and a single-command build script. It is high-quality, production-grade reference material for a faceless-shorts studio.",
-  "knowledge": 1,
-  "build": 2,
-  "items": [
-   {
-    "title": "Procedural music synthesis with sectional instrumentation",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Single-command reproducible video build script",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Automated font subsetting via Google Fonts CSS2 API",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Beat-synced audio-visual event timeline (events.json)",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "ASCII/CRT terminal shader with density-mapped glyph ramp",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Blueprint/cyanotype progressive line drawing renderer",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Static first/last frame caching for segment transitions",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Deterministic seeded audio synthesis for reproducibility",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Font subsetting with change detection via manifest",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Identical transition signature across sections",
-    "kind": "knowledge",
-    "area": "hook"
-   },
-   {
-    "title": "Minimal distant character system with 2-bone IK",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Automated cue-sync auditor (score hits ↔ picture events)",
-    "kind": "build",
-    "area": "review"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:16",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This repo part implements a microgame-style animated short ('Five-Second Astronaut') with seven distinct procedural visual styles (risograph, crayon, ink-wash, pixel, blueprint, ASCII, Swiss) composed together in a boss level. It demonstrates beat-synced scene direction, seeded procedural generation, multi-style character consistency, and a reusable HUD component system — all deterministic and fra",
-  "knowledge": 3,
-  "build": 2,
-  "items": [
-   {
-    "title": "Beat-synced event timeline with named timestamps",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Multi-style composition in a single frame",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Seeded procedural generators for backgrounds",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Character consistency across visual styles",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "HUD component library (fuse, command, stamp, lives, subtitle)",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Camera work with zoom, shake, and follow modes",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "ASR-verified subtitle lines with trim/asr fields",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Ink-wash parachute deployment with feibai and jiaomo",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Biphonic audio alternation for UI ticks",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Deterministic scene test harness with URL params",
-    "kind": "knowledge",
-    "area": "ops"
-   },
-   {
-    "title": "Risograph overprint logic with plate misregistration kick",
-    "kind": "knowledge",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:22",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source reveals two demo pipelines (Microgame and Microscope) from a procedural animation/audio codebase. Microgame showcases a complete 'music as code' score with procedural foley per visual material, a single timeline driving video/audio/subtitles, automated cue verification, Whisper-based TTS cleanup and final-mix ASR checks, two-pass loudnorm, and a gated build script. Microscope adds a rep",
-  "knowledge": 2,
-  "build": 2,
-  "items": [
-   {
-    "title": "Procedural Foley Library by Visual Material",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Music as Code with Groove Engine & Tempo Ramps",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Single Source-of-Truth Timeline (JS → JSON)",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Automated Cue Alignment Check (Score ↔ Picture)",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "TTS Single-Word Artifact Trim via Whisper Timestamps",
-    "kind": "build",
-    "area": "voice"
-   },
-   {
-    "title": "Final Mix ASR Verification",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Two-Pass Loudnorm Mastering to -14 LUFS",
-    "kind": "better",
-    "area": "audio"
-   },
-   {
-    "title": "Font Version Pinning for Reproducible Renders",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Full Pipeline Build Script with Quality Gates",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Bilingual Subtitle Cue Structure with Precise Timing",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "True Silence Gating in Music Stems",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Procedural Score Stems Export for Flexible Mixing",
-    "kind": "build",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:23",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This repo contains two polished, code-driven demo films: a scientific microscope dive (\"Measured Blue\") using real whole-slide pathology data with computed measurements, and a mid-century cartoon product explainer (\"Meet Pip\") driven by a swappable content.json. Both showcase deterministic rendering, tight audio-visual sync on a musical grid, procedural graphics/sound, and automated verification (",
-  "knowledge": 2,
-  "build": 0,
-  "items": [
-   {
-    "title": "Log-spiral camera interpolation for natural dive moves",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Data-verified script numbers against source measurements",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Stem-based mixing with voice-envelope ducking and intentional silences",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Declarative content.json drives entire video build",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Subtitle safe-area check with real fonts in headless browser",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Two intentional silence beats per short for pacing",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Procedural foley synced to visual state-change events",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Measurement-based visual grammar (scale bars, dimension lines from data)",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Deterministic seeded rendering across full pipeline",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "ASR verification of final mixed audio (music+foley+voice)",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Font subsetting via CSS2 API with exact glyph set",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Beat-grid aligned event timeline at half-beat resolution",
-    "kind": "knowledge",
-    "area": "edit"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:24",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This repo part contains a complete mid-century cartoon animation engine (toon.js) and a beat-synced product demo film 'Meet Pip' (film.js) with procedural graphics, material-specific foley synthesis (mix.py), and musical hit points (hits.json). The code is production-quality, deterministic, and demonstrates a cohesive 1950s UPA-style pipeline from timeline to final mix.",
-  "knowledge": 0,
-  "build": 2,
-  "items": [
-   {
-    "title": "BPM-locked timeline with beat-grid sections",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "True silence gating for ambience and foley",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Voice ducking via convolved envelope (8 dB)",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Material-specific procedural foley synthesis",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Off-register cel look with twos jitter",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Potential-flow route lanes with obstacle bending",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Iris transitions through focal medallions",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Two-plate lettering with color offset",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Deterministic frame engine via global clock",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Mantel clock ambience on half-note grid",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "J-cut voice cues half beat before visual iris",
-    "kind": "knowledge",
-    "area": "script"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:25",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source part demonstrates a production-ready procedural music system (score.py) that generates multi-stem jazz tracks with deterministic timing, swing, reverb per stem, and unified bus limiting. It also includes supporting tooling for cue validation against musical grids, word-level timestamp preparation, font version pinning via fetch script, model sheet rendering, and content-to-lines normal",
-  "knowledge": 1,
-  "build": 0,
-  "items": [
-   {
-    "title": "Multi-stem procedural music with unified bus limiting",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Cue validation against half-beat grid and music hits",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Explicit silence masks with cosine fades for dramatic pacing",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Pre-computed word-level timestamps for script lines",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Automated font fetch script pinned to commit hash",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Model sheet renderer for character consistency",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Content-to-lines pipeline with ASR normalization",
-    "kind": "build",
-    "area": "script"
-   },
-   {
-    "title": "Swing timing helper for beat-synced animation",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Deterministic jitter for humanized timing",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Per-stem reverb sends with shared room parameters",
-    "kind": "build",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:27",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This repo is a complete, deterministic pipeline for a 48s neon-tube music video: procedural audio synthesis synced to visual events, beat-grid character animation, WebGL glass-tube shading, and one-command build. It demonstrates high craft in sample-free audio, event-driven AV sync, and shader-based neon aesthetics.",
-  "knowledge": 1,
-  "build": 2,
-  "items": [
-   {
-    "title": "Procedural event-synced score+foley synth",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Beat-grid pose switching (no in-betweens)",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Neon tube glyph pipeline from font skeleton",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Deterministic readcheck via projected text bounds",
-    "kind": "knowledge",
-    "area": "review"
-   },
-   {
-    "title": "Sidechain ducking by per-event foley loudness",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Procedural brick/tile facade textures in shader",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Glass tube shading: Fresnel, gas column, refraction",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Floor reflections with ripple simulation",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Motion blur via multi-sample along velocity vector",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Event list generation from timeline data",
-    "kind": "build",
-    "area": "script"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:28",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source is a production-grade procedural neon-tube animation pipeline (\"Midnight Snack\" film) with hand-laid glyph skeletons, SDF character rigs, monotone camera splines, and a one-command build that includes ASR verification. It demonstrates high craft in deterministic vector animation and physical neon simulation.",
-  "knowledge": 1,
-  "build": 6,
-  "items": [
-   {
-    "title": "Polyline Filleting with Leg-Proportional Radius Clamping",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Arc-Length Parameterization for Precise Stroke Animation",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "SDF Character Rig with Marching Squares Extraction",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Neon Gas Colour Palette with Phosphor-Coat Flag",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Procedural Facade Generation with Seeded Types",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Hand-Laid Glyph Skeleton on 10×10 Font Grid",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "One-Command Pipeline with ASR Verification Gate",
-    "kind": "knowledge",
-    "area": "ops"
-   },
-   {
-    "title": "Electrode Gap Splitting for Authentic Neon Ends",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Smooth-Union SDF Blending (Polynomial smin)",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Contour Cleanup Pipeline: RDP → Resample → Laplacian Smooth",
-    "kind": "build",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:28",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This is a complete broadcast news package demo (53.5s) for a weekly AI news show, built as a deterministic Canvas 2D render(t) with beat-synced cuts, data-driven graphics, persistent lower-third strap, and a full audio mix pipeline. It demonstrates production-grade visual grammar for news: real-data charts, spec cards, map projections, strategic silence, and external subtitle delivery.",
-  "knowledge": 1,
-  "build": 1,
-  "items": [
-   {
-    "title": "Beat-synced cuts on fixed BPM grid",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Persistent strap with vertical-band wipe transitions",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Shared duotone grade for all picture-layer assets",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Data-driven chart components with real measurements",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "External SRT generation with CJK/Latin line-length validation",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Font subsetting from script text via Google Fonts CSS API",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Footage license tracker with SOURCES.jsonl → SOURCES.md",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Strategic silence gaps in music bed",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Spectral ducking (1.2–5 kHz) under VO",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Corner AI-generation disclosure tag",
-    "kind": "knowledge",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:29",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a complete, reproducible pipeline for a 1920s newsreel-style short ('Knock-Knee Alert') built on a strict 200 BPM beat grid. It demonstrates procedural audio (score, foley, period voice treatment), archive footage handling with license tracking, animated maps, beat-synced visuals/transitions, and rigorous QA (ASR on final mix, subtitle width checks) — all driven by a single timeline",
-  "knowledge": 1,
-  "build": 3,
-  "items": [
-   {
-    "title": "Beat-Grid Timeline as Single Clock",
-    "kind": "knowledge",
-    "area": "ops"
-   },
-   {
-    "title": "Procedural Score & Foley in Code",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Period Voice Treatment Chain",
-    "kind": "build",
-    "area": "voice"
-   },
-   {
-    "title": "Procedural Foley Library",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Archive Footage License Tracker",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Animated Map with Albers Projection & Route Arcs",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Beat-Synced Flipbook with Grid Zoom",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Split-Screen Duel with Hard Audio Gating",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Persistent Subtitle Title Strip",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Final ASR Check on Master Audio",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Reproducible Asset Bake with Per-Clip Level-Set",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Beat-Synced Transitions Library",
-    "kind": "knowledge",
-    "area": "motion"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:31",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a production-grade demo for a '1-bit dither' short film (The Moon's Fax), showcasing a fully deterministic, code-driven pipeline: procedural 3D scenes (Three.js), sample-free foley/music synthesis synced to a timeline event list, lossless intermediate rendering (FFV1) with a single H.264 encode tuned for animation, custom shaders for resolution-independent crisp lines/halftones, and",
-  "knowledge": 1,
-  "build": 1,
-  "items": [
-   {
-    "title": "Procedural Foley & Music Synthesis from Timeline Events",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Lossless Master → Single Encode Pipeline for Sharp Graphics",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Screen-Space Derivative Thresholding for Resolution-Independent Crisp Lines",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Deterministic Procedural Backgrounds via Seeded Noise & Instancing",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Hermite Spline Camera Paths with Projection Morphing",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Data-Driven Shot Timeline & Dissolve Definitions",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Font Subsetting at Build Time via Character Audit",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Automated Readcheck & Safe-Area Validation in Headless Render",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Procedural Halftone Shader for Newspaper/Fax Aesthetic",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Event-Driven Audio Architecture (Visual Timeline → Audio Render)",
-    "kind": "build",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:33",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source contains two complete film implementations: a 1-bit dithered historical short ('The Moon's Fax') with a custom WebGL NPR pipeline, and a single-line drawing film ('The Line That Never Lifted') with procedural geometry, ink simulation, and camera follow logic. Both demonstrate high craft in deterministic procedural rendering, beat-synced timing, and lossless render pipelines.",
-  "knowledge": 2,
-  "build": 0,
-  "items": [
-   {
-    "title": "Surface-Anchored Bayer Dithering",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "1-Bit Transition Grammar",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Lossless Intermediate Render Pipeline",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Ease-In Warp After Cuts",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Pen/Hand Shadow-Only Rendering",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Ink Simulation with Pressure, Tremor, Feibai, Pooling, Blots",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Camera Follow with Lag/Anticipation and Soft Constraint",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "BPM-Synced Visual Events at Sixteenth-Note Resolution",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Event-Driven AV Sync with High-Res Motion Tracks",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Log-Scale Zoom Interpolation",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Atkinson Error Diffusion for 1-Bit Photo Conversion",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Procedural Paper/Tooth/Vignette Compositing",
-    "kind": "knowledge",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:35",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source contains two polished demo films from the lemo-opuscar library: a one-line drawing life story and an oscilloscope math explainer. Both showcase high-end procedural visuals (Manim/canvas), deterministic audio-visual sync via events.json, physics-based foley synthesis, phosphor CRT post-processing, and a reproducible single-command build with parallel rendering, ASR-verified voice, and re",
-  "knowledge": 1,
-  "build": 1,
-  "items": [
-   {
-    "title": "Procedural Paper Texture with Camera-Aware Transform",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Pen-Tip Scratch Sound Synthesis from Stroke Speed",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "World-Anchored Glyph Morphing for Title-to-Geometry Transitions",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Phosphor CRT Post-Process Pass",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Unified Reproducible Build Script with Parallel Rendering",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Reading-Time Check via Headless Browser",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Music Timbre Synced to Visual Complexity",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Log-Space Camera Zoom with Follow Weight",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Bilingual Subtitle Write-On with Paper Halo",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "ASR-Verified TTS with Word Timestamps",
-    "kind": "build",
-    "area": "voice"
-   },
-   {
-    "title": "Per-Stem Loudness Monitoring in Mix",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Procedural Foley for Ink/Paper Interactions",
-    "kind": "build",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:35",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This repo part showcases two polished demo styles: 'Oscilloscope Math' (Fourier/Gibbs phenomenon) and 'Paper Lantern' (paper-cut lightbox). Both demonstrate production-grade pipelines: MathJax-baked SVG formula templates with digit placeholders, beat-synced timeline.json with granular event markers, deterministic procedural audio synthesis, a one-command build.sh (fonts→TTS+ASR→timeline→render→mix",
-  "knowledge": 1,
-  "build": 1,
-  "items": [
-   {
-    "title": "Math Formula SVG Template System",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Beat-Synced Timeline Event Markers",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Single-Command Reproducible Build (build.sh pattern)",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Bilingual Subtitle Structure with Relative Offsets",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Monotone Cubic Interpolation (Fritsch-Carlson) for Data Motion",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Procedural Grain/Cloud Textures for Lab Look Panels",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Read-Check HTML for Legibility Audit",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "ASR Verification Field in Voice Lines",
-    "kind": "knowledge",
-    "area": "voice"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:37",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source is a Three.js/WebGL demo for a paper-cut lightbox style short film ('The Last Night Train'), featuring a sophisticated per-shot render pipeline with physical depth of field, bloom, and color grading; a deterministic procedural asset system; a structured bilingual timeline with hit points; and automated QC tools for subtitle contrast and font subsetting. It is high-quality, production-gr",
-  "knowledge": 0,
-  "build": 4,
-  "items": [
-   {
-    "title": "Per-shot grading parameter reset",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Automated subtitle darkness QC",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Structured timeline with hit points",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Font subsetting for bilingual CJK + Latin",
-    "kind": "better",
-    "area": "visual"
-   },
-   {
-    "title": "Word-level timestamps for karaoke sync",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Unified seeded PRNG for all procedural assets",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Shot config pattern: update/post/grade",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Handheld camera micro-motion via noise",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Bilingual text rendering with font fallback",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Transition metadata in timeline",
-    "kind": "knowledge",
-    "area": "edit"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:38",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source is a complete paper-popup book demo built with Three.js and Canvas 2D, featuring a one-command build pipeline (TTS, ASR verification, music editing, parallel rendering, bilingual subtitles). It demonstrates deterministic procedural art, parameterized character poses, and a rich 2D overlay system (typewriter speech bubbles, chapter banners, action ratings) directly transferable to our sh",
-  "knowledge": 1,
-  "build": 2,
-  "items": [
-   {
-    "title": "Typewriter Speech Bubbles with Anchor Tracking",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Action Rating Pop-ups (NICE! GREAT!)",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Paper-Cut Procedural Character System",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Bilingual Subtitle Split-Part Fade",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Hanging Chapter Banner Animation",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Bang Emphasis Pop",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Font Subsetting with Unicode-Range Change Detection",
-    "kind": "knowledge",
-    "area": "ops"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:40",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a complete 3D pop-up book short film pipeline (Three.js, Playwright, FFmpeg, Python DSP) featuring deterministic timeline choreography, procedural sound synthesis, beat-matched music editing, parallel rendering, and bilingual subtitle generation. It is high-quality, production-grade code with clever solutions for sync, audio, and render throughput.",
-  "knowledge": 2,
-  "build": 1,
-  "items": [
-   {
-    "title": "Beat-matched music jump editing",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Procedural SFX synthesis from event list",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Deterministic character state functions",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Parallel segment rendering via Playwright + FFmpeg pipe",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Subtitle splitting at word pauses using ASR timestamps",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Camera shot list as interpolated keyframe data",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Auto-generate Foley events from animation kinematics",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Lighting timeline with environment crossfade",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Bilingual SRT generation from structured cues",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Music crossfade at beat boundaries",
-    "kind": "build",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:41",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "The source is the 'papercut-red' demo from the lemo-opuscar repo: a complete, deterministic pipeline for a 49-second red paper-cut short film. It showcases procedural visuals (fold-cut-unfold simulation, jointed character rig, night lighting with light-maps/bloom/rays), procedural audio (synthesized foley, music ducking, loudnorm mastering), and rigorous QC (per-line Whisper verification, blackdet",
-  "knowledge": 0,
-  "build": 1,
-  "items": [
-   {
-    "title": "Procedural Foley Synthesis from Event Timeline",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "ASR Homophone Hint Field in Script JSON",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Fold-Cut-Unfold Paper Simulation with Strip Perspective",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Diegetic Paper-Cut Subtitle Banners (Hengpi)",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Unified Lighting Pipeline: Light Map + Emission + Bloom + Volumetric Rays",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Procedural Jointed Character Rig with FK and Expression Swaps",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Camera Keyframe Grammar via Track Helper",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Final Render QC: Per-Line Whisper + Blackdetect",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Multi-Stem Music Ducking with Look-Ahead Envelope",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Single-Command Reproducible Build with Manifest",
-    "kind": "build",
-    "area": "ops"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:42",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a complete production codebase for a 49-second Chinese folk paper-cut animation 'Nian Comes to Town', featuring procedural motif generation, jointed cut-out rigging, beat-locked timeline, physical-model music synthesis, and a deterministic rendering pipeline. It is exceptionally well-engineered for a specific aesthetic, with reusable systems for folk patterns, character animation, a",
-  "knowledge": 2,
-  "build": 1,
-  "items": [
-   {
-    "title": "Procedural Folk Motif Library",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Jointed Cut-Out Rig with Piece Swapping",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Beat-Locked Timeline as Single Source of Truth",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Word-Level Subtitle Timestamps from Forced Alignment",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Procedural Music Generation with Stem Export",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Deterministic Seeded Noise Utility",
-    "kind": "knowledge",
-    "area": "ops"
-   },
-   {
-    "title": "Backlit Transmission Shader for Paper-Cut Look",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Formal Model Sheets for Character Consistency",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Automated Font Fetching with Commit Pinning",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "2D Lighting System with Light Maps, Bloom, and Rays",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "D4 Symmetry Procedural Rosettes (Tuanhua)",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Shot List Locked to Musical Cue Points",
-    "kind": "knowledge",
-    "area": "edit"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:43",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This is a pen-plotter demo that draws Mount Everest on an A2 sheet with deterministic kinematics, procedural music+foley from animation events, real NASADEM terrain data, and a single-command reproducible build. It's exceptionally well-engineered: every visual and audio element derives from a shared event timeline, making it a gold standard for deterministic, data-driven shorts.",
-  "knowledge": 2,
-  "build": 1,
-  "items": [
-   {
-    "title": "Procedural score + foley from animation events",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Least-cost path routing on real elevation data",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Contour generation from DEM with label-aware gaps",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Hillshade-driven procedural hatching for terrain",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Multi-resolution paper texture with bump mapping",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Lifted contour relief: 2D lines → 3D extrusions → settle",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Camera grammar with per-shot kinematic logic",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Screen-space readability verification for text blocks",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Font subsetting pipeline with license manifest",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Deterministic kinematics with trapezoidal velocity profiles",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Procedural machine sound synthesis from kinematics",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "End card as animated pen-stroke reveal",
-    "kind": "knowledge",
-    "area": "caption"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:44",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a complete, code-driven 50-second short film pipeline (pictogram-motion) that generates every frame procedurally on an HTML canvas, syncs all visuals and audio to a 120 BPM grid via a shared events.json, and builds with a single reproducible script. It demonstrates a high-quality, fully generative approach with deterministic graphics, parametric pictograms, beat-locked transitions, ",
-  "knowledge": 0,
-  "build": 2,
-  "items": [
-   {
-    "title": "Beat-synced event timeline as single source of truth",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Procedural pictogram library (parametric SVG/Canvas components)",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Deterministic procedural background patterns with row offsets",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Mask slide-up bilingual subtitle reveal with minimum hold",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Voice ducking with 300 Hz–4 kHz spectral dip",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Multi-subframe motion blur for fast camera moves",
-    "kind": "build",
-    "area": "edit"
-   },
-   {
-    "title": "Single-command reproducible build with partial render support",
-    "kind": "build",
-    "area": "ops"
-   },
-   {
-    "title": "Transition grammar with named types and beat-locked parameters",
-    "kind": "knowledge",
-    "area": "hook"
-   },
-   {
-    "title": "HUD overlay system with persistent data-driven widgets",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Chapter-hue color discipline across shots",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Automated readability check (readcheck) for on-screen text",
-    "kind": "build",
-    "area": "review"
-   },
-   {
-    "title": "Procedural foley synthesis tied to event types",
-    "kind": "knowledge",
-    "area": "audio"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:45",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This source is a complete, production-grade procedural short film pipeline (Blob Simulation) built with Three.js, Node, and Python. It demonstrates deterministic simulation-driven animation, instanced crowd rendering, mathematically rigorous camera blending, event-driven procedural audio, and a single-command reproducible build — all relevant to a data-driven faceless studio.",
-  "knowledge": 2,
-  "build": 0,
-  "items": [
-   {
-    "title": "Simulation-First Animation Pipeline",
-    "kind": "build",
-    "area": "motion"
-   },
-   {
-    "title": "Event-Driven Procedural Foley & Score",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "Camera Setup Blending via Slerp + Log-Distance",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "OKLab Perceptual Color Ramp for Data Encoding",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Reading-Time Subtitle QC Gate",
-    "kind": "build",
-    "area": "caption"
-   },
-   {
-    "title": "Bilingual Subtitle Plate Design System",
-    "kind": "knowledge",
-    "area": "caption"
-   },
-   {
-    "title": "Contact Shadow as Multiply-Blended Radial Gradient",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Expression Transition via Blink Interpolation",
-    "kind": "knowledge",
-    "area": "motion"
-   },
-   {
-    "title": "Perspective-Corrected End Card via Raycast",
-    "kind": "knowledge",
-    "area": "visual"
-   }
-  ],
-  "skip": ""
- },
- {
-  "t": "2026-11-19 02:46",
-  "name": "lemomo-ai/lemo-opuscar",
-  "url": "https://github.com/lemomo-ai/lemo-opuscar",
-  "license": "see repo",
-  "verdict": "useful",
-  "summary": "This part of the lemo-opuscar repo contains two complete demo styles (pip-simulation, pixel-rpg) showcasing a deterministic, code-driven pipeline: procedural visuals (Three.js/pixel canvas), procedural audio (chip synthesis matched to visual fidelity), ASR-verified scripts, and a single-command build. It demonstrates tight audio-visual cohesion where sound design mirrors the 'color depth' of each ",
-  "knowledge": 1,
-  "build": 2,
-  "items": [
-   {
-    "title": "Color-depth-matched audio fidelity tiers",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Procedural Foley synthesis from event timeline",
-    "kind": "build",
-    "area": "audio"
-   },
-   {
-    "title": "ASR homophone override field in lines.json",
-    "kind": "knowledge",
-    "area": "script"
-   },
-   {
-    "title": "Leitmotif music that evolves across sections",
-    "kind": "knowledge",
-    "area": "audio"
-   },
-   {
-    "title": "Structural silence windows for dramatic pacing",
-    "kind": "knowledge",
-    "area": "edit"
-   },
-   {
-    "title": "Multi-fidelity memory sequences",
-    "kind": "knowledge",
-    "area": "visual"
-   },
-   {
-    "title": "Shader-based crisp grid/diagram layer",
-    "kind": "build",
-    "area": "visual"
-   },
-   {
-    "title": "Bayer dithering transition library",
-    "kind": "build",
-    "area": "motion"
-   }
-  ],
-  "skip": ""
- },
- {
   "t": "2026-11-19 02:48",
   "name": "lemomo-ai/lemo-opuscar",
   "url": "https://github.com/lemomo-ai/lemo-opuscar",
@@ -17212,6 +15164,1854 @@
    {
     "title": "Deterministic SVG Standalone Conversion",
     "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:30",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames CLI is the capture/QA layer: browser page settling, tiered seek profiles, zoom-crop diagnostics, byte-level asset validation and timeout budgets, covered by unusually thorough tests. It is high-quality and directly reusable in our preflight/review pipeline, though it is engineering plumbing rather than creative technique.",
+  "knowledge": 0,
+  "build": 6,
+  "items": [
+   {
+    "title": "Tiered seek-settle profiles",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Post-seek font-subset wait",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "WebGL draw-skip gate for geometry audits",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "preserveDrawingBuffer for readable WebGL",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Runtime-ready gate before sampling",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Prelaunch browser reuse keyed by launch args",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Selector-to-crop resolution for zoomed diagnostics",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Visible-layer image decode enumeration",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Byte-based asset validation",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Stage budget with typed timeout errors",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:32",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames CLI is a set of capture-side modules (browser watchdog, colour-grading runtime/bake tests, contact-sheet builder, vision captioning with provider fallbacks) with unusually thorough, deterministic tests around timeouts, native crashes, secret leakage and file races. Quality is high and several patterns transfer directly to our Gemini-driven still review and render relia",
+  "knowledge": 3,
+  "build": 5,
+  "items": [
+   {
+    "title": "Browser-ready capture deadline watchdog",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Labeled contact sheet for whole-video stills review",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Hard timeout race around vision calls",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Disable thinking on vision calls",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Read assets through an open fd with a 4 MB inline cap",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Grade-group propagation check by pixel sampling",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Baked-grade vs runtime parity test",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Assert rendered title pixels, not just file format",
+    "kind": "knowledge",
+    "area": "thumbnail"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:33",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames capture pipeline part implements a production-grade website capture system with phased extraction, multi-provider vision captioning, design token extraction, and budget-aware degradation. It's high-quality engineering with careful error handling, concurrency control, and provider fallbacks.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "SVG rasterization before vision captioning",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Multi-provider vision captioning with budget tracking",
+    "kind": "build",
+    "area": "research"
+   },
+   {
+    "title": "Library detection via globals, DOM, scripts, and shaders",
+    "kind": "build",
+    "area": "ideas"
+   },
+   {
+    "title": "Clean visible text extraction with TreeWalker",
+    "kind": "build",
+    "area": "research"
+   },
+   {
+    "title": "Comprehensive design token extraction",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Favicon ranking: SVG > largest size > .ico > mask-icon",
+    "kind": "knowledge",
+    "area": "thumbnail"
+   },
+   {
+    "title": "Framework script filtering preserving animation libs",
+    "kind": "build",
+    "area": "research"
+   },
+   {
+    "title": "Budget-aware phased extraction with graceful degradation",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Asset description priority: video > captioned images > uncaptioned > SVGs > fonts",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Sharp concurrency isolation for SVG batch rasterization",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "CDP animation cataloging for reference motion analysis",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Video manifest capture with DOM context",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:35",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is the HyperFrames CLI capture module (part 224 of 822) that extracts production-grade website captures for design reference: it downloads and inlines stylesheets preserving cascade order, rewrites asset URLs, classifies icons as bare-mark vs badge via markup/edge sampling, extracts font metadata from name tables with family canonicalization, and implements resilient capture with WebGL",
+  "knowledge": 4,
+  "build": 3,
+  "items": [
+   {
+    "title": "Font metadata extraction with family canonicalization",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Icon bare-mark vs badge classifier",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Preserve stylesheet cascade order when inlining",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Lazy scroll with budget and image-wait for long pages",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Local page server with security isolation for capture",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Capture retry with WebGL disable on navigation stall",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Proxy-enforced network isolation for deterministic renders",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Asset download with relative URL rewriting and entity decoding",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Icon font detection via glyph coverage not name",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Partial capture bundle on deadline for crash recovery",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:39",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "some",
+  "summary": "This source implements HyperFrames' website capture pipeline: secure local page serving, Lottie/video asset extraction with strict validation, budget-aware downloads, and symlink/SSRF hardening. It provides concrete, production-grade implementations of patterns already in our brain (SSRF-safe fetch, symlink protection, content-addressing, stage budgets) with specific thresholds (2 MB preview gate,",
+  "knowledge": 0,
+  "build": 4,
+  "items": [
+   {
+    "title": "Preview rendering size gate",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Private URL blocking in headless preview pages",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Content-addressed asset deduplication",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Two-stage wait fallback with remaining budget",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Symlink refusal at media write",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Byte budget for external asset downloads",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:40",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames capture module handles robust website capture with deadline-aware partial saves, blocked-page detection, font/animation cataloging, and multi-type contact-sheet generation. It's production-grade infrastructure for design-system extraction with graceful degradation.",
+  "knowledge": 1,
+  "build": 2,
+  "items": [
+   {
+    "title": "Partial capture bundle on deadline",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "CSS fixed/sticky neutralization for full-page screenshots",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Navigation fallback with proxy error explanation",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Blocked page detection heuristics",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Contact sheet varieties for different asset types",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Asset descriptions markdown with vision/catalog mode header",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Font manifest with unidentified warnings",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Response record persistence for external calls",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:41",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames capture module provides production-grade website capture with budget-aware screenshot tiling, design token extraction, WebGL stall detection, and secure asset proxying. The code is well-tested, handles edge cases (clipped plates, consent banners, symlink attacks), and uses deterministic patterns suitable for pipeline integration.",
+  "knowledge": 2,
+  "build": 4,
+  "items": [
+   {
+    "title": "Budget-aware render chunks with cooperative time checks",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "PNG IHDR height validation to detect clipped renders",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Sticky/fixed neutralization for clean reference plates",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Design token extraction for brand kit auto-generation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "WebGL stall watchdog with dual-miss detection",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Single user agent constant for browser and Node fetches",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Scroll screenshot tiling with 30% overlap and percentile naming",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Symlink planting protection for render output directories",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Color usage statistics separate brand accents from surface colors",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Consent banner auto-dismiss before capture",
+    "kind": "build",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:42",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source is the HyperFrames CLI codebase (entry point, command registration, lifecycle management, telemetry, and cloud API client) plus its test suite. It demonstrates production-grade patterns for agent-friendly CLI tools, robust render lifecycle tracking, and reliable automation — directly relevant to a studio using HyperFrames for rendering.",
+  "knowledge": 5,
+  "build": 6,
+  "items": [
+   {
+    "title": "Render success state tracking to suppress teardown noise",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "JSON error envelope for machine-readable failures",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Agent-friendly CLI contract: no ANSI, no prompts, clean stdout",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "EPIPE handling as normal teardown, not crash",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Exit code sanitization after validated render",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Background checks in detached child, main process reads only caches",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Dotenv loading policy: project .env before browser selection, with opt-out",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Workspace build gate blocks commands until dependencies ready",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Telemetry flushSync on process exit, not await flush()",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Lazy command loading with dynamic imports for fast startup",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Did-you-mean suggestions for unknown commands and flags",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Structured pipeline event logging with run IDs",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:44",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This is the HyperFrames CLI cloud-render client package: TypeScript interfaces for the HeyGen/HyperFrames cloud API, plus robust utilities for auth (OAuth refresh with API-key fallback), aspect-ratio auto-detection from composition HTML, ranged parallel downloads with resume and atomic replacement, structured error reporting with actionable hints, font preflight/embedding for cloud renders, and AN",
+  "knowledge": 0,
+  "build": 4,
+  "items": [
+   {
+    "title": "Aspect-ratio auto-detection from composition HTML",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ranged parallel downloads with resume and atomic replacement",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Font preflight: embed system fonts as inline @font-face for deterministic cloud renders",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Font fallback look-alike mapping for banned/unavailable families",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Structured error codes with actionable hints table",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Credential refresh with deduplication and API-key fallback",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Atomic file staging with symlink preservation and mode retention",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "ANSI-aware visible-length utilities for aligned dashboard logs",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "401-retry decorator for external API clients",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Font failure diagnosis: parse unresolved families and locate in project files",
+    "kind": "build",
+    "area": "review"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:47",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "some",
+  "summary": "This part of the HyperFrames repo is the CLI's cloud media-offload module: it moves heavy media out of a project zip into hosted assets with content-addressed caching, size-capped re-encodes, frame-aligned trimming and reference rewriting. It is unusually well tested (real ffmpeg/ffprobe fixtures, hostile edge cases), but most of it targets HeyGen's cloud publish path, so only the media-handling t",
+  "knowledge": 6,
+  "build": 1,
+  "items": [
+   {
+    "title": "Trim source clips to the windows actually played",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Frame-grid cut snapping",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Bitrate ceiling derived from a byte cap",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Media-type-aware re-encode ladder",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Re-validate cached uploads with HEAD",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Unicode-normalised path matching",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Encode a snapshot; abort if the source changed",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:48",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source implements HyperFrames' cloud asset upload pipeline: media trimming to played segments, multipart resumable uploads with stall detection, strict CLI parsing, and robust polling. It's production-grade code with comprehensive tests, directly relevant to any studio using HyperFrames for rendering or uploading large media assets reliably.",
+  "knowledge": 7,
+  "build": 1,
+  "items": [
+   {
+    "title": "Media trim to played windows with margin",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Multipart resumable upload for large assets",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Stall-aware upload retry with repeated-cut detection",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Structured progress events with attempt tracking",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Polling with abort signal and size-scaled timeout",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Strict CLI flag parsing rejecting trailing garbage",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "SHA256 checksum for asset integrity end-to-end",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Idempotent upload initialization with idempotency keys",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Media fragment (#t=) detection to avoid trim errors",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Complete upload retry only on 409 with size-scaled budget",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:49",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source covers HyperFrames CLI commands for registry item installation (add), audio analysis, and auth management. It demonstrates robust patterns for dependency resolution, variable injection, provenance tracking, and failure rollback — all directly applicable to a HyperFrames-based video pipeline.",
+  "knowledge": 3,
+  "build": 6,
+  "items": [
+   {
+    "title": "Variable values as mount attributes, not baked into files",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Composition ID contract for reliable block mounting",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Transitive registry dependency resolution with topological install order",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Received-files ledger for provenance and safe publishing",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Layer-aware audio analysis (music/sfx/voice) with onset/beat detection",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Compatibility gate before any filesystem writes",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Force vs preserve edited files on re-install",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "JSON output for CLI automation and CI integration",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Tag-based bulk install for category-driven workflows",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Auth credential rollback on verification failure",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Primary installed target resolution for snippets",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Audio analysis caching with content-addressed keys",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:50",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo contains production-grade CLI commands for authentication (OAuth PKCE, device flow, API keys with rollback), batch rendering (variable substitution, collision-safe output paths, manifest tracking, concurrency control), and beat analysis (audio onset detection, secure path resolution, HTML source discovery). Code quality is high: defensive, well-tested, security-co",
+  "knowledge": 4,
+  "build": 2,
+  "items": [
+   {
+    "title": "Beat-synced cuts via CLI beat analysis",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Batch rendering with manifest, concurrency, and collision guards",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Credential rollback on verification failure",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Path containment for asset loading and output writing",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Offline engine fallback guidance with readiness probes",
+    "kind": "knowledge",
+    "area": "voice"
+   },
+   {
+    "title": "Variable schema validation per batch row",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Atomic manifest writes with per-row progress",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Beat detection quality gates (ambience rejection, strength threshold)",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Device authorization flow for headless/CI servers",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Reference background detection and propagation",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Telemetry identity stitching across anonymous and authenticated sessions",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "HTML source discovery for music element (priority, muted, roles)",
+    "kind": "knowledge",
+    "area": "caption"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:52",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo is its CLI layer: beat detection, a render benchmark harness, billing, browser management and website capture commands, with unusually thorough test coverage. It is production-grade, but most of it (billing, browser install) sits outside our free-stack pipeline; the genuinely useful parts are the beat-file convention, the render-preset benchmark and the capture/do",
+  "knowledge": 3,
+  "build": 0,
+  "items": [
+   {
+    "title": "Music-bed role marker for auto beat detection",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Render preset benchmark sweep",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Video download guardrails",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Capture output never merges",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Versioned phase events without URLs",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Progress UI must die with the process",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Two clocks: page load vs post-navigation budget",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:53",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames CLI shows a mature asset pipeline: video capture with SSRF-safe streaming, size caps, and manifest-based collision detection; a two-tier catalog search (local word match + on-device semantic) with explicit consent gating and gap reporting; and a catch-up command that tracks project history via append-only logs. All outputs are machine-readable (JSON envelopes) and terminal-safe (co",
+  "knowledge": 3,
+  "build": 5,
+  "items": [
+   {
+    "title": "SSRF-safe video download with mid-stream size cap",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Manifest-driven asset selection with collision guard",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Two-tier search with consent-gated semantic model",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Gap-report command baked into search envelope",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Append-only project history with seen-pointer catch-up",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "JSON envelope with tier, unindexed count, and warnings",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Source dimensions vs display dimensions in manifest",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Control-character escaping for terminal-safe logs",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Consent model: record answer, survive concurrent runs, fail loudly on write error",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:54",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames check command is a comprehensive verification gate that runs lint, runtime, layout, motion, contrast, craft, and audio checks in one browser session. It features sophisticated caption-zone collision detection, social safe-zone validation (TikTok/Reels/Shorts), frame-breach floors, contrast sampling, transition-boundary sampling, caching, artifact recording, and dual human/JSON outp",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Caption-zone collision gate",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Social safe-zone validation",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Frame breach floor",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Contrast sampling strategy",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Transition-boundary sampling",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Audio source readability check",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Check caching with content-addressed keys",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Prepare-media preflight step",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Project lock for concurrent run safety",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Finding crops for visual debugging",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Control-character-safe logging",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:56",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the heygen-com/hyperframes repo is the CLI layer for disk cleanup and HeyGen cloud render (clean.ts plus the cloud render/list/get/delete commands and their tests); it contains no editorial, hook or motion code. The engineering quality is high and test-driven — owner-pid liveness checks, symlink-safe deletion, fail-soft sweeps, composition-scoped asset validation and aspect-ratio gate",
+  "knowledge": 1,
+  "build": 6,
+  "items": [
+   {
+    "title": "Owner-stamped render dirs with liveness check",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Symlink-safe recursive delete guard",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Fail-soft sweep with error ledger",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Composition-scoped missing-asset check",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Payload preflight with largest-file attribution",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Outside-project reference blocklist",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Aspect-ratio gate instead of stretching",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "60-second render heartbeat",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Unattended destructive ops need explicit opt-in",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:58",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source is the HyperFrames CLI's cloud rendering commands (cloud render, cloudrun deploy/render/batch) with robust orchestration: direct-to-S3 uploads, aspect-ratio detection, variable validation, dry-run, media offloading, idempotency, webhooks, and distributed Cloud Run rendering. It's production-grade infrastructure code with thorough tests.",
+  "knowledge": 1,
+  "build": 5,
+  "items": [
+   {
+    "title": "Direct-to-S3 upload with presigned URLs",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Aspect-ratio detection from composition HTML",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Variable validation against declared schema",
+    "kind": "build",
+    "area": "script"
+   },
+   {
+    "title": "Dry-run mode for archive inspection",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Offload heavy media to cloud assets",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Idempotency keys for safe render retries",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Webhook callback for fire-and-forget rendering",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "Batch render from JSONL for personalized series",
+    "kind": "build",
+    "area": "growth"
+   },
+   {
+    "title": "Visual compare command for regression testing",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Terraform-defined cloud render stack for reproducibility",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Polling with progress reporting and resume",
+    "kind": "better",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 10:59",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This HyperFrames CLI segment provides a comparison-sheet generator for visual A/B testing, a full WCAG contrast audit that samples composited pixels inside text bounding boxes (handling gradients, occlusion, clipping, and SVG fills), and a composition inventory command. The contrast audit is production-grade, browser-injected, and unit-tested; the comparison tool renders up to 16 variants into a l",
+  "knowledge": 3,
+  "build": 1,
+  "items": [
+   {
+    "title": "Variant comparison contact sheet",
+    "kind": "build",
+    "area": "thumbnail"
+   },
+   {
+    "title": "Automated WCAG contrast audit for captions",
+    "kind": "build",
+    "area": "caption"
+   },
+   {
+    "title": "Composition inventory CLI",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Sample background inside text bbox, not outer ring",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "SVG gradient text contrast uses weakest gradient stop",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Occlusion-aware contrast: skip only when fully covered",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Clip-path handling: exclude fully clipped text",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Sub-composition path resolution ignores network shares",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:00",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the hyperframes repo contains CLI commands for frame-accurate video diffing (SSIM, cuts, person detection), comprehensive system health checks (doctor), structured feedback with repro publishing, telemetry join keys linking feedback to renders, and media treatment routing. The code is production-grade with locked JSON schemas, snapshot tests, and careful UX (redacted paths, consent ga",
+  "knowledge": 4,
+  "build": 4,
+  "items": [
+   {
+    "title": "Frame-accurate video diff with SSIM, cuts, person gates",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Doctor checks with locked JSON schema and redacted paths",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Telemetry join keys link feedback to render IDs and check results",
+    "kind": "knowledge",
+    "area": "growth"
+   },
+   {
+    "title": "Media treatment CLI for canonical visual adjustments",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "Frames cache monitoring with relocation hint",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Structured feedback with repro publishing and consent gate",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Docker detection skips project-local binaries",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Skill documentation contracts enforce reproduction packets",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Control character escaping in terminal output",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Media treatment recipes for stylized looks",
+    "kind": "knowledge",
+    "area": "motion"
+   },
+   {
+    "title": "Deprecation test harness for CLI commands",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Docs command with markdown rendering and topic registry",
+    "kind": "knowledge",
+    "area": "script"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:04",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the hyperframes repo covers Figma integration (asset/component/tokens import) and a grade-compare CLI. It demonstrates robust asset provenance tracking, cache reuse with version checks, batched API calls, SVG sanitization, symlink protection, atomic writes, and structured telemetry — all directly applicable to a media pipeline.",
+  "knowledge": 3,
+  "build": 6,
+  "items": [
+   {
+    "title": "Batched render API calls with single request",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Provenance manifest with version-gated cache reuse",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Atomic file replacement with symlink/hardlink guards",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Control-character-safe terminal logging",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "SVG sanitization before freeze",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Grade comparison sheet for color grading QA",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Rasterize fallback: SVG → PNG retry then placeholder",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Safe index regeneration in finally block",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Structured telemetry with phase and reuse flags",
+    "kind": "knowledge",
+    "area": "growth"
+   },
+   {
+    "title": "Content-length pre-check before buffering download",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Token import with enterprise fallback to styles metadata",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic asset IDs via nextId with type prefix",
+    "kind": "build",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:07",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "some",
+  "summary": "This part of the HyperFrames repo is the CLI layer for project history (turn-based undo/restore/diff), project metadata reporting and safe scaffolding — it contains no content, hook or editing craft. The engineering is unusually rigorous (single-owner locks, all-or-nothing undo, refusal semantics, inode-safe transcodes), so a handful of ops and preflight patterns are worth porting.",
+  "knowledge": 1,
+  "build": 4,
+  "items": [
+   {
+    "title": "Transactional multi-file rollback for composition rewrites",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Conflict-aware undo with two explicit resolutions",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Composition metadata preflight: expected vs actual duration",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Heard-clips manifest on the film's clock",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Same-inode guard before writing derived media",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Exclusive single-writer claim per project",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Byte-bounded slug for render directories",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:12",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides a robust CLI scaffolding and media-handling framework for video compositions, including reliable resolution presets and GSAP timeline analysis. It is highly useful for standardizing our project setup and improving the predictability of our render pipeline.",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Project Scaffolding CLI",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Regex-based Resolution Presets",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Media Placeholder Patching",
+    "kind": "build",
+    "area": "edit"
+   },
+   {
+    "title": "GSAP Timeline Surface Analysis",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Hierarchical Duration Resolution",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:13",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames CLI keyframes and lambda commands provide advanced motion inspection (GSAP/CSS/Anime.js surfacing, multi-stroke trace compositing, composed-ancestor annotation, template-fragment extraction) and robust cloud render orchestration (dimension-mismatch guards, ARM64 container deploys, structured progress). The code is production-grade with thorough tests and deterministic practices.",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Multi-stroke trace compositing with pen-up detection",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Composed-ancestor motion annotation for nested elements",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Template-fragment traversal for sub-composition motion extraction",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Onion-skin screenshot for 3D motion self-verification",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Control-character escaping in terminal/log output",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Dimension-mismatch guard with supersampling hint",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "CSS @keyframes comment-stripping before selector parsing",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "Anime.js registration detection via __hfAnime push",
+    "kind": "knowledge",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:14",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo contains the AWS Lambda CLI deployment and render orchestration layer: SAM-based stack management, IAM policy validation, batch rendering with concurrency control, progress polling with cost telemetry, and artifact verification. It's production-grade infrastructure code for serverless video rendering.",
+  "knowledge": 3,
+  "build": 2,
+  "items": [
+   {
+    "title": "Batch render queue with concurrency semaphore",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Composition variable schema validation",
+    "kind": "build",
+    "area": "script"
+   },
+   {
+    "title": "Dry-run mode for batch jobs",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Progress telemetry with frame counters and cost estimate",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Idempotent render state persistence",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Artifact integrity verification via SHA256",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Concurrency cap for external API calls",
+    "kind": "knowledge",
+    "area": "ops"
+   },
+   {
+    "title": "Aspect-agnostic resolution flag threading",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Structured error handling with exit codes",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Cache directory isolation with ownership checks",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Shared content store for reusable project assets",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Parameter override system for runtime config",
+    "kind": "knowledge",
+    "area": "ops"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:14",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the hyperframes repo contains the CLI's Lambda deployment machinery (state persistence, stack validation, arm64 video image push, function warming) and a comprehensive browser-side layout audit that detects overflow, text clipping, content overlap, occlusion, and visibility escapes at render time. The layout audit is production-grade and directly applicable to HyperFrames preflight ch",
+  "knowledge": 2,
+  "build": 3,
+  "items": [
+   {
+    "title": "Glyph-level text overlap detection with ink rects",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Occlusion-aware contrast via actual pixel alpha",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Clip-path and mask region parsing for true visible bounds",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Visibility escape detection for timed segments",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Deterministic stack state file with field validation",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Lambda warm invocation with payload and profile support",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Text overflow fix hints with font-size shrink calculation",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Arm64 video image push with local override and repo tagging",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Managed flow overlap exemption for flex/grid children",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Vertical tolerance for text overflow absorbs glyph ink",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:15",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The source is a comprehensive test suite for HyperFrames' layout-audit browser module, covering text overflow, invisible text, canvas edge content, panel bounds, escaped containers, content overlap, text-over-video detection, and craft sampling. It reveals precise, production-grade rules and opt-out attributes that our preflight can leverage.",
+  "knowledge": 4,
+  "build": 0,
+  "items": [
+   {
+    "title": "Layout audit opt-out attributes",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Gradient text safety rules",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Text-over-video detection in preflight",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Canvas content at edge ignores full-bleed gradients",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Panel out of canvas severity and exemptions",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Content overlap judged on painted glyphs",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Craft sampling for render verification",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Escaped container detection for positioned elements",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Invisible text detection covers ancestor gradients/images",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Font-metric band tolerance for glyph ink spill",
+    "kind": "knowledge",
+    "area": "visual"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:16",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "The HyperFrames CLI repo shows a mature layout-audit system that detects text occlusion by video alpha channels (cutouts), samples at transition boundaries, and verifies motion intent via *.motion.json sidecars. It also provides a rich video measurement toolkit (cuts, events, energy, curves, face tracking, extraction) and robust CLI patterns (exit-code over process.exit, control-char escaping, dep",
+  "knowledge": 1,
+  "build": 1,
+  "items": [
+   {
+    "title": "Video-alpha-aware layout audit",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Motion verification sidecar (*.motion.json)",
+    "kind": "build",
+    "area": "motion"
+   },
+   {
+    "title": "Transition-boundary sampling for transient overlaps",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Video measurement toolkit for reference analysis",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Exit-code pattern for reliable piped JSON",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Control-character escaping in terminal output",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Layout audit tolerance and collapse-static",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Beat/onset detection for event mapping",
+    "kind": "build",
+    "area": "audio"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:19",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This source provides HyperFrames CLI commands for video measurement—including event-aware frame extraction, color grade analysis, and media probing—as well as media treatment mutation tools. It offers strong techniques for non-contiguous frame extraction, event-preserving visual QA sampling, and seek-safe CSS property animation.",
+  "knowledge": 0,
+  "build": 2,
+  "items": [
+   {
+    "title": "Event-preserving frame thinning for vision review",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Run-length select filter for single-pass multi-frame extraction",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Seek-safe CSS custom property animation for media effects",
+    "kind": "knowledge",
+    "area": "motion"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:20",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo contains CLI commands for HeyGen media generation (avatar, lipsync, cutout), voice clone listing, on-device speech model management (Parakeet/Whisper), and a sophisticated in-browser motion detection system used for frozen-frame guards and liveness verification. The motion-signature classifier is production-grade, handling DOM channels, CSS counters, content-visib",
+  "knowledge": 5,
+  "build": 0,
+  "items": [
+   {
+    "title": "Multi-channel motion signature for frozen-frame detection",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Frame-difference fallback with noise threshold",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "CSS counter animation detection via counter-reset/increment/set",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Content-visibility and layout-ignore handling for motion scope",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Preflight liveness sampling via compositionSignature",
+    "kind": "build",
+    "area": "preflight"
+   },
+   {
+    "title": "Media time tracking for A/V sync verification",
+    "kind": "knowledge",
+    "area": "edit"
+   },
+   {
+    "title": "On-device Parakeet TDT 0.6B v3 for deterministic transcription",
+    "kind": "knowledge",
+    "area": "caption"
+   },
+   {
+    "title": "Workspace voice clone inventory with teammate-clone warnings",
+    "kind": "knowledge",
+    "area": "voice"
+   }
+  ],
+  "skip": ""
+ },
+ {
+  "t": "2026-11-20 11:21",
+  "name": "heygen-com/hyperframes",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "license": "see repo",
+  "verdict": "useful",
+  "summary": "This part of the HyperFrames repo contains production-grade motion analysis tooling: a multi-channel motion signature for frame-accurate change detection, onion-skin motion visualization (marker-based for DOM/SVG and ghost/rendered for canvas/WebGL), scope resolution for static wrapper elements, GPU work synchronization via custom events, audio normalization with true-peak ceiling, and orbit camer",
+  "knowledge": 4,
+  "build": 0,
+  "items": [
+   {
+    "title": "Multi-channel motion signature fingerprinting",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Onion-skin motion self-verification (marker + ghost modes)",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Scope resolution for static wrapper elements",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "GPU work synchronization via hf-seek event with waitUntil",
+    "kind": "build",
+    "area": "ops"
+   },
+   {
+    "title": "Audio normalization with true-peak ceiling and reference matching",
+    "kind": "build",
+    "area": "audio"
+   },
+   {
+    "title": "Orbit camera for 3D motion inspection",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Filmstrip and path motion visualization layouts",
+    "kind": "build",
+    "area": "review"
+   },
+   {
+    "title": "Quantized liveness buckets for motion detection",
+    "kind": "knowledge",
+    "area": "review"
+   },
+   {
+    "title": "Nested composition audio source resolution",
+    "kind": "knowledge",
+    "area": "audio"
+   },
+   {
+    "title": "Deterministic equal-time sampling with windowing",
+    "kind": "knowledge",
+    "area": "visual"
+   },
+   {
+    "title": "Marker-based 3D projection via zero-size children",
+    "kind": "build",
+    "area": "visual"
+   },
+   {
+    "title": "Ghost/rendered onion-skin for canvas/WebGL motion",
+    "kind": "build",
     "area": "visual"
    }
   ],

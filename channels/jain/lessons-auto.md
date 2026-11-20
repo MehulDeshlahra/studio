@@ -345,3 +345,13 @@
 ## The principle of Aparigraha (Non-Possessiveness) amidst econ (story check)
 - STORY scene 4: invented: 'Phir bhi Muni ne pucha: 'Rajan, kaun sa bojh sabse bhari?'': This dialogue is not found in the standard Jain canonical texts. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
 - STORY scene 5: invented: 'Raja bola: 'Jo main rakhna chahta hoon, wahi bojh banta hai.'': This specific exchange is a modern parable and does not appear in the scriptures. (the two checks disagree on what really happened: REMOVE this detail, do not replace it)
+
+## 1119-2225 What lives inside a potato that makes Jains refuse all root vegetables? The microscopic ahimsa science. (source: Acharanga Sutra / Agam)
+- scene 9: The image shows a potato in a bowl, but the script says 'Kata hua aloo bhi naya paudha ban jata hai' (A cut potato also becomes a new plant). The visual is just a potato in a bowl, not a cut potato or a sprouting plant, which makes the visual slightly disconnected from the specific claim about propagation.
+
+## review 1119-2225
+- picture check: scene 3: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 77%)
+- picture check: scene 6: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 76%)
+- picture check: scene 8: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 72%)
+- picture check: scene 10: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 77%)
+- picture check: scene 12: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 84%)

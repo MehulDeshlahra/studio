@@ -104,7 +104,11 @@
   "qc_ok": true,
   "status": "held",
   "review": [
-   "20 Nov pre-post picture check: the monk changes from clean-shaven to an old man with a white beard (scenes 6, 12)"
+   "picture check: scene 3: Are there onion domes, minarets or Mughal-style buildings in the picture? (yes 77%)",
+   "picture check: scene 6: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 76%)",
+   "picture check: scene 8: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 72%)",
+   "picture check: scene 10: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 77%)",
+   "picture check: scene 12: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 84%)"
   ]
  },
  {
