@@ -10,7 +10,7 @@ const healerLine = (j) => { const h = j.healer || {}; if (h.state === "parked") 
 const K = { green: "var(--green)", amber: "var(--amber)", red: "var(--red)", blue: "var(--blue)", violet: "var(--violet)", teal: "var(--teal)", gray: "var(--gray)" };
 const ST = {
   building: ["Building", K.blue, 1], prepped: ["Prepped", K.blue], waiting: ["Needs approval", K.violet], ready: ["Ready, not sent", K.violet],
-  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], removed: ["Removed", K.gray], paused: ["Stopped midway", K.gray], made: ["Made", K.gray], cancelled: ["Cancelled", K.gray],
+  approved: ["Approved", K.teal], posted: ["Posted", K.green], held: ["Held", K.amber], on_hold: ["On hold", K.gray], queued: ["Queued", K.teal], rejected: ["Rejected", K.red], removed: ["Removed", K.gray], superseded: ["Replaced", K.gray], paused: ["Stopped midway", K.gray], made: ["Made", K.gray], cancelled: ["Cancelled", K.gray],
 };
 const LV = { ok: K.green, warn: K.amber, bad: K.red, info: K.gray, run: K.blue, wait: K.violet };
 const P = {

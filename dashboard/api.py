@@ -317,7 +317,8 @@ def jobs(running):
                 act[(p["cid"], d)] = {"started": t0, "frm": None, "until": p.get("until"), "age": r["age"], "pid": r.get("pid")}
     sent = tgmap(); out = []
     # 20 Nov: core.pages() is a tuple; tuple + list raised and /api/state returned 500 (dashboard stuck on "Loading")
-    channels = sorted(set(list(_pages()) + [d for d in os.listdir(OUT) if os.path.isdir(os.path.join(OUT, d)) and not d.startswith(".")]))
+    channels = sorted(set(list(_pages()) + [d for d in os.listdir(OUT) if os.path.isdir(os.path.join(OUT, d)) and not d.startswith(".")
+                                            and os.path.exists(os.path.join(ROOT, "channels", d, "channel.json"))]))   # 20 Nov: test folders ("pilot") are not pages
     for c in channels:
         done = {d["job"]: d for d in (jload(os.path.join(ROOT, "channels", c, "done.json"), []) or [])}
         base = os.path.join(OUT, c)
@@ -340,6 +341,8 @@ def jobs(running):
                 status = "approved"
             elif st in ("rejected",):
                 status = "rejected"
+            elif st == "superseded":          # 20 Nov: old clip format replaced; showed as "needs approval"
+                status = "superseded"
             elif st in ("removed",):          # 18 Nov: was missing, so a removed video with a failed review showed as held
                 status = "removed"
             elif st == "held" or s["review"]["ok"] is False:
