@@ -7,7 +7,7 @@
   "library": {
     "roots": [
       "C:/Users/mehul/Desktop/vajra-automation",
-      "~/vajra-automation"
+      "~/libraries/vajra"
     ],
     "sources": [
       {
@@ -25,7 +25,13 @@
         "desc_field": "desc"
       }
     ],
-    "music_dir": "assets/music"
+    "music_dir": "assets/music",
+    "update": [
+      "git",
+      "pull",
+      "-q",
+      "--ff-only"
+    ]
   },
   "media": {
     "ban": "sheet-held|v1-hold|v1-core|x-sheet-floor-dirty|r-used|v2-used|dirty|stained|residue",
@@ -102,23 +108,48 @@
     "font": "Archivo Black",
     "end_line": "Comment karo PP"
   },
-  "deliver": {
-    "type": "command",
-    "cmd": [
-      "{python}",
-      "social/engine/intake.py",
-      "--file",
-      "{mp4}",
-      "--caption",
-      "{caption}",
-      "--cover",
-      "{cover}",
-      "--id",
-      "{id}",
-      "--title",
-      "{title}",
-      "--ai",
-      "{ai}"
-    ]
+  "deliver": [
+    {
+      "type": "git_drop",
+      "dir": "~/vajra-gen",
+      "path": "studio",
+      "keep_days": 5
+    },
+    {
+      "type": "command",
+      "only_if_exists": "C:/Users/mehul/Desktop/vajra-automation/social/engine/intake.py",
+      "cmd": [
+        "{python}",
+        "social/engine/intake.py",
+        "--file",
+        "{mp4}",
+        "--caption",
+        "{caption}",
+        "--cover",
+        "{cover}",
+        "--id",
+        "{id}",
+        "--title",
+        "{title}",
+        "--ai",
+        "{ai}"
+      ]
+    }
+  ],
+  "auto": {
+    "min_pending": 3,
+    "max_per_day": 2,
+    "max_waiting": 3,
+    "hours": [
+      7,
+      22
+    ],
+    "pending": {
+      "file": "social/queue.json",
+      "list": "posts",
+      "done_field": "posted",
+      "require": "video"
+    },
+    "queue_id": "reel-studio-{job}"
   }
 }

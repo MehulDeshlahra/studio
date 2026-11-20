@@ -72,6 +72,10 @@ def business(bid):
     if not b["root"]:
         sys.exit(f"{bid}: none of the library roots exists on this machine: {roots}")
     b["out"] = os.path.join(OUT, "biz", bid); os.makedirs(b["out"], exist_ok=True)
+    up = (b.get("library") or {}).get("update")
+    if up and not os.environ.get("BIZ_NO_UPDATE"):
+        r = subprocess.run(up, cwd=b["root"], capture_output=True, text=True, timeout=600)
+        log("biz library update", b["id"], "ok" if r.returncode == 0 else ("failed: " + (r.stderr or r.stdout)[-200:]))
     return b
 
 
@@ -572,7 +576,10 @@ def render(rdir, raw, total, label):
                 return
         except Exception as e:
             log("biz laptop render skipped:", str(e)[:120])
-        sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--output", raw], cwd=rdir, timeout=7200)
+        import make as studio_make
+        env = dict(os.environ, PUPPETEER_EXECUTABLE_PATH=studio_make.CHROME) if studio_make.CHROME else None
+        sh(["nice", "-n", "15", "npx", "-y", "hyperframes@latest", "render", "--workers", studio_make.render_workers(),
+            "--no-low-memory-mode", "--output", raw], cwd=rdir, timeout=7200, env=env)
     else:
         sh(["npx.cmd", "-y", "hyperframes@latest", "render", "--output", raw], cwd=rdir, timeout=7200)
 
@@ -622,7 +629,18 @@ def _visual_bad(problems, n):
 
 
 def deliver(b, job_id, final, p, cover):
-    d = b.get("deliver") or {"type": "folder", "dir": os.path.join(b["out"], "ready")}
+    """business "deliver" = one target or a list (first usable one wins: a git_drop whose clone is missing is skipped)."""
+    ds = b.get("deliver") or {"type": "folder", "dir": os.path.join(b["out"], "ready")}
+    for d in (ds if isinstance(ds, list) else [ds]):
+        if d["type"] == "git_drop" and not os.path.isdir(os.path.join(os.path.expanduser(d["dir"]), ".git")):
+            continue
+        if d["type"] == "command" and d.get("only_if_exists") and not os.path.exists(os.path.expanduser(d["only_if_exists"])):
+            continue
+        return _deliver_one(b, d, job_id, final, p, cover)
+    log("biz: no usable deliver target"); return False
+
+
+def _deliver_one(b, d, job_id, final, p, cover):
     cap = os.path.join(os.path.dirname(final), "caption.txt")
     open(cap, "w", encoding="utf-8").write(p["caption"].strip() + "\n")
     vals = {"mp4": final, "caption": cap, "cover": cover or "", "id": job_id, "title": p.get("title", ""),
@@ -634,6 +652,30 @@ def deliver(b, job_id, final, p, cover):
                 shutil.copy(f, os.path.join(dst, f"{job_id}-" + os.path.basename(f)))
         log("biz delivered to folder", dst)
         return True
+    if d["type"] == "git_drop":
+        # the reel goes into a git repo folder (e.g. a drop repo the business's own automation imports from)
+        repo = os.path.expanduser(d["dir"]); sub = os.path.join(repo, d.get("path", "drop"), f"{b['id']}-{job_id}")
+        g = lambda *x: subprocess.run(["git", "-C", repo, *x], capture_output=True, text=True, timeout=300)
+        g("pull", "-q", "--rebase")
+        os.makedirs(sub, exist_ok=True)
+        shutil.copy(final, os.path.join(sub, "reel.mp4")); shutil.copy(cap, os.path.join(sub, "caption.txt"))
+        if cover and os.path.exists(cover):
+            shutil.copy(cover, os.path.join(sub, "cover.jpg"))
+        save(os.path.join(sub, "meta.json"), {"business": b["id"], "job": job_id, "title": p.get("title", ""), "ai": bool(p.get("ai")),
+                                              "hook": p.get("hook", ""), "made": time.strftime("%Y-%m-%d %H:%M")})
+        keep = float(d.get("keep_days", 5)) * 86400          # old drops leave the repo (the importer has them by then)
+        base = os.path.join(repo, d.get("path", "drop"))
+        for x in os.listdir(base):
+            px = os.path.join(base, x)
+            if os.path.isdir(px) and x != os.path.basename(sub) and time.time() - os.path.getmtime(px) > keep:
+                shutil.rmtree(px)
+        g("add", "-A", d.get("path", "drop"))
+        g("commit", "-qm", f"studio drop {b['id']}-{job_id}")
+        for _ in range(3):
+            if g("push", "-q").returncode == 0:
+                log("biz delivered to git drop", f"{d.get('path', 'drop')}/{b['id']}-{job_id}"); return True
+            g("pull", "-q", "--rebase"); time.sleep(5)
+        log("biz: git drop push failed"); return False
     if d["type"] == "command":
         cmd = [str(x).format(**vals) for x in d["cmd"]]
         cmd = [sys.executable if x == "{python}" else x for x in cmd]
@@ -759,6 +801,42 @@ def make(b, angle="", job_id=None, frm="", send=True):
     return {"ok": rep["ok"], "final": final, "job": job, "qc": rep}
 
 
+def need(b):
+    """(should_make, why). business "auto": {"min_pending": 3, "max_per_day": 2, "max_waiting": 3, "hours": [7, 22],
+    "pending": {"file": "social/queue.json", "list": "posts", "done_field": "posted", "require": "video"},
+    "queue_id": "reel-studio-{business}-{job}"}"""
+    a = b.get("auto") or {}
+    if not a:
+        return False, "no auto settings"
+    h = int(time.strftime("%H"))
+    lo, hi = a.get("hours", [0, 24])
+    if not lo <= h < hi:
+        return False, f"outside hours {lo}-{hi}"
+    done = load(os.path.join(b["out"], "done.json"), []) or []
+    today = time.strftime("%Y-%m-%d")
+    made_today = [d for d in done if str(d.get("made", "")).startswith(today) and d.get("ok")]
+    if len(made_today) >= a.get("max_per_day", 2):
+        return False, f"{len(made_today)} made today"
+    pend, ids = 0, set()
+    pc = a.get("pending") or {}
+    if pc.get("file"):
+        q = load(R(b, pc["file"]), {}) or {}
+        lst = q.get(pc.get("list", "posts"), []) if isinstance(q, dict) else q
+        for it in lst:
+            if isinstance(it, dict):
+                ids.add(str(it.get("id")))
+                if not it.get(pc.get("done_field", "posted")) and (not pc.get("require") or it.get(pc["require"])):
+                    pend += 1
+    qid = a.get("queue_id", "{business}-{job}")
+    waiting = [d for d in done if d.get("delivered") and qid.format(business=b["id"], job=d["job"]) not in ids
+               and time.time() - time.mktime(time.strptime(d["made"], "%Y-%m-%d %H:%M")) < 3 * 86400]
+    if len(waiting) >= a.get("max_waiting", 3):
+        return False, f"{len(waiting)} delivered reels not in the queue yet"
+    if pend + len(waiting) >= a.get("min_pending", 3):
+        return False, f"{pend} pending + {len(waiting)} on the way"
+    return True, f"only {pend} pending + {len(waiting)} on the way"
+
+
 def status(b):
     items = _fresh(b, index(b, describe=False))
     clips = [x for x in items if x["kind"] == "clip"]
@@ -769,7 +847,7 @@ def status(b):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("business"); ap.add_argument("cmd", choices=["index", "make", "status"])
+    ap.add_argument("business"); ap.add_argument("cmd", choices=["index", "make", "status", "auto"])
     ap.add_argument("--angle", default=""); ap.add_argument("--job"); ap.add_argument("--from", dest="frm", default="")
     ap.add_argument("--no-deliver", action="store_true")
     a = ap.parse_args()
@@ -780,5 +858,14 @@ if __name__ == "__main__":
         print(json.dumps([{k: x[k] for k in ("id", "kind", "secs", "ai", "desc")} for x in it], ensure_ascii=False, indent=0)[:6000])
     elif a.cmd == "status":
         status(B)
+    elif a.cmd == "auto":
+        go, why = need(B)
+        log("biz auto", B["id"], "MAKE" if go else "skip", "-", why)
+        if go:
+            r = make(B, a.angle, a.job, a.frm, not a.no_deliver)
+            if not r.get("ok"):                            # held -> one more try with a fresh plan (new job)
+                log("biz auto: held, trying a new reel once")
+                r = make(B, a.angle, time.strftime("%m%d-%H%M") + "r", "", not a.no_deliver)
+            print(json.dumps({k: v for k, v in r.items() if k != "qc"}, ensure_ascii=False))
     else:
         print(json.dumps({k: v for k, v in make(B, a.angle, a.job, a.frm, not a.no_deliver).items() if k != "qc"}, ensure_ascii=False))
