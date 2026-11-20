@@ -244,6 +244,55 @@ def index(b, describe=True):
     return out
 
 
+def library(b):
+    """20 Nov (owner: "where can I see the library?"): EVERY file in the business library, read-only, with what the
+    engine decided about it: used / left out (why), what vision saw, last used. Nothing is described or changed here."""
+    m = b.get("media") or {}
+    ban = re.compile(m["ban"], re.I) if m.get("ban") else None
+    cache = load(os.path.join(b["out"], "index.json"), {}) or {}
+    usage, cd = _usage(b), float(m.get("cooldown_days", 21))
+    out = []
+    for src in (b.get("library") or {}).get("sources", []):
+        d = R(b, src["dir"])
+        if not os.path.isdir(d):
+            continue
+        own = load(os.path.join(d, src["index"]), {}) if src.get("index") else {}
+        own = own if isinstance(own, dict) else {}
+        exts = VID if src["kind"] == "clip" else IMG
+        files = sorted(f for f in os.listdir(d) if f.lower().endswith(exts))
+        dd = src.get("dedupe_suffix")
+        for f in files:
+            stem, ext = os.path.splitext(f)
+            key = f"{src['dir']}/{f}"
+            c = cache.get(key) or {}
+            meta = own.get(f) or own.get(stem) or {}
+            note = str(meta.get(src.get("desc_field", "note")) or meta.get("desc") or meta.get("note") or "")
+            desc = c.get("seen") or note or c.get("desc") or ""
+            why = ""
+            if dd and stem.endswith(dd) and (stem[: -len(dd)] + ext) in files:
+                why = "duplicate copy"
+            elif meta.get("ok") is False:
+                why = "marked not OK in the library notes"
+            elif ban and (ban.search(f) or ban.search(desc)):
+                why = "banned by the business rules"
+            elif c.get("problem") and m.get("skip_problem", True):
+                why = "problem: " + str(c["problem"])[:80]
+            elif src["kind"] == "clip" and c.get("secs") and c["secs"] < m.get("min_clip_s", 1.5):
+                why = f"too short ({c['secs']} s)"
+            elif c.get("text") and m.get("skip_burned_text", True):
+                why = "has burned-in text"
+            elif c.get("usable") is False:
+                why = "vision: not usable"
+            elif key not in cache:
+                why = "not looked at yet"
+            last = usage.get(f, 0)
+            out.append({"key": key, "file": f, "kind": src["kind"], "secs": c.get("secs", 0), "desc": desc[:220],
+                        "ai": bool(c.get("ai_seen") or c.get("ai") or meta.get(src.get("ai_field") or "_")),
+                        "used": not why, "why": why, "crop": c.get("crop", ""), "last": int(last),
+                        "fresh": (time.time() - last) > cd * 86400, "path": os.path.join(d, f)})
+    return out
+
+
 def _usage(b):
     return load(os.path.join(b["out"], "usage.json"), {}) or {}
 

@@ -110,6 +110,31 @@ function issueRow(i) {
 /* ---------- pages ---------- */
 let BIZ = null;
 async function loadBiz() { try { BIZ = await (await fetch("/api/businesses")).json(); } catch (e) { BIZ = []; } render(1); }
+/* 20 Nov (owner: "where can I see the library?"): every clip and photo of a business with what the engine decided */
+let BIZLIB = {}, BIZOPEN = "", BIZF = "all";
+async function bizLib(id) {
+  BIZOPEN = BIZOPEN === id ? "" : id; render(1);
+  if (BIZOPEN && !BIZLIB[id]) { try { BIZLIB[id] = await (await fetch("/api/biz-library?id=" + encodeURIComponent(id))).json(); } catch (e) { BIZLIB[id] = { items: [], error: String(e) }; } render(1); }
+}
+function bizFilter(f) { BIZF = f; render(1); }
+function bizLibView(id) {
+  const L = BIZLIB[id];
+  if (!L) return `<div class="mut" style="margin-top:10px">Loading the library...</div>`;
+  const it = (L.items || []).filter((x) => BIZF === "all" || (BIZF === "used" ? x.used : BIZF === "out" ? !x.used : x.kind === BIZF));
+  const day = (t) => t ? new Date(t * 1000).toLocaleDateString(undefined, { day: "numeric", month: "short" }) : "never";
+  const btn = (k, t) => `<button class="btn sm${BIZF === k ? " ok" : ""}" onclick="bizFilter('${k}')">${t}</button>`;
+  const tile = (x) => `<div class="card" style="padding:0;overflow:hidden;${x.used ? "" : "opacity:.55"}">
+      <a href="/bizlib/${id}/${x.h}" target="_blank" title="Open the original file"><img loading="lazy" src="/bizlib/${id}/${x.h}.jpg" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111"></a>
+      <div style="padding:7px 8px;font-size:12px">
+        <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">${lvlBadge(x.used ? "ok" : "warn", x.used ? "Used" : "Left out")}<span class="faint">${x.kind}${x.secs ? " · " + Math.round(x.secs) + " s" : ""}${x.ai ? " · AI" : ""}</span></div>
+        <div style="margin-top:4px;white-space:normal">${esc(x.desc || x.file)}</div>
+        ${x.why ? `<div class="dn" style="margin-top:3px">${esc(x.why)}</div>` : ""}
+        <div class="faint" style="margin-top:3px">Last used: ${day(x.last)}${x.used && x.fresh ? " · fresh" : ""}</div>
+        <div class="faint" style="word-break:break-all">${esc(x.file)}</div></div></div>`;
+  return `<div style="margin-top:12px"><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><b>Library</b><span class="mut">${L.total || 0} files · ${L.used || 0} used by the engine · ${L.clips || 0} clips · ${L.photos || 0} photos</span>
+      <span style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap">${btn("all", "All")}${btn("used", "Used")}${btn("out", "Left out")}${btn("clip", "Clips")}${btn("photo", "Photos")}</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px">${it.map(tile).join("") || `<div class="mut">Nothing here.</div>`}</div></div>`;
+}
 async function bizMake(id) { const r = await post("/api/biz-make", { id }); alert(r.ok ? "Started: one reel for " + id + " (about 15-25 min). It shows here when done." : (r.error || "failed")); }
 const V = {
   businesses() {
@@ -118,12 +143,12 @@ const V = {
       <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
         <div><div style="font-weight:600;font-size:16px">${esc(b.name)} <span class="mut" style="font-weight:400">${esc(b.handle)}</span></div>
         <div class="faint" style="font-size:12px">${esc(b.about)}</div></div>
-        <button onclick="bizMake('${b.id}')">Make one reel now</button></div>
+        <span style="display:flex;gap:8px"><button onclick="bizLib('${b.id}')">${BIZOPEN === b.id ? "Hide library" : "Open library"}</button><button onclick="bizMake('${b.id}')">Make one reel now</button></span></div>
       <div class="mut" style="margin-top:8px">Library: ${esc(b.library)} · ${b.clips} clips · ${b.photos} photos</div>
       <div class="mut">Auto: ${b.auto ? (b.need ? "will make a reel at the next check" : "waiting") + " · " + esc(b.why) : "off"}${b.next ? " · next check " + esc(b.next) : ""}</div>
       <div class="mut">Made ${b.made} · passed QC ${b.ok} · delivered ${b.delivered}</div>
       <table style="margin-top:8px"><thead><tr><th>Job</th><th>Hook</th><th>QC</th><th class="hide-m">Made</th></tr></thead><tbody>${(b.last || []).map((d) =>
-        `<tr><td>${esc(d.job)}</td><td style="white-space:normal">${esc(d.hook || d.title)}</td><td>${d.ok ? (d.delivered ? lvlBadge("ok", "delivered") : lvlBadge("ok", "passed")) : lvlBadge("warn", "held")}</td><td class="hide-m">${esc(d.made)}</td></tr>`).join("") || `<tr><td colspan="4" class="mut">no reels yet</td></tr>`}</tbody></table></div>`;
+        `<tr><td>${esc(d.job)}</td><td style="white-space:normal">${esc(d.hook || d.title)}</td><td>${d.ok ? (d.delivered ? lvlBadge("ok", "delivered") : lvlBadge("ok", "passed")) : lvlBadge("warn", "held")}</td><td class="hide-m">${esc(d.made)}</td></tr>`).join("") || `<tr><td colspan="4" class="mut">no reels yet</td></tr>`}</tbody></table>${BIZOPEN === b.id ? bizLibView(b.id) : ""}</div>`;
     return `<div class="h1">Businesses</div><div class="lead">Reels made for a business from its OWN photos and clips (engine/biz.py). One settings file per business: businesses/&lt;id&gt;/business.json. How to add one: businesses/README.md.</div>
       ${BIZ.map(card).join("") || `<div class="card pad mut">No businesses yet.</div>`}`;
   },

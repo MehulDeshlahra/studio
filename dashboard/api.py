@@ -877,6 +877,44 @@ def businesses():
     return out
 
 
+_LIB = {}
+
+
+def biz_library(bid):
+    """20 Nov: every file of a business library with the engine's decision (engine/biz.library). Files are named by a
+    hash of their library key: the browser never sends a path."""
+    import hashlib
+    if not re.fullmatch(r"[a-z0-9_-]+", bid or "") or not os.path.exists(os.path.join(ROOT, "businesses", bid, "business.json")):
+        raise ValueError("unknown business")
+    sys.path.insert(0, os.path.join(ROOT, "engine")); os.environ["BIZ_NO_UPDATE"] = "1"
+    import biz
+    items = biz.library(biz.business(bid))
+    paths = {}
+    for it in items:
+        h = hashlib.md5(it["key"].encode()).hexdigest()[:16]
+        paths[h] = it.pop("path"); it["h"] = h
+    _LIB[bid] = paths
+    return {"id": bid, "items": items, "total": len(items), "used": sum(1 for i in items if i["used"]),
+            "clips": sum(1 for i in items if i["kind"] == "clip"), "photos": sum(1 for i in items if i["kind"] != "clip")}
+
+
+def biz_file(bid, h, thumb):
+    """The library file (clip/photo) or a cached 270 px thumbnail of it."""
+    if bid not in _LIB:
+        biz_library(bid)
+    src = (_LIB.get(bid) or {}).get(h)
+    if not src or not os.path.isfile(src):
+        return None
+    if not thumb:
+        return src
+    tdir = os.path.join(OUT, "biz", bid, "thumbs"); os.makedirs(tdir, exist_ok=True)
+    t = os.path.join(tdir, h + ".jpg")
+    if not os.path.exists(t) or os.path.getmtime(t) < os.path.getmtime(src):
+        pre = ["-ss", "1.0"] if src.lower().endswith((".mp4", ".mov", ".m4v", ".webm")) else []
+        subprocess.run(["ffmpeg", "-v", "error", "-y"] + pre + ["-i", src, "-frames:v", "1", "-vf", "scale=270:-2", "-q:v", "5", t], timeout=40)
+    return t if os.path.exists(t) else None
+
+
 def biz_make(bid):
     if not re.fullmatch(r"[a-z0-9_-]+", bid or "") or not os.path.exists(os.path.join(ROOT, "businesses", bid, "business.json")):
         raise ValueError("unknown business")
@@ -988,6 +1026,15 @@ class H(BaseHTTPRequestHandler):
                                        "top": [{"title": i["title"], "uses": i["uses"], "wins": i.get("wins", 0)} for i in top]})
             if u == "/api/businesses":                  # 20 Nov: business engine (engine/biz.py)
                 return self.send(200, businesses())
+            if u == "/api/biz-library":
+                return self.send(200, biz_library(qs.get("id", "")))
+            if u.startswith("/bizlib/"):                 # /bizlib/<id>/<hash>.jpg (thumbnail) or /bizlib/<id>/<hash> (file)
+                parts = u.split("/")[2:]
+                if len(parts) == 2 and re.fullmatch(r"[a-z0-9_-]+", parts[0]) and re.fullmatch(r"[0-9a-f]{16}(\.jpg)?", parts[1]):
+                    f = biz_file(parts[0], parts[1][:16], parts[1].endswith(".jpg"))
+                    if f:
+                        return self.file(f)
+                return self.send(404, {"error": "not found"})
             if u == "/api/published":                   # 20 Nov: every post on every page, one feed
                 return self.send(200, extra.published())
             if u == "/api/radar":
@@ -1050,7 +1097,7 @@ class H(BaseHTTPRequestHandler):
         # 19 Nov: profile pictures were re-asked on every 4 s redraw (no-cache); they change at most daily
         # 20 Nov: thumbnails (cover-s.jpg) cached a day, so the Published grid does not download them again
         self.send_header("Cache-Control", "max-age=3600" if os.sep + "dp" + os.sep in p else
-                         "max-age=86400" if p.endswith("cover-s.jpg") else "no-cache"); self.end_headers(); self.wfile.write(data)
+                         "max-age=86400" if p.endswith("cover-s.jpg") or os.sep + "thumbs" + os.sep in p else "no-cache"); self.end_headers(); self.wfile.write(data)
 
     def do_POST(self):
         u = urllib.parse.urlparse(self.path).path
