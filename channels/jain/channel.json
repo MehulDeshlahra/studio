@@ -121,7 +121,7 @@
     "Is any monk or nun wearing saffron, orange or red robes?",
     "Does any figure have more than two arms or a third eye?",
     "Are there onion domes, minarets or Mughal-style buildings in the picture?",
-    "Is Bahubali shown wearing a crown or clothes, or with his hands folded?"
+    "The narration names Bahubali (Gommateshwara), and he is shown wearing a crown or clothes, or with his hands folded? (If the narration does not name Bahubali, answer no.)"
   ],
   "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass",
   "real_idols": true,
