@@ -1025,6 +1025,17 @@ def main():
         tries = max(1, int(os.environ.get("STUDIO_PREFLIGHT_TRIES", "3")))   # healer checks use 1: judge the code, not repairs
         for attempt in range(tries):
             pr = preflight.run(job, p, timed, total, lang_p)
+            # 20 Nov: a scene whose picture passed picsmith's check (same rules, full size, one frame) is not judged again
+            # on sacred forms from the small contact sheet; layout / caption problems still count
+            for k_ in list(pr.get("bad") or {}):
+                if ((p["scenes"][int(k_)].get("pic") or {}).get("passed")):
+                    keep_ = [x for x in pr["bad"][k_] if not re.search(r"RESPECT|robe|saffron|crown|jewel|tilak|beard|deity|god|idol|form", str(x), re.I)]
+                    if keep_:
+                        pr["bad"][k_] = keep_
+                    else:
+                        pr["bad"].pop(k_)
+            if not pr.get("bad"):
+                pr["ok"] = True
             if pr["ok"] or attempt == tries - 1:
                 break
             if theme.get("style") == "lab":

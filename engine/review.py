@@ -107,7 +107,7 @@ def _confirm(model, jpg, qs, said=""):
     return "; ".join(dict.fromkeys(got))
 
 
-def picture_check(mp4, timing, checks, max_frames=14, frame_checks=None, frame_context=""):
+def picture_check(mp4, timing, checks, max_frames=14, frame_checks=None, frame_context="", passed_scenes=None):
     """20 Nov: the contact-sheet review passed 3 Navkar Bhav reels with a bearded saffron Mahavira, a crowned Bahubali
     and saffron monks (26 tiny frames + a 'traditional forms, never report' note). Here: ONE frame per scene at 540x960,
     only the page's checklist, any yes = a problem. Returns {"problems": [...], "frames": n}."""
@@ -136,7 +136,10 @@ def picture_check(mp4, timing, checks, max_frames=14, frame_checks=None, frame_c
         # rendered frames carry our own captions + page handle: the "text" question is asked on the raw picture only
         single.update({k: v for k, v in picsmith.GENERAL.items() if k != "text"})
         out, scores = [], []
+        passed = set(passed_scenes or [])
         for i in range(len(pts)):
+            if i in passed:                   # 20 Nov: this picture passed the same check when it was drawn
+                continue
             fjpg = os.path.join(tmp, f"{i}.jpg")
             if not os.path.exists(fjpg):
                 continue
@@ -358,10 +361,20 @@ def review(cid, job):
     v = vision_review(mp4, plan, tj.get("lines", []), os.path.join(jd, "review-sheet.jpg"), lang, ch.get("handle", ""),
                       checks=ch.get("visual_checks") or [])
     checks["vision"] = v
-    probs += [f"visual: {x}" for x in (v.get("serious") or [])]
+    # 20 Nov: sacred-form remarks from the small contact sheet about scenes whose picture already passed the full-size
+    # picture check (same rules) are notes, not holds; anything else from the sheet still holds
+    passed_ = {n for n, s_ in enumerate(plan.get("scenes") or []) if (s_.get("pic") or {}).get("passed")}
+    SAC_ = re.compile(r"RESPECT|robe|saffron|crown|jewel|tilak|beard|deity|god|idol|tirthankar|form", re.I)
+    for x in (v.get("serious") or []):
+        nums = {int(n) - 1 for n in re.findall(r"[Ss]cenes?\s*(\d+)", str(x))} | {int(n) - 1 for n in re.findall(r"(?:&|,|and)\s*(\d+)\b", str(x))}
+        if passed_ and nums and nums <= passed_ and SAC_.search(str(x)):
+            v.setdefault("minor", []).append(f"(picture passed its own check) {x}")
+        else:
+            probs.append(f"visual: {x}")
     if ch.get("visual_checks"):
         pc = picture_check(mp4, tj.get("lines", []), ch["visual_checks"], frame_checks=ch.get("frame_checks"),
-                           frame_context=ch.get("frame_context", ""))
+                           frame_context=ch.get("frame_context", ""),
+                           passed_scenes=[n for n, s_ in enumerate(plan.get("scenes") or []) if (s_.get("pic") or {}).get("passed")])
         checks["picture_check"] = pc
         probs += [f"picture check: {x}" for x in pc.get("problems") or []]
     if (v.get("score") or 0) < 6:

@@ -432,9 +432,32 @@ def scene_picture(ch, p, s, i, base_prompt, adir, chain):
             log(f"picsmith scene {i + 1}: same problem twice, no third try")
             break
         feedback = "; ".join(f"{qs[k]} (yes, {v:.0%})" for k, v in fails.items())
+    # 20 Nov (owner: "why do we know this at the end?"): the check knew at 16:16 that scene 6 had a jewelled, tilaked
+    # Tirthankara, kept it anyway, and the final review held the whole reel 40 min later. A figure that keeps coming out
+    # wrong is not drawn again: one last picture shows the moment WITHOUT that figure (temple, lotus, scripture, light),
+    # which cannot be a wrong form. Only if that fails too does the least bad picture go on.
+    if best is None and tries and any(t.get("fails") for t in tries):
+        try:
+            import strict
+            hard = [qs.get(k, k) for t in tries[-1:] for k in (t.get("fails") or {})]
+            if any(strict.is_hard("picture check: scene: " + q) for q in hard):
+                fp = write_prompt(ch, s, i, {"figures": [], "places": bible.get("places") or []}, [],
+                                  "The figure itself keeps coming out wrong. Show this moment WITHOUT any person, god or idol: "
+                                  "its setting or a symbol of it (temple, lotus, scripture, lamp, light, sky, landscape).")
+                img = chain(fp, TRIES) if fp else None
+                if img:
+                    a, _ = check(img, said, ch, "")
+                    f2 = {k: v for k, v in a.items() if v >= FAIL}
+                    tries.append({"file": os.path.basename(img), "prompt": fp, "fails": f2, "top": max(a.values() or [0]), "figure_free": True})
+                    log(f"picsmith scene {i + 1}: figure-free picture", "OK" if not f2 else f"still {list(f2)}")
+                    if not f2:
+                        best = img
+        except Exception as e:
+            log("picsmith figure-free try failed", str(e)[:120])
     if best is None and tries:                   # every try failed: keep the least bad one, the review will hold it
         t = min(tries, key=lambda t: t.get("top", 1))
         best = os.path.join(adir, t["file"])
         log(f"picsmith scene {i + 1}: all {len(tries)} tries failed, kept the least bad ({t.get('top')})")
-    s["pic"] = {"refs": [f for f, _ in refs], "tries": tries}
+    s["pic"] = {"refs": [f for f, _ in refs], "tries": tries,
+                "passed": bool(best) and any(not t.get("fails") and os.path.basename(best) == t["file"] for t in tries)}
     return best
