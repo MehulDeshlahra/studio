@@ -16,7 +16,20 @@
    "motion": "punch",
    "big": "JAWAB",
    "small": "PART 2",
-   "hud_right": "CASE 2"
+   "hud_right": "CASE 2",
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s0p.jpg",
+      "prompt": "A red and gold wedding gift bag resting on a velvet crimson chair, positioned center stage. The bag is open and empty, showcasing its vibrant fabric. Behind it, a heavy silk curtain drapes vertically, partially obscuring the background. Warm amber floodlights illuminate the scene from above, creating dramatic rim lighting on the bag's edges. Deep teal shadows pool in the corners, contrasting with the bright marigold garlands hanging nearby. The atmosphere is tense and cinematic, with subtle film grain adding texture to the night. Vertical 9:16 framing keeps the subject in the middle third, leaving generous calm space above and below for visual breathing room.",
+      "fails": {},
+      "top": 0.1
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Teen suspect the: photographer, halwai, aur dulhe ka dost.",
@@ -27,7 +40,22 @@
     "teen",
     "suspect"
    ],
-   "hud_right": "3 SUSPECT"
+   "hud_right": "3 SUSPECT",
+   "big": null,
+   "small": null,
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s1o.jpg",
+      "prompt": "Three Indian men standing apart backstage at a wedding, a young man with a DSLR camera, a plump cook wearing a traditional gamchha over his shoulder, and a young man in a shiny kurta, all captured in dark silhouettes against a backdrop of glowing fairy lights, cinematic graphic-novel illustration, vibrant Indian wedding at night, marigold garlands, warm saturated colours with deep shadows, dramatic rim light, subtle film grain, vertical 9:16 composition, generous calm space above and below.",
+      "fails": {},
+      "top": 0.14
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Photographer ki har photo mein wahi stage hai. Woh wahan se hila hi nahi.",
@@ -37,7 +65,22 @@
    "label": "A",
    "who": "Photographer Rohit",
    "quote": "Har photo stage ki.",
-   "hud_right": "A: CLEAR"
+   "hud_right": "A: CLEAR",
+   "big": null,
+   "small": null,
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s2p.jpg",
+      "prompt": "Young Indian man, lean build, early twenties, smooth jawline, short black hair under backward cap, warm brown skin, fitted black T‑shirt, dark denim jeans, large DSLR camera slung across chest, right hand poised to click, focused gaze. He raises the camera high, flash bursting bright white. Central stage illuminated by amber flood, velvet crimson chair placed centre, red‑gold wedding envelope resting on its arm, heavy silk curtain behind, couple’s silhouettes faintly visible, teal mist curling low, cinematic grain adding texture, rain droplets glistening on edge. Cinematic night thriller still, rain, film grain, cold teal shadows, warm amber practical lights, Indian location. Vertical 9:16 composition, main subject in the middle third, generous calm space above and below.",
+      "fails": {},
+      "top": 0.26
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Halwai ke haath chashni mein the. Par bag pe chashni ka ek bhi nishaan nahi.",
@@ -47,7 +90,22 @@
    "label": "B",
    "who": "Halwai Ramesh",
    "quote": "Bag bilkul saaf.",
-   "hud_right": "B: CLEAR"
+   "hud_right": "B: CLEAR",
+   "big": null,
+   "small": null,
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s3p.jpg",
+      "prompt": "Halwai Ramesh, a middle-aged Indian man with a round belly, cheerful smile, silver-gray hair tied in a bun, caramel skin, wearing a white cotton vest over a bright orange dhoti with an orange gamchha draped over his shoulder, stands frying golden jalebis in a large iron kadhai, syrup glistening on his sturdy hands, steam rising into the air, set within a grand Indian wedding hall at night with marigold garlands, cinematic night thriller still, film grain, cold teal shadows, warm amber practical lights, vertical 9:16.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Aur dost ne kaha, main phone charge karne gaya tha.",
@@ -57,7 +115,22 @@
    "label": "C",
    "who": "Dost Sunny",
    "quote": "Phone charge karne gaya tha.",
-   "hud_right": "SUSPECT C"
+   "hud_right": "SUSPECT C",
+   "big": null,
+   "small": null,
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s4p.jpg",
+      "prompt": "Groom's friend Sunny: Young Indian man, athletic build, early twenties, glossy maroon kurta with subtle gold embroidery, sleek black hair gelled back, bronze skin, gold chain resting on chest, smartphone clasped in right hand, nervous grin, standing under spotlight, shoulders relaxed. He holds his smartphone up towards the camera with a hesitant, nervous smile, partially obscured by heavy silk curtains. The setting is a grand wedding hall at night, marigold garlands and warm amber fairy lights in the background. Cinematic night thriller style, film grain, cold teal shadows, dramatic rim light, vertical 9:16.",
+      "fails": {},
+      "top": 0.15
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Par stage ke peeche ek bhi plug point tha hi nahi.",
@@ -69,7 +142,21 @@
     "point"
    ],
    "title": "JHOOTH",
-   "hud_right": "SURAAG"
+   "hud_right": "SURAAG",
+   "big": null,
+   "small": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s5p.jpg",
+      "prompt": "Backstage wall of reclaimed wood boards, a bright torch beam scanning the surface, interwoven marigold strings forming bright borders, empty wooden panels where sockets could be placed, deep teal shadows deepening cracks, cinematic night thriller still, rain-slicked floor reflecting light, film grain softening edges, warm amber practical lights contrasting with cold teal shadows, vertical 9:16 composition, main subject in the middle third with generous calm space above and below.",
+      "fails": {},
+      "top": 0.15
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Toh chor... dulhe ka dost, Sunny!",
@@ -78,7 +165,20 @@
    "motion": "punch",
    "big": "C",
    "small": "DOST SUNNY",
-   "hud_right": "CHOR"
+   "hud_right": "CHOR",
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s6p.jpg",
+      "prompt": "Groom's friend Sunny, a young Indian man in his early twenties with an athletic build, sleek black hair gelled back, and bronze skin, wearing a glossy maroon kurta with subtle gold embroidery and a gold chain, stands frozen under a bright spotlight. He holds a smartphone in his right hand, his expression a nervous grin with wide eyes. The setting is a grand Indian wedding hall at night, with marigold garlands and warm amber fairy lights, cinematic night thriller style, deep teal shadows, film grain.",
+      "fails": {},
+      "top": 0.19
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Lifafa uske kurte ki andar wali jeb se mila.",
@@ -89,7 +189,22 @@
     "lifafa",
     "jeb"
    ],
-   "hud_right": "CASE CLOSED"
+   "hud_right": "CASE CLOSED",
+   "big": null,
+   "small": null,
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s7o.jpg",
+      "prompt": "A red-and-gold wedding envelope being pulled out of the inside pocket of a shiny maroon kurta, gold chain visible, close-up shot of hands retrieving the envelope, vibrant Indian wedding at night setting, cinematic graphic-novel illustration style, dramatic rim light highlighting the fabric texture and gold embroidery, warm saturated colors contrasting with deep teal shadows, subtle film grain, vertical 9:16 composition, main subject centered, generous calm space above and below.",
+      "fails": {},
+      "top": 0.36
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Tumne kya socha tha, A, B ya C? Comment mein batao. Naya case jaldi.",
@@ -98,10 +213,23 @@
    "motion": "pull",
    "big": "CASE CLOSED",
    "small": "NAYA CASE JALDI",
-   "hud_right": "CASE 2"
+   "hud_right": "CASE 2",
+   "title": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s8p.jpg",
+      "prompt": "A single ornate brass oil lamp burning on a polished wooden floor, casting a warm flickering glow, surrounded by scattered wilting rose petals and marigold garlands in a grand Indian wedding hall at dawn. The scene is captured in a cinematic graphic-novel illustration style, vibrant colors with deep teal shadows, dramatic rim light highlighting the petals, subtle film grain texture, vertical 9:16 composition with generous empty space above and below the central lamp.",
+      "fails": {},
+      "top": 0.13
+     }
+    ],
+    "passed": true
+   }
   }
  ],
- "caption": "Jawab aa gaya 🕵 Shaadi ke 5 lakh ka chor kaun tha? Do suraag, ek jhooth. Tumne sahi pakda? A, B ya C, comment mein batao. Part 1 profile pe 👆",
+ "caption": "Jawab aa gaya 🕵 Shaadi ke 5 lakh ka chor kaun tha? Do suraag, ek jhooth. Tumne sahi pakda? A, B ya C, comment mein batao. Part 1 profile pe 👆\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#RaazKaFaisla",
   "#HindiMystery",
@@ -117,5 +245,64 @@
    "basis": "original story"
   }
  ],
- "part_of": "case2-p1"
+ "part_of": "case2-p1",
+ "bible": {
+  "figures": [
+   {
+    "name": "Narrator-Detective",
+    "scenes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "look": "Middle‑aged Indian man, slender build, sharp cheekbones, short salt‑and‑pepper hair, olive skin, dark trench coat with high collar, plain bare shoulders, leather gloves, fedora tipped forward, holding a vintage notebook, standing slightly hunched, eyes scanning."
+   },
+   {
+    "name": "Photographer Rohit",
+    "scenes": [
+     2,
+     3
+    ],
+    "look": "Young Indian man, lean build, early twenties, smooth jawline, short black hair under backward cap, warm brown skin, fitted black T‑shirt, dark denim jeans, large DSLR camera slung across chest, right hand poised to click, focused gaze."
+   },
+   {
+    "name": "Halwai Ramesh",
+    "scenes": [
+     4
+    ],
+    "look": "Middle‑aged Indian man, round belly, cheerful smile, silver‑gray hair tied in bun, caramel skin, white cotton vest over bright orange dhoti, orange gamchha draped over shoulder, sturdy hands holding steaming jalebi pan, syrup glistening on fingertips, upright posture."
+   },
+   {
+    "name": "Groom's friend Sunny",
+    "scenes": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "look": "Young Indian man, athletic build, early twenties, glossy maroon kurta with subtle gold embroidery, sleek black hair gelled back, bronze skin, gold chain resting on chest, smartphone clasped in right hand, nervous grin, standing under spotlight, shoulders relaxed."
+   }
+  ],
+  "places": [
+   {
+    "name": "Wedding Hall",
+    "look": "Grand Indian wedding hall, night sky visible through open arches, walls draped in marigold garlands, strings of warm amber fairy lights twinkling, polished wooden floor scattered with rose petals, deep teal shadows hugging corners, subtle film grain texture."
+   },
+   {
+    "name": "Stage",
+    "look": "Central stage illuminated by amber flood, velvet crimson chair placed centre, red‑gold wedding envelope resting on its arm, heavy silk curtain behind, couple’s silhouettes faintly visible, teal mist curling low, cinematic grain adding texture, rain droplets glistening on edge."
+   },
+   {
+    "name": "Backstage Wall",
+    "look": "Backstage wall of reclaimed wood boards, interwoven marigold strings forming bright borders, faint torch beam scanning surface, space where sockets could be filled with decorative lanterns, teal shadows deepening cracks, film grain softening edges, rain‑slicked floor reflecting light."
+   }
+  ]
+ },
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

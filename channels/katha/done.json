@@ -12,13 +12,29 @@
   "topic": "Nachiketa aur Yamraj (Katha Upanishad)",
   "title": "Jab 8 saal ke bachche ne Yamraj ko jhuka diya",
   "qc_ok": true,
-  "status": "approved",
+  "status": "scheduled",
   "review": [
    "20 Nov pre-post picture check: scene 12 'Atma na janam leti' shows a blue four-armed Vishnu-like figure where Yamraj teaches (Yama: dark, crown, mace + noose, buffalo); redraw that scene only"
   ],
   "mehul_rebuilt": "2026-11-18",
   "replan_requested": "2026-11-18 05:54",
-  "approved_by": "owner 20 Nov: loosened reviewers; passed today's checks"
+  "approved_by": "owner 20 Nov: loosened reviewers; passed today's checks",
+  "sched": {
+   "slot": 1795271400,
+   "at": "2026-11-21 20:00",
+   "platforms": [
+    "ig",
+    "fb",
+    "yt"
+   ],
+   "mp4": "/home/ubuntu/studio-out/katha/1117-0145/post.mp4",
+   "prepared": "2026-11-20 21:14",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/katha-1117-0145-1795189489.mp4",
+   "yt": "VlJ06GnOWMQ",
+   "fb": "1494856149220284",
+   "ig_container": "17970577052998874",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/katha-1117-0145-1795189489.mp4"
+  }
  },
  {
   "job": "kuber-01",

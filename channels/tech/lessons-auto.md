@@ -455,3 +455,6 @@
 - visual: Scene 12 text says '10-13' in the first frame but voice and next frame state '11-13 weeks', creating a contradiction for viewers.
 - picture check: scene 7: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 62%)
 - picture check: scene 9: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 66%)
+
+## review 1120-2001
+- picture check: scene 3: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 77%)

@@ -215,7 +215,7 @@
   }
  ],
  "music_mood": "driving",
- "caption": "GTA 6 ke peeche asli hero India mein baithe hain! 🇮🇳 Bengaluru ke developers ne Rockstar ke saath milkar ye game banayi hai. Kya aapne game try kiya?",
+ "caption": "GTA 6 ke peeche asli hero India mein baithe hain! 🇮🇳 Bengaluru ke developers ne Rockstar ke saath milkar ye game banayi hai. Kya aapne game try kiya?\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#GTA6",
   "#IndiaGaming",
@@ -271,5 +271,6 @@
   "e15cfaed29",
   "6055c69660"
  ],
- "skin": "keynote"
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }

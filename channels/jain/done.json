@@ -188,8 +188,24 @@
   "topic": "The story of Chandanbala: How a princess turned slave became the first female disciple of Mahavira. She offered her last bowl of rice to the Lord, breaking his 6-month fast. Source: Kalpasutra.",
   "title": "Rajkumari bani daasi, phir Mahavir ki pehli shishya?",
   "qc_ok": true,
-  "status": "approved",
-  "review": []
+  "status": "scheduled",
+  "review": [],
+  "sched": {
+   "slot": 1795271400,
+   "at": "2026-11-21 20:00",
+   "platforms": [
+    "ig",
+    "fb",
+    "yt"
+   ],
+   "mp4": "/home/ubuntu/studio-out/jain/1120-1645/post.mp4",
+   "prepared": "2026-11-20 21:14",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/jain-1120-1645-1795189464.mp4",
+   "yt": "a2HM_i2ebjw",
+   "fb": "1459868072164773",
+   "ig_container": "18227199568338986",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/jain-1120-1645-1795189464.mp4"
+  }
  },
  {
   "job": "1120-1724",
@@ -204,7 +220,7 @@
   "topic": "Was Draupadi a Jain devotee? The untold story of her spiritual journey and path to liberation. (Source: Trishashti-shalaka-purusha-charitra)",
   "title": "Kya Draupadi ek Jain sadhika thi?",
   "qc_ok": true,
-  "status": "made",
+  "status": "approved",
   "review": []
  }
 ]

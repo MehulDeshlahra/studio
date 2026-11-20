@@ -3,7 +3,8 @@
  "job": "1120-2001",
  "topic": "GTA VI and India's Game Dev Talent",
  "replanned_empty": true,
- "stage": "prepped",
+ "stage": "done",
  "lang": "hi",
- "prepped_at": "2026-11-20 20:33"
+ "prepped_at": "2026-11-20 20:33",
+ "brain_judged": true
 }

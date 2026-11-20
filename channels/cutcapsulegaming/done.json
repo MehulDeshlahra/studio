@@ -191,12 +191,21 @@
   "job": "1120-1940a-c1",
   "topic": "BIG STEAM SAVINGS",
   "title": "BIG STEAM SAVINGS",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://f.io/O1zu3kBp",
    "start": 0.0,
    "layout": "mixed:crop+fill"
+  },
+  "sched": {
+   "slot": 1795222800,
+   "at": "2026-11-21 06:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsulegaming/1120-1940a-c1/post.mp4",
+   "prepared": "2026-11-20 21:20"
   }
  },
  {

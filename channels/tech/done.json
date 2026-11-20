@@ -186,5 +186,13 @@
   "minor": [
    "picture check: scene 6: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 75%)"
   ]
+ },
+ {
+  "job": "1120-2001",
+  "topic": "GTA VI and India's Game Dev Talent",
+  "title": "GTA 6 aur India ka connection",
+  "qc_ok": true,
+  "status": "made",
+  "review": []
  }
 ]
