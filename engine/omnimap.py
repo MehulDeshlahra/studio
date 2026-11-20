@@ -223,7 +223,34 @@ def probe():
     return data
 
 
+def hung_models(hours=24, at_least=3):
+    """20 Nov: a model can pass the morning probe and then hang all day (gemini-3.7-flash: 14 calls waited 300 s each
+    for nothing, a Jain reel spent 30 min in planning). Models that timed out (499) or stalled (503 after 20 s+) at
+    least 3 times in Studio's own calls of the last day go to the END of every combo until they behave again."""
+    import glob
+    bad = {}
+    since = time.time() - hours * 3600
+    base = os.path.expanduser("~/.omniroute/call_logs")
+    for day in (time.strftime("%Y-%m-%d", time.gmtime(since)), time.strftime("%Y-%m-%d", time.gmtime())):
+        for f in glob.glob(os.path.join(base, day, "*.json")):
+            if os.path.getmtime(f) < since:
+                continue
+            try:
+                s = json.load(open(f)).get("summary") or {}
+            except Exception:
+                continue
+            if s.get("apiKeyName") != "studio" or str(s.get("model", "")).startswith("studio-"):
+                continue
+            if s.get("status") == 499 or (s.get("status") == 503 and (s.get("duration") or 0) > 20000):
+                m = s.get("requestedModel") or s.get("model")
+                bad[m] = bad.get(m, 0) + 1
+    return {m for m, n in bad.items() if n >= at_least}
+
+
 def rank(data, cands, kind, need_tier=0, only=None):
+    hung = hung_models()
+    if hung:
+        log("omnimap: hung in the last 24 h, moved to the end:", ", ".join(sorted(hung)))
     out = []
     for m, tier in cands:
         r = data["results"].get(f"{kind}:{m}")
@@ -234,7 +261,7 @@ def rank(data, cands, kind, need_tier=0, only=None):
             continue
         # 18 Nov: a 429 at probe time only means "busy this minute"; OmniRoute skips a busy model per request anyway,
         # so a usually-working model keeps its place (04:40 run had put every Gemini model last for the whole day)
-        out.append((-(tier * 10 + rel * 5) + min(r["secs"], 60) / 6, m))
+        out.append((-(tier * 10 + rel * 5) + min(r["secs"], 60) / 6 + (1000 if m in hung else 0), m))
     return [m for _, m in sorted(out)]
 
 

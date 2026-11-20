@@ -74,7 +74,9 @@ def _dated(content):
     return content
 
 
-def _chain(models, content, json_mode, max_tokens, timeout=300):
+def _chain(models, content, json_mode, max_tokens, timeout=120):
+    # 20 Nov: OmniRoute's gemini-3.7-flash hung without answering; each call waited the full 300 s, 14 such calls cost a
+    # Jain reel ~30 min of planning. Answers that work come in 5-90 s (nemotron plans 27-88 s): 120 s is the limit.
     errs = []
     if models is not CODE_MODELS:
         content = _dated(content)
@@ -103,7 +105,7 @@ def text(prompt, json_mode=False, max_tokens=4000, fast=False):
 
 
 def code(prompt, max_tokens=8000):
-    return _chain(CODE_MODELS, prompt, False, max_tokens, timeout=600)
+    return _chain(CODE_MODELS, prompt, False, max_tokens, timeout=600)     # whole-file code edits are long on purpose
 
 
 def vision(prompt, image, json_mode=True, max_tokens=3000, mime="image/jpeg"):

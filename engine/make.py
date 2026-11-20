@@ -895,6 +895,10 @@ def main():
             if x == "--from":
                 skip = True; continue
             av.append(x)
+        # 20 Nov: the prep lane starts make.py WITHOUT --job, so this restart made a brand-new video on a new topic and
+        # threw away 30 min of research + plan (jain 1120-1510 -> 1120-1542). Keep the same job.
+        if "--job" not in av:
+            av += ["--job", job_id]
         os.execv(sys.executable, [sys.executable] + av + ["--from", "voice"])
     # holds: silence after a line (e.g. a countdown before the answer); words after it move later
     vo_use = vo
