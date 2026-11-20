@@ -1,4 +1,4 @@
-﻿/* Studio dashboard. Neutral surfaces; colour is only used to mean something (status, channel). */
+/* Studio dashboard. Neutral surfaces; colour is only used to mean something (status, channel). */
 :root{
  --green:#16a34a;--amber:#d97706;--red:#dc2626;--blue:#2563eb;--violet:#7c3aed;--teal:#0d9488;--gray:#737373;
  --r:10px;--fs:13.5px;
@@ -151,4 +151,4 @@ textarea{height:auto;padding:8px 10px;width:100%}
 .pubbody{padding:12px}
 .pubcard .chips{display:flex;flex-wrap:wrap;gap:6px}
 .pubcard a.badge{text-decoration:none}
-@media(max-width:640px){.pubgrid{grid-template-columns:repeat(2,1fr);gap:8px}.pubthumb{aspect-ratio:9/16;max-height:340px;background:linear-gradient(135deg,var(--sub),var(--hover));cursor:pointer;border-bottom:1px solid var(--line);overflow:hidden}.pubthumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .25s}.pubthumb img.ld{opacity:1}.pubcard{transition:transform .15s,box-shadow .15s}.pubcard:hover{transform:translateY(-2px)}}
+@media(max-width:640px){.pubgrid{grid-template-columns:repeat(2,1fr);gap:8px}.pubthumb{max-height:260px}}
