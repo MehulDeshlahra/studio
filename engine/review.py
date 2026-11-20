@@ -197,6 +197,12 @@ def vision_review(mp4, plan, timing, out_jpg, lang, handle, checks=None):
             forms = "\nTraditional forms (correct, never report them as a mistake): " + n + "." + iconography.NO_COUNT
     except Exception:
         pass
+    # 20 Nov: King Shrenik's crown and royal robes held a Jain reel twice (the forms were read as rules for everyone)
+    forms += ("\nThe traditional forms apply ONLY to the figures they name. Kings, queens, devotees, devas and other people may "
+              "wear crowns, jewellery, beards and coloured clothes: never report that.")
+    bib = (plan.get("bible") or {}).get("figures") or []
+    if bib:
+        forms += "\nCast as designed for this video (correct): " + "; ".join(f"{f.get('name')}: {str(f.get('look'))[:150]}" for f in bib[:6])
     desc = "\n".join(f"scene {i + 1}: says \"{s['vo']}\" | type {s['type']}"
                      + ("" if (not s.get("title") or _dup(s["title"], s.get("vo"))) else f" | headline \"{s['title']}\"")
                      + (f" | CARD words shown on screen (intended, do not flag them): \"{s.get('big', '')}\" / \"{s.get('small', '')}\"" if s.get("type") == "card" else "")
