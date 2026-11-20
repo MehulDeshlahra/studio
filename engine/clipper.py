@@ -619,6 +619,10 @@ def make(cid, url, n=4, test=False, campaign=None):
         log("clipper: no video info (", str(e)[:120], ")"); info = {}
     # 19 Nov render 13: no free model could watch a 65-min compilation (timeouts / empty answers). Long videos, or a
     # failed watch, go through the transcript path (laptop whisper, moments picked from the timed text)
+    # 20 Nov audit: an 11.5-hour stream (691 min) was downloaded at 1080p to be transcribed whole; the one laptop worker
+    # was busy with it while two story renders waited. Sources over 3 h are skipped for good
+    if float(info.get("duration") or 0) > 3 * 3600:
+        raise RuntimeError(f"TOO_LONG source is {float(info['duration']) / 60:.0f} min (over 3 h): not clipped, the laptop would be busy for hours")
     if float(info.get("duration") or 0) > 2400:
         log("clipper:", url, f"{float(info['duration']) / 60:.0f} min: too long to watch, transcript path")
         shutil.rmtree(sdir, ignore_errors=True)

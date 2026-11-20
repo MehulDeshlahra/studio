@@ -134,7 +134,7 @@ def run(only=None):
                 log("clipwatch: made", len(made), "clips,", len(ok), "passed checks")
             except Exception as e:
                 log("clipwatch: clip run failed", str(e)[:200])
-                if "NOT_FOOTAGE" in str(e):
+                if "NOT_FOOTAGE" in str(e) or "TOO_LONG" in str(e):
                     # 20 Nov: brief links to a guidelines PDF and a logo PNG were tried as footage every hour. Never again
                     st.setdefault("not_footage", {})[url] = str(e)[:160]; save(STATE, st)
                     log("clipwatch: not footage, skipped for good:", url)
