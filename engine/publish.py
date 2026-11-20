@@ -358,8 +358,7 @@ def post_one(cid, dry=False):
             except Exception:
                 pass
             res[name + "_error"] = (str(e) + " " + body)[:500]; log("publish fail", cid, name, e, body)
-            try:
-                from core import telegram
+            try:                                   # (telegram is imported at the top: a local import here broke post_one)
                 telegram(f"⚠️ {cid}: {name.upper()} post failed ({str(e)[:80]} {body[:160]}). The other platforms went out.")
             except Exception:
                 pass
