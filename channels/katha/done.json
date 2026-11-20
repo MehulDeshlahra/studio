@@ -76,8 +76,10 @@
   "topic": "When Lord Krishna visited Narakasura's kingdom: The true Puranic legend behind cosmic warfare and inner destruction.",
   "title": "Jab Krishna khud pahunche Narakasura ke durg",
   "qc_ok": true,
-  "status": "approved",
-  "review": [],
+  "status": "held",
+  "review": [
+   "picture check: scene 5 shows a horned demon on a throne where Krishna and Satyabhama ride Garuda; scene 8 two blue figures on horses (Narakasura is not blue)"
+  ],
   "replan_requested": "2026-11-19 16:09"
  },
  {
@@ -100,8 +102,10 @@
   "job": "1118-0435",
   "topic": "12 Jyotirlinga ki katha - Part 2: Mallikarjun",
   "title": "Ganesha ki Buddhi aur Mallikarjun ki Kahani",
-  "status": "approved",
-  "review": []
+  "status": "held",
+  "review": [
+   "picture check: scene 1 split screen (Kartikeya on the peacock beside Ganesha, two panels)"
+  ]
  },
  {
   "job": "1118-0735",

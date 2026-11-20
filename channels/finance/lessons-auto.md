@@ -229,3 +229,8 @@
 
 ## Purana sona bechne par poora paisa kyun nahi milta (numbers check)
 - NUMBERS: scene 1: 'Example loss of ₹15000 when selling old gold.' is not in the sources: remove it or say only what the sources say
+
+## 1119-0426-p2 (pre-render check)
+- FIT: Table content is cut off or missing cells due to incorrect card rendering
+- CUT: The last line of the card text is cut off at the bottom of the container
+- FIT: Table content for compliance comparison is not rendering correctly inside the card

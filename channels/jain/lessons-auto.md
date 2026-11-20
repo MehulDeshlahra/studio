@@ -355,3 +355,13 @@
 - picture check: scene 8: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 72%)
 - picture check: scene 10: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 77%)
 - picture check: scene 12: Is the Tirthankara shown as a living man with ordinary skin instead of as a stone or metal temple idol? (yes 84%)
+
+## 1118-2242 (pre-render check)
+- FIT: Character in scene 6 appears with a beard and hair/clothing style more resembling a Hindu rishi rather than a plain Jain Tirthankara (Mahavira Swami should be bare-headed with tight curls or an a
+
+## 1118-2242 (pre-render check)
+- FIT: Voice mentions 'sher, saanp, haathi', but caption only shows 'saanp' and 'sab aaye'.
+
+## 1118-2242 (pre-render check)
+- FIT: split / collage picture shown instead of a single cohesive scene
+- READ: caption text says 'SAANP' while the voice says 'Sher, saanp, haathi...'
