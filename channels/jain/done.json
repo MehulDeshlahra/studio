@@ -42,12 +42,8 @@
   "job": "1119-0335",
   "topic": "What Prince Parshvanatha saw inside a burning log that made him the 23rd Tirthankara — the snake pair's past life debt (source: Kalpasutra / Uttaradhyayana Sutra)",
   "title": "Jalte lakdi mein saanp phansa tha",
-  "status": "held",
-  "review": [
-   "visual: Checklist item 1: Mughal / Islamic architecture with onion domes and arched structures appears in the background of scenes 1-11, which is historically and culturally inappropriate for Jain iconography.",
-   "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1 to 11 background architecture features arched structures and domes resembling Islamic/Mughal styles rather than traditional ancient Indian or Jain temple architecture.",
-   "visual score 5/10"
-  ],
+  "status": "made",
+  "review": [],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
  },
@@ -55,8 +51,10 @@
   "job": "1119-0935",
   "topic": "Why did Prince Bahubali stand motionless in meditation for 12 years while vines grew around his legs? (Source: Adipurana / Trishashti-shalaka-purusha-charitra)",
   "title": "12 saal tak hile bina kyun khada raha Bahubali?",
-  "status": "approved",
-  "review": [],
+  "status": "held",
+  "review": [
+   "20 Nov pre-post check: 57-ft Gommateshwara drawn crowned with folded hands (he stands bare, arms down); monks in saffron (scenes 2, 4, 11)"
+  ],
   "replan_requested": "2026-11-19 22:36",
   "mehul_rebuilt": "2026-11-19"
  },
