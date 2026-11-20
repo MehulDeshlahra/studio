@@ -83,7 +83,7 @@
   {
    "vo": "Ek bana kabootar, dusra baaz — raja ki pariksha ke liye",
    "type": "image",
-   "prompt": "Two demi-gods transforming: one into a white pigeon with gentle eyes, small and delicate, feathers slightly ruffled, other into a large brown hawk with sharp talons and piercing eyes, fierce presence, magical golden light swirling, Jain temple spires in distant background",
+   "prompt": "Two divine beings transforming: one into a small delicate white pigeon with gentle eyes, feathers slightly ruffled; the other into a large brown hawk with sharp talons and piercing eyes, fierce presence; magical golden light swirling around them; distant Jain temple spires in background; centered composition, 9:16 vertical, ample space top and bottom for text, no text, no logos.",
    "motion": "tilt",
    "keywords": [
     "kabootar",
@@ -94,13 +94,14 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Kabootar khidki se aaya, raja ki godi mein gir pada",
    "type": "image",
-   "prompt": "King Megharath in court, white pigeon with gentle eyes flies through carved stone window, lands trembling on his lap, king's hand gently rests on it, courtiers watch in surprise",
-   "motion": "push",
+   "prompt": "Vertical 9:16 cinematic close-up of King Megharath seated on an ornate throne, a tiny trembling white pigeon resting safely in the king's lap under his protective open hands; rich royal fabrics, warm soft court lighting; centered subject, plenty of empty space top and bottom for text; no text, no watermark.",
+   "motion": "slow-zoom",
    "keywords": [
     "kabootar",
     "godi",
@@ -110,7 +111,8 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Turant baaz bhi aaya, bola — ye mera shikaar hai",
@@ -164,8 +166,8 @@
   {
    "vo": "Mantri kaha — kasai se maans mang lo maharaj",
    "type": "image",
-   "prompt": "Elderly courtier with white cotton dhoti and angavastram speaks earnestly to king, gestures toward palace gate, king shakes head gently",
-   "motion": "pan",
+   "prompt": "Vertical 9:16 portrait of an elderly royal minister with folded hands pleading earnestly, wearing simple cotton dhoti and angavastram, expressive concerned face; soft palace pillar background; centered subject, empty space top and bottom for text; no text, no watermark.",
+   "motion": "slow-push",
    "keywords": [
     "mantri",
     "kasai",
@@ -175,7 +177,8 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "real": null
   },
   {
    "vo": "Raja ne kaha — kasai ka maans lene se doosra janwar marega",

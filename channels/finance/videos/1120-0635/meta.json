@@ -1,5 +1,9 @@
 {
  "channel": "finance",
  "job": "1120-0635",
- "topic": "Gold kharidte waqt ye 3 galtiyan mat karna: HUID hallmark, making charge, GST"
+ "topic": "Gold kharidte waqt ye 3 galtiyan mat karna: HUID hallmark, making charge, GST",
+ "stage": "done",
+ "lang": "hi",
+ "prepped_at": "2026-11-20 06:57",
+ "brain_judged": true
 }

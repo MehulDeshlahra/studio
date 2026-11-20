@@ -14,8 +14,12 @@
   "title": "Raja ne apna maans kaise kaata kabutar bachane?",
   "status": "held",
   "review": [
-   "before render, scene 5: FIT: Caption says 'se aaya' and 'raja ki godi' but the visual shows only the pigeon flying in the courtyard with no king or lap visible yet",
-   "before render, scene 9: DUP: Both stills show identical caption text 'KASAI SE MAANS' instead of progressing through the line"
+   "visual: Scene 1, 2, 6, 7, 9, 10, 11, 12, 13 clearly feature Mughal/Islamic architecture including large white onion domes and minarets in the background, which is historically and culturally inappropriate for an ancient Jain story about Raja Megharath.",
+   "visual: Jain ascetic and figures in several scenes (such as scenes 9, 10, 11) are shown wearing orange/saffron robes, whereas Jain ascetics traditionally wear plain white or are Digambar.",
+   "visual: Checklist item 1 is true (Mughal/Islamic architecture present).",
+   "visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1, 2, 6, 7, 9, 10, 11, 12, 13",
+   "visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 9, 10, 11",
+   "visual score 3/10"
   ],
   "replan_requested": "2026-11-19 15:51"
  },

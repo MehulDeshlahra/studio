@@ -286,3 +286,20 @@
 ## 1119-0305 (pre-render check)
 - OVERLAP/CUT (layout audit): text_occluded on #s3n4
 - FIT: monk is wearing orange/saffron robes instead of plain white robes
+
+## 1119-0215 (pre-render check)
+- FIT: The right still shows 'DUSRA BAAZ RAJA' which is garbled and does not match the voice 'dusra baaz — raja ki pariksha ke liye'
+- FIT: The left still caption 'SE AAYA' does not match the voice 'Kabootar khidki se aaya'
+- DUP: Both stills in scene 9 display identical caption text 'KASAI SE MAANS' instead of progressing
+
+## 1119-0215 Why King Megharath Cut His Own Flesh to Save a Pigeon (Source: Adipurana)
+- scene 1: character design of the king differs visibly from scene 5 (aged bearded king vs young king)
+- scene 8: bird anatomy and hand interaction looks slightly distorted/unnatural
+
+## review 1119-0215
+- visual: Scene 1, 2, 6, 7, 9, 10, 11, 12, 13 clearly feature Mughal/Islamic architecture including large white onion domes and minarets in the background, which is historically and culturally inappropriate for an ancient Jain story about Raja Megharath.
+- visual: Jain ascetic and figures in several scenes (such as scenes 9, 10, 11) are shown wearing orange/saffron robes, whereas Jain ascetics traditionally wear plain white or are Digambar.
+- visual: Checklist item 1 is true (Mughal/Islamic architecture present).
+- visual: checklist: Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings? -> Scenes 1, 2, 6, 7, 9, 10, 11, 12, 13
+- visual: checklist: Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)? -> Scenes 9, 10, 11
+- visual score 3/10

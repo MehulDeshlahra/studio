@@ -1,0 +1,25 @@
+{
+ "topic": "Gold kharidte waqt ye 3 galtiyan mat karna: HUID hallmark, making charge, GST",
+ "title": "Gold kharidte waqt ye 3 galtiyan kaunsi hain?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.7,
+  "true_peak": -3.2,
+  "dur": 45.97
+ },
+ "vision": {
+  "score": 7,
+  "ok": true,
+  "problems": []
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.8529411764705882,
+  "words": 110,
+  "problems": []
+ },
+ "ok": true
+}
