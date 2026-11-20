@@ -760,6 +760,12 @@ def ingest(ch, cid, url, info, src, test, ms, out, base, only=None):
             probs.append("almost no speech (captions nearly empty)")
         # 20 Nov: Japanese captions (a Yakuza cutscene) passed the review. Our captions are Latin script on every page
         txt = res.get("text", "") or ""
+        # 20 Nov: the Rascals Drive folder held the campaign's own briefing video; it was cut into "GET PAID $3 PER 1K
+        # VIEWS" clips that nearly posted. A clip that talks about clipping / payouts is never a post
+        import re as _re
+        if _re.search(r"per 1k views|per 1,?000 views|get paid \$|clipping campaign|submit your clips?|join (the|our) campaign|"
+                      r"content rewards|\bwhop\b|clippers\b", txt + " " + str(res.get("hook") or ""), _re.I):
+            probs.append("this is the campaign's own brief (talks about clipping / payouts), not footage to post")
         if txt and sum(1 for ch in txt if ord(ch) > 0x2E7F) > 0.1 * len(txt):
             probs.append(f"captions not in Latin script (spoken language '{res.get('lang')}'): wrong language for this page")
         if (res.get("lost") or 0) > 0.1:             # 19 Nov: vision scored 10 with the comedian walked out of the crop
