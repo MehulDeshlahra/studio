@@ -60,7 +60,8 @@ def _groq_words(wav, lang):
         hdr = {"Authorization": "Bearer " + llm._key(), "Content-Type": f"multipart/form-data; boundary={b}"}
         for attempt in range(2):
             try:
-                d = json.load(urllib.request.urlopen(urllib.request.Request(url, data=body, headers=hdr), timeout=180))
+                # 20 Nov audit: a good answer takes ~3 s; at 180 s + a 150 s wait one reel sat 7+ min here (tech 1120-1748z)
+                d = json.load(urllib.request.urlopen(urllib.request.Request(url, data=body, headers=hdr), timeout=45))
                 break
             except urllib.error.HTTPError as e:
                 # Groq busy (the job bot shares the key): a wait of <= 150 s beats minutes of local CPU at a worse match
@@ -69,7 +70,7 @@ def _groq_words(wav, lang):
                     wait = int(json.loads(e.read() or b"{}").get("error", {}).get("retry_after") or 0)
                 except Exception:
                     pass
-                if e.code != 429 or attempt or not 0 < wait <= 150:
+                if e.code != 429 or attempt or not 0 < wait <= 40:
                     raise
                 import time as _t
                 _t.sleep(wait + 2)
