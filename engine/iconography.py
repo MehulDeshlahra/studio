@@ -10,7 +10,7 @@ FORMS = {
                   "youthful warrior god, one face or six faces (Shanmukha), holds a vel (spear), rides a peacock"),
     "Ganesha": (r"ganesh|ganesha|ganpati|ganapati|vinayak",
                 "elephant head with one broken tusk, pot belly, four arms, modak, mouse (mooshak) as vehicle"),
-    "Shiva": (r"\bshiv\b|shiva|mahadev|shankar|bholenath|neelkanth|rudra",
+    "Shiva": (r"\bshiv(?:ji)?\b|shiva|mahadev|shankar|bholenath|neelkanth|rudra",
               "ash-grey or blue-grey skin, matted hair with crescent moon and Ganga, third eye, trident, damru, snake at the neck, tiger skin"),
     "Parvati": (r"parvati|gauri|uma\b", "graceful goddess in a red or green saree with jewellery, often beside Shiva"),
     "Durga": (r"durga|ambe|sherawali|mahishasura", "many-armed goddess holding weapons, rides a lion or tiger, red saree"),
