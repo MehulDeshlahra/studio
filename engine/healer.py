@@ -298,7 +298,8 @@ def heal_held():
             # through engine/picsmith.py (prompt engineer, reference / real idol photo, Decisions check), once per code
             pic = [x for x in probs if PIC_PROB.search(x) or (re.search(r"\bFIT:|visual:", x) and PIC_WORDS.search(x))]
             ks = sorted(k for k in scenes_in(pic) if k >= 0) if pic else []
-            if ks and ("redraw", h) not in tried:
+            done_sets = [s_.get("scenes") for s_ in it["steps"] if s_["step"] == "redraw" and s_.get("code") == h]
+            if ks and [k + 1 for k in ks] not in done_sets and len(done_sets) < 3:     # new scenes flagged -> redraw them
                 it["state"] = "working"
                 it["steps"].append({"step": "redraw", "code": h, "scenes": [k + 1 for k in ks], "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 if not DRY:
