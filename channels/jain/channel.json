@@ -1,130 +1,130 @@
 {
-  "id": "jain",
-  "name": "Navkar Bhav (@navkarbhav)",
-  "story_check": true,
-  "story_query": "Jain",
-  "story_texts": "Jain scriptures: Kalpasutra, Acharanga Sutra, Trishashti-shalaka-purusha-charitra (Hemachandra), Uttaradhyayana Sutra, Adipurana (Digambara)",
-  "status": "pilot",
-  "language": "Hindi",
-  "format": "One Jain story (Tirthankaras, saints, kings, Jain festivals and practices) with one clear lesson, 40-75 s; every story names its source (Agam / Kalpasutra / Adipurana / Trishashti-shalaka-purusha-charitra)",
-  "voice": {
-    "engine": "gemini-3.8-flash-tts",
-    "voice": "Charon",
-    "one_request_per_reel": true,
-    "style": "a calm, gentle Hindi storyteller with deep respect, soft and warm like an elder telling a story after evening prayers, clear pronunciation of Prakrit and Sanskrit names, a quiet emotional pause at the turning point; speak slightly slower than a normal fast reel, with clear pauses between sentences"
+ "id": "jain",
+ "name": "Navkar Bhav (@navkarbhav)",
+ "story_check": true,
+ "story_query": "Jain",
+ "story_texts": "Jain scriptures: Kalpasutra, Acharanga Sutra, Trishashti-shalaka-purusha-charitra (Hemachandra), Uttaradhyayana Sutra, Adipurana (Digambara)",
+ "status": "pilot",
+ "language": "Hindi",
+ "format": "One Jain story (Tirthankaras, saints, kings, Jain festivals and practices) with one clear lesson, 40-75 s; every story names its source (Agam / Kalpasutra / Adipurana / Trishashti-shalaka-purusha-charitra)",
+ "voice": {
+  "engine": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "one_request_per_reel": true,
+  "style": "a calm, gentle Hindi storyteller with deep respect, soft and warm like an elder telling a story after evening prayers, clear pronunciation of Prakrit and Sanskrit names, a quiet emotional pause at the turning point; speak slightly slower than a normal fast reel, with clear pauses between sentences"
+ },
+ "visuals": {
+  "primary": "muse",
+  "look": "serene painterly Indian style, warm golden light on white marble, calm and peaceful, gentle glow, uncluttered; architecture: ancient Indian sandstone and white-marble Jain temples and palaces with tall pointed shikhara spires, finely carved pillars and stepped stone roofs (Dilwara, Ranakpur, Palitana style), village lanes of mud and stone houses; every monk, nun or ascetic wears plain white unstitched cotton robes and carries a soft white whisk broom",
+  "look_note": "19 Nov: positive words only. The old look said 'soft saffron' (every monk came out in saffron robes) and listed 'onion domes, minarets, Taj Mahal' after NEVER (image models draw the nouns they read). The NEVER rules live in visual_checks for the reviewers",
+  "cast": "the story's people in ancient Indian attire, calm faces; Tirthankaras only as serene meditating temple idols (seated padmasana or standing kayotsarga, eyes half closed, with their emblem) or as symbols (lotus, light, footprints, the siddhashila crescent), never as action characters; Jain monks and nuns in plain white robes with a broom (rajoharan); never Hindu gods, never weapons in a Tirthankara's hands; the same person keeps the same face, age, beard, hair and clothes in every scene (a king stays a crowned king)"
+ },
+ "looks": {
+  "painting": {
+   "use": "the main story: the people, the place, the moment itself (default, most scenes)",
+   "pic": "serene painterly Indian style, soft saffron, gold and white marble light, calm and peaceful, ornate Jain temple details, gentle glow, uncluttered; architecture: ancient Indian stone palaces, courtyards and Jain temples (Maru-Gurjara / Nagara carving, shikhara spires, carved pillars); NEVER Mughal or Islamic domes, onion domes, minarets or anything like the Taj Mahal"
   },
-  "visuals": {
-    "primary": "muse",
-    "look": "serene painterly Indian style, warm golden light on white marble, calm and peaceful, gentle glow, uncluttered; architecture: ancient Indian sandstone and white-marble Jain temples and palaces with tall pointed shikhara spires, finely carved pillars and stepped stone roofs (Dilwara, Ranakpur, Palitana style), village lanes of mud and stone houses; every monk, nun or ascetic wears plain white unstitched cotton robes and carries a soft white whisk broom",
-    "look_note": "19 Nov: positive words only. The old look said 'soft saffron' (every monk came out in saffron robes) and listed 'onion domes, minarets, Taj Mahal' after NEVER (image models draw the nouns they read). The NEVER rules live in visual_checks for the reviewers",
-    "cast": "the story's people in ancient Indian attire, calm faces; Tirthankaras only as serene meditating temple idols (seated padmasana or standing kayotsarga, eyes half closed, with their emblem) or as symbols (lotus, light, footprints, the siddhashila crescent), never as action characters; Jain monks and nuns in plain white robes with a broom (rajoharan); never Hindu gods, never weapons in a Tirthankara's hands; the same person keeps the same face, age, beard, hair and clothes in every scene (a king stays a crowned king)"
-  },
-  "looks": {
-    "painting": {
-      "use": "the main story: the people, the place, the moment itself (default, most scenes)",
-      "pic": "serene painterly Indian style, soft saffron, gold and white marble light, calm and peaceful, ornate Jain temple details, gentle glow, uncluttered; architecture: ancient Indian stone palaces, courtyards and Jain temples (Maru-Gurjara / Nagara carving, shikhara spires, carved pillars); NEVER Mughal or Islamic domes, onion domes, minarets or anything like the Taj Mahal"
-    },
-    "manuscript": {
-      "use": "a scene from scripture, a past life, a Tirthankara's life event, the cosmos (lokakash), the meaning of the story",
-      "pic": "Jain Kalpasutra manuscript painting: flat vermilion red ground, gold leaf and ultramarine blue, fine black outlines, stylised figures in profile, ornamental border motifs, palm-leaf and paper texture, one single scene; architecture: ancient Indian stone palaces, courtyards and Jain temples (Maru-Gurjara / Nagara carving, shikhara spires, carved pillars); NEVER Mughal or Islamic domes, onion domes, minarets or anything like the Taj Mahal"
-    }
-  },
-  "looks_on": false,
-  "rules": [
-    "respectful, no mockery, no sect bashing: when Shwetambar and Digambar versions differ, say so",
-    "sourced stories only (Agam, Kalpasutra, Adipurana, Trishashti-shalaka-purusha-charitra, Uttaradhyayana); name the source",
-    "never mix Hindu gods or Hindu iconography into Jain stories",
-    "no miracles claimed as history, no medical or astrological claims",
-    "no on-screen AI label",
-    "no Mughal/Islamic domes, minarets or Taj Mahal-like buildings in ancient Jain stories",
-    "Tirthankaras, Bahubali and Jain monks never with blue skin, crowns or Hindu-god jewellery",
-    "never promise a wallpaper, PDF or DM gift unless the page really sends it (dm.py offer exists)",
-    "one character = one look across all scenes"
-  ],
-  "schedule": {
-    "posts_per_day": 1,
-    "approve_first": 10,
-    "backlog": 10
-  },
-  "accounts": {
-    "instagram": "@navkarbhav",
-    "facebook_page": "Navkar Bhav - Jain Dharma",
-    "youtube": null
-  },
-  "theme": {
-    "bg": "#160d04",
-    "accent": "#f2c14e",
-    "accent2": "#e8571a",
-    "font": "Archivo Black",
-    "music": "music/close-up.mp3",
-    "music_offset": 0,
-    "end_line": "Jai Jinendra. Kal ek nayi katha"
-  },
-  "topics_backlog": [
-    "Chandanbala ki katha (Kalpasutra)",
-    "Mahavir Swami aur Chandkaushik naag",
-    "Bharat aur Bahubali ka yuddh (Adipurana)",
-    "Navkar Mantra ka asli arth",
-    "Paryushan kyun manate hain",
-    "Micchami Dukkadam kyun bolte hain",
-    "Meghkumar ki diksha (Gyatadharmakatha)",
-    "Raja Shrenik aur Abhaykumar ki buddhi",
-    "Rishabhdev ne duniya ko kheti aur likhna sikhaya",
-    "Jain dharma mein suryast ke baad bhojan kyun nahi",
-    "Sthulibhadra aur Kosha (Parishishtaparvan)",
-    "Mahavir Swami ke kaan mein keelein kisne thoki"
-  ],
-  "edit": {
-    "wps": 2.3,
-    "length_s": [
-      30,
-      78
-    ]
-  },
-  "english": false,
-  "warmup": {
-    "post_from": "2026-11-22",
-    "one_a_day_until": "2026-11-29",
-    "note": "new account (added 18 Nov): profile + manual engagement 19-21 Nov, 1 reel/day (evening) 22-28 Nov"
-  },
-  "handle": "@navkarbhav",
-  "handle_instagram": "@navkarbhav",
-  "tagline": "Jain dharma ki kathayein, saral bhasha mein.",
-  "youtube": null,
-  "offers": {
-    "on": true,
-    "every": 4,
-    "kinds": [
-      "wallpaper",
-      "sheet"
-    ]
-  },
-  "visual_checks": [
-    "Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings?",
-    "Is a Tirthankara, Bahubali or Jain idol shown with blue, green or grey skin, a crown, jewellery, a tilak, horns or a third eye?",
-    "Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)?",
-    "Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)?",
-    "Is Bahubali / Gommateshwara shown wearing a crown or clothes, or with hands folded (he stands bare, arms straight down, creepers on his legs)?",
-    "Is there big broken or half-cut text, or random letters, across the picture?",
-    "Does any figure look like a Hindu god or goddess (many arms, Hindu ornaments) where the story is about a Jain figure?",
-    "Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)?",
-    "Is any frame an empty arch, wall or background with no subject behind a big word?"
-  ],
-  "frame_checks": [
-    "Is there a crown, tiara, cap or golden headpiece on the head of the idol or Tirthankara?",
-    "Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery?",
-    "Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara?",
-    "Does the idol or Tirthankara have a beard or moustache?",
-    "Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)?",
-    "Does the idol or Tirthankara have blue, green or grey skin?",
-    "The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure is shown as a living man instead of a stone or metal temple idol? (A monk or nun in white robes is not a Tirthankara: answer no; if the narration names no Tirthankara, answer no.)",
-    "Is any monk or nun wearing saffron, orange or red robes?",
-    "Does any figure have more than two arms or a third eye?",
-    "Are there onion domes, minarets or Mughal-style buildings in the picture?",
-    "The narration names Bahubali (Gommateshwara), and he is shown wearing a crown or clothes, or with his hands folded? (If the narration does not name Bahubali, answer no.)"
-  ],
-  "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass",
-  "real_idols": true,
-  "real_idols_note": "20 Nov owner OK: a scene about a Tirthankara or Bahubali uses a real temple idol photo from Wikimedia Commons first (engine/picsmith.real_idol)",
-  "frame_context": "The questions about crowns, jewellery, a tilak, a beard or coloured clothes are ONLY about a Tirthankara or a Jain temple idol. A king (for example Raja Shrenik), queen, devotee, deva or any other person may wear a crown, jewellery, a beard and coloured clothes: for them answer no."
+  "manuscript": {
+   "use": "a scene from scripture, a past life, a Tirthankara's life event, the cosmos (lokakash), the meaning of the story",
+   "pic": "Jain Kalpasutra manuscript painting: flat vermilion red ground, gold leaf and ultramarine blue, fine black outlines, stylised figures in profile, ornamental border motifs, palm-leaf and paper texture, one single scene; architecture: ancient Indian stone palaces, courtyards and Jain temples (Maru-Gurjara / Nagara carving, shikhara spires, carved pillars); NEVER Mughal or Islamic domes, onion domes, minarets or anything like the Taj Mahal"
+  }
+ },
+ "looks_on": false,
+ "rules": [
+  "respectful, no mockery, no sect bashing: when Shwetambar and Digambar versions differ, say so",
+  "sourced stories only (Agam, Kalpasutra, Adipurana, Trishashti-shalaka-purusha-charitra, Uttaradhyayana); name the source",
+  "never mix Hindu gods or Hindu iconography into Jain stories",
+  "no miracles claimed as history, no medical or astrological claims",
+  "no on-screen AI label",
+  "no Mughal/Islamic domes, minarets or Taj Mahal-like buildings in ancient Jain stories",
+  "Tirthankaras, Bahubali and Jain monks never with blue skin, crowns or Hindu-god jewellery",
+  "never promise a wallpaper, PDF or DM gift unless the page really sends it (dm.py offer exists)",
+  "one character = one look across all scenes"
+ ],
+ "schedule": {
+  "posts_per_day": 1,
+  "approve_first": 10,
+  "backlog": 10
+ },
+ "accounts": {
+  "instagram": "@navkarbhav",
+  "facebook_page": "Navkar Bhav - Jain Dharma",
+  "youtube": null
+ },
+ "theme": {
+  "bg": "#160d04",
+  "accent": "#f2c14e",
+  "accent2": "#e8571a",
+  "font": "Archivo Black",
+  "music": "music/close-up.mp3",
+  "music_offset": 0,
+  "end_line": "Jai Jinendra. Kal ek nayi katha"
+ },
+ "topics_backlog": [
+  "Chandanbala ki katha (Kalpasutra)",
+  "Mahavir Swami aur Chandkaushik naag",
+  "Bharat aur Bahubali ka yuddh (Adipurana)",
+  "Navkar Mantra ka asli arth",
+  "Paryushan kyun manate hain",
+  "Micchami Dukkadam kyun bolte hain",
+  "Meghkumar ki diksha (Gyatadharmakatha)",
+  "Raja Shrenik aur Abhaykumar ki buddhi",
+  "Rishabhdev ne duniya ko kheti aur likhna sikhaya",
+  "Jain dharma mein suryast ke baad bhojan kyun nahi",
+  "Sthulibhadra aur Kosha (Parishishtaparvan)",
+  "Mahavir Swami ke kaan mein keelein kisne thoki"
+ ],
+ "edit": {
+  "wps": 2.3,
+  "length_s": [
+   30,
+   78
+  ]
+ },
+ "english": false,
+ "warmup": {
+  "one_a_day_until": "2026-11-29",
+  "note": "new account (added 18 Nov): profile + manual engagement 19-21 Nov, 1 reel/day (evening) 22-28 Nov",
+  "post_from_note": "20 Nov owner: post now (warm-up removed)"
+ },
+ "handle": "@navkarbhav",
+ "handle_instagram": "@navkarbhav",
+ "tagline": "Jain dharma ki kathayein, saral bhasha mein.",
+ "youtube": null,
+ "offers": {
+  "on": true,
+  "every": 4,
+  "kinds": [
+   "wallpaper",
+   "sheet"
+  ]
+ },
+ "visual_checks": [
+  "Is there any Mughal / Islamic architecture: onion domes, minarets, Taj Mahal-like buildings?",
+  "Is a Tirthankara, Bahubali or Jain idol shown with blue, green or grey skin, a crown, jewellery, a tilak, horns or a third eye?",
+  "Is a Jain monk or nun shown in saffron, orange or red robes (Jain ascetics wear plain white, or are Digambar)?",
+  "Is Mahavira or any Tirthankara shown with a beard or moustache, as an old man, or wearing coloured clothes (Tirthankaras are young, beardless, and shown unclothed or in plain white)?",
+  "Is Bahubali / Gommateshwara shown wearing a crown or clothes, or with hands folded (he stands bare, arms straight down, creepers on his legs)?",
+  "Is there big broken or half-cut text, or random letters, across the picture?",
+  "Does any figure look like a Hindu god or goddess (many arms, Hindu ornaments) where the story is about a Jain figure?",
+  "Does the same character change face, age, beard or clothes between scenes (a king becomes a monk)?",
+  "Is any frame an empty arch, wall or background with no subject behind a big word?"
+ ],
+ "frame_checks": [
+  "Is there a crown, tiara, cap or golden headpiece on the head of the idol or Tirthankara?",
+  "Is the idol or Tirthankara wearing a necklace, earrings, armlets, a sacred thread or other jewellery?",
+  "Is there a tilak, dot or painted mark on the forehead of the idol or Tirthankara?",
+  "Does the idol or Tirthankara have a beard or moustache?",
+  "Is the idol or Tirthankara wearing coloured clothes or a robe (orange, red, yellow or saffron)?",
+  "Does the idol or Tirthankara have blue, green or grey skin?",
+  "The narration names a Tirthankara (Mahavira, Parshvanath, Rishabhdev, Neminath) or Bahubali, and that figure is shown as a living man instead of a stone or metal temple idol? (A monk or nun in white robes is not a Tirthankara: answer no; if the narration names no Tirthankara, answer no.)",
+  "Is any monk or nun wearing saffron, orange or red robes?",
+  "Does any figure have more than two arms or a third eye?",
+  "Are there onion domes, minarets or Mughal-style buildings in the picture?",
+  "The narration names Bahubali (Gommateshwara), and he is shown wearing a crown or clothes, or with his hands folded? (If the narration does not name Bahubali, answer no.)"
+ ],
+ "frame_checks_note": "20 Nov: one thing per question for the Decisions API (single-picture checks); compound questions diluted the yes-probability and let a crown and a tilak pass",
+ "real_idols": true,
+ "real_idols_note": "20 Nov owner OK: a scene about a Tirthankara or Bahubali uses a real temple idol photo from Wikimedia Commons first (engine/picsmith.real_idol)",
+ "frame_context": "The questions about crowns, jewellery, a tilak, a beard or coloured clothes are ONLY about a Tirthankara or a Jain temple idol. A king (for example Raja Shrenik), queen, devotee, deva or any other person may wear a crown, jewellery, a beard and coloured clothes: for them answer no."
 }
