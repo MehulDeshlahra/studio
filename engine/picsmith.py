@@ -115,8 +115,41 @@ def refs_for(text, page=None, n=3):
     return out[:n]
 
 
+CF_DEAD = os.path.join(OUT, "cf-quota.json")
+REDRAWS_PER_VIDEO = 6          # 20 Nov: 3 tries x 14 scenes could eat Muse's 40 images a day; at most 6 extra per video
+
+
+def _cf_out():
+    """Cloudflare's 10,000 free neurons a day reset at 00:00 UTC; one klein 9B picture costs ~1,400 (about 7 a day)."""
+    return (load(CF_DEAD, {}) or {}).get("day") == time.strftime("%Y-%m-%d", time.gmtime())
+
+
+def nv_klein(prompt, refs, dest):
+    """FLUX.2 [klein] 4B on NVIDIA through OmniRoute, free, with input_image (one reference). 20 Nov: accepted the
+    field and answered in 12 s; whether it really follows the reference is checked by the Decisions step anyway."""
+    if not refs:
+        return None
+    try:
+        b = base64.b64encode(open(refs[0][1], "rb").read()).decode()
+        body = json.dumps({"model": "nvidia/black-forest-labs/flux.2-klein-4b", "prompt": prompt, "size": "768x1344", "n": 1,
+                           "input_image": "data:image/png;base64," + b}).encode()
+        req = urllib.request.Request("http://127.0.0.1:20128/v1/images/generations", data=body,
+                                     headers={"Authorization": "Bearer " + llm._key(), "Content-Type": "application/json"})
+        d = json.load(urllib.request.urlopen(req, timeout=240))["data"][0]
+        raw = base64.b64decode(d["b64_json"]) if d.get("b64_json") else urllib.request.urlopen(d["url"], timeout=90).read()
+        if len(raw) < 20000:
+            raise RuntimeError("tiny image")
+        open(dest, "wb").write(raw)
+        log("nv klein image (1 ref)", os.path.basename(dest))
+        return dest
+    except Exception as e:
+        log("nv klein fail", str(e)[:120]); return None
+
+
 def cf_klein(prompt, refs, dest, model="flux-2-klein-9b"):
     """FLUX.2 [klein] on Cloudflare Workers AI (free plan, multipart, up to 4 reference images of 512x512)."""
+    if _cf_out():
+        return None
     try:
         tok = open(os.path.expanduser("~/videngine/cf.token")).read().strip()
         pf = dest + ".prompt.txt"
@@ -130,7 +163,14 @@ def cf_klein(prompt, refs, dest, model="flux-2-klein-9b"):
         d = json.loads(p.stdout or b"{}")
         img = (d.get("result") or {}).get("image")
         if not img:
-            log("cf klein fail", model, str(d.get("errors") or d)[:160]); return None
+            err = str(d.get("errors") or d)
+            if "daily free allocation" in err or "3036" in err:
+                from core import save
+                save(CF_DEAD, {"day": time.strftime("%Y-%m-%d", time.gmtime())})
+                log("cf klein: free neurons used up until 00:00 UTC, skipped for today")
+            else:
+                log("cf klein fail", model, err[:160])
+            return None
         open(dest, "wb").write(base64.b64decode(img))
         log("cf klein image", model, f"{len(refs)} refs", os.path.basename(dest))
         return dest
@@ -254,8 +294,15 @@ def scene_picture(ch, p, s, i, base_prompt, adir, chain):
     refs = refs_for(said + " " + str(s.get("prompt") or "") + " " + _bible_for(bible, i), ch.get("id"))
     tries, feedback, best = [], "", None
     for n in range(TRIES):
+        if n and p.get("pic_redraws", 0) >= REDRAWS_PER_VIDEO:
+            log(f"picsmith scene {i + 1}: redraw budget of this video used ({REDRAWS_PER_VIDEO}), the review decides")
+            break
+        if n:
+            p["pic_redraws"] = p.get("pic_redraws", 0) + 1
         prompt = write_prompt(ch, s, i, bible, refs, feedback) or base_prompt
-        img = cf_klein(prompt, refs, os.path.join(adir, f"s{i}k{n}.jpg")) if refs else None
+        img = None
+        if refs:
+            img = cf_klein(prompt, refs, os.path.join(adir, f"s{i}k{n}.jpg")) or nv_klein(prompt, refs, os.path.join(adir, f"s{i}n{n}.jpg"))
         img = img or chain(prompt, n)
         if not img:
             continue
