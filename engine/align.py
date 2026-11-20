@@ -5,7 +5,7 @@ words_by_line(wav, texts):
      with a monotonic Needleman-Wunsch. Matched words take the real times; unmatched words are interpolated
      between their neighbours. -> captions and cuts follow the voice word by word.
 Falls back to a pause-based estimate (old method) when whisper fails or matches too little."""
-import re, unicodedata
+import os, re, unicodedata
 from difflib import SequenceMatcher
 import numpy as np
 import soundfile as sf
@@ -93,7 +93,8 @@ def _whisper(wav, lang="hi", prompt=None, engine="local"):
         from faster_whisper import WhisperModel
         # 17 Nov: Hinglish matched only 62-84% (Devanagari output vs our Latin script). The script as initial_prompt makes
         # Whisper write the same Latin spellings, so the words line up (English editions already match ~95%).
-        segs, _ = WhisperModel("small", compute_type="int8").transcribe(a, language=lang, word_timestamps=True, beam_size=5,
+        # 20 Nov: device "auto" picked CUDA on the Windows laptop without cuBLAS -> crash; Studio runs Whisper on CPU everywhere
+        segs, _ = WhisperModel("small", device=os.environ.get("STUDIO_WHISPER_DEVICE", "cpu"), compute_type="int8").transcribe(a, language=lang, word_timestamps=True, beam_size=5,
                                                                         initial_prompt=(prompt or None) and prompt[:600])
         out = [(w.word.strip(), float(w.start), float(w.end)) for s in segs for w in s.words if w.word.strip()]
     # speech end by energy (drops hallucinated words in a silent tail)

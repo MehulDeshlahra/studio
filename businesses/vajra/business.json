@@ -1,0 +1,124 @@
+{
+  "name": "VAJRA Formwork",
+  "handle": "@vajraformwork",
+  "about": "VAJRA PP (plastic) hollow shuttering sheets for concrete formwork: slabs, columns, beams. Replaces plywood shuttering. Light, easy to cut, washable, reusable, smooth concrete finish. Sold from Durg/Raipur, Chhattisgarh, delivery across India. Free 1x1 sample on request.",
+  "audience": "Contractors, shuttering mistris, builders and site engineers in Chhattisgarh and across India who use plywood shuttering today",
+  "language": "Hinglish",
+  "library": {
+    "roots": [
+      "C:/Users/mehul/Desktop/vajra-automation",
+      "~/vajra-automation"
+    ],
+    "sources": [
+      {
+        "dir": "assets/clips",
+        "kind": "clip",
+        "index": "library.json",
+        "desc_field": "note",
+        "ai_field": "flow",
+        "dedupe_suffix": "-proxy"
+      },
+      {
+        "dir": "assets/photos",
+        "kind": "photo",
+        "index": "library.json",
+        "desc_field": "desc"
+      }
+    ],
+    "music_dir": "assets/music"
+  },
+  "media": {
+    "ban": "sheet-held|v1-hold|v1-core|x-sheet-floor-dirty|r-used|v2-used|dirty|stained|residue",
+    "cooldown_days": 21,
+    "min_clip_s": 1.5
+  },
+  "rules": [
+    "Never state any number of uses (no '40 baar', no '50+ uses', no 'har 5 slab', no per-dhalai rupee maths, no '1 VAJRA = 8 ply'). The ONLY allowed durability line: 'Sahi handling ke saath ply se 2-3 guna zyada chalti hai.'",
+    "Ply really lasts about 8-10 uses: never say ply breaks every time / after one use ('har baar toot', 'ek baar mein kharab'). Say it gets damaged, swells, wastes money over time.",
+    "Never mention the sheet price, rate or GST anywhere (voice, titles, caption). Rate goes to DM only.",
+    "Problem scenes (heavy, broken, wasted, costly ply) show OLD BROWN WOODEN PLYWOOD only, never the grey VAJRA sheet.",
+    "No fake proof: never claim lab tests, certificates, awards, customer counts or numbers that are not in the brand notes.",
+    "Never name competitors or other brands.",
+    "No on-screen 'AI' label (Instagram's AI toggle is used instead)."
+  ],
+  "never": [
+    "\\b\\d{1,3}\\s*\\+?\\s*(baar|bar|times|uses?|dhalai|slab)\\b",
+    "(₹|rs\\.?|rupees?)\\s*\\d",
+    "\\bgst\\b",
+    "per sheet",
+    "\\b3[, ]?[45]00\\b",
+    "\\bai (label|visuals|video|generated)\\b",
+    "(har|ek)\\s+baar\\b.{0,25}(toot|tut|kharab|bekar|bekaar|fat|phat)|(toot|tut|kharab)\\w*\\s+(\\w+\\s+){0,2}har\\s+baar"
+  ],
+  "text_filter": {
+    "python": "social/engine/claims.py",
+    "line": "fix_line",
+    "caption": "fix_caption",
+    "bad": "bad"
+  },
+  "brand_file": "social/engine/brand.md",
+  "context_files": [
+    "social/growth-plan.json"
+  ],
+  "voice": {
+    "engine": "gemini",
+    "voice": "Charon",
+    "lang": "hi",
+    "style": "confident, warm Indian site contractor explaining to another contractor, natural Hinglish, slightly fast reel pace with clear pauses",
+    "edge": "hi-IN-MadhurNeural",
+    "edge_rate": "+6%"
+  },
+  "edit": {
+    "words": [
+      40,
+      68
+    ],
+    "scenes": [
+      6,
+      9
+    ],
+    "min_clips": 4,
+    "music_db": -21
+  },
+  "cta": "a short spoken line asking viewers to comment PP for details (no price), e.g. 'Details chahiye? Comment mein PP likho.'",
+  "caption_rule": "Hinglish, 3-5 short lines: hook line, one benefit line, then exactly these lines: 'Comment mein PP likhiye, rate aapke DM mein. Follow kijiye @vajraformwork' and '📞 83050 70160' and 'PP shuttering sheet, plastic shuttering. Raipur, Durg, Bhilai aur poore India mein delivery.' then the hashtags",
+  "hashtags": [
+    "#PPFormwork",
+    "#PlasticShuttering",
+    "#Shuttering",
+    "#Formwork",
+    "#Construction",
+    "#Contractors",
+    "#Builders",
+    "#Chhattisgarh",
+    "#Raipur",
+    "#Durg",
+    "#Bhilai"
+  ],
+  "theme": {
+    "accent": "#f2b632",
+    "accent2": "#ffffff",
+    "bg": "#14110d",
+    "font": "Archivo Black",
+    "end_line": "Comment karo PP"
+  },
+  "deliver": {
+    "type": "command",
+    "cmd": [
+      "{python}",
+      "social/engine/intake.py",
+      "--file",
+      "{mp4}",
+      "--caption",
+      "{caption}",
+      "--cover",
+      "{cover}",
+      "--id",
+      "{id}",
+      "--title",
+      "{title}",
+      "--ai",
+      "{ai}"
+    ]
+  }
+}
