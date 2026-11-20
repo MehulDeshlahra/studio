@@ -310,7 +310,8 @@ def main():
             log(f"{lane} lane: a manual job is running, skip"); return
         if not lap_ok:
             log("prep lane: a manual job is running, but a page has nothing to post (golden rule): going ahead")
-        log("render lane: a manual job is running, but the laptop is free: rendering there")
+        else:
+            log("render lane: a manual job is running, but the laptop is free: rendering there")
     try:                                                    # 18 Nov: the job bot shares this server; never push it into swap
         avail = int(next(l for l in open("/proc/meminfo") if l.startswith("MemAvailable")).split()[1]) // 1024
         if avail < int(os.environ.get("STUDIO_MIN_FREE_MB", "1800")):
