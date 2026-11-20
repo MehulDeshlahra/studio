@@ -419,8 +419,21 @@ META_TTL = 1800      # 18 Nov: selfcheck 'fixed' this to 0 at 07:49 -> 2 Meta ca
                      # Never lower this below 600; follower counts change slowly.
 
 
+def _posted_sig():
+    """Newest change to any page's done.json (a post, an approval)."""
+    try:
+        return max(os.path.getmtime(os.path.join(ROOT, "channels", c, "done.json")) for c in os.listdir(os.path.join(ROOT, "channels"))
+                   if os.path.exists(os.path.join(ROOT, "channels", c, "done.json")))
+    except ValueError:
+        return 0
+
+
 def meta_pages():
-    if time.time() - _cache.get("t", 0) < max(600, META_TTL) and _cache.get("pages"):
+    # 20 Nov (owner: "the channels page is stale"): a post made at 20:49 showed as 0 posts for 30 min. The counts are
+    # read again as soon as something was posted (at most every 2 min, Meta's limits stay safe); otherwise every 30 min
+    fresh = time.time() - _cache.get("t", 0) < max(600, META_TTL)
+    posted_since = _posted_sig() > _cache.get("t", 0) and time.time() - _cache.get("t", 0) > 120
+    if fresh and not posted_since and _cache.get("pages"):
         return _cache["pages"]
     if time.time() < _cache.get("busy_until", 0):          # Meta refused us: back off 15 min, even with nothing cached
         return _cache.get("pages") or {}
