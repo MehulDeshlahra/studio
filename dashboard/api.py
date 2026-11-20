@@ -314,14 +314,15 @@ def jobs(running):
                 d = max(ds, key=lambda d: os.path.getmtime(os.path.join(base, d)))
                 act[(p["cid"], d)] = {"started": t0, "frm": None, "until": p.get("until"), "age": r["age"], "pid": r.get("pid")}
     sent = tgmap(); out = []
-    for c in _pages():
+    channels = _pages() + [d for d in os.listdir(OUT) if os.path.isdir(os.path.join(OUT, d)) and d not in _pages()]
+    for c in set(channels):
         done = {d["job"]: d for d in (jload(os.path.join(ROOT, "channels", c, "done.json"), []) or [])}
         base = os.path.join(OUT, c)
         if not os.path.isdir(base):
             continue
         for j in os.listdir(base):
             jd = os.path.join(base, j)
-            if not os.path.isdir(jd) or not os.path.exists(os.path.join(jd, "plan.json")):
+            if not os.path.isdir(jd):
                 continue
             s = job_state(c, j, act.get((c, j)))
             d = done.get(j)
