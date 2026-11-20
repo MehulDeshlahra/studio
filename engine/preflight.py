@@ -257,11 +257,12 @@ def repair_classic(plan, bad, lang, page="story"):
     layout_only = {k for k, pr in bad.items() if pr and all("layout audit" in str(x).lower() for x in pr)}
     for k in layout_only:
         s0 = plan["scenes"][int(k)]
-        for f_ in ("title", "big", "small"):
-            s0.pop(f_, None)
-        if s0.get("type") == "card":
-            s0["type"] = "image"
-        log("preflight: scene", int(k) + 1, "layout overlap -> extra on-screen text removed, picture kept")
+        if s0.get("type") == "card":                 # a card IS its text: keep it, shorter (3 big words, no small line)
+            s0["big"] = " ".join(str(s0.get("big") or "").split()[:3]); s0.pop("small", None); s0.pop("title", None)
+        else:
+            for f_ in ("title", "big", "small"):
+                s0.pop(f_, None)
+        log("preflight: scene", int(k) + 1, "layout overlap -> on-screen text shortened / removed, picture kept")
     bad = {k: v for k, v in bad.items() if k not in layout_only}
     if not bad:
         return []
