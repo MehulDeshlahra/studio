@@ -1,43 +1,33 @@
-"""Respectful address (owner, said again 20 Nov: "never say tu and all, give request to viewers always").
-Every word the viewer hears or reads (voice lines, on-screen titles / cards, captions, post text, comments) speaks to
-them as "aap", and asks as a request ("comment mein bataiye", "follow kijiye"), never "tu / tum / batao / likho / karo".
-  find(text)  -> list of the informal words found ([] = clean)
-  fix(text)   -> the same text with the common forms rewritten (words with no safe rewrite are left for find())
+"""Respectful address (owner 20 Nov: "never say tu"; then "tum is fine, only tu is bad").
+Nobody on screen or in the voice is spoken to as "tu" (tu / tera / tujhe ... and the bare "tu" commands such as
+"comment mein bata", "follow kar"). "tum" and "aap" are both fine; "tu" forms become "tum" forms.
+  find(text)  -> list of the "tu" words found ([] = clean)
+  fix(text)   -> the same text with the "tu" forms rewritten to "tum" forms
   fix_plan(p) -> rewrites every viewer-facing field of a plan in place, returns the number of changes
 The plan writer gets the rule in its prompt; this module enforces it after (a prompt alone failed 5+ times)."""
 import re
 
-# informal word -> respectful form (Roman Hinglish, as our scripts are written)
+# "tu" word -> "tum" form (Roman Hinglish, as our scripts are written)
 MAP = {
-    "tu": "aap", "tum": "aap", "tujhe": "aapko", "tumhe": "aapko", "tumhein": "aapko", "tujhko": "aapko", "tumko": "aapko",
-    "tujhse": "aapse", "tumse": "aapse", "tera": "aapka", "teri": "aapki", "tere": "aapke", "tumhara": "aapka",
-    "tumhari": "aapki", "tumhare": "aapke", "tumhaara": "aapka", "tumhaari": "aapki", "tumhaare": "aapke",
-    "batao": "bataiye", "bata": "bataiye", "likho": "likhiye", "likh": "likhiye", "socho": "sochiye", "soch": "sochiye",
-    "dekho": "dekhiye", "suno": "suniye", "sun": "suniye", "bolo": "boliye", "bol": "boliye", "jao": "jaiye", "aao": "aaiye",
-    "ruko": "rukiye", "ruk": "rukiye", "rukho": "rukiye", "chalo": "chaliye", "samjho": "samjhiye", "yaad rakho": "yaad rakhiye",
-    "karo": "kijiye", "kar": "kijiye", "do": "dijiye", "lo": "lijiye", "bhejo": "bhejiye", "pucho": "poochhiye", "poocho": "poochhiye",
-    "karoge": "karenge", "dekhoge": "dekhenge", "sochoge": "sochenge", "jaoge": "jaayenge", "bologe": "bolenge",
-    "doge": "denge", "loge": "lenge", "chunoge": "chunenge", "bataoge": "batayenge", "samjhoge": "samjhenge", "rahoge": "rahenge",
-    "chuno": "chuniye", "dabao": "dabaiye", "bachao": "bachaiye", "padho": "padhiye", "jano": "jaaniye", "jaano": "jaaniye", "milao": "milaiye",
+    "tu": "tum", "tujhe": "tumhe", "tujhko": "tumko", "tujhse": "tumse", "tujhme": "tumme", "tujhmein": "tummein",
+    "tera": "tumhara", "teri": "tumhari", "tere": "tumhare", "tereko": "tumko", "terko": "tumko",
+    "bata": "batao", "kar": "karo", "likh": "likho", "sun": "suno", "bol": "bolo", "soch": "socho", "dekh": "dekho",
+    "ruk": "ruko", "chal": "chalo", "bhej": "bhejo", "le": "lo", "de": "do", "aaja": "aao", "ja": "jao",
 }
-# words that are only informal when they address someone; "do" (two), "lo", "kar", "bata", "sun", "bol", "soch", "likh",
-# "ruk" are common inside other phrases, so they are rewritten only right after a CTA word or at a line end
-SOFT = {"do", "lo", "kar", "bata", "sun", "bol", "soch", "likh", "ruk"}
+# bare "tu" commands ("bata", "kar", "le", "de" ...) are also ordinary words ("kar diya", "le gaya"), so they count only
+# right after a CTA word and at the end of a phrase ("comment mein bata.", "follow kar")
+SOFT = {"bata", "kar", "likh", "sun", "bol", "soch", "dekh", "ruk", "chal", "bhej", "le", "de", "aaja", "ja"}
 CTA = r"(?:comment|comments|share|follow|save|like|subscribe|dm|message|reply|tag|link|bio|neeche|mein|me|mujhe|humein|hume)"
 HARD = re.compile(r"(?<![a-z])(" + "|".join(sorted((re.escape(k) for k in MAP if k not in SOFT), key=len, reverse=True)) + r")(?![a-z])", re.I)
-# "DM kar dunga" / "bhej diya" (I will / I did) is not a request: a first-person ending after it keeps the word
 SOFTRX = re.compile(r"(?<![a-z])(" + CTA + r")\s+(" + "|".join(SOFT) + r")(?![a-z])"
                     r"(?!\s+(?:dunga|dungi|denge|diya|liya|raha|rahi|rahe|chuka|chuki|sakta|sakti|payega))"
-                    r"(?=\s*(?:$|[.,!?|:;\u2014-]|aur\b))", re.I)   # "mein do devtaon" (two gods) is no request
-# "tum ... ho" / "tu ... hai" endings become "aap ... hain"
-HO = re.compile(r"(?<![a-z])(aap\b[^.?!|]{0,40}?\b)(ho|hai|tha|thi)(?=\s*(?:[?!.,|]|$))", re.I)   # "ho jayega" stays
+                    r"(?=\s*(?:$|[.,!?|:;\u2014-]|aur\b))", re.I)
+# "tu ... hai / tha" endings become "tum ... ho / the"
+HO = re.compile(r"(?<![a-z])(tum\b[^.?!|]{0,40}?\b)(hai|tha|thi)(?=\s*(?:[?!.,|]|$))", re.I)
 
 
 def _case(src, new):
     return new.upper() if src.isupper() else (new.capitalize() if src[:1].isupper() else new)
-
-
-OGE = re.compile(r"(?<![a-z])([a-z]{2,})oge(?![a-z])", re.I)       # any "-oge" (you will ...) -> "-enge"
 
 
 KEEP = re.compile(r"aage\s+suno|samjho\.exe", re.I)        # the page name "Aage Suno" and handles stay as they are
@@ -45,7 +35,7 @@ KEEP = re.compile(r"aage\s+suno|samjho\.exe", re.I)        # the page name "Aage
 
 def find(text):
     t = KEEP.sub(" ", text or "")
-    return [m.group(0) for m in HARD.finditer(t)] + [m.group(2) for m in SOFTRX.finditer(t)] + [m.group(0) for m in OGE.finditer(t)]
+    return [m.group(0) for m in HARD.finditer(t)] + [m.group(2) for m in SOFTRX.finditer(t)]
 
 
 def fix(text):
@@ -56,12 +46,11 @@ def fix(text):
     def _hold(m):
         keep[f"\x00{len(keep)}\x00"] = m.group(0); return f"\x00{len(keep) - 1}\x00"
     text = KEEP.sub(_hold, text)
-    had_tu = bool(re.search(r"(?<![a-z])(tu|tum)(?![a-z])", text, re.I))
+    had_tu = bool(re.search(r"(?<![a-z])tu(?![a-z])", text, re.I))
     out = HARD.sub(lambda m: _case(m.group(1), MAP[m.group(1).lower()]), text)
     out = SOFTRX.sub(lambda m: m.group(1) + " " + _case(m.group(2), MAP[m.group(2).lower()]), out)
-    out = OGE.sub(lambda m: m.group(1) + ("ENGE" if m.group(0).isupper() else "enge"), out)
-    if had_tu:                        # "tum kya sochte ho" -> "aap kya sochte hain"
-        out = HO.sub(lambda m: m.group(1) + _case(m.group(2), {"ho": "hain", "hai": "hain", "tha": "the", "thi": "thi"}[m.group(2).lower()]), out)
+    if had_tu:                        # "tu kya sochta hai" -> "tum kya sochta ho"
+        out = HO.sub(lambda m: m.group(1) + _case(m.group(2), {"hai": "ho", "tha": "the", "thi": "thi"}[m.group(2).lower()]), out)
     for k, v in keep.items():
         out = out.replace(k, v)
     return out
@@ -70,18 +59,15 @@ def fix(text):
 FIELDS = ("vo", "title", "big", "small", "headline", "text", "label", "question", "cta", "caption", "line", "hook")
 
 
-REWRITE = """You fix ONE line of a Hindi short-video script (Roman Hinglish). Owner rule: nobody is spoken to as "tu" or
-"tum"; everyone (the viewer and every character) is "aap", and every ask to the viewer is a polite request.
-Change ONLY the informal words and the verbs that go with them. Do not add, drop or move anything else: no new words
-like "aapki" or "mein", same names, same keywords in capitals, same punctuation, same meaning.
+REWRITE = """You fix ONE line of a Hindi short-video script (Roman Hinglish). Owner rule: nobody is spoken to as "tu".
+Change every "tu" form (tu, tera, teri, tere, tujhe, tujhse and the bare commands like "bata", "kar", "le") to the
+"tum" form with the matching verbs. "tum" and "aap" stay as they are. Do not add, drop or move anything else: same
+names, same keywords in capitals, same punctuation, same meaning.
 Examples:
-"Comment karo MAHAKAL, main DM kar dunga." -> "Comment kijiye MAHAKAL, main DM kar dunga."
-"bhai tu tension mat le, sab theek ho jayega." -> "bhai aap tension mat lijiye, sab theek ho jayega."
-"Tum ho detective." -> "Aap hain detective."
-"Socho agar paani girta, toh kya hota?" -> "Sochiye, agar paani girta, toh kya hota?"
-"Tum kya karoge? Dekhoge ya bhaagoge?" -> "Aap kya karenge? Dekhenge ya bhaagenge?"
-"Part 2 kal. Follow karo." -> "Part 2 kal. Follow kijiye."
-"Comment mein batao." -> "Comment mein bataiye."
+"bhai tu tension mat le, sab theek ho jayega." -> "bhai tum tension mat lo, sab theek ho jayega."
+"Tu hota to kya karta? Comment mein bata" -> "Tum hote to kya karte? Comment mein batao"
+"aur usse nikalta hai tera processor." -> "aur usse nikalta hai tumhara processor."
+"Proprietorship: tu hi maalik, unlimited risk." -> "Proprietorship: tum hi maalik, unlimited risk."
 Line: {line}
 Return JSON {{"line": "..."}}"""
 
@@ -132,16 +118,18 @@ def problems(p):
         for k in FIELDS:
             v = s.get(k)
             if isinstance(v, str) and find(v):
-                out.append(f"scene {i + 1} {k}: informal '{', '.join(find(v))}' in \"{v[:80]}\" (owner: always 'aap' and a request)")
+                out.append(f"scene {i + 1} {k}: informal '{', '.join(find(v))}' in \"{v[:80]}\" (owner: never 'tu')")
     for k in ("caption", "description", "title", "first_comment", "pinned"):
         v = p.get(k)
         if isinstance(v, str) and find(v):
-            out.append(f"post {k}: informal '{', '.join(find(v))}' (owner: always 'aap' and a request)")
+            out.append(f"post {k}: informal '{', '.join(find(v))}' (owner: never 'tu')")
     return out
 
 
 if __name__ == "__main__":
-    for t in ["Comment batao tum", "TUM HOTE TOH? COMMENT MEIN LIKHO", "COMMENT MEIN BATAO", "Tum kya sochte ho?",
-              "Agla baar darr aaye - tum kya karoge? Dekhoge? Ya daboge?", "Do log aaye", "Follow karo aur share karo",
-              "Kuber ne do baar socha", "Aap kya sochte hain? Comment kijiye", "Tera dost kaun hai?", "Mujhe batao"]:
-        print(f"{t!r:60} -> {fix(t)!r:60} left: {find(fix(t))}")
+    for t, want in [("Comment batao tum", "Comment batao tum"), ("Tum kya sochte ho?", "Tum kya sochte ho?"), ("Follow karo", "Follow karo"),
+                    ("Tu hota to kya karta? Comment mein bata", None), ("Tera dost kaun hai?", "Tumhara dost kaun hai?"),
+                    ("bhai tu tension mat le", None), ("Raghav le gaya", "Raghav le gaya"), ("main DM kar dunga", "main DM kar dunga"),
+                    ("Aage Suno pe follow kar", "Aage Suno pe follow karo"), ("Tu kya sochta hai?", "Tum kya sochta ho?")]:
+        got = fix(t)
+        print("OK " if (want is None or got == want) else "BAD", repr(t), "->", repr(got), "| left", find(got))

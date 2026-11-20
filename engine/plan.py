@@ -907,8 +907,7 @@ def explainer_gate(ch, topic, plan, research_text, W0, W1, rounds=2):
 - numbers/claims with no source or out of date (fix from the SOURCES or remove): {json.dumps(g.get('unsourced') or [], ensure_ascii=False)}
 - jargon left unexplained: {json.dumps(g.get('jargon') or [], ensure_ascii=False)}; stiff, bookish lines: {g.get('stiff')}
 Rules: 10-14 scenes, each ONE spoken line of 5-14 words, natural Hinglish like a friend explaining at a chai stall (short
-words, "sochiye", "matlab", "bas"); the viewer is ALWAYS "aap" and every ask is a polite request ("comment mein bataiye", "follow kijiye", "sochiye",
-"dekhiye"); never "tu", "tum", "batao", "karo", "likho" (owner rule); every technical word gets an everyday comparison the first time (webhook = "ek doorbell jo
+words, "sochiye", "matlab", "bas"); nobody is ever spoken to as "tu" (no "tu", "tera", "tujhe", no bare "bata" / "kar"): "tum" or "aap" only (owner rule); every technical word gets an everyday comparison the first time (webhook = "ek doorbell jo
 business ke server ko jagaati hai"); keep the hook idea and the JSON shape; fill "mechanism" with 3-6 real steps from the sources and walk them in order,
 one scene per step, each scene's visual showing that step (a flow node lighting up, the message moving, the tool card);
 at most one benefits line; no spoken 'follow' line; end with a payoff + an easy comment question; {W0}-{W1} words total;
