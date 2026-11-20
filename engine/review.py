@@ -127,6 +127,26 @@ def picture_check(mp4, timing, checks, max_frames=14):
             # 20 Nov: without the narration the model cannot know WHO a figure should be (missed a Vishnu-like Yamraj)
             parts.append({"text": f"Image {i + 1} (scene {i + 1}), narration: \"{said[i]}\":"})
             parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(open(f, "rb").read()).decode()}})
+    # 20 Nov: Gemini Decisions API first (calibrated yes-probabilities, own free quota; on the labelled frames it caught
+    # 3/3 wrong Jain pictures and passed 6/6 clean ones at 0.6). The two-model look below is the fallback.
+    try:
+        import picsmith
+        single = {f"c{k + 1}": q for k, q in enumerate(checks) if not re.search(r"between scenes", q, re.I)}
+        single.update(picsmith.GENERAL)
+        out, scores = [], []
+        for i in range(len(pts)):
+            fjpg = os.path.join(tmp, f"{i}.jpg")
+            if not os.path.exists(fjpg):
+                continue
+            a = picsmith.decide(fjpg, f"One picture from a short devotional / story video. Narration over this picture: "
+                                      f"\"{said[i]}\". The main figure is the one the narration is about.", single)
+            bad = {k: v for k, v in a.items() if v >= picsmith.FAIL}
+            scores.append(round(max(a.values() or [0]), 2))
+            if bad:
+                out.append(f"scene {i + 1}: " + "; ".join(f"{single[k][:110]} (yes {v:.0%})" for k, v in bad.items()))
+        return {"problems": out, "frames": len(pts), "model": "gemini-decision-1", "top": scores}
+    except Exception as e:
+        log("picture check: Decisions API unavailable, two-model check instead:", str(e)[:120])
     qs = "\n".join(f"{i + 1}. {q}" for i, q in enumerate(checks))
     body = {"contents": [{"parts": [{"text": PICCHK.format(qs=qs)}] + parts}],
             "generationConfig": {"responseMimeType": "application/json", "temperature": 0.0}}
