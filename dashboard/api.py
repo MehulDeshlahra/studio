@@ -708,6 +708,8 @@ def state():
     iss = issues(srv, fails, jl, sched, token_days, chs)
     st = {"auto_approve": False, "min_score": 9, **(jload(SETTINGS, {}) or {})}
     out = {"now": int(time.time()), "doing": now_sentence(running, jl), "server": srv, "running": running, "jobs": jl[:40],
+           # 20 Nov: Approvals showed 16 of 42 approved and 13 of 78 held (it read the newest-40 Runs list): full queue here
+           "queue": [j for j in jl if j["status"] in ("waiting", "ready", "held", "approved")],
             "schedule": sched, "issues": iss, "channels": chs, "budgets": budgets(), "activity": activity(), "settings": st,
             "token_days": token_days, "render_median": render_median(), "quality": quality(), "offers": offers_list(), "campaigns": campaigns_list()}
     out["needs"] = extra.needs_you(out)

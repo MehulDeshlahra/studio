@@ -112,7 +112,7 @@ const V = {
   today() {
     const d = new Date(now() * 1000), act = S.jobs.filter((j) => j.active);
     const fol = S.channels.reduce((a, c) => a + c.igF + c.fb, 0);
-    const wait = S.jobs.filter((j) => ["waiting", "ready"].includes(j.status)).length, appr = S.jobs.filter((j) => j.status === "approved").length;
+    const wait = (S.queue || S.jobs).filter((j) => ["waiting", "ready"].includes(j.status)).length, appr = (S.queue || S.jobs).filter((j) => j.status === "approved").length;
     const today = d.toISOString().slice(0, 10), made = S.activity.filter((a) => a.t.startsWith(today) && /rendered in/.test(a.msg)).length;
     const bad = S.issues.filter((i) => i.lvl === "bad").length, warn = S.issues.filter((i) => i.lvl === "warn").length;
     const s = S.server, b = briefCache;
@@ -164,7 +164,8 @@ const V = {
       <td class="hide-m mut">${ago(j.updated)}</td></tr>`; }).join("") || `<tr><td colspan="6" class="empty">No runs here.</td></tr>`}</tbody></table></div>`;
   },
   approvals() {
-    const w = S.jobs.filter((j) => ["waiting", "ready"].includes(j.status)), held = S.jobs.filter((j) => j.status === "held"), ap = S.jobs.filter((j) => j.status === "approved");
+    const Q = S.queue || S.jobs;   // 20 Nov: full approval queue, not the newest-40 Runs list
+    const w = Q.filter((j) => ["waiting", "ready"].includes(j.status)), held = Q.filter((j) => j.status === "held"), ap = Q.filter((j) => j.status === "approved");
     const card = (j) => { const c = ch(j.cid), base = `/media/${j.cid}/${j.job}/`;
       return `<div class="card pad"><div class="media"><div class="cover" onclick="openJob('${j.cid}','${j.job}')">${(j.files[j.final] || j.files["preview.mp4"]) ? `${j.files["cover.jpg"] ? `<img src="${base}cover-s.jpg?v=${j.updated}" onerror="this.onerror=null;this.src='${base}cover.jpg'">` : ""}<span class="pl">${ic("play")}${j.qc.dur ? Math.round(j.qc.dur) + "s" : "Play"}</span>` : `<div class="empty" style="padding:70px 8px;font-size:12px">No video yet<br>held before render</div>`}</div>
        <div style="min-width:0"><div style="display:flex;gap:8px;align-items:center">${dp(c, 20)}<span class="mut">${esc(c.name)} · ${j.lang === "en" ? "English" : "Hindi"}</span><span style="margin-left:auto">${badge(j.status, j)}</span></div>
@@ -458,7 +459,7 @@ function toggleTheme() { const h = document.documentElement; h.dataset.theme = h
 const page = () => { const t = location.hash.slice(1); return V[t] ? t : "today"; };
 function render(force) {
   if (!S) return;
-  const p = page(), wait = S.jobs.filter((j) => ["waiting", "ready"].includes(j.status)).length, bad = S.issues.filter((i) => i.lvl === "bad").length, warn = S.issues.filter((i) => i.lvl === "warn").length;
+  const p = page(), wait = (S.queue || S.jobs).filter((j) => ["waiting", "ready"].includes(j.status)).length, bad = S.issues.filter((i) => i.lvl === "bad").length, warn = S.issues.filter((i) => i.lvl === "warn").length;
   const cnt = { approvals: wait ? [wait, "v"] : null, server: bad ? [bad, "r"] : warn ? [warn, "a"] : null, runs: S.jobs.filter((j) => j.active).length ? [S.jobs.filter((j) => j.active).length, ""] : null };
   $("#nav").innerHTML = NAV.map(([g, it]) => (g ? `<div class="ng">${g}</div>` : `<div style="height:6px"></div>`) + it.map(([k, t]) => `<a href="#${k}" class="${k === p ? "on" : ""}">${ic(ICON[k])}${t}${cnt[k] ? `<span class="c ${cnt[k][1]}">${cnt[k][0]}</span>` : ""}</a>`).join("")).join("");
   $("#tabbar").innerHTML = [["today", "Today"], ["published", "Posted"], ["approvals", "Approve"], ["channels", "Channels"], ["server", "Server"], ["more", "More"]].map(([k, t]) => `<a href="${k === "more" ? "javascript:moreMenu()" : "#" + k}" class="${k === p ? "on" : ""}">${ic(ICON[k] || "more")}${t}${cnt[k] ? `<span class="c">${cnt[k][0]}</span>` : ""}</a>`).join("");
