@@ -933,7 +933,12 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     wprompt: a sample in the wanted script (19 Nov Hindi page: whisper wrote garbled Devanagari; a Roman Hinglish sample
     as initial_prompt makes it write Latin, which our captions and the note anchors need)."""
     os.makedirs(out_dir, exist_ok=True)
+    forced = lang
     Wd, lang = words(src, lang, " ".join(x for x in (wprompt, ", ".join(glossary or [])) if x))
+    # 20 Nov: a Japanese-audio Yakuza cutscene got Japanese captions over its own English subtitles and was approved
+    # (cutcapsuletv 1120-0311a-c1). A page without a set language is English: other spoken languages are not clipped
+    if not forced and lang and lang != "en" and len(Wd) >= 8:
+        raise RuntimeError(f"spoken language is '{lang}', not English: captions would be wrong for this page, clip skipped")
     Wd = fix_names(Wd, glossary)
     a2, b2 = trim(Wd, a, b)
     ranges = keep_ranges(Wd, a2, b2, loudness(src))
