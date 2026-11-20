@@ -46,5 +46,261 @@
   "vision_secs": 3.1,
   "tested": 1795152680.5471172,
   "tested_day": "2026-11-20"
+ },
+ "openrouter/dots-studio/dots-3-note-preview:free": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 15.6,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "openrouter/nvidia/nemotron-3.5-lightning:free": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 15.6,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 15.1,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 15.6,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "openrouter/google/gemma-4-26b-a4b-it:free": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 15.5,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "openrouter/google/gemma-4-31b-it:free": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 15.3,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "llm7/gpt-4o-mini-2024-07-18": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.0,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "llm7/gpt-4.1-nano-2025-04-14": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.0,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "llm7/deepseek-r1-0528": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "llm7/qwen2.5-coder-32b-instruct": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nara/agnes-2.0-flash": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.1,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nara/agnes-2.5-flash": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.3,
+  "vision": 0.0,
+  "vision_secs": 0.4,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nara/laguna-s-2.1": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.5,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nara/minimax-m3-free": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.1,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nara/mistral-large": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.1,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nara/mistral-medium-3-5": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.1,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nara/qwen3.8-27b": {
+  "first_seen": "2026-11-21",
+  "text": 0.25,
+  "text_secs": 1.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nara/stepfun-3.7-flash": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.3,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "gemini/gemini-3.8-flash": {
+  "first_seen": "2026-11-21",
+  "text": 1.0,
+  "text_secs": 2.8,
+  "vision": 1.0,
+  "vision_secs": 2.8,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "gemini/gemini-3.7-flash": {
+  "first_seen": "2026-11-21",
+  "text": 1.0,
+  "text_secs": 2.2,
+  "vision": 1.0,
+  "vision_secs": 2.8,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "gemini/gemini-3.1-flash-lite": {
+  "first_seen": "2026-11-21",
+  "text": 1.0,
+  "text_secs": 3.0,
+  "vision": 1.0,
+  "vision_secs": 3.8,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "gemini/gemini-3-flash-preview": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.0,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "gemini/gemini-2.5-flash": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 1.2,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "gemini/gemini-2.5-flash-lite": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 1.1,
+  "vision": 0.0,
+  "vision_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "groq/groq/compound": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "groq/allam-2-7b": {
+  "first_seen": "2026-11-21",
+  "text": 0.5,
+  "text_secs": 0.2,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "groq/openai/gpt-oss-120b": {
+  "first_seen": "2026-11-21",
+  "text": 1.0,
+  "text_secs": 0.6,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "groq/openai/gpt-oss-20b": {
+  "first_seen": "2026-11-21",
+  "text": 1.0,
+  "text_secs": 0.6,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "groq/qwen/qwen3.6-27b": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 0.0,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "groq/qwen/qwen3.8-27b": {
+  "first_seen": "2026-11-21",
+  "text": 0.75,
+  "text_secs": 0.2,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nvidia/meta/muse-glimmer-30b": {
+  "first_seen": "2026-11-21",
+  "text": 0.0,
+  "text_secs": 120.1,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
+ },
+ "nvidia/poolside/laguna-xs-2.1": {
+  "first_seen": "2026-11-21",
+  "text": 0.5,
+  "text_secs": 0.4,
+  "tested": 1795216201.7818136,
+  "tested_day": "2026-11-21"
  }
 }

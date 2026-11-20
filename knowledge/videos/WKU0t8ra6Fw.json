@@ -1,0 +1,41 @@
+{
+ "hook_first_words": "Ghar mein Ram ban ke raho",
+ "first_frame": "A split screen showing a person (Raj Shamani) on the left and a person (the guest) on the right, both sitting in a studio setting with a bookshelf background.",
+ "hook_type": "other",
+ "format": "talking head + graphics",
+ "length_s": 29,
+ "cuts_estimate": 14,
+ "avg_shot_s": 2.07,
+ "words_per_s_estimate": 2.4,
+ "beats": [
+  "0-4 s: Introduction using clips from a mythological show to illustrate the difference between Ram and Krishna.",
+  "4-10 s: Transition to the studio setting where the host and guest discuss the concept.",
+  "10-18 s: Explanation of Krishna's philosophy of winning by any means necessary.",
+  "18-29 s: Explanation of Ram's philosophy of winning through honesty and discipline, concluding the comparison."
+ ],
+ "visual_techniques": [
+  "Split-screen for the interview portion (0:04-0:29)",
+  "B-roll footage from a mythological TV show (0:00-0:04, 0:10-0:12, 0:16-0:18, 0:20-0:29)",
+  "Text overlays appearing in sync with the spoken words (throughout)"
+ ],
+ "captions": "Bold, white, sans-serif font, centered, 2-4 words per chunk, periodically highlighted in yellow.",
+ "sound": "Voiceover from the interview, background music that is upbeat and rhythmic, no sound effects.",
+ "recurring_element": "The contrast between the two mythological figures (Ram and Krishna) and the split-screen interview setup.",
+ "ending": "The video ends with the speaker's final point, fading out without a specific CTA.",
+ "why": "The video performs well because it uses a relatable and culturally significant analogy (Ram vs. Krishna) to explain a complex philosophical question, making it engaging and easy to understand.",
+ "reusable_faceless": [
+  "Using popular cultural or mythological references to explain a concept",
+  "Split-screen format for interviews",
+  "Dynamic text overlays that emphasize key words"
+ ],
+ "id": "WKU0t8ra6Fw",
+ "url": "https://www.youtube.com/watch?v=WKU0t8ra6Fw",
+ "channel": "RajShamani",
+ "niche": "Entrepreneurship/Tech",
+ "title": "What matters more today: having principles or knowing how to navigate reality? | Raj Shamani #Shorts",
+ "views": 927000,
+ "channel_median": 355000,
+ "ratio": 2.61,
+ "label": "winner",
+ "watched": "2026-11-21T05:04+05:30"
+}

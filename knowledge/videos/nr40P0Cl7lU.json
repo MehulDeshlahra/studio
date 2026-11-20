@@ -1,0 +1,46 @@
+{
+ "hook_first_words": "Kuch creators apni puri energy",
+ "first_frame": "The host, Abhi, is centered, wearing a red t-shirt, with a blue background. The text 'PROBLEM FOR INDIA'S IMAGE' is at the top in a red and white box.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 65,
+ "cuts_estimate": 15,
+ "avg_shot_s": 4.3,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-4 s: Hook: Creators are obsessed with portraying India negatively.",
+  "4-16 s: Introduction of the specific example: Tyler Oliveira's video on the Gorehabba festival.",
+  "16-24 s: Counter-example: Positive Indian festivals that could have been shown instead.",
+  "24-33 s: Critique of the creator's intent: Choosing the most sensationalized/disgusting content.",
+  "33-49 s: Evidence of impact: Showing the negative comment section and the creator's disclaimer.",
+  "49-55 s: Contrast: Highlighting successful Indians (CEOs) vs. the negative stereotypes.",
+  "55-65 s: Conclusion: Calling this 'mental slavery' and 'racism', followed by a CTA."
+ ],
+ "visual_techniques": [
+  "Picture-in-picture (PiP) overlay of external YouTube videos (0:04, 0:07, 0:11, 0:17, 0:21, 0:23, 0:36, 0:50, 0:53)",
+  "Zoom-in on host for emphasis (0:33, 1:01)",
+  "Text overlays for key phrases (e.g., 'PROBLEM FOR INDIA'S IMAGE', 'Mental Slavery')",
+  "Split screen with host on bottom and external content on top (0:04-0:33)"
+ ],
+ "captions": "Dynamic, word-by-word or short phrase highlighting, centered at the bottom, yellow text with black outline.",
+ "sound": "Host voice is clear and energetic. Background music is a serious, slightly tense, rhythmic beat. No sound effects used.",
+ "recurring_element": "The host (Abhi) remains the central figure throughout, providing the narrative anchor.",
+ "ending": "CTA to watch the full video on YouTube, showing the thumbnail of the long-form video.",
+ "why": "It addresses a sensitive, relatable topic (national pride/stereotypes) with a clear 'us vs. them' narrative. It uses concrete evidence (screenshots of comments and videos) to validate the host's argument, making it highly shareable.",
+ "reusable_faceless": [
+  "Using PiP overlays to critique existing viral content.",
+  "Highlighting negative comment sections to build a 'common enemy' narrative.",
+  "Contrasting negative stereotypes with positive, factual counter-evidence.",
+  "Using a strong, emotionally charged hook to immediately grab attention."
+ ],
+ "id": "nr40P0Cl7lU",
+ "url": "https://www.youtube.com/watch?v=nr40P0Cl7lU",
+ "channel": "AbhiAndNiyu",
+ "niche": "Social/Tech/Explainer",
+ "title": "Why Is India Always Shown Negatively?",
+ "views": 350000,
+ "channel_median": 118000,
+ "ratio": 2.97,
+ "label": "winner",
+ "watched": "2026-11-21T05:04+05:30"
+}

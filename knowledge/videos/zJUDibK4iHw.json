@@ -1,0 +1,51 @@
+{
+ "hook_first_words": "South Koreans khud apne desh ko",
+ "first_frame": "Host in a red t-shirt, text overlay 'SAMSUNG'S BUSINESS EMPIRE' at the top.",
+ "hook_type": "question",
+ "format": "talking head + graphics",
+ "length_s": 89,
+ "cuts_estimate": 25,
+ "avg_shot_s": 3.56,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-4 s: The hook: Why do South Koreans call their country 'The Republic of Samsung'?",
+  "4-11 s: Visual metaphor: The iceberg showing Samsung's diverse subsidiaries.",
+  "11-23 s: The 'Samsung Life' cycle: Born, live, study, insure, die in Samsung-affiliated institutions.",
+  "23-35 s: Economic scale: Revenue and GDP contribution stats.",
+  "35-46 s: The irony: Samsung as a competitor and supplier to Apple.",
+  "46-52 s: Heavy industries: Shipbuilding and oil rigs.",
+  "52-1:09 s: Construction: Global landmarks built by Samsung C&T.",
+  "1:09-1:22 s: Insurance: Market penetration and vertical integration.",
+  "1:22-1:29 s: Conclusion: Final summary and CTA."
+ ],
+ "visual_techniques": [
+  "Text overlay (0s)",
+  "Iceberg animation (4s)",
+  "Split screen with stock footage/images (13s)",
+  "Animated bar charts (24s)",
+  "Newspaper/article clipping overlay (39s)",
+  "Map/location pins on a grid (53s)",
+  "Icon animation (1:14s)"
+ ],
+ "captions": "Bold, white text with black outline, centered, 3-6 words per chunk, highlighting key terms in yellow.",
+ "sound": "Upbeat, rhythmic background music; clear, energetic voiceover; subtle sound effects for graphics.",
+ "recurring_element": "The host in the red t-shirt remains the anchor, with graphics appearing above him.",
+ "ending": "CTA: 'Full video on YouTube' with a thumbnail preview.",
+ "why": "It uses a 'myth-busting' structure that turns a familiar brand into a surprising, almost dystopian fact-based narrative. The 'Samsung Life' cycle is highly relatable and creates a sense of awe, which drives engagement.",
+ "reusable_faceless": [
+  "The 'iceberg' visual metaphor for corporate structures",
+  "Using a 'life cycle' narrative to explain a brand's influence",
+  "Overlaying text/clippings on top of a talking head",
+  "Using simple, clean animated bar charts for economic data"
+ ],
+ "id": "zJUDibK4iHw",
+ "url": "https://www.youtube.com/watch?v=zJUDibK4iHw",
+ "channel": "AbhiAndNiyu",
+ "niche": "Social/Tech/Explainer",
+ "title": "Samsung's MASSIVE Business Empire | Abhi and Niyu",
+ "views": 422000,
+ "channel_median": 118000,
+ "ratio": 3.58,
+ "label": "winner",
+ "watched": "2026-11-21T05:04+05:30"
+}

@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "We're all",
+ "first_frame": "A close-up of a woman's hands opening a Dell laptop.",
+ "hook_type": "other",
+ "format": "talking head + graphics",
+ "length_s": 19,
+ "cuts_estimate": 17,
+ "avg_shot_s": 1.1,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Introduction of the brand and the concept of building.",
+  "3-6 s: Introducing the speaker and the context of experimentation.",
+  "6-10 s: Showcasing the laptop's capabilities with video editing software.",
+  "10-15 s: Highlighting the laptop's performance and technical specifications.",
+  "15-19 s: Concluding with a brand message and CTA."
+ ],
+ "visual_techniques": [
+  "Close-up shots of the laptop (0s, 6s, 8s, 11s, 15s)",
+  "Medium shots of the speaker (2s, 4s, 7s, 16s)",
+  "Screen recording/overlay of editing software (5s, 9s, 14s)",
+  "Text overlays for branding and specs (3s, 13s, 18s)"
+ ],
+ "captions": "Simple white text centered at the bottom, one or two words per chunk, no highlighting.",
+ "sound": "Voiceover by the speaker, upbeat background music, no sound effects.",
+ "recurring_element": "The Dell laptop logo.",
+ "ending": "CTA with brand logos and the slogan 'Built For You'.",
+ "why": "The video feels like a generic corporate advertisement rather than an engaging tech story. It lacks a compelling hook, authentic personality, or unique value proposition, making it feel like a paid promotion rather than organic content.",
+ "reusable_faceless": [
+  "Using B-roll of products to illustrate a narrative",
+  "Overlaying screen recordings to demonstrate software performance",
+  "Using text overlays to highlight key features or specs",
+  "Creating a consistent brand aesthetic through color and lighting"
+ ],
+ "id": "DJqoBbAEgWA",
+ "url": "https://www.youtube.com/watch?v=DJqoBbAEgWA",
+ "channel": "aevytv",
+ "niche": "tech stories, English, India",
+ "title": "The Dell Pro Precision helps us grow our ideas into something bigger and better.",
+ "views": 19000,
+ "channel_median": 167000,
+ "ratio": 0.11,
+ "label": "flop",
+ "watched": "2026-11-21T05:04+05:30"
+}

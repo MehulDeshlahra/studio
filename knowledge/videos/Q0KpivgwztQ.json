@@ -1,0 +1,40 @@
+{
+ "hook_first_words": "How old are you?",
+ "first_frame": "Raj Shamani standing in a formal room, facing French President Emmanuel Macron. Text overlay: 'Manifested it, Said it, Achieved it!'",
+ "hook_type": "in-the-middle",
+ "format": "talking head + graphics (interview clip)",
+ "length_s": 17,
+ "cuts_estimate": 3,
+ "avg_shot_s": 5.6,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-2 s: Raj asks Macron his age, Macron responds.",
+  "2-17 s: Raj explains his goal to make his podcast the world's #1, mentioning his current ranking and ambition to beat American competitors."
+ ],
+ "visual_techniques": [
+  "High-contrast color grading",
+  "Dynamic, center-aligned captions appearing word-by-word",
+  "Subtle zoom-in on Raj during his monologue",
+  "Static camera angle for the interview"
+ ],
+ "captions": "Bold, white sans-serif font, center-screen, 2-4 words per chunk, white text with no highlight color.",
+ "sound": "Original dialogue audio, no background music, clear voice recording.",
+ "recurring_element": "The text overlay at the top: 'Manifested it, Said it, Achieved it!'",
+ "ending": "Punchline: 'There is only Americans, we're gonna beat it.'",
+ "why": "It leverages social proof and high-status association by featuring a world leader, combined with a bold, aspirational narrative that resonates with the creator's audience of entrepreneurs.",
+ "reusable_faceless": [
+  "Use of high-status guest footage to anchor a personal mission statement",
+  "Word-by-word captioning to maintain viewer attention",
+  "The 'Manifested it, Said it, Achieved it!' header as a recurring brand element"
+ ],
+ "id": "Q0KpivgwztQ",
+ "url": "https://www.youtube.com/watch?v=Q0KpivgwztQ",
+ "channel": "RajShamani",
+ "niche": "Entrepreneurship/Tech",
+ "title": "❤️🫡| Raj Shamani #Shorts #podcast",
+ "views": 3000000,
+ "channel_median": 355000,
+ "ratio": 8.45,
+ "label": "winner",
+ "watched": "2026-11-21T05:03+05:30"
+}

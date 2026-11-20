@@ -1,0 +1,42 @@
+{
+ "hook_first_words": "If you looked",
+ "first_frame": "A top-down view of a colorful geothermal pool in Yellowstone National Park.",
+ "hook_type": "question",
+ "format": "3D how-it-works",
+ "length_s": 32,
+ "cuts_estimate": 11,
+ "avg_shot_s": 2.9,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Hook and introduction to Yellowstone's magma chamber.",
+  "3-8 s: Visualizing the volume of magma.",
+  "8-13 s: Explaining why it won't explode naturally.",
+  "13-25 s: Hypothetical scenario of dumping magma on NYC.",
+  "25-32 s: The aftermath and final destruction of a house."
+ ],
+ "visual_techniques": [
+  "3D animation of subterranean magma (0-8s)",
+  "Camera zoom/pan to simulate a hypothetical event (13-25s)",
+  "Destruction animation (28-32s)"
+ ],
+ "captions": "White text with black outline, 3-6 words per chunk, centered, no highlight colour.",
+ "sound": "AI-generated male narrator, dramatic orchestral music, sound effects of bubbling magma and roaring fire.",
+ "recurring_element": "The glowing orange magma texture.",
+ "ending": "A house being engulfed by a wave of lava.",
+ "why": "The hypothetical scenario is extreme and lacks a relatable 'real-world' application or educational pivot, making it feel like a generic 'what-if' video rather than a compelling 'how-it-works' piece.",
+ "reusable_faceless": [
+  "Using 3D software to visualize hypothetical disasters",
+  "Pacing the narrative with a 'what if' question",
+  "Directly comparing volumes (e.g., magma vs. Grand Canyon) to make abstract concepts tangible"
+ ],
+ "id": "gpZstBrMiF0",
+ "url": "https://www.youtube.com/watch?v=gpZstBrMiF0",
+ "channel": "zackdfilms",
+ "niche": "3D how-it-works",
+ "title": "Dumping Yellowstone’s Magma On NYC 🤯",
+ "views": 995000,
+ "channel_median": 3400000,
+ "ratio": 0.29,
+ "label": "flop",
+ "watched": "2026-11-21T05:04+05:30"
+}

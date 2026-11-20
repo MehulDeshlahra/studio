@@ -1,0 +1,44 @@
+{
+ "hook_first_words": "Tum ek ladke ko",
+ "first_frame": "Raj Shamani in a pink hoodie sitting at a desk with a microphone, talking to a guest in a yellow jacket.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 55,
+ "cuts_estimate": 12,
+ "avg_shot_s": 4.5,
+ "words_per_s_estimate": 2.8,
+ "beats": [
+  "0-5 s: Hook: You don't know a guy until you travel with him.",
+  "5-20 s: List of scenarios: money, drunk, angry, family/friends treatment.",
+  "20-30 s: More scenarios: broke, desperate, rejection.",
+  "30-40 s: Physical boundaries/intimacy scenarios.",
+  "40-55 s: Closing argument: how he handles low phases/negativity."
+ ],
+ "visual_techniques": [
+  "Jump cuts to maintain pacing",
+  "Dynamic captioning with word highlighting",
+  "Occasional zoom-ins on the speaker's face for emphasis",
+  "Reaction shots of the guest to validate the speaker's points"
+ ],
+ "captions": "Bold, yellow text, centered at the bottom, one or two words highlighted at a time for rhythm.",
+ "sound": "Clear voiceover, subtle background ambient music, no sound effects.",
+ "recurring_element": "The speaker's hand gestures to emphasize the list of points.",
+ "ending": "Punchline: 'You don't know a guy properly until you see these things.'",
+ "why": "The video uses a relatable, high-stakes topic (relationships/vetting partners) and delivers it as a structured 'checklist' which encourages viewers to watch until the end to see all the points.",
+ "reusable_faceless": [
+  "Dynamic, word-by-word captioning",
+  "Structured listicle format (The 'X things you need to know' approach)",
+  "Pacing through jump cuts to remove dead air",
+  "Using a 'hook' that challenges common knowledge"
+ ],
+ "id": "Gmi8jhU1Kb8",
+ "url": "https://www.youtube.com/watch?v=Gmi8jhU1Kb8",
+ "channel": "RajShamani",
+ "niche": "Entrepreneurship/Tech",
+ "title": "Share this with your girl | Raj Shamani #Shorts #relationship",
+ "views": 2100000,
+ "channel_median": 355000,
+ "ratio": 5.92,
+ "label": "winner",
+ "watched": "2026-11-21T05:03+05:30"
+}

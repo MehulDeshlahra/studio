@@ -1,136 +1,136 @@
 {
  "picks": [
   {
-   "title": "TwinD: Generalizing Deepfake Detection",
-   "url": "https://huggingface.co/papers/2611.25935",
-   "src": "Hugging Face",
-   "angle": "Better tech to spot deepfakes, crucial for Indian social media.",
-   "hook": "Deepfake se bachna hai? Yeh naya AI model dekho.",
-   "format": "how-it-works",
-   "freshness": "this week",
-   "score": 10,
-   "found": "2026-11-20T17:06+05:30"
-  },
-  {
-   "title": "Meta’s AI agent Muse leaking private data",
-   "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+   "title": "AI claimed a solution to the 167-year-old Riemann hypothesis",
+   "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
    "src": "TechCrunch",
-   "angle": "Privacy alert for Indian users using Meta's new AI features.",
-   "hook": "Meta ka naya AI agent aapki baatein leak kar raha hai?",
+   "angle": "Math ka sabse bada mystery solve ho gaya? AI vs Human race.",
+   "hook": "Riemann hypothesis solve ho gaya? AI ya insaan?",
    "format": "story",
    "freshness": "today",
-   "score": 9,
-   "found": "2026-11-20T17:06+05:30"
+   "score": 10,
+   "found": "2026-11-21T05:02+05:30"
   },
   {
-   "title": "The Garage Door Spam Phenomenon",
-   "url": "https://blog.harrison.page/garage-door-spam/",
-   "src": "Hacker News",
-   "angle": "Surprising new way spammers are targeting smart home devices.",
-   "hook": "Smart garage door hai? Yeh naya scam bachke rehna!",
-   "format": "story",
+   "title": "Signal is blocking Gemini and Siri AI from reading your screen",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+   "src": "The Verge",
+   "angle": "Privacy first! Ab AI aapke private chats nahi padh payega.",
+   "hook": "Ab AI aapke private chats nahi padh payega!",
+   "format": "evidence",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-20T17:06+05:30"
+   "found": "2026-11-21T05:02+05:30"
   },
   {
-   "title": "Firecrawl: Knowledge infrastructure for agents",
-   "url": "https://github.com/firecrawl/firecrawl",
-   "src": "GitHub",
-   "angle": "Easier web scraping for Indian AI startup founders.",
-   "hook": "AI agents ko internet ka data kaise milega? Firecrawl dekho.",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-20T17:06+05:30"
-  },
-  {
-   "title": "PostgreSQL 19 Released",
-   "url": "https://www.postgresql.org/docs/release/19.0/",
-   "src": "PostgreSQL",
-   "angle": "Essential update for Indian developers and database admins.",
-   "hook": "PostgreSQL 19 aa gaya hai, database management ab aur fast!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-20T17:06+05:30"
-  },
-  {
-   "title": "FFmpeg 9.1 'Gauss' Released",
-   "url": "https://ffmpeg.org/download.html#release_9.1",
-   "src": "FFmpeg",
-   "angle": "Major update for Indian video editors and content creators.",
-   "hook": "Video editing karte ho? FFmpeg ka naya update check karo.",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-20T17:06+05:30"
-  },
-  {
-   "title": "UK fridges secured from hackers",
-   "url": "https://www.bbc.co.uk/news/articles/c6eq49zyx7p4o",
-   "src": "BBC",
-   "angle": "Why your smart appliances need better security in India too.",
-   "hook": "Aapka fridge hack ho sakta hai? Yeh news dekho.",
-   "format": "story",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-20T17:06+05:30"
-  },
-  {
-   "title": "DailySafe: Benchmarking Dynamic Safety",
-   "url": "https://huggingface.co/papers/2611.26298",
+   "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+   "url": "https://huggingface.co/blog/inkling2mini",
    "src": "Hugging Face",
-   "angle": "How researchers are making AI safer for everyday chats.",
-   "hook": "Kya aapka AI safe hai? Naya benchmark test dekho.",
-   "format": "evidence",
+   "angle": "Kam specs wale laptop pe bhi powerful AI model.",
+   "hook": "Slow laptop? Ye AI model fast chalega!",
+   "format": "tool-demo",
    "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-20T17:06+05:30"
+   "score": 9,
+   "found": "2026-11-21T05:02+05:30"
   },
   {
-   "title": "Research acceleration: The jagged frontier",
-   "url": "https://openai.com/index/research-acceleration-jagged-frontier",
-   "src": "OpenAI",
-   "angle": "Understanding why AI is great at some things and bad at others.",
-   "hook": "AI kabhi genius, kabhi dumb kyun hota hai?",
+   "title": "OpenComputer – an open source alternative to Devin",
+   "url": "https://github.com/diggerhq/opencomputer",
+   "src": "GitHub",
+   "angle": "Free coding agent jo aapke liye software banaye.",
+   "hook": "Devin ka free alternative aa gaya hai!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "title": "Language Models Can Rewrite Their Own Weights",
+   "url": "https://huggingface.co/papers/2611.21885",
+   "src": "Hugging Face Papers",
+   "angle": "AI khud ko update kar raha hai, next level evolution.",
+   "hook": "AI khud ko update kar sakta hai?",
+   "format": "how-it-works",
+   "freshness": "this week",
+   "score": 9,
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "title": "Winedroid – run Android apps without Android (WASM demo)",
+   "url": "https://winedroid.soham.sh/demo/",
+   "src": "Hacker News",
+   "angle": "Browser mein Android apps chalana ab possible hai.",
+   "hook": "Browser mein Android apps? Bina Android ke!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "title": "Introducing Tool Retrieval in the Gemini API",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+   "src": "Google AI",
+   "angle": "Developers ke liye Gemini ab khud tools dhund lega.",
+   "hook": "Gemini ab khud tools dhund lega, coding easy!",
    "format": "how-it-works",
    "freshness": "this week",
    "score": 8,
-   "found": "2026-11-20T17:06+05:30"
+   "found": "2026-11-21T05:02+05:30"
   },
   {
-   "title": "Show HN: Tinnitus frequency finder",
-   "url": "https://trynotched.com/find",
+   "title": "AURA: AUdio-dRiven streaming Avatar",
+   "url": "https://huggingface.co/papers/2611.26540",
+   "src": "Hugging Face Papers",
+   "angle": "Sirf audio se real-time avatar video banana ab easy.",
+   "hook": "Sirf audio se banega real-time AI video!",
+   "format": "evidence",
+   "freshness": "today",
+   "score": 8,
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "title": "Professor Euler – Offline math desk",
+   "url": "https://euler.dawei7.com",
    "src": "Hacker News",
-   "angle": "A simple tool to help people identify ear ringing frequencies.",
-   "hook": "Kaano mein ghanti bajti hai? Yeh tool try karo.",
+   "angle": "Offline math tool jo internet bina kaam kare.",
+   "hook": "Internet nahi hai? Maths solve hoga offline!",
+   "format": "tool-demo",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "title": "System 1 agents: a method for local, reliable and fast agentic AI",
+   "url": "https://huggingface.co/papers/2611.21053",
+   "src": "Hugging Face Papers",
+   "angle": "Local AI agents jo fast aur reliable hain.",
+   "hook": "Local AI agents, ab aur bhi fast!",
+   "format": "how-it-works",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "title": "Vibecoding an inference chip",
+   "url": "https://ankitg.me/blog/vibecoding-inference-chip/",
+   "src": "Hacker News",
+   "angle": "Hardware design mein AI ka kamaal, khud ka chip.",
+   "hook": "AI se khud ka chip design karna?",
+   "format": "story",
+   "freshness": "this week",
+   "score": 7,
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "title": "Google DeepMind math horizon repo",
+   "url": "https://github.com/google-deepmind/math-horizon",
+   "src": "GitHub",
+   "angle": "Students ke liye advanced math seekhne ka naya resource.",
+   "hook": "Maths mein genius banna hai? Ye dekho!",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-20T17:06+05:30"
-  },
-  {
-   "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
-   "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
-   "src": "OpenAI",
-   "angle": "Behind the scenes of how ChatGPT handles massive traffic.",
-   "hook": "ChatGPT itna fast kaise chalta hai? Secret reveal!",
-   "format": "evidence",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-20T17:06+05:30"
-  },
-  {
-   "title": "Weight-Space Programming",
-   "url": "https://notesbylex.com/weight-space-programming-1990s",
-   "src": "Hacker News",
-   "angle": "A retro-inspired way to build neural networks.",
-   "hook": "AI banane ka purana tarika, phir se trend mein?",
-   "format": "how-it-works",
-   "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-20T17:06+05:30"
+   "found": "2026-11-21T05:02+05:30"
   }
  ],
  "history": [
@@ -668,7 +668,67 @@
    "url": "https://openai.com/index/research-acceleration-jagged-frontier",
    "title": "Research acceleration: The jagged frontier",
    "found": "2026-11-20T17:06+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+   "title": "AI claimed a solution to the 167-year-old Riemann hypothesis",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+   "title": "Signal is blocking Gemini and Siri AI from reading your screen",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://winedroid.soham.sh/demo/",
+   "title": "Winedroid – run Android apps without Android (WASM demo)",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+   "title": "Introducing Tool Retrieval in the Gemini API",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://huggingface.co/blog/inkling2mini",
+   "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://github.com/diggerhq/opencomputer",
+   "title": "OpenComputer – an open source alternative to Devin",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.26540",
+   "title": "AURA: AUdio-dRiven streaming Avatar",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://ankitg.me/blog/vibecoding-inference-chip/",
+   "title": "Vibecoding an inference chip",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.21885",
+   "title": "Language Models Can Rewrite Their Own Weights",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://github.com/google-deepmind/math-horizon",
+   "title": "Google DeepMind math horizon repo",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://euler.dawei7.com",
+   "title": "Professor Euler – Offline math desk",
+   "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://huggingface.co/papers/2611.21053",
+   "title": "System 1 agents: a method for local, reliable and fast agentic AI",
+   "found": "2026-11-21T05:02+05:30"
   }
  ],
- "updated": "2026-11-20T17:06+05:30"
+ "updated": "2026-11-21T05:02+05:30"
 }
