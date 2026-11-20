@@ -38,3 +38,6 @@ Plan:
 - [ ] server: sparse checkout clips/music, push token, timer
 - [ ] owner: Oracle login recovered, boot volume expanded
 - [ ] second business
+
+## Oracle login (owner forgot it, 20 Nov)
+- ORACLE CLOUD LOGIN (found 20 Nov, no password stored anywhere): https://cloud.oracle.com -> Cloud Account Name 'mehuldeshlahra' -> email mehuldeshlahra12@gmail.com (Oracle Cloud mails go there) -> password = owner's (reset with 'Forgot password'). Home region India West (Mumbai) ap-mumbai-1. Instance 'jobbot' (VM.Standard.A1.Flex, 2 OCPU / 12 GB, Ubuntu 24.04), public IP 137.23.60.164, SSH: ssh -i C:\Users\mehul\Desktop\job\oracle.key ubuntu@137.23.60.164. Boot volume 46.6 GB (Always Free limit 200 GB boot+block).
