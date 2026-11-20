@@ -74,7 +74,8 @@ def run(cmd, timeout=120, **kw):
 def checkin(mode, ac, busy=""):
     info = json.dumps({"mode": mode, "wanted": wanted(), "ac": ac, "busy": busy, "idle": round(idle_s()), "t": time.strftime("%H:%M:%S")})
     claim = "" if busy or mode == "off" or not ac else (
-        f'cd {R}/queue 2>/dev/null && for f in $(ls -tr *.json 2>/dev/null); do mv "$f" ../claimed/ 2>/dev/null && echo "JOB $f" && break; done')
+        # 20 Nov: Content Rewards accepts a link only within 30 min of posting: Whop jobs (-w) go first
+        f'cd {R}/queue 2>/dev/null && for f in $(ls -tr *-w.json 2>/dev/null) $(ls -tr *.json 2>/dev/null); do mv "$f" ../claimed/ 2>/dev/null && echo "JOB $f" && break; done')
     r = run(SSH + [f"mkdir -p {R}/queue {R}/claimed {R}/done; echo '{info}' > {R}/alive.json; {claim}"], timeout=40)
     for line in r.stdout.splitlines():
         if line.startswith("JOB "):

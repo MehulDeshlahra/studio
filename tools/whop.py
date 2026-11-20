@@ -191,12 +191,39 @@ def submit(page, url, post):
     if not box:
         return {"ok": False, "why": "no link box found", "shot": shot(page, "submit-nobox"), "buttons":
                 page.eval_on_selector_all("button", "els => els.map(e => e.innerText.trim()).filter(Boolean).slice(0,60)")}
-    box.fill(post); page.wait_for_timeout(1000)
-    done = click_text(page, [r"^submit$", r"^submit (post|clip|link)$", r"^send$", r"^confirm$"])
-    page.wait_for_timeout(4000)
+    box.fill(post); page.wait_for_timeout(2500)          # the form checks the link (linked account, not used, < 30 min)
+    # 20 Nov: the first real submit "succeeded" but nothing was sent: the form has a required "I've read the requirements"
+    # checkbox and the Submit button does nothing until it is ticked. Tick every unticked box in the dialog.
+    ticked = 0
+    for sel in ("[role=dialog] input[type=checkbox]", "input[type=checkbox]", "[role=dialog] [role=checkbox]", "[role=checkbox]"):
+        loc = page.locator(sel)
+        for i in range(loc.count()):
+            el = loc.nth(i)
+            try:
+                on = el.is_checked() if sel.endswith("checkbox]") and "input" in sel else el.get_attribute("aria-checked") == "true"
+                if not on:
+                    el.check(timeout=2000, force=True) if "input" in sel else el.click(timeout=2000)
+                    ticked += 1
+            except Exception:
+                continue
+        if ticked:
+            break
+    if not ticked:                                       # a styled box: click its label text instead
+        if click_text(page, [r"i'?ve read the requirements", r"i (have )?read", r"i agree", r"accept"]):
+            ticked = 1
+    page.wait_for_timeout(800)
+    before = page.inner_text("body")
+    done = click_text(page, [r"^submit clip$", r"^submit$", r"^submit (post|clip|link)$", r"^send$", r"^confirm$"])
+    page.wait_for_timeout(5000)
     text = page.inner_text("body")
-    ok = bool(done) and not re.search(r"(invalid|error|already submitted|not eligible)", text, re.I)
-    return {"ok": ok, "clicked": done, "shot": shot(page, "submit"), "note": re.findall(r"[^.\n]*(submitted|pending|review)[^.\n]*", text, re.I)[:3]}
+    # proof, not a click: the dialog is gone / says submitted, and the checkbox text is no longer on screen
+    still_open = bool(re.search(r"i'?ve read the requirements", text, re.I))
+    confirmed = bool(re.search(r"(submitted|under review|pending review|submission received)", text, re.I)) and not still_open
+    bad = re.search(r"(invalid|error|already submitted|not eligible|older than|more than 30 minutes|can'?t be used)", text, re.I)
+    ok = bool(done) and confirmed and not bad
+    why = None if ok else (bad.group(0) if bad else "the dialog is still open after Submit" if still_open else "no confirmation on the page")
+    return {"ok": ok, "why": why, "clicked": done, "ticked": ticked, "shot": shot(page, "submit"),
+            "note": re.findall(r"[^.\n]*(submitted|pending|review|30 minutes)[^.\n]*", text, re.I)[:3]}
 
 
 def main():
