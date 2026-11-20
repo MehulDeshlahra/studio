@@ -80,6 +80,40 @@ def _patch_crop(x_at, holder):
         or setattr(cvc_cut, "shot_filter", orig_sf)
 
 
+MODEL = Path(__file__).resolve().parent / "cvc" / "assets" / "models" / "face_detection_yunet_2023mar.onnx"
+# 20 Nov: stream layout = HmdNvd/Gaming-Clipper render_clip.py "facecam split" (blurred backdrop, facecam enlarged on top,
+# full 16:9 gameplay below); facecam found by nakhulgithesh/gta6-clipper facecam.py (copied as engine/cvc/gamecam.py).
+# Ours on top: the small webcam inside the gameplay is blurred out (19 Nov hold: "streamer shown twice"), captions sit
+# under the gameplay inside the Reels safe zone.
+CAM_Y, CAM_H, GAME_Y, CAP_Y_STACK = 290, 470, 780, 1450
+
+
+def _stack_cut(src, a, b, box, info, out):
+    x, y, w, h = box
+    sw, sh = info["width"], info["height"]
+    pad = 6                                             # a little more than the face box, so the inset edge is gone
+    bx, by = max(0, x - pad), max(0, y - pad)
+    bw, bh = min(sw - bx, w + 2 * pad), min(sh - by, h + 2 * pad)
+    fc = (f"[0:v]split=3[bg][cam][game];"
+          f"[bg]scale=270:480:force_original_aspect_ratio=increase,crop=270:480,boxblur=6:2,scale=1080:1920,"
+          f"eq=brightness=-0.18[bgb];"
+          f"[cam]crop={w}:{h}:{x}:{y},scale=-2:{CAM_H}:flags=lanczos,unsharp=5:5:0.7:5:5:0.0[c];"
+          f"[game]split=2[g0][g1];[g1]crop={bw}:{bh}:{bx}:{by},boxblur=20:4[gb];[g0][gb]overlay={bx}:{by}[gc];"
+          f"[gc]scale=1080:-2:flags=lanczos[g];"
+          f"[bgb][c]overlay=(W-w)/2:{CAM_Y}[t];[t][g]overlay=(W-w)/2:{GAME_Y},setsar=1,fps=30,format=yuv420p[v]")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", str(src),
+                    "-filter_complex", fc, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "fast", "-crf", "17",
+                    "-c:a", "aac", "-b:a", "192k", "-ar", "48000", str(out)], check=True, capture_output=True)
+
+
+def facecam(src):
+    try:
+        from cvc import gamecam
+        return gamecam.facecam_box(str(src), str(MODEL), samples=12)
+    except Exception as e:
+        print("cvc_run: facecam check failed", str(e)[:120]); return None
+
+
 def make(src, ranges, Wd, hook, out_dir, logo=None, hook_ass=None):
     """src: the downloaded window; ranges: [[a, b], ...] in src seconds; Wd: [(s, e, text)] on src.
     Returns (final_mp4, meta, plan)."""
@@ -87,6 +121,17 @@ def make(src, ranges, Wd, hook, out_dir, logo=None, hook_ass=None):
     words = [{"w": _mask(str(t)), "s": float(s), "e": float(e)} for s, e, t in Wd]
     info = cvc_probe(src)
     cutf = out_dir / "cut.mp4"
+    box = facecam(src)
+    if box:
+        a, b = float(ranges[0][0]), float(ranges[-1][1])        # one range: reactions keep their pauses
+        _stack_cut(src, a, b, box, info, cutf)
+        meta = {"fps": 30, "parts": [[a, b]], "duration": round(b - a, 3), "splices": [],
+                "shots": [{"t0": 0.0, "t1": round(b - a, 3), "mode": "stack", "focus": [540, 960]}],
+                "words": [{**w, "s": round(w["s"] - a, 3), "e": round(w["e"] - a, 3)} for w in words if a <= w["s"] < b],
+                "title": hook, "emphasis": [], "facecam": list(box)}
+        plan = cvc_plan.build(meta, BRAND, {"zoom": False, "captions": True, "sfx": "light", "uppercase": True,
+                                            "caption_y": CAP_Y_STACK})
+        return _finish(cutf, meta, plan, out_dir, logo, hook_ass, hook_y=CAM_Y + CAM_H - 70)
     try:
         undo = _patch_crop(_tracked(src), {"start": 0.0})
     except Exception as e:                              # tracking is a bonus: their static crop still works
@@ -99,6 +144,14 @@ def make(src, ranges, Wd, hook, out_dir, logo=None, hook_ass=None):
         raise RuntimeError("cvc: no words in the clip range")
     meta.update(title=hook, emphasis=[])
     plan = cvc_plan.build(meta, BRAND, {"zoom": True, "captions": True, "sfx": "auto", "uppercase": True})
+    return _finish(cutf, meta, plan, out_dir, logo, hook_ass)
+
+
+def _finish(cutf, meta, plan, out_dir, logo, hook_ass, hook_y=None):
+    """cvc's mix + caption render, then our hook (moved to hook_y when given) + logo."""
+    if hook_ass and hook_y:
+        t = open(hook_ass, encoding="utf-8").read()
+        open(hook_ass, "w", encoding="utf-8").write(re.sub(r"\\pos\(540,\d+\)", f"\\\\pos(540,{hook_y})", t))
     wav = out_dir / "mix.wav"
     cvc_edit.mix_audio(cutf, plan["sfx"], wav, plan["duration"])
     edited = out_dir / "edited.mp4"

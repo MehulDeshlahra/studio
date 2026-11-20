@@ -940,14 +940,8 @@ def make_clip(src, a, b, hook, out_dir, lang=None, brand="", glossary=None, note
     if ENGINE == "cvc":
         # 19 Nov: cvc has crop / fit only. A streamer's webcam box over gameplay needs our stack layout (cam on top,
         # game below), so those clips keep the own engine; everything else uses cvc
-        try:
-            cam = analyse(src).get("cam")
-        except Exception:
-            cam = None
-        if not cam:
-            return _make_cvc(src, Wd, a2, b2, ranges, hook, out_dir, lang, brand, notes)
-        log_ = "clipcore: webcam box found, own engine (stack layout)"
-        print(log_)
+        # 20 Nov: cvc_run finds a stream's facecam itself (gta6-clipper detector) and uses the Gaming-Clipper stack layout
+        return _make_cvc(src, Wd, a2, b2, ranges, hook, out_dir, lang, brand, notes)
     tight = tighten(src, ranges, os.path.join(out_dir, "tight.mp4"))
     Wt = remap(Wd, ranges)
     info = analyse(tight)
