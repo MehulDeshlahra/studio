@@ -27,12 +27,12 @@ const P = {
 const ic = (n) => `<svg viewBox="0 0 24 24">${P[n] || ""}</svg>`;
 const NAV = [
   ["", [["today", "Today"], ["published", "Published"], ["runs", "Runs"], ["approvals", "Approvals"]]],
-  ["Channels", [["channels", "All channels"]]],
+  ["Channels", [["channels", "All channels"], ["businesses", "Businesses"]]],
   ["System", [["server", "Server"], ["sources", "Connected apps"], ["activity", "Activity log"]]],
   ["Knowledge", [["brain", "Brain"], ["radar", "Radar"]]],
   ["", [["settings", "Settings"]]],
 ];
-const ICON = { published: "approve", radar: "spark", today: "today", runs: "runs", approvals: "approve", channels: "channels", server: "server", sources: "sources", activity: "activity", brain: "brain", settings: "settings" };
+const ICON = { businesses: "channels", published: "approve", radar: "spark", today: "today", runs: "runs", approvals: "approve", channels: "channels", server: "server", sources: "sources", activity: "activity", brain: "brain", settings: "settings" };
 let S = null, prev = "", runFilter = "all", runCh = "all", logQ = "", logLvl = "all", fails = 0, srcCache = null, briefCache = null, drawerKey = null;
 
 /* ---------- format ---------- */
@@ -108,7 +108,25 @@ function issueRow(i) {
 }
 
 /* ---------- pages ---------- */
+let BIZ = null;
+async function loadBiz() { try { BIZ = await (await fetch("/api/businesses")).json(); } catch (e) { BIZ = []; } render(1); }
+async function bizMake(id) { const r = await post("/api/biz-make", { id }); alert(r.ok ? "Started: one reel for " + id + " (about 15-25 min). It shows here when done." : (r.error || "failed")); }
 const V = {
+  businesses() {
+    if (BIZ === null) { loadBiz(); return `<div class="h1">Businesses</div><div class="lead">Loading...</div>`; }
+    const card = (b) => `<div class="card pad" style="margin-top:12px">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
+        <div><div style="font-weight:600;font-size:16px">${esc(b.name)} <span class="mut" style="font-weight:400">${esc(b.handle)}</span></div>
+        <div class="faint" style="font-size:12px">${esc(b.about)}</div></div>
+        <button onclick="bizMake('${b.id}')">Make one reel now</button></div>
+      <div class="mut" style="margin-top:8px">Library: ${esc(b.library)} · ${b.clips} clips · ${b.photos} photos</div>
+      <div class="mut">Auto: ${b.auto ? (b.need ? "will make a reel at the next check" : "waiting") + " · " + esc(b.why) : "off"}${b.next ? " · next check " + esc(b.next) : ""}</div>
+      <div class="mut">Made ${b.made} · passed QC ${b.ok} · delivered ${b.delivered}</div>
+      <table style="margin-top:8px"><thead><tr><th>Job</th><th>Hook</th><th>QC</th><th class="hide-m">Made</th></tr></thead><tbody>${(b.last || []).map((d) =>
+        `<tr><td>${esc(d.job)}</td><td style="white-space:normal">${esc(d.hook || d.title)}</td><td>${d.ok ? (d.delivered ? lvlBadge("ok", "delivered") : lvlBadge("ok", "passed")) : lvlBadge("warn", "held")}</td><td class="hide-m">${esc(d.made)}</td></tr>`).join("") || `<tr><td colspan="4" class="mut">no reels yet</td></tr>`}</tbody></table></div>`;
+    return `<div class="h1">Businesses</div><div class="lead">Reels made for a business from its OWN photos and clips (engine/biz.py). One settings file per business: businesses/&lt;id&gt;/business.json. How to add one: businesses/README.md.</div>
+      ${BIZ.map(card).join("") || `<div class="card pad mut">No businesses yet.</div>`}`;
+  },
   today() {
     const d = new Date(now() * 1000), act = S.jobs.filter((j) => j.active);
     const fol = S.channels.reduce((a, c) => a + c.igF + c.fb, 0);

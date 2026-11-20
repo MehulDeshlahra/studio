@@ -109,3 +109,10 @@
 - DM links the next post after the commented one (serial = next part), else 'jaldi aa raha hai, follow karo' + profile.
 - Token: ~/.studio-meta-connect.token (Planstalk Connect, own rate budget) if present, else the Ads MCP login. Ads MCP app hit Meta #4 app limit 18 Nov; dm.py pauses 30 min on #4 or X-App-Usage >= 60 %.
 - New channel: ~/.studio-accounts/<id>.json + Instagram 'Allow access to messages' ON + optional 'dm' block. Caps 40 DMs/page/day. State ~/studio-out/dm-state.json.
+
+## Business engine (20 Nov)
+- Reels for ANY business from its own media library: engine/biz.py + businesses/<id>/business.json. How-to: businesses/README.md. Plan + storage research: knowledge/BUSINESS-ENGINE.md.
+- First business VAJRA: library ~/libraries/vajra (sparse clone), timer studio-biz-vajra (07:20-21:20 every 2 h, only when VAJRA queue < 3), deliver = git drop offhours-lab/vajra-gen studio/ -> GitHub studio-intake.yml -> VAJRA queue.
+- Dashboard: Channels > Businesses (/api/businesses, POST /api/biz-make).
+- Never hardcode a business in engine code: everything goes in business.json.
+

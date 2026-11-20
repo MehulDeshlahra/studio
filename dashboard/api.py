@@ -849,6 +849,44 @@ def decide(cid, job, action, note=""):
     return {"ok": True}
 
 
+def businesses():
+    """20 Nov: businesses made from their own media library (engine/biz.py, businesses/<id>/business.json)."""
+    out = []
+    for f in sorted(glob.glob(os.path.join(ROOT, "businesses", "*", "business.json"))):
+        bid = os.path.basename(os.path.dirname(f)); b = jload(f, {}) or {}
+        bo = os.path.join(OUT, "biz", bid)
+        done = jload(os.path.join(bo, "done.json"), []) or []
+        idx = jload(os.path.join(bo, "index.json"), {}) or {}
+        roots = [os.path.expanduser(r) for r in (b.get("library") or {}).get("roots", [])]
+        root = next((r for r in roots if os.path.isdir(r)), "")
+        clips = sum(1 for k in idx if "/clips/" in k or k.startswith("assets/clips")); photos = len(idx) - clips
+        try:
+            sys.path.insert(0, os.path.join(ROOT, "engine")); os.environ["BIZ_NO_UPDATE"] = "1"
+            import biz
+            bb = biz.business(bid); go, why = biz.need(bb)
+        except BaseException as e:
+            go, why = False, f"check failed: {str(e)[:80]}"
+        unit = f"studio-biz-{bid}.timer"
+        nxt = run(["systemctl", "show", unit, "-p", "NextElapseUSecRealtime", "--value"]).strip()
+        out.append({"id": bid, "name": b.get("name", bid), "handle": b.get("handle", ""), "about": b.get("about", "")[:200],
+                    "library": root or "missing on this machine", "clips": clips, "photos": photos,
+                    "auto": bool(b.get("auto")), "need": go, "why": why, "next": nxt, "timer": unit,
+                    "made": len(done), "ok": sum(1 for d in done if d.get("ok")), "delivered": sum(1 for d in done if d.get("delivered")),
+                    "last": [{"job": d["job"], "title": d.get("title", ""), "hook": d.get("hook", ""), "ok": d.get("ok"),
+                              "delivered": d.get("delivered"), "made": d.get("made", "")} for d in done[-6:][::-1]]})
+    return out
+
+
+def biz_make(bid):
+    if not re.fullmatch(r"[a-z0-9_-]+", bid or "") or not os.path.exists(os.path.join(ROOT, "businesses", bid, "business.json")):
+        raise ValueError("unknown business")
+    unit = f"studio-biz-dash-{int(time.time())}"
+    cmd = ["sudo", "systemd-run", f"--unit={unit}", "--uid=ubuntu", "-p", "CPUWeight=20", "-p", "MemoryHigh=2600M", "-p", "MemoryMax=3400M",
+           "-p", "Nice=15", f"--working-directory={ROOT}", "-E", f"HOME={HOME}", PY, os.path.join(ROOT, "engine", "biz.py"), bid, "make"]
+    subprocess.run(cmd, capture_output=True, timeout=20)
+    return {"ok": True, "unit": unit}
+
+
 def make_now(cid, topic=""):
     if cid not in _pages():
         raise ValueError("unknown channel")
@@ -948,6 +986,8 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, {"stats": brainmod.stats(), "learned": (jload(os.path.join(ROOT, "knowledge", "learned.json"), []) or [])[::-1][:40],
                                        "build_open": bq.count("- [ ]"), "build_done": bq.count("- [x]"),
                                        "top": [{"title": i["title"], "uses": i["uses"], "wins": i.get("wins", 0)} for i in top]})
+            if u == "/api/businesses":                  # 20 Nov: business engine (engine/biz.py)
+                return self.send(200, businesses())
             if u == "/api/published":                   # 20 Nov: every post on every page, one feed
                 return self.send(200, extra.published())
             if u == "/api/radar":
@@ -1021,6 +1061,8 @@ class H(BaseHTTPRequestHandler):
                 return self.send(200, decide(body["cid"], body["job"], body["action"], body.get("note", "")[:1000]))
             if u == "/api/make":
                 return self.send(200, make_now(body["cid"], body.get("topic", "")))
+            if u == "/api/biz-make":
+                return self.send(200, biz_make(body.get("id", "")))
             if u == "/api/source":
                 return self.send(200, add_source(body))
             if u == "/api/change":

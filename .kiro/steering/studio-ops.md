@@ -93,3 +93,10 @@ https://jobbot.taildd6388.ts.net:10000. Timers are created by engine/units.sh.
 
 ## Posting
 Warm-up: no posts before 20 Nov; 1 a day (evening) until 27 Nov; then the page's posts_per_day.
+
+## Business engine (20 Nov)
+- Reels for ANY business from its own media library: engine/biz.py + businesses/<id>/business.json. How-to: businesses/README.md. Plan + storage research: knowledge/BUSINESS-ENGINE.md.
+- First business VAJRA: library ~/libraries/vajra (sparse clone), timer studio-biz-vajra (07:20-21:20 every 2 h, only when VAJRA queue < 3), deliver = git drop offhours-lab/vajra-gen studio/ -> GitHub studio-intake.yml -> VAJRA queue.
+- Dashboard: Channels > Businesses (/api/businesses, POST /api/biz-make).
+- Never hardcode a business in engine code: everything goes in business.json.
+
