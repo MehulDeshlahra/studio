@@ -1,3 +1,5 @@
+> HISTORY (16-19 Nov 2026). Not the current state: read knowledge/STATE.md on the server and knowledge/AUDIT-2026-11.md.
+
 # Studio: everything in one place (keep updated)
 
 ## Decisions
