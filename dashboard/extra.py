@@ -122,7 +122,8 @@ def published():
                              "campaign": src if (v.get("submit") or {}).get("campaign") else None,
                              "submitted": (v.get("submit") or {}).get("submitted"),
                              "submit_ok": len((v.get("submit") or {}).get("ok_links") or []),
-                             "submit_n": len([x for x in (v.get("submit") or {}).get("links") or [] if str(x).startswith("http")])})
+                             "submit_n": len([x for x in (v.get("submit") or {}).get("links") or []
+                                              if str(x).startswith("http") and ("instagram.com" in x or "tiktok.com" in x)])})
         rows.sort(key=lambda r: r["at"] or "", reverse=True)
         rows = rows[:80]
         try:

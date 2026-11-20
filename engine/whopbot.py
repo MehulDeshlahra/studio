@@ -153,6 +153,8 @@ def submit_all(st):
     return n_ok
 
 
+def _whop_link(x):
+    return str(x).startswith("http") and ("instagram.com" in x or "tiktok.com" in x)
 def _submit_page(page):
     path = os.path.join(ROOT, "channels", page, "done.json")
     done = load(path, []) or []
@@ -162,7 +164,8 @@ def _submit_page(page):
         if not s.get("campaign") or s.get("submitted") or s.get("tries", 0) >= 3:
             continue
         for link in s.get("links") or []:
-            if link in (s.get("ok_links") or []) or not link.startswith("http"):
+            # 20 Nov: the Whop form only takes Instagram / TikTok links ("Enter a Instagram or TikTok link" on a YouTube one)
+            if link in (s.get("ok_links") or []) or not _whop_link(link):
                 continue
             r = _job("submit", s["campaign"], link)
             if r.get("ok"):
@@ -170,7 +173,7 @@ def _submit_page(page):
             else:
                 fails.append(f"{d['job']}: {r.get('why') or r.get('error') or 'not confirmed'}")
         s["tries"] = s.get("tries", 0) + 1
-        if set(s.get("ok_links") or []) >= {x for x in s.get("links") or [] if x.startswith("http")}:
+        if set(s.get("ok_links") or []) >= {x for x in s.get("links") or [] if _whop_link(x)}:
             s["submitted"] = time.strftime("%Y-%m-%d %H:%M")
     save(path, done)
     return n_ok, [f"{page} {f}" for f in fails]

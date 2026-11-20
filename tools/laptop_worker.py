@@ -569,6 +569,28 @@ def whop_job(jid, spec):
         shutil.rmtree(work, ignore_errors=True)
 
 
+WHOP_LANE = [None]
+
+
+def whop_lane():
+    """20 Nov: Whop takes a clip link only for 30 min after posting, but the worker runs one job at a time: a transcribe
+    that ran 30 min made the 22:30 clips miss the window. Whop jobs (-w) are a browser task, so while a long job runs,
+    claim them here and run them in their own thread (one at a time)."""
+    t = WHOP_LANE[0]
+    if t is not None and t.is_alive():
+        return
+    r = run(SSH + [f'cd {R}/queue 2>/dev/null && for f in $(ls -tr *-w.json 2>/dev/null); do mv "$f" ../claimed/ 2>/dev/null && echo "JOB $f" && break; done'], timeout=40)
+    for line in r.stdout.splitlines():
+        if line.startswith("JOB "):
+            jid = line[4:].strip()[:-5]
+            spec = job_spec(jid)
+            import threading
+            WHOP_LANE[0] = threading.Thread(target=whop_job, args=(jid, spec), daemon=True)
+            WHOP_LANE[0].start()
+            log("whop lane: ran", jid, "beside the busy job")
+            return
+
+
 def job_spec(jid):
     r = run(SSH + [f"cat {R}/claimed/{jid}.json"], timeout=40)
     try:
@@ -666,6 +688,7 @@ def main():
                     while not stop.wait(20):
                         try:
                             checkin(effective(), on_ac(), busy=jid)
+                            whop_lane()
                         except Exception:
                             pass
                 th = threading.Thread(target=beat, daemon=True); th.start()
