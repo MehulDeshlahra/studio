@@ -38,6 +38,8 @@ mk studio-hooks    "Studio hook study of top Shorts (weekly)" "Mon *-*-* 05:30:0
 [ -f /home/ubuntu/studio/engine/comments.py ] && mk studio-comments "Studio pinned question + comment replies" "*-*-* *:25:00" comments.py 900
 # 18 Nov: comment-to-DM + keyword DM replies (engine/dm.py), every 10 min
 [ -f /home/ubuntu/studio/engine/dm.py ] && mk studio-dm "Studio comment-to-DM (every 10 min)" "*-*-* *:03/10:00" dm.py 240
+# 20 Nov: business engine (engine/biz.py): every 2 h 07-21, makes a reel only when the business queue is low
+[ -f /home/ubuntu/studio/engine/biz.py ] && mk studio-biz-vajra "Studio business engine: VAJRA (auto)" "*-*-* 07,09,11,13,15,17,19,21:20:00" "biz.py vajra auto" 5400
 [ -f /home/ubuntu/studio/engine/mehul.py ] && mk studio-mehul "Studio Mehul agent (acts for the owner, daily)" "*-*-* 22:30:00" mehul.py 3600
 # 18 Nov: competitors + brands (engine/rivals.py): daily track, Sunday brand scan + weekly strategy read
 mk studio-rivals "Studio competitor + brand tracker (daily)" "*-*-* 05:10:00" rivals.py 5400
