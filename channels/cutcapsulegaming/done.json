@@ -370,7 +370,7 @@
   "job": "1120-2040a-c1",
   "topic": "STEAM BLACK FRIDAY SALE",
   "title": "STEAM BLACK FRIDAY SALE",
-  "status": "scheduled",
+  "status": "posted",
   "review": [],
   "clip": {
    "url": "https://f.io/O1zu3kBp",
@@ -388,6 +388,17 @@
    "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040a-c1-1795195168.mp4",
    "ig_container": "17905376952397877",
    "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040a-c1-1795195168.mp4"
+  },
+  "posted": {
+   "at": "2026-11-21 04:30",
+   "ig": "18135349957741739"
+  },
+  "submit": {
+   "campaign": "https://contentrewards.com/c/campaigns/1391fb95-e8a3-4f0b-b146-d0d786e6aee0",
+   "links": [
+    "https://www.instagram.com/reel/Df-LZq7kaAo/"
+   ],
+   "at": "2026-11-21 04:30"
   }
  },
  {

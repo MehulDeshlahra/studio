@@ -1,0 +1,244 @@
+{
+ "slug": "online-fraud-1930-rbi-zero-liability",
+ "title": "Online fraud ho gaya? 1930 pe call aur 3 din ka rule",
+ "hooks": [
+  "Online fraud ho gaya? 1930 pe call, 3 din mein zero liability",
+  "Paisa kat gaya fraud se? RBI ka niyam: 3 din, zero zimmedari",
+  "Fraud ka paisa wapas milega? 1930 dial karo, 3 din ka rule jaano"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the exact viewer question and the two critical numbers (1930, 3 din) in the first 6 words — matches the 'scam alert' hook pattern that wins on Finance Fuel.",
+ "metaphor": "A ticking 3-day clock that stops the moment you dial 1930 — the call freezes the fraudster's money chain and locks in your zero-liability protection.",
+ "mechanism": [
+  "Victim discovers unauthorized debit",
+  "Calls 1930 immediately (Citizen Financial Cyber Fraud Reporting System)",
+  "Operator raises ticket to banks/payment aggregators to place hold on funds",
+  "Victim informs bank and freezes card/account",
+  "Files complaint on cybercrime.gov.in with acknowledgment",
+  "RBI zero-liability rule applies if reported within 3 working days for third-party breach"
+ ],
+ "cast": {
+  "Aditya": "Young Indian male, 24, casual kurta, anxious expression, phone in hand, standing in a typical Indian apartment hallway",
+  "Scammer": "Faceless hooded figure in dark room, only hands visible on keyboard, never shown clearly"
+ },
+ "scenes": [
+  {
+   "vo": "Online fraud ho gaya? 1930 pe call, 3 din mein zero liability",
+   "type": "wa",
+   "title": "Aditya",
+   "prompt": "WhatsApp chat screen, dark mode, Aditya's name at top",
+   "motion": "push",
+   "messages": [
+    {
+     "from": "Aditya",
+     "text": "Bhai, mere account se ₹45,000 kat gaye 😱"
+    },
+    {
+     "from": "me",
+     "text": "Kab hua? Turant 1930 dial kar!"
+    }
+   ],
+   "keywords": [
+    "Online fraud",
+    "1930",
+    "zero liability"
+   ],
+   "bg_prompt": "A young man in a modest Indian apartment hallway at night, phone screen glowing on his worried face, distant sounds of traffic",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aditya ke phone pe bank ka debit SMS aaya, unauthorized transaction ka",
+   "type": "sms",
+   "title": "",
+   "prompt": "Lock screen with bank SMS, time 22:47",
+   "motion": "punch",
+   "messages": [
+    {
+     "app": "Messages",
+     "from": "VM-BANK",
+     "text": "A/c XXXXXX debited. Unauthorized transaction. Info: 1800-xxx-xxxx"
+    }
+   ],
+   "keywords": [
+    "debit SMS",
+    "unauthorized transaction"
+   ],
+   "bg_prompt": "Close-up of a hand holding a phone with a bright SMS notification in a dimly lit room, reflection in eyes",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "RBI ka niyam: 3 working days mein report karo, zero liability",
+   "type": "rule",
+   "title": "RBI Circular",
+   "prompt": "Official rule card on deep black-green, RBI logo top left, gold accent lines",
+   "motion": "tilt",
+   "lines": [
+    "Zero liability agar 3 working days mein report kiya",
+    "Third-party breach ya system compromise ka case"
+   ],
+   "stamp": "ASLI NIYAM",
+   "keywords": [
+    "RBI",
+    "3 working days",
+    "zero liability"
+   ],
+   "real": {
+    "q": "Reserve Bank of India logo",
+    "kind": "logo",
+    "subject": "RBI official logo"
+   },
+   "bg_real": {
+    "q": "Reserve Bank of India headquarters Mumbai",
+    "kind": "photo",
+    "subject": "RBI central office building Mumbai"
+   },
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "bg_prompt": "A person in India in the middle of this money moment: Online fraud ho gaya? 1930 pe call aur 3 din ka rule"
+  },
+  {
+   "vo": "3 working days mein report karo, zero liability",
+   "type": "stat",
+   "title": "",
+   "prompt": "Big number card on black-green, ₹0 green, soft gold glow",
+   "motion": "pull",
+   "value": "₹0",
+   "sub": "Zero liability within 3 working days",
+   "keywords": [
+    "₹0",
+    "3 working days",
+    "zero liability"
+   ],
+   "bg_prompt": "A digital clock ticking on a wall in a bank branch, people waiting with token slips, green and gold ambient light",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Pehle 1930, phir bank, phir cybercrime.gov.in — yeh sequence yaad rakho",
+   "type": "list",
+   "title": "3 Steps",
+   "prompt": "Checklist card on phone screen, checkboxes, clean typography",
+   "motion": "pan",
+   "lines": [
+    "1. 1930 call karein — National Cyber Crime Helpline",
+    "2. Bank ko unauthorized transaction report karein",
+    "3. cybercrime.gov.in pe complaint file karein"
+   ],
+   "keywords": [
+    "1930",
+    "bank report",
+    "cybercrime.gov.in"
+   ],
+   "bg_prompt": "A person walking down a busy Indian street at night, phone to ear, streetlights blur in background, determined stride",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Bank ke paas burden of proof hai — unse likh ke maango",
+   "type": "title",
+   "title": "",
+   "prompt": "Bold text card on black-green: 'BANK SE LIKH KE MAANGO' in gold, subtext in white",
+   "motion": "punch",
+   "big": "BANK SE LIKH KE MAANGO",
+   "sub": "RBI circular ke hisaab se burden of proof bank pe hai",
+   "keywords": [
+    "burden of proof",
+    "RBI circular"
+   ],
+   "bg_prompt": "Inside a bank branch, a customer at the counter speaking to an officer, documents on table, serious conversation",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Save karo — kaam aayega. Tumne kab 1930 try kiya?",
+   "type": "title",
+   "title": "",
+   "prompt": "End card: Finance Fuel handle, 'Save karo' in gold, question in white",
+   "motion": "pull",
+   "big": "SAVE KARO",
+   "sub": "Tumne kab 1930 try kiya? Comment mein batao",
+   "keywords": [
+    "Save karo",
+    "1930",
+    "comment"
+   ],
+   "bg_prompt": "A hand tapping 'Save' on a phone screen, warm ambient light, sense of completion",
+   "small": null,
+   "label": null
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Online fraud ho gaya? 1930 pe call, 3 din mein zero liability 🛡️\n\nTurant 1930 dial karo → bank freeze karo → cybercrime.gov.in pe complaint. RBI circular 6 July 2017 ke hisaab se 3 working days mein report kiya toh zero liability.\n\nSource: RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18\nSave karo, kaam aayega 📌\nTumne kab 1930 try kiya?\n\n#personalfinance #financeinhindi #moneytips #rbi #scamalert #cyberfraud #1930helpline\n\nEducation only, not financial advice.",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#rbi",
+  "#scamalert",
+  "#cyberfraud",
+  "#1930helpline"
+ ],
+ "claims": [
+  {
+   "claim": "RBI zero liability rule applies if unauthorized transaction reported within 3 working days for third-party breach",
+   "basis": "RBI Circular DBR.No.Leg.BC.78/09.07.005/2017-18 dated 6 July 2017"
+  },
+  {
+   "claim": "1930 is the National Cyber Crime Helpline connecting to Citizen Financial Cyber Fraud Reporting and Management System",
+   "basis": "Indian Cyber Crime Coordination Centre (I4C), Ministry of Home Affairs"
+  },
+  {
+   "claim": "Bank bears burden of proving customer liability in unauthorized transactions",
+   "basis": "RBI circular and legaldoot.in analysis"
+  }
+ ],
+ "explainer": {
+  "score": 7,
+  "ok": false,
+  "steps_learned": [
+   "Call 1930 immediately upon realizing fraud has occurred.",
+   "Report the incident to the bank.",
+   "File a report on cybercrime.gov.in.",
+   "The RBI rule states that reporting within 3 working days results in zero liability.",
+   "Request written proof from the bank if they claim you shared an OTP."
+  ],
+  "missing_steps": [
+   "The script fails to explain the specific process of how to 'report to the bank' (e.g., blocking the card/account immediately via app or customer care).",
+   "It doesn't clarify that '3 working days' starts from the date of the transaction/communication, not just when you notice it.",
+   "It lacks the crucial step of obtaining an acknowledgment number (FIR/NCR number) from the cybercrime portal, which is essential for bank follow-ups.",
+   "It assumes the user knows how to navigate the cybercrime.gov.in portal."
+  ],
+  "unsourced": [
+   "The script mentions 'Aditya ke phone pe HDFC ka debit SMS aaya, ₹45,000 ka' - this is a hypothetical scenario not backed by the RBI circular or general facts.",
+   "The specific claim about '3 din mein zero liability' is a simplification; the RBI circular actually specifies '3 working days' from the date of receiving the communication from the bank, which is a nuance often missed."
+  ]
+ },
+ "phone_bg": true,
+ "brain_ids": [
+  "b2fabb69c4",
+  "4396759d41",
+  "fc294ac58f",
+  "6ce7203c71",
+  "7f620e6fdf",
+  "f945e2a937",
+  "1e1964f463",
+  "0755cc155a",
+  "7fa182f8ef",
+  "161339712e",
+  "1e60a34718",
+  "b69d65467f",
+  "9db4cc694f",
+  "a688e48ca2"
+ ]
+}

@@ -281,3 +281,14 @@
 
 ## review 1121-0115
 - length 54.97 s is outside 28-50 s
+
+## Online fraud ho gaya? 1930 pe call aur 3 din ka rule (RBI ze (numbers check)
+- NUMBERS: scene 3: 'Bank must refund the amount within 10 working days after a fraud report' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 4: 'If the fraud is reported in 4‑7 days, the customer’s maximum liability is ₹10,000' is not in the sources: remove it or say only what the sources say
+
+## Online fraud ho gaya? 1930 pe call aur 3 din ka rule (RBI ze (numbers check)
+- NUMBERS: scene 2: 'HDFC debit SMS of ₹45,000' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 5: 'Calling 1930 creates a ticket and funds are held' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 5: 'Bank can freeze card/account after you call them' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 5: 'File complaint on cybercrime.gov.in and save CRM ID' is not in the sources: remove it or say only what the sources say
+- NUMBERS: scene 6: 'Bank may ask for written proof that you shared OTP' is not in the sources: remove it or say only what the sources say

@@ -1155,5 +1155,129 @@
     "score": 4.01
    }
   ]
+ },
+ {
+  "t": "2026-11-21 04:55",
+  "picked": "GTA 6 Software Warning",
+  "ideas": [
+   {
+    "topic": "GTA 6 Software Warning",
+    "search": "GTA 6 release news",
+    "fit": 9.0,
+    "from": "trend",
+    "note": "With GTA 6 being a massive cultural phenomenon and PlayStation issuing a software warning, viewers are desperate for info. The 'Kaise Tech' angle: How do pre-launch software checks actually work to prevent leaks?",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.1,
+    "score": 7.17
+   },
+   {
+    "topic": "AI-Powered Cyberattacks",
+    "search": "how ai cyberattacks work",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "Nikesh Arora's warning about AI making cyberattacks easier is timely and fits the 'Kaise Tech' educational vibe.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.2,
+    "score": 6.84
+   },
+   {
+    "topic": "Free AI video generator jo Sora ko replace kare? Real demo",
+    "note": "",
+    "search": "free AI video generator alternative Sora",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 6.8,
+    "score": 6.31
+   },
+   {
+    "topic": "OTP kaise banta hai",
+    "search": "OTP kaise banta hai",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": true,
+    "demand": 7.0,
+    "median_views": 645471,
+    "fresh": 2.7,
+    "score": 6.14
+   },
+   {
+    "topic": "Incognito mode kaun kaun dekh sakta hai? Asli raaz",
+    "note": "",
+    "search": "incognito mode privacy who sees",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.7,
+    "score": 6.09
+   },
+   {
+    "topic": "Semiconductor Manufacturing in India",
+    "search": "how chips are made",
+    "fit": 8.0,
+    "from": "trend",
+    "note": "With the government's focus on the semiconductor revolution and chip design, explaining the tech behind it is highly relevant.",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 2.1,
+    "score": 6.02
+   },
+   {
+    "topic": "Wireless charging table ke upar se kaise kaam karta hai?",
+    "note": "",
+    "search": "wireless charging through table physics",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 3.8,
+    "score": 5.36
+   },
+   {
+    "topic": "Fast charging phone ko kharab karti hai kya",
+    "search": "Fast charging phone ko kharab karti hai kya",
+    "fit": 7,
+    "from": "backlog",
+    "demand_known": false,
+    "demand": 4.0,
+    "median_views": 0,
+    "fresh": 5.1,
+    "score": 5.27
+   },
+   {
+    "topic": "Satellite message bina satellite phone ke kaise jaata hai?",
+    "note": "",
+    "search": "satellite messaging smartphone how works",
+    "fit": 9.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 40,
+    "fresh": 5.1,
+    "score": 4.17
+   },
+   {
+    "topic": "Phone 2 saal mein slow kyun ho jaata hai? Battery ya saazish?",
+    "note": "",
+    "search": "phone slowdown after two years reason",
+    "fit": 8.0,
+    "from": "new",
+    "demand_known": true,
+    "demand": 0.0,
+    "median_views": 40,
+    "fresh": 4.7,
+    "score": 3.74
+   }
+  ]
  }
 ]

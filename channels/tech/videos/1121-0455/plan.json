@@ -1,0 +1,399 @@
+{
+ "slug": "gta6-ps5-update-warning",
+ "title": "PS5 update bina GTA 6 nahi chalega?",
+ "hooks": [
+  "PS5 update bina GTA 6 nahi chalega",
+  "Sony ne di warning: pehle update, phir GTA 6",
+  "GTA 6 launch ho chuka, update mandatory hai khelne ke liye"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Directly states the blocking problem in colloquial Hinglish; the viewer who owns a PS5 instantly feels the stakes — GTA 6 is out but won't run without the firmware.",
+ "metaphor": "A security gate that only opens after a firmware key is inserted — the PS5 system update is the key, GTA 6 is the city behind the gate.",
+ "mechanism": [
+  "PlayStation pushed mandatory system software update",
+  "Console downloads update in Rest Mode via auto-download",
+  "Update verifies license and prepares storage subsystem",
+  "Game executable checks firmware version at launch",
+  "Mismatch blocks launch; match opens the gate"
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "PS5 update bina GTA 6 nahi chalega, Sony ne clear kiya",
+   "type": "image",
+   "prompt": "A PS5 console on a black studio surface, its light bar pulsing blue, then a red warning overlay flashes 'SYSTEM UPDATE REQUIRED' in mono chrome font, camera pushes in fast",
+   "motion": "push",
+   "title": "WARNING",
+   "keywords": [
+    "PS5",
+    "update",
+    "GTA 6"
+   ],
+   "bg_prompt": "PS5 console front view, pure black background, dramatic rim light, 8K product render",
+   "label": "HOOK CLIP",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Sony ne official warning di thi, update mandatory hai ab bhi",
+   "type": "object",
+   "prompt": "PlayStation Support tweet card floating in 3D space, text readable: 'PS5 system software update required before playing Grand Theft Auto VI'",
+   "motion": "push",
+   "title": "OFFICIAL",
+   "keywords": [
+    "Sony",
+    "warning"
+   ],
+   "real": {
+    "q": "Twitter/X tweet screenshot Sony PlayStation official account warning about mandatory update",
+    "kind": "photo",
+    "subject": "Real tweet from Sony's official account showing warning text about mandatory update"
+   },
+   "label": "REAL TWEET",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "System software version mismatch rokega launch, firmware check hota hai",
+   "type": "flow",
+   "nodes": [
+    "Game Launch",
+    "Firmware Check",
+    "Version Match?",
+    "Block / Allow"
+   ],
+   "motion": "pan",
+   "title": "CHECK",
+   "keywords": [
+    "firmware",
+    "check",
+    "block"
+   ],
+   "bg_prompt": "Abstract data flow diagram on black, neon cyan lines connecting nodes, premium lab aesthetic",
+   "label": "FLOW DIAGRAM",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Update abhi download hota hai Rest Mode mein, auto-download on rehta hai",
+   "type": "ui",
+   "title": "PS5 SETTINGS",
+   "rows": [
+    {
+     "label": "Auto-Download",
+     "value": "ON",
+     "pct": 100
+    },
+    {
+     "label": "Rest Mode",
+     "value": "ACTIVE",
+     "pct": 100
+    },
+    {
+     "label": "Internet",
+     "value": "CONNECTED",
+     "pct": 100
+    }
+   ],
+   "motion": "tilt",
+   "keywords": [
+    "Rest Mode",
+    "auto-download"
+   ],
+   "bg_prompt": "PS5 settings screen close-up, dark mode UI, finger hovering over toggle, photoreal",
+   "label": "SETTINGS UI",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "PS5 settings menu showing system software update option in rest mode",
+    "kind": "photo",
+    "subject": "PS5 settings UI with auto-download enabled in rest mode"
+   },
+   "skin": "blueprint"
+  },
+  {
+   "vo": "212 GB jagah chahiye install ke liye, internal SSD zaroori",
+   "type": "stat",
+   "value": "212 GB",
+   "sub": "minimum free space",
+   "motion": "punch",
+   "title": "STORAGE",
+   "keywords": [
+    "212 GB",
+    "storage"
+   ],
+   "bg_prompt": "PS5 internal SSD exposed, M.2 NVMe slot visible, clean studio lighting, black background",
+   "label": "STORAGE STAT",
+   "big": null,
+   "small": null,
+   "real": {
+    "q": "PS5 internal SSD storage showing 212 GB requirement for GTA 6",
+    "kind": "photo",
+    "subject": "PS5 console with visible internal SSD and storage capacity display"
+   },
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "External USB drive se kaam nahi chalega, sirf internal drive chalega",
+   "type": "compare",
+   "items": [
+    {
+     "label": "Internal SSD",
+     "value": "Supported",
+     "pct": 100
+    },
+    {
+     "label": "USB External",
+     "value": "Not Supported",
+     "pct": 0
+    }
+   ],
+   "motion": "pan",
+   "title": "DRIVE TYPE",
+   "keywords": [
+    "internal",
+    "USB",
+    "unsupported"
+   ],
+   "bg_prompt": "Side by side: PS5 internal M.2 SSD vs USB external drive, red X over USB, green check on internal",
+   "label": "DRIVE COMPARE",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "USB logo",
+    "kind": "logo",
+    "subject": "the official USB logo"
+   },
+   "skin": "keynote"
+  },
+  {
+   "vo": "M.2 NVMe SSD laga sakte ho PS5 mein, heatsink ke saath",
+   "type": "object",
+   "prompt": "Sony-approved M.2 NVMe SSD with heatsink, installed in PS5 expansion slot, angled hero shot",
+   "motion": "push",
+   "title": "EXPANSION",
+   "keywords": [
+    "M.2",
+    "NVMe",
+    "SSD"
+   ],
+   "real": {
+    "q": "M.2 NVMe SSD with heatsink installed in PS5 expansion slot",
+    "kind": "photo",
+    "subject": "Real M.2 NVMe SSD with heatsink being installed into PS5"
+   },
+   "label": "REAL HARDWARE",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Xbox pe bhi Sleep mode chahiye auto-update ke liye, expansion card bhi lagega",
+   "type": "object",
+   "prompt": "Xbox Series X console, front view, power button glowing dim (Sleep mode), Xbox Storage Expansion Card inserted",
+   "motion": "pull",
+   "title": "XBOX TOO",
+   "keywords": [
+    "Xbox",
+    "Sleep mode",
+    "update"
+   ],
+   "real": {
+    "q": "Xbox Series X console with expansion card and controller showing sleep mode",
+    "kind": "photo",
+    "subject": "Xbox Series X with expansion card and controller in sleep mode"
+   },
+   "label": "XBOX PARITY",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Global rollout 19 Nov midnight local time pe complete hua, ab sab zones live hain",
+   "type": "chart",
+   "title": "GLOBAL ROLLOUT DONE",
+   "points": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21
+   ],
+   "end_label": "All zones live since 19 Nov",
+   "motion": "pan",
+   "keywords": [
+    "midnight",
+    "local time",
+    "unlock"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: timezone chart, global rollout done, midnight local time unlock, ps5 update bina gta 6 nahi chalega?. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "label": "TIMEZONE CHART",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "World map with timezone markers showing PS5 update rollout completion",
+    "kind": "photo",
+    "subject": "Real world map screenshot from PlayStation social media showing timezone rollout"
+   },
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "$1.65 billion actual sales pehle din, 75% PlayStation, 25% Xbox",
+   "type": "stat",
+   "value": "$1.65B",
+   "sub": "actual sales (Sensor Tower)",
+   "motion": "punch",
+   "title": "SALES RECORD",
+   "keywords": [
+    "$1.65 billion",
+    "sales"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: sales stat, sales record, $1.65 billion sales, ps5 update bina gta 6 nahi chalega?. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "label": "SALES STAT",
+   "big": null,
+   "small": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Abhi check karo: Settings > System > System Software Update, update button dabayein",
+   "type": "code",
+   "title": "TERMINAL",
+   "lines": [
+    "Settings → System",
+    "System Software Update",
+    "Check for Update",
+    "Download & Install"
+   ],
+   "highlight": 2,
+   "motion": "tilt",
+   "keywords": [
+    "Settings",
+    "System Software",
+    "Update"
+   ],
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: update path, terminal, settings system software update, ps5 update bina gta 6 nahi chalega?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "label": "UPDATE PATH",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Update abhi kar lo, GTA 6 khelna hai to firmware chahiye, wait mat karo",
+   "type": "title",
+   "big": "UPDATE NOW",
+   "sub": "GTA 6 is live — firmware required",
+   "motion": "punch",
+   "keywords": [
+    "update now",
+    "play now"
+   ],
+   "bg_prompt": "PS5 console with progress bar at 100%, green checkmark, GTA 6 key art glowing behind it",
+   "label": "FINAL CARD",
+   "title": "",
+   "small": null,
+   "skin": "keynote",
+   "prompt": ""
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "PS5 pe GTA 6 khelna hai? Pehle system update mandatory hai. Sony ne official warning di thi. 212 GB space, Rest Mode, auto-download — sab ready rakho. Global rollout 19 Nov midnight poora hua. $1.65B sales pehle din. Tumne update check kiya? Comment mein batao 👇",
+ "hashtags": [
+  "#GTA6",
+  "#PS5",
+  "#PlayStation",
+  "#TechTip",
+  "#KaiseTech"
+ ],
+ "claims": [
+  {
+   "claim": "PlayStation issued mandatory PS5 system software update required before playing GTA 6",
+   "basis": "PlayStation Support US on X, reported by Newsweek Nov 2026; The Times of India Nov 18 2026"
+  },
+  {
+   "claim": "GTA 6 requires up to 212 GB of available space for install",
+   "basis": "Rockstar Games advisory via Newsweek Nov 2026; Mashable India Nov 18 2026"
+  },
+  {
+   "claim": "Game became playable at midnight local time on PS5 and Xbox Series X|S on 19 November 2026",
+   "basis": "Moneycontrol Nov 19 2026; IGN on MSN Nov 19 2026"
+  },
+  {
+   "claim": "PS5 supports compatible M.2 NVMe SSDs for storage expansion",
+   "basis": "Newsweek Nov 2026; The Times of India Nov 18 2026"
+  },
+  {
+   "claim": "Xbox Series X|S supports dedicated Storage Expansion Cards",
+   "basis": "Newsweek Nov 2026"
+  },
+  {
+   "claim": "GTA 6 generated $1.65 billion in actual sales on launch day, ~75% on PlayStation",
+   "basis": "Sensor Tower data cited by Moneycontrol Nov 19 2026; Admiral Markets Nov 19 2026"
+  }
+ ],
+ "fresh_fixed": [
+  "scene 0: presents PS5 update warning as if GTA 6 launch is upcoming -> sources confirm GTA 6 launched on 19 November 2026 (two days ago)",
+  "scene 1: shows official PlayStation Support tweet as current warning for upcoming launch -> launch already happened",
+  "scene 3: describes Rest Mode auto-download for pre-load -> pre-load period ended with launch",
+  "scene 4: states 212 GB needed for pre-load -> pre-load no longer relevant",
+  "scene 7: mentions Xbox Sleep mode for auto-preload -> preload phase over",
+  "scene 8: shows timezone chart with midnight unlock rollout -> global rollout completed on 19 November",
+  "scene 9: cites 15.88 crore pre-order estimate -> sources report $1.65 billion in actual sales already",
+  "scene 11: urges \"update aaj hi kar lo, warna kal pachtaoge, midnight wait nahi karegi\" -> midnight launch already passed"
+ ],
+ "explainer": {
+  "score": 4,
+  "ok": false,
+  "steps_learned": [
+   "Check for system software updates via Settings > System > System Software Update",
+   "Ensure the game is on internal SSD, not an external USB drive",
+   "Install the mandatory system firmware update to launch the game"
+  ],
+  "missing_steps": [
+   "The script mentions '212 GB' but doesn't explain how to check if the user has enough space or how to manage storage if full",
+   "It mentions 'Rest Mode' and 'auto-download' but doesn't explain how to actually enable these settings for someone who doesn't have them on",
+   "It doesn't clarify that the game might already be pre-loaded, which was a key part of the launch process"
+  ],
+  "unsourced": [
+   "Line 5: '212 GB jagah chahiye' (No source confirms this specific number)",
+   "Line 10: '$1.65 billion actual sales pehle din, 75% PlayStation, 25% Xbox' (This specific revenue breakdown is not in the provided sources)"
+  ]
+ },
+ "brain_ids": [
+  "f945e2a937",
+  "1e1964f463",
+  "fc294ac58f",
+  "b2fabb69c4",
+  "4396759d41",
+  "6ce7203c71",
+  "7f620e6fdf",
+  "b69d65467f",
+  "6055c69660",
+  "9db4cc694f",
+  "7fa182f8ef",
+  "1e60a34718",
+  "0755cc155a",
+  "161339712e"
+ ],
+ "visual_done": "2026-11-21 05:00",
+ "skin": "keynote"
+}

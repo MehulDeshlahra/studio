@@ -1,10 +1,10 @@
-# Rivals of katha (engine/rivals.py, 2026-11-20)
+# Rivals of katha (engine/rivals.py, 2026-11-21)
 Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title: take the QUESTION behind it.
 
-## Tilak [leader, adjacent] (40,700,000 subs; usual Short 24,500 views)
-- 143,000 views: Sita in love, Ram in righteousness; a hundred bows to the feet of both.
-- 118,000 views: रामकथा के मधुर सुरों में, जीवन के आदर्श मिलें।
-- 129,000 views: Singing the deeds of Sita Ram, awakening love and reverence in the heart.
+## Tilak [leader, adjacent] (40,700,000 subs; usual Short 23,500 views)
+- 155,000 views: Sita in love, Ram in righteousness; a hundred bows to the feet of both.
+- 125,000 views: रामकथा के मधुर सुरों में, जीवन के आदर्श मिलें।
+- 143,000 views: Singing the deeds of Sita Ram, awakening love and reverence in the heart.
 ## The Divine Tales [leader, direct] (7,750,000 subs; usual Short 5,250 views)
 - 22,000 views: नवरात्रि में जौ क्यों बोए जाते हैं? | Why Barley? - The Navratri Mystery 🌾
 ## Bhakti Gyan [leader, direct] (1,490,000 subs; usual Short 6,600 views)
@@ -19,7 +19,7 @@ Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title:
 - 35,000 views: Did Neem Karoli Baba Foresee His Own Death? A True Mysterious Story || neem karoli baba story
 - 34,000 views: Why did Lord Krishna bear this terrible weapon of Kurukshetra on his chest? #fast #shorts #facts
 - 19,000 views: When Mahadev himself became enchanted upon seeing Vishnu's Mohini form!
-## Pauranikk Maraatthi [climber, adjacent] (86,800 subs, +100 in 7 days; usual Short 1,300,000 views)
+## Pauranikk Maraatthi [climber, adjacent] (86,900 subs, +200 in 7 days; usual Short 1,300,000 views)
 
 ## Brands that pay creators in this niche (from sponsor lines)
 - Tilak: Subscribe to Tilak for more devotional contents - https://bit.ly/SubscribeTilak

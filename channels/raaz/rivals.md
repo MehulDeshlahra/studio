@@ -1,7 +1,7 @@
-# Rivals of raaz (engine/rivals.py, 2026-11-20)
+# Rivals of raaz (engine/rivals.py, 2026-11-21)
 Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title: take the QUESTION behind it.
 
-## Crime Tak [leader, direct] (13,600,000 subs; usual Short 27,500 views)
+## Crime Tak [leader, direct] (13,600,000 subs; usual Short 26,000 views)
 - 121,000 views: Death of a Disciple at Vrindavan Ashram: 11-Second CCTV Footage Raises Questions
 - 160,000 views: 'The Hero' Captain Smit Machchhar
 - 91,000 views: Father poisoned food at night, then crushed his wife and 3 innocent daughters to death with a sto...
@@ -9,9 +9,9 @@ Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title:
 - 101,000 views: Gaon Ki kahani | Momos  #cartoon #comedy #funny #kahani #shorts  #momos  #hindistories
 ## SR PAY [leader, direct] (2,400,000 subs; usual Short 146,500 views)
 - 485,000 views: Jealous BF Stabbed GF
-- 794,000 views: Crazy Boyfriend Killed His Girlfriend For Cheating
+- 795,000 views: Crazy Boyfriend Killed His Girlfriend For Cheating
 - 659,000 views: Even CBI Couldn't Solve This Case
-## Wronged [leader, direct] (1,910,000 subs; usual Short 932,000 views)
+## Wronged [leader, direct] (1,910,000 subs; usual Short 932,500 views)
 - 13,000,000 views: When Kids became Devils😡#justicefornirbhay #wronged
 - 7,600,000 views: When Parents became Demons😰
 - 8,800,000 views: When he crossed all the limits 😡
@@ -20,8 +20,8 @@ Proven topics = Shorts with 3x+ their channel's usual views. Never copy a title:
 - 351,000 views: Who is the indian illuminati ?
 - 7,200,000 views: For Full video click 👆🏻👆🏻👆🏻
 - 167,000 views: Japanese Urban legend - Kuchisake Onna
-## The Crime Show by Khooni Monday [leader, direct] (537,000 subs; usual Short 125,000 views)
-## Vikal Here [leader, direct] (166,000 subs, +1,000 in 7 days; usual Short 3,650 views)
+## The Crime Show by Khooni Monday [leader, direct] (537,000 subs; usual Short 126,000 views)
+## Vikal Here [leader, direct] (166,000 subs, +1,000 in 7 days; usual Short 3,700 views)
 - 344,000 views: Kolkata Doctor case dark reality
 
 ## Brands that pay creators in this niche (from sponsor lines)
