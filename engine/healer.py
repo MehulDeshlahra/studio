@@ -278,10 +278,13 @@ def heal_held():
             it["steps"] = [s for s in it["steps"] if not (s["step"] == "code" and "result" not in s)]
             tried = {(s["step"], s.get("code")) for s in it["steps"]}
             today_steps = sum(1 for s in it["steps"] if s.get("t", "")[:10] == time.strftime("%Y-%m-%d"))
-            if today_steps >= 6:                            # a hard daily cap per video: never loop on one job
+            if today_steps >= 3:                            # a hard daily cap per video: never loop on one job (was 6)
                 continue
             stg = stage_for(probs)
-            files = STAGE_FILES.get(stg, []) + STAGE_FILES["preflight"] + ["engine/make.py", "engine/plan.py"]
+            # 20 Nov audit: with make.py / plan.py in this list, each of the 138 engine commits of 19-20 Nov counted as "the
+            # code changed" for every held video: 32 of 84 rebuilds were that step, and none was aimed at the problem.
+            # Only the files of the stage that holds the video count now, and that rebuild runs at most once a day.
+            files = STAGE_FILES.get(stg, []) + (STAGE_FILES["preflight"] if stg == "compose" else [])
             # 0 the owner agent (engine/mehul.py) asked for a new plan: honour it first, once per request
             req = d.get("replan_requested")
             if req and not any(s["step"] == "replan" and s.get("req") == req for s in it["steps"]):
@@ -290,7 +293,8 @@ def heal_held():
                 rebuild(cid, job, "plan", "the owner agent asked for a new plan"); save(STATE, S); return
             # 1 known fix
             kf = known_fix(probs)
-            if kf and ("known", h) not in tried:
+            known_before = any(s["step"] == "known" and s.get("fix") == (kf or {}).get("fix") for s in it["steps"])
+            if kf and ("known", h) not in tried and not known_before:      # a learned fix is tried once per video, not per commit
                 it["state"] = "working"; it["steps"].append({"step": "known", "code": h, "fix": kf["fix"], "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 if kf["fix"] == "simplify" and simplify(cid, job, probs):
                     rebuild(cid, job, "assets" if stg == "compose" else stg, f"known fix: {kf['fix']}")
@@ -338,16 +342,18 @@ def heal_held():
             # 2 rebuild after a code change
             since = next((s["code"] for s in reversed(it["steps"]) if s.get("code")), None) or \
                 (load(os.path.join(OUT, cid, job, "meta.json"), {}) or {}).get("doctor_code")
-            if ("rebuild", h) not in tried and changed_since(since, files):
+            rebuilt_today = any(s["step"] == "rebuild" and s.get("t", "")[:10] == time.strftime("%Y-%m-%d") for s in it["steps"])
+            if ("rebuild", h) not in tried and not rebuilt_today and changed_since(since, files):
                 it["state"] = "working"; it["steps"].append({"step": "rebuild", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 rebuild(cid, job, stg, "code changed since the last try"); save(STATE, S); return
-            # 3 change the input (once per code version)
-            if ("simplify", h) not in tried and stg == "compose":
+            # 3 change the input (once per code version, and at most once a day: 20 Nov audit, 20 of 84 rebuilds)
+            simp_today = any(s_["step"] == "simplify" and s_.get("t", "")[:10] == time.strftime("%Y-%m-%d") for s_ in it["steps"])
+            if ("simplify", h) not in tried and not simp_today and stg == "compose":
                 it["state"] = "working"; it["steps"].append({"step": "simplify", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 if simplify(cid, job, probs):
                     rebuild(cid, job, "assets", "failing scenes re-planned"); save(STATE, S); return
                 it["steps"][-1].update(pending=False, result="nothing to re-plan")
-            if ("simplify", h) not in tried and stg == "voice":
+            if ("simplify", h) not in tried and not simp_today and stg == "voice":
                 it["state"] = "working"; it["steps"].append({"step": "simplify", "code": h, "t": time.strftime("%Y-%m-%d %H:%M"), "pending": True})
                 for f_ in ("vo-raw.wav", "vo-paced.wav", "timing.json"):
                     p_ = os.path.join(OUT, cid, job, f_)
