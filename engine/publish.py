@@ -214,6 +214,11 @@ def serial_order(ch, done, cands):
     import serials
     posted = {d["job"] for d in done if d.get("status") == "posted"}
     info = {d["job"]: serials._find(ch, d.get("topic")) for d in cands}
+    # 20 Nov: a part made by hand (topic "X (Part 2, jawab)") is not found by topic: use the story's own job list too
+    for s_ in serials.stories(ch["id"]):
+        for n_, j_ in (s_.get("made_jobs") or {}).items():
+            if j_ in info and not info[j_][0]:
+                info[j_] = (s_, int(n_))
     def ready(d):
         s, n = info[d["job"]]
         return not s or n == 1 or s["made_jobs"].get(str(n - 1)) in posted
