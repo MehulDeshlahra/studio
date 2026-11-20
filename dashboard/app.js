@@ -145,7 +145,7 @@ const V = {
       <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
         <div><div style="font-weight:600;font-size:16px">${esc(b.name)} <span class="mut" style="font-weight:400">${esc(b.handle)}</span></div>
         <div class="faint" style="font-size:12px">${esc(b.about)}</div></div>
-        <span style="display:flex;gap:8px"><button onclick="bizLib('${b.id}')">${BIZOPEN === b.id ? "Hide library" : "Open library"}</button><button onclick="bizMake('${b.id}')">Make one reel now</button></span></div>
+        <span style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="bizLib('${b.id}')">${BIZOPEN === b.id ? "Hide library" : "Open library"}</button><button class="btn ok" onclick="bizMake('${b.id}')">Make one reel now</button></span></div>
       <div class="mut" style="margin-top:8px">Library: ${esc(b.library)} · ${b.clips} clips · ${b.photos} photos</div>
       <div class="mut">Auto: ${b.auto ? (b.need ? "will make a reel at the next check" : "waiting") + " · " + esc(b.why) : "off"}${b.next ? " · next check " + esc(b.next) : ""}</div>
       <div class="mut">Made ${b.made} · passed QC ${b.ok} · delivered ${b.delivered}</div>
@@ -233,7 +233,7 @@ const V = {
       <td class="hide-m" style="white-space:normal;min-width:210px">${Object.entries(cnt).filter(([, v]) => v).map(([k, v]) => `<span class="mut" style="margin-right:10px;display:inline-block">${v} ${(ST[k] || [k])[0].toLowerCase()}</span>`).join("") || `<span class="faint">—</span>`}</td><td class="hide-m">${spark(c.spark, c.color)}</td></tr>`; };
     const st = S.channels.filter((c) => c.group === "Studio"), bz = S.channels.filter((c) => c.group !== "Studio");
     const head = `<thead><tr><th>Channel</th><th>Status</th><th>IG followers</th><th class="hide-m">FB followers</th><th class="hide-m">IG posts</th><th class="hide-m">Videos</th><th class="hide-m">30 days</th></tr></thead>`;
-    return `<div class="h1">Channels</div><div class="lead">${S.channels.length} channels. Follower numbers come from Meta every 30 minutes. Click one for its latest posts.</div>
+    return `<div class="h1">Channels</div><a class="btn" href="#businesses" style="float:right;margin-top:-34px">${ic("channels")} Businesses</a><div class="lead">${S.channels.length} channels. Follower numbers come from Meta every 30 minutes. Click one for its latest posts.</div>
      <div class="sec"><h3>Studio pages</h3><span class="mut">made by the engine</span></div><div class="card tw"><table>${head}<tbody>${st.map(row).join("")}</tbody></table></div>
      <div class="sec"><h3>Clipping campaigns</h3><span class="mut">Cut Capsule · ranked every 6 h from contentrewards.com · join on Whop, then add it below</span></div><div class="card tw"><table><thead><tr><th>Score</th><th>Campaign</th><th class="hide-m">Why</th><th></th></tr></thead><tbody>${((S.campaigns || {}).top || []).map((c) => `<tr><td class="num" style="font-weight:600">${c.score}</td><td class="w">${esc(c.brand || "")} · ${esc(c.title || "")}</td><td class="mut hide-m">${esc((c.why || []).join(" · "))}</td><td>${c.joined ? `<span class="badge" style="--c:var(--green)">Joined</span>` : `<a class="btn sm" target="_blank" href="${esc(c.url)}">Open ${ic("ext")}</a> <button class="btn sm" onclick="$('#srcU').value='${esc(c.url)}';$('#srcC').focus()">I joined</button>`}</td></tr>`).join("") || `<tr><td colspan="4" class="empty">No campaign data yet (first run within 6 h).</td></tr>`}</tbody></table></div>
      <div class="card pad" style="margin-top:10px"><div style="font-weight:600;margin-bottom:6px">Add a source you may clip (a joined campaign or a creator's OK)</div>
@@ -535,7 +535,7 @@ document.addEventListener("input", (e) => { const el = e.target; if (el && el.id
 document.addEventListener("change", (e) => { const el = e.target; if (el && el.id && el.tagName === "SELECT") { const d = JSON.parse(sessionStorage.getItem(DRAFT) || "{}"); d[el.id] = el.value; sessionStorage.setItem(DRAFT, JSON.stringify(d)); } });
 function moreMenu() {
   drawerKey = "more"; $("#drawer").classList.add("on");
-  $("#panel").innerHTML = `<div class="ph"><div style="flex:1;font-weight:600">More</div><button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div><div>${[["runs", "Runs"], ["sources", "Connected apps"], ["activity", "Activity log"], ["brain", "Brain"], ["settings", "Settings"]].map(([k, t]) => `<a class="row click" href="#${k}" onclick="closeDrawer()">${ic(ICON[k])}<span class="grow">${t}</span></a>`).join("")}<a class="row click" href="javascript:closeDrawer();openPalette()">${ic("spark")}<span class="grow">Ask a question</span></a></div>`;
+  $("#panel").innerHTML = `<div class="ph"><div style="flex:1;font-weight:600">More</div><button class="icon-btn" onclick="closeDrawer()">${ic("x")}</button></div><div>${[["businesses", "Businesses"], ["runs", "Runs"], ["sources", "Connected apps"], ["activity", "Activity log"], ["brain", "Brain"], ["radar", "Radar"], ["settings", "Settings"]].map(([k, t]) => `<a class="row click" href="#${k}" onclick="closeDrawer()">${ic(ICON[k])}<span class="grow">${t}</span></a>`).join("")}<a class="row click" href="javascript:closeDrawer();openPalette()">${ic("spark")}<span class="grow">Ask a question</span></a></div>`;
 }
 async function load() {
   try {
