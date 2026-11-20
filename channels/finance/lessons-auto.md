@@ -266,3 +266,8 @@
 
 ## review 1120-2137
 - visual: Scene 4 (Teesra): The rule card background is largely blank and blurry compared to other detailed cards, showing minimal text before expanding.
+
+## Repo rate 0.75% badha toh ₹30 lakh home loan ki EMI kitni ba (numbers check)
+- NUMBERS: scene 1: 'RBI ne repo rate 75 bps badha diya' is wrong: Sources state the repo rate is currently 5.50% (as of 2026-10-07) and a 75 bps hike is only an expectation, not an offic
+- NUMBERS: scene 3: '16 November 2026 ke circular se 75 bps repo rate hike' is wrong: No such official RBI circular exists in the provided sources; the repo rate remains at 5.50%.
+- NUMBERS: scene 4: '9% se 9.75% interest rate hike' is not in the sources: remove it or say only what the sources say

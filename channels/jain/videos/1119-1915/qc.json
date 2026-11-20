@@ -10,15 +10,10 @@
   "dur": 45.67
  },
  "vision": {
-  "score": 9,
-  "ok": true,
-  "problems": [
-   "scene 5: The caption 'BHUYESU DOSTI SABSE' does not match the intended line 'Mitti Me Savva Bhuyesu — dosti sabse, dushmani kisi se nahi'. It seems to have skipped 'Mitti Me'.",
-   "scene 6: The caption 'KE LIYE NAHI CHEENTI' does not match the intended line 'Yeh sirf insanon ke liye nahi — cheenti, patte, hawa ke kan tak pahuncha hai'. It seems to have skipped 'Yeh sirf insanon'.",
-   "scene 7: The caption 'HAIN' is incomplete and does not reflect the intended line 'Pratikraman mein yeh teen baar doharate hain, Paryushan ke aakhri din Samvatsari ko'.",
-   "scene 8: The caption 'MEIN ISEY KSHAMAVANI' does not match the intended line 'Digambar parampara mein isey Kshamavani kehte hain'. It seems to have skipped 'Digambar parampara'.",
-   "scene 9: The caption 'JATA HAI' does not match the intended line 'Samvatsari ke din yeh formula bola jata hai, naya saal shuru hota hai'."
-  ]
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
  },
  "voice": {
   "ok": true,
