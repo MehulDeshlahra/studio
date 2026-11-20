@@ -76,6 +76,10 @@ def allow_soft(jd, soft, gate):
     except Exception:
         meta = {}
     key = f"soft_{gate}"
+    # 20 Nov owner: "loosen the reviewers, it's fine for now if little mistakes happen": soft problems pass at once
+    # (listed as notes and in the page's lessons); only the HARD list above stops a reel
+    if os.environ.get("STUDIO_SOFT_FIX_ROUND") != "1":
+        return True
     if meta.get(key, 0) >= 1:
         return True
     meta[key] = meta.get(key, 0) + 1

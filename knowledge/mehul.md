@@ -74,3 +74,9 @@ is looked at before it goes live.
   (memory floor still applies); its prepped reel is rendered first. Telegram warns once a day when a page runs low.
 - At the slot (engine/publish.py): nothing approved -> the newest reel that passed every check and only waits for the
   owner's tap posts, and Telegram says so. Nothing at all -> Telegram alarm.
+
+## Looser reviewers (owner, 20 Nov 2026 evening)
+- "Loosen the reviewers, it's fine for now if little mistakes happen." Only the HARD list above stops a reel; every
+  soft problem passes at once as a note (no fix round). The editor rewrite pass is off and the explainer gate only
+  grades. Picture checks for the main sacred figure, numbers, story changes, 'tu', broken voice / sound / format,
+  unsafe content and wrong-language captions still stop a reel.

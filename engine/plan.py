@@ -332,6 +332,18 @@ LESSONS:
 {lessons}
 PLAN:
 {json.dumps(plan, ensure_ascii=False)}"""
+    # 20 Nov owner ("loosen the reviewers"): the editor rewrite pass (2-3 min of slow free-model time a reel) is off; the
+    # plan prompt already carries the same rules. STUDIO_EDITOR_PASS=1 turns it back on
+    if os.environ.get("STUDIO_EDITOR_PASS") != "1":
+        w1_ = sum(len(s.get("vo", "").split()) for s in plan.get("scenes", []))
+        if not (W0 - 5 <= w1_ <= W1 + 15):
+            log("plan has", w1_, "words -> length fix")
+            fx = ask(f"This plan has {w1_} spoken words; it needs {W0 + 5}-{W1 - 5}. Rewrite it to fit: add the missing "
+                     f"steps of the mechanism (or cut repetition), keep the same JSON shape.\n{EXAMPLE}\n"
+                     f"PLAN:\n{json.dumps(plan, ensure_ascii=False)}")
+            if len((fx or {}).get("scenes") or []) >= 6:
+                plan = fx
+        return _checks(ch, topic, plan, research_text, W0, W1, bids)
     try:
         better = ask(review)
         bw = sum(len(s.get("vo", "").split()) for s in better.get("scenes", []))
@@ -938,7 +950,7 @@ and the final question are NOT filler],
     return g
 
 
-def explainer_gate(ch, topic, plan, research_text, W0, W1, rounds=1):   # 20 Nov: 1 fix round (2nd added ~2 min, 8 -> 9)
+def explainer_gate(ch, topic, plan, research_text, W0, W1, rounds=0):   # 20 Nov owner: loosen reviewers -> grade + note only   # 20 Nov: 1 fix round (2nd added ~2 min, 8 -> 9)
     """19 Nov (owner: the WhatsApp AI agent reel 'is not top notch', the reviewer gave it 10/10). The editor pass fixes form
     (hook, line length); nothing checked that a 'kaise kaam karta hai' reel actually EXPLAINS. This gate grades the script
     as a viewer would (answers the title? which real steps are learned? filler? unsourced numbers?), rewrites it with that
