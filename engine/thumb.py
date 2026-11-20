@@ -265,6 +265,9 @@ def make(cid, job):
 
 
 def stamp(mp4, cover, out):
+    # 20 Nov: a full re-encode (2-4 min on the shared CPU): done once, reused when nothing changed since
+    if os.path.exists(out) and os.path.getmtime(out) >= max(os.path.getmtime(mp4), os.path.getmtime(cover)):
+        return out
     sh(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-i", cover, "-filter_complex",
         "[1:v]scale=1080:1920,format=yuv420p[c];[0:v][c]overlay=0:0:enable='lt(n,3)'[v]", "-map", "[v]", "-map", "0:a",
         "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", out],
