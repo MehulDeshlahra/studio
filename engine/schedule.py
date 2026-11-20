@@ -351,12 +351,13 @@ def stage():
                     and (d["sched"].get("fb") or d["sched"].get("yt")):
                 unschedule(cid, d)
         sc_ = [d for d in rows if d.get("status") == "scheduled"]
-        if sc_:                                          # one prepared reel per page at a time; finish what is missing
-            d = sc_[0]
+        # 20 Nov: up to one prepared reel per daily slot (clip pages post 4 a day); finish what is missing on each
+        for d in sc_:
             s = d.get("sched") or {}
             miss = [n for n in s.get("platforms") or [] if not (s.get("ig_container") if n == "ig" else s.get(n))]
             if miss and s.get("slot", 0) - time.time() > LEAD_MIN and time.time() - s.get("retried", 0) > 600:
                 jobs.append((cid, ch, d, s["slot"], miss))
+        if len(sc_) >= max(1, len(day_slots(ch, (now + dt.timedelta(hours=12)).date()))) or any(j[0] == cid for j in jobs):
             continue
         slot = next_slot(cid, ch, rows, now)
         if not slot or slot - time.time() > WINDOW:
