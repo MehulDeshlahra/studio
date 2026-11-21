@@ -130,7 +130,9 @@ def words(mp4, lang=None, prompt=""):
     if a.ndim > 1:
         a = a.mean(axis=1)
     if _MODEL[0] is None:
-        for args in (("medium", "cuda", "int8_float16"), ("small", "cpu", "int8")):
+        # 21 Nov: the server (no GPU) runs clip jobs now; skip the CUDA try there
+        gpu = os.name == "nt" or os.path.exists("/dev/nvidia0")
+        for args in ((("medium", "cuda", "int8_float16"),) if gpu else ()) + (("small", "cpu", "int8"),):
             try:
                 m = WhisperModel(args[0], device=args[1], compute_type=args[2])
                 list(m.transcribe(np.zeros(16000, dtype="float32"))[0])          # fails here when cuDNN is missing
