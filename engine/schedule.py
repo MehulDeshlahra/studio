@@ -137,7 +137,32 @@ def pick(cid, ch, rows):
         po = (load(os.path.join(OUT, cid, d["job"], "plan.json"), {}) or {}).get("part_of")
         return bool(po) and po in posted_
     cands = sorted(cands, key=lambda d: not _answers(d))
-    for c in cands[:3]:
+    # 21 Nov (owner: "they were duplicates"): a clip showing the same pictures as one this page already posted (last 14
+    # days) or has scheduled is removed, never posted. Picture fingerprint, so a new caption does not hide a repeat.
+    others = []
+    if ch.get("kind") == "clips":
+        cut = time.time() - 14 * 86400
+        for d in rows:
+            at = str((d.get("posted") or {}).get("at") or "")
+            try:
+                recent = d.get("status") == "posted" and time.mktime(time.strptime(at[:16], "%Y-%m-%d %H:%M")) > cut
+            except ValueError:
+                recent = False
+            if recent or d.get("status") == "scheduled":
+                others.append(d["job"])
+    for c in cands[:6]:
+        if others:
+            try:
+                import framesig
+                mine = os.path.join(OUT, cid, c["job"], f"{cid}-{c['job']}.mp4")
+                hit = next((j for j in others if j != c["job"] and
+                            framesig.same(mine, os.path.join(OUT, cid, j, f"{cid}-{j}.mp4")) >= 0.75), None)
+            except Exception as e:
+                hit = None; log("schedule: repeat check could not run", cid, c["job"], str(e)[:100])
+            if hit:
+                log("schedule: REPEAT removed", cid, c["job"], "shows the same pictures as", hit)
+                update(cid, c["job"], lambda d, h=hit: d.update(status="removed", removed_why=f"same pictures as {h} (repeat check)"))
+                continue
         if not cid.startswith("cutcapsule"):
             try:
                 import respect
