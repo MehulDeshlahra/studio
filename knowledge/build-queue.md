@@ -53,3 +53,5 @@ This file holds only: open owner-agent tasks ([mehul], worked on by engine/heale
 - [ ] [mehul] 20 Nov katha: Update engine/compose.py to include a pre-render check that scans for English character sets in text layers and blocks the build if found.
 - [ ] [mehul] 20 Nov raaz: Update engine/plan.py to include a strict validation filter that blacklists owner and real staff names from ever appearing as character names in generated story scripts.
 - [ ] [mehul] 20 Nov tech: Update engine/preflight.py to automatically reject any script containing keywords like 'Launch', 'Price', or 'Release' unless it contains at least two verified source URLs in the metadata.
+
+- [ ] [radar] 2.5D & Gaussian Splats (https://dev.to/hiper2d/turn-any-image-into-a-3d-scene-25d-and-gaussian-splats-37i3, 2026-11-21): Directly addresses our 'Not built yet' goal for 3D scenes without needing a full 3D engine like Blender. FREE: Open source implementation details provided in the dev.to article. HOW: Integrate a basic 2.5D parallax effect into compose_lab.py using GSAP to move layers of a single image.
