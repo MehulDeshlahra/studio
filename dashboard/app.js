@@ -438,7 +438,11 @@ function drawPublished() {
     : r.errors && r.errors[k] ? `<span class="badge" style="--c:var(--red)" title="${esc(r.errors[k])}">${label} failed</span>` : "";
   g.innerHTML = rows.map((r) => {
     const c = ch(r.cid);
-    const camp = r.campaign ? (r.submitted ? `<span class="badge" style="--c:var(--green)">Submitted ${esc(r.submitted.slice(5))}</span>` : `<span class="badge" style="--c:var(--amber)">Submit ${r.submit_ok}/${r.submit_n}</span>`) : "";
+    // 21 Nov: say WHY a clip is not submitted (owner saw "Submit 0/1" and could not tell)
+    const camp = !r.campaign ? "" : r.submitted ? `<span class="badge" style="--c:var(--green)">Submitted ${esc(r.submitted.slice(5))}</span>`
+      : r.paused ? `<span class="badge" style="--c:var(--red)">Campaign paused by brand</span>`
+      : r.missed ? `<span class="badge" style="--c:var(--red)">Missed 30-min window</span>`
+      : `<span class="badge" style="--c:var(--amber)">Submitting ${r.submit_ok}/${r.submit_n}</span>`;
     return `<div class="card pubcard">
       <div class="pubthumb" onclick="openJob('${r.cid}','${r.job}')">${r.cover ? `<img src="${r.cover}" loading="lazy" decoding="async" alt="" onload="this.classList.add('ld')">` : ""}</div>
       <div class="pubbody"><div style="display:flex;gap:8px;align-items:center">${dp(c, 20)}<span class="mut" style="font-size:12px">${esc(c.name)} · ${esc((r.at || "").slice(5))}</span></div>
