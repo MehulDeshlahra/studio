@@ -136,13 +136,14 @@
   "job": "1119-2240a-c1",
   "topic": "RELEASE ANCESTRAL MEMORIES NOW",
   "title": "RELEASE ANCESTRAL MEMORIES NOW",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=hE7ZcRFA6-I",
    "start": 3272.33,
    "layout": "fit"
-  }
+  },
+  "removed_why": "21 Nov owner stopped the channel (Hindi captions wrong)"
  },
  {
   "job": "1119-2240a-c2",
@@ -167,48 +168,52 @@
   "job": "1119-2240a-c3",
   "topic": "FEET GROWING ROOTS DURING MEDITATION",
   "title": "FEET GROWING ROOTS DURING MEDITATION",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=hE7ZcRFA6-I",
    "start": 209.25,
    "layout": "stack"
-  }
+  },
+  "removed_why": "21 Nov owner stopped the channel (Hindi captions wrong)"
  },
  {
   "job": "1121-1020a-c1",
   "topic": "GHATE KE ENTRANCE PE YE HOTA",
   "title": "GHATE KE ENTRANCE PE YE HOTA",
-  "status": "made",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=Ge7d-htYFww",
    "start": 58.43,
    "layout": "crop"
-  }
+  },
+  "removed_why": "21 Nov owner stopped the channel (Hindi captions wrong)"
  },
  {
   "job": "1121-1020b-c1",
   "topic": "YE MASS HEALING HAI, DOSTO",
   "title": "YE MASS HEALING HAI, DOSTO",
-  "status": "made",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=Ge7d-htYFww",
    "start": 88.25,
    "layout": "crop"
-  }
+  },
+  "removed_why": "21 Nov owner stopped the channel (Hindi captions wrong)"
  },
  {
   "job": "1121-1020c-c1",
   "topic": "4 MAHINE KI BETI CHHOD AAYI",
   "title": "4 MAHINE KI BETI CHHOD AAYI",
-  "status": "made",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=Ge7d-htYFww",
    "start": 33.87,
    "layout": "crop"
-  }
+  },
+  "removed_why": "21 Nov owner stopped the channel (Hindi captions wrong)"
  }
 ]

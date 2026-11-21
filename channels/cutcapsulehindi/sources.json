@@ -1,64 +1,66 @@
 {
- "_how": "Clips are posted ONLY from sources listed here (a joined Indian clipping campaign: ClipConnect, Dashrize, INDclipping, Klipp.in, Vyuzz; or a creator who allows clipping in writing). Anything else is made as a test and never posted.",
- "sources": {
-  "tarunsharmashow": {
-   "platform": "creator",
-   "title": "Tarun Sharma Show",
-   "channels": [
-    "@tarunsharmashow"
-   ],
-   "videos": [
-    "https://www.youtube.com/watch?v=B_DpiJ0SY0k",
-    "https://www.youtube.com/watch?v=wPB05nNhvCo"
-   ],
-   "match": [
-    "@tarunsharmashow",
-    "UCew-pajn__JQuaiT9RUO_ow"
-   ],
-   "_ids": {
-    "@tarunsharmashow": "UCew-pajn__JQuaiT9RUO_ow"
-   },
-   "permission": "email reply 2026-11-19 12:57 from tarunsharmateam@artificiluxvn.com: \"Go Ahead -- Sent with Hostinger Mail\"",
-   "conditions": [
-    "credit and a link to the full episode"
-   ],
-   "credit_link": true,
-   "clips_per_video": 3,
-   "active": false,
-   "added": "2026-11-19 12:57",
-   "added_t": 1793863647.0561016,
-   "paused": "2026-11-19 14:47 astrology / tantra content (moments picked: 'paisa attract karne ka tantra', 'divorce cases badhne wale hain'): brand-unsafe; owner can re-enable"
-  },
-  "bhaktiprabha6156": {
-   "platform": "creator",
-   "title": "The Spiritual Awakening (Bhakti Prabha)",
-   "channels": [
-    "@bhaktiprabha6156"
-   ],
-   "videos": [
-    "https://www.youtube.com/watch?v=E_n5yk9sxqs",
-    "https://www.youtube.com/watch?v=wj455R5SX5A",
-    "https://www.youtube.com/watch?v=V1cE3z0yS0Q"
-   ],
-   "match": [
-    "@bhaktiprabha6156",
-    "UCHTTVNH5LpLpD_p5BQ-7v9w"
-   ],
-   "_ids": {
-    "@bhaktiprabha6156": "UCHTTVNH5LpLpD_p5BQ-7v9w"
-   },
-   "permission": "email reply 2026-11-19 13:15 from bhaktiprabha13@gmail.com: \"ok try with our latest podcast and let us see how it works. and also plz share shorts with us also so we can post it on our instagram.\"",
-   "conditions": [
-    "credit and a link to the full episode",
-    "share shorts with them for Instagram"
-   ],
-   "credit_link": true,
-   "clips_per_video": 3,
-   "active": true,
-   "added": "2026-11-19 13:15",
-   "added_t": 1793864704.9808426,
-   "share_back": true,
-   "share_note": "creator asked 19 Nov: 'plz share shorts with us also so we can post it on our instagram'"
+  "_how": "Clips are posted ONLY from sources listed here (a joined Indian clipping campaign: ClipConnect, Dashrize, INDclipping, Klipp.in, Vyuzz; or a creator who allows clipping in writing). Anything else is made as a test and never posted.",
+  "sources": {
+    "tarunsharmashow": {
+      "platform": "creator",
+      "title": "Tarun Sharma Show",
+      "channels": [
+        "@tarunsharmashow"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=B_DpiJ0SY0k",
+        "https://www.youtube.com/watch?v=wPB05nNhvCo"
+      ],
+      "match": [
+        "@tarunsharmashow",
+        "UCew-pajn__JQuaiT9RUO_ow"
+      ],
+      "_ids": {
+        "@tarunsharmashow": "UCew-pajn__JQuaiT9RUO_ow"
+      },
+      "permission": "email reply 2026-11-19 12:57 from tarunsharmateam@artificiluxvn.com: \"Go Ahead -- Sent with Hostinger Mail\"",
+      "conditions": [
+        "credit and a link to the full episode"
+      ],
+      "credit_link": true,
+      "clips_per_video": 3,
+      "active": false,
+      "added": "2026-11-19 12:57",
+      "added_t": 1793863647.0561016,
+      "paused": "2026-11-19 14:47 astrology / tantra content (moments picked: 'paisa attract karne ka tantra', 'divorce cases badhne wale hain'): brand-unsafe; owner can re-enable",
+      "retired": "2026-11-21 owner: channel stopped (Hindi captions wrong)"
+    },
+    "bhaktiprabha6156": {
+      "platform": "creator",
+      "title": "The Spiritual Awakening (Bhakti Prabha)",
+      "channels": [
+        "@bhaktiprabha6156"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=E_n5yk9sxqs",
+        "https://www.youtube.com/watch?v=wj455R5SX5A",
+        "https://www.youtube.com/watch?v=V1cE3z0yS0Q"
+      ],
+      "match": [
+        "@bhaktiprabha6156",
+        "UCHTTVNH5LpLpD_p5BQ-7v9w"
+      ],
+      "_ids": {
+        "@bhaktiprabha6156": "UCHTTVNH5LpLpD_p5BQ-7v9w"
+      },
+      "permission": "email reply 2026-11-19 13:15 from bhaktiprabha13@gmail.com: \"ok try with our latest podcast and let us see how it works. and also plz share shorts with us also so we can post it on our instagram.\"",
+      "conditions": [
+        "credit and a link to the full episode",
+        "share shorts with them for Instagram"
+      ],
+      "credit_link": true,
+      "clips_per_video": 3,
+      "active": false,
+      "added": "2026-11-19 13:15",
+      "added_t": 1793864704.9808426,
+      "share_back": true,
+      "share_note": "creator asked 19 Nov: 'plz share shorts with us also so we can post it on our instagram'",
+      "retired": "2026-11-21 owner: channel stopped (Hindi captions wrong)"
+    }
   }
- }
 }
