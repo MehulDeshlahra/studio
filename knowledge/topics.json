@@ -1,136 +1,136 @@
 {
  "picks": [
   {
-   "title": "AI claimed a solution to the 167-year-old Riemann hypothesis",
-   "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
-   "src": "TechCrunch",
-   "angle": "Math ka sabse bada mystery solve ho gaya? AI vs Human race.",
-   "hook": "Riemann hypothesis solve ho gaya? AI ya insaan?",
+   "title": "Apple may be developing its own AI agent that runs your Mac",
+   "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+   "src": "TechCrunch AI",
+   "angle": "Apple is building an AI agent to control your Mac, making complex multitasking effortless for users.",
+   "hook": "Ab aapka Mac khud saare kaam karega!",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 10,
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+   "url": "https://openai.com/business/customer-stories/hebbia",
+   "src": "OpenAI",
+   "angle": "OpenAI's GPT-6 is already being deployed for high-end financial research and complex data tasks.",
+   "hook": "GPT-6 aa gaya hai aur ye bohot fast hai!",
    "format": "story",
    "freshness": "today",
    "score": 10,
-   "found": "2026-11-21T05:02+05:30"
+   "found": "2026-11-21T17:04+05:30"
   },
   {
-   "title": "Signal is blocking Gemini and Siri AI from reading your screen",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
-   "src": "The Verge",
-   "angle": "Privacy first! Ab AI aapke private chats nahi padh payega.",
-   "hook": "Ab AI aapke private chats nahi padh payega!",
-   "format": "evidence",
+   "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+   "src": "The Verge AI",
+   "angle": "An AI-assisted breakthrough might have just solved a 167-year-old math problem worth $1 million.",
+   "hook": "AI ne solve kar diya 167 saal purana maths problem!",
+   "format": "story",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-21T05:02+05:30"
+   "found": "2026-11-21T17:04+05:30"
   },
   {
-   "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
-   "url": "https://huggingface.co/blog/inkling2mini",
-   "src": "Hugging Face",
-   "angle": "Kam specs wale laptop pe bhi powerful AI model.",
-   "hook": "Slow laptop? Ye AI model fast chalega!",
+   "title": "Avoid common App Store and Google Play rejections",
+   "url": "https://github.com/sponsors/mjmirza",
+   "src": "GitHub trending",
+   "angle": "A new open playbook helps Indian app developers avoid 117 common rejection patterns on major app stores.",
+   "hook": "App Store rejection se bachne ka secret mil gaya.",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-21T05:02+05:30"
+   "found": "2026-11-21T17:04+05:30"
   },
   {
-   "title": "OpenComputer – an open source alternative to Devin",
-   "url": "https://github.com/diggerhq/opencomputer",
-   "src": "GitHub",
-   "angle": "Free coding agent jo aapke liye software banaye.",
-   "hook": "Devin ka free alternative aa gaya hai!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 9,
-   "found": "2026-11-21T05:02+05:30"
-  },
-  {
-   "title": "Language Models Can Rewrite Their Own Weights",
-   "url": "https://huggingface.co/papers/2611.21885",
-   "src": "Hugging Face Papers",
-   "angle": "AI khud ko update kar raha hai, next level evolution.",
-   "hook": "AI khud ko update kar sakta hai?",
+   "title": "google-labs-code/stitch-skills: A library of Agent Skills",
+   "url": "https://github.com/google-labs-code/stitch-skills",
+   "src": "GitHub trending",
+   "angle": "Google's new framework allows AI agents to learn specific skills, moving us closer to autonomous digital assistants.",
+   "hook": "Google ne launch kiya AI agents ke liye skills library.",
    "format": "how-it-works",
    "freshness": "this week",
    "score": 9,
-   "found": "2026-11-21T05:02+05:30"
+   "found": "2026-11-21T17:04+05:30"
   },
   {
-   "title": "Winedroid – run Android apps without Android (WASM demo)",
-   "url": "https://winedroid.soham.sh/demo/",
+   "title": "Six AI-powered gadgets that could make your home office smarter",
+   "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/",
+   "src": "TechCrunch AI",
+   "angle": "New AI-integrated hardware can significantly boost productivity for Indian remote workers and freelancers.",
+   "hook": "Ye 6 AI gadgets aapka home office badal denge.",
+   "format": "tool-demo",
+   "freshness": "today",
+   "score": 8,
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "title": "FBI reportedly investigating apparent hack of its criminal database",
+   "url": "https://www.bbc.com/news/articles/cvze7de86pk3o",
    "src": "Hacker News",
-   "angle": "Browser mein Android apps chalana ab possible hai.",
-   "hook": "Browser mein Android apps? Bina Android ke!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-21T05:02+05:30"
-  },
-  {
-   "title": "Introducing Tool Retrieval in the Gemini API",
-   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
-   "src": "Google AI",
-   "angle": "Developers ke liye Gemini ab khud tools dhund lega.",
-   "hook": "Gemini ab khud tools dhund lega, coding easy!",
-   "format": "how-it-works",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-21T05:02+05:30"
-  },
-  {
-   "title": "AURA: AUdio-dRiven streaming Avatar",
-   "url": "https://huggingface.co/papers/2611.26540",
-   "src": "Hugging Face Papers",
-   "angle": "Sirf audio se real-time avatar video banana ab easy.",
-   "hook": "Sirf audio se banega real-time AI video!",
+   "angle": "A major security breach at the FBI highlights the growing cyber threats even for top global agencies.",
+   "hook": "FBI ka criminal database hack ho gaya hai!",
    "format": "evidence",
    "freshness": "today",
    "score": 8,
-   "found": "2026-11-21T05:02+05:30"
+   "found": "2026-11-21T17:04+05:30"
   },
   {
-   "title": "Professor Euler – Offline math desk",
-   "url": "https://euler.dawei7.com",
+   "title": "Engineer's Guide to Career Growth – Advice from My Time at Stripe and Facebook",
+   "url": "https://review.firstround.com/the-engineers-guide-to-career-growth-advice-from-my-time-at-stripe-and-facebook/",
    "src": "Hacker News",
-   "angle": "Offline math tool jo internet bina kaam kare.",
-   "hook": "Internet nahi hai? Maths solve hoga offline!",
-   "format": "tool-demo",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-21T05:02+05:30"
-  },
-  {
-   "title": "System 1 agents: a method for local, reliable and fast agentic AI",
-   "url": "https://huggingface.co/papers/2611.21053",
-   "src": "Hugging Face Papers",
-   "angle": "Local AI agents jo fast aur reliable hain.",
-   "hook": "Local AI agents, ab aur bhi fast!",
-   "format": "how-it-works",
-   "freshness": "this week",
-   "score": 8,
-   "found": "2026-11-21T05:02+05:30"
-  },
-  {
-   "title": "Vibecoding an inference chip",
-   "url": "https://ankitg.me/blog/vibecoding-inference-chip/",
-   "src": "Hacker News",
-   "angle": "Hardware design mein AI ka kamaal, khud ka chip.",
-   "hook": "AI se khud ka chip design karna?",
+   "angle": "Practical career advice from top-tier tech companies for Indian software engineers looking to level up.",
+   "hook": "Stripe aur Facebook engineers se seekho career growth secrets.",
    "format": "story",
    "freshness": "this week",
-   "score": 7,
-   "found": "2026-11-21T05:02+05:30"
+   "score": 8,
+   "found": "2026-11-21T17:04+05:30"
   },
   {
-   "title": "Google DeepMind math horizon repo",
-   "url": "https://github.com/google-deepmind/math-horizon",
-   "src": "GitHub",
-   "angle": "Students ke liye advanced math seekhne ka naya resource.",
-   "hook": "Maths mein genius banna hai? Ye dekho!",
+   "title": "Can AI help scientists identify promising drug candidates? Introducing MedChemBench",
+   "url": "https://openai.com/index/introducing-medchembench",
+   "src": "OpenAI",
+   "angle": "OpenAI's new benchmark helps AI models assist in discovering life-saving medicines faster.",
+   "hook": "AI ab nayi medicines dhoondhne mein madad karega.",
+   "format": "evidence",
+   "freshness": "this week",
+   "score": 8,
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "title": "ClawDOS – An AI coding agent for DOS",
+   "url": "http://ricapar.net/ClawDOS/",
+   "src": "Hacker News",
+   "angle": "You can now run a modern AI coding agent on a 40-year-old operating system, showing AI's versatility.",
+   "hook": "40 saal purane computer par AI coding agent?",
+   "format": "tool-demo",
+   "freshness": "today",
+   "score": 7,
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "title": "AFFiNE: next-gen knowledge base that brings planning, sorting and creating",
+   "url": "https://github.com/sponsors/toeverything",
+   "src": "GitHub trending",
+   "angle": "A powerful open-source alternative to Notion and Miro for better project management and planning.",
+   "hook": "Notion bhool jao, ye naya tool try karo.",
    "format": "tool-demo",
    "freshness": "this week",
    "score": 7,
-   "found": "2026-11-21T05:02+05:30"
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "title": "Slopstrap – Make your site look hastily vibecoded",
+   "url": "https://slopstrap.mikelacher.com/",
+   "src": "Hacker News",
+   "angle": "A fun tool to instantly give your website the trendy 'vibecoded' aesthetic popular in 2026.",
+   "hook": "Apni website ko vibecoding look dena hai?",
+   "format": "tool-demo",
+   "freshness": "today",
+   "score": 7,
+   "found": "2026-11-21T17:04+05:30"
   }
  ],
  "history": [
@@ -728,7 +728,67 @@
    "url": "https://huggingface.co/papers/2611.21053",
    "title": "System 1 agents: a method for local, reliable and fast agentic AI",
    "found": "2026-11-21T05:02+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+   "title": "Apple may be developing its own AI agent that runs your Mac",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://openai.com/business/customer-stories/hebbia",
+   "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+   "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/",
+   "title": "Six AI-powered gadgets that could make your home office smarter",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://github.com/sponsors/mjmirza",
+   "title": "Avoid common App Store and Google Play rejections",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "http://ricapar.net/ClawDOS/",
+   "title": "ClawDOS – An AI coding agent for DOS",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://www.bbc.com/news/articles/cvze7de86pk3o",
+   "title": "FBI reportedly investigating apparent hack of its criminal database",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://review.firstround.com/the-engineers-guide-to-career-growth-advice-from-my-time-at-stripe-and-facebook/",
+   "title": "Engineer's Guide to Career Growth – Advice from My Time at Stripe and Facebook",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://github.com/sponsors/toeverything",
+   "title": "AFFiNE: next-gen knowledge base that brings planning, sorting and creating",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://slopstrap.mikelacher.com/",
+   "title": "Slopstrap – Make your site look hastily vibecoded",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://openai.com/index/introducing-medchembench",
+   "title": "Can AI help scientists identify promising drug candidates? Introducing MedChemBench",
+   "found": "2026-11-21T17:04+05:30"
+  },
+  {
+   "url": "https://github.com/google-labs-code/stitch-skills",
+   "title": "google-labs-code/stitch-skills: A library of Agent Skills",
+   "found": "2026-11-21T17:04+05:30"
   }
  ],
- "updated": "2026-11-21T05:02+05:30"
+ "updated": "2026-11-21T17:04+05:30"
 }

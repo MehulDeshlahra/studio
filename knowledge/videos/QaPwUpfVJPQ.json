@@ -1,0 +1,48 @@
+{
+ "hook_first_words": "क्या स्टॉक मार्केट में आए थे?",
+ "first_frame": "Talking head of Pranjal Kamra, wearing a white t-shirt, in an office setting.",
+ "hook_type": "question",
+ "format": "talking head + graphics",
+ "length_s": 175,
+ "cuts_estimate": 45,
+ "avg_shot_s": 3.8,
+ "words_per_s_estimate": 2.4,
+ "beats": [
+  "0-10 s: Hook - Questioning the audience's motivation for entering the stock market.",
+  "10-22 s: Establishing the 'easy money' myth vs reality.",
+  "22-32 s: Comparing retail investors to industry giants like Mukesh Ambani and Elon Musk.",
+  "32-52 s: Debunking 'screenshot' success stories and social media influence.",
+  "52-110 s: Critique of 'get-rich-quick' schemes and lack of regulatory compliance.",
+  "110-130 s: Addressing the 'greed' factor and the reality of business cycles.",
+  "130-175 s: Transition to the solution (Finology 30) and final CTA."
+ ],
+ "visual_techniques": [
+  "Animated illustration of a person thinking (0:02)",
+  "Chart overlay showing market returns (0:04)",
+  "Screen recording of a trading platform (0:06)",
+  "Image of Mukesh Ambani and Elon Musk (0:15)",
+  "SEBI logo overlay (0:54)",
+  "Screen recording of a scam telegram channel (1:12)",
+  "Logo and product features of Finology 30 (2:34)"
+ ],
+ "captions": "Style: Bold, white text with black outline, 3-5 words per chunk, centered, no specific highlight colour.",
+ "sound": "Voice: Clear, authoritative, fast-paced. Music: Subtle, upbeat background track. No sound effects.",
+ "recurring_element": "The talking head of the creator, Pranjal Kamra, consistently anchors the video.",
+ "ending": "CTA: Directing viewers to the link in bio for more details.",
+ "why": "It performed well because it directly challenges the viewer's greed and common misconceptions about the stock market, building trust through a 'tough love' approach before introducing a legitimate service.",
+ "reusable_faceless": [
+  "Using stock footage of business environments to represent abstract concepts.",
+  "Overlaying screen recordings of apps to demonstrate points.",
+  "Using simple motion graphics to highlight key terms or logos."
+ ],
+ "id": "QaPwUpfVJPQ",
+ "url": "https://www.youtube.com/watch?v=QaPwUpfVJPQ",
+ "channel": "PranjalKamra",
+ "niche": "Finance/Explainer",
+ "title": "Stock Market is NOT for You!’",
+ "views": 134000,
+ "channel_median": 40000,
+ "ratio": 3.35,
+ "label": "winner",
+ "watched": "2026-11-21T17:05+05:30"
+}

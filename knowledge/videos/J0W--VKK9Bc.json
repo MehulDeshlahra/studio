@@ -1,0 +1,40 @@
+{
+ "hook_first_words": "Women love when they tell other women",
+ "first_frame": "Raj Shamani speaking into a microphone, wearing a blue hoodie, with a blurred background of a studio.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 46,
+ "cuts_estimate": 1,
+ "avg_shot_s": 46.0,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-7 s: Explaining how women use constructive criticism to help each other.",
+  "8-24 s: Contrasting this with how men perceive similar behavior in relationships as a problem.",
+  "25-46 s: Summarizing the difference: women's affection is empowering, while men's is often through 'negative roast' and criticism."
+ ],
+ "visual_techniques": [
+  "Static frame with subtle zoom-ins at 0:00, 0:08, 0:19, 0:26, 0:34, and 0:39 to maintain visual engagement.",
+  "Captions overlaying the speaker throughout the video."
+ ],
+ "captions": "Bold, white sans-serif font, 3-5 words per chunk, centered at the bottom, highlighting key words in yellow.",
+ "sound": "Clear voiceover (direct audio from the interview), no background music, no sound effects.",
+ "recurring_element": "The speaker's consistent framing and the captioning style.",
+ "ending": "Punchline: Defining the difference between how men and women show affection.",
+ "why": "It addresses a relatable, polarizing topic (gender differences in communication) with a clear, counter-intuitive insight that encourages viewer agreement or debate.",
+ "reusable_faceless": [
+  "Using a 'bold claim' hook to start the video.",
+  "Dynamic captioning with color-coded highlights.",
+  "Gradual zoom-ins to maintain focus on the speaker.",
+  "Structuring the content as a comparison between two groups to drive engagement."
+ ],
+ "id": "J0W--VKK9Bc",
+ "url": "https://www.youtube.com/watch?v=J0W--VKK9Bc",
+ "channel": "RajShamani",
+ "niche": "Entrepreneurship/Tech",
+ "title": "How Men's Show Affection | Raj Shamani #Shorts #relationship",
+ "views": 727000,
+ "channel_median": 340000,
+ "ratio": 2.14,
+ "label": "winner",
+ "watched": "2026-11-21T17:06+05:30"
+}

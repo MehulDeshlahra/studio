@@ -1,0 +1,45 @@
+{
+ "hook_first_words": "There’s a new",
+ "first_frame": "Two vials of 'CBL-514' side-by-side on a white surface, with Varun Mayya speaking in the foreground.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 78,
+ "cuts_estimate": 25,
+ "avg_shot_s": 3.1,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-4 s: Hook: New fat-killing injection in Phase 3 trials.",
+  "4-14 s: Explanation of how fat cells work and stay constant.",
+  "14-20 s: Contrast with diet/GLP-1s which only shrink cells.",
+  "20-33 s: Comparison with liposuction and Kybella (existing fat-killing drug).",
+  "33-54 s: Details on CBL-514, how it works (apoptosis), and Phase 2 trial stats.",
+  "54-71 s: Risks, current trial status, and FDA/clinical trial news.",
+  "71-78 s: Future outlook: combining CBL-514 with GLP-1s for body shaping."
+ ],
+ "visual_techniques": [
+  "2D medical animation (0:02, 0:06, 0:09, 0:13, 0:15, 0:17, 0:22, 0:26, 0:28, 0:30, 0:40, 0:44, 0:47, 0:50, 0:56, 0:58)",
+  "Screen recording of news articles/tweets (0:02, 0:36, 1:02, 1:09)",
+  "Stock footage of medical procedure (0:52)",
+  "Stock footage of a man in a mirror (1:05)"
+ ],
+ "captions": "White text with black outline, 3-6 words per chunk, centered, no highlight colour.",
+ "sound": "Clear voiceover, upbeat background music, subtle UI sound effects during animations.",
+ "recurring_element": "The CBL-514 vial, which appears at the beginning, middle, and end.",
+ "ending": "CTA: Implied future outlook/speculation on the drug's potential as a 'miracle' for body shaping.",
+ "why": "The video is heavy on dense, clinical information and text-heavy news clippings which can be visually fatiguing. The pacing is slightly slow for a short-form format, and the topic, while interesting, lacks a strong emotional or personal hook to sustain viewer retention for over a minute.",
+ "reusable_faceless": [
+  "Using 2D medical animations to explain complex biological processes.",
+  "Overlaying text-based news snippets to add credibility to claims.",
+  "Using a clear, consistent visual anchor (the vial) to tie different segments together."
+ ],
+ "id": "_cd38tmh4Jw",
+ "url": "https://www.youtube.com/watch?v=_cd38tmh4Jw",
+ "channel": "VarunMayya",
+ "niche": "AI/tech news, English, India",
+ "title": "There’s a fat killing injection in Phase 3 trials, and it only works where you inject it.",
+ "views": 31000,
+ "channel_median": 118000,
+ "ratio": 0.26,
+ "label": "flop",
+ "watched": "2026-11-21T17:07+05:30"
+}

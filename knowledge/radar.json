@@ -429,5 +429,138 @@
     "title": "Instagram lets users edit Stories within 15 minutes without losing engagement - Buzzincontent"
    }
   ]
+ },
+ {
+  "day": "2026-11-21",
+  "t": "06:48",
+  "scanned": 294,
+  "new": 70,
+  "sources": [
+   "dev.to",
+   "github",
+   "google news",
+   "hacker news",
+   "hugging face models",
+   "hugging face spaces",
+   "product hunt"
+  ],
+  "picks": [
+   {
+    "name": "Gemini 4 Neon",
+    "what": "A new Gemini 4 model optimized for developers and coding tasks with updated benchmarks.",
+    "why": "We use Gemini free credits for plan.py and research.py; switching to Neon should improve script logic and scene planning accuracy.",
+    "free": "Available via Google AI Studio free tier (Gemini free credits).",
+    "action": "add_to_brain",
+    "how": "Update the model ID in plan.py and research.py to use 'gemini-4-neon' for better scene-by-scene logic.",
+    "effort": "small",
+    "score": 10,
+    "risk": "Check if the free tier rate limits for Neon differ from previous Flash models.",
+    "src": "dev.to",
+    "url": "https://dev.to/studio1hq/-gemini-4-neon-review-pricing-benchmarks-and-coding-tests-pfe",
+    "title": "Gemini 4 Neon Review: Pricing, Benchmarks, and Coding Tests",
+    "done": "added to the brain"
+   },
+   {
+    "name": "GTA 6 Creator Trends",
+    "what": "New creator tools and high-demand content trends specifically for GTA 6 on Shorts and Reels.",
+    "why": "Massive hook potential for 'Kaise Tech' (tech behind the game) and 'Aage Suno' (storytelling) given the 2026 relevance.",
+    "free": "Trend data and platform features are free to use.",
+    "action": "add_to_brain",
+    "how": "Inject 'GTA 6' as a high-weight keyword in ideas.py to trigger tech-explainer scripts about the game's engine or leaks.",
+    "effort": "small",
+    "score": 9,
+    "risk": "Avoid copyright strikes by using AI-generated 'GTA-style' visuals instead of raw game footage.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNTNvSEw5NHZQU3E1MTNpc3VZcW5NN1JUdHJiTkZ5dm1GZW01OEFNWEdKZmVhYjFHTWo5X21EbHZWbjNGTXZnQnlhbXFvd3M4SEhJTXhCdVROaHRpR0lQeEt6VnBna05zbVdCbjJrQ3BaVVJURWE3a1cxa2FwcWtod200U2VhZzNaTFU5WWdn?oc=5",
+    "title": "GTA 6 Creators for YouTube Shorts and Instagram Reels - Gizmo Times",
+    "done": "added to the brain"
+   },
+   {
+    "name": "WeMM-Video (Tencent)",
+    "what": "Open-source video generation models ranging from 2B to 35B parameters that can 'see and hear'.",
+    "why": "The 2B version is a candidate for self-hosting or finding a free Hugging Face Space to replace Muse for image-to-video.",
+    "free": "Open weights (Apache/MIT style likely) available on Hugging Face.",
+    "action": "learn_repo",
+    "how": "Test if the 2B model can be run via CPU-only quantization (GGUF) on our 12GB ARM server for short clips.",
+    "effort": "large",
+    "score": 8,
+    "risk": "Video generation without a GPU is extremely slow; might need to rely on free Hugging Face Inference endpoints.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPRi1jX2phWUZWQTl3a1ZDeVQ4TXE1WmpYQ2xQazdyV3labG1DbENuQzVXSmlvWGdSYjVMVmxCSWc0NTE3UXdTX1VpNFdNVmprUlJfT0R6VXA4MS1KS2ZMN2lVYTVEX2U5TS1wRXUwMktQa2JNMVNpMVN1X1NBZE9RckNEUkxfS1cxeWctemdtS1BORW0taWRiTi1rb2xjZw?oc=5",
+    "title": "WeMM-Video: Tencent Open Models Hear and See (2B–35B) - explainx.ai"
+   },
+   {
+    "name": "Instagram Story Edit",
+    "what": "A new feature allowing users to edit Stories for up to 15 minutes after publishing.",
+    "why": "Allows us to fix typos in Hinglish captions or tags without deleting and losing early engagement.",
+    "free": "Native Instagram feature.",
+    "action": "add_to_brain",
+    "how": "Update the Telegram 'Studio360' bot to include an 'Edit Story' reminder link for 15 mins after publish.py runs.",
+    "effort": "small",
+    "score": 7,
+    "risk": "Only works within a 15-minute window; requires manual intervention via the app.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPVmptaXVwa0EyZXhvOVZxcFBZV0NmSFBwZHNYcjNmR1RhUGp0eURDMlhwZ0F0WU5Melp5YmoyTDBBbUNWN1luankxalZ6cks4dER6YkRCUVJBdXdNdzdrTnJnZWVTdXFRSFBsWEEtWm1DSGs0NllBQ2tyeFllZWdvZWlTckE1NndKd1VIYnNHdHc1NkkxZGotZmxNVlBkRGxhblVpYmVB0gGmAUFVX3lxTE9Wam1pdXBrQTJleG85VnFwUFlXQ2ZIUHBkc1hyM2ZHVGFQanR5REMyWHBnQXRZTkx6WnliajJMMEFtQ1Y3WW5qeTFqVnpySzh0RHpiREJRUkF1d013N2tOcmdlZVN1cVFIUGxYQS1abUNIazQ2WUFDa3J4WWVlZ29laVNyQTU2d0p3VUhic0d0dzU2STFkai1mbE1WUGREbGFuVWliZUE?oc=5",
+    "title": "Instagram introduces post-publish Story editing, but users get just 15 minutes - Social Samosa",
+    "done": "added to the brain"
+   },
+   {
+    "name": "Fack’d",
+    "what": "A tool that provides real-time fact-checking and sources for YouTube videos.",
+    "why": "Can be integrated into research.py to verify the accuracy of tech claims before Gemini writes the script.",
+    "free": "Free to use on YouTube.",
+    "action": "watch",
+    "how": "Use the tool during the 'research.py' phase to cross-reference top-performing shorts and avoid repeating misinformation.",
+    "effort": "medium",
+    "score": 7,
+    "risk": "May not support Hinglish/Hindi audio perfectly yet.",
+    "src": "product hunt",
+    "url": "https://www.producthunt.com/products/fack-d",
+    "title": "Fack’d"
+   },
+   {
+    "name": "2.5D & Gaussian Splats",
+    "what": "Technique to turn a single still image into a 3D scene with camera movement.",
+    "why": "Directly addresses our 'Not built yet' goal for 3D scenes without needing a full 3D engine like Blender.",
+    "free": "Open source implementation details provided in the dev.to article.",
+    "action": "build",
+    "how": "Integrate a basic 2.5D parallax effect into compose_lab.py using GSAP to move layers of a single image.",
+    "effort": "medium",
+    "score": 7,
+    "risk": "Requires clean image segmentation (foreground/background) which adds a processing step.",
+    "src": "dev.to",
+    "url": "https://dev.to/hiper2d/turn-any-image-into-a-3d-scene-25d-and-gaussian-splats-37i3",
+    "title": "Turn Any Image into a 3D Scene: 2.5D and Gaussian Splats",
+    "done": "added to the build list"
+   },
+   {
+    "name": "Sourashtra TTS (IISc)",
+    "what": "Open-source text-to-speech models for the Sourashtra language by IISc and Bhashini.",
+    "why": "Perfect for 'Puraan Ki Katha' to target niche regional Indian audiences with high-quality, authentic audio.",
+    "free": "Open source speech corpus and models released by IISc.",
+    "action": "learn_repo",
+    "how": "Download the model weights and test if the inference runs on our ARM server for regional editions of mythology stories.",
+    "effort": "medium",
+    "score": 6,
+    "risk": "Niche audience; may require a new channel/page to avoid confusing current followers.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOY3l4bWZ3QWNPU0duVGx6eDBlVFM1bUsybTBvN0huajc4UmV4VDBDd3RZcEgzLXYxenNrekxXWmZIWk5qclFNbHJoRWZubU1nVk82R3BQUkNUN19uWmQyOFlKTE8wQlcwc0VUTmtzajBkSlM2cmRFWmlJNmNGYVVzZHRURUZXRE9uVUNEd0dud2xiNzRpZ1hxWUx1NURDYnpQU0Y2V0tickpFRXg1VWhlam43SWFrSWl4Q1ZHX3V1ektnZG1ZSm1US01Hd1pmWWxqWkhfVjRzcmlJcy1GS0cxY2lwUkk?oc=5",
+    "title": "IISc, BHASHINI release AI text-to-speech models and speech corpus for Sourashtra language - Education Times"
+   },
+   {
+    "name": "Gemini Omni 1.2 Flash GIFs",
+    "what": "Native GIF generation capability within the Gemini app/API.",
+    "why": "Simplifies the 'lab look' by generating animated UI elements or icons directly from a prompt instead of static images.",
+    "free": "Included in Gemini free tier/credits.",
+    "action": "owner_signup",
+    "how": "Update compose_lab.py to request GIF assets from Gemini for 'terminal typing' or 'stat counters' instead of static PNGs.",
+    "effort": "small",
+    "score": 6,
+    "risk": "GIF quality/resolution might be low; need to check if they can be transparent.",
+    "src": "google news",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE94NWgxQlRGN1h0Q29RcURLS3MweldjODBVWlRXX3dmSWQ0RHlQVFp2UnhEN1lZb2lDRFZZUElhM0VUUjB1R19uZk5EUHNmNm4xQlMtc2dYZ3oyNHhjeFhEdmZSX0xUVmJaWWNnOE9vejRnZw?oc=5",
+    "title": "Gemini Omni 1.2 Flash Now Makes GIFs in the Gemini App - OrcaRouter"
+   }
+  ]
  }
 ]

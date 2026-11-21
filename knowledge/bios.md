@@ -70,14 +70,14 @@ A Scroll House page
 - Facebook (set automatically): The best scenes from TV, movies and comedy
 
 ## Finance Fuel
-- Instagram bio (53 chars):
+- Instagram bio (55 chars):
 ```
-Paisa samjho, simple bhasha mein.
+Paisa samjhiye, simple bhasha mein.
 A Scroll House page
 ```
 - Instagram link: https://scrollhouse.in/go/finance.html
 - YouTube description: Money made simple for young India: saving, credit, tax, UPI and scams, explained in under a minute with real numbers. Education, not advice. A Scroll House page. https://scrollhouse.in/go/finance.html
-- Facebook (set automatically): Paisa samjho, simple bhasha mein.
+- Facebook (set automatically): Paisa samjhiye, simple bhasha mein.
 
 ## Navkar Bhav (@navkarbhav)
 - Instagram bio (64 chars):

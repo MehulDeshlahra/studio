@@ -1,0 +1,49 @@
+{
+ "hook_first_words": "This is the all new MacBook Pro",
+ "first_frame": "Technical Guruji standing next to a white pedestal with a MacBook Pro on it, with a large Apple logo on the wall behind him.",
+ "hook_type": "bold claim",
+ "format": "talking head + graphics",
+ "length_s": 46,
+ "cuts_estimate": 15,
+ "avg_shot_s": 3.0,
+ "words_per_s_estimate": 2.5,
+ "beats": [
+  "0-3 s: Hook and intro to the new MacBook Pro.",
+  "3-14 s: Technical specs (display, brightness, contrast, refresh rate).",
+  "14-18 s: Demonstration of the touchscreen functionality.",
+  "18-24 s: Port overview (Thunderbolt 5, HDMI, Headphone Jack, MagSafe, SDXC).",
+  "24-27 s: Chipset mention (M5 Pro/Max).",
+  "27-30 s: Pricing and model comparison graphic.",
+  "30-37 s: Showcase of the glowing Apple logo.",
+  "37-41 s: B-roll of the device in use.",
+  "41-46 s: Outro and final thoughts."
+ ],
+ "visual_techniques": [
+  "Split-screen (0:04, 0:06, 0:08, 0:14, 0:20, 0:37)",
+  "Text overlays for specs (0:02, 0:06, 0:08, 0:10, 0:20, 0:24)",
+  "Close-up shots of ports (0:20)",
+  "Screen recording/overlay of software usage (0:14, 0:37)",
+  "Static graphic for pricing (0:28)"
+ ],
+ "captions": "White text, 3-5 words per chunk, centered or lower third, no highlight colour.",
+ "sound": "Direct speech, no background music, clear audio, no sound effects.",
+ "recurring_element": "The Apple logo on the wall behind the presenter.",
+ "ending": "Direct address to camera with a final opinion.",
+ "why": "The video is a straightforward, dry recitation of specs without a strong narrative or engaging visual flow. The lack of background music makes it feel flat, and the rapid-fire delivery of technical details is overwhelming, failing to create a compelling reason for the viewer to watch until the end.",
+ "reusable_faceless": [
+  "Split-screen for side-by-side comparison",
+  "Dynamic text overlays synced to speech",
+  "Screen recording overlays to demonstrate software features",
+  "Static infographics for complex pricing/spec data"
+ ],
+ "id": "L_IDWnPsNOc",
+ "url": "https://www.youtube.com/watch?v=L_IDWnPsNOc",
+ "channel": "TechnicalGuruji",
+ "niche": "Consumer Tech (Hindi)",
+ "title": "The NEW #MacBookPro with #PROLED XDR Display & Touchscreen is here...#TGFamily #shorts 🔥 🔥 🔥",
+ "views": 147000,
+ "channel_median": 484000,
+ "ratio": 0.3,
+ "label": "flop",
+ "watched": "2026-11-21T17:07+05:30"
+}

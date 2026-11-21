@@ -1,49 +1,43 @@
 {
  "tech": [
   {
-   "topic": "GTA VI and India's Game Dev Talent",
-   "search": "how gta 6 is made",
+   "topic": "Meta’s Muse Charm AI device kaise kaam karta hai?",
+   "search": "Muse Charm AI review",
    "fit": 9,
-   "why": "India's role in GTA VI development is a massive trending story. It connects national pride with tech curiosity.",
-   "day": "2026-11-20",
-   "source": "trend",
-   "used": "2026-11-20"
+   "why": "Trending tech news about Meta’s upcoming Muse Charm AI gadget; curiosity about its AI functions fits the Kaise Tech format and current interest.",
+   "day": "2026-11-21",
+   "source": "trend"
   },
   {
-   "topic": "GTA 6 Software Warning",
-   "search": "GTA 6 release news",
+   "topic": "ChatGPT mobile app ke naye tabs kaise kaam karte hain?",
+   "search": "ChatGPT mobile app redesign",
    "fit": 9,
-   "why": "With GTA 6 being a massive cultural phenomenon and PlayStation issuing a software warning, viewers are desperate for info. The 'Kaise Tech' angle: How do pre-launch software checks actually work to prevent leaks?",
-   "day": "2026-11-19",
-   "source": "trend",
-   "used": "2026-11-21"
+   "why": "OpenAI’s redesign is trending in gadget news; a simple ‘how it works’ video aligns with the tech‑curiosity theme.",
+   "day": "2026-11-21",
+   "source": "trend"
   },
   {
-   "topic": "iPhone Handoff Feature",
-   "search": "iOS 27 handoff feature",
-   "fit": 9,
-   "why": "New iOS 27 features are always trending. The 'Kaise Tech' angle: How does the 'One number, two devices' handoff tech actually sync data instantly?",
-   "day": "2026-11-19",
-   "source": "trend",
-   "used": "2026-11-21"
+   "topic": "Lava Smart 4 Pro ki 7,000 mAh battery kaise kaam karti hai?",
+   "search": "Lava Smart 4 Pro battery",
+   "fit": 8,
+   "why": "Lava Smart 4 Pro launch is in today’s tech headlines; explaining high‑capacity battery operation matches the curiosity‑first Shorts style.",
+   "day": "2026-11-21",
+   "source": "trend"
   },
   {
-   "topic": "Apple Server Outage",
-   "search": "Apple iCloud down reason",
-   "fit": 9,
-   "why": "The 'Apple outages' trend is massive (2000+ searches). Users are frustrated and curious why a giant like Apple goes down. Explaining server load balancing via a 'traffic jam' metaphor fits the 'Kaise Tech' style perfectly.",
-   "question": "Apple ke servers down kaise ho jaate hain?",
-   "metaphor": "Imagine a highway with 100 toll gates, but suddenly 1 million cars try to pass through at once. The toll gates (servers) get jammed, not because they are broken, but because they can't process the crowd fast enough.",
-   "day": "2026-11-18",
-   "source": "trend",
-   "used": "2026-11-20"
+   "topic": "Samsung One UI 9.5 naye features kaise kaam karte hain?",
+   "search": "Samsung One UI 9.5 features",
+   "fit": 8,
+   "why": "One UI 9.5 release is a current gadget story; a quick explainer on its UI improvements suits a 30‑60 s faceless short.",
+   "day": "2026-11-21",
+   "source": "trend"
   },
   {
-   "topic": "Prison jammers in Bengaluru have left residents without signal for nearly two years",
-   "search": "how mobile jammers block signal",
-   "fit": 9,
-   "why": "Trending on Reddit r/india about prison jammers cutting off entire neighborhoods; highly relatable tech curiosity.",
-   "day": "2026-11-17",
+   "topic": "Foldable touchscreen technology patent kaise kaam karta hai?",
+   "search": "foldable touchscreen patent",
+   "fit": 8,
+   "why": "Legal 500 article on foldable touchscreen patents is a hot tech topic; explaining the underlying mechanism fits the Kaise Tech audience.",
+   "day": "2026-11-21",
    "source": "trend"
   },
   {
@@ -107,20 +101,27 @@
  ],
  "katha": [
   {
-   "topic": "The Significance of Devuthani Ekadashi: When Lord Vishnu Wakes Up",
-   "search": "Devuthani Ekadashi katha significance",
+   "topic": "Why Lord Vishnu Wakes Up Today: The Story of Devuthani Ekadashi",
+   "search": "Devuthani Ekadashi 2026 katha",
    "fit": 10,
-   "why": "With 'Devuthani Ekadashi 2026' trending in festival news, this is the perfect time to explain the mythology behind Vishnu waking from his four-month slumber (Yoganidra) and the start of auspicious wedding seasons.",
-   "day": "2026-11-20",
-   "source": "trend",
-   "used": "2026-11-21"
+   "why": "Directly relates to the trending festival 'Devuthani Ekadashi 2026' on the current date. It explains the end of Chaturmas.",
+   "day": "2026-11-21",
+   "source": "trend"
   },
   {
-   "topic": "Did Ravana actually touch Sita Maa during her abduction? Valmiki Ramayana reveals the curse that stopped him.",
-   "search": "did ravan touch sita maa valmiki ramayana",
-   "fit": 10,
-   "why": "Fueled by the active trending discussion on r/hinduism ('Did Ravan touch Sita maa or not? While kidnapping.'), this taps into deep scriptural curiosity. Source: Valmiki Ramayana, Aranya Kanda.",
-   "day": "2026-11-17",
+   "topic": "The Secret of the Setting Sun: Why Chhath Puja is Unique",
+   "search": "Chhath Puja Surya Dev story",
+   "fit": 9,
+   "why": "Matches the news about Chhath Puja 2026 and the specific mention of worshipping the setting sun in Bihar.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "The Infinite Pillar of Fire: The Legend of Karthigai Deepam",
+   "search": "Karthigai Deepam Shiva story",
+   "fit": 9,
+   "why": "Triggered by the Supreme Court news regarding the lighting at Thiruparankundram hilltop on Nov 24.",
+   "day": "2026-11-21",
    "source": "trend"
   },
   {
@@ -172,39 +173,39 @@
    "source": "trend"
   },
   {
-   "topic": "The Devotion of Pundalik and the Origin of Pandharpur",
-   "search": "Kartiki Ekadashi story",
+   "topic": "When Even God Took a Loan: The Debt of Lord Venkateswara",
+   "search": "Lord Venkateswara Kubera loan story",
    "fit": 8,
-   "why": "Kartiki Ekadashi is trending. The story of Pundalik's devotion to his parents and how Lord Vitthal stood on a brick to wait for him (Skanda Purana) is a classic, deeply resonant story for this occasion.",
-   "day": "2026-11-19",
+   "why": "Connects to the high volume search for 'கடன்' (Debt/Loan) in India trends, using the famous Tirupati legend.",
+   "day": "2026-11-21",
    "source": "trend"
   },
   {
-   "topic": "The Power of Dharma: Lessons from the Ramayana",
-   "search": "Ramayana moral stories",
+   "topic": "Can Your Zodiac Change? The Story of King Vikramaditya and Shani",
+   "search": "Shani Dev Vikramaditya katha",
    "fit": 8,
-   "why": "With 'Ramayana' trending in news headlines regarding cultural identity, a short, impactful story about Lord Rama's adherence to duty (Valmiki Ramayana, Ayodhya Kanda) provides a timely, positive, and non-political connection to current discourse.",
-   "day": "2026-11-19",
+   "why": "Capitalizes on the trending searches for 'Raashiyan' and 'Jaatakam' (Horoscope/Zodiac) to explain the influence of planets.",
+   "day": "2026-11-21",
    "source": "trend"
   },
   {
-   "topic": "Krishna as the ultimate team captain in the Mahabharata – Strategy over brute force",
-   "search": "Krishna Mahabharata strategy",
+   "topic": "Surviving the Storm: How Krishna Broke Indra's Pride",
+   "search": "Govardhan Puja Krishna story",
    "fit": 8,
-   "why": "IPL and cricket‑related queries dominate today’s trends; presenting Krishna’s strategic role in the war mirrors a captain’s duties in cricket, offering a lesson on teamwork and smart play.",
-   "day": "2026-11-18",
-   "source": "trend"
-  },
-  {
-   "topic": "Arjuna’s archery contest – Mastery through focus",
-   "search": "Arjuna archery story",
-   "fit": 8,
-   "why": "Test cricket searches are soaring; an archery competition from the Mahabharata parallels a sports event, drawing curiosity and teaching the value of concentration.",
-   "day": "2026-11-18",
+   "why": "Relates to the news of Cyclone 'Akvan' hitting the coast, using the Puranic story of divine protection during a Great Storm.",
+   "day": "2026-11-21",
    "source": "trend"
   }
  ],
  "raaz": [
+  {
+   "topic": "Cricket Mystery Thriller: The Vanishing Ball",
+   "search": "cricket mystery story",
+   "fit": 9,
+   "why": "Trending search 'கிரிக்கெட்' (cricket) + audience love for mystery thrillers; a cliffhanger daily saga about a small-town match where the ball disappears, sparking a suspenseful investigation.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
   {
    "topic": "The 'GTA VI' Contract Mystery (Fiction Serial Idea)",
    "search": "GTA 6 game mystery",
@@ -238,19 +239,35 @@
    "source": "trend"
   },
   {
-   "topic": "Ek gaddhe mein 8,000 mendhakon ke kankal: 2000 saal puraana Roman rahasya",
-   "search": "roman ditch frog bones mystery",
-   "fit": 9,
-   "why": "Trending in science/history news: 'Archaeologists in England Discovered 8,000 Roman-Era Frog Bones'. A bizarre historical puzzle with an eerie premise perfectly suited for Hindi mystery storytelling.",
-   "day": "2026-11-17",
+   "topic": "Arrested Secrets: Diary of the Missing Officer",
+   "search": "arrest mystery story",
+   "fit": 8,
+   "why": "Trending search 'arrest' + fits the page's thriller format; a fictional officer is mysteriously arrested and leaves a diary that reveals a hidden conspiracy, perfect for daily cliffhangers.",
+   "day": "2026-11-21",
    "source": "trend"
   },
   {
-   "topic": "Doctor Doom ki asli kahani: Avengers Doomsday mein kya hone wala hai?",
-   "search": "avengers doomsday story explained",
-   "fit": 9,
-   "why": "Google trend 'marvel avengers doomsday' (10,000+ searches) and comic theory reports. High-interest fantasy/comic lore for the 16-35 age group explaining how Victor Von Doom rewrites reality.",
-   "day": "2026-11-17",
+   "topic": "Zodiac Twist: Love Across Forbidden Signs",
+   "search": "zodiac love story",
+   "fit": 8,
+   "why": "Trending search 'राशियाँ' (zodiac) + blends emotional family drama with a secret love plot; each episode reveals how the protagonists defy astrological odds, ending on a suspenseful reveal.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "Loan Horror: The Debt That Came Alive",
+   "search": "loan horror story",
+   "fit": 8,
+   "why": "Trending search 'கடன்' (loan) + fits light horror genre; a borrower receives a loan that turns into a nightly haunting, creating daily scares and a mystery to solve.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "Horoscope Hunt: The Lost Jyotish Manuscript",
+   "search": "horoscope mystery story",
+   "fit": 8,
+   "why": "Trending search 'జాతకం' (horoscope) + perfect for a mystery thriller; a forgotten horoscope book leads a group of friends on a treasure hunt, with each part ending on a twist.",
+   "day": "2026-11-21",
    "source": "trend"
   },
   {
@@ -276,33 +293,17 @@
    "why": "The CT scan of a 400-year-old lock is a compelling visual hook. We can start a 'Karma Twist' serial where an antique dealer finds a lock that cannot be opened, and every time he tries, something from his past comes back to haunt him.",
    "day": "2026-11-20",
    "source": "trend"
-  },
-  {
-   "topic": "A mysterious 400-year-old lock that won't open",
-   "search": "mystery lock secret mechanism",
-   "fit": 8,
-   "why": "Based on the 'Mysterious 400-Year-Old Lock' history news. Ideal for a thriller serial about an antique dealer who finds a lock that, when opened, reveals a map to a place that doesn't appear on any modern GPS.",
-   "day": "2026-11-19",
-   "source": "trend"
-  },
-  {
-   "topic": "The secret bunker found under a cliff",
-   "search": "secret bunker mystery story",
-   "fit": 8,
-   "why": "Based on the 'WW2 bunker' history news. Great for a survival/thriller serial about a group of friends who explore an abandoned coastal bunker, only to realize the door has sealed behind them and something else is inside.",
-   "day": "2026-11-19",
-   "source": "trend"
-  },
-  {
-   "topic": "The glitch in the game world",
-   "search": "GTA 6 secrets mystery",
-   "fit": 8,
-   "why": "Based on the 'GTA 6' and 'little secrets in Rockstar worlds' news. Perfect for a small-town sci-fi serial where a gamer realizes that the 'glitches' in a new open-world game are actually messages from a missing person.",
-   "day": "2026-11-19",
-   "source": "trend"
   }
  ],
  "jain": [
+  {
+   "topic": "Mahavira’s lesson on fair play – the true spirit of cricket",
+   "search": "Jain fair play cricket",
+   "fit": 9,
+   "why": "Cricket searches are topping Google Trends today; linking Mahavira’s teaching of non‑violence and fairness (Kalpasutra) to modern cricket creates curiosity and a clear moral lesson.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
   {
    "topic": "The story of King Megharatha and the Pigeon (Compassion in Action)",
    "search": "Jain story compassion kindness",
@@ -312,13 +313,20 @@
    "source": "trend"
   },
   {
-   "topic": "The principle of Aparigraha (Non-Possessiveness) amidst economic news",
-   "search": "Jain philosophy non-possessiveness",
+   "topic": "Rashiyon ka rahasya – Jain Tirthankara Rishabhanatha aur 12 rashiyon ki kahani",
+   "search": "Jain zodiac signs story",
    "fit": 8,
-   "why": "With headlines about gold prices falling, stock market volatility, and corporate wage debates, young viewers are stressed about money. A story about a wealthy merchant or king who realized the futility of material hoarding (from the Agams) provides a grounding, timeless perspective on true wealth.",
-   "day": "2026-11-20",
-   "source": "trend",
-   "used": "2026-11-20"
+   "why": "The Hindi search “राशियाँ” is trending; a short story from the Adipurana about Rishabhanatha’s connection to the 12 zodiac signs offers a cultural hook and a lesson on destiny vs. effort.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "Jain dharm aur jātaka – Neminatha ne kyon mana kiya jyotish ka sahara?",
+   "search": "Jain horoscope myth",
+   "fit": 8,
+   "why": "The Telugu search “జాతకం” (horoscope) is trending; the Kalpasutra recounts Neminatha’s refusal of horoscope predictions, teaching reliance on self‑discipline.",
+   "day": "2026-11-21",
+   "source": "trend"
   },
   {
    "topic": "The power of Truth (Satya) in a world of 'blame games'",
@@ -326,6 +334,30 @@
    "fit": 8,
    "why": "With political news dominated by 'blame games' and international tensions, the Jain value of Satya (Truth) is a great counter-narrative. A story about a Tirthankara or great Shravaka who stood by the truth despite consequences (from the Kalpasutra) offers a strong moral lesson for today's youth.",
    "day": "2026-11-20",
+   "source": "trend"
+  },
+  {
+   "topic": "Cyclone Akvan ke baad Sudarshan Mahavira ki sahayata – Jain dharm ki seva bhavana",
+   "search": "Jain disaster relief story",
+   "fit": 7,
+   "why": "Recent news about Cyclone ‘Akvan’ in Odisha makes disaster‑relief stories relevant; a 40‑second retelling from Trishashti‑shalaka‑purusha‑charitra about a Jain monk’s help illustrates compassion.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "Kṛṣṇa‑dāna ki kahānī – Bimbisāra rājā ne loan se bāhar rahkar dān kyā diyā",
+   "search": "Jain generosity loan story",
+   "fit": 6,
+   "why": "The Telugu search “కడన్” (loan) is trending; a Kalpasutra anecdote about King Bimbisāra’s refusal to take loans and his generous giving teaches financial integrity.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "Dharm ke liye bandhan – Ek Jain muni ki arrest aur uski dhairya ki kahani",
+   "search": "Jain monk arrested story",
+   "fit": 5,
+   "why": "The English search “arrest” is trending; a brief Kalpasutra story of a Jain monk facing wrongful arrest but staying steadfast offers a moral about truthfulness.",
+   "day": "2026-11-21",
    "source": "trend"
   }
  ],
@@ -336,6 +368,30 @@
    "fit": 10,
    "why": "Headline: 'SBI UPI Services To Be Down Tomorrow on 19 November'. This is highly actionable and urgent for the target audience using UPI daily.",
    "day": "2026-11-19",
+   "source": "trend"
+  },
+  {
+   "topic": "₹10 लाख एक्सपोर्ट डिक्लेरेशन फॉर्म भूल? जुर्माने से बचें",
+   "search": "export declaration rule",
+   "fit": 9,
+   "why": "Matches RBI news on ₹10 Lakh Export Declaration Form rule; finance‑right content; high relevance to current headlines.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "₹1 लाख लोन, 30% छुपा इंटरेस्ट? कर्ज धोखा समझें",
+   "search": "loan scam India",
+   "fit": 9,
+   "why": "Taps trending Telugu search \"కడన్\" (loan); ties to RBI’s warning on financial mis‑selling; perfect money‑trap short.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "₹10,000 निवेश, 194% रिटर्न? SGB 2020‑21 प्रीमच्योर रिडेम्पशन",
+   "search": "SGB redemption 194%",
+   "fit": 9,
+   "why": "Based on Livemint report of RBI’s premature redemption of SGB 2020‑21 Series II; high‑impact money‑right with big ₹ number.",
+   "day": "2026-11-21",
    "source": "trend"
   },
   {
@@ -363,6 +419,22 @@
    "source": "trend"
   },
   {
+   "topic": "RBI ने बैंक को ₹5 लाख का जुर्माना क्यों लगाया? आपका बैंक भी?",
+   "search": "RBI fine mis-selling",
+   "fit": 8,
+   "why": "Uses trending English search \"fine\" and Livemint article on RBI Dy Governor Murmu explaining mis‑selling fines; clear scam/penalty angle.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
+   "topic": "नए SEBI पोर्टफोलियो मैनेजर नियम 2026: आपका निवेश कैसे सुरक्षित?",
+   "search": "SEBI portfolio manager 2026",
+   "fit": 8,
+   "why": "Draws from Legal 500 article on SEBI (Portfolio Managers) Regulations, 2026; offers a concise rights‑explanation for investors.",
+   "day": "2026-11-21",
+   "source": "trend"
+  },
+  {
    "topic": "NEFT Transfer Limits Explained",
    "search": "NEFT transfer limit rules",
    "fit": 8,
@@ -384,22 +456,6 @@
    "fit": 8,
    "why": "Headline: 'RBI announces SGB 2020-21 Series VIII premature redemption price: Investors to earn up to 163% gains'. This showcases a successful long-term investment example.",
    "day": "2026-11-19",
-   "source": "trend"
-  },
-  {
-   "topic": "Free Credit Report Check",
-   "search": "how to check CIBIL",
-   "fit": 8,
-   "why": "Headline: 'How to get four free credit reports every year in India'. This provides immediate utility and financial literacy for the 16-35 demographic.",
-   "day": "2026-11-19",
-   "source": "trend"
-  },
-  {
-   "topic": "Gold Loan Stressed Assets",
-   "search": "how gold loans work",
-   "fit": 7,
-   "why": "Gold loan firms seeking RBI clarity on selling stressed loans is a niche but important topic for anyone who has pledged gold. It explains the 'what happens if I default' fear.",
-   "day": "2026-11-20",
    "source": "trend"
   }
  ]
