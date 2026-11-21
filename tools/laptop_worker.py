@@ -528,7 +528,8 @@ def clip_job(jid, spec):
                 res = clipcore.make_clip(win, float(c["a"]) - s0, float(c["b"]) - s0, c.get("hook", ""), cd, spec.get("lang"),
                                          brand=spec.get("brand") or "", glossary=spec.get("glossary") or [],
                                          notes=c.get("notes") or [], wprompt=spec.get("wprompt") or "",
-                                         **({"silent": True} if c.get("silent") else {}))
+                                         **({"silent": True} if c.get("silent") else {}),
+                                         **({"captions": False} if spec.get("captions") is False else {}))
                 res["offset"] = s0
                 json.dump(res, open(os.path.join(cd, "result.json"), "w", encoding="utf-8"), ensure_ascii=False)
                 done += 1

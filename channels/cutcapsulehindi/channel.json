@@ -19,7 +19,9 @@
     "layout": "fill",
     "hook_lang": "Hinglish in Latin script (the way Indian Reels write it)",
     "lang": "hi",
-    "whisper_prompt": "Haan bhai, toh aaj hum baat karenge ki zindagi mein sabse zaroori kya hai. Dekho, maine bahut logon se suna hai, par sach yeh hai ki mehnat aur bharosa hi kaam aata hai. Aapko kya lagta hai?"
+    "whisper_prompt": "Haan bhai, toh aaj hum baat karenge ki zindagi mein sabse zaroori kya hai. Dekho, maine bahut logon se suna hai, par sach yeh hai ki mehnat aur bharosa hi kaam aata hai. Aapko kya lagta hai?",
+    "captions": false,
+    "captions_note": "21 Nov owner: 'dont add caption for hindi channel' (whisper wrote random Devanagari letters); hook banner only"
   },
   "schedule": {
     "posts_per_day": 2,

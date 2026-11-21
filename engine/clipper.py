@@ -478,6 +478,8 @@ def _lang_spec(ch):
         out["lang"] = c["lang"]
     if c.get("whisper_prompt"):
         out["wprompt"] = c["whisper_prompt"]
+    if c.get("captions") is False:                 # 21 Nov owner: no captions on the Hindi channel
+        out["captions"] = False
     return out
 
 
