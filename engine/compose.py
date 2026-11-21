@@ -33,7 +33,7 @@ GLUE = set("""ke ki ka ko se ne mein me par pe tak aur ya lekin kyunki jo jab to
 
 def chunks(words, keys=None):
     """Caption groups: 3 words / 14 letters normally, break at punctuation or a pause >= 0.15 s, never a lone last word,
-    never ending on a joining word or an open quote (then up to 4 words / 18 letters)."""
+    never ending on a joining word or an open quote (then up to 4 words / 16 letters)."""
     words = _split_dashes(words)
     out, cur = [], []
     quote = False
@@ -47,9 +47,10 @@ def chunks(words, keys=None):
         core = re.sub(r"[^\w]", "", t.lower())
         sentence_end = t.endswith((",", ".", "?", "!", "..."))
         brk = (len(cur) >= 3 or letters >= 14 or sentence_end or (nxt and nxt["s"] - w["e"] >= 0.15))
-        if brk and not sentence_end and (core in GLUE or quote) and len(cur) < 4 and letters < 18 and left > 0:
+        # 18 Nov: reduced glue-word limit from 18 to 16 letters to prevent caption overflow (content_overlap)
+        if brk and not sentence_end and (core in GLUE or quote) and len(cur) < 4 and letters < 16 and left > 0:
             brk = False                                  # finish the phrase first
-        if len(cur) >= 4 or letters >= 18:
+        if len(cur) >= 4 or letters >= 16:
             brk = True
         if left == 1 and len(cur) >= 4:              # would become 5+ words with the last one: hand one word over
             out.append(cur[:-1]); cur = [cur[-1]]
