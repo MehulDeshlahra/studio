@@ -34,7 +34,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s0q0.jpg",
+      "prompt": "A grand Jain temple shikhara rises majestically against a soft dawn sky, its white marble spires and intricately carved pillars glowing in warm golden light. In the foreground, a single pristine lotus bud emerges from the dark, still water of a temple tank, its petals catching the first rays of the sun. The scene is rendered in a serene painterly Indian style, with calm, peaceful atmosphere, generous empty space above and below, and elegant, ancient architectural details.",
+      "fails": {},
+      "top": 0.16
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Yeh sawal Raja Shrenik ki kahaani se aata hai.",
@@ -49,7 +63,37 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s1r0.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "text": 0.61
+      },
+      "top": 0.61
+     },
+     {
+      "file": "s1r1.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p3": 0.8
+      },
+      "top": 0.8
+     },
+     {
+      "file": "s1q0.jpg",
+      "prompt": "King Shrenik, a middle-aged king with a trimmed black beard and calm expression wearing a golden crown with a central ruby and draped in a rich red-gold silk angavastram, stands in anjali mudra facing the smooth white marble idol of Mahavira Swami from image 1 seated in padmasana. Set in a grand palace courtyard of polished white marble and sandstone with intricately carved pillars and distant temple spires. Serene painterly Indian style, warm golden hour light, gentle glow, vertical 9:16 composition.",
+      "fails": {},
+      "top": 0.29
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Shrenik Mahavir ke param bhakt the, din raat seva.",
@@ -64,7 +108,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s2r0.jpg",
+      "prompt": "real photo",
+      "fails": {},
+      "top": 0.33
+     }
+    ],
+    "real_photo": true
+   }
   },
   {
    "vo": "Ek chhoti bhool se unka jeevan badal gaya.",
@@ -79,7 +137,19 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [],
+    "tries": [
+     {
+      "file": "s3o.jpg",
+      "prompt": "King Shrenik, a middle-aged king with a trimmed black beard and calm expression, wears a golden crown with a central ruby and a rich red-gold silk angavastram, gesturing sharply with one hand while standing in a palace courtyard. The setting features polished white marble floors, finely carved pillars, and distant temple shikhara spires. Serene painterly Indian style, warm golden sunlight creating long shadows on the floor, soft cinematic glow, vertical 9:16 composition, main subject centered with generous space above and below.",
+      "fails": {},
+      "top": 0.27
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Maran ke baad wo narak ke andhere pahunche.",
@@ -94,7 +164,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s4q0.jpg",
+      "prompt": "A vast symbolic cavernous space, dark and deep with a faint crimson glow emanating from the shadows, a singular brilliant beam of warm golden light descends from above, illuminating a lone pristine lotus bud rising from dark still water, ancient Jain cosmic geography style, serene painterly texture, deep shadows contrasting with ethereal warm highlights, vertical 9:16 composition, centered subject with generous calm space above and below, peaceful and contemplative atmosphere.",
+      "fails": {},
+      "top": 0.18
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Wahan bhi unke mann mein Mahavir ki yaad rahi.",
@@ -109,7 +193,29 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s5r0.jpg",
+      "prompt": "real photo",
+      "fails": {
+       "p3": 0.62
+      },
+      "top": 0.62
+     },
+     {
+      "file": "s5q0.jpg",
+      "prompt": "King Shrenik, a middle-aged king with a trimmed black beard, sits cross-legged in deep meditation, hands pressed together in anjali mudra. Before his closed eyes, a luminous golden silhouette of the Mahavira Swami idol from image 1 appears, featuring small tight curls, a srivatsa mark, and a lion emblem. The scene is set within a vast, dark symbolic cavern, rendered in a serene painterly Indian style. A single beam of warm golden light illuminates the king, creating an ethereal, contemplative atmosphere.",
+      "fails": {},
+      "top": 0.25
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Paschatap ke aansuon se atma shuddhi hui.",
@@ -124,7 +230,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s6q0.jpg",
+      "prompt": "A single lotus bud floats in the center of a vast, dark, still pool, slowly unfurling its delicate petals toward a singular, brilliant beam of golden light descending from above. The water around the lotus clears, revealing a polished stone floor with intricate Jain temple carvings visible beneath the surface. Serene painterly Indian style, warm golden light illuminating the petals, ethereal glow, deep shadows, contemplative atmosphere, vertical 9:16 composition with generous calm space above and below, clean and unmarked surfaces.",
+      "fails": {},
+      "top": 0.18
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Agle kalp mein wo Tirthankar banenge.",
@@ -139,7 +259,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s7q0.jpg",
+      "prompt": "A great wheel of time, the Kalachakra, turns slowly in the center, crafted from polished white marble and glowing gold filigree. A single, radiant, luminous soul ascends upward from the wheel toward a crescent-shaped, ethereal realm of light at the apex. Warm golden light bathes the scene, casting gentle glows on the intricate carvings. Serene painterly Indian style, vertical 9:16 composition, generous calm space above and below, clean and unmarked surfaces, peaceful and contemplative atmosphere.",
+      "fails": {},
+      "top": 0.29
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Yeh baat Trishashti Shalaka Purusha Charitra mein likhi hai.",
@@ -154,7 +288,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s8q0.jpg",
+      "prompt": "An ancient palm-leaf manuscript with blank, weathered pages lies open on a dark, intricately carved wooden book stand. The setting is a serene Jain temple library featuring white marble pillars and distant tall pointed shikhara spires visible through an arched opening. The style is a serene painterly Indian aesthetic with warm golden light illuminating the manuscript, creating soft, long shadows on the polished stone floor. The framing is vertical 9:16, focusing on the manuscript in the middle third with generous calm space above and below.",
+      "fails": {},
+      "top": 0.21
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Paschatap aapki bhi kismat badal sakta hai aaj.",
@@ -169,7 +317,21 @@
    "big": null,
    "small": null,
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s9q0.jpg",
+      "prompt": "A split composition featuring a singular lotus flower transitioning from a closed bud in murky, dark water on the left to a fully bloomed, radiant lotus in pristine, clear water on the right. White marble temple steps with intricate carvings descend into both pools, connected by a seamless, polished marble floor. Serene painterly Indian style, warm golden sunlight bathing the white stone, gentle glow, uncluttered, peaceful atmosphere, vertical 9:16 composition with generous space above and below.",
+      "fails": {},
+      "top": 0.51
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "vo": "Aap hote to kya karte? Comment karo.",
@@ -184,7 +346,29 @@
     "kya karte"
    ],
    "sub": null,
-   "label": null
+   "label": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s10q0.jpg",
+      "prompt": "Smooth white marble idol of Mahavir Swami seated in padmasana posture, small tight curls covering the head, a srivatsa mark on the chest, a lion emblem on the pedestal, eyes half-closed in deep meditation, serene polished stone surface. The idol is centered against a clean white marble background with a subtle carved lotus border. Warm golden light streams from the top-left, creating a gentle glow. Serene painterly Indian style, uncluttered, peaceful atmosphere, vertical 9:16 composition.",
+      "fails": {
+       "p3": 0.76
+      },
+      "top": 0.76
+     },
+     {
+      "file": "s10q1.jpg",
+      "prompt": "Smooth white marble idol of Mahavira Swami seated in padmasana posture, hands resting in the lap, small tight curls covering the head, a srivatsa mark on the chest, a lion emblem on the pedestal, eyes half-closed in deep meditation, polished stone surface with plain features and completely smooth forehead, serene painterly Indian style, warm golden light from top-left, clean white marble background with subtle carved lotus border, vertical 9:16 composition, generous calm space above and below, uncluttered, peaceful, gentle glow.",
+      "fails": {},
+      "top": 0.25
+     }
+    ],
+    "passed": true
+   }
   },
   {
    "type": "card",
@@ -194,7 +378,22 @@
    "vo": "Ye HD wallpaper chahiye? Comment kijiye IMAGE, main DM bhej dunga.",
    "offer_cta": true,
    "label": "FREE",
-   "prompt": "a gift box with soft warm light, simple background"
+   "prompt": "a gift box with soft warm light, simple background",
+   "title": null,
+   "pic": {
+    "refs": [
+     "Mahavir Swami"
+    ],
+    "tries": [
+     {
+      "file": "s11q0.jpg",
+      "prompt": "A gift box made of polished sandalwood sits centered on a clean white marble floor, emitting a soft warm golden light from within. The box is tied with a simple silk ribbon, resting in a serene, uncluttered palace courtyard with finely carved sandstone pillars and distant temple spires visible under a gentle, glowing sunset. The style is serene painterly Indian, with warm golden light bathing the scene, creating long, soft shadows. Vertical 9:16 composition, generous calm space above and below.",
+      "fails": {},
+      "top": 0.22
+     }
+    ],
+    "passed": true
+   }
   }
  ],
  "music_mood": "calm",
@@ -252,6 +451,69 @@
   "title": "Narak se Tirthankar Wallpaper",
   "items": [],
   "wallpaper_scene": 7,
-  "job": "1120-1510"
- }
+  "job": "1120-1510",
+  "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/offers/jain/offer-image.jpg"
+ },
+ "bible": {
+  "figures": [
+   {
+    "name": "Mahavira Swami (Idol)",
+    "scenes": [
+     2,
+     3,
+     6
+    ],
+    "look": "Smooth white marble idol seated in padmasana posture. Small tight curls cover the bare head. A srivatsa mark adorns the chest. A lion emblem sits on the pedestal. Eyes remain half-closed in deep meditation. Serene, polished stone surface with plain features."
+   },
+   {
+    "name": "King Shrenik",
+    "scenes": [
+     2,
+     3,
+     4,
+     6
+    ],
+    "look": "Middle-aged king with a trimmed black beard and calm expression. Wears a golden crown with a central ruby. Draped in a rich red-gold silk angavastram over a bare chest. Hands held in anjali mudra. Dignified, royal, and peaceful posture throughout."
+   }
+  ],
+  "places": [
+   {
+    "name": "Jain Temple",
+    "look": "Grand white marble structure with tall, pointed shikhara spires and stepped stone roofs. Intricately carved pillars and sandstone accents. Warm golden light bathes the white stone. A temple tank with clear water and lotuses sits at the base of the steps."
+   },
+   {
+    "name": "Palace Courtyard",
+    "look": "Open courtyard of polished white marble and warm sandstone. Finely carved pillars support the structure. View of distant temple spires. Soft golden sunlight creates long shadows on the clean floor. Elegant, ancient Indian royal architecture with open, airy vistas."
+   },
+   {
+    "name": "Symbolic Cavern",
+    "look": "Vast cavernous space with a faint crimson glow. A singular, brilliant beam of golden light descends from above. A lone lotus bud rises from dark, still water. Painterly textures with deep shadows and ethereal, warm highlights create a contemplative atmosphere."
+   },
+   {
+    "name": "Cosmic Realm",
+    "look": "A massive stone wheel of time with carved spokes. Above it, a radiant white crescent-shaped realm floats in a golden sky. Luminous souls appear as points of light ascending toward the apex. Ethereal, serene, and vast ancient cosmic geography."
+   },
+   {
+    "name": "Temple Library",
+    "look": "Quiet chamber with white marble pillars. Ancient palm-leaf manuscripts rest on carved wooden stands. Warm golden light filters through stone lattices. A peaceful atmosphere filled with the texture of aged parchment and polished, cool stone surfaces."
+   },
+   {
+    "name": "Gift Box Scene",
+    "look": "A simple, elegant box wrapped in textured paper, emitting a soft internal golden glow. Rests on a clean white marble surface. Minimalist and peaceful presentation under warm, diffused lighting with a soft focus and uncluttered background."
+   }
+  ]
+ },
+ "idol_photos_used": [
+  "File:Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05.jpg",
+  "File:Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar).jpg",
+  "File:Lord Mahavira.jpg",
+  "File:Rujuwalika Jain Temple Mahavira Kevalgyan statue 2.jpg"
+ ],
+ "credits": [
+  "Photo: Idol of Lord Mahavira (Mahavir Swami), the 24th Tirthankar of Jainism, at a Jain temple in Rahli Patnaganj (Dist - Sagar) (Wikimedia Commons)",
+  "Photo: Tirthankara statue at Mathura Chaurasi Digambara Jain Temple 05 (Wikimedia Commons)",
+  "Photo: Lord Mahavira (Wikimedia Commons)",
+  "Photo: Rujuwalika Jain Temple Mahavira Kevalgyan statue 2 (Wikimedia Commons)"
+ ],
+ "pic_redraws": 1
 }
