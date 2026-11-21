@@ -433,16 +433,21 @@
    "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040a-c1-1795195168.mp4"
   },
   "posted": {
-   "at": "2026-11-21 04:30",
-   "ig": "18135349957741739"
+   "at": "2026-11-21 09:15",
+   "ig": "18104092880550099",
+   "reposted_from": "18135349957741739"
   },
   "submit": {
    "campaign": "https://contentrewards.com/c/campaigns/1391fb95-e8a3-4f0b-b146-d0d786e6aee0",
    "links": [
-    "https://www.instagram.com/reel/Df-LZq7kaAo/"
+    "https://www.instagram.com/reel/Df_S3JogU3F/"
    ],
-   "at": "2026-11-21 04:30",
-   "missed": "2026-11-21 08:49"
+   "at": "2026-11-21 09:15",
+   "tries": 2,
+   "ok_links": [
+    "https://www.instagram.com/reel/Df_S3JogU3F/"
+   ],
+   "submitted": "2026-11-21 09:19"
   },
   "stats": {
    "views": 0,
@@ -459,7 +464,7 @@
   "job": "1120-2040b-c1",
   "topic": "SEGA BLACK FRIDAY SALE",
   "title": "SEGA BLACK FRIDAY SALE",
-  "status": "scheduled",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://f.io/O1zu3kBp",
@@ -477,13 +482,14 @@
    "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040b-c1-1795198063.mp4",
    "ig_container": "17905388235397877",
    "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040b-c1-1795198063.mp4"
-  }
+  },
+  "removed_why": "21 Nov: same SEGA Steam ad as the live clip (owner: duplicates)"
  },
  {
   "job": "1120-2040c-c1",
   "topic": "SEGA BLACK FRIDAY SALE",
   "title": "SEGA BLACK FRIDAY SALE",
-  "status": "scheduled",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://f.io/O1zu3kBp",
@@ -501,7 +507,8 @@
    "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040c-c1-1795212251.mp4",
    "ig_container": "17905428864397877",
    "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2040c-c1-1795212251.mp4"
-  }
+  },
+  "removed_why": "21 Nov: same SEGA Steam ad as the live clip (owner: duplicates)"
  },
  {
   "job": "1120-2149a-c1",
@@ -586,24 +593,48 @@
   "job": "1120-2159c-c1",
   "topic": "REFEREE'S POINT OF VIEW CAMERA",
   "title": "REFEREE'S POINT OF VIEW CAMERA",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=63BIm4JRL7c",
    "start": 239.77,
    "layout": "mixed:crop+fit"
+  },
+  "sched": {
+   "slot": 1795280400,
+   "at": "2026-11-21 22:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsulegaming/1120-2159c-c1/post.mp4",
+   "prepared": "2026-11-21 09:33",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2159c-c1-1795233831.mp4",
+   "ig_container": "17905492401397877",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2159c-c1-1795233831.mp4"
   }
  },
  {
   "job": "1120-2159d-c1",
   "topic": "THE TUNNEL EXPERIENCE IS UNREAL",
   "title": "THE TUNNEL EXPERIENCE IS UNREAL",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=63BIm4JRL7c",
    "start": 192.91,
    "layout": "mixed:crop+fit"
+  },
+  "sched": {
+   "slot": 1795294800,
+   "at": "2026-11-22 02:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsulegaming/1120-2159d-c1/post.mp4",
+   "prepared": "2026-11-21 09:49",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2159d-c1-1795234754.mp4",
+   "ig_container": "17905494609397877",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2159d-c1-1795234754.mp4"
   }
  }
 ]

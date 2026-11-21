@@ -53,16 +53,21 @@
    "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1119-2140b-c1-1795187823.mp4"
   },
   "posted": {
-   "at": "2026-11-21 06:30",
-   "ig": "17937466473144658"
+   "at": "2026-11-21 09:29",
+   "ig": "18659439478046508",
+   "reposted_from": "17937466473144658"
   },
   "submit": {
    "campaign": "https://contentrewards.com/c/campaigns/eb28f557-df7b-4245-8603-01380c4d84cc",
    "links": [
-    "https://www.instagram.com/reel/Df99YCckv9q/"
+    "https://www.instagram.com/reel/Df_UdnVEYkE/"
    ],
-   "at": "2026-11-21 06:30",
-   "missed": "2026-11-21 08:49"
+   "at": "2026-11-21 09:29",
+   "ok_links": [
+    "https://www.instagram.com/reel/Df_UdnVEYkE/"
+   ],
+   "tries": 1,
+   "submitted": "2026-11-21 09:29"
   },
   "stats": {
    "views": 0,
@@ -199,16 +204,21 @@
    "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-0124a-c3-1795194560.mp4"
   },
   "posted": {
-   "at": "2026-11-21 02:30",
-   "ig": "18169424107488898"
+   "at": "2026-11-21 09:51",
+   "ig": "17908662663606907",
+   "reposted_from": "18169424107488898"
   },
   "submit": {
    "campaign": "https://contentrewards.com/c/campaigns/cc01471a-0dd5-471d-95b7-90955b037974",
    "links": [
-    "https://www.instagram.com/reel/Df-KLWjlGsI/"
+    "https://www.instagram.com/reel/Df_W83ZAB-B/"
    ],
-   "at": "2026-11-21 02:30",
-   "missed": "2026-11-21 08:49"
+   "at": "2026-11-21 09:51",
+   "ok_links": [
+    "https://www.instagram.com/reel/Df_W83ZAB-B/"
+   ],
+   "tries": 1,
+   "submitted": "2026-11-21 09:51"
   },
   "stats": {
    "views": 0,
@@ -583,13 +593,14 @@
   "job": "1120-1823e-c1",
   "topic": "Man survives brutal rocket sled crash",
   "title": "Man survives brutal rocket sled crash",
-  "status": "approved",
+  "status": "removed",
   "review": [],
   "clip": {
    "url": "https://drive.google.com/drive/folders/1OBN9ijIUa39DYfo6FlOosgADwBH8gW4b",
    "start": 0.0,
    "layout": "vertical"
-  }
+  },
+  "removed_why": "21 Nov: same rocket-sled clip as 1120-1823d-c1 (repeat check: audio 0.98)"
  },
  {
   "job": "1120-1823f-c1",

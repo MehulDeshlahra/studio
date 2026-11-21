@@ -1484,5 +1484,53 @@
   },
   "moved_from": "cutcapsulegaming",
   "removed_why": "20 Nov: clip of the campaign's own brief ('GET PAID'), never post"
+ },
+ {
+  "job": "1121-0910a-c1",
+  "topic": "WILLIE DROPS SUCCESSION QUOTE: KING TUT",
+  "title": "WILLIE DROPS SUCCESSION QUOTE: KING TUT",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=a7iTuJGYkQA",
+   "start": 2374.63,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1121-0910a-c2",
+  "topic": "NO HUMAN CAPITAL BOTTLENECKS: WORLD IS YOURS",
+  "title": "NO HUMAN CAPITAL BOTTLENECKS: WORLD IS YOURS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=a7iTuJGYkQA",
+   "start": 1320.73,
+   "layout": "crop"
+  }
+ },
+ {
+  "job": "1121-0910a-c3",
+  "topic": "OWN 100% OF CASH BIZ: RICHEST IN AMERICA",
+  "title": "OWN 100% OF CASH BIZ: RICHEST IN AMERICA",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=a7iTuJGYkQA",
+   "start": 2287.55,
+   "layout": "stack"
+  }
+ },
+ {
+  "job": "1121-0910a-c4",
+  "topic": "10 BEAUTY ROBOT DOES YOUR NAILS AUTOMATED",
+  "title": "10 BEAUTY ROBOT DOES YOUR NAILS AUTOMATED",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=a7iTuJGYkQA",
+   "start": 367.61,
+   "layout": "stack"
+  }
  }
 ]
