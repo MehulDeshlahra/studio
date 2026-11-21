@@ -648,5 +648,61 @@
    "start": 0.0,
    "layout": "stack"
   }
+ },
+ {
+  "job": "1121-1104a-c1",
+  "topic": "FREE FOOTBALL CARDS",
+  "title": "FREE FOOTBALL CARDS",
+  "status": "held",
+  "review": [
+   "loudness -16.2 LUFS"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=A5Z-5eZLONY",
+   "start": 2515.0,
+   "layout": "mixed:crop+fill"
+  }
+ },
+ {
+  "job": "1121-1104a-c2",
+  "topic": "FREE FOOTBALL CARDS",
+  "title": "FREE FOOTBALL CARDS",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=A5Z-5eZLONY",
+   "start": 3727.0,
+   "layout": "fill"
+  }
+ },
+ {
+  "job": "1121-1104a-c3",
+  "topic": "FREE FOOTBALL CARDS",
+  "title": "FREE FOOTBALL CARDS",
+  "status": "held",
+  "review": [
+   "No transcript provided, empty gameplay clip with no speech or audio context, yet claims 'FREE FOOTBALL CARDS' as a hook.",
+   "The hook is misleading/false as it's a generic football game (Volta/FIFA) gameplay clip offering no free football cards.",
+   "checklist: weak / vague / negative page note"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=A5Z-5eZLONY",
+   "start": 3124.0,
+   "layout": "fill"
+  }
+ },
+ {
+  "job": "1121-1104a-c4",
+  "topic": "FREE FOOTBALL CARDS",
+  "title": "FREE FOOTBALL CARDS",
+  "status": "held",
+  "review": [
+   "loudness -16.6 LUFS"
+  ],
+  "clip": {
+   "url": "https://www.youtube.com/watch?v=A5Z-5eZLONY",
+   "start": 1550.0,
+   "layout": "fill"
+  }
  }
 ]

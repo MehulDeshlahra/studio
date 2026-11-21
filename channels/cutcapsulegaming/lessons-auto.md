@@ -31,3 +31,14 @@
 ## 1120-2149b-c1 (clipper)
 - not brand-safe: 'Nigga' in the clip (brands and campaigns pay for brand-safe clips only)
 - Captioning error: The final frame shows incoherent text 'I YOU WHEN' instead of the actual transcript.
+
+## 1121-1104a-c1 (clipper)
+- loudness -16.2 LUFS
+
+## 1121-1104a-c3 (clipper)
+- No transcript provided, empty gameplay clip with no speech or audio context, yet claims 'FREE FOOTBALL CARDS' as a hook.
+- The hook is misleading/false as it's a generic football game (Volta/FIFA) gameplay clip offering no free football cards.
+- checklist: weak / vague / negative page note
+
+## 1121-1104a-c4 (clipper)
+- loudness -16.6 LUFS
