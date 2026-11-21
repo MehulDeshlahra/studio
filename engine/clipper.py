@@ -593,6 +593,21 @@ def silent_moments(ch, it, n, src):
              "notes": [], "silent": True} for a, b in wins[:n]]
 
 
+def _already_cut(cid, url, file_id, a, b):
+    """True when this page already has a clip of the same file covering > 50% of [a, b] (any status except a test)."""
+    import glob
+    a, b = float(a), float(b)
+    for p in glob.glob(os.path.join(OUT, cid, "sources", "*", "moments.json")):
+        d = load(p, {}) or {}
+        if d.get("test") or d.get("url") != url or (file_id and d.get("file_id") not in (None, file_id)):
+            continue
+        for m in d.get("moments") or []:
+            ov = min(b, float(m.get("b", 0))) - max(a, float(m.get("a", 0)))
+            if ov > 0.5 * max(1.0, b - a):
+                return True
+    return False
+
+
 def make_files(cid, url, n=4, test=False, campaign=None):
     """Non-YouTube footage (a Drive file or folder): transcribe on the laptop, pick moments from the text, clip each file."""
     import laptop
@@ -615,11 +630,17 @@ def make_files(cid, url, n=4, test=False, campaign=None):
                 log("clipper (files): almost no speech in", it.get("name")); continue
         else:
             ms = find_moments_text(ch, it, per, src)
+        # 21 Nov (owner deleted 3 Gaming clips as "duplicates"): a campaign's short ad (SEGA Steam sale, ~25 s) was clipped
+        # whole on every run, so the page posted the same ad 4 times with a new caption. Drop a moment that overlaps more
+        # than half of a clip this page already made from the same file.
+        ms = [m for m in ms if not _already_cut(cid, url, it.get("id"), m["a"], m["b"])]
         if not ms:
+            log("clipper (files): every moment of", it.get("name"), "was already clipped on", cid, "- skipped (no duplicates)")
             continue
         b2 = f"{base}{chr(97 + k)}"
         os.makedirs(os.path.join(OUT, cid, "sources", b2), exist_ok=True)
-        save(os.path.join(OUT, cid, "sources", b2, "moments.json"), {"url": url, "file": it.get("name"), "moments": ms, "source": src, "test": test})
+        save(os.path.join(OUT, cid, "sources", b2, "moments.json"), {"url": url, "file": it.get("name"), "file_id": it.get("id"),
+                                                                       "moments": ms, "source": src, "test": test})
         log("clipper (files): moments", it.get("name"), [(round(m["a"]), round(m["b"]), m["hook"], m["score"]) for m in ms])
         brand = "" if (src or {}).get("no_watermark") else (ch.get("handle") or "")
         out = laptop.job({"kind": "clip", "url": url, "id": it["id"], "pad": 0 if ms[0].get("silent") else 4, "brand": brand,
