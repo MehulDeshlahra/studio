@@ -202,41 +202,19 @@ def submit(page, url, post):
     # 20 Nov: the first real submit "succeeded" but nothing was sent: the form has a required "I've read the requirements"
     # checkbox and the Submit button does nothing until it is ticked. Tick every unticked box in the dialog.
     ticked = 0
-    for sel in ("[role=dialog] input[type=checkbox]", "input[type=checkbox]", "[role=dialog] [role=checkbox]", "[role=checkbox]"):
-        loc = page.locator(sel)
-        for i in range(loc.count()):
-            el = loc.nth(i)
-            try:
-                on = el.is_checked() if sel.endswith("checkbox]") and "input" in sel else el.get_attribute("aria-checked") == "true"
-                if not on:
-                    el.check(timeout=2000, force=True) if "input" in sel else el.click(timeout=2000)
-                    ticked += 1
-            except Exception:
-                continue
-        if ticked:
-            break
     # 21 Nov (server run): the box is a styled element; the label says "I’ve" with a CURLY apostrophe, so the old text
     # match missed it and Submit did nothing. Click the label, then the square just left of it, and check the result.
-    req = page.get_by_text(re.compile(r"read the requirements", re.I)).first
-    for attempt in range(3):
-        try:
-            if not req.count():
-                break
-            if attempt == 0:
-                req.click(timeout=3000)
-            else:
-                b = req.bounding_box()
-                page.mouse.click(b["x"] - 22, b["y"] + b["height"] / 2)
-            page.wait_for_timeout(600)
-            on = page.evaluate("""() => { const t = [...document.querySelectorAll('*')].find(e => /read the requirements/i.test(e.textContent || '') && e.children.length < 4);
-                    let n = t; for (let i = 0; i < 5 && n; i++, n = n.parentElement) {
-                      const c = n.querySelector('input[type=checkbox],[role=checkbox],[aria-checked],[data-state]');
-                      if (c) return c.checked === true || c.getAttribute('aria-checked') === 'true' || c.getAttribute('data-state') === 'checked'; }
-                    return null; }""")
-            if on:
-                ticked = max(ticked, 1); break
-        except Exception:
-            continue
+    # The real control is a 1x1 hidden <input> inside a <label>: a forced .check() does not reach React, a real click on
+    # the LABEL does (21 Nov server test: "Clip submitted"). Click the label once, only if the input is not on yet.
+    try:
+        lab = page.locator("label", has_text=re.compile(r"read the requirements", re.I)).first
+        if lab.count():
+            on = lab.evaluate("l => { const i = l.querySelector('input'); return !!(i && i.checked); }")
+            if not on:
+                lab.click(timeout=3000); page.wait_for_timeout(600)
+            ticked = max(ticked, 1)
+    except Exception:
+        pass
     if not ticked:
         if click_text(page, [r"i[’']?ve read the requirements", r"i (have )?read", r"i agree"]):
             ticked = 1
