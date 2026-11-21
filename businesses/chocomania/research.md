@@ -77,3 +77,10 @@ Start line: median 15 likes, 2,877 followers, 4 months without posts.
 4. Approval: auto-post, or a WhatsApp preview first.
 5. Will Teena appear on camera? (founder face = the strongest trust signal, but her choice)
 6. Our fee (draft: Rs 2,999 / 12 reels, Rs 5,999 / 30 reels a month; not agreed).
+
+## 8. Sample films (21 Nov, owner: 'no one will pay for this basic edit, do extraordinary work')
+- First sample (biz.py, captions over her posts) rejected as too basic. Bar now: a premium brand film per reel.
+- Toolkit that works for Rs 0 (tested 21 Nov): NVIDIA FLUX.1-schnell image generation through OmniRoute (3 s an image, 768x1344); rembg isnet cut-outs on the laptop (her real cakes, clean edges, 5-25 s each); HyperFrames motion design rendered on the laptop GPU; Gemini Aoede voice; incompetech CC BY music.
+- Rule kept: the PRODUCT is always her real cake/hamper/person; AI makes only the set behind it (backgrounds, light, mood).
+- Not working (21 Nov): image EDIT models (Kontext, klein) via NVIDIA need an asset id, not base64; veo-free / seedance video needs a login; AI Horde queue 8+ min; Cloudflare FLUX error.
+- Films: A Masterpiece (luxury brand film), B Wedding season (gifting), C The workshop (problem -> fix -> Comment WORKSHOP). Source: C:\Users\mehul\choco-samples (films.py + build.py).
