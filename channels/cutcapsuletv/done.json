@@ -628,5 +628,29 @@
    "Checklist b: Caption words are misheard/misspelled compared to the transcript ('is Tiz', 'lessom lassies', 'Farm')",
    "checklist: misheard caption"
   ]
+ },
+ {
+  "job": "1121-1028a-c1",
+  "topic": "FOUR PERFORMERS, ONE WIRE, TOTAL TERROR",
+  "title": "FOUR PERFORMERS, ONE WIRE, TOTAL TERROR",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1Y8IvP14KC8x_K_-4FNmCdrc6VKs_d4v4",
+   "start": 16.52,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1121-1028b-c1",
+  "topic": "CANNONBALL NOT MUSH PROVEN WRONG",
+  "title": "CANNONBALL NOT MUSH PROVEN WRONG",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1Y8IvP14KC8x_K_-4FNmCdrc6VKs_d4v4",
+   "start": 0.7,
+   "layout": "vertical"
+  }
  }
 ]

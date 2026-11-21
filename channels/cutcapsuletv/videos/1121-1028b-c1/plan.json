@@ -1,0 +1,58 @@
+{
+ "title": "CANNONBALL NOT MUSH PROVEN WRONG",
+ "topic": "CANNONBALL NOT MUSH PROVEN WRONG",
+ "caption": "Movietone Presents stunt test goes sideways. Host declares cannonball solid, then the dad joke lands.",
+ "hashtags": [
+  "#MovietonePresents",
+  "#Tubi",
+  "#StuntFail"
+ ],
+ "lang": "en",
+ "clip": {
+  "url": "https://drive.google.com/drive/folders/1Y8IvP14KC8x_K_-4FNmCdrc6VKs_d4v4",
+  "start": 0.7,
+  "end": 13.02,
+  "layout": "vertical",
+  "removed_s": 0,
+  "why": "Bold claim hook at 0.8s, builds to 'Cannonfather' punchline at 13.2s, clean 12.2s reaction loop",
+  "scores": {
+   "hook": 9,
+   "flow": 8,
+   "value": 7,
+   "trend": 8
+  },
+  "replayed": false,
+  "notes": [],
+  "source": "modern",
+  "test": false,
+  "creator": "Movietone Presents Clip Farm"
+ },
+ "seo": {
+  "ig": {
+   "caption": "Movietone Presents stunt test goes sideways. Host declares cannonball solid, then the dad joke lands.",
+   "hashtags": [
+    "#MovietonePresents",
+    "#Tubi",
+    "#StuntFail"
+   ]
+  },
+  "fb": {
+   "caption": "Movietone Presents stunt test goes sideways. Host declares cannonball solid, then the dad joke lands.",
+   "hashtags": [
+    "#MovietonePresents",
+    "#Tubi",
+    "#StuntFail"
+   ]
+  },
+  "yt": {
+   "title": "CANNONBALL NOT MUSH PROVEN WRONG",
+   "description": "Movietone Presents stunt test goes sideways. Host declares cannonball solid, then the dad joke lands.",
+   "tags": [
+    "MovietonePresents",
+    "Tubi",
+    "StuntFail"
+   ]
+  }
+ },
+ "scenes": []
+}
