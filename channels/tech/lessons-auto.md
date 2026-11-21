@@ -481,3 +481,13 @@
 ## review 1121-0225
 - picture check: scene 9: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 64%)
 - picture check: scene 11: Is any frame a near-empty box, card or placeholder block where the line explains something? (yes 65%)
+
+## 1121-0455 (pre-render check)
+- EMPTY: the centre of the frame has no main visual in the middle still
+- READ: text in the background and chart area is heavily distorted and illegible
+- READ: background text layer is heavily corrupted and unreadable
+- READ: terminal text layers are duplicated with severe artifacting and illegibility
+- READ: title and header text are heavily corrupted with visual glitching
+
+## 1121-0455 (pre-render check)
+- FIT: gibberish text on the central object instead of the expected warning label

@@ -20,21 +20,28 @@
  "scenes": [
   {
    "vo": "PS5 update bina GTA 6 nahi chalega, Sony ne clear kiya",
-   "type": "image",
+   "type": "ui",
    "prompt": "A PS5 console on a black studio surface, its light bar pulsing blue, then a red warning overlay flashes 'SYSTEM UPDATE REQUIRED' in mono chrome font, camera pushes in fast",
    "motion": "push",
-   "title": "WARNING",
+   "title": "PS5 Update Required",
    "keywords": [
     "PS5",
     "update",
     "GTA 6"
    ],
-   "bg_prompt": "PS5 console front view, pure black background, dramatic rim light, 8K product render",
-   "label": "HOOK CLIP",
-   "big": null,
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: status, ps5 update required, ps5 update gta 6, ps5 update bina gta 6 nahi chalega?. Style: cinematic photoreal, dark low-key lighting, teal and amber accents, shallow depth of field, premium tech documentary. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "label": "Status",
+   "big": "System Update",
    "small": null,
-   "sub": null,
-   "skin": "keynote"
+   "sub": "Required for GTA 6",
+   "skin": "keynote",
+   "value": "Pending",
+   "rows": [
+    [
+     "Update",
+     "Required"
+    ]
+   ]
   },
   {
    "vo": "Sony ne official warning di thi, update mandatory hai ab bhi",
@@ -144,16 +151,16 @@
   },
   {
    "vo": "External USB drive se kaam nahi chalega, sirf internal drive chalega",
-   "type": "compare",
+   "type": "object",
    "items": [
     {
      "label": "Internal SSD",
-     "value": "Supported",
+     "value": "Yes",
      "pct": 100
     },
     {
      "label": "USB External",
-     "value": "Not Supported",
+     "value": "No",
      "pct": 0
     }
    ],
@@ -166,7 +173,7 @@
    ],
    "bg_prompt": "Side by side: PS5 internal M.2 SSD vs USB external drive, red X over USB, green check on internal",
    "label": "DRIVE COMPARE",
-   "big": null,
+   "big": "SSD vs USB",
    "small": null,
    "sub": null,
    "real": {
@@ -174,7 +181,8 @@
     "kind": "logo",
     "subject": "the official USB logo"
    },
-   "skin": "keynote"
+   "skin": "keynote",
+   "prompt": "the official USB logo"
   },
   {
    "vo": "M.2 NVMe SSD laga sakte ho PS5 mein, heatsink ke saath",
@@ -234,7 +242,7 @@
     18,
     21
    ],
-   "end_label": "All zones live since 19 Nov",
+   "end_label": "All zones live",
    "motion": "pan",
    "keywords": [
     "midnight",
@@ -258,14 +266,14 @@
    "vo": "$1.65 billion actual sales pehle din, 75% PlayStation, 25% Xbox",
    "type": "stat",
    "value": "$1.65B",
-   "sub": "actual sales (Sensor Tower)",
+   "sub": "Sensor Tower",
    "motion": "punch",
    "title": "SALES RECORD",
    "keywords": [
     "$1.65 billion",
     "sales"
    ],
-   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: sales stat, sales record, $1.65 billion sales, ps5 update bina gta 6 nahi chalega?. Style: technical engineering blueprint drawing, crisp white line art on deep Prussian blue cyanotype paper, orthographic and isometric line drawing with centre lines, dimension lines and hatching, flat 2D, no 3D render, no shading, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: sales stat, sales record. Style: technical blueprint, white line art on deep blue, vertical 9:16.",
    "label": "SALES STAT",
    "big": null,
    "small": null,
@@ -301,7 +309,7 @@
    "vo": "Update abhi kar lo, GTA 6 khelna hai to firmware chahiye, wait mat karo",
    "type": "title",
    "big": "UPDATE NOW",
-   "sub": "GTA 6 is live — firmware required",
+   "sub": "GTA6 live, need fw",
    "motion": "punch",
    "keywords": [
     "update now",
@@ -316,7 +324,7 @@
   }
  ],
  "music_mood": "driving",
- "caption": "PS5 pe GTA 6 khelna hai? Pehle system update mandatory hai. Sony ne official warning di thi. 212 GB space, Rest Mode, auto-download — sab ready rakho. Global rollout 19 Nov midnight poora hua. $1.65B sales pehle din. Tumne update check kiya? Comment mein batao 👇",
+ "caption": "PS5 pe GTA 6 khelna hai? Pehle system update mandatory hai. Sony ne official warning di thi. 212 GB space, Rest Mode, auto-download — sab ready rakho. Global rollout 19 Nov midnight poora hua. $1.65B sales pehle din. Tumne update check kiya? Comment mein batao 👇\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
  "hashtags": [
   "#GTA6",
   "#PS5",
@@ -395,5 +403,6 @@
   "161339712e"
  ],
  "visual_done": "2026-11-21 05:00",
- "skin": "keynote"
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
 }
