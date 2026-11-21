@@ -50,6 +50,56 @@ def sig(mp4):
     return out
 
 
+def audio(mp4):
+    """Loudness curve (log RMS per 100 ms, normalised). 21 Nov: one SEGA ad came as a 30 s 16:9 cut, a 15 s cut and a
+    9:16 version: the pictures differ (crop / layout) but the soundtrack is the same. Test: every SEGA version scored
+    1.00-1.13 against the others, every different clip 0.40 or less."""
+    if not os.path.exists(mp4):
+        return []
+    k = "A|" + _key(mp4)
+    if not _mem:
+        _mem.update(load(CACHE, {}) or {})
+    if k in _mem:
+        return _mem[k]
+    import numpy as np
+    try:
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", mp4, "-ac", "1", "-ar", "8000", "-f", "s16le", "-"],
+                             capture_output=True, timeout=120).stdout
+    except Exception:
+        raw = b""
+    a = np.frombuffer(raw, np.int16).astype(float)
+    out = []
+    if len(a) >= 8000:
+        e = np.log(np.sqrt(np.mean(a[: len(a) // 800 * 800].reshape(-1, 800) ** 2, axis=1) + 1))
+        if e.std() > 0.05:                                # a silent clip has no usable curve
+            out = [round(float(x), 3) for x in (e - e.mean()) / e.std()]
+    _mem[k] = out
+    try:
+        save(CACHE, dict(list(_mem.items())[-3000:]))
+    except Exception:
+        pass
+    return out
+
+
+def same_audio(a_mp4, b_mp4):
+    """Best match of the shorter loudness curve slid over the longer one (a 15 s cut inside the 30 s ad matches)."""
+    import numpy as np
+    A, B = np.array(audio(a_mp4)), np.array(audio(b_mp4))
+    if len(A) < 30 or len(B) < 30:
+        return 0.0
+    if len(A) > len(B):
+        A, B = B, A
+    best = max(float(np.mean(A * B[s:s + len(A)])) for s in range(len(B) - len(A) + 1))
+    for s in range(1, min(30, len(A) // 3)):               # small shifts both ways (a cut that starts later)
+        best = max(best, float(np.mean(A[s:] * B[:len(A) - s])), float(np.mean(B[s:len(A)] * A[:len(A) - s])))
+    return best
+
+
+def repeat(a_mp4, b_mp4):
+    """True when b shows the same video as a: same pictures, or the same soundtrack (another cut / crop of one ad)."""
+    return same(a_mp4, b_mp4) >= 0.75 or same_audio(a_mp4, b_mp4) >= 0.8
+
+
 def _near(a, b):
     return sum(x != y for x, y in zip(a, b)) / len(a) < 0.12
 
@@ -63,4 +113,5 @@ def same(a_mp4, b_mp4):
 
 
 if __name__ == "__main__":
-    print(round(same(sys.argv[1], sys.argv[2]), 2))
+    print("pictures", round(same(sys.argv[1], sys.argv[2]), 2), "audio", round(same_audio(sys.argv[1], sys.argv[2]), 2),
+          "REPEAT" if repeat(sys.argv[1], sys.argv[2]) else "different")

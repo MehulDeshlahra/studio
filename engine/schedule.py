@@ -156,7 +156,7 @@ def pick(cid, ch, rows):
                 import framesig
                 mine = os.path.join(OUT, cid, c["job"], f"{cid}-{c['job']}.mp4")
                 hit = next((j for j in others if j != c["job"] and
-                            framesig.same(mine, os.path.join(OUT, cid, j, f"{cid}-{j}.mp4")) >= 0.75), None)
+                            framesig.repeat(mine, os.path.join(OUT, cid, j, f"{cid}-{j}.mp4"))), None)
             except Exception as e:
                 hit = None; log("schedule: repeat check could not run", cid, c["job"], str(e)[:100])
             if hit:
