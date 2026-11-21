@@ -93,8 +93,7 @@ def run(only=None):
         cap = int((ch.get("clip") or {}).get("backlog", 12))
         if waiting(cid) >= cap:
             log("clipwatch:", cid, f"{waiting(cid)} clips already waiting (cap {cap}), skip"); continue
-        if not laptop.available():
-            log("clipwatch: the laptop is off, nothing to clip with"); return
+        # 21 Nov: no laptop guard: laptop.job runs the clip on the server when the laptop is off (engine/localjob.py)
         todo = []
         for key, s in srcs.items():
             added = s.get("added_t") or 0

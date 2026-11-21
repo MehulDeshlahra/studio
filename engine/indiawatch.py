@@ -30,11 +30,8 @@ def dashrize():
 
 def clipconnect():
     """Logged-in campaign marketplace through the laptop (owner's ClipConnect login in the saved profile)."""
-    import laptop
-    if not laptop.available():
-        return {"live": None, "note": "laptop off"}
-    d = laptop.job({"kind": "whop", "cmd": "look", "args": ["https://app.clipconnect.in/campaigns"]}, "india clipconnect", wait=600)
-    r = load(os.path.join(d, "result.json"), {}) or {}
+    import whopbot                           # 21 Nov: runs on the server (whop.py headless + saved cookies), laptop fallback
+    r = whopbot._job("look", "https://app.clipconnect.in/campaigns", wait=600)
     t = r.get("text") or ""
     if re.search(r"\b(log ?in|sign ?in)\b", t[:600], re.I) and "MARKETPLACE" not in t.upper():
         return {"live": None, "note": "ClipConnect login expired: owner logs in once in the robot window"}

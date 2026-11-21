@@ -88,10 +88,21 @@ def render(rdir, out, total, label=""):
                 pass
 
 
+def _take_local(q, claimed, jid):
+    """21 Nov owner: "everything must run on the server too, the laptop can be off any time". Take the job back from
+    the queue and run it here (engine/localjob.py: same worker code, YouTube through the free WARP proxy)."""
+    try:
+        os.replace(q + ".json", claimed)
+    except FileNotFoundError:
+        return None                                    # the laptop claimed it in the same second: it runs there
+    log("laptop: off or busy, running", jid, "on the server")
+    return subprocess.Popen([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "localjob.py"), jid],
+                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
 def job(spec, label="", wait=2400):
-    """Hand one job (spec["kind"] = info | clip) to the laptop and wait. Returns the folder with what it sent back."""
-    if not available():
-        raise RuntimeError("the laptop is off: clip jobs need it (YouTube blocks the server)")
+    """Run one job (spec["kind"] = info | clip | transcribe | words | fetch | whop): on the laptop when it is on and
+    free, otherwise on this server. Returns the folder with what came back."""
     for sub in ("queue", "claimed", "done"):
         os.makedirs(os.path.join(D, sub), exist_ok=True)
     jid = time.strftime("%m%d-%H%M%S") + "-" + spec["kind"][:1]
@@ -101,27 +112,31 @@ def job(spec, label="", wait=2400):
     t0 = time.time()
     claimed = os.path.join(D, "claimed", jid + ".json")
     done, err = os.path.join(D, "done", jid + ".tgz"), os.path.join(D, "done", jid + ".err")
+    here = _take_local(q, claimed, jid) if not available() else None
     try:
         while time.time() - t0 < wait:
             if os.path.exists(err):
-                raise RuntimeError(f"laptop {spec['kind']} failed: " + open(err, encoding="utf-8", errors="ignore").read()[-300:])
+                raise RuntimeError(f"{'server' if here else 'laptop'} {spec['kind']} failed: "
+                                   + open(err, encoding="utf-8", errors="ignore").read()[-300:])
             if os.path.exists(done):
                 break
-            if time.time() - t0 > CLAIM_WAIT * 2 and not os.path.exists(claimed) and os.path.exists(q + ".json"):
-                # 19 Nov: the worker does one job at a time; while it is busy (a transcribe/clip job) the queue waits
-                if status().get("busy") and status().get("age", 999) < 90 and time.time() - t0 < wait:
-                    time.sleep(4); continue
-                raise RuntimeError("the laptop did not pick the job up")
-            if os.path.exists(claimed) and status().get("age", 999) > 180:
+            if here is None and time.time() - t0 > CLAIM_WAIT * 2 and not os.path.exists(claimed) and os.path.exists(q + ".json"):
+                # the laptop is busy with a long job or gone: do not wait for it (was: wait up to the full time / fail)
+                here = _take_local(q, claimed, jid)
+            if here is not None and here.poll() is not None and not (os.path.exists(done) or os.path.exists(err)):
+                raise RuntimeError(f"server {spec['kind']} job stopped without a result (code {here.returncode})")
+            if here is None and os.path.exists(claimed) and status().get("age", 999) > 180:
                 raise RuntimeError("the laptop went away during the job")
             time.sleep(4)
         else:
-            raise RuntimeError(f"laptop {spec['kind']} too slow")
+            if here is not None and here.poll() is None:
+                here.kill()
+            raise RuntimeError(f"{'server' if here else 'laptop'} {spec['kind']} too slow")
         out = os.path.join(OUT, "laptop", "fetched", jid)
         os.makedirs(out, exist_ok=True)
         with tarfile.open(done) as t:
             t.extractall(out, filter="data")
-        log(f"laptop: {spec['kind']} done in {time.time() - t0:.0f} s ({label})")
+        log(f"{'server' if here else 'laptop'}: {spec['kind']} done in {time.time() - t0:.0f} s ({label})")
         return os.path.join(out, "fetch")
     finally:
         for f in (q + ".json", claimed, err, done):
@@ -137,47 +152,14 @@ def info(url, label=""):
 
 
 def fetch(url, sections, label="", wait=1800):
-    """19 Nov (CutCapsule): YouTube blocks this server, so the laptop downloads the asked parts of a video.
-    sections = [(start_s, end_s), ...]. Returns (info dict, [local mp4 path or None per section]); raises when the laptop
-    is away or the download fails."""
-    if not available():
-        raise RuntimeError("the laptop is off or busy-off: YouTube downloads need it (YouTube blocks the server)")
-    for sub in ("queue", "claimed", "done"):
-        os.makedirs(os.path.join(D, sub), exist_ok=True)
-    jid = time.strftime("%m%d-%H%M%S") + "-f"
-    q = os.path.join(D, "queue", jid)
-    json.dump({"id": jid, "kind": "fetch", "url": url, "sections": [[float(a), float(b)] for a, b in sections], "label": label,
-               "t": time.time()}, open(q + ".json.part", "w"))
-    os.replace(q + ".json.part", q + ".json")
+    """19 Nov (CutCapsule): download only the asked parts of a video. sections = [(start_s, end_s), ...]. Returns
+    (info dict, [local mp4 path or None per section]). 21 Nov: through job(): the laptop when on, else this server."""
     t0 = time.time()
-    claimed = os.path.join(D, "claimed", jid + ".json")
-    done, err = os.path.join(D, "done", jid + ".tgz"), os.path.join(D, "done", jid + ".err")
-    try:
-        while time.time() - t0 < wait:
-            if os.path.exists(err):
-                raise RuntimeError("laptop download failed: " + open(err, encoding="utf-8", errors="ignore").read()[-300:])
-            if os.path.exists(done):
-                break
-            if time.time() - t0 > CLAIM_WAIT * 2 and not os.path.exists(claimed) and os.path.exists(q + ".json"):
-                raise RuntimeError("the laptop did not pick the download up")
-            time.sleep(4)
-        else:
-            raise RuntimeError("laptop download too slow")
-        out = os.path.join(OUT, "laptop", "fetched", jid)
-        os.makedirs(out, exist_ok=True)
-        with tarfile.open(done) as t:
-            t.extractall(out, filter="data")
-        base = os.path.join(out, "fetch")
-        info = json.load(open(os.path.join(base, "info.json"))) if os.path.exists(os.path.join(base, "info.json")) else {}
-        files = [os.path.join(base, f"c{i}.mp4") if os.path.exists(os.path.join(base, f"c{i}.mp4")) else None for i in range(len(sections))]
-        log(f"laptop: fetched {sum(1 for f in files if f)}/{len(files)} parts in {time.time() - t0:.0f} s ({label})")
-        return info, files
-    finally:
-        for f in (q + ".json", claimed, err, done):
-            try:
-                os.remove(f)
-            except OSError:
-                pass
+    base = job({"kind": "fetch", "url": url, "sections": [[float(a), float(b)] for a, b in sections]}, label, wait=wait)
+    info = json.load(open(os.path.join(base, "info.json"))) if os.path.exists(os.path.join(base, "info.json")) else {}
+    files = [os.path.join(base, f"c{i}.mp4") if os.path.exists(os.path.join(base, f"c{i}.mp4")) else None for i in range(len(sections))]
+    log(f"fetched {sum(1 for f in files if f)}/{len(files)} parts in {time.time() - t0:.0f} s ({label})")
+    return info, files
 
 
 if __name__ == "__main__":
