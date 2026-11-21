@@ -1,0 +1,58 @@
+{
+ "title": "ROUND 2 SIR",
+ "topic": "ROUND 2 SIR",
+ "caption": "BenDaDonnn takes on Round 2 with the Hash Butler and his Puffco device while streaming GTA 6.",
+ "hashtags": [
+  "#BenDaDonnn",
+  "#Puffco",
+  "#GTA6"
+ ],
+ "lang": "en",
+ "clip": {
+  "url": "https://www.youtube.com/watch?v=HyDtVeQqFOM",
+  "start": 0.0,
+  "end": 13.44,
+  "layout": "stack",
+  "removed_s": 0,
+  "why": "The setup of the 'Hash Butler' introducing the round builds immediate anticipation for the hit.",
+  "scores": {
+   "hook": 9,
+   "flow": 8,
+   "value": 7,
+   "trend": 8
+  },
+  "replayed": false,
+  "notes": [],
+  "source": "launch-clipping",
+  "test": false,
+  "creator": "Thestreamclipper"
+ },
+ "seo": {
+  "ig": {
+   "caption": "BenDaDonnn takes on Round 2 with the Hash Butler and his Puffco device while streaming GTA 6.",
+   "hashtags": [
+    "#BenDaDonnn",
+    "#Puffco",
+    "#GTA6"
+   ]
+  },
+  "fb": {
+   "caption": "BenDaDonnn takes on Round 2 with the Hash Butler and his Puffco device while streaming GTA 6.",
+   "hashtags": [
+    "#BenDaDonnn",
+    "#Puffco",
+    "#GTA6"
+   ]
+  },
+  "yt": {
+   "title": "BenDaDonnn takes on Round 2 with the Hash Butler and his Puffco device while streaming GTA",
+   "description": "BenDaDonnn takes on Round 2 with the Hash Butler and his Puffco device while streaming GTA 6.",
+   "tags": [
+    "BenDaDonnn",
+    "Puffco",
+    "GTA6"
+   ]
+  }
+ },
+ "scenes": []
+}
