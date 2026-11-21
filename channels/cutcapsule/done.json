@@ -940,14 +940,14 @@
    "tries": 3
   },
   "stats": {
-   "views": 2,
-   "reach": 1,
+   "views": 15,
+   "reach": 13,
    "likes": 1,
    "comments": 0,
    "shares": 0,
    "saved": 0,
-   "avg_watch_s": 35.4,
-   "at": "2026-11-20 09:00"
+   "avg_watch_s": 6.3,
+   "at": "2026-11-21 09:00"
   }
  },
  {
@@ -1005,6 +1005,16 @@
    ],
    "at": "2026-11-21 06:30",
    "missed": "2026-11-21 08:49"
+  },
+  "stats": {
+   "views": 0,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "saved": 0,
+   "ig_reels_avg_watch_time": 0,
+   "at": "2026-11-21 09:00"
   }
  },
  {
@@ -1046,6 +1056,16 @@
    "at": "2026-11-20 22:30",
    "tries": 4,
    "paused": true
+  },
+  "stats": {
+   "views": 0,
+   "reach": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "saved": 0,
+   "ig_reels_avg_watch_time": 0,
+   "at": "2026-11-21 09:00"
   }
  },
  {
@@ -1102,6 +1122,16 @@
    ],
    "at": "2026-11-21 02:30",
    "missed": "2026-11-21 08:49"
+  },
+  "stats": {
+   "views": 216,
+   "reach": 187,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "saved": 0,
+   "avg_watch_s": 4.9,
+   "at": "2026-11-21 09:00"
   }
  },
  {
@@ -1142,6 +1172,16 @@
    ],
    "at": "2026-11-21 04:30",
    "missed": "2026-11-21 08:49"
+  },
+  "stats": {
+   "views": 206,
+   "reach": 181,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "saved": 0,
+   "avg_watch_s": 4.5,
+   "at": "2026-11-21 09:00"
   }
  },
  {
