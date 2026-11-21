@@ -292,3 +292,13 @@
 - NUMBERS: scene 5: 'Bank can freeze card/account after you call them' is not in the sources: remove it or say only what the sources say
 - NUMBERS: scene 5: 'File complaint on cybercrime.gov.in and save CRM ID' is not in the sources: remove it or say only what the sources say
 - NUMBERS: scene 6: 'Bank may ask for written proof that you shared OTP' is not in the sources: remove it or say only what the sources say
+
+## Credit card band karne ko bola, bank 7 working days mein ban (numbers check)
+- NUMBERS: scene 1: says 7.00 but worked out from the script it is 10.00 (5000 / 500; short)
+- NUMBERS: scene 3: says 7.00 but worked out from the script it is 10.00 (5000 / 500; The script states that 10 days of delay results in a ₹5,000 penalty at a rate of)
+
+## Credit card band karne ko bola, bank 7 working days mein ban (numbers check)
+- NUMBERS: scene 1: 'Bank 10 din mein band nahi kare toh ₹5,000 penalty' is wrong: RBI rule allows 7 working days for closure. If the bank fails to close it by the 10th day, the delay is only 3 days (10-
+
+## Credit card band karne ko bola, bank 7 working days mein ban (numbers check)
+- NUMBERS: scene 7: 'If no response from nodal officer in 30 days, file complaint on RBI CMS portal.' is not in the sources: remove it or say only what the sources say

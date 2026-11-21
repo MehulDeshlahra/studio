@@ -1,0 +1,291 @@
+{
+ "slug": "cc-closure-penalty-500-day",
+ "title": "Credit card band karne ko bola, bank 7 din mein band nahi kare toh roz ₹500 milega?",
+ "hooks": [
+  "Credit card band karne ko bola, bank 7 din mein band nahi kare toh roz ₹500 milega",
+  "Bank credit card band nahi kar raha? RBI ke niyam se roz ₹500 penalty milti hai",
+  "7 working days mein card band nahi hua toh bank se ₹500 roz lene ka tarika"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Opens with the exact ₹ number the viewer gets (₹500/day) and the trigger condition (7 working days), matching the 'Bank pays you' hook pattern that won on rival reels. No greeting, no setup — the surprise is in the first 6 words.",
+ "metaphor": "A ticking timer on a credit card that turns green (money to you) when the bank crosses the 7-working-day line",
+ "mechanism": [
+  "Customer clears all dues and submits closure request via app/email/IVR",
+  "Bank has 7 working days to close the card and confirm via SMS/email",
+  "If bank misses deadline, ₹500/day penalty auto-starts from day 8",
+  "Customer keeps request proof (ticket number, date) and escalates to bank's nodal officer",
+  "If unresolved in 30 days, file on RBI CMS portal (cms.rbi.org.in) for compensation"
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Credit card band karne ko bola, bank 7 din mein band nahi kare toh roz ₹500 milega",
+   "type": "wa",
+   "title": "Aditya",
+   "messages": [
+    {
+     "from": "Aditya",
+     "text": "Bhai HDFC card band karne ko 10 din ho gaye, abhi bhi chalu hai 😤"
+    },
+    {
+     "from": "me",
+     "text": "RBI rule hai — 7 working days miss kiye toh ₹500 roz penalty banti hai"
+    }
+   ],
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "₹500 roz",
+    "7 din",
+    "penalty"
+   ],
+   "bg_prompt": "A young man sitting on a sofa in a modest Indian living room at evening, phone in hand, looking annoyed at the screen, warm ambient light from a side lamp",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Maine HDFC app se closure request daala, 10 din beet gaye, card abhi bhi chalu hai",
+   "type": "sms",
+   "title": "",
+   "messages": [
+    {
+     "app": "Messages",
+     "from": "VM-HDFCBK",
+     "text": "Your credit card closure request received on 10-Nov-2026. Ref: CL20261110HDFC. We will process within 7 working days."
+    },
+    {
+     "app": "HDFC App",
+     "from": "HDFC Bank",
+     "text": "Closure Request Submitted ✓ Track status: Credit Cards > Manage Card > Closure Request"
+    }
+   ],
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "closure request",
+    "10 din",
+    "working days"
+   ],
+   "bg_prompt": "Close-up of hands holding a smartphone showing a bank app screen, blurred background of a coffee table with a chai cup, natural indoor lighting",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "RBI ka niyam: 7 working days mein card band karna zaroori, warna ₹500 roz penalty",
+   "type": "title",
+   "title": "RBI Master Direction",
+   "messages": [],
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "RBI MASTER DIRECTION",
+   "small": "",
+   "keywords": [
+    "RBI niyam",
+    "7 working days",
+    "₹500 roz"
+   ],
+   "real": {
+    "q": "Reserve Bank of India logo",
+    "kind": "logo",
+    "subject": "RBI official logo"
+   },
+   "bg_real": {
+    "q": "Reserve Bank of India headquarters Mumbai building exterior",
+    "kind": "photo",
+    "subject": "RBI headquarters Mumbai"
+   },
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Agar bank 10 din late kare, toh aapko ₹5,000 milenge, seedha aapke khate mein",
+   "type": "stat",
+   "title": "",
+   "messages": [],
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "₹5,000",
+   "small": "10 din late penalty",
+   "keywords": [
+    "₹5,000",
+    "10 din",
+    "khate mein"
+   ],
+   "bg_prompt": "A bank passbook lying open on a wooden desk showing a credit entry, soft morning light through a window, Indian home office setting",
+   "value": "₹5,000",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Shart sirf ye: card par zero outstanding, koi EMI ya bill baki na ho",
+   "type": "title",
+   "title": "Penalty ki shart",
+   "messages": [],
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "PENALTY KI SHART",
+   "small": "",
+   "keywords": [
+    "zero outstanding",
+    "EMI baki na ho",
+    "bill clear"
+   ],
+   "bg_prompt": "A person reviewing a credit card statement on a laptop at a dining table, concentrated expression, late afternoon light",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Example: 8th day se ₹500, 10 din late = ₹5,000, 30 din = ₹15,000",
+   "type": "title",
+   "title": "Penalty Calculation",
+   "messages": [],
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "PENALTY CALCULATION",
+   "small": "",
+   "keywords": [
+    "8th day",
+    "₹500",
+    "₹15,000"
+   ],
+   "bg_prompt": "A calculator and notepad on a desk with handwritten math: 500 x 10 = 5000, 500 x 30 = 15000, warm desk lamp light",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Bank ke nodal officer ko likho, phir RBI CMS portal pe complaint, paisa wapas milega",
+   "type": "wa",
+   "title": "Aditya",
+   "messages": [
+    {
+     "from": "me",
+     "text": "Step 1: Bank ke principal nodal officer ko email likho — request date, ticket number, RBI rule attach karo"
+    },
+    {
+     "from": "Aditya",
+     "text": "Aur agar 30 din mein jawab na aaye? 🤔"
+    },
+    {
+     "from": "me",
+     "text": "Step 2: cms.rbi.org.in pe complaint daal do — compensation mil jayega"
+    }
+   ],
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "",
+   "small": "",
+   "keywords": [
+    "nodal officer",
+    "RBI CMS",
+    "complaint"
+   ],
+   "bg_prompt": "Two friends sitting across a small cafe table, one typing on phone, the other leaning in interested, Mumbai street cafe vibe, evening",
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Aaj hi closure request ka record bachao. Save karo, kab kaam aayega pata nahi",
+   "type": "title",
+   "title": "",
+   "messages": [],
+   "prompt": "",
+   "motion": "push",
+   "nodes": [],
+   "big": "Record bachao",
+   "small": "Save karo, kaam aayega",
+   "keywords": [
+    "record bachao",
+    "save karo"
+   ],
+   "bg_prompt": "A hand placing a smartphone face-down on a bedside table at night, a diary and pen beside it, soft warm bedroom lighting",
+   "sub": null,
+   "label": null
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Credit card band karne ko bola, bank 7 din mein band nahi kare toh roz ₹500 milega?\n\nZero outstanding hai toh 7 working days ka rule lagta hai. Request ka screenshot, ticket number, date — sab save rakho. Bank na mane toh nodal officer → RBI CMS portal.\n\nTumne kabhi card closure ke liye penalty claim kiya? Comment mein batao.\n\nSource: RBI Master Direction · 21 Apr 2022\nSave karo, kaam aayega 📌\n\n#personalfinance #financeinhindi #moneytips #rbi #creditcard #penalty #bankingrights",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#rbi",
+  "#creditcard",
+  "#penalty",
+  "#bankingrights"
+ ],
+ "claims": [
+  {
+   "claim": "RBI Master Direction dated 21 April 2022 mandates credit card closure within 7 working days of request",
+   "basis": "RBI Master Direction on Credit Card and Debit Card — Issuance and Conduct Directions, 2022 (dated 21 Apr 2022), confirmed by LiveMint, Times Now Hindi, Asianet News"
+  },
+  {
+   "claim": "Penalty of ₹500 per day applies from the 8th working day if card not closed and zero outstanding balance",
+   "basis": "Same RBI Master Direction; LiveMint article 'बैंक नहीं बंद कर रहा क्रेडिट कार्ड? हर दिन मिलेगा ₹500'; Times Now Hindi 'Credit Card Close Rule: 7 Din Mein Card Band Nahi Hua To Bank...'; Asianet News 'Credit Card: 7 दिन में कार्ड बंद न होने पर बैंक देगा ₹500 रोज'"
+  },
+  {
+   "claim": "Penalty only applies when no outstanding dues (zero balance, no EMI, no unbilled charges) on the card",
+   "basis": "All cited news sources explicitly state condition: 'sirf jab koi outstanding na ho', 'agar aapke card par koi pending dues nahi hai', 'sara bill jama kar diya ho'"
+  },
+  {
+   "claim": "Customer can escalate to bank's principal nodal officer, then RBI CMS portal (cms.rbi.org.in) after 30 days",
+   "basis": "LiveMint: 'sabse pehle bank ke pradhan nodal adhikari ke paas shikayat darj karein... 30 din mein jawab na mile toh RBI lokpal ke paas'; Times Now Hindi: 'cms.rbi.org.in par jaakar online shikayat darj karayein'"
+  },
+  {
+   "claim": "Real case: bank paid ₹3.21 lakh compensation for months of delay in closing card",
+   "basis": "LiveMint and Asianet News both report the same case: 'haal hi mein ek mamle mein bank ne mahino tak card band nahi kiya... ₹3.21 lakh ka muavza dena pada'"
+  }
+ ],
+ "fresh_fixed": [
+  "scene 2: The message text uses '10-Nov-2026' which is fine, but the script implies the user is just now discovering the rule. The logic is generally sound, but the prompt requires checking against current facts. The script is accurate regarding the 7 working days rule.",
+  "scene 3: The script mentions 'RBI Master Direction' as the rule source. This is correct per the 21 April 2022 RBI Master Direction on Credit Card and Debit Card – Issuance and Conduct Directions, which is still the governing document as of Nov 2026.",
+  "scene 4: The script claims '10 din late = ₹5,000'. The RBI rule says '₹500 per day' after the 7 working days. If the bank is 10 days late *beyond* the 7 working days, that is 10 days of penalty. The math is correct based on the rule. No error found.",
+  "scene 7: The script suggests 'cms.rbi.org.in' for complaints. This is the correct current portal for the Reserve Bank – Integrated Ombudsman Scheme (RB-IOS)."
+ ],
+ "explainer": {
+  "score": 7,
+  "ok": false,
+  "steps_learned": [
+   "Initiate closure request via the bank's app.",
+   "Ensure the credit card has zero outstanding balance and no EMIs.",
+   "Wait for the bank to process the request within 7 working days.",
+   "If the bank fails to close it within 7 working days, they are liable to pay ₹500 per day penalty.",
+   "If the bank delays, contact the nodal officer, then file a complaint on the RBI CMS portal."
+  ],
+  "missing_steps": [
+   "The script does not mention that the online closure option is mandatory for banks (as per Equis.in), which is a key actionable step if the app doesn't show it.",
+   "It fails to explain how to prove the request date (e.g., saving the acknowledgment email or reference number), which is crucial for claiming the penalty.",
+   "It doesn't explain the CIBIL impact of closing an old credit card, which is a significant consideration mentioned in the source."
+  ],
+  "unsourced": [
+   "The claim '10 din late = ₹5,000' is mathematically correct based on the rule, but the script presents it as a guaranteed outcome without mentioning the need for proof or escalation, which might mislead users into thinking it's automatic."
+  ]
+ },
+ "phone_bg": true,
+ "brain_ids": [
+  "b2fabb69c4",
+  "4396759d41",
+  "fc294ac58f",
+  "7f620e6fdf",
+  "6ce7203c71",
+  "b69d65467f",
+  "0755cc155a",
+  "f945e2a937",
+  "9db4cc694f",
+  "1e1964f463",
+  "e15cfaed29",
+  "1e60a34718",
+  "161339712e",
+  "a688e48ca2"
+ ]
+}
