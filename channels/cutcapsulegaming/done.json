@@ -484,12 +484,24 @@
   "job": "1120-2159a-c1",
   "topic": "PETER CROUCH'S LANKY FRAME IN ACTION",
   "title": "PETER CROUCH'S LANKY FRAME IN ACTION",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=63BIm4JRL7c",
    "start": 57.75,
    "layout": "crop"
+  },
+  "sched": {
+   "slot": 1795302000,
+   "at": "2026-11-22 04:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsulegaming/1120-2159a-c1/post.mp4",
+   "prepared": "2026-11-21 05:39",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2159a-c1-1795219762.mp4",
+   "ig_container": "17905449717397877",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsulegaming-1120-2159a-c1-1795219762.mp4"
   }
  },
  {

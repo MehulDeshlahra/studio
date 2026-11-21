@@ -559,3 +559,6 @@
 
 ## review 1119-0935
 - picture check: scene 3: Does the idol or Tirthankara have blue, green or grey skin? (yes 66%)
+
+## review 1119-0935
+- picture check: scene 3: Does the idol or Tirthankara have blue, green or grey skin? (yes 66%)

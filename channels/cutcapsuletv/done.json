@@ -357,7 +357,7 @@
   "job": "1120-1440a-c1",
   "topic": "MOM QUESTIONS LITTLE LIES",
   "title": "MOM QUESTIONS LITTLE LIES",
-  "status": "approved",
+  "status": "scheduled",
   "review": [
    "A heavily blurred enlarged copy of the frame behind the video creates a split stacked layout where the top half shows cropped sections of the speaker's head/face, causing a broken layout.",
    "The split top/bottom layout results in the speaker being awkwardly cropped in the upper frames."
@@ -371,7 +371,19 @@
   "minor": [
    "A heavily blurred enlarged copy of the frame behind the video creates a split stacked layout where the top half shows cropped sections of the speaker's head/face, causing a broken layout.",
    "The split top/bottom layout results in the speaker being awkwardly cropped in the upper frames."
-  ]
+  ],
+  "sched": {
+   "slot": 1795302000,
+   "at": "2026-11-22 04:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsuletv/1120-1440a-c1/post.mp4",
+   "prepared": "2026-11-21 05:39",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-1440a-c1-1795219781.mp4",
+   "ig_container": "18196665673406979",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-1440a-c1-1795219781.mp4"
+  }
  },
  {
   "job": "1120-1440b-c1",
