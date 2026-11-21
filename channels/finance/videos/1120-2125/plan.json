@@ -1,0 +1,294 @@
+{
+ "slug": "purana-sona-bechna-loss",
+ "title": "Purana sona bechne par poora paisa kyun nahi milta?",
+ "hooks": [
+  "Purana sona bechne ja rahe ho? Ye 3 galtiyan paisa kha jaati hain",
+  "Sona becha ₹50,000 ka, haath aaye ₹38,000? Jaano kyun",
+  "Gold exchange kiya naya kharidne ke liye? GST ka chakkar samjho"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Mistake warning pattern works best for gold topics (Indian Dollar 173k views with 'PURANE SONE...'), immediately relatable to anyone with old jewelry",
+ "metaphor": "Receipt breaking down every deduction from gold weight to final cash — like a restaurant bill but each line shows what the jeweller keeps",
+ "mechanism": [
+  "Purity test (XRF/BIS hallmark) decides karat percentage",
+  "Net weight = gross weight minus stones/solder (1-3% deduction)",
+  "Making charges paid while buying are NOT returned",
+  "GST only applies on new purchase/exchange difference, not on sale",
+  "Final payout = net gold weight × today's rate × purity %"
+ ],
+ "cast": {
+  "Mehul": "Young Indian male, 26, casual kurta, holding phone at a jeweller's counter, warm studio lighting",
+  "Raghav": "Friend, 27, polo shirt, sitting across tea table, phone in hand"
+ },
+ "scenes": [
+  {
+   "vo": "Purana sona bechne ja rahe ho? Ye 3 galtiyan paisa kha jaati hain",
+   "type": "wa",
+   "title": "Raghav",
+   "messages": [
+    {
+     "from": "Raghav",
+     "text": "Bhai naani ke kangan bechne hain, sahi rate kaise milega?"
+    },
+    {
+     "from": "me",
+     "text": "Ruko, pehle ye 3 cheezein check karo warna loss pakka"
+    }
+   ],
+   "motion": "push",
+   "keywords": [
+    "purana sona",
+    "3 galtiyan"
+   ],
+   "bg_prompt": "Two friends at a small tea stall in Delhi, steam rising from kulhads, morning light through metal shutters",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Pehli galti: Bina hallmark ke sona le jaana — purity guess hoti hai, rate kam milta hai",
+   "type": "rule",
+   "title": "BIS Hallmarking Rules",
+   "sub": "Mandatory since 16 Jun 2021",
+   "lines": [
+    "Hallmark = BIS logo + purity grade + jeweller code",
+    "Bina hallmark ke jeweller apni marzi se purity decide karta hai"
+   ],
+   "stamp": "ASLI NIYAM",
+   "motion": "punch",
+   "keywords": [
+    "hallmark",
+    "BIS",
+    "purity"
+   ],
+   "real": {
+    "q": "BIS hallmark gold jewelry logo",
+    "kind": "logo",
+    "subject": "BIS hallmark symbol with purity grade"
+   },
+   "bg_prompt": "Close-up of a gold bangle on velvet tray, hallmark stamp visible under magnifying glass, jeweller's tools blurred",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Doosri galti: Making charges ka paisa maangna — wo kabhi wapas nahi milta",
+   "type": "bill",
+   "title": "Bill Breakdown",
+   "sub": "10g 22K gold bangle sale",
+   "rows": [
+    {
+     "label": "Gross weight",
+     "value": "10.00 g"
+    },
+    {
+     "label": "Stone/solder deduction (2%)",
+     "value": "-0.20 g"
+    },
+    {
+     "label": "Net gold weight",
+     "value": "9.80 g"
+    },
+    {
+     "label": "Rate @ ₹6,200/g (22K)",
+     "value": "₹60,760"
+    },
+    {
+     "label": "Making charges paid earlier",
+     "value": "₹0 (not refunded)"
+    }
+   ],
+   "total": {
+    "label": "Final payout",
+    "value": "₹60,760"
+   },
+   "tone": "bad",
+   "motion": "pan",
+   "keywords": [
+    "making charges",
+    "not refunded"
+   ],
+   "bg_prompt": "Jeweller's weighing scale with gold bangles, calculator showing numbers, receipt printing in background",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Teesri galti: Exchange ke chakkar mein GST ka hisaab samajhna bhool jana",
+   "type": "compare",
+   "items": [
+    {
+     "label": "Sell for cash",
+     "value": "No GST, full gold value",
+     "pct": 100
+    },
+    {
+     "label": "Exchange for new",
+     "value": "3% GST on difference amount",
+     "pct": 97
+    }
+   ],
+   "motion": "tilt",
+   "keywords": [
+    "exchange",
+    "GST",
+    "3%"
+   ],
+   "bg_prompt": "Jewellery showroom counter, new gold sets in glass cases, customer pointing at designs, salesperson showing calculator",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Sahi process: XRF machine se purity test karo, 2-3 jagah rate compare karo",
+   "type": "list",
+   "title": "Sahi Tarika",
+   "lines": [
+    "XRF non-destructive test mangao (free hona chahiye)",
+    "Aaj ka MCX gold rate check karo",
+    "2-3 jewellers se quote lo, likhwa ke",
+    "Stone weight alag likhwao, solder deduction pucho"
+   ],
+   "motion": "push",
+   "keywords": [
+    "XRF test",
+    "MCX rate",
+    "compare quotes"
+   ],
+   "bg_prompt": "Hand holding phone showing MCX gold rate app, jeweller's XRF machine glowing blue, multiple visiting cards on table",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null
+  },
+  {
+   "vo": "Ek example: 20g 22K chain — making charges ₹8,000 gaye, solder ₹1,200 kaat liye",
+   "type": "stat",
+   "value": "₹9,200",
+   "sub": "Total loss on ₹1.24L gold",
+   "motion": "punch",
+   "keywords": [
+    "₹9,200 loss",
+    "making charges",
+    "solder"
+   ],
+   "bg_prompt": "Calculator screen showing subtraction: 1,24,000 minus 9,200 equals 1,14,800, Indian currency notes beside it",
+   "title": "",
+   "big": null,
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Action: Pehle hallmark check karo, phir XRF test, phir 3 quotes — tabhi becho",
+   "type": "title",
+   "big": "3 Steps Before Selling",
+   "sub": "Hallmark → XRF → 3 Quotes",
+   "motion": "pull",
+   "keywords": [
+    "hallmark",
+    "XRF",
+    "3 quotes"
+   ],
+   "bg_prompt": "Checklist on paper being ticked: hallmark symbol, XRF machine icon, three jeweller visiting cards",
+   "title": "",
+   "small": null,
+   "label": null
+  },
+  {
+   "vo": "Save karo, kaam aayega — tumne kab purana sona becha? Comment mein batao",
+   "type": "title",
+   "big": "Save Karo 📌",
+   "sub": "Kab becha purana sona?",
+   "motion": "tilt",
+   "keywords": [
+    "save karo",
+    "comment"
+   ],
+   "bg_prompt": "Phone screen showing Instagram save icon animation, thumb hovering over it, warm ambient light",
+   "title": "",
+   "small": null,
+   "label": null
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Purana sona bechne ja rahe ho? Ye 3 galtiyan paisa kha jaati hain\n\n1️⃣ Bina hallmark ke mat becho — purity guess hoti hai\n2️⃣ Making charges kabhi wapas nahi milte\n3️⃣ Exchange mein GST difference pe lagta hai\n\nSource: BIS Hallmarking Regulations 2021, GST Council notifications\n\nSave karo, kaam aayega 📌\n\nTumne kab purana sona becha? Comment mein batao\n\n#personalfinance #financeinhindi #moneytips #gold #hallmark #bis #gst #jewellery",
+ "hashtags": [
+  "#personalfinance",
+  "#financeinhindi",
+  "#moneytips",
+  "#gold",
+  "#hallmark",
+  "#bis",
+  "#gst",
+  "#jewellery"
+ ],
+ "claims": [
+  {
+   "claim": "BIS hallmarking mandatory for gold jewellery since 16 June 2021",
+   "basis": "BIS Hallmarking Regulations, Ministry of Consumer Affairs notification dated 16 Jun 2021"
+  },
+  {
+   "claim": "Making charges paid at purchase are not refunded when selling old gold",
+   "basis": "Gold Mart Jewellers guide 'Purana Sona Bechna Pune — GST, Purity aur Sahi Price Guide' and Anjaneya Gold Point blog"
+  },
+  {
+   "claim": "GST at 3% applies only on new jewellery purchase or exchange difference, not on outright sale of old gold",
+   "basis": "GST Council notifications; Gold Mart Jewellers guide confirms 'Jab aap purana sona bechte hain, GST aap pe nahi lagta'"
+  },
+  {
+   "claim": "Typical solder/impurity deduction is 1-3% of gross weight",
+   "basis": "Gold Mart Jewellers guide: 'Impurity / Solder Deduction... Typically 1–3% deducted'"
+  },
+  {
+   "claim": "Stone weight is separated and valued separately",
+   "basis": "Gold Mart Jewellers guide: 'Stone Weight... unka weight alag kiya jaata hai — stones ki alag valuation hoti hai'"
+  },
+  {
+   "claim": "Final payout = Net gold weight × Today's gold rate × Purity %",
+   "basis": "Gold Mart Jewellers guide formula: 'Final value = Net gold weight × Today's gold rate × Purity %'"
+  }
+ ],
+ "explainer": {
+  "score": 6,
+  "ok": false,
+  "steps_learned": [
+   "Check for BIS hallmark before selling to avoid purity guesswork",
+   "Get purity tested via XRF machine (non-destructive) at the buyer's shop",
+   "Compare buy-back rates at 2–3 different jewellers",
+   "Understand making charges and solder/wastage deductions are never refunded",
+   "Distinguish between outright sale (no GST on seller) and exchange (3% GST on difference amount)"
+  ],
+  "missing_steps": [
+   "How XRF machine works and why it's more reliable than touchstone/acid test",
+   "Exact GST calculation: 3% on (new jewellery value – old gold credit) during exchange",
+   "BIS hallmark components (BIS logo, purity grade, jeweller's mark, year) and how to verify via BIS Care app",
+   "Conversion of karat to fineness: 22K = 91.6%, 18K = 75%, 24K = 99.9%",
+   "Formula: settlement weight = gross weight × (purity%/100) minus stones/non-gold parts",
+   "Making charges typically 8–14% of gold value; solder/wastage 1–2% extra"
+  ],
+  "unsourced": [
+   "Example numbers: 20 g 22K chain, making charges ₹8,000, solder ₹1,200",
+   "Specific mention of 'XRF machine' (source says 'purity test' generically)"
+  ]
+ },
+ "phone_bg": true,
+ "brain_ids": [
+  "4396759d41",
+  "1e1964f463",
+  "fc294ac58f",
+  "b2fabb69c4",
+  "f945e2a937",
+  "6ce7203c71",
+  "e15cfaed29",
+  "b69d65467f",
+  "161339712e",
+  "7f620e6fdf",
+  "0755cc155a",
+  "9db4cc694f",
+  "a688e48ca2",
+  "1e60a34718"
+ ]
+}

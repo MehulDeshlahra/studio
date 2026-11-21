@@ -302,3 +302,6 @@
 
 ## Credit card band karne ko bola, bank 7 working days mein ban (numbers check)
 - NUMBERS: scene 7: 'If no response from nodal officer in 30 days, file complaint on RBI CMS portal.' is not in the sources: remove it or say only what the sources say
+
+## Purana sona bechne par poora paisa kyun nahi milta (numbers check)
+- NUMBERS: scene 5: 'XRF non-destructive purity test should be free' is not in the sources: remove it or say only what the sources say

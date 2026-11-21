@@ -1,5 +1,8 @@
 {
  "channel": "finance",
  "job": "1120-2125",
- "topic": "Purana sona bechne par poora paisa kyun nahi milta"
+ "topic": "Purana sona bechne par poora paisa kyun nahi milta",
+ "stage": "prepped",
+ "lang": "hi",
+ "prepped_at": "2026-11-21 07:07"
 }
