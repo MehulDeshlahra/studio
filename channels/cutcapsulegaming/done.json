@@ -519,12 +519,21 @@
   "job": "1120-2159b-c1",
   "topic": "ERLING HAALAND'S CLOTH PHYSICS REVEALED",
   "title": "ERLING HAALAND'S CLOTH PHYSICS REVEALED",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://www.youtube.com/watch?v=63BIm4JRL7c",
    "start": 90.29,
    "layout": "crop"
+  },
+  "sched": {
+   "slot": 1795309200,
+   "at": "2026-11-22 06:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsulegaming/1120-2159b-c1/post.mp4",
+   "prepared": "2026-11-21 07:39"
   }
  },
  {
