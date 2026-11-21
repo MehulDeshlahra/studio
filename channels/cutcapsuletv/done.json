@@ -255,16 +255,21 @@
    "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-0124a-c4-1795195083.mp4"
   },
   "posted": {
-   "at": "2026-11-21 04:30",
-   "ig": "18125206141941814"
+   "at": "2026-11-21 10:12",
+   "ig": "18119149502328981",
+   "reposted_from": "18125206141941814"
   },
   "submit": {
    "campaign": "https://contentrewards.com/c/campaigns/cc01471a-0dd5-471d-95b7-90955b037974",
    "links": [
-    "https://www.instagram.com/reel/Df-LQXdiJNE/"
+    "https://www.instagram.com/reel/Df_ZXDbCQxJ/"
    ],
-   "at": "2026-11-21 04:30",
-   "missed": "2026-11-21 08:49"
+   "at": "2026-11-21 10:12",
+   "ok_links": [
+    "https://www.instagram.com/reel/Df_ZXDbCQxJ/"
+   ],
+   "tries": 1,
+   "submitted": "2026-11-21 10:12"
   },
   "stats": {
    "views": 0,
