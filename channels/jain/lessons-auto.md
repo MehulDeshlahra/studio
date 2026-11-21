@@ -562,3 +562,17 @@
 
 ## review 1119-0935
 - picture check: scene 3: Does the idol or Tirthankara have blue, green or grey skin? (yes 66%)
+
+## 1120-1510 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s10b
+- LANG: English caption 'THE' used instead of Hinglish
+- FIT: split/collage picture used when one scene was meant
+
+## 1120-1510 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s10b
+- FIT: Caption says 'THE' abruptly due to word splitting in half
+
+## 1120-1510 (pre-render check)
+- OVERLAP/CUT (layout audit): text_occluded on #s10b
+- FIT: Voice says 'Shrenik Mahavir ke param bhakt the, din raat seva', but the caption says 'SHRENIK MAHAVIR THE' which is incomplete and grammatically broken.
+- FIT: Voice says 'Maran ke baad wo narak ke andhere pahunche', but the caption says 'WO NARAK KE' while showing a lotus instead of darkness or the descent into hell.
