@@ -2,8 +2,10 @@
  "channel": "tech",
  "job": "1121-0455",
  "topic": "GTA 6 Software Warning",
- "stage": "prepped",
+ "stage": "cancelled",
  "lang": "hi",
  "prepped_at": "2026-11-21 05:09",
- "voice_gate": 1
+ "voice_gate": 1,
+ "cancelled_at": "2026-11-21 17:14",
+ "cancelled_why": "owner stopped it"
 }

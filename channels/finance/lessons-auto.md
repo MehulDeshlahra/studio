@@ -305,3 +305,6 @@
 
 ## Purana sona bechne par poora paisa kyun nahi milta (numbers check)
 - NUMBERS: scene 5: 'XRF non-destructive purity test should be free' is not in the sources: remove it or say only what the sources say
+
+## review 1121-0605
+- visual: Scene 4 uses the exact same workspace image and layout as Scene 5, repeating the identical background visuals consecutively.

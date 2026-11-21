@@ -1,0 +1,26 @@
+{
+ "topic": "Credit card band karne ko bola, bank 7 working days mein band nahi kare toh ₹500 roz (RBI rule, sirf jab koi outstanding na ho)",
+ "title": "Credit card band karne ko bola, bank 7 din mein band nahi kare toh roz ₹500 milega?",
+ "format": {
+  "ok": true,
+  "video": "h264,1080,1920,30/1",
+  "audio": "aac",
+  "lufs": -13.6,
+  "true_peak": -3.2,
+  "dur": 45.0
+ },
+ "vision": {
+  "ok": null,
+  "score": null,
+  "problems": [],
+  "note": "judged by review.py"
+ },
+ "voice": {
+  "ok": true,
+  "method": "whisper",
+  "matched": 0.88,
+  "words": 117,
+  "problems": []
+ },
+ "ok": true
+}
