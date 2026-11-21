@@ -280,7 +280,10 @@ def page(plan, timed, total, theme, assets):
         follow = "FOLLOW" if theme.get("lang") == "en" else "FOLLOW KARO"
         line = esc((plan.get("end_line") or theme.get("end_line") or "").upper())
         brand.append(f'<div id="endc" class="clip endc" data-start="{e0:.3f}" data-duration="{endcard:.3f}" data-track-index="8">'
-                     f'<div id="endf" class="endf">{follow}</div><div id="endh" class="endh">{esc(handle)}</div>'
+                     # 21 Nov (ChocoMania sample): "@chocomaniaindia" at the fixed 104 px ran edge to edge. Montserrat 900
+                     # is ~0.68 em per character: size so the handle fills at most 90% of the width
+                     f'<div id="endf" class="endf">{follow}</div><div id="endh" class="endh" '
+                     f'style="font-size:{min(104, int(W * 0.9 / (0.68 * max(1, len(handle)))))}px">{esc(handle)}</div>'
                      + (f'<div id="endl" class="endl">{line}</div>' if line else "") + '</div>')
         js.append(f'tl.fromTo("#endc",{{opacity:0}},{{opacity:1,duration:0.2,immediateRender:false}},{e0:.3f});')
         js.append(f'tl.fromTo("#endh",{{scale:0.5}},{{scale:1,duration:0.35,ease:"back.out(2.2)",immediateRender:false}},{e0 + 0.05:.3f});')
