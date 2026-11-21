@@ -367,5 +367,14 @@
   "first": "2026-11-21 04:28",
   "last": "2026-11-21 04:28",
   "example": "picture check: scene 3: Does the idol or Tirthankara have blue, green or grey skin? (yes 66%)"
+ },
+ {
+  "sig": "before render, scene #: fit: voice says '…', but the caption says '…' which is incomplete and grammatically br",
+  "fix": "simplify",
+  "detail": "",
+  "n": 1,
+  "first": "2026-11-21 18:52",
+  "last": "2026-11-21 18:52",
+  "example": "before render, scene 3: FIT: Voice says 'Shrenik Mahavir ke param bhakt the, din raat seva', but the caption says 'SHRENIK MAHAVIR THE' which is incomplete and grammatically broken."
  }
 ]

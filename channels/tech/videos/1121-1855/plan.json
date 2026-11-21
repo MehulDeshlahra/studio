@@ -1,0 +1,279 @@
+{
+ "slug": "anc-khamoshi",
+ "title": "Noise cancellation khamoshi kaise banata hai?",
+ "hooks": [
+  "Noise cancellation khamoshi kaise banata hai?",
+  "Do waves takrate hain... aur shor gayab!",
+  "Headphone ke andar yeh chip shor maarta hai"
+ ],
+ "hook_choice": 0,
+ "hook_why": "Direct curiosity question with the core visual metaphor (waves cancelling) visible at frame 0; matches top-performing tech Shorts that open with the subject noun + mechanism demo.",
+ "metaphor": "Two identical sound waves meeting 180° out of phase and flattening into a flat line — destructive interference.",
+ "mechanism": [
+  "Microphones on headphone listen to outside noise",
+  "Processor analyses the wave shape in real time",
+  "Chip generates an inverted copy (180° phase shift)",
+  "Speaker plays inverted wave with your audio",
+  "Outside wave + inverted wave = destructive interference",
+  "Result: low-frequency drone cancels, sudden peaks remain"
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Noise cancellation khamoshi kaise banata hai? Aaj dekho.",
+   "type": "clip",
+   "prompt": "Two sine waves in 3D, one blue one orange, approaching each other on pure black background. They collide at centre and instantly flatten into a single straight line. Cinematic lighting, premium studio render.",
+   "motion": "punch",
+   "title": "",
+   "keywords": [
+    "Noise cancellation",
+    "khamoshi"
+   ],
+   "bg_prompt": "Two 3D sine waves colliding and flattening on pure black, premium product render",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Headphone ke bahar mic sunta hai har awaaz, chahe traffic ho ya AC.",
+   "type": "object",
+   "prompt": "Premium over-ear headphone on pure black, left earcup cutaway showing three tiny MEMS microphones flush with the outer grill. Studio lighting, chrome accents.",
+   "motion": "push",
+   "title": "MIC ARRAY",
+   "label": "OUTSIDE MICS",
+   "keywords": [
+    "mic",
+    "sunta hai"
+   ],
+   "bg_prompt": "Close-up of headphone earcup showing external microphones on pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Chip us wave ka shape real-time padhta hai, har millisecond naya data leta hai.",
+   "type": "flow",
+   "nodes": [
+    "MIC IN",
+    "DSP ANALYSIS",
+    "WAVE SHAPE"
+   ],
+   "label": "SIGNAL PATH",
+   "motion": "pan",
+   "title": "REAL-TIME ANALYSIS",
+   "keywords": [
+    "chip",
+    "wave shape"
+   ],
+   "bg_prompt": "Tiny ANC processor die on circuit board, pure black studio shot with subtle trace lines",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint",
+   "prompt": ""
+  },
+  {
+   "vo": "Phir 180 degree ulta wave bana ke bhejta hai, speaker se nikalta hai.",
+   "type": "object",
+   "prompt": "Same ANC chip, now glowing faint cyan. A holographic wave form above it flips vertically (phase invert) in smooth motion. Pure black background.",
+   "motion": "tilt",
+   "title": "PHASE INVERT",
+   "label": "180° SHIFT",
+   "keywords": [
+    "ulta wave",
+    "180 degree"
+   ],
+   "bg_prompt": "ANC processor chip with holographic inverted wave form on pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "blueprint"
+  },
+  {
+   "vo": "Do waves milte hain, ek dusre ko kaat dete hain, shor flat ho jata hai.",
+   "type": "clip",
+   "prompt": "Split screen: left, original noise wave (orange) enters ear; right, inverted wave (blue) from speaker meets it. At collision point they flatten to a straight line. Slow-mo, premium render on pure black.",
+   "motion": "punch",
+   "title": "DESTRUCTIVE INTERFERENCE",
+   "keywords": [
+    "do waves",
+    "kaat dete hain"
+   ],
+   "bg_prompt": "Two waves colliding and cancelling inside ear canal visualization on pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "label": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Nateeja: engine, AC, traffic ka drone gayab, 20 se 30 dB tak kam hota hai.",
+   "type": "stat",
+   "value": "20-30 dB",
+   "sub": "low-frequency attenuation",
+   "label": "ANC RANGE",
+   "motion": "pull",
+   "title": "LOW FREQ GONE",
+   "keywords": [
+    "engine",
+    "AC",
+    "traffic"
+   ],
+   "bg_prompt": "Headphone on pure black with subtle frequency response curve overlay showing deep notch at 100-500 Hz",
+   "big": null,
+   "small": null,
+   "skin": "hologram",
+   "prompt": ""
+  },
+  {
+   "vo": "Par achanak chillana ya bhonkna nahi rukta, high frequency peaks bachte hain.",
+   "type": "compare",
+   "items": [
+    {
+     "label": "CONTINUOUS LOW FREQ",
+     "value": "CANCELLED",
+     "pct": 90
+    },
+    {
+     "label": "SUDDEN HIGH PEAKS",
+     "value": "PASSES THROUGH",
+     "pct": 70
+    }
+   ],
+   "label": "ANC LIMITS",
+   "motion": "pan",
+   "title": "SUDDEN SOUNDS LEAK",
+   "keywords": [
+    "achanak",
+    "bhonkna"
+   ],
+   "bg_prompt": "Sound wave comparison: smooth sine vs sharp transient on pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram",
+   "prompt": ""
+  },
+  {
+   "vo": "Ear cup ka foam bhi kaam aata hai, passive noise cancellation se bahar ka shor rokta hai.",
+   "type": "object",
+   "prompt": "Headphone earcup cross-section on pure black: memory foam ring, protein leather, sealed cavity. No electronics visible. Premium material close-up.",
+   "motion": "push",
+   "title": "PNC BARRIER",
+   "label": "PASSIVE BLOCK",
+   "keywords": [
+    "foam",
+    "passive"
+   ],
+   "bg_prompt": "Headphone earcup material cross-section on pure black",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "ANC aur PNC milke banti hai asli khamoshi, dono ka combo hi kaam aata hai.",
+   "type": "title",
+   "big": "KHAMOSHI",
+   "sub": "Active + Passive = Real Silence",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "ANC",
+    "PNC",
+    "khamoshi"
+   ],
+   "bg_prompt": "Headphone floating on pure black, subtle glow around it suggesting silent aura",
+   "small": null,
+   "label": null,
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Aapke headphone ka ANC kaunsi frequency best kaam karta hai? Comment mein batao, hum padhenge.",
+   "type": "title",
+   "big": "COMMENT KARO",
+   "sub": "Which frequency cancels best for you?",
+   "motion": "pull",
+   "title": "",
+   "keywords": [
+    "comment",
+    "frequency"
+   ],
+   "bg_prompt": "Kaise Tech end card on pure black: logo + handle @kaise.tech",
+   "small": null,
+   "label": null,
+   "skin": "keynote",
+   "prompt": ""
+  }
+ ],
+ "music_mood": "calm",
+ "caption": "Noise cancellation do waves ko takra ke khamoshi banata hai 🎧\n\nDestructive interference asli hero hai.\n\nAapke headphone ka ANC kaunsi frequency best kaam karta hai?",
+ "hashtags": [
+  "#KaiseTech",
+  "#NoiseCancellation",
+  "#ANC",
+  "#TechHindi",
+  "#Shorts"
+ ],
+ "claims": [
+  {
+   "claim": "ANC uses external microphones to detect ambient noise",
+   "basis": "ABP Live article: 'हेडफोन में छोटे-छोटे माइक्रोफोन लगे होते हैं, जो आसपास की आवाज को सुनते हैं'"
+  },
+  {
+   "claim": "Processor creates inverted wave (180° phase shift) for destructive interference",
+   "basis": "ABP Live: 'प्रोसेसर उसकी पहचान करता है और करीब 180 डिग्री इनवर्टेड साउंड वेव तैयार करता है'; Wikipedia: 'emits a sound wave with the same amplitude but with an inverted phase (also known as antiphase)'"
+  },
+  {
+   "claim": "ANC most effective on continuous low-frequency sounds (engine, AC, traffic)",
+   "basis": "ABP Live: 'यह खास तौर पर लगातार और लो-फ्रीक्वेंसी आवाजों पर ज्यादा प्रभावी होता है. जैसे हवाई जहाज के इंजन की आवाज, ट्रैफिक का लगातार शोर, एयर कंडीशनर या मशीनों की आवाज'"
+  },
+  {
+   "claim": "Sudden high-frequency sounds (shouting, dog bark) are harder to cancel",
+   "basis": "ABP Live: 'वहीं अचानक होने वाली तेज आवाज, जैसे किसी के चिल्लाने या कुत्ते के भौंकने की आवाज को रोकना ANC के लिए ज्यादा मुश्किल होता है'"
+  },
+  {
+   "claim": "Passive noise cancellation uses physical design/materials to block sound",
+   "basis": "ABP Live: 'Passive Noise Cancellation यानी PNC भी काम करती है. इसमें किसी इलेक्ट्रॉनिक साउंड वेव की जरूरत नहीं होती है. हेडफोन का डिजाइन, ईयर कप और उसमें इस्तेमाल होने वाला मटेरियल बाहरी आवाज को कानों तक पहुंचने से रोकने में मदद करता है'"
+  }
+ ],
+ "explainer": {
+  "score": 8,
+  "ok": false,
+  "steps_learned": [
+   "Microphones outside the headphones listen to ambient sounds like traffic or AC.",
+   "A chip/processor analyzes the sound wave shape in real-time.",
+   "The speaker produces a 180-degree inverted sound wave.",
+   "The original noise wave and the inverted wave meet and cancel each other out (Destructive Interference).",
+   "Ear cup foam (Passive Noise Cancellation) acts as a physical barrier for sounds the chip can't process."
+  ],
+  "missing_steps": [
+   "The specific names of the scientific phenomena: 'Phase Cancellation' or 'Destructive Interference'.",
+   "The explanation that ANC is specifically effective on 'low-frequency' sounds, which is why it struggles with high-pitched sudden noises."
+  ],
+  "unsourced": [
+   "20 se 30 dB tak kam hota hai (The source mentions reduction but does not provide specific decibel numbers)."
+  ]
+ },
+ "brain_ids": [
+  "fc294ac58f",
+  "4396759d41",
+  "6ce7203c71",
+  "1e1964f463",
+  "f945e2a937",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "161339712e",
+  "9db4cc694f",
+  "7fa182f8ef",
+  "1e60a34718",
+  "b69d65467f",
+  "6055c69660",
+  "e15cfaed29"
+ ],
+ "skin": "keynote"
+}

@@ -576,3 +576,7 @@
 - OVERLAP/CUT (layout audit): text_occluded on #s10b
 - FIT: Voice says 'Shrenik Mahavir ke param bhakt the, din raat seva', but the caption says 'SHRENIK MAHAVIR THE' which is incomplete and grammatically broken.
 - FIT: Voice says 'Maran ke baad wo narak ke andhere pahunche', but the caption says 'WO NARAK KE' while showing a lotus instead of darkness or the descent into hell.
+
+## 1120-1510 (pre-render check)
+- FIT: Caption says 'SHRENIK MAHAVIR THE' which does not match the voice line 'Shrenik Mahavir ke param bhakt the, din raat seva'.
+- FIT: Scene shows King Shrenik meditating instead of the soul of Shrenik remembering Mahavir in hell as stated in the voiceover.

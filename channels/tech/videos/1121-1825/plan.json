@@ -1,0 +1,352 @@
+{
+ "slug": "meta-muse-charm-how-it-works",
+ "title": "Meta’s Muse Charm AI device kaise kaam karta hai?",
+ "hooks": [
+  "Phone nikaalne ki zaroorat nahi... Meta ka Muse Charm aapka kaam khud kar dega.",
+  "Smartphone ka zamana khatam? Meta ne launch kiya Muse Charm AI device!",
+  "Bas bolo aur kaam ho gaya! Dekhiye Meta Muse Charm kaise kaam karta hai."
+ ],
+ "hook_choice": 0,
+ "hook_why": "It focuses on the immediate utility (not needing a phone) which is a high-retention trigger for tech enthusiasts.",
+ "metaphor": "A 'Digital Remote Control' for your digital life that acts instead of just talking.",
+ "mechanism": [
+  "User activates device via voice or biometric touch",
+  "Request is sent to cloud-based Muse Secure VM",
+  "AI Agent accesses connected services like Gmail and Calendar",
+  "Agent navigates websites and fills forms automatically",
+  "User approves the final action on the device or smartwatch"
+ ],
+ "cast": {},
+ "scenes": [
+  {
+   "vo": "Phone nikaalne ki zaroorat nahi... Meta ka Muse Charm aapka kaam khud kar dega.",
+   "type": "object",
+   "prompt": "A sleek, pebble-shaped matte black AI device with a small glowing circular touchscreen in the center, held between two fingers, premium studio lighting on pure black background.",
+   "label": "META MUSE CHARM",
+   "keywords": [
+    "Phone",
+    "Muse Charm"
+   ],
+   "real": {
+    "q": "Meta Muse Charm AI device held in hand",
+    "kind": "photo",
+    "subject": "A person holding the Meta Muse Charm physical device"
+   },
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "keynote"
+  },
+  {
+   "vo": "Ye koi smartphone nahi... balki ek dedicated AI remote hai jo aapke orders leta hai.",
+   "type": "title",
+   "big": "AI REMOTE",
+   "sub": "DEDICATED HARDWARE",
+   "bg_prompt": "Close up of the device's biometric sensor glowing with a soft yellow pulse, macro tech photography.",
+   "keywords": [
+    "AI remote",
+    "orders"
+   ],
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null,
+   "real": {
+    "q": "Meta Muse Charm AI remote close up texture",
+    "kind": "photo",
+    "subject": "Close-up of the device's hardware and microphone grill"
+   },
+   "skin": "keynote",
+   "prompt": ""
+  },
+  {
+   "vo": "Iska kaam hai friction khatam karna. Bas button dabao aur apna task bolo.",
+   "type": "flow",
+   "nodes": [
+    "ACTIVATE",
+    "SPEAK",
+    "EXECUTE"
+   ],
+   "label": "USER WORKFLOW",
+   "bg_prompt": "A person's thumb pressing a side button on a small black tech gadget, dramatic low-key lighting.",
+   "keywords": [
+    "friction",
+    "task"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "thumb pressing button on Meta Muse Charm",
+    "kind": "photo",
+    "subject": "A human thumb interacting with the physical button on the device"
+   },
+   "skin": "keynote"
+  },
+  {
+   "vo": "Aapki voice seedha cloud mein 'Muse Secure VM' tak jaati hai.",
+   "type": "code",
+   "title": "CLOUD CONNECTION",
+   "lines": [
+    "connect",
+    "secure",
+    "routing",
+    "ready"
+   ],
+   "highlight": 3,
+   "label": "MUSE SECURE VM",
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: muse secure vm, cloud connection, voice secure vm, meta’s muse charm ai device kaise kaam karta hai?. Style: image made only of glowing amber monospace ASCII characters on dark CRT glass, scanlines, slight screen curvature, monochrome amber phosphor, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "keywords": [
+    "voice",
+    "Secure VM"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "terminal",
+   "prompt": ""
+  },
+  {
+   "vo": "Wahan ye agent aapke connected apps jaise Calendar aur Gmail ko access karta hai.",
+   "type": "ui",
+   "title": "CONNECTED SERVICES",
+   "rows": [
+    {
+     "label": "Calendar",
+     "value": "Linked"
+    },
+    {
+     "label": "Gmail",
+     "value": "Active"
+    },
+    {
+     "label": "Booking",
+     "value": "Ready"
+    }
+   ],
+   "label": "AGENT ACCESS",
+   "bg_prompt": "A dark UI dashboard showing various app icons glowing in a grid.",
+   "keywords": [
+    "connected apps",
+    "access"
+   ],
+   "real": {
+    "q": "Google Calendar app on iPhone held in hand",
+    "kind": "photo",
+    "subject": "A physical phone showing the Google Calendar interface"
+   },
+   "prompt": "App logos for Google services",
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "terminal"
+  },
+  {
+   "vo": "Sirf jawab nahi deta... ye khud websites par jaakar forms bharta hai aur bookings karta hai.",
+   "type": "flow",
+   "prompt": "A cinematic shot of a digital cursor moving rapidly across a web form, filling in text boxes automatically, high-tech overlay.",
+   "label": "AUTO EXEC",
+   "keywords": [
+    "forms",
+    "bookings"
+   ],
+   "motion": "push",
+   "title": "AUTO EXECUTION",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram",
+   "nodes": [
+    {
+     "label": "Open site"
+    },
+    {
+     "label": "Fill form"
+    },
+    {
+     "label": "Book now"
+    }
+   ],
+   "bg_prompt": "Vertical scene for a technology explainer about: auto-execution, auto execution, forms bookings, meta’s muse charm ai device kaise kaam karta hai?. Style: glowing cyan wireframe hologram made of thin light lines floating above a round projector pad, near-black stage, faint dot grid, depth fog, no solid surfaces, no photo. One clear subject in the middle third, empty dark space at the top and bottom, no people's faces, no text, no letters, no logos, no watermark, vertical 9:16."
+  },
+  {
+   "vo": "Jaise movie tickets dhoondhna ya dentist appointment manage karna... sab automatic.",
+   "type": "chat",
+   "title": "MUSE AGENT",
+   "messages": [
+    {
+     "role": "user",
+     "text": "Book movie tickets for tonight."
+    },
+    {
+     "role": "ai",
+     "text": "Found 8 PM show. Booking confirmed at PVR."
+    }
+   ],
+   "label": "REAL-TIME TASK",
+   "bg_prompt": "Soft, out-of-focus ambient background for a technology explainer about: real-time task, muse agent, movie tickets automatic, meta’s muse charm ai device kaise kaam karta hai?. Style: glowing cyan wireframe hologram made of thin light lines floating above a round projector pad, near-black stage, faint dot grid, depth fog, no solid surfaces, no photo. Abstract light, depth and colour only: no screens, no monitors, no phones showing anything, no terminals, no windows, no text, no letters, no numbers, no logos, no watermark, vertical 9:16.",
+   "keywords": [
+    "movie tickets",
+    "automatic"
+   ],
+   "motion": "push",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram",
+   "prompt": ""
+  },
+  {
+   "vo": "Aap Apple Watch ya Wear OS se bhi ise approve kar sakte ho.",
+   "type": "object",
+   "prompt": "An Apple Watch Ultra on a wrist showing a Muse AI notification with 'Approve' and 'Decline' buttons.",
+   "label": "SMARTWATCH REMOTE",
+   "keywords": [
+    "Apple Watch",
+    "approve"
+   ],
+   "real": {
+    "q": "Apple Watch Ultra on wrist showing notification",
+    "kind": "photo",
+    "subject": "A person wearing an Apple Watch with a notification on screen"
+   },
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "skin": "hologram"
+  },
+  {
+   "vo": "Ye ek chatbot nahi... aapka personal agent hai jo background mein kaam khatam karta hai.",
+   "type": "object",
+   "items": [
+    {
+     "label": "CHATBOT",
+     "value": "ONLY TALKS",
+     "pct": 30
+    },
+    {
+     "label": "MUSE AGENT",
+     "value": "TAKES ACTION",
+     "pct": 100
+    }
+   ],
+   "label": "AGENT VS CHATBOT",
+   "bg_prompt": "A split screen showing a simple text bubble on one side and a complex mechanical gear system on the other.",
+   "keywords": [
+    "personal agent",
+    "background"
+   ],
+   "motion": "push",
+   "title": "",
+   "big": null,
+   "small": null,
+   "sub": null,
+   "real": {
+    "q": "Meta official logo blue background",
+    "kind": "logo",
+    "subject": "The official Meta logo"
+   },
+   "skin": "keynote",
+   "prompt": "The official Meta logo"
+  },
+  {
+   "vo": "Kya aap phone chhod kar aise AI device par shift honge? Comment mein batao!",
+   "type": "title",
+   "big": "TRY KAROGE?",
+   "sub": "COMMENT MEIN BATAO",
+   "bg_prompt": "The Muse Charm device sitting on a clean black desk, reflecting a soft yellow light, premium finish.",
+   "keywords": [
+    "shift",
+    "Comment"
+   ],
+   "motion": "push",
+   "title": "",
+   "small": null,
+   "label": null,
+   "real": {
+    "q": "indian man holding small tech gadget looking curious",
+    "kind": "photo",
+    "subject": "A relatable person looking at the device in their hand"
+   },
+   "skin": "keynote"
+  }
+ ],
+ "music_mood": "driving",
+ "caption": "Phone ki chhutti? 📱\n\nMeta ka naya Muse Charm AI device sirf baatein nahi karta, balki aapke liye kaam bhi karta hai. Bookings se lekar schedule management tak, sab kuch bina phone chhuye!\n\nKya aap ise use karna chahenge? 👇\n\n#MetaMuse #MuseCharm #AIAgent #TechNews #KaiseTech #FutureTech #SmartGadgets\n\nMusic: Kevin MacLeod (incompetech.com), CC BY 4.0",
+ "hashtags": [
+  "#MetaMuse",
+  "#MuseCharm",
+  "#AIAgent",
+  "#TechNews",
+  "#KaiseTech",
+  "#FutureTech",
+  "#SmartGadgets"
+ ],
+ "claims": [
+  {
+   "claim": "Muse Charm is a dedicated pocket hardware device for Meta's Muse AI agent.",
+   "basis": "Source: aiidelist.com (What Is Muse Charm? Meta's Pocket AI Device Explained)"
+  },
+  {
+   "claim": "The device uses a cloud-based system called Muse Secure VM to operate.",
+   "basis": "Source: Gadgets & Wearables (Meta brings its Muse AI agent to Apple Watch and Wear OS)"
+  },
+  {
+   "claim": "Muse AI can navigate websites, fill forms, and make bookings.",
+   "basis": "Source: Gadgets & Wearables and aiidelist.com"
+  },
+  {
+   "claim": "Muse AI is available as a companion app on Apple Watch and Wear OS.",
+   "basis": "Source: Gadgets & Wearables (Nov 11, 2026)"
+  }
+ ],
+ "explainer": {
+  "score": 4,
+  "ok": false,
+  "steps_learned": [
+   "User presses a button on the device.",
+   "User speaks a task command.",
+   "Voice data is sent to a cloud-based 'Muse Secure VM'.",
+   "The agent accesses connected apps like Calendar and Gmail.",
+   "The agent performs actions like filling forms or booking appointments.",
+   "User approves actions via Apple Watch or Wear OS."
+  ],
+  "missing_steps": [
+   "The script mentions 'Muse Secure VM' but doesn't explain what that actually is (is it a server? a software environment?).",
+   "It doesn't clarify if 'Muse Charm' is a separate physical hardware device or a software feature, given the sources mention 'Muse AI agent' on watches and phones, not a specific 'Charm' hardware device.",
+   "How does the device connect to the internet or the user's phone? (Bluetooth? Wi-Fi? Cellular?)",
+   "How is the 'Muse Secure VM' authenticated to access personal apps like Gmail?"
+  ],
+  "unsourced": [
+   "The existence of a specific physical 'Muse Charm' device (Sources only mention 'Muse AI agent' on watches/phones, 'Muse Voice', and 'Muse Spaces').",
+   "The term 'Muse Secure VM' (This specific technical term does not appear in the provided sources)."
+  ]
+ },
+ "brain_ids": [
+  "fc294ac58f",
+  "4396759d41",
+  "f945e2a937",
+  "1e1964f463",
+  "b2fabb69c4",
+  "7f620e6fdf",
+  "7fa182f8ef",
+  "161339712e",
+  "b69d65467f",
+  "6ce7203c71",
+  "9db4cc694f",
+  "e15cfaed29",
+  "6055c69660",
+  "1e60a34718"
+ ],
+ "visual_done": "2026-11-21 18:32",
+ "skin": "keynote",
+ "music_credit": "Music: Kevin MacLeod (incompetech.com), CC BY 4.0"
+}

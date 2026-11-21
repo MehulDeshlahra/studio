@@ -177,11 +177,7 @@
   "job": "1120-1510",
   "topic": "Can a soul currently in hell become a Tirthankara? The story of King Shrenik (Bimbisara) and his bond with Mahavira. Lesson: Repentance can reshape your ultimate destiny. (Source: Trishashti-shalaka-purusha-charitra)",
   "title": "Narak mein pade atma Tirthankar ban sakti hai?",
-  "status": "held",
-  "review": [
-   "before render, scene 3: FIT: Voice says 'Shrenik Mahavir ke param bhakt the, din raat seva', but the caption says 'SHRENIK MAHAVIR THE' which is incomplete and grammatically broken.",
-   "before render, scene 5: FIT: Voice says 'Maran ke baad wo narak ke andhere pahunche', but the caption says 'WO NARAK KE' while showing a lotus instead of darkness or the descent into hell.",
-   "before render, scene 11: OVERLAP/CUT (layout audit): text_occluded on #s10b"
-  ]
+  "status": "made",
+  "review": []
  }
 ]

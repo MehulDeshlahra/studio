@@ -62,12 +62,6 @@
    "align": "peak"
   },
   {
-   "t": 32.02,
-   "file": "sfx/impact.mp3",
-   "gain_db": -18,
-   "align": "onset"
-  },
-  {
    "t": 32.0,
    "file": "sfx/air-zoom.mp3",
    "gain_db": -18,

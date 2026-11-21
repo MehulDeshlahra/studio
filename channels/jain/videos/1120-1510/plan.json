@@ -98,9 +98,9 @@
   {
    "vo": "Shrenik Mahavir ke param bhakt the, din raat seva.",
    "type": "image",
-   "prompt": "Cinematic 9:16 portrait of King Shrenik with hands in Anjali Mudra, wearing a traditional gold crown and royal silk robes, calm and devoted expression, centered composition, soft divine glow, blurred temple background, plenty of vertical space for captions.",
+   "prompt": "Cinematic 9:16 portrait of King Shrenik in palace courtyard, hands folded in anjali mudra, offering flowers at feet of a small Mahavira idol on a pedestal, wearing gold crown with ruby and red-gold silk angavastram, devoted expression, warm golden light, blurred marble pillars, centered with generous vertical space above and below.",
    "motion": "push",
-   "title": "Raja Shrenik",
+   "title": "Param Bhakt Shrenik",
    "keywords": [
     "Mahavir",
     "bhakt"
@@ -116,9 +116,18 @@
     "tries": [
      {
       "file": "s2q0.jpg",
-      "prompt": "King Shrenik, middle-aged with trimmed black beard and calm expression, wears a golden crown centered with a ruby, a rich red-gold silk angavastram draped elegantly across his torso, stands in palace courtyard of polished white marble and warm sandstone, finely carved pillars rising around him, distant temple spires visible beyond, hands pressed together at chest in reverent anjali mudra, serene painterly Indian style with warm golden light bathing the stone, gentle divine glow illuminating his peaceful face, soft sunlight casting long shadows on clean floor, vertical 9:16 composition centered with generous calm space above and below",
+      "prompt": "King Shrenik, middle-aged with trimmed black beard and calm expression, wearing a golden crown centered with a ruby, a rich red-gold silk angavastram draped across his torso, stands in anjali mudra offering flowers at the feet of the idol from image 1, a smooth white marble Mahavira seated in padmasana with small tight curls, half-closed eyes, srivatsa mark on chest, lion emblem on pedestal, serene polished stone surface, placed on a carved stone pedestal in an open palace courtyard of polished white marble and warm sandstone, finely carved pillars rising around, distant temple spires visible beyond, serene painterly Indian style, warm golden sunlight bathing the scene in gentle glow, long soft shadows on clean floor, vertical 9:16 composition with King Shrenik centered in middle third, generous calm space above and below",
+      "fails": {
+       "p1": 0.76,
+       "p3": 0.76
+      },
+      "top": 0.76
+     },
+     {
+      "file": "s2q1.jpg",
+      "prompt": "King Shrenik, a middle-aged king with a trimmed black beard and calm expression, wearing a golden crown with a central ruby and draped in a rich red-gold silk angavastram, stands in anjali mudra, offering lotus flowers at the feet of a smooth white marble idol of Mahavira Swami, seated in padmasana posture with small tight curls on the head, a srivatsa mark on the chest, and a lion emblem on the pedestal, set in an open palace courtyard of polished white marble, warm golden light.",
       "fails": {},
-      "top": 0.27
+      "top": 0.37
      }
     ],
     "passed": true
@@ -155,9 +164,9 @@
   {
    "vo": "Maran ke baad wo narak ke andhere pahunche.",
    "type": "image",
-   "prompt": "Symbolic representation: dark cavernous space with faint red glow, but a single beam of golden light pierces down from above onto a lotus bud. Ancient Jain cosmic geography style — painterly, not graphic. Warm golden light contrasts with darkness. Serene, not frightening.",
+   "prompt": "Symbolic 9:16 vertical composition: vast dark cavernous space with faint crimson glow, single brilliant beam of warm golden light piercing down from above onto a lone pristine lotus bud rising from still dark water, ancient Jain cosmic geography style, painterly texture, serene contemplative atmosphere, centered subject with ample calm space above and below.",
    "motion": "pull",
-   "title": "MARAN NARAK AAGMAN",
+   "title": "",
    "keywords": [
     "maran",
     "narak"
@@ -173,20 +182,21 @@
     "tries": [
      {
       "file": "s4q0.jpg",
-      "prompt": "A vast symbolic cavernous space, dark and deep with a faint crimson glow emanating from the shadows, a singular brilliant beam of warm golden light descends from above, illuminating a lone pristine lotus bud rising from dark still water, ancient Jain cosmic geography style, serene painterly texture, deep shadows contrasting with ethereal warm highlights, vertical 9:16 composition, centered subject with generous calm space above and below, peaceful and contemplative atmosphere.",
+      "prompt": "A lone pristine lotus bud rises from dark still water, its pale petals tightly furled, centered in a vast cavernous space where faint crimson glow suffuses the stone walls. A singular brilliant beam of warm golden light pierces straight down from high above, striking the bud and the water's mirror surface. Ancient Jain cosmic geography rendered in serene painterly Indian style, deep shadows and ethereal warm highlights on textured stone. Vertical 9:16 frame, the lotus bud in the middle third, generous calm darkness above and below.",
       "fails": {},
-      "top": 0.18
+      "top": 0.21
      }
     ],
     "passed": true
-   }
+   },
+   "real": null
   },
   {
    "vo": "Wahan bhi unke mann mein Mahavir ki yaad rahi.",
    "type": "image",
-   "prompt": "In the symbolic darkness, King Shrenik sits in meditation posture, eyes closed, hands folded. A faint golden silhouette of Mahavira's meditating idol appears in his mind's eye — lotus, lion emblem, srivatsa. Painterly inner vision, warm glow from within.",
+   "prompt": "Symbolic 9:16 vertical composition: a radiant soul of King Shrenik floating in a dark hellish cavern with fiery pits and shadowy figures, eyes closed in deep remembrance, a faint golden silhouette of Mahavira meditating (with lion emblem and srivatsa) appears in the soul's mind, warm inner glow contrasting with hellish surroundings, painterly Indian style, centered with space above and below.",
    "motion": "push",
-   "title": "NARAK MEIN MAHAVIR YAAD",
+   "title": "Narak Mein Yaad",
    "keywords": [
     "mann",
     "Mahavir"
@@ -201,22 +211,31 @@
     ],
     "tries": [
      {
-      "file": "s5r0.jpg",
-      "prompt": "real photo",
+      "file": "s5q0.jpg",
+      "prompt": "A radiant, translucent soul of King Shrenik floating in a vast, dark cavern, eyes closed in deep, peaceful remembrance. Within his mind, a faint, glowing golden silhouette of the idol from image 1 appears: a smooth white marble Mahavir Swami seated in padmasana, small tight curls on his head, srivatsa mark on the chest, lion emblem on the pedestal. Warm golden light emanates from the soul, contrasting with the deep, shadowy cavern walls. Serene painterly Indian style, vertical 9:16 composition, centered.",
       "fails": {
-       "p3": 0.62
+       "p3": 0.74
       },
-      "top": 0.62
+      "top": 0.74
      },
      {
-      "file": "s5q0.jpg",
-      "prompt": "King Shrenik, a middle-aged king with a trimmed black beard, sits cross-legged in deep meditation, hands pressed together in anjali mudra. Before his closed eyes, a luminous golden silhouette of the Mahavira Swami idol from image 1 appears, featuring small tight curls, a srivatsa mark, and a lion emblem. The scene is set within a vast, dark symbolic cavern, rendered in a serene painterly Indian style. A single beam of warm golden light illuminates the king, creating an ethereal, contemplative atmosphere.",
+      "file": "s5q1.jpg",
+      "prompt": "A radiant soul of King Shrenik, middle-aged with a trimmed black beard, eyes closed in deep meditation, floating in a vast dark cavern, visualizing a faint golden silhouette of the idol from image 1: a smooth white marble Mahavir Swami seated in padmasana, small tight curls on the head, srivatsa mark on the chest, lion emblem on the pedestal, serene face with half-closed eyes, completely plain unmarked forehead. Painterly Indian style, warm golden inner glow, dark hellish background, vertical 9:16 composition, centered subject, generous calm space above and below.",
+      "fails": {
+       "p4": 0.67
+      },
+      "top": 0.67
+     },
+     {
+      "file": "s5q2.jpg",
+      "prompt": "King Shrenik, a middle-aged man with a trimmed black beard and calm expression, wearing a golden crown with a central ruby and rich red-gold silk angavastram, floats in a vast cavernous space. He holds his hands in anjali mudra, eyes closed in deep remembrance. Above him, a faint golden silhouette of the Mahavira Swami idol from image 1 appears, seated in padmasana, eyes half-closed, with curled hair, srivatsa mark, and lion emblem. Serene painterly Indian style, warm golden inner glow, dark cavernous background, vertical 9:16 composition.",
       "fails": {},
-      "top": 0.25
+      "top": 0.41
      }
     ],
     "passed": true
-   }
+   },
+   "real": null
   },
   {
    "vo": "Paschatap ke aansuon se atma shuddhi hui.",
@@ -337,10 +356,10 @@
   },
   {
    "vo": "Aap hote to kya karte? Comment karo.",
-   "type": "card",
-   "prompt": "Clean white marble background with subtle carved lotus border. Warm golden light from top-left. Center space for text.",
+   "type": "image",
+   "prompt": "Smooth white marble idol of Mahavir Swami seated in padmasana, small tight curls, srivatsa mark on chest, lion emblem on pedestal, half-closed meditative eyes, serene polished stone surface, centered against clean white marble background with subtle carved lotus border, warm golden light from top-left, vertical 9:16 composition with generous calm space above and below.",
    "motion": "push",
-   "big": "AAP KYA KARTE",
+   "big": null,
    "keywords": [
     "aap",
     "kya karte"
@@ -354,21 +373,16 @@
     "tries": [
      {
       "file": "s10q0.jpg",
-      "prompt": "Smooth white marble idol of Mahavir Swami seated in padmasana posture, small tight curls covering the head, a srivatsa mark on the chest, a lion emblem on the pedestal, eyes half-closed in deep meditation, serene polished stone surface. The idol is centered against a clean white marble background with a subtle carved lotus border. Warm golden light streams from the top-left, creating a gentle glow. Serene painterly Indian style, uncluttered, peaceful atmosphere, vertical 9:16 composition.",
-      "fails": {
-       "p3": 0.76
-      },
-      "top": 0.76
-     },
-     {
-      "file": "s10q1.jpg",
-      "prompt": "Smooth white marble idol of Mahavira Swami seated in padmasana posture, hands resting in the lap, small tight curls covering the head, a srivatsa mark on the chest, a lion emblem on the pedestal, eyes half-closed in deep meditation, polished stone surface with plain features and completely smooth forehead, serene painterly Indian style, warm golden light from top-left, clean white marble background with subtle carved lotus border, vertical 9:16 composition, generous calm space above and below, uncluttered, peaceful, gentle glow.",
+      "prompt": "the idol from image 1 smooth white marble idol of Mahavir Swami seated in padmasana cross-legged with hands resting in the lap small tight curls covering the bare head srivatsa mark on the chest lion emblem on the pedestal half-closed meditative eyes serene polished stone surface with plain features centered against clean white marble background with subtle carved lotus border ancient Jain temple architecture tall pointed shikhara spires finely carved pillars visible in the distance serene painterly Indian style calm peaceful gentle glow uncluttered warm golden light from top-left bathing the white marble vertical 9:16 composition main subject in the middle third generous calm space above and below",
       "fails": {},
-      "top": 0.25
+      "top": 0.56
      }
     ],
     "passed": true
-   }
+   },
+   "title": "",
+   "small": null,
+   "real": null
   },
   {
    "type": "card",
@@ -515,5 +529,5 @@
   "Photo: Lord Mahavira (Wikimedia Commons)",
   "Photo: Rujuwalika Jain Temple Mahavira Kevalgyan statue 2 (Wikimedia Commons)"
  ],
- "pic_redraws": 1
+ "pic_redraws": 4
 }

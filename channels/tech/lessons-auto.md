@@ -491,3 +491,24 @@
 
 ## 1121-0455 (pre-render check)
 - FIT: gibberish text on the central object instead of the expected warning label
+
+## 1121-1825 (pre-render check)
+- FIT: The visual shows a generic 'Add Google Calendar' card instead of the required rows showing connection status for Calendar, Gmail, and Ticket Booking.
+- EMPTY: The centre of the frame has no main visual (just a dark gradient) in the stills.
+
+## 1121-1825 (pre-render check)
+- FIT: text rendering on screen is severely corrupted with scrambled typography and overlapping artifacts
+- FIT: lower half of the frame shows unrelated prompt 'How to Add Google Calendar to iPhone?' which clashes with the voiceover
+- FIT: heavy spelling errors and corrupted text artifacts displayed on screen above the nodes
+
+## 1121-1825 (pre-render check)
+- LANG: spelling mistakes and incorrect placeholder labels displayed on screen ('auto-excution', 'forms boockgs', '{label: open site}')
+
+## review 1121-1825
+- visual: Scene 4: The text in the terminal/cloud connection frames is heavily garbled and filled with fake, unreadable character artifacts ('MHNXE SECII SEDBE AHGNR SECUREF...').
+- visual: Scene 6: Floating text elements contain severe spelling and garbling errors ('auto-excution', 'forms boockgs', 'metz's muse ckmarm ai dlevse', '{LABEL: FILL FORM}').
+- visual: Scene 9: The background panels are stark, near-empty grey placeholder blocks completely lacking any visual content or texture.
+- visual: Checklist q1: Scene 6 and Scene 9 contain garbled brand/UI text and placeholder blocks.
+- visual: checklist: Does a frame show a wrong or fake logo for the brand it names? -> Scene 6 and Scene 9
+- visual: checklist: Is any frame a near-empty box, card or placeholder block where the line explains something? -> Scene 9
+- visual score 4/10

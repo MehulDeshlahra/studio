@@ -230,5 +230,21 @@
   "status": "approved",
   "offer": "HANDOFF",
   "review": []
+ },
+ {
+  "job": "1121-1825",
+  "topic": "Meta’s Muse Charm AI device kaise kaam karta hai?",
+  "title": "Meta’s Muse Charm AI device kaise kaam karta hai?",
+  "qc_ok": true,
+  "status": "held",
+  "review": [
+   "visual: Scene 4: The text in the terminal/cloud connection frames is heavily garbled and filled with fake, unreadable character artifacts ('MHNXE SECII SEDBE AHGNR SECUREF...').",
+   "visual: Scene 6: Floating text elements contain severe spelling and garbling errors ('auto-excution', 'forms boockgs', 'metz's muse ckmarm ai dlevse', '{LABEL: FILL FORM}').",
+   "visual: Scene 9: The background panels are stark, near-empty grey placeholder blocks completely lacking any visual content or texture.",
+   "visual: Checklist q1: Scene 6 and Scene 9 contain garbled brand/UI text and placeholder blocks.",
+   "visual: checklist: Does a frame show a wrong or fake logo for the brand it names? -> Scene 6 and Scene 9",
+   "visual: checklist: Is any frame a near-empty box, card or placeholder block where the line explains something? -> Scene 9",
+   "visual score 4/10"
+  ]
  }
 ]
