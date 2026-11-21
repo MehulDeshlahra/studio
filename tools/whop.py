@@ -215,8 +215,30 @@ def submit(page, url, post):
                 continue
         if ticked:
             break
-    if not ticked:                                       # a styled box: click its label text instead
-        if click_text(page, [r"i'?ve read the requirements", r"i (have )?read", r"i agree", r"accept"]):
+    # 21 Nov (server run): the box is a styled element; the label says "I’ve" with a CURLY apostrophe, so the old text
+    # match missed it and Submit did nothing. Click the label, then the square just left of it, and check the result.
+    req = page.get_by_text(re.compile(r"read the requirements", re.I)).first
+    for attempt in range(3):
+        try:
+            if not req.count():
+                break
+            if attempt == 0:
+                req.click(timeout=3000)
+            else:
+                b = req.bounding_box()
+                page.mouse.click(b["x"] - 22, b["y"] + b["height"] / 2)
+            page.wait_for_timeout(600)
+            on = page.evaluate("""() => { const t = [...document.querySelectorAll('*')].find(e => /read the requirements/i.test(e.textContent || '') && e.children.length < 4);
+                    let n = t; for (let i = 0; i < 5 && n; i++, n = n.parentElement) {
+                      const c = n.querySelector('input[type=checkbox],[role=checkbox],[aria-checked],[data-state]');
+                      if (c) return c.checked === true || c.getAttribute('aria-checked') === 'true' || c.getAttribute('data-state') === 'checked'; }
+                    return null; }""")
+            if on:
+                ticked = max(ticked, 1); break
+        except Exception:
+            continue
+    if not ticked:
+        if click_text(page, [r"i[’']?ve read the requirements", r"i (have )?read", r"i agree"]):
             ticked = 1
     page.wait_for_timeout(800)
     before = page.inner_text("body")
