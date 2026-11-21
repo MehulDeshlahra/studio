@@ -400,12 +400,24 @@
   "job": "1120-1440b-c1",
   "topic": "WHO'S KID ARE YOU? CULINARY DISASTER",
   "title": "WHO'S KID ARE YOU? CULINARY DISASTER",
-  "status": "approved",
+  "status": "scheduled",
   "review": [],
   "clip": {
    "url": "https://drive.google.com/drive/folders/1XDhpF6dPX2OaNWo3hh-O7YGhoOfSiHeM",
    "start": 0.0,
    "layout": "mixed:crop+fit"
+  },
+  "sched": {
+   "slot": 1795309200,
+   "at": "2026-11-22 06:30",
+   "platforms": [
+    "ig"
+   ],
+   "mp4": "/home/ubuntu/studio-out/cutcapsuletv/1120-1440b-c1/post.mp4",
+   "prepared": "2026-11-21 07:42",
+   "url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-1440b-c1-1795227135.mp4",
+   "ig_container": "18196675339406979",
+   "ig_url": "https://raw.githubusercontent.com/offhours-lab/studio-media/main/reels/cutcapsuletv-1120-1440b-c1-1795227135.mp4"
   }
  },
  {
