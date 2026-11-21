@@ -99,8 +99,31 @@ def _save_sources(d, msg, page=CID):
 
 
 def _job(cmd, *args, wait=900):
+    """21 Nov owner: "everything must run on the server, the laptop can be off any time". tools/whop.py runs HERE (headless
+    Chromium, login cookies in ~/whop/whop-cookies.json); the laptop is only a fallback if the server run breaks."""
+    import subprocess, tempfile
+    out = tempfile.mktemp(prefix="whop-", suffix=".json")
+    keep = os.path.join(OUT, CID, "whop-shots"); os.makedirs(keep, exist_ok=True)
+    try:
+        subprocess.run([sys.executable, os.path.join(ROOT, "tools", "whop.py"), cmd] + [str(a) for a in args],
+                       capture_output=True, text=True, timeout=min(wait, 600), env=dict(os.environ, WHOP_OUT=out))
+        r = load(out, {}) or {}
+        if r.get("shot") and os.path.exists(r["shot"]):
+            r["shot_server"] = os.path.join(keep, f"{time.strftime('%m%d-%H%M%S')}-{cmd}.png")
+            os.replace(r["shot"], r["shot_server"])
+        if r and not r.get("error"):
+            return r
+        log("whopbot: server run gave", str(r)[:150], "- trying the laptop")
+    except Exception as e:
+        log("whopbot: server run failed", cmd, str(e)[:150], "- trying the laptop")
+    finally:
+        if os.path.exists(out):
+            os.remove(out)
     import laptop
-    try:     # 19 Nov: the laptop busy with a long transcribe = "did not pick the job up", which crashed the whole run
+    s = laptop.status()
+    if not s or s.get("age", 999) > 60 or s.get("mode") == "off":
+        return {"error": "server whop run failed and the laptop is off"}
+    try:
         d = laptop.job({"kind": "whop", "cmd": cmd, "args": list(args)}, f"whop {cmd}", wait=wait)
     except Exception as e:
         log("whopbot: laptop job failed", cmd, str(e)[:150])
@@ -108,7 +131,6 @@ def _job(cmd, *args, wait=900):
     r = load(os.path.join(d, "result.json"), {}) or {}
     shot = os.path.join(d, "shot.png")
     if os.path.exists(shot):
-        keep = os.path.join(OUT, CID, "whop-shots"); os.makedirs(keep, exist_ok=True)
         r["shot_server"] = os.path.join(keep, f"{time.strftime('%m%d-%H%M%S')}-{cmd}.png")
         os.replace(shot, r["shot_server"])
     return r
@@ -414,8 +436,6 @@ def retire(st):
 def run():
     import laptop
     st = load(STATE, {}) or {}
-    if not laptop.available():
-        log("whopbot: the laptop is off"); return
     if not logged_in():
         if time.time() - st.get("told_login", 0) > 86400:
             telegram("🔑 Whop login needed once on the laptop: run  python tools\\whop.py login  (or tell Kiro). "
@@ -444,8 +464,6 @@ def submit_only():
                 pending += 1
     if not pending:
         return
-    if not laptop.available():
-        log("whopbot: clip waiting to submit but the laptop is off"); return
-    submit_all(load(STATE, {}) or {})
+    submit_all(load(STATE, {}) or {})        # 21 Nov: runs on the server (_job), laptop not needed
 if __name__ == "__main__":
     submit_only() if sys.argv[1:2] == ["submit"] else run()

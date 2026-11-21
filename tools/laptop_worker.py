@@ -83,7 +83,12 @@ def run(cmd, timeout=120, **kw):
 
 def checkin(mode, ac, busy=""):
     info = json.dumps({"mode": mode, "wanted": wanted(), "ac": ac, "busy": busy, "idle": round(idle_s()), "t": time.strftime("%H:%M:%S")})
-    claim = "" if busy or mode == "off" or not ac else (
+    # 21 Nov: on battery the worker claimed nothing, so 9 overnight clips missed Whop's 30-minute window. A Whop submit is a
+    # 30-second browser task: it runs on battery too; heavy jobs still wait for the charger
+    if not busy and mode != "off" and not ac:
+        claim = f'cd {R}/queue 2>/dev/null && for f in $(ls -tr *-w.json 2>/dev/null); do mv "$f" ../claimed/ 2>/dev/null && echo "JOB $f" && break; done'
+    else:
+      claim = "" if busy or mode == "off" or not ac else (
         # 20 Nov: Content Rewards accepts a link only within 30 min of posting: Whop jobs (-w) go first
         # 20 Nov audit: then story renders (plain MMDD-HHMMSS names): two renders fell back to the loaded server while
         # the worker downloaded an 11.5 h stream for a clip transcript. Clip / info / transcribe jobs come after

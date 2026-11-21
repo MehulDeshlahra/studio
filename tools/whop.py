@@ -9,8 +9,12 @@ for clippers, so this drives the real site like a person would.
 Every result is JSON on stdout (the laptop worker sends it to the server)."""
 import json, os, re, sys, time
 
-PROFILE = r"C:\Users\mehul\studio-render\whop-profile"
-SHOTS = r"C:\Users\mehul\studio-render\whop-shots"
+if os.name == "nt":
+    PROFILE = r"C:\Users\mehul\studio-render\whop-profile"
+    SHOTS = r"C:\Users\mehul\studio-render\whop-shots"
+else:   # 21 Nov owner: "everything must run on the server, the laptop can be off any time"
+    PROFILE = os.path.expanduser("~/whop/profile")
+    SHOTS = os.path.expanduser("~/whop/shots")
 
 
 COOKIES = os.path.join(os.path.dirname(PROFILE), "whop-cookies.json")
