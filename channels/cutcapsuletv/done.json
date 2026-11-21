@@ -664,5 +664,32 @@
    "start": 33.65,
    "layout": "vertical"
   }
+ },
+ {
+  "job": "1121-1028d-c1",
+  "topic": "11 HOURS OF NIGHT SURF TRAINING",
+  "title": "11 HOURS OF NIGHT SURF TRAINING",
+  "status": "held",
+  "review": [
+   "Another account's watermark ('FOX MOVIETONE NEWS') is visible at the top of the frames.",
+   "There are two caption layers appearing at once, causing text to overlap and become unreadable (e.g., Frame 4)."
+  ],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1Y8IvP14KC8x_K_-4FNmCdrc6VKs_d4v4",
+   "start": 0.0,
+   "layout": "vertical"
+  }
+ },
+ {
+  "job": "1121-1028f-c1",
+  "topic": "Longest jump shocks the judges",
+  "title": "Longest jump shocks the judges",
+  "status": "approved",
+  "review": [],
+  "clip": {
+   "url": "https://drive.google.com/drive/folders/1Y8IvP14KC8x_K_-4FNmCdrc6VKs_d4v4",
+   "start": 6.29,
+   "layout": "vertical"
+  }
  }
 ]

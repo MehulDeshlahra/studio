@@ -31,3 +31,7 @@
 - Caption typo: 'Tiz' instead of 'this', 'lessom lassies' instead of 'lesson lassies', 'Farm' instead of 'form'
 - Checklist b: Caption words are misheard/misspelled compared to the transcript ('is Tiz', 'lessom lassies', 'Farm')
 - checklist: misheard caption
+
+## 1121-1028d-c1 (clipper)
+- Another account's watermark ('FOX MOVIETONE NEWS') is visible at the top of the frames.
+- There are two caption layers appearing at once, causing text to overlap and become unreadable (e.g., Frame 4).
