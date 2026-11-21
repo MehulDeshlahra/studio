@@ -1,0 +1,63 @@
+{
+  "name": "ChocoMania",
+  "handle": "@chocomaniaindia",
+  "about": "ChocoMania by Teena Khandelwal, Durg (Chhattisgarh): curated gourmet gifting, handcrafted EGGLESS cakes and chocolates for weddings, corporate gifting and celebrations; hands-on baking workshops (e.g. tiramisu tres leches) in small groups. FSSAI registered. Orders by Instagram DM.",
+  "audience": "Families, brides-to-be, wedding planners and companies in Durg, Bhilai and Raipur who want a special, eggless, handmade cake or gift box; people who would love to learn baking in a workshop",
+  "language": "English",
+  "library": {
+    "roots": ["~/libraries/chocomania"],
+    "sources": [
+      {"dir": "clips", "kind": "clip", "index": "library.json", "desc_field": "note"},
+      {"dir": "photos", "kind": "photo", "index": "library.json", "desc_field": "note"}
+    ],
+    "music_dir": "music"
+  },
+  "media": {
+    "ban": "",
+    "cooldown_days": 14,
+    "min_clip_s": 1.5
+  },
+  "rules": [
+    "Use ONLY facts from 'about': eggless, handcrafted, gifting for weddings / corporate / celebrations, workshops, FSSAI registered, Durg. Never invent anything else.",
+    "Never state a price, discount, offer, delivery time, delivery area beyond Durg-Bhilai-Raipur, workshop date or seat count: those come from the owner only.",
+    "Never claim awards, customer counts, 'best in city', 'No. 1', health or sugar-free claims.",
+    "Never name or compare with other bakeries or brands.",
+    "Every scene shows her real product or kitchen from the library; never describe something the picture does not show.",
+    "The tone is warm, elegant and personal (a home chocolatier), never shouty sales talk.",
+    "No on-screen 'AI' label."
+  ],
+  "never": [
+    "(₹|rs\\.?|rupees?|inr)\\s*\\d",
+    "\\b\\d+\\s*%\\s*off\\b",
+    "\\b(best|no\\.?\\s*1|number one)\\b.{0,20}\\b(in|of)\\b.{0,20}(durg|bhilai|raipur|city|india)",
+    "\\bsugar[- ]?free\\b",
+    "\\bai (label|visuals|video|generated)\\b"
+  ],
+  "voice": {
+    "engine": "gemini",
+    "voice": "Aoede",
+    "lang": "en",
+    "style": "warm, elegant Indian woman (a home chocolatier) talking softly to a friend about her craft, natural Indian English, calm reel pace with small pauses",
+    "edge": "en-IN-NeerjaNeural",
+    "edge_rate": "+4%"
+  },
+  "edit": {
+    "words": [38, 60],
+    "scenes": [6, 8],
+    "min_clips": 3,
+    "music_db": -20
+  },
+  "cta": "a short spoken line inviting viewers to DM ChocoMania to order or ask about the next workshop (no price, no date), e.g. 'Planning a celebration? Just DM us.'",
+  "caption_rule": "English, 3-4 short lines: a hook line, one line on what makes it special (handcrafted, eggless), then exactly: 'DM to order or to join our next workshop 🤍' and 'Durg · Bhilai · Raipur | FSSAI Registered' then the hashtags",
+  "hashtags": ["#ChocoMania", "#EgglessCakes", "#HandcraftedChocolates", "#WeddingGifting", "#CorporateGifting", "#GiftHampers", "#DurgBhilai", "#Raipur", "#Chhattisgarh", "#HomeBaker"],
+  "theme": {
+    "accent": "#c9a27e",
+    "accent2": "#fff6ee",
+    "bg": "#2a1a14",
+    "font": "Playfair Display",
+    "end_line": "DM to order 🤍"
+  },
+  "deliver": [
+    {"type": "folder", "dir": "~/studio-out/biz/chocomania/ready"}
+  ]
+}
