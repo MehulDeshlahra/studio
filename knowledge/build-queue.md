@@ -6,7 +6,7 @@ This file holds only: open owner-agent tasks ([mehul], worked on by engine/heale
 
 ## Open owner-agent tasks
 
-- [ ] [mehul] 18 Nov katha: Fix layout engine in engine/compose.py to completely reject or automatically re-wrap lines causing content_overlap before marking ready.
+- [x] [mehul] 18 Nov katha: Fix layout engine in engine/compose.py to completely reject or automatically re-wrap lines causing content_overlap before marking ready. (healer)
 - [ ] [mehul] 18 Nov katha: Add character persistence validation in engine/make.py (picture prompts) to ensure deity/hero descriptions remain identical across all scenes of a single video.
 - [ ] [mehul] 18 Nov raaz: engine/preflight.py: add a pre-render check to ensure the first spoken word perfectly matches the generated audio buffer without clipping.
 - [ ] [mehul] 18 Nov tech: Fix TTS generation pipeline in engine/tts.py to ensure 100% script alignment before marking audio ready.
